@@ -1,0 +1,2684 @@
+head	1.58;
+access;
+symbols
+	v8_1_5717_0:1.54
+	v8_1:1.54.0.2
+	v8_0_5449_1:1.50
+	v8_0_5449_0:1.50
+	v8_0:1.50.0.4
+	v7_4_5196_0:1.50
+	v7_4:1.50.0.2
+	v7_3:1.47.0.2
+	v7_2_4630_6:1.44
+	v7_2_4630_5:1.44
+	v7_2_4630_4:1.44
+	v7_2_4630_3:1.44
+	v7_2_4630_2:1.44
+	v0_46_0_4:1.12
+	v7_2_4630_1:1.44
+	v7_2:1.44.0.2
+	v7_1_4532_2:1.32
+	v7_1_4532_1:1.32
+	v7_1_4532_0:1.32
+	v7_1:1.32.0.2
+	v7_0_4335_3:1.24
+	v7_0_4335_2:1.24
+	v7_0_4335_1:1.24
+	v0_46_0_2:1.12
+	v7_0_4335_0:1.24
+	v7_0:1.24.0.2
+	v0_46_0_1:1.12
+	v0_46_0_0:1.12
+	v0_46:1.12.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.58
+date	2016.07.04.05.15.00;	author jfrijters;	state Exp;
+branches;
+next	1.57;
+
+1.57
+date	2016.07.01.05.44.41;	author jfrijters;	state Exp;
+branches;
+next	1.56;
+
+1.56
+date	2016.07.01.04.52.50;	author jfrijters;	state Exp;
+branches;
+next	1.55;
+
+1.55
+date	2015.11.03.09.10.24;	author jfrijters;	state Exp;
+branches;
+next	1.54;
+
+1.54
+date	2015.04.21.10.15.39;	author jfrijters;	state Exp;
+branches;
+next	1.53;
+
+1.53
+date	2015.04.21.08.19.33;	author jfrijters;	state Exp;
+branches;
+next	1.52;
+
+1.52
+date	2015.04.06.07.06.31;	author jfrijters;	state Exp;
+branches;
+next	1.51;
+
+1.51
+date	2015.02.16.12.24.28;	author jfrijters;	state Exp;
+branches;
+next	1.50;
+
+1.50
+date	2013.12.03.15.50.33;	author jfrijters;	state Exp;
+branches;
+next	1.49;
+
+1.49
+date	2013.09.20.12.49.22;	author jfrijters;	state Exp;
+branches;
+next	1.48;
+
+1.48
+date	2013.05.10.08.11.25;	author jfrijters;	state Exp;
+branches;
+next	1.47;
+
+1.47
+date	2013.01.28.07.17.27;	author jfrijters;	state Exp;
+branches;
+next	1.46;
+
+1.46
+date	2012.11.20.15.01.55;	author jfrijters;	state Exp;
+branches;
+next	1.45;
+
+1.45
+date	2012.11.20.14.09.41;	author jfrijters;	state Exp;
+branches;
+next	1.44;
+
+1.44
+date	2012.07.16.11.27.56;	author jfrijters;	state Exp;
+branches;
+next	1.43;
+
+1.43
+date	2012.07.16.10.14.37;	author jfrijters;	state Exp;
+branches;
+next	1.42;
+
+1.42
+date	2012.07.16.07.23.00;	author jfrijters;	state Exp;
+branches;
+next	1.41;
+
+1.41
+date	2012.07.13.13.08.28;	author jfrijters;	state Exp;
+branches;
+next	1.40;
+
+1.40
+date	2012.07.13.11.01.07;	author jfrijters;	state Exp;
+branches;
+next	1.39;
+
+1.39
+date	2012.07.13.10.26.07;	author jfrijters;	state Exp;
+branches;
+next	1.38;
+
+1.38
+date	2012.07.13.10.22.19;	author jfrijters;	state Exp;
+branches;
+next	1.37;
+
+1.37
+date	2012.07.13.10.17.11;	author jfrijters;	state Exp;
+branches;
+next	1.36;
+
+1.36
+date	2012.07.13.07.37.54;	author jfrijters;	state Exp;
+branches;
+next	1.35;
+
+1.35
+date	2012.07.13.06.33.30;	author jfrijters;	state Exp;
+branches;
+next	1.34;
+
+1.34
+date	2012.07.12.15.10.58;	author jfrijters;	state Exp;
+branches;
+next	1.33;
+
+1.33
+date	2012.07.12.13.30.07;	author jfrijters;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2012.04.10.06.18.32;	author jfrijters;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2012.04.09.10.04.58;	author jfrijters;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2012.03.12.09.32.15;	author jfrijters;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2012.01.25.14.56.34;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2012.01.17.14.38.43;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2012.01.16.06.19.58;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2012.01.12.06.51.18;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2011.12.01.06.30.50;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2011.03.21.04.47.37;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2011.03.17.08.15.02;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2011.03.16.08.05.09;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2011.03.13.09.03.15;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2011.03.08.14.58.42;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2011.03.08.09.18.31;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2011.03.08.06.43.01;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2011.03.08.06.14.22;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2011.03.08.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2011.03.07.15.23.45;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2011.03.03.16.06.44;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2011.03.03.12.52.44;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2011.02.14.05.39.24;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2011.01.26.13.34.04;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2011.01.26.06.59.57;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2011.01.20.14.31.10;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2011.01.20.05.38.11;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2011.01.18.16.44.39;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2011.01.13.15.44.28;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2011.01.13.15.35.03;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2011.01.13.15.27.03;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2011.01.13.14.47.21;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2011.01.13.14.33.02;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2011.01.13.10.44.45;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.58
+log
+@Removed [Obsolete] methods from NETSTANDARD build.
+@
+text
+@/*
+  Copyright (C) 2011-2012 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+
+namespace IKVM.Reflection
+{
+#if !NETSTANDARD
+	[Serializable]
+#endif
+	public sealed class MissingAssemblyException : InvalidOperationException
+	{
+#if !NETSTANDARD
+		[NonSerialized]
+#endif
+		private readonly MissingAssembly assembly;
+
+		internal MissingAssemblyException(MissingAssembly assembly)
+			: base("Assembly '" + assembly.FullName + "' is a missing assembly and does not support the requested operation.")
+		{
+			this.assembly = assembly;
+		}
+
+#if !NETSTANDARD
+		private MissingAssemblyException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+			: base(info, context)
+		{
+		}
+#endif
+
+		public Assembly Assembly
+		{
+			get { return assembly; }
+		}
+	}
+
+#if !NETSTANDARD
+	[Serializable]
+#endif
+	public sealed class MissingModuleException : InvalidOperationException
+	{
+#if !NETSTANDARD
+		[NonSerialized]
+#endif
+		private readonly MissingModule module;
+
+		internal MissingModuleException(MissingModule module)
+			: base("Module from missing assembly '" + module.Assembly.FullName + "' does not support the requested operation.")
+		{
+			this.module = module;
+		}
+
+#if !NETSTANDARD
+		private MissingModuleException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+			: base(info, context)
+		{
+		}
+#endif
+
+		public Module Module
+		{
+			get { return module; }
+		}
+	}
+
+#if !NETSTANDARD
+	[Serializable]
+#endif
+	public sealed class MissingMemberException : InvalidOperationException
+	{
+#if !NETSTANDARD
+		[NonSerialized]
+#endif
+		private readonly MemberInfo member;
+
+		internal MissingMemberException(MemberInfo member)
+			: base("Member '" + member + "' is a missing member and does not support the requested operation.")
+		{
+			this.member = member;
+		}
+
+#if !NETSTANDARD
+		private MissingMemberException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+			: base(info, context)
+		{
+		}
+#endif
+
+		public MemberInfo MemberInfo
+		{
+			get { return member; }
+		}
+	}
+
+	public struct MissingGenericMethodBuilder
+	{
+		private readonly MissingMethod method;
+
+		public MissingGenericMethodBuilder(Type declaringType, CallingConventions callingConvention, string name, int genericParameterCount)
+		{
+			method = new MissingMethod(declaringType, name, new MethodSignature(null, null, new PackedCustomModifiers(), callingConvention, genericParameterCount));
+		}
+
+		public Type[] GetGenericArguments()
+		{
+			return method.GetGenericArguments();
+		}
+
+		public void SetSignature(Type returnType, CustomModifiers returnTypeCustomModifiers, Type[] parameterTypes, CustomModifiers[] parameterTypeCustomModifiers)
+		{
+			method.signature = new MethodSignature(
+				returnType ?? method.Module.universe.System_Void,
+				Util.Copy(parameterTypes),
+				PackedCustomModifiers.CreateFromExternal(returnTypeCustomModifiers, parameterTypeCustomModifiers, parameterTypes.Length),
+				method.signature.CallingConvention,
+				method.signature.GenericParameterCount);
+		}
+
+#if !NETSTANDARD
+		[Obsolete("Please use SetSignature(Type, CustomModifiers, Type[], CustomModifiers[]) instead.")]
+		public void SetSignature(Type returnType, Type[] returnTypeRequiredCustomModifiers, Type[] returnTypeOptionalCustomModifiers, Type[] parameterTypes, Type[][] parameterTypeRequiredCustomModifiers, Type[][] parameterTypeOptionalCustomModifiers)
+		{
+			method.signature = new MethodSignature(
+				returnType ?? method.Module.universe.System_Void,
+				Util.Copy(parameterTypes),
+				PackedCustomModifiers.CreateFromExternal(returnTypeOptionalCustomModifiers, returnTypeRequiredCustomModifiers, parameterTypeOptionalCustomModifiers, parameterTypeRequiredCustomModifiers, parameterTypes.Length),
+				method.signature.CallingConvention,
+				method.signature.GenericParameterCount);
+		}
+#endif
+
+		public MethodInfo Finish()
+		{
+			return method;
+		}
+	}
+
+	sealed class MissingAssembly : Assembly
+	{
+		private readonly MissingModule module;
+
+		internal MissingAssembly(Universe universe, string name)
+			: base(universe)
+		{
+			module = new MissingModule(this, -1);
+			this.fullName = name;
+		}
+
+		public override Type[] GetTypes()
+		{
+			throw new MissingAssemblyException(this);
+		}
+
+		public override AssemblyName GetName()
+		{
+			return new AssemblyName(fullName);
+		}
+
+		public override string ImageRuntimeVersion
+		{
+			get { throw new MissingAssemblyException(this); }
+		}
+
+		public override Module ManifestModule
+		{
+			get { return module; }
+		}
+
+		public override MethodInfo EntryPoint
+		{
+			get { throw new MissingAssemblyException(this); }
+		}
+
+		public override string Location
+		{
+			get { throw new MissingAssemblyException(this); }
+		}
+
+		public override AssemblyName[] GetReferencedAssemblies()
+		{
+			throw new MissingAssemblyException(this);
+		}
+
+		public override Module[] GetModules(bool getResourceModules)
+		{
+			throw new MissingAssemblyException(this);
+		}
+
+		public override Module[] GetLoadedModules(bool getResourceModules)
+		{
+			throw new MissingAssemblyException(this);
+		}
+
+		public override Module GetModule(string name)
+		{
+			throw new MissingAssemblyException(this);
+		}
+
+		public override string[] GetManifestResourceNames()
+		{
+			throw new MissingAssemblyException(this);
+		}
+
+		public override ManifestResourceInfo GetManifestResourceInfo(string resourceName)
+		{
+			throw new MissingAssemblyException(this);
+		}
+
+		public override System.IO.Stream GetManifestResourceStream(string resourceName)
+		{
+			throw new MissingAssemblyException(this);
+		}
+
+		public override bool __IsMissing
+		{
+			get { return true; }
+		}
+
+		internal override Type FindType(TypeName typeName)
+		{
+			return null;
+		}
+
+		internal override Type FindTypeIgnoreCase(TypeName lowerCaseName)
+		{
+			return null;
+		}
+
+		internal override IList<CustomAttributeData> GetCustomAttributesData(Type attributeType)
+		{
+			throw new MissingAssemblyException(this);
+		}
+	}
+
+	sealed class MissingModule : NonPEModule
+	{
+		private readonly Assembly assembly;
+		private readonly int index;
+
+		internal MissingModule(Assembly assembly, int index)
+			: base(assembly.universe)
+		{
+			this.assembly = assembly;
+			this.index = index;
+		}
+
+		public override int MDStreamVersion
+		{
+			get { throw new MissingModuleException(this); }
+		}
+
+		public override Assembly Assembly
+		{
+			get { return assembly; }
+		}
+
+		public override string FullyQualifiedName
+		{
+			get { throw new MissingModuleException(this); }
+		}
+
+		public override string Name
+		{
+			get
+			{
+				if (index == -1)
+				{
+					throw new MissingModuleException(this);
+				}
+				return assembly.ManifestModule.GetString(assembly.ManifestModule.File.records[index].Name);
+			}
+		}
+
+		public override Guid ModuleVersionId
+		{
+			get { throw new MissingModuleException(this); }
+		}
+
+		public override string ScopeName
+		{
+			get { throw new MissingModuleException(this); }
+		}
+
+		internal override Type FindType(TypeName typeName)
+		{
+			return null;
+		}
+
+		internal override Type FindTypeIgnoreCase(TypeName lowerCaseName)
+		{
+			return null;
+		}
+
+		internal override void GetTypesImpl(System.Collections.Generic.List<Type> list)
+		{
+			throw new MissingModuleException(this);
+		}
+
+		public override void __GetDataDirectoryEntry(int index, out int rva, out int length)
+		{
+			throw new MissingModuleException(this);
+		}
+
+		public override IList<CustomAttributeData> __GetPlaceholderAssemblyCustomAttributes(bool multiple, bool security)
+		{
+			throw new MissingModuleException(this);
+		}
+
+		public override long __RelativeVirtualAddressToFileOffset(int rva)
+		{
+			throw new MissingModuleException(this);
+		}
+
+		public override __StandAloneMethodSig __ResolveStandAloneMethodSig(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+		{
+			throw new MissingModuleException(this);
+		}
+
+		public override int __Subsystem
+		{
+			get { throw new MissingModuleException(this); }
+		}
+
+		internal override void ExportTypes(int fileToken, IKVM.Reflection.Emit.ModuleBuilder manifestModule)
+		{
+			throw new MissingModuleException(this);
+		}
+
+		public override void GetPEKind(out PortableExecutableKinds peKind, out ImageFileMachine machine)
+		{
+			throw new MissingModuleException(this);
+		}
+
+		public override bool __IsMissing
+		{
+			get { return true; }
+		}
+
+		protected override Exception InvalidOperationException()
+		{
+			return new MissingModuleException(this);
+		}
+
+		protected override Exception NotSupportedException()
+		{
+			return new MissingModuleException(this);
+		}
+
+		protected override Exception ArgumentOutOfRangeException()
+		{
+			return new MissingModuleException(this);
+		}
+
+		public override byte[] __ModuleHash
+		{
+			get
+			{
+				if (index == -1)
+				{
+					throw new MissingModuleException(this);
+				}
+				if (assembly.ManifestModule.File.records[index].HashValue == 0)
+				{
+					return null;
+				}
+				IKVM.Reflection.Reader.ByteReader br = assembly.ManifestModule.GetBlob(assembly.ManifestModule.File.records[index].HashValue);
+				return br.ReadBytes(br.Length);
+			}
+		}
+	}
+
+	sealed class MissingType : Type
+	{
+		private readonly Module module;
+		private readonly Type declaringType;
+		private readonly string ns;
+		private readonly string name;
+		private Type[] typeArgs;
+		private int token;
+		private int flags;
+		private bool cyclicTypeForwarder;
+		private bool cyclicTypeSpec;
+
+		internal MissingType(Module module, Type declaringType, string ns, string name)
+		{
+			this.module = module;
+			this.declaringType = declaringType;
+			this.ns = ns;
+			this.name = name;
+			MarkKnownType(ns, name);
+
+			// HACK we need to handle the Windows Runtime projected types that change from ValueType to Class or v.v.
+			if (WindowsRuntimeProjection.IsProjectedValueType(ns, name, module))
+			{
+				typeFlags |= TypeFlags.ValueType;
+			}
+			else if (WindowsRuntimeProjection.IsProjectedReferenceType(ns, name, module))
+			{
+				typeFlags |= TypeFlags.NotValueType;
+			}
+		}
+
+		internal override MethodBase FindMethod(string name, MethodSignature signature)
+		{
+			MethodInfo method = new MissingMethod(this, name, signature);
+			if (name == ".ctor")
+			{
+				return new ConstructorInfoImpl(method);
+			}
+			return method;
+		}
+
+		internal override FieldInfo FindField(string name, FieldSignature signature)
+		{
+			return new MissingField(this, name, signature);
+		}
+
+		internal override Type FindNestedType(TypeName name)
+		{
+			return null;
+		}
+
+		internal override Type FindNestedTypeIgnoreCase(TypeName lowerCaseName)
+		{
+			return null;
+		}
+
+		public override bool __IsMissing
+		{
+			get { return true; }
+		}
+
+		public override Type DeclaringType
+		{
+			get { return declaringType; }
+		}
+
+		internal override TypeName TypeName
+		{
+			get { return new TypeName(ns, name); }
+		}
+
+		public override string Name
+		{
+			get { return TypeNameParser.Escape(name); }
+		}
+
+		public override string FullName
+		{
+			get { return GetFullName(); }
+		}
+
+		public override Module Module
+		{
+			get { return module; }
+		}
+
+		public override int MetadataToken
+		{
+			get { return token; }
+		}
+
+		protected override bool IsValueTypeImpl
+		{
+			get
+			{
+				switch (typeFlags & (TypeFlags.ValueType | TypeFlags.NotValueType))
+				{
+					case TypeFlags.ValueType:
+						return true;
+					case TypeFlags.NotValueType:
+						return false;
+					case TypeFlags.ValueType | TypeFlags.NotValueType:
+						if (WindowsRuntimeProjection.IsProjectedValueType(ns, name, module))
+						{
+							typeFlags &= ~TypeFlags.NotValueType;
+							return true;
+						}
+						if (WindowsRuntimeProjection.IsProjectedReferenceType(ns, name, module))
+						{
+							typeFlags &= ~TypeFlags.ValueType;
+							return false;
+						}
+						goto default;
+					default:
+						if (module.universe.ResolveMissingTypeIsValueType(this))
+						{
+							typeFlags |= TypeFlags.ValueType;
+						}
+						else
+						{
+							typeFlags |= TypeFlags.NotValueType;
+						}
+						return (typeFlags & TypeFlags.ValueType) != 0;
+				}
+			}
+		}
+
+		public override Type BaseType
+		{
+			get { throw new MissingMemberException(this); }
+		}
+
+		public override TypeAttributes Attributes
+		{
+			get { throw new MissingMemberException(this); }
+		}
+
+		public override Type[] __GetDeclaredTypes()
+		{
+			throw new MissingMemberException(this);
+		}
+
+		public override Type[] __GetDeclaredInterfaces()
+		{
+			throw new MissingMemberException(this);
+		}
+
+		public override MethodBase[] __GetDeclaredMethods()
+		{
+			throw new MissingMemberException(this);
+		}
+
+		public override __MethodImplMap __GetMethodImplMap()
+		{
+			throw new MissingMemberException(this);
+		}
+
+		public override FieldInfo[] __GetDeclaredFields()
+		{
+			throw new MissingMemberException(this);
+		}
+
+		public override EventInfo[] __GetDeclaredEvents()
+		{
+			throw new MissingMemberException(this);
+		}
+
+		public override PropertyInfo[] __GetDeclaredProperties()
+		{
+			throw new MissingMemberException(this);
+		}
+
+		public override CustomModifiers __GetCustomModifiers()
+		{
+			throw new MissingMemberException(this);
+		}
+
+		public override Type[] GetGenericArguments()
+		{
+			throw new MissingMemberException(this);
+		}
+
+		public override CustomModifiers[] __GetGenericArgumentsCustomModifiers()
+		{
+			throw new MissingMemberException(this);
+		}
+
+		public override bool __GetLayout(out int packingSize, out int typeSize)
+		{
+			throw new MissingMemberException(this);
+		}
+
+		public override bool IsGenericType
+		{
+			get { throw new MissingMemberException(this); }
+		}
+
+		public override bool IsGenericTypeDefinition
+		{
+			get { throw new MissingMemberException(this); }
+		}
+
+		internal override Type GetGenericTypeArgument(int index)
+		{
+			if (typeArgs == null)
+			{
+				typeArgs = new Type[index + 1];
+			}
+			else if (typeArgs.Length <= index)
+			{
+				Array.Resize(ref typeArgs, index + 1);
+			}
+			return typeArgs[index] ?? (typeArgs[index] = new MissingTypeParameter(this, index));
+		}
+
+		internal override Type BindTypeParameters(IGenericBinder binder)
+		{
+			return this;
+		}
+
+		internal override Type SetMetadataTokenForMissing(int token, int flags)
+		{
+			this.token = token;
+			this.flags = flags;
+			return this;
+		}
+
+		internal override Type SetCyclicTypeForwarder()
+		{
+			this.cyclicTypeForwarder = true;
+			return this;
+		}
+
+		internal override Type SetCyclicTypeSpec()
+		{
+			this.cyclicTypeSpec = true;
+			return this;
+		}
+
+		internal override bool IsBaked
+		{
+			get { throw new MissingMemberException(this); }
+		}
+
+		public override bool __IsTypeForwarder
+		{
+			// CorTypeAttr.tdForwarder
+			get { return (flags & 0x00200000) != 0; }
+		}
+
+		public override bool __IsCyclicTypeForwarder
+		{
+			get { return cyclicTypeForwarder; }
+		}
+
+		public override bool __IsCyclicTypeSpec
+		{
+			get { return cyclicTypeSpec; }
+		}
+	}
+
+	sealed class MissingTypeParameter : IKVM.Reflection.Reader.TypeParameterType
+	{
+		private readonly MemberInfo owner;
+		private readonly int index;
+
+		internal MissingTypeParameter(Type owner, int index)
+			: this(owner, index, Signature.ELEMENT_TYPE_VAR)
+		{
+		}
+
+		internal MissingTypeParameter(MethodInfo owner, int index)
+			: this(owner, index, Signature.ELEMENT_TYPE_MVAR)
+		{
+		}
+
+		private MissingTypeParameter(MemberInfo owner, int index, byte sigElementType)
+			: base(sigElementType)
+		{
+			this.owner = owner;
+			this.index = index;
+		}
+
+		public override Module Module
+		{
+			get { return owner.Module; }
+		}
+
+		public override string Name
+		{
+			get { return null; }
+		}
+
+		public override int GenericParameterPosition
+		{
+			get { return index; }
+		}
+
+		public override MethodBase DeclaringMethod
+		{
+			get { return owner as MethodBase; }
+		}
+
+		public override Type DeclaringType
+		{
+			get { return owner as Type; }
+		}
+
+		internal override Type BindTypeParameters(IGenericBinder binder)
+		{
+			if (owner is MethodBase)
+			{
+				return binder.BindMethodParameter(this);
+			}
+			else
+			{
+				return binder.BindTypeParameter(this);
+			}
+		}
+
+		internal override bool IsBaked
+		{
+			get { return owner.IsBaked; }
+		}
+	}
+
+	sealed class MissingMethod : MethodInfo
+	{
+		private readonly Type declaringType;
+		private readonly string name;
+		internal MethodSignature signature;
+		private MethodInfo forwarder;
+		private Type[] typeArgs;
+
+		internal MissingMethod(Type declaringType, string name, MethodSignature signature)
+		{
+			this.declaringType = declaringType;
+			this.name = name;
+			this.signature = signature;
+		}
+
+		private MethodInfo Forwarder
+		{
+			get
+			{
+				MethodInfo method = TryGetForwarder();
+				if (method == null)
+				{
+					throw new MissingMemberException(this);
+				}
+				return method;
+			}
+		}
+
+		private MethodInfo TryGetForwarder()
+		{
+			if (forwarder == null && !declaringType.__IsMissing)
+			{
+				MethodBase mb = declaringType.FindMethod(name, signature);
+				ConstructorInfo ci = mb as ConstructorInfo;
+				if (ci != null)
+				{
+					forwarder = ci.GetMethodInfo();
+				}
+				else
+				{
+					forwarder = (MethodInfo)mb;
+				}
+			}
+			return forwarder;
+		}
+
+		public override bool __IsMissing
+		{
+			get { return TryGetForwarder() == null; }
+		}
+
+		public override Type ReturnType
+		{
+			get { return signature.GetReturnType(this); }
+		}
+
+		public override ParameterInfo ReturnParameter
+		{
+			get { return new ParameterInfoImpl(this, -1); }
+		}
+
+		internal override MethodSignature MethodSignature
+		{
+			get { return signature; }
+		}
+
+		internal override int ParameterCount
+		{
+			get { return signature.GetParameterCount(); }
+		}
+
+		private sealed class ParameterInfoImpl : ParameterInfo
+		{
+			private readonly MissingMethod method;
+			private readonly int index;
+
+			internal ParameterInfoImpl(MissingMethod method, int index)
+			{
+				this.method = method;
+				this.index = index;
+			}
+
+			private ParameterInfo Forwarder
+			{
+				get { return index == -1 ? method.Forwarder.ReturnParameter : method.Forwarder.GetParameters()[index]; }
+			}
+
+			public override string Name
+			{
+				get { return Forwarder.Name; }
+			}
+
+			public override Type ParameterType
+			{
+				get { return index == -1 ? method.signature.GetReturnType(method) : method.signature.GetParameterType(method, index); }
+			}
+
+			public override ParameterAttributes Attributes
+			{
+				get { return Forwarder.Attributes; }
+			}
+
+			public override int Position
+			{
+				get { return index; }
+			}
+
+			public override object RawDefaultValue
+			{
+				get { return Forwarder.RawDefaultValue; }
+			}
+
+			public override CustomModifiers __GetCustomModifiers()
+			{
+				return index == -1
+					? method.signature.GetReturnTypeCustomModifiers(method)
+					: method.signature.GetParameterCustomModifiers(method, index);
+			}
+
+			public override bool __TryGetFieldMarshal(out FieldMarshal fieldMarshal)
+			{
+				return Forwarder.__TryGetFieldMarshal(out fieldMarshal);
+			}
+
+			public override MemberInfo Member
+			{
+				get { return method; }
+			}
+
+			public override int MetadataToken
+			{
+				get { return Forwarder.MetadataToken; }
+			}
+
+			internal override Module Module
+			{
+				get { return method.Module; }
+			}
+
+			public override string ToString()
+			{
+				return Forwarder.ToString();
+			}
+		}
+
+		public override ParameterInfo[] GetParameters()
+		{
+			ParameterInfo[] parameters = new ParameterInfo[signature.GetParameterCount()];
+			for (int i = 0; i < parameters.Length; i++)
+			{
+				parameters[i] = new ParameterInfoImpl(this, i);
+			}
+			return parameters;
+		}
+
+		public override MethodAttributes Attributes
+		{
+			get { return Forwarder.Attributes; }
+		}
+
+		public override MethodImplAttributes GetMethodImplementationFlags()
+		{
+			return Forwarder.GetMethodImplementationFlags();
+		}
+
+		public override MethodBody GetMethodBody()
+		{
+			return Forwarder.GetMethodBody();
+		}
+
+		public override int __MethodRVA
+		{
+			get { return Forwarder.__MethodRVA; }
+		}
+
+		public override CallingConventions CallingConvention
+		{
+			get { return signature.CallingConvention; }
+		}
+
+		internal override int ImportTo(IKVM.Reflection.Emit.ModuleBuilder module)
+		{
+			MethodInfo method = TryGetForwarder();
+			if (method != null)
+			{
+				return method.ImportTo(module);
+			}
+			return module.ImportMethodOrField(declaringType, this.Name, this.MethodSignature);
+		}
+
+		public override string Name
+		{
+			get { return name; }
+		}
+
+		public override Type DeclaringType
+		{
+			get { return declaringType.IsModulePseudoType ? null : declaringType; }
+		}
+
+		public override Module Module
+		{
+			get { return declaringType.Module; }
+		}
+
+		public override bool Equals(object obj)
+		{
+			MissingMethod other = obj as MissingMethod;
+			return other != null
+				&& other.declaringType == declaringType
+				&& other.name == name
+				&& other.signature.Equals(signature);
+		}
+
+		public override int GetHashCode()
+		{
+			return declaringType.GetHashCode() ^ name.GetHashCode() ^ signature.GetHashCode();
+		}
+
+		internal override MethodBase BindTypeParameters(Type type)
+		{
+			MethodInfo forwarder = TryGetForwarder();
+			if (forwarder != null)
+			{
+				return forwarder.BindTypeParameters(type);
+			}
+			return new GenericMethodInstance(type, this, null);
+		}
+
+		public override bool ContainsGenericParameters
+		{
+			get { return Forwarder.ContainsGenericParameters; }
+		}
+
+		public override Type[] GetGenericArguments()
+		{
+			MethodInfo method = TryGetForwarder();
+			if (method != null)
+			{
+				return Forwarder.GetGenericArguments();
+			}
+			if (typeArgs == null)
+			{
+				typeArgs = new Type[signature.GenericParameterCount];
+				for (int i = 0; i < typeArgs.Length; i++)
+				{
+					typeArgs[i] = new MissingTypeParameter(this, i);
+				}
+			}
+			return Util.Copy(typeArgs);
+		}
+
+		internal override Type GetGenericMethodArgument(int index)
+		{
+			return GetGenericArguments()[index];
+		}
+
+		internal override int GetGenericMethodArgumentCount()
+		{
+			return Forwarder.GetGenericMethodArgumentCount();
+		}
+
+		public override MethodInfo GetGenericMethodDefinition()
+		{
+			return Forwarder.GetGenericMethodDefinition();
+		}
+
+		internal override MethodInfo GetMethodOnTypeDefinition()
+		{
+			return Forwarder.GetMethodOnTypeDefinition();
+		}
+
+		internal override bool HasThis
+		{
+			get { return (signature.CallingConvention & (CallingConventions.HasThis | CallingConventions.ExplicitThis)) == CallingConventions.HasThis; }
+		}
+
+		public override bool IsGenericMethod
+		{
+			get { return IsGenericMethodDefinition; }
+		}
+
+		public override bool IsGenericMethodDefinition
+		{
+			get { return signature.GenericParameterCount != 0; }
+		}
+
+		public override MethodInfo MakeGenericMethod(params Type[] typeArguments)
+		{
+			MethodInfo method = TryGetForwarder();
+			if (method != null)
+			{
+				return method.MakeGenericMethod(typeArguments);
+			}
+			return new GenericMethodInstance(declaringType, this, typeArguments);
+		}
+
+		public override int MetadataToken
+		{
+			get { return Forwarder.MetadataToken; }
+		}
+
+		internal override int GetCurrentToken()
+		{
+			return Forwarder.GetCurrentToken();
+		}
+
+		internal override bool IsBaked
+		{
+			get { return Forwarder.IsBaked; }
+		}
+	}
+
+	sealed class MissingField : FieldInfo
+	{
+		private readonly Type declaringType;
+		private readonly string name;
+		private readonly FieldSignature signature;
+		private FieldInfo forwarder;
+
+		internal MissingField(Type declaringType, string name, FieldSignature signature)
+		{
+			this.declaringType = declaringType;
+			this.name = name;
+			this.signature = signature;
+		}
+
+		private FieldInfo Forwarder
+		{
+			get
+			{
+				FieldInfo field = TryGetForwarder();
+				if (field == null)
+				{
+					throw new MissingMemberException(this);
+				}
+				return field;
+			}
+		}
+
+		private FieldInfo TryGetForwarder()
+		{
+			if (forwarder == null && !declaringType.__IsMissing)
+			{
+				forwarder = declaringType.FindField(name, signature);
+			}
+			return forwarder;
+		}
+
+		public override bool __IsMissing
+		{
+			get { return TryGetForwarder() == null; }
+		}
+
+		public override FieldAttributes Attributes
+		{
+			get { return Forwarder.Attributes; }
+		}
+
+		public override void __GetDataFromRVA(byte[] data, int offset, int length)
+		{
+			Forwarder.__GetDataFromRVA(data, offset, length);
+		}
+
+		public override int __FieldRVA
+		{
+			get { return Forwarder.__FieldRVA; }
+		}
+
+		public override bool __TryGetFieldOffset(out int offset)
+		{
+			return Forwarder.__TryGetFieldOffset(out offset);
+		}
+
+		public override object GetRawConstantValue()
+		{
+			return Forwarder.GetRawConstantValue();
+		}
+
+		internal override FieldSignature FieldSignature
+		{
+			get { return signature; }
+		}
+
+		internal override int ImportTo(IKVM.Reflection.Emit.ModuleBuilder module)
+		{
+			FieldInfo field = TryGetForwarder();
+			if (field != null)
+			{
+				return field.ImportTo(module);
+			}
+			return module.ImportMethodOrField(declaringType, this.Name, this.FieldSignature);
+		}
+
+		public override string Name
+		{
+			get { return name; }
+		}
+
+		public override Type DeclaringType
+		{
+			get { return declaringType.IsModulePseudoType ? null : declaringType; }
+		}
+
+		public override Module Module
+		{
+			get { return declaringType.Module; }
+		}
+
+		internal override FieldInfo BindTypeParameters(Type type)
+		{
+			FieldInfo forwarder = TryGetForwarder();
+			if (forwarder != null)
+			{
+				return forwarder.BindTypeParameters(type);
+			}
+			return new GenericFieldInstance(type, this);
+		}
+
+		public override int MetadataToken
+		{
+			get { return Forwarder.MetadataToken; }
+		}
+
+		public override bool Equals(object obj)
+		{
+			MissingField other = obj as MissingField;
+			return other != null
+				&& other.declaringType == declaringType
+				&& other.name == name
+				&& other.signature.Equals(signature);
+		}
+
+		public override int GetHashCode()
+		{
+			return declaringType.GetHashCode() ^ name.GetHashCode() ^ signature.GetHashCode();
+		}
+
+		public override string ToString()
+		{
+			return this.FieldType.Name + " " + this.Name;
+		}
+
+		internal override int GetCurrentToken()
+		{
+			return Forwarder.GetCurrentToken();
+		}
+
+		internal override bool IsBaked
+		{
+			get { return Forwarder.IsBaked; }
+		}
+	}
+
+	// NOTE this is currently only used by CustomAttributeData (because there is no other way to refer to a property)
+	sealed class MissingProperty : PropertyInfo
+	{
+		private readonly Type declaringType;
+		private readonly string name;
+		private readonly PropertySignature signature;
+
+		internal MissingProperty(Type declaringType, string name, PropertySignature signature)
+		{
+			this.declaringType = declaringType;
+			this.name = name;
+			this.signature = signature;
+		}
+
+		public override PropertyAttributes Attributes
+		{
+			get { throw new MissingMemberException(this); }
+		}
+
+		public override bool CanRead
+		{
+			get { throw new MissingMemberException(this); }
+		}
+
+		public override bool CanWrite
+		{
+			get { throw new MissingMemberException(this); }
+		}
+
+		public override MethodInfo GetGetMethod(bool nonPublic)
+		{
+			throw new MissingMemberException(this);
+		}
+
+		public override MethodInfo GetSetMethod(bool nonPublic)
+		{
+			throw new MissingMemberException(this);
+		}
+
+		public override MethodInfo[] GetAccessors(bool nonPublic)
+		{
+			throw new MissingMemberException(this);
+		}
+
+		public override object GetRawConstantValue()
+		{
+			throw new MissingMemberException(this);
+		}
+
+		internal override bool IsPublic
+		{
+			get { throw new MissingMemberException(this); }
+		}
+
+		internal override bool IsNonPrivate
+		{
+			get { throw new MissingMemberException(this); }
+		}
+
+		internal override bool IsStatic
+		{
+			get { throw new MissingMemberException(this); }
+		}
+
+		internal override PropertySignature PropertySignature
+		{
+			get { return signature; }
+		}
+
+		public override string Name
+		{
+			get { return name; }
+		}
+
+		public override Type DeclaringType
+		{
+			get { return declaringType; }
+		}
+
+		public override Module Module
+		{
+			get { return declaringType.Module; }
+		}
+
+		internal override bool IsBaked
+		{
+			get { return declaringType.IsBaked; }
+		}
+
+		internal override int GetCurrentToken()
+		{
+			throw new MissingMemberException(this);
+		}
+	}
+}
+@
+
+
+1.57
+log
+@Replaced CORECLR symbol with NETSTANDARD.
+@
+text
+@d141 1
+d152 1
+@
+
+
+1.56
+log
+@Added supported for cyclic TypeSpec.
+@
+text
+@d30 1
+a30 1
+#if !CORECLR
+d35 1
+a35 1
+#if !CORECLR
+d46 1
+a46 1
+#if !CORECLR
+d59 1
+a59 1
+#if !CORECLR
+d64 1
+a64 1
+#if !CORECLR
+d75 1
+a75 1
+#if !CORECLR
+d88 1
+a88 1
+#if !CORECLR
+d93 1
+a93 1
+#if !CORECLR
+d104 1
+a104 1
+#if !CORECLR
+@
+
+
+1.55
+log
+@Added caching to Type.IsValueType.
+@
+text
+@d402 1
+d625 6
+d646 5
+@
+
+
+1.54
+log
+@Use sigElementType to implement IsGenericParameter.
+@
+text
+@d482 1
+a482 1
+		public override bool IsValueType
+@
+
+
+1.53
+log
+@Optimized built-in type handling a bit.
+@
+text
+@d646 12
+a657 1
+		internal MissingTypeParameter(MemberInfo owner, int index)
+@
+
+
+1.52
+log
+@Added internal Type.TypeName virtual property to retrieve type name with a single virtual method call.
+@
+text
+@d409 1
+a409 1
+			MarkEnumOrValueType(ns, name);
+@
+
+
+1.51
+log
+@Added CoreCLR target for IKVM.Reflection.
+@
+text
+@d457 1
+a457 1
+		public override string __Name
+d459 1
+a459 6
+			get { return name; }
+		}
+
+		public override string __Namespace
+		{
+			get { return ns; }
+@
+
+
+1.50
+log
+@When a cyclic type forwarder is found and UniverseOptions.ResolveMissingMembers is set, we should not throw an exception but instead create a missing type. Added a new Type.__IsCyclicTypeForwarder property to allow detecting this case.
+@
+text
+@d30 1
+d32 1
+d35 1
+d37 1
+d46 1
+d51 1
+d59 1
+d61 1
+d64 1
+d66 1
+d75 1
+d80 1
+d88 1
+d90 1
+d93 1
+d95 1
+d104 1
+d109 1
+@
+
+
+1.49
+log
+@Implemented WinMD projection support.
+@
+text
+@d383 1
+d605 6
+d621 5
+@
+
+
+1.48
+log
+@Implemented Type.StructLayoutAttribute in Type.
+@
+text
+@d391 10
+d478 12
+@
+
+
+1.47
+log
+@Expose the Name and __ModuleHash for missing external Modules.
+@
+text
+@d542 1
+a542 1
+		public override StructLayoutAttribute StructLayoutAttribute
+d544 1
+a544 1
+			get { throw new MissingMemberException(this); }
+@
+
+
+1.46
+log
+@Added Type.__IsTypeForwarder property to let mcs distinguish between "normal" missing types and forwarded missing types.
+@
+text
+@d147 1
+a147 1
+			module = new MissingModule(this);
+d240 1
+d242 1
+a242 1
+		internal MissingModule(Assembly assembly)
+d246 1
+d266 8
+a273 1
+			get { throw new MissingModuleException(this); }
+d355 17
+@
+
+
+1.45
+log
+@If missing member resolution is enabled, automatically create missing modules as needed.
+@
+text
+@d356 1
+d549 1
+a549 1
+		internal override Type SetMetadataTokenForMissing(int token)
+d552 1
+d560 6
+@
+
+
+1.44
+log
+@Moved Module custom attribute handling to CustomAtttributeData.
+@
+text
+@d239 1
+a239 1
+		private readonly MissingAssembly assembly;
+d241 1
+a241 1
+		internal MissingModule(MissingAssembly assembly)
+@
+
+
+1.43
+log
+@Refactored custom attribute handling of MemberInfo types.
+@
+text
+@a331 5
+		internal override IList<CustomAttributeData> GetCustomAttributesData(Type attributeType)
+		{
+			throw new MissingModuleException(this);
+		}
+
+@
+
+
+1.42
+log
+@Added new API MethodInfo.__TryGetImplMap().
+@
+text
+@a547 5
+		internal override IList<CustomAttributeData> GetCustomAttributesData(Type attributeType)
+		{
+			throw new MissingMemberException(this);
+		}
+
+d558 5
+d612 5
+a852 5
+		internal override IList<CustomAttributeData> GetCustomAttributesData(Type attributeType)
+		{
+			return Forwarder.GetCustomAttributesData(attributeType);
+		}
+
+d925 5
+d1067 1
+a1067 1
+		internal override IList<CustomAttributeData> GetCustomAttributesData(Type attributeType)
+d1069 1
+a1069 1
+			return Forwarder.GetCustomAttributesData(attributeType);
+d1156 10
+@
+
+
+1.41
+log
+@Fixed regression in __TryGetFieldOffset. The FieldLayout.Field field is an index (not a token), except for unsaved modules where it is a pseudo token.
+@
+text
+@d920 5
+@
+
+
+1.40
+log
+@Restored GetCustomAttributesData forwarding, to allow FieldBuilder to throw exception if the type has not yet been baked.
+@
+text
+@d978 5
+@
+
+
+1.39
+log
+@All FieldInfo subclasses should implement GetCurrentToken().
+@
+text
+@d1051 5
+@
+
+
+1.38
+log
+@Moved __TryGetFieldOffset and __TryGetFieldMarshal up into FieldInfo.
+@
+text
+@d1046 5
+@
+
+
+1.37
+log
+@Moved common custom attribute code into FieldInfo.
+@
+text
+@a977 10
+		public override bool __TryGetFieldOffset(out int offset)
+		{
+			return Forwarder.__TryGetFieldOffset(out offset);
+		}
+
+		public override bool __TryGetFieldMarshal(out FieldMarshal fieldMarshal)
+		{
+			return forwarder.__TryGetFieldMarshal(out fieldMarshal);
+		}
+
+@
+
+
+1.36
+log
+@- Changed FieldInfo.__FieldOffset property to __TryGetFieldOffset() method.
+- Implemented __TryGetFieldMarshal() & __TryGetFieldOffest() for FieldBuilder.
+- Fixed FieldBuilder to throw NotImplementedException when trying to get custom attributes on unbaked type.
+- Fixed FieldBuilder to return pseudo custom attributes (but it is currently still broken after the module has been saved).
+@
+text
+@a1032 5
+		internal override IList<CustomAttributeData> GetCustomAttributesData(Type attributeType)
+		{
+			return Forwarder.GetCustomAttributesData(attributeType);
+		}
+
+@
+
+
+1.35
+log
+@- Changed [Field|Parameter]Info.__FieldMarshal property to __TryGetFieldMarshal method.
+- Changed FieldMarshal class into a value type with public fields.
+@
+text
+@d978 1
+a978 1
+		public override int __FieldOffset
+d980 1
+a980 1
+			get { return Forwarder.__FieldOffset; }
+@
+
+
+1.34
+log
+@- Added new public APIs FieldInfo.__FieldMarshal and ParameterInfo.__FieldMarshal.
+- Moved ParameterInfo pseudo custom attribute handling to CustomAttributeData.
+- Ignore HasFieldMarshal attribute and always return the pseudo custom attribute if a FieldMarshal record exists. This is similar to .NET reflection.
+@
+text
+@d733 1
+a733 1
+			public override FieldMarshal __FieldMarshal
+d735 1
+a735 1
+				get { return Forwarder.__FieldMarshal; }
+d983 1
+a983 1
+		public override FieldMarshal __FieldMarshal
+d985 1
+a985 1
+			get { return Forwarder.__FieldMarshal; }
+@
+
+
+1.33
+log
+@Added public API FieldInfo.__FieldOffset to get the offset of the field (in an explicit layout type) without having to parse the pseudo custom attribute.
+@
+text
+@d733 5
+a752 5
+			internal override IList<CustomAttributeData> GetCustomAttributesData(Type attributeType)
+			{
+				return Forwarder.GetCustomAttributesData(attributeType);
+			}
+
+d983 5
+@
+
+
+1.32
+log
+@Moved GetEvents(), GetFields(), GetConstructors(), GetNestedTypes() and GetProperties() to a common implementation that fixes a number of bugs.
+@
+text
+@d978 5
+@
+
+
+1.31
+log
+@Added support for case-insensitive type lookup.
+@
+text
+@d1107 5
+@
+
+
+1.30
+log
+@Added Universe.MissingTypeIsValueType event to enable missing types (i.e. symbolic types) to be used in signatures.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2011 Jeroen Frijters
+d226 5
+d282 5
+d391 5
+@
+
+
+1.29
+log
+@Cache the assembly FullName in Assembly. This brings the Assembly.FullName property performance more inline with System.Reflection which also caches the FullName (computing the FullName is expensive).
+@
+text
+@d432 9
+a440 1
+						throw new MissingMemberException(this);
+@
+
+
+1.28
+log
+@Fix type parameter binding for missing types.
+@
+text
+@a142 1
+		private readonly string name;
+d148 1
+a148 1
+			this.name = name;
+a155 5
+		public override string FullName
+		{
+			get { return name; }
+		}
+
+d158 1
+a158 1
+			return new AssemblyName(name);
+@
+
+
+1.27
+log
+@API change. Allow Type.MetadataToken to be called on missing type (it will return 0 or the token hint when the type was forwarded).
+@
+text
+@d583 12
+@
+
+
+1.26
+log
+@Added MethodBase.__MethodRVA property.
+@
+text
+@d422 5
+a540 5
+		internal int GetMetadataTokenForMissing()
+		{
+			return token;
+		}
+
+@
+
+
+1.25
+log
+@- Rewrote custom modifier handling to retain ordering.
+- Added ConstructorInfo.__ReturnParameter to expose custom modifiers.
+- Added __GetCustomModifiers() to various *Info types.
+- Added CustomModifiers type to encapsulate a custom modifier sequence.
+- Added CustomModifiersBuilder to create a CustomModifiers sequence.
+- Marked a number of IKVM.Reflection specific methods Obsolete, because they are replaced with method that take CustomModifiers value(s).
+@
+text
+@d755 5
+@
+
+
+1.24
+log
+@Use a bit in typeFlags to mark System.Enum and System.ValueType and detect them dynamically, to allow multiple mscorlib versions to be used.
+@
+text
+@d105 1
+a105 1
+			method = new MissingMethod(declaringType, name, new MethodSignature(null, null, null, callingConvention, genericParameterCount));
+d113 11
+d483 1
+a483 6
+		public override Type[] __GetRequiredCustomModifiers()
+		{
+			throw new MissingMemberException(this);
+		}
+
+		public override Type[] __GetOptionalCustomModifiers()
+d493 1
+a493 6
+		public override Type[][] __GetGenericArgumentsRequiredCustomModifiers()
+		{
+			throw new MissingMemberException(this);
+		}
+
+		public override Type[][] __GetGenericArgumentsOptionalCustomModifiers()
+d697 1
+a697 1
+			public override Type[] GetOptionalCustomModifiers()
+d699 3
+a701 14
+				if (index == -1)
+				{
+					return Util.Copy(method.signature.GetReturnTypeOptionalCustomModifiers(method));
+				}
+				return Util.Copy(method.signature.GetParameterOptionalCustomModifiers(method, index));
+			}
+
+			public override Type[] GetRequiredCustomModifiers()
+			{
+				if (index == -1)
+				{
+					return Util.Copy(method.signature.GetReturnTypeRequiredCustomModifiers(method));
+				}
+				return Util.Copy(method.signature.GetParameterRequiredCustomModifiers(method, index));
+@
+
+
+1.23
+log
+@- Added API extension to query the types exported from a module.
+- Fixed __AddTypeForwarder() to handle missing types.
+@
+text
+@d353 1
+@
+
+
+1.22
+log
+@Added API extension for creating missing methods and fields.
+@
+text
+@d345 1
+d533 11
+@
+
+
+1.21
+log
+@Added API extension FieldInfo.__FieldRVA.
+@
+text
+@d99 30
+d575 1
+a575 1
+		private readonly MethodSignature signature;
+d823 1
+a823 2
+			typeArgs = new Type[signature.GenericParameterCount];
+			for (int i = 0; i < typeArgs.Length; i++)
+d825 5
+a829 1
+				typeArgs[i] = new MissingTypeParameter(this, i);
+@
+
+
+1.20
+log
+@Added support for missing fields/properties.
+@
+text
+@d903 5
+@
+
+
+1.19
+log
+@Fixed GetGenericArguments() for MissingMethod (to allow the inherited ToString to work).
+@
+text
+@d977 80
+@
+
+
+1.18
+log
+@Introduced base class for virtual Module classes to have common place to implement abstract Module methods that aren't supported.
+@
+text
+@a787 5
+			return Forwarder.GetGenericArguments();
+		}
+
+		internal override Type GetGenericMethodArgument(int index)
+		{
+d791 1
+a791 1
+				return method.GetGenericMethodArgument(index);
+d793 2
+a794 1
+			if (typeArgs == null)
+d796 1
+a796 1
+				typeArgs = new Type[index + 1];
+d798 6
+a803 5
+			else if (typeArgs.Length <= index)
+			{
+				Array.Resize(ref typeArgs, index + 1);
+			}
+			return typeArgs[index] ?? (typeArgs[index] = new MissingTypeParameter(this, index));
+@
+
+
+1.17
+log
+@Added API extension __ImageBase to Module.
+@
+text
+@d197 1
+a197 1
+	sealed class MissingModule : Module
+a231 30
+		public override Type ResolveType(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+		{
+			throw new MissingModuleException(this);
+		}
+
+		public override MethodBase ResolveMethod(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+		{
+			throw new MissingModuleException(this);
+		}
+
+		public override FieldInfo ResolveField(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+		{
+			throw new MissingModuleException(this);
+		}
+
+		public override MemberInfo ResolveMember(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+		{
+			throw new MissingModuleException(this);
+		}
+
+		public override string ResolveString(int metadataToken)
+		{
+			throw new MissingModuleException(this);
+		}
+
+		public override Type[] __ResolveOptionalParameterTypes(int metadataToken)
+		{
+			throw new MissingModuleException(this);
+		}
+
+a246 20
+		public override AssemblyName[] __GetReferencedAssemblies()
+		{
+			throw new MissingModuleException(this);
+		}
+
+		public override string[] __GetReferencedModules()
+		{
+			throw new MissingModuleException(this);
+		}
+
+		internal override Type GetModuleType()
+		{
+			throw new MissingModuleException(this);
+		}
+
+		internal override IKVM.Reflection.Reader.ByteReader GetBlob(int blobIndex)
+		{
+			throw new MissingModuleException(this);
+		}
+
+d292 1
+a292 1
+		protected override long GetImageBaseImpl()
+d294 11
+a304 1
+			throw new MissingModuleException(this);
+@
+
+
+1.16
+log
+@Added API extensions to get and add referenced modules.
+@
+text
+@d341 5
+@
+
+
+1.15
+log
+@Added support for generic missing types and methods.
+@
+text
+@d282 5
+@
+
+
+1.14
+log
+@Added support for missing fields.
+@
+text
+@d344 1
+d510 13
+d534 37
+d577 1
+d798 6
+a803 1
+			return Forwarder.BindTypeParameters(type);
+d823 14
+a836 1
+			return Forwarder.GetGenericMethodArgument(index);
+d871 6
+a876 1
+			return Forwarder.MakeGenericMethod(typeArguments);
+d973 6
+a978 1
+			return Forwarder.BindTypeParameters(type);
+@
+
+
+1.13
+log
+@Allow missing types and methods to be used in emitted assembly.
+@
+text
+@d363 5
+d809 121
+@
+
+
+1.12
+log
+@- Removed UTF-8 byte order marker.
+- Removed unused "using".
+@
+text
+@d403 16
+d702 6
+a707 1
+			return Forwarder.ImportTo(module);
+d781 1
+a781 1
+			get { return Forwarder.HasThis; }
+@
+
+
+1.11
+log
+@Added (partial) support for missing member resolution in existing types.
+@
+text
+@d1 1
+a1 1
+﻿/*
+a24 1
+using System.Text;
+@
+
+
+1.10
+log
+@Added support for resolving methods in missing types (primarily to enable CustomAttributeData.Constructor to work for missing attribute types).
+@
+text
+@d505 1
+d514 31
+d547 1
+a547 1
+			get { return true; }
+d567 1
+a567 1
+			get { throw new MissingMemberException(this); }
+d581 5
+d588 1
+a588 1
+				get { throw new MissingMemberException(method); }
+d598 1
+a598 1
+				get { throw new MissingMemberException(method); }
+d608 1
+a608 1
+				get { throw new MissingMemberException(method); }
+d636 1
+a636 1
+				get { throw new MissingMemberException(method); }
+d643 10
+d657 1
+a657 1
+			ParameterInfoImpl[] parameters = new ParameterInfoImpl[signature.GetParameterCount()];
+d667 1
+a667 1
+			get { throw new MissingMemberException(this); }
+d672 1
+a672 1
+			throw new MissingMemberException(this);
+d677 1
+a677 1
+			throw new MissingMemberException(this);
+d687 1
+a687 1
+			throw new MissingMemberException(this);
+d718 65
+@
+
+
+1.9
+log
+@Move missing type support into universe and optionally allow missing types to be resolved inside all Assemblies.
+@
+text
+@d25 1
+d354 10
+d369 5
+d499 173
+@
+
+
+1.8
+log
+@More type name fixes. This time to support the fact that the CLR and Mono both treat TypeNamespace and TypeName as separate names and do not consider fullName to be relevant.
+@
+text
+@a100 1
+		private readonly Dictionary<TypeName, Type> types = new Dictionary<TypeName, Type>();
+a110 11
+		internal override Type GetMissingType(TypeName name)
+		{
+			Type type;
+			if (!types.TryGetValue(name, out type))
+			{
+				type = new MissingType(module, null, name.Namespace, name.Name);
+				types.Add(name, type);
+			}
+			return type;
+		}
+
+a343 1
+		private Dictionary<TypeName, Type> types;
+d353 1
+a353 1
+		internal override Type ResolveNestedType(TypeName typeName)
+d355 1
+a355 11
+			if (types == null)
+			{
+				types = new Dictionary<TypeName, Type>();
+			}
+			Type type;
+			if (!types.TryGetValue(typeName, out type))
+			{
+				type = new MissingType(module, this, typeName.Namespace, typeName.Name);
+				types.Add(typeName, type);
+			}
+			return type;
+@
+
+
+1.7
+log
+@Added support for resolving MissingTypes in AssemblyBuilder.
+@
+text
+@d101 1
+a101 1
+		private readonly Dictionary<string, Type> types = new Dictionary<string, Type>();
+d112 1
+a112 1
+		internal override Type ResolveType(string ns, string name)
+a113 1
+			string fullName = ns == null ? name : ns + "." + name;
+d115 1
+a115 1
+			if (!types.TryGetValue(fullName, out type))
+d117 2
+a118 2
+				type = new MissingType(module, null, ns, name);
+				types.Add(fullName, type);
+d198 1
+a198 1
+		internal override Type GetTypeImpl(string typeName)
+d200 1
+a200 1
+			throw new MissingAssemblyException(this);
+d279 1
+a279 1
+		internal override Type GetTypeImpl(string typeName)
+d281 1
+a281 1
+			throw new MissingModuleException(this);
+d356 1
+a356 1
+		private Dictionary<string, Type> types;
+d366 1
+a366 1
+		internal override Type ResolveNestedType(string ns, string name)
+d370 1
+a370 1
+				types = new Dictionary<string, Type>();
+a371 1
+			string fullName = ns == null ? name : ns + "." + name;
+d373 1
+a373 1
+			if (!types.TryGetValue(fullName, out type))
+d375 2
+a376 2
+				type = new MissingType(module, this, ns, name);
+				types.Add(fullName, type);
+@
+
+
+1.6
+log
+@Added __IsMissing to Module and Assembly and make sure that __GetDeclarativeSecurity() when called with a MissingAssembly.
+@
+text
+@d353 1
+a353 1
+		private readonly MissingModule module;
+d359 1
+a359 1
+		internal MissingType(MissingModule module, Type declaringType, string ns, string name)
+@
+
+
+1.5
+log
+@Override BindTypeParameters to ignore the bind.
+@
+text
+@d194 5
+d340 5
+@
+
+
+1.4
+log
+@Prevent invalid operations on MissingModule.
+@
+text
+@d492 5
+@
+
+
+1.3
+log
+@Make all invalid operations on missing types throw a MissingMemberException.
+@
+text
+@d299 40
+@
+
+
+1.2
+log
+@Introduced exceptions for invalid operations on missing types/modules/assemblies.
+@
+text
+@d26 1
+d372 80
+@
+
+
+1.1
+log
+@Added support for magic missing assemblies that resolve missing types to allow (some) reflection on assemblies with missing dependencies.
+@
+text
+@d29 69
+d125 1
+a125 1
+			throw new NotImplementedException();
+d140 1
+a140 1
+			get { throw new NotImplementedException(); }
+d150 1
+a150 1
+			get { throw new NotImplementedException(); }
+d155 1
+a155 1
+			get { throw new NotImplementedException(); }
+d160 1
+a160 1
+			throw new NotImplementedException();
+d165 1
+a165 1
+			throw new NotImplementedException();
+d170 1
+a170 1
+			throw new NotImplementedException();
+d175 1
+a175 1
+			throw new NotImplementedException();
+d180 1
+a180 1
+			throw new NotImplementedException();
+d185 1
+a185 1
+			throw new NotImplementedException();
+d190 1
+a190 1
+			throw new NotImplementedException();
+d195 1
+a195 1
+			throw new NotImplementedException();
+d200 1
+a200 1
+			throw new NotImplementedException();
+d216 1
+a216 1
+			get { throw new NotImplementedException(); }
+d226 1
+a226 1
+			get { throw new NotImplementedException(); }
+d231 1
+a231 1
+			get { throw new NotImplementedException(); }
+d236 1
+a236 1
+			get { throw new NotImplementedException(); }
+d241 1
+a241 1
+			throw new NotImplementedException();
+d246 1
+a246 1
+			throw new NotImplementedException();
+d251 1
+a251 1
+			throw new NotImplementedException();
+d256 1
+a256 1
+			throw new NotImplementedException();
+d261 1
+a261 1
+			throw new NotImplementedException();
+d266 1
+a266 1
+			throw new NotImplementedException();
+d271 1
+a271 1
+			get { throw new NotImplementedException(); }
+d276 1
+a276 1
+			throw new NotImplementedException();
+d281 1
+a281 1
+			throw new NotImplementedException();
+d286 1
+a286 1
+			throw new NotImplementedException();
+d291 1
+a291 1
+			throw new NotImplementedException();
+d296 1
+a296 1
+			throw new NotImplementedException();
+d364 1
+a364 1
+			get { throw new NotImplementedException(); }
+d369 1
+a369 1
+			get { throw new NotImplementedException(); }
+@
+

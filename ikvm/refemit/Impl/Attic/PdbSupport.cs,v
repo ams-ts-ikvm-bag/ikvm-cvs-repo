@@ -1,0 +1,397 @@
+head	1.6;
+access;
+symbols
+	v0_40_0_6:1.4
+	v0_40_0_5:1.4
+	v0_42_0_7:1.5
+	v0_42_0_6:1.5
+	v0_42_0_5:1.5
+	v0_42_0_4:1.5
+	v0_42_0_3:1.5
+	v0_42_0_2:1.5
+	v0_42_0_1:1.5
+	v0_42_0_0:1.5
+	v0_42:1.5.0.2
+	v0_40_0_3:1.4
+	v0_40_0_2:1.4
+	v0_40_0_1:1.4
+	v0_40_0_0:1.4
+	v0_40:1.4.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.6
+date	2010.04.02.04.03.43;	author jfrijters;	state dead;
+branches;
+next	1.5;
+
+1.5
+date	2009.08.25.04.31.36;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2009.03.26.14.32.28;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2009.03.16.06.49.00;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2009.01.20.06.50.57;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.11.14.07.40.50;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.6
+log
+@Removed old refemit code.
+@
+text
+@﻿/*
+  Copyright (C) 2008, 2009 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Runtime.InteropServices;
+using System.Diagnostics.SymbolStore;
+
+namespace IKVM.Reflection.Emit.Impl
+{
+	[StructLayout(LayoutKind.Sequential)]
+	public struct IMAGE_DEBUG_DIRECTORY
+	{
+		public uint Characteristics;
+		public uint TimeDateStamp;
+		public ushort MajorVersion;
+		public ushort MinorVersion;
+		public uint Type;
+		public uint SizeOfData;
+		public uint AddressOfRawData;
+		public uint PointerToRawData;
+	}
+
+	public interface ISymbolWriterImpl : ISymbolWriter
+	{
+		byte[] GetDebugInfo(ref IMAGE_DEBUG_DIRECTORY idd);
+		void RemapToken(int oldToken, int newToken);
+		void DefineLocalVariable2(string name, System.Reflection.FieldAttributes attributes, int signature, SymAddressKind addrKind, int addr1, int addr2, int addr3, int startOffset, int endOffset);
+	}
+
+	static class PdbSupport
+	{
+		private static readonly Type symbolWriterType = GetSymbolWriterType();
+
+		private static Type GetSymbolWriterType()
+		{
+			string symbolAssembly = Environment.GetEnvironmentVariable("IKVM_REFEMIT_SYMBOLWRITER_ASSEMBLY");
+			if (symbolAssembly == null)
+			{
+				string baseAssembly = typeof(PdbSupport).Assembly.FullName;
+				string suffix = RunningOnMono ? ".MdbWriter" : ".PdbWriter";
+				symbolAssembly = baseAssembly.Insert(baseAssembly.IndexOf(','), suffix);
+			}
+			return Type.GetType("IKVM.Reflection.Emit.Impl.SymbolWriter, " + symbolAssembly, true);
+		}
+
+		private static bool RunningOnMono { get { return Type.GetType("Mono.Runtime") != null; } }
+
+		internal static ISymbolWriterImpl CreateSymbolWriterFor(ModuleBuilder moduleBuilder)
+		{
+			return (ISymbolWriterImpl)Activator.CreateInstance(symbolWriterType, moduleBuilder);
+		}
+
+		internal static byte[] GetDebugInfo(ISymbolWriter writer, ref IMAGE_DEBUG_DIRECTORY idd)
+		{
+			return ((ISymbolWriterImpl)writer).GetDebugInfo(ref idd);
+		}
+
+		internal static void RemapToken(ISymbolWriter writer, int oldToken, int newToken)
+		{
+			((ISymbolWriterImpl)writer).RemapToken(oldToken, newToken);
+		}
+	}
+}
+@
+
+
+1.5
+log
+@Fixed local variable signature in debugging info. This finally fixes the debugging support regression in 0.40.
+@
+text
+@@
+
+
+1.4
+log
+@- Renamed IKVM.PdbWriter.dll to IKVM.Reflection.Emit.PdbWriter.dll.
+- Added IKVM.Reflection.Emit.MdbWriter.dll (untested and not yet complete).
+- Changed SymbolWriter plug-in API to be more flexible.
+- Added ModuleBuilder.ResolveMethod() API.
+- Don't write PE debug directory if symbol writer doesn't supply debug data.
+@
+text
+@d47 1
+d68 1
+a68 1
+		internal static ISymbolWriter CreateSymbolWriterFor(ModuleBuilder moduleBuilder)
+@
+
+
+1.3
+log
+@Moved PDB support into seperate assembly to make Mono support easier.
+@
+text
+@d33 8
+a40 8
+		internal uint Characteristics;
+		internal uint TimeDateStamp;
+		internal ushort MajorVersion;
+		internal ushort MinorVersion;
+		internal uint Type;
+		internal uint SizeOfData;
+		internal uint AddressOfRawData;
+		internal uint PointerToRawData;
+d51 17
+a67 1
+		internal static ISymbolWriter CreateSymbolWriter(string fileName)
+d69 1
+a69 1
+			return (ISymbolWriterImpl)Activator.CreateInstance(Type.GetType("IKVM.Reflection.Emit.Impl.SymbolWriter, IKVM.PdbWriter"), fileName);
+@
+
+
+1.2
+log
+@Disabled PDB support when compiling on Mono (because of the missing ISymWrapper.dll dependency).
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008 Jeroen Frijters
+d30 2
+a31 1
+	static class PdbSupport
+d33 9
+a41 12
+		[StructLayout(LayoutKind.Sequential)]
+		internal struct IMAGE_DEBUG_DIRECTORY
+		{
+			internal uint Characteristics;
+			internal uint TimeDateStamp;
+			internal ushort MajorVersion;
+			internal ushort MinorVersion;
+			internal uint Type;
+			internal uint SizeOfData;
+			internal uint AddressOfRawData;
+			internal uint PointerToRawData;
+		}
+d43 5
+a47 13
+#if HAS_ISYMWRAPPER
+		[Guid("809c652e-7396-11d2-9771-00a0c9b4d50c")]
+		[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+		[CoClass(typeof(MetaDataDispenserClass))]
+		[ComImport]
+		private interface IMetaDataDispenser
+		{
+			void DefineScope(
+				[In]  ref Guid rclsid,
+				[In]  int dwCreateFlags,
+				[In]  ref Guid riid,
+				[Out, MarshalAs(UnmanagedType.IUnknown)] out object punk);
+		}
+d49 2
+a50 121
+		[Guid("e5cb7a31-7512-11d2-89ce-0080c792e5d8")]
+		[ComImport]
+		private class MetaDataDispenserClass { }
+
+		[Guid("7dac8207-d3ae-4c75-9b67-92801a497d44")]
+		[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+		[ComImport]
+		private interface IMetadataImport { }
+
+		[Guid("ba3fee4c-ecb9-4e41-83b7-183fa41cd859")]
+		[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+		[ComImport]
+		private interface IMetaDataEmit { }
+
+		[Guid("ed14aa72-78e2-4884-84e2-334293ae5214")]
+		[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+		[ComImport]
+		[CoClass(typeof(CorSymWriterClass))]
+		private interface ISymUnmanagedWriter
+		{
+			void PlaceHolder_DefineDocument();
+			void PlaceHolder_SetUserEntryPoint();
+			void PlaceHolder_OpenMethod();
+			void PlaceHolder_CloseMethod();
+			void PlaceHolder_OpenScope();
+			void PlaceHolder_CloseScope();
+			void PlaceHolder_SetScopeRange();
+			void PlaceHolder_DefineLocalVariable();
+			void PlaceHolder_DefineParameter();
+			void PlaceHolder_DefineField();
+			void PlaceHolder_DefineGlobalVariable();
+			void PlaceHolder_Close();
+			void PlaceHolder_SetSymAttribute();
+			void PlaceHolder_OpenNamespace();
+			void PlaceHolder_CloseNamespace();
+			void PlaceHolder_UsingNamespace();
+			void PlaceHolder_SetMethodSourceRange();
+			void PlaceHolder_Initialize();
+
+			void GetDebugInfo(
+				[In, Out] ref IMAGE_DEBUG_DIRECTORY pIDD,
+				[In]  uint cData,
+				[Out] out uint pcData,
+				[Out, MarshalAs(UnmanagedType.LPArray)] byte[] data);
+
+			void PlaceHolder_DefineSequencePoints();
+
+			void RemapToken(
+				[In] int oldToken,
+				[In] int newToken);
+		}
+
+		[Guid("108296c1-281e-11d3-bd22-0000f80849bd")]
+		[ComImport]
+		private class CorSymWriterClass { }
+
+		private sealed class MySymWriter : SymWriter
+		{
+			private readonly IntPtr ppISymUnmanagedWriter = Marshal.AllocHGlobal(IntPtr.Size);
+			private readonly ISymUnmanagedWriter symUnmanagedWriter = new ISymUnmanagedWriter();
+			private readonly IntPtr pISymUnmanagedWriter;
+
+			internal MySymWriter(string fileName)
+			{
+				pISymUnmanagedWriter = Marshal.GetComInterfaceForObject(symUnmanagedWriter, typeof(ISymUnmanagedWriter));
+				Marshal.WriteIntPtr(ppISymUnmanagedWriter, pISymUnmanagedWriter);
+				SetUnderlyingWriter(ppISymUnmanagedWriter);
+				IMetaDataDispenser disp = new IMetaDataDispenser();
+				object emitter;
+				Guid CLSID_CorMetaDataRuntime = new Guid("005023ca-72b1-11d3-9fc4-00c04f79a0a3");
+				Guid IID_IMetaDataEmit = typeof(IMetaDataEmit).GUID;
+				disp.DefineScope(ref CLSID_CorMetaDataRuntime, 0, ref IID_IMetaDataEmit, out emitter);
+				IntPtr emitterPtr = Marshal.GetComInterfaceForObject(emitter, typeof(IMetaDataEmit));
+				try
+				{
+					Initialize(emitterPtr, fileName, true);
+				}
+				finally
+				{
+					Marshal.Release(emitterPtr);
+				}
+				Marshal.ReleaseComObject(disp);
+				Marshal.ReleaseComObject(emitter);
+			}
+
+			~MySymWriter()
+			{
+				Marshal.Release(pISymUnmanagedWriter);
+				Marshal.FreeHGlobal(ppISymUnmanagedWriter);
+			}
+
+			internal byte[] GetDebugInfo(ref IMAGE_DEBUG_DIRECTORY idd)
+			{
+				uint cData;
+				symUnmanagedWriter.GetDebugInfo(ref idd, 0, out cData, null);
+				byte[] buf = new byte[cData];
+				symUnmanagedWriter.GetDebugInfo(ref idd, (uint)buf.Length, out cData, buf);
+				return buf;
+			}
+
+			internal void RemapToken(int oldToken, int newToken)
+			{
+				symUnmanagedWriter.RemapToken(oldToken, newToken);
+			}
+		}
+
+		internal static ISymbolWriter CreateSymbolWriter(string fileName)
+		{
+			return new MySymWriter(fileName);
+		}
+
+		internal static byte[] GetDebugInfo(ISymbolWriter writer, ref IMAGE_DEBUG_DIRECTORY idd)
+		{
+			return ((MySymWriter)writer).GetDebugInfo(ref idd);
+		}
+
+		internal static void RemapToken(ISymbolWriter writer, int oldToken, int newToken)
+		{
+			((MySymWriter)writer).RemapToken(oldToken, newToken);
+		}
+#else
+d53 1
+a53 1
+			throw new NotImplementedException();
+d58 1
+a58 1
+			throw new NotImplementedException();
+d63 1
+a63 1
+			throw new NotImplementedException();
+a64 1
+#endif
+@
+
+
+1.1
+log
+@New Ref.Emit implementation.
+@
+text
+@d32 14
+a114 13
+		[StructLayout(LayoutKind.Sequential)]
+		internal struct IMAGE_DEBUG_DIRECTORY
+		{
+			internal uint Characteristics;
+			internal uint TimeDateStamp;
+			internal ushort MajorVersion;
+			internal ushort MinorVersion;
+			internal uint Type;
+			internal uint SizeOfData;
+			internal uint AddressOfRawData;
+			internal uint PointerToRawData;
+		}
+
+d179 16
+@
+

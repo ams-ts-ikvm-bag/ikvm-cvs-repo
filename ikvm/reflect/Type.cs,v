@@ -1,0 +1,6639 @@
+head	1.116;
+access;
+symbols
+	v8_1_5717_0:1.109
+	v8_1:1.109.0.2
+	v8_0_5449_1:1.100
+	v8_0_5449_0:1.100
+	v8_0:1.100.0.2
+	v7_4_5196_0:1.98
+	v7_4:1.98.0.2
+	v7_3:1.94.0.2
+	v7_2_4630_6:1.83
+	v7_2_4630_5:1.83
+	v7_2_4630_4:1.83
+	v7_2_4630_3:1.83
+	v7_2_4630_2:1.83
+	v0_46_0_4:1.42.2.1
+	v7_2_4630_1:1.83
+	v7_2:1.83.0.2
+	v7_1_4532_2:1.69.2.1
+	v7_1_4532_1:1.69.2.1
+	v7_1_4532_0:1.69
+	v7_1:1.69.0.2
+	v7_0_4335_3:1.57
+	v7_0_4335_2:1.57
+	v7_0_4335_1:1.57
+	v0_46_0_2:1.42.2.1
+	v7_0_4335_0:1.57
+	v7_0:1.57.0.2
+	v0_46_0_1:1.42.2.1
+	v0_46_0_0:1.42
+	v0_46:1.42.0.2
+	v0_44_0_6:1.25
+	v0_44_0_5:1.25
+	v0_44_0_4:1.25
+	v0_44_0_3:1.25
+	v0_44_0_2:1.25
+	v0_44_0_1:1.25
+	v0_44_0_0:1.25
+	v0_44:1.25.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.116
+date	2016.07.04.05.15.00;	author jfrijters;	state Exp;
+branches;
+next	1.115;
+
+1.115
+date	2016.07.01.06.20.37;	author jfrijters;	state Exp;
+branches;
+next	1.114;
+
+1.114
+date	2016.07.01.05.57.10;	author jfrijters;	state Exp;
+branches;
+next	1.113;
+
+1.113
+date	2016.07.01.05.15.22;	author jfrijters;	state Exp;
+branches;
+next	1.112;
+
+1.112
+date	2016.07.01.04.52.50;	author jfrijters;	state Exp;
+branches;
+next	1.111;
+
+1.111
+date	2015.11.03.09.28.18;	author jfrijters;	state Exp;
+branches;
+next	1.110;
+
+1.110
+date	2015.11.03.09.10.24;	author jfrijters;	state Exp;
+branches;
+next	1.109;
+
+1.109
+date	2015.06.23.11.47.48;	author jfrijters;	state Exp;
+branches;
+next	1.108;
+
+1.108
+date	2015.04.21.10.23.23;	author jfrijters;	state Exp;
+branches;
+next	1.107;
+
+1.107
+date	2015.04.21.10.15.39;	author jfrijters;	state Exp;
+branches;
+next	1.106;
+
+1.106
+date	2015.04.21.09.46.52;	author jfrijters;	state Exp;
+branches;
+next	1.105;
+
+1.105
+date	2015.04.21.09.36.37;	author jfrijters;	state Exp;
+branches;
+next	1.104;
+
+1.104
+date	2015.04.21.08.19.33;	author jfrijters;	state Exp;
+branches;
+next	1.103;
+
+1.103
+date	2015.04.21.06.48.03;	author jfrijters;	state Exp;
+branches;
+next	1.102;
+
+1.102
+date	2015.04.06.07.06.31;	author jfrijters;	state Exp;
+branches;
+next	1.101;
+
+1.101
+date	2015.02.16.12.24.28;	author jfrijters;	state Exp;
+branches;
+next	1.100;
+
+1.100
+date	2014.03.27.12.30.43;	author jfrijters;	state Exp;
+branches;
+next	1.99;
+
+1.99
+date	2014.03.27.07.56.53;	author jfrijters;	state Exp;
+branches;
+next	1.98;
+
+1.98
+date	2014.03.22.08.56.50;	author jfrijters;	state Exp;
+branches;
+next	1.97;
+
+1.97
+date	2013.12.03.15.50.33;	author jfrijters;	state Exp;
+branches;
+next	1.96;
+
+1.96
+date	2013.05.10.10.13.44;	author jfrijters;	state Exp;
+branches;
+next	1.95;
+
+1.95
+date	2013.05.10.08.11.25;	author jfrijters;	state Exp;
+branches;
+next	1.94;
+
+1.94
+date	2013.01.07.13.22.30;	author jfrijters;	state Exp;
+branches;
+next	1.93;
+
+1.93
+date	2013.01.07.12.03.04;	author jfrijters;	state Exp;
+branches;
+next	1.92;
+
+1.92
+date	2012.12.26.09.21.27;	author jfrijters;	state Exp;
+branches;
+next	1.91;
+
+1.91
+date	2012.12.24.10.49.51;	author jfrijters;	state Exp;
+branches;
+next	1.90;
+
+1.90
+date	2012.12.23.10.48.26;	author jfrijters;	state Exp;
+branches;
+next	1.89;
+
+1.89
+date	2012.11.20.15.01.55;	author jfrijters;	state Exp;
+branches;
+next	1.88;
+
+1.88
+date	2012.10.14.21.20.06;	author jfrijters;	state Exp;
+branches;
+next	1.87;
+
+1.87
+date	2012.10.11.11.37.12;	author jfrijters;	state Exp;
+branches;
+next	1.86;
+
+1.86
+date	2012.10.11.11.10.50;	author jfrijters;	state Exp;
+branches;
+next	1.85;
+
+1.85
+date	2012.10.01.16.24.33;	author jfrijters;	state Exp;
+branches;
+next	1.84;
+
+1.84
+date	2012.09.05.08.58.51;	author jfrijters;	state Exp;
+branches;
+next	1.83;
+
+1.83
+date	2012.08.09.21.20.57;	author jfrijters;	state Exp;
+branches;
+next	1.82;
+
+1.82
+date	2012.07.16.13.47.07;	author jfrijters;	state Exp;
+branches;
+next	1.81;
+
+1.81
+date	2012.07.16.12.38.09;	author jfrijters;	state Exp;
+branches;
+next	1.80;
+
+1.80
+date	2012.07.16.11.52.29;	author jfrijters;	state Exp;
+branches;
+next	1.79;
+
+1.79
+date	2012.07.16.10.14.37;	author jfrijters;	state Exp;
+branches;
+next	1.78;
+
+1.78
+date	2012.07.13.06.33.30;	author jfrijters;	state Exp;
+branches;
+next	1.77;
+
+1.77
+date	2012.07.12.15.10.58;	author jfrijters;	state Exp;
+branches;
+next	1.76;
+
+1.76
+date	2012.07.12.13.29.08;	author jfrijters;	state Exp;
+branches;
+next	1.75;
+
+1.75
+date	2012.07.12.10.26.20;	author jfrijters;	state Exp;
+branches;
+next	1.74;
+
+1.74
+date	2012.07.12.09.13.43;	author jfrijters;	state Exp;
+branches;
+next	1.73;
+
+1.73
+date	2012.07.07.08.20.59;	author jfrijters;	state Exp;
+branches;
+next	1.72;
+
+1.72
+date	2012.06.10.11.43.03;	author jfrijters;	state Exp;
+branches;
+next	1.71;
+
+1.71
+date	2012.06.01.13.39.45;	author jfrijters;	state Exp;
+branches;
+next	1.70;
+
+1.70
+date	2012.05.31.13.26.26;	author jfrijters;	state Exp;
+branches;
+next	1.69;
+
+1.69
+date	2012.04.18.06.51.20;	author jfrijters;	state Exp;
+branches
+	1.69.2.1;
+next	1.68;
+
+1.68
+date	2012.04.10.13.03.09;	author jfrijters;	state Exp;
+branches;
+next	1.67;
+
+1.67
+date	2012.04.10.09.07.54;	author jfrijters;	state Exp;
+branches;
+next	1.66;
+
+1.66
+date	2012.04.10.06.23.16;	author jfrijters;	state Exp;
+branches;
+next	1.65;
+
+1.65
+date	2012.04.10.06.20.59;	author jfrijters;	state Exp;
+branches;
+next	1.64;
+
+1.64
+date	2012.04.10.06.18.32;	author jfrijters;	state Exp;
+branches;
+next	1.63;
+
+1.63
+date	2012.04.10.06.09.47;	author jfrijters;	state Exp;
+branches;
+next	1.62;
+
+1.62
+date	2012.04.09.10.04.58;	author jfrijters;	state Exp;
+branches;
+next	1.61;
+
+1.61
+date	2012.03.12.09.31.28;	author jfrijters;	state Exp;
+branches;
+next	1.60;
+
+1.60
+date	2012.03.05.13.48.58;	author jfrijters;	state Exp;
+branches;
+next	1.59;
+
+1.59
+date	2011.12.01.07.37.48;	author jfrijters;	state Exp;
+branches;
+next	1.58;
+
+1.58
+date	2011.12.01.06.30.50;	author jfrijters;	state Exp;
+branches;
+next	1.57;
+
+1.57
+date	2011.09.30.07.26.56;	author jfrijters;	state Exp;
+branches;
+next	1.56;
+
+1.56
+date	2011.03.21.04.47.37;	author jfrijters;	state Exp;
+branches;
+next	1.55;
+
+1.55
+date	2011.03.17.14.40.50;	author jfrijters;	state Exp;
+branches;
+next	1.54;
+
+1.54
+date	2011.03.17.08.15.02;	author jfrijters;	state Exp;
+branches;
+next	1.53;
+
+1.53
+date	2011.03.16.08.05.09;	author jfrijters;	state Exp;
+branches;
+next	1.52;
+
+1.52
+date	2011.03.14.05.03.30;	author jfrijters;	state Exp;
+branches;
+next	1.51;
+
+1.51
+date	2011.03.13.09.09.43;	author jfrijters;	state Exp;
+branches;
+next	1.50;
+
+1.50
+date	2011.03.13.09.06.55;	author jfrijters;	state Exp;
+branches;
+next	1.49;
+
+1.49
+date	2011.03.09.07.09.26;	author jfrijters;	state Exp;
+branches;
+next	1.48;
+
+1.48
+date	2011.03.09.06.01.52;	author jfrijters;	state Exp;
+branches;
+next	1.47;
+
+1.47
+date	2011.03.06.08.16.41;	author jfrijters;	state Exp;
+branches;
+next	1.46;
+
+1.46
+date	2011.03.06.07.36.55;	author jfrijters;	state Exp;
+branches;
+next	1.45;
+
+1.45
+date	2011.03.06.06.37.29;	author jfrijters;	state Exp;
+branches;
+next	1.44;
+
+1.44
+date	2011.03.03.16.06.44;	author jfrijters;	state Exp;
+branches;
+next	1.43;
+
+1.43
+date	2011.03.03.12.52.44;	author jfrijters;	state Exp;
+branches;
+next	1.42;
+
+1.42
+date	2011.02.14.05.58.49;	author jfrijters;	state Exp;
+branches
+	1.42.2.1;
+next	1.41;
+
+1.41
+date	2011.01.26.06.59.57;	author jfrijters;	state Exp;
+branches;
+next	1.40;
+
+1.40
+date	2011.01.23.08.12.13;	author jfrijters;	state Exp;
+branches;
+next	1.39;
+
+1.39
+date	2011.01.20.14.31.10;	author jfrijters;	state Exp;
+branches;
+next	1.38;
+
+1.38
+date	2011.01.20.05.38.12;	author jfrijters;	state Exp;
+branches;
+next	1.37;
+
+1.37
+date	2011.01.19.04.55.26;	author jfrijters;	state Exp;
+branches;
+next	1.36;
+
+1.36
+date	2011.01.18.16.44.39;	author jfrijters;	state Exp;
+branches;
+next	1.35;
+
+1.35
+date	2011.01.14.05.36.42;	author jfrijters;	state Exp;
+branches;
+next	1.34;
+
+1.34
+date	2011.01.14.05.29.04;	author jfrijters;	state Exp;
+branches;
+next	1.33;
+
+1.33
+date	2011.01.13.15.29.30;	author jfrijters;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2011.01.13.10.44.45;	author jfrijters;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2011.01.13.07.24.50;	author jfrijters;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2011.01.13.07.08.00;	author jfrijters;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2011.01.13.05.58.54;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2011.01.12.13.57.05;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2011.01.12.13.31.27;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2010.11.29.11.20.47;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2010.06.30.07.17.58;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2010.06.28.12.14.24;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2010.06.28.07.41.51;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2010.05.21.03.48.26;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2010.05.20.09.25.30;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2010.05.20.09.05.09;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2010.05.07.16.37.28;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2010.05.07.16.35.47;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2010.05.07.14.03.40;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2010.05.07.13.30.04;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2010.05.07.04.44.11;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2010.05.06.13.50.36;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2010.05.06.13.40.43;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2010.05.06.13.24.29;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2010.04.18.09.25.47;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2010.04.18.08.39.20;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2010.04.02.03.50.49;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2010.02.09.14.34.05;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2010.02.09.07.57.49;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2010.02.09.05.42.05;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2010.02.09.05.20.01;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.02.04.09.38.52;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.01.27.06.12.37;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.42.2.1
+date	2011.03.17.05.18.42;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.69.2.1
+date	2012.06.12.08.45.56;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.116
+log
+@Removed [Obsolete] methods from NETSTANDARD build.
+@
+text
+@/*
+  Copyright (C) 2009-2015 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Collections.Generic;
+using IKVM.Reflection.Emit;
+
+namespace IKVM.Reflection
+{
+	interface IGenericContext
+	{
+		Type GetGenericTypeArgument(int index);
+		Type GetGenericMethodArgument(int index);
+	}
+
+	interface IGenericBinder
+	{
+		Type BindTypeParameter(Type type);
+		Type BindMethodParameter(Type type);
+	}
+
+	public abstract class Type : MemberInfo, IGenericContext, IGenericBinder
+	{
+		public static readonly Type[] EmptyTypes = Empty<Type>.Array;
+		protected readonly Type underlyingType;
+		protected TypeFlags typeFlags;
+		private byte sigElementType;	// only used if (__IsBuiltIn || HasElementType || __IsFunctionPointer || IsGenericParameter)
+
+		[Flags]
+		protected enum TypeFlags : ushort
+		{
+			// for use by TypeBuilder or TypeDefImpl
+			IsGenericTypeDefinition = 1,
+
+			// for use by TypeBuilder
+			HasNestedTypes = 2,
+			Baked = 4,
+
+			// for use by IsValueType to cache result of IsValueTypeImpl
+			ValueType = 8,
+			NotValueType = 16,
+
+			// for use by TypeDefImpl, TypeBuilder or MissingType
+			PotentialEnumOrValueType = 32,
+			EnumOrValueType = 64,
+
+			// for use by TypeDefImpl
+			NotGenericTypeDefinition = 128,
+
+			// used to cache __ContainsMissingType
+			ContainsMissingType_Unknown = 0,
+			ContainsMissingType_Pending = 256,
+			ContainsMissingType_Yes = 512,
+			ContainsMissingType_No = 256 | 512,
+			ContainsMissingType_Mask = 256 | 512,
+
+			// built-in type support
+			PotentialBuiltIn = 1024,
+			BuiltIn = 2048,
+		}
+
+		// prevent subclassing by outsiders
+		internal Type()
+		{
+			this.underlyingType = this;
+		}
+
+		internal Type(Type underlyingType)
+		{
+			System.Diagnostics.Debug.Assert(underlyingType.underlyingType == underlyingType);
+			this.underlyingType = underlyingType;
+			this.typeFlags = underlyingType.typeFlags;
+		}
+
+		internal Type(byte sigElementType)
+			: this()
+		{
+			this.sigElementType = sigElementType;
+		}
+
+		public static Binder DefaultBinder
+		{
+			get { return new DefaultBinder(); }
+		}
+
+		public sealed override MemberTypes MemberType
+		{
+			get { return IsNested ? MemberTypes.NestedType : MemberTypes.TypeInfo; }
+		}
+
+		public virtual string AssemblyQualifiedName
+		{
+			// NOTE the assembly name is not escaped here, only when used in a generic type instantiation
+			get { return this.FullName + ", " + this.Assembly.FullName; }
+		}
+
+		public abstract Type BaseType
+		{
+			get;
+		}
+
+		public abstract TypeAttributes Attributes
+		{
+			get;
+		}
+
+		public virtual Type GetElementType()
+		{
+			return null;
+		}
+
+		internal virtual void CheckBaked()
+		{
+		}
+
+		public virtual Type[] __GetDeclaredTypes()
+		{
+			return Type.EmptyTypes;
+		}
+
+		public virtual Type[] __GetDeclaredInterfaces()
+		{
+			return Type.EmptyTypes;
+		}
+
+		public virtual MethodBase[] __GetDeclaredMethods()
+		{
+			return Empty<MethodBase>.Array;
+		}
+
+		public virtual __MethodImplMap __GetMethodImplMap()
+		{
+			throw new NotSupportedException();
+		}
+
+		public virtual FieldInfo[] __GetDeclaredFields()
+		{
+			return Empty<FieldInfo>.Array;
+		}
+
+		public virtual EventInfo[] __GetDeclaredEvents()
+		{
+			return Empty<EventInfo>.Array;
+		}
+
+		public virtual PropertyInfo[] __GetDeclaredProperties()
+		{
+			return Empty<PropertyInfo>.Array;
+		}
+
+		public virtual CustomModifiers __GetCustomModifiers()
+		{
+			return new CustomModifiers();
+		}
+
+#if !NETSTANDARD
+		[Obsolete("Please use __GetCustomModifiers() instead.")]
+		public Type[] __GetRequiredCustomModifiers()
+		{
+			return __GetCustomModifiers().GetRequired();
+		}
+
+		[Obsolete("Please use __GetCustomModifiers() instead.")]
+		public Type[] __GetOptionalCustomModifiers()
+		{
+			return __GetCustomModifiers().GetOptional();
+		}
+#endif
+
+		public virtual __StandAloneMethodSig __MethodSignature
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		public bool HasElementType
+		{
+			get { return IsArray || IsByRef || IsPointer; }
+		}
+
+		public bool IsArray
+		{
+			get { return sigElementType == Signature.ELEMENT_TYPE_ARRAY || sigElementType == Signature.ELEMENT_TYPE_SZARRAY; }
+		}
+
+		public bool __IsVector
+		{
+			get { return sigElementType == Signature.ELEMENT_TYPE_SZARRAY; }
+		}
+
+		public bool IsByRef
+		{
+			get { return sigElementType == Signature.ELEMENT_TYPE_BYREF; }
+		}
+
+		public bool IsPointer
+		{
+			get { return sigElementType == Signature.ELEMENT_TYPE_PTR; }
+		}
+
+		public bool __IsFunctionPointer
+		{
+			get { return sigElementType == Signature.ELEMENT_TYPE_FNPTR; }
+		}
+
+		public bool IsValueType
+		{
+			get
+			{
+				// MissingType sets both flags for WinRT projection types
+				switch (typeFlags & (TypeFlags.ValueType | TypeFlags.NotValueType))
+				{
+					case 0:
+					case TypeFlags.ValueType | TypeFlags.NotValueType:
+						return IsValueTypeImpl;
+				}
+				return (typeFlags & TypeFlags.ValueType) != 0;
+			}
+		}
+
+		protected abstract bool IsValueTypeImpl
+		{
+			get;
+		}
+
+		public bool IsGenericParameter
+		{
+			get { return sigElementType == Signature.ELEMENT_TYPE_VAR || sigElementType == Signature.ELEMENT_TYPE_MVAR; }
+		}
+
+		public virtual int GenericParameterPosition
+		{
+			get { throw new NotSupportedException(); }
+		}
+
+		public virtual MethodBase DeclaringMethod
+		{
+			get { return null; }
+		}
+
+		public Type UnderlyingSystemType
+		{
+			get { return underlyingType; }
+		}
+
+		public override Type DeclaringType
+		{
+			get { return null; }
+		}
+
+		internal virtual TypeName TypeName
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		public string __Name
+		{
+			get { return TypeName.Name; }
+		}
+
+		public string __Namespace
+		{
+			get { return TypeName.Namespace; }
+		}
+
+		public abstract override string Name
+		{
+			get;
+		}
+
+		public virtual string Namespace
+		{
+			get
+			{
+				if (IsNested)
+				{
+					return DeclaringType.Namespace;
+				}
+				return __Namespace;
+			}
+		}
+
+		internal virtual int GetModuleBuilderToken()
+		{
+			throw new InvalidOperationException();
+		}
+
+		public static bool operator ==(Type t1, Type t2)
+		{
+			// Casting to object results in smaller code than calling ReferenceEquals and makes
+			// this method more likely to be inlined.
+			// On CLR v2 x86, microbenchmarks show this to be faster than calling ReferenceEquals.
+			return (object)t1 == (object)t2
+				|| ((object)t1 != null && (object)t2 != null && (object)t1.underlyingType == (object)t2.underlyingType);
+		}
+
+		public static bool operator !=(Type t1, Type t2)
+		{
+			return !(t1 == t2);
+		}
+
+		public bool Equals(Type type)
+		{
+			return this == type;
+		}
+
+		public override bool Equals(object obj)
+		{
+			return Equals(obj as Type);
+		}
+
+		public override int GetHashCode()
+		{
+			Type type = this.UnderlyingSystemType;
+			return ReferenceEquals(type, this) ? base.GetHashCode() : type.GetHashCode();
+		}
+
+		public Type[] GenericTypeArguments
+		{
+			get { return IsConstructedGenericType ? GetGenericArguments() : Type.EmptyTypes; }
+		}
+
+		public virtual Type[] GetGenericArguments()
+		{
+			return Type.EmptyTypes;
+		}
+
+		public virtual CustomModifiers[] __GetGenericArgumentsCustomModifiers()
+		{
+			return Empty<CustomModifiers>.Array;
+		}
+
+#if !NETSTANDARD
+		[Obsolete("Please use __GetGenericArgumentsCustomModifiers() instead")]
+		public Type[][] __GetGenericArgumentsRequiredCustomModifiers()
+		{
+			CustomModifiers[] customModifiers = __GetGenericArgumentsCustomModifiers();
+			Type[][] array = new Type[customModifiers.Length][];
+			for (int i = 0; i < array.Length; i++)
+			{
+				array[i] = customModifiers[i].GetRequired();
+			}
+			return array;
+		}
+
+		[Obsolete("Please use __GetGenericArgumentsCustomModifiers() instead")]
+		public Type[][] __GetGenericArgumentsOptionalCustomModifiers()
+		{
+			CustomModifiers[] customModifiers = __GetGenericArgumentsCustomModifiers();
+			Type[][] array = new Type[customModifiers.Length][];
+			for (int i = 0; i < array.Length; i++)
+			{
+				array[i] = customModifiers[i].GetOptional();
+			}
+			return array;
+		}
+#endif
+
+		public virtual Type GetGenericTypeDefinition()
+		{
+			throw new InvalidOperationException();
+		}
+
+		public StructLayoutAttribute StructLayoutAttribute
+		{
+			get
+			{
+				StructLayoutAttribute layout;
+				switch (this.Attributes & TypeAttributes.LayoutMask)
+				{
+					case TypeAttributes.AutoLayout:
+						layout = new StructLayoutAttribute(LayoutKind.Auto);
+						break;
+					case TypeAttributes.SequentialLayout:
+						layout = new StructLayoutAttribute(LayoutKind.Sequential);
+						break;
+					case TypeAttributes.ExplicitLayout:
+						layout = new StructLayoutAttribute(LayoutKind.Explicit);
+						break;
+					default:
+						throw new BadImageFormatException();
+				}
+				switch (this.Attributes & TypeAttributes.StringFormatMask)
+				{
+					case TypeAttributes.AnsiClass:
+						layout.CharSet = CharSet.Ansi;
+						break;
+					case TypeAttributes.UnicodeClass:
+						layout.CharSet = CharSet.Unicode;
+						break;
+					case TypeAttributes.AutoClass:
+#if NETSTANDARD
+						layout.CharSet = (CharSet)4;
+#else
+						layout.CharSet = CharSet.Auto;
+#endif
+						break;
+					default:
+#if NETSTANDARD
+						layout.CharSet = (CharSet)1;
+#else
+						layout.CharSet = CharSet.None;
+#endif
+						break;
+				}
+				if (!__GetLayout(out layout.Pack, out layout.Size))
+				{
+					// compatibility with System.Reflection
+					layout.Pack = 8;
+				}
+				return layout;
+			}
+		}
+
+		public virtual bool __GetLayout(out int packingSize, out int typeSize)
+		{
+			packingSize = 0;
+			typeSize = 0;
+			return false;
+		}
+
+		public virtual bool IsGenericType
+		{
+			get { return false; }
+		}
+
+		public virtual bool IsGenericTypeDefinition
+		{
+			get { return false; }
+		}
+
+		// .NET 4.5 API
+		public virtual bool IsConstructedGenericType
+		{
+			get { return false; }
+		}
+
+		public virtual bool ContainsGenericParameters
+		{
+			get
+			{
+				if (this.IsGenericParameter)
+				{
+					return true;
+				}
+				foreach (Type arg in this.GetGenericArguments())
+				{
+					if (arg.ContainsGenericParameters)
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+		}
+
+		public virtual Type[] GetGenericParameterConstraints()
+		{
+			throw new InvalidOperationException();
+		}
+
+		public virtual CustomModifiers[] __GetGenericParameterConstraintCustomModifiers()
+		{
+			throw new InvalidOperationException();
+		}
+
+		public virtual GenericParameterAttributes GenericParameterAttributes
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		public virtual int GetArrayRank()
+		{
+			throw new NotSupportedException();
+		}
+
+		public virtual int[] __GetArraySizes()
+		{
+			throw new NotSupportedException();
+		}
+
+		public virtual int[] __GetArrayLowerBounds()
+		{
+			throw new NotSupportedException();
+		}
+
+		// .NET 4.0 API
+		public virtual Type GetEnumUnderlyingType()
+		{
+			if (!this.IsEnum)
+			{
+				throw new ArgumentException();
+			}
+			CheckBaked();
+			return GetEnumUnderlyingTypeImpl();
+		}
+
+		internal Type GetEnumUnderlyingTypeImpl()
+		{
+			foreach (FieldInfo field in __GetDeclaredFields())
+			{
+				if (!field.IsStatic)
+				{
+					// the CLR assumes that an enum has only one instance field, so we can do the same
+					return field.FieldType;
+				}
+			}
+			throw new InvalidOperationException();
+		}
+
+		public string[] GetEnumNames()
+		{
+			if (!IsEnum)
+			{
+				throw new ArgumentException();
+			}
+			List<string> names = new List<string>();
+			foreach (FieldInfo field in __GetDeclaredFields())
+			{
+				if (field.IsLiteral)
+				{
+					names.Add(field.Name);
+				}
+			}
+			return names.ToArray();
+		}
+
+		public string GetEnumName(object value)
+		{
+			if (!IsEnum)
+			{
+				throw new ArgumentException();
+			}
+			if (value == null)
+			{
+				throw new ArgumentNullException();
+			}
+			try
+			{
+				value = Convert.ChangeType(value, __GetSystemType(GetTypeCode(GetEnumUnderlyingType())));
+			}
+			catch (FormatException)
+			{
+				throw new ArgumentException();
+			}
+			catch (OverflowException)
+			{
+				return null;
+			}
+			catch (InvalidCastException)
+			{
+				return null;
+			}
+			foreach (FieldInfo field in __GetDeclaredFields())
+			{
+				if (field.IsLiteral && field.GetRawConstantValue().Equals(value))
+				{
+					return field.Name;
+				}
+			}
+			return null;
+		}
+
+		public bool IsEnumDefined(object value)
+		{
+			if (value is string)
+			{
+				return Array.IndexOf(GetEnumNames(), value) != -1;
+			}
+			if (!IsEnum)
+			{
+				throw new ArgumentException();
+			}
+			if (value == null)
+			{
+				throw new ArgumentNullException();
+			}
+			if (value.GetType() != __GetSystemType(GetTypeCode(GetEnumUnderlyingType())))
+			{
+				throw new ArgumentException();
+			}
+			foreach (FieldInfo field in __GetDeclaredFields())
+			{
+				if (field.IsLiteral && field.GetRawConstantValue().Equals(value))
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+
+		public override string ToString()
+		{
+			return FullName;
+		}
+
+		public abstract string FullName
+		{
+			get;
+		}
+
+		protected string GetFullName()
+		{
+			string ns = TypeNameParser.Escape(this.__Namespace);
+			Type decl = this.DeclaringType;
+			if (decl == null)
+			{
+				if (ns == null)
+				{
+					return this.Name;
+				}
+				else
+				{
+					return ns + "." + this.Name;
+				}
+			}
+			else
+			{
+				if (ns == null)
+				{
+					return decl.FullName + "+" + this.Name;
+				}
+				else
+				{
+					return decl.FullName + "+" + ns + "." + this.Name;
+				}
+			}
+		}
+
+		internal virtual bool IsModulePseudoType
+		{
+			get { return false; }
+		}
+
+		internal virtual Type GetGenericTypeArgument(int index)
+		{
+			throw new InvalidOperationException();
+		}
+
+		public MemberInfo[] GetDefaultMembers()
+		{
+			Type defaultMemberAttribute = this.Module.universe.Import(typeof(System.Reflection.DefaultMemberAttribute));
+			foreach (CustomAttributeData cad in CustomAttributeData.GetCustomAttributes(this))
+			{
+				if (cad.Constructor.DeclaringType.Equals(defaultMemberAttribute))
+				{
+					return GetMember((string)cad.ConstructorArguments[0].Value);
+				}
+			}
+			return Empty<MemberInfo>.Array;
+		}
+
+		public MemberInfo[] GetMember(string name)
+		{
+			return GetMember(name, BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
+		}
+
+		public MemberInfo[] GetMember(string name, BindingFlags bindingAttr)
+		{
+			return GetMember(name, MemberTypes.All, bindingAttr);
+		}
+
+		public MemberInfo[] GetMembers()
+		{
+			return GetMembers(BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
+		}
+
+		public MemberInfo[] GetMembers(BindingFlags bindingAttr)
+		{
+			List<MemberInfo> members = new List<MemberInfo>();
+			members.AddRange(GetConstructors(bindingAttr));
+			members.AddRange(GetMethods(bindingAttr));
+			members.AddRange(GetFields(bindingAttr));
+			members.AddRange(GetProperties(bindingAttr));
+			members.AddRange(GetEvents(bindingAttr));
+			members.AddRange(GetNestedTypes(bindingAttr));
+			return members.ToArray();
+		}
+
+		public MemberInfo[] GetMember(string name, MemberTypes type, BindingFlags bindingAttr)
+		{
+			MemberFilter filter;
+			if ((bindingAttr & BindingFlags.IgnoreCase) != 0)
+			{
+				name = name.ToLowerInvariant();
+				filter = delegate(MemberInfo member, object filterCriteria) { return member.Name.ToLowerInvariant().Equals(filterCriteria); };
+			}
+			else
+			{
+				filter = delegate(MemberInfo member, object filterCriteria) { return member.Name.Equals(filterCriteria); };
+			}
+			return FindMembers(type, bindingAttr, filter, name);
+		}
+
+		private static void AddMembers(List<MemberInfo> list, MemberFilter filter, object filterCriteria, MemberInfo[] members)
+		{
+			foreach (MemberInfo member in members)
+			{
+				if (filter == null || filter(member, filterCriteria))
+				{
+					list.Add(member);
+				}
+			}
+		}
+
+		public MemberInfo[] FindMembers(MemberTypes memberType, BindingFlags bindingAttr, MemberFilter filter, object filterCriteria)
+		{
+			List<MemberInfo> members = new List<MemberInfo>();
+			if ((memberType & MemberTypes.Constructor) != 0)
+			{
+				AddMembers(members, filter, filterCriteria, GetConstructors(bindingAttr));
+			}
+			if ((memberType & MemberTypes.Method) != 0)
+			{
+				AddMembers(members, filter, filterCriteria, GetMethods(bindingAttr));
+			}
+			if ((memberType & MemberTypes.Field) != 0)
+			{
+				AddMembers(members, filter, filterCriteria, GetFields(bindingAttr));
+			}
+			if ((memberType & MemberTypes.Property) != 0)
+			{
+				AddMembers(members, filter, filterCriteria, GetProperties(bindingAttr));
+			}
+			if ((memberType & MemberTypes.Event) != 0)
+			{
+				AddMembers(members, filter, filterCriteria, GetEvents(bindingAttr));
+			}
+			if ((memberType & MemberTypes.NestedType) != 0)
+			{
+				AddMembers(members, filter, filterCriteria, GetNestedTypes(bindingAttr));
+			}
+			return members.ToArray();
+		}
+
+		private MemberInfo[] GetMembers<T>()
+		{
+			if (typeof(T) == typeof(ConstructorInfo) || typeof(T) == typeof(MethodInfo))
+			{
+				return __GetDeclaredMethods();
+			}
+			else if (typeof(T) == typeof(FieldInfo))
+			{
+				return __GetDeclaredFields();
+			}
+			else if (typeof(T) == typeof(PropertyInfo))
+			{
+				return __GetDeclaredProperties();
+			}
+			else if (typeof(T) == typeof(EventInfo))
+			{
+				return __GetDeclaredEvents();
+			}
+			else if (typeof(T) == typeof(Type))
+			{
+				return __GetDeclaredTypes();
+			}
+			else
+			{
+				throw new InvalidOperationException();
+			}
+		}
+
+		private T[] GetMembers<T>(BindingFlags flags)
+			where T : MemberInfo
+		{
+			CheckBaked();
+			List<T> list = new List<T>();
+			foreach (MemberInfo member in GetMembers<T>())
+			{
+				if (member is T && member.BindingFlagsMatch(flags))
+				{
+					list.Add((T)member);
+				}
+			}
+			if ((flags & BindingFlags.DeclaredOnly) == 0)
+			{
+				for (Type type = this.BaseType; type != null; type = type.BaseType)
+				{
+					type.CheckBaked();
+					foreach (MemberInfo member in type.GetMembers<T>())
+					{
+						if (member is T && member.BindingFlagsMatchInherited(flags))
+						{
+							list.Add((T)member.SetReflectedType(this));
+						}
+					}
+				}
+			}
+			return list.ToArray();
+		}
+
+		private T GetMemberByName<T>(string name, BindingFlags flags, Predicate<T> filter)
+			where T : MemberInfo
+		{
+			CheckBaked();
+			if ((flags & BindingFlags.IgnoreCase) != 0)
+			{
+				name = name.ToLowerInvariant();
+			}
+			T found = null;
+			foreach (MemberInfo member in GetMembers<T>())
+			{
+				if (member is T && member.BindingFlagsMatch(flags))
+				{
+					string memberName = member.Name;
+					if ((flags & BindingFlags.IgnoreCase) != 0)
+					{
+						memberName = memberName.ToLowerInvariant();
+					}
+					if (memberName == name && (filter == null || filter((T)member)))
+					{
+						if (found != null)
+						{
+							throw new AmbiguousMatchException();
+						}
+						found = (T)member;
+					}
+				}
+			}
+			if ((flags & BindingFlags.DeclaredOnly) == 0)
+			{
+				for (Type type = this.BaseType; (found == null || typeof(T) == typeof(MethodInfo)) && type != null; type = type.BaseType)
+				{
+					type.CheckBaked();
+					foreach (MemberInfo member in type.GetMembers<T>())
+					{
+						if (member is T && member.BindingFlagsMatchInherited(flags))
+						{
+							string memberName = member.Name;
+							if ((flags & BindingFlags.IgnoreCase) != 0)
+							{
+								memberName = memberName.ToLowerInvariant();
+							}
+							if (memberName == name && (filter == null || filter((T)member)))
+							{
+								if (found != null)
+								{
+									MethodInfo mi;
+									// TODO does this depend on HideBySig vs HideByName?
+									if ((mi = found as MethodInfo) != null
+										&& mi.MethodSignature.MatchParameterTypes(((MethodBase)member).MethodSignature))
+									{
+										continue;
+									}
+									throw new AmbiguousMatchException();
+								}
+								found = (T)member.SetReflectedType(this);
+							}
+						}
+					}
+				}
+			}
+			return found;
+		}
+
+		private T GetMemberByName<T>(string name, BindingFlags flags)
+			where T : MemberInfo
+		{
+			return GetMemberByName<T>(name, flags, null);
+		}
+
+		public EventInfo GetEvent(string name)
+		{
+			return GetEvent(name, BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
+		}
+
+		public EventInfo GetEvent(string name, BindingFlags bindingAttr)
+		{
+			return GetMemberByName<EventInfo>(name, bindingAttr);
+		}
+
+		public EventInfo[] GetEvents()
+		{
+			return GetEvents(BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
+		}
+
+		public EventInfo[] GetEvents(BindingFlags bindingAttr)
+		{
+			return GetMembers<EventInfo>(bindingAttr);
+		}
+
+		public FieldInfo GetField(string name)
+		{
+			return GetField(name, BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
+		}
+
+		public FieldInfo GetField(string name, BindingFlags bindingAttr)
+		{
+			return GetMemberByName<FieldInfo>(name, bindingAttr);
+		}
+
+		public FieldInfo[] GetFields()
+		{
+			return GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance);
+		}
+
+		public FieldInfo[] GetFields(BindingFlags bindingAttr)
+		{
+			return GetMembers<FieldInfo>(bindingAttr);
+		}
+
+		public Type[] GetInterfaces()
+		{
+			List<Type> list = new List<Type>();
+			for (Type type = this; type != null; type = type.BaseType)
+			{
+				AddInterfaces(list, type);
+			}
+			return list.ToArray();
+		}
+
+		private static void AddInterfaces(List<Type> list, Type type)
+		{
+			foreach (Type iface in type.__GetDeclaredInterfaces())
+			{
+				if (!list.Contains(iface))
+				{
+					list.Add(iface);
+					AddInterfaces(list, iface);
+				}
+			}
+		}
+
+		public MethodInfo[] GetMethods(BindingFlags bindingAttr)
+		{
+			CheckBaked();
+			List<MethodInfo> list = new List<MethodInfo>();
+			foreach (MethodBase mb in __GetDeclaredMethods())
+			{
+				MethodInfo mi = mb as MethodInfo;
+				if (mi != null && mi.BindingFlagsMatch(bindingAttr))
+				{
+					list.Add(mi);
+				}
+			}
+			if ((bindingAttr & BindingFlags.DeclaredOnly) == 0)
+			{
+				List<MethodInfo> baseMethods = new List<MethodInfo>();
+				foreach (MethodInfo mi in list)
+				{
+					if (mi.IsVirtual)
+					{
+						baseMethods.Add(mi.GetBaseDefinition());
+					}
+				}
+				for (Type type = this.BaseType; type != null; type = type.BaseType)
+				{
+					type.CheckBaked();
+					foreach (MethodBase mb in type.__GetDeclaredMethods())
+					{
+						MethodInfo mi = mb as MethodInfo;
+						if (mi != null && mi.BindingFlagsMatchInherited(bindingAttr))
+						{
+							if (mi.IsVirtual)
+							{
+								if (baseMethods == null)
+								{
+									baseMethods = new List<MethodInfo>();
+								}
+								else if (baseMethods.Contains(mi.GetBaseDefinition()))
+								{
+									continue;
+								}
+								baseMethods.Add(mi.GetBaseDefinition());
+							}
+							list.Add((MethodInfo)mi.SetReflectedType(this));
+						}
+					}
+				}
+			}
+			return list.ToArray();
+		}
+
+		public MethodInfo[] GetMethods()
+		{
+			return GetMethods(BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance);
+		}
+
+		public MethodInfo GetMethod(string name)
+		{
+			return GetMethod(name, BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public);
+		}
+
+		public MethodInfo GetMethod(string name, BindingFlags bindingAttr)
+		{
+			return GetMemberByName<MethodInfo>(name, bindingAttr);
+		}
+
+		public MethodInfo GetMethod(string name, Type[] types)
+		{
+			return GetMethod(name, types, null);
+		}
+
+		public MethodInfo GetMethod(string name, Type[] types, ParameterModifier[] modifiers)
+		{
+			return GetMethod(name, BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public, null, types, modifiers);
+		}
+
+		public MethodInfo GetMethod(string name, BindingFlags bindingAttr, Binder binder, Type[] types, ParameterModifier[] modifiers)
+		{
+			// first we try an exact match and only if that fails we fall back to using the binder
+			return GetMemberByName<MethodInfo>(name, bindingAttr,
+				delegate(MethodInfo method) { return method.MethodSignature.MatchParameterTypes(types); })
+				?? GetMethodWithBinder<MethodInfo>(name, bindingAttr, binder ?? DefaultBinder, types, modifiers);
+		}
+
+		private T GetMethodWithBinder<T>(string name, BindingFlags bindingAttr, Binder binder, Type[] types, ParameterModifier[] modifiers)
+			where T : MethodBase
+		{
+			List<MethodBase> list = new List<MethodBase>();
+			GetMemberByName<T>(name, bindingAttr, delegate(T method) {
+				list.Add(method);
+				return false;
+			});
+			return (T)binder.SelectMethod(bindingAttr, list.ToArray(), types, modifiers);
+		}
+
+		public MethodInfo GetMethod(string name, BindingFlags bindingAttr, Binder binder, CallingConventions callConvention, Type[] types, ParameterModifier[] modifiers)
+		{
+			// FXBUG callConvention seems to be ignored
+			return GetMethod(name, bindingAttr, binder, types, modifiers);
+		}
+
+		public ConstructorInfo[] GetConstructors()
+		{
+			return GetConstructors(BindingFlags.Public | BindingFlags.Instance);
+		}
+
+		public ConstructorInfo[] GetConstructors(BindingFlags bindingAttr)
+		{
+			return GetMembers<ConstructorInfo>(bindingAttr | BindingFlags.DeclaredOnly);
+		}
+
+		public ConstructorInfo GetConstructor(Type[] types)
+		{
+			return GetConstructor(BindingFlags.Public | BindingFlags.Instance, null, CallingConventions.Standard, types, null);
+		}
+
+		public ConstructorInfo GetConstructor(BindingFlags bindingAttr, Binder binder, Type[] types, ParameterModifier[] modifiers)
+		{
+			ConstructorInfo ci1 = null;
+			if ((bindingAttr & BindingFlags.Instance) != 0)
+			{
+				ci1 = GetConstructorImpl(ConstructorInfo.ConstructorName, bindingAttr, binder, types, modifiers);
+			}
+			if ((bindingAttr & BindingFlags.Static) != 0)
+			{
+				ConstructorInfo ci2 = GetConstructorImpl(ConstructorInfo.TypeConstructorName, bindingAttr, binder, types, modifiers);
+				if (ci2 != null)
+				{
+					if (ci1 != null)
+					{
+						throw new AmbiguousMatchException();
+					}
+					return ci2;
+				}
+			}
+			return ci1;
+		}
+
+		private ConstructorInfo GetConstructorImpl(string name, BindingFlags bindingAttr, Binder binder, Type[] types, ParameterModifier[] modifiers)
+		{
+			// first we try an exact match and only if that fails we fall back to using the binder
+			return GetMemberByName<ConstructorInfo>(name, bindingAttr | BindingFlags.DeclaredOnly,
+				delegate(ConstructorInfo ctor) { return ctor.MethodSignature.MatchParameterTypes(types); })
+				?? GetMethodWithBinder<ConstructorInfo>(name, bindingAttr, binder ?? DefaultBinder, types, modifiers);
+		}
+
+		public ConstructorInfo GetConstructor(BindingFlags bindingAttr, Binder binder, CallingConventions callingConvention, Type[] types, ParameterModifier[] modifiers)
+		{
+			// FXBUG callConvention seems to be ignored
+			return GetConstructor(bindingAttr, binder, types, modifiers);
+		}
+
+		internal Type ResolveNestedType(Module requester, TypeName typeName)
+		{
+			return FindNestedType(typeName) ?? Module.universe.GetMissingTypeOrThrow(requester, Module, this, typeName);
+		}
+
+		// unlike the public API, this takes the namespace and name into account
+		internal virtual Type FindNestedType(TypeName name)
+		{
+			foreach (Type type in __GetDeclaredTypes())
+			{
+				if (type.TypeName == name)
+				{
+					return type;
+				}
+			}
+			return null;
+		}
+
+		internal virtual Type FindNestedTypeIgnoreCase(TypeName lowerCaseName)
+		{
+			foreach (Type type in __GetDeclaredTypes())
+			{
+				if (type.TypeName.ToLowerInvariant() == lowerCaseName)
+				{
+					return type;
+				}
+			}
+			return null;
+		}
+
+		public Type GetNestedType(string name)
+		{
+			return GetNestedType(name, BindingFlags.Public);
+		}
+
+		public Type GetNestedType(string name, BindingFlags bindingAttr)
+		{
+			// FXBUG the namespace is ignored, so we can use GetMemberByName
+			return GetMemberByName<Type>(name, bindingAttr | BindingFlags.DeclaredOnly);
+		}
+
+		public Type[] GetNestedTypes()
+		{
+			return GetNestedTypes(BindingFlags.Public);
+		}
+
+		public Type[] GetNestedTypes(BindingFlags bindingAttr)
+		{
+			// FXBUG the namespace is ignored, so we can use GetMember
+			return GetMembers<Type>(bindingAttr | BindingFlags.DeclaredOnly);
+		}
+
+		public PropertyInfo[] GetProperties()
+		{
+			return GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
+		}
+
+		public PropertyInfo[] GetProperties(BindingFlags bindingAttr)
+		{
+			return GetMembers<PropertyInfo>(bindingAttr);
+		}
+
+		public PropertyInfo GetProperty(string name)
+		{
+			return GetProperty(name, BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
+		}
+
+		public PropertyInfo GetProperty(string name, BindingFlags bindingAttr)
+		{
+			return GetMemberByName<PropertyInfo>(name, bindingAttr);
+		}
+
+		public PropertyInfo GetProperty(string name, Type returnType)
+		{
+			const BindingFlags flags = BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static;
+			return GetMemberByName<PropertyInfo>(name, flags, delegate(PropertyInfo prop) { return prop.PropertyType.Equals(returnType); })
+				?? GetPropertyWithBinder(name, flags, DefaultBinder, returnType, null, null);
+		}
+
+		public PropertyInfo GetProperty(string name, Type[] types)
+		{
+			const BindingFlags flags = BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static;
+			return GetMemberByName<PropertyInfo>(name, flags, delegate(PropertyInfo prop) { return prop.PropertySignature.MatchParameterTypes(types); })
+				?? GetPropertyWithBinder(name, flags, DefaultBinder, null, types, null);
+		}
+
+		public PropertyInfo GetProperty(string name, Type returnType, Type[] types)
+		{
+			return GetProperty(name, returnType, types, null);
+		}
+
+		public PropertyInfo GetProperty(string name, Type returnType, Type[] types, ParameterModifier[] modifiers)
+		{
+			return GetProperty(name, BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static, null, returnType, types, modifiers);
+		}
+
+		public PropertyInfo GetProperty(string name, BindingFlags bindingAttr, Binder binder, Type returnType, Type[] types, ParameterModifier[] modifiers)
+		{
+			return GetMemberByName<PropertyInfo>(name, bindingAttr,
+				delegate(PropertyInfo prop) {
+					return prop.PropertyType.Equals(returnType) && prop.PropertySignature.MatchParameterTypes(types);
+				})
+				?? GetPropertyWithBinder(name, bindingAttr, binder ?? DefaultBinder, returnType, types, modifiers);
+		}
+
+		private PropertyInfo GetPropertyWithBinder(string name, BindingFlags bindingAttr, Binder binder, Type returnType, Type[] types, ParameterModifier[] modifiers)
+		{
+			List<PropertyInfo> list = new List<PropertyInfo>();
+			GetMemberByName<PropertyInfo>(name, bindingAttr, delegate(PropertyInfo property) {
+				list.Add(property);
+				return false;
+			});
+			return binder.SelectProperty(bindingAttr, list.ToArray(), returnType, types, modifiers);
+		}
+
+		public Type GetInterface(string name)
+		{
+			return GetInterface(name, false);
+		}
+
+		public Type GetInterface(string name, bool ignoreCase)
+		{
+			if (ignoreCase)
+			{
+				name = name.ToLowerInvariant();
+			}
+			Type found = null;
+			foreach (Type type in GetInterfaces())
+			{
+				string typeName = type.FullName;
+				if (ignoreCase)
+				{
+					typeName = typeName.ToLowerInvariant();
+				}
+				if (typeName == name)
+				{
+					if (found != null)
+					{
+						throw new AmbiguousMatchException();
+					}
+					found = type;
+				}
+			}
+			return found;
+		}
+
+		public Type[] FindInterfaces(TypeFilter filter, object filterCriteria)
+		{
+			List<Type> list = new List<Type>();
+			foreach (Type type in GetInterfaces())
+			{
+				if (filter(type, filterCriteria))
+				{
+					list.Add(type);
+				}
+			}
+			return list.ToArray();
+		}
+
+		public ConstructorInfo TypeInitializer
+		{
+			get { return GetConstructor(BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic, null, Type.EmptyTypes, null); }
+		}
+
+		public bool IsPrimitive
+		{
+			get
+			{
+				return __IsBuiltIn
+					&& ((sigElementType >= Signature.ELEMENT_TYPE_BOOLEAN && sigElementType <= Signature.ELEMENT_TYPE_R8)
+						|| sigElementType == Signature.ELEMENT_TYPE_I
+						|| sigElementType == Signature.ELEMENT_TYPE_U);
+			}
+		}
+
+		public bool __IsBuiltIn
+		{
+			get
+			{
+				return (typeFlags & (TypeFlags.BuiltIn | TypeFlags.PotentialBuiltIn)) != 0
+					&& ((typeFlags & TypeFlags.BuiltIn) != 0 || ResolvePotentialBuiltInType());
+			}
+		}
+
+		internal byte SigElementType
+		{
+			get
+			{
+				// this property can only be called after __IsBuiltIn, HasElementType, __IsFunctionPointer or IsGenericParameter returned true
+				System.Diagnostics.Debug.Assert((typeFlags & TypeFlags.BuiltIn) != 0 || HasElementType || __IsFunctionPointer || IsGenericParameter);
+				return sigElementType;
+			}
+		}
+
+		private bool ResolvePotentialBuiltInType()
+		{
+			// [ECMA 335] 8.2.2 Built-in value and reference types
+			typeFlags &= ~TypeFlags.PotentialBuiltIn;
+			Universe u = this.Universe;
+			switch (__Name)
+			{
+				case "Boolean":
+					return ResolvePotentialBuiltInType(u.System_Boolean, Signature.ELEMENT_TYPE_BOOLEAN);
+				case "Char":
+					return ResolvePotentialBuiltInType(u.System_Char, Signature.ELEMENT_TYPE_CHAR);
+				case "Object":
+					return ResolvePotentialBuiltInType(u.System_Object, Signature.ELEMENT_TYPE_OBJECT);
+				case "String":
+					return ResolvePotentialBuiltInType(u.System_String, Signature.ELEMENT_TYPE_STRING);
+				case "Single":
+					return ResolvePotentialBuiltInType(u.System_Single, Signature.ELEMENT_TYPE_R4);
+				case "Double":
+					return ResolvePotentialBuiltInType(u.System_Double, Signature.ELEMENT_TYPE_R8);
+				case "SByte":
+					return ResolvePotentialBuiltInType(u.System_SByte, Signature.ELEMENT_TYPE_I1);
+				case "Int16":
+					return ResolvePotentialBuiltInType(u.System_Int16, Signature.ELEMENT_TYPE_I2);
+				case "Int32":
+					return ResolvePotentialBuiltInType(u.System_Int32, Signature.ELEMENT_TYPE_I4);
+				case "Int64":
+					return ResolvePotentialBuiltInType(u.System_Int64, Signature.ELEMENT_TYPE_I8);
+				case "IntPtr":
+					return ResolvePotentialBuiltInType(u.System_IntPtr, Signature.ELEMENT_TYPE_I);
+				case "UIntPtr":
+					return ResolvePotentialBuiltInType(u.System_UIntPtr, Signature.ELEMENT_TYPE_U);
+				case "TypedReference":
+					return ResolvePotentialBuiltInType(u.System_TypedReference, Signature.ELEMENT_TYPE_TYPEDBYREF);
+				case "Byte":
+					return ResolvePotentialBuiltInType(u.System_Byte, Signature.ELEMENT_TYPE_U1);
+				case "UInt16":
+					return ResolvePotentialBuiltInType(u.System_UInt16, Signature.ELEMENT_TYPE_U2);
+				case "UInt32":
+					return ResolvePotentialBuiltInType(u.System_UInt32, Signature.ELEMENT_TYPE_U4);
+				case "UInt64":
+					return ResolvePotentialBuiltInType(u.System_UInt64, Signature.ELEMENT_TYPE_U8);
+				case "Void":	// [LAMESPEC] missing from ECMA list for some reason
+					return ResolvePotentialBuiltInType(u.System_Void, Signature.ELEMENT_TYPE_VOID);
+				default:
+					throw new InvalidOperationException();
+			}
+		}
+
+		private bool ResolvePotentialBuiltInType(Type builtIn, byte elementType)
+		{
+			if (this == builtIn)
+			{
+				typeFlags |= TypeFlags.BuiltIn;
+				this.sigElementType = elementType;
+				return true;
+			}
+			return false;
+		}
+
+		public bool IsEnum
+		{
+			get
+			{
+				Type baseType = this.BaseType;
+				return baseType != null
+					&& baseType.IsEnumOrValueType
+					&& baseType.__Name[0] == 'E';
+			}
+		}
+
+		public bool IsSealed
+		{
+			get { return (Attributes & TypeAttributes.Sealed) != 0; }
+		}
+
+		public bool IsAbstract
+		{
+			get { return (Attributes & TypeAttributes.Abstract) != 0; }
+		}
+
+		private bool CheckVisibility(TypeAttributes access)
+		{
+			return (Attributes & TypeAttributes.VisibilityMask) == access;
+		}
+
+		public bool IsPublic
+		{
+			get { return CheckVisibility(TypeAttributes.Public); }
+		}
+
+		public bool IsNestedPublic
+		{
+			get { return CheckVisibility(TypeAttributes.NestedPublic); }
+		}
+
+		public bool IsNestedPrivate
+		{
+			get { return CheckVisibility(TypeAttributes.NestedPrivate); }
+		}
+
+		public bool IsNestedFamily
+		{
+			get { return CheckVisibility(TypeAttributes.NestedFamily); }
+		}
+
+		public bool IsNestedAssembly
+		{
+			get { return CheckVisibility(TypeAttributes.NestedAssembly); }
+		}
+
+		public bool IsNestedFamANDAssem
+		{
+			get { return CheckVisibility(TypeAttributes.NestedFamANDAssem); }
+		}
+
+		public bool IsNestedFamORAssem
+		{
+			get { return CheckVisibility(TypeAttributes.NestedFamORAssem); }
+		}
+
+		public bool IsNotPublic
+		{
+			get { return CheckVisibility(TypeAttributes.NotPublic); }
+		}
+
+		public bool IsImport
+		{
+			get { return (Attributes & TypeAttributes.Import) != 0; }
+		}
+
+		public bool IsCOMObject
+		{
+			get { return IsClass && IsImport; }
+		}
+
+		public bool IsContextful
+		{
+			get { return IsSubclassOf(this.Module.universe.System_ContextBoundObject); }
+		}
+
+		public bool IsMarshalByRef
+		{
+			get { return IsSubclassOf(this.Module.universe.System_MarshalByRefObject); }
+		}
+
+		public virtual bool IsVisible
+		{
+			get { return IsPublic || (IsNestedPublic && this.DeclaringType.IsVisible); }
+		}
+
+		public bool IsAnsiClass
+		{
+			get { return (Attributes & TypeAttributes.StringFormatMask) == TypeAttributes.AnsiClass; }
+		}
+
+		public bool IsUnicodeClass
+		{
+			get { return (Attributes & TypeAttributes.StringFormatMask) == TypeAttributes.UnicodeClass; }
+		}
+
+		public bool IsAutoClass
+		{
+			get { return (Attributes & TypeAttributes.StringFormatMask) == TypeAttributes.AutoClass; }
+		}
+
+		public bool IsAutoLayout
+		{
+			get { return (Attributes & TypeAttributes.LayoutMask) == TypeAttributes.AutoLayout; }
+		}
+
+		public bool IsLayoutSequential
+		{
+			get { return (Attributes & TypeAttributes.LayoutMask) == TypeAttributes.SequentialLayout; }
+		}
+
+		public bool IsExplicitLayout
+		{
+			get { return (Attributes & TypeAttributes.LayoutMask) == TypeAttributes.ExplicitLayout; }
+		}
+
+		public bool IsSpecialName
+		{
+			get { return (Attributes & TypeAttributes.SpecialName) != 0; }
+		}
+
+		public bool IsSerializable
+		{
+			get { return (Attributes & TypeAttributes.Serializable) != 0; }
+		}
+
+		public bool IsClass
+		{
+			get { return !IsInterface && !IsValueType; }
+		}
+
+		public bool IsInterface
+		{
+			get { return (Attributes & TypeAttributes.Interface) != 0; }
+		}
+
+		public bool IsNested
+		{
+			// FXBUG we check the declaring type (like .NET) and this results
+			// in IsNested returning true for a generic type parameter
+			get { return this.DeclaringType != null; }
+		}
+
+		public bool __ContainsMissingType
+		{
+			get
+			{
+				if ((typeFlags & TypeFlags.ContainsMissingType_Mask) == TypeFlags.ContainsMissingType_Unknown)
+				{
+					// Generic parameter constraints can refer back to the type parameter they are part of,
+					// so to prevent infinite recursion, we set the Pending flag during computation.
+					typeFlags |= TypeFlags.ContainsMissingType_Pending;
+					typeFlags = (typeFlags & ~TypeFlags.ContainsMissingType_Mask) | (ContainsMissingTypeImpl ? TypeFlags.ContainsMissingType_Yes : TypeFlags.ContainsMissingType_No);
+				}
+				return (typeFlags & TypeFlags.ContainsMissingType_Mask) == TypeFlags.ContainsMissingType_Yes;
+			}
+		}
+
+		internal static bool ContainsMissingType(Type[] types)
+		{
+			if (types == null)
+			{
+				return false;
+			}
+			foreach (Type type in types)
+			{
+				if (type.__ContainsMissingType)
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+
+		protected virtual bool ContainsMissingTypeImpl
+		{
+			get
+			{
+				return __IsMissing
+					|| ContainsMissingType(GetGenericArguments())
+					|| __GetCustomModifiers().ContainsMissingType;
+			}
+		}
+
+		public Type MakeArrayType()
+		{
+			return ArrayType.Make(this, new CustomModifiers());
+		}
+
+		public Type __MakeArrayType(CustomModifiers customModifiers)
+		{
+			return ArrayType.Make(this, customModifiers);
+		}
+
+#if !NETSTANDARD
+		[Obsolete("Please use __MakeArrayType(CustomModifiers) instead.")]
+		public Type __MakeArrayType(Type[] requiredCustomModifiers, Type[] optionalCustomModifiers)
+		{
+			return __MakeArrayType(CustomModifiers.FromReqOpt(requiredCustomModifiers, optionalCustomModifiers));
+		}
+#endif
+
+		public Type MakeArrayType(int rank)
+		{
+			return __MakeArrayType(rank, new CustomModifiers());
+		}
+
+		public Type __MakeArrayType(int rank, CustomModifiers customModifiers)
+		{
+			return MultiArrayType.Make(this, rank, Empty<int>.Array, new int[rank], customModifiers);
+		}
+
+#if !NETSTANDARD
+		[Obsolete("Please use __MakeArrayType(int, CustomModifiers) instead.")]
+		public Type __MakeArrayType(int rank, Type[] requiredCustomModifiers, Type[] optionalCustomModifiers)
+		{
+			return __MakeArrayType(rank, CustomModifiers.FromReqOpt(requiredCustomModifiers, optionalCustomModifiers));
+		}
+#endif
+
+		public Type __MakeArrayType(int rank, int[] sizes, int[] lobounds, CustomModifiers customModifiers)
+		{
+			return MultiArrayType.Make(this, rank, sizes ?? Empty<int>.Array, lobounds ?? Empty<int>.Array, customModifiers);
+		}
+
+#if !NETSTANDARD
+		[Obsolete("Please use __MakeArrayType(int, int[], int[], CustomModifiers) instead.")]
+		public Type __MakeArrayType(int rank, int[] sizes, int[] lobounds, Type[] requiredCustomModifiers, Type[] optionalCustomModifiers)
+		{
+			return __MakeArrayType(rank, sizes, lobounds, CustomModifiers.FromReqOpt(requiredCustomModifiers, optionalCustomModifiers));
+		}
+#endif
+
+		public Type MakeByRefType()
+		{
+			return ByRefType.Make(this, new CustomModifiers());
+		}
+
+		public Type __MakeByRefType(CustomModifiers customModifiers)
+		{
+			return ByRefType.Make(this, customModifiers);
+		}
+
+#if !NETSTANDARD
+		[Obsolete("Please use __MakeByRefType(CustomModifiers) instead.")]
+		public Type __MakeByRefType(Type[] requiredCustomModifiers, Type[] optionalCustomModifiers)
+		{
+			return __MakeByRefType(CustomModifiers.FromReqOpt(requiredCustomModifiers, optionalCustomModifiers));
+		}
+#endif
+
+		public Type MakePointerType()
+		{
+			return PointerType.Make(this, new CustomModifiers());
+		}
+
+		public Type __MakePointerType(CustomModifiers customModifiers)
+		{
+			return PointerType.Make(this, customModifiers);
+		}
+
+#if !NETSTANDARD
+		[Obsolete("Please use __MakeByRefType(CustomModifiers) instead.")]
+		public Type __MakePointerType(Type[] requiredCustomModifiers, Type[] optionalCustomModifiers)
+		{
+			return __MakePointerType(CustomModifiers.FromReqOpt(requiredCustomModifiers, optionalCustomModifiers));
+		}
+#endif
+
+		public Type MakeGenericType(params Type[] typeArguments)
+		{
+			return __MakeGenericType(typeArguments, null);
+		}
+
+		public Type __MakeGenericType(Type[] typeArguments, CustomModifiers[] customModifiers)
+		{
+			if (!this.__IsMissing && !this.IsGenericTypeDefinition)
+			{
+				throw new InvalidOperationException();
+			}
+			return GenericTypeInstance.Make(this, Util.Copy(typeArguments), customModifiers == null ? null : (CustomModifiers[])customModifiers.Clone());
+		}
+
+#if !NETSTANDARD
+		[Obsolete("Please use __MakeGenericType(Type[], CustomModifiers[]) instead.")]
+		public Type __MakeGenericType(Type[] typeArguments, Type[][] requiredCustomModifiers, Type[][] optionalCustomModifiers)
+		{
+			if (!this.__IsMissing && !this.IsGenericTypeDefinition)
+			{
+				throw new InvalidOperationException();
+			}
+			CustomModifiers[] mods = null;
+			if (requiredCustomModifiers != null || optionalCustomModifiers != null)
+			{
+				mods = new CustomModifiers[typeArguments.Length];
+				for (int i = 0; i < mods.Length; i++)
+				{
+					mods[i] = CustomModifiers.FromReqOpt(Util.NullSafeElementAt(requiredCustomModifiers, i), Util.NullSafeElementAt(optionalCustomModifiers, i));
+				}
+			}
+			return GenericTypeInstance.Make(this, Util.Copy(typeArguments), mods);
+		}
+#endif
+
+		public static System.Type __GetSystemType(TypeCode typeCode)
+		{
+			switch (typeCode)
+			{
+				case TypeCode.Boolean:
+					return typeof(System.Boolean);
+				case TypeCode.Byte:
+					return typeof(System.Byte);
+				case TypeCode.Char:
+					return typeof(System.Char);
+#if NETSTANDARD
+				case (TypeCode)2:
+					return System.Type.GetType("System.DBNull", true);
+#else
+				case TypeCode.DBNull:
+					return typeof(System.DBNull);
+#endif
+				case TypeCode.DateTime:
+					return typeof(System.DateTime);
+				case TypeCode.Decimal:
+					return typeof(System.Decimal);
+				case TypeCode.Double:
+					return typeof(System.Double);
+				case TypeCode.Empty:
+					return null;
+				case TypeCode.Int16:
+					return typeof(System.Int16);
+				case TypeCode.Int32:
+					return typeof(System.Int32);
+				case TypeCode.Int64:
+					return typeof(System.Int64);
+				case TypeCode.Object:
+					return typeof(System.Object);
+				case TypeCode.SByte:
+					return typeof(System.SByte);
+				case TypeCode.Single:
+					return typeof(System.Single);
+				case TypeCode.String:
+					return typeof(System.String);
+				case TypeCode.UInt16:
+					return typeof(System.UInt16);
+				case TypeCode.UInt32:
+					return typeof(System.UInt32);
+				case TypeCode.UInt64:
+					return typeof(System.UInt64);
+				default:
+					throw new ArgumentOutOfRangeException();
+			}
+		}
+
+		public static TypeCode GetTypeCode(Type type)
+		{
+			if (type == null)
+			{
+				return TypeCode.Empty;
+			}
+			if (!type.__IsMissing && type.IsEnum)
+			{
+				type = type.GetEnumUnderlyingType();
+			}
+			Universe u = type.Module.universe;
+			if (type == u.System_Boolean)
+			{
+				return TypeCode.Boolean;
+			}
+			else if (type == u.System_Char)
+			{
+				return TypeCode.Char;
+			}
+			else if (type == u.System_SByte)
+			{
+				return TypeCode.SByte;
+			}
+			else if (type == u.System_Byte)
+			{
+				return TypeCode.Byte;
+			}
+			else if (type == u.System_Int16)
+			{
+				return TypeCode.Int16;
+			}
+			else if (type == u.System_UInt16)
+			{
+				return TypeCode.UInt16;
+			}
+			else if (type == u.System_Int32)
+			{
+				return TypeCode.Int32;
+			}
+			else if (type == u.System_UInt32)
+			{
+				return TypeCode.UInt32;
+			}
+			else if (type == u.System_Int64)
+			{
+				return TypeCode.Int64;
+			}
+			else if (type == u.System_UInt64)
+			{
+				return TypeCode.UInt64;
+			}
+			else if (type == u.System_Single)
+			{
+				return TypeCode.Single;
+			}
+			else if (type == u.System_Double)
+			{
+				return TypeCode.Double;
+			}
+			else if (type == u.System_DateTime)
+			{
+				return TypeCode.DateTime;
+			}
+			else if (type == u.System_DBNull)
+			{
+#if NETSTANDARD
+				return (TypeCode)2;
+#else
+				return TypeCode.DBNull;
+#endif
+			}
+			else if (type == u.System_Decimal)
+			{
+				return TypeCode.Decimal;
+			}
+			else if (type == u.System_String)
+			{
+				return TypeCode.String;
+			}
+			else if (type.__IsMissing)
+			{
+				throw new MissingMemberException(type);
+			}
+			else
+			{
+				return TypeCode.Object;
+			}
+		}
+
+		public Assembly Assembly
+		{
+			get { return Module.Assembly; }
+		}
+
+		public bool IsAssignableFrom(Type type)
+		{
+			if (this.Equals(type))
+			{
+				return true;
+			}
+			else if (type == null)
+			{
+				return false;
+			}
+			else if (this.IsArray && type.IsArray)
+			{
+				if (this.GetArrayRank() != type.GetArrayRank())
+				{
+					return false;
+				}
+				else if (this.__IsVector && !type.__IsVector)
+				{
+					return false;
+				}
+				Type e1 = this.GetElementType();
+				Type e2 = type.GetElementType();
+				return e1.IsValueType == e2.IsValueType && e1.IsAssignableFrom(e2);
+			}
+			else if (this.IsCovariant(type))
+			{
+				return true;
+			}
+			else if (this.IsSealed)
+			{
+				return false;
+			}
+			else if (this.IsInterface)
+			{
+				foreach (Type iface in type.GetInterfaces())
+				{
+					if (this.Equals(iface) || this.IsCovariant(iface))
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+			else if (type.IsInterface)
+			{
+				return this == this.Module.universe.System_Object;
+			}
+			else if (type.IsPointer)
+			{
+				return this == this.Module.universe.System_Object || this == this.Module.universe.System_ValueType;
+			}
+			else
+			{
+				return type.IsSubclassOf(this);
+			}
+		}
+
+		private bool IsCovariant(Type other)
+		{
+			if (this.IsConstructedGenericType
+				&& other.IsConstructedGenericType
+				&& this.GetGenericTypeDefinition() == other.GetGenericTypeDefinition())
+			{
+				Type[] typeParameters = GetGenericTypeDefinition().GetGenericArguments();
+				for (int i = 0; i < typeParameters.Length; i++)
+				{
+					Type t1 = this.GetGenericTypeArgument(i);
+					Type t2 = other.GetGenericTypeArgument(i);
+					if (t1.IsValueType != t2.IsValueType)
+					{
+						return false;
+					}
+					switch (typeParameters[i].GenericParameterAttributes & GenericParameterAttributes.VarianceMask)
+					{
+						case GenericParameterAttributes.Covariant:
+							if (!t1.IsAssignableFrom(t2))
+							{
+								return false;
+							}
+							break;
+						case GenericParameterAttributes.Contravariant:
+							if (!t2.IsAssignableFrom(t1))
+							{
+								return false;
+							}
+							break;
+						case GenericParameterAttributes.None:
+							if (t1 != t2)
+							{
+								return false;
+							}
+							break;
+					}
+				}
+				return true;
+			}
+			return false;
+		}
+
+		public bool IsSubclassOf(Type type)
+		{
+			Type thisType = this.BaseType;
+			while (thisType != null)
+			{
+				if (thisType.Equals(type))
+				{
+					return true;
+				}
+				thisType = thisType.BaseType;
+			}
+			return false;
+		}
+
+		// This returns true if this type directly (i.e. not inherited from the base class) implements the interface.
+		// Note that a complicating factor is that the interface itself can be implemented by an interface that extends it.
+		private bool IsDirectlyImplementedInterface(Type interfaceType)
+		{
+			foreach (Type iface in __GetDeclaredInterfaces())
+			{
+				if (interfaceType.IsAssignableFrom(iface))
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+
+		public InterfaceMapping GetInterfaceMap(Type interfaceType)
+		{
+			CheckBaked();
+			InterfaceMapping map;
+			map.InterfaceMethods = interfaceType.GetMethods(BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.Public);
+			map.InterfaceType = interfaceType;
+			map.TargetMethods = new MethodInfo[map.InterfaceMethods.Length];
+			map.TargetType = this;
+			FillInInterfaceMethods(interfaceType, map.InterfaceMethods, map.TargetMethods);
+			return map;
+		}
+
+		private void FillInInterfaceMethods(Type interfaceType, MethodInfo[] interfaceMethods, MethodInfo[] targetMethods)
+		{
+			FillInExplicitInterfaceMethods(interfaceMethods, targetMethods);
+			bool direct = IsDirectlyImplementedInterface(interfaceType);
+			if (direct)
+			{
+				FillInImplicitInterfaceMethods(interfaceMethods, targetMethods);
+			}
+			Type baseType = this.BaseType;
+			if (baseType != null)
+			{
+				baseType.FillInInterfaceMethods(interfaceType, interfaceMethods, targetMethods);
+				ReplaceOverriddenMethods(targetMethods);
+			}
+			if (direct)
+			{
+				for (Type type = this.BaseType; type != null && type.Module == Module; type = type.BaseType)
+				{
+					type.FillInImplicitInterfaceMethods(interfaceMethods, targetMethods);
+				}
+			}
+		}
+
+		private void FillInImplicitInterfaceMethods(MethodInfo[] interfaceMethods, MethodInfo[] targetMethods)
+		{
+			MethodBase[] methods = null;
+			for (int i = 0; i < targetMethods.Length; i++)
+			{
+				if (targetMethods[i] == null)
+				{
+					if (methods == null)
+					{
+						methods = __GetDeclaredMethods();
+					}
+					for (int j = 0; j < methods.Length; j++)
+					{
+						if (methods[j].IsVirtual
+							&& methods[j].Name == interfaceMethods[i].Name
+							&& methods[j].MethodSignature.Equals(interfaceMethods[i].MethodSignature))
+						{
+							targetMethods[i] = (MethodInfo)methods[j];
+							break;
+						}
+					}
+				}
+			}
+		}
+
+		private void ReplaceOverriddenMethods(MethodInfo[] baseMethods)
+		{
+			__MethodImplMap impl = __GetMethodImplMap();
+			for (int i = 0; i < baseMethods.Length; i++)
+			{
+				if (baseMethods[i] != null && !baseMethods[i].IsFinal)
+				{
+					MethodInfo def = baseMethods[i].GetBaseDefinition();
+					for (int j = 0; j < impl.MethodDeclarations.Length; j++)
+					{
+						for (int k = 0; k < impl.MethodDeclarations[j].Length; k++)
+						{
+							if (impl.MethodDeclarations[j][k].GetBaseDefinition() == def)
+							{
+								baseMethods[i] = impl.MethodBodies[j];
+								goto next;
+							}
+						}
+					}
+					MethodInfo candidate = FindMethod(def.Name, def.MethodSignature) as MethodInfo;
+					if (candidate != null && candidate.IsVirtual && !candidate.IsNewSlot)
+					{
+						baseMethods[i] = candidate;
+					}
+				}
+			next: ;
+			}
+		}
+
+		internal void FillInExplicitInterfaceMethods(MethodInfo[] interfaceMethods, MethodInfo[] targetMethods)
+		{
+			__MethodImplMap impl = __GetMethodImplMap();
+			for (int i = 0; i < impl.MethodDeclarations.Length; i++)
+			{
+				for (int j = 0; j < impl.MethodDeclarations[i].Length; j++)
+				{
+					int index = Array.IndexOf(interfaceMethods, impl.MethodDeclarations[i][j]);
+					if (index != -1 && targetMethods[index] == null)
+					{
+						targetMethods[index] = impl.MethodBodies[i];
+					}
+				}
+			}
+		}
+
+		Type IGenericContext.GetGenericTypeArgument(int index)
+		{
+			return GetGenericTypeArgument(index);
+		}
+
+		Type IGenericContext.GetGenericMethodArgument(int index)
+		{
+			throw new BadImageFormatException();
+		}
+
+		Type IGenericBinder.BindTypeParameter(Type type)
+		{
+			return GetGenericTypeArgument(type.GenericParameterPosition);
+		}
+
+		Type IGenericBinder.BindMethodParameter(Type type)
+		{
+			throw new BadImageFormatException();
+		}
+
+		internal virtual Type BindTypeParameters(IGenericBinder binder)
+		{
+			if (IsGenericTypeDefinition)
+			{
+				Type[] args = GetGenericArguments();
+				Type.InplaceBindTypeParameters(binder, args);
+				return GenericTypeInstance.Make(this, args, null);
+			}
+			else
+			{
+				return this;
+			}
+		}
+
+		private static void InplaceBindTypeParameters(IGenericBinder binder, Type[] types)
+		{
+			for (int i = 0; i < types.Length; i++)
+			{
+				types[i] = types[i].BindTypeParameters(binder);
+			}
+		}
+
+		internal virtual MethodBase FindMethod(string name, MethodSignature signature)
+		{
+			foreach (MethodBase method in __GetDeclaredMethods())
+			{
+				if (method.Name == name && method.MethodSignature.Equals(signature))
+				{
+					return method;
+				}
+			}
+			return null;
+		}
+
+		internal virtual FieldInfo FindField(string name, FieldSignature signature)
+		{
+			foreach (FieldInfo field in __GetDeclaredFields())
+			{
+				if (field.Name == name && field.FieldSignature.Equals(signature))
+				{
+					return field;
+				}
+			}
+			return null;
+		}
+
+		internal bool IsAllowMultipleCustomAttribute
+		{
+			get
+			{
+				IList<CustomAttributeData> cad = CustomAttributeData.__GetCustomAttributes(this, this.Module.universe.System_AttributeUsageAttribute, false);
+				if (cad.Count == 1)
+				{
+					foreach (CustomAttributeNamedArgument arg in cad[0].NamedArguments)
+					{
+						if (arg.MemberInfo.Name == "AllowMultiple")
+						{
+							return (bool)arg.TypedValue.Value;
+						}
+					}
+				}
+				return false;
+			}
+		}
+
+		internal Type MarkNotValueType()
+		{
+			typeFlags |= TypeFlags.NotValueType;
+			return this;
+		}
+
+		internal Type MarkValueType()
+		{
+			typeFlags |= TypeFlags.ValueType;
+			return this;
+		}
+
+		internal ConstructorInfo GetPseudoCustomAttributeConstructor(params Type[] parameterTypes)
+		{
+			Universe u = this.Module.universe;
+			MethodSignature methodSig = MethodSignature.MakeFromBuilder(u.System_Void, parameterTypes, new PackedCustomModifiers(), CallingConventions.Standard | CallingConventions.HasThis, 0);
+			MethodBase mb =
+				FindMethod(".ctor", methodSig) ??
+				u.GetMissingMethodOrThrow(null, this, ".ctor", methodSig);
+			return (ConstructorInfo)mb;
+		}
+
+		public MethodBase __CreateMissingMethod(string name, CallingConventions callingConvention, Type returnType, CustomModifiers returnTypeCustomModifiers, Type[] parameterTypes, CustomModifiers[] parameterTypeCustomModifiers)
+		{
+			return CreateMissingMethod(name, callingConvention, returnType, parameterTypes, PackedCustomModifiers.CreateFromExternal(returnTypeCustomModifiers, parameterTypeCustomModifiers, parameterTypes.Length));
+		}
+
+		private MethodBase CreateMissingMethod(string name, CallingConventions callingConvention, Type returnType, Type[] parameterTypes, PackedCustomModifiers customModifiers)
+		{
+			MethodSignature sig = new MethodSignature(
+				returnType ?? this.Module.universe.System_Void,
+				Util.Copy(parameterTypes),
+				customModifiers,
+				callingConvention,
+				0);
+			MethodInfo method = new MissingMethod(this, name, sig);
+			if (name == ".ctor" || name == ".cctor")
+			{
+				return new ConstructorInfoImpl(method);
+			}
+			return method;
+		}
+
+#if !NETSTANDARD
+		[Obsolete("Please use __CreateMissingMethod(string, CallingConventions, Type, CustomModifiers, Type[], CustomModifiers[]) instead")]
+		public MethodBase __CreateMissingMethod(string name, CallingConventions callingConvention, Type returnType, Type[] returnTypeRequiredCustomModifiers, Type[] returnTypeOptionalCustomModifiers, Type[] parameterTypes, Type[][] parameterTypeRequiredCustomModifiers, Type[][] parameterTypeOptionalCustomModifiers)
+		{
+			return CreateMissingMethod(name, callingConvention, returnType, parameterTypes, PackedCustomModifiers.CreateFromExternal(returnTypeOptionalCustomModifiers, returnTypeRequiredCustomModifiers, parameterTypeOptionalCustomModifiers, parameterTypeRequiredCustomModifiers, parameterTypes.Length));
+		}
+#endif
+
+		public FieldInfo __CreateMissingField(string name, Type fieldType, CustomModifiers customModifiers)
+		{
+			return new MissingField(this, name, FieldSignature.Create(fieldType, customModifiers));
+		}
+
+#if !NETSTANDARD
+		[Obsolete("Please use __CreateMissingField(string, Type, CustomModifiers) instead")]
+		public FieldInfo __CreateMissingField(string name, Type fieldType, Type[] requiredCustomModifiers, Type[] optionalCustomModifiers)
+		{
+			return __CreateMissingField(name, fieldType, CustomModifiers.FromReqOpt(requiredCustomModifiers, optionalCustomModifiers));
+		}
+#endif
+
+		public PropertyInfo __CreateMissingProperty(string name, CallingConventions callingConvention, Type propertyType, CustomModifiers propertyTypeCustomModifiers, Type[] parameterTypes, CustomModifiers[] parameterTypeCustomModifiers)
+		{
+			PropertySignature sig = PropertySignature.Create(callingConvention,
+				propertyType,
+				parameterTypes,
+				PackedCustomModifiers.CreateFromExternal(propertyTypeCustomModifiers, parameterTypeCustomModifiers, Util.NullSafeLength(parameterTypes)));
+			return new MissingProperty(this, name, sig);
+		}
+
+		internal virtual Type SetMetadataTokenForMissing(int token, int flags)
+		{
+			return this;
+		}
+
+		internal virtual Type SetCyclicTypeForwarder()
+		{
+			return this;
+		}
+
+		internal virtual Type SetCyclicTypeSpec()
+		{
+			return this;
+		}
+
+		protected void MarkKnownType(string typeNamespace, string typeName)
+		{
+			// we assume that mscorlib won't have nested types with these names,
+			// so we don't check that we're not a nested type
+			if (typeNamespace == "System")
+			{
+				switch (typeName)
+				{
+					case "Boolean":
+					case "Char":
+					case "Object":
+					case "String":
+					case "Single":
+					case "Double":
+					case "SByte":
+					case "Int16":
+					case "Int32":
+					case "Int64":
+					case "IntPtr":
+					case "UIntPtr":
+					case "TypedReference":
+					case "Byte":
+					case "UInt16":
+					case "UInt32":
+					case "UInt64":
+					case "Void":
+						typeFlags |= TypeFlags.PotentialBuiltIn;
+						break;
+					case "Enum":
+					case "ValueType":
+						typeFlags |= TypeFlags.PotentialEnumOrValueType;
+						break;
+				}
+			}
+		}
+
+		private bool ResolvePotentialEnumOrValueType()
+		{
+			if (this.Assembly == this.Universe.Mscorlib
+				|| this.Assembly.GetName().Name.Equals("mscorlib", StringComparison.OrdinalIgnoreCase)
+				// check if mscorlib forwards the type (.NETCore profile reference mscorlib forwards System.Enum and System.ValueType to System.Runtime.dll)
+				|| this.Universe.Mscorlib.FindType(TypeName) == this)
+			{
+				typeFlags = (typeFlags & ~TypeFlags.PotentialEnumOrValueType) | TypeFlags.EnumOrValueType;
+				return true;
+			}
+			else
+			{
+				typeFlags &= ~TypeFlags.PotentialEnumOrValueType;
+				return false;
+			}
+		}
+
+		internal bool IsEnumOrValueType
+		{
+			get
+			{
+				return (typeFlags & (TypeFlags.EnumOrValueType | TypeFlags.PotentialEnumOrValueType)) != 0
+					&& ((typeFlags & TypeFlags.EnumOrValueType) != 0 || ResolvePotentialEnumOrValueType());
+			}
+		}
+
+		internal virtual Universe Universe
+		{
+			get { return Module.universe; }
+		}
+
+		internal sealed override bool BindingFlagsMatch(BindingFlags flags)
+		{
+			return BindingFlagsMatch(IsNestedPublic, flags, BindingFlags.Public, BindingFlags.NonPublic);
+		}
+
+		internal sealed override MemberInfo SetReflectedType(Type type)
+		{
+			throw new InvalidOperationException();
+		}
+
+		internal override int GetCurrentToken()
+		{
+			return this.MetadataToken;
+		}
+
+		internal sealed override List<CustomAttributeData> GetPseudoCustomAttributes(Type attributeType)
+		{
+			// types don't have pseudo custom attributes
+			return null;
+		}
+
+		// in .NET this is an extension method, but we target .NET 2.0, so we have an instance method
+		public TypeInfo GetTypeInfo()
+		{
+			TypeInfo type = this as TypeInfo;
+			if (type == null)
+			{
+				throw new MissingMemberException(this);
+			}
+			return type;
+		}
+
+		public virtual bool __IsTypeForwarder
+		{
+			get { return false; }
+		}
+
+		public virtual bool __IsCyclicTypeForwarder
+		{
+			get { return false; }
+		}
+
+		public virtual bool __IsCyclicTypeSpec
+		{
+			get { return false; }
+		}
+	}
+
+	abstract class ElementHolderType : TypeInfo
+	{
+		protected readonly Type elementType;
+		private int token;
+		private readonly CustomModifiers mods;
+
+		protected ElementHolderType(Type elementType, CustomModifiers mods, byte sigElementType)
+			: base(sigElementType)
+		{
+			this.elementType = elementType;
+			this.mods = mods;
+		}
+
+		protected bool EqualsHelper(ElementHolderType other)
+		{
+			return other != null
+				&& other.elementType.Equals(elementType)
+				&& other.mods.Equals(mods);
+		}
+
+		public override CustomModifiers __GetCustomModifiers()
+		{
+			return mods;
+		}
+
+		public sealed override string Name
+		{
+			get { return elementType.Name + GetSuffix(); }
+		}
+
+		public sealed override string Namespace
+		{
+			get { return elementType.Namespace; }
+		}
+
+		public sealed override string FullName
+		{
+			get { return elementType.FullName + GetSuffix(); }
+		}
+
+		public sealed override string ToString()
+		{
+			return elementType.ToString() + GetSuffix();
+		}
+
+		public sealed override Type GetElementType()
+		{
+			return elementType;
+		}
+
+		public sealed override Module Module
+		{
+			get { return elementType.Module; }
+		}
+
+		internal sealed override int GetModuleBuilderToken()
+		{
+			if (token == 0)
+			{
+				token = ((ModuleBuilder)elementType.Module).ImportType(this);
+			}
+			return token;
+		}
+
+		public sealed override bool ContainsGenericParameters
+		{
+			get
+			{
+				Type type = elementType;
+				while (type.HasElementType)
+				{
+					type = type.GetElementType();
+				}
+				return type.ContainsGenericParameters;
+			}
+		}
+
+		protected sealed override bool ContainsMissingTypeImpl
+		{
+			get
+			{
+				Type type = elementType;
+				while (type.HasElementType)
+				{
+					type = type.GetElementType();
+				}
+				return type.__ContainsMissingType
+					|| mods.ContainsMissingType;
+			}
+		}
+
+		protected sealed override bool IsValueTypeImpl
+		{
+			get { return false; }
+		}
+
+		internal sealed override Type BindTypeParameters(IGenericBinder binder)
+		{
+			Type type = elementType.BindTypeParameters(binder);
+			CustomModifiers mods = this.mods.Bind(binder);
+			if (ReferenceEquals(type, elementType)
+				&& mods.Equals(this.mods))
+			{
+				return this;
+			}
+			return Wrap(type, mods);
+		}
+
+		internal override void CheckBaked()
+		{
+			elementType.CheckBaked();
+		}
+
+		internal sealed override Universe Universe
+		{
+			get { return elementType.Universe; }
+		}
+
+		internal sealed override bool IsBaked
+		{
+			get { return elementType.IsBaked; }
+		}
+
+		internal sealed override int GetCurrentToken()
+		{
+			// we don't have a token, so we return 0 (which is never a valid token)
+			return 0;
+		}
+
+		internal abstract string GetSuffix();
+
+		protected abstract Type Wrap(Type type, CustomModifiers mods);
+	}
+
+	sealed class ArrayType : ElementHolderType
+	{
+		internal static Type Make(Type type, CustomModifiers mods)
+		{
+			return type.Universe.CanonicalizeType(new ArrayType(type, mods));
+		}
+
+		private ArrayType(Type type, CustomModifiers mods)
+			: base(type, mods, Signature.ELEMENT_TYPE_SZARRAY)
+		{
+		}
+
+		public override Type BaseType
+		{
+			get { return elementType.Module.universe.System_Array; }
+		}
+
+		public override Type[] __GetDeclaredInterfaces()
+		{
+			return new Type[] {
+				this.Module.universe.Import(typeof(IList<>)).MakeGenericType(elementType),
+				this.Module.universe.Import(typeof(ICollection<>)).MakeGenericType(elementType),
+				this.Module.universe.Import(typeof(IEnumerable<>)).MakeGenericType(elementType)
+			};
+		}
+
+		public override MethodBase[] __GetDeclaredMethods()
+		{
+			Type[] int32 = new Type[] { this.Module.universe.System_Int32 };
+			List<MethodBase> list = new List<MethodBase>();
+			list.Add(new BuiltinArrayMethod(this.Module, this, "Set", CallingConventions.Standard | CallingConventions.HasThis, this.Module.universe.System_Void, new Type[] { this.Module.universe.System_Int32, elementType }));
+			list.Add(new BuiltinArrayMethod(this.Module, this, "Address", CallingConventions.Standard | CallingConventions.HasThis, elementType.MakeByRefType(), int32));
+			list.Add(new BuiltinArrayMethod(this.Module, this, "Get", CallingConventions.Standard | CallingConventions.HasThis, elementType, int32));
+			list.Add(new ConstructorInfoImpl(new BuiltinArrayMethod(this.Module, this, ".ctor", CallingConventions.Standard | CallingConventions.HasThis, this.Module.universe.System_Void, int32)));
+			for (Type type = elementType; type.__IsVector; type = type.GetElementType())
+			{
+				Array.Resize(ref int32, int32.Length + 1);
+				int32[int32.Length - 1] = int32[0];
+				list.Add(new ConstructorInfoImpl(new BuiltinArrayMethod(this.Module, this, ".ctor", CallingConventions.Standard | CallingConventions.HasThis, this.Module.universe.System_Void, int32)));
+			}
+			return list.ToArray();
+		}
+
+		public override TypeAttributes Attributes
+		{
+			get { return TypeAttributes.Public | TypeAttributes.Sealed | TypeAttributes.Serializable; }
+		}
+
+		public override int GetArrayRank()
+		{
+			return 1;
+		}
+
+		public override bool Equals(object o)
+		{
+			return EqualsHelper(o as ArrayType);
+		}
+
+		public override int GetHashCode()
+		{
+			return elementType.GetHashCode() * 5;
+		}
+
+		internal override string GetSuffix()
+		{
+			return "[]";
+		}
+
+		protected override Type Wrap(Type type, CustomModifiers mods)
+		{
+			return Make(type, mods);
+		}
+	}
+
+	sealed class MultiArrayType : ElementHolderType
+	{
+		private readonly int rank;
+		private readonly int[] sizes;
+		private readonly int[] lobounds;
+
+		internal static Type Make(Type type, int rank, int[] sizes, int[] lobounds, CustomModifiers mods)
+		{
+			return type.Universe.CanonicalizeType(new MultiArrayType(type, rank, sizes, lobounds, mods));
+		}
+
+		private MultiArrayType(Type type, int rank, int[] sizes, int[] lobounds, CustomModifiers mods)
+			: base(type, mods, Signature.ELEMENT_TYPE_ARRAY)
+		{
+			this.rank = rank;
+			this.sizes = sizes;
+			this.lobounds = lobounds;
+		}
+
+		public override Type BaseType
+		{
+			get { return elementType.Module.universe.System_Array; }
+		}
+
+		public override MethodBase[] __GetDeclaredMethods()
+		{
+			Type int32 = this.Module.universe.System_Int32;
+			Type[] setArgs = new Type[rank + 1];
+			Type[] getArgs = new Type[rank];
+			Type[] ctorArgs = new Type[rank * 2];
+			for (int i = 0; i < rank; i++)
+			{
+				setArgs[i] = int32;
+				getArgs[i] = int32;
+				ctorArgs[i * 2 + 0] = int32;
+				ctorArgs[i * 2 + 1] = int32;
+			}
+			setArgs[rank] = elementType;
+			return new MethodBase[] {
+				new ConstructorInfoImpl(new BuiltinArrayMethod(this.Module, this, ".ctor", CallingConventions.Standard | CallingConventions.HasThis, this.Module.universe.System_Void, getArgs)),
+				new ConstructorInfoImpl(new BuiltinArrayMethod(this.Module, this, ".ctor", CallingConventions.Standard | CallingConventions.HasThis, this.Module.universe.System_Void, ctorArgs)),
+				new BuiltinArrayMethod(this.Module, this, "Set", CallingConventions.Standard | CallingConventions.HasThis, this.Module.universe.System_Void, setArgs),
+				new BuiltinArrayMethod(this.Module, this, "Address", CallingConventions.Standard | CallingConventions.HasThis, elementType.MakeByRefType(), getArgs),
+				new BuiltinArrayMethod(this.Module, this, "Get", CallingConventions.Standard | CallingConventions.HasThis, elementType, getArgs),
+			};
+		}
+
+		public override TypeAttributes Attributes
+		{
+			get { return TypeAttributes.Public | TypeAttributes.Sealed | TypeAttributes.Serializable; }
+		}
+
+		public override int GetArrayRank()
+		{
+			return rank;
+		}
+
+		public override int[] __GetArraySizes()
+		{
+			return Util.Copy(sizes);
+		}
+
+		public override int[] __GetArrayLowerBounds()
+		{
+			return Util.Copy(lobounds);
+		}
+
+		public override bool Equals(object o)
+		{
+			MultiArrayType at = o as MultiArrayType;
+			return EqualsHelper(at)
+				&& at.rank == rank
+				&& ArrayEquals(at.sizes, sizes)
+				&& ArrayEquals(at.lobounds, lobounds);
+		}
+
+		private static bool ArrayEquals(int[] i1, int[] i2)
+		{
+			if (i1.Length == i2.Length)
+			{
+				for (int i = 0; i < i1.Length; i++)
+				{
+					if (i1[i] != i2[i])
+					{
+						return false;
+					}
+				}
+				return true;
+			}
+			return false;
+		}
+
+		public override int GetHashCode()
+		{
+			return elementType.GetHashCode() * 9 + rank;
+		}
+
+		internal override string GetSuffix()
+		{
+			if (rank == 1)
+			{
+				return "[*]";
+			}
+			else
+			{
+				return "[" + new String(',', rank - 1) + "]";
+			}
+		}
+
+		protected override Type Wrap(Type type, CustomModifiers mods)
+		{
+			return Make(type, rank, sizes, lobounds, mods);
+		}
+	}
+
+	sealed class BuiltinArrayMethod : ArrayMethod
+	{
+		internal BuiltinArrayMethod(Module module, Type arrayClass, string methodName, CallingConventions callingConvention, Type returnType, Type[] parameterTypes)
+			: base(module, arrayClass, methodName, callingConvention, returnType, parameterTypes)
+		{
+		}
+
+		public override MethodAttributes Attributes
+		{
+			get { return this.Name == ".ctor" ? MethodAttributes.RTSpecialName | MethodAttributes.Public : MethodAttributes.Public; }
+		}
+
+		public override MethodImplAttributes GetMethodImplementationFlags()
+		{
+			return MethodImplAttributes.IL;
+		}
+
+		public override int MetadataToken
+		{
+			get { return 0x06000000; }
+		}
+
+		public override MethodBody GetMethodBody()
+		{
+			return null;
+		}
+
+		public override ParameterInfo[] GetParameters()
+		{
+			ParameterInfo[] parameterInfos = new ParameterInfo[parameterTypes.Length];
+			for (int i = 0; i < parameterInfos.Length; i++)
+			{
+				parameterInfos[i] = new ParameterInfoImpl(this, parameterTypes[i], i);
+			}
+			return parameterInfos;
+		}
+
+		public override ParameterInfo ReturnParameter
+		{
+			get { return new ParameterInfoImpl(this, this.ReturnType, -1); }
+		}
+
+		private sealed class ParameterInfoImpl : ParameterInfo
+		{
+			private readonly MethodInfo method;
+			private readonly Type type;
+			private readonly int pos;
+
+			internal ParameterInfoImpl(MethodInfo method, Type type, int pos)
+			{
+				this.method = method;
+				this.type = type;
+				this.pos = pos;
+			}
+
+			public override Type ParameterType
+			{
+				get { return type; }
+			}
+
+			public override string Name
+			{
+				get { return null; }
+			}
+
+			public override ParameterAttributes Attributes
+			{
+				get { return ParameterAttributes.None; }
+			}
+
+			public override int Position
+			{
+				get { return pos; }
+			}
+
+			public override object RawDefaultValue
+			{
+				get { return null; }
+			}
+
+			public override CustomModifiers __GetCustomModifiers()
+			{
+				return new CustomModifiers();
+			}
+
+			public override bool __TryGetFieldMarshal(out FieldMarshal fieldMarshal)
+			{
+				fieldMarshal = new FieldMarshal();
+				return false;
+			}
+
+			public override MemberInfo Member
+			{
+				get { return method.IsConstructor ? (MethodBase)new ConstructorInfoImpl(method) : method; }
+			}
+
+			public override int MetadataToken
+			{
+				get { return 0x08000000; }
+			}
+
+			internal override Module Module
+			{
+				get { return method.Module; }
+			}
+		}
+	}
+
+	sealed class ByRefType : ElementHolderType
+	{
+		internal static Type Make(Type type, CustomModifiers mods)
+		{
+			return type.Universe.CanonicalizeType(new ByRefType(type, mods));
+		}
+
+		private ByRefType(Type type, CustomModifiers mods)
+			: base(type, mods, Signature.ELEMENT_TYPE_BYREF)
+		{
+		}
+
+		public override bool Equals(object o)
+		{
+			return EqualsHelper(o as ByRefType);
+		}
+
+		public override int GetHashCode()
+		{
+			return elementType.GetHashCode() * 3;
+		}
+
+		public override Type BaseType
+		{
+			get { return null; }
+		}
+
+		public override TypeAttributes Attributes
+		{
+			get { return 0; }
+		}
+
+		internal override string GetSuffix()
+		{
+			return "&";
+		}
+
+		protected override Type Wrap(Type type, CustomModifiers mods)
+		{
+			return Make(type, mods);
+		}
+	}
+
+	sealed class PointerType : ElementHolderType
+	{
+		internal static Type Make(Type type, CustomModifiers mods)
+		{
+			return type.Universe.CanonicalizeType(new PointerType(type, mods));
+		}
+
+		private PointerType(Type type, CustomModifiers mods)
+			: base(type, mods, Signature.ELEMENT_TYPE_PTR)
+		{
+		}
+
+		public override bool Equals(object o)
+		{
+			return EqualsHelper(o as PointerType);
+		}
+
+		public override int GetHashCode()
+		{
+			return elementType.GetHashCode() * 7;
+		}
+
+		public override Type BaseType
+		{
+			get { return null; }
+		}
+
+		public override TypeAttributes Attributes
+		{
+			get { return 0; }
+		}
+
+		internal override string GetSuffix()
+		{
+			return "*";
+		}
+
+		protected override Type Wrap(Type type, CustomModifiers mods)
+		{
+			return Make(type, mods);
+		}
+	}
+
+	sealed class GenericTypeInstance : TypeInfo
+	{
+		private readonly Type type;
+		private readonly Type[] args;
+		private readonly CustomModifiers[] mods;
+		private Type baseType;
+		private int token;
+
+		internal static Type Make(Type type, Type[] typeArguments, CustomModifiers[] mods)
+		{
+			bool identity = true;
+			if (type is TypeBuilder || type is BakedType || type.__IsMissing)
+			{
+				// a TypeBuiler identity must be instantiated
+				identity = false;
+			}
+			else
+			{
+				// we must not instantiate the identity instance, because typeof(Foo<>).MakeGenericType(typeof(Foo<>).GetGenericArguments()) == typeof(Foo<>)
+				for (int i = 0; i < typeArguments.Length; i++)
+				{
+					if (typeArguments[i] != type.GetGenericTypeArgument(i)
+						|| !IsEmpty(mods, i))
+					{
+						identity = false;
+						break;
+					}
+				}
+			}
+			if (identity)
+			{
+				return type;
+			}
+			else
+			{
+				return type.Universe.CanonicalizeType(new GenericTypeInstance(type, typeArguments, mods));
+			}
+		}
+
+		private static bool IsEmpty(CustomModifiers[] mods, int i)
+		{
+			// we need to be extra careful, because mods doesn't not need to be in canonical format
+			// (Signature.ReadGenericInst() calls Make() directly, without copying the modifier arrays)
+			return mods == null || mods[i].IsEmpty;
+		}
+
+		private GenericTypeInstance(Type type, Type[] args, CustomModifiers[] mods)
+		{
+			this.type = type;
+			this.args = args;
+			this.mods = mods;
+		}
+
+		public override bool Equals(object o)
+		{
+			GenericTypeInstance gt = o as GenericTypeInstance;
+			return gt != null && gt.type.Equals(type) && Util.ArrayEquals(gt.args, args)
+				&& Util.ArrayEquals(gt.mods, mods);
+		}
+
+		public override int GetHashCode()
+		{
+			return type.GetHashCode() * 3 ^ Util.GetHashCode(args);
+		}
+
+		public override string AssemblyQualifiedName
+		{
+			get
+			{
+				string fn = FullName;
+				return fn == null ? null : fn + ", " + type.Assembly.FullName;
+			}
+		}
+
+		public override Type BaseType
+		{
+			get
+			{
+				if (baseType == null)
+				{
+					Type rawBaseType = type.BaseType;
+					if (rawBaseType == null)
+					{
+						baseType = rawBaseType;
+					}
+					else
+					{
+						baseType = rawBaseType.BindTypeParameters(this);
+					}
+				}
+				return baseType;
+			}
+		}
+
+		protected override bool IsValueTypeImpl
+		{
+			get { return type.IsValueType; }
+		}
+
+		public override bool IsVisible
+		{
+			get
+			{
+				if (base.IsVisible)
+				{
+					foreach (Type arg in args)
+					{
+						if (!arg.IsVisible)
+						{
+							return false;
+						}
+					}
+					return true;
+				}
+				return false;
+			}
+		}
+
+		public override Type DeclaringType
+		{
+			get { return type.DeclaringType; }
+		}
+
+		public override TypeAttributes Attributes
+		{
+			get { return type.Attributes; }
+		}
+
+		internal override void CheckBaked()
+		{
+			type.CheckBaked();
+		}
+
+		public override FieldInfo[] __GetDeclaredFields()
+		{
+			FieldInfo[] fields = type.__GetDeclaredFields();
+			for (int i = 0; i < fields.Length; i++)
+			{
+				fields[i] = fields[i].BindTypeParameters(this);
+			}
+			return fields;
+		}
+
+		public override Type[] __GetDeclaredInterfaces()
+		{
+			Type[] interfaces = type.__GetDeclaredInterfaces();
+			for (int i = 0; i < interfaces.Length; i++)
+			{
+				interfaces[i] = interfaces[i].BindTypeParameters(this);
+			}
+			return interfaces;
+		}
+
+		public override MethodBase[] __GetDeclaredMethods()
+		{
+			MethodBase[] methods = type.__GetDeclaredMethods();
+			for (int i = 0; i < methods.Length; i++)
+			{
+				methods[i] = methods[i].BindTypeParameters(this);
+			}
+			return methods;
+		}
+
+		public override Type[] __GetDeclaredTypes()
+		{
+			return type.__GetDeclaredTypes();
+		}
+
+		public override EventInfo[] __GetDeclaredEvents()
+		{
+			EventInfo[] events = type.__GetDeclaredEvents();
+			for (int i = 0; i < events.Length; i++)
+			{
+				events[i] = events[i].BindTypeParameters(this);
+			}
+			return events;
+		}
+
+		public override PropertyInfo[] __GetDeclaredProperties()
+		{
+			PropertyInfo[] properties = type.__GetDeclaredProperties();
+			for (int i = 0; i < properties.Length; i++)
+			{
+				properties[i] = properties[i].BindTypeParameters(this);
+			}
+			return properties;
+		}
+
+		public override __MethodImplMap __GetMethodImplMap()
+		{
+			__MethodImplMap map = type.__GetMethodImplMap();
+			map.TargetType = this;
+			for (int i = 0; i < map.MethodBodies.Length; i++)
+			{
+				map.MethodBodies[i] = (MethodInfo)map.MethodBodies[i].BindTypeParameters(this);
+				for (int j = 0; j < map.MethodDeclarations[i].Length; j++)
+				{
+					Type interfaceType = map.MethodDeclarations[i][j].DeclaringType;
+					if (interfaceType.IsGenericType)
+					{
+						map.MethodDeclarations[i][j] = (MethodInfo)map.MethodDeclarations[i][j].BindTypeParameters(this);
+					}
+				}
+			}
+			return map;
+		}
+
+		public override string Namespace
+		{
+			get { return type.Namespace; }
+		}
+
+		public override string Name
+		{
+			get { return type.Name; }
+		}
+
+		public override string FullName
+		{
+			get
+			{
+				if (!this.__ContainsMissingType && this.ContainsGenericParameters)
+				{
+					return null;
+				}
+				StringBuilder sb = new StringBuilder(this.type.FullName);
+				sb.Append('[');
+				string sep = "";
+				foreach (Type type in args)
+				{
+					sb.Append(sep).Append('[').Append(type.FullName).Append(", ").Append(type.Assembly.FullName.Replace("]", "\\]")).Append(']');
+					sep = ",";
+				}
+				sb.Append(']');
+				return sb.ToString();
+			}
+		}
+
+		public override string ToString()
+		{
+			StringBuilder sb = new StringBuilder(type.FullName);
+			sb.Append('[');
+			string sep = "";
+			foreach (Type arg in args)
+			{
+				sb.Append(sep);
+				sb.Append(arg);
+				sep = ",";
+			}
+			sb.Append(']');
+			return sb.ToString();
+		}
+
+		public override Module Module
+		{
+			get { return type.Module; }
+		}
+
+		public override bool IsGenericType
+		{
+			get { return true; }
+		}
+
+		public override bool IsConstructedGenericType
+		{
+			get { return true; }
+		}
+
+		public override Type GetGenericTypeDefinition()
+		{
+			return type;
+		}
+
+		public override Type[] GetGenericArguments()
+		{
+			return Util.Copy(args);
+		}
+
+		public override CustomModifiers[] __GetGenericArgumentsCustomModifiers()
+		{
+			return mods != null ? (CustomModifiers[])mods.Clone() : new CustomModifiers[args.Length];
+		}
+
+		internal override Type GetGenericTypeArgument(int index)
+		{
+			return args[index];
+		}
+
+		public override bool ContainsGenericParameters
+		{
+			get
+			{
+				foreach (Type type in args)
+				{
+					if (type.ContainsGenericParameters)
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+		}
+
+		protected override bool ContainsMissingTypeImpl
+		{
+			get { return type.__ContainsMissingType || ContainsMissingType(args); }
+		}
+
+		public override bool __GetLayout(out int packingSize, out int typeSize)
+		{
+			return type.__GetLayout(out packingSize, out typeSize);
+		}
+
+		internal override int GetModuleBuilderToken()
+		{
+			if (token == 0)
+			{
+				token = ((ModuleBuilder)type.Module).ImportType(this);
+			}
+			return token;
+		}
+
+		internal override Type BindTypeParameters(IGenericBinder binder)
+		{
+			for (int i = 0; i < args.Length; i++)
+			{
+				Type xarg = args[i].BindTypeParameters(binder);
+				if (!ReferenceEquals(xarg, args[i]))
+				{
+					Type[] xargs = new Type[args.Length];
+					Array.Copy(args, xargs, i);
+					xargs[i++] = xarg;
+					for (; i < args.Length; i++)
+					{
+						xargs[i] = args[i].BindTypeParameters(binder);
+					}
+					return Make(type, xargs, null);
+				}
+			}
+			return this;
+		}
+
+		internal override int GetCurrentToken()
+		{
+			return type.GetCurrentToken();
+		}
+
+		internal override bool IsBaked
+		{
+			get { return type.IsBaked; }
+		}
+	}
+
+	sealed class FunctionPointerType : TypeInfo
+	{
+		private readonly Universe universe;
+		private readonly __StandAloneMethodSig sig;
+
+		internal static Type Make(Universe universe, __StandAloneMethodSig sig)
+		{
+			return universe.CanonicalizeType(new FunctionPointerType(universe, sig));
+		}
+
+		private FunctionPointerType(Universe universe, __StandAloneMethodSig sig)
+			: base(Signature.ELEMENT_TYPE_FNPTR)
+		{
+			this.universe = universe;
+			this.sig = sig;
+		}
+
+		public override bool Equals(object obj)
+		{
+			FunctionPointerType other = obj as FunctionPointerType;
+			return other != null
+				&& other.universe == universe
+				&& other.sig.Equals(sig);
+		}
+
+		public override int GetHashCode()
+		{
+			return sig.GetHashCode();
+		}
+
+		public override __StandAloneMethodSig __MethodSignature
+		{
+			get { return sig; }
+		}
+
+		public override Type BaseType
+		{
+			get { return null; }
+		}
+
+		public override TypeAttributes Attributes
+		{
+			get { return 0; }
+		}
+
+		public override string Name
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		public override string FullName
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		public override Module Module
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		internal override Universe Universe
+		{
+			get { return universe; }
+		}
+
+		public override string ToString()
+		{
+			return "<FunctionPtr>";
+		}
+
+		protected override bool ContainsMissingTypeImpl
+		{
+			get { return sig.ContainsMissingType; }
+		}
+
+		internal override bool IsBaked
+		{
+			get { return true; }
+		}
+
+		protected override bool IsValueTypeImpl
+		{
+			get { return false; }
+		}
+	}
+
+	sealed class MarkerType : Type
+	{
+		// used by CustomModifiers and SignatureHelper
+		internal static readonly Type ModOpt = new MarkerType(Signature.ELEMENT_TYPE_CMOD_OPT);
+		internal static readonly Type ModReq = new MarkerType(Signature.ELEMENT_TYPE_CMOD_REQD);
+		// used by SignatureHelper
+		internal static readonly Type Sentinel = new MarkerType(Signature.SENTINEL);
+		internal static readonly Type Pinned = new MarkerType(Signature.ELEMENT_TYPE_PINNED);
+		// used by ModuleReader.LazyForwardedType and TypeSpec resolution
+		internal static readonly Type LazyResolveInProgress = new MarkerType(0xFF);
+
+		private MarkerType(byte sigElementType)
+			: base(sigElementType)
+		{
+		}
+
+		public override Type BaseType
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		public override TypeAttributes Attributes
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		public override string Name
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		public override string FullName
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		public override Module Module
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		internal override bool IsBaked
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		public override bool __IsMissing
+		{
+			get { return false; }
+		}
+
+		protected override bool IsValueTypeImpl
+		{
+			get { throw new InvalidOperationException(); }
+		}
+	}
+}
+@
+
+
+1.115
+log
+@Implemented Type.GetEnumName() in a way that is compatible with NETSTANDARD.
+@
+text
+@d178 1
+d190 1
+d354 1
+d378 1
+d1549 1
+d1555 1
+d1567 1
+d1573 1
+d1580 1
+d1586 1
+d1598 1
+d1604 1
+d1616 1
+d1622 1
+d1638 1
+d1657 1
+d2163 1
+d2169 1
+d2176 1
+d2182 1
+@
+
+
+1.114
+log
+@Implemented Type.IsContextful and Type.IsMarshalByRef without relying on Import.
+@
+text
+@a544 1
+#if !CORECLR
+d557 1
+a557 1
+				value = Convert.ChangeType(value, GetTypeCode(GetEnumUnderlyingType()));
+a579 1
+#endif
+@
+
+
+1.113
+log
+@Added support for building against .NET Standard 1.3.
+@
+text
+@a1423 1
+#if !CORECLR
+d1426 1
+a1426 1
+			get { return IsSubclassOf(this.Module.universe.Import(typeof(ContextBoundObject))); }
+d1431 1
+a1431 1
+			get { return IsSubclassOf(this.Module.universe.Import(typeof(MarshalByRefObject))); }
+a1432 1
+#endif
+@
+
+
+1.112
+log
+@Added supported for cyclic TypeSpec.
+@
+text
+@d409 3
+d413 1
+d416 3
+d420 1
+d597 1
+a597 1
+			if (System.Type.GetTypeCode(value.GetType()) != GetTypeCode(GetEnumUnderlyingType()))
+d1657 4
+d1663 1
+d1762 3
+d1766 1
+@
+
+
+1.111
+log
+@Added a dedicated MarkerType for circular type forwarding detection, instead of abusing MarkerType.Pinned.
+@
+text
+@d2170 5
+d2283 5
+d3254 1
+a3254 1
+		// used by ModuleReader.LazyForwardedType
+@
+
+
+1.110
+log
+@Added caching to Type.IsValueType.
+@
+text
+@d3244 2
+@
+
+
+1.109
+log
+@Added Type.__GetGenericParameterConstraintCustomModifiers() API.
+@
+text
+@d61 1
+a61 1
+			// for use by MissingType
+d225 1
+a225 1
+		public virtual bool IsValueType
+d229 8
+a236 4
+				Type baseType = this.BaseType;
+				return baseType != null
+					&& baseType.IsEnumOrValueType
+					&& !this.IsEnumOrValueType;
+d240 5
+d2223 1
+a2223 1
+		private bool IsEnumOrValueType
+d2371 5
+d2891 1
+a2891 1
+		public override bool IsValueType
+d3229 5
+d3284 5
+@
+
+
+1.108
+log
+@Use sigElementType for MarkerType.
+@
+text
+@d462 5
+@
+
+
+1.107
+log
+@Use sigElementType to implement IsGenericParameter.
+@
+text
+@d3215 2
+a3216 2
+		internal static readonly Type ModOpt = new MarkerType();
+		internal static readonly Type ModReq = new MarkerType();
+d3218 2
+a3219 2
+		internal static readonly Type Sentinel = new MarkerType();
+		internal static readonly Type Pinned = new MarkerType();
+d3221 4
+a3224 1
+		private MarkerType() { }
+@
+
+
+1.106
+log
+@Use sigElementType to implement __IsFunctionPointer.
+@
+text
+@d49 1
+a49 1
+		private byte sigElementType;	// only used if (__IsBuiltIn || HasElementType || __IsFunctionPointer)
+d236 1
+a236 1
+		public virtual bool IsGenericParameter
+d238 1
+a238 1
+			get { return false; }
+d1261 2
+a1262 2
+				// this property can only be called after __IsBuiltIn, HasElementType or __IsFunctionPointer returned true
+				System.Diagnostics.Debug.Assert((typeFlags & TypeFlags.BuiltIn) != 0 || HasElementType || __IsFunctionPointer);
+@
+
+
+1.105
+log
+@Optimized Array, ByRef and Pointer types by storing the signature element type.
+@
+text
+@d49 1
+a49 1
+		private byte sigElementType;	// only used if (__IsBuiltIn || HasElementType)
+d220 1
+a220 1
+		public virtual bool __IsFunctionPointer
+d222 1
+a222 1
+			get { return false; }
+d1261 2
+a1262 2
+				// this property can only be called after __IsBuiltIn or HasElementType returned true
+				System.Diagnostics.Debug.Assert((typeFlags & TypeFlags.BuiltIn) != 0 || HasElementType);
+d3142 1
+a3160 5
+		public override bool __IsFunctionPointer
+		{
+			get { return true; }
+		}
+
+@
+
+
+1.104
+log
+@Optimized built-in type handling a bit.
+@
+text
+@d49 1
+a49 1
+		private byte elementType;	// only used if __IsBuiltIn returns true
+d97 6
+d195 1
+a195 1
+		public virtual bool HasElementType
+d197 1
+a197 1
+			get { return false; }
+d200 1
+a200 1
+		public virtual bool IsArray
+d202 1
+a202 1
+			get { return false; }
+d205 1
+a205 1
+		public virtual bool __IsVector
+d207 1
+a207 1
+			get { return false; }
+d210 1
+a210 1
+		public virtual bool IsByRef
+d212 1
+a212 1
+			get { return false; }
+d215 1
+a215 1
+		public virtual bool IsPointer
+d217 1
+a217 1
+			get { return false; }
+d1242 3
+a1244 3
+					&& ((elementType >= Signature.ELEMENT_TYPE_BOOLEAN && elementType <= Signature.ELEMENT_TYPE_R8)
+						|| elementType == Signature.ELEMENT_TYPE_I
+						|| elementType == Signature.ELEMENT_TYPE_U);
+d1257 1
+a1257 1
+		internal byte BuiltInElementType
+d1261 3
+a1263 3
+				// this property can only be called after __IsBuiltIn returned true
+				System.Diagnostics.Debug.Assert((typeFlags & TypeFlags.BuiltIn) != 0);
+				return elementType;
+d1320 1
+a1320 1
+				this.elementType = elementType;
+d2272 2
+a2273 1
+		protected ElementHolderType(Type elementType, CustomModifiers mods)
+a2315 5
+		public sealed override bool HasElementType
+		{
+			get { return true; }
+		}
+
+d2403 1
+a2403 1
+			: base(type, mods)
+a2442 10
+		public override bool IsArray
+		{
+			get { return true; }
+		}
+
+		public override bool __IsVector
+		{
+			get { return true; }
+		}
+
+d2481 1
+a2481 1
+			: base(type, mods)
+a2520 5
+		public override bool IsArray
+		{
+			get { return true; }
+		}
+
+d2700 1
+a2700 1
+			: base(type, mods)
+a2723 5
+		public override bool IsByRef
+		{
+			get { return true; }
+		}
+
+d2743 1
+a2743 1
+			: base(type, mods)
+a2766 5
+		public override bool IsPointer
+		{
+			get { return true; }
+		}
+
+@
+
+
+1.103
+log
+@Added new public APIs to help deal with built-in types even when they are not defined in mscorlib:
+- Type.__IsBuiltIn
+- Universe.GetBuiltInType(string ns, string name)
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009-2013 Jeroen Frijters
+d49 1
+d52 1
+a52 1
+		protected enum TypeFlags
+d78 4
+d1235 4
+a1238 16
+				Universe u = this.Universe;
+				return this == u.System_Boolean
+					|| this == u.System_Byte
+					|| this == u.System_SByte
+					|| this == u.System_Int16
+					|| this == u.System_UInt16
+					|| this == u.System_Int32
+					|| this == u.System_UInt32
+					|| this == u.System_Int64
+					|| this == u.System_UInt64
+					|| this == u.System_IntPtr
+					|| this == u.System_UIntPtr
+					|| this == u.System_Char
+					|| this == u.System_Double
+					|| this == u.System_Single
+					;
+d1246 70
+a1315 21
+				// [ECMA 335] 8.2.2 Built-in value and reference types
+				Universe u = this.Universe;
+				return this == u.System_Boolean
+					|| this == u.System_Char
+					|| this == u.System_Object
+					|| this == u.System_String
+					|| this == u.System_Single
+					|| this == u.System_Double
+					|| this == u.System_SByte
+					|| this == u.System_Int16
+					|| this == u.System_Int32
+					|| this == u.System_Int64
+					|| this == u.System_IntPtr
+					|| this == u.System_UIntPtr
+					|| this == u.System_TypedReference
+					|| this == u.System_Byte
+					|| this == u.System_UInt16
+					|| this == u.System_UInt32
+					|| this == u.System_UInt64
+					|| this == u.System_Void		// [LAMESPEC] missing from ECMA list for some reason
+					;
+d1317 1
+d2150 1
+a2150 1
+		protected void MarkEnumOrValueType(string typeNamespace, string typeName)
+d2154 1
+a2154 2
+			if (typeNamespace == "System"
+				&& (typeName == "Enum" || typeName == "ValueType"))
+d2156 27
+a2182 1
+				typeFlags |= TypeFlags.PotentialEnumOrValueType;
+@
+
+
+1.102
+log
+@Added internal Type.TypeName virtual property to retrieve type name with a single virtual method call.
+@
+text
+@d1249 28
+@
+
+
+1.101
+log
+@Added CoreCLR target for IKVM.Reflection.
+@
+text
+@d250 1
+a250 1
+		public virtual string __Name
+d255 1
+a255 1
+		public virtual string __Namespace
+d257 6
+a262 1
+			get { throw new InvalidOperationException(); }
+d1072 1
+a1072 1
+				if (type.__Namespace == name.Namespace && type.__Name == name.Name)
+d1084 1
+a1084 1
+				if (new TypeName(type.__Namespace, type.__Name).ToLowerInvariant() == lowerCaseName)
+d2095 1
+a2095 1
+				|| this.Universe.Mscorlib.FindType(new TypeName(__Namespace, __Name)) == this)
+@
+
+
+1.100
+log
+@Rewrote Type.GetInterfaceMap().
+@
+text
+@d507 1
+d543 1
+d1320 1
+d1330 1
+@
+
+
+1.99
+log
+@Bug fix. Only virtual methods can implement interface methods and once we find the method, we should stop looking (i.e. more derived method wins).
+@
+text
+@d1804 24
+a1827 2
+			InterfaceMapping map = new InterfaceMapping();
+			if (!IsDirectlyImplementedInterface(interfaceType))
+d1829 1
+a1829 6
+				Type baseType = this.BaseType;
+				if (baseType == null)
+				{
+					throw new ArgumentException();
+				}
+				else
+d1831 1
+a1831 2
+					map = baseType.GetInterfaceMap(interfaceType);
+					ReplaceOverriddenMethods(map.TargetMethods);
+d1834 6
+a1839 1
+			else
+d1841 1
+a1841 6
+				map.InterfaceMethods = interfaceType.GetMethods(BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.Public);
+				map.InterfaceType = interfaceType;
+				map.TargetMethods = new MethodInfo[map.InterfaceMethods.Length];
+				FillInExplicitInterfaceMethods(map.InterfaceMethods, map.TargetMethods);
+				MethodInfo[] methods = GetMethods(BindingFlags.Instance | BindingFlags.Public);
+				for (int i = 0; i < map.TargetMethods.Length; i++)
+d1843 5
+a1847 1
+					if (map.TargetMethods[i] == null)
+d1849 3
+a1851 2
+						// TODO use proper method resolution (also take into account that no implicit base class implementation is used across assembly boundaries)
+						for (int j = 0; j < methods.Length; j++)
+d1853 2
+a1854 7
+							if (methods[j].IsVirtual
+								&& methods[j].Name == map.InterfaceMethods[i].Name
+								&& methods[j].MethodSignature.Equals(map.InterfaceMethods[i].MethodSignature))
+							{
+								map.TargetMethods[i] = methods[j];
+								break;
+							}
+a1857 4
+				for (Type baseType = this.BaseType; baseType != null && interfaceType.IsAssignableFrom(baseType); baseType = baseType.BaseType)
+				{
+					baseType.FillInExplicitInterfaceMethods(map.InterfaceMethods, map.TargetMethods);
+				}
+a1858 2
+			map.TargetType = this;
+			return map;
+d1866 1
+a1866 1
+				if (!baseMethods[i].IsFinal)
+@
+
+
+1.98
+log
+@Bug fix. Type.GetInterfaceMap() should return overriden methods for interface methods implemented by base classes.
+https://github.com/mono/ikvm-fork/issues/5
+@
+text
+@d1832 2
+a1833 1
+							if (methods[j].Name == map.InterfaceMethods[i].Name
+d1837 1
+@
+
+
+1.97
+log
+@When a cyclic type forwarder is found and UniverseOptions.ResolveMissingMembers is set, we should not throw an exception but instead create a missing type. Added a new Type.__IsCyclicTypeForwarder property to allow detecting this case.
+@
+text
+@d1815 1
+d1849 29
+@
+
+
+1.96
+log
+@Removed unused method.
+@
+text
+@d2023 5
+d2106 5
+@
+
+
+1.95
+log
+@Implemented Type.StructLayoutAttribute in Type.
+@
+text
+@a1948 22
+		internal bool IsPseudoCustomAttribute
+		{
+			get
+			{
+				Universe u = this.Module.universe;
+				return this == u.System_NonSerializedAttribute
+					|| this == u.System_SerializableAttribute
+					|| this == u.System_Runtime_InteropServices_DllImportAttribute
+					|| this == u.System_Runtime_InteropServices_FieldOffsetAttribute
+					|| this == u.System_Runtime_InteropServices_InAttribute
+					|| this == u.System_Runtime_InteropServices_MarshalAsAttribute
+					|| this == u.System_Runtime_InteropServices_OutAttribute
+					|| this == u.System_Runtime_InteropServices_StructLayoutAttribute
+					|| this == u.System_Runtime_InteropServices_OptionalAttribute
+					|| this == u.System_Runtime_InteropServices_PreserveSigAttribute
+					|| this == u.System_Runtime_InteropServices_ComImportAttribute
+					|| this == u.System_Runtime_CompilerServices_SpecialNameAttribute
+					|| this == u.System_Runtime_CompilerServices_MethodImplAttribute
+					;
+			}
+		}
+
+@
+
+
+1.94
+log
+@Implemented Universe.ResolvedMissingMember event for fields, methods and properties.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009-2012 Jeroen Frijters
+d356 1
+a356 1
+		public virtual StructLayoutAttribute StructLayoutAttribute
+d358 39
+a396 1
+			get { return null; }
+d2974 1
+a2974 1
+		public override StructLayoutAttribute StructLayoutAttribute
+d2976 1
+a2976 1
+			get { return type.StructLayoutAttribute; }
+@
+
+
+1.93
+log
+@Added Universe.ResolvedMissingMember event.
+@
+text
+@d1951 1
+a1951 1
+				u.GetMissingMethodOrThrow(this, ".ctor", methodSig);
+@
+
+
+1.92
+log
+@Fixed TypeFlags encoding of ContainsMissingType to use only two bits.
+@
+text
+@d1017 1
+a1017 1
+		internal Type ResolveNestedType(TypeName typeName)
+d1019 1
+a1019 1
+			return FindNestedType(typeName) ?? Module.universe.GetMissingTypeOrThrow(Module, this, typeName);
+@
+
+
+1.91
+log
+@- Implemented __ContainsMissingType for function pointer types.
+- Changed __ContainsMissingType to take custom modifiers into account.
+@
+text
+@d75 2
+a76 2
+			ContainsMissingType_No = 1024,
+			ContainsMissingType_Mask = 256 | 512 | 1024,
+@
+
+
+1.90
+log
+@Added caching for Type.__ContainsMissingType property to simplify the prevention of infinite recursion while evaluating generic parameter constraints.
+@
+text
+@d1367 1
+a1367 1
+		protected virtual bool ContainsMissingTypeImpl
+d1369 5
+a1373 1
+			get
+d1375 1
+a1375 1
+				if (this.__IsMissing)
+d1379 11
+a1389 8
+				foreach (Type arg in this.GetGenericArguments())
+				{
+					if (arg.__ContainsMissingType)
+					{
+						return true;
+					}
+				}
+				return false;
+d2177 2
+a2178 1
+				return type.__ContainsMissingType;
+d2933 1
+a2933 11
+			get
+			{
+				foreach (Type type in args)
+				{
+					if (type.__ContainsMissingType)
+					{
+						return true;
+					}
+				}
+				return this.type.__IsMissing;
+			}
+d3055 5
+d3109 1
+a3109 1
+			get { throw new InvalidOperationException(); }
+@
+
+
+1.89
+log
+@Added Type.__IsTypeForwarder property to let mcs distinguish between "normal" missing types and forwarded missing types.
+@
+text
+@d70 7
+d1352 16
+a1367 1
+		public virtual bool __ContainsMissingType
+d2161 1
+a2161 1
+		public sealed override bool __ContainsMissingType
+d2923 1
+a2923 1
+		public override bool __ContainsMissingType
+@
+
+
+1.88
+log
+@Refactored BeginCatchBlock and BeginExceptFilterBlock to get rid of the last MarkerType.
+@
+text
+@d1973 1
+a1973 1
+		internal virtual Type SetMetadataTokenForMissing(int token)
+d2051 5
+@
+
+
+1.87
+log
+@Added new .NET 4.0 methods Type.GetEnumNames(), Type.GetEnumName() and Type.IsEnumDefined().
+@
+text
+@a3037 4
+		// used by ILGenerator
+		internal static readonly Type Fault = new MarkerType();
+		internal static readonly Type Finally = new MarkerType();
+		internal static readonly Type Filter = new MarkerType();
+@
+
+
+1.86
+log
+@Added new .NET 4.5 property Type.GenericTypeArguments.
+@
+text
+@d445 81
+@
+
+
+1.85
+log
+@Implemented caching for TypeDefImpl.IsGenericTypeDefinition property.
+@
+text
+@d305 5
+@
+
+
+1.84
+log
+@Added TypeInfo (from .NET 4.5).
+@
+text
+@d53 3
+a56 1
+			IsGenericTypeDefinition = 1,
+d64 1
+a64 1
+			// for use by TypeDef, TypeBuilder or MissingType
+d67 3
+@
+
+
+1.83
+log
+@Bug fix. When enumerating virtual methods, we should only skip match actual base methods, not any method with the same signature.
+@
+text
+@d1949 11
+d1962 1
+a1962 1
+	abstract class ElementHolderType : Type
+d2502 1
+a2502 1
+	sealed class GenericTypeInstance : Type
+d2865 1
+a2865 1
+	sealed class FunctionPointerType : Type
+d2989 5
+@
+
+
+1.82
+log
+@Regression fix. GetCurrentToken() should be implemented for GenericTypeInstance to allow custom attributes to be retrieved from generic type instances.
+@
+text
+@d804 1
+a804 1
+								else if (FindMethod(baseMethods, mi.GetBaseDefinition()))
+a817 12
+		private static bool FindMethod(List<MethodInfo> methods, MethodInfo method)
+		{
+			foreach (MethodInfo m in methods)
+			{
+				if (m.Name == method.Name && m.MethodSignature.Equals(method.MethodSignature))
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+
+@
+
+
+1.81
+log
+@Moved InterfaceImpl custom attribute handling to CustomAttributeData.
+@
+text
+@d2855 5
+@
+
+
+1.80
+log
+@Added leading zero to hardcoded token value for consistency.
+@
+text
+@a1935 5
+		internal virtual IList<CustomAttributeData> GetInterfaceImplCustomAttributes(Type interfaceType, Type attributeType)
+		{
+			throw new NotSupportedException();
+		}
+
+@
+
+
+1.79
+log
+@Refactored custom attribute handling of MemberInfo types.
+@
+text
+@d2402 1
+a2402 1
+				get { return 0x8000000; }
+@
+
+
+1.78
+log
+@- Changed [Field|Parameter]Info.__FieldMarshal property to __TryGetFieldMarshal method.
+- Changed FieldMarshal class into a value type with public fields.
+@
+text
+@d1788 1
+a1788 1
+				IList<CustomAttributeData> cad = GetCustomAttributesData(this.Module.universe.System_AttributeUsageAttribute);
+d1955 11
+d2079 6
+a2084 1
+		internal sealed override IList<CustomAttributeData> GetCustomAttributesData(Type attributeType)
+d2086 1
+a2086 1
+			return CustomAttributeData.EmptyList;
+d2089 1
+a2089 1
+		internal sealed override Universe Universe
+d2091 2
+a2092 1
+			get { return elementType.Universe; }
+d2860 1
+a2860 1
+		internal override IList<CustomAttributeData> GetCustomAttributesData(Type attributeType)
+d2862 1
+a2862 1
+			return type.GetCustomAttributesData(attributeType);
+d2939 5
+d2985 5
+@
+
+
+1.77
+log
+@- Added new public APIs FieldInfo.__FieldMarshal and ParameterInfo.__FieldMarshal.
+- Moved ParameterInfo pseudo custom attribute handling to CustomAttributeData.
+- Ignore HasFieldMarshal attribute and always return the pseudo custom attribute if a FieldMarshal record exists. This is similar to .NET reflection.
+@
+text
+@d2372 1
+a2372 1
+			public override FieldMarshal __FieldMarshal
+d2374 2
+a2375 1
+				get { return null; }
+@
+
+
+1.76
+log
+@Support mscorlib that forwards System.Enum and System.ValueType to another assembly (as .NETCore reference mscorlib does).
+@
+text
+@d2372 5
+@
+
+
+1.75
+log
+@Added co-/contra-variance support to Type.IsAssignableFrom().
+@
+text
+@d1912 4
+a1915 1
+			if (this.Assembly == this.Universe.Mscorlib || this.Assembly.GetName().Name.Equals("mscorlib", StringComparison.OrdinalIgnoreCase))
+@
+
+
+1.74
+log
+@Added new .NET 4.5 API Type.IsConstructedGenericType.
+@
+text
+@a1527 1
+		// note that interface/delegate co- and contravariance is not considered
+d1552 4
+d1562 8
+a1569 1
+				return Array.IndexOf(type.GetInterfaces(), this) != -1;
+d1585 42
+@
+
+
+1.73
+log
+@Fixed regression. Type.GetConstructor() should also return the class constructor. This also fixes Type.TypeInitializer.
+@
+text
+@d361 2
+a362 1
+		internal virtual bool IsGenericTypeInstance
+d2693 1
+a2693 1
+		internal override bool IsGenericTypeInstance
+@
+
+
+1.72
+log
+@Bug fix. Type.GetInterfaces() should work for unbaked types.
+@
+text
+@d896 22
+d919 1
+a919 1
+			return GetMemberByName<ConstructorInfo>(ConstructorInfo.ConstructorName, bindingAttr | BindingFlags.DeclaredOnly,
+d921 1
+a921 1
+				?? GetMethodWithBinder<ConstructorInfo>(ConstructorInfo.ConstructorName, bindingAttr, binder ?? DefaultBinder, types, modifiers);
+@
+
+
+1.71
+log
+@Simplified SignatureHelper implementation to make it more compatible with .NET and more efficient.
+@
+text
+@a756 1
+			type.CheckBaked();
+@
+
+
+1.70
+log
+@Moved MarkerType from ILGenerator.cs to Type.cs and made all instances static fields in MarkerType.
+@
+text
+@d2847 1
+a2847 1
+		// used by CustomModifiers
+d2850 3
+@
+
+
+1.69
+log
+@Regression fix. When GetMethods(DeclaredOnly) is called, we should not call GetBaseDefinition because it is unnecessary and causes problems when one of the base classes is missing. Thanks to Marek Safar for reporting this.
+@
+text
+@d2840 38
+@
+
+
+1.69.2.1
+log
+@Backported: Bug fix. Type.GetInterfaces() should work for unbaked types.
+@
+text
+@d757 1
+@
+
+
+1.68
+log
+@Added Binder support for method and property lookup.
+@
+text
+@a771 1
+			List<MethodInfo> baseMethods = null;
+d777 8
+a786 4
+						if (baseMethods == null)
+						{
+							baseMethods = new List<MethodInfo>();
+						}
+a788 1
+					list.Add(mi);
+a789 3
+			}
+			if ((bindingAttr & BindingFlags.DeclaredOnly) == 0)
+			{
+@
+
+
+1.67
+log
+@Added MemberInfo.ReflectedType.
+@
+text
+@d82 1
+a82 1
+			get { return null; }
+d858 1
+d860 13
+a872 1
+				delegate(MethodInfo method) { return method.MethodSignature.MatchParameterTypes(types); });
+d898 1
+d900 2
+a901 1
+				delegate(ConstructorInfo ctor) { return ctor.MethodSignature.MatchParameterTypes(types); });
+d984 3
+a986 1
+			return GetMemberByName<PropertyInfo>(name, BindingFlags.Default, delegate(PropertyInfo prop) { return prop.PropertyType.Equals(returnType); });
+d991 3
+a993 17
+			return GetMemberByName<PropertyInfo>(name, BindingFlags.Default, delegate(PropertyInfo prop) { return MatchParameterTypes(prop.GetIndexParameters(), types); });
+		}
+
+		private static bool MatchParameterTypes(ParameterInfo[] parameters, Type[] types)
+		{
+			if (parameters.Length == types.Length)
+			{
+				for (int i = 0; i < parameters.Length; i++)
+				{
+					if (!parameters[i].ParameterType.Equals(types[i]))
+					{
+						return false;
+					}
+				}
+				return true;
+			}
+			return false;
+d1010 13
+a1022 2
+					return prop.PropertyType.Equals(returnType) && MatchParameterTypes(prop.GetIndexParameters(), types);
+				});
+@
+
+
+1.66
+log
+@Moved member lookup by name to a common implementation that fixes a number of bugs and adds IgnoreCase support.
+@
+text
+@d627 1
+a627 1
+							list.Add((T)member);
+d690 1
+a690 1
+								found = (T)member;
+d811 1
+a811 1
+							list.Add(mi);
+d1860 5
+@
+
+
+1.65
+log
+@Fixed GetMethods() to properly filter out base class methods that have been overridden.
+@
+text
+@d524 10
+a533 1
+			MemberFilter filter = delegate(MemberInfo member, object filterCriteria) { return member.Name.Equals(filterCriteria); };
+d635 70
+d712 1
+a712 8
+			foreach (EventInfo evt in GetEvents(bindingAttr))
+			{
+				if (evt.Name == name)
+				{
+					return evt;
+				}
+			}
+			return null;
+d732 1
+a732 8
+			foreach (FieldInfo field in GetFields(bindingAttr))
+			{
+				if (field.Name == name)
+				{
+					return field;
+				}
+			}
+			return null;
+d843 1
+a843 13
+			MethodInfo found = null;
+			foreach (MethodInfo method in GetMethods(bindingAttr))
+			{
+				if (method.Name == name)
+				{
+					if (found != null)
+					{
+						throw new AmbiguousMatchException();
+					}
+					found = method;
+				}
+			}
+			return found;
+d858 2
+a859 13
+			MethodInfo found = null;
+			foreach (MethodInfo method in GetMethods(bindingAttr))
+			{
+				if (method.Name == name && method.MethodSignature.MatchParameterTypes(types))
+				{
+					if (found != null)
+					{
+						throw new AmbiguousMatchException();
+					}
+					found = method;
+				}
+			}
+			return found;
+d885 2
+a886 8
+			foreach (ConstructorInfo constructor in GetConstructors(bindingAttr))
+			{
+				if (constructor.MethodSignature.MatchParameterTypes(types))
+				{
+					return constructor;
+				}
+			}
+			return null;
+d932 2
+a933 9
+			foreach (Type type in GetNestedTypes(bindingAttr))
+			{
+				// FXBUG the namespace is ignored
+				if (type.__Name == name)
+				{
+					return type;
+				}
+			}
+			return null;
+d964 1
+a964 8
+			foreach (PropertyInfo prop in GetProperties(bindingAttr))
+			{
+				if (prop.Name == name)
+				{
+					return prop;
+				}
+			}
+			return null;
+d969 1
+a969 13
+			PropertyInfo found = null;
+			foreach (PropertyInfo prop in GetProperties())
+			{
+				if (prop.Name == name && prop.PropertyType.Equals(returnType))
+				{
+					if (found != null)
+					{
+						throw new AmbiguousMatchException();
+					}
+					found = prop;
+				}
+			}
+			return found;
+d974 1
+a974 13
+			PropertyInfo found = null;
+			foreach (PropertyInfo prop in GetProperties())
+			{
+				if (prop.Name == name && MatchParameterTypes(prop.GetIndexParameters(), types))
+				{
+					if (found != null)
+					{
+						throw new AmbiguousMatchException();
+					}
+					found = prop;
+				}
+			}
+			return found;
+d1005 4
+a1008 13
+			PropertyInfo found = null;
+			foreach (PropertyInfo prop in GetProperties(bindingAttr))
+			{
+				if (prop.Name == name && prop.PropertyType.Equals(returnType) && MatchParameterTypes(prop.GetIndexParameters(), types))
+				{
+					if (found != null)
+					{
+						throw new AmbiguousMatchException();
+					}
+					found = prop;
+				}
+			}
+			return found;
+@
+
+
+1.64
+log
+@Moved GetEvents(), GetFields(), GetConstructors(), GetNestedTypes() and GetProperties() to a common implementation that fixes a number of bugs.
+@
+text
+@d707 1
+d711 1
+a711 3
+				if (mi != null
+					&& BindingFlagsMatch(mi.IsPublic, bindingAttr, BindingFlags.Public, BindingFlags.NonPublic)
+					&& BindingFlagsMatch(mi.IsStatic, bindingAttr, BindingFlags.Static, BindingFlags.Instance))
+d713 8
+d732 1
+a732 5
+						if (mi != null
+							&& (mi.Attributes & MethodAttributes.MemberAccessMask) > MethodAttributes.Private
+							&& BindingFlagsMatch(mi.IsPublic, bindingAttr, BindingFlags.Public, BindingFlags.NonPublic)
+							&& BindingFlagsMatch(mi.IsStatic, bindingAttr, BindingFlags.Static | BindingFlags.FlattenHierarchy, BindingFlags.Instance)
+							&& !FindMethod(list, mi))
+d734 12
+@
+
+
+1.63
+log
+@Implemented case insensitive lookup in Type.GetInterface().
+@
+text
+@d569 57
+d650 1
+a650 27
+			List<EventInfo> list = new List<EventInfo>();
+			Type type = this;
+			while (type != null)
+			{
+				type.CheckBaked();
+				foreach (EventInfo evt in type.__GetDeclaredEvents())
+				{
+					if (BindingFlagsMatch(evt.IsPublic, bindingAttr, BindingFlags.Public, BindingFlags.NonPublic)
+						&& BindingFlagsMatch(evt.IsStatic, bindingAttr, BindingFlags.Static, BindingFlags.Instance))
+					{
+						list.Add(evt);
+					}
+				}
+				if ((bindingAttr & BindingFlags.DeclaredOnly) == 0)
+				{
+					if ((bindingAttr & BindingFlags.FlattenHierarchy) == 0)
+					{
+						bindingAttr &= ~BindingFlags.Static;
+					}
+					type = type.BaseType;
+				}
+				else
+				{
+					break;
+				}
+			}
+			return list.ToArray();
+d677 1
+a677 26
+			List<FieldInfo> list = new List<FieldInfo>();
+			CheckBaked();
+			foreach (FieldInfo field in __GetDeclaredFields())
+			{
+				if (BindingFlagsMatch(field.IsPublic, bindingAttr, BindingFlags.Public, BindingFlags.NonPublic)
+					&& BindingFlagsMatch(field.IsStatic, bindingAttr, BindingFlags.Static, BindingFlags.Instance))
+				{
+					list.Add(field);
+				}
+			}
+			if ((bindingAttr & BindingFlags.DeclaredOnly) == 0)
+			{
+				for (Type type = this.BaseType; type != null; type = type.BaseType)
+				{
+					type.CheckBaked();
+					foreach (FieldInfo field in type.__GetDeclaredFields())
+					{
+						if ((field.Attributes & FieldAttributes.FieldAccessMask) > FieldAttributes.Private
+							&& BindingFlagsMatch(field.IsStatic, bindingAttr, BindingFlags.Static | BindingFlags.FlattenHierarchy, BindingFlags.Instance))
+						{
+							list.Add(field);
+						}
+					}
+				}
+			}
+			return list.ToArray();
+d818 1
+a818 13
+			CheckBaked();
+			List<ConstructorInfo> list = new List<ConstructorInfo>();
+			foreach (MethodBase mb in __GetDeclaredMethods())
+			{
+				ConstructorInfo constructor = mb as ConstructorInfo;
+				if (constructor != null
+					&& BindingFlagsMatch(constructor.IsPublic, bindingAttr, BindingFlags.Public, BindingFlags.NonPublic)
+					&& BindingFlagsMatch(constructor.IsStatic, bindingAttr, BindingFlags.Static, BindingFlags.Instance))
+				{
+					list.Add(constructor);
+				}
+			}
+			return list.ToArray();
+d899 2
+a900 10
+			CheckBaked();
+			List<Type> list = new List<Type>();
+			foreach (Type type in __GetDeclaredTypes())
+			{
+				if (BindingFlagsMatch(type.IsNestedPublic, bindingAttr, BindingFlags.Public, BindingFlags.NonPublic))
+				{
+					list.Add(type);
+				}
+			}
+			return list.ToArray();
+d910 1
+a910 27
+			List<PropertyInfo> list = new List<PropertyInfo>();
+			Type type = this;
+			while (type != null)
+			{
+				type.CheckBaked();
+				foreach (PropertyInfo property in type.__GetDeclaredProperties())
+				{
+					if (BindingFlagsMatch(property.IsPublic, bindingAttr, BindingFlags.Public, BindingFlags.NonPublic)
+						&& BindingFlagsMatch(property.IsStatic, bindingAttr, BindingFlags.Static, BindingFlags.Instance))
+					{
+						list.Add(property);
+					}
+				}
+				if ((bindingAttr & BindingFlags.DeclaredOnly) == 0)
+				{
+					if ((bindingAttr & BindingFlags.FlattenHierarchy) == 0)
+					{
+						bindingAttr &= ~BindingFlags.Static;
+					}
+					type = type.BaseType;
+				}
+				else
+				{
+					break;
+				}
+			}
+			return list.ToArray();
+d1851 5
+@
+
+
+1.62
+log
+@Added support for case-insensitive type lookup.
+@
+text
+@d1056 1
+a1056 1
+				throw new NotImplementedException();
+d1058 1
+d1061 2
+a1062 1
+				if (type.FullName == name)
+d1064 9
+a1072 1
+					return type;
+d1075 1
+a1075 1
+			return null;
+@
+
+
+1.61
+log
+@Added Type.__CreateMissingProperty() API to enable symbolic properties in custom attributes.
+@
+text
+@d868 12
+@
+
+
+1.60
+log
+@Support building an "mscorlib" assembly that is not named mscorlib.
+@
+text
+@d1812 9
+@
+
+
+1.59
+log
+@Added support for function pointer types.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009-2011 Jeroen Frijters
+d63 2
+a64 1
+			EnumOrValueType = 32,
+d208 2
+a209 2
+					&& (baseType.typeFlags & TypeFlags.EnumOrValueType) != 0
+					&& (typeFlags & TypeFlags.EnumOrValueType) == 0;
+d1103 1
+a1103 1
+					&& (baseType.typeFlags & TypeFlags.EnumOrValueType) != 0
+d1819 1
+a1819 1
+			// we don't assume that mscorlib won't have nested types with these names,
+d1822 1
+a1822 2
+				&& (typeName == "Enum" || typeName == "ValueType")
+				&& this.Assembly.GetName().Name.Equals("mscorlib", StringComparison.OrdinalIgnoreCase))
+d1824 24
+a1847 1
+				typeFlags |= TypeFlags.EnumOrValueType;
+@
+
+
+1.58
+log
+@- Rewrote custom modifier handling to retain ordering.
+- Added ConstructorInfo.__ReturnParameter to expose custom modifiers.
+- Added __GetCustomModifiers() to various *Info types.
+- Added CustomModifiers type to encapsulate a custom modifier sequence.
+- Added CustomModifiersBuilder to create a CustomModifiers sequence.
+- Marked a number of IKVM.Reflection specific methods Obsolete, because they are replaced with method that take CustomModifiers value(s).
+@
+text
+@d166 5
+d196 5
+d1077 1
+a1077 1
+				Universe u = this.Module.universe;
+d1832 5
+d1955 5
+d1969 1
+a1969 1
+			return type.Module.CanonicalizeType(new ArrayType(type, mods));
+d2057 1
+a2057 1
+			return type.Module.CanonicalizeType(new MultiArrayType(type, rank, sizes, lobounds, mods));
+d2275 1
+a2275 1
+			return type.Module.CanonicalizeType(new ByRefType(type, mods));
+d2323 1
+a2323 1
+			return type.Module.CanonicalizeType(new PointerType(type, mods));
+d2402 1
+a2402 1
+				return type.Module.CanonicalizeType(new GenericTypeInstance(type, typeArguments, mods));
+d2724 75
+@
+
+
+1.57
+log
+@Added API extension to query custom attributes on interfaceimpl records.
+@
+text
+@d149 1
+a149 1
+		public virtual Type[] __GetRequiredCustomModifiers()
+d151 7
+a157 1
+			return Type.EmptyTypes;
+d160 2
+a161 1
+		public virtual Type[] __GetOptionalCustomModifiers()
+d163 1
+a163 1
+			return Type.EmptyTypes;
+d294 1
+a294 1
+		public virtual Type[][] __GetGenericArgumentsRequiredCustomModifiers()
+d296 13
+a308 1
+			return Empty<Type[]>.Array;
+d311 2
+a312 1
+		public virtual Type[][] __GetGenericArgumentsOptionalCustomModifiers()
+d314 7
+a320 1
+			return Empty<Type[]>.Array;
+d1255 1
+a1255 1
+			return ArrayType.Make(this, null, null);
+d1258 6
+d1266 1
+a1266 1
+			return ArrayType.Make(this, Util.Copy(requiredCustomModifiers), Util.Copy(optionalCustomModifiers));
+d1271 6
+a1276 1
+			return MultiArrayType.Make(this, rank, Empty<int>.Array, new int[rank], null, null);
+d1279 1
+d1282 6
+a1287 1
+			return MultiArrayType.Make(this, rank, Empty<int>.Array, new int[rank], Util.Copy(requiredCustomModifiers), Util.Copy(optionalCustomModifiers));
+d1290 1
+d1293 1
+a1293 1
+			return MultiArrayType.Make(this, rank, sizes ?? Empty<int>.Array, lobounds ?? Empty<int>.Array, Util.Copy(requiredCustomModifiers), Util.Copy(optionalCustomModifiers));
+d1298 1
+a1298 1
+			return ByRefType.Make(this, null, null);
+d1301 6
+d1309 1
+a1309 1
+			return ByRefType.Make(this, Util.Copy(requiredCustomModifiers), Util.Copy(optionalCustomModifiers));
+d1314 6
+a1319 1
+			return PointerType.Make(this, null, null);
+d1322 1
+d1325 1
+a1325 1
+			return PointerType.Make(this, Util.Copy(requiredCustomModifiers), Util.Copy(optionalCustomModifiers));
+d1330 10
+a1339 1
+			return __MakeGenericType(typeArguments, null, null);
+d1342 1
+d1349 10
+a1358 1
+			return GenericTypeInstance.Make(this, Util.Copy(typeArguments), Util.Copy(requiredCustomModifiers), Util.Copy(optionalCustomModifiers));
+d1660 1
+a1660 1
+				return GenericTypeInstance.Make(this, args, null, null);
+d1668 1
+a1668 1
+		internal static void InplaceBindTypeParameters(IGenericBinder binder, Type[] types)
+d1756 1
+a1756 1
+			MethodSignature methodSig = MethodSignature.MakeFromBuilder(u.System_Void, parameterTypes, null, CallingConventions.Standard | CallingConventions.HasThis, 0);
+d1763 6
+a1768 1
+		public MethodBase __CreateMissingMethod(string name, CallingConventions callingConvention, Type returnType, Type[] returnTypeRequiredCustomModifiers, Type[] returnTypeOptionalCustomModifiers, Type[] parameterTypes, Type[][] parameterTypeRequiredCustomModifiers, Type[][] parameterTypeOptionalCustomModifiers)
+d1773 1
+a1773 1
+				PackedCustomModifiers.CreateFromExternal(returnTypeOptionalCustomModifiers, returnTypeRequiredCustomModifiers, parameterTypeOptionalCustomModifiers, parameterTypeRequiredCustomModifiers, parameterTypes.Length),
+d1784 12
+d1798 1
+a1798 1
+			return new MissingField(this, name, FieldSignature.Create(fieldType, optionalCustomModifiers, requiredCustomModifiers));
+d1828 1
+a1828 2
+		private readonly Type[] requiredCustomModifiers;
+		private readonly Type[] optionalCustomModifiers;
+d1830 1
+a1830 1
+		protected ElementHolderType(Type elementType, Type[] requiredCustomModifiers, Type[] optionalCustomModifiers)
+d1833 1
+a1833 2
+			this.requiredCustomModifiers = requiredCustomModifiers;
+			this.optionalCustomModifiers = optionalCustomModifiers;
+d1840 1
+a1840 7
+				&& Util.ArrayEquals(other.requiredCustomModifiers, requiredCustomModifiers)
+				&& Util.ArrayEquals(other.optionalCustomModifiers, optionalCustomModifiers);
+		}
+
+		public override Type[] __GetRequiredCustomModifiers()
+		{
+			return Util.Copy(requiredCustomModifiers);
+d1843 1
+a1843 1
+		public override Type[] __GetOptionalCustomModifiers()
+d1845 1
+a1845 1
+			return Util.Copy(optionalCustomModifiers);
+d1921 1
+a1921 2
+			Type[] req = BindArray(requiredCustomModifiers, binder);
+			Type[] opt = BindArray(optionalCustomModifiers, binder);
+d1923 1
+a1923 2
+				&& ReferenceEquals(req, requiredCustomModifiers)
+				&& ReferenceEquals(opt, optionalCustomModifiers))
+d1927 1
+a1927 1
+			return Wrap(type, req, opt);
+a1934 22
+		private static Type[] BindArray(Type[] array, IGenericBinder binder)
+		{
+			if (array ==null || array.Length == 0)
+			{
+				return array;
+			}
+			Type[] result = array;
+			for (int i = 0; i < array.Length; i++)
+			{
+				Type type = array[i].BindTypeParameters(binder);
+				if (!ReferenceEquals(type, array[i]))
+				{
+					if (result == array)
+					{
+						result = (Type[])array.Clone();
+					}
+					result[i] = type;
+				}
+			}
+			return result;
+		}
+
+d1942 1
+a1942 1
+		protected abstract Type Wrap(Type type, Type[] requiredCustomModifiers, Type[] optionalCustomModifiers);
+d1947 1
+a1947 1
+		internal static Type Make(Type type, Type[] requiredCustomModifiers, Type[] optionalCustomModifiers)
+d1949 1
+a1949 1
+			return type.Module.CanonicalizeType(new ArrayType(type, requiredCustomModifiers, optionalCustomModifiers));
+d1952 2
+a1953 2
+		private ArrayType(Type type, Type[] requiredCustomModifiers, Type[] optionalCustomModifiers)
+			: base(type, requiredCustomModifiers, optionalCustomModifiers)
+d2023 1
+a2023 1
+		protected override Type Wrap(Type type, Type[] requiredCustomModifiers, Type[] optionalCustomModifiers)
+d2025 1
+a2025 1
+			return Make(type, requiredCustomModifiers, optionalCustomModifiers);
+d2035 1
+a2035 1
+		internal static Type Make(Type type, int rank, int[] sizes, int[] lobounds, Type[] requiredCustomModifiers, Type[] optionalCustomModifiers)
+d2037 1
+a2037 1
+			return type.Module.CanonicalizeType(new MultiArrayType(type, rank, sizes, lobounds, requiredCustomModifiers, optionalCustomModifiers));
+d2040 2
+a2041 2
+		private MultiArrayType(Type type, int rank, int[] sizes, int[] lobounds, Type[] requiredCustomModifiers, Type[] optionalCustomModifiers)
+			: base(type, requiredCustomModifiers, optionalCustomModifiers)
+d2143 1
+a2143 1
+		protected override Type Wrap(Type type, Type[] requiredCustomModifiers, Type[] optionalCustomModifiers)
+d2145 1
+a2145 1
+			return Make(type, rank, sizes, lobounds, requiredCustomModifiers, optionalCustomModifiers);
+d2229 1
+a2229 1
+			public override Type[] GetOptionalCustomModifiers()
+d2231 1
+a2231 6
+				return Empty<Type>.Array;
+			}
+
+			public override Type[] GetRequiredCustomModifiers()
+			{
+				return Empty<Type>.Array;
+d2253 1
+a2253 1
+		internal static Type Make(Type type, Type[] requiredCustomModifiers, Type[] optionalCustomModifiers)
+d2255 1
+a2255 1
+			return type.Module.CanonicalizeType(new ByRefType(type, requiredCustomModifiers, optionalCustomModifiers));
+d2258 2
+a2259 2
+		private ByRefType(Type type, Type[] requiredCustomModifiers, Type[] optionalCustomModifiers)
+			: base(type, requiredCustomModifiers, optionalCustomModifiers)
+d2293 1
+a2293 1
+		protected override Type Wrap(Type type, Type[] requiredCustomModifiers, Type[] optionalCustomModifiers)
+d2295 1
+a2295 1
+			return Make(type, requiredCustomModifiers, optionalCustomModifiers);
+d2301 1
+a2301 1
+		internal static Type Make(Type type, Type[] requiredCustomModifiers, Type[] optionalCustomModifiers)
+d2303 1
+a2303 1
+			return type.Module.CanonicalizeType(new PointerType(type, requiredCustomModifiers, optionalCustomModifiers));
+d2306 2
+a2307 2
+		private PointerType(Type type, Type[] requiredCustomModifiers, Type[] optionalCustomModifiers)
+			: base(type, requiredCustomModifiers, optionalCustomModifiers)
+d2341 1
+a2341 1
+		protected override Type Wrap(Type type, Type[] requiredCustomModifiers, Type[] optionalCustomModifiers)
+d2343 1
+a2343 1
+			return Make(type, requiredCustomModifiers, optionalCustomModifiers);
+d2351 1
+a2351 2
+		private readonly Type[][] requiredCustomModifiers;
+		private readonly Type[][] optionalCustomModifiers;
+d2355 1
+a2355 1
+		internal static Type Make(Type type, Type[] typeArguments, Type[][] requiredCustomModifiers, Type[][] optionalCustomModifiers)
+d2369 1
+a2369 2
+						|| !IsEmpty(requiredCustomModifiers, i)
+						|| !IsEmpty(optionalCustomModifiers, i))
+d2382 1
+a2382 1
+				return type.Module.CanonicalizeType(new GenericTypeInstance(type, typeArguments, requiredCustomModifiers, optionalCustomModifiers));
+d2386 1
+a2386 1
+		private static bool IsEmpty(Type[][] mods, int i)
+d2390 1
+a2390 1
+			return mods == null || mods[i] == null || mods[i].Length == 0;
+d2393 1
+a2393 1
+		private GenericTypeInstance(Type type, Type[] args, Type[][] requiredCustomModifiers, Type[][] optionalCustomModifiers)
+d2397 1
+a2397 2
+			this.requiredCustomModifiers = requiredCustomModifiers;
+			this.optionalCustomModifiers = optionalCustomModifiers;
+d2404 1
+a2404 2
+				&& Util.ArrayEquals(gt.requiredCustomModifiers, requiredCustomModifiers)
+				&& Util.ArrayEquals(gt.optionalCustomModifiers, optionalCustomModifiers);
+d2625 1
+a2625 6
+		public override Type[][] __GetGenericArgumentsRequiredCustomModifiers()
+		{
+			return Util.Copy(requiredCustomModifiers ?? new Type[args.Length][]);
+		}
+
+		public override Type[][] __GetGenericArgumentsOptionalCustomModifiers()
+d2627 1
+a2627 1
+			return Util.Copy(optionalCustomModifiers ?? new Type[args.Length][]);
+d2693 1
+a2693 1
+					return Make(type, xargs, null, null);
+@
+
+
+1.56
+log
+@Use a bit in typeFlags to mark System.Enum and System.ValueType and detect them dynamically, to allow multiple mscorlib versions to be used.
+@
+text
+@d1725 5
+@
+
+
+1.55
+log
+@Added support for array Type sizes/lower bounds.
+@
+text
+@d58 1
+a58 1
+			// for general use
+d61 3
+d74 1
+d76 1
+d189 3
+a191 2
+				return baseType == this.Module.universe.System_Enum
+					|| (baseType == this.Module.universe.System_ValueType && this != this.Module.universe.System_Enum);
+d1062 7
+a1068 1
+			get { return this.BaseType == this.Module.universe.System_Enum; }
+d1713 12
+@
+
+
+1.54
+log
+@- Added API extension to query the types exported from a module.
+- Fixed __AddTypeForwarder() to handle missing types.
+@
+text
+@d357 10
+d1227 1
+a1227 1
+			return MultiArrayType.Make(this, rank, null, null);
+d1232 6
+a1237 1
+			return MultiArrayType.Make(this, rank, Util.Copy(requiredCustomModifiers), Util.Copy(optionalCustomModifiers));
+d1943 2
+d1946 1
+a1946 1
+		internal static Type Make(Type type, int rank, Type[] requiredCustomModifiers, Type[] optionalCustomModifiers)
+d1948 1
+a1948 1
+			return type.Module.CanonicalizeType(new MultiArrayType(type, rank, requiredCustomModifiers, optionalCustomModifiers));
+d1951 1
+a1951 1
+		private MultiArrayType(Type type, int rank, Type[] requiredCustomModifiers, Type[] optionalCustomModifiers)
+d1955 2
+d2002 10
+d2015 20
+a2034 1
+			return EqualsHelper(at) && at.rank == rank;
+d2056 1
+a2056 1
+			return Make(type, rank, requiredCustomModifiers, optionalCustomModifiers);
+@
+
+
+1.53
+log
+@Added API extension for creating missing methods and fields.
+@
+text
+@d1681 5
+@
+
+
+1.52
+log
+@- Removed TypeBuilder.__SetStructLayoutAttribute().
+- Added TypeBuilder.__SetLayout().
+- Added Type.__GetLayout().
+- Fixed Type.StructLayoutAttribute to be compatible with .NET.
+@
+text
+@d1660 21
+@
+
+
+1.51
+log
+@Type parameter type names need not assembly qualified if the types live in the current assembly.
+@
+text
+@d301 7
+@
+
+
+1.50
+log
+@Bug fix:
+- Type parameters should be separated by commas.
+- Only the assembly name should escape the ']' characters.
+@
+text
+@d1803 1
+a1803 1
+		protected abstract string GetSuffix();
+d1881 1
+a1881 1
+		protected override string GetSuffix()
+d1961 1
+a1961 1
+		protected override string GetSuffix()
+d2123 1
+a2123 1
+		protected override string GetSuffix()
+d2171 1
+a2171 1
+		protected override string GetSuffix()
+@
+
+
+1.49
+log
+@Allow Type.FullName to be used on generic type instance that uses missing type as a type parameter.
+@
+text
+@d2413 1
+d2416 2
+a2417 1
+					sb.Append('[').Append(type.AssemblyQualifiedName.Replace("]", "\\]")).Append(']');
+@
+
+
+1.48
+log
+@Allow Type.GetTypeCode() to work with missing mscorlib (for primitive types).
+@
+text
+@d2407 1
+a2407 1
+				if (this.ContainsGenericParameters)
+@
+
+
+1.47
+log
+@Add support for returning pseudo-custom attributes based on missing types.
+@
+text
+@d1303 1
+a1303 1
+			if (type.IsEnum)
+d1372 4
+@
+
+
+1.46
+log
+@Added Type.IsGenericTypeInstance to make it easier (and more efficient) to test for generic type instantiations. Note that this property can be called on missing types (it will return false), unlike both IsGenericType and IsGenericTypeDefinition.
+@
+text
+@d1639 10
+@
+
+
+1.45
+log
+@Allow MakeGenericType() to be used on missing type.
+@
+text
+@d311 5
+d2433 5
+@
+
+
+1.44
+log
+@Added support for missing fields.
+@
+text
+@d1240 1
+a1240 1
+			if (!this.IsGenericTypeDefinition)
+@
+
+
+1.43
+log
+@Allow missing types and methods to be used in emitted assembly.
+@
+text
+@d1570 1
+a1570 1
+		internal FieldInfo FindField(string name, FieldSignature signature)
+@
+
+
+1.42
+log
+@Optimized the Type == operator.
+@
+text
+@d48 14
+d1622 12
+@
+
+
+1.42.2.1
+log
+@Back ported fixes:
+- Bug fix. BeginExceptFilterBlock() should behave like BeginCatchBlock(), not BeginFinallyBlock().
+- Fix for http://gcc.gnu.org/bugzilla/show_bug.cgi?id=48131.
+- Bug fix. Support loading resources from assemblies added to the boot classloader (with ikvm.runtime.Startup.addBootClassPathAssemby()).
+- Type parameters should be separated by commas.
+- Only the assembly name should escape the ']' characters.
+- Bug fix. <Module> should not extend object.
+- Bug fix. String literals that are invalid UTF-16 should not be "corrected".
+- Bug fix. MaxStack returned incorrect value for tiny header methods.
+- Fix. Module does not inherit members from Object.
+- Align initialized data arrays.
+- Align managed resources on 8 bytes.
+@
+text
+@a2367 1
+				string sep = "";
+d2370 1
+a2370 2
+					sb.Append(sep).Append('[').Append(type.FullName).Append(", ").Append(type.Assembly.FullName.Replace("]", "\\]")).Append(']');
+					sep = ",";
+@
+
+
+1.41
+log
+@Added support for resolving methods in missing types (primarily to enable CustomAttributeData.Constructor to work for missing attribute types).
+@
+text
+@d47 1
+d52 6
+d190 1
+a190 1
+		public virtual Type UnderlyingSystemType
+d192 1
+a192 1
+			get { return this; }
+d232 14
+d248 1
+a248 1
+			return !ReferenceEquals(type, null) && ReferenceEquals(type.UnderlyingSystemType, this.UnderlyingSystemType);
+a2352 5
+		public override Type UnderlyingSystemType
+		{
+			get { return this; }
+		}
+
+@
+
+
+1.40
+log
+@Add support for reflecting on assemblies without loading mscorlib (or with partial mscorlib) when missing type resolution is enabled.
+@
+text
+@a1138 5
+		public bool __IsMissing
+		{
+			get { return this is MissingType; }
+		}
+
+d1523 1
+a1523 1
+		internal MethodBase FindMethod(string name, MethodSignature signature)
+@
+
+
+1.39
+log
+@Move missing type support into universe and optionally allow missing types to be resolved inside all Assemblies.
+@
+text
+@d752 1
+a752 1
+			return FindNestedType(typeName) ?? Module.universe.GetMissingType(Module, this, typeName);
+@
+
+
+1.38
+log
+@More type name fixes. This time to support the fact that the CLR and Mono both treat TypeNamespace and TypeName as separate names and do not consider fullName to be relevant.
+@
+text
+@d750 1
+a750 1
+		internal virtual Type ResolveNestedType(TypeName typeName)
+d752 1
+a752 1
+			return FindNestedType(typeName);
+d756 1
+a756 1
+		internal Type FindNestedType(TypeName name)
+@
+
+
+1.37
+log
+@Fix for GenericTypeInstance.__ContainsMissingType. Thanks to Marek for reporting this.
+@
+text
+@d750 1
+a750 1
+		private static bool MatchTypeNames(string ns, string name, string fullName)
+d752 1
+a752 19
+			if (ns == null)
+			{
+				return name == fullName;
+			}
+			else if (ns.Length + 1 + name.Length == fullName.Length)
+			{
+				return fullName[ns.Length] == '.'
+					&& String.CompareOrdinal(ns, 0, fullName, 0, ns.Length) == 0
+					&& String.CompareOrdinal(name, 0, fullName, ns.Length + 1, name.Length) == 0;
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+		internal virtual Type ResolveNestedType(string ns, string name)
+		{
+			return GetNestedTypeCorrectly(ns == null ? name : ns + "." + name);
+d756 1
+a756 1
+		internal Type GetNestedTypeCorrectly(string name)
+d760 1
+a760 1
+				if (MatchTypeNames(type.__Namespace, type.__Name, name))
+@
+
+
+1.36
+log
+@Added support for resolving MissingTypes in AssemblyBuilder.
+@
+text
+@d2460 1
+a2460 1
+				return false;
+@
+
+
+1.35
+log
+@Added Type.__ContainsMissingType to easily check for missing types in a constructed type.
+@
+text
+@a775 1
+			CheckBaked();
+@
+
+
+1.34
+log
+@Add support for reading signatures with instantiations of generic missing type.
+@
+text
+@d1163 19
+d1702 13
+d2450 15
+@
+
+
+1.33
+log
+@Rename __IsMissingType to __IsMissing to make it easier if/when we add support for other missing members.
+@
+text
+@d2120 1
+a2120 1
+			if (type is TypeBuilder || type is BakedType)
+@
+
+
+1.32
+log
+@Added support for magic missing assemblies that resolve missing types to allow (some) reflection on assemblies with missing dependencies.
+@
+text
+@d1158 1
+a1158 1
+		public bool __IsMissingType
+@
+
+
+1.31
+log
+@Fixed resolving nested type by name.
+@
+text
+@d768 5
+d1158 5
+@
+
+
+1.30
+log
+@Fixed Type.GetNestedType(). The name passed in is not escaped, so we should match with __Name.
+@
+text
+@d750 32
+@
+
+
+1.29
+log
+@Prevent external subclassing. It's not part of the design to suppor that, now it is also enforced.
+@
+text
+@d759 2
+a760 1
+				if (type.Name == name)
+@
+
+
+1.28
+log
+@Final set of Name/Namespace/FullName fixes to make everything more compatible (including bugs) with .NET reflection.
+@
+text
+@d48 5
+@
+
+
+1.27
+log
+@Added virtual __Name and __Namespace properties to Type to allow the real (from the ECMA CLI point of view) namespace and names of types to be queried (for TypeDef and TypeBuilder only).
+@
+text
+@d198 1
+a198 1
+		public override string Name
+d200 1
+a200 5
+			get
+			{
+				string fullname = FullName;
+				return fullname.Substring(fullname.LastIndexOf('.') + 1);
+			}
+d209 1
+a209 1
+					return null;
+d211 1
+a211 3
+				string fullname = FullName;
+				int index = fullname.LastIndexOf('.');
+				return index < 0 ? null : fullname.Substring(0, index);
+d334 6
+a339 1
+		public virtual string FullName
+d341 14
+a354 1
+			get
+a355 2
+				Type decl = this.DeclaringType;
+				string ns = this.Namespace;
+d358 1
+a358 8
+					if (decl == null)
+					{
+						return this.Name;
+					}
+					else
+					{
+						return decl.FullName + "+" + this.Name;
+					}
+d362 1
+a362 8
+					if (decl == null)
+					{
+						return ns + "." + this.Name;
+					}
+					else
+					{
+						return decl.FullName + "+" + ns + "." + this.Name;
+					}
+d1583 5
+d2294 1
+a2294 1
+				StringBuilder sb = new StringBuilder(base.FullName);
+@
+
+
+1.26
+log
+@Add support for assembly custom attributes on modules (they are applied to a placeholder TypeRef record and compiler consuming the module is supposed to merge them into the assembly manifest).
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009-2010 Jeroen Frijters
+d188 10
+@
+
+
+1.25
+log
+@It turns out that "multi dimensional" vectors have "multi dimensional" constructors.
+@
+text
+@d1498 19
+@
+
+
+1.24
+log
+@Re-instroduced generic type instantation for "identity" instantations of TypeBuilder types. This is required to be able to distinguish the two types in this example:
+
+class Foo<T>
+{
+   void Frob() {
+     Console.WriteLine(typeof(Foo<>));
+     Console.WriteLine(typeof(Foo<T>));
+   }
+}
+@
+text
+@d1685 12
+a1696 6
+			return new MethodBase[] {
+				new ConstructorInfoImpl(new BuiltinArrayMethod(this.Module, this, ".ctor", CallingConventions.Standard | CallingConventions.HasThis, this.Module.universe.System_Void, int32)),
+				new BuiltinArrayMethod(this.Module, this, "Set", CallingConventions.Standard | CallingConventions.HasThis, this.Module.universe.System_Void, new Type[] { this.Module.universe.System_Int32, elementType }),
+				new BuiltinArrayMethod(this.Module, this, "Address", CallingConventions.Standard | CallingConventions.HasThis, elementType.MakeByRefType(), int32),
+				new BuiltinArrayMethod(this.Module, this, "Get", CallingConventions.Standard | CallingConventions.HasThis, elementType, int32),
+			};
+@
+
+
+1.23
+log
+@Implemented __GetDeclaredMethods() for ArrayType and MultiArrayType.
+@
+text
+@d2035 2
+a2036 2
+			// we must not instantiate the identity instance, because typeof(Foo<>).MakeGenericType(typeof(Foo<>).GetGenericArguments()) == typeof(Foo<>)
+			for (int i = 0; i < typeArguments.Length; i++)
+d2038 7
+a2044 3
+				if (typeArguments[i] != type.GetGenericTypeArgument(i)
+					|| !IsEmpty(requiredCustomModifiers, i)
+					|| !IsEmpty(optionalCustomModifiers, i))
+d2046 7
+a2052 1
+					return type.Module.CanonicalizeType(new GenericTypeInstance(type, typeArguments, requiredCustomModifiers, optionalCustomModifiers));
+d2055 8
+a2062 1
+			return type;
+@
+
+
+1.22
+log
+@Three IsAssignableFrom fixes:
+- non-vector arrays are not assignable to vector arrays
+- value type arrays are not assignable to non-value type arrays (and v.v.)
+- pointers can be boxed to ValueType as well as Object
+@
+text
+@d1684 7
+a1690 5
+			// TODO should return these three methods:
+			// Void Set(Int32, T)
+			// T& Address(Int32)
+			// T Get(Int32)
+			throw new NotImplementedException();
+d1756 19
+a1774 5
+			// TODO should return these three methods:
+			// Void Set(Int32[, Int32]*, T)
+			// T& Address(Int32[, Int32]*)
+			// T Get(Int32[, Int32]*)
+			throw new NotImplementedException();
+d1821 107
+@
+
+
+1.21
+log
+@Implemented custom attribute filtering at the source. Added support for custom attribute sub typing.
+@
+text
+@d1305 1
+a1305 1
+			else if (this.IsArray && type.IsArray && this.GetArrayRank() == type.GetArrayRank())
+d1307 11
+a1317 1
+				return GetElementType().IsAssignableFrom(type.GetElementType());
+d1327 1
+a1327 1
+			else if (type.IsInterface || type.IsPointer)
+d1331 4
+@
+
+
+1.20
+log
+@Implemented Type.IsAssignableFrom() (minus co-/contravariance).
+@
+text
+@d1632 1
+a1632 1
+		internal sealed override IList<CustomAttributeData> GetCustomAttributesData()
+d2214 1
+a2214 1
+		internal override IList<CustomAttributeData> GetCustomAttributesData()
+d2216 1
+a2216 1
+			return type.GetCustomAttributesData();
+@
+
+
+1.19
+log
+@Introduced Type.GetEnumUnderlyingTypeImpl() to avoid CheckBaked for our own usage.
+@
+text
+@d1294 1
+d1301 13
+a1313 1
+			if (this.IsInterface)
+d1317 8
+a1324 1
+			throw new NotImplementedException();
+@
+
+
+1.18
+log
+@Removed attributes that aren't pseudo custom attributes from pseudo custom attribute list.
+@
+text
+@d309 5
+@
+
+
+1.17
+log
+@Added null check.
+@
+text
+@a1465 6
+					|| this == u.System_Reflection_AssemblyFlagsAttribute
+					|| this == u.System_Reflection_AssemblyAlgorithmIdAttribute
+					|| this == u.System_Reflection_AssemblyVersionAttribute
+					|| this == u.System_Reflection_AssemblyKeyFileAttribute
+					|| this == u.System_Reflection_AssemblyKeyNameAttribute
+					|| this == u.System_Reflection_AssemblyCultureAttribute
+@
+
+
+1.16
+log
+@It turns out that the "identity" generic type instantation should return the type definition.
+@
+text
+@d1894 3
+a1896 1
+			return mods == null || mods[i].Length == 0;
+@
+
+
+1.15
+log
+@Removed support for pseudo custom attributes TypeForwardedToAttribute and DefaultParameterValueAttribute that aren't supported by .NET reflection either.
+@
+text
+@d1879 16
+a1894 1
+			return type.Module.CanonicalizeType(new GenericTypeInstance(type, typeArguments, requiredCustomModifiers, optionalCustomModifiers));
+@
+
+
+1.14
+log
+@Constructed types (Generic types, arrays and pointers) should forward CheckBaked to element type.
+@
+text
+@a1480 2
+					|| this == u.System_Runtime_InteropServices_DefaultParameterValueAttribute
+					|| this == u.System_Runtime_CompilerServices_TypeForwardedToAttribute
+@
+
+
+1.13
+log
+@Removed CheckBaked() from __GetDeclaredXxx methods and moved it to .NET compatible APIs only. There is really no good reason not to allow unbaked builders to be interrogated.
+@
+text
+@d1588 5
+d1968 5
+@
+
+
+1.12
+log
+@Fixed Type.GetEnumUnderlyingType(). Only for EnumBuilder should it work on unbaked types.
+@
+text
+@d79 4
+d308 1
+d481 1
+d531 1
+d544 1
+d570 1
+d583 1
+d599 1
+d696 1
+d758 1
+d781 1
+d1332 1
+@
+
+
+1.11
+log
+@Added support for custom modifiers in generic type instantions (in signatures).
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Jeroen Frijters
+d304 9
+a312 2
+			// the CLR assumes that an enum has only one instance field, so we can do the same
+			return __GetDeclaredFields()[0].FieldType;
+@
+
+
+1.10
+log
+@Introduced Empty<T> to cache zero length arrays.
+@
+text
+@d233 10
+d1125 5
+d1134 1
+a1134 1
+			return GenericTypeInstance.Make(this, (Type[])typeArguments.Clone());
+d1397 1
+a1397 1
+				return GenericTypeInstance.Make(this, args);
+d1847 2
+d1852 1
+a1852 1
+		internal static Type Make(Type type, Type[] typeArguments)
+d1854 1
+a1854 1
+			return type.Module.CanonicalizeType(new GenericTypeInstance(type, typeArguments));
+d1857 1
+a1857 1
+		private GenericTypeInstance(Type type, Type[] args)
+d1861 2
+d1868 3
+a1870 1
+			return gt != null && gt.type.Equals(type) && Util.ArrayEquals(gt.args, args);
+d2081 11
+a2091 1
+			return (Type[])args.Clone();
+d2142 1
+a2142 1
+					return Make(type, xargs);
+@
+
+
+1.9
+log
+@Fixed Type.FullName. Nested types can also have a namespace (not in the C# sense, but in the CLR sense).
+@
+text
+@d46 1
+a46 1
+		public static readonly Type[] EmptyTypes = new Type[0];
+d91 1
+a91 1
+			return MethodBase.EmptyArray;
+d101 1
+a101 1
+			return FieldInfo.EmptyArray;
+d106 1
+a106 1
+			return EventInfo.EmptyArray;
+d111 1
+a111 1
+			return PropertyInfo.EmptyArray;
+d354 1
+a354 1
+			return new MemberInfo[0];
+@
+
+
+1.8
+log
+@Fixed regression introduced with == operator in MemberInfo.
+@
+text
+@d307 1
+a310 1
+					Type decl = this.DeclaringType;
+d322 8
+a329 1
+					return ns + "." + this.Name;
+@
+
+
+1.7
+log
+@Added == and != operators to MemberInfo to mask the fact that we don't implement reference identity for various members (most notably the constructor wrappers, generic wrappers and events and properties).
+Changed Type.Equals() to avoid infinite recursion, now that we overload the == operator.
+@
+text
+@d225 1
+a225 1
+			return type == this ? base.GetHashCode() : type.GetHashCode();
+@
+
+
+1.6
+log
+@If a generic type contains generic parameters (that haven't been bound), FullName and AssemblyQualifiedName should return null.
+@
+text
+@d214 1
+a214 1
+			return type != null && type.UnderlyingSystemType == this.UnderlyingSystemType;
+@
+
+
+1.5
+log
+@Bug fix in BindTypeParameters(). It forgot to copy subsequent args entries that weren't affected by the bind.
+@
+text
+@d1852 5
+a1856 1
+			get { return FullName + ", " + type.Assembly.FullName; }
+d2006 4
+@
+
+
+1.4
+log
+@FindMembers() may be called with a null filter.
+@
+text
+@a2083 1
+			Type[] xargs = null;
+d2089 4
+a2092 1
+					if (xargs == null)
+d2094 1
+a2094 2
+						xargs = new Type[args.Length];
+						Array.Copy(args, xargs, i);
+d2096 1
+a2096 1
+					xargs[i] = xarg;
+d2099 1
+a2099 1
+			return xargs == null ? this : Make(type, xargs);
+@
+
+
+1.3
+log
+@Several IKVM.Reflection fixes related to generics.
+- MethodImpls in generic type definitions should be resolved with typeArgs as context.
+- Cleaned up member on generic type rebinding.
+- Fixed __GetDeclaredProperties and __GetDeclaredEvents to rebind properly.
+@
+text
+@d387 1
+a387 1
+				if (filter(member, filterCriteria))
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d1371 10
+a1380 1
+			return this;
+d1914 1
+a1914 1
+				fields[i] = new GenericFieldInstance(this, fields[i]);
+d1934 1
+a1934 9
+				ConstructorInfo ci = methods[i] as ConstructorInfo;
+				if (ci != null)
+				{
+					methods[i] = new ConstructorInfoImpl(new GenericMethodInstance(this, ci.GetMethodInfo(), null));
+				}
+				else
+				{
+					methods[i] = new GenericMethodInstance(this, (MethodInfo)methods[i], null);
+				}
+d1949 1
+a1949 1
+				events[i] = new GenericEventInfo(type, events[i]);
+d1959 1
+a1959 1
+				properties[i] = new GenericPropertyInfo(type, properties[i]);
+d1970 1
+a1970 1
+				map.MethodBodies[i] = new GenericMethodInstance(this, map.MethodBodies[i], null);
+d1976 1
+a1976 1
+						map.MethodDeclarations[i][j] = new GenericMethodInstance(interfaceType.BindTypeParameters(this), map.MethodDeclarations[i][j], null);
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

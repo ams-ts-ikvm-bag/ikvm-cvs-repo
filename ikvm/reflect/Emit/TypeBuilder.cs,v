@@ -1,0 +1,3011 @@
+head	1.63;
+access;
+symbols
+	v8_1_5717_0:1.60
+	v8_1:1.60.0.2
+	v8_0_5449_1:1.54
+	v8_0_5449_0:1.54
+	v8_0:1.54.0.4
+	v7_4_5196_0:1.54
+	v7_4:1.54.0.2
+	v7_3:1.52.0.2
+	v7_2_4630_6:1.47
+	v7_2_4630_5:1.47
+	v7_2_4630_4:1.47
+	v7_2_4630_3:1.47
+	v7_2_4630_2:1.47
+	v0_46_0_4:1.34.2.1
+	v7_2_4630_1:1.47
+	v7_2:1.47.0.2
+	v7_1_4532_2:1.42
+	v7_1_4532_1:1.42
+	v7_1_4532_0:1.42
+	v7_1:1.42.0.2
+	v7_0_4335_3:1.41
+	v7_0_4335_2:1.41
+	v7_0_4335_1:1.41
+	v0_46_0_2:1.34.2.1
+	v7_0_4335_0:1.41
+	v7_0:1.41.0.2
+	v0_46_0_1:1.34.2.1
+	v0_46_0_0:1.34
+	v0_46:1.34.0.2
+	v0_44_0_6:1.19
+	v0_44_0_5:1.19
+	v0_44_0_4:1.19
+	v0_44_0_3:1.19
+	v0_44_0_2:1.19
+	v0_44_0_1:1.19
+	v0_44_0_0:1.19
+	v0_44:1.19.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.63
+date	2016.07.01.05.44.41;	author jfrijters;	state Exp;
+branches;
+next	1.62;
+
+1.62
+date	2016.07.01.05.15.22;	author jfrijters;	state Exp;
+branches;
+next	1.61;
+
+1.61
+date	2015.11.03.09.10.24;	author jfrijters;	state Exp;
+branches;
+next	1.60;
+
+1.60
+date	2015.06.23.11.47.48;	author jfrijters;	state Exp;
+branches;
+next	1.59;
+
+1.59
+date	2015.04.21.10.15.39;	author jfrijters;	state Exp;
+branches;
+next	1.58;
+
+1.58
+date	2015.04.21.08.19.33;	author jfrijters;	state Exp;
+branches;
+next	1.57;
+
+1.57
+date	2015.04.06.07.12.29;	author jfrijters;	state Exp;
+branches;
+next	1.56;
+
+1.56
+date	2015.04.06.07.06.31;	author jfrijters;	state Exp;
+branches;
+next	1.55;
+
+1.55
+date	2015.02.16.12.24.28;	author jfrijters;	state Exp;
+branches;
+next	1.54;
+
+1.54
+date	2013.05.10.08.11.25;	author jfrijters;	state Exp;
+branches;
+next	1.53;
+
+1.53
+date	2013.05.10.07.28.48;	author jfrijters;	state Exp;
+branches;
+next	1.52;
+
+1.52
+date	2012.11.11.11.29.31;	author jfrijters;	state Exp;
+branches;
+next	1.51;
+
+1.51
+date	2012.10.11.09.21.59;	author jfrijters;	state Exp;
+branches;
+next	1.50;
+
+1.50
+date	2012.10.11.09.14.59;	author jfrijters;	state Exp;
+branches;
+next	1.49;
+
+1.49
+date	2012.10.11.09.12.48;	author jfrijters;	state Exp;
+branches;
+next	1.48;
+
+1.48
+date	2012.09.05.08.58.51;	author jfrijters;	state Exp;
+branches;
+next	1.47;
+
+1.47
+date	2012.08.15.06.15.01;	author jfrijters;	state Exp;
+branches;
+next	1.46;
+
+1.46
+date	2012.07.31.18.28.15;	author jfrijters;	state Exp;
+branches;
+next	1.45;
+
+1.45
+date	2012.07.16.15.13.58;	author jfrijters;	state Exp;
+branches;
+next	1.44;
+
+1.44
+date	2012.07.16.10.14.38;	author jfrijters;	state Exp;
+branches;
+next	1.43;
+
+1.43
+date	2012.06.26.15.53.33;	author jfrijters;	state Exp;
+branches;
+next	1.42;
+
+1.42
+date	2011.12.01.06.30.51;	author jfrijters;	state Exp;
+branches;
+next	1.41;
+
+1.41
+date	2011.09.30.08.26.28;	author jfrijters;	state Exp;
+branches;
+next	1.40;
+
+1.40
+date	2011.05.10.09.01.09;	author jfrijters;	state Exp;
+branches;
+next	1.39;
+
+1.39
+date	2011.03.21.04.47.37;	author jfrijters;	state Exp;
+branches;
+next	1.38;
+
+1.38
+date	2011.03.14.05.03.30;	author jfrijters;	state Exp;
+branches;
+next	1.37;
+
+1.37
+date	2011.03.10.16.08.44;	author jfrijters;	state Exp;
+branches;
+next	1.36;
+
+1.36
+date	2011.03.06.07.25.38;	author jfrijters;	state Exp;
+branches;
+next	1.35;
+
+1.35
+date	2011.03.03.12.52.44;	author jfrijters;	state Exp;
+branches;
+next	1.34;
+
+1.34
+date	2011.02.14.05.58.49;	author jfrijters;	state Exp;
+branches
+	1.34.2.1;
+next	1.33;
+
+1.33
+date	2011.01.21.12.58.56;	author jfrijters;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2011.01.20.14.31.10;	author jfrijters;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2011.01.20.05.49.49;	author jfrijters;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2011.01.20.05.38.12;	author jfrijters;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2011.01.18.16.44.39;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2011.01.12.14.22.04;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2011.01.12.14.09.54;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2011.01.12.13.57.05;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2011.01.12.13.31.27;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2010.12.20.18.11.09;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2010.12.09.06.12.19;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2010.12.06.10.31.53;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2010.12.05.04.56.39;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2010.12.03.17.01.20;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2010.06.28.10.18.07;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2010.05.07.13.29.05;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2010.05.07.07.21.29;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2010.05.06.13.40.43;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2010.05.06.13.24.29;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2010.05.06.05.38.52;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2010.04.28.09.39.53;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2010.04.18.08.39.21;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2010.02.09.07.50.07;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2010.02.09.07.45.28;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2010.02.09.07.30.47;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2010.02.09.07.29.25;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2010.02.09.05.54.08;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2010.02.09.05.50.05;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2010.02.04.11.18.07;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.02.04.09.59.42;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.02.04.09.49.04;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.34.2.1
+date	2011.03.17.05.18.42;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.63
+log
+@Replaced CORECLR symbol with NETSTANDARD.
+@
+text
+@/*
+  Copyright (C) 2008-2011 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
+using IKVM.Reflection.Impl;
+using IKVM.Reflection.Metadata;
+using IKVM.Reflection.Writer;
+
+namespace IKVM.Reflection.Emit
+{
+	public sealed class GenericTypeParameterBuilder : TypeInfo
+	{
+		private readonly string name;
+		private readonly TypeBuilder type;
+		private readonly MethodBuilder method;
+		private readonly int paramPseudoIndex;
+		private readonly int position;
+		private int typeToken;
+		private Type baseType;
+		private GenericParameterAttributes attr;
+
+		internal GenericTypeParameterBuilder(string name, TypeBuilder type, int position)
+			: this(name, type, null, position, Signature.ELEMENT_TYPE_VAR)
+		{
+		}
+
+		internal GenericTypeParameterBuilder(string name, MethodBuilder method, int position)
+			: this(name, null, method, position, Signature.ELEMENT_TYPE_MVAR)
+		{
+		}
+
+		private GenericTypeParameterBuilder(string name, TypeBuilder type, MethodBuilder method, int position, byte sigElementType)
+			: base(sigElementType)
+		{
+			this.name = name;
+			this.type = type;
+			this.method = method;
+			this.position = position;
+			GenericParamTable.Record rec = new GenericParamTable.Record();
+			rec.Number = (short)position;
+			rec.Flags = 0;
+			rec.Owner = type != null ? type.MetadataToken : method.MetadataToken;
+			rec.Name = this.ModuleBuilder.Strings.Add(name);
+			this.paramPseudoIndex = this.ModuleBuilder.GenericParam.AddRecord(rec);
+		}
+
+		public override string AssemblyQualifiedName
+		{
+			get { return null; }
+		}
+
+		protected override bool IsValueTypeImpl
+		{
+			get { return (this.GenericParameterAttributes & GenericParameterAttributes.NotNullableValueTypeConstraint) != 0; }
+		}
+
+		public override Type BaseType
+		{
+			get { return baseType; }
+		}
+
+		public override Type[] __GetDeclaredInterfaces()
+		{
+			throw new NotImplementedException();
+		}
+
+		public override TypeAttributes Attributes
+		{
+			get { return TypeAttributes.Public; }
+		}
+
+		public override string Namespace
+		{
+			get { return DeclaringType.Namespace; }
+		}
+
+		public override string Name
+		{
+			get { return name; }
+		}
+
+		public override string FullName
+		{
+			get { return null; }
+		}
+
+		public override string ToString()
+		{
+			return this.Name;
+		}
+
+		private ModuleBuilder ModuleBuilder
+		{
+			get { return type != null ? type.ModuleBuilder : method.ModuleBuilder; }
+		}
+
+		public override Module Module
+		{
+			get { return ModuleBuilder; }
+		}
+
+		public override int GenericParameterPosition
+		{
+			get { return position; }
+		}
+
+		public override Type DeclaringType
+		{
+			get { return type; }
+		}
+
+		public override MethodBase DeclaringMethod
+		{
+			get { return method; }
+		}
+
+		public override Type[] GetGenericParameterConstraints()
+		{
+			throw new NotImplementedException();
+		}
+
+		public override CustomModifiers[] __GetGenericParameterConstraintCustomModifiers()
+		{
+			throw new NotImplementedException();
+		}
+
+		public override GenericParameterAttributes GenericParameterAttributes
+		{
+			get
+			{
+				CheckBaked();
+				return attr;
+			}
+		}
+
+		internal override void CheckBaked()
+		{
+			if (type != null)
+			{
+				type.CheckBaked();
+			}
+			else
+			{
+				method.CheckBaked();
+			}
+		}
+
+		private void AddConstraint(Type type)
+		{
+			GenericParamConstraintTable.Record rec = new GenericParamConstraintTable.Record();
+			rec.Owner = paramPseudoIndex;
+			rec.Constraint = this.ModuleBuilder.GetTypeTokenForMemberRef(type);
+			this.ModuleBuilder.GenericParamConstraint.AddRecord(rec);
+		}
+
+		public void SetBaseTypeConstraint(Type baseTypeConstraint)
+		{
+			this.baseType = baseTypeConstraint;
+			AddConstraint(baseTypeConstraint);
+		}
+
+		public void SetInterfaceConstraints(params Type[] interfaceConstraints)
+		{
+			foreach (Type type in interfaceConstraints)
+			{
+				AddConstraint(type);
+			}
+		}
+
+		public void SetGenericParameterAttributes(GenericParameterAttributes genericParameterAttributes)
+		{
+			this.attr = genericParameterAttributes;
+			// for now we'll back patch the table
+			this.ModuleBuilder.GenericParam.PatchAttribute(paramPseudoIndex, genericParameterAttributes);
+		}
+
+		public void SetCustomAttribute(CustomAttributeBuilder customBuilder)
+		{
+			this.ModuleBuilder.SetCustomAttribute((GenericParamTable.Index << 24) | paramPseudoIndex, customBuilder);
+		}
+
+		public void SetCustomAttribute(ConstructorInfo con, byte[] binaryAttribute)
+		{
+			SetCustomAttribute(new CustomAttributeBuilder(con, binaryAttribute));
+		}
+
+		public override int MetadataToken
+		{
+			get
+			{
+				CheckBaked();
+				return (GenericParamTable.Index << 24) | paramPseudoIndex;
+			}
+		}
+
+		internal override int GetModuleBuilderToken()
+		{
+			if (typeToken == 0)
+			{
+				ByteBuffer spec = new ByteBuffer(5);
+				Signature.WriteTypeSpec(this.ModuleBuilder, spec, this);
+				typeToken = 0x1B000000 | this.ModuleBuilder.TypeSpec.AddRecord(this.ModuleBuilder.Blobs.Add(spec));
+			}
+			return typeToken;
+		}
+
+		internal override Type BindTypeParameters(IGenericBinder binder)
+		{
+			if (type != null)
+			{
+				return binder.BindTypeParameter(this);
+			}
+			else
+			{
+				return binder.BindMethodParameter(this);
+			}
+		}
+
+		internal override int GetCurrentToken()
+		{
+			if (this.ModuleBuilder.IsSaved)
+			{
+				return (GenericParamTable.Index << 24) | this.Module.GenericParam.GetIndexFixup()[paramPseudoIndex - 1] + 1;
+			}
+			else
+			{
+				return (GenericParamTable.Index << 24) | paramPseudoIndex;
+			}
+		}
+
+		internal override bool IsBaked
+		{
+			get { return ((MemberInfo)type ?? method).IsBaked; }
+		}
+	}
+
+	public sealed class TypeBuilder : TypeInfo, ITypeOwner
+	{
+		public const int UnspecifiedTypeSize = 0;
+		private readonly ITypeOwner owner;
+		private readonly int token;
+		private int extends;
+		private Type lazyBaseType;		// (lazyBaseType == null && attribs & TypeAttributes.Interface) == 0) => BaseType == System.Object
+		private readonly int typeName;
+		private readonly int typeNameSpace;
+		private readonly string ns;
+		private readonly string name;
+		private readonly List<MethodBuilder> methods = new List<MethodBuilder>();
+		private readonly List<FieldBuilder> fields = new List<FieldBuilder>();
+		private List<PropertyBuilder> properties;
+		private List<EventBuilder> events;
+		private TypeAttributes attribs;
+		private GenericTypeParameterBuilder[] gtpb;
+		private List<CustomAttributeBuilder> declarativeSecurity;
+		private List<Type> interfaces;
+		private int size;
+		private short pack;
+		private bool hasLayout;
+
+		internal TypeBuilder(ITypeOwner owner, string ns, string name)
+		{
+			this.owner = owner;
+			this.token = this.ModuleBuilder.TypeDef.AllocToken();
+			this.ns = ns;
+			this.name = name;
+			this.typeNameSpace = ns == null ? 0 : this.ModuleBuilder.Strings.Add(ns);
+			this.typeName = this.ModuleBuilder.Strings.Add(name);
+			MarkKnownType(ns, name);
+		}
+
+		public ConstructorBuilder DefineDefaultConstructor(MethodAttributes attributes)
+		{
+			ConstructorBuilder cb = DefineConstructor(attributes, CallingConventions.Standard, Type.EmptyTypes);
+			ILGenerator ilgen = cb.GetILGenerator();
+			ilgen.Emit(OpCodes.Ldarg_0);
+			ilgen.Emit(OpCodes.Call, BaseType.GetConstructor(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic, null, Type.EmptyTypes, null));
+			ilgen.Emit(OpCodes.Ret);
+			return cb;
+		}
+
+		public ConstructorBuilder DefineConstructor(MethodAttributes attribs, CallingConventions callConv, Type[] parameterTypes)
+		{
+			return DefineConstructor(attribs, callConv, parameterTypes, null, null);
+		}
+
+		public ConstructorBuilder DefineConstructor(MethodAttributes attribs, CallingConventions callingConvention, Type[] parameterTypes, Type[][] requiredCustomModifiers, Type[][] optionalCustomModifiers)
+		{
+			attribs |= MethodAttributes.RTSpecialName | MethodAttributes.SpecialName;
+			string name = (attribs & MethodAttributes.Static) == 0 ? ConstructorInfo.ConstructorName : ConstructorInfo.TypeConstructorName;
+			MethodBuilder mb = DefineMethod(name, attribs, callingConvention, null, null, null, parameterTypes, requiredCustomModifiers, optionalCustomModifiers);
+			return new ConstructorBuilder(mb);
+		}
+
+		public ConstructorBuilder DefineTypeInitializer()
+		{
+			MethodBuilder mb = DefineMethod(ConstructorInfo.TypeConstructorName, MethodAttributes.Private | MethodAttributes.Static | MethodAttributes.RTSpecialName | MethodAttributes.SpecialName, null, Type.EmptyTypes);
+			return new ConstructorBuilder(mb);
+		}
+
+		private MethodBuilder CreateMethodBuilder(string name, MethodAttributes attributes, CallingConventions callingConvention)
+		{
+			this.ModuleBuilder.MethodDef.AddVirtualRecord();
+			MethodBuilder mb = new MethodBuilder(this, name, attributes, callingConvention);
+			methods.Add(mb);
+			return mb;
+		}
+
+		public MethodBuilder DefineMethod(string name, MethodAttributes attribs)
+		{
+			return DefineMethod(name, attribs, CallingConventions.Standard);
+		}
+
+		public MethodBuilder DefineMethod(string name, MethodAttributes attribs, CallingConventions callingConvention)
+		{
+			return CreateMethodBuilder(name, attribs, callingConvention);
+		}
+
+		public MethodBuilder DefineMethod(string name, MethodAttributes attribs, Type returnType, Type[] parameterTypes)
+		{
+			return DefineMethod(name, attribs, CallingConventions.Standard, returnType, null, null, parameterTypes, null, null);
+		}
+
+		public MethodBuilder DefineMethod(string name, MethodAttributes attributes, CallingConventions callingConvention, Type returnType, Type[] parameterTypes)
+		{
+			return DefineMethod(name, attributes, callingConvention, returnType, null, null, parameterTypes, null, null);
+		}
+
+		public MethodBuilder DefineMethod(string name, MethodAttributes attributes, CallingConventions callingConvention, Type returnType, Type[] returnTypeRequiredCustomModifiers, Type[] returnTypeOptionalCustomModifiers, Type[] parameterTypes, Type[][] parameterTypeRequiredCustomModifiers, Type[][] parameterTypeOptionalCustomModifiers)
+		{
+			MethodBuilder mb = CreateMethodBuilder(name, attributes, callingConvention);
+			mb.SetSignature(returnType, returnTypeRequiredCustomModifiers, returnTypeOptionalCustomModifiers, parameterTypes, parameterTypeRequiredCustomModifiers, parameterTypeOptionalCustomModifiers);
+			return mb;
+		}
+
+		public MethodBuilder DefinePInvokeMethod(string name, string dllName, MethodAttributes attributes, CallingConventions callingConvention, Type returnType, Type[] parameterTypes, CallingConvention nativeCallConv, CharSet nativeCharSet)
+		{
+			return DefinePInvokeMethod(name, dllName, null, attributes, callingConvention, returnType, null, null, parameterTypes, null, null, nativeCallConv, nativeCharSet);
+		}
+
+		public MethodBuilder DefinePInvokeMethod(string name, string dllName, string entryName, MethodAttributes attributes, CallingConventions callingConvention, Type returnType, Type[] parameterTypes, CallingConvention nativeCallConv, CharSet nativeCharSet)
+		{
+			return DefinePInvokeMethod(name, dllName, entryName, attributes, callingConvention, returnType, null, null, parameterTypes, null, null, nativeCallConv, nativeCharSet);
+		}
+
+		public MethodBuilder DefinePInvokeMethod(string name, string dllName, string entryName, MethodAttributes attributes, CallingConventions callingConvention,
+			Type returnType, Type[] returnTypeRequiredCustomModifiers, Type[] returnTypeOptionalCustomModifiers,
+			Type[] parameterTypes, Type[][] parameterTypeRequiredCustomModifiers, Type[][] parameterTypeOptionalCustomModifiers,
+			CallingConvention nativeCallConv, CharSet nativeCharSet)
+		{
+			MethodBuilder mb = DefineMethod(name, attributes | MethodAttributes.PinvokeImpl, callingConvention,
+				returnType, returnTypeRequiredCustomModifiers, returnTypeOptionalCustomModifiers,
+				parameterTypes, parameterTypeRequiredCustomModifiers, parameterTypeOptionalCustomModifiers);
+			mb.SetDllImportPseudoCustomAttribute(dllName, entryName, nativeCallConv, nativeCharSet, null, null, null, null, null);
+			return mb;
+		}
+
+		public void DefineMethodOverride(MethodInfo methodInfoBody, MethodInfo methodInfoDeclaration)
+		{
+			MethodImplTable.Record rec = new MethodImplTable.Record();
+			rec.Class = token;
+			rec.MethodBody = this.ModuleBuilder.GetMethodToken(methodInfoBody).Token;
+			rec.MethodDeclaration = this.ModuleBuilder.GetMethodTokenWinRT(methodInfoDeclaration);
+			this.ModuleBuilder.MethodImpl.AddRecord(rec);
+		}
+
+		public FieldBuilder DefineField(string name, Type fieldType, FieldAttributes attribs)
+		{
+			return DefineField(name, fieldType, null, null, attribs);
+		}
+
+		public FieldBuilder DefineField(string fieldName, Type type, Type[] requiredCustomModifiers, Type[] optionalCustomModifiers, FieldAttributes attributes)
+		{
+			return __DefineField(fieldName, type, CustomModifiers.FromReqOpt(requiredCustomModifiers, optionalCustomModifiers), attributes);
+		}
+
+		public FieldBuilder __DefineField(string fieldName, Type type, CustomModifiers customModifiers, FieldAttributes attributes)
+		{
+			FieldBuilder fb = new FieldBuilder(this, fieldName, type, customModifiers, attributes);
+			fields.Add(fb);
+			return fb;
+		}
+
+		public PropertyBuilder DefineProperty(string name, PropertyAttributes attributes, Type returnType, Type[] parameterTypes)
+		{
+			return DefineProperty(name, attributes, returnType, null, null, parameterTypes, null, null);
+		}
+
+		public PropertyBuilder DefineProperty(string name, PropertyAttributes attributes, CallingConventions callingConvention, Type returnType, Type[] parameterTypes)
+		{
+			return DefineProperty(name, attributes, callingConvention, returnType, null, null, parameterTypes, null, null);
+		}
+
+		public PropertyBuilder DefineProperty(string name, PropertyAttributes attributes, Type returnType, Type[] returnTypeRequiredCustomModifiers, Type[] returnTypeOptionalCustomModifiers,
+			Type[] parameterTypes, Type[][] parameterTypeRequiredCustomModifiers, Type[][] parameterTypeOptionalCustomModifiers)
+		{
+			return DefinePropertyImpl(name, attributes, CallingConventions.Standard, true, returnType, parameterTypes,
+				PackedCustomModifiers.CreateFromExternal(returnTypeOptionalCustomModifiers, returnTypeRequiredCustomModifiers, parameterTypeOptionalCustomModifiers, parameterTypeRequiredCustomModifiers, Util.NullSafeLength(parameterTypes)));
+		}
+
+		public PropertyBuilder DefineProperty(string name, PropertyAttributes attributes, CallingConventions callingConvention,
+			Type returnType, Type[] returnTypeRequiredCustomModifiers, Type[] returnTypeOptionalCustomModifiers,
+			Type[] parameterTypes, Type[][] parameterTypeRequiredCustomModifiers, Type[][] parameterTypeOptionalCustomModifiers)
+		{
+			return DefinePropertyImpl(name, attributes, callingConvention, false, returnType, parameterTypes,
+				PackedCustomModifiers.CreateFromExternal(returnTypeOptionalCustomModifiers, returnTypeRequiredCustomModifiers, parameterTypeOptionalCustomModifiers, parameterTypeRequiredCustomModifiers, Util.NullSafeLength(parameterTypes)));
+		}
+
+		public PropertyBuilder __DefineProperty(string name, PropertyAttributes attributes, CallingConventions callingConvention,
+			Type returnType, CustomModifiers returnTypeCustomModifiers, Type[] parameterTypes, CustomModifiers[] parameterTypeCustomModifiers)
+		{
+			return DefinePropertyImpl(name, attributes, callingConvention, false, returnType, parameterTypes,
+				PackedCustomModifiers.CreateFromExternal(returnTypeCustomModifiers, parameterTypeCustomModifiers, Util.NullSafeLength(parameterTypes)));
+		}
+
+		private PropertyBuilder DefinePropertyImpl(string name, PropertyAttributes attributes, CallingConventions callingConvention, bool patchCallingConvention,
+			Type returnType, Type[] parameterTypes, PackedCustomModifiers customModifiers)
+		{
+			if (properties == null)
+			{
+				properties = new List<PropertyBuilder>();
+			}
+			PropertySignature sig = PropertySignature.Create(callingConvention, returnType, parameterTypes, customModifiers);
+			PropertyBuilder pb = new PropertyBuilder(this, name, attributes, sig, patchCallingConvention);
+			properties.Add(pb);
+			return pb;
+		}
+
+		public EventBuilder DefineEvent(string name, EventAttributes attributes, Type eventtype)
+		{
+			if (events == null)
+			{
+				events = new List<EventBuilder>();
+			}
+			EventBuilder eb = new EventBuilder(this, name, attributes, eventtype);
+			events.Add(eb);
+			return eb;
+		}
+
+		public TypeBuilder DefineNestedType(string name)
+		{
+			return DefineNestedType(name, TypeAttributes.Class | TypeAttributes.NestedPrivate);
+		}
+
+		public TypeBuilder DefineNestedType(string name, TypeAttributes attribs)
+		{
+			return DefineNestedType(name, attribs, null);
+		}
+
+		public TypeBuilder DefineNestedType(string name, TypeAttributes attr, Type parent, Type[] interfaces)
+		{
+			TypeBuilder tb = DefineNestedType(name, attr, parent);
+			if (interfaces != null)
+			{
+				foreach (Type iface in interfaces)
+				{
+					tb.AddInterfaceImplementation(iface);
+				}
+			}
+			return tb;
+		}
+
+		public TypeBuilder DefineNestedType(string name, TypeAttributes attr, Type parent)
+		{
+			return DefineNestedType(name, attr, parent, 0);
+		}
+
+		public TypeBuilder DefineNestedType(string name, TypeAttributes attr, Type parent, int typeSize)
+		{
+			return DefineNestedType(name, attr, parent, PackingSize.Unspecified, typeSize);
+		}
+
+		public TypeBuilder DefineNestedType(string name, TypeAttributes attr, Type parent, PackingSize packSize)
+		{
+			return DefineNestedType(name, attr, parent, packSize, 0);
+		}
+
+		public TypeBuilder DefineNestedType(string name, TypeAttributes attr, Type parent, PackingSize packSize, int typeSize)
+		{
+			string ns = null;
+			int lastdot = name.LastIndexOf('.');
+			if (lastdot > 0)
+			{
+				ns = name.Substring(0, lastdot);
+				name = name.Substring(lastdot + 1);
+			}
+			TypeBuilder typeBuilder = __DefineNestedType(ns, name);
+			typeBuilder.__SetAttributes(attr);
+			typeBuilder.SetParent(parent);
+			if (packSize != PackingSize.Unspecified || typeSize != 0)
+			{
+				typeBuilder.__SetLayout((int)packSize, typeSize);
+			}
+			return typeBuilder;
+		}
+
+		public TypeBuilder __DefineNestedType(string ns, string name)
+		{
+			this.typeFlags |= TypeFlags.HasNestedTypes;
+			TypeBuilder typeBuilder = this.ModuleBuilder.DefineType(this, ns, name);
+			NestedClassTable.Record rec = new NestedClassTable.Record();
+			rec.NestedClass = typeBuilder.MetadataToken;
+			rec.EnclosingClass = this.MetadataToken;
+			this.ModuleBuilder.NestedClass.AddRecord(rec);
+			return typeBuilder;
+		}
+
+		public void SetParent(Type parent)
+		{
+			lazyBaseType = parent;
+		}
+
+		public void AddInterfaceImplementation(Type interfaceType)
+		{
+			if (interfaces == null)
+			{
+				interfaces = new List<Type>();
+			}
+			interfaces.Add(interfaceType);
+		}
+
+		public void __SetInterfaceImplementationCustomAttribute(Type interfaceType, CustomAttributeBuilder cab)
+		{
+			this.ModuleBuilder.SetInterfaceImplementationCustomAttribute(this, interfaceType, cab);
+		}
+
+		public int Size
+		{
+			get { return size; }
+		}
+
+		public PackingSize PackingSize
+		{
+			get { return (PackingSize)pack; }
+		}
+
+		public override bool __GetLayout(out int packingSize, out int typeSize)
+		{
+			packingSize = this.pack;
+			typeSize = this.size;
+			return hasLayout;
+		}
+
+		public void __SetLayout(int packingSize, int typesize)
+		{
+			this.pack = (short)packingSize;
+			this.size = typesize;
+			this.hasLayout = true;
+		}
+
+		private void SetStructLayoutPseudoCustomAttribute(CustomAttributeBuilder customBuilder)
+		{
+			object val = customBuilder.GetConstructorArgument(0);
+			LayoutKind layout;
+			if (val is short)
+			{
+				layout = (LayoutKind)(short)val;
+			}
+			else
+			{
+				layout = (LayoutKind)val;
+			}
+			pack = (short)((int?)customBuilder.GetFieldValue("Pack") ?? 0);
+			size = (int?)customBuilder.GetFieldValue("Size") ?? 0;
+#if NETSTANDARD
+			CharSet charSet = customBuilder.GetFieldValue<CharSet>("CharSet") ?? (CharSet)1;
+#else
+			CharSet charSet = customBuilder.GetFieldValue<CharSet>("CharSet") ?? CharSet.None;
+#endif
+			attribs &= ~TypeAttributes.LayoutMask;
+			switch (layout)
+			{
+				case LayoutKind.Auto:
+					attribs |= TypeAttributes.AutoLayout;
+					break;
+				case LayoutKind.Explicit:
+					attribs |= TypeAttributes.ExplicitLayout;
+					break;
+				case LayoutKind.Sequential:
+					attribs |= TypeAttributes.SequentialLayout;
+					break;
+			}
+			attribs &= ~TypeAttributes.StringFormatMask;
+			switch (charSet)
+			{
+#if NETSTANDARD
+				case (CharSet)1:
+#else
+				case CharSet.None:
+#endif
+				case CharSet.Ansi:
+					attribs |= TypeAttributes.AnsiClass;
+					break;
+#if NETSTANDARD
+				case (CharSet)4:
+#else
+				case CharSet.Auto:
+#endif
+					attribs |= TypeAttributes.AutoClass;
+					break;
+				case CharSet.Unicode:
+					attribs |= TypeAttributes.UnicodeClass;
+					break;
+			}
+			hasLayout = pack != 0 || size != 0;
+		}
+
+		public void SetCustomAttribute(ConstructorInfo con, byte[] binaryAttribute)
+		{
+			SetCustomAttribute(new CustomAttributeBuilder(con, binaryAttribute));
+		}
+
+		public void SetCustomAttribute(CustomAttributeBuilder customBuilder)
+		{
+			switch (customBuilder.KnownCA)
+			{
+				case KnownCA.StructLayoutAttribute:
+					SetStructLayoutPseudoCustomAttribute(customBuilder.DecodeBlob(this.Assembly));
+					break;
+				case KnownCA.SerializableAttribute:
+					attribs |= TypeAttributes.Serializable;
+					break;
+				case KnownCA.ComImportAttribute:
+					attribs |= TypeAttributes.Import;
+					break;
+				case KnownCA.SpecialNameAttribute:
+					attribs |= TypeAttributes.SpecialName;
+					break;
+				case KnownCA.SuppressUnmanagedCodeSecurityAttribute:
+					attribs |= TypeAttributes.HasSecurity;
+					goto default;
+				default:
+					this.ModuleBuilder.SetCustomAttribute(token, customBuilder);
+					break;
+			}
+		}
+
+		public void __AddDeclarativeSecurity(CustomAttributeBuilder customBuilder)
+		{
+			attribs |= TypeAttributes.HasSecurity;
+			if (declarativeSecurity == null)
+			{
+				declarativeSecurity = new List<CustomAttributeBuilder>();
+			}
+			declarativeSecurity.Add(customBuilder);
+		}
+
+#if !NETSTANDARD
+		public void AddDeclarativeSecurity(System.Security.Permissions.SecurityAction securityAction, System.Security.PermissionSet permissionSet)
+		{
+			this.ModuleBuilder.AddDeclarativeSecurity(token, securityAction, permissionSet);
+			this.attribs |= TypeAttributes.HasSecurity;
+		}
+#endif
+
+		public GenericTypeParameterBuilder[] DefineGenericParameters(params string[] names)
+		{
+			typeFlags |= TypeFlags.IsGenericTypeDefinition;
+			gtpb = new GenericTypeParameterBuilder[names.Length];
+			for (int i = 0; i < names.Length; i++)
+			{
+				gtpb[i] = new GenericTypeParameterBuilder(names[i], this, i);
+			}
+			return (GenericTypeParameterBuilder[])gtpb.Clone();
+		}
+
+		public override Type[] GetGenericArguments()
+		{
+			return Util.Copy(gtpb);
+		}
+
+		public override CustomModifiers[] __GetGenericArgumentsCustomModifiers()
+		{
+			return gtpb == null ? Empty<CustomModifiers>.Array : new CustomModifiers[gtpb.Length];
+		}
+
+		internal override Type GetGenericTypeArgument(int index)
+		{
+			return gtpb[index];
+		}
+
+		public override bool ContainsGenericParameters
+		{
+			get { return gtpb != null; }
+		}
+
+		public override Type GetGenericTypeDefinition()
+		{
+			return this;
+		}
+
+		public TypeInfo CreateTypeInfo()
+		{
+			if ((typeFlags & TypeFlags.Baked) != 0)
+			{
+				// .NET allows multiple invocations (subsequent invocations return the same baked type)
+				throw new NotImplementedException();
+			}
+			typeFlags |= TypeFlags.Baked;
+			if (hasLayout)
+			{
+				ClassLayoutTable.Record rec = new ClassLayoutTable.Record();
+				rec.PackingSize = pack;
+				rec.ClassSize = size;
+				rec.Parent = token;
+				this.ModuleBuilder.ClassLayout.AddRecord(rec);
+			}
+			bool hasConstructor = false;
+			foreach (MethodBuilder mb in methods)
+			{
+				hasConstructor |= mb.IsSpecialName && mb.Name == ConstructorInfo.ConstructorName;
+				mb.Bake();
+			}
+			if (!hasConstructor && !IsModulePseudoType && !IsInterface && !IsValueType && !(IsAbstract && IsSealed) && Universe.AutomaticallyProvideDefaultConstructor)
+			{
+				((MethodBuilder)DefineDefaultConstructor(MethodAttributes.Public).GetMethodInfo()).Bake();
+			}
+			if (declarativeSecurity != null)
+			{
+				this.ModuleBuilder.AddDeclarativeSecurity(token, declarativeSecurity);
+			}
+			if (!IsModulePseudoType)
+			{
+				Type baseType = this.BaseType;
+				if (baseType != null)
+				{
+					extends = this.ModuleBuilder.GetTypeToken(baseType).Token;
+				}
+			}
+			if (interfaces != null)
+			{
+				foreach (Type interfaceType in interfaces)
+				{
+					InterfaceImplTable.Record rec = new InterfaceImplTable.Record();
+					rec.Class = token;
+					rec.Interface = this.ModuleBuilder.GetTypeToken(interfaceType).Token;
+					this.ModuleBuilder.InterfaceImpl.AddRecord(rec);
+				}
+			}
+			return new BakedType(this);
+		}
+
+		public Type CreateType()
+		{
+			return CreateTypeInfo();
+		}
+
+		internal void PopulatePropertyAndEventTables()
+		{
+			if (properties != null)
+			{
+				PropertyMapTable.Record rec = new PropertyMapTable.Record();
+				rec.Parent = token;
+				rec.PropertyList = this.ModuleBuilder.Property.RowCount + 1;
+				this.ModuleBuilder.PropertyMap.AddRecord(rec);
+				foreach (PropertyBuilder pb in properties)
+				{
+					pb.Bake();
+				}
+			}
+			if (events != null)
+			{
+				EventMapTable.Record rec = new EventMapTable.Record();
+				rec.Parent = token;
+				rec.EventList = this.ModuleBuilder.Event.RowCount + 1;
+				this.ModuleBuilder.EventMap.AddRecord(rec);
+				foreach (EventBuilder eb in events)
+				{
+					eb.Bake();
+				}
+			}
+		}
+
+		public override Type BaseType
+		{
+			get
+			{
+				if (lazyBaseType == null && !IsInterface)
+				{
+					Type obj = Module.universe.System_Object;
+					if (this != obj)
+					{
+						lazyBaseType = obj;
+					}
+				}
+				return lazyBaseType;
+			}
+		}
+
+		public override string FullName
+		{
+			get
+			{
+				if (this.IsNested)
+				{
+					return this.DeclaringType.FullName + "+" + TypeNameParser.Escape(name);
+				}
+				if (ns == null)
+				{
+					return TypeNameParser.Escape(name);
+				}
+				else
+				{
+					return TypeNameParser.Escape(ns) + "." + TypeNameParser.Escape(name);
+				}
+			}
+		}
+
+		internal override TypeName TypeName
+		{
+			get { return new TypeName(ns, name); }
+		}
+
+		public override string Name
+		{
+			// FXBUG for a TypeBuilder the name is not escaped
+			get { return name; }
+		}
+
+		public override string Namespace
+		{
+			get
+			{
+				// for some reason, TypeBuilder doesn't return null (and mcs depends on this)
+				// note also that we don't return the declaring type namespace for nested types
+				return ns ?? "";
+			}
+		}
+
+		public override TypeAttributes Attributes
+		{
+			get { return attribs; }
+		}
+
+		public void __SetAttributes(TypeAttributes attributes)
+		{
+			this.attribs = attributes;
+		}
+
+		public override Type[] __GetDeclaredInterfaces()
+		{
+			return Util.ToArray(interfaces, Type.EmptyTypes);
+		}
+
+		public override MethodBase[] __GetDeclaredMethods()
+		{
+			MethodBase[] methods = new MethodBase[this.methods.Count];
+			for (int i = 0; i < methods.Length; i++)
+			{
+				MethodBuilder mb = this.methods[i];
+				if (mb.IsConstructor)
+				{
+					methods[i] = new ConstructorInfoImpl(mb);
+				}
+				else
+				{
+					methods[i] = mb;
+				}
+			}
+			return methods;
+		}
+
+		public override Type DeclaringType
+		{
+			get { return owner as TypeBuilder; }
+		}
+
+		public override bool IsGenericType
+		{
+			get { return IsGenericTypeDefinition; }
+		}
+
+		public override bool IsGenericTypeDefinition
+		{
+			get { return (typeFlags & TypeFlags.IsGenericTypeDefinition) != 0; }
+		}
+
+		public override int MetadataToken
+		{
+			get { return token; }
+		}
+
+		public FieldBuilder DefineUninitializedData(string name, int size, FieldAttributes attributes)
+		{
+			return DefineInitializedData(name, new byte[size], attributes);
+		}
+
+		public FieldBuilder DefineInitializedData(string name, byte[] data, FieldAttributes attributes)
+		{
+			Type fieldType = this.ModuleBuilder.GetType("$ArrayType$" + data.Length);
+			if (fieldType == null)
+			{
+				TypeBuilder tb = this.ModuleBuilder.DefineType("$ArrayType$" + data.Length, TypeAttributes.Public | TypeAttributes.Sealed | TypeAttributes.ExplicitLayout, this.Module.universe.System_ValueType, PackingSize.Size1, data.Length);
+				tb.CreateType();
+				fieldType = tb;
+			}
+			FieldBuilder fb = DefineField(name, fieldType, attributes | FieldAttributes.Static);
+			fb.__SetDataAndRVA(data);
+			return fb;
+		}
+
+		public static MethodInfo GetMethod(Type type, MethodInfo method)
+		{
+			return new GenericMethodInstance(type, method, null);
+		}
+
+		public static ConstructorInfo GetConstructor(Type type, ConstructorInfo constructor)
+		{
+			return new ConstructorInfoImpl(GetMethod(type, constructor.GetMethodInfo()));
+		}
+
+		public static FieldInfo GetField(Type type, FieldInfo field)
+		{
+			return new GenericFieldInstance(type, field);
+		}
+
+		public override Module Module
+		{
+			get { return owner.ModuleBuilder; }
+		}
+
+		public TypeToken TypeToken
+		{
+			get { return new TypeToken(token); }
+		}
+
+		internal void WriteTypeDefRecord(MetadataWriter mw, ref int fieldList, ref int methodList)
+		{
+			mw.Write((int)attribs);
+			mw.WriteStringIndex(typeName);
+			mw.WriteStringIndex(typeNameSpace);
+			mw.WriteTypeDefOrRef(extends);
+			mw.WriteField(fieldList);
+			mw.WriteMethodDef(methodList);
+			methodList += methods.Count;
+			fieldList += fields.Count;
+		}
+
+		internal void WriteMethodDefRecords(int baseRVA, MetadataWriter mw, ref int paramList)
+		{
+			foreach (MethodBuilder mb in methods)
+			{
+				mb.WriteMethodDefRecord(baseRVA, mw, ref paramList);
+			}
+		}
+
+		internal void ResolveMethodAndFieldTokens(ref int methodToken, ref int fieldToken, ref int parameterToken)
+		{
+			foreach (MethodBuilder method in methods)
+			{
+				method.FixupToken(methodToken++, ref parameterToken);
+			}
+			foreach (FieldBuilder field in fields)
+			{
+				field.FixupToken(fieldToken++);
+			}
+		}
+
+		internal void WriteParamRecords(MetadataWriter mw)
+		{
+			foreach (MethodBuilder mb in methods)
+			{
+				mb.WriteParamRecords(mw);
+			}
+		}
+
+		internal void WriteFieldRecords(MetadataWriter mw)
+		{
+			foreach (FieldBuilder fb in fields)
+			{
+				fb.WriteFieldRecords(mw);
+			}
+		}
+
+		internal ModuleBuilder ModuleBuilder
+		{
+			get { return owner.ModuleBuilder; }
+		}
+
+		ModuleBuilder ITypeOwner.ModuleBuilder
+		{
+			get { return owner.ModuleBuilder; }
+		}
+
+		internal override int GetModuleBuilderToken()
+		{
+			return token;
+		}
+
+		internal bool HasNestedTypes
+		{
+			get { return (typeFlags & TypeFlags.HasNestedTypes) != 0; }
+		}
+
+		// helper for ModuleBuilder.ResolveMethod()
+		internal MethodBase LookupMethod(int token)
+		{
+			foreach (MethodBuilder method in methods)
+			{
+				if (method.MetadataToken == token)
+				{
+					return method;
+				}
+			}
+			return null;
+		}
+
+		public bool IsCreated()
+		{
+			return (typeFlags & TypeFlags.Baked) != 0;
+		}
+
+		internal override void CheckBaked()
+		{
+			if ((typeFlags & TypeFlags.Baked) == 0)
+			{
+				throw new NotSupportedException();
+			}
+		}
+
+		public override Type[] __GetDeclaredTypes()
+		{
+			if (this.HasNestedTypes)
+			{
+				List<Type> types = new List<Type>();
+				List<int> classes = this.ModuleBuilder.NestedClass.GetNestedClasses(token);
+				foreach (int nestedClass in classes)
+				{
+					types.Add(this.ModuleBuilder.ResolveType(nestedClass));
+				}
+				return types.ToArray();
+			}
+			else
+			{
+				return Type.EmptyTypes;
+			}
+		}
+
+		public override FieldInfo[] __GetDeclaredFields()
+		{
+			return Util.ToArray(fields, Empty<FieldInfo>.Array);
+		}
+
+		public override EventInfo[] __GetDeclaredEvents()
+		{
+			return Util.ToArray(events, Empty<EventInfo>.Array);
+		}
+
+		public override PropertyInfo[] __GetDeclaredProperties()
+		{
+			return Util.ToArray(properties, Empty<PropertyInfo>.Array);
+		}
+
+		internal override bool IsModulePseudoType
+		{
+			get { return token == 0x02000001; }
+		}
+
+		internal override bool IsBaked
+		{
+			get { return IsCreated(); }
+		}
+
+		protected override bool IsValueTypeImpl
+		{
+			get
+			{
+				Type baseType = this.BaseType;
+				if (baseType != null && baseType.IsEnumOrValueType && !this.IsEnumOrValueType)
+				{
+					if (IsCreated())
+					{
+						typeFlags |= TypeFlags.ValueType;
+					}
+					return true;
+				}
+				else
+				{
+					if (IsCreated())
+					{
+						typeFlags |= TypeFlags.NotValueType;
+					}
+					return false;
+				}
+			}
+		}
+	}
+
+	sealed class BakedType : TypeInfo
+	{
+		internal BakedType(TypeBuilder typeBuilder)
+			: base(typeBuilder)
+		{
+		}
+
+		public override string AssemblyQualifiedName
+		{
+			get { return underlyingType.AssemblyQualifiedName; }
+		}
+
+		public override Type BaseType
+		{
+			get { return underlyingType.BaseType; }
+		}
+
+		internal override TypeName TypeName
+		{
+			get { return underlyingType.TypeName; }
+		}
+
+		public override string Name
+		{
+			// we need to escape here, because TypeBuilder.Name does not escape
+			get { return TypeNameParser.Escape(underlyingType.__Name); }
+		}
+
+		public override string FullName
+		{
+			get { return GetFullName(); }
+		}
+
+		public override TypeAttributes Attributes
+		{
+			get { return underlyingType.Attributes; }
+		}
+
+		public override Type[] __GetDeclaredInterfaces()
+		{
+			return underlyingType.__GetDeclaredInterfaces();
+		}
+
+		public override MethodBase[] __GetDeclaredMethods()
+		{
+			return underlyingType.__GetDeclaredMethods();
+		}
+
+		public override __MethodImplMap __GetMethodImplMap()
+		{
+			return underlyingType.__GetMethodImplMap();
+		}
+
+		public override FieldInfo[] __GetDeclaredFields()
+		{
+			return underlyingType.__GetDeclaredFields();
+		}
+
+		public override EventInfo[] __GetDeclaredEvents()
+		{
+			return underlyingType.__GetDeclaredEvents();
+		}
+
+		public override PropertyInfo[] __GetDeclaredProperties()
+		{
+			return underlyingType.__GetDeclaredProperties();
+		}
+
+		public override Type[] __GetDeclaredTypes()
+		{
+			return underlyingType.__GetDeclaredTypes();
+		}
+
+		public override Type DeclaringType
+		{
+			get { return underlyingType.DeclaringType; }
+		}
+
+		public override bool __GetLayout(out int packingSize, out int typeSize)
+		{
+			return underlyingType.__GetLayout(out packingSize, out typeSize);
+		}
+
+		public override Type[] GetGenericArguments()
+		{
+			return underlyingType.GetGenericArguments();
+		}
+
+		internal override Type GetGenericTypeArgument(int index)
+		{
+			return underlyingType.GetGenericTypeArgument(index);
+		}
+
+		public override CustomModifiers[] __GetGenericArgumentsCustomModifiers()
+		{
+			return underlyingType.__GetGenericArgumentsCustomModifiers();
+		}
+
+		public override bool IsGenericType
+		{
+			get { return underlyingType.IsGenericType; }
+		}
+
+		public override bool IsGenericTypeDefinition
+		{
+			get { return underlyingType.IsGenericTypeDefinition; }
+		}
+
+		public override bool ContainsGenericParameters
+		{
+			get { return underlyingType.ContainsGenericParameters; }
+		}
+
+		public override int MetadataToken
+		{
+			get { return underlyingType.MetadataToken; }
+		}
+
+		public override Module Module
+		{
+			get { return underlyingType.Module; }
+		}
+
+		internal override int GetModuleBuilderToken()
+		{
+			return underlyingType.GetModuleBuilderToken();
+		}
+
+		internal override bool IsBaked
+		{
+			get { return true; }
+		}
+
+		protected override bool IsValueTypeImpl
+		{
+			get { return underlyingType.IsValueType; }
+		}
+	}
+}
+@
+
+
+1.62
+log
+@Added support for building against .NET Standard 1.3.
+@
+text
+@d670 1
+a670 1
+#if !CORECLR
+@
+
+
+1.61
+log
+@Added caching to Type.IsValueType.
+@
+text
+@d587 3
+d591 1
+d608 3
+d612 1
+d616 3
+d620 1
+@
+
+
+1.60
+log
+@Added Type.__GetGenericParameterConstraintCustomModifiers() API.
+@
+text
+@d75 1
+a75 1
+		public override bool IsValueType
+d1073 24
+d1231 5
+@
+
+
+1.59
+log
+@Use sigElementType to implement IsGenericParameter.
+@
+text
+@d145 5
+@
+
+
+1.58
+log
+@Optimized built-in type handling a bit.
+@
+text
+@d45 12
+a56 1
+		internal GenericTypeParameterBuilder(string name, TypeBuilder type, MethodBuilder method, int position)
+a124 5
+		public override bool IsGenericParameter
+		{
+			get { return true; }
+		}
+
+d667 1
+a667 1
+				gtpb[i] = new GenericTypeParameterBuilder(names[i], this, null, i);
+@
+
+
+1.57
+log
+@Fixed known custom attribute handling. They should be recognized by type name, not type identity.
+@
+text
+@d280 1
+a280 1
+			MarkEnumOrValueType(ns, name);
+@
+
+
+1.56
+log
+@Added internal Type.TypeName virtual property to retrieve type name with a single virtual method call.
+@
+text
+@d614 1
+a614 3
+			Universe u = this.ModuleBuilder.universe;
+			Type type = customBuilder.Constructor.DeclaringType;
+			if (type == u.System_Runtime_InteropServices_StructLayoutAttribute)
+d616 13
+a628 18
+				SetStructLayoutPseudoCustomAttribute(customBuilder.DecodeBlob(this.Assembly));
+			}
+			else if (type == u.System_SerializableAttribute)
+			{
+				attribs |= TypeAttributes.Serializable;
+			}
+			else if (type == u.System_Runtime_InteropServices_ComImportAttribute)
+			{
+				attribs |= TypeAttributes.Import;
+			}
+			else if (type == u.System_Runtime_CompilerServices_SpecialNameAttribute)
+			{
+				attribs |= TypeAttributes.SpecialName;
+			}
+			else
+			{
+				if (type == u.System_Security_SuppressUnmanagedCodeSecurityAttribute)
+				{
+d630 4
+a633 2
+				}
+				this.ModuleBuilder.SetCustomAttribute(token, customBuilder);
+@
+
+
+1.55
+log
+@Added CoreCLR target for IKVM.Reflection.
+@
+text
+@d813 1
+a813 1
+		public override string __Name
+d815 1
+a815 6
+			get { return name; }
+		}
+
+		public override string __Namespace
+		{
+			get { return ns; }
+d1086 1
+a1086 6
+		public override string __Name
+		{
+			get { return underlyingType.__Name; }
+		}
+
+		public override string __Namespace
+d1088 1
+a1088 1
+			get { return underlyingType.__Namespace; }
+@
+
+
+1.54
+log
+@Implemented Type.StructLayoutAttribute in Type.
+@
+text
+@d652 1
+d658 1
+@
+
+
+1.53
+log
+@Removed unncessary StructLayoutAttribute construction.
+@
+text
+@a869 39
+		public override StructLayoutAttribute StructLayoutAttribute
+		{
+			get
+			{
+				LayoutKind layout;
+				switch (attribs & TypeAttributes.LayoutMask)
+				{
+					case TypeAttributes.ExplicitLayout:
+						layout = LayoutKind.Explicit;
+						break;
+					case TypeAttributes.SequentialLayout:
+						layout = LayoutKind.Sequential;
+						break;
+					default:
+						layout = LayoutKind.Auto;
+						break;
+				}
+				StructLayoutAttribute attr = new StructLayoutAttribute(layout);
+				attr.Pack = (ushort)pack;
+				attr.Size = size;
+				switch (attribs & TypeAttributes.StringFormatMask)
+				{
+					case TypeAttributes.AutoClass:
+						attr.CharSet = CharSet.Auto;
+						break;
+					case TypeAttributes.UnicodeClass:
+						attr.CharSet = CharSet.Unicode;
+						break;
+					case TypeAttributes.AnsiClass:
+						attr.CharSet = CharSet.Ansi;
+						break;
+					default:
+						attr.CharSet = CharSet.None;
+						break;
+				}
+				return attr;
+			}
+		}
+
+d1155 1
+a1155 1
+		public override StructLayoutAttribute StructLayoutAttribute
+d1157 1
+a1157 1
+			get { return underlyingType.StructLayoutAttribute; }
+@
+
+
+1.52
+log
+@Added UniverseOptions.DontProvideAutomaticDefaultConstructor to disable the "helpful" creation of a default constructor.
+@
+text
+@d574 3
+a576 4
+			StructLayoutAttribute attr = new StructLayoutAttribute(layout);
+			attr.Pack = (int?)customBuilder.GetFieldValue("Pack") ?? 0;
+			attr.Size = (int?)customBuilder.GetFieldValue("Size") ?? 0;
+			attr.CharSet = customBuilder.GetFieldValue<CharSet>("CharSet") ?? CharSet.None;
+d578 1
+a578 1
+			switch (attr.Value)
+d591 1
+a591 1
+			switch (attr.CharSet)
+a603 2
+			pack = (short)attr.Pack;
+			size = attr.Size;
+@
+
+
+1.51
+log
+@Added new .NET 4.0 overload of TypeBuilder.DefineProperty().
+@
+text
+@d719 1
+a719 1
+			if (!hasConstructor && !IsModulePseudoType && !IsInterface && !IsValueType && !(IsAbstract && IsSealed))
+@
+
+
+1.50
+log
+@Added new .NET 4.5 API TypeBuilder.CreateTypeInfo().
+@
+text
+@d400 5
+@
+
+
+1.49
+log
+@Added new .NET 4.5 TypeBuilder.DefineNestedType() overload.
+@
+text
+@d692 1
+a692 1
+		public Type CreateType()
+d743 5
+@
+
+
+1.48
+log
+@Added TypeInfo (from .NET 4.5).
+@
+text
+@d484 1
+a484 1
+		private TypeBuilder DefineNestedType(string name, TypeAttributes attr, Type parent, PackingSize packSize, int typeSize)
+@
+
+
+1.47
+log
+@Automatically add default constructor when necessary (using the same criteria as Ref.Emit).
+@
+text
+@d34 1
+a34 1
+	public sealed class GenericTypeParameterBuilder : Type
+d249 1
+a249 1
+	public sealed class TypeBuilder : Type, ITypeOwner
+d1104 1
+a1104 1
+	sealed class BakedType : Type
+@
+
+
+1.46
+log
+@Make GenericTypeParameterBuilder override CheckBaked().
+@
+text
+@d708 1
+d711 1
+d714 4
+@
+
+
+1.45
+log
+@- Fixed GenericTypeParameterBuilder.IsBaked (should also work for type parameters on methods).
+- Implemented GenericTypeParameterBuilder.MetadataToken (after the type has been baked it should return the token).
+- Implemented GenericTypeParameterBuilder.GetCurrentToken() to allow custom attributes to be queried.
+@
+text
+@d148 1
+a148 1
+		private void CheckBaked()
+@
+
+
+1.44
+log
+@Refactored custom attribute handling of MemberInfo types.
+@
+text
+@d143 1
+a143 8
+				if (type != null)
+				{
+					type.CheckBaked();
+				}
+				else
+				{
+					method.CheckBaked();
+				}
+d148 12
+d199 9
+d231 12
+d245 1
+a245 1
+			get { return type.IsBaked; }
+@
+
+
+1.43
+log
+@Enable to generation of WindowsRuntime assemblies.
+@
+text
+@d216 5
+d1065 5
+d1204 5
+@
+
+
+1.42
+log
+@- Rewrote custom modifier handling to retain ordering.
+- Added ConstructorInfo.__ReturnParameter to expose custom modifiers.
+- Added __GetCustomModifiers() to various *Info types.
+- Added CustomModifiers type to encapsulate a custom modifier sequence.
+- Added CustomModifiersBuilder to create a CustomModifiers sequence.
+- Marked a number of IKVM.Reflection specific methods Obsolete, because they are replaced with method that take CustomModifiers value(s).
+@
+text
+@d343 1
+a343 1
+			rec.MethodDeclaration = this.ModuleBuilder.GetMethodToken(methodInfoDeclaration).Token;
+@
+
+
+1.41
+log
+@Added API extension to set custom attributes on interfaceimpl records.
+@
+text
+@d354 6
+a359 1
+			FieldBuilder fb = new FieldBuilder(this, fieldName, type, requiredCustomModifiers, optionalCustomModifiers, attributes);
+d372 2
+a373 2
+			return DefinePropertyImpl(name, attributes, CallingConventions.Standard, true, returnType, returnTypeRequiredCustomModifiers, returnTypeOptionalCustomModifiers,
+				parameterTypes, parameterTypeRequiredCustomModifiers, parameterTypeOptionalCustomModifiers);
+d380 9
+a388 2
+			return DefinePropertyImpl(name, attributes, callingConvention, false, returnType, returnTypeRequiredCustomModifiers, returnTypeOptionalCustomModifiers,
+				parameterTypes, parameterTypeRequiredCustomModifiers, parameterTypeOptionalCustomModifiers);
+d392 1
+a392 2
+			Type returnType, Type[] returnTypeRequiredCustomModifiers, Type[] returnTypeOptionalCustomModifiers,
+			Type[] parameterTypes, Type[][] parameterTypeRequiredCustomModifiers, Type[][] parameterTypeOptionalCustomModifiers)
+d398 1
+a398 2
+			PropertySignature sig = PropertySignature.Create(callingConvention, returnType, returnTypeOptionalCustomModifiers, returnTypeRequiredCustomModifiers,
+				parameterTypes, parameterTypeOptionalCustomModifiers, parameterTypeRequiredCustomModifiers);
+d641 1
+a641 6
+		public override Type[][] __GetGenericArgumentsOptionalCustomModifiers()
+		{
+			return gtpb == null ? Empty<Type[]>.Array : Util.Copy(new Type[gtpb.Length][]);
+		}
+
+		public override Type[][] __GetGenericArgumentsRequiredCustomModifiers()
+d643 1
+a643 1
+			return gtpb == null ? Empty<Type[]>.Array : Util.Copy(new Type[gtpb.Length][]);
+d1160 1
+a1160 6
+		public override Type[][] __GetGenericArgumentsOptionalCustomModifiers()
+		{
+			return underlyingType.__GetGenericArgumentsOptionalCustomModifiers();
+		}
+
+		public override Type[][] __GetGenericArgumentsRequiredCustomModifiers()
+d1162 1
+a1162 1
+			return underlyingType.__GetGenericArgumentsRequiredCustomModifiers();
+@
+
+
+1.40
+log
+@Fix. DefineNestedType should accept a null reference for the interfaces parameter.
+@
+text
+@d487 5
+@
+
+
+1.39
+log
+@Use a bit in typeFlags to mark System.Enum and System.ValueType and detect them dynamically, to allow multiple mscorlib versions to be used.
+@
+text
+@d418 1
+a418 1
+			foreach (Type iface in interfaces)
+d420 4
+a423 1
+				tb.AddInterfaceImplementation(iface);
+@
+
+
+1.38
+log
+@- Removed TypeBuilder.__SetStructLayoutAttribute().
+- Added TypeBuilder.__SetLayout().
+- Added Type.__GetLayout().
+- Fixed Type.StructLayoutAttribute to be compatible with .NET.
+@
+text
+@d249 1
+@
+
+
+1.37
+log
+@Bug fix. <Module> should not extend object.
+@
+text
+@d239 1
+d451 4
+a454 2
+			typeBuilder.pack = (short)packSize;
+			typeBuilder.size = typeSize;
+d493 15
+a507 1
+		public void __SetStructLayoutAttribute(StructLayoutAttribute attribute)
+d509 14
+d524 1
+a524 1
+			switch (attribute.Value)
+d537 1
+a537 1
+			switch (attribute.CharSet)
+d550 3
+a552 27
+			pack = (short)attribute.Pack;
+			size = attribute.Size;
+		}
+
+		internal void SetPackingSizeAndTypeSize(PackingSize packingSize, int typesize)
+		{
+			this.pack = (short)packingSize;
+			this.size = typesize;
+		}
+
+		private void SetStructLayoutPseudoCustomAttribute(CustomAttributeBuilder customBuilder)
+		{
+			object val = customBuilder.GetConstructorArgument(0);
+			LayoutKind layout;
+			if (val is short)
+			{
+				layout = (LayoutKind)(short)val;
+			}
+			else
+			{
+				layout = (LayoutKind)val;
+			}
+			StructLayoutAttribute attr = new StructLayoutAttribute(layout);
+			attr.Pack = (int?)customBuilder.GetFieldValue("Pack") ?? 0;
+			attr.Size = (int?)customBuilder.GetFieldValue("Size") ?? 0;
+			attr.CharSet = customBuilder.GetFieldValue<CharSet>("CharSet") ?? CharSet.None;
+			__SetStructLayoutAttribute(attr);
+d655 1
+a655 1
+			if (pack != 0 || size != 0)
+d658 1
+a658 1
+				rec.PackingSize = (short)pack;
+@
+
+
+1.36
+log
+@Added API extension __SetStructLayoutAttribute().
+@
+text
+@d664 1
+a664 2
+			Type baseType = this.BaseType;
+			if (baseType != null)
+d666 5
+a670 1
+				extends = this.ModuleBuilder.GetTypeToken(baseType).Token;
+@
+
+
+1.35
+log
+@Allow missing types and methods to be used in emitted assembly.
+@
+text
+@d237 2
+d450 2
+a451 1
+			this.ModuleBuilder.SetPackingSizeAndTypeSize(typeBuilder, PackingSize.Unspecified, typeSize);
+d482 1
+a482 11
+			get
+			{
+				for (int i = 0; i < this.ModuleBuilder.ClassLayout.records.Length; i++)
+				{
+					if (this.ModuleBuilder.ClassLayout.records[i].Parent == token)
+					{
+						return this.ModuleBuilder.ClassLayout.records[i].ClassSize;
+					}
+				}
+				return 0;
+			}
+d487 1
+a487 11
+			get
+			{
+				for (int i = 0; i < this.ModuleBuilder.ClassLayout.records.Length; i++)
+				{
+					if (this.ModuleBuilder.ClassLayout.records[i].Parent == token)
+					{
+						return (PackingSize)this.ModuleBuilder.ClassLayout.records[i].PackingSize;
+					}
+				}
+				return PackingSize.Unspecified;
+			}
+d490 1
+a490 1
+		private void SetStructLayoutPseudoCustomAttribute(CustomAttributeBuilder customBuilder)
+a491 20
+			object val = customBuilder.GetConstructorArgument(0);
+			LayoutKind layout;
+			if (val is short)
+			{
+				layout = (LayoutKind)(short)val;
+			}
+			else
+			{
+				layout = (LayoutKind)val;
+			}
+			int? pack = (int?)customBuilder.GetFieldValue("Pack");
+			int? size = (int?)customBuilder.GetFieldValue("Size");
+			if (pack.HasValue || size.HasValue)
+			{
+				ClassLayoutTable.Record rec = new ClassLayoutTable.Record();
+				rec.PackingSize = (short)(pack ?? 0);
+				rec.ClassSize = size ?? 0;
+				rec.Parent = token;
+				this.ModuleBuilder.ClassLayout.AddOrReplaceRecord(rec);
+			}
+d493 1
+a493 1
+			switch (layout)
+a504 1
+			CharSet? charSet = customBuilder.GetFieldValue<CharSet>("CharSet");
+d506 1
+a506 1
+			switch (charSet ?? CharSet.None)
+d519 27
+d648 8
+d806 2
+a807 2
+				StructLayoutAttribute attr;
+				if ((attribs & TypeAttributes.ExplicitLayout) != 0)
+d809 9
+a817 10
+					attr = new StructLayoutAttribute(LayoutKind.Explicit);
+					attr.Pack = 8;
+					attr.Size = 0;
+					this.ModuleBuilder.ClassLayout.GetLayout(token, ref attr.Pack, ref attr.Size);
+				}
+				else
+				{
+					attr = new StructLayoutAttribute((attribs & TypeAttributes.SequentialLayout) != 0 ? LayoutKind.Sequential : LayoutKind.Auto);
+					attr.Pack = 8;
+					attr.Size = 0;
+d819 3
+d833 3
+@
+
+
+1.34
+log
+@Optimized the Type == operator.
+@
+text
+@a233 1
+		private TypeFlags typeFlags;
+a237 8
+		[Flags]
+		private enum TypeFlags
+		{
+			IsGenericTypeDefinition = 1,
+			HasNestedTypes = 2,
+			Baked = 4,
+		}
+
+@
+
+
+1.34.2.1
+log
+@Back ported fixes:
+- Bug fix. BeginExceptFilterBlock() should behave like BeginCatchBlock(), not BeginFinallyBlock().
+- Fix for http://gcc.gnu.org/bugzilla/show_bug.cgi?id=48131.
+- Bug fix. Support loading resources from assemblies added to the boot classloader (with ikvm.runtime.Startup.addBootClassPathAssemby()).
+- Type parameters should be separated by commas.
+- Only the assembly name should escape the ']' characters.
+- Bug fix. <Module> should not extend object.
+- Bug fix. String literals that are invalid UTF-16 should not be "corrected".
+- Bug fix. MaxStack returned incorrect value for tiny header methods.
+- Fix. Module does not inherit members from Object.
+- Align initialized data arrays.
+- Align managed resources on 8 bytes.
+@
+text
+@d676 2
+a677 1
+			if (!IsModulePseudoType)
+d679 1
+a679 5
+				Type baseType = this.BaseType;
+				if (baseType != null)
+				{
+					extends = this.ModuleBuilder.GetTypeToken(baseType).Token;
+				}
+@
+
+
+1.33
+log
+@Fixed TypeBuilder.SetParent(null) handling. Moved base type defaulting to CreateType() to avoid problems when compiing mscorlib.
+@
+text
+@a88 5
+		public override Type UnderlyingSystemType
+		{
+			get { return this; }
+		}
+
+a1046 2
+		private readonly TypeBuilder typeBuilder;
+
+d1048 1
+a1049 1
+			this.typeBuilder = typeBuilder;
+d1054 1
+a1054 1
+			get { return typeBuilder.AssemblyQualifiedName; }
+d1059 1
+a1059 1
+			get { return typeBuilder.BaseType; }
+d1064 1
+a1064 1
+			get { return typeBuilder.__Name; }
+d1069 1
+a1069 1
+			get { return typeBuilder.__Namespace; }
+d1075 1
+a1075 1
+			get { return TypeNameParser.Escape(typeBuilder.__Name); }
+d1085 1
+a1085 1
+			get { return typeBuilder.Attributes; }
+d1090 1
+a1090 1
+			return typeBuilder.__GetDeclaredInterfaces();
+d1095 1
+a1095 1
+			return typeBuilder.__GetDeclaredMethods();
+d1100 1
+a1100 1
+			return typeBuilder.__GetMethodImplMap();
+d1105 1
+a1105 1
+			return typeBuilder.__GetDeclaredFields();
+d1110 1
+a1110 1
+			return typeBuilder.__GetDeclaredEvents();
+d1115 1
+a1115 1
+			return typeBuilder.__GetDeclaredProperties();
+d1120 1
+a1120 1
+			return typeBuilder.__GetDeclaredTypes();
+d1125 1
+a1125 1
+			get { return typeBuilder.DeclaringType; }
+d1130 1
+a1130 7
+			get { return typeBuilder.StructLayoutAttribute; }
+		}
+
+		public override Type UnderlyingSystemType
+		{
+			// Type.Equals/GetHashCode relies on this
+			get { return typeBuilder; }
+d1135 1
+a1135 1
+			return typeBuilder.GetGenericArguments();
+d1140 1
+a1140 1
+			return typeBuilder.GetGenericTypeArgument(index);
+d1145 1
+a1145 1
+			return typeBuilder.__GetGenericArgumentsOptionalCustomModifiers();
+d1150 1
+a1150 1
+			return typeBuilder.__GetGenericArgumentsRequiredCustomModifiers();
+d1155 1
+a1155 1
+			get { return typeBuilder.IsGenericType; }
+d1160 1
+a1160 1
+			get { return typeBuilder.IsGenericTypeDefinition; }
+d1165 1
+a1165 1
+			get { return typeBuilder.ContainsGenericParameters; }
+d1170 1
+a1170 1
+			get { return typeBuilder.MetadataToken; }
+d1175 1
+a1175 1
+			get { return typeBuilder.Module; }
+d1180 1
+a1180 1
+			return typeBuilder.GetModuleBuilderToken();
+@
+
+
+1.32
+log
+@Move missing type support into universe and optionally allow missing types to be resolved inside all Assemblies.
+@
+text
+@d229 1
+a229 1
+		private Type baseType;
+d267 1
+a267 1
+			ilgen.Emit(OpCodes.Call, baseType.GetConstructor(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic, null, Type.EmptyTypes, null));
+a460 4
+			if (parent == null && (attr & TypeAttributes.Interface) == 0)
+			{
+				parent = this.ModuleBuilder.universe.System_Object;
+			}
+d479 1
+a479 1
+			baseType = parent;
+d681 1
+d727 12
+a738 1
+			get { return baseType; }
+@
+
+
+1.31
+log
+@The type attributes are mutable, so there is no reason to require them in __Define[Nested]Type().
+@
+text
+@a1039 5
+
+		internal override Type ResolveNestedType(TypeName typeName)
+		{
+			return base.ResolveNestedType(typeName) ?? ((AssemblyBuilder)ModuleBuilder.Assembly).GetMissingType(this.Module, this, typeName);
+		}
+@
+
+
+1.30
+log
+@More type name fixes. This time to support the fact that the CLR and Mono both treat TypeNamespace and TypeName as separate names and do not consider fullName to be relevant.
+@
+text
+@d252 1
+a252 1
+		internal TypeBuilder(ITypeOwner owner, string ns, string name, TypeAttributes attribs)
+a257 1
+			this.attribs = attribs;
+d459 2
+a460 1
+			TypeBuilder typeBuilder = __DefineNestedType(ns, name, attr);
+d470 1
+a470 1
+		public TypeBuilder __DefineNestedType(string ns, string name, TypeAttributes attr)
+d473 1
+a473 1
+			TypeBuilder typeBuilder = this.ModuleBuilder.DefineType(this, ns, name, attr);
+@
+
+
+1.29
+log
+@Added support for resolving MissingTypes in AssemblyBuilder.
+@
+text
+@d1041 1
+a1041 1
+		internal override Type ResolveNestedType(string ns, string name)
+d1043 1
+a1043 1
+			return base.ResolveNestedType(ns, name) ?? ((AssemblyBuilder)ModuleBuilder.Assembly).GetMissingType(this.Module, this, ns, name);
+@
+
+
+1.28
+log
+@Refactored Define[Nested]Type methods to allow __DefineType() and __DefineNestedType() APIs to be added that allow namespace and name to be passed in separately.
+@
+text
+@d1040 5
+@
+
+
+1.27
+log
+@Remove parent from TypeBuilder constructor.
+@
+text
+@d252 1
+a252 1
+		internal TypeBuilder(ITypeOwner owner, string name, TypeAttributes attribs)
+d256 2
+d259 1
+a259 11
+			if (!this.IsNested)
+			{
+				int lastdot = name.LastIndexOf('.');
+				if (lastdot > 0)
+				{
+					this.ns = name.Substring(0, lastdot);
+					this.typeNameSpace = this.ModuleBuilder.Strings.Add(ns);
+					name = name.Substring(lastdot + 1);
+				}
+			}
+			this.name = name;
+d438 1
+a438 2
+			this.typeFlags |= TypeFlags.HasNestedTypes;
+			return this.ModuleBuilder.DefineNestedTypeHelper(this, name, attr, parent, PackingSize.Unspecified, 0);
+d443 1
+a443 2
+			this.typeFlags |= TypeFlags.HasNestedTypes;
+			return this.ModuleBuilder.DefineNestedTypeHelper(this, name, attr, parent, PackingSize.Unspecified, typeSize);
+d448 24
+d473 6
+a478 1
+			return this.ModuleBuilder.DefineNestedTypeHelper(this, name, attr, parent, packSize, 0);
+@
+
+
+1.26
+log
+@Final set of Name/Namespace/FullName fixes to make everything more compatible (including bugs) with .NET reflection.
+@
+text
+@d252 1
+a252 1
+		internal TypeBuilder(ITypeOwner owner, string name, Type baseType, TypeAttributes attribs)
+a255 1
+			SetParent(baseType);
+@
+
+
+1.25
+log
+@Added virtual __Name and __Namespace properties to Type to allow the real (from the ECMA CLI point of view) namespace and names of types to be queried (for TypeDef and TypeBuilder only).
+@
+text
+@d746 2
+a747 11
+			get
+			{
+				if (this.IsNested)
+				{
+					return name;
+				}
+				else
+				{
+					return base.Name;
+				}
+			}
+d755 2
+a756 1
+				return base.Namespace ?? "";
+a759 7
+		internal string GetBakedNamespace()
+		{
+			// if you refer to the TypeBuilder via its baked Type, Namespace will return null
+			// for the empty namespace (instead of "" like TypeBuilder.Namespace above does)
+			return base.Namespace;
+		}
+
+d1043 6
+a1048 1
+		public override string Name
+d1050 1
+a1050 1
+			get { return typeBuilder.Name; }
+d1053 1
+a1053 1
+		public override string Namespace
+d1055 2
+a1056 1
+			get { return typeBuilder.GetBakedNamespace(); }
+d1061 1
+a1061 1
+			get { return typeBuilder.FullName; }
+@
+
+
+1.24
+log
+@Don't create duplicate ClassLayout table records when using the DefineType overload that specifies the size and also applying a StructLayoutAttribute.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008-2010 Jeroen Frijters
+d232 2
+a233 1
+		private readonly string nameOrFullName;
+a255 1
+			this.nameOrFullName = TypeNameParser.Escape(name);
+d263 2
+a264 1
+					this.typeNameSpace = this.ModuleBuilder.Strings.Add(name.Substring(0, lastdot));
+d268 1
+d721 5
+a725 1
+					return this.DeclaringType.FullName + "+" + nameOrFullName;
+d729 1
+a729 1
+					return nameOrFullName;
+d734 10
+d750 1
+a750 1
+					return nameOrFullName;
+@
+
+
+1.23
+log
+@According to Marek, Mono requires the PropertyMap table to be sorted.
+@
+text
+@d525 1
+a525 1
+				this.ModuleBuilder.ClassLayout.AddRecord(rec);
+@
+
+
+1.22
+log
+@Custom attributes applied to GenericTypeParameterBuilder were attached to the type token, instead of the type parameter token.
+@
+text
+@d661 23
+a705 19
+			if (declarativeSecurity != null)
+			{
+				this.ModuleBuilder.AddDeclarativeSecurity(token, declarativeSecurity);
+			}
+			if (baseType != null)
+			{
+				extends = this.ModuleBuilder.GetTypeToken(baseType).Token;
+			}
+			if (interfaces != null)
+			{
+				foreach (Type interfaceType in interfaces)
+				{
+					InterfaceImplTable.Record rec = new InterfaceImplTable.Record();
+					rec.Class = token;
+					rec.Interface = this.ModuleBuilder.GetTypeToken(interfaceType).Token;
+					this.ModuleBuilder.InterfaceImpl.AddRecord(rec);
+				}
+			}
+			return new BakedType(this);
+@
+
+
+1.21
+log
+@TypeBuilder created by DefineInitializedData should be created.
+@
+text
+@d39 1
+a39 1
+		private readonly int paramToken;
+d43 1
+d56 1
+a56 1
+			this.paramToken = this.ModuleBuilder.GenericParam.AddRecord(rec);
+d156 1
+a156 1
+				return this.ModuleBuilder.GenericParam.GetAttributes(paramToken);
+d163 1
+a163 1
+			rec.Owner = paramToken;
+d184 1
+d186 1
+a186 1
+			this.ModuleBuilder.GenericParam.PatchAttribute(paramToken, genericParameterAttributes);
+d191 1
+a191 1
+			this.ModuleBuilder.SetCustomAttribute(GetModuleBuilderToken(), customBuilder);
+@
+
+
+1.20
+log
+@- Delay creation of tokens for base type and interfaces until CreateType, to avoid problems when a non yet completely defined type is used as a base type or interface.
+- Don't clear properties and events fields during CreateType.
+@
+text
+@d850 3
+a852 1
+				fieldType = this.ModuleBuilder.DefineType("$ArrayType$" + data.Length, TypeAttributes.Public | TypeAttributes.Sealed | TypeAttributes.ExplicitLayout, this.Module.universe.System_ValueType, PackingSize.Size1, data.Length);
+@
+
+
+1.19
+log
+@Use GetTypeTokenForMemberRef() instead of GetTypeToken(), where appropriate.
+@
+text
+@a461 8
+			if (parent == null)
+			{
+				extends = 0;
+			}
+			else
+			{
+				extends = this.ModuleBuilder.GetTypeToken(parent).Token;
+			}
+a470 4
+			InterfaceImplTable.Record rec = new InterfaceImplTable.Record();
+			rec.Class = token;
+			rec.Interface = this.ModuleBuilder.GetTypeToken(interfaceType).Token;
+			this.ModuleBuilder.InterfaceImpl.AddRecord(rec);
+a668 1
+				properties = null;
+a679 1
+				events = null;
+d685 14
+@
+
+
+1.18
+log
+@Fixed __GetGenericArgumentsOptionalCustomModifiers() and __GetGenericArgumentsRequiredCustomModifiers() as they should return an array with the same number of elements as the number of generic arguments, even if there aren't any modifiers.
+@
+text
+@d163 1
+a163 1
+			rec.Constraint = this.ModuleBuilder.GetTypeToken(type).Token;
+@
+
+
+1.17
+log
+@Added TypeBuilder.__SetAttributes() and MethodBuilder.__SetAttributes() to allow modying the attributes after the builder has been created.
+@
+text
+@d634 10
+d1115 10
+@
+
+
+1.16
+log
+@Removed CheckBaked() from __GetDeclaredXxx methods and moved it to .NET compatible APIs only. There is really no good reason not to allow unbaked builders to be interrogated.
+@
+text
+@d748 5
+@
+
+
+1.15
+log
+@Fixed Type.GetEnumUnderlyingType(). Only for EnumBuilder should it work on unbaked types.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008, 2009 Jeroen Frijters
+a749 1
+			CheckBaked();
+a754 1
+			CheckBaked();
+d953 1
+a953 1
+		internal void CheckBaked()
+a962 1
+			CheckBaked();
+a980 1
+			CheckBaked();
+a985 1
+			CheckBaked();
+a990 1
+			CheckBaked();
+@
+
+
+1.14
+log
+@SetCustomAttribute(ConstructorInfo, byte[]) overload should forward to SetCustomAttribute(CustomAttributeBuilder) overload instead of directly calling ModuleBuilder.SetCustomAttribute(), otherwise we miss the pseudo custom attribute support.
+@
+text
+@a949 16
+		public override Type GetEnumUnderlyingType()
+		{
+			if (this.IsEnum)
+			{
+				foreach (FieldInfo field in fields)
+				{
+					// the CLR assumes that an enum has only one instance field, so we can do the same
+					if (!field.IsStatic)
+					{
+						return field.FieldType;
+					}
+				}
+			}
+			throw new ArgumentException();
+		}
+
+@
+
+
+1.13
+log
+@Removed mcs specific flag that is no longer required.
+@
+text
+@d194 1
+a194 1
+			this.ModuleBuilder.SetCustomAttribute(GetModuleBuilderToken(), new CustomAttributeBuilder(con, binaryAttribute));
+d569 1
+a569 1
+			this.ModuleBuilder.SetCustomAttribute(token, new CustomAttributeBuilder(con, binaryAttribute));
+@
+
+
+1.12
+log
+@Introduced Empty<T> to cache zero length arrays.
+@
+text
+@d973 1
+a973 1
+			if ((typeFlags & TypeFlags.Baked) == 0 && !((AssemblyBuilder)this.Assembly).mcs)
+@
+
+
+1.11
+log
+@Implemented GenericTypeParameterBuilder.GenericParameterAttributes.
+@
+text
+@d1001 1
+a1001 1
+			return Util.ToArray(fields, FieldInfo.EmptyArray);
+d1007 1
+a1007 1
+			return Util.ToArray(events, EventInfo.EmptyArray);
+d1013 1
+a1013 1
+			return Util.ToArray(properties, PropertyInfo.EmptyArray);
+@
+
+
+1.10
+log
+@Implemented GenericTypeParameterBuilder.BaseType.
+@
+text
+@d145 12
+a156 1
+			get { throw new NotImplementedException(); }
+d971 1
+a971 1
+		private void CheckBaked()
+@
+
+
+1.9
+log
+@Renamed GenericTypeParameterBuilder.token to typeToken, to more clearly distinguish it from paramToken.
+@
+text
+@d42 1
+d70 1
+a70 1
+			get { throw new NotImplementedException(); }
+d148 1
+a148 1
+		public void SetBaseTypeConstraint(Type baseTypeConstraint)
+d152 1
+a152 1
+			rec.Constraint = this.ModuleBuilder.GetTypeToken(baseTypeConstraint).Token;
+d156 6
+d166 1
+a166 1
+				SetBaseTypeConstraint(type);
+@
+
+
+1.8
+log
+@Moved common metadata table record adding code to GenericTypeParameterBuilder constructor and did some other GenericTypeParameterBuilder clean up.
+@
+text
+@d41 1
+a41 1
+		private int token;
+d181 1
+a181 1
+			if (token == 0)
+d185 1
+a185 1
+				token = 0x1B000000 | this.ModuleBuilder.TypeSpec.AddRecord(this.ModuleBuilder.Blobs.Add(spec));
+d187 1
+a187 1
+			return token;
+@
+
+
+1.7
+log
+@Implemented __GetDeclaredInterfaces() on TypeBuilder (and hence baked types).
+@
+text
+@a35 1
+		private readonly ModuleBuilder moduleBuilder;
+d37 3
+a39 3
+		private readonly Type type;
+		private readonly MethodInfo method;
+		private readonly int owner;
+d43 1
+a43 1
+		internal GenericTypeParameterBuilder(ModuleBuilder moduleBuilder, string name, Type type, MethodInfo method, int owner, int position)
+a44 1
+			this.moduleBuilder = moduleBuilder;
+a47 1
+			this.owner = owner;
+d49 6
+d107 5
+d114 1
+a114 1
+			get { return moduleBuilder; }
+d150 3
+a152 3
+			rec.Owner = owner;
+			rec.Constraint = moduleBuilder.GetTypeToken(baseTypeConstraint).Token;
+			moduleBuilder.GenericParamConstraint.AddRecord(rec);
+d166 1
+a166 1
+			this.moduleBuilder.GenericParam.PatchAttribute(owner, genericParameterAttributes);
+d171 1
+a171 1
+			this.moduleBuilder.SetCustomAttribute(GetModuleBuilderToken(), customBuilder);
+d176 1
+a176 1
+			this.moduleBuilder.SetCustomAttribute(GetModuleBuilderToken(), new CustomAttributeBuilder(con, binaryAttribute));
+d184 2
+a185 2
+				Signature.WriteTypeSpec(moduleBuilder, spec, this);
+				token = 0x1B000000 | moduleBuilder.TypeSpec.AddRecord(moduleBuilder.Blobs.Add(spec));
+d606 1
+a606 6
+				GenericParamTable.Record rec = new GenericParamTable.Record();
+				rec.Number = (short)i;
+				rec.Flags = 0;
+				rec.Owner = token;
+				rec.Name = this.ModuleBuilder.Strings.Add(names[i]);
+				gtpb[i] = new GenericTypeParameterBuilder(this.ModuleBuilder, names[i], this, null, this.ModuleBuilder.GenericParam.AddRecord(rec), i);
+@
+
+
+1.6
+log
+@TypeBuilder.Namespace shouldn't return null.
+@
+text
+@d213 1
+d448 5
+d727 6
+@
+
+
+1.5
+log
+@Support for mcs specific AssemblyBuilderAccess flag (0x800 aka COMPILER_ACCESS) to allow access to members of unbaked TypeBuilders.
+@
+text
+@d700 16
+d1013 5
+@
+
+
+1.4
+log
+@Implemented __GetDeclaredFields(), __GetDeclaredEvents() and __GetDeclaredProperties() on TypeBuilder.
+@
+text
+@d924 1
+a924 1
+			if ((typeFlags & TypeFlags.Baked) == 0)
+@
+
+
+1.3
+log
+@Use Util.Copy() instead of cloning the array, because we want to return a Type[] not a GenericTypeParameterBuilder[].
+@
+text
+@d952 1
+a952 1
+			throw new NotImplementedException();
+d958 1
+a958 1
+			throw new NotImplementedException();
+d964 1
+a964 1
+			throw new NotImplementedException();
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d604 1
+a604 1
+			return gtpb == null ? Type.EmptyTypes : (Type[])gtpb.Clone();
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

@@ -1,0 +1,882 @@
+head	1.22;
+access;
+symbols
+	v8_1_5717_0:1.22
+	v8_1:1.22.0.4
+	v8_0_5449_1:1.22
+	v8_0_5449_0:1.22
+	v8_0:1.22.0.2
+	v7_4_5196_0:1.21
+	v7_4:1.21.0.6
+	v7_3:1.21.0.4
+	v7_2_4630_6:1.21
+	v7_2_4630_5:1.21
+	v7_2_4630_4:1.21
+	v7_2_4630_3:1.21
+	v7_2_4630_2:1.21
+	v0_46_0_4:1.18
+	v7_2_4630_1:1.21
+	v7_2:1.21.0.2
+	v7_1_4532_2:1.20
+	v7_1_4532_1:1.20
+	v7_1_4532_0:1.20
+	v7_1:1.20.0.2
+	v7_0_4335_3:1.19
+	v7_0_4335_2:1.19
+	v7_0_4335_1:1.19
+	v0_46_0_2:1.18
+	v7_0_4335_0:1.19
+	v7_0:1.19.0.2
+	v0_40_0_6:1.8.2.1
+	v0_40_0_5:1.8.2.1
+	v0_46_0_1:1.18
+	v0_46_0_0:1.18
+	v0_46:1.18.0.2
+	v0_44_0_6:1.15.2.1
+	v0_44_0_5:1.15
+	v0_44_0_4:1.15
+	v0_44_0_3:1.15
+	v0_44_0_2:1.15
+	v0_42_0_7:1.8
+	v0_44_0_1:1.15
+	v0_44_0_0:1.15
+	v0_44:1.15.0.2
+	v0_42_0_6:1.8
+	v0_42_0_5:1.8
+	v0_42_0_4:1.8
+	v0_42_0_3:1.8
+	v0_42_0_2:1.8
+	v0_42_0_1:1.8
+	v0_42_0_0:1.8
+	v0_42:1.8.0.4
+	v0_40_0_3:1.8
+	v0_40_0_2:1.8
+	v0_40_0_1:1.8
+	v0_40_0_0:1.8
+	v0_40:1.8.0.2
+	v0_38_0_1:1.5
+	v0_38_0_0:1.5
+	v0_38:1.5.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.22
+date	2014.11.18.11.33.36;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2012.07.05.09.57.09;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2011.12.09.15.59.35;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2011.08.10.09.06.27;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2010.10.21.12.20.13;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2010.10.01.08.11.50;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2010.09.30.04.03.33;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2010.06.07.06.13.05;	author jfrijters;	state Exp;
+branches
+	1.15.2.1;
+next	1.14;
+
+1.14
+date	2010.02.11.10.20.24;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2010.01.28.09.18.34;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2010.01.27.09.03.32;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2010.01.25.07.53.28;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2009.10.16.07.06.52;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2009.10.14.14.58.41;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2009.02.27.06.17.06;	author jfrijters;	state Exp;
+branches
+	1.8.2.1;
+next	1.7;
+
+1.7
+date	2009.01.20.05.14.17;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2008.11.14.08.42.07;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2008.06.03.12.10.34;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2008.06.03.06.52.33;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.05.09.05.58.03;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.12.28.14.36.51;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.12.28.10.23.46;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.8.2.1
+date	2011.05.16.06.54.23;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.15.2.1
+date	2010.10.22.07.30.32;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.22
+log
+@Added cache for methodinfos of interlocked methods.
+@
+text
+@/*
+  Copyright (C) 2007-2011 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+
+using System;
+using System.Collections.Generic;
+#if STATIC_COMPILER
+using IKVM.Reflection;
+using IKVM.Reflection.Emit;
+using Type = IKVM.Reflection.Type;
+#else
+using System.Reflection;
+using System.Reflection.Emit;
+#endif
+using IKVM.Internal;
+using InstructionFlags = IKVM.Internal.ClassFile.Method.InstructionFlags;
+
+static class AtomicReferenceFieldUpdaterEmitter
+{
+	internal static bool Emit(DynamicTypeWrapper.FinishContext context, TypeWrapper wrapper, CodeEmitter ilgen, ClassFile classFile, int i, ClassFile.Method.Instruction[] code, InstructionFlags[] flags)
+	{
+		if (i >= 3
+			&& (flags[i - 0] & InstructionFlags.BranchTarget) == 0
+			&& (flags[i - 1] & InstructionFlags.BranchTarget) == 0
+			&& (flags[i - 2] & InstructionFlags.BranchTarget) == 0
+			&& (flags[i - 3] & InstructionFlags.BranchTarget) == 0
+			&& code[i - 1].NormalizedOpCode == NormalizedByteCode.__ldc_nothrow
+			&& code[i - 2].NormalizedOpCode == NormalizedByteCode.__ldc
+			&& code[i - 3].NormalizedOpCode == NormalizedByteCode.__ldc)
+		{
+			// we now have a structural match, now we need to make sure that the argument values are what we expect
+			TypeWrapper tclass = classFile.GetConstantPoolClassType(code[i - 3].Arg1);
+			TypeWrapper vclass = classFile.GetConstantPoolClassType(code[i - 2].Arg1);
+			string fieldName = classFile.GetConstantPoolConstantString(code[i - 1].Arg1);
+			if (tclass == wrapper && !vclass.IsUnloadable && !vclass.IsPrimitive && !vclass.IsNonPrimitiveValueType)
+			{
+				FieldWrapper field = wrapper.GetFieldWrapper(fieldName, vclass.SigName);
+				if (field != null && !field.IsStatic && field.IsVolatile && field.DeclaringType == wrapper && field.FieldTypeWrapper == vclass)
+				{
+					// everything matches up, now call the actual emitter
+					ilgen.Emit(OpCodes.Pop);
+					ilgen.Emit(OpCodes.Pop);
+					ilgen.Emit(OpCodes.Pop);
+					ilgen.Emit(OpCodes.Newobj, context.GetAtomicReferenceFieldUpdater(field));
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+	internal static void EmitImpl(TypeBuilder tb, FieldInfo field)
+	{
+		EmitCompareAndSet("compareAndSet", tb, field);
+		EmitGet(tb, field);
+		EmitSet("set", tb, field);
+	}
+
+	private static void EmitCompareAndSet(string name, TypeBuilder tb, FieldInfo field)
+	{
+		MethodBuilder compareAndSet = tb.DefineMethod(name, MethodAttributes.Public | MethodAttributes.Virtual, Types.Boolean, new Type[] { Types.Object, Types.Object, Types.Object });
+		ILGenerator ilgen = compareAndSet.GetILGenerator();
+		ilgen.Emit(OpCodes.Ldarg_1);
+		ilgen.Emit(OpCodes.Castclass, field.DeclaringType);
+		ilgen.Emit(OpCodes.Ldflda, field);
+		ilgen.Emit(OpCodes.Ldarg_3);
+		ilgen.Emit(OpCodes.Castclass, field.FieldType);
+		ilgen.Emit(OpCodes.Ldarg_2);
+		ilgen.Emit(OpCodes.Castclass, field.FieldType);
+		ilgen.Emit(OpCodes.Call, MakeCompareExchange(field.FieldType));
+		ilgen.Emit(OpCodes.Ldarg_2);
+		ilgen.Emit(OpCodes.Ceq);
+		ilgen.Emit(OpCodes.Ret);
+	}
+
+	internal static MethodInfo MakeCompareExchange(Type type)
+	{
+		return InterlockedMethods.CompareExchangeOfT.MakeGenericMethod(type);
+	}
+
+	private static void EmitGet(TypeBuilder tb, FieldInfo field)
+	{
+		MethodBuilder get = tb.DefineMethod("get", MethodAttributes.Public | MethodAttributes.Virtual, Types.Object, new Type[] { Types.Object });
+		ILGenerator ilgen = get.GetILGenerator();
+		ilgen.Emit(OpCodes.Ldarg_1);
+		ilgen.Emit(OpCodes.Castclass, field.DeclaringType);
+		ilgen.Emit(OpCodes.Volatile);
+		ilgen.Emit(OpCodes.Ldfld, field);
+		ilgen.Emit(OpCodes.Ret);
+	}
+
+	private static void EmitSet(string name, TypeBuilder tb, FieldInfo field)
+	{
+		MethodBuilder set = tb.DefineMethod(name, MethodAttributes.Public | MethodAttributes.Virtual, Types.Void, new Type[] { Types.Object, Types.Object });
+		CodeEmitter ilgen = CodeEmitter.Create(set);
+		ilgen.Emit(OpCodes.Ldarg_1);
+		ilgen.Emit(OpCodes.Castclass, field.DeclaringType);
+		ilgen.Emit(OpCodes.Ldarg_2);
+		ilgen.Emit(OpCodes.Castclass, field.FieldType);
+		ilgen.Emit(OpCodes.Volatile);
+		ilgen.Emit(OpCodes.Stfld, field);
+		ilgen.EmitMemoryBarrier();
+		ilgen.Emit(OpCodes.Ret);
+		ilgen.DoEmit();
+	}
+}
+
+static class InterlockedMethods
+{
+	internal static readonly MethodInfo AddInt32;
+	internal static readonly MethodInfo CompareExchangeInt32;
+	internal static readonly MethodInfo CompareExchangeInt64;
+	internal static readonly MethodInfo CompareExchangeOfT;
+	internal static readonly MethodInfo ExchangeOfT;
+
+	static InterlockedMethods()
+	{
+		Type type = JVM.Import(typeof(System.Threading.Interlocked));
+		AddInt32 = type.GetMethod("Add", new Type[] { Types.Int32.MakeByRefType(), Types.Int32 });
+		CompareExchangeInt32 = type.GetMethod("CompareExchange", new Type[] { Types.Int32.MakeByRefType(), Types.Int32, Types.Int32 });
+		CompareExchangeInt64 = type.GetMethod("CompareExchange", new Type[] { Types.Int64.MakeByRefType(), Types.Int64, Types.Int64 });
+		foreach (MethodInfo m in type.GetMethods())
+		{
+			if (m.IsGenericMethodDefinition)
+			{
+				switch (m.Name)
+				{
+					case "CompareExchange":
+						CompareExchangeOfT = m;
+						break;
+					case "Exchange":
+						ExchangeOfT = m;
+						break;
+				}
+			}
+		}
+	}
+}
+@
+
+
+1.21
+log
+@Added intrinsics for (some usages of) Unsafe methods: putObject, putOrderedObject, putObjectVolatile, getObjectVolatile, getObject, compareAndSwapObject.
+@
+text
+@d98 1
+a98 10
+		MethodInfo interlockedCompareExchange = null;
+		foreach (MethodInfo m in JVM.Import(typeof(System.Threading.Interlocked)).GetMethods())
+		{
+			if (m.Name == "CompareExchange" && m.IsGenericMethodDefinition)
+			{
+				interlockedCompareExchange = m;
+				break;
+			}
+		}
+		return interlockedCompareExchange.MakeGenericMethod(type);
+d127 32
+@
+
+
+1.20
+log
+@Moved AtomicReferenceFieldUpdater creation into FinishContext, to be able to better keep track of the types and avoid the global dictionary.
+@
+text
+@d96 1
+a96 1
+	private static MethodInfo MakeCompareExchange(Type type)
+@
+
+
+1.19
+log
+@Bug fix. The "ldc <class>" bytecode can throw an exception, so we need to treat it as such (previously it wasn't marked as throwing an exception, so an exception handler surrounding it could be "optimized" away). The new scheme is to patch the safe versions of ldc opcode into a ldc_nothrow.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2007 Jeroen Frijters
+a39 2
+	private static readonly Dictionary<FieldWrapper, ConstructorBuilder> map = new Dictionary<FieldWrapper, ConstructorBuilder>();
+
+d61 4
+a64 1
+					DoEmit(context, wrapper, ilgen, field);
+d72 1
+a72 1
+	private static void DoEmit(DynamicTypeWrapper.FinishContext context, TypeWrapper wrapper, CodeEmitter ilgen, FieldWrapper field)
+d74 3
+a76 37
+		ConstructorBuilder cb;
+		bool exists;
+		lock (map)
+		{
+			exists = map.TryGetValue(field, out cb);
+		}
+		if (!exists)
+		{
+			// note that we don't need to lock here, because we're running as part of FinishCore, which is already protected by a lock
+			TypeWrapper arfuTypeWrapper = ClassLoaderWrapper.LoadClassCritical("ikvm.internal.IntrinsicAtomicReferenceFieldUpdater");
+			TypeBuilder tb = wrapper.TypeAsBuilder.DefineNestedType("__<ARFU>_" + field.Name + field.Signature.Replace('.', '/'), TypeAttributes.NestedPrivate | TypeAttributes.Sealed, arfuTypeWrapper.TypeAsBaseType);
+			EmitCompareAndSet("compareAndSet", tb, field.GetField());
+			EmitGet(tb, field.GetField());
+			EmitSet("set", tb, field.GetField());
+
+			cb = tb.DefineConstructor(MethodAttributes.Assembly, CallingConventions.Standard, Type.EmptyTypes);
+			lock (map)
+			{
+				map.Add(field, cb);
+			}
+			CodeEmitter ctorilgen = CodeEmitter.Create(cb);
+			ctorilgen.Emit(OpCodes.Ldarg_0);
+			MethodWrapper basector = arfuTypeWrapper.GetMethodWrapper("<init>", "()V", false);
+			basector.Link();
+			basector.EmitCall(ctorilgen);
+			ctorilgen.Emit(OpCodes.Ret);
+			ctorilgen.DoEmit();
+			context.RegisterPostFinishProc(delegate
+			{
+				arfuTypeWrapper.Finish();
+				tb.CreateType();
+			});
+		}
+		ilgen.Emit(OpCodes.Pop);
+		ilgen.Emit(OpCodes.Pop);
+		ilgen.Emit(OpCodes.Pop);
+		ilgen.Emit(OpCodes.Newobj, cb);
+@
+
+
+1.18
+log
+@Volatile stores require a memory barrier. Fix for #3086040.
+@
+text
+@d49 1
+a49 1
+			&& code[i - 1].NormalizedOpCode == NormalizedByteCode.__ldc
+@
+
+
+1.17
+log
+@- Removed unnecessary methods from CodeEmitter.
+- Removed "Lazy" prefixes in CodeEmitter.
+@
+text
+@d157 1
+a157 1
+		ILGenerator ilgen = set.GetILGenerator();
+d164 1
+d166 1
+@
+
+
+1.16
+log
+@Build intermediate store of MSIL code in CodeEmitter to allow post-processing optimization steps.
+@
+text
+@d106 3
+a108 3
+		ilgen.LazyEmitPop();
+		ilgen.LazyEmitPop();
+		ilgen.LazyEmitPop();
+@
+
+
+1.15
+log
+@Removed mutable flags field from Instruction.
+@
+text
+@d99 1
+@
+
+
+1.15.2.1
+log
+@Backport: Volatile stores require a memory barrier. Fix for #3086040.
+@
+text
+@d156 1
+a156 1
+		CodeEmitter ilgen = CodeEmitter.Create(set);
+a162 1
+		ilgen.EmitMemoryBarrier();
+@
+
+
+1.14
+log
+@Introduced a base class for intrisified AtomitcReferenceFieldUpdaters. This reduces the size of the generates classes somewhat and allows for a public type to represent all intrinsified instances (instead of the HideFromJava nested type).
+@
+text
+@d36 1
+d42 1
+a42 1
+	internal static bool Emit(DynamicTypeWrapper.FinishContext context, TypeWrapper wrapper, CodeEmitter ilgen, ClassFile classFile, int i, ClassFile.Method.Instruction[] code)
+d45 4
+a48 3
+			&& !code[i - 0].IsBranchTarget
+			&& !code[i - 1].IsBranchTarget
+			&& !code[i - 2].IsBranchTarget
+@
+
+
+1.13
+log
+@Removed IKVM_REF_EMIT, as STATIC_COMPILER or STUB_GENERATOR now always implies IKVM.Reflection.
+@
+text
+@d80 1
+a80 1
+			TypeWrapper arfuTypeWrapper = ClassLoaderWrapper.LoadClassCritical("java.util.concurrent.atomic.AtomicReferenceFieldUpdater");
+a82 1
+			EmitCompareAndSet("weakCompareAndSet", tb, field.GetField());
+d84 1
+a84 2
+			EmitSet("set", tb, field.GetField(), false);
+			EmitSet("lazySet", tb, field.GetField(), true);
+d151 1
+a151 1
+	private static void EmitSet(string name, TypeBuilder tb, FieldInfo field, bool lazy)
+d159 1
+a159 4
+		if (!lazy)
+		{
+			ilgen.Emit(OpCodes.Volatile);
+		}
+@
+
+
+1.12
+log
+@The synthetic atomic update helper nested types should not be visible from Java, so they should have a name starting with "__<".
+@
+text
+@d27 1
+a27 1
+#if IKVM_REF_EMIT
+@
+
+
+1.11
+log
+@Integrated new IKVM.Reflection implementation.
+@
+text
+@d81 1
+a81 1
+			TypeBuilder tb = wrapper.TypeAsBuilder.DefineNestedType("__ARFU_" + field.Name + field.Signature.Replace('.', '/'), TypeAttributes.NestedPrivate | TypeAttributes.Sealed, arfuTypeWrapper.TypeAsBaseType);
+@
+
+
+1.10
+log
+@More type funneling.
+@
+text
+@a26 1
+using System.Reflection;
+d28 1
+d30 1
+d32 1
+a129 3
+		return new CompareExchangeMethodInfo(type);
+		// MONOBUG this doesn't work in Mono (because we're closing a generic method over our own Type implementation)
+		/*
+a139 136
+		 */
+	}
+
+	private sealed class CompareExchangeMethodInfo : MethodInfo
+	{
+		private readonly Type type;
+
+		internal CompareExchangeMethodInfo(Type type)
+		{
+			this.type = type;
+		}
+
+		public override MethodInfo GetBaseDefinition()
+		{
+			throw new NotImplementedException();
+		}
+
+		public override ICustomAttributeProvider ReturnTypeCustomAttributes
+		{
+			get { throw new NotImplementedException(); }
+		}
+
+		public override MethodAttributes Attributes
+		{
+			get { return MethodAttributes.Public; }
+		}
+
+		public override MethodImplAttributes GetMethodImplementationFlags()
+		{
+			throw new NotImplementedException();
+		}
+
+		private sealed class MyParameterInfo : ParameterInfo
+		{
+			private readonly Type type;
+
+			internal MyParameterInfo(Type type)
+			{
+				this.type = type;
+			}
+
+			public override Type ParameterType
+			{
+				get
+				{
+					return type;
+				}
+			}
+		}
+
+		public override ParameterInfo[] GetParameters()
+		{
+			return new ParameterInfo[] { 
+				new MyParameterInfo(type.MakeByRefType()),
+				new MyParameterInfo(type),
+				new MyParameterInfo(type)
+			};
+		}
+
+		public override ParameterInfo ReturnParameter
+		{
+			get
+			{
+				return new MyParameterInfo(type);
+			}
+		}
+
+		public override Type ReturnType
+		{
+			get
+			{
+				return type;
+			}
+		}
+
+		public override object Invoke(object obj, BindingFlags invokeAttr, Binder binder, object[] parameters, System.Globalization.CultureInfo culture)
+		{
+			throw new NotImplementedException();
+		}
+
+		public override RuntimeMethodHandle MethodHandle
+		{
+			get { throw new NotImplementedException(); }
+		}
+
+		public override Type DeclaringType
+		{
+			get { return typeof(System.Threading.Interlocked); }
+		}
+
+		public override object[] GetCustomAttributes(Type attributeType, bool inherit)
+		{
+			throw new NotImplementedException();
+		}
+
+		public override object[] GetCustomAttributes(bool inherit)
+		{
+			throw new NotImplementedException();
+		}
+
+		public override bool IsDefined(Type attributeType, bool inherit)
+		{
+			throw new NotImplementedException();
+		}
+
+		public override string Name
+		{
+			get { return "CompareExchange"; }
+		}
+
+		public override Type ReflectedType
+		{
+			get { return DeclaringType; }
+		}
+
+		public override bool IsGenericMethod
+		{
+			get { return true; }
+		}
+
+		public override Type[] GetGenericArguments()
+		{
+			return new Type[] { type };
+		}
+
+		public override MethodInfo GetGenericMethodDefinition()
+		{
+			foreach (MethodInfo m in typeof(System.Threading.Interlocked).GetMethods())
+			{
+				if (m.Name == "CompareExchange" && m.IsGenericMethodDefinition)
+				{
+					return m;
+				}
+			}
+			throw new InvalidOperationException();
+		}
+@
+
+
+1.9
+log
+@Replaced most type literals with static field access (in Types class) or warpped JVM.Import() around them.
+@
+text
+@d132 1
+a132 1
+		foreach (MethodInfo m in typeof(System.Threading.Interlocked).GetMethods())
+@
+
+
+1.8
+log
+@- Added support for multi level stack tracking to CodeEmitter.
+- Made most Pop emitting lazy to enable optimizing them away (together with corresponding push).
+- Made loading class literal lazy, to enable optimizing them away when they aren't used (e.g. because an atomic intrinsic).
+- Made Class.desiredAssertionStatus() into an intrinsic, to be able to optimize it away when -removeassertions is used.
+@
+text
+@d111 1
+a111 1
+		MethodBuilder compareAndSet = tb.DefineMethod(name, MethodAttributes.Public | MethodAttributes.Virtual, typeof(bool), new Type[] { typeof(object), typeof(object), typeof(object) });
+d281 1
+a281 1
+		MethodBuilder get = tb.DefineMethod("get", MethodAttributes.Public | MethodAttributes.Virtual, typeof(object), new Type[] { typeof(object) });
+d292 1
+a292 1
+		MethodBuilder set = tb.DefineMethod(name, MethodAttributes.Public | MethodAttributes.Virtual, typeof(void), new Type[] { typeof(object), typeof(object) });
+@
+
+
+1.8.2.1
+log
+@Backport: Volatile stores require a memory barrier. Fix for #3086040.
+@
+text
+@a302 1
+		ilgen.Emit(OpCodes.Call, typeof(System.Threading.Thread).GetMethod("MemoryBarrier"));
+@
+
+
+1.7
+log
+@Workaround for Mono bug 467230.
+@
+text
+@d103 3
+a105 3
+		ilgen.Emit(OpCodes.Pop);
+		ilgen.Emit(OpCodes.Pop);
+		ilgen.Emit(OpCodes.Pop);
+@
+
+
+1.6
+log
+@Integrated IKVM.Reflection.Emit in ikvmc.
+@
+text
+@d120 11
+d140 137
+a276 4
+		ilgen.Emit(OpCodes.Call, interlockedCompareExchange.MakeGenericMethod(field.FieldType));
+		ilgen.Emit(OpCodes.Ldarg_2);
+		ilgen.Emit(OpCodes.Ceq);
+		ilgen.Emit(OpCodes.Ret);
+@
+
+
+1.5
+log
+@- Renamed CountingILGenerator to CodeEmitter.
+- Renamed CountingLabel to CodeEmitterLabel.
+@
+text
+@d28 3
+d32 1
+@
+
+
+1.4
+log
+@Refactored finish state/methods from JavaTypeImpl into FinishContext.
+@
+text
+@d35 1
+a35 1
+	internal static bool Emit(DynamicTypeWrapper.FinishContext context, TypeWrapper wrapper, CountingILGenerator ilgen, ClassFile classFile, int i, ClassFile.Method.Instruction[] code)
+d63 1
+a63 1
+	private static void DoEmit(DynamicTypeWrapper.FinishContext context, TypeWrapper wrapper, CountingILGenerator ilgen, FieldWrapper field)
+d87 1
+a87 1
+			CountingILGenerator ctorilgen = cb.GetILGenerator();
+@
+
+
+1.3
+log
+@- added more efficient float/double to/from int/long bits converters
+- made Double.doubleToRawLongBits/longBitsToDouble and Float.floatToRawIntBits/intBitsToFloat intrinsics
+- generalized the intrinsics support
+@
+text
+@d35 1
+a35 1
+	internal static bool Emit(TypeWrapper wrapper, CountingILGenerator ilgen, ClassFile classFile, int i, ClassFile.Method.Instruction[] code)
+d55 1
+a55 1
+					DoEmit(wrapper, ilgen, field);
+d63 1
+a63 1
+	private static void DoEmit(TypeWrapper wrapper, CountingILGenerator ilgen, FieldWrapper field)
+d93 1
+a93 1
+			((DynamicTypeWrapper)wrapper).RegisterPostFinishProc(delegate
+@
+
+
+1.2
+log
+@Stupid fix.
+@
+text
+@a32 3
+	private static readonly string ClassName = string.Intern("java.util.concurrent.atomic.AtomicReferenceFieldUpdater");
+	private static readonly string MethodName = string.Intern("newUpdater");
+	private static readonly string MethodSignature = string.Intern("(Ljava.lang.Class;Ljava.lang.Class;Ljava.lang.String;)Ljava.util.concurrent.atomic.AtomicReferenceFieldUpdater;");
+d35 1
+a35 1
+	internal static bool Emit(TypeWrapper wrapper, CountingILGenerator ilgen, ClassFile classFile, ClassFile.ConstantPoolItemMI cpi, int i, ClassFile.Method.Instruction[] code)
+d37 1
+a37 4
+		if (ReferenceEquals(cpi.Class, AtomicReferenceFieldUpdaterEmitter.ClassName)
+			&& ReferenceEquals(cpi.Name, AtomicReferenceFieldUpdaterEmitter.MethodName)
+			&& ReferenceEquals(cpi.Signature, AtomicReferenceFieldUpdaterEmitter.MethodSignature)
+			&& i >= 3
+d74 1
+a74 1
+			TypeWrapper arfuTypeWrapper = ClassLoaderWrapper.LoadClassCritical(ClassName);
+@
+
+
+1.1
+log
+@Intrinsified AtomicReferenceFieldUpdater.newUpdater().
+@
+text
+@a87 4
+			ilgen.Emit(OpCodes.Pop);
+			ilgen.Emit(OpCodes.Pop);
+			ilgen.Emit(OpCodes.Pop);
+
+d105 3
+@
+

@@ -1,0 +1,312 @@
+head	1.6;
+access;
+symbols
+	v8_1_5717_0:1.6
+	v8_1:1.6.0.10
+	v8_0_5449_1:1.6
+	v8_0_5449_0:1.6
+	v8_0:1.6.0.8
+	v7_4_5196_0:1.6
+	v7_4:1.6.0.6
+	v7_3:1.6.0.4
+	v7_2_4630_6:1.6
+	v7_2_4630_5:1.6
+	v7_2_4630_4:1.6
+	v7_2_4630_3:1.6
+	v7_2_4630_2:1.6
+	v0_46_0_4:1.4.4.1
+	v7_2_4630_1:1.6
+	v7_2:1.6.0.2
+	v7_1_4532_2:1.5
+	v7_1_4532_1:1.5
+	v7_1_4532_0:1.5
+	v7_1:1.5.0.4
+	v7_0_4335_3:1.5
+	v7_0_4335_2:1.5
+	v7_0_4335_1:1.5
+	v0_46_0_2:1.4
+	v7_0_4335_0:1.5
+	v7_0:1.5.0.2
+	v0_40_0_6:1.3
+	v0_40_0_5:1.3
+	v0_46_0_1:1.4
+	v0_46_0_0:1.4
+	v0_46:1.4.0.4
+	v0_36_0_14:1.2
+	v0_44_0_6:1.4
+	v0_44_0_5:1.4
+	v0_44_0_4:1.4
+	v0_44_0_3:1.4
+	v0_44_0_2:1.4
+	v0_42_0_7:1.3
+	v0_44_0_1:1.4
+	v0_44_0_0:1.4
+	v0_44:1.4.0.2
+	v0_42_0_6:1.3
+	v0_42_0_5:1.3
+	v0_42_0_4:1.3
+	v0_42_0_3:1.3
+	v0_42_0_2:1.3
+	v0_42_0_1:1.3
+	v0_42_0_0:1.3
+	v0_42:1.3.0.6
+	v0_40_0_3:1.3
+	v0_40_0_2:1.3
+	v0_40_0_1:1.3
+	v0_40_0_0:1.3
+	v0_40:1.3.0.4
+	v0_36_0_13:1.2
+	v0_38_0_1:1.3
+	v0_38_0_0:1.3
+	v0_38:1.3.0.2
+	v0_36_0_9:1.2
+	v0_36_0_7:1.2
+	v0_36_0_5:1.2
+	v0_36_0_4:1.2
+	v0_36_0_3:1.2
+	v0_36_0_2:1.2
+	v0_36_0_1:1.2
+	v0_36_0_0:1.2
+	v0_36:1.2.0.2
+	v0_34_0_3:1.1
+	v0_34_0_2:1.1
+	v0_34_0_1:1.1
+	v0_34_0_0:1.1
+	v0_34:1.1.0.4
+	v0_32:1.1.0.2
+	v0_32_0_0:1.1;
+locks; strict;
+comment	@# @;
+
+
+1.6
+date	2012.06.15.14.50.24;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2011.08.29.09.44.23;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.04.08.12.37.39;	author jfrijters;	state Exp;
+branches
+	1.4.4.1;
+next	1.3;
+
+1.3
+date	2008.04.07.04.27.02;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.07.12.08.40.32;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2006.09.20.05.53.39;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.4.4.1
+date	2012.10.03.06.18.56;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.6
+log
+@Disable AppDomain.ProcessExit hook to run shutdown hooks when running on Mono to workaround https://bugzilla.xamarin.com/show_bug.cgi?id=5650
+@
+text
+@package ikvm.internal;
+
+import ikvm.lang.Internal;
+
+@@Internal
+public final class Util
+{
+    private Util() {}
+
+    public static final boolean MONO = cli.System.Type.GetType("Mono.Runtime") != null;
+
+    public static final boolean WINDOWS;
+    public static final boolean MACOSX;
+
+    static
+    {
+        switch (cli.System.Environment.get_OSVersion().get_Platform().Value)
+        {
+            case cli.System.PlatformID.Win32NT:
+            case cli.System.PlatformID.Win32Windows:
+            case cli.System.PlatformID.Win32S:
+            case cli.System.PlatformID.WinCE:
+                WINDOWS = true;
+                MACOSX = false;
+                break;
+            case cli.System.PlatformID.MacOSX:
+                WINDOWS = false;
+                MACOSX = true;
+                break;
+            case cli.System.PlatformID.Unix:
+                WINDOWS = false;
+                // as of version 2.6, Mono still returns Unix when running on MacOSX
+                MACOSX = "Darwin".equals(MonoUtils.unameProperty("sysname"));
+                break;
+            default:
+                WINDOWS = false;
+                MACOSX = false;
+                break;
+        }
+    }
+
+    public static boolean rangeCheck(int arrayLength, int offset, int length)
+    {
+        return offset >= 0
+	    && offset <= arrayLength
+            && length >= 0
+            && length <= arrayLength - offset;
+    }
+
+    public static String SafeGetEnvironmentVariable(String name)
+    {
+        try
+        {
+            if (false) throw new cli.System.Security.SecurityException();
+            return cli.System.Environment.GetEnvironmentVariable(name);
+        }
+        catch (cli.System.Security.SecurityException _)
+        {
+            return null;
+        }
+    }
+}
+@
+
+
+1.5
+log
+@Moved SafeGetEnvironmentVariable into Util.
+@
+text
+@d10 2
+@
+
+
+1.4
+log
+@Cleaned up Windows/MacOSX detection and added compile time dependency on PlatformID.MacOSX (which was added in .NET 2.0 SP2).
+Mono specific MacOSX detection code is unfortunately still necessary.
+@
+text
+@d47 13
+@
+
+
+1.4.4.1
+log
+@Backported fixes for 0.46.0.3:
+- Bug fix. java.lang.Package was not populated from manifest for ikvmc compiled assemblies.
+- Bug fix. When writing a direct ByteBuffer to a non-blocking socket and the write fails because there is no kernel buffer available, we should not advance the ByteBuffer position.
+- Bug fix. When adding certificates to virtual cacerts file make sure that the aliases are unique.
+- Bug fix. If a finally/fault handler contains reachable code before the handler's start index, the handler should branch to the handler start index.
+- Bug fix. After emitting a finally/fault handler block, we should emit the block leave stubs (even though you can't leave the block, they also emit the backward branch stubs).
+- Bug fix. If a Java class extends a remapped .NET type (cli.System.Object or cli.System.Exception), we should correctly report the base class.
+- Bug fix. If we encounter a jsr or ret instruction, we should throw a VerifyError (instead of NotImplementedException).
+- Bug fix. If an exception block ends with an astore, we need to propagate the local variable type after the astore to the exception handler.
+- Disable AppDomain.ProcessExit hook to run shutdown hooks when running on Mono to workaround https://bugzilla.xamarin.com/show_bug.cgi?id=5650
+- Bug fix. Custom attribute properties that don't have a public getter and setter should not be exposed as annotation properties.
+- Bug fix. Non-public property getter/setter methods should be ignored when we create properties to hide properties inherited from shadow types. This fixes a build break with .NET 4.5 beta which introduces a protected setter for Exception.HResult.
+- Bug fix. The $Method inner class for delegates should also be loadable for generic delegates. Thanks to Michael Bayne for reporting this.
+- Bug fix. When constructing a generic class loader we can't use GetWrapperFromType() on the type arguments, because they might refer to a subtype that is currently being loaded.
+- Replaced non-ascii character (micro) with ascii 'u' in Win32PrintService.java.
+- IKVM.Reflection: Bug fix. Resource Directory Entries must be sorted and names are case-insensitive
+
+Backported for 0.46.0.4:
+- Fixed ikvmc to retain transient modifier on constant static final fields.
+- Fixed Field.getModifiers() to only return the relevant modifiers.
+- Fixed IKVM.Reflection to set AddressOfRawData in IMAGE_DEBUG_DIRECTORY.
+@
+text
+@a9 2
+    public static final boolean MONO = cli.System.Type.GetType("Mono.Runtime") != null;
+
+@
+
+
+1.3
+log
+@Added Mac OS X platform detection.
+@
+text
+@d10 2
+a11 2
+    public static final boolean WINDOWS = runningOnWindows();
+    public static final boolean MACOSX = runningOnMacOSX();
+d13 1
+a13 1
+    private static boolean runningOnWindows()
+d15 1
+a15 13
+        cli.System.OperatingSystem os = cli.System.Environment.get_OSVersion();
+        int platform = os.get_Platform().Value;
+        return platform == cli.System.PlatformID.Win32NT
+            || platform == cli.System.PlatformID.Win32Windows
+	    || platform == cli.System.PlatformID.Win32S
+	    || platform == cli.System.PlatformID.WinCE;
+    }
+
+    private static boolean runningOnMacOSX()
+    {
+        cli.System.OperatingSystem os = cli.System.Environment.get_OSVersion();
+        int platform = os.get_Platform().Value;
+        if (platform == 6 /* Silverlight MacOSX PlatformID constant */)
+d17 20
+a36 1
+	    return true;
+a37 10
+        if (platform == cli.System.PlatformID.Unix)
+        {
+	    // we're on some sort of Unix, that probably means we're on Mono,
+	    // so we use its uname method to determine if we're on Darwin
+	    if ("Darwin".equals(MonoUtils.unameProperty("sysname")))
+	    {
+		return true;
+	    }
+        }
+        return false;
+d39 1
+a39 1
+    
+@
+
+
+1.2
+log
+@- Added WINDOWS constant to ikvm.internal.Util to check if we're running on Windows.
+- Added a bunch of native methods to openjdk.cs (some real implementations, some stubs)
+- Added OpenJDK derived PlainSocketImpl/SocketInputStream/SocketOutputStream implementations.
+- Added OpenJDK derived file protocol handler (a single class that supports both Windows and non-Windows)
+@
+text
+@d11 1
+d22 21
+a42 1
+	
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@d9 12
+@
+

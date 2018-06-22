@@ -1,0 +1,492 @@
+head	1.16;
+access;
+symbols
+	v8_1_5717_0:1.15
+	v8_1:1.15.0.2
+	v8_0_5449_1:1.14
+	v8_0_5449_0:1.14
+	v8_0:1.14.0.4
+	v7_4_5196_0:1.14
+	v7_4:1.14.0.2
+	v7_3:1.13.0.2
+	v7_2_4630_6:1.8
+	v7_2_4630_5:1.8
+	v7_2_4630_4:1.8
+	v7_2_4630_3:1.8
+	v7_2_4630_2:1.8
+	v0_46_0_4:1.5
+	v7_2_4630_1:1.8
+	v7_2:1.8.0.4
+	v7_1_4532_2:1.8
+	v7_1_4532_1:1.8
+	v7_1_4532_0:1.8
+	v7_1:1.8.0.2
+	v7_0_4335_3:1.5
+	v7_0_4335_2:1.5
+	v7_0_4335_1:1.5
+	v0_46_0_2:1.5
+	v7_0_4335_0:1.5
+	v7_0:1.5.0.4
+	v0_46_0_1:1.5
+	v0_46_0_0:1.5
+	v0_46:1.5.0.2
+	v0_44_0_6:1.3.2.1
+	v0_44_0_5:1.3
+	v0_44_0_4:1.3
+	v0_44_0_3:1.3
+	v0_44_0_2:1.3
+	v0_44_0_1:1.3
+	v0_44_0_0:1.3
+	v0_44:1.3.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.16
+date	2016.07.01.05.24.43;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2015.02.16.12.24.28;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2013.09.20.12.49.23;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2013.02.27.16.23.19;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2012.12.12.09.00.18;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2012.10.12.14.09.41;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2012.10.11.15.05.43;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2012.09.05.08.58.52;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2012.04.26.08.06.30;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2012.04.26.06.41.27;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2011.12.01.06.30.50;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2011.01.13.10.44.45;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.08.10.15.02.03;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.05.11.15.19.27;	author jfrijters;	state Exp;
+branches
+	1.3.2.1;
+next	1.2;
+
+1.2
+date	2010.01.28.09.18.34;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.3.2.1
+date	2010.10.22.06.19.34;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.16
+log
+@Removed CoreCLR build target.
+@
+text
+@<?xml version="1.0"?>
+<!--
+  Copyright (C) 2002-2013 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+-->
+<project name="reflect" default="IKVM.Reflection">
+    <include buildfile="../ikvm.include" />
+
+    <target name="properties">
+        <property name="defs" value="TRACE" />
+        <if test="${framework::exists('mono-2.0')}">
+            <property name="defs" value="${defs};MONO" />
+        </if>
+        <if test="${property::exists('signed')}">
+            <property name="defs" value="${defs};${signed}" />
+        </if>
+        <if test="${version::get-major(framework::get-version(framework::get-target-framework() )) == 4}">
+            <property name="defs" value="${defs};NET_4_0" />
+        </if>
+        <!-- workaround for the fact that <include if="${framework::exists('mono-2.0')} ...> still insists on evaluating the name attribute -->
+        <property name="MonoSymbolWriter" value="dummy.dll" />
+        <if test="${framework::exists('mono-2.0')}">
+            <property name="MonoSymbolWriter" value="${path::combine(framework::get-assembly-directory('mono-2.0'), 'Mono.CompilerServices.SymbolWriter.dll')}" />
+        </if>
+    </target>
+
+    <target name="IKVM.Reflection" depends="properties">
+        <call target="compile" />
+    </target>
+
+    <target name="compile">
+        <csc target="library" output="../bin/IKVM.Reflection.dll" optimize="true" define="${defs}" noconfig="true" nostdlib="true">
+            <sources>
+                <include name="../CommonAssemblyInfo.cs" />
+                <include name="AmbiguousMatchException.cs" />
+                <include name="Assembly.cs" />
+                <include name="AssemblyName.cs" />
+                <include name="BadImageFormatException.cs" />
+                <include name="Binder.cs" />
+                <include name="ConstructorInfo.cs" />
+                <include name="CustomAttributeData.cs" />
+                <include name="CustomAttributeNamedArgument.cs" />
+                <include name="CustomAttributeTypedArgument.cs" />
+                <include name="CustomModifiers.cs" />
+                <include name="Enums.cs" />
+                <include name="EventInfo.cs" />
+                <include name="ExceptionHandlingClause.cs" />
+                <include name="FieldInfo.cs" />
+                <include name="FieldSignature.cs" />
+                <include name="Fusion.cs" />
+                <include name="GenericWrappers.cs" />
+                <include name="InterfaceMapping.cs" />
+                <include name="LocalVariableInfo.cs" />
+                <include name="ManifestResourceInfo.cs" />
+                <include name="MarshalSpec.cs" />
+                <include name="MemberInfo.cs" />
+                <include name="MethodBase.cs" />
+                <include name="MethodBody.cs" />
+                <include name="MethodImplMap.cs" />
+                <include name="MethodInfo.cs" />
+                <include name="MethodSignature.cs" />
+                <include name="Missing.cs" />
+                <include name="Module.cs" />
+                <include name="ParameterInfo.cs" />
+                <include name="ParameterModifier.cs" />
+                <include name="Projection.cs" />
+                <include name="PropertyInfo.cs" />
+                <include name="PropertySignature.cs" />
+                <include name="Signature.cs" />
+                <include name="StandAloneMethodSig.cs" />
+                <include name="StrongNameKeyPair.cs" />
+                <include name="Type.cs" />
+                <include name="TypeInfo.cs" />
+                <include name="TypeNameParser.cs" />
+                <include name="Universe.cs" />
+                <include name="Util.cs" />
+                <include name="Emit\AssemblyBuilder.cs" />
+                <include name="Emit\ConstructorBuilder.cs" />
+                <include name="Emit\CustomAttributeBuilder.cs" />
+                <include name="Emit\CustomModifiersBuilder.cs" />
+                <include name="Emit\EnumBuilder.cs" />
+                <include name="Emit\Enums.cs" />
+                <include name="Emit\ExceptionHandler.cs" />
+                <include name="Emit\EventBuilder.cs" />
+                <include name="Emit\FieldBuilder.cs" />
+                <include name="Emit\ILGenerator.cs" />
+                <include name="Emit\MethodBuilder.cs" />
+                <include name="Emit\ModuleBuilder.cs" />
+                <include name="Emit\OpCode.cs" />
+                <include name="Emit\OpCodes.cs" />
+                <include name="Emit\ParameterBuilder.cs" />
+                <include name="Emit\PropertyBuilder.cs" />
+                <include name="Emit\SignatureHelper.cs" />
+                <include name="Emit\Tokens.cs" />
+                <include name="Emit\TypeBuilder.cs" />
+                <include name="Impl\ITypeOwner.cs" />
+                <include name="Impl\MdbWriter.cs" />
+                <include name="Impl\PdbWriter.cs" />
+                <include name="Impl\SymbolSupport.cs" />
+                <include name="Metadata\CliHeader.cs" />
+                <include name="Metadata\MetadataRW.cs" />
+                <include name="Metadata\Tables.cs" />
+                <include name="Properties\AssemblyInfo.cs" />
+                <include name="Reader\AssemblyReader.cs" />
+                <include name="Reader\Authenticode.cs" />
+                <include name="Reader\ByteReader.cs" />
+                <include name="Reader\EventInfoImpl.cs" />
+                <include name="Reader\Field.cs" />
+                <include name="Reader\GenericTypeParameter.cs" />
+                <include name="Reader\MetadataReader.cs" />
+                <include name="Reader\Method.cs" />
+                <include name="Reader\ModuleReader.cs" />
+                <include name="Reader\PEReader.cs" />
+                <include name="Reader\PropertyInfoImpl.cs" />
+                <include name="Reader\ResourceModule.cs" />
+                <include name="Reader\TypeDefImpl.cs" />
+                <include name="Writer\ByteBuffer.cs" />
+                <include name="Writer\Heaps.cs" />
+                <include name="Writer\MetadataWriter.cs" />
+                <include name="Writer\ModuleWriter.cs" />
+                <include name="Writer\PEWriter.cs" />
+                <include name="Writer\ResourceSection.cs" />
+                <include name="Writer\TextSection.cs" />
+                <include name="Writer\VersionInfo.cs" />
+            </sources>
+            <references>
+                <include if="${framework::exists('mono-2.0')}" name="${MonoSymbolWriter}" />
+                <include name="${ReferencePath}/mscorlib.dll" />
+                <include name="${ReferencePath}/System.dll" />
+                <include name="${ReferencePath}/System.Security.dll" />
+            </references>
+        </csc>
+    </target>
+</project>
+@
+
+
+1.15
+log
+@Added CoreCLR target for IKVM.Reflection.
+@
+text
+@a45 6
+    <target name="CoreCLR" depends="properties">
+        <property name="CoreCLR" value="true" />
+        <property name="defs" value="${defs};CORECLR;NO_SYMBOL_WRITER;NO_AUTHENTICODE" />
+        <call target="compile" />
+    </target>
+
+a46 1
+        <property name="CoreCLR" value="false" />
+a59 1
+                <include name="coreclr.cs" />
+d117 1
+a117 1
+                <include name="Impl\PdbWriter.cs" unless="${CoreCLR}" />
+d148 2
+a149 2
+                <include name="${ReferencePath}/System.dll" unless="${CoreCLR}" />
+                <include name="${ReferencePath}/System.Security.dll" unless="${CoreCLR}" />
+@
+
+
+1.14
+log
+@Implemented WinMD projection support.
+@
+text
+@d28 1
+a28 1
+    <target name="IKVM.Reflection">
+d44 14
+d67 1
+d125 1
+a125 1
+                <include name="Impl\PdbWriter.cs" />
+d156 2
+a157 2
+                <include name="${ReferencePath}/System.dll" />
+                <include name="${ReferencePath}/System.Security.dll" />
+@
+
+
+1.13
+log
+@Added license headers to build scripts.
+@
+text
+@d78 1
+@
+
+
+1.12
+log
+@Changed build infrastructure to support targetting .NET 4.0 on systems where 4.5 is installed.
+@
+text
+@d2 23
+@
+
+
+1.11
+log
+@Added (old) API Module.GetSignerCertificate().
+@
+text
+@d3 2
+d21 1
+a21 1
+        <csc target="library" output="../bin/IKVM.Reflection.dll" optimize="true" define="${defs}">
+d116 3
+@
+
+
+1.10
+log
+@Forgot to add ExceptionHandler.cs to project and build files.
+@
+text
+@d91 1
+@
+
+
+1.9
+log
+@Added TypeInfo (from .NET 4.5).
+@
+text
+@d69 1
+@
+
+
+1.8
+log
+@Rewrote StrongNameKeyPair without depending on System.Reflection.StrongNameKeyPair.
+@
+text
+@d59 1
+@
+
+
+1.7
+log
+@Removed Mono CryptoConvert code and use .NET 2.0 API instead.
+@
+text
+@a79 1
+                <include name="Impl\CryptoHack.cs" />
+@
+
+
+1.6
+log
+@- Rewrote custom modifier handling to retain ordering.
+- Added ConstructorInfo.__ReturnParameter to expose custom modifiers.
+- Added __GetCustomModifiers() to various *Info types.
+- Added CustomModifiers type to encapsulate a custom modifier sequence.
+- Added CustomModifiersBuilder to create a CustomModifiers sequence.
+- Marked a number of IKVM.Reflection specific methods Obsolete, because they are replaced with method that take CustomModifiers value(s).
+@
+text
+@a79 1
+                <include name="Impl\CryptoConvert.cs" />
+@
+
+
+1.5
+log
+@Added support for magic missing assemblies that resolve missing types to allow (some) reflection on assemblies with missing dependencies.
+@
+text
+@d31 1
+d65 1
+@
+
+
+1.4
+log
+@Fix build to work when Mono isn't installed.
+@
+text
+@d48 1
+@
+
+
+1.3
+log
+@Added implementation of Fusion's CompareAssemblyIdentity API.
+@
+text
+@d14 5
+d109 1
+a109 1
+                <include if="${framework::exists('mono-2.0')}" name="${path::combine(framework::get-assembly-directory('mono-2.0'), 'Mono.CompilerServices.SymbolWriter.dll')}" />
+@
+
+
+1.3.2.1
+log
+@Fix build on systems that don't have Mono installed.
+@
+text
+@a13 5
+        <!-- workaround for the fact that <include if="${framework::exists('mono-2.0')} ...> still insists on evaluating the name attribute -->
+        <property name="MonoSymbolWriter" value="dummy.dll" />
+        <if test="${framework::exists('mono-2.0')}">
+            <property name="MonoSymbolWriter" value="${path::combine(framework::get-assembly-directory('mono-2.0'), 'Mono.CompilerServices.SymbolWriter.dll')}" />
+        </if>
+d104 1
+a104 1
+                <include if="${framework::exists('mono-2.0')}" name="${MonoSymbolWriter}" />
+@
+
+
+1.2
+log
+@Removed IKVM_REF_EMIT, as STATIC_COMPILER or STUB_GENERATOR now always implies IKVM.Reflection.
+@
+text
+@d31 1
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d4 1
+a4 1
+        <property name="defs" value="IKVM_REF_EMIT" />
+@
+

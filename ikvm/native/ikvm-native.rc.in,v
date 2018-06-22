@@ -1,0 +1,72 @@
+head	1.1;
+access;
+symbols
+	v8_1_5717_0:1.1
+	v8_1:1.1.0.12
+	v8_0_5449_1:1.1
+	v8_0_5449_0:1.1
+	v8_0:1.1.0.10
+	v7_4_5196_0:1.1
+	v7_4:1.1.0.8
+	v7_3:1.1.0.6
+	v7_2_4630_6:1.1
+	v7_2_4630_5:1.1
+	v7_2_4630_4:1.1
+	v7_2_4630_3:1.1
+	v7_2_4630_2:1.1
+	v7_2_4630_1:1.1
+	v7_2:1.1.0.4
+	v7_1_4532_2:1.1
+	v7_1_4532_1:1.1
+	v7_1_4532_0:1.1
+	v7_1:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	2012.01.17.14.46.07;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Add version info resource to ikvm-native-win32-{arch}.dll. Modified version of patch #3472413.
+@
+text
+@//#include "winres.h"
+
+1 VERSIONINFO
+ FILEVERSION @@VERSIONLIST@@
+ PRODUCTVERSION @@VERSIONLIST@@
+ FILEFLAGSMASK 0x3fL
+ FILEFLAGS 0x0L
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004b0"
+        BEGIN
+            VALUE "CompanyName", "Jeroen Frijters"
+            VALUE "FileDescription", "IKVM.NET OpenJDK Library for .NET"
+            VALUE "FileVersion", "@@VERSION@@"
+            VALUE "InternalName", "ikvm-native"
+            VALUE "LegalCopyright", "Copyright (C) 2002-2011 Jeroen Frijters"
+            VALUE "OriginalFilename", "ikvm-native-win32-@@ARCH@@.dll"
+            VALUE "ProductName", "IKVM.NET"
+            VALUE "ProductVersion", "@@VERSION@@"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0, 1200
+    END
+END
+@

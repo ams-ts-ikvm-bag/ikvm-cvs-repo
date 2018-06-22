@@ -1,0 +1,238 @@
+head	1.3;
+access;
+symbols
+	v7_4_5196_0:1.2
+	v7_4:1.2.0.10
+	v7_3:1.2.0.8
+	v7_2_4630_6:1.2
+	v7_2_4630_5:1.2
+	v7_2_4630_4:1.2
+	v7_2_4630_3:1.2
+	v7_2_4630_2:1.2
+	v0_46_0_4:1.1
+	v7_2_4630_1:1.2
+	v7_2:1.2.0.6
+	v7_1_4532_2:1.2
+	v7_1_4532_1:1.2
+	v7_1_4532_0:1.2
+	v7_1:1.2.0.4
+	v7_0_4335_3:1.2
+	v7_0_4335_2:1.2
+	v7_0_4335_1:1.2
+	v0_46_0_2:1.1
+	v7_0_4335_0:1.2
+	v7_0:1.2.0.2
+	v0_46_0_1:1.1
+	v0_46_0_0:1.1
+	v0_46:1.1.0.4
+	v0_44_0_6:1.1
+	v0_44_0_5:1.1
+	v0_44_0_4:1.1
+	v0_44_0_3:1.1
+	v0_44_0_2:1.1
+	v0_44_0_1:1.1
+	v0_44_0_0:1.1
+	v0_44:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.3
+date	2014.05.19.12.43.44;	author jfrijters;	state dead;
+branches;
+next	1.2;
+
+1.2
+date	2011.07.10.20.46.13;	author smallsql;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.05.02.08.21.00;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.3
+log
+@First part of OpenJDK 8 integration.
+@
+text
+@/*
+  Copyright (C) 2010 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+
+package com.sun.management;
+
+import ikvm.internal.NotYetImplementedError;
+import cli.System.Activator;
+import cli.System.Diagnostics.Process;
+import cli.System.Reflection.Assembly;
+import cli.System.Reflection.PropertyInfo;
+import cli.System.Runtime.InteropServices.DllImportAttribute;
+import cli.System.Runtime.InteropServices.LayoutKind;
+import cli.System.Runtime.InteropServices.StructLayoutAttribute;
+import cli.System.Security.SecuritySafeCriticalAttribute;
+import cli.System.Type;
+import sun.management.OperatingSystemImpl;
+import sun.management.VMManagement;
+
+class OperatingSystem extends OperatingSystemImpl implements OperatingSystemMXBean
+{
+    OperatingSystem(VMManagement vmm)
+    {
+        super(vmm);
+    }
+
+    public long getProcessCpuTime()
+    {
+        return Process.GetCurrentProcess().get_TotalProcessorTime().get_Ticks() * 100;
+    }
+
+    public long getCommittedVirtualMemorySize()
+    {
+        return Process.GetCurrentProcess().get_PagedMemorySize64();
+    }
+
+    public long getTotalPhysicalMemorySize()
+    {
+        long value = get("TotalPhysicalMemory");
+        if (value != -1)
+        {
+            return value;
+        }
+        return GetMemoryStatusEx().ullTotalPhys;
+    }
+
+    public long getFreePhysicalMemorySize()
+    {
+        long value = get("AvailablePhysicalMemory");
+        if (value != -1)
+        {
+            return value;
+        }
+        return GetMemoryStatusEx().ullAvailPhys;
+    }
+    
+    public long getTotalSwapSpaceSize()
+    {
+        return GetMemoryStatusEx().ullTotalPageFile;
+    }
+
+    public long getFreeSwapSpaceSize()
+    {
+        return GetMemoryStatusEx().ullAvailPageFile;
+    }
+    
+    public /*native*/ double getSystemCpuLoad()
+    {
+    	throw new NotYetImplementedError(); //TODO JDK7
+    }
+    
+    public /*native*/ double getProcessCpuLoad()
+    {
+    	throw new NotYetImplementedError(); //TODO JDK7
+    }
+
+    private static long get(String propertyName)
+    {
+        Assembly asm = Assembly.LoadWithPartialName("Microsoft.VisualBasic");
+        if (asm != null)
+        {
+            Type type = asm.GetType("Microsoft.VisualBasic.Devices.ComputerInfo");
+            if (type != null)
+            {
+                PropertyInfo property = type.GetProperty(propertyName);
+                if (property != null)
+                {
+                    Object obj = Activator.CreateInstance(type);
+                    try
+                    {
+                        if (false) throw new cli.System.NotImplementedException();
+                        return ikvm.lang.CIL.unbox_ulong((cli.System.UInt64)property.GetValue(obj, null));
+                    }
+                    catch (cli.System.NotImplementedException _)
+                    {
+                        // Mono doesn't implement this property
+                    }
+                }
+            }
+        }
+        return -1;
+    }
+    
+    @@SecuritySafeCriticalAttribute.Annotation
+    private static MEMORYSTATUSEX GetMemoryStatusEx()
+    {
+        if (ikvm.internal.Util.WINDOWS)
+        {
+            MEMORYSTATUSEX mem = new MEMORYSTATUSEX();
+            if (GlobalMemoryStatusEx(mem))
+            {
+                return mem;
+            }
+        }
+        throw new InternalError("Unsupported Platform");
+    }
+
+    @@DllImportAttribute.Annotation("kernel32")    
+    private static native boolean GlobalMemoryStatusEx(MEMORYSTATUSEX lpBuffer);
+}
+
+@@StructLayoutAttribute.Annotation(LayoutKind.__Enum.Sequential)
+final class MEMORYSTATUSEX extends cli.System.Object
+{
+    int dwLength = 64;
+    int dwMemoryLoad;
+    long ullTotalPhys;
+    long ullAvailPhys;
+    long ullTotalPageFile;
+    long ullAvailPageFile;
+    long ullTotalVirtual;
+    long ullAvailVirtual;
+    long ullAvailExtendedVirtual;
+}
+@
+
+
+1.2
+log
+@Add methods in OperatingSystem for Java 7
+@
+text
+@@
+
+
+1.1
+log
+@Implemented OperatingSystemMXBean.
+@
+text
+@d27 1
+d86 10
+@
+

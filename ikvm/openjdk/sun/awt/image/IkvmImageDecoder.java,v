@@ -1,0 +1,239 @@
+head	1.2;
+access;
+symbols
+	v8_1_5717_0:1.2
+	v8_1:1.2.0.16
+	v8_0_5449_1:1.2
+	v8_0_5449_0:1.2
+	v8_0:1.2.0.14
+	v7_4_5196_0:1.2
+	v7_4:1.2.0.12
+	v7_3:1.2.0.10
+	v7_2_4630_6:1.2
+	v7_2_4630_5:1.2
+	v7_2_4630_4:1.2
+	v7_2_4630_3:1.2
+	v7_2_4630_2:1.2
+	v0_46_0_4:1.2
+	v7_2_4630_1:1.2
+	v7_2:1.2.0.8
+	v7_1_4532_2:1.2
+	v7_1_4532_1:1.2
+	v7_1_4532_0:1.2
+	v7_1:1.2.0.6
+	v7_0_4335_3:1.2
+	v7_0_4335_2:1.2
+	v7_0_4335_1:1.2
+	v0_46_0_2:1.2
+	v7_0_4335_0:1.2
+	v7_0:1.2.0.4
+	v0_46_0_1:1.2
+	v0_46_0_0:1.2
+	v0_46:1.2.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2011.01.17.05.22.44;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.12.27.10.33.40;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@Throw the proper exception (System.NotSupportedException) from the unsupported Stream methods.
+@
+text
+@/*
+  Copyright (C) 2010 Volker Berlin (i-net software)
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+ */
+package sun.awt.image;
+
+import java.awt.image.*;
+import java.io.IOException;
+import java.io.InputStream;
+
+import cli.System.Drawing.Bitmap;
+import cli.System.Drawing.Imaging.ImageLockMode;
+import cli.System.Drawing.Imaging.PixelFormat;
+import cli.System.IO.SeekOrigin;
+import cli.System.IO.Stream;
+import cli.System.NotSupportedException;
+import ikvm.runtime.Util;
+
+abstract class IkvmImageDecoder extends ImageDecoder {
+
+    IkvmImageDecoder(InputStreamImageSource src, InputStream is){
+        super(src, is);
+    }
+
+    @@Override
+    @@cli.System.Security.SecuritySafeCriticalAttribute.Annotation
+    public void produceImage() throws IOException, ImageFormatException{
+        Stream stream = new Stream(){
+
+            @@Override
+            public void Flush(){
+                Util.throwException(new NotSupportedException());
+            }
+
+            @@Override
+            public int Read(byte[] bytes, int off, int len){
+                try{
+                    int count = input.read(bytes, off, len);
+                    if( count < 0 ){
+                        return 0;
+                    }
+                    return count;
+                }catch(IOException ex){
+                    throw new RuntimeException(ex);
+                }
+            }
+
+            @@Override
+            public long Seek(long arg0, SeekOrigin arg1){
+                Util.throwException(new NotSupportedException());
+                return 0;
+            }
+
+            @@Override
+            public void SetLength(long arg0){
+                Util.throwException(new NotSupportedException());
+            }
+
+            @@Override
+            public void Write(byte[] arg0, int arg1, int arg2){
+                Util.throwException(new NotSupportedException());
+            }
+
+            @@Override
+            public boolean get_CanRead(){
+                return true;
+            }
+
+            @@Override
+            public boolean get_CanSeek(){
+                return false;
+            }
+
+            @@Override
+            public boolean get_CanWrite(){
+                return true;
+            }
+
+            @@Override
+            public long get_Length(){
+                try{
+                    return input.available();
+                }catch(IOException ex){
+                    throw new RuntimeException(ex);
+                }
+            }
+
+            @@Override
+            public long get_Position(){
+                Util.throwException(new NotSupportedException());
+                return 0;
+            }
+
+            @@Override
+            public void set_Position(long arg0){
+                Util.throwException(new NotSupportedException());
+            }
+            
+        };
+        try{
+            Bitmap bitmap = new Bitmap(stream);
+            int width = bitmap.get_Width();
+            int height = bitmap.get_Height();
+            int size = width * height;
+            int[] pixelData = new int[size];
+            
+            cli.System.Drawing.Rectangle rect = new cli.System.Drawing.Rectangle(0, 0, width, height);
+            cli.System.Drawing.Imaging.BitmapData data = bitmap.LockBits(rect, ImageLockMode.wrap(ImageLockMode.ReadOnly), PixelFormat.wrap(PixelFormat.Format32bppArgb));
+            cli.System.IntPtr pixelPtr = data.get_Scan0();
+            cli.System.Runtime.InteropServices.Marshal.Copy(pixelPtr, pixelData, 0, size);        
+            bitmap.UnlockBits(data);
+            
+            //source.
+            
+            setDimensions(width, height);
+            ColorModel cm = ColorModel.getRGBdefault();
+            setColorModel(cm);
+            //setHints(flags);
+            headerComplete();
+            
+            setPixels(0,0,width,height, cm, pixelData,0,width);
+            imageComplete(ImageConsumer.STATICIMAGEDONE, true);
+        }catch(Throwable th){
+            th.printStackTrace();
+            imageComplete(ImageConsumer.IMAGEERROR|ImageConsumer.STATICIMAGEDONE, true);
+            throw new IOException(th);
+        } finally {
+            try { close(); } catch(Throwable e){e.printStackTrace();}
+        }
+    }
+}
+@
+
+
+1.1
+log
+@* Added Image Content Handler in package sun.net.www.content.image
+* Replace NetProducerImage with the original ToolkitImage and ImageRepresentation. Now this image work correctly with the MediaTracker together.
+* remove some methods Image methods from NetToolkit and use the original of SunToolkit
+@
+text
+@a29 1
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+d35 2
+d51 1
+a51 1
+                throw new NotImplementedException();
+d69 2
+a70 1
+                throw new NotImplementedException();
+d75 1
+a75 1
+                throw new NotImplementedException();
+d80 1
+a80 1
+                throw new NotImplementedException();
+d109 2
+a110 1
+                throw new NotImplementedException();
+d115 1
+a115 1
+                throw new NotImplementedException();
+@
+

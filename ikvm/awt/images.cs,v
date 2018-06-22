@@ -1,0 +1,827 @@
+head	1.13;
+access;
+symbols
+	v8_1_5717_0:1.13
+	v8_1:1.13.0.6
+	v8_0_5449_1:1.13
+	v8_0_5449_0:1.13
+	v8_0:1.13.0.4
+	v7_4_5196_0:1.13
+	v7_4:1.13.0.2
+	v7_3:1.12.0.2
+	v7_2_4630_6:1.11
+	v7_2_4630_5:1.11
+	v7_2_4630_4:1.11
+	v7_2_4630_3:1.11
+	v7_2_4630_2:1.11
+	v0_46_0_4:1.11
+	v7_2_4630_1:1.11
+	v7_2:1.11.0.8
+	v7_1_4532_2:1.11
+	v7_1_4532_1:1.11
+	v7_1_4532_0:1.11
+	v7_1:1.11.0.6
+	v7_0_4335_3:1.11
+	v7_0_4335_2:1.11
+	v7_0_4335_1:1.11
+	v0_46_0_2:1.11
+	v7_0_4335_0:1.11
+	v7_0:1.11.0.4
+	v0_40_0_6:1.3
+	v0_40_0_5:1.3
+	v0_46_0_1:1.11
+	v0_46_0_0:1.11
+	v0_46:1.11.0.2
+	v0_36_0_14:1.1
+	v0_44_0_6:1.8
+	v0_44_0_5:1.8
+	v0_44_0_4:1.8
+	v0_44_0_3:1.8
+	v0_44_0_2:1.8
+	v0_42_0_7:1.7
+	v0_44_0_1:1.8
+	v0_44_0_0:1.8
+	v0_44:1.8.0.2
+	v0_42_0_6:1.7
+	v0_42_0_5:1.7
+	v0_42_0_4:1.7
+	v0_42_0_3:1.7
+	v0_42_0_2:1.7
+	v0_42_0_1:1.7
+	v0_42_0_0:1.7
+	v0_42:1.7.0.2
+	v0_40_0_3:1.3
+	v0_40_0_2:1.3
+	v0_40_0_1:1.3
+	v0_40_0_0:1.3
+	v0_40:1.3.0.2
+	v0_36_0_13:1.1
+	v0_38_0_1:1.2
+	v0_38_0_0:1.2
+	v0_38:1.2.0.2
+	v0_36_0_9:1.1
+	v0_36_0_7:1.1
+	v0_36_0_5:1.1
+	v0_36_0_4:1.1
+	v0_36_0_3:1.1
+	v0_36_0_2:1.1
+	v0_36_0_1:1.1
+	v0_36_0_0:1.1
+	v0_36:1.1.0.4
+	v0_34_0_3:1.1
+	v0_34_0_2:1.1
+	v0_34_0_1:1.1
+	v0_34_0_0:1.1
+	v0_34:1.1.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.13
+date	2013.04.01.18.12.45;	author smallsql;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2013.02.13.13.33.26;	author smallsql;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2010.12.27.21.16.43;	author smallsql;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2010.12.27.10.36.00;	author smallsql;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2010.08.09.12.36.16;	author smallsql;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2010.06.11.04.14.35;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2009.09.30.16.22.14;	author natl;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2009.05.25.20.07.04;	author smallsql;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2009.04.17.06.36.01;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2009.04.15.04.58.12;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.12.30.10.28.10;	author smallsql;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.09.21.09.33.09;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.01.21.14.18.03;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.13
+log
+@Prepare the usage of SunGraphics2D as super class of all graphics classes and pass the destination object in the constructor.
+Remove a not used method (createGraphics) from IkvmToolkit.
+@
+text
+@/*
+  Copyright (C) 2002, 2004, 2005, 2006 Jeroen Frijters
+  Copyright (C) 2006 Active Endpoints, Inc.
+  Copyright (C) 2006 - 2013 Volker Berlin (i-net software)
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net 
+
+*/
+using System;
+using System.Drawing;
+using java.awt.image;
+using java.util;
+using System.Drawing.Imaging;
+
+
+namespace ikvm.awt
+{
+
+    class NetVolatileImage : java.awt.image.VolatileImage
+    {
+        internal readonly Bitmap bitmap;
+        internal readonly java.awt.Component component;
+        private java.awt.Font defaultFont;
+        private readonly int width;
+        private readonly int height;
+
+        internal NetVolatileImage(java.awt.Component component, int width, int height)
+        {
+            this.component = component;
+            bitmap = new Bitmap(width, height);
+            this.width = width;
+            this.height = height;
+            using (Graphics g = Graphics.FromImage(bitmap))
+            {
+                g.Clear(Color.White);
+            }
+        }
+
+        internal NetVolatileImage(int width, int height) : this(null, width, height)
+        {
+        }
+
+        public override bool contentsLost()
+        {
+            return false;
+        }
+
+        private java.awt.Color getForeground()
+        {
+            if (component != null)
+            {
+                return component.getForeground();
+            }
+            else
+            {
+                return java.awt.Color.black;
+            }
+        }
+
+        private java.awt.Color getBackground()
+        {
+            if (component != null)
+            {
+                return component.getBackground();
+            }
+            else
+            {
+                return java.awt.Color.white;
+            }
+        }
+
+        private java.awt.Font getFont()
+        {
+            if (component != null)
+            {
+                return component.getFont();
+            }
+            else
+            {
+                if (defaultFont == null)
+                {
+                    defaultFont = new java.awt.Font("Dialog", java.awt.Font.PLAIN, 12);
+                }
+                return defaultFont;
+            }
+        }
+        
+        public override int getHeight(ImageObserver io)
+        {
+            return height; // bitmap.Height --> need invoke or lock
+        }
+
+        public override int getWidth(ImageObserver io)
+        {
+            return width; // bitmap.Width --> need invoke or lock
+        }
+
+        public override object getProperty(string str, ImageObserver io)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override java.awt.Graphics2D createGraphics()
+        {
+            //Graphics g = Graphics.FromImage(bitmap);
+            // HACK for off-screen images we don't want ClearType or anti-aliasing
+            // TODO I'm sure Java 2D has a way to control text rendering quality, we should honor that
+            //g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SingleBitPerPixelGridFit;
+            return new BitmapGraphics(bitmap, this, getFont(), J2C.ConvertColor(getForeground()), J2C.ConvertColor(getBackground()));
+        }
+
+        public override int getHeight()
+        {
+            return height; // bitmap.Height --> need invoke or lock
+        }
+
+        public override int getWidth()
+        {
+            return width; // bitmap.Width --> need invoke or lock
+        }
+
+        public override BufferedImage getSnapshot()
+        {
+            return new BufferedImage(bitmap);
+        }
+
+        public override int validate(java.awt.GraphicsConfiguration gc)
+        {
+            return 0;
+        }
+
+        public override java.awt.ImageCapabilities getCapabilities()
+        {
+            throw new NotImplementedException();
+        }
+
+		public override void flush()
+		{
+		}
+    }
+
+    class NoImage : java.awt.Image
+    {
+        private sun.awt.image.InputStreamImageSource source;
+
+        internal NoImage(sun.awt.image.InputStreamImageSource source) {
+            this.source = source;
+        }
+
+        public override int getWidth(java.awt.image.ImageObserver observer)
+        {
+            if (observer != null)
+            {
+                observer.imageUpdate(this, java.awt.image.ImageObserver.__Fields.ERROR | java.awt.image.ImageObserver.__Fields.ABORT, 0, 0, -1, -1);
+            }
+            return -1;
+        }
+
+        public override int getHeight(java.awt.image.ImageObserver observer)
+        {
+            if (observer != null)
+            {
+                observer.imageUpdate(this, java.awt.image.ImageObserver.__Fields.ERROR | java.awt.image.ImageObserver.__Fields.ABORT, 0, 0, -1, -1);
+            }
+            return -1;
+        }
+
+        public override ImageProducer getSource()
+        {
+            return source;
+        }
+
+        public override java.awt.Graphics getGraphics()
+        {
+            // TODO throw java.lang.IllegalAccessError: getGraphics() only valid for images created with createImage(w, h)
+            return null;
+        }
+
+        public override object getProperty(string name, java.awt.image.ImageObserver observer)
+        {
+            if (observer != null)
+            {
+                observer.imageUpdate(this, java.awt.image.ImageObserver.__Fields.ERROR | java.awt.image.ImageObserver.__Fields.ABORT, 0, 0, -1, -1);
+            }
+            return null;
+        }
+
+        public override void flush()
+        {
+        }
+    }
+
+
+}@
+
+
+1.12
+log
+@Also broken ToolkitImage need to return a ImageSource
+@
+text
+@d126 1
+a126 1
+            return new BitmapGraphics(bitmap, getFont(), J2C.ConvertColor(getForeground()), J2C.ConvertColor(getBackground()));
+@
+
+
+1.11
+log
+@remove NetProducerImage and replace it with ToolkitImage
+@
+text
+@d4 1
+a4 1
+  Copyright (C) 2006 - 2010 Volker Berlin (i-net software)
+d161 5
+d187 1
+a187 1
+            return null;
+@
+
+
+1.10
+log
+@remove some Image methods from NetToolkit and use the original of SunToolkit
+@
+text
+@d4 1
+a4 1
+  Copyright (C) 2006, 2007, 2008 Volker Berlin (i-net software)
+a35 151
+    class NetProducerImage : java.awt.Image, java.awt.image.ImageConsumer
+    {
+        private java.awt.image.ImageProducer source;
+
+        private int mHeight = -1;
+
+        private int mWidth = -1;
+
+        private int mHintFlags;
+
+        private ColorModel mColorModel;
+
+        private Hashtable mProperties;
+
+        private Bitmap mBitmap;
+
+        private int availinfo;
+
+        internal NetProducerImage(java.awt.image.ImageProducer source)
+        {
+            this.source = source;
+        }
+
+        public override void flush()
+        {
+        }
+
+        public override java.awt.Graphics getGraphics()
+        {
+            return new BitmapGraphics(mBitmap);
+        }
+
+        public override int getHeight(ImageObserver param)
+        {
+            return mHeight;
+        }
+
+        public override int getWidth(ImageObserver param)
+        {
+            return mWidth;
+        }
+
+        public override object getProperty(string param, ImageObserver obs)
+        {
+            return null;
+        }
+
+        public override ImageProducer getSource()
+        {
+            return source;
+        }
+
+        public void setHints(int hintflags)
+        {
+            mHintFlags = hintflags;
+        }
+
+		public void setPixels(int x, int y, int w, int h, ColorModel model, byte[] pixels, int off, int scansize)
+		{
+			int[] pixeli = new int[pixels.Length];
+			for (int i = 0; i < pixels.Length; i++)
+			{
+				pixeli[i] = model.getRGB(pixels[i] & 0xff);
+			}
+			setPixels(x, y, w, h, model, pixeli, off, scansize);
+		}
+
+        /// <summary>
+        /// Create a bitmap from the pixel array. The bitmap will be used
+        /// by drawImage.
+        /// </summary>
+		[System.Security.SecuritySafeCritical]
+		public void setPixels(int x, int y, int w, int h, ColorModel model, int[] pixels, int off, int scansize)
+		{
+            if( x < 0) {
+                w -= x;
+                x = 0;
+            }
+            if (y < 0) {
+                h -= y;
+                y = 0;
+            }
+            if (w <= 0 || h <= 0) {
+                // nothing to set
+                return;
+            }
+            if ( off < 0 ) {
+                throw new java.lang.ArrayIndexOutOfBoundsException( "Data offset out of bounds." );
+            }
+            long length = w * h;
+			if (length > pixels.Length - off)
+			{
+                throw new java.lang.ArrayIndexOutOfBoundsException("Data offset out of bounds.");
+            }
+			lock (mBitmap)
+			{
+				BitmapData data = mBitmap.LockBits(new Rectangle(x, y, w, h), ImageLockMode.WriteOnly, PixelFormat.Format32bppArgb);
+				System.Runtime.InteropServices.Marshal.Copy(pixels, off, data.Scan0, data.Width * data.Height);
+				mBitmap.UnlockBits(data);
+			}
+		}
+
+        public Bitmap getBitmap()
+        {
+            return mBitmap;
+        }
+
+        public void setDimensions(int width, int height)
+        {
+            mWidth = width;
+            mHeight = height;
+			mBitmap = new Bitmap(mWidth, mHeight);
+            availinfo |= ImageObserver.__Fields.WIDTH | ImageObserver.__Fields.HEIGHT;
+		}
+
+        public void imageComplete(int status)
+        {
+            switch (status)
+            {
+                default:
+                case ImageConsumer.__Fields.IMAGEERROR:
+                    availinfo |= ImageObserver.__Fields.ERROR | ImageObserver.__Fields.ABORT;
+                    break;
+                case ImageConsumer.__Fields.IMAGEABORTED:
+                    availinfo |= ImageObserver.__Fields.ABORT;
+                    break;
+                case ImageConsumer.__Fields.STATICIMAGEDONE:
+                    availinfo |= ImageObserver.__Fields.ALLBITS;
+                    break;
+                case ImageConsumer.__Fields.SINGLEFRAMEDONE:
+                    availinfo |= ImageObserver.__Fields.FRAMEBITS;
+                    break;
+            }
+        }
+
+        public void setColorModel(ColorModel model)
+        {
+            mColorModel = model;
+        }
+
+        public void setProperties(Hashtable props)
+        {
+            mProperties = props;
+        }
+
+        internal int getStatus()
+        {
+            return availinfo;
+        }
+    }
+
+@
+
+
+1.9
+log
+@Fix regression with createImage(ImageProducer)
+@
+text
+@d40 1
+a40 1
+        private int mHeight = 0;
+d42 1
+a42 1
+        private int mWidth = 0;
+d44 1
+a44 1
+        private int mHintFlags = 0;
+d46 1
+a46 1
+        private ColorModel mColorModel = null;
+d52 2
+d65 1
+a65 1
+            return null;
+d148 1
+d153 16
+a168 1
+            // Console.WriteLine("NetProducerImage: imageComplete");
+d180 5
+@
+
+
+1.8
+log
+@Added parameter validation and .NET 4.0 security attribute.
+@
+text
+@d108 16
+a123 6
+			if (x <= 0 || y <= 0 || w <= 0 || h <= 0 || off < 0)
+			{
+				// should we report an error?
+				return;
+			}
+			long length = w * h;
+d126 2
+a127 3
+				// should we report an error?
+				return;
+			}
+@
+
+
+1.7
+log
+@fix a bug where the default foreground/background color in paint method are not derived from the color setting of the component
+@
+text
+@d105 1
+d108 11
+d122 1
+a122 1
+				System.Runtime.InteropServices.Marshal.Copy(pixels, off, data.Scan0, w * h);
+@
+
+
+1.6
+log
+@fix a System.InvalidOperationException: Object is currently in use elsewhere
+@
+text
+@d146 2
+d151 1
+a151 1
+        internal NetVolatileImage(int width, int height)
+d153 1
+d163 4
+d172 40
+d233 1
+a233 1
+            return new BitmapGraphics(bitmap);
+@
+
+
+1.5
+log
+@Integrated OpenJDK java/awt/image and java/awt/image/renderable packages.
+@
+text
+@d145 3
+a147 1
+        internal Bitmap bitmap;
+d152 2
+d167 1
+a167 1
+            return bitmap.Height;
+d172 1
+a172 1
+            return bitmap.Width;
+d182 1
+a182 1
+            Graphics g = Graphics.FromImage(bitmap);
+d185 1
+a185 1
+            g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SingleBitPerPixelGridFit;
+d191 1
+a191 1
+            return bitmap.Height;
+d196 1
+a196 1
+            return bitmap.Width;
+@
+
+
+1.4
+log
+@converter.cs
+- ConvertRoundRect - correction in representation differences
+- LineJoin, LineCap, Dash conversions
+- CreateFontFamily - case sensitivity fix
+fonts.cs, fonts-0.95.cs
+- overriding FontMetrics.getStringBounds
+- y coordinate of the returned rectangle should be the negative ascent in Java
+graphics.cs
+- NetGraphics.drawArc, fillArc - correction in representation differences
+- NetGraphics.drawRoundRect, fillRoundRect - correction in representation differences
+- NetGraphics.drawString - text was mispositioned
+- NetGraphics.setStroke - BasicStroke support for LineCap, LineJoin, LineDash
+- NetGraphicsEnvironment.createGraphics returned empty image
+images.cs
+- NetProducerImage.setPixels - implementation for byte[] argument
+toolkit.cs, toolkit-0.95.cs
+toolkit.cs: NetToolkit implements ikvm.awt.IkvmToolkit, see BufferedImage.createGraphics implementation
+NetToolkit - getBestCursorSize, createCustomCursor implementation
+NetToolkit - DoubleClick, ContextMenu support
+NetToolkit - MapKeyCode did not work for Enter and Delete keys
+NetToolkit - OnBoundsChanged - component resized event seems to be missing
+NetToolkit - createImage(ImageProducer) implementation
+NetToolkit - setCursorImpl, NetCustomCursor
+NetDialogPeer - setting the title of the dialog
+NetFramePeer - setting icon for the frame
+
+Contributed by: Judit Vasko-Szedlar (Chemaxon)
+@
+text
+@d209 4
+@
+
+
+1.3
+log
+@Remove NetBufferedImage and merge the code in the class BufferedImage. Now the class BufferedImage has 2 buffers. A Java Raster and .NET Bitmap.
+@
+text
+@d91 9
+a99 4
+        public void setPixels(int x, int y, int w, int h, ColorModel model, byte[] pixels, int off, int scansize)
+        {
+            Console.WriteLine("NetProducerImage: setPixels");
+        }
+d105 2
+a106 2
+        void java.awt.image.ImageConsumer.setPixels(int x, int y, int w, int h, ColorModel model, int[] pixels, int off, int scansize)
+        {
+d113 1
+a113 1
+        }
+@
+
+
+1.2
+log
+@- Lock bitmap when drawing it, to make modifying the bitmap from another thread safe.
+- Make setPixels() lots faster by using direct memory copy (although this requires full trust).
+@
+text
+@d4 1
+a4 1
+  Copyright (C) 2006, 2007 Volker Berlin
+a35 45
+    // HACK Classpath should have a working BufferedImage, but currently it doesn't, until then, we
+    // provide a hacked up version
+    class NetBufferedImage : java.awt.image.BufferedImage
+    {
+        internal Bitmap bitmap;
+
+        internal NetBufferedImage(Bitmap bitmap)
+            : base(bitmap.Width, bitmap.Height, java.awt.image.BufferedImage.TYPE_INT_RGB)
+        {
+            this.bitmap = bitmap;
+        }
+
+        internal NetBufferedImage(int width, int height)
+            : base(width, height, java.awt.image.BufferedImage.TYPE_INT_RGB)
+        {
+            bitmap = new Bitmap(width, height);
+            using (Graphics g = Graphics.FromImage(bitmap))
+            {
+                g.Clear(Color.White);
+            }
+        }
+
+        public override java.awt.Graphics2D createGraphics()
+        {
+            Graphics g = Graphics.FromImage(bitmap);
+            // HACK for off-screen images we don't want ClearType or anti-aliasing
+            // TODO I'm sure Java 2D has a way to control text rendering quality, we should honor that
+            g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SingleBitPerPixelGridFit;
+            return new BitmapGraphics(bitmap);
+        }
+
+        public override java.awt.image.ImageProducer getSource()
+        {
+            int[] pix = new int[bitmap.Width * bitmap.Height];
+            for (int y = 0; y < bitmap.Height; y++)
+            {
+                for (int x = 0; x < bitmap.Width; x++)
+                {
+                    pix[x + y * bitmap.Width] = bitmap.GetPixel(x, y).ToArgb();
+                }
+            }
+            return new java.awt.image.MemoryImageSource(bitmap.Width, bitmap.Height, pix, 0, bitmap.Width);
+        }
+    }
+
+d93 1
+a93 1
+            Console.WriteLine("NetBufferedImage: setPixels");
+d124 1
+a124 1
+            // Console.WriteLine("NetBufferedImage: imageComplete");
+d192 1
+a192 1
+            return new NetBufferedImage(bitmap);
+@
+
+
+1.1
+log
+@Restructing the awt project part 2
+@
+text
+@d30 1
+d145 1
+a145 1
+        void java.awt.image.ImageConsumer.setPixels(int aX, int aY, int w, int h, ColorModel model, int[] pixels, int off, int scansize)
+d147 6
+a152 20
+            mWidth = w;
+            mHeight = h;
+            mColorModel = model;
+            mBitmap = new Bitmap(mWidth, mHeight);
+            int pixel = 0;
+            for (int y = 0; y < mHeight; ++y)
+            {
+                for (int x = 0; x < mWidth; x++)
+                {
+                    uint argb = (uint)pixels[pixel++];
+                    int blue = (int)argb & 0xff;
+                    argb >>= 8;
+                    int green = (int)argb & 0xff;
+                    argb >>= 8;
+                    int red = (int)argb & 0xff;
+                    argb >>= 8;
+                    int alpha = (int)argb & 0xff;
+                    mBitmap.SetPixel(x, y, Color.FromArgb(alpha, red, green, blue));
+                }
+            }
+d164 2
+a165 1
+        }
+@
+

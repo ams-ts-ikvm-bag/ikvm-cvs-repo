@@ -1,0 +1,139 @@
+head	1.4;
+access;
+symbols
+	v0_8_0_0:1.3;
+locks; strict;
+comment	@# @;
+
+
+1.4
+date	2005.01.03.08.26.22;	author jfrijters;	state dead;
+branches;
+next	1.3;
+
+1.3
+date	2004.03.08.15.18.48;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2003.08.21.10.06.36;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2003.04.14.09.41.59;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@/*
+  Copyright (C) 2003 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+package java.lang;
+
+class ObjectHelper
+{
+    private ObjectHelper() {}
+
+    static void wait(Object o, long timeout, int nanos)
+    {
+	if(o == null)
+	{
+	    throw new NullPointerException();
+	}
+	if(timeout < 0 || nanos < 0 || nanos > 999999)
+	{
+	    throw new IllegalArgumentException("argument out of range");
+	}
+	if(timeout == 0 && nanos == 0)
+	{
+	    cli.System.Threading.Monitor.Wait(o);
+	}
+	else
+	{
+	    // TODO handle time span calculation overflow
+	    cli.System.Threading.Monitor.Wait(o, new cli.System.TimeSpan(timeout * 10000 + (nanos + 99) / 100));
+	}
+    }
+
+    static String toStringSpecial(Object o)
+    {
+	return o.getClass().getName() + '@@' + Integer.toHexString(o.hashCode());
+    }
+}
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d26 1
+a26 1
+public class ObjectHelper
+d30 1
+a30 6
+    public static void wait(Object o, long timeout)
+    {
+	wait(o, timeout, 0);
+    }
+
+    public static void wait(Object o, long timeout, int nanos)
+d51 1
+a51 1
+    public static String toStringSpecial(Object o)
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@d47 1
+a47 1
+	    system.threading.Monitor.Wait(o);
+d52 1
+a52 1
+	    system.threading.Monitor.Wait(o, new system.TimeSpan(timeout * 10000 + (nanos + 99) / 100));
+@
+

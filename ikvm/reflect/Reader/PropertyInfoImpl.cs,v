@@ -1,0 +1,360 @@
+head	1.7;
+access;
+symbols
+	v8_1_5717_0:1.7
+	v8_1:1.7.0.10
+	v8_0_5449_1:1.7
+	v8_0_5449_0:1.7
+	v8_0:1.7.0.8
+	v7_4_5196_0:1.7
+	v7_4:1.7.0.6
+	v7_3:1.7.0.4
+	v7_2_4630_6:1.7
+	v7_2_4630_5:1.7
+	v7_2_4630_4:1.7
+	v7_2_4630_3:1.7
+	v7_2_4630_2:1.7
+	v0_46_0_4:1.5
+	v7_2_4630_1:1.7
+	v7_2:1.7.0.2
+	v7_1_4532_2:1.6
+	v7_1_4532_1:1.6
+	v7_1_4532_0:1.6
+	v7_1:1.6.0.2
+	v7_0_4335_3:1.5
+	v7_0_4335_2:1.5
+	v7_0_4335_1:1.5
+	v0_46_0_2:1.5
+	v7_0_4335_0:1.5
+	v7_0:1.5.0.6
+	v0_46_0_1:1.5
+	v0_46_0_0:1.5
+	v0_46:1.5.0.4
+	v0_44_0_6:1.5
+	v0_44_0_5:1.5
+	v0_44_0_4:1.5
+	v0_44_0_3:1.5
+	v0_44_0_2:1.5
+	v0_44_0_1:1.5
+	v0_44_0_0:1.5
+	v0_44:1.5.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.7
+date	2012.07.16.10.14.38;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2012.04.10.06.18.32;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2010.02.26.09.26.20;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.02.25.10.46.29;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.02.09.07.53.28;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.02;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.32;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.7
+log
+@Refactored custom attribute handling of MemberInfo types.
+@
+text
+@/*
+  Copyright (C) 2009-2012 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Text;
+using IKVM.Reflection.Metadata;
+
+namespace IKVM.Reflection.Reader
+{
+	sealed class PropertyInfoImpl : PropertyInfo
+	{
+		private readonly ModuleReader module;
+		private readonly Type declaringType;
+		private readonly int index;
+		private PropertySignature sig;
+		private bool isPublic;
+		private bool isNonPrivate;
+		private bool isStatic;
+		private bool flagsCached;
+
+		internal PropertyInfoImpl(ModuleReader module, Type declaringType, int index)
+		{
+			this.module = module;
+			this.declaringType = declaringType;
+			this.index = index;
+		}
+
+		public override bool Equals(object obj)
+		{
+			PropertyInfoImpl other = obj as PropertyInfoImpl;
+			return other != null && other.DeclaringType == declaringType && other.index == index;
+		}
+
+		public override int GetHashCode()
+		{
+			return declaringType.GetHashCode() * 77 + index;
+		}
+
+		internal override PropertySignature PropertySignature
+		{
+			get
+			{
+				if (sig == null)
+				{
+					sig = PropertySignature.ReadSig(module, module.GetBlob(module.Property.records[index].Type), declaringType);
+				}
+				return sig;
+			}
+		}
+
+		public override PropertyAttributes Attributes
+		{
+			get { return (PropertyAttributes)module.Property.records[index].Flags; }
+		}
+
+		public override object GetRawConstantValue()
+		{
+			return module.Constant.GetRawConstantValue(module, this.MetadataToken);
+		}
+
+		public override bool CanRead
+		{
+			get { return GetGetMethod(true) != null; }
+		}
+
+		public override bool CanWrite
+		{
+			get { return GetSetMethod(true) != null; }
+		}
+
+		public override MethodInfo GetGetMethod(bool nonPublic)
+		{
+			return module.MethodSemantics.GetMethod(module, this.MetadataToken, nonPublic, MethodSemanticsTable.Getter);
+		}
+
+		public override MethodInfo GetSetMethod(bool nonPublic)
+		{
+			return module.MethodSemantics.GetMethod(module, this.MetadataToken, nonPublic, MethodSemanticsTable.Setter);
+		}
+
+		public override MethodInfo[] GetAccessors(bool nonPublic)
+		{
+			return module.MethodSemantics.GetMethods(module, this.MetadataToken, nonPublic, MethodSemanticsTable.Getter | MethodSemanticsTable.Setter | MethodSemanticsTable.Other);
+		}
+
+		public override Type DeclaringType
+		{
+			get { return declaringType; }
+		}
+
+		public override Module Module
+		{
+			get { return module; }
+		}
+
+		public override int MetadataToken
+		{
+			get { return (PropertyTable.Index << 24) + index + 1; }
+		}
+
+		public override string Name
+		{
+			get { return module.GetString(module.Property.records[index].Name); }
+		}
+
+		internal override bool IsPublic
+		{
+			get
+			{
+				if (!flagsCached)
+				{
+					ComputeFlags();
+				}
+				return isPublic;
+			}
+		}
+
+		internal override bool IsNonPrivate
+		{
+			get
+			{
+				if (!flagsCached)
+				{
+					ComputeFlags();
+				}
+				return isNonPrivate;
+			}
+		}
+
+		internal override bool IsStatic
+		{
+			get
+			{
+				if (!flagsCached)
+				{
+					ComputeFlags();
+				}
+				return isStatic;
+			}
+		}
+
+		private void ComputeFlags()
+		{
+			module.MethodSemantics.ComputeFlags(module, this.MetadataToken, out isPublic, out isNonPrivate, out isStatic);
+			flagsCached = true;
+		}
+
+		internal override bool IsBaked
+		{
+			get { return true; }
+		}
+
+		internal override int GetCurrentToken()
+		{
+			return this.MetadataToken;
+		}
+	}
+}
+@
+
+
+1.6
+log
+@Moved GetEvents(), GetFields(), GetConstructors(), GetNestedTypes() and GetProperties() to a common implementation that fixes a number of bugs.
+@
+text
+@d168 10
+@
+
+
+1.5
+log
+@Made property and event public/static flag handling compatible with .NET
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Jeroen Frijters
+d38 1
+d139 12
+d165 1
+a165 1
+			module.MethodSemantics.ComputeFlags(module, this.MetadataToken, out isPublic, out isStatic);
+@
+
+
+1.4
+log
+@Added workaround for the fact that Mono doesn't set the HasThis flag on property signatures.
+@
+text
+@a35 1
+		private bool? isStatic;
+d37 3
+d130 5
+a134 1
+				return module.MethodSemantics.GetMethod(module, this.MetadataToken, false, MethodSemanticsTable.Getter | MethodSemanticsTable.Setter) != null;
+d142 1
+a142 1
+				if (!isStatic.HasValue)
+d144 1
+a144 12
+					// MONOBUG assemblies compiled with mcs (and possibly everything generated with Mono's Ref.Emit)
+					// don't have the HasThis flag set in the property signature, so we have to look at the getter/setter
+					// methods
+					if (this.PropertySignature.HasThis)
+					{
+						isStatic = false;
+					}
+					else
+					{
+						MethodInfo mi = module.MethodSemantics.GetMethod(module, this.MetadataToken, true, MethodSemanticsTable.Getter | MethodSemanticsTable.Setter);
+						isStatic = mi == null || mi.IsStatic;
+					}
+d146 1
+a146 1
+				return isStatic.Value;
+d149 6
+@
+
+
+1.3
+log
+@Since we don't cache PropertyInfoImpls and EventInfoImpls, they should at least override Equals/GetHashCode to do by value equality.
+@
+text
+@d36 1
+d131 23
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d45 11
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

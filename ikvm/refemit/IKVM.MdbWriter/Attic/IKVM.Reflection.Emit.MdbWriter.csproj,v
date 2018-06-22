@@ -1,0 +1,113 @@
+head	1.2;
+access;
+symbols
+	v0_40_0_6:1.1
+	v0_40_0_5:1.1
+	v0_42_0_7:1.1
+	v0_42_0_6:1.1
+	v0_42_0_5:1.1
+	v0_42_0_4:1.1
+	v0_42_0_3:1.1
+	v0_42_0_2:1.1
+	v0_42_0_1:1.1
+	v0_42_0_0:1.1
+	v0_42:1.1.0.4
+	v0_40_0_3:1.1
+	v0_40_0_2:1.1
+	v0_40_0_1:1.1
+	v0_40_0_0:1.1
+	v0_40:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2010.04.02.04.03.42;	author jfrijters;	state dead;
+branches;
+next	1.1;
+
+1.1
+date	2009.03.26.14.32.28;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@Removed old refemit code.
+@
+text
+@﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{30D0FC5E-31D2-4BC0-B4F0-51D01C0A89B5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IKVM.MdbWriter</RootNamespace>
+    <AssemblyName>IKVM.Reflection.Emit.MdbWriter</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="SymbolWriter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Mono.CompilerServices.SymbolWriter, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\Mono-2.4\lib\mono\2.0\Mono.CompilerServices.SymbolWriter.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IKVM.Reflection.Emit.csproj">
+      <Project>{3949055D-38DF-4A8F-A632-0F0E62337428}</Project>
+      <Name>IKVM.Reflection.Emit</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>@
+
+
+1.1
+log
+@- Renamed IKVM.PdbWriter.dll to IKVM.Reflection.Emit.PdbWriter.dll.
+- Added IKVM.Reflection.Emit.MdbWriter.dll (untested and not yet complete).
+- Changed SymbolWriter plug-in API to be more flexible.
+- Added ModuleBuilder.ResolveMethod() API.
+- Don't write PE debug directory if symbol writer doesn't supply debug data.
+@
+text
+@@
+

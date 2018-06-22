@@ -1,0 +1,258 @@
+head	1.12;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.12
+date	2010.12.20.21.19.23;	author smallsql;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2010.12.17.21.32.01;	author smallsql;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2010.12.07.09.41.34;	author smallsql;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2010.09.24.08.23.30;	author smallsql;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2010.09.07.09.21.02;	author smallsql;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2010.08.09.11.58.36;	author smallsql;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2009.12.11.14.02.18;	author smallsql;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2009.11.22.22.07.19;	author smallsql;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2009.11.22.10.30.42;	author smallsql;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2009.11.07.22.10.08;	author smallsql;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2009.10.28.09.48.47;	author smallsql;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2009.10.27.18.55.42;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.12
+log
+@remove duplicate call of font tests
+@
+text
+@/*
+  Copyright (C) 2009, 2010 Volker Berlin (i-net software)
+  Copyright (C) 2010 Karsten Heinrich (i-net software)
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+package java_.awt;
+
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+
+
+@@RunWith(Suite.class)
+@@Suite.SuiteClasses({
+    ButtonTest.class,
+    DialogTest.class,
+    FontMetricsTest.class,
+    FontTest.class,
+    FrameTest.class,
+    GraphicsTest.class,
+    GraphicsDeviceTest.class,
+    GraphicsEnvironmentTest.class,
+    LabelTest.class,
+    PanelTest.class,
+    ToolkitTest.class,
+    WindowTest.class
+})
+public class AllTests{
+    //Nothing
+}
+@
+
+
+1.11
+log
+@Panel.isLightweight test added
+@
+text
+@a26 3
+import java_.awt.font.LineMetricsTest;
+import java_.awt.font.TextLayoutTest;
+
+a41 1
+    LineMetricsTest.class,
+a42 1
+    TextLayoutTest.class,
+@
+
+
+1.10
+log
+@ClipTest und andere improvents of the Tests
+@
+text
+@d36 1
+a43 2
+    ToolkitTest.class,
+    WindowTest.class,
+a44 1
+    ButtonTest.class,
+d46 4
+a49 1
+    TextLayoutTest.class
+@
+
+
+1.9
+log
+@create() for ButtonPeer and LabelPeer implemented
+@
+text
+@d27 3
+d46 3
+a48 1
+    ButtonTest.class
+@
+
+
+1.8
+log
+@Add FontMetricsTest and improve FontTest
+@
+text
+@d3 1
+d41 3
+a43 1
+    WindowTest.class
+@
+
+
+1.7
+log
+@Tests for Regression with getDisabledIcon
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Volker Berlin (i-net software)
+d33 1
+@
+
+
+1.6
+log
+@Tests for GraphicsEnvironment added
+@
+text
+@d38 1
+@
+
+
+1.5
+log
+@Extends the Frame Test also to Window and Dialog
+@
+text
+@d37 1
+@
+
+
+1.4
+log
+@Add tests for default values of java.awt.Frame. Make the use of ReferenceData simpler.
+@
+text
+@d32 1
+d36 2
+a37 1
+    GraphicsDeviceTest.class
+@
+
+
+1.3
+log
+@JUnit test for copyArea
+@
+text
+@d33 1
+@
+
+
+1.2
+log
+@Test for Font.getStringBounds
+@
+text
+@d32 3
+a34 2
+    GraphicsDeviceTest.class,
+    FontTest.class
+@
+
+
+1.1
+log
+@First JUnit tests for IKVM
+@
+text
+@d32 2
+a33 1
+    GraphicsDeviceTest.class
+@
+

@@ -1,0 +1,669 @@
+head	1.7;
+access;
+symbols
+	v8_1_5717_0:1.7
+	v8_1:1.7.0.2
+	v8_0_5449_1:1.6
+	v8_0_5449_0:1.6
+	v8_0:1.6.0.2
+	v7_4_5196_0:1.5
+	v7_4:1.5.0.8
+	v7_3:1.5.0.6
+	v7_2_4630_6:1.5
+	v7_2_4630_5:1.5
+	v7_2_4630_4:1.5
+	v7_2_4630_3:1.5
+	v7_2_4630_2:1.5
+	v0_46_0_4:1.4
+	v7_2_4630_1:1.5
+	v7_2:1.5.0.4
+	v7_1_4532_2:1.5
+	v7_1_4532_1:1.5
+	v7_1_4532_0:1.5
+	v7_1:1.5.0.2
+	v7_0_4335_3:1.4
+	v7_0_4335_2:1.4
+	v7_0_4335_1:1.4
+	v0_46_0_2:1.4
+	v7_0_4335_0:1.4
+	v7_0:1.4.0.4
+	v0_40_0_6:1.3
+	v0_40_0_5:1.3
+	v0_46_0_1:1.4
+	v0_46_0_0:1.4
+	v0_46:1.4.0.2
+	v0_36_0_14:1.2
+	v0_44_0_6:1.3
+	v0_44_0_5:1.3
+	v0_44_0_4:1.3
+	v0_44_0_3:1.3
+	v0_44_0_2:1.3
+	v0_42_0_7:1.3
+	v0_44_0_1:1.3
+	v0_44_0_0:1.3
+	v0_44:1.3.0.8
+	v0_42_0_6:1.3
+	v0_42_0_5:1.3
+	v0_42_0_4:1.3
+	v0_42_0_3:1.3
+	v0_42_0_2:1.3
+	v0_42_0_1:1.3
+	v0_42_0_0:1.3
+	v0_42:1.3.0.6
+	v0_40_0_3:1.3
+	v0_40_0_2:1.3
+	v0_40_0_1:1.3
+	v0_40_0_0:1.3
+	v0_40:1.3.0.4
+	v0_36_0_13:1.2
+	v0_38_0_1:1.3
+	v0_38_0_0:1.3
+	v0_38:1.3.0.2
+	v0_36_0_9:1.2
+	v0_36_0_7:1.2
+	v0_36_0_5:1.2
+	v0_36_0_4:1.2
+	v0_36_0_3:1.2
+	v0_36_0_2:1.2
+	v0_36_0_1:1.2
+	v0_36_0_0:1.2
+	v0_36:1.2.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.7
+date	2015.06.09.09.28.44;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2014.05.19.12.43.41;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2012.05.24.07.49.06;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2011.01.24.16.40.23;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.06.11.09.05.47;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.07.02.07.09.07;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.06.12.12.50.37;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.7
+log
+@Integrated OpenJDK 8u45.
+@
+text
+@/*
+ * Copyright (c) 1999, 2013, Oracle and/or its affiliates. All rights reserved.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 only, as
+ * published by the Free Software Foundation.  Oracle designates this
+ * particular file as subject to the "Classpath" exception as provided
+ * by Oracle in the LICENSE file that accompanied this code.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * You should have received a copy of the GNU General Public License version
+ * 2 along with this work; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+ * or visit www.oracle.com if you need additional information or have any
+ * questions.
+ */
+
+package sun.misc;
+import java.io.PrintStream;
+
+public class Version {
+
+
+    private static final String launcher_name =
+        "openjdk";
+
+    private static final String java_version =
+        "1.8.0-internal";
+
+    private static final String java_runtime_name =
+        "OpenJDK Runtime Environment";
+
+    private static final String java_profile_name =
+        "";
+
+    private static final String java_runtime_version =
+        "1.8.0-internal-jeroen_2015_06_02_10_38-b00";
+
+    static {
+        init();
+    }
+
+    public static void init() {
+    }
+
+    private static boolean versionsInitialized = false;
+    private static int jvm_major_version = 0;
+    private static int jvm_minor_version = 0;
+    private static int jvm_micro_version = 0;
+    private static int jvm_update_version = 0;
+    private static int jvm_build_number = 0;
+    private static String jvm_special_version = null;
+    private static int jdk_major_version = 0;
+    private static int jdk_minor_version = 0;
+    private static int jdk_micro_version = 0;
+    private static int jdk_update_version = 0;
+    private static int jdk_build_number = 0;
+    private static String jdk_special_version = null;
+
+    /**
+     * In case you were wondering this method is called by java -version.
+     * Sad that it prints to stderr; would be nicer if default printed on
+     * stdout.
+     */
+    public static void print() {
+        print(System.err);
+    }
+
+    /**
+     * This is the same as print except that it adds an extra line-feed
+     * at the end, typically used by the -showversion in the launcher
+     */
+    public static void println() {
+        print(System.err);
+        System.err.println();
+    }
+
+    /**
+     * Give a stream, it will print version info on it.
+     */
+    public static void print(PrintStream ps) {
+        boolean isHeadless = false;
+
+        /* Report that we're running headless if the property is true */
+        String headless = System.getProperty("java.awt.headless");
+        if ( (headless != null) && (headless.equalsIgnoreCase("true")) ) {
+            isHeadless = true;
+        }
+
+        /* First line: platform version. */
+        ps.println(launcher_name + " version \"" + java_version + "\"");
+
+        /* Second line: runtime version (ie, libraries). */
+
+        ps.print(java_runtime_name + " (build " + java_runtime_version);
+
+        if (java_profile_name.length() > 0) {
+            // profile name
+            ps.print(", profile " + java_profile_name);
+        }
+
+        if (java_runtime_name.indexOf("Embedded") != -1 && isHeadless) {
+            // embedded builds report headless state
+            ps.print(", headless");
+        }
+        ps.println(')');
+
+        /* Third line: JVM information. */
+        String java_vm_name    = System.getProperty("java.vm.name");
+        String java_vm_version = System.getProperty("java.vm.version");
+        String java_vm_info    = System.getProperty("java.vm.info");
+        ps.println(java_vm_name + " (build " + java_vm_version + ", " +
+                   java_vm_info + ")");
+    }
+
+
+    /**
+     * Returns the major version of the running JVM if it's 1.6 or newer
+     * or any RE VM build. It will return 0 if it's an internal 1.5 or
+     * 1.4.x build.
+     *
+     * @@since 1.6
+     */
+    public static synchronized int jvmMajorVersion() {
+        if (!versionsInitialized) {
+            initVersions();
+        }
+        return jvm_major_version;
+    }
+
+    /**
+     * Returns the minor version of the running JVM if it's 1.6 or newer
+     * or any RE VM build. It will return 0 if it's an internal 1.5 or
+     * 1.4.x build.
+     * @@since 1.6
+     */
+    public static synchronized int jvmMinorVersion() {
+        if (!versionsInitialized) {
+            initVersions();
+        }
+        return jvm_minor_version;
+    }
+
+
+    /**
+     * Returns the micro version of the running JVM if it's 1.6 or newer
+     * or any RE VM build. It will return 0 if it's an internal 1.5 or
+     * 1.4.x build.
+     * @@since 1.6
+     */
+    public static synchronized int jvmMicroVersion() {
+        if (!versionsInitialized) {
+            initVersions();
+        }
+        return jvm_micro_version;
+    }
+
+    /**
+     * Returns the update release version of the running JVM if it's
+     * a RE build. It will return 0 if it's an internal build.
+     * @@since 1.6
+     */
+    public static synchronized int jvmUpdateVersion() {
+        if (!versionsInitialized) {
+            initVersions();
+        }
+        return jvm_update_version;
+    }
+
+    public static synchronized String jvmSpecialVersion() {
+        if (!versionsInitialized) {
+            initVersions();
+        }
+        if (jvm_special_version == null) {
+            jvm_special_version = getJvmSpecialVersion();
+        }
+        return jvm_special_version;
+    }
+    public static native String getJvmSpecialVersion();
+
+    /**
+     * Returns the build number of the running JVM if it's a RE build
+     * It will return 0 if it's an internal build.
+     * @@since 1.6
+     */
+    public static synchronized int jvmBuildNumber() {
+        if (!versionsInitialized) {
+            initVersions();
+        }
+        return jvm_build_number;
+    }
+
+    /**
+     * Returns the major version of the running JDK.
+     *
+     * @@since 1.6
+     */
+    public static synchronized int jdkMajorVersion() {
+        if (!versionsInitialized) {
+            initVersions();
+        }
+        return jdk_major_version;
+    }
+
+    /**
+     * Returns the minor version of the running JDK.
+     * @@since 1.6
+     */
+    public static synchronized int jdkMinorVersion() {
+        if (!versionsInitialized) {
+            initVersions();
+        }
+        return jdk_minor_version;
+    }
+
+    /**
+     * Returns the micro version of the running JDK.
+     * @@since 1.6
+     */
+    public static synchronized int jdkMicroVersion() {
+        if (!versionsInitialized) {
+            initVersions();
+        }
+        return jdk_micro_version;
+    }
+
+    /**
+     * Returns the update release version of the running JDK if it's
+     * a RE build. It will return 0 if it's an internal build.
+     * @@since 1.6
+     */
+    public static synchronized int jdkUpdateVersion() {
+        if (!versionsInitialized) {
+            initVersions();
+        }
+        return jdk_update_version;
+    }
+
+    public static synchronized String jdkSpecialVersion() {
+        if (!versionsInitialized) {
+            initVersions();
+        }
+        if (jdk_special_version == null) {
+            jdk_special_version = getJdkSpecialVersion();
+        }
+        return jdk_special_version;
+    }
+    public static native String getJdkSpecialVersion();
+
+    /**
+     * Returns the build number of the running JDK if it's a RE build
+     * It will return 0 if it's an internal build.
+     * @@since 1.6
+     */
+    public static synchronized int jdkBuildNumber() {
+        if (!versionsInitialized) {
+            initVersions();
+        }
+        return jdk_build_number;
+    }
+
+    // true if JVM exports the version info including the capabilities
+    private static boolean jvmVersionInfoAvailable;
+    private static synchronized void initVersions() {
+        if (versionsInitialized) {
+            return;
+        }
+        jvmVersionInfoAvailable = getJvmVersionInfo();
+        if (!jvmVersionInfoAvailable) {
+            // parse java.vm.version for older JVM before the
+            // new JVM_GetVersionInfo is added.
+            // valid format of the version string is:
+            // n.n.n[_uu[c]][-<identifer>]-bxx
+            CharSequence cs = System.getProperty("java.vm.version");
+            if (cs.length() >= 5 &&
+                Character.isDigit(cs.charAt(0)) && cs.charAt(1) == '.' &&
+                Character.isDigit(cs.charAt(2)) && cs.charAt(3) == '.' &&
+                Character.isDigit(cs.charAt(4))) {
+                jvm_major_version = Character.digit(cs.charAt(0), 10);
+                jvm_minor_version = Character.digit(cs.charAt(2), 10);
+                jvm_micro_version = Character.digit(cs.charAt(4), 10);
+                cs = cs.subSequence(5, cs.length());
+                if (cs.charAt(0) == '_' && cs.length() >= 3 &&
+                    Character.isDigit(cs.charAt(1)) &&
+                    Character.isDigit(cs.charAt(2))) {
+                    int nextChar = 3;
+                    try {
+                        String uu = cs.subSequence(1, 3).toString();
+                        jvm_update_version = Integer.valueOf(uu).intValue();
+                        if (cs.length() >= 4) {
+                            char c = cs.charAt(3);
+                            if (c >= 'a' && c <= 'z') {
+                                jvm_special_version = Character.toString(c);
+                                nextChar++;
+                            }
+                        }
+                    } catch (NumberFormatException e) {
+                        // not conforming to the naming convention
+                        return;
+                    }
+                    cs = cs.subSequence(nextChar, cs.length());
+                }
+                if (cs.charAt(0) == '-') {
+                    // skip the first character
+                    // valid format: <identifier>-bxx or bxx
+                    // non-product VM will have -debug|-release appended
+                    cs = cs.subSequence(1, cs.length());
+                    String[] res = cs.toString().split("-");
+                    for (String s : res) {
+                        if (s.charAt(0) == 'b' && s.length() == 3 &&
+                            Character.isDigit(s.charAt(1)) &&
+                            Character.isDigit(s.charAt(2))) {
+                            jvm_build_number =
+                                Integer.valueOf(s.substring(1, 3)).intValue();
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        getJdkVersionInfo();
+        versionsInitialized = true;
+    }
+
+    // Gets the JVM version info if available and sets the jvm_*_version fields
+    // and its capabilities.
+    //
+    // Return false if not available which implies an old VM (Tiger or before).
+    private static native boolean getJvmVersionInfo();
+    private static native void getJdkVersionInfo();
+}
+
+// Help Emacs a little because this file doesn't end in .java.
+//
+// Local Variables: ***
+// mode: java ***
+// End: ***
+@
+
+
+1.6
+log
+@First part of OpenJDK 8 integration.
+@
+text
+@d45 1
+a45 1
+        "1.8.0-internal-jeroen_2014_04_10_09_21-b00";
+@
+
+
+1.5
+log
+@Merged sun.misc.Version changes.
+@
+text
+@d2 1
+a2 1
+ * Copyright (c) 1999, 2011, Oracle and/or its affiliates. All rights reserved.
+d36 1
+a36 1
+        "1.7.0-internal";
+d39 5
+a43 2
+	"OpenJDK Runtime Environment";
+ 
+d45 1
+a45 1
+        "1.7.0-internal-jeroen_2012_05_22_06_05-b00";
+d93 2
+a94 2
+	String headless = System.getProperty("java.awt.headless");
+	if ( (headless != null) && (headless.equalsIgnoreCase("true")) ) {
+d96 1
+a96 1
+	} 
+d103 1
+a103 1
+	ps.print(java_runtime_name + " (build " + java_runtime_version);
+d105 10
+a114 5
+	if (java_runtime_name.indexOf("Embedded") != -1 && isHeadless) {
+	    // embedded builds report headless state
+	    ps.print(", headless");
+	}
+	ps.println(')');
+a338 1
+
+@
+
+
+1.4
+log
+@Integrated OpenJDK 6 b21.
+@
+text
+@d2 1
+a2 1
+ * Copyright (c) 1999, 2007, Oracle and/or its affiliates. All rights reserved.
+d33 1
+a33 1
+        "@@@@launcher_name@@@@";
+d36 2
+a37 2
+        "@@@@java_version@@@@";
+        
+d39 2
+a40 2
+        "@@@@java_runtime_name@@@@";
+
+d42 1
+a42 1
+        "@@@@java_runtime_version@@@@";
+a48 3
+        //System.setProperty("java.version", java_version);
+        //System.setProperty("java.runtime.version", java_runtime_version);
+        //System.setProperty("java.runtime.name", java_runtime_name);
+d75 9
+d87 8
+d99 8
+a106 2
+        ps.println(java_runtime_name + " (build " +
+                           java_runtime_version + ")");
+d116 1
+d270 1
+a270 1
+            // parse java.vm.version for older JVM before the 
+d275 2
+a276 2
+            if (cs.length() >= 5 && 
+                Character.isDigit(cs.charAt(0)) && cs.charAt(1) == '.' && 
+d279 1
+a279 1
+                jvm_major_version = Character.digit(cs.charAt(0), 10); 
+d284 1
+a284 1
+                    Character.isDigit(cs.charAt(1)) && 
+d288 1
+a288 1
+                        String uu = cs.subSequence(1, 3).toString(); 
+d292 1
+a292 1
+                            if (c >= 'a' && c <= 'z') { 
+d310 2
+a311 2
+                        if (s.charAt(0) == 'b' && s.length() == 3 && 
+                            Character.isDigit(s.charAt(1)) && 
+d313 1
+a313 1
+                            jvm_build_number = 
+d316 2
+a317 2
+                        } 
+                    } 
+@
+
+
+1.3
+log
+@Converted tabs to spaces.
+@
+text
+@d2 1
+a2 1
+ * Copyright 1999-2007 Sun Microsystems, Inc.  All Rights Reserved.
+d7 1
+a7 1
+ * published by the Free Software Foundation.  Sun designates this
+d9 1
+a9 1
+ * by Sun in the LICENSE file that accompanied this code.
+d21 3
+a23 3
+ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
+ * CA 95054 USA or visit www.sun.com if you need additional information or
+ * have any questions.
+@
+
+
+1.2
+log
+@Don't overwrite version properties.
+@
+text
+@d33 1
+a33 1
+	"@@@@launcher_name@@@@";
+d36 2
+a37 2
+	"@@@@java_version@@@@";
+	
+d39 1
+a39 1
+	"@@@@java_runtime_name@@@@";
+d42 1
+a42 1
+	"@@@@java_runtime_version@@@@";
+d45 1
+a45 1
+	init();
+d49 3
+a51 3
+	//System.setProperty("java.version", java_version);
+	//System.setProperty("java.runtime.version", java_runtime_version);
+	//System.setProperty("java.runtime.name", java_runtime_name);
+d74 1
+a74 1
+	print(System.err);
+d81 2
+a82 2
+	/* First line: platform version. */
+	ps.println(launcher_name + " version \"" + java_version + "\"");
+d84 10
+a93 10
+	/* Second line: runtime version (ie, libraries). */
+	ps.println(java_runtime_name + " (build " +
+			   java_runtime_version + ")");
+
+	/* Third line: JVM information. */
+	String java_vm_name    = System.getProperty("java.vm.name");
+	String java_vm_version = System.getProperty("java.vm.version");
+	String java_vm_info    = System.getProperty("java.vm.info");
+	ps.println(java_vm_name + " (build " + java_vm_version + ", " +
+		   java_vm_info + ")");
+d253 1
+a253 1
+	    CharSequence cs = System.getProperty("java.vm.version");
+@
+
+
+1.1
+log
+@Previously forgot to add this file.
+@
+text
+@d49 3
+a51 3
+	System.setProperty("java.version", java_version);
+	System.setProperty("java.runtime.version", java_runtime_version);
+	System.setProperty("java.runtime.name", java_runtime_name);
+@
+

@@ -1,0 +1,3373 @@
+head	1.48;
+access;
+symbols
+	v8_1_5717_0:1.48
+	v8_1:1.48.0.2
+	v8_0_5449_1:1.47
+	v8_0_5449_0:1.47
+	v8_0:1.47.0.2
+	v7_4_5196_0:1.45
+	v7_4:1.45.0.4
+	v7_3:1.45.0.2
+	v7_2_4630_6:1.44
+	v7_2_4630_5:1.44
+	v7_2_4630_4:1.44
+	v7_2_4630_3:1.44
+	v7_2_4630_2:1.44
+	v0_46_0_4:1.33.2.1
+	v7_2_4630_1:1.44
+	v7_2:1.44.0.2
+	v7_1_4532_2:1.41
+	v7_1_4532_1:1.41
+	v7_1_4532_0:1.41
+	v7_1:1.41.0.2
+	v7_0_4335_3:1.39
+	v7_0_4335_2:1.39
+	v7_0_4335_1:1.39
+	v0_46_0_2:1.33.2.1
+	v7_0_4335_0:1.39
+	v7_0:1.39.0.2
+	v0_40_0_6:1.19
+	v0_40_0_5:1.19
+	v0_46_0_1:1.33
+	v0_46_0_0:1.33
+	v0_46:1.33.0.2
+	v0_36_0_14:1.9
+	v0_44_0_6:1.26.2.1
+	v0_44_0_5:1.26
+	v0_44_0_4:1.26
+	v0_44_0_3:1.26
+	v0_44_0_2:1.26
+	v0_42_0_7:1.21
+	v0_44_0_1:1.26
+	v0_44_0_0:1.26
+	v0_44:1.26.0.2
+	v0_42_0_6:1.21
+	v0_42_0_5:1.21
+	v0_42_0_4:1.21
+	v0_42_0_3:1.21
+	v0_42_0_2:1.21
+	v0_42_0_1:1.21
+	v0_42_0_0:1.21
+	v0_42:1.21.0.2
+	v0_40_0_3:1.19
+	v0_40_0_2:1.19
+	v0_40_0_1:1.19
+	v0_40_0_0:1.19
+	v0_40:1.19.0.2
+	v0_36_0_13:1.9
+	v0_38_0_1:1.16
+	v0_38_0_0:1.16
+	v0_38:1.16.0.2
+	v0_36_0_9:1.9
+	v0_36_0_7:1.9
+	v0_36_0_5:1.9
+	v0_36_0_4:1.9
+	v0_36_0_3:1.9
+	v0_36_0_2:1.9
+	v0_36_0_1:1.9
+	v0_36_0_0:1.9
+	v0_36:1.9.0.2
+	v0_34_0_3:1.5.4.1
+	v0_34_0_2:1.5.4.1
+	v0_34_0_1:1.5.4.1
+	v0_34_0_0:1.5.4.1
+	v0_34:1.5.0.4
+	v0_32:1.5.0.2
+	v0_32_0_0:1.5
+	v0_30:1.3.0.2
+	v0_28_0_0:1.2;
+locks; strict;
+comment	@ * @;
+
+
+1.48
+date	2015.03.24.09.39.11;	author jfrijters;	state Exp;
+branches;
+next	1.47;
+
+1.47
+date	2014.11.19.07.24.41;	author jfrijters;	state Exp;
+branches;
+next	1.46;
+
+1.46
+date	2014.04.28.13.34.03;	author jfrijters;	state Exp;
+branches;
+next	1.45;
+
+1.45
+date	2013.01.31.09.12.20;	author jfrijters;	state Exp;
+branches;
+next	1.44;
+
+1.44
+date	2012.08.06.12.12.03;	author jfrijters;	state Exp;
+branches;
+next	1.43;
+
+1.43
+date	2012.07.07.07.15.30;	author jfrijters;	state Exp;
+branches;
+next	1.42;
+
+1.42
+date	2012.07.03.14.45.51;	author jfrijters;	state Exp;
+branches;
+next	1.41;
+
+1.41
+date	2012.01.20.16.13.08;	author jfrijters;	state Exp;
+branches;
+next	1.40;
+
+1.40
+date	2011.11.24.12.31.38;	author jfrijters;	state Exp;
+branches;
+next	1.39;
+
+1.39
+date	2011.07.30.09.54.34;	author jfrijters;	state Exp;
+branches;
+next	1.38;
+
+1.38
+date	2011.07.11.07.32.40;	author jfrijters;	state Exp;
+branches;
+next	1.37;
+
+1.37
+date	2011.06.26.06.29.43;	author jfrijters;	state Exp;
+branches;
+next	1.36;
+
+1.36
+date	2011.05.25.09.23.37;	author jfrijters;	state Exp;
+branches;
+next	1.35;
+
+1.35
+date	2011.05.13.07.29.31;	author jfrijters;	state Exp;
+branches;
+next	1.34;
+
+1.34
+date	2011.05.12.10.15.52;	author jfrijters;	state Exp;
+branches;
+next	1.33;
+
+1.33
+date	2010.11.20.07.33.10;	author jfrijters;	state Exp;
+branches
+	1.33.2.1;
+next	1.32;
+
+1.32
+date	2010.10.22.06.06.56;	author jfrijters;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2010.10.21.10.58.57;	author jfrijters;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2010.10.05.04.49.12;	author jfrijters;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2010.10.01.08.11.49;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2010.09.29.07.21.51;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2010.09.20.15.08.46;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2010.05.20.04.59.13;	author jfrijters;	state Exp;
+branches
+	1.26.2.1;
+next	1.25;
+
+1.25
+date	2010.05.16.06.31.20;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2010.01.28.09.18.34;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2010.01.25.07.52.51;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2009.10.16.07.06.50;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2009.08.06.06.46.54;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2009.07.14.09.31.21;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2009.03.16.05.40.41;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2009.03.13.04.59.21;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2008.11.14.08.42.07;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2008.08.15.12.01.12;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2008.08.14.06.51.32;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2008.08.14.05.42.43;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2008.06.03.12.10.13;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2008.06.03.09.17.32;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2008.02.18.07.58.28;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2007.12.28.14.35.18;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2007.06.28.10.29.28;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2007.06.12.11.45.23;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2007.06.11.09.11.42;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2007.04.23.08.14.55;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2006.11.20.09.33.16;	author jfrijters;	state Exp;
+branches
+	1.5.4.1;
+next	1.4;
+
+1.4
+date	2006.10.02.07.10.54;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2006.06.08.09.26.38;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2006.04.12.13.01.14;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2006.04.10.09.18.37;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.5.4.1
+date	2007.04.23.07.25.24;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.26.2.1
+date	2010.10.22.07.33.12;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.33.2.1
+date	2011.12.20.11.01.45;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.48
+log
+@Removed sig decoding methods with implicit LoadMode.
+@
+text
+@/*
+  Copyright (C) 2002-2010 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using IKVM.Reflection;
+using IKVM.Reflection.Emit;
+using Type = IKVM.Reflection.Type;
+using System.Diagnostics;
+using IKVM.Attributes;
+using IKVM.Internal;
+
+namespace IKVM.Internal.MapXml
+{
+	sealed class CodeGenContext
+	{
+		private ClassLoaderWrapper classLoader;
+		private readonly Dictionary<string, object> h = new Dictionary<string, object>();
+
+		internal CodeGenContext(ClassLoaderWrapper classLoader)
+		{
+			this.classLoader = classLoader;
+		}
+
+		internal object this[string key]
+		{
+			get
+			{
+				object val;
+				h.TryGetValue(key, out val);
+				return val;
+			}
+			set { h[key] = value; }
+		}
+
+		internal ClassLoaderWrapper ClassLoader { get { return classLoader; } }
+	}
+
+	public abstract class Instruction
+	{
+		private int lineNumber = Root.LineNumber;
+
+		internal int LineNumber
+		{
+			get
+			{
+				return lineNumber;
+			}
+		}
+
+		internal abstract void Generate(CodeGenContext context, CodeEmitter ilgen);
+
+		public override string ToString()
+		{
+			System.Text.StringBuilder sb = new System.Text.StringBuilder();
+			sb.Append('<');
+			object[] attr = GetType().GetCustomAttributes(typeof(XmlTypeAttribute), false);
+			if (attr.Length == 1)
+			{
+				sb.Append(((XmlTypeAttribute)attr[0]).TypeName);
+			}
+			else
+			{
+				sb.Append(GetType().Name);
+			}
+			foreach (System.Reflection.FieldInfo field in GetType().GetFields())
+			{
+				if (!field.IsStatic)
+				{
+					object value = field.GetValue(this);
+					if (value != null)
+					{
+						attr = field.GetCustomAttributes(typeof(XmlAttributeAttribute), false);
+						if (attr.Length == 1)
+						{
+							sb.AppendFormat(" {0}=\"{1}\"", ((XmlAttributeAttribute)attr[0]).AttributeName, value);
+						}
+					}
+				}
+			}
+			sb.Append(" />");
+			return sb.ToString();
+		}
+	}
+
+	[XmlType("ldstr")]
+	public sealed class Ldstr : Instruction
+	{
+		[XmlAttribute("value")]
+		public string Value;
+
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			ilgen.Emit(OpCodes.Ldstr, Value);
+		}
+	}
+
+	[XmlType("ldnull")]
+	public sealed class Ldnull : Simple
+	{
+		public Ldnull() : base(OpCodes.Ldnull)
+		{
+		}
+	}
+
+	[XmlType("call")]
+	public class Call : Instruction
+	{
+		public Call() : this(OpCodes.Call)
+		{
+		}
+
+		internal Call(OpCode opcode)
+		{
+			this.opcode = opcode;
+		}
+
+		[XmlAttribute("class")]
+		public string Class;
+		[XmlAttribute("type")]
+		public string type;
+		[XmlAttribute("name")]
+		public string Name;
+		[XmlAttribute("sig")]
+		public string Sig;
+
+		private OpCode opcode;
+
+		internal sealed override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			Debug.Assert(Name != null);
+			if(Name == ".ctor")
+			{
+				Debug.Assert(Class == null && type != null);
+				Type[] argTypes = context.ClassLoader.ArgTypeListFromSig(Sig);
+				ConstructorInfo ci = StaticCompiler.GetTypeForMapXml(context.ClassLoader, type).GetConstructor(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance, null, CallingConventions.Standard, argTypes, null);
+				if(ci == null)
+				{
+					throw new InvalidOperationException("Missing .ctor: " + type + "..ctor" + Sig);
+				}
+				ilgen.Emit(opcode, ci);
+			}
+			else
+			{
+				Debug.Assert(Class == null ^ type == null);
+				if(Class != null)
+				{
+					Debug.Assert(Sig != null);
+					MethodWrapper method = context.ClassLoader.LoadClassByDottedName(Class).GetMethodWrapper(Name, Sig, false);
+					if(method == null)
+					{
+						throw new InvalidOperationException("method not found: " + Class + "." + Name + Sig);
+					}
+					method.Link();
+					// TODO this code is part of what Compiler.CastInterfaceArgs (in compiler.cs) does,
+					// it would be nice if we could avoid this duplication...
+					TypeWrapper[] argTypeWrappers = method.GetParameters();
+					for(int i = 0; i < argTypeWrappers.Length; i++)
+					{
+						if(argTypeWrappers[i].IsGhost)
+						{
+							CodeEmitterLocal[] temps = new CodeEmitterLocal[argTypeWrappers.Length + (method.IsStatic ? 0 : 1)];
+							for(int j = temps.Length - 1; j >= 0; j--)
+							{
+								TypeWrapper tw;
+								if(method.IsStatic)
+								{
+									tw = argTypeWrappers[j];
+								}
+								else
+								{
+									if(j == 0)
+									{
+										tw = method.DeclaringType;
+									}
+									else
+									{
+										tw = argTypeWrappers[j - 1];
+									}
+								}
+								if(tw.IsGhost)
+								{
+									tw.EmitConvStackTypeToSignatureType(ilgen, null);
+								}
+								temps[j] = ilgen.DeclareLocal(tw.TypeAsSignatureType);
+								ilgen.Emit(OpCodes.Stloc, temps[j]);
+							}
+							for(int j = 0; j < temps.Length; j++)
+							{
+								ilgen.Emit(OpCodes.Ldloc, temps[j]);
+							}
+							break;
+						}
+					}
+					if(opcode.Value == OpCodes.Call.Value)
+					{
+						method.EmitCall(ilgen);
+					}
+					else if(opcode.Value == OpCodes.Callvirt.Value)
+					{
+						method.EmitCallvirt(ilgen);
+					}
+					else if(opcode.Value == OpCodes.Newobj.Value)
+					{
+						method.EmitNewobj(ilgen);
+					}
+					else
+					{
+						// ldftn or ldvirtftn
+						ilgen.Emit(opcode, (MethodInfo)method.GetMethod());
+					}
+				}
+				else
+				{
+					Type[] argTypes;
+					if(Sig.StartsWith("("))
+					{
+						argTypes = context.ClassLoader.ArgTypeListFromSig(Sig);
+					}
+					else if(Sig == "")
+					{
+						argTypes = Type.EmptyTypes;
+					}
+					else
+					{
+						string[] types = Sig.Split(';');
+						argTypes = new Type[types.Length];
+						for(int i = 0; i < types.Length; i++)
+						{
+							argTypes[i] = StaticCompiler.GetTypeForMapXml(context.ClassLoader, types[i]);
+						}
+					}
+					MethodInfo mi = StaticCompiler.GetTypeForMapXml(context.ClassLoader, type).GetMethod(Name, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static, null, argTypes, null);
+					if(mi == null)
+					{
+						throw new InvalidOperationException("Missing method: " + type + "." + Name + Sig);
+					}
+					ilgen.Emit(opcode, mi);
+				}
+			}
+		}
+	}
+
+	[XmlType("callvirt")]
+	public sealed class Callvirt : Call
+	{
+		public Callvirt() : base(OpCodes.Callvirt)
+		{
+		}
+	}
+
+	[XmlType("newobj")]
+	public sealed class NewObj : Call
+	{
+		public NewObj() : base(OpCodes.Newobj)
+		{
+		}
+	}
+
+	[XmlType("ldftn")]
+	public sealed class Ldftn : Call
+	{
+		public Ldftn() : base(OpCodes.Ldftn)
+		{
+		}
+	}
+
+	[XmlType("ldvirtftn")]
+	public sealed class Ldvirtftn : Call
+	{
+		public Ldvirtftn() : base(OpCodes.Ldvirtftn)
+		{
+		}
+	}
+
+	public abstract class Simple : Instruction
+	{
+		private OpCode opcode;
+
+		public Simple(OpCode opcode)
+		{
+			this.opcode = opcode;
+		}
+
+		internal sealed override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			ilgen.Emit(opcode);
+		}
+	}
+
+	[XmlType("dup")]
+	public sealed class Dup : Simple
+	{
+		public Dup() : base(OpCodes.Dup)
+		{
+		}
+	}
+
+	[XmlType("pop")]
+	public sealed class Pop : Instruction
+	{
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			ilgen.Emit(OpCodes.Pop);
+		}
+	}
+
+	public abstract class TypeOrTypeWrapperInstruction : Instruction
+	{
+		[XmlAttribute("class")]
+		public string Class;
+		[XmlAttribute("type")]
+		public string type;
+
+		internal TypeWrapper typeWrapper;
+		internal Type typeType;
+
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			if(typeWrapper == null && typeType == null)
+			{
+				Debug.Assert(Class == null ^ type == null);
+				if(Class != null)
+				{
+					typeWrapper = context.ClassLoader.LoadClassByDottedName(Class);
+				}
+				else
+				{
+					typeType = StaticCompiler.GetTypeForMapXml(context.ClassLoader, type);
+				}
+			}
+		}
+	}
+
+	[XmlType("isinst")]
+	public sealed class IsInst : TypeOrTypeWrapperInstruction
+	{
+		public IsInst()
+		{
+		}
+
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			base.Generate(context, ilgen);
+			if(typeType != null)
+			{
+				ilgen.Emit(OpCodes.Isinst, typeType);
+			}
+			else
+			{
+				if(typeWrapper.IsGhost || typeWrapper.IsGhostArray)
+				{
+					ilgen.Emit(OpCodes.Dup);
+					typeWrapper.EmitInstanceOf(ilgen);
+					CodeEmitterLabel endLabel = ilgen.DefineLabel();
+					ilgen.EmitBrtrue(endLabel);
+					ilgen.Emit(OpCodes.Pop);
+					ilgen.Emit(OpCodes.Ldnull);
+					ilgen.MarkLabel(endLabel);
+				}
+				else
+				{
+					ilgen.Emit(OpCodes.Isinst, typeWrapper.TypeAsTBD);
+				}
+			}
+		}
+	}
+
+	[XmlType("castclass")]
+	public sealed class Castclass : TypeOrTypeWrapperInstruction
+	{
+		public Castclass()
+		{
+		}
+
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			base.Generate(context, ilgen);
+			if(typeType != null)
+			{
+				ilgen.Emit(OpCodes.Castclass, typeType);
+			}
+			else
+			{
+				typeWrapper.EmitCheckcast(ilgen);
+			}
+		}
+	}
+
+	[XmlType("castclass_impl")]
+	public sealed class Castclass_impl : Instruction
+	{
+		[XmlAttribute("class")]
+		public string Class;
+
+		public Castclass_impl()
+		{
+		}
+
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			ilgen.Emit(OpCodes.Castclass, context.ClassLoader.LoadClassByDottedName(Class).TypeAsBaseType);
+		}
+	}
+
+	public abstract class TypeInstruction : Instruction
+	{
+		[XmlAttribute("type")]
+		public string type;
+
+		private OpCode opcode;
+		private Type typeType;
+
+		internal TypeInstruction(OpCode opcode)
+		{
+			this.opcode = opcode;
+		}
+
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			if(typeType == null)
+			{
+				Debug.Assert(type != null);
+				typeType = StaticCompiler.GetTypeForMapXml(context.ClassLoader, type);
+			}
+			ilgen.Emit(opcode, typeType);
+		}
+	}
+
+	[XmlType("ldobj")]
+	public sealed class Ldobj : TypeInstruction
+	{
+		public Ldobj() : base(OpCodes.Ldobj)
+		{
+		}
+	}
+
+	[XmlType("unbox")]
+	public sealed class Unbox : TypeInstruction
+	{
+		public Unbox() : base(OpCodes.Unbox)
+		{
+		}
+	}
+
+	[XmlType("box")]
+	public sealed class Box : TypeInstruction
+	{
+		public Box() : base(OpCodes.Box)
+		{
+		}
+	}
+
+	public abstract class Branch : Instruction
+	{
+		internal sealed override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			CodeEmitterLabel l;
+			if(context[Name] == null)
+			{
+				l = ilgen.DefineLabel();
+				context[Name] = l;
+			}
+			else
+			{
+				l = (CodeEmitterLabel)context[Name];
+			}
+			Emit(ilgen, l);
+		}
+
+		internal abstract void Emit(CodeEmitter ilgen, CodeEmitterLabel label);
+
+		[XmlAttribute("name")]
+		public string Name;
+	}
+
+	[XmlType("brfalse")]
+	public sealed class BrFalse : Branch
+	{
+		internal override void Emit(CodeEmitter ilgen, CodeEmitterLabel label)
+		{
+			ilgen.EmitBrfalse(label);
+		}
+	}
+
+	[XmlType("brtrue")]
+	public sealed class BrTrue : Branch
+	{
+		internal override void Emit(CodeEmitter ilgen, CodeEmitterLabel label)
+		{
+			ilgen.EmitBrtrue(label);
+		}
+	}
+
+	[XmlType("br")]
+	public sealed class Br : Branch
+	{
+		internal override void Emit(CodeEmitter ilgen, CodeEmitterLabel label)
+		{
+			ilgen.EmitBr(label);
+		}
+	}
+
+	[XmlType("beq")]
+	public sealed class Beq : Branch
+	{
+		internal override void Emit(CodeEmitter ilgen, CodeEmitterLabel label)
+		{
+			ilgen.EmitBeq(label);
+		}
+	}
+
+	[XmlType("bne_un")]
+	public sealed class Bne_Un : Branch
+	{
+		internal override void Emit(CodeEmitter ilgen, CodeEmitterLabel label)
+		{
+			ilgen.EmitBne_Un(label);
+		}
+	}
+
+	[XmlType("bge_un")]
+	public sealed class Bge_Un : Branch
+	{
+		internal override void Emit(CodeEmitter ilgen, CodeEmitterLabel label)
+		{
+			ilgen.EmitBge_Un(label);
+		}
+	}
+
+	[XmlType("ble_un")]
+	public sealed class Ble_Un : Branch
+	{
+		internal override void Emit(CodeEmitter ilgen, CodeEmitterLabel label)
+		{
+			ilgen.EmitBle_Un(label);
+		}
+	}
+
+	[XmlType("blt")]
+	public sealed class Blt : Branch
+	{
+		internal override void Emit(CodeEmitter ilgen, CodeEmitterLabel label)
+		{
+			ilgen.EmitBlt(label);
+		}
+	}
+
+	[XmlType("blt_un")]
+	public sealed class Blt_Un : Branch
+	{
+		internal override void Emit(CodeEmitter ilgen, CodeEmitterLabel label)
+		{
+			ilgen.EmitBlt_Un(label);
+		}
+	}
+
+	[XmlType("label")]
+	public sealed class BrLabel : Instruction
+	{
+		[XmlAttribute("name")]
+		public string Name;
+
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			CodeEmitterLabel l;
+			if(context[Name] == null)
+			{
+				l = ilgen.DefineLabel();
+				context[Name] = l;
+			}
+			else
+			{
+				l = (CodeEmitterLabel)context[Name];
+			}
+			ilgen.MarkLabel(l);
+		}
+	}
+
+	[XmlType("stloc")]
+	public sealed class StLoc : Instruction
+	{
+		[XmlAttribute("name")]
+		public string Name;
+		[XmlAttribute("class")]
+		public string Class;
+		[XmlAttribute("type")]
+		public string type;
+
+		private TypeWrapper typeWrapper;
+		private Type typeType;
+
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			CodeEmitterLocal lb = (CodeEmitterLocal)context[Name];
+			if(lb == null)
+			{
+				if(typeWrapper == null && typeType == null)
+				{
+					Debug.Assert(Class == null ^ type == null);
+					if(type != null)
+					{
+						typeType = StaticCompiler.GetTypeForMapXml(context.ClassLoader, type);
+					}
+					else
+					{
+						typeWrapper = context.ClassLoader.LoadClassByDottedName(Class);
+					}
+				}
+				lb = ilgen.DeclareLocal(typeType != null ? typeType : typeWrapper.TypeAsTBD);
+				context[Name] = lb;
+			}
+			ilgen.Emit(OpCodes.Stloc, lb);
+		}
+	}
+
+	[XmlType("ldloc")]
+	public sealed class LdLoc : Instruction
+	{
+		[XmlAttribute("name")]
+		public string Name;
+
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			ilgen.Emit(OpCodes.Ldloc, (CodeEmitterLocal)context[Name]);
+		}
+	}
+
+	[XmlType("ldarga")]
+	public sealed class LdArga : Instruction
+	{
+		[XmlAttribute("argNum")]
+		public ushort ArgNum;
+
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			ilgen.EmitLdarga(ArgNum);
+		}
+	}
+
+	[XmlType("ldarg_s")]
+	public sealed class LdArg_S : Instruction
+	{
+		[XmlAttribute("argNum")]
+		public byte ArgNum;
+
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			ilgen.EmitLdarg(ArgNum);
+		}
+	}
+
+	[XmlType("ldarg_0")]
+	public sealed class LdArg_0 : Simple
+	{
+		public LdArg_0() : base(OpCodes.Ldarg_0)
+		{
+		}
+	}
+
+	[XmlType("ldarg_1")]
+	public sealed class LdArg_1 : Simple
+	{
+		public LdArg_1() : base(OpCodes.Ldarg_1)
+		{
+		}
+	}
+
+	[XmlType("ldarg_2")]
+	public sealed class LdArg_2 : Simple
+	{
+		public LdArg_2() : base(OpCodes.Ldarg_2)
+		{
+		}
+	}
+
+	[XmlType("ldarg_3")]
+	public sealed class LdArg_3 : Simple
+	{
+		public LdArg_3() : base(OpCodes.Ldarg_3)
+		{
+		}
+	}
+
+	[XmlType("ldind_i1")]
+	public sealed class Ldind_i1 : Simple
+	{
+		public Ldind_i1() : base(OpCodes.Ldind_I1)
+		{
+		}
+	}
+
+	[XmlType("ldind_i2")]
+	public sealed class Ldind_i2 : Simple
+	{
+		public Ldind_i2() : base(OpCodes.Ldind_I2)
+		{
+		}
+	}
+
+	[XmlType("ldind_i4")]
+	public sealed class Ldind_i4 : Simple
+	{
+		public Ldind_i4() : base(OpCodes.Ldind_I4)
+		{
+		}
+	}
+
+	[XmlType("ldind_i8")]
+	public sealed class Ldind_i8 : Simple
+	{
+		public Ldind_i8() : base(OpCodes.Ldind_I8)
+		{
+		}
+	}
+
+	[XmlType("ldind_r4")]
+	public sealed class Ldind_r4 : Simple
+	{
+		public Ldind_r4() : base(OpCodes.Ldind_R4)
+		{
+		}
+	}
+
+	[XmlType("ldind_r8")]
+	public sealed class Ldind_r8 : Simple
+	{
+		public Ldind_r8() : base(OpCodes.Ldind_R8)
+		{
+		}
+	}
+
+	[XmlType("ldind_ref")]
+	public sealed class Ldind_ref : Simple
+	{
+		public Ldind_ref() : base(OpCodes.Ldind_Ref)
+		{
+		}
+	}
+
+	[XmlType("stind_i1")]
+	public sealed class Stind_i1 : Simple
+	{
+		public Stind_i1() : base(OpCodes.Stind_I1)
+		{
+		}
+	}
+
+	[XmlType("stind_i2")]
+	public sealed class Stind_i2 : Simple
+	{
+		public Stind_i2() : base(OpCodes.Stind_I2)
+		{
+		}
+	}
+
+	[XmlType("stind_i4")]
+	public sealed class Stind_i4 : Simple
+	{
+		public Stind_i4() : base(OpCodes.Stind_I4)
+		{
+		}
+	}
+
+	[XmlType("stind_i8")]
+	public sealed class Stind_i8 : Simple
+	{
+		public Stind_i8()
+			: base(OpCodes.Stind_I8)
+		{
+		}
+	}
+
+	[XmlType("stind_ref")]
+	public sealed class Stind_ref : Simple
+	{
+		public Stind_ref() : base(OpCodes.Stind_Ref)
+		{
+		}
+	}
+
+	[XmlType("ret")]
+	public sealed class Ret : Simple
+	{
+		public Ret() : base(OpCodes.Ret)
+		{
+		}
+	}
+
+	[XmlType("throw")]
+	public sealed class Throw : Simple
+	{
+		public Throw() : base(OpCodes.Throw)
+		{
+		}
+	}
+
+	[XmlType("ldflda")]
+	public sealed class Ldflda : Instruction
+	{
+		[XmlAttribute("class")]
+		public string Class;
+		[XmlAttribute("name")]
+		public string Name;
+		[XmlAttribute("sig")]
+		public string Sig;
+
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			ilgen.Emit(OpCodes.Ldflda, StaticCompiler.GetFieldForMapXml(context.ClassLoader, Class, Name, Sig).GetField());
+		}
+	}
+
+	[XmlType("ldfld")]
+	public sealed class Ldfld : Instruction
+	{
+		[XmlAttribute("class")]
+		public string Class;
+		[XmlAttribute("name")]
+		public string Name;
+		[XmlAttribute("sig")]
+		public string Sig;
+
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			// we don't use fw.EmitGet because we don't want automatic unboxing and whatever
+			ilgen.Emit(OpCodes.Ldfld, StaticCompiler.GetFieldForMapXml(context.ClassLoader, Class, Name, Sig).GetField());
+		}
+	}
+
+	[XmlType("ldsfld")]
+	public sealed class Ldsfld : Instruction
+	{
+		[XmlAttribute("class")]
+		public string Class;
+		[XmlAttribute("type")]
+		public string Type;
+		[XmlAttribute("name")]
+		public string Name;
+		[XmlAttribute("sig")]
+		public string Sig;
+
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			if(Type != null)
+			{
+				ilgen.Emit(OpCodes.Ldsfld, StaticCompiler.GetTypeForMapXml(context.ClassLoader, Type).GetField(Name, BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic));
+			}
+			else
+			{
+				// we don't use fw.EmitGet because we don't want automatic unboxing and whatever
+				ilgen.Emit(OpCodes.Ldsfld, StaticCompiler.GetFieldForMapXml(context.ClassLoader, Class, Name, Sig).GetField());
+			}
+		}
+	}
+
+	[XmlType("stfld")]
+	public sealed class Stfld : Instruction
+	{
+		[XmlAttribute("class")]
+		public string Class;
+		[XmlAttribute("name")]
+		public string Name;
+		[XmlAttribute("sig")]
+		public string Sig;
+
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			// we don't use fw.EmitSet because we don't want automatic unboxing and whatever
+			ilgen.Emit(OpCodes.Stfld, StaticCompiler.GetFieldForMapXml(context.ClassLoader, Class, Name, Sig).GetField());
+		}
+	}
+
+	[XmlType("stsfld")]
+	public sealed class Stsfld : Instruction
+	{
+		[XmlAttribute("class")]
+		public string Class;
+		[XmlAttribute("name")]
+		public string Name;
+		[XmlAttribute("sig")]
+		public string Sig;
+
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			// we don't use fw.EmitSet because we don't want automatic unboxing and whatever
+			ilgen.Emit(OpCodes.Stsfld, StaticCompiler.GetFieldForMapXml(context.ClassLoader, Class, Name, Sig).GetField());
+		}
+	}
+
+	[XmlType("ldc_i4")]
+	public sealed class Ldc_I4 : Instruction
+	{
+		[XmlAttribute("value")]
+		public int val;
+
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			ilgen.EmitLdc_I4(val);
+		}
+	}
+
+	[XmlType("ldc_i4_0")]
+	public sealed class Ldc_I4_0 : Simple
+	{
+		public Ldc_I4_0() : base(OpCodes.Ldc_I4_0)
+		{
+		}
+	}
+
+	[XmlType("ldc_i4_1")]
+	public sealed class Ldc_I4_1 : Simple
+	{
+		public Ldc_I4_1() : base(OpCodes.Ldc_I4_1)
+		{
+		}
+	}
+
+	[XmlType("ldc_i4_m1")]
+	public sealed class Ldc_I4_M1 : Simple
+	{
+		public Ldc_I4_M1() : base(OpCodes.Ldc_I4_M1)
+		{
+		}
+	}
+
+	[XmlType("conv_i")]
+	public sealed class Conv_I : Simple
+	{
+		public Conv_I() : base(OpCodes.Conv_I)
+		{
+		}
+	}
+
+	[XmlType("conv_i1")]
+	public sealed class Conv_I1 : Simple
+	{
+		public Conv_I1() : base(OpCodes.Conv_I1)
+		{
+		}
+	}
+
+	[XmlType("conv_u1")]
+	public sealed class Conv_U1 : Simple
+	{
+		public Conv_U1() : base(OpCodes.Conv_U1)
+		{
+		}
+	}
+
+	[XmlType("conv_i2")]
+	public sealed class Conv_I2 : Simple
+	{
+		public Conv_I2() : base(OpCodes.Conv_I2)
+		{
+		}
+	}
+
+	[XmlType("conv_u2")]
+	public sealed class Conv_U2 : Simple
+	{
+		public Conv_U2() : base(OpCodes.Conv_U2)
+		{
+		}
+	}
+
+	[XmlType("conv_i4")]
+	public sealed class Conv_I4 : Simple
+	{
+		public Conv_I4() : base(OpCodes.Conv_I4)
+		{
+		}
+	}
+
+	[XmlType("conv_u4")]
+	public sealed class Conv_U4 : Simple
+	{
+		public Conv_U4() : base(OpCodes.Conv_U4)
+		{
+		}
+	}
+
+	[XmlType("conv_i8")]
+	public sealed class Conv_I8 : Simple
+	{
+		public Conv_I8() : base(OpCodes.Conv_I8)
+		{
+		}
+	}
+
+	[XmlType("conv_u8")]
+	public sealed class Conv_U8 : Simple
+	{
+		public Conv_U8() : base(OpCodes.Conv_U8)
+		{
+		}
+	}
+
+	[XmlType("ldlen")]
+	public sealed class Ldlen : Simple
+	{
+		public Ldlen() : base(OpCodes.Ldlen)
+		{
+		}
+	}
+
+	[XmlType("add")]
+	public sealed class Add : Simple
+	{
+		public Add() : base(OpCodes.Add)
+		{
+		}
+	}
+
+	[XmlType("sub")]
+	public sealed class Sub : Simple
+	{
+		public Sub()
+			: base(OpCodes.Sub)
+		{
+		}
+	}
+
+	[XmlType("mul")]
+	public sealed class Mul : Simple
+	{
+		public Mul() : base(OpCodes.Mul)
+		{
+		}
+	}
+
+	[XmlType("div_un")]
+	public sealed class Div_Un : Simple
+	{
+		public Div_Un()
+			: base(OpCodes.Div_Un)
+		{
+		}
+	}
+
+	[XmlType("rem_un")]
+	public sealed class Rem_Un : Simple
+	{
+		public Rem_Un()
+			: base(OpCodes.Rem_Un)
+		{
+		}
+	}
+
+	[XmlType("and")]
+	public sealed class And : Simple
+	{
+		public And()
+			: base(OpCodes.And)
+		{
+		}
+	}
+
+	[XmlType("or")]
+	public sealed class Or : Simple
+	{
+		public Or()
+			: base(OpCodes.Or)
+		{
+		}
+	}
+
+	[XmlType("xor")]
+	public sealed class Xor : Simple
+	{
+		public Xor()
+			: base(OpCodes.Xor)
+		{
+		}
+	}
+
+	[XmlType("not")]
+	public sealed class Not : Simple
+	{
+		public Not()
+			: base(OpCodes.Not)
+		{
+		}
+	}
+
+	[XmlType("unaligned")]
+	public sealed class Unaligned : Instruction
+	{
+		[XmlAttribute("alignment")]
+		public int Alignment;
+
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			ilgen.EmitUnaligned((byte)Alignment);
+		}
+	}
+
+	[XmlType("cpblk")]
+	public sealed class Cpblk : Simple
+	{
+		public Cpblk() : base(OpCodes.Cpblk)
+		{
+		}
+	}
+
+	[XmlType("ceq")]
+	public sealed class Ceq : Simple
+	{
+		public Ceq() : base(OpCodes.Ceq)
+		{
+		}
+	}
+
+	[XmlType("leave")]
+	public sealed class Leave : Branch
+	{
+		internal override void Emit(CodeEmitter ilgen, CodeEmitterLabel label)
+		{
+			ilgen.EmitLeave(label);
+		}
+	}
+
+	[XmlType("endfinally")]
+	public sealed class Endfinally : Simple
+	{
+		public Endfinally() : base(OpCodes.Endfinally)
+		{
+		}
+	}
+
+	[XmlType("exceptionBlock")]
+	public sealed class ExceptionBlock : Instruction
+	{
+		public InstructionList @@try;
+		public CatchBlock @@catch;
+		public InstructionList @@finally;
+
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			ilgen.BeginExceptionBlock();
+			@@try.Generate(context, ilgen);
+			if(@@catch != null)
+			{
+				Type type;
+				if(@@catch.type != null)
+				{
+					type = StaticCompiler.GetTypeForMapXml(context.ClassLoader, @@catch.type);
+				}
+				else
+				{
+					type = context.ClassLoader.LoadClassByDottedName(@@catch.Class).TypeAsExceptionType;
+				}
+				ilgen.BeginCatchBlock(type);
+				@@catch.Generate(context, ilgen);
+			}
+			if(@@finally != null)
+			{
+				ilgen.BeginFinallyBlock();
+				@@finally.Generate(context, ilgen);
+			}
+			ilgen.EndExceptionBlock();
+		}
+	}
+
+	public sealed class CatchBlock : InstructionList
+	{
+		[XmlAttribute("type")]
+		public string type;
+		[XmlAttribute("class")]
+		public string Class;
+	}
+
+	[XmlType("conditional")]
+	public sealed class ConditionalInstruction : Instruction
+	{
+		[XmlAttribute("framework")]
+		public string framework;
+		public InstructionList code;
+
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			if (Environment.Version.ToString().StartsWith(framework))
+			{
+				code.Generate(context, ilgen);
+			}
+		}
+	}
+
+	[XmlType("volatile")]
+	public sealed class Volatile : Simple
+	{
+		public Volatile() : base(OpCodes.Volatile)
+		{
+		}
+	}
+
+	[XmlType("ldelema")]
+	public sealed class Ldelema : Instruction
+	{
+		[XmlAttribute("sig")]
+		public string Sig;
+
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			ilgen.Emit(OpCodes.Ldelema, context.ClassLoader.FieldTypeWrapperFromSig(Sig, LoadMode.LoadOrThrow).TypeAsArrayType);
+		}
+	}
+
+	[XmlType("newarr")]
+	public sealed class Newarr : Instruction
+	{
+		[XmlAttribute("sig")]
+		public string Sig;
+
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			ilgen.Emit(OpCodes.Newarr, context.ClassLoader.FieldTypeWrapperFromSig(Sig, LoadMode.LoadOrThrow).TypeAsArrayType);
+		}
+	}
+
+	[XmlType("ldtoken")]
+	public sealed class Ldtoken : Instruction
+	{
+		[XmlAttribute("type")]
+		public string type;
+		[XmlAttribute("class")]
+		public string Class;
+		[XmlAttribute("method")]
+		public string Method;
+		[XmlAttribute("field")]
+		public string Field;
+		[XmlAttribute("sig")]
+		public string Sig;
+
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			if (!Validate())
+			{
+				return;
+			}
+
+			MemberInfo member = Resolve(context);
+			Type type = member as Type;
+			MethodInfo method = member as MethodInfo;
+			ConstructorInfo constructor = member as ConstructorInfo;
+			FieldInfo field = member as FieldInfo;
+
+			if (type != null)
+			{
+				ilgen.Emit(OpCodes.Ldtoken, type);
+			}
+			else if (method != null)
+			{
+				ilgen.Emit(OpCodes.Ldtoken, method);
+			}
+			else if (constructor != null)
+			{
+				ilgen.Emit(OpCodes.Ldtoken, constructor);
+			}
+			else if (field != null)
+			{
+				ilgen.Emit(OpCodes.Ldtoken, field);
+			}
+			else
+			{
+				StaticCompiler.IssueMessage(Message.MapXmlUnableToResolveOpCode, ToString());
+			}
+		}
+
+		private bool Validate()
+		{
+			if (type != null && Class == null)
+			{
+				if (Method != null || Field != null || Sig != null)
+				{
+					StaticCompiler.IssueMessage(Message.MapXmlError, "not implemented: cannot use 'type' attribute with 'method' or 'field' attribute for ldtoken");
+					return false;
+				}
+				return true;
+			}
+			else if (Class != null && type == null)
+			{
+				if (Method == null && Field == null)
+				{
+					if (Sig != null)
+					{
+						StaticCompiler.IssueMessage(Message.MapXmlError, "cannot specify 'sig' attribute without either 'method' or 'field' attribute for ldtoken");
+					}
+					return true;
+				}
+				if (Method != null && Field != null)
+				{
+					StaticCompiler.IssueMessage(Message.MapXmlError, "cannot specify both 'method' and 'field' attribute for ldtoken");
+					return false;
+				}
+				return true;
+			}
+			else
+			{
+				StaticCompiler.IssueMessage(Message.MapXmlError, "must specify either 'type' or 'class' attribute for ldtoken");
+				return false;
+			}
+		}
+
+		private MemberInfo Resolve(CodeGenContext context)
+		{
+			if (type != null)
+			{
+				if (Class != null || Method != null || Field != null || Sig != null)
+				{
+					throw new NotImplementedException();
+				}
+				return StaticCompiler.GetTypeForMapXml(context.ClassLoader, type);
+			}
+			else if (Class != null)
+			{
+				TypeWrapper tw = context.ClassLoader.LoadClassByDottedNameFast(Class);
+				if (tw == null)
+				{
+					return null;
+				}
+				else if (Method != null)
+				{
+					MethodWrapper mw = tw.GetMethodWrapper(Method, Sig, false);
+					if (mw == null)
+					{
+						return null;
+					}
+					return mw.GetMethod();
+				}
+				else if (Field != null)
+				{
+					FieldWrapper fw = tw.GetFieldWrapper(Field, Sig);
+					if (fw == null)
+					{
+						return null;
+					}
+					return fw.GetField();
+				}
+				else
+				{
+					return tw.TypeAsBaseType;
+				}
+			}
+			else
+			{
+				return null;
+			}
+		}
+	}
+
+	[XmlType("runclassinit")]
+	public sealed class RunClassInit : Instruction
+	{
+		[XmlAttribute("class")]
+		public string Class;
+
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			context.ClassLoader.LoadClassByDottedName(Class).EmitRunClassConstructor(ilgen);
+		}
+	}
+
+	[XmlType("exceptionMapping")]
+	public sealed class EmitExceptionMapping : Instruction
+	{
+		internal ExceptionMapping[] mapping;
+
+		internal override void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			CompilerClassLoader.ExceptionMapEmitter emitter = new CompilerClassLoader.ExceptionMapEmitter(mapping);
+			emitter.Emit(context, ilgen);
+		}
+	}
+
+	public class InstructionList
+	{
+		[XmlElement(typeof(Ldstr))]
+		[XmlElement(typeof(Call))]
+		[XmlElement(typeof(Callvirt))]
+		[XmlElement(typeof(Ldftn))]
+		[XmlElement(typeof(Ldvirtftn))]
+		[XmlElement(typeof(Dup))]
+		[XmlElement(typeof(Pop))]
+		[XmlElement(typeof(IsInst))]
+		[XmlElement(typeof(Castclass))]
+		[XmlElement(typeof(Castclass_impl))]
+		[XmlElement(typeof(Ldobj))]
+		[XmlElement(typeof(Unbox))]
+		[XmlElement(typeof(Box))]
+		[XmlElement(typeof(BrFalse))]
+		[XmlElement(typeof(BrTrue))]
+		[XmlElement(typeof(Br))]
+		[XmlElement(typeof(Beq))]
+		[XmlElement(typeof(Bne_Un))]
+		[XmlElement(typeof(Bge_Un))]
+		[XmlElement(typeof(Ble_Un))]
+		[XmlElement(typeof(Blt))]
+		[XmlElement(typeof(Blt_Un))]
+		[XmlElement(typeof(BrLabel))]
+		[XmlElement(typeof(NewObj))]
+		[XmlElement(typeof(StLoc))]
+		[XmlElement(typeof(LdLoc))]
+		[XmlElement(typeof(LdArga))]
+		[XmlElement(typeof(LdArg_S))]
+		[XmlElement(typeof(LdArg_0))]
+		[XmlElement(typeof(LdArg_1))]
+		[XmlElement(typeof(LdArg_2))]
+		[XmlElement(typeof(LdArg_3))]
+		[XmlElement(typeof(Ldind_i1))]
+		[XmlElement(typeof(Ldind_i2))]
+		[XmlElement(typeof(Ldind_i4))]
+		[XmlElement(typeof(Ldind_i8))]
+		[XmlElement(typeof(Ldind_r4))]
+		[XmlElement(typeof(Ldind_r8))]
+		[XmlElement(typeof(Ldind_ref))]
+		[XmlElement(typeof(Stind_i1))]
+		[XmlElement(typeof(Stind_i2))]
+		[XmlElement(typeof(Stind_i4))]
+		[XmlElement(typeof(Stind_i8))]
+		[XmlElement(typeof(Stind_ref))]
+		[XmlElement(typeof(Ret))]
+		[XmlElement(typeof(Throw))]
+		[XmlElement(typeof(Ldnull))]
+		[XmlElement(typeof(Ldflda))]
+		[XmlElement(typeof(Ldfld))]
+		[XmlElement(typeof(Ldsfld))]
+		[XmlElement(typeof(Stfld))]
+		[XmlElement(typeof(Stsfld))]
+		[XmlElement(typeof(Ldc_I4))]
+		[XmlElement(typeof(Ldc_I4_0))]
+		[XmlElement(typeof(Ldc_I4_1))]
+		[XmlElement(typeof(Ldc_I4_M1))]
+		[XmlElement(typeof(Conv_I))]
+		[XmlElement(typeof(Conv_I1))]
+		[XmlElement(typeof(Conv_U1))]
+		[XmlElement(typeof(Conv_I2))]
+		[XmlElement(typeof(Conv_U2))]
+		[XmlElement(typeof(Conv_I4))]
+		[XmlElement(typeof(Conv_U4))]
+		[XmlElement(typeof(Conv_I8))]
+		[XmlElement(typeof(Conv_U8))]
+		[XmlElement(typeof(Ldlen))]
+		[XmlElement(typeof(ExceptionBlock))]
+		[XmlElement(typeof(Add))]
+		[XmlElement(typeof(Sub))]
+		[XmlElement(typeof(Mul))]
+		[XmlElement(typeof(Div_Un))]
+		[XmlElement(typeof(Rem_Un))]
+		[XmlElement(typeof(And))]
+		[XmlElement(typeof(Or))]
+		[XmlElement(typeof(Xor))]
+		[XmlElement(typeof(Not))]
+		[XmlElement(typeof(Unaligned))]
+		[XmlElement(typeof(Cpblk))]
+		[XmlElement(typeof(Ceq))]
+		[XmlElement(typeof(ConditionalInstruction))]
+		[XmlElement(typeof(Volatile))]
+		[XmlElement(typeof(Ldelema))]
+		[XmlElement(typeof(Newarr))]
+		[XmlElement(typeof(Ldtoken))]
+		[XmlElement(typeof(Leave))]
+		[XmlElement(typeof(Endfinally))]
+		[XmlElement(typeof(RunClassInit))]
+		[XmlElement(typeof(EmitExceptionMapping))]
+		public Instruction[] invoke;
+
+		internal void Generate(CodeGenContext context, CodeEmitter ilgen)
+		{
+			if(invoke != null)
+			{
+				for(int i = 0; i < invoke.Length; i++)
+				{
+					if(invoke[i].LineNumber != -1)
+					{
+						ilgen.SetLineNumber((ushort)invoke[i].LineNumber);
+					}
+					invoke[i].Generate(context, ilgen);
+				}
+			}
+		}
+
+		internal void Emit(ClassLoaderWrapper loader, CodeEmitter ilgen)
+		{
+			Generate(new CodeGenContext(loader), ilgen);
+		}
+	}
+
+	public sealed class Throws
+	{
+		[XmlAttribute("class")]
+		public string Class;
+	}
+
+	public sealed class Redirect
+	{
+		private int linenum = Root.LineNumber;
+
+		internal int LineNumber
+		{
+			get
+			{
+				return linenum;
+			}
+		}
+
+		[XmlAttribute("class")]
+		public string Class;
+		[XmlAttribute("name")]
+		public string Name;
+		[XmlAttribute("sig")]
+		public string Sig;
+		[XmlAttribute("type")]
+		public string Type;
+
+		internal void Emit(ClassLoaderWrapper loader, CodeEmitter ilgen)
+		{
+			if(Type != "static" || Class == null || Name == null || Sig == null)
+			{
+				throw new NotImplementedException();
+			}
+			Type[] redirParamTypes = loader.ArgTypeListFromSig(Sig);
+			for(int i = 0; i < redirParamTypes.Length; i++)
+			{
+				ilgen.EmitLdarg(i);
+			}
+			// HACK if the class name contains a comma, we assume it is a .NET type
+			if(Class.IndexOf(',') >= 0)
+			{
+				Type type = StaticCompiler.Universe.GetType(Class, true);
+				MethodInfo mi = type.GetMethod(Name, redirParamTypes);
+				if(mi == null)
+				{
+					throw new InvalidOperationException();
+				}
+				ilgen.Emit(OpCodes.Call, mi);
+			}
+			else
+			{
+				TypeWrapper tw = loader.LoadClassByDottedName(Class);
+				MethodWrapper mw = tw.GetMethodWrapper(Name, Sig, false);
+				if(mw == null)
+				{
+					throw new InvalidOperationException();
+				}
+				mw.Link();
+				mw.EmitCall(ilgen);
+			}
+			// TODO we may need a cast here (or a stack to return type conversion)
+			ilgen.Emit(OpCodes.Ret);
+		}
+	}
+
+	public sealed class Override
+	{
+		[XmlAttribute("class")]
+		public string Class;
+		[XmlAttribute("name")]
+		public string Name;
+	}
+
+	public sealed class ReplaceMethodCall
+	{
+		[XmlAttribute("class")]
+		public string Class;
+		[XmlAttribute("name")]
+		public string Name;
+		[XmlAttribute("sig")]
+		public string Sig;
+		public InstructionList code;
+	}
+
+	public abstract class MethodBase
+	{
+		[XmlAttribute("attributes")]
+		public MethodAttributes MethodAttributes;
+		public InstructionList body;
+		[XmlElement("throws", typeof(Throws))]
+		public Throws[] throws;
+		[XmlElement("attribute")]
+		public Attribute[] Attributes;
+		[XmlElement("replace-method-call")]
+		public ReplaceMethodCall[] ReplaceMethodCalls;
+		public InstructionList prologue;
+
+		internal abstract MethodKey ToMethodKey(string className);
+	}
+
+	public abstract class MethodConstructorBase : MethodBase
+	{
+		[XmlAttribute("sig")]
+		public string Sig;
+		[XmlAttribute("modifiers")]
+		public MapModifiers Modifiers;
+		[XmlElement("parameter")]
+		public Param[] Params;
+		public InstructionList alternateBody;
+		public Redirect redirect;
+
+		internal void Emit(ClassLoaderWrapper loader, CodeEmitter ilgen)
+		{
+			if(prologue != null)
+			{
+				prologue.Emit(loader, ilgen);
+			}
+			if(redirect != null)
+			{
+				redirect.Emit(loader, ilgen);
+			}
+			else
+			{
+				body.Emit(loader, ilgen);
+			}
+		}
+	}
+
+	public sealed class Method : MethodConstructorBase
+	{
+		[XmlAttribute("name")]
+		public string Name;
+		[XmlAttribute("nonullcheck")]
+		public bool NoNullCheck;
+		public InstructionList nonvirtualAlternateBody;
+		public Override @@override;
+
+		internal override MethodKey ToMethodKey(string className)
+		{
+			return new MethodKey(className, Name, Sig);
+		}
+	}
+
+	public sealed class Constructor : MethodConstructorBase
+	{
+		internal override MethodKey ToMethodKey(string className)
+		{
+			return new MethodKey(className, StringConstants.INIT, Sig);
+		}
+	}
+
+	public sealed class ClassInitializer : MethodBase
+	{
+		internal override MethodKey ToMethodKey(string className)
+		{
+			return new MethodKey(className, StringConstants.CLINIT, StringConstants.SIG_VOID);
+		}
+	}
+
+	public sealed class Field
+	{
+		[XmlAttribute("name")]
+		public string Name;
+		[XmlAttribute("sig")]
+		public string Sig;
+		[XmlAttribute("modifiers")]
+		public MapModifiers Modifiers;
+		[XmlAttribute("constant")]
+		public string Constant;
+		[XmlElement("attribute")]
+		public Attribute[] Attributes;
+	}
+
+	public sealed class Property
+	{
+		[XmlAttribute("name")]
+		public string Name;
+		[XmlAttribute("sig")]
+		public string Sig;
+		public Method getter;
+		public Method setter;
+		[XmlElement("attribute")]
+		public Attribute[] Attributes;
+	}
+
+	public sealed class Interface
+	{
+		[XmlAttribute("class")]
+		public string Name;
+		[XmlElement("method")]
+		public Method[] Methods;
+	}
+
+	[Flags]
+	public enum MapModifiers
+	{
+		[XmlEnum("public")]
+		Public = Modifiers.Public,
+		[XmlEnum("protected")]
+		Protected = Modifiers.Protected,
+		[XmlEnum("private")]
+		Private = Modifiers.Private,
+		[XmlEnum("final")]
+		Final = Modifiers.Final,
+		[XmlEnum("interface")]
+		Interface = Modifiers.Interface,
+		[XmlEnum("static")]
+		Static = Modifiers.Static,
+		[XmlEnum("abstract")]
+		Abstract = Modifiers.Abstract,
+		[XmlEnum("ACC_BRIDGE")]
+		Bridge = Modifiers.Bridge,
+		[XmlEnum("ACC_SYNTHETIC")]
+		Synthetic = Modifiers.Synthetic,
+	}
+
+	public enum Scope
+	{
+		[XmlEnum("public")]
+		Public = 0,
+		[XmlEnum("private")]
+		Private = 1
+	}
+
+	public sealed class Element
+	{
+		[XmlText]
+		public string Value;
+	}
+
+	public sealed class Param
+	{
+		[XmlText]
+		public string Value;
+		[XmlAttribute("name")]
+		public string Name;
+		[XmlAttribute("sig")]
+		public string Sig;		// optional (for object type args)
+		[XmlElement("element")]
+		public Element[] Elements;
+		[XmlElement("attribute")]
+		public Attribute[] Attributes;
+	}
+
+	public sealed class Attribute
+	{
+		[XmlAttribute("type")]
+		public string Type;
+		[XmlAttribute("class")]
+		public string Class;
+		[XmlAttribute("sig")]
+		public string Sig;
+		[XmlElement("parameter")]
+		public Param[] Params;
+		[XmlElement("property")]
+		public Param[] Properties;
+		[XmlElement("field")]
+		public Param[] Fields;
+	}
+
+	[XmlType("class")]
+	public sealed class Class
+	{
+		[XmlAttribute("name")]
+		public string Name;
+		[XmlAttribute("shadows")]
+		public string Shadows;
+		[XmlAttribute("modifiers")]
+		public MapModifiers Modifiers;
+		[XmlAttribute("scope")]
+		public Scope scope;
+		[XmlElement("constructor")]
+		public Constructor[] Constructors;
+		[XmlElement("method")]
+		public Method[] Methods;
+		[XmlElement("field")]
+		public Field[] Fields;
+		[XmlElement("property")]
+		public Property[] Properties;
+		[XmlElement("implements")]
+		public Interface[] Interfaces;
+		[XmlElement("clinit")]
+		public ClassInitializer Clinit;
+		[XmlElement("attribute")]
+		public Attribute[] Attributes;
+	}
+
+	public sealed class Assembly
+	{
+		[XmlElement("class")]
+		public Class[] Classes;
+		[XmlElement("attribute")]
+		public Attribute[] Attributes;
+	}
+
+	[XmlType("exception")]
+	public sealed class ExceptionMapping
+	{
+		[XmlAttribute]
+		public string src;
+		[XmlAttribute]
+		public string dst;
+		public InstructionList code;
+	}
+
+	[XmlRoot("root")]
+	public sealed class Root
+	{
+		internal static System.Xml.XmlTextReader xmlReader;
+
+		internal static int LineNumber
+		{
+			get
+			{
+				return xmlReader == null ? -1: xmlReader.LineNumber;
+			}
+		}
+
+		[XmlElement("assembly")]
+		public Assembly assembly;
+		public ExceptionMapping[] exceptionMappings;
+	}
+}
+@
+
+
+1.47
+log
+@Added support for div.un and rem.un opcodes.
+@
+text
+@d1227 1
+a1227 1
+			ilgen.Emit(OpCodes.Ldelema, context.ClassLoader.FieldTypeWrapperFromSig(Sig).TypeAsArrayType);
+d1239 1
+a1239 1
+			ilgen.Emit(OpCodes.Newarr, context.ClassLoader.FieldTypeWrapperFromSig(Sig).TypeAsArrayType);
+@
+
+
+1.46
+log
+@Fixed ikvmc to emit fatal error instead of crashing when a field referenced in remap file isn't found.
+@
+text
+@d1054 18
+d1470 2
+@
+
+
+1.45
+log
+@Removed unused (and bogus) parameter from TypeWrapper.EmitCheckcast() and EmitInstanceOf().
+@
+text
+@d832 1
+a832 3
+			FieldWrapper fw = StaticCompiler.GetClassForMapXml(context.ClassLoader, Class).GetFieldWrapper(Name, Sig);
+			fw.Link();
+			ilgen.Emit(OpCodes.Ldflda, fw.GetField());
+a847 2
+			FieldWrapper fw = StaticCompiler.GetClassForMapXml(context.ClassLoader, Class).GetFieldWrapper(Name, Sig);
+			fw.Link();
+d849 1
+a849 1
+			ilgen.Emit(OpCodes.Ldfld, fw.GetField());
+a872 2
+				FieldWrapper fw = StaticCompiler.GetClassForMapXml(context.ClassLoader, Class).GetFieldWrapper(Name, Sig);
+				fw.Link();
+d874 1
+a874 1
+				ilgen.Emit(OpCodes.Ldsfld, fw.GetField());
+a890 2
+			FieldWrapper fw = StaticCompiler.GetClassForMapXml(context.ClassLoader, Class).GetFieldWrapper(Name, Sig);
+			fw.Link();
+d892 1
+a892 1
+			ilgen.Emit(OpCodes.Stfld, fw.GetField());
+a907 2
+			FieldWrapper fw = StaticCompiler.GetClassForMapXml(context.ClassLoader, Class).GetFieldWrapper(Name, Sig);
+			fw.Link();
+d909 1
+a909 1
+			ilgen.Emit(OpCodes.Stsfld, fw.GetField());
+@
+
+
+1.44
+log
+@- Marked MemberWrapper class abstract.
+- Marked all classes that don't (and shouldn't) have subclasses sealed.
+@
+text
+@d376 1
+a376 3
+					// NOTE we pass a null context, but that shouldn't be a problem, because
+					// typeWrapper should never be an UnloadableTypeWrapper
+					typeWrapper.EmitInstanceOf(null, ilgen);
+d407 1
+a407 3
+				// NOTE we pass a null context, but that shouldn't be a problem, because
+				// typeWrapper should never be an UnloadableTypeWrapper
+				typeWrapper.EmitCheckcast(null, ilgen);
+@
+
+
+1.43
+log
+@Mark String.compareTo(Object0 as bridge method.
+@
+text
+@d37 1
+a37 1
+	class CodeGenContext
+d1183 1
+a1183 1
+	public class CatchBlock : InstructionList
+d1192 1
+a1192 1
+	public class ConditionalInstruction : Instruction
+d1505 1
+a1505 1
+	public class Throws
+d1511 1
+a1511 1
+	public class Redirect
+d1570 1
+a1570 1
+	public class Override
+d1578 1
+a1578 1
+	public class ReplaceMethodCall
+d1633 1
+a1633 1
+	public class Method : MethodConstructorBase
+d1648 1
+a1648 1
+	public class Constructor : MethodConstructorBase
+d1656 1
+a1656 1
+	public class ClassInitializer : MethodBase
+d1664 1
+a1664 1
+	public class Field
+d1678 1
+a1678 1
+	public class Property
+d1690 1
+a1690 1
+	public class Interface
+d1729 1
+a1729 1
+	public class Element
+d1735 1
+a1735 1
+	public class Param
+d1749 1
+a1749 1
+	public class Attribute
+d1766 1
+a1766 1
+	public class Class
+d1792 1
+a1792 1
+	public class Assembly
+d1801 1
+a1801 1
+	public class ExceptionMapping
+d1811 1
+a1811 1
+	public class Root
+@
+
+
+1.42
+log
+@- Made CodeEmitter more "type safe" by adding specific EmitXxx methods instead of following the more general ILGenerator pattern.
+- Added some new optimizations to CodeEmitter (disabled unless experimental optimizations are enabled).
+- Added some invariant checks to CodeEmitter to help debug optimizations (and document the invariants).
+@
+text
+@d1714 5
+a1718 1
+		Abstract = Modifiers.Abstract
+@
+
+
+1.41
+log
+@Bug fix. The right remap filename should be put in the SourceFileAttribute, instead of the last one.
+@
+text
+@d380 1
+a380 1
+					ilgen.Emit(OpCodes.Brtrue_S, endLabel);
+a481 7
+		private OpCode opcode;
+
+		public Branch(OpCode opcode)
+		{
+			this.opcode = opcode;
+		}
+
+d494 1
+a494 1
+			ilgen.Emit(opcode, l);
+d497 2
+d506 1
+a506 1
+		public BrFalse() : base(OpCodes.Brfalse)
+d508 1
+d515 1
+a515 1
+		public BrTrue() : base(OpCodes.Brtrue)
+d517 1
+d524 1
+a524 1
+		public Br() : base(OpCodes.Br)
+d526 1
+d533 1
+a533 2
+		public Beq()
+			: base(OpCodes.Beq)
+d535 1
+d542 1
+a542 2
+		public Bne_Un()
+			: base(OpCodes.Bne_Un)
+d544 1
+d551 1
+a551 1
+		public Bge_Un() : base(OpCodes.Bge_Un)
+d553 1
+d560 1
+a560 1
+		public Ble_Un() : base(OpCodes.Ble_Un)
+d562 1
+d569 1
+a569 1
+		public Blt() : base(OpCodes.Blt)
+d571 1
+d578 1
+a578 1
+		public Blt_Un() : base(OpCodes.Blt_Un)
+d580 1
+d663 1
+a663 1
+			ilgen.Emit(OpCodes.Ldarga, (short)ArgNum);
+d675 1
+a675 1
+			ilgen.Emit(OpCodes.Ldarg_S, ArgNum);
+d935 1
+a935 1
+			ilgen.Emit(OpCodes.Ldc_I4, val);
+d1112 1
+a1112 1
+			ilgen.Emit(OpCodes.Unaligned, (byte)Alignment);
+d1135 1
+a1135 1
+		public Leave() : base(OpCodes.Leave)
+d1137 1
+d1541 1
+a1541 1
+				ilgen.Emit(OpCodes.Ldarg, (short)i);
+@
+
+
+1.40
+log
+@Removed legacy remap feature that allowed final fields as properties to be defined (long time ago this was used for the System.in/out/err fields).
+@
+text
+@a1806 1
+		internal static string filename;
+@
+
+
+1.39
+log
+@Added opcodes: or, xor, not
+@
+text
+@a1670 1
+		public Redirect redirect;
+@
+
+
+1.38
+log
+@Extended map file support for ldtoken opcode to support loading method and field tokens.
+@
+text
+@d1075 27
+d1464 3
+@
+
+
+1.37
+log
+@Added ldarg_s opcode.
+@
+text
+@d74 32
+d1214 8
+d1225 112
+a1336 1
+			ilgen.Emit(OpCodes.Ldtoken, StaticCompiler.GetTypeForMapXml(context.ClassLoader, type));
+@
+
+
+1.36
+log
+@Unified Method/Constructor/Clinit remapper types to allow method patching to work more consistently.
+@
+text
+@d633 12
+d1242 1
+@
+
+
+1.35
+log
+@- Updated AtomicInteger, AtomicIntegerArray, AtomicLonger, AtomicLongerArray to use .NET 2.0 interlocked operations.
+- Added stind_i8 opcode to remapper.
+@
+text
+@a1313 17
+	public class Constructor
+	{
+		[XmlAttribute("sig")]
+		public string Sig;
+		[XmlAttribute("modifiers")]
+		public MapModifiers Modifiers;
+		[XmlElement("parameter")]
+		public Param[] Params;
+		public InstructionList body;
+		public InstructionList alternateBody;
+		public Redirect redirect;
+		[XmlElement("throws", typeof(Throws))]
+		public Throws[] throws;
+		[XmlElement("attribute")]
+		public Attribute[] Attributes;
+	}
+
+d1392 1
+a1392 1
+	public class Method
+a1393 6
+		[XmlAttribute("name")]
+		public string Name;
+		[XmlAttribute("sig")]
+		public string Sig;
+		[XmlAttribute("modifiers")]
+		public MapModifiers Modifiers;
+a1395 4
+		[XmlAttribute("nonullcheck")]
+		public bool NoNullCheck;
+		[XmlElement("parameter")]
+		public Param[] Params;
+a1396 4
+		public InstructionList alternateBody;
+		public InstructionList nonvirtualAlternateBody;
+		public Redirect redirect;
+		public Override @@override;
+d1405 14
+d1436 31
+d1587 1
+a1587 1
+		public Method Clinit;
+@
+
+
+1.34
+log
+@Added method prologue support to remap file.
+@
+text
+@d745 9
+d1244 1
+@
+
+
+1.33
+log
+@Added ldftn/ldvirtftn/and opcodes.
+@
+text
+@d1424 1
+d1428 4
+@
+
+
+1.33.2.1
+log
+@Backport: Add support for overriding constructor body in map.xml.
+@
+text
+@d1304 17
+d1399 1
+a1399 1
+	public abstract class MethodBase
+d1401 6
+d1409 4
+d1414 4
+a1424 14
+		internal abstract MethodKey ToMethodKey(string className);
+	}
+
+	public abstract class MethodConstructorBase : MethodBase
+	{
+		[XmlAttribute("sig")]
+		public string Sig;
+		[XmlAttribute("modifiers")]
+		public MapModifiers Modifiers;
+		[XmlElement("parameter")]
+		public Param[] Params;
+		public InstructionList alternateBody;
+		public Redirect redirect;
+
+a1437 31
+	public class Method : MethodConstructorBase
+	{
+		[XmlAttribute("name")]
+		public string Name;
+		[XmlAttribute("nonullcheck")]
+		public bool NoNullCheck;
+		public InstructionList nonvirtualAlternateBody;
+		public Override @@override;
+
+		internal override MethodKey ToMethodKey(string className)
+		{
+			return new MethodKey(className, Name, Sig);
+		}
+	}
+
+	public class Constructor : MethodConstructorBase
+	{
+		internal override MethodKey ToMethodKey(string className)
+		{
+			return new MethodKey(className, StringConstants.INIT, Sig);
+		}
+	}
+
+	public class ClassInitializer : MethodBase
+	{
+		internal override MethodKey ToMethodKey(string className)
+		{
+			return new MethodKey(className, StringConstants.CLINIT, StringConstants.SIG_VOID);
+		}
+	}
+
+d1558 1
+a1558 1
+		public ClassInitializer Clinit;
+@
+
+
+1.32
+log
+@Empty sig attribute on call should be interpreted as zero length argument list.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002-2008 Jeroen Frijters
+d199 2
+a200 1
+						throw new InvalidOperationException();
+d250 16
+d1013 9
+d1197 2
+d1262 1
+@
+
+
+1.31
+log
+@Fixed class name resolution for xml remapping instructions.
+@
+text
+@d209 4
+@
+
+
+1.30
+log
+@Added endfinally opcode.
+@
+text
+@d760 1
+a760 1
+			FieldWrapper fw = ClassLoaderWrapper.LoadClassCritical(Class).GetFieldWrapper(Name, Sig);
+d778 1
+a778 1
+			FieldWrapper fw = ClassLoaderWrapper.LoadClassCritical(Class).GetFieldWrapper(Name, Sig);
+d805 1
+a805 1
+				FieldWrapper fw = ClassLoaderWrapper.LoadClassCritical(Class).GetFieldWrapper(Name, Sig);
+d825 1
+a825 1
+			FieldWrapper fw = ClassLoaderWrapper.LoadClassCritical(Class).GetFieldWrapper(Name, Sig);
+d844 1
+a844 1
+			FieldWrapper fw = ClassLoaderWrapper.LoadClassCritical(Class).GetFieldWrapper(Name, Sig);
+@
+
+
+1.29
+log
+@- Removed unnecessary methods from CodeEmitter.
+- Removed "Lazy" prefixes in CodeEmitter.
+@
+text
+@d1028 8
+d1239 1
+@
+
+
+1.28
+log
+@Wrapped LocalBuilder in new CodeEmitterLocal class to allow CodeEmitter to encapsulate the ILGenerator fully.
+@
+text
+@d273 1
+a273 1
+			ilgen.LazyEmitPop();
+@
+
+
+1.27
+log
+@Renamed StaticCompiler.GetType() that is used exclusively by map.xml processing to make it more obvious and added error message (and abort the compile). The remaining StaticCompiler.GetType() now behaves more like Type.GetType() in that it returns null if the type isn't found.
+@
+text
+@d152 1
+a152 1
+							LocalBuilder[] temps = new LocalBuilder[argTypeWrappers.Length + (method.IsStatic ? 0 : 1)];
+d566 1
+a566 1
+			LocalBuilder lb = (LocalBuilder)context[Name];
+d596 1
+a596 1
+			ilgen.Emit(OpCodes.Ldloc, (LocalBuilder)context[Name]);
+@
+
+
+1.26
+log
+@Removed JVM.GetType().
+@
+text
+@d126 1
+a126 1
+				ConstructorInfo ci = StaticCompiler.GetType(context.ClassLoader, type).GetConstructor(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance, null, CallingConventions.Standard, argTypes, null);
+d215 1
+a215 1
+							argTypes[i] = StaticCompiler.GetType(context.ClassLoader, types[i]);
+d218 1
+a218 1
+					MethodInfo mi = StaticCompiler.GetType(context.ClassLoader, type).GetMethod(Name, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static, null, argTypes, null);
+d298 1
+a298 1
+					typeType = StaticCompiler.GetType(context.ClassLoader, type);
+d397 1
+a397 1
+				typeType = StaticCompiler.GetType(context.ClassLoader, type);
+d574 1
+a574 1
+						typeType = StaticCompiler.GetType(context.ClassLoader, type);
+d801 1
+a801 1
+				ilgen.Emit(OpCodes.Ldsfld, StaticCompiler.GetType(context.ClassLoader, Type).GetField(Name, BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic));
+d1044 1
+a1044 1
+					type = StaticCompiler.GetType(context.ClassLoader, @@catch.type);
+d1126 1
+a1126 1
+			ilgen.Emit(OpCodes.Ldtoken, StaticCompiler.GetType(context.ClassLoader, type));
+@
+
+
+1.26.2.1
+log
+@Backport: Empty sig attribute on call should be interpreted as zero length argument list.
+@
+text
+@a208 4
+					else if(Sig == "")
+					{
+						argTypes = Type.EmptyTypes;
+					}
+@
+
+
+1.25
+log
+@Changed StaticCompiler.GetType() to be multi-target aware. Instead of looking thru all assemblies currently loaded, only the relevant referenced assemblies are searched.
+
+Note that this is a (minor) breaking change. Types referenced in -remap:map.xml file are now only resolved against directly referenced assemblies.
+@
+text
+@d1314 1
+a1314 1
+				Type type = JVM.GetType(Class, true);
+@
+
+
+1.24
+log
+@Removed IKVM_REF_EMIT, as STATIC_COMPILER or STUB_GENERATOR now always implies IKVM.Reflection.
+@
+text
+@d126 1
+a126 1
+				ConstructorInfo ci = StaticCompiler.GetType(type).GetConstructor(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance, null, CallingConventions.Standard, argTypes, null);
+d215 1
+a215 1
+							argTypes[i] = StaticCompiler.GetType(types[i]);
+d218 1
+a218 1
+					MethodInfo mi = StaticCompiler.GetType(type).GetMethod(Name, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static, null, argTypes, null);
+d298 1
+a298 1
+					typeType = StaticCompiler.GetType(type);
+d397 1
+a397 1
+				typeType = StaticCompiler.GetType(type);
+d574 1
+a574 1
+						typeType = StaticCompiler.GetType(type);
+d801 1
+a801 1
+				ilgen.Emit(OpCodes.Ldsfld, StaticCompiler.GetType(Type).GetField(Name, BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic));
+d1044 1
+a1044 1
+					type = StaticCompiler.GetType(@@catch.type);
+d1126 1
+a1126 1
+			ilgen.Emit(OpCodes.Ldtoken, StaticCompiler.GetType(type));
+@
+
+
+1.23
+log
+@Integrated new IKVM.Reflection implementation.
+@
+text
+@a27 1
+#if IKVM_REF_EMIT
+a30 4
+#else
+using System.Reflection;
+using System.Reflection.Emit;
+#endif
+@
+
+
+1.22
+log
+@More type funneling.
+@
+text
+@a27 1
+using System.Reflection;
+d29 1
+d31 1
+d33 1
+@
+
+
+1.21
+log
+@Removed unused attribute (Method.Type).
+@
+text
+@d1317 1
+a1317 1
+				Type type = System.Type.GetType(Class, true);
+@
+
+
+1.20
+log
+@- Turn pops in map.mxl into lazy pop to annihilate constants.
+- Fixed "replace-method-call" to not emit line numbers from map.xml (which don't make sense in the context of another method and disrupt the lazy pop optimizations).
+@
+text
+@a1369 2
+		[XmlAttribute("type")]
+		public string Type;
+@
+
+
+1.19
+log
+@Added Castclass_impl opcode to cast remapped type instance to implementation type.
+@
+text
+@d272 1
+a272 1
+	public sealed class Pop : Simple
+d274 1
+a274 1
+		public Pop() : base(OpCodes.Pop)
+d276 1
+@
+
+
+1.18
+log
+@Added newarr opcode.
+@
+text
+@d365 16
+d1165 1
+@
+
+
+1.17
+log
+@Integrated IKVM.Reflection.Emit in ikvmc.
+@
+text
+@d1092 12
+d1213 1
+@
+
+
+1.16
+log
+@Generified all collections.
+@
+text
+@d29 3
+d33 1
+@
+
+
+1.15
+log
+@Moved generated exception mapping code from ExceptionHelper to Throwable and made it slightly less hacky.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007 Jeroen Frijters
+d26 1
+a27 1
+using System.Collections;
+d39 1
+a39 1
+		private readonly Hashtable h = new Hashtable();
+d46 1
+a46 1
+		internal object this[object key]
+d48 6
+a53 1
+			get { return h[key]; }
+@
+
+
+1.14
+log
+@Replaced usage of BootstrapClassLoader with actual class loader in static compiler.
+@
+text
+@d1107 12
+d1195 1
+@
+
+
+1.13
+log
+@- Renamed CountingILGenerator to CodeEmitter.
+- Renamed CountingLabel to CodeEmitterLabel.
+@
+text
+@d36 19
+d67 1
+a67 1
+		internal abstract void Generate(Hashtable context, CodeEmitter ilgen);
+d76 1
+a76 1
+		internal override void Generate(Hashtable context, CodeEmitter ilgen)
+d113 1
+a113 1
+		internal sealed override void Generate(Hashtable context, CodeEmitter ilgen)
+d119 1
+a119 1
+				Type[] argTypes = ClassLoaderWrapper.GetBootstrapClassLoader().ArgTypeListFromSig(Sig);
+d133 1
+a133 1
+					MethodWrapper method = ClassLoaderWrapper.GetBootstrapClassLoader().LoadClassByDottedName(Class).GetMethodWrapper(Name, Sig, false);
+d201 1
+a201 1
+						argTypes = ClassLoaderWrapper.GetBootstrapClassLoader().ArgTypeListFromSig(Sig);
+d248 1
+a248 1
+		internal sealed override void Generate(Hashtable context, CodeEmitter ilgen)
+d280 1
+a280 1
+		internal override void Generate(Hashtable context, CodeEmitter ilgen)
+d287 1
+a287 1
+					typeWrapper = ClassLoaderWrapper.GetBootstrapClassLoader().LoadClassByDottedName(Class);
+d304 1
+a304 1
+		internal override void Generate(Hashtable context, CodeEmitter ilgen)
+d340 1
+a340 1
+		internal override void Generate(Hashtable context, CodeEmitter ilgen)
+d369 1
+a369 1
+		internal override void Generate(Hashtable context, CodeEmitter ilgen)
+d413 1
+a413 1
+		internal sealed override void Generate(Hashtable context, CodeEmitter ilgen)
+d512 1
+a512 1
+		internal override void Generate(Hashtable context, CodeEmitter ilgen)
+d541 1
+a541 1
+		internal override void Generate(Hashtable context, CodeEmitter ilgen)
+d555 1
+a555 1
+						typeWrapper = ClassLoaderWrapper.GetBootstrapClassLoader().LoadClassByDottedName(Class);
+d571 1
+a571 1
+		internal override void Generate(Hashtable context, CodeEmitter ilgen)
+d583 1
+a583 1
+		internal override void Generate(Hashtable context, CodeEmitter ilgen)
+d735 1
+a735 1
+		internal override void Generate(Hashtable context, CodeEmitter ilgen)
+d753 1
+a753 1
+		internal override void Generate(Hashtable context, CodeEmitter ilgen)
+d774 1
+a774 1
+		internal override void Generate(Hashtable context, CodeEmitter ilgen)
+d800 1
+a800 1
+		internal override void Generate(Hashtable context, CodeEmitter ilgen)
+d819 1
+a819 1
+		internal override void Generate(Hashtable context, CodeEmitter ilgen)
+d834 1
+a834 1
+		internal override void Generate(Hashtable context, CodeEmitter ilgen)
+d975 1
+a975 1
+		internal override void Generate(Hashtable context, CodeEmitter ilgen)
+d1012 1
+a1012 1
+		internal override void Generate(Hashtable context, CodeEmitter ilgen)
+d1025 1
+a1025 1
+					type = ClassLoaderWrapper.GetBootstrapClassLoader().LoadClassByDottedName(@@catch.Class).TypeAsExceptionType;
+d1054 1
+a1054 1
+		internal override void Generate(Hashtable context, CodeEmitter ilgen)
+d1077 1
+a1077 1
+		internal override void Generate(Hashtable context, CodeEmitter ilgen)
+d1079 1
+a1079 1
+			ilgen.Emit(OpCodes.Ldelema, ClassLoaderWrapper.GetBootstrapClassLoader().FieldTypeWrapperFromSig(Sig).TypeAsArrayType);
+d1089 1
+a1089 1
+		internal override void Generate(Hashtable context, CodeEmitter ilgen)
+d1101 1
+a1101 1
+		internal override void Generate(Hashtable context, CodeEmitter ilgen)
+d1103 1
+a1103 1
+			ClassLoaderWrapper.GetBootstrapClassLoader().LoadClassByDottedName(Class).EmitRunClassConstructor(ilgen);
+d1185 1
+a1185 1
+		internal void Generate(Hashtable context, CodeEmitter ilgen)
+d1200 1
+a1200 1
+		internal void Emit(CodeEmitter ilgen)
+d1202 1
+a1202 1
+			Generate(new Hashtable(), ilgen);
+d1250 1
+a1250 1
+		internal void Emit(CodeEmitter ilgen)
+d1256 1
+a1256 1
+			Type[] redirParamTypes = ClassLoaderWrapper.GetBootstrapClassLoader().ArgTypeListFromSig(Sig);
+d1274 1
+a1274 1
+				TypeWrapper tw = ClassLoaderWrapper.LoadClassCritical(Class);
+d1335 1
+a1335 1
+		internal void Emit(CodeEmitter ilgen)
+d1339 1
+a1339 1
+				redirect.Emit(ilgen);
+d1343 1
+a1343 1
+				body.Emit(ilgen);
+@
+
+
+1.12
+log
+@Removed CodeEmitter abstract base class.
+@
+text
+@d32 1
+a32 3
+
+using ILGenerator = IKVM.Internal.CountingILGenerator;
+using Label = IKVM.Internal.CountingLabel;
+d48 1
+a48 1
+		internal abstract void Generate(Hashtable context, ILGenerator ilgen);
+d57 1
+a57 1
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+d94 1
+a94 1
+		internal sealed override void Generate(Hashtable context, ILGenerator ilgen)
+d229 1
+a229 1
+		internal sealed override void Generate(Hashtable context, ILGenerator ilgen)
+d261 1
+a261 1
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+d284 2
+a285 2
+	
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+d300 1
+a300 1
+					Label endLabel = ilgen.DefineLabel();
+d321 1
+a321 1
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+d350 1
+a350 1
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+d394 1
+a394 1
+		internal sealed override void Generate(Hashtable context, ILGenerator ilgen)
+d396 1
+a396 1
+			Label l;
+d404 1
+a404 1
+				l = (Label)context[Name];
+d493 1
+a493 1
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+d495 1
+a495 1
+			Label l;
+d503 1
+a503 1
+				l = (Label)context[Name];
+d522 1
+a522 1
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+d551 2
+a552 2
+		
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+d564 1
+a564 1
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+d716 1
+a716 1
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+d734 1
+a734 1
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+d755 1
+a755 1
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+d781 1
+a781 1
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+d800 1
+a800 1
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+d815 1
+a815 1
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+d956 1
+a956 1
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+d993 1
+a993 1
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+d1035 1
+a1035 1
+		internal override void Generate(Hashtable context, CountingILGenerator ilgen)
+d1058 1
+a1058 1
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+d1070 1
+a1070 1
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+d1082 1
+a1082 1
+		internal override void Generate(Hashtable context, CountingILGenerator ilgen)
+d1166 1
+a1166 1
+		internal void Generate(Hashtable context, ILGenerator ilgen)
+d1181 1
+a1181 1
+		internal void Emit(ILGenerator ilgen)
+d1231 1
+a1231 1
+		internal void Emit(ILGenerator ilgen)
+d1316 1
+a1316 1
+		internal void Emit(ILGenerator ilgen)
+@
+
+
+1.11
+log
+@Added support for explicitly implementing an interface method with the <override /> element.
+@
+text
+@d1090 1
+a1090 1
+	public class InstructionList : CodeEmitter
+d1183 1
+a1183 1
+		internal sealed override void Emit(ILGenerator ilgen)
+@
+
+
+1.10
+log
+@Added virtual opcode to explicitly trigger class initialization.
+@
+text
+@d1273 2
+@
+
+
+1.9
+log
+@Changed Ldfld & Ldsfld opcode handling to directly emit Ldfld & Ldsfld opcodes instead of using EmitGet (to bypass all the magic that happens there and to be consistent with Stfld & Stsfld).
+@
+text
+@d1078 12
+d1165 1
+@
+
+
+1.8
+log
+@Added support for locally (i.e. per method) replacing method calls with a custom CIL sequence.
+@
+text
+@d740 2
+a741 1
+			fw.EmitGet(ilgen);
+d767 2
+a768 1
+				fw.EmitGet(ilgen);
+@
+
+
+1.7
+log
+@Added Leave opcode support.
+@
+text
+@d1262 11
+d1298 2
+@
+
+
+1.6
+log
+@Optimized various String methods.
+@
+text
+@d978 8
+d1150 1
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002, 2003, 2004, 2005, 2006 Jeroen Frijters
+d439 18
+d933 9
+d1083 2
+d1133 1
+d1265 2
+@
+
+
+1.5.4.1
+log
+@Backported:
+- String fixes and optimizations.
+- Thread death deadlock
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007 Jeroen Frijters
+a438 18
+	[XmlType("beq")]
+	public sealed class Beq : Branch
+	{
+		public Beq()
+			: base(OpCodes.Beq)
+		{
+		}
+	}
+
+	[XmlType("bne_un")]
+	public sealed class Bne_Un : Branch
+	{
+		public Bne_Un()
+			: base(OpCodes.Bne_Un)
+		{
+		}
+	}
+
+a914 9
+	[XmlType("sub")]
+	public sealed class Sub : Simple
+	{
+		public Sub()
+			: base(OpCodes.Sub)
+		{
+		}
+	}
+
+a1055 2
+		[XmlElement(typeof(Beq))]
+		[XmlElement(typeof(Bne_Un))]
+a1103 1
+		[XmlElement(typeof(Sub))]
+a1234 2
+		[XmlAttribute("nonullcheck")]
+		public bool NoNullCheck;
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002, 2003, 2004, 2005 Jeroen Frijters
+d731 2
+d740 10
+a749 3
+			FieldWrapper fw = ClassLoaderWrapper.LoadClassCritical(Class).GetFieldWrapper(Name, Sig);
+			fw.Link();
+			fw.EmitGet(ilgen);
+d1029 12
+d1111 1
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d1156 37
+d1224 12
+d1269 2
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d634 8
+d650 24
+d1008 12
+d1054 1
+d1056 3
+d1089 1
+@
+
+
+1.1
+log
+@moved CompilerClassLoader.cs and remapper.cs from runtime to ikvmc
+@
+text
+@a23 1
+#if STATIC_COMPILER && !COMPACT_FRAMEWORK
+a1299 1
+#endif
+@
+

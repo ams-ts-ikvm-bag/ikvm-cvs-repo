@@ -1,0 +1,300 @@
+head	1.6;
+access;
+symbols
+	v0_46_0_4:1.5
+	v0_46_0_2:1.5
+	v0_40_0_6:1.4
+	v0_40_0_5:1.4
+	v0_46_0_1:1.5
+	v0_46_0_0:1.5
+	v0_46:1.5.0.2
+	v0_44_0_6:1.4
+	v0_44_0_5:1.4
+	v0_44_0_4:1.4
+	v0_44_0_3:1.4
+	v0_44_0_2:1.4
+	v0_42_0_7:1.4
+	v0_44_0_1:1.4
+	v0_44_0_0:1.4
+	v0_44:1.4.0.8
+	v0_42_0_6:1.4
+	v0_42_0_5:1.4
+	v0_42_0_4:1.4
+	v0_42_0_3:1.4
+	v0_42_0_2:1.4
+	v0_42_0_1:1.4
+	v0_42_0_0:1.4
+	v0_42:1.4.0.6
+	v0_40_0_3:1.4
+	v0_40_0_2:1.4
+	v0_40_0_1:1.4
+	v0_40_0_0:1.4
+	v0_40:1.4.0.4
+	v0_38_0_1:1.4
+	v0_38_0_0:1.4
+	v0_38:1.4.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.6
+date	2011.06.19.10.02.30;	author jfrijters;	state dead;
+branches;
+next	1.5;
+
+1.5
+date	2011.01.24.16.40.22;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2008.06.12.09.09.22;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.06.11.09.05.10;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.04.23.04.25.21;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.04.21.04.38.14;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.6
+log
+@Unforked java.lang.ApplicationShutdownHooks and updated to OpenJDK 7 version.
+@
+text
+@/*
+ * Copyright (c) 2005, 2006, Oracle and/or its affiliates. All rights reserved.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 only, as
+ * published by the Free Software Foundation.  Oracle designates this
+ * particular file as subject to the "Classpath" exception as provided
+ * by Oracle in the LICENSE file that accompanied this code.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * You should have received a copy of the GNU General Public License version
+ * 2 along with this work; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+ * or visit www.oracle.com if you need additional information or have any
+ * questions.
+ */
+package java.lang;
+
+import java.util.*;
+
+/*
+ * Class to track and run user level shutdown hooks registered through
+ * <tt>{@@link Runtime#addShutdownHook Runtime.addShutdownHook}</tt>.
+ *
+ * @@see java.lang.Runtime#addShutdownHook
+ * @@see java.lang.Runtime#removeShutdownHook
+ */
+
+class ApplicationShutdownHooks implements Runnable {
+    private static ApplicationShutdownHooks instance = null;
+
+    /* The set of registered hooks */
+    private static IdentityHashMap<Thread, Thread> hooks = new IdentityHashMap<Thread, Thread>();
+
+    static {
+        // [IKVM] make sure that we are registered with the shutdown process
+        Shutdown.init();
+    }
+
+    static synchronized ApplicationShutdownHooks hook() {
+        if (instance == null)
+            instance = new ApplicationShutdownHooks();
+
+        return instance;
+    }
+
+    private ApplicationShutdownHooks() {}
+
+    /* Add a new shutdown hook.  Checks the shutdown state and the hook itself,
+     * but does not do any security checks.
+     */
+    static synchronized void add(Thread hook) {
+        if(hooks == null)
+            throw new IllegalStateException("Shutdown in progress");
+
+        if (hook.isAlive())
+            throw new IllegalArgumentException("Hook already running");
+
+        if (hooks.containsKey(hook))
+            throw new IllegalArgumentException("Hook previously registered");
+
+        hooks.put(hook, hook);
+    }
+
+    /* Remove a previously-registered hook.  Like the add method, this method
+     * does not do any security checks.
+     */
+    static synchronized boolean remove(Thread hook) {
+        if(hooks == null)
+            throw new IllegalStateException("Shutdown in progress");
+
+        if (hook == null)
+            throw new NullPointerException();
+
+        return hooks.remove(hook) != null;
+    }
+
+    /* Iterates over all application hooks creating a new thread for each
+     * to run in. Hooks are run concurrently and this method waits for
+     * them to finish.
+     */
+    public void run() {
+        Collection<Thread> threads;
+        synchronized(ApplicationShutdownHooks.class) {
+            threads = hooks.keySet();
+            hooks = null;
+        }
+
+        for (Thread hook : threads) {
+            hook.start();
+        }
+        for (Thread hook : threads) {
+            try {
+                hook.join();
+            } catch (InterruptedException x) { }
+        }
+    }
+}
+@
+
+
+1.5
+log
+@Integrated OpenJDK 6 b21.
+@
+text
+@@
+
+
+1.4
+log
+@Merged OpenJDK 6 b10 whitespace and comment changes.
+@
+text
+@d2 1
+a2 1
+ * Copyright 2005-2006 Sun Microsystems, Inc.  All Rights Reserved.
+d7 1
+a7 1
+ * published by the Free Software Foundation.  Sun designates this
+d9 1
+a9 1
+ * by Sun in the LICENSE file that accompanied this code.
+d21 3
+a23 3
+ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
+ * CA 95054 USA or visit www.sun.com if you need additional information or
+ * have any questions.
+@
+
+
+1.3
+log
+@Converted tabs to spaces.
+@
+text
+@d80 1
+a80 1
+        if (hook == null) 
+d87 1
+a87 1
+     * to run in. Hooks are run concurrently and this method waits for 
+a106 1
+
+@
+
+
+1.2
+log
+@Refactored class library initialization.
+@
+text
+@d44 2
+a45 2
+	// [IKVM] make sure that we are registered with the shutdown process
+	Shutdown.init();
+d49 2
+a50 2
+	if (instance == null)
+	    instance = new ApplicationShutdownHooks();
+d52 1
+a52 1
+	return instance;
+d61 2
+a62 2
+	if(hooks == null)
+	    throw new IllegalStateException("Shutdown in progress");
+d64 2
+a65 2
+	if (hook.isAlive())
+	    throw new IllegalArgumentException("Hook already running");
+d67 2
+a68 2
+	if (hooks.containsKey(hook))
+	    throw new IllegalArgumentException("Hook previously registered");
+d77 2
+a78 2
+	if(hooks == null)
+	    throw new IllegalStateException("Shutdown in progress");
+d80 2
+a81 2
+	if (hook == null) 
+	    throw new NullPointerException();
+d83 1
+a83 1
+	return hooks.remove(hook) != null;
+d91 14
+a104 14
+	Collection<Thread> threads;
+	synchronized(ApplicationShutdownHooks.class) {
+	    threads = hooks.keySet();
+	    hooks = null;
+	}
+
+	for (Thread hook : threads) {
+	    hook.start();
+	}
+	for (Thread hook : threads) {
+	    try {
+		hook.join();
+	    } catch (InterruptedException x) { }
+	}
+@
+
+
+1.1
+log
+@Forked java/lang/ApplicationShutdownHooks.java.
+@
+text
+@d43 5
+@
+

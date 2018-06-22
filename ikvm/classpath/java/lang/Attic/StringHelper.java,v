@@ -1,0 +1,2046 @@
+head	1.20;
+access;
+symbols
+	v0_36_0_14:1.19
+	v0_36_0_13:1.19
+	v0_36_0_9:1.19
+	v0_36_0_7:1.19
+	v0_36_0_5:1.19
+	v0_36_0_4:1.19
+	v0_36_0_3:1.19
+	v0_36_0_2:1.19
+	v0_36_0_1:1.19
+	v0_36_0_0:1.19
+	v0_36:1.19.0.2
+	v0_34_0_3:1.16.6.2
+	v0_34_0_2:1.16.6.2
+	v0_34_0_1:1.16.6.2
+	v0_34_0_0:1.16.6.1
+	v0_34:1.16.0.6
+	v0_32:1.16.0.4
+	v0_32_0_0:1.16
+	v0_30:1.16.0.2
+	v0_28_0_0:1.16
+	v0_26_0_1:1.16
+	v0_26_0_0:1.16
+	v0_24_0_1:1.15
+	v0_24_0_0:1.15
+	v0_22_0_0:1.15
+	v0_20_0_0:1.15
+	v0_18_0_0:1.15
+	v0_16_0_0:1.15
+	v0_14_0_1:1.14
+	v0_14_0_0:1.14
+	v0_12_0_0:1.13
+	v0_10_0_1:1.13
+	v0_10_0_0:1.13
+	v0_8_0_0:1.10;
+locks; strict;
+comment	@# @;
+
+
+1.20
+date	2008.08.06.12.51.17;	author jfrijters;	state dead;
+branches;
+next	1.19;
+
+1.19
+date	2007.04.26.08.17.16;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2007.04.23.08.14.55;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2007.04.19.10.14.05;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2006.02.17.09.29.10;	author jfrijters;	state Exp;
+branches
+	1.16.6.1;
+next	1.15;
+
+1.15
+date	2005.05.18.11.54.28;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2005.04.18.08.34.16;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2004.11.23.17.46.40;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2004.10.19.13.43.55;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2004.07.10.07.19.57;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2004.06.25.10.33.10;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2004.06.25.09.38.07;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2004.04.23.14.21.46;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2004.03.16.17.10.11;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2004.03.08.15.18.48;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2003.08.21.10.06.36;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2003.08.05.14.07.23;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2003.07.31.12.49.30;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2003.04.14.09.41.59;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2003.03.17.14.04.27;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.16.6.1
+date	2007.04.23.07.25.23;	author jfrijters;	state Exp;
+branches;
+next	1.16.6.2;
+
+1.16.6.2
+date	2007.04.24.08.27.56;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.20
+log
+@Removed files that are no longer needed no that GNU Classpath support has been dropped.
+@
+text
+@/* StringHelper.java -- helper class adapted from java/lang/String.java
+   Copyright (C) 1998, 1999, 2000, 2001, 2002 Free Software Foundation, Inc.
+
+This file is part of GNU Classpath.
+
+GNU Classpath is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2, or (at your option)
+any later version.
+
+GNU Classpath is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with GNU Classpath; see the file COPYING.  If not, write to the
+Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+02111-1307 USA.
+
+Linking this library statically or dynamically with other modules is
+making a combined work based on this library.  Thus, the terms and
+conditions of the GNU General Public License cover the whole
+combination.
+
+As a special exception, the copyright holders of this library give you
+permission to link this library with independent modules to produce an
+executable, regardless of the license terms of these independent
+modules, and to copy and distribute the resulting executable under
+terms of your choice, provided that you also meet, for each linked
+independent module, the terms and conditions of the license of that
+module.  An independent module is a module which is not derived from
+or based on this library.  If you modify this library, you may extend
+this exception to your version of the library, but you are not
+obligated to do so.  If you do not wish to do so, delete this
+exception statement from your version. */
+
+package java.lang;
+
+import gnu.classpath.SystemProperties;
+import gnu.java.lang.CharData;
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetEncoder;
+import java.nio.charset.CharsetDecoder;
+import java.nio.charset.CoderResult;
+import java.nio.charset.CodingErrorAction;
+import java.nio.charset.CharacterCodingException;
+import java.nio.charset.IllegalCharsetNameException;
+import java.nio.charset.UnsupportedCharsetException;
+import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.util.Locale;
+
+final class StringHelper
+{
+    private StringHelper() {}
+
+    static boolean equalsIgnoreCase(String s1, String s2)
+    {
+	int len = s1.length();
+	if(s2 == null || len != s2.length())
+	{
+	    return false;
+	}
+	for(int i = 0; i < len; i++)
+	{
+	    char c1 = s1.charAt(i);
+	    char c2 = s2.charAt(i);
+	    if(c1 != c2 && (Character.toUpperCase(c1) != Character.toUpperCase(c2)) &&
+		(Character.toLowerCase(c1) != Character.toLowerCase(c2)))
+	    {
+		return false;
+	    }
+	}
+	return true;
+    }
+
+    static int compareTo(String s1, String s2)
+    {
+	int len = Math.min(s1.length(), s2.length());
+	for(int i = 0; i < len; i++)
+	{
+	    int diff = s1.charAt(i) - s2.charAt(i);
+	    if(diff != 0)
+	    {
+		return diff;
+	    }
+	}
+	return s1.length() - s2.length();
+    }
+
+    static int compareToIgnoreCase(String s1, String s2)
+    {
+	int len = Math.min(s1.length(), s2.length());
+	for(int i = 0; i < len; i++)
+	{
+	    int result = Character.toLowerCase(Character.toUpperCase(s1.charAt(i)))
+		- Character.toLowerCase(Character.toUpperCase(s2.charAt(i)));
+	    if (result != 0)
+		return result;
+	}
+	return s1.length() - s2.length();
+    }
+
+    static String toLowerCase(String s)
+    {
+	return toLowerCase(s, Locale.getDefault());
+    }
+
+    static String toLowerCase(String s, Locale loc)
+    {
+	// First, see if the current string is already lower case.
+	boolean turkish = "tr".equals(loc.getLanguage());
+	int len = s.length();
+	for(int i = 0; i < len; i++)
+	{
+	    char ch = s.charAt(i);
+	    if((turkish && ch == '\u0049') || ch != Character.toLowerCase(ch))
+	    {
+		// Now we perform the conversion. Fortunately, there are no multi-character
+		// lowercase expansions in Unicode 3.0.0.
+		char[] newStr = s.toCharArray();
+		for(; i < len; i++)
+		{
+		    ch = newStr[i];
+		    // Hardcoded special case.
+		    newStr[i] = (turkish && ch == '\u0049') ? '\u0131' : Character.toLowerCase(ch);
+		}
+		return new String(newStr);
+	    }
+	}
+	return s;
+    }
+
+    static String toUpperCase(String s)
+    {
+	return toUpperCase(s, Locale.getDefault());
+    }
+
+    static String toUpperCase(String s, Locale loc)
+    {
+	// First, see how many characters we have to grow by, as well as if the
+	// current string is already upper case.
+	boolean turkish = "tr".equals(loc.getLanguage());
+	int expand = 0;
+	boolean unchanged = true;
+	int i = s.length();
+	int x = i;
+	while (--i >= 0)
+	{
+	    char ch = s.charAt(--x);
+	    expand += upperCaseExpansion(ch);
+	    unchanged = (unchanged && expand == 0
+		&& ! (turkish && ch == '\u0069')
+		&& ch == Character.toUpperCase(ch));
+	}
+	if (unchanged)
+	    return s;
+
+	// Now we perform the conversion.
+	i = s.length();
+	if (expand == 0)
+	{
+	    char[] newStr = s.toCharArray();
+	    while (--i >= 0)
+	    {
+		char ch = s.charAt(x);
+		// Hardcoded special case.
+		newStr[x++] = (turkish && ch == '\u0069') ? '\u0130'
+		    : Character.toUpperCase(ch);
+	    }
+	    return new String(newStr);
+	}
+
+	// Expansion is necessary.
+	char[] newStr = new char[s.length() + expand];
+	int j = 0;
+	while (--i >= 0)
+	{
+	    char ch = s.charAt(x++);
+	    // Hardcoded special case.
+	    if (turkish && ch == '\u0069')
+	    {
+		newStr[j++] = '\u0130';
+		continue;
+	    }
+	    expand = upperCaseExpansion(ch);
+	    if (expand > 0)
+	    {
+		int index = upperCaseIndex(ch);
+		while (expand-- >= 0)
+		    newStr[j++] = upperExpand[index++];
+	    }
+	    else
+		newStr[j++] = Character.toUpperCase(ch);
+	}
+	return new String(newStr);
+    }
+
+    private static int upperCaseExpansion(char ch)
+    {
+        return Character.direction[0][Character.readCodePoint((int)ch) >> 7] & 3;
+    }
+
+    private static int upperCaseIndex(char ch)
+    {
+	// Simple binary search for the correct character.
+	int low = 0;
+	int hi = upperSpecial.length - 2;
+	int mid = ((low + hi) >> 2) << 1;
+	char c = upperSpecial[mid];
+	while (ch != c)
+	{
+	    if (ch < c)
+		hi = mid - 2;
+	    else
+		low = mid + 2;
+	    mid = ((low + hi) >> 2) << 1;
+	    c = upperSpecial[mid];
+	}
+	return upperSpecial[mid + 1];
+    }
+
+    private static final char[] upperExpand = CharData.UPPER_EXPAND.toCharArray();
+    private static final char[] upperSpecial = CharData.UPPER_SPECIAL.toCharArray();
+
+    static String NewString(byte[] ascii, int hibyte, int offset, int count)
+    {
+	if (offset < 0 || count < 0 || ascii.length - offset < count)
+	    throw new StringIndexOutOfBoundsException();
+	char[] value = new char[count];
+	hibyte <<= 8;
+	offset += count;
+	while (--count >= 0)
+	    value[count] = (char) (hibyte | (ascii[--offset] & 0xff));
+	return new String(value);
+    }
+
+    static String NewString(byte[] ascii, int hibyte)
+    {
+	return NewString(ascii, hibyte, 0, ascii.length);
+    }
+
+    private static Charset getCharset(String encoding) throws UnsupportedEncodingException
+    {
+        try
+        {
+            return Charset.forName(encoding);
+        }
+        catch(IllegalCharsetNameException e)
+        {
+            throw (UnsupportedEncodingException)new UnsupportedEncodingException("Encoding: " + encoding + " not found.").initCause(e);
+        }
+        catch(UnsupportedCharsetException e)
+        {
+            throw (UnsupportedEncodingException)new UnsupportedEncodingException("Encoding: " + encoding + " not found.").initCause(e);
+        }
+    }
+
+    static String NewString(byte[] data, int offset, int count, String encoding)
+	throws UnsupportedEncodingException
+    {
+	if (offset < 0 || count < 0 || data.length - offset < count)
+	    throw new StringIndexOutOfBoundsException();
+
+        CharsetDecoder csd = getCharset(encoding).newDecoder();
+        csd.onMalformedInput(CodingErrorAction.REPLACE);
+        csd.onUnmappableCharacter(CodingErrorAction.REPLACE);
+        CharBuffer out = CharBuffer.allocate(count * (int)csd.maxCharsPerByte());
+        csd.decode(ByteBuffer.wrap(data, offset, count), out, true);
+        csd.flush(out);
+        return out.flip().toString();
+    }
+
+    static String NewString(byte[] data, String encoding)
+	throws UnsupportedEncodingException
+    {
+	return NewString(data, 0, data.length, encoding);
+    }
+
+    static String NewString(byte[] data, int offset, int count)
+    {
+        try
+        {
+            return NewString(data, offset, count, SystemProperties.getProperty("file.encoding"));
+        }
+        catch(UnsupportedEncodingException e)
+        {
+            throw new Error(e);
+        }
+    }
+
+    static String NewString(byte[] data)
+    {
+	return NewString(data, 0, data.length);
+    }
+
+    static String NewString(char[] data, int offset, int count, boolean dont_copy)
+    {
+	return new String(data, offset, count);
+    }
+
+    static String NewString(StringBuffer sb)
+    {
+	synchronized(sb)
+	{
+	    return new String(sb.value, 0, sb.count);
+	}
+    }
+
+    static String NewString(int[] codePoints, int offset, int count)
+    {
+        cli.System.Text.StringBuilder sb = new cli.System.Text.StringBuilder(count);
+        for(int i = 0; i < count; i++)
+        {
+            int ch = codePoints[i + offset];
+            if(ch < 0 || ch > 0x10ffff)
+                throw new IllegalArgumentException();
+            if(ch < 0x10000)
+            {
+                sb.Append((char)ch);
+            }
+            else
+            {
+                sb.Append((char)(0xd800 + ((ch - 0x10000) >> 10)));
+                sb.Append((char)(0xdc00 + (ch & 0x3ff)));
+            }
+        }
+        return sb.ToString();
+    }
+
+    static String substring(cli.System.String s, int off, int end)
+    {
+	return s.Substring(off, end - off);
+    }
+
+    static void getChars(cli.System.String s, int srcBegin, int srcEnd, char[] dst, int dstBegin) 
+    {
+	s.CopyTo(srcBegin, dst, dstBegin, srcEnd - srcBegin);
+    }
+
+    // this exposes the package accessible "count" field (for use by StringBuffer)
+    static int GetCountField(cli.System.String s)
+    {
+	return s.get_Length();
+    }
+
+    // this exposes the package accessible "value" field (for use by StringBuffer)
+    static char[] GetValueField(cli.System.String s)
+    {
+	return s.ToCharArray();
+    }
+
+    // this exposes the package accessible "offset" field (for use by StringBuffer)
+    static int GetOffsetField(cli.System.String s)
+    {
+	return 0;
+    }
+
+    static int indexOf(String s, String o)
+    {
+        return indexOf(s, o, 0);
+    }
+
+    static int indexOf(String s, String o, int fromIndex)
+    {
+        // start by dereferencing s, to make sure we throw a NullPointerException if s is null
+        int slen = s.length();
+        int olen = o.length();
+        if(olen == 0)
+        {
+            return Math.max(0, Math.min(fromIndex, slen));
+        }
+        if(olen > slen)
+        {
+            return -1;
+        }
+        char firstChar = o.charAt(0);
+        // Java allows fromIndex to both below zero or above the length of the string, .NET doesn't
+        int index = Math.max(0, Math.min(slen, fromIndex));
+        int end = slen - olen;
+        while(index >= 0 && index <= end)
+        {
+            if(cli.System.String.CompareOrdinal(s, index, o, 0, olen) == 0)
+            {
+                return index;
+            }
+            index = s.indexOf(firstChar, index + 1);
+        }
+        return -1;
+    }
+
+    static int lastIndexOf(cli.System.String s, int ch, int fromIndex)
+    {
+	// start by dereferencing s, to make sure we throw a NullPointerException if s is null
+	int len = s.get_Length();
+	if(fromIndex  < 0)
+	{
+	    return -1;
+	}
+	if(ch < 0 || ch > Character.MAX_VALUE)
+	{
+	    return -1;
+	}
+	// Java allows fromIndex to be above the length of the string, .NET doesn't
+	return s.LastIndexOf((char)ch, Math.min(len - 1, fromIndex));
+    }
+
+    static int lastIndexOf(String s, String o)
+    {
+	return lastIndexOf(s, o, Integer.MAX_VALUE);
+    }
+
+    static int lastIndexOf(String s, String o, int fromIndex)
+    {
+	// start by dereferencing s, to make sure we throw a NullPointerException if s is null
+	int slen = s.length();
+	if(fromIndex < 0)
+	{
+	    return -1;
+	}
+        int olen = o.length();
+	if(olen == 0)
+	{
+	    return Math.min(slen, fromIndex);
+	}
+        if(olen > slen)
+        {
+            return -1;
+        }
+        cli.System.String cliStr = (cli.System.String)(Object)s;
+        char firstChar = o.charAt(0);
+        // Java allows fromIndex to both below zero or above the length of the string, .NET doesn't
+        int index = Math.max(0, Math.min(slen - olen, fromIndex));
+        while(index > 0)
+        {
+            if(cli.System.String.CompareOrdinal(s, index, o, 0, olen) == 0)
+            {
+                return index;
+            }
+            index = cliStr.LastIndexOf(firstChar, index - 1);
+        }
+        return cli.System.String.CompareOrdinal(s, 0, o, 0, olen) == 0 ? 0 : -1;
+    }
+
+    static String concat(String s1, String s2)
+    {
+	if(s1.length() == 0)
+	{
+	    return s2;
+	}
+	if(s2.length() == 0)
+	{
+	    return s1;
+	}
+	return cli.System.String.Concat(s1, s2);
+    }
+
+    static void getBytes(String s, int srcBegin, int srcEnd, byte dst[], int dstBegin)
+    {
+	if (srcBegin < 0 || srcBegin > srcEnd || srcEnd > s.length())
+	    throw new StringIndexOutOfBoundsException();
+	int i = srcEnd - srcBegin;
+	while (--i >= 0)
+	    dst[dstBegin++] = (byte)s.charAt(srcBegin++);
+    }
+
+    static byte[] getBytes(String s, String enc) throws UnsupportedEncodingException
+    {
+        try 
+        {
+            CharsetEncoder cse = getCharset(enc).newEncoder();
+            cse.onMalformedInput(CodingErrorAction.REPLACE);
+            cse.onUnmappableCharacter(CodingErrorAction.REPLACE);
+            char[] value = s.toCharArray();
+            ByteBuffer bbuf = cse.encode(CharBuffer.wrap(value, 0, value.length));
+            if(bbuf.hasArray())
+                return bbuf.array();
+
+            // Doubt this will happen. But just in case.
+            byte[] bytes = new byte[bbuf.remaining()];
+            bbuf.get(bytes);
+            return bytes;
+        }
+        catch(CharacterCodingException e)
+        {
+            throw new Error(e);
+        }
+    }
+
+    static byte[] getBytes(String s)
+    {
+        try 
+        {
+            return getBytes(s, SystemProperties.getProperty("file.encoding"));
+        }
+        catch(UnsupportedEncodingException e)
+        {
+            throw new Error(e);
+        }
+    }
+
+    static boolean regionMatches(String s, int toffset, String other, int ooffset, int len)
+    {
+	return regionMatches(s, false, toffset, other, ooffset, len);
+    }
+
+    static boolean regionMatches(String s, boolean ignoreCase, int toffset,
+	String other, int ooffset, int len)
+    {
+	// this explicit test is needed, because Integer.MIN_VALUE will underflow the while
+	if (len < 0)
+	{
+	    return true;
+	}
+	// be careful to avoid integer overflow
+	if (toffset < 0 || ooffset < 0 || s.length() - toffset < len || other.length() - ooffset < len)
+	{
+	    return false;
+	}
+	while (--len >= 0)
+	{
+	    char c1 = s.charAt(toffset++);
+	    char c2 = other.charAt(ooffset++);
+	    // Note that checking c1 != c2 is redundant when ignoreCase is true,
+	    // but it avoids method calls.
+	    if (c1 != c2
+		&& (! ignoreCase
+		|| (Character.toLowerCase(c1) != Character.toLowerCase(c2)
+		&& (Character.toUpperCase(c1)
+		!= Character.toUpperCase(c2)))))
+		return false;
+	}
+	return true;
+    }
+
+    static String trim(String s)
+    {
+	int limit = s.length();
+	if (limit == 0 || (s.charAt(0) > '\u0020'
+	    && s.charAt(limit - 1) > '\u0020'))
+	    return s;
+	int begin = 0;
+	do
+	    if (begin == limit)
+		return "";
+	while (s.charAt(begin++) <= '\u0020');
+	int end = limit;
+	while (s.charAt(--end) <= '\u0020');
+	return s.substring(begin - 1, end + 1);
+    }
+
+    static String valueOf(boolean b)
+    {
+	return b ? "true" : "false";
+    }
+
+    static String valueOf(int i)
+    {
+	return Integer.toString(i, 10);
+    }
+
+    static String valueOf(long l)
+    {
+	return Long.toString(l);
+    }
+
+    static cli.System.String valueOf(char c)
+    {
+	return new cli.System.String(c, 1);
+    }
+
+    static String valueOf(float f)
+    {
+	return Float.toString(f);
+    }
+
+    static String valueOf(double d)
+    {
+	return Double.toString(d);
+    }
+
+    static String valueOf(char[] c)
+    {
+	return new String(c);
+    }
+
+    static String valueOf(char[] c, int offset, int count)
+    {
+	return new String(c, offset, count);
+    }
+
+    static String valueOf(Object o)
+    {
+	return o == null ? "null" : o.toString();
+    }
+
+    static int hashCode(cli.System.String s)
+    {
+	int h = 0;
+	// NOTE having the get_Length in the for condition is actually faster than hoisting it,
+	// the CLR JIT recognizes this pattern and optimizes the array bounds check in get_Chars.
+	for(int i = 0; i < s.get_Length(); i++)
+	{
+	    h = h * 31 + s.get_Chars(i);
+	}
+	return h;
+    }
+
+    static String replace(String s, CharSequence oldValue, CharSequence newValue)
+    {
+        String s1 = oldValue.toString();
+        String s2 = newValue.toString();
+        int prev = 0;
+        int pos = s.indexOf(s1);
+        if(pos == -1)
+        {
+            return s;
+        }
+        int slen = s.length();
+        int s1len = s1.length();
+        if(s1len == 0)
+        {
+            cli.System.Text.StringBuilder sb = new cli.System.Text.StringBuilder((slen + 1) * (s2.length() + 1));
+            for(int i = 0; i < slen; i++)
+            {
+                sb.Append(s2).Append(s.charAt(i));
+            }
+            sb.Append(s2);
+            return sb.ToString();
+        }
+        cli.System.Text.StringBuilder sb = new cli.System.Text.StringBuilder();
+        while (pos != -1)
+        {
+            sb.Append(s, prev, pos - prev);
+            sb.Append(s2);
+            prev = pos + s1len;
+            pos = s.indexOf(s1, prev);
+        }
+        sb.Append(s, prev, slen - prev);
+        return sb.ToString();
+    }
+
+    static boolean contains(String s, CharSequence seq)
+    {
+        return s.indexOf(seq.toString()) != -1;
+    }
+
+    static boolean contentEquals(String s, CharSequence seq)
+    {
+        return s.equals(seq.toString());
+    }
+
+    static int codePointAt(String s, int index)
+    {
+        char c1 = s.charAt(index++);
+        if(c1 >= 0xd800 && c1 <= 0xdbff && index < s.length())
+        {
+            char c2 = s.charAt(index);
+            if(c2 >= 0xdc00 && c2 <= 0xdfff)
+            {
+                return 0x10000 + ((c1 - 0xdb800) << 10) + c2 - 0xdc00;
+            }
+        }
+        return c1;
+    }
+
+    static int codePointBefore(String s, int index)
+    {
+        char c2 = s.charAt(--index);
+        if(c2 >= 0xdc00 && c2 <= 0xdfff && index > 0)
+        {
+            char c1 = s.charAt(--index);
+            if(c1 >= 0xd800 && c1 <= 0xdbff)
+            {
+                return 0x10000 + ((c1 - 0xdb800) << 10) + c2 - 0xdc00;
+            }
+        }
+        return c2;
+    }
+
+    static int codePointCount(String s, int offset, int count)
+    {
+        int cpc = 0;
+        char prev = 0;
+        for(int i = 0; i < count; i++)
+        {
+            char c = s.charAt(i + offset);
+            if(c >= 0xdc00 && c <= 0xdfff && prev >= 0xd800 && prev <= 0xdbff)
+            {
+                cpc--;
+            }
+            prev = c;
+            cpc++;
+        }
+        return cpc;
+    }
+
+    static int offsetByCodePoints(String s, int index, int codePointOffset)
+    {
+        while(codePointOffset < 0)
+        {
+            char c2 = s.charAt(--index);
+            char c1 = index > 0 ? s.charAt(index - 1) : (char)0;
+            if(c1 >= 0xd800 && c1 <= 0xdbff && c2 >= 0xdc00 && c2 <= 0xdfff)
+            {
+                index--;
+            }
+            codePointOffset++;
+        }
+        while(codePointOffset > 0)
+        {
+            char c1 = s.charAt(index++);
+            char c2 = index < s.length() ? s.charAt(index) : (char)0;
+            if(c1 >= 0xd800 && c1 <= 0xdbff && c2 >= 0xdc00 && c2 <= 0xdfff)
+            {
+                index++;
+            }
+            codePointOffset--;
+        }
+        return index;
+    }
+}
+@
+
+
+1.19
+log
+@Fixed String.lastIndexOf(String, int) regression.
+@
+text
+@@
+
+
+1.18
+log
+@Optimized various String methods.
+@
+text
+@d435 1
+a435 1
+        int index = Math.max(0, Math.min(slen - olen, fromIndex - olen + 1));
+@
+
+
+1.17
+log
+@Fixed various String methods (indexOf, lastIndexOf, startsWith, endsWith, contains, replace) to use ordinal semantics instead of culture dependent word matching. Thanks to Louis Boydstun for tracking this bug down.
+@
+text
+@a337 25
+    static boolean startsWith(String s, String prefix)
+    {
+	return cli.System.String.CompareOrdinal(s, 0, prefix, 0, prefix.length()) == 0;
+    }
+
+    static boolean startsWith(String s, String prefix, int toffset)
+    {
+	if(toffset < 0 || toffset > s.length())
+	{
+	    return false;
+	}
+        return cli.System.String.CompareOrdinal(s, toffset, prefix, 0, prefix.length()) == 0;
+    }
+
+    static boolean endsWith(String s, String suffix)
+    {
+        int suflen = suffix.length();
+        int off = s.length() - suflen;
+        if(off < 0)
+        {
+            return false;
+        }
+        return cli.System.String.CompareOrdinal(s, off, suffix, 0, suflen) == 0;
+    }
+
+a360 14
+    static int indexOf(cli.System.String s, int ch, int fromIndex)
+    {
+	if(ch < 0 || ch > Character.MAX_VALUE)
+	{
+	    if(s == null)
+	    {
+		throw new NullPointerException();
+	    }
+    	    return -1;
+	}
+	// Java allow fromIndex to both below zero or above the length of the string, .NET doesn't
+	return s.IndexOf((char)ch, Math.max(0, Math.min(s.get_Length(), fromIndex)));
+    }
+
+a378 1
+        cli.System.String cliStr = (cli.System.String)(Object)s;
+d389 1
+a389 1
+            index = cliStr.IndexOf(firstChar, index + 1);
+@
+
+
+1.16
+log
+@*** empty log message ***
+@
+text
+@d338 1
+a338 1
+    static boolean startsWith(cli.System.String s, String prefix, int toffset)
+d340 6
+a345 1
+	if(toffset < 0 || toffset > s.get_Length())
+d349 12
+a360 2
+	s = (cli.System.String)(Object)s.Substring(Math.min(s.get_Length(), toffset));
+	return s.StartsWith(prefix);
+d400 1
+a400 1
+    static int indexOf(cli.System.String s, String o, int fromIndex)
+d402 30
+a431 2
+	// Java allow fromIndex to both below zero or above the length of the string, .NET doesn't
+	return s.IndexOf(o, Math.max(0, Math.min(s.get_Length(), fromIndex)));
+d450 1
+a450 1
+    static int lastIndexOf(cli.System.String s, String o)
+d452 1
+a452 1
+	return lastIndexOf(s, o, s.get_Length());
+d455 1
+a455 1
+    static int lastIndexOf(cli.System.String s, String o, int fromIndex)
+d458 2
+a459 2
+	int len = s.get_Length();
+	if(fromIndex  < 0)
+d463 2
+a464 1
+	if(o.length() == 0)
+d466 1
+a466 1
+	    return Math.min(len, fromIndex);
+d468 17
+a484 7
+	// make sure we don't overflow if fromIndex is near Integer.MAX_VALUE
+	if((fromIndex + o.length() - 1) < 0) 
+	{ 
+	    fromIndex = len - 1; 
+	} 
+	// Java allows fromIndex to be above the length of the string, .NET doesn't
+	return s.LastIndexOf(o, Math.min(len - 1, fromIndex + o.length() - 1));
+d655 9
+a663 1
+        if(s1.length() > 0)
+d665 7
+a671 1
+            return ((cli.System.String)(Object)s).Replace(s1, s2);
+d673 2
+a674 2
+        cli.System.Text.StringBuilder sb = new cli.System.Text.StringBuilder((s.length() + 1) * (s2.length() + 1));
+        for(int i = 0; i < s.length(); i++)
+d676 4
+a679 1
+            sb.Append(s2).Append(s.charAt(i));
+d681 1
+a681 1
+        sb.Append(s2);
+d687 1
+a687 1
+        return ((cli.System.String)(Object)s).IndexOf(seq.toString()) != -1;
+@
+
+
+1.16.6.1
+log
+@Backported:
+- String fixes and optimizations.
+- Thread death deadlock
+@
+text
+@d338 10
+d371 1
+a371 1
+    static int indexOf(String s, String o)
+d373 10
+a382 1
+        return indexOf(s, o, 0);
+d385 1
+a385 1
+    static int indexOf(String s, String o, int fromIndex)
+d387 2
+a388 24
+        // start by dereferencing s, to make sure we throw a NullPointerException if s is null
+        int slen = s.length();
+        int olen = o.length();
+        if(olen == 0)
+        {
+            return Math.max(0, Math.min(fromIndex, slen));
+        }
+        if(olen > slen)
+        {
+            return -1;
+        }
+        char firstChar = o.charAt(0);
+        // Java allows fromIndex to both below zero or above the length of the string, .NET doesn't
+        int index = Math.max(0, Math.min(slen, fromIndex));
+        int end = slen - olen;
+        while(index >= 0 && index <= end)
+        {
+            if(cli.System.String.CompareOrdinal(s, index, o, 0, olen) == 0)
+            {
+                return index;
+            }
+            index = s.indexOf(firstChar, index + 1);
+        }
+        return -1;
+d407 1
+a407 1
+    static int lastIndexOf(String s, String o)
+d409 1
+a409 1
+	return lastIndexOf(s, o, Integer.MAX_VALUE);
+d412 1
+a412 1
+    static int lastIndexOf(String s, String o, int fromIndex)
+d415 2
+a416 2
+	int slen = s.length();
+	if(fromIndex < 0)
+d420 1
+a420 2
+        int olen = o.length();
+	if(olen == 0)
+d422 1
+a422 1
+	    return Math.min(slen, fromIndex);
+d424 7
+a430 17
+        if(olen > slen)
+        {
+            return -1;
+        }
+        cli.System.String cliStr = (cli.System.String)(Object)s;
+        char firstChar = o.charAt(0);
+        // Java allows fromIndex to both below zero or above the length of the string, .NET doesn't
+        int index = Math.max(0, Math.min(slen - olen, fromIndex - olen + 1));
+        while(index > 0)
+        {
+            if(cli.System.String.CompareOrdinal(s, index, o, 0, olen) == 0)
+            {
+                return index;
+            }
+            index = cliStr.LastIndexOf(firstChar, index - 1);
+        }
+        return cli.System.String.CompareOrdinal(s, 0, o, 0, olen) == 0 ? 0 : -1;
+d601 1
+a601 9
+        int prev = 0;
+        int pos = s.indexOf(s1);
+        if(pos == -1)
+        {
+            return s;
+        }
+        int slen = s.length();
+        int s1len = s1.length();
+        if(s1len == 0)
+d603 1
+a603 7
+            cli.System.Text.StringBuilder sb = new cli.System.Text.StringBuilder((slen + 1) * (s2.length() + 1));
+            for(int i = 0; i < slen; i++)
+            {
+                sb.Append(s2).Append(s.charAt(i));
+            }
+            sb.Append(s2);
+            return sb.ToString();
+d605 2
+a606 2
+        cli.System.Text.StringBuilder sb = new cli.System.Text.StringBuilder();
+        while (pos != -1)
+d608 1
+a608 4
+            sb.Append(s, prev, pos - prev);
+            sb.Append(s2);
+            prev = pos + s1len;
+            pos = s.indexOf(s1, prev);
+d610 1
+a610 1
+        sb.Append(s, prev, slen - prev);
+d616 1
+a616 1
+        return s.indexOf(seq.toString()) != -1;
+@
+
+
+1.16.6.2
+log
+@Fixed String.lastIndexOf() regression.
+@
+text
+@d435 1
+a435 1
+        int index = Math.max(0, Math.min(slen - olen, fromIndex));
+@
+
+
+1.15
+log
+@*** empty log message ***
+@
+text
+@d203 1
+a203 1
+	return Character.direction[Character.readChar(ch) >> 7] & 3;
+@
+
+
+1.14
+log
+@*** empty log message ***
+@
+text
+@d312 21
+d596 97
+@
+
+
+1.13
+log
+@*** empty log message ***
+@
+text
+@d40 13
+a53 3
+import java.io.UnsupportedEncodingException;
+import gnu.java.io.EncodingManager;
+import gnu.java.lang.CharData;
+d123 1
+a123 1
+		char[] newStr = (char[])s.toCharArray();
+d245 16
+d266 8
+a273 2
+	// XXX Consider using java.nio here.
+	return new String(EncodingManager.getDecoder(encoding).convertToChars(data, offset, count));
+d284 8
+a291 4
+	if (offset < 0 || count < 0 || data.length - offset < count)
+	    throw new StringIndexOutOfBoundsException();
+	// XXX Consider using java.nio here.
+	return new String(EncodingManager.getDecoder().convertToChars(data, offset, count));
+d436 19
+a454 2
+	// XXX Consider using java.nio here.
+	return EncodingManager.getEncoder(enc).convertToBytes(s.toCharArray());
+d459 8
+a466 2
+	// XXX Consider using java.nio here.
+	return EncodingManager.getEncoder().convertToBytes(s.toCharArray());
+@
+
+
+1.12
+log
+@*** empty log message ***
+@
+text
+@a41 1
+import java.io.CharConversionException;
+d240 2
+a241 10
+	try
+	{
+	    // XXX Consider using java.nio here.
+	    return new String(EncodingManager.getDecoder(encoding)
+		.convertToChars(data, offset, count));
+	}
+	catch (CharConversionException cce)
+	{
+	    throw new Error(cce);
+	}
+d254 2
+a255 10
+	try
+	{
+	    // XXX Consider using java.nio here.
+	    return new String(EncodingManager.getDecoder()
+		.convertToChars(data, offset, count));
+	}
+	catch (CharConversionException cce)
+	{
+	    throw new Error(cce);
+	}
+d400 2
+a401 10
+	try
+	{
+	    // XXX Consider using java.nio here.
+	    return EncodingManager.getEncoder(enc)
+		.convertToBytes(s.toCharArray());
+	}
+	catch (CharConversionException e)
+	{
+	    return null;
+	}
+d406 2
+a407 10
+	try
+	{
+	    // XXX Consider using java.nio here.
+	    return EncodingManager.getEncoder()
+		.convertToBytes(s.toCharArray());
+	}
+	catch (CharConversionException e)
+	{
+	    return null;
+	}
+@
+
+
+1.11
+log
+@*** empty log message ***
+@
+text
+@a307 14
+    static char charAt(cli.System.String s, int index)
+    {
+	try 
+	{
+	    return s.get_Chars(index);
+	}
+	// NOTE the System.IndexOutOfRangeException thrown by get_Chars, is translated by our
+	// exception handling code to an ArrayIndexOutOfBoundsException, so we catch that.
+	catch (ArrayIndexOutOfBoundsException x) 
+	{
+	    throw new StringIndexOutOfBoundsException();
+	}
+    }
+
+@
+
+
+1.10
+log
+@*** empty log message ***
+@
+text
+@d221 1
+a221 1
+	if (offset < 0 || count < 0 || offset + count > ascii.length)
+d239 1
+a239 1
+	if (offset < 0 || count < 0 || offset + count > data.length)
+d261 1
+a261 1
+	if (offset < 0 || count < 0 || offset + count > data.length)
+d300 1
+a300 1
+	if(toffset < 0)
+@
+
+
+1.9
+log
+@*** empty log message ***
+@
+text
+@d377 1
+a377 1
+	// Java allow fromIndex to be above the length of the string, .NET doesn't
+d398 6
+a403 1
+	// Java allow fromIndex to be above the length of the string, .NET doesn't
+d465 8
+a472 2
+	if (toffset < 0 || ooffset < 0 || toffset + len > s.length()
+	    || ooffset + len > other.length())
+d474 1
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@d345 1
+a345 1
+    static int indexOf(cli.System.String s, char ch, int fromIndex)
+d347 8
+d356 1
+a356 1
+	return s.IndexOf(ch, Math.max(0, Math.min(s.get_Length(), fromIndex)));
+d365 1
+a365 1
+    static int lastIndexOf(cli.System.String s, char ch, int fromIndex)
+d373 4
+d378 1
+a378 1
+	return s.LastIndexOf(ch, Math.min(len - 1, fromIndex));
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d293 1
+a293 1
+    static String substring(String s, int off, int end)
+d295 1
+a295 1
+	return cli.System.String.Substring(s, off, end - off);
+d298 1
+a298 1
+    static boolean startsWith(String s, String prefix, int toffset)
+d304 2
+a305 2
+	s = cli.System.String.Substring(s, Math.min(s.length(), toffset));
+	return cli.System.String.StartsWith(s, prefix);
+d308 1
+a308 1
+    static char charAt(String s, int index)
+d312 1
+a312 1
+	    return cli.System.String.get_Chars(s, index);
+d322 1
+a322 1
+    static void getChars(String s, int srcBegin, int srcEnd, char[] dst, int dstBegin) 
+d324 1
+a324 1
+	cli.System.String.CopyTo(s, srcBegin, dst, dstBegin, srcEnd - srcBegin);
+d328 1
+a328 1
+    static int GetCountField(String s)
+d330 1
+a330 1
+	return s.length();
+d334 1
+a334 1
+    static char[] GetValueField(String s)
+d336 1
+a336 1
+	return s.toCharArray();
+d340 1
+a340 1
+    static int GetOffsetField(String s)
+d345 1
+a345 1
+    static int indexOf(String s, char ch, int fromIndex)
+d348 1
+a348 1
+	return cli.System.String.IndexOf(s, ch, Math.max(0, Math.min(s.length(), fromIndex)));
+d351 1
+a351 1
+    static int indexOf(String s, String o, int fromIndex)
+d354 1
+a354 1
+	return cli.System.String.IndexOf(s, o, Math.max(0, Math.min(s.length(), fromIndex)));
+d357 1
+a357 1
+    static int lastIndexOf(String s, char ch, int fromIndex)
+d360 1
+a360 1
+	int len = s.length();
+d366 1
+a366 1
+	return cli.System.String.LastIndexOf(s, ch, Math.min(len - 1, fromIndex));
+d369 1
+a369 1
+    static int lastIndexOf(String s, String o)
+d371 1
+a371 1
+	return lastIndexOf(s, o, s.length());
+d374 1
+a374 1
+    static int lastIndexOf(String s, String o, int fromIndex)
+d377 1
+a377 1
+	int len = s.length();
+d387 1
+a387 1
+	return cli.System.String.LastIndexOf(s, o, Math.min(len - 1, fromIndex + o.length() - 1));
+d392 4
+a395 2
+	// null check
+	s1 = s1.toString();
+d498 1
+a498 1
+    static String valueOf(char c)
+d500 1
+a500 1
+	return cli.System.String.__new(c, 1);
+d528 1
+a528 1
+    static int hashCode(String s)
+d533 1
+a533 1
+	for(int i = 0; i < cli.System.String.get_Length(s); i++)
+d535 1
+a535 1
+	    h = h * 31 + cli.System.String.get_Chars(s, i);
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d529 3
+a531 2
+	int len = s.length();
+	for(int i = 0; i < len; i++)
+d533 1
+a533 1
+	    h = h *31 + cli.System.String.get_Chars(s, i);
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d46 1
+a46 1
+public final class StringHelper
+a47 1
+    private static final java.util.Comparator CASE_INSENSITIVE_ORDER = constructCaseInsensitiveOrder();
+d50 1
+a50 1
+    public static boolean equalsIgnoreCase(String s1, String s2)
+d70 1
+a70 1
+    public static int compareTo(String s1, String s2)
+d84 1
+a84 1
+    public static int compareToIgnoreCase(String s1, String s2)
+d97 1
+a97 1
+    public static String toLowerCase(String s)
+d102 1
+a102 1
+    public static String toLowerCase(String s, Locale loc)
+d127 1
+a127 1
+    public static String toUpperCase(String s)
+d132 1
+a132 1
+    public static String toUpperCase(String s, Locale loc)
+d219 1
+a219 1
+    public static String NewString(byte[] ascii, int hibyte, int offset, int count)
+d231 1
+a231 1
+    public static String NewString(byte[] ascii, int hibyte)
+d236 1
+a236 1
+    public static String NewString(byte[] data, int offset, int count, String encoding)
+d253 1
+a253 1
+    public static String NewString(byte[] data, String encoding)
+d259 1
+a259 1
+    public static String NewString(byte[] data, int offset, int count)
+d275 1
+a275 1
+    public static String NewString(byte[] data)
+d280 1
+a280 1
+    public static String NewString(char[] data, int offset, int count, boolean dont_copy)
+d285 1
+a285 1
+    public static String NewString(StringBuffer sb)
+d293 1
+a293 1
+    public static String substring(String s, int off, int end)
+d298 1
+a298 1
+    public static boolean startsWith(String s, String prefix, int toffset)
+d308 1
+a308 1
+    public static char charAt(String s, int index)
+d322 1
+a322 1
+    public static void getChars(String s, int srcBegin, int srcEnd, char[] dst, int dstBegin) 
+d345 1
+a345 1
+    public static int indexOf(String s, char ch, int fromIndex)
+d351 1
+a351 1
+    public static int indexOf(String s, String o, int fromIndex)
+d357 1
+a357 1
+    public static int lastIndexOf(String s, char ch, int fromIndex)
+d369 1
+a369 1
+    public static int lastIndexOf(String s, String o)
+d374 1
+a374 1
+    public static int lastIndexOf(String s, String o, int fromIndex)
+d390 1
+a390 1
+    public static String concat(String s1, String s2)
+d401 1
+a401 1
+    public static void getBytes(String s, int srcBegin, int srcEnd, byte dst[], int dstBegin)
+d410 1
+a410 1
+    public static byte[] getBytes(String s, String enc) throws UnsupportedEncodingException
+d424 1
+a424 1
+    public static byte[] getBytes(String s)
+d438 1
+a438 1
+    public static boolean regionMatches(String s, int toffset, String other, int ooffset, int len)
+d443 1
+a443 1
+    public static boolean regionMatches(String s, boolean ignoreCase, int toffset,
+d465 1
+a465 1
+    public static String trim(String s)
+d481 1
+a481 1
+    public static String valueOf(boolean b)
+d486 1
+a486 1
+    public static String valueOf(int i)
+d491 1
+a491 1
+    public static String valueOf(long l)
+d496 1
+a496 1
+    public static String valueOf(char c)
+d501 1
+a501 1
+    public static String valueOf(float f)
+d506 1
+a506 1
+    public static String valueOf(double d)
+d511 1
+a511 1
+    public static String valueOf(char[] c)
+d516 1
+a516 1
+    public static String valueOf(char[] c, int offset, int count)
+d521 1
+a521 1
+    public static String valueOf(Object o)
+d526 1
+a526 1
+    public static int hashCode(String s)
+a535 7
+
+    public static java.util.Comparator getCaseInsensitiveOrder()
+    {
+	return CASE_INSENSITIVE_ORDER;
+    }
+
+    private static native java.util.Comparator constructCaseInsensitiveOrder();
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d296 1
+a296 1
+	return ((system.String)(Object)s).Substring(off, end - off);
+d299 1
+a299 1
+    public static boolean startsWith(String si, String prefix, int toffset)
+d305 2
+a306 3
+	system.String s = (system.String)(Object)si;
+	s = (system.String)(Object)s.Substring(Math.min(s.get_Length(), toffset));
+	return s.StartsWith(prefix);
+d313 1
+a313 1
+	    return ((system.String)(Object)s).get_Chars(index);
+d325 1
+a325 1
+	((system.String)(Object)s).CopyTo(srcBegin, dst, dstBegin, srcEnd - srcBegin);
+d346 1
+a346 1
+    public static int indexOf(String si, char ch, int fromIndex)
+d349 1
+a349 2
+	system.String s = (system.String)(Object)si;
+	return s.IndexOf(ch, Math.max(0, Math.min(s.get_Length(), fromIndex)));
+d352 1
+a352 1
+    public static int indexOf(String si, String o, int fromIndex)
+d355 1
+a355 2
+	system.String s = (system.String)(Object)si;
+	return s.IndexOf(o, Math.max(0, Math.min(s.get_Length(), fromIndex)));
+d358 1
+a358 1
+    public static int lastIndexOf(String si, char ch, int fromIndex)
+a359 1
+	system.String s = (system.String)(Object)si;
+d361 1
+a361 1
+	int len = s.get_Length();
+d367 1
+a367 1
+	return s.LastIndexOf(ch, Math.min(len - 1, fromIndex));
+d375 1
+a375 1
+    public static int lastIndexOf(String si, String o, int fromIndex)
+a376 1
+	system.String s = (system.String)(Object)si;
+d378 1
+a378 1
+	int len = s.get_Length();
+d388 1
+a388 1
+	return s.LastIndexOf(o, Math.min(len - 1, fromIndex + o.length() - 1));
+d399 1
+a399 1
+	return system.String.Concat(s1, s2);
+d499 1
+a499 1
+	return new system.String(c, 1).ToString();
+a528 1
+	system.String ns = (system.String)(Object)s;
+d530 2
+a531 1
+	for(int i = 0; i < ns.get_Length(); i++)
+d533 1
+a533 1
+	    h = h *31 + ns.get_Chars(i);
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d294 113
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d286 8
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@d48 2
+a49 1
+	private StringHelper() {}
+d51 70
+a120 138
+	public static boolean equalsIgnoreCase(String s1, String s2)
+	{
+		int len = s1.length();
+		if(s2 == null || len != s2.length())
+		{
+			return false;
+		}
+		for(int i = 0; i < len; i++)
+		{
+			char c1 = s1.charAt(i);
+			char c2 = s2.charAt(i);
+			if(c1 != c2 && (Character.toUpperCase(c1) != Character.toUpperCase(c2)) &&
+				(Character.toLowerCase(c1) != Character.toLowerCase(c2)))
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
+	public static int compareTo(String s1, String s2)
+	{
+		int len = Math.min(s1.length(), s2.length());
+		for(int i = 0; i < len; i++)
+		{
+			int diff = s1.charAt(i) - s2.charAt(i);
+			if(diff != 0)
+			{
+				return diff;
+			}
+		}
+		return s1.length() - s2.length();
+	}
+
+	public static int compareToIgnoreCase(String s1, String s2)
+	{
+		int len = Math.min(s1.length(), s2.length());
+		for(int i = 0; i < len; i++)
+		{
+			int result = Character.toLowerCase(Character.toUpperCase(s1.charAt(i)))
+				- Character.toLowerCase(Character.toUpperCase(s2.charAt(i)));
+			if (result != 0)
+				return result;
+		}
+		return s1.length() - s2.length();
+	}
+
+	public static String toLowerCase(String s)
+	{
+		return toLowerCase(s, Locale.getDefault());
+	}
+
+	public static String toLowerCase(String s, Locale loc)
+	{
+		// First, see if the current string is already lower case.
+		boolean turkish = "tr".equals(loc.getLanguage());
+		int len = s.length();
+		for(int i = 0; i < len; i++)
+		{
+			char ch = s.charAt(i);
+			if((turkish && ch == '\u0049') || ch != Character.toLowerCase(ch))
+			{
+				// Now we perform the conversion. Fortunately, there are no multi-character
+				// lowercase expansions in Unicode 3.0.0.
+				char[] newStr = (char[])s.toCharArray();
+				for(; i < len; i++)
+				{
+					ch = newStr[i];
+					// Hardcoded special case.
+					newStr[i] = (turkish && ch == '\u0049') ? '\u0131' : Character.toLowerCase(ch);
+				}
+				return new String(newStr);
+			}
+		}
+		return s;
+	}
+
+	public static String toUpperCase(String s)
+	{
+		return toUpperCase(s, Locale.getDefault());
+	}
+
+	public static String toUpperCase(String s, Locale loc)
+	{
+		// First, see how many characters we have to grow by, as well as if the
+		// current string is already upper case.
+		boolean turkish = "tr".equals(loc.getLanguage());
+		int expand = 0;
+		boolean unchanged = true;
+		int i = s.length();
+		int x = i;
+		while (--i >= 0)
+		{
+			char ch = s.charAt(--x);
+			expand += upperCaseExpansion(ch);
+			unchanged = (unchanged && expand == 0
+				&& ! (turkish && ch == '\u0069')
+				&& ch == Character.toUpperCase(ch));
+		}
+		if (unchanged)
+			return s;
+
+		// Now we perform the conversion.
+		i = s.length();
+		if (expand == 0)
+		{
+			char[] newStr = s.toCharArray();
+			while (--i >= 0)
+			{
+				char ch = s.charAt(x);
+				// Hardcoded special case.
+				newStr[x++] = (turkish && ch == '\u0069') ? '\u0130'
+					: Character.toUpperCase(ch);
+			}
+			return new String(newStr);
+		}
+
+		// Expansion is necessary.
+		char[] newStr = new char[s.length() + expand];
+		int j = 0;
+		while (--i >= 0)
+		{
+			char ch = s.charAt(x++);
+			// Hardcoded special case.
+			if (turkish && ch == '\u0069')
+			{
+				newStr[j++] = '\u0130';
+				continue;
+			}
+			expand = upperCaseExpansion(ch);
+			if (expand > 0)
+			{
+				int index = upperCaseIndex(ch);
+				while (expand-- >= 0)
+					newStr[j++] = upperExpand[index++];
+			}
+			else
+				newStr[j++] = Character.toUpperCase(ch);
+d123 1
+d125 2
+d128 298
+a425 115
+	private static int upperCaseExpansion(char ch)
+	{
+		return Character.direction[Character.readChar(ch) >> 7] & 3;
+	}
+
+	private static int upperCaseIndex(char ch)
+	{
+		// Simple binary search for the correct character.
+		int low = 0;
+		int hi = upperSpecial.length - 2;
+		int mid = ((low + hi) >> 2) << 1;
+		char c = upperSpecial[mid];
+		while (ch != c)
+		{
+			if (ch < c)
+				hi = mid - 2;
+			else
+				low = mid + 2;
+			mid = ((low + hi) >> 2) << 1;
+			c = upperSpecial[mid];
+		}
+		return upperSpecial[mid + 1];
+	}
+
+	private static final char[] upperExpand = CharData.UPPER_EXPAND.toCharArray();
+	private static final char[] upperSpecial = CharData.UPPER_SPECIAL.toCharArray();
+
+	public static String NewString(byte[] ascii, int hibyte, int offset, int count)
+	{
+		if (offset < 0 || count < 0 || offset + count > ascii.length)
+			throw new StringIndexOutOfBoundsException();
+		char[] value = new char[count];
+		hibyte <<= 8;
+		offset += count;
+		while (--count >= 0)
+			value[count] = (char) (hibyte | (ascii[--offset] & 0xff));
+		return new String(value);
+	}
+
+	public static String NewString(byte[] ascii, int hibyte)
+	{
+		return NewString(ascii, hibyte, 0, ascii.length);
+	}
+
+	public static String NewString(byte[] data, int offset, int count, String encoding)
+		throws UnsupportedEncodingException
+	{
+		if (offset < 0 || count < 0 || offset + count > data.length)
+			throw new StringIndexOutOfBoundsException();
+		try
+		{
+			// XXX Consider using java.nio here.
+			return new String(EncodingManager.getDecoder(encoding)
+				.convertToChars(data, offset, count));
+		}
+		catch (CharConversionException cce)
+		{
+			throw new Error(cce);
+		}
+	}
+
+	public static String NewString(byte[] data, String encoding)
+		throws UnsupportedEncodingException
+	{
+		return NewString(data, 0, data.length, encoding);
+	}
+
+	public static String NewString(byte[] data, int offset, int count)
+	{
+		if (offset < 0 || count < 0 || offset + count > data.length)
+			throw new StringIndexOutOfBoundsException();
+		try
+		{
+			// XXX Consider using java.nio here.
+			return new String(EncodingManager.getDecoder()
+				.convertToChars(data, offset, count));
+		}
+		catch (CharConversionException cce)
+		{
+			throw new Error(cce);
+		}
+	}
+
+	public static String NewString(byte[] data)
+	{
+		return NewString(data, 0, data.length);
+	}
+
+	public static String NewString(char[] data, int offset, int count, boolean dont_copy)
+	{
+		return new String(data, offset, count);
+	}
+
+	public static void getBytes(String s, int srcBegin, int srcEnd, byte dst[], int dstBegin)
+	{
+		if (srcBegin < 0 || srcBegin > srcEnd || srcEnd > s.length())
+			throw new StringIndexOutOfBoundsException();
+		int i = srcEnd - srcBegin;
+		while (--i >= 0)
+			dst[dstBegin++] = (byte)s.charAt(srcBegin++);
+	}
+
+	public static byte[] getBytes(String s, String enc) throws UnsupportedEncodingException
+	{
+		try
+		{
+			// XXX Consider using java.nio here.
+			return EncodingManager.getEncoder(enc)
+				.convertToBytes(s.toCharArray());
+		}
+		catch (CharConversionException e)
+		{
+			return null;
+		}
+	}
+d427 1
+a427 56
+	public static byte[] getBytes(String s)
+	{
+		try
+		{
+			// XXX Consider using java.nio here.
+			return EncodingManager.getEncoder()
+				.convertToBytes(s.toCharArray());
+		}
+		catch (CharConversionException e)
+		{
+			return null;
+		}
+	}
+
+	public static boolean regionMatches(String s, int toffset, String other, int ooffset, int len)
+	{
+		return regionMatches(s, false, toffset, other, ooffset, len);
+	}
+
+	public static boolean regionMatches(String s, boolean ignoreCase, int toffset,
+		String other, int ooffset, int len)
+	{
+		if (toffset < 0 || ooffset < 0 || toffset + len > s.length()
+			|| ooffset + len > other.length())
+			return false;
+		while (--len >= 0)
+		{
+			char c1 = s.charAt(toffset++);
+			char c2 = other.charAt(ooffset++);
+			// Note that checking c1 != c2 is redundant when ignoreCase is true,
+			// but it avoids method calls.
+			if (c1 != c2
+				&& (! ignoreCase
+				|| (Character.toLowerCase(c1) != Character.toLowerCase(c2)
+				&& (Character.toUpperCase(c1)
+				!= Character.toUpperCase(c2)))))
+				return false;
+		}
+		return true;
+	}
+
+	public static String trim(String s)
+	{
+		int limit = s.length();
+		if (limit == 0 || (s.charAt(0) > '\u0020'
+			&& s.charAt(limit - 1) > '\u0020'))
+			return s;
+		int begin = 0;
+		do
+			if (begin == limit)
+				return "";
+		while (s.charAt(begin++) <= '\u0020');
+		int end = limit;
+		while (s.charAt(--end) <= '\u0020');
+		return s.substring(begin - 1, end + 1);
+	}
+@
+

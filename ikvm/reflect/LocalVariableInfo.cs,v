@@ -1,0 +1,270 @@
+head	1.6;
+access;
+symbols
+	v8_1_5717_0:1.6
+	v8_1:1.6.0.8
+	v8_0_5449_1:1.6
+	v8_0_5449_0:1.6
+	v8_0:1.6.0.6
+	v7_4_5196_0:1.6
+	v7_4:1.6.0.4
+	v7_3:1.6.0.2
+	v7_2_4630_6:1.4.4.1
+	v7_2_4630_5:1.4.4.1
+	v7_2_4630_4:1.4.4.1
+	v7_2_4630_3:1.4.4.1
+	v7_2_4630_2:1.4
+	v0_46_0_4:1.3
+	v7_2_4630_1:1.4
+	v7_2:1.4.0.4
+	v7_1_4532_2:1.4
+	v7_1_4532_1:1.4
+	v7_1_4532_0:1.4
+	v7_1:1.4.0.2
+	v7_0_4335_3:1.3
+	v7_0_4335_2:1.3
+	v7_0_4335_1:1.3
+	v0_46_0_2:1.3
+	v7_0_4335_0:1.3
+	v7_0:1.3.0.4
+	v0_46_0_1:1.3
+	v0_46_0_0:1.3
+	v0_46:1.3.0.2
+	v0_44_0_6:1.2
+	v0_44_0_5:1.2
+	v0_44_0_4:1.2
+	v0_44_0_3:1.2
+	v0_44_0_2:1.2
+	v0_44_0_1:1.2
+	v0_44_0_0:1.2
+	v0_44:1.2.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.6
+date	2012.10.19.20.12.36;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2012.10.18.23.04.09;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2011.12.01.09.47.21;	author jfrijters;	state Exp;
+branches
+	1.4.4.1;
+next	1.3;
+
+1.3
+date	2011.01.13.05.58.54;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.4.4.1
+date	2012.10.23.08.15.53;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.6
+log
+@Bug fix. LocalBuilder should extend LocalVariableInfo.
+@
+text
+@/*
+  Copyright (C) 2009-2011 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+
+namespace IKVM.Reflection
+{
+	public class LocalVariableInfo
+	{
+		private readonly int index;
+		private readonly Type type;
+		private readonly bool pinned;
+		private readonly CustomModifiers customModifiers;
+
+		internal LocalVariableInfo(int index, Type type, bool pinned)
+		{
+			this.index = index;
+			this.type = type;
+			this.pinned = pinned;
+		}
+
+		internal LocalVariableInfo(int index, Type type, bool pinned, CustomModifiers customModifiers)
+			: this(index, type, pinned)
+		{
+			this.customModifiers = customModifiers;
+		}
+
+		public bool IsPinned
+		{
+			get { return pinned; }
+		}
+
+		public int LocalIndex
+		{
+			get { return index; }
+		}
+
+		public Type LocalType
+		{
+			get { return type; }
+		}
+
+		public CustomModifiers __GetCustomModifiers()
+		{
+			return customModifiers;
+		}
+
+		public override string ToString()
+		{
+			return String.Format(pinned ? "{0} ({1}) (pinned)" : "{0} ({1})", type, index);
+		}
+	}
+}
+@
+
+
+1.5
+log
+@Implemented LocalVariableInfo.ToString().
+@
+text
+@d28 1
+a28 1
+	public sealed class LocalVariableInfo
+d35 1
+a35 1
+		internal LocalVariableInfo(int index, Type type, bool pinned, CustomModifiers customModifiers)
+d40 5
+@
+
+
+1.4
+log
+@- Added custom modifier support in local variable signatures.
+- Fixed SignatureHelper to support custom modifiers in method signatures.
+@
+text
+@d62 5
+@
+
+
+1.4.4.1
+log
+@Backported fixes for rc 3.
+- Bug fix. Off-by-one error in local ref index reusing. Fix for bug #3575555.
+- Bug fix. Don't try to inject DynamicMethod in array types (applies to array.clone() method for MethodHandles).
+- IKVM.Reflection: Bug fix. ModuleReader.ResolveMember() should support types. Thanks to Jb Evain for finding this.
+- IKVM.Reflection: Bug fix. While reading the Cecil source I realized that array bounds are signed.
+- IKVM.Reflection: Bug fix. LocalBuilder should extend LocalVariableInfo.
+- IKVM.Reflection: Implemented LocalVariableInfo.ToString().
+@
+text
+@d28 1
+a28 1
+	public class LocalVariableInfo
+d35 1
+a35 1
+		internal LocalVariableInfo(int index, Type type, bool pinned)
+a39 5
+		}
+
+		internal LocalVariableInfo(int index, Type type, bool pinned, CustomModifiers customModifiers)
+			: this(index, type, pinned)
+		{
+a61 5
+
+		public override string ToString()
+		{
+			return String.Format(pinned ? "{0} ({1}) (pinned)" : "{0} ({1})", type, index);
+		}
+@
+
+
+1.3
+log
+@Prevent external subclassing. It's not part of the design to suppor that, now it is also enforced.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Jeroen Frijters
+d33 1
+d35 1
+a35 1
+		internal LocalVariableInfo(int index, Type type, bool pinned)
+d40 1
+d57 5
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d28 1
+a28 1
+	public class LocalVariableInfo
+d41 1
+a41 1
+		public virtual bool IsPinned
+d46 1
+a46 1
+		public virtual int LocalIndex
+d51 1
+a51 1
+		public virtual Type LocalType
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

@@ -1,0 +1,488 @@
+head	1.8;
+access;
+symbols
+	v8_1_5717_0:1.8
+	v8_1:1.8.0.8
+	v8_0_5449_1:1.8
+	v8_0_5449_0:1.8
+	v8_0:1.8.0.6
+	v7_4_5196_0:1.8
+	v7_4:1.8.0.4
+	v7_3:1.8.0.2
+	v7_2_4630_6:1.7.4.1
+	v7_2_4630_5:1.7.4.1
+	v7_2_4630_4:1.7.4.1
+	v7_2_4630_3:1.7.4.1
+	v7_2_4630_2:1.7
+	v0_46_0_4:1.4
+	v7_2_4630_1:1.7
+	v7_2:1.7.0.4
+	v7_1_4532_2:1.7
+	v7_1_4532_1:1.7
+	v7_1_4532_0:1.7
+	v7_1:1.7.0.2
+	v7_0_4335_3:1.5
+	v7_0_4335_2:1.5
+	v7_0_4335_1:1.5
+	v0_46_0_2:1.4
+	v7_0_4335_0:1.5
+	v7_0:1.5.0.2
+	v0_46_0_1:1.4
+	v0_46_0_0:1.4
+	v0_46:1.4.0.4
+	v0_44_0_6:1.4
+	v0_44_0_5:1.4
+	v0_44_0_4:1.4
+	v0_44_0_3:1.4
+	v0_44_0_2:1.4
+	v0_44_0_1:1.4
+	v0_44_0_0:1.4
+	v0_44:1.4.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.8
+date	2012.10.13.20.12.32;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2012.04.10.13.03.09;	author jfrijters;	state Exp;
+branches
+	1.7.4.1;
+next	1.6;
+
+1.6
+date	2011.12.01.06.30.50;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2011.03.10.10.49.17;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.04.20.12.52.05;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.02.26.09.26.20;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.7.4.1
+date	2012.10.23.08.15.53;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.8
+log
+@Renamed methods that deal with unsigned compressed integers to *CompressedUInt instead of *CompressedInt.
+@
+text
+@/*
+  Copyright (C) 2009-2011 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using IKVM.Reflection.Emit;
+using IKVM.Reflection.Writer;
+using IKVM.Reflection.Reader;
+
+namespace IKVM.Reflection
+{
+	sealed class PropertySignature : Signature
+	{
+		private CallingConventions callingConvention;
+		private readonly Type propertyType;
+		private readonly Type[] parameterTypes;
+		private readonly PackedCustomModifiers customModifiers;
+
+		internal static PropertySignature Create(CallingConventions callingConvention, Type propertyType, Type[] parameterTypes, PackedCustomModifiers customModifiers)
+		{
+			return new PropertySignature(callingConvention, propertyType, Util.Copy(parameterTypes), customModifiers);
+		}
+
+		private PropertySignature(CallingConventions callingConvention, Type propertyType, Type[] parameterTypes, PackedCustomModifiers customModifiers)
+		{
+			this.callingConvention = callingConvention;
+			this.propertyType = propertyType;
+			this.parameterTypes = parameterTypes;
+			this.customModifiers = customModifiers;
+		}
+
+		public override bool Equals(object obj)
+		{
+			PropertySignature other = obj as PropertySignature;
+			return other != null
+				&& other.propertyType.Equals(propertyType)
+				&& other.customModifiers.Equals(customModifiers);
+		}
+
+		public override int GetHashCode()
+		{
+			return propertyType.GetHashCode() ^ customModifiers.GetHashCode();
+		}
+
+		internal int ParameterCount
+		{
+			get { return parameterTypes.Length; }
+		}
+
+		internal bool HasThis
+		{
+			set
+			{
+				if (value)
+				{
+					callingConvention |= CallingConventions.HasThis;
+				}
+				else
+				{
+					callingConvention &= ~CallingConventions.HasThis;
+				}
+			}
+		}
+
+		internal Type PropertyType
+		{
+			get { return propertyType; }
+		}
+
+		internal CustomModifiers GetCustomModifiers()
+		{
+			return customModifiers.GetReturnTypeCustomModifiers();
+		}
+
+		internal PropertySignature ExpandTypeParameters(Type declaringType)
+		{
+			return new PropertySignature(
+				callingConvention,
+				propertyType.BindTypeParameters(declaringType),
+				BindTypeParameters(declaringType, parameterTypes),
+				customModifiers.Bind(declaringType));
+		}
+
+		internal override void WriteSig(ModuleBuilder module, ByteBuffer bb)
+		{
+			byte flags = PROPERTY;
+			if ((callingConvention & CallingConventions.HasThis) != 0)
+			{
+				flags |= HASTHIS;
+			}
+			if ((callingConvention & CallingConventions.ExplicitThis) != 0)
+			{
+				flags |= EXPLICITTHIS;
+			}
+			if ((callingConvention & CallingConventions.VarArgs) != 0)
+			{
+				flags |= VARARG;
+			}
+			bb.Write(flags);
+			bb.WriteCompressedUInt(parameterTypes == null ? 0 : parameterTypes.Length);
+			WriteCustomModifiers(module, bb, customModifiers.GetReturnTypeCustomModifiers());
+			WriteType(module, bb, propertyType);
+			if (parameterTypes != null)
+			{
+				for (int i = 0; i < parameterTypes.Length; i++)
+				{
+					WriteCustomModifiers(module, bb, customModifiers.GetParameterCustomModifiers(i));
+					WriteType(module, bb, parameterTypes[i]);
+				}
+			}
+		}
+
+		internal Type GetParameter(int parameter)
+		{
+			return parameterTypes[parameter];
+		}
+
+		internal CustomModifiers GetParameterCustomModifiers(int parameter)
+		{
+			return customModifiers.GetParameterCustomModifiers(parameter);
+		}
+
+		internal CallingConventions CallingConvention
+		{
+			get { return callingConvention; }
+		}
+
+		internal bool MatchParameterTypes(Type[] types)
+		{
+			return Util.ArrayEquals(types, parameterTypes);
+		}
+
+		internal static PropertySignature ReadSig(ModuleReader module, ByteReader br, IGenericContext context)
+		{
+			byte flags = br.ReadByte();
+			if ((flags & PROPERTY) == 0)
+			{
+				throw new BadImageFormatException();
+			}
+			CallingConventions callingConvention = CallingConventions.Standard;
+			if ((flags & HASTHIS) != 0)
+			{
+				callingConvention |= CallingConventions.HasThis;
+			}
+			if ((flags & EXPLICITTHIS) != 0)
+			{
+				callingConvention |= CallingConventions.ExplicitThis;
+			}
+			Type returnType;
+			Type[] parameterTypes;
+			int paramCount = br.ReadCompressedUInt();
+			CustomModifiers[] mods = null;
+			PackedCustomModifiers.Pack(ref mods, 0, CustomModifiers.Read(module, br, context), paramCount + 1);
+			returnType = ReadRetType(module, br, context);
+			parameterTypes = new Type[paramCount];
+			for (int i = 0; i < parameterTypes.Length; i++)
+			{
+				PackedCustomModifiers.Pack(ref mods, i + 1, CustomModifiers.Read(module, br, context), paramCount + 1);
+				parameterTypes[i] = ReadParam(module, br, context);
+			}
+			return new PropertySignature(callingConvention, returnType, parameterTypes, PackedCustomModifiers.Wrap(mods));
+		}
+	}
+}
+@
+
+
+1.7
+log
+@Added Binder support for method and property lookup.
+@
+text
+@d122 1
+a122 1
+			bb.WriteCompressedInt(parameterTypes == null ? 0 : parameterTypes.Length);
+d173 1
+a173 1
+			int paramCount = br.ReadCompressedInt();
+@
+
+
+1.7.4.1
+log
+@Backported fixes for rc 3.
+- Bug fix. Off-by-one error in local ref index reusing. Fix for bug #3575555.
+- Bug fix. Don't try to inject DynamicMethod in array types (applies to array.clone() method for MethodHandles).
+- IKVM.Reflection: Bug fix. ModuleReader.ResolveMember() should support types. Thanks to Jb Evain for finding this.
+- IKVM.Reflection: Bug fix. While reading the Cecil source I realized that array bounds are signed.
+- IKVM.Reflection: Bug fix. LocalBuilder should extend LocalVariableInfo.
+- IKVM.Reflection: Implemented LocalVariableInfo.ToString().
+@
+text
+@d122 1
+a122 1
+			bb.WriteCompressedUInt(parameterTypes == null ? 0 : parameterTypes.Length);
+d173 1
+a173 1
+			int paramCount = br.ReadCompressedUInt();
+@
+
+
+1.6
+log
+@- Rewrote custom modifier handling to retain ordering.
+- Added ConstructorInfo.__ReturnParameter to expose custom modifiers.
+- Added __GetCustomModifiers() to various *Info types.
+- Added CustomModifiers type to encapsulate a custom modifier sequence.
+- Added CustomModifiersBuilder to create a CustomModifiers sequence.
+- Marked a number of IKVM.Reflection specific methods Obsolete, because they are replaced with method that take CustomModifiers value(s).
+@
+text
+@d150 5
+@
+
+
+1.5
+log
+@Added API extension to expose property calling convention.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Jeroen Frijters
+a37 2
+		private readonly Type[] optionalCustomModifiers;
+		private readonly Type[] requiredCustomModifiers;
+d39 1
+a39 2
+		private readonly Type[][] parameterOptionalCustomModifiers;
+		private readonly Type[][] parameterRequiredCustomModifiers;
+d41 1
+a41 1
+		internal static PropertySignature Create(CallingConventions callingConvention, Type propertyType, Type[] optionalCustomModifiers, Type[] requiredCustomModifiers, Type[] parameterTypes, Type[][] parameterTypeOptionalCustomModifiers, Type[][] parameterTypeRequiredCustomModifiers)
+d43 1
+a43 1
+			return new PropertySignature(callingConvention, propertyType, Util.Copy(optionalCustomModifiers), Util.Copy(requiredCustomModifiers), Util.Copy(parameterTypes), Util.Copy(parameterTypeOptionalCustomModifiers), Util.Copy(parameterTypeRequiredCustomModifiers));
+d46 1
+a46 1
+		private PropertySignature(CallingConventions callingConvention, Type propertyType, Type[] optionalCustomModifiers, Type[] requiredCustomModifiers, Type[] parameterTypes, Type[][] parameterTypeOptionalCustomModifiers, Type[][] parameterTypeRequiredCustomModifiers)
+a49 2
+			this.optionalCustomModifiers = optionalCustomModifiers;
+			this.requiredCustomModifiers = requiredCustomModifiers;
+d51 1
+a51 2
+			this.parameterOptionalCustomModifiers = parameterTypeOptionalCustomModifiers;
+			this.parameterRequiredCustomModifiers = parameterTypeRequiredCustomModifiers;
+d59 1
+a59 2
+				&& Util.ArrayEquals(other.optionalCustomModifiers, optionalCustomModifiers)
+				&& Util.ArrayEquals(other.requiredCustomModifiers, requiredCustomModifiers);
+d64 1
+a64 1
+			return propertyType.GetHashCode() ^ Util.GetHashCode(optionalCustomModifiers) ^ Util.GetHashCode(requiredCustomModifiers);
+d92 1
+a92 1
+		internal Type[] GetOptionalCustomModifiers()
+d94 1
+a94 6
+			return Util.Copy(optionalCustomModifiers);
+		}
+
+		internal Type[] GetRequiredCustomModifiers()
+		{
+			return Util.Copy(requiredCustomModifiers);
+a101 2
+				BindTypeParameters(declaringType, optionalCustomModifiers),
+				BindTypeParameters(declaringType, requiredCustomModifiers),
+d103 1
+a103 2
+				BindTypeParameters(declaringType, parameterOptionalCustomModifiers),
+				BindTypeParameters(declaringType, parameterRequiredCustomModifiers));
+d123 1
+a123 2
+			WriteCustomModifiers(module, bb, ELEMENT_TYPE_CMOD_REQD, requiredCustomModifiers);
+			WriteCustomModifiers(module, bb, ELEMENT_TYPE_CMOD_OPT, optionalCustomModifiers);
+d129 1
+a129 8
+					if (parameterRequiredCustomModifiers != null)
+					{
+						WriteCustomModifiers(module, bb, ELEMENT_TYPE_CMOD_REQD, parameterRequiredCustomModifiers[i]);
+					}
+					if (parameterOptionalCustomModifiers != null)
+					{
+						WriteCustomModifiers(module, bb, ELEMENT_TYPE_CMOD_OPT, parameterOptionalCustomModifiers[i]);
+					}
+d140 1
+a140 6
+		internal Type[] GetOptionalCustomModifiers(int parameter)
+		{
+			return parameterOptionalCustomModifiers == null ? Type.EmptyTypes : parameterOptionalCustomModifiers[parameter];
+		}
+
+		internal Type[] GetRequiredCustomModifiers(int parameter)
+d142 1
+a142 1
+			return parameterRequiredCustomModifiers == null ? Type.EmptyTypes : parameterRequiredCustomModifiers[parameter];
+a166 2
+			Type[] returnTypeRequiredCustomModifiers;
+			Type[] returnTypeOptionalCustomModifiers;
+a167 2
+			Type[][] parameterRequiredCustomModifiers;
+			Type[][] parameterOptionalCustomModifiers;
+d169 2
+a170 1
+			ReadCustomModifiers(module, br, context, out returnTypeRequiredCustomModifiers, out returnTypeOptionalCustomModifiers);
+a172 2
+			parameterRequiredCustomModifiers = null;
+			parameterOptionalCustomModifiers = null;
+d175 1
+a175 9
+				if (IsCustomModifier(br.PeekByte()))
+				{
+					if (parameterOptionalCustomModifiers == null)
+					{
+						parameterOptionalCustomModifiers = new Type[parameterTypes.Length][];
+						parameterRequiredCustomModifiers = new Type[parameterTypes.Length][];
+					}
+					ReadCustomModifiers(module, br, context, out parameterRequiredCustomModifiers[i], out parameterOptionalCustomModifiers[i]);
+				}
+d178 1
+a178 2
+			return new PropertySignature(callingConvention, returnType, returnTypeOptionalCustomModifiers, returnTypeRequiredCustomModifiers,
+				parameterTypes, parameterOptionalCustomModifiers, parameterRequiredCustomModifiers);
+@
+
+
+1.4
+log
+@required/optional modifier arguments were in incorrect order.
+@
+text
+@d173 5
+@
+
+
+1.3
+log
+@Made property and event public/static flag handling compatible with .NET
+@
+text
+@d210 1
+a210 1
+					ReadCustomModifiers(module, br, context, out parameterOptionalCustomModifiers[i], out parameterRequiredCustomModifiers[i]);
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@a80 1
+			get { return (callingConvention & CallingConventions.HasThis) != 0; }
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

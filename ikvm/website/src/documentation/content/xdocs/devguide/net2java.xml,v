@@ -1,0 +1,202 @@
+head	1.3;
+access;
+symbols
+	v8_1_5717_0:1.3
+	v8_1:1.3.0.18
+	v8_0_5449_1:1.3
+	v8_0_5449_0:1.3
+	v8_0:1.3.0.16
+	v7_4_5196_0:1.3
+	v7_4:1.3.0.14
+	v7_3:1.3.0.12
+	v7_2_4630_6:1.3
+	v7_2_4630_5:1.3
+	v7_2_4630_4:1.3
+	v7_2_4630_3:1.3
+	v7_2_4630_2:1.3
+	v0_46_0_4:1.3
+	v7_2_4630_1:1.3
+	v7_2:1.3.0.10
+	v7_1_4532_2:1.3
+	v7_1_4532_1:1.3
+	v7_1_4532_0:1.3
+	v7_1:1.3.0.8
+	v7_0_4335_3:1.3
+	v7_0_4335_2:1.3
+	v7_0_4335_1:1.3
+	v0_46_0_2:1.3
+	v7_0_4335_0:1.3
+	v7_0:1.3.0.6
+	v0_40_0_6:1.2
+	v0_40_0_5:1.2
+	v0_46_0_1:1.3
+	v0_46_0_0:1.3
+	v0_46:1.3.0.4
+	v0_36_0_14:1.1
+	v0_44_0_6:1.3
+	v0_44_0_5:1.3
+	v0_44_0_4:1.3
+	v0_44_0_3:1.3
+	v0_44_0_2:1.3
+	v0_42_0_7:1.2
+	v0_44_0_1:1.3
+	v0_44_0_0:1.3
+	v0_44:1.3.0.2
+	v0_42_0_6:1.2
+	v0_42_0_5:1.2
+	v0_42_0_4:1.2
+	v0_42_0_3:1.2
+	v0_42_0_2:1.2
+	v0_42_0_1:1.2
+	v0_42_0_0:1.2
+	v0_42:1.2.0.6
+	v0_40_0_3:1.2
+	v0_40_0_2:1.2
+	v0_40_0_1:1.2
+	v0_40_0_0:1.2
+	v0_40:1.2.0.4
+	v0_36_0_13:1.1
+	v0_38_0_1:1.2
+	v0_38_0_0:1.2
+	v0_38:1.2.0.2
+	v0_36_0_9:1.1
+	v0_36_0_7:1.1
+	v0_36_0_5:1.1
+	v0_36_0_4:1.1
+	v0_36_0_3:1.1
+	v0_36_0_2:1.1
+	v0_36_0_1:1.1
+	v0_36_0_0:1.1
+	v0_36:1.1.0.8
+	v0_34_0_3:1.1
+	v0_34_0_2:1.1
+	v0_34_0_1:1.1
+	v0_34_0_0:1.1
+	v0_34:1.1.0.6
+	v0_32:1.1.0.4
+	v0_32_0_0:1.1
+	v0_30:1.1.0.2
+	v0_28_0_0:1.1
+	v0_26_0_1:1.1
+	v0_26_0_0:1.1
+	v0_24_0_1:1.1
+	v0_24_0_0:1.1
+	v0_22_0_0:1.1
+	v0_20_0_0:1.1
+	v0_18_0_0:1.1
+	v0_16_0_0:1.1
+	v0_14_0_1:1.1
+	v0_14_0_0:1.1
+	v0_12_0_0:1.1
+	v0_10_0_1:1.1
+	v0_10_0_0:1.1;
+locks; strict;
+comment	@# @;
+
+
+1.3
+date	2010.01.11.07.06.20;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.07.21.12.17.18;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2004.06.29.12.59.30;	author sschaub;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.3
+log
+@Moved User Guide content to wiki.
+@
+text
+@<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.2//EN" "http://apache.org/forrest/dtd/document-v12.dtd">
+<document> 
+  <header> 
+    <title>Using Java API's in .NET Applications</title> 
+     <abstract>This section discusses information of interest to developers
+       who want to use Java API's in their .NET applications. </abstract>
+  </header> 
+  <body> 
+
+   <section>
+      <title>Overview</title>
+      
+      <p>IKVM makes it possible to develop .NET applications that use Java API's. Here's how to proceed:</p>
+      <ol>
+        <li>IKVM comes with an implementation of the Java class libraries in .NET. To use those API's, simply add
+        a reference to IKVM.OpenJDK.ClassLibrary.dll to your Mono / .NET IDE project. </li>
+        <li>To use other Java API's, you can take one of the following approaches:
+            <ul>
+               <li>Convert the Java API to .NET CIL using <link href="ext:ikvmc">ikvmc</link>.
+                       This produces a .NET dll that you can reference in your project. </li>
+                <li>Use the Java reflection API's to dynamically load and execute the Java bytecode using the
+                        IKVM bytecode interpreter.
+                        For example, your application can load Java bytecode over a network connection
+                        and execute it dynamically.</li>
+            </ul>
+        </li>
+      </ol>
+      
+    </section>
+
+    <section>
+      <title>Java / .NET Interoperability Issues</title>
+      
+      <p>When calling Java API's from a .NET language such as C#, you will need to know 
+      how to deal with the gap between the .NET and Java object models. For example, Java and .NET
+      both have their own String class, primitive wrapper classes, exception hierarchy, and so on. 
+      Eventually, that information will be included in this manual. For now, you can use the following
+      as resources:</p>
+      
+      <ul>
+        <li>The <link href="http://weblog.ikvm.net">IKVM WebLog</link> has several
+          helpful entries. The series from February 29 - March 10 describe the object model.</li>
+        <li>The hodgepodge sample in the <link href="site:download">sample distribution</link>
+        is a simple demonstration of using Java API's from a C# application.</li>
+        <li>The IKVM source code is the ultimate reference, of course. </li>
+      </ul>
+    </section>
+    
+    <section>
+      <title>Subclassing Java Code</title>
+      <p>See IKVM Weblog Article: March 9</p>
+    </section>
+    
+  </body>
+</document>
+@
+
+
+1.2
+log
+@Website updates.
+@
+text
+@d20 1
+a20 1
+               <li>Convert the Java API to .NET CIL using <link href="site:ikvmc">ikvmc</link>.
+@
+
+
+1.1
+log
+@Initial website commit
+@
+text
+@d16 2
+a17 2
+        <li>IKVM comes with an implementation of GNU Classpath in .NET. To use those API's, simply add
+        a reference to IKVM.GNU.Classpath.dll to your Mono / .NET IDE project. </li>
+@
+

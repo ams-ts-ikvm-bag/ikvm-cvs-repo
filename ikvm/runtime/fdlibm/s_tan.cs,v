@@ -1,0 +1,168 @@
+head	1.2;
+access;
+symbols
+	v8_1_5717_0:1.2
+	v8_1:1.2.0.16
+	v8_0_5449_1:1.2
+	v8_0_5449_0:1.2
+	v8_0:1.2.0.14
+	v7_4_5196_0:1.2
+	v7_4:1.2.0.12
+	v7_3:1.2.0.10
+	v7_2_4630_6:1.2
+	v7_2_4630_5:1.2
+	v7_2_4630_4:1.2
+	v7_2_4630_3:1.2
+	v7_2_4630_2:1.2
+	v0_46_0_4:1.2
+	v7_2_4630_1:1.2
+	v7_2:1.2.0.8
+	v7_1_4532_2:1.2
+	v7_1_4532_1:1.2
+	v7_1_4532_0:1.2
+	v7_1:1.2.0.6
+	v7_0_4335_3:1.2
+	v7_0_4335_2:1.2
+	v7_0_4335_1:1.2
+	v0_46_0_2:1.2
+	v7_0_4335_0:1.2
+	v7_0:1.2.0.4
+	v0_46_0_1:1.2
+	v0_46_0_0:1.2
+	v0_46:1.2.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.2
+date	2010.12.10.06.31.08;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.12.10.06.28.00;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@Ported fdlibm/floor and fdlibm/tan (and dependencies).
+@
+text
+@
+
+/*
+ * Copyright (c) 1998, 2001, Oracle and/or its affiliates. All rights reserved.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 only, as
+ * published by the Free Software Foundation.  Oracle designates this
+ * particular file as subject to the "Classpath" exception as provided
+ * by Oracle in the LICENSE file that accompanied this code.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * You should have received a copy of the GNU General Public License version
+ * 2 along with this work; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+ * or visit www.oracle.com if you need additional information or have any
+ * questions.
+ */
+
+/* tan(x)
+ * Return tangent function of x.
+ *
+ * kernel function:
+ *      __kernel_tan            ... tangent function on [-pi/4,pi/4]
+ *      __ieee754_rem_pio2      ... argument reduction routine
+ *
+ * Method.
+ *      Let S,C and T denote the sin, cos and tan respectively on
+ *      [-PI/4, +PI/4]. Reduce the argument x to y1+y2 = x-k*pi/2
+ *      in [-pi/4 , +pi/4], and let n = k mod 4.
+ *      We have
+ *
+ *          n        sin(x)      cos(x)        tan(x)
+ *     ----------------------------------------------------------
+ *          0          S           C             T
+ *          1          C          -S            -1/T
+ *          2         -S          -C             T
+ *          3         -C           S            -1/T
+ *     ----------------------------------------------------------
+ *
+ * Special cases:
+ *      Let trig be any of sin, cos, or tan.
+ *      trig(+-INF)  is NaN, with signals;
+ *      trig(NaN)    is that NaN;
+ *
+ * Accuracy:
+ *      TRIG(x) returns trig(x) nearly rounded
+ */
+
+static partial class fdlibm
+{
+	internal static
+        double tan(double x)
+{
+        double z=0.0;
+        int n, ix;
+
+    /* High word of x. */
+        ix = __HI(x);
+
+    /* |x| ~< pi/4 */
+        ix &= 0x7fffffff;
+        if(ix <= 0x3fe921fb) return __kernel_tan(x,z,1);
+
+    /* tan(Inf or NaN) is NaN */
+        else if (ix>=0x7ff00000) return x-x;            /* NaN */
+
+    /* argument reduction needed */
+        else {
+			double y_0_ = 0.0, y_1_ = 0.0;
+			n = __ieee754_rem_pio2(x, ref y_0_, ref y_1_);
+            return __kernel_tan(y_0_,y_1_,1-((n&1)<<1)); /*   1 -- n even
+                                                        -1 -- n odd */
+        }
+    }
+}
+@
+
+
+1.1
+log
+@Prepare for fork/port to C#.
+@
+text
+@d58 3
+a60 3
+#include "fdlibm.h"
+
+#ifdef __STDC__
+a61 4
+#else
+        double tan(x)
+        double x;
+#endif
+d63 1
+a63 1
+        double y[2],z=0.0;
+d78 3
+a80 2
+            n = __ieee754_rem_pio2(x,y);
+            return __kernel_tan(y[0],y[1],1-((n&1)<<1)); /*   1 -- n even
+d83 1
+@
+

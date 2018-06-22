@@ -1,0 +1,1446 @@
+head	1.17;
+access;
+symbols
+	v8_1_5717_0:1.17
+	v8_1:1.17.0.4
+	v8_0_5449_1:1.17
+	v8_0_5449_0:1.17
+	v8_0:1.17.0.2
+	v7_4_5196_0:1.14
+	v7_4:1.14.0.6
+	v7_3:1.14.0.4
+	v7_2_4630_6:1.14
+	v7_2_4630_5:1.14
+	v7_2_4630_4:1.14
+	v7_2_4630_3:1.14
+	v7_2_4630_2:1.14
+	v0_46_0_4:1.6
+	v7_2_4630_1:1.14
+	v7_2:1.14.0.2
+	v7_1_4532_2:1.13.2.1
+	v7_1_4532_1:1.13.2.1
+	v7_1_4532_0:1.13
+	v7_1:1.13.0.2
+	v7_0_4335_3:1.12.2.1
+	v7_0_4335_2:1.12.2.1
+	v7_0_4335_1:1.12.2.1
+	v0_46_0_2:1.6
+	v7_0_4335_0:1.12
+	v7_0:1.12.0.2
+	v0_46_0_1:1.6
+	v0_46_0_0:1.6
+	v0_46:1.6.0.2
+	v0_44_0_6:1.4
+	v0_44_0_5:1.4
+	v0_44_0_4:1.4
+	v0_44_0_3:1.4
+	v0_44_0_2:1.4
+	v0_44_0_1:1.4
+	v0_44_0_0:1.4
+	v0_44:1.4.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.17
+date	2014.05.19.12.43.36;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2014.05.06.14.21.10;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2014.05.01.12.06.05;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2012.06.04.14.39.56;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2011.12.13.16.21.06;	author jfrijters;	state Exp;
+branches
+	1.13.2.1;
+next	1.12;
+
+1.12
+date	2011.08.20.19.55.27;	author smallsql;	state Exp;
+branches
+	1.12.2.1;
+next	1.11;
+
+1.11
+date	2011.08.13.13.52.06;	author smallsql;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2011.08.07.11.22.08;	author smallsql;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2011.07.28.13.32.44;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2011.07.01.14.03.41;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2011.06.19.09.33.08;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2011.01.24.16.40.22;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2010.08.24.10.04.32;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.06.10.08.43.30;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.04.02.03.54.06;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.02.19.14.38.41;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2009.11.12.07.40.52;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.12.2.1
+date	2012.01.03.12.16.37;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.13.2.1
+date	2012.06.04.15.23.01;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.17
+log
+@First part of OpenJDK 8 integration.
+@
+text
+@#
+#  Copyright (C) 2002-2014 Jeroen Frijters
+#
+#  This software is provided 'as-is', without any express or implied
+#  warranty.  In no event will the authors be held liable for any damages
+#  arising from the use of this software.
+#
+#  Permission is granted to anyone to use this software for any purpose,
+#  including commercial applications, and to alter it and redistribute it
+#  freely, subject to the following restrictions:
+#
+#  1. The origin of this software must not be misrepresented; you must not
+#     claim that you wrote the original software. If you use this software
+#     in a product, an acknowledgment in the product documentation would be
+#     appreciated but is not required.
+#  2. Altered source versions must be plainly marked as such, and must not be
+#     misrepresented as being the original software.
+#  3. This notice may not be removed or altered from any source distribution.
+#
+#  Jeroen Frijters
+#  jeroen@@frijters.net
+#  
+
+-compressresources
+-strictfinalfieldsemantics
+-removeassertions
+{
+    -out:../bin/IKVM.OpenJDK.Tools.dll
+    -resource:META-INF/services/com.sun.jdi.connect.Connector=@@OPENJDK@@/jdk/src/share/classes/com/sun/tools/jdi/META-INF/services/com.sun.jdi.connect.Connector
+    -resource:META-INF/services/com.sun.jdi.connect.spi.TransportService=@@OPENJDK@@/jdk/src/share/classes/com/sun/tools/jdi/META-INF/services/com.sun.jdi.connect.spi.TransportService
+    -resource:META-INF/services/com.sun.tools.internal.xjc.Plugin=@@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/etc/META-INF/services/com.sun.tools.internal.xjc.Plugin
+    -resource:META-INF/services/com.sun.tools.xjc.Plugin=@@OPENJDK@@/build/linux-x86_64-normal-server-release/jdk/classes/META-INF/services/com.sun.tools.xjc.Plugin
+    -resource:META-INF/services/com.sun.tools.attach.spi.AttachProvider=@@OPENJDK@@/jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider
+    -resource:com/sun/tools/corba/se/idl/idl.prp=@@OPENJDK@@/corba/src/share/classes/com/sun/tools/corba/se/idl/idl.prp
+    -resource:com/sun/tools/corba/se/idl/idl_ja.prp=@@OPENJDK@@/corba/src/share/classes/com/sun/tools/corba/se/idl/idl_ja.prp
+    -resource:com/sun/tools/corba/se/idl/idl_zh_CN.prp=@@OPENJDK@@/corba/src/share/classes/com/sun/tools/corba/se/idl/idl_zh_CN.prp
+    -resource:com/sun/tools/corba/se/idl/toJavaPortable/toJavaPortable.prp=@@OPENJDK@@/corba/src/share/classes/com/sun/tools/corba/se/idl/toJavaPortable/toJavaPortable.prp
+    -resource:com/sun/tools/corba/se/idl/toJavaPortable/toJavaPortable_ja.prp=@@OPENJDK@@/corba/src/share/classes/com/sun/tools/corba/se/idl/toJavaPortable/toJavaPortable_ja.prp
+    -resource:com/sun/tools/corba/se/idl/toJavaPortable/toJavaPortable_zh_CN.prp=@@OPENJDK@@/corba/src/share/classes/com/sun/tools/corba/se/idl/toJavaPortable/toJavaPortable_zh_CN.prp
+    -recurse:@@OPENJDK@@/langtools/src/share/classes/*.properties
+    -assemblyattributes:commonAttributes.class
+    @@OPENJDK@@/build/linux-x86_64-normal-server-release/jdk/gensrc/com/sun/tools/jdi/*.class
+    @@OPENJDK@@/build/linux-x86_64-normal-server-release/jdk/gensrc/com/sun/tools/jdi/resources/*.class
+    @@OPENJDK@@/build/linux-x86_64-normal-server-release/jdk/gensrc/sun/tools/jar/resources/*.class
+    @@OPENJDK@@/build/linux-x86_64-normal-server-release/langtools/gensrc/com/sun/tools/doclets/formats/html/resources/*.class
+    @@OPENJDK@@/build/linux-x86_64-normal-server-release/langtools/gensrc/com/sun/tools/doclets/internal/toolkit/resources/*.class
+    @@OPENJDK@@/build/linux-x86_64-normal-server-release/langtools/gensrc/com/sun/tools/javac/resources/*.class
+    @@OPENJDK@@/build/linux-x86_64-normal-server-release/langtools/gensrc/com/sun/tools/javadoc/resources/*.class
+    @@OPENJDK@@/build/linux-x86_64-normal-server-release/langtools/gensrc/com/sun/tools/javah/resources/*.class
+    @@OPENJDK@@/build/linux-x86_64-normal-server-release/langtools/gensrc/com/sun/tools/javap/resources/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/codemodel/internal/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/codemodel/internal/fmt/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/codemodel/internal/util/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/codemodel/internal/writer/*.class
+    @@OPENJDK@@/corba/src/share/classes/com/sun/tools/corba/se/idl/*.class
+    @@OPENJDK@@/corba/src/share/classes/com/sun/tools/corba/se/idl/constExpr/*.class
+    @@OPENJDK@@/corba/src/share/classes/com/sun/tools/corba/se/idl/som/cff/*.class
+    @@OPENJDK@@/corba/src/share/classes/com/sun/tools/corba/se/idl/som/idlemit/*.class
+    @@OPENJDK@@/corba/src/share/classes/com/sun/tools/corba/se/idl/toJavaPortable/*.class
+    @@OPENJDK@@/corba/src/share/classes/com/sun/tools/corba/se/logutil/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/istack/internal/tools/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/jxc/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/jxc/ap/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/jxc/api/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/jxc/api/impl/j2s/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/jxc/gen/config/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/jxc/model/nav/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/api/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/api/wsdl/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/processor/generator/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/processor/model/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/processor/model/exporter/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/processor/model/java/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/processor/model/jaxb/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/processor/modeler/annotation/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/processor/modeler/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/processor/modeler/wsdl/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/processor/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/processor/util/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/resources/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/spi/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/util/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/util/xml/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/wscompile/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/wsdl/document/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/wsdl/document/http/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/wsdl/document/jaxws/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/wsdl/document/mime/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/wsdl/document/schema/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/wsdl/document/soap/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/wsdl/framework/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/ws/wsdl/parser/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/addon/accessors/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/addon/at_generated/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/addon/code_injector/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/addon/episode/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/addon/locator/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/addon/sync/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/api/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/api/impl/s2j/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/api/util/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/generator/annotation/spec/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/generator/bean/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/generator/bean/field/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/generator/util/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/model/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/model/nav/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/outline/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/reader/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/reader/dtd/bindinfo/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/reader/dtd/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/reader/gbind/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/reader/internalizer/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/reader/relaxng/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/reader/xmlschema/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/reader/xmlschema/bindinfo/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/reader/xmlschema/ct/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/reader/xmlschema/parser/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/runtime/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/util/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/tools/internal/xjc/writer/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/dtdparser/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/rngom/ast/builder/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/rngom/ast/om/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/rngom/ast/util/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/rngom/binary/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/rngom/binary/visitor/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/rngom/digested/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/rngom/dt/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/rngom/dt/builtin/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/rngom/nc/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/rngom/parse/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/rngom/parse/compact/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/rngom/parse/host/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/rngom/parse/xml/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/rngom/util/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/rngom/xml/sax/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/rngom/xml/util/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/xsom/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/xsom/impl/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/xsom/impl/parser/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/xsom/impl/parser/state/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/xsom/impl/scd/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/xsom/impl/util/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/xsom/parser/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/xsom/util/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/com/sun/xml/internal/xsom/visitor/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/org/relaxng/datatype/*.class
+    @@OPENJDK@@/jaxws/src/share/jaxws_classes/org/relaxng/datatype/helpers/*.class
+    @@OPENJDK@@/jdk/src/share/classes/com/sun/jarsigner/*.class
+    @@OPENJDK@@/jdk/src/share/classes/com/sun/jdi/*.class
+    @@OPENJDK@@/jdk/src/share/classes/com/sun/jdi/connect/*.class
+    @@OPENJDK@@/jdk/src/share/classes/com/sun/jdi/connect/spi/*.class
+    @@OPENJDK@@/jdk/src/share/classes/com/sun/jdi/event/*.class
+    @@OPENJDK@@/jdk/src/share/classes/com/sun/jdi/request/*.class
+    @@OPENJDK@@/jdk/src/share/classes/com/sun/tools/attach/*.class
+    @@OPENJDK@@/jdk/src/share/classes/com/sun/tools/attach/spi/*.class
+    @@OPENJDK@@/jdk/src/share/classes/com/sun/tools/jdi/*.class
+    @@OPENJDK@@/jdk/src/share/classes/com/sun/tools/script/shell/*.class
+    @@OPENJDK@@/jdk/src/share/classes/sun/rmi/rmic/*.class
+    @@OPENJDK@@/jdk/src/share/classes/sun/rmi/rmic/newrmic/*.class
+    @@OPENJDK@@/jdk/src/share/classes/sun/rmi/rmic/newrmic/jrmp/*.class
+    @@OPENJDK@@/jdk/src/share/classes/sun/tools/asm/*.class
+    @@OPENJDK@@/jdk/src/share/classes/sun/tools/jar/*.class
+    @@OPENJDK@@/jdk/src/share/classes/sun/tools/java/*.class
+    @@OPENJDK@@/jdk/src/share/classes/sun/tools/javac/*.class
+    @@OPENJDK@@/jdk/src/share/classes/sun/tools/native2ascii/*.class
+    @@OPENJDK@@/jdk/src/share/classes/sun/tools/native2ascii/resources/*.class
+    @@OPENJDK@@/jdk/src/share/classes/sun/tools/serialver/*.class
+    @@OPENJDK@@/jdk/src/share/classes/sun/tools/tree/*.class
+    @@OPENJDK@@/jdk/src/share/classes/sun/tools/util/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/javadoc/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/source/doctree/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/source/tree/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/source/util/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/classfile/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/doclets/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/doclets/standard/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/doclets/formats/html/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/doclets/formats/html/markup/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/taglets/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/util/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/util/links/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/doclint/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/api/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/code/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/comp/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/file/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/jvm/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/nio/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/main/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/model/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/parser/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/processing/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/sym/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/tree/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/util/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javadoc/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javah/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javap/*.class
+}
+@
+
+
+1.16
+log
+@Replaced OPENJDK7 with OPENJDK.
+@
+text
+@d2 1
+a2 1
+#  Copyright (C) 2002-2011 Jeroen Frijters
+d31 9
+a39 70
+    -resource:META-INF/services/com.sun.mirror.apt.AnnotationProcessorFactory=@@OPENJDK@@/build/linux-amd64/classes/META-INF/services/com.sun.mirror.apt.AnnotationProcessorFactory
+    -resource:META-INF/services/com.sun.tools.internal.xjc.Plugin=@@OPENJDK@@/build/linux-amd64/classes/META-INF/services/com.sun.tools.internal.xjc.Plugin
+    -resource:META-INF/services/com.sun.tools.xjc.Plugin=@@OPENJDK@@/build/linux-amd64/classes/META-INF/services/com.sun.tools.xjc.Plugin
+    -resource:META-INF/services/com.sun.tools.attach.spi.AttachProvider=@@OPENJDK@@/build/linux-amd64/classes/META-INF/services/com.sun.tools.attach.spi.AttachProvider
+    -resource:com/sun/tools/corba/se/idl/idl.prp=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/corba/se/idl/idl.prp
+    -resource:com/sun/tools/corba/se/idl/idl_ja.prp=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/corba/se/idl/idl_ja.prp
+    -resource:com/sun/tools/corba/se/idl/idl_zh_CN.prp=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/corba/se/idl/idl_zh_CN.prp
+    -resource:com/sun/tools/corba/se/idl/toJavaPortable/toJavaPortable.prp=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/corba/se/idl/toJavaPortable/toJavaPortable.prp
+    -resource:com/sun/tools/corba/se/idl/toJavaPortable/toJavaPortable_ja.prp=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/corba/se/idl/toJavaPortable/toJavaPortable_ja.prp
+    -resource:com/sun/tools/corba/se/idl/toJavaPortable/toJavaPortable_zh_CN.prp=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/corba/se/idl/toJavaPortable/toJavaPortable_zh_CN.prp
+    -resource:com/sun/tools/doclets/internal/toolkit/resources/background.gif=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/doclets/internal/toolkit/resources/background.gif
+    -resource:com/sun/tools/doclets/internal/toolkit/resources/doclet.xml=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/doclets/internal/toolkit/resources/doclet.xml
+    -resource:com/sun/tools/doclets/internal/toolkit/resources/stylesheet.css=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/doclets/internal/toolkit/resources/stylesheet.css
+    -resource:com/sun/tools/doclets/internal/toolkit/resources/tab.gif=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/doclets/internal/toolkit/resources/tab.gif
+    -resource:com/sun/tools/doclets/internal/toolkit/resources/titlebar.gif=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/doclets/internal/toolkit/resources/titlebar.gif
+    -resource:com/sun/tools/doclets/internal/toolkit/resources/titlebar_end.gif=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/doclets/internal/toolkit/resources/titlebar_end.gif
+    -resource:com/sun/tools/internal/jxc/apt/MessageBundle.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/jxc/apt/MessageBundle.properties
+    -resource:com/sun/tools/internal/jxc/gen/config/config.xsd=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/jxc/gen/config/config.xsd
+    -resource:com/sun/tools/internal/jxc/MessageBundle.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/jxc/MessageBundle.properties
+    -resource:com/sun/tools/internal/xjc/api/util/Messages.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/api/util/Messages.properties
+    -resource:com/sun/tools/internal/xjc/generator/bean/field/MessageBundle.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/generator/bean/field/MessageBundle.properties
+    -resource:com/sun/tools/internal/xjc/generator/bean/MessageBundle.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/generator/bean/MessageBundle.properties
+    -resource:com/sun/tools/internal/xjc/MessageBundle.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/MessageBundle.properties
+    -resource:com/sun/tools/internal/xjc/reader/dtd/bindinfo/bindingfile.xsd=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/dtd/bindinfo/bindingfile.xsd
+    -resource:com/sun/tools/internal/xjc/reader/dtd/bindinfo/MessageBundle.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/dtd/bindinfo/MessageBundle.properties
+    -resource:com/sun/tools/internal/xjc/reader/dtd/bindinfo/xjc.xsd=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/dtd/bindinfo/xjc.xsd
+    -resource:com/sun/tools/internal/xjc/reader/dtd/MessageBundle.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/dtd/MessageBundle.properties
+    -resource:com/sun/tools/internal/xjc/reader/internalizer/MessageBundle.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/internalizer/MessageBundle.properties
+    -resource:com/sun/tools/internal/xjc/reader/MessageBundle.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/MessageBundle.properties
+    -resource:com/sun/tools/internal/xjc/reader/xmlschema/bindinfo/binding.xsd=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/xmlschema/bindinfo/binding.xsd
+    -resource:com/sun/tools/internal/xjc/reader/xmlschema/bindinfo/MessageBundle.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/xmlschema/bindinfo/MessageBundle.properties
+    -resource:com/sun/tools/internal/xjc/reader/xmlschema/bindinfo/xjc.xsd=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/xmlschema/bindinfo/xjc.xsd
+    -resource:com/sun/tools/internal/xjc/reader/xmlschema/bindinfo/xs.xsd=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/xmlschema/bindinfo/xs.xsd
+    -resource:com/sun/tools/internal/xjc/reader/xmlschema/ct/MessageBundle.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/xmlschema/ct/MessageBundle.properties
+    -resource:com/sun/tools/internal/xjc/reader/xmlschema/MessageBundle.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/xmlschema/MessageBundle.properties
+    -resource:com/sun/tools/internal/xjc/reader/xmlschema/parser/MessageBundle.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/xmlschema/parser/MessageBundle.properties
+    -resource:com/sun/tools/internal/xjc/runtime/JAXBContextFactory.java=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/runtime/JAXBContextFactory.java
+    -resource:com/sun/tools/internal/xjc/runtime/ZeroOneBooleanAdapter.java=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/runtime/ZeroOneBooleanAdapter.java
+    -resource:com/sun/tools/internal/xjc/util/MessageBundle.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/util/MessageBundle.properties
+    -resource:com/sun/tools/internal/ws/resources/configuration.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/ws/resources/configuration.properties
+    -resource:com/sun/tools/internal/ws/resources/generator.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/ws/resources/generator.properties
+    -resource:com/sun/tools/internal/ws/resources/javacompiler.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/ws/resources/javacompiler.properties
+    -resource:com/sun/tools/internal/ws/resources/model.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/ws/resources/model.properties
+    -resource:com/sun/tools/internal/ws/resources/modeler.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/ws/resources/modeler.properties
+    -resource:com/sun/tools/internal/ws/resources/processor.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/ws/resources/processor.properties
+    -resource:com/sun/tools/internal/ws/resources/util.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/ws/resources/util.properties
+    -resource:com/sun/tools/internal/ws/resources/webserviceap.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/ws/resources/webserviceap.properties
+    -resource:com/sun/tools/internal/ws/resources/wscompile.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/ws/resources/wscompile.properties
+    -resource:com/sun/tools/internal/ws/resources/wsdl.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/ws/resources/wsdl.properties
+    -resource:com/sun/tools/internal/ws/version.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/internal/ws/version.properties
+    -resource:com/sun/tools/javac/services/javax.tools.JavaCompilerTool=@@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/services/javax.tools.JavaCompilerTool
+    -resource:com/sun/xml/internal/rngom/binary/Messages.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/xml/internal/rngom/binary/Messages.properties
+    -resource:com/sun/xml/internal/rngom/dt/builtin/Messages.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/xml/internal/rngom/dt/builtin/Messages.properties
+    -resource:com/sun/xml/internal/rngom/parse/compact/Messages.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/xml/internal/rngom/parse/compact/Messages.properties
+    -resource:com/sun/xml/internal/rngom/parse/Messages.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/xml/internal/rngom/parse/Messages.properties
+    -resource:com/sun/xml/internal/rngom/parse/xml/Messages.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/xml/internal/rngom/parse/xml/Messages.properties
+    -resource:com/sun/xml/internal/xsom/impl/parser/datatypes.xsd=@@OPENJDK@@/build/linux-amd64/classes/com/sun/xml/internal/xsom/impl/parser/datatypes.xsd
+    -resource:com/sun/xml/internal/xsom/impl/parser/Messages.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/xml/internal/xsom/impl/parser/Messages.properties
+    -resource:com/sun/xml/internal/xsom/impl/parser/Messages_ja.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/xml/internal/xsom/impl/parser/Messages_ja.properties
+    -resource:com/sun/xml/internal/xsom/util/NameGetter.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/xml/internal/xsom/util/NameGetter.properties
+    -resource:com/sun/xml/internal/dtdparser/resources/Messages.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/xml/internal/dtdparser/resources/Messages.properties
+    -resource:com/sun/tools/script/shell/init.js=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/script/shell/init.js
+    -resource:com/sun/tools/script/shell/messages.properties=@@OPENJDK@@/build/linux-amd64/classes/com/sun/tools/script/shell/messages.properties
+    -resource:sun/rmi/rmic/resources/rmic.properties=@@OPENJDK@@/build/linux-amd64/classes/sun/rmi/rmic/resources/rmic.properties
+    -resource:sun/rmi/rmic/resources/rmic_ja.properties=@@OPENJDK@@/build/linux-amd64/classes/sun/rmi/rmic/resources/rmic_ja.properties
+    -resource:sun/rmi/rmic/resources/rmic_zh_CN.properties=@@OPENJDK@@/build/linux-amd64/classes/sun/rmi/rmic/resources/rmic_zh_CN.properties
+    -resource:sun/tools/javac/resources/javac.properties=@@OPENJDK@@/jdk/src/share/classes/sun/tools/javac/resources/javac.properties
+    -resource:sun/tools/serialver/resources/serialver.properties=@@OPENJDK@@/build/linux-amd64/classes/sun/tools/serialver/resources/serialver.properties
+    -resource:sun/tools/serialver/resources/serialver_ja.properties=@@OPENJDK@@/build/linux-amd64/classes/sun/tools/serialver/resources/serialver_ja.properties
+    -resource:sun/tools/serialver/resources/serialver_zh_CN.properties=@@OPENJDK@@/build/linux-amd64/classes/sun/tools/serialver/resources/serialver_zh_CN.properties
+a40 2
+    # ignore the warning that KeyStoreUtil already exists in IKVM.OpenJDK.Security.dll
+    -nowarn:109:sun.security.tools.KeyStoreUtil
+d42 110
+a151 113
+    @@OPENJDK@@/build/linux-amd64/gensrc/com/sun/tools/jdi/*.class
+    @@OPENJDK@@/build/linux-amd64/gensrc/com/sun/tools/jdi/resources/*.class
+    @@OPENJDK@@/build/linux-amd64/gensrc/sun/tools/jar/resources/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/codemodel/internal/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/codemodel/internal/fmt/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/codemodel/internal/util/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/codemodel/internal/writer/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/istack/internal/tools/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/istack/internal/ws/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/corba/se/idl/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/corba/se/idl/constExpr/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/corba/se/idl/som/cff/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/corba/se/idl/som/idlemit/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/corba/se/idl/toJavaPortable/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/corba/se/logutil/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/jxc/apt/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/jxc/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/jxc/gen/config/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/jxc/model/nav/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/api/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/api/wsdl/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/generator/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/model/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/model/exporter/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/model/java/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/model/jaxb/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/modeler/annotation/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/modeler/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/modeler/wsdl/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/util/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/resources/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/spi/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/util/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/util/xml/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wscompile/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/document/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/document/http/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/document/jaxws/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/document/mime/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/document/schema/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/document/soap/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/framework/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/parser/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/addon/accessors/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/addon/at_generated/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/addon/code_injector/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/addon/episode/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/addon/locator/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/addon/sync/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/api/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/api/impl/j2s/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/api/impl/s2j/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/api/util/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/generator/annotation/ri/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/generator/annotation/spec/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/generator/bean/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/generator/bean/field/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/generator/util/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/model/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/model/nav/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/outline/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/dtd/bindinfo/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/dtd/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/gbind/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/internalizer/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/relaxng/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/xmlschema/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/xmlschema/bindinfo/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/xmlschema/ct/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/xmlschema/parser/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/runtime/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/util/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/writer/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/dtdparser/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/ast/builder/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/ast/om/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/ast/util/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/binary/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/binary/visitor/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/digested/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/dt/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/dt/builtin/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/nc/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/parse/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/parse/compact/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/parse/host/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/parse/xml/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/util/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/xml/sax/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/xml/util/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/impl/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/impl/parser/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/impl/parser/state/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/impl/scd/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/impl/util/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/parser/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/util/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/visitor/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/org/relaxng/datatype/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/org/relaxng/datatype/helpers/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/sun/rmi/rmic/iiop/*.class
+    @@OPENJDK@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/apt/resources/*.class
+    @@OPENJDK@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/doclets/formats/html/resources/*.class
+    @@OPENJDK@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/doclets/internal/toolkit/resources/*.class
+    @@OPENJDK@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/javac/resources/*.class
+    @@OPENJDK@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/javadoc/resources/*.class
+    @@OPENJDK@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/javah/resources/*.class
+    @@OPENJDK@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/javap/resources/*.class
+a164 1
+    @@OPENJDK@@/jdk/src/share/classes/sun/security/tools/*.class
+d175 1
+a175 4
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/mirror/apt/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/mirror/declaration/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/mirror/type/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/mirror/util/*.class
+a177 9
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/apt/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/apt/comp/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/apt/main/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/apt/mirror/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/apt/mirror/apt/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/apt/mirror/declaration/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/apt/mirror/type/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/apt/mirror/util/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/apt/util/*.class
+d188 1
+@
+
+
+1.15
+log
+@Fix build break.
+@
+text
+@d29 73
+a101 73
+    -resource:META-INF/services/com.sun.jdi.connect.Connector=@@OPENJDK7@@/jdk/src/share/classes/com/sun/tools/jdi/META-INF/services/com.sun.jdi.connect.Connector
+    -resource:META-INF/services/com.sun.jdi.connect.spi.TransportService=@@OPENJDK7@@/jdk/src/share/classes/com/sun/tools/jdi/META-INF/services/com.sun.jdi.connect.spi.TransportService
+    -resource:META-INF/services/com.sun.mirror.apt.AnnotationProcessorFactory=@@OPENJDK7@@/build/linux-amd64/classes/META-INF/services/com.sun.mirror.apt.AnnotationProcessorFactory
+    -resource:META-INF/services/com.sun.tools.internal.xjc.Plugin=@@OPENJDK7@@/build/linux-amd64/classes/META-INF/services/com.sun.tools.internal.xjc.Plugin
+    -resource:META-INF/services/com.sun.tools.xjc.Plugin=@@OPENJDK7@@/build/linux-amd64/classes/META-INF/services/com.sun.tools.xjc.Plugin
+    -resource:META-INF/services/com.sun.tools.attach.spi.AttachProvider=@@OPENJDK7@@/build/linux-amd64/classes/META-INF/services/com.sun.tools.attach.spi.AttachProvider
+    -resource:com/sun/tools/corba/se/idl/idl.prp=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/corba/se/idl/idl.prp
+    -resource:com/sun/tools/corba/se/idl/idl_ja.prp=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/corba/se/idl/idl_ja.prp
+    -resource:com/sun/tools/corba/se/idl/idl_zh_CN.prp=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/corba/se/idl/idl_zh_CN.prp
+    -resource:com/sun/tools/corba/se/idl/toJavaPortable/toJavaPortable.prp=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/corba/se/idl/toJavaPortable/toJavaPortable.prp
+    -resource:com/sun/tools/corba/se/idl/toJavaPortable/toJavaPortable_ja.prp=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/corba/se/idl/toJavaPortable/toJavaPortable_ja.prp
+    -resource:com/sun/tools/corba/se/idl/toJavaPortable/toJavaPortable_zh_CN.prp=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/corba/se/idl/toJavaPortable/toJavaPortable_zh_CN.prp
+    -resource:com/sun/tools/doclets/internal/toolkit/resources/background.gif=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/doclets/internal/toolkit/resources/background.gif
+    -resource:com/sun/tools/doclets/internal/toolkit/resources/doclet.xml=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/doclets/internal/toolkit/resources/doclet.xml
+    -resource:com/sun/tools/doclets/internal/toolkit/resources/stylesheet.css=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/doclets/internal/toolkit/resources/stylesheet.css
+    -resource:com/sun/tools/doclets/internal/toolkit/resources/tab.gif=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/doclets/internal/toolkit/resources/tab.gif
+    -resource:com/sun/tools/doclets/internal/toolkit/resources/titlebar.gif=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/doclets/internal/toolkit/resources/titlebar.gif
+    -resource:com/sun/tools/doclets/internal/toolkit/resources/titlebar_end.gif=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/doclets/internal/toolkit/resources/titlebar_end.gif
+    -resource:com/sun/tools/internal/jxc/apt/MessageBundle.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/jxc/apt/MessageBundle.properties
+    -resource:com/sun/tools/internal/jxc/gen/config/config.xsd=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/jxc/gen/config/config.xsd
+    -resource:com/sun/tools/internal/jxc/MessageBundle.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/jxc/MessageBundle.properties
+    -resource:com/sun/tools/internal/xjc/api/util/Messages.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/api/util/Messages.properties
+    -resource:com/sun/tools/internal/xjc/generator/bean/field/MessageBundle.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/generator/bean/field/MessageBundle.properties
+    -resource:com/sun/tools/internal/xjc/generator/bean/MessageBundle.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/generator/bean/MessageBundle.properties
+    -resource:com/sun/tools/internal/xjc/MessageBundle.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/MessageBundle.properties
+    -resource:com/sun/tools/internal/xjc/reader/dtd/bindinfo/bindingfile.xsd=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/dtd/bindinfo/bindingfile.xsd
+    -resource:com/sun/tools/internal/xjc/reader/dtd/bindinfo/MessageBundle.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/dtd/bindinfo/MessageBundle.properties
+    -resource:com/sun/tools/internal/xjc/reader/dtd/bindinfo/xjc.xsd=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/dtd/bindinfo/xjc.xsd
+    -resource:com/sun/tools/internal/xjc/reader/dtd/MessageBundle.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/dtd/MessageBundle.properties
+    -resource:com/sun/tools/internal/xjc/reader/internalizer/MessageBundle.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/internalizer/MessageBundle.properties
+    -resource:com/sun/tools/internal/xjc/reader/MessageBundle.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/MessageBundle.properties
+    -resource:com/sun/tools/internal/xjc/reader/xmlschema/bindinfo/binding.xsd=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/xmlschema/bindinfo/binding.xsd
+    -resource:com/sun/tools/internal/xjc/reader/xmlschema/bindinfo/MessageBundle.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/xmlschema/bindinfo/MessageBundle.properties
+    -resource:com/sun/tools/internal/xjc/reader/xmlschema/bindinfo/xjc.xsd=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/xmlschema/bindinfo/xjc.xsd
+    -resource:com/sun/tools/internal/xjc/reader/xmlschema/bindinfo/xs.xsd=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/xmlschema/bindinfo/xs.xsd
+    -resource:com/sun/tools/internal/xjc/reader/xmlschema/ct/MessageBundle.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/xmlschema/ct/MessageBundle.properties
+    -resource:com/sun/tools/internal/xjc/reader/xmlschema/MessageBundle.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/xmlschema/MessageBundle.properties
+    -resource:com/sun/tools/internal/xjc/reader/xmlschema/parser/MessageBundle.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/reader/xmlschema/parser/MessageBundle.properties
+    -resource:com/sun/tools/internal/xjc/runtime/JAXBContextFactory.java=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/runtime/JAXBContextFactory.java
+    -resource:com/sun/tools/internal/xjc/runtime/ZeroOneBooleanAdapter.java=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/runtime/ZeroOneBooleanAdapter.java
+    -resource:com/sun/tools/internal/xjc/util/MessageBundle.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/xjc/util/MessageBundle.properties
+    -resource:com/sun/tools/internal/ws/resources/configuration.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/ws/resources/configuration.properties
+    -resource:com/sun/tools/internal/ws/resources/generator.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/ws/resources/generator.properties
+    -resource:com/sun/tools/internal/ws/resources/javacompiler.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/ws/resources/javacompiler.properties
+    -resource:com/sun/tools/internal/ws/resources/model.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/ws/resources/model.properties
+    -resource:com/sun/tools/internal/ws/resources/modeler.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/ws/resources/modeler.properties
+    -resource:com/sun/tools/internal/ws/resources/processor.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/ws/resources/processor.properties
+    -resource:com/sun/tools/internal/ws/resources/util.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/ws/resources/util.properties
+    -resource:com/sun/tools/internal/ws/resources/webserviceap.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/ws/resources/webserviceap.properties
+    -resource:com/sun/tools/internal/ws/resources/wscompile.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/ws/resources/wscompile.properties
+    -resource:com/sun/tools/internal/ws/resources/wsdl.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/ws/resources/wsdl.properties
+    -resource:com/sun/tools/internal/ws/version.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/internal/ws/version.properties
+    -resource:com/sun/tools/javac/services/javax.tools.JavaCompilerTool=@@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/javac/services/javax.tools.JavaCompilerTool
+    -resource:com/sun/xml/internal/rngom/binary/Messages.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/xml/internal/rngom/binary/Messages.properties
+    -resource:com/sun/xml/internal/rngom/dt/builtin/Messages.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/xml/internal/rngom/dt/builtin/Messages.properties
+    -resource:com/sun/xml/internal/rngom/parse/compact/Messages.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/xml/internal/rngom/parse/compact/Messages.properties
+    -resource:com/sun/xml/internal/rngom/parse/Messages.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/xml/internal/rngom/parse/Messages.properties
+    -resource:com/sun/xml/internal/rngom/parse/xml/Messages.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/xml/internal/rngom/parse/xml/Messages.properties
+    -resource:com/sun/xml/internal/xsom/impl/parser/datatypes.xsd=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/xml/internal/xsom/impl/parser/datatypes.xsd
+    -resource:com/sun/xml/internal/xsom/impl/parser/Messages.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/xml/internal/xsom/impl/parser/Messages.properties
+    -resource:com/sun/xml/internal/xsom/impl/parser/Messages_ja.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/xml/internal/xsom/impl/parser/Messages_ja.properties
+    -resource:com/sun/xml/internal/xsom/util/NameGetter.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/xml/internal/xsom/util/NameGetter.properties
+    -resource:com/sun/xml/internal/dtdparser/resources/Messages.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/xml/internal/dtdparser/resources/Messages.properties
+    -resource:com/sun/tools/script/shell/init.js=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/script/shell/init.js
+    -resource:com/sun/tools/script/shell/messages.properties=@@OPENJDK7@@/build/linux-amd64/classes/com/sun/tools/script/shell/messages.properties
+    -resource:sun/rmi/rmic/resources/rmic.properties=@@OPENJDK7@@/build/linux-amd64/classes/sun/rmi/rmic/resources/rmic.properties
+    -resource:sun/rmi/rmic/resources/rmic_ja.properties=@@OPENJDK7@@/build/linux-amd64/classes/sun/rmi/rmic/resources/rmic_ja.properties
+    -resource:sun/rmi/rmic/resources/rmic_zh_CN.properties=@@OPENJDK7@@/build/linux-amd64/classes/sun/rmi/rmic/resources/rmic_zh_CN.properties
+    -resource:sun/tools/javac/resources/javac.properties=@@OPENJDK7@@/jdk/src/share/classes/sun/tools/javac/resources/javac.properties
+    -resource:sun/tools/serialver/resources/serialver.properties=@@OPENJDK7@@/build/linux-amd64/classes/sun/tools/serialver/resources/serialver.properties
+    -resource:sun/tools/serialver/resources/serialver_ja.properties=@@OPENJDK7@@/build/linux-amd64/classes/sun/tools/serialver/resources/serialver_ja.properties
+    -resource:sun/tools/serialver/resources/serialver_zh_CN.properties=@@OPENJDK7@@/build/linux-amd64/classes/sun/tools/serialver/resources/serialver_zh_CN.properties
+    -recurse:@@OPENJDK7@@/langtools/src/share/classes/*.properties
+d105 179
+a283 179
+    @@OPENJDK7@@/build/linux-amd64/gensrc/com/sun/tools/jdi/*.class
+    @@OPENJDK7@@/build/linux-amd64/gensrc/com/sun/tools/jdi/resources/*.class
+    @@OPENJDK7@@/build/linux-amd64/gensrc/sun/tools/jar/resources/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/codemodel/internal/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/codemodel/internal/fmt/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/codemodel/internal/util/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/codemodel/internal/writer/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/istack/internal/tools/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/istack/internal/ws/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/corba/se/idl/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/corba/se/idl/constExpr/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/corba/se/idl/som/cff/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/corba/se/idl/som/idlemit/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/corba/se/idl/toJavaPortable/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/corba/se/logutil/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/jxc/apt/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/jxc/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/jxc/gen/config/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/jxc/model/nav/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/api/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/api/wsdl/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/generator/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/model/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/model/exporter/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/model/java/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/model/jaxb/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/modeler/annotation/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/modeler/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/modeler/wsdl/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/util/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/resources/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/spi/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/util/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/util/xml/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wscompile/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/document/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/document/http/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/document/jaxws/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/document/mime/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/document/schema/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/document/soap/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/framework/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/parser/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/addon/accessors/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/addon/at_generated/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/addon/code_injector/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/addon/episode/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/addon/locator/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/addon/sync/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/api/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/api/impl/j2s/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/api/impl/s2j/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/api/util/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/generator/annotation/ri/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/generator/annotation/spec/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/generator/bean/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/generator/bean/field/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/generator/util/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/model/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/model/nav/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/outline/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/dtd/bindinfo/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/dtd/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/gbind/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/internalizer/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/relaxng/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/xmlschema/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/xmlschema/bindinfo/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/xmlschema/ct/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/xmlschema/parser/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/runtime/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/util/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/writer/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/dtdparser/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/ast/builder/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/ast/om/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/ast/util/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/binary/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/binary/visitor/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/digested/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/dt/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/dt/builtin/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/nc/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/parse/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/parse/compact/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/parse/host/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/parse/xml/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/util/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/xml/sax/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/xml/util/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/impl/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/impl/parser/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/impl/parser/state/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/impl/scd/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/impl/util/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/parser/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/util/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/visitor/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/org/relaxng/datatype/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/org/relaxng/datatype/helpers/*.class
+    @@OPENJDK7@@/build/linux-amd64/impsrc/sun/rmi/rmic/iiop/*.class
+    @@OPENJDK7@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/apt/resources/*.class
+    @@OPENJDK7@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/doclets/formats/html/resources/*.class
+    @@OPENJDK7@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/doclets/internal/toolkit/resources/*.class
+    @@OPENJDK7@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/javac/resources/*.class
+    @@OPENJDK7@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/javadoc/resources/*.class
+    @@OPENJDK7@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/javah/resources/*.class
+    @@OPENJDK7@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/javap/resources/*.class
+    @@OPENJDK7@@/jdk/src/share/classes/com/sun/jarsigner/*.class
+    @@OPENJDK7@@/jdk/src/share/classes/com/sun/jdi/*.class
+    @@OPENJDK7@@/jdk/src/share/classes/com/sun/jdi/connect/*.class
+    @@OPENJDK7@@/jdk/src/share/classes/com/sun/jdi/connect/spi/*.class
+    @@OPENJDK7@@/jdk/src/share/classes/com/sun/jdi/event/*.class
+    @@OPENJDK7@@/jdk/src/share/classes/com/sun/jdi/request/*.class
+    @@OPENJDK7@@/jdk/src/share/classes/com/sun/tools/attach/*.class
+    @@OPENJDK7@@/jdk/src/share/classes/com/sun/tools/attach/spi/*.class
+    @@OPENJDK7@@/jdk/src/share/classes/com/sun/tools/jdi/*.class
+    @@OPENJDK7@@/jdk/src/share/classes/com/sun/tools/script/shell/*.class
+    @@OPENJDK7@@/jdk/src/share/classes/sun/rmi/rmic/*.class
+    @@OPENJDK7@@/jdk/src/share/classes/sun/rmi/rmic/newrmic/*.class
+    @@OPENJDK7@@/jdk/src/share/classes/sun/rmi/rmic/newrmic/jrmp/*.class
+    @@OPENJDK7@@/jdk/src/share/classes/sun/security/tools/*.class
+    @@OPENJDK7@@/jdk/src/share/classes/sun/tools/asm/*.class
+    @@OPENJDK7@@/jdk/src/share/classes/sun/tools/jar/*.class
+    @@OPENJDK7@@/jdk/src/share/classes/sun/tools/java/*.class
+    @@OPENJDK7@@/jdk/src/share/classes/sun/tools/javac/*.class
+    @@OPENJDK7@@/jdk/src/share/classes/sun/tools/native2ascii/*.class
+    @@OPENJDK7@@/jdk/src/share/classes/sun/tools/native2ascii/resources/*.class
+    @@OPENJDK7@@/jdk/src/share/classes/sun/tools/serialver/*.class
+    @@OPENJDK7@@/jdk/src/share/classes/sun/tools/tree/*.class
+    @@OPENJDK7@@/jdk/src/share/classes/sun/tools/util/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/javadoc/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/mirror/apt/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/mirror/declaration/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/mirror/type/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/mirror/util/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/source/tree/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/source/util/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/apt/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/apt/comp/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/apt/main/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/apt/mirror/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/apt/mirror/apt/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/apt/mirror/declaration/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/apt/mirror/type/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/apt/mirror/util/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/apt/util/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/classfile/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/doclets/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/doclets/standard/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/doclets/formats/html/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/doclets/formats/html/markup/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/taglets/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/util/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/util/links/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/javac/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/javac/api/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/javac/code/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/javac/comp/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/javac/file/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/javac/jvm/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/javac/nio/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/javac/main/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/javac/model/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/javac/parser/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/javac/processing/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/javac/sym/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/javac/tree/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/javac/util/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/javadoc/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/javah/*.class
+    @@OPENJDK7@@/langtools/src/share/classes/com/sun/tools/javap/*.class
+@
+
+
+1.14
+log
+@Fixed build issue on Linux. The filename assembly.class should be all lowercase.
+@
+text
+@d104 1
+a104 1
+    assembly.class
+@
+
+
+1.13
+log
+@Include copyright and metadata in IKVM.OpenJDK.Tools.dll. Part of patch #3458997.
+@
+text
+@d104 1
+a104 1
+    Assembly.class
+@
+
+
+1.13.2.1
+log
+@Updated revision number and backported fixes:
+- Fixed Linux build issue due to assembly.class filename case error in tools.rsp
+- Added workaround for Mono 2.10 bug in AssemblyName (public key token for ECMA public key is not created correctly).
+- Added workaround for Mono to StrongNameKeyPair.
+- Disallow key container constructor of StrongNameKeyPair when running on Mono on Windows.
+- Introduced Universe.MonoRuntime to ease checking of Mono runtime.
+@
+text
+@d104 1
+a104 1
+    assembly.class
+@
+
+
+1.12
+log
+@Add missing resources
+@
+text
+@d104 1
+@
+
+
+1.12.2.1
+log
+@Backported fixes:
+- FileStore for non-accessible drive should throw exception when trying to create the FileStore, not when accessing the name() or type() properties.
+- Graphics2D.clip(null) should only throw NPE for a Component graphics.
+- Don't crash when ikvmc -resource: or -externalresource: option doesn't contain an = sign.
+- Handle Main-Class manifest value that spans multiple lines. Fix for bug #3461012.
+- Informational messages should not be treated as error when -warnaserror is specified. Fix for #3443377.
+- Don't enforce pre-1.5 class name rules in ikvmc (since HotSpot doesn't enforce any naming rules for classes loaded by the system (and boot) class loader, by default). Fix for #3443373.
+- Fix for #3441959.
+- Throwable.addSuppressed() didn't have a proper parameter name.
+- mark getSpace0 with SecuritySafeCritical to avoid getting an exception with .NET 4
+- Bug fix. Removed incorrect check for uninitialized objects on backward branch.
+- Don't crash when ikvmc -resource: or -externalresource: option doesn't contain an = sign.
+- Added AssemblyInformationalVersionAttribute to OpenJDK assemblies (to set the "Product Version"). Part of patch #3458997.
+- Include copyright and metadata in IKVM.OpenJDK.Tools.dll. Part of patch #3458997.
+- Bug fix. Don't call Finish on unloadable TypeWrapper.
+- Bug fix. When constructing a generic class loader we can't use GetWrapperFromType() on the type arguments, because they might refer to a subtype that is currently being loaded.
+- Fix. When decoding a NameSigAttribute it is possible that a type does not exist (i.e. is an unloadable) and that results in a warning emitted against the referenced assemblies class loader.
+- Suppress annotation custom attributes when enumerating inner classes.
+- IKVM.Reflection: Bug fix. Fixed copy/paste error. FieldInfo.IsAssembly should test for FieldAttributes.Assembly access, not FieldAttributes.Family.
+@
+text
+@a103 1
+    Assembly.class
+@
+
+
+1.11
+log
+@added package sun/management/snmp/ and some other missing classes
+@
+text
+@d31 70
+@
+
+
+1.10
+log
+@added some oversee classes
+@
+text
+@d80 1
+@
+
+
+1.9
+log
+@Complete migration to OpenJDK 7. Thanks to Volker Berlin for the bulk of this patch.
+@
+text
+@d145 1
+d165 1
+d201 1
+@
+
+
+1.8
+log
+@Updated java.security package and a massive amount of dependencies to OpenJDK 7.
+@
+text
+@d29 3
+a31 3
+    -resource:META-INF/services/com.sun.jdi.connect.Connector=@@OPENJDK6@@/jdk/src/share/classes/com/sun/tools/jdi/META-INF/services/com.sun.jdi.connect.Connector
+    -resource:META-INF/services/com.sun.jdi.connect.spi.TransportService=@@OPENJDK6@@/jdk/src/share/classes/com/sun/tools/jdi/META-INF/services/com.sun.jdi.connect.spi.TransportService
+    -recurse:@@OPENJDK6@@/langtools/src/share/classes/*.properties
+d34 124
+a157 124
+    @@OPENJDK6@@/build/linux-amd64/gensrc/com/sun/tools/jdi/*.class
+    @@OPENJDK6@@/build/linux-amd64/gensrc/com/sun/tools/jdi/resources/*.class
+    @@OPENJDK6@@/build/linux-amd64/gensrc/sun/tools/jar/resources/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/codemodel/internal/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/codemodel/internal/fmt/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/codemodel/internal/util/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/codemodel/internal/writer/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/istack/internal/tools/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/istack/internal/ws/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/corba/se/idl/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/corba/se/idl/constExpr/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/corba/se/idl/som/cff/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/corba/se/idl/som/idlemit/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/corba/se/idl/toJavaPortable/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/corba/se/logutil/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/jxc/apt/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/jxc/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/jxc/gen/config/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/jxc/model/nav/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/api/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/api/wsdl/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/generator/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/model/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/model/exporter/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/model/java/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/model/jaxb/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/modeler/annotation/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/modeler/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/modeler/wsdl/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/util/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/resources/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/spi/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/util/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/util/xml/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wscompile/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/document/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/document/http/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/document/jaxws/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/document/mime/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/document/schema/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/document/soap/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/framework/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/parser/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/addon/at_generated/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/addon/code_injector/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/addon/episode/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/addon/locator/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/addon/sync/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/api/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/api/impl/j2s/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/api/impl/s2j/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/api/util/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/generator/annotation/ri/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/generator/annotation/spec/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/generator/bean/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/generator/bean/field/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/generator/util/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/model/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/model/nav/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/outline/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/dtd/bindinfo/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/dtd/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/gbind/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/internalizer/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/relaxng/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/xmlschema/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/xmlschema/bindinfo/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/xmlschema/ct/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/xmlschema/parser/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/runtime/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/util/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/writer/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/dtdparser/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/ast/builder/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/ast/om/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/ast/util/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/binary/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/binary/visitor/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/digested/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/dt/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/dt/builtin/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/nc/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/parse/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/parse/compact/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/parse/host/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/parse/xml/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/util/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/xml/sax/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/xml/util/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/impl/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/impl/parser/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/impl/parser/state/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/impl/scd/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/impl/util/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/parser/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/util/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/visitor/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/org/relaxng/datatype/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/org/relaxng/datatype/helpers/*.class
+    @@OPENJDK6@@/build/linux-amd64/impsrc/sun/rmi/rmic/iiop/*.class
+    @@OPENJDK6@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/apt/resources/*.class
+    @@OPENJDK6@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/doclets/formats/html/resources/*.class
+    @@OPENJDK6@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/doclets/internal/toolkit/resources/*.class
+    @@OPENJDK6@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/javac/resources/*.class
+    @@OPENJDK6@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/javadoc/resources/*.class
+    @@OPENJDK6@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/javah/resources/*.class
+    @@OPENJDK6@@/jdk/src/share/classes/com/sun/jarsigner/*.class
+    @@OPENJDK6@@/jdk/src/share/classes/com/sun/jdi/*.class
+    @@OPENJDK6@@/jdk/src/share/classes/com/sun/jdi/connect/*.class
+    @@OPENJDK6@@/jdk/src/share/classes/com/sun/jdi/connect/spi/*.class
+    @@OPENJDK6@@/jdk/src/share/classes/com/sun/jdi/event/*.class
+    @@OPENJDK6@@/jdk/src/share/classes/com/sun/jdi/request/*.class
+    @@OPENJDK6@@/jdk/src/share/classes/com/sun/tools/attach/*.class
+    @@OPENJDK6@@/jdk/src/share/classes/com/sun/tools/attach/spi/*.class
+    @@OPENJDK6@@/jdk/src/share/classes/com/sun/tools/jdi/*.class
+    @@OPENJDK6@@/jdk/src/share/classes/com/sun/tools/script/shell/*.class
+    @@OPENJDK6@@/jdk/src/share/classes/sun/rmi/rmic/*.class
+    @@OPENJDK6@@/jdk/src/share/classes/sun/rmi/rmic/newrmic/*.class
+    @@OPENJDK6@@/jdk/src/share/classes/sun/rmi/rmic/newrmic/jrmp/*.class
+d159 1
+a159 1
+    @@OPENJDK6@@/jdk/src/share/classes/sun/tools/asm/*.class
+d161 48
+a208 47
+    @@OPENJDK6@@/jdk/src/share/classes/sun/tools/java/*.class
+    @@OPENJDK6@@/jdk/src/share/classes/sun/tools/javac/*.class
+    @@OPENJDK6@@/jdk/src/share/classes/sun/tools/native2ascii/*.class
+    @@OPENJDK6@@/jdk/src/share/classes/sun/tools/serialver/*.class
+    @@OPENJDK6@@/jdk/src/share/classes/sun/tools/tree/*.class
+    @@OPENJDK6@@/jdk/src/share/classes/sun/tools/util/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/javadoc/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/mirror/apt/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/mirror/declaration/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/mirror/type/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/mirror/util/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/source/tree/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/source/util/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/apt/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/apt/comp/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/apt/main/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/apt/mirror/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/apt/mirror/apt/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/apt/mirror/declaration/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/apt/mirror/type/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/apt/mirror/util/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/apt/util/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/doclets/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/doclets/standard/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/doclets/formats/html/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/doclets/formats/html/markup/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/taglets/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/util/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/util/links/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/javac/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/javac/api/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/javac/code/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/javac/comp/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/javac/file/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/javac/jvm/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/javac/main/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/javac/model/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/javac/parser/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/javac/processing/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/javac/sym/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/javac/tree/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/javac/util/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/javadoc/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/com/sun/tools/javah/*.class
+    @@OPENJDK6@@/langtools/src/share/classes/sun/tools/javap/*.class
+@
+
+
+1.7
+log
+@- Enable ikvmc support for class file version 51.
+- Change build to support hybrid OpenJDK 6 & 7 build.
+@
+text
+@d158 1
+a158 1
+    @@OPENJDK6@@/jdk/src/share/classes/sun/security/tools/*.class
+d160 1
+a160 1
+    @@OPENJDK6@@/jdk/src/share/classes/sun/tools/jar/*.class
+@
+
+
+1.6
+log
+@Integrated OpenJDK 6 b21.
+@
+text
+@d29 3
+a31 3
+    -resource:META-INF/services/com.sun.jdi.connect.Connector=@@OPENJDK@@/jdk/src/share/classes/com/sun/tools/jdi/META-INF/services/com.sun.jdi.connect.Connector
+    -resource:META-INF/services/com.sun.jdi.connect.spi.TransportService=@@OPENJDK@@/jdk/src/share/classes/com/sun/tools/jdi/META-INF/services/com.sun.jdi.connect.spi.TransportService
+    -recurse:@@OPENJDK@@/langtools/src/share/classes/*.properties
+d34 174
+a207 174
+    @@OPENJDK@@/build/linux-amd64/gensrc/com/sun/tools/jdi/*.class
+    @@OPENJDK@@/build/linux-amd64/gensrc/com/sun/tools/jdi/resources/*.class
+    @@OPENJDK@@/build/linux-amd64/gensrc/sun/tools/jar/resources/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/codemodel/internal/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/codemodel/internal/fmt/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/codemodel/internal/util/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/codemodel/internal/writer/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/istack/internal/tools/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/istack/internal/ws/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/corba/se/idl/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/corba/se/idl/constExpr/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/corba/se/idl/som/cff/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/corba/se/idl/som/idlemit/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/corba/se/idl/toJavaPortable/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/corba/se/logutil/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/jxc/apt/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/jxc/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/jxc/gen/config/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/jxc/model/nav/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/api/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/api/wsdl/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/generator/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/model/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/model/exporter/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/model/java/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/model/jaxb/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/modeler/annotation/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/modeler/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/modeler/wsdl/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/processor/util/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/resources/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/spi/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/util/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/util/xml/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wscompile/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/document/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/document/http/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/document/jaxws/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/document/mime/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/document/schema/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/document/soap/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/framework/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/ws/wsdl/parser/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/addon/at_generated/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/addon/code_injector/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/addon/episode/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/addon/locator/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/addon/sync/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/api/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/api/impl/j2s/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/api/impl/s2j/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/api/util/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/generator/annotation/ri/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/generator/annotation/spec/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/generator/bean/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/generator/bean/field/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/generator/util/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/model/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/model/nav/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/outline/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/dtd/bindinfo/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/dtd/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/gbind/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/internalizer/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/relaxng/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/xmlschema/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/xmlschema/bindinfo/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/xmlschema/ct/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/reader/xmlschema/parser/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/runtime/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/util/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/tools/internal/xjc/writer/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/dtdparser/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/ast/builder/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/ast/om/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/ast/util/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/binary/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/binary/visitor/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/digested/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/dt/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/dt/builtin/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/nc/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/parse/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/parse/compact/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/parse/host/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/parse/xml/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/util/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/xml/sax/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/xml/util/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/impl/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/impl/parser/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/impl/parser/state/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/impl/scd/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/impl/util/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/parser/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/util/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/visitor/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/org/relaxng/datatype/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/org/relaxng/datatype/helpers/*.class
+    @@OPENJDK@@/build/linux-amd64/impsrc/sun/rmi/rmic/iiop/*.class
+    @@OPENJDK@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/apt/resources/*.class
+    @@OPENJDK@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/doclets/formats/html/resources/*.class
+    @@OPENJDK@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/doclets/internal/toolkit/resources/*.class
+    @@OPENJDK@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/javac/resources/*.class
+    @@OPENJDK@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/javadoc/resources/*.class
+    @@OPENJDK@@/build/linux-amd64/langtools/build/gensrc/com/sun/tools/javah/resources/*.class
+    @@OPENJDK@@/jdk/src/share/classes/com/sun/jarsigner/*.class
+    @@OPENJDK@@/jdk/src/share/classes/com/sun/jdi/*.class
+    @@OPENJDK@@/jdk/src/share/classes/com/sun/jdi/connect/*.class
+    @@OPENJDK@@/jdk/src/share/classes/com/sun/jdi/connect/spi/*.class
+    @@OPENJDK@@/jdk/src/share/classes/com/sun/jdi/event/*.class
+    @@OPENJDK@@/jdk/src/share/classes/com/sun/jdi/request/*.class
+    @@OPENJDK@@/jdk/src/share/classes/com/sun/tools/attach/*.class
+    @@OPENJDK@@/jdk/src/share/classes/com/sun/tools/attach/spi/*.class
+    @@OPENJDK@@/jdk/src/share/classes/com/sun/tools/jdi/*.class
+    @@OPENJDK@@/jdk/src/share/classes/com/sun/tools/script/shell/*.class
+    @@OPENJDK@@/jdk/src/share/classes/sun/rmi/rmic/*.class
+    @@OPENJDK@@/jdk/src/share/classes/sun/rmi/rmic/newrmic/*.class
+    @@OPENJDK@@/jdk/src/share/classes/sun/rmi/rmic/newrmic/jrmp/*.class
+    @@OPENJDK@@/jdk/src/share/classes/sun/security/tools/*.class
+    @@OPENJDK@@/jdk/src/share/classes/sun/tools/asm/*.class
+    @@OPENJDK@@/jdk/src/share/classes/sun/tools/jar/*.class
+    @@OPENJDK@@/jdk/src/share/classes/sun/tools/java/*.class
+    @@OPENJDK@@/jdk/src/share/classes/sun/tools/javac/*.class
+    @@OPENJDK@@/jdk/src/share/classes/sun/tools/native2ascii/*.class
+    @@OPENJDK@@/jdk/src/share/classes/sun/tools/serialver/*.class
+    @@OPENJDK@@/jdk/src/share/classes/sun/tools/tree/*.class
+    @@OPENJDK@@/jdk/src/share/classes/sun/tools/util/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/javadoc/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/mirror/apt/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/mirror/declaration/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/mirror/type/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/mirror/util/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/source/tree/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/source/util/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/apt/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/apt/comp/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/apt/main/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/apt/mirror/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/apt/mirror/apt/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/apt/mirror/declaration/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/apt/mirror/type/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/apt/mirror/util/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/apt/util/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/doclets/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/doclets/standard/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/doclets/formats/html/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/doclets/formats/html/markup/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/taglets/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/util/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/util/links/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/api/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/code/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/comp/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/file/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/jvm/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/main/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/model/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/parser/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/processing/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/sym/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/tree/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/util/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javadoc/*.class
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javah/*.class
+    @@OPENJDK@@/langtools/src/share/classes/sun/tools/javap/*.class
+@
+
+
+1.5
+log
+@Added a couple of forgotten resource directories to IKVM.OpenJDK.Tools.dll build.
+@
+text
+@d1 23
+a30 3
+    -resource:com/sun/tools/jdi/resources/jdi.properties=@@OPENJDK@@/jdk/src/share/classes/com/sun/tools/jdi/resources/jdi.properties
+    -resource:com/sun/tools/jdi/resources/jdi_ja.properties=@@OPENJDK@@/jdk/src/share/classes/com/sun/tools/jdi/resources/jdi_ja.properties
+    -resource:com/sun/tools/jdi/resources/jdi_zh_CN.properties=@@OPENJDK@@/jdk/src/share/classes/com/sun/tools/jdi/resources/jdi_zh_CN.properties
+d32 2
+d35 75
+d138 1
+d145 1
+d154 13
+d196 1
+a204 1
+    @@OPENJDK@@/langtools/src/share/classes/com/sun/tools/javac/zip/*.class
+@
+
+
+1.4
+log
+@Include more parts of tools.jar in IKVM.OpenJDK.Tools.dll.
+@
+text
+@d41 6
+@
+
+
+1.3
+log
+@Integrated OpenJDK 6 b18.
+@
+text
+@d11 1
+d49 41
+@
+
+
+1.2
+log
+@Removed ../../openjdk6-b16 path from tools response file.
+@
+text
+@d38 2
+a39 2
+    @@OPENJDK@@/jaxws/src/share/classes/org/relaxng/datatype/*.class
+    @@OPENJDK@@/jaxws/src/share/classes/org/relaxng/datatype/helpers/*.class
+@
+
+
+1.1
+log
+@Created IKVM.OpenJDK.Tools.dll (which is going to be the equivalent of tools.jar).
+@
+text
+@d6 42
+a47 42
+    -resource:META-INF/services/com.sun.jdi.connect.Connector=../../openjdk6-b16/jdk/src/share/classes/com/sun/tools/jdi/META-INF/services/com.sun.jdi.connect.Connector
+    -resource:META-INF/services/com.sun.jdi.connect.spi.TransportService=../../openjdk6-b16/jdk/src/share/classes/com/sun/tools/jdi/META-INF/services/com.sun.jdi.connect.spi.TransportService
+    -resource:com/sun/tools/jdi/resources/jdi.properties=../../openjdk6-b16/jdk/src/share/classes/com/sun/tools/jdi/resources/jdi.properties
+    -resource:com/sun/tools/jdi/resources/jdi_ja.properties=../../openjdk6-b16/jdk/src/share/classes/com/sun/tools/jdi/resources/jdi_ja.properties
+    -resource:com/sun/tools/jdi/resources/jdi_zh_CN.properties=../../openjdk6-b16/jdk/src/share/classes/com/sun/tools/jdi/resources/jdi_zh_CN.properties
+    ../../openjdk6-b16/build/linux-amd64/gensrc/com/sun/tools/jdi/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/dtdparser/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/ast/builder/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/ast/om/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/ast/util/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/binary/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/binary/visitor/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/digested/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/dt/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/dt/builtin/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/nc/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/parse/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/parse/compact/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/parse/host/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/parse/xml/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/util/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/xml/sax/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/rngom/xml/util/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/impl/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/impl/parser/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/impl/parser/state/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/impl/scd/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/impl/util/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/parser/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/util/*.class
+    ../../openjdk6-b16/build/linux-amd64/impsrc/com/sun/xml/internal/xsom/visitor/*.class
+    ../../openjdk6-b16/jaxws/src/share/classes/org/relaxng/datatype/*.class
+    ../../openjdk6-b16/jaxws/src/share/classes/org/relaxng/datatype/helpers/*.class
+    ../../openjdk6-b16/jdk/src/share/classes/com/sun/jdi/*.class
+    ../../openjdk6-b16/jdk/src/share/classes/com/sun/jdi/connect/*.class
+    ../../openjdk6-b16/jdk/src/share/classes/com/sun/jdi/connect/spi/*.class
+    ../../openjdk6-b16/jdk/src/share/classes/com/sun/jdi/event/*.class
+    ../../openjdk6-b16/jdk/src/share/classes/com/sun/jdi/request/*.class
+    ../../openjdk6-b16/jdk/src/share/classes/com/sun/tools/attach/*.class
+    ../../openjdk6-b16/jdk/src/share/classes/com/sun/tools/attach/spi/*.class
+    ../../openjdk6-b16/jdk/src/share/classes/com/sun/tools/jdi/*.class
+@
+

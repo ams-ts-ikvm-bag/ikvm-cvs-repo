@@ -1,0 +1,88 @@
+head	1.2;
+access;
+symbols
+	v8_1_5717_0:1.2
+	v8_1:1.2.0.8
+	v8_0_5449_1:1.2
+	v8_0_5449_0:1.2
+	v8_0:1.2.0.6
+	v7_4_5196_0:1.2
+	v7_4:1.2.0.4
+	v7_3:1.2.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.2
+date	2012.12.13.10.11.17;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2012.10.25.18.32.06;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@Ported MSBuild task to .NET 2.0 and included the project in the VS solution.
+@
+text
+@﻿/*
+  Copyright (C) 2007, 2008, 2010 Jeroen Frijters
+  Copyright (C) 2009 - 2012 Volker Berlin (i-net software)
+  Copyright (C) 2010 Karsten Heinrich (i-net software)
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+#region Using directives
+
+using System;
+using System.Reflection;
+using System.Runtime.InteropServices;
+
+#endregion
+
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+[assembly: AssemblyTitle("IKVM.MSBuild")]
+[assembly: AssemblyDescription("Java build task for .NET")]
+
+//[assembly: System.Security.AllowPartiallyTrustedCallers]
+@
+
+
+1.1
+log
+@Java MsBuild task based on IKVM
+@
+text
+@d40 1
+a40 1
+[assembly: System.Security.AllowPartiallyTrustedCallers]
+@
+

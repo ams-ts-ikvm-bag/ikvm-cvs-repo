@@ -1,0 +1,237 @@
+head	1.1;
+access;
+symbols
+	v8_1_5717_0:1.1
+	v8_1:1.1.0.20
+	v8_0_5449_1:1.1
+	v8_0_5449_0:1.1
+	v8_0:1.1.0.18
+	v7_4_5196_0:1.1
+	v7_4:1.1.0.16
+	v7_3:1.1.0.14
+	v7_2_4630_6:1.1
+	v7_2_4630_5:1.1
+	v7_2_4630_4:1.1
+	v7_2_4630_3:1.1
+	v7_2_4630_2:1.1
+	v0_46_0_4:1.1
+	v7_2_4630_1:1.1
+	v7_2:1.1.0.12
+	v7_1_4532_2:1.1
+	v7_1_4532_1:1.1
+	v7_1_4532_0:1.1
+	v7_1:1.1.0.10
+	v7_0_4335_3:1.1
+	v7_0_4335_2:1.1
+	v7_0_4335_1:1.1
+	v0_46_0_2:1.1
+	v7_0_4335_0:1.1
+	v7_0:1.1.0.8
+	v0_46_0_1:1.1
+	v0_46_0_0:1.1
+	v0_46:1.1.0.6
+	v0_44_0_6:1.1
+	v0_44_0_5:1.1
+	v0_44_0_4:1.1
+	v0_44_0_3:1.1
+	v0_44_0_2:1.1
+	v0_42_0_7:1.1
+	v0_44_0_1:1.1
+	v0_44_0_0:1.1
+	v0_44:1.1.0.4
+	v0_42_0_6:1.1
+	v0_42_0_5:1.1
+	v0_42_0_4:1.1
+	v0_42_0_3:1.1
+	v0_42_0_2:1.1
+	v0_42_0_1:1.1
+	v0_42_0_0:1.1
+	v0_42:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	2009.05.03.19.05.09;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Create a wrapper GraphicsEnvironment for headless support
+@
+text
+@/*
+  Copyright (C) 2009 Volker Berlin (i-net software)
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+ */
+package sun.java2d;
+
+import java.awt.Font;
+import java.awt.Graphics2D;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+import java.awt.HeadlessException;
+import java.awt.Point;
+import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
+import java.util.Locale;
+
+
+/**
+ * Placeholder for not supported headless environment
+ */
+public class HeadlessGraphicsEnvironment extends GraphicsEnvironment{
+
+    private final GraphicsEnvironment env;
+    
+
+    public HeadlessGraphicsEnvironment(GraphicsEnvironment env){
+        this.env = env;
+    }
+    
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    public Graphics2D createGraphics(BufferedImage img){
+        return env.createGraphics(img);
+    }
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    public boolean equals(Object obj){
+        return env.equals(obj);
+    }
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    public Font[] getAllFonts(){
+        return env.getAllFonts();
+    }
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    public String[] getAvailableFontFamilyNames(){
+        return env.getAvailableFontFamilyNames();
+    }
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    public String[] getAvailableFontFamilyNames(Locale l){
+        return env.getAvailableFontFamilyNames(l);
+    }
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    public Point getCenterPoint() throws HeadlessException{
+        return env.getCenterPoint();
+    }
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    public GraphicsDevice getDefaultScreenDevice() throws HeadlessException{
+        return env.getDefaultScreenDevice();
+    }
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    public Rectangle getMaximumWindowBounds() throws HeadlessException{
+        return env.getMaximumWindowBounds();
+    }
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    public GraphicsDevice[] getScreenDevices() throws HeadlessException{
+        return env.getScreenDevices();
+    }
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    public int hashCode(){
+        return env.hashCode();
+    }
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    public boolean isHeadlessInstance(){
+        return env.isHeadlessInstance();
+    }
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    public void preferLocaleFonts(){
+        env.preferLocaleFonts();
+    }
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    public void preferProportionalFonts(){
+        env.preferProportionalFonts();
+    }
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    public boolean registerFont(Font font){
+        return env.registerFont(font);
+    }
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    public String toString(){
+        return env.toString();
+    }    
+}
+@

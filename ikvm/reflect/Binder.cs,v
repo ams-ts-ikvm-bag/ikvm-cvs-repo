@@ -1,0 +1,618 @@
+head	1.7;
+access;
+symbols
+	v8_1_5717_0:1.6
+	v8_1:1.6.0.6
+	v8_0_5449_1:1.6
+	v8_0_5449_0:1.6
+	v8_0:1.6.0.4
+	v7_4_5196_0:1.6
+	v7_4:1.6.0.2
+	v7_3:1.4.0.6
+	v7_2_4630_6:1.4
+	v7_2_4630_5:1.4
+	v7_2_4630_4:1.4
+	v7_2_4630_3:1.4
+	v7_2_4630_2:1.4
+	v0_46_0_4:1.2
+	v7_2_4630_1:1.4
+	v7_2:1.4.0.4
+	v7_1_4532_2:1.4
+	v7_1_4532_1:1.4
+	v7_1_4532_0:1.4
+	v7_1:1.4.0.2
+	v7_0_4335_3:1.2
+	v7_0_4335_2:1.2
+	v7_0_4335_1:1.2
+	v0_46_0_2:1.2
+	v7_0_4335_0:1.2
+	v7_0:1.2.0.6
+	v0_46_0_1:1.2
+	v0_46_0_0:1.2
+	v0_46:1.2.0.4
+	v0_44_0_6:1.2
+	v0_44_0_5:1.2
+	v0_44_0_4:1.2
+	v0_44_0_3:1.2
+	v0_44_0_2:1.2
+	v0_44_0_1:1.2
+	v0_44_0_0:1.2
+	v0_44:1.2.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.7
+date	2015.11.03.10.05.56;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2013.11.22.07.15.57;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2013.11.21.06.56.53;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2012.04.12.06.40.56;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2012.04.10.13.03.09;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.7
+log
+@Bind type parameters when matching signatures.
+@
+text
+@/*
+  Copyright (C) 2010-2012 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Globalization;
+
+namespace IKVM.Reflection
+{
+	public abstract class Binder
+	{
+		protected Binder()
+		{
+		}
+
+		public virtual MethodBase BindToMethod(BindingFlags bindingAttr, MethodBase[] match, ref object[] args, ParameterModifier[] modifiers, CultureInfo culture, string[] names, out object state)
+		{
+			throw new InvalidOperationException();
+		}
+
+		public virtual FieldInfo BindToField(BindingFlags bindingAttr, FieldInfo[] match, object value, CultureInfo culture)
+		{
+			throw new InvalidOperationException();
+		}
+
+		public virtual object ChangeType(object value, Type type, CultureInfo culture)
+		{
+			throw new InvalidOperationException();
+		}
+
+		public virtual void ReorderArgumentArray(ref object[] args, object state)
+		{
+			throw new InvalidOperationException();
+		}
+
+		public abstract MethodBase SelectMethod(BindingFlags bindingAttr, MethodBase[] match, Type[] types, ParameterModifier[] modifiers);
+		public abstract PropertyInfo SelectProperty(BindingFlags bindingAttr, PropertyInfo[] match, Type returnType, Type[] indexes, ParameterModifier[] modifiers);
+	}
+
+	sealed class DefaultBinder : Binder
+	{
+		public override MethodBase SelectMethod(BindingFlags bindingAttr, MethodBase[] match, Type[] types, ParameterModifier[] modifiers)
+		{
+			int matchCount = 0;
+			foreach (MethodBase method in match)
+			{
+				if (MatchParameterTypes(method.GetParameters(), types))
+				{
+					match[matchCount++] = method;
+				}
+			}
+
+			if (matchCount == 0)
+			{
+				return null;
+			}
+
+			MethodBase bestMatch = match[0];
+			bool ambiguous = false;
+			for (int i = 1; i < matchCount; i++)
+			{
+				SelectBestMatch(match[i], types, ref bestMatch, ref ambiguous);
+			}
+			if (ambiguous)
+			{
+				throw new AmbiguousMatchException();
+			}
+			return bestMatch;
+		}
+
+		private static bool MatchParameterTypes(ParameterInfo[] parameters, Type[] types)
+		{
+			if (parameters.Length != types.Length)
+			{
+				return false;
+			}
+			for (int i = 0; i < parameters.Length; i++)
+			{
+				Type sourceType = types[i];
+				Type targetType = parameters[i].ParameterType;
+				if (sourceType != targetType
+					&& !targetType.IsAssignableFrom(sourceType)
+					&& !IsAllowedPrimitiveConversion(sourceType, targetType))
+				{
+					return false;
+				}
+			}
+			return true;
+		}
+
+		private static void SelectBestMatch(MethodBase candidate, Type[] types, ref MethodBase currentBest, ref bool ambiguous)
+		{
+			switch (MatchSignatures(currentBest, candidate, types))
+			{
+				case 1:
+					return;
+				case 2:
+					ambiguous = false;
+					currentBest = candidate;
+					return;
+			}
+
+			if (currentBest.MethodSignature.MatchParameterTypes(candidate.MethodSignature))
+			{
+				int depth1 = GetInheritanceDepth(currentBest.DeclaringType);
+				int depth2 = GetInheritanceDepth(candidate.DeclaringType);
+				if (depth1 > depth2)
+				{
+					return;
+				}
+				else if (depth1 < depth2)
+				{
+					ambiguous = false;
+					currentBest = candidate;
+					return;
+				}
+			}
+
+			ambiguous = true;
+		}
+
+		private static int GetInheritanceDepth(Type type)
+		{
+			int depth = 0;
+			while (type != null)
+			{
+				depth++;
+				type = type.BaseType;
+			}
+			return depth;
+		}
+
+		private static int MatchSignatures(MethodBase mb1, MethodBase mb2, Type[] types)
+		{
+			MethodSignature sig1 = mb1.MethodSignature;
+			MethodSignature sig2 = mb2.MethodSignature;
+			IGenericBinder gb1 = mb1 as IGenericBinder ?? mb1.DeclaringType;
+			IGenericBinder gb2 = mb2 as IGenericBinder ?? mb2.DeclaringType;
+			for (int i = 0; i < sig1.GetParameterCount(); i++)
+			{
+				Type type1 = sig1.GetParameterType(gb1, i);
+				Type type2 = sig2.GetParameterType(gb2, i);
+				if (type1 != type2)
+				{
+					return MatchTypes(type1, type2, types[i]);
+				}
+			}
+			return 0;
+		}
+
+		private static int MatchSignatures(PropertySignature sig1, PropertySignature sig2, Type[] types)
+		{
+			for (int i = 0; i < sig1.ParameterCount; i++)
+			{
+				Type type1 = sig1.GetParameter(i);
+				Type type2 = sig2.GetParameter(i);
+				if (type1 != type2)
+				{
+					return MatchTypes(type1, type2, types[i]);
+				}
+			}
+			return 0;
+		}
+
+		private static int MatchTypes(Type type1, Type type2, Type type)
+		{
+			if (type1 == type)
+			{
+				return 1;
+			}
+			if (type2 == type)
+			{
+				return 2;
+			}
+			bool conv = type1.IsAssignableFrom(type2);
+			return conv == type2.IsAssignableFrom(type1) ? 0 : conv ? 2 : 1;
+		}
+
+		private static bool IsAllowedPrimitiveConversion(Type source, Type target)
+		{
+			// we need to check for primitives, because GetTypeCode will return the underlying type for enums
+			if (!source.IsPrimitive || !target.IsPrimitive)
+			{
+				return false;
+			}
+			TypeCode sourceType = Type.GetTypeCode(source);
+			TypeCode targetType = Type.GetTypeCode(target);
+			switch (sourceType)
+			{
+				case TypeCode.Char:
+					switch (targetType)
+					{
+						case TypeCode.UInt16:
+						case TypeCode.UInt32:
+						case TypeCode.Int32:
+						case TypeCode.UInt64:
+						case TypeCode.Int64:
+						case TypeCode.Single:
+						case TypeCode.Double:
+							return true;
+						default:
+							return false;
+					}
+				case TypeCode.Byte:
+					switch (targetType)
+					{
+						case TypeCode.Char:
+						case TypeCode.UInt16:
+						case TypeCode.Int16:
+						case TypeCode.UInt32:
+						case TypeCode.Int32:
+						case TypeCode.UInt64:
+						case TypeCode.Int64:
+						case TypeCode.Single:
+						case TypeCode.Double:
+							return true;
+						default:
+							return false;
+					}
+				case TypeCode.SByte:
+					switch (targetType)
+					{
+						case TypeCode.Int16:
+						case TypeCode.Int32:
+						case TypeCode.Int64:
+						case TypeCode.Single:
+						case TypeCode.Double:
+							return true;
+						default:
+							return false;
+					}
+				case TypeCode.UInt16:
+					switch (targetType)
+					{
+						case TypeCode.UInt32:
+						case TypeCode.Int32:
+						case TypeCode.UInt64:
+						case TypeCode.Int64:
+						case TypeCode.Single:
+						case TypeCode.Double:
+							return true;
+						default:
+							return false;
+					}
+				case TypeCode.Int16:
+					switch (targetType)
+					{
+						case TypeCode.Int32:
+						case TypeCode.Int64:
+						case TypeCode.Single:
+						case TypeCode.Double:
+							return true;
+						default:
+							return false;
+					}
+				case TypeCode.UInt32:
+					switch (targetType)
+					{
+						case TypeCode.UInt64:
+						case TypeCode.Int64:
+						case TypeCode.Single:
+						case TypeCode.Double:
+							return true;
+						default:
+							return false;
+					}
+				case TypeCode.Int32:
+					switch (targetType)
+					{
+						case TypeCode.Int64:
+						case TypeCode.Single:
+						case TypeCode.Double:
+							return true;
+						default:
+							return false;
+					}
+				case TypeCode.UInt64:
+					switch (targetType)
+					{
+						case TypeCode.Single:
+						case TypeCode.Double:
+							return true;
+						default:
+							return false;
+					}
+				case TypeCode.Int64:
+					switch (targetType)
+					{
+						case TypeCode.Single:
+						case TypeCode.Double:
+							return true;
+						default:
+							return false;
+					}
+				case TypeCode.Single:
+					switch (targetType)
+					{
+						case TypeCode.Double:
+							return true;
+						default:
+							return false;
+					}
+				default:
+					return false;
+			}
+		}
+
+		public override PropertyInfo SelectProperty(BindingFlags bindingAttr, PropertyInfo[] match, Type returnType, Type[] indexes, ParameterModifier[] modifiers)
+		{
+			int matchCount = 0;
+			foreach (PropertyInfo property in match)
+			{
+				if (indexes == null || MatchParameterTypes(property.GetIndexParameters(), indexes))
+				{
+					if (returnType != null)
+					{
+						if (property.PropertyType.IsPrimitive)
+						{
+							if (!IsAllowedPrimitiveConversion(returnType, property.PropertyType))
+							{
+								continue;
+							}
+						}
+						else
+						{
+							if (!property.PropertyType.IsAssignableFrom(returnType))
+							{
+								continue;
+							}
+						}
+					}
+					match[matchCount++] = property;
+				}
+			}
+
+			if (matchCount == 0)
+			{
+				return null;
+			}
+
+			if (matchCount == 1)
+			{
+				return match[0];
+			}
+
+			PropertyInfo bestMatch = match[0];
+			bool ambiguous = false;
+			for (int i = 1; i < matchCount; i++)
+			{
+				int best = MatchTypes(bestMatch.PropertyType, match[i].PropertyType, returnType);
+				if (best == 0 && indexes != null)
+				{
+					best = MatchSignatures(bestMatch.PropertySignature, match[i].PropertySignature, indexes);
+				}
+				if (best == 0)
+				{
+					int depth1 = GetInheritanceDepth(bestMatch.DeclaringType);
+					int depth2 = GetInheritanceDepth(match[i].DeclaringType);
+					if (bestMatch.Name == match[i].Name && depth1 != depth2)
+					{
+						if (depth1 > depth2)
+						{
+							best = 1;
+						}
+						else
+						{
+							best = 2;
+						}
+					}
+					else
+					{
+						ambiguous = true;
+					}
+				}
+				if (best == 2)
+				{
+					ambiguous = false;
+					bestMatch = match[i];
+				}
+			}
+			if (ambiguous)
+			{
+				throw new AmbiguousMatchException();
+			}
+			return bestMatch;
+		}
+	}
+}
+@
+
+
+1.6
+log
+@Removed unnecessary early out in SelectMethod().
+@
+text
+@d112 1
+a112 1
+			switch (MatchSignatures(currentBest.MethodSignature, candidate.MethodSignature, types))
+d152 1
+a152 1
+		private static int MatchSignatures(MethodSignature sig1, MethodSignature sig2, Type[] types)
+d154 4
+d160 2
+a161 2
+				Type type1 = sig1.GetParameterType(i);
+				Type type2 = sig2.GetParameterType(i);
+@
+
+
+1.5
+log
+@Fix for bug #283.
+@
+text
+@a76 5
+			if (matchCount == 1)
+			{
+				return match[0];
+			}
+
+@
+
+
+1.4
+log
+@Binder bug fix. Enums should not be treated as primitives.
+@
+text
+@d86 1
+a86 1
+				bestMatch = SelectBestMatch(bestMatch, match[i], types, ref ambiguous);
+d115 1
+a115 1
+		private static MethodBase SelectBestMatch(MethodBase mb1, MethodBase mb2, Type[] types, ref bool ambiguous)
+d117 1
+a117 1
+			switch (MatchSignatures(mb1.MethodSignature, mb2.MethodSignature, types))
+d120 1
+a120 1
+					return mb1;
+d122 3
+a124 1
+					return mb2;
+d127 1
+a127 1
+			if (mb1.MethodSignature.MatchParameterTypes(mb2.MethodSignature))
+d129 2
+a130 2
+				int depth1 = GetInheritanceDepth(mb1.DeclaringType);
+				int depth2 = GetInheritanceDepth(mb2.DeclaringType);
+d133 1
+a133 1
+					return mb1;
+d137 3
+a139 1
+					return mb2;
+a143 1
+			return mb1;
+@
+
+
+1.3
+log
+@Added Binder support for method and property lookup.
+@
+text
+@d107 1
+a107 1
+					&& !IsAllowedPrimitiveConversion(Type.GetTypeCode(sourceType), Type.GetTypeCode(targetType)))
+d196 1
+a196 1
+		private static bool IsAllowedPrimitiveConversion(TypeCode sourceType, TypeCode targetType)
+d198 7
+d336 1
+a336 1
+							if (!IsAllowedPrimitiveConversion(Type.GetTypeCode(returnType), Type.GetTypeCode(property.PropertyType)))
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2010 Jeroen Frijters
+a32 1
+			throw new NotSupportedException();
+d35 20
+a54 4
+		public abstract MethodBase BindToMethod(BindingFlags bindingAttr, MethodBase[] match, ref object[] args, ParameterModifier[] modifiers, CultureInfo culture, string[] names, out object state);
+		public abstract FieldInfo BindToField(BindingFlags bindingAttr, FieldInfo[] match, object value, CultureInfo culture);
+		public abstract object ChangeType(object value, Type type, CultureInfo culture);
+		public abstract void ReorderArgumentArray(ref object[] args, object state);
+d58 340
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

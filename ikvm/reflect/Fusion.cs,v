@@ -1,0 +1,1917 @@
+head	1.33;
+access;
+symbols
+	v8_1_5717_0:1.31
+	v8_1:1.31.0.2
+	v8_0_5449_1:1.30
+	v8_0_5449_0:1.30
+	v8_0:1.30.0.4
+	v7_4_5196_0:1.30
+	v7_4:1.30.0.2
+	v7_3:1.20.0.2
+	v7_2_4630_6:1.19
+	v7_2_4630_5:1.19
+	v7_2_4630_4:1.19
+	v7_2_4630_3:1.19
+	v7_2_4630_2:1.19
+	v0_46_0_4:1.7
+	v7_2_4630_1:1.19
+	v7_2:1.19.0.2
+	v7_1_4532_2:1.18
+	v7_1_4532_1:1.18
+	v7_1_4532_0:1.18
+	v7_1:1.18.0.2
+	v7_0_4335_3:1.7
+	v7_0_4335_2:1.7
+	v7_0_4335_1:1.7
+	v0_46_0_2:1.7
+	v7_0_4335_0:1.7
+	v7_0:1.7.0.4
+	v0_46_0_1:1.7
+	v0_46_0_0:1.7
+	v0_46:1.7.0.2
+	v0_44_0_6:1.3
+	v0_44_0_5:1.3
+	v0_44_0_4:1.3
+	v0_44_0_3:1.3
+	v0_44_0_2:1.3
+	v0_44_0_1:1.3
+	v0_44_0_0:1.3
+	v0_44:1.3.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.33
+date	2016.08.03.13.55.22;	author jfrijters;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2016.07.01.05.44.41;	author jfrijters;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2015.02.16.12.24.28;	author jfrijters;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2013.12.05.09.43.01;	author jfrijters;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2013.09.25.08.57.44;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2013.09.25.08.44.30;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2013.09.25.07.57.26;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2013.09.24.13.27.09;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2013.09.11.14.53.11;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2013.09.11.07.53.17;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2013.09.10.09.41.14;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2013.09.10.06.47.58;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2013.05.10.06.16.58;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2012.10.14.14.33.28;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2012.06.26.15.51.53;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2012.03.05.13.47.47;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2012.01.30.14.22.37;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2012.01.25.08.10.15;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2012.01.25.06.03.25;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2011.11.08.09.49.26;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2011.11.08.09.43.24;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2011.11.08.09.42.04;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2011.11.08.06.15.39;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2011.11.08.06.12.53;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2011.11.08.06.10.09;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2011.11.07.14.55.30;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2011.01.18.07.09.42;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2011.01.14.05.02.23;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2011.01.13.15.15.41;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2011.01.13.13.22.07;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.05.12.15.17.24;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.05.12.06.55.49;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.05.11.15.19.27;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.33
+log
+@Patch by Marek Safar <marek.safar@@gmail.com>
+
+[PATCH] Fixes FX assemblies unification with different build and revision versions.
+
+This happens for PCL assemblies like System.Runtime which already exists in
+versions 4.0.0.0, 4.0.10.0, 4.0.20.0
+@
+text
+@/*
+  Copyright (C) 2010-2013 Jeroen Frijters
+  Copyright (C) 2011 Marek Safar
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+
+using System;
+using System.Runtime.InteropServices;
+using System.Text;
+
+namespace IKVM.Reflection
+{
+	struct ParsedAssemblyName
+	{
+		internal string Name;
+		internal string Version;
+		internal string Culture;
+		internal string PublicKeyToken;
+		internal bool? Retargetable;
+		internal ProcessorArchitecture ProcessorArchitecture;
+		internal bool HasPublicKey;
+		internal bool WindowsRuntime;
+	}
+
+	enum ParseAssemblyResult
+	{
+		OK,
+		GenericError,
+		DuplicateKey,
+	}
+
+	static class Fusion
+	{
+		static readonly Version FrameworkVersion = new Version(4, 0, 0, 0);
+		static readonly Version FrameworkVersionNext = new Version(4, 1, 0, 0);
+		static readonly Version SilverlightVersion = new Version(2, 0, 5, 0);
+		static readonly Version SilverlightVersionMinimum = new Version(2, 0, 0, 0);
+		static readonly Version SilverlightVersionMaximum = new Version(5, 9, 0, 0);
+		const string PublicKeyTokenEcma = "b77a5c561934e089";
+		const string PublicKeyTokenMicrosoft = "b03f5f7f11d50a3a";
+		const string PublicKeyTokenSilverlight = "7cec85d7bea7798e";
+		const string PublicKeyTokenWinFX = "31bf3856ad364e35";
+
+#if !NETSTANDARD
+		internal static bool CompareAssemblyIdentityNative(string assemblyIdentity1, bool unified1, string assemblyIdentity2, bool unified2, out AssemblyComparisonResult result)
+		{
+			bool equivalent;
+			Marshal.ThrowExceptionForHR(CompareAssemblyIdentity(assemblyIdentity1, unified1, assemblyIdentity2, unified2, out equivalent, out result));
+			return equivalent;
+		}
+
+		[DllImport("fusion", CharSet = CharSet.Unicode)]
+		private static extern int CompareAssemblyIdentity(string pwzAssemblyIdentity1, bool fUnified1, string pwzAssemblyIdentity2, bool fUnified2, out bool pfEquivalent, out AssemblyComparisonResult pResult);
+#endif
+
+		// internal for use by mcs
+		internal static bool CompareAssemblyIdentityPure(string assemblyIdentity1, bool unified1, string assemblyIdentity2, bool unified2, out AssemblyComparisonResult result)
+		{
+			ParsedAssemblyName name1;
+			ParsedAssemblyName name2;
+
+			ParseAssemblyResult r1 = ParseAssemblyName(assemblyIdentity1, out name1);
+			ParseAssemblyResult r2 = ParseAssemblyName(assemblyIdentity2, out name2);
+
+			Version version1;
+			if (unified1)
+			{
+				if (name1.Name == null || !ParseVersion(name1.Version, out version1) || version1 == null || version1.Revision == -1
+					|| name1.Culture == null || name1.PublicKeyToken == null || name1.PublicKeyToken.Length < 2)
+				{
+					result = AssemblyComparisonResult.NonEquivalent;
+					throw new ArgumentException();
+				}
+			}
+
+			Version version2 = null;
+			if (!ParseVersion(name2.Version, out version2) || version2 == null || version2.Revision == -1 
+				|| name2.Culture == null || name2.PublicKeyToken == null || name2.PublicKeyToken.Length < 2)
+			{
+				result = AssemblyComparisonResult.NonEquivalent;
+				throw new ArgumentException();
+			}
+
+			if (name2.Name != null && name2.Name.Equals("mscorlib", StringComparison.OrdinalIgnoreCase))
+			{
+				if (name1.Name != null && name1.Name.Equals(name2.Name, StringComparison.OrdinalIgnoreCase))
+				{
+					result = AssemblyComparisonResult.EquivalentFullMatch;
+					return true;
+				}
+				else
+				{
+					result = AssemblyComparisonResult.NonEquivalent;
+					return false;
+				}
+			}
+
+			if (r1 != ParseAssemblyResult.OK)
+			{
+				result = AssemblyComparisonResult.NonEquivalent;
+				switch (r1)
+				{
+					case ParseAssemblyResult.DuplicateKey:
+						throw new System.IO.FileLoadException();
+					case ParseAssemblyResult.GenericError:
+					default:
+						throw new ArgumentException();
+				}
+			}
+
+			if (r2 != ParseAssemblyResult.OK)
+			{
+				result = AssemblyComparisonResult.NonEquivalent;
+				switch (r2)
+				{
+					case ParseAssemblyResult.DuplicateKey:
+						throw new System.IO.FileLoadException();
+					case ParseAssemblyResult.GenericError:
+					default:
+						throw new ArgumentException();
+				}
+			}
+
+			if (!ParseVersion(name1.Version, out version1))
+			{
+				result = AssemblyComparisonResult.NonEquivalent;
+				throw new ArgumentException();
+			}
+
+			bool partial = IsPartial(name1, version1);
+
+			if (partial && name1.Retargetable.HasValue)
+			{
+				result = AssemblyComparisonResult.NonEquivalent;
+				throw new System.IO.FileLoadException();
+			}
+			if ((partial && unified1) || IsPartial(name2, version2))
+			{
+				result = AssemblyComparisonResult.NonEquivalent;
+				throw new ArgumentException();
+			}
+			if (!name1.Name.Equals(name2.Name, StringComparison.OrdinalIgnoreCase))
+			{
+				result = AssemblyComparisonResult.NonEquivalent;
+				return false;
+			}
+			if (partial && name1.Culture == null)
+			{
+			}
+			else if (!name1.Culture.Equals(name2.Culture, StringComparison.OrdinalIgnoreCase))
+			{
+				result = AssemblyComparisonResult.NonEquivalent;
+				return false;
+			}
+
+			if (!name1.Retargetable.GetValueOrDefault() && name2.Retargetable.GetValueOrDefault())
+			{
+				result = AssemblyComparisonResult.NonEquivalent;
+				return false;
+			}
+
+			// HACK handle the case "System.Net, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e, Retargetable=Yes"
+			// compared with "System.Net, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e, Retargetable=No"
+			if (name1.PublicKeyToken == name2.PublicKeyToken
+				&& version1 != null
+				&& name1.Retargetable.GetValueOrDefault()
+				&& !name2.Retargetable.GetValueOrDefault()
+				&& GetRemappedPublicKeyToken(ref name1, version1) != null)
+			{
+				name1.Retargetable = false;
+			}
+
+			string remappedPublicKeyToken1 = null;
+			string remappedPublicKeyToken2 = null;
+			if (version1 != null && (remappedPublicKeyToken1 = GetRemappedPublicKeyToken(ref name1, version1)) != null)
+			{
+				name1.PublicKeyToken = remappedPublicKeyToken1;
+				version1 = FrameworkVersion;
+			}
+			if ((remappedPublicKeyToken2 = GetRemappedPublicKeyToken(ref name2, version2)) != null)
+			{
+				name2.PublicKeyToken = remappedPublicKeyToken2;
+				version2 = FrameworkVersion;
+			}
+			if (name1.Retargetable.GetValueOrDefault())
+			{
+				if (name2.Retargetable.GetValueOrDefault())
+				{
+					if (remappedPublicKeyToken1 != null ^ remappedPublicKeyToken2 != null)
+					{
+						result = AssemblyComparisonResult.NonEquivalent;
+						return false;
+					}
+				}
+				else if (remappedPublicKeyToken1 == null || remappedPublicKeyToken2 != null)
+				{
+					result = AssemblyComparisonResult.Unknown;
+					return false;
+				}
+			}
+
+			bool fxUnified = false;
+
+			// build and revision numbers are ignored
+			bool fxVersionMatch = version1.Major == version2.Major && version1.Minor == version2.Minor;
+			if (IsFrameworkAssembly(name1))
+			{
+				fxUnified |= !fxVersionMatch;
+				version1 = FrameworkVersion;
+			}
+			if (IsFrameworkAssembly(name2) && version2 < FrameworkVersionNext)
+			{
+				fxUnified |= !fxVersionMatch;
+				version2 = FrameworkVersion;
+			}
+
+			if (IsStrongNamed(name2))
+			{
+				if (name1.PublicKeyToken != null && name1.PublicKeyToken != name2.PublicKeyToken)
+				{
+					result = AssemblyComparisonResult.NonEquivalent;
+					return false;
+				}
+				else if (version1 == null)
+				{
+					result = AssemblyComparisonResult.EquivalentPartialMatch;
+					return true;
+				}
+				else if (version1.Revision == -1 || version2.Revision == -1)
+				{
+					result = AssemblyComparisonResult.NonEquivalent;
+					throw new ArgumentException();
+				}
+				else if (version1 < version2)
+				{
+					if (unified2)
+					{
+						result = partial ? AssemblyComparisonResult.EquivalentPartialUnified : AssemblyComparisonResult.EquivalentUnified;
+						return true;
+					}
+					else
+					{
+						result = partial ? AssemblyComparisonResult.NonEquivalentPartialVersion : AssemblyComparisonResult.NonEquivalentVersion;
+						return false;
+					}
+				}
+				else if (version1 > version2)
+				{
+					if (unified1)
+					{
+						result = partial ? AssemblyComparisonResult.EquivalentPartialUnified : AssemblyComparisonResult.EquivalentUnified;
+						return true;
+					}
+					else
+					{
+						result = partial ? AssemblyComparisonResult.NonEquivalentPartialVersion : AssemblyComparisonResult.NonEquivalentVersion;
+						return false;
+					}
+				}
+				else if (fxUnified || version1 != version2)
+				{
+					result = partial ? AssemblyComparisonResult.EquivalentPartialFXUnified : AssemblyComparisonResult.EquivalentFXUnified;
+					return true;
+				}
+				else
+				{
+					result = partial ? AssemblyComparisonResult.EquivalentPartialMatch : AssemblyComparisonResult.EquivalentFullMatch;
+					return true;
+				}
+			}
+			else if (IsStrongNamed(name1))
+			{
+				result = AssemblyComparisonResult.NonEquivalent;
+				return false;
+			}
+			else
+			{
+				result = partial ? AssemblyComparisonResult.EquivalentPartialWeakNamed : AssemblyComparisonResult.EquivalentWeakNamed;
+				return true;
+			}
+		}
+
+		static bool IsFrameworkAssembly(ParsedAssemblyName name)
+		{
+			// Framework assemblies use different unification rules, so when
+			// a new framework is released the new assemblies need to be added.
+			switch (name.Name)
+			{
+				case "System":
+				case "System.Core":
+				case "System.Data":
+				case "System.Data.DataSetExtensions":
+				case "System.Data.Linq":
+				case "System.Data.OracleClient":
+				case "System.Data.Services":
+				case "System.Data.Services.Client":
+				case "System.IdentityModel":
+				case "System.IdentityModel.Selectors":
+				case "System.IO.Compression":
+				case "System.Numerics":
+				case "System.Reflection.Context":
+				case "System.Runtime.Remoting":
+				case "System.Runtime.Serialization":
+				case "System.Runtime.WindowsRuntime":
+				case "System.Runtime.WindowsRuntime.UI.Xaml":
+				case "System.ServiceModel":
+				case "System.Transactions":
+				case "System.Windows.Forms":
+				case "System.Xml":
+				case "System.Xml.Linq":
+				case "System.Xml.Serialization":
+					return name.PublicKeyToken == PublicKeyTokenEcma;
+
+				case "Microsoft.CSharp":
+				case "Microsoft.VisualBasic":
+				case "System.Collections":
+				case "System.Collections.Concurrent":
+				case "System.ComponentModel":
+				case "System.ComponentModel.Annotations":
+				case "System.ComponentModel.EventBasedAsync":
+				case "System.Configuration":
+				case "System.Configuration.Install":
+				case "System.Design":
+				case "System.Diagnostics.Contracts":
+				case "System.Diagnostics.Debug":
+				case "System.Diagnostics.Tools":
+				case "System.Diagnostics.Tracing":
+				case "System.DirectoryServices":
+				case "System.Drawing":
+				case "System.Drawing.Design":
+				case "System.Dynamic.Runtime":
+				case "System.EnterpriseServices":
+				case "System.Globalization":
+				case "System.IO":
+				case "System.Linq":
+				case "System.Linq.Expressions":
+				case "System.Linq.Parallel":
+				case "System.Linq.Queryable":
+				case "System.Management":
+				case "System.Messaging":
+				case "System.Net":
+				case "System.Net.Http":
+				case "System.Net.Http.Rtc":
+				case "System.Net.NetworkInformation":
+				case "System.Net.Primitives":
+				case "System.Net.Requests":
+				case "System.ObjectModel":
+				case "System.Reflection":
+				case "System.Reflection.Extensions":
+				case "System.Reflection.Primitives":
+				case "System.Resources.ResourceManager":
+				case "System.Runtime":
+				case "System.Runtime.Extensions":
+				case "System.Runtime.InteropServices":
+				case "System.Runtime.InteropServices.WindowsRuntime":
+				case "System.Runtime.Numerics":
+				case "System.Runtime.Serialization.Formatters.Soap":
+				case "System.Runtime.Serialization.Json":
+				case "System.Runtime.Serialization.Primitives":
+				case "System.Runtime.Serialization.Xml":
+				case "System.Security":
+				case "System.Security.Principal":
+				case "System.ServiceModel.Duplex":
+				case "System.ServiceModel.Http":
+				case "System.ServiceModel.NetTcp":
+				case "System.ServiceModel.Primitives":
+				case "System.ServiceModel.Security":
+				case "System.ServiceProcess":
+				case "System.Text.Encoding":
+				case "System.Text.Encoding.Extensions":
+				case "System.Text.RegularExpressions":
+				case "System.Threading":
+				case "System.Threading.Tasks":
+				case "System.Threading.Tasks.Parallel":
+				case "System.Web":
+				case "System.Web.Mobile":
+				case "System.Web.Services":
+				case "System.Windows":
+				case "System.Xml.ReaderWriter":
+				case "System.Xml.XDocument":
+				case "System.Xml.XmlSerializer":
+					return name.PublicKeyToken == PublicKeyTokenMicrosoft;
+
+				case "System.ComponentModel.DataAnnotations":
+				case "System.ServiceModel.Web":
+				case "System.Web.Abstractions":
+				case "System.Web.Extensions":
+				case "System.Web.Extensions.Design":
+				case "System.Web.DynamicData":
+				case "System.Web.Routing":
+					return name.PublicKeyToken == PublicKeyTokenWinFX;
+			}
+
+			return false;
+		}
+
+		static string GetRemappedPublicKeyToken(ref ParsedAssemblyName name, Version version)
+		{
+			if (name.Retargetable.GetValueOrDefault() && version < SilverlightVersion)
+			{
+				return null;
+			}
+			if (name.PublicKeyToken == "ddd0da4d3e678217" && name.Name == "System.ComponentModel.DataAnnotations" && name.Retargetable.GetValueOrDefault())
+			{
+				return PublicKeyTokenWinFX;
+			}
+			if (SilverlightVersionMinimum <= version && version <= SilverlightVersionMaximum)
+			{
+				switch (name.PublicKeyToken)
+				{
+					case PublicKeyTokenSilverlight:
+						switch (name.Name)
+						{
+							case "System":
+							case "System.Core":
+								return PublicKeyTokenEcma;
+						}
+						if (name.Retargetable.GetValueOrDefault())
+						{
+							switch (name.Name)
+							{
+								case "System.Runtime.Serialization":
+								case "System.Xml":
+									return PublicKeyTokenEcma;
+								case "System.Net":
+								case "System.Windows":
+									return PublicKeyTokenMicrosoft;
+								case "System.ServiceModel.Web":
+									return PublicKeyTokenWinFX;
+							}
+						}
+						break;
+					case PublicKeyTokenWinFX:
+						switch (name.Name)
+						{
+							case "System.ComponentModel.Composition":
+								return PublicKeyTokenEcma;
+						}
+						if (name.Retargetable.GetValueOrDefault())
+						{
+							switch (name.Name)
+							{
+								case "Microsoft.CSharp":
+									return PublicKeyTokenMicrosoft;
+								case "System.Numerics":
+								case "System.ServiceModel":
+								case "System.Xml.Serialization":
+								case "System.Xml.Linq":
+									return PublicKeyTokenEcma;
+							}
+						}
+						break;
+				}
+			}
+			return null;
+		}
+
+		internal static ParseAssemblyResult ParseAssemblySimpleName(string fullName, out int pos, out string simpleName)
+		{
+			pos = 0;
+			if (!TryParse(fullName, ref pos, out simpleName) || simpleName.Length == 0)
+			{
+				return ParseAssemblyResult.GenericError;
+			}
+			if (pos == fullName.Length && fullName[fullName.Length - 1] == ',')
+			{
+				return ParseAssemblyResult.GenericError;
+			}
+			return ParseAssemblyResult.OK;
+		}
+
+		private static bool TryParse(string fullName, ref int pos, out string value)
+		{
+			value = null;
+			StringBuilder sb = new StringBuilder();
+			while (pos < fullName.Length && char.IsWhiteSpace(fullName[pos]))
+			{
+				pos++;
+			}
+			int quote = -1;
+			if (pos < fullName.Length && (fullName[pos] == '"' || fullName[pos] == '\''))
+			{
+				quote = fullName[pos++];
+			}
+			for (; pos < fullName.Length; pos++)
+			{
+				char ch = fullName[pos];
+				if (ch == '\\')
+				{
+					if (++pos == fullName.Length)
+					{
+						return false;
+					}
+					ch = fullName[pos];
+					if (ch == '\\')
+					{
+						return false;
+					}
+				}
+				else if (ch == quote)
+				{
+					for (pos++; pos != fullName.Length; pos++)
+					{
+						ch = fullName[pos];
+						if (ch == ',' || ch == '=')
+						{
+							break;
+						}
+						if (!char.IsWhiteSpace(ch))
+						{
+							return false;
+						}
+					}
+					break;
+				}
+				else if (quote == -1 && (ch == '"' || ch == '\''))
+				{
+					return false;
+				}
+				else if (quote == -1 && (ch == ',' || ch == '='))
+				{
+					break;
+				}
+				sb.Append(ch);
+			}
+			value = sb.ToString().Trim();
+			return value.Length != 0 || quote != -1;
+		}
+
+		private static bool TryConsume(string fullName, char ch, ref int pos)
+		{
+			if (pos < fullName.Length && fullName[pos] == ch)
+			{
+				pos++;
+				return true;
+			}
+			return false;
+		}
+
+		private static bool TryParseAssemblyAttribute(string fullName, ref int pos, ref string key, ref string value)
+		{
+			return TryConsume(fullName, ',', ref pos)
+				&& TryParse(fullName, ref pos, out key)
+				&& TryConsume(fullName, '=', ref pos)
+				&& TryParse(fullName, ref pos, out value);
+		}
+
+		internal static ParseAssemblyResult ParseAssemblyName(string fullName, out ParsedAssemblyName parsedName)
+		{
+			parsedName = new ParsedAssemblyName();
+			int pos;
+			ParseAssemblyResult res = ParseAssemblySimpleName(fullName, out pos, out parsedName.Name);
+			if (res != ParseAssemblyResult.OK)
+			{
+				return res;
+			}
+			else
+			{
+				const int ERROR_SXS_IDENTITIES_DIFFERENT = unchecked((int)0x80073716);
+				System.Collections.Generic.Dictionary<string, string> unknownAttributes = null;
+				bool hasProcessorArchitecture = false;
+				bool hasContentType = false;
+				bool hasPublicKeyToken = false;
+				string publicKeyToken;
+				while (pos != fullName.Length)
+				{
+					string key = null;
+					string value = null;
+					if (!TryParseAssemblyAttribute(fullName, ref pos, ref key, ref value))
+					{
+						return ParseAssemblyResult.GenericError;
+					}
+					key = key.ToLowerInvariant();
+					switch (key)
+					{
+						case "version":
+							if (parsedName.Version != null)
+							{
+								return ParseAssemblyResult.DuplicateKey;
+							}
+							parsedName.Version = value;
+							break;
+						case "culture":
+							if (parsedName.Culture != null)
+							{
+								return ParseAssemblyResult.DuplicateKey;
+							}
+							if (!ParseCulture(value, out parsedName.Culture))
+							{
+								return ParseAssemblyResult.GenericError;
+							}
+							break;
+						case "publickeytoken":
+							if (hasPublicKeyToken)
+							{
+								return ParseAssemblyResult.DuplicateKey;
+							}
+							if (!ParsePublicKeyToken(value, out publicKeyToken))
+							{
+								return ParseAssemblyResult.GenericError;
+							}
+							if (parsedName.HasPublicKey && parsedName.PublicKeyToken != publicKeyToken)
+							{
+								Marshal.ThrowExceptionForHR(ERROR_SXS_IDENTITIES_DIFFERENT);
+							}
+							parsedName.PublicKeyToken = publicKeyToken;
+							hasPublicKeyToken = true;
+							break;
+						case "publickey":
+							if (parsedName.HasPublicKey)
+							{
+								return ParseAssemblyResult.DuplicateKey;
+							}
+							if (!ParsePublicKey(value, out publicKeyToken))
+							{
+								return ParseAssemblyResult.GenericError;
+							}
+							if (hasPublicKeyToken && parsedName.PublicKeyToken != publicKeyToken)
+							{
+								Marshal.ThrowExceptionForHR(ERROR_SXS_IDENTITIES_DIFFERENT);
+							}
+							parsedName.PublicKeyToken = publicKeyToken;
+							parsedName.HasPublicKey = true;
+							break;
+						case "retargetable":
+							if (parsedName.Retargetable.HasValue)
+							{
+								return ParseAssemblyResult.DuplicateKey;
+							}
+							switch (value.ToLowerInvariant())
+							{
+								case "yes":
+									parsedName.Retargetable = true;
+									break;
+								case "no":
+									parsedName.Retargetable = false;
+									break;
+								default:
+									return ParseAssemblyResult.GenericError;
+							}
+							break;
+						case "processorarchitecture":
+							if (hasProcessorArchitecture)
+							{
+								return ParseAssemblyResult.DuplicateKey;
+							}
+							hasProcessorArchitecture = true;
+							switch (value.ToLowerInvariant())
+							{
+								case "none":
+									parsedName.ProcessorArchitecture = ProcessorArchitecture.None;
+									break;
+								case "msil":
+									parsedName.ProcessorArchitecture = ProcessorArchitecture.MSIL;
+									break;
+								case "x86":
+									parsedName.ProcessorArchitecture = ProcessorArchitecture.X86;
+									break;
+								case "ia64":
+									parsedName.ProcessorArchitecture = ProcessorArchitecture.IA64;
+									break;
+								case "amd64":
+									parsedName.ProcessorArchitecture = ProcessorArchitecture.Amd64;
+									break;
+								case "arm":
+									parsedName.ProcessorArchitecture = ProcessorArchitecture.Arm;
+									break;
+								default:
+									return ParseAssemblyResult.GenericError;
+							}
+							break;
+						case "contenttype":
+							if (hasContentType)
+							{
+								return ParseAssemblyResult.DuplicateKey;
+							}
+							hasContentType = true;
+							if (!value.Equals("windowsruntime", StringComparison.OrdinalIgnoreCase))
+							{
+								return ParseAssemblyResult.GenericError;
+							}
+							parsedName.WindowsRuntime = true;
+							break;
+						default:
+							if (key.Length == 0)
+							{
+								return ParseAssemblyResult.GenericError;
+							}
+							if (unknownAttributes == null)
+							{
+								unknownAttributes = new System.Collections.Generic.Dictionary<string, string>();
+							}
+							if (unknownAttributes.ContainsKey(key))
+							{
+								return ParseAssemblyResult.DuplicateKey;
+							}
+							unknownAttributes.Add(key, null);
+							break;
+					}
+				}
+				return ParseAssemblyResult.OK;
+			}
+		}
+
+		private static bool ParseVersion(string str, out Version version)
+		{
+			if (str == null)
+			{
+				version = null;
+				return true;
+			}
+			string[] parts = str.Split('.');
+			if (parts.Length < 2 || parts.Length > 4)
+			{
+				version = null;
+				ushort dummy;
+				// if the version consists of a single integer, it is invalid, but not invalid enough to fail the parse of the whole assembly name
+				return parts.Length == 1 && ushort.TryParse(parts[0], System.Globalization.NumberStyles.Integer, null, out dummy);
+			}
+			if (parts[0] == "" || parts[1] == "")
+			{
+				// this is a strange scenario, the version is invalid, but not invalid enough to fail the parse of the whole assembly name
+				version = null;
+				return true;
+			}
+			ushort major, minor, build = 65535, revision = 65535;
+			if (ushort.TryParse(parts[0], System.Globalization.NumberStyles.Integer, null, out major)
+				&& ushort.TryParse(parts[1], System.Globalization.NumberStyles.Integer, null, out minor)
+				&& (parts.Length <= 2 || parts[2] == "" || ushort.TryParse(parts[2], System.Globalization.NumberStyles.Integer, null, out build))
+				&& (parts.Length <= 3 || parts[3] == "" || (parts[2] != "" && ushort.TryParse(parts[3], System.Globalization.NumberStyles.Integer, null, out revision))))
+			{
+				if (parts.Length == 4 && parts[3] != "" && parts[2] != "")
+				{
+					version = new Version(major, minor, build, revision);
+				}
+				else if (parts.Length == 3 && parts[2] != "")
+				{
+					version = new Version(major, minor, build);
+				}
+				else
+				{
+					version = new Version(major, minor);
+				}
+				return true;
+			}
+			version = null;
+			return false;
+		}
+
+		private static bool ParseCulture(string str, out string culture)
+		{
+			if (str == null)
+			{
+				culture = null;
+				return false;
+			}
+			culture = str;
+			return true;
+		}
+
+		private static bool ParsePublicKeyToken(string str, out string publicKeyToken)
+		{
+			if (str == null)
+			{
+				publicKeyToken = null;
+				return false;
+			}
+			publicKeyToken = str.ToLowerInvariant();
+			return true;
+		}
+
+		private static bool ParsePublicKey(string str, out string publicKeyToken)
+		{
+			if (str == null)
+			{
+				publicKeyToken = null;
+				return false;
+			}
+			publicKeyToken = AssemblyName.ComputePublicKeyToken(str);
+			return true;
+		}
+
+		private static bool IsPartial(ParsedAssemblyName name, Version version)
+		{
+			return version == null || name.Culture == null || name.PublicKeyToken == null;
+		}
+
+		private static bool IsStrongNamed(ParsedAssemblyName name)
+		{
+			return name.PublicKeyToken != null && name.PublicKeyToken != "null";
+		}
+	}
+}
+@
+
+
+1.32
+log
+@Replaced CORECLR symbol with NETSTANDARD.
+@
+text
+@d222 3
+a224 1
+			bool versionMatch = version1 == version2;
+d227 1
+a227 1
+				fxUnified |= !versionMatch;
+d232 1
+a232 1
+				fxUnified |= !versionMatch;
+d279 1
+a279 1
+				else if (!versionMatch || fxUnified)
+@
+
+
+1.31
+log
+@Added CoreCLR target for IKVM.Reflection.
+@
+text
+@d63 1
+a63 1
+#if !CORECLR
+@
+
+
+1.30
+log
+@Bug fix. Assembly may contain both PublicKeyToken and PublicKey if they are the same identity.
+@
+text
+@d63 1
+d73 1
+@
+
+
+1.29
+log
+@Forked version number parser.
+@
+text
+@d574 1
+d578 2
+d609 1
+a609 1
+							if (parsedName.PublicKeyToken != null)
+d613 1
+a613 1
+							if (!ParsePublicKeyToken(value, out parsedName.PublicKeyToken))
+d617 6
+d625 1
+a625 1
+							if (parsedName.PublicKeyToken != null)
+d629 1
+a629 1
+							if (!ParsePublicKey(value, out parsedName.PublicKeyToken))
+d633 5
+@
+
+
+1.28
+log
+@Mscorlib is handled differently. It tolerates more errors in the assembly name.
+@
+text
+@d706 1
+a706 1
+		internal static bool ParseVersion(string str, out Version version)
+@
+
+
+1.27
+log
+@Moved version number parsing out of assembly name parser, because it turns out that AssemblyName and Fusion use different version number parsing rules.
+@
+text
+@d79 50
+a128 2
+			ParseAssemblyResult r = ParseAssemblyName(assemblyIdentity1, out name1);
+			if (r != ParseAssemblyResult.OK || (r = ParseAssemblyName(assemblyIdentity2, out name2)) != ParseAssemblyResult.OK)
+d131 1
+a131 1
+				switch (r)
+d141 1
+a141 3
+			Version version1;
+			Version version2;
+			if (!ParseVersion(name1.Version, out version1) || !ParseVersion(name2.Version, out version2))
+a163 5
+			if (name1.Name.Equals("mscorlib", StringComparison.OrdinalIgnoreCase))
+			{
+				result = AssemblyComparisonResult.EquivalentFullMatch;
+				return true;
+			}
+@
+
+
+1.26
+log
+@Rewrote assembly name comparison to better handle remapping and Retargetable.
+@
+text
+@d35 1
+a35 1
+		internal Version Version;
+d93 9
+a101 1
+			bool partial = IsPartial(name1);
+d108 1
+a108 1
+			if ((partial && unified1) || IsPartial(name2))
+d141 1
+a141 1
+				&& name1.Version != null
+d144 1
+a144 1
+				&& GetRemappedPublicKeyToken(ref name1) != null)
+d151 1
+a151 1
+			if (name1.Version != null && (remappedPublicKeyToken1 = GetRemappedPublicKeyToken(ref name1)) != null)
+d154 1
+a154 1
+				name1.Version = FrameworkVersion;
+d156 1
+a156 1
+			if ((remappedPublicKeyToken2 = GetRemappedPublicKeyToken(ref name2)) != null)
+d159 1
+a159 1
+				name2.Version = FrameworkVersion;
+d179 1
+a179 1
+			bool versionMatch = name1.Version == name2.Version;
+d183 1
+a183 1
+				name1.Version = FrameworkVersion;
+d185 1
+a185 1
+			if (IsFrameworkAssembly(name2) && name2.Version < FrameworkVersionNext)
+d188 1
+a188 1
+				name2.Version = FrameworkVersion;
+d198 1
+a198 1
+				else if (name1.Version == null)
+d203 1
+a203 1
+				else if (name1.Version.Revision == -1 || name2.Version.Revision == -1)
+d208 1
+a208 1
+				else if (name1.Version < name2.Version)
+d221 1
+a221 1
+				else if (name1.Version > name2.Version)
+d371 1
+a371 1
+		static string GetRemappedPublicKeyToken(ref ParsedAssemblyName name)
+d373 1
+a373 1
+			if (name.Retargetable.GetValueOrDefault() && name.Version < SilverlightVersion)
+d381 1
+a381 1
+			if (SilverlightVersionMinimum <= name.Version && name.Version <= SilverlightVersionMaximum)
+d552 1
+a552 4
+							if (!ParseVersion(value, out parsedName.Version))
+							{
+								return ParseAssemblyResult.GenericError;
+							}
+d665 1
+a665 1
+		private static bool ParseVersion(string str, out Version version)
+d667 5
+d743 1
+a743 1
+		private static bool IsPartial(ParsedAssemblyName name)
+d745 1
+a745 1
+			return name.Version == null || name.Culture == null || name.PublicKeyToken == null;
+@
+
+
+1.25
+log
+@Fixed handling of Retargetable and added PublicKeyToken remapping.
+@
+text
+@d53 5
+d123 14
+a136 1
+			if (name1.Retargetable.GetValueOrDefault() != name2.Retargetable.GetValueOrDefault())
+d138 18
+a155 1
+				if (name1.Retargetable.GetValueOrDefault())
+d157 5
+a161 1
+					result = AssemblyComparisonResult.Unknown;
+d163 1
+a163 1
+				else
+d165 2
+a166 1
+					result = AssemblyComparisonResult.NonEquivalent;
+a167 1
+				return false;
+d169 14
+d185 1
+a185 11
+				if (partial && name1.PublicKeyToken == null)
+				{
+				}
+				else if (name1.PublicKeyToken == name2.PublicKeyToken)
+				{
+				}
+				else if (!name1.Retargetable.GetValueOrDefault()
+					&& (GetRemappedPublicKeyToken(name1.Name, name1.PublicKeyToken) == name2.PublicKeyToken || GetRemappedPublicKeyToken(name2.Name, name2.PublicKeyToken) == name1.PublicKeyToken))
+				{
+				}
+				else
+d190 1
+a190 11
+				if (partial && name1.Version == null)
+				{
+					if (name2.Retargetable.HasValue && GetRemappedPublicKeyToken(name2.Name, name2.PublicKeyToken) == null)
+					{
+						result = AssemblyComparisonResult.NonEquivalent;
+						return false;
+					}
+					result = IsFrameworkAssembly(name2) ? AssemblyComparisonResult.EquivalentPartialFXUnified : AssemblyComparisonResult.EquivalentPartialMatch;
+					return true;
+				}
+				else if (IsFrameworkAssembly(name2))
+d192 1
+a192 1
+					result = partial ? AssemblyComparisonResult.EquivalentPartialFXUnified : AssemblyComparisonResult.EquivalentFXUnified;
+d226 1
+a226 1
+				else if (name1.PublicKeyToken != name2.PublicKeyToken)
+a252 4
+			if (GetRemappedPublicKeyToken(name.Name, name.PublicKeyToken) != null)
+			{
+				return true;
+			}
+d363 1
+a363 1
+		static string GetRemappedPublicKeyToken(string name, string publicKeyToken)
+d365 1
+a365 2
+			// keep this in sync with the key_remap_table in mono/metadata/assembly.c
+			switch (publicKeyToken)
+d367 53
+a419 35
+				case PublicKeyTokenSilverlight:
+					switch (name)
+					{
+						case "System":
+						case "System.Core":
+						case "System.Runtime.Serialization":
+						case "System.Xml":
+							return PublicKeyTokenEcma;
+						case "System.Net":
+						case "System.Windows":
+							return PublicKeyTokenMicrosoft;
+						case "System.ServiceModel.Web":
+							return PublicKeyTokenWinFX;
+					}
+					break;
+				case PublicKeyTokenWinFX:
+					switch (name)
+					{
+						case "Microsoft.CSharp":
+						case "System.Numerics":
+						case "System.Xml.Serialization":
+							return PublicKeyTokenMicrosoft;
+						case "System.ComponentModel.Composition":
+						case "System.ServiceModel":
+						case "System.Xml.Linq":
+							return PublicKeyTokenEcma;
+					}
+					break;
+				case "ddd0da4d3e678217":
+					switch (name)
+					{
+						case "System.ComponentModel.DataAnnotations":
+							return PublicKeyTokenWinFX;
+					}
+					break;
+@
+
+
+1.24
+log
+@Use StringComparison.OrdinalIgnoreCase instead of StringComparison.InvariantCultureIgnoreCase.
+@
+text
+@d53 5
+d90 5
+d118 12
+d135 8
+a142 1
+				else if (name1.PublicKeyToken != name2.PublicKeyToken)
+d149 6
+a154 1
+					result = AssemblyComparisonResult.EquivalentPartialMatch;
+d193 5
+d220 4
+d249 1
+a249 1
+					return name.PublicKeyToken == "b77a5c561934e089";
+d319 1
+a319 1
+					return name.PublicKeyToken == "b03f5f7f11d50a3a";
+d328 1
+a328 1
+					return name.PublicKeyToken == "31bf3856ad364e35";
+d334 44
+@
+
+
+1.23
+log
+@Added the 4.5 (reference) assemblies to the framework list. The previous assumption was that we only need to add assemblies for previous frameworks, but that turns out to be incorrect because the list affects CompareAssemblyIdentity() which returns EquivalentFXUnified for framework assemblies.
+@
+text
+@d500 1
+a500 1
+							if (!value.Equals("windowsruntime", StringComparison.InvariantCultureIgnoreCase))
+@
+
+
+1.22
+log
+@Fixed assembly name parsing to handle quoted keys and values. Thanks to Ian Battersby for reporting this.
+@
+text
+@d179 2
+a180 3
+			// A list of FX assemblies which require some form of remapping
+			// When 4.0 + 1 version  is release, assemblies introduced in v4.0
+			// will have to be added
+d193 3
+d198 2
+d205 1
+d208 7
+d218 4
+d225 1
+d227 6
+d235 16
+d252 3
+d256 6
+d263 6
+d272 4
+@
+
+
+1.21
+log
+@Replaced incorrect usage of StringComparison.InvariantCultureIgnoreCase with StringComparison.OrdinalIgnoreCase.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2010-2012 Jeroen Frijters
+d235 15
+a250 2
+			pos = 0;
+			simpleName = null;
+d255 2
+a256 2
+			char quoteOrComma = ',';
+			if (pos < fullName.Length && (fullName[pos] == '\"' || fullName[pos] == '\''))
+d258 1
+a258 1
+				quoteOrComma = fullName[pos++];
+d260 1
+a260 1
+			while (pos < fullName.Length)
+d262 1
+a262 1
+				char ch = fullName[pos++];
+d265 1
+a265 1
+					if (pos == fullName.Length)
+d267 1
+a267 1
+						return ParseAssemblyResult.GenericError;
+d269 1
+a269 1
+					ch = fullName[pos++];
+d272 1
+a272 1
+						return ParseAssemblyResult.GenericError;
+d275 1
+a275 1
+				else if (ch == quoteOrComma)
+d277 1
+a277 1
+					if (ch != ',')
+d279 2
+a280 1
+						while (pos != fullName.Length)
+d282 5
+a286 9
+							ch = fullName[pos++];
+							if (ch == ',')
+							{
+								break;
+							}
+							if (!char.IsWhiteSpace(ch))
+							{
+								return ParseAssemblyResult.GenericError;
+							}
+d291 5
+a295 1
+				else if (ch == '=' || (quoteOrComma == ',' && (ch == '\'' || ch == '"')))
+d297 1
+a297 1
+					return ParseAssemblyResult.GenericError;
+d301 7
+a307 2
+			simpleName = sb.ToString().Trim();
+			if (simpleName.Length == 0)
+d309 2
+a310 1
+				return ParseAssemblyResult.GenericError;
+d312 9
+a320 5
+			if (pos == fullName.Length && fullName[fullName.Length - 1] == ',')
+			{
+				return ParseAssemblyResult.GenericError;
+			}
+			return ParseAssemblyResult.OK;
+d328 1
+a328 1
+			if (res != ParseAssemblyResult.OK || pos == fullName.Length)
+d337 1
+a337 2
+				string[] parts = fullName.Substring(pos).Split(',');
+				for (int i = 0; i < parts.Length; i++)
+d339 3
+a341 2
+					string[] kv = parts[i].Split('=');
+					if (kv.Length != 2)
+d345 2
+a346 1
+					switch (kv[0].Trim().ToLowerInvariant())
+d353 1
+a353 1
+							if (!ParseVersion(kv[1].Trim(), out parsedName.Version))
+d363 1
+a363 1
+							if (!ParseCulture(kv[1].Trim(), out parsedName.Culture))
+d373 1
+a373 1
+							if (!ParsePublicKeyToken(kv[1].Trim(), out parsedName.PublicKeyToken))
+d383 1
+a383 1
+							if (!ParsePublicKey(kv[1].Trim(), out parsedName.PublicKeyToken))
+d394 1
+a394 1
+							switch (kv[1].Trim().ToLowerInvariant())
+d412 1
+a412 1
+							switch (kv[1].Trim().ToLowerInvariant())
+d442 1
+a442 1
+							if (kv[1].Trim().ToLowerInvariant() != "windowsruntime")
+d449 1
+a449 1
+							if (kv[1].Trim() == "")
+d457 1
+a457 1
+							if (unknownAttributes.ContainsKey(kv[0].Trim().ToLowerInvariant()))
+d461 1
+a461 1
+							unknownAttributes.Add(kv[0].Trim().ToLowerInvariant(), null);
+d465 1
+a466 1
+			return ParseAssemblyResult.OK;
+@
+
+
+1.20
+log
+@Added helper method to AssemblyName to help Fusion parser convert public key to public key token.
+@
+text
+@d90 1
+a90 1
+			if (!name1.Name.Equals(name2.Name, StringComparison.InvariantCultureIgnoreCase))
+d95 1
+a95 1
+			if (name1.Name.Equals("mscorlib", StringComparison.InvariantCultureIgnoreCase))
+d103 1
+a103 1
+			else if (!name1.Culture.Equals(name2.Culture, StringComparison.InvariantCultureIgnoreCase))
+@
+
+
+1.19
+log
+@Added support for ContentType=WindowsRuntime in AssemblyName.
+@
+text
+@d513 1
+a513 8
+			// HACK use AssemblyName to convert PublicKey to PublicKeyToken
+			byte[] token = new System.Reflection.AssemblyName("Foo, PublicKey=" + str).GetPublicKeyToken();
+			StringBuilder sb = new StringBuilder(token.Length * 2);
+			for (int i = 0; i < token.Length; i++)
+			{
+				sb.AppendFormat("{0:x2}", token[i]);
+			}
+			publicKeyToken = sb.ToString();
+@
+
+
+1.18
+log
+@Added ParsedAssemblyName.HasPublicKey for use by mcs.
+@
+text
+@d41 1
+d312 1
+d411 12
+@
+
+
+1.17
+log
+@Removed unused methods.
+@
+text
+@d40 1
+d360 1
+@
+
+
+1.16
+log
+@Optimized assembly lookup. Thanks to Marek Safar for the pointer.
+@
+text
+@a516 16
+
+		private static bool IsEqual(byte[] b1, byte[] b2)
+		{
+			if (b1.Length != b2.Length)
+			{
+				return false;
+			}
+			for (int i = 0; i < b1.Length; i++)
+			{
+				if (b1[i] != b2[i])
+				{
+					return false;
+				}
+			}
+			return true;
+		}
+@
+
+
+1.15
+log
+@Added UniverseOptions.DisableFusion to explicitly disable Fusion (without having to resort to setting the IKVM_DISABLE_FUSION environment variable).
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2010-2011 Jeroen Frijters
+d231 1
+a231 1
+		internal static ParseAssemblyResult ParseAssemblyName(string fullName, out ParsedAssemblyName parsedName)
+a232 1
+			parsedName = new ParsedAssemblyName();
+d234 2
+a235 1
+			int pos = 0;
+d285 6
+a290 2
+			parsedName.Name = sb.ToString().Trim();
+			if (parsedName.Name.Length == 0)
+d294 9
+a302 1
+			if (pos == fullName.Length)
+d304 1
+a304 1
+				return fullName[fullName.Length - 1] != ',' ? ParseAssemblyResult.OK : ParseAssemblyResult.GenericError;
+@
+
+
+1.14
+log
+@Re-use (our) Fusion assembly name parser in AssemblyName.
+@
+text
+@d51 1
+a51 29
+		private static readonly bool UseNativeFusion = GetUseNativeFusion();
+
+		private static bool GetUseNativeFusion()
+		{
+			try
+			{
+				return Environment.OSVersion.Platform == PlatformID.Win32NT
+					&& System.Type.GetType("Mono.Runtime") == null
+					&& Environment.GetEnvironmentVariable("IKVM_DISABLE_FUSION") == null;
+			}
+			catch (System.Security.SecurityException)
+			{
+				return false;
+			}
+		}
+
+		internal static bool CompareAssemblyIdentity(string assemblyIdentity1, bool unified1, string assemblyIdentity2, bool unified2, out AssemblyComparisonResult result)
+		{
+			if (UseNativeFusion)
+			{
+				return CompareAssemblyIdentityNative(assemblyIdentity1, unified1, assemblyIdentity2, unified2, out result);
+			}
+			else
+			{
+				return CompareAssemblyIdentityPure(assemblyIdentity1, unified1, assemblyIdentity2, unified2, out result);
+			}
+		}
+
+		private static bool CompareAssemblyIdentityNative(string assemblyIdentity1, bool unified1, string assemblyIdentity2, bool unified2, out AssemblyComparisonResult result)
+@
+
+
+1.13
+log
+@Parse and validate the Retargetable and ProcessorArchitecture attributes.
+@
+text
+@d259 1
+a259 2
+		// note that this is the fusion specific parser, it is not the same as System.Reflection.AssemblyName
+		private static ParseAssemblyResult ParseAssemblyName(string fullName, out ParsedAssemblyName parsedName)
+d514 1
+a514 1
+			byte[] token = new AssemblyName("Foo, PublicKey=" + str).GetPublicKeyToken();
+@
+
+
+1.12
+log
+@Return more specific error from ParseAssemblyName and throw the right exceptions.
+@
+text
+@d38 2
+d326 1
+d377 47
+@
+
+
+1.11
+log
+@- Fixed version parsing.
+- In a strong name it is illegal to use a partial version.
+@
+text
+@d40 7
+d93 2
+a94 2
+			if (!ParseAssemblyName(assemblyIdentity1, out name1)
+				|| !ParseAssemblyName(assemblyIdentity2, out name2))
+d97 8
+a104 1
+				throw new ArgumentException();
+d258 1
+a258 1
+		private static bool ParseAssemblyName(string fullName, out ParsedAssemblyName parsedName)
+d279 1
+a279 1
+						return false;
+d284 1
+a284 1
+						return false;
+d300 1
+a300 1
+								return false;
+d308 1
+a308 1
+					return false;
+d315 1
+a315 1
+				return false;
+d319 1
+a319 1
+				return fullName[fullName.Length - 1] != ',';
+d330 1
+a330 1
+						return false;
+d337 1
+a337 1
+								return false;
+d341 1
+a341 1
+								return false;
+d347 1
+a347 1
+								return false;
+d351 1
+a351 1
+								return false;
+d357 1
+a357 1
+								return false;
+d361 1
+a361 1
+								return false;
+d367 1
+a367 1
+								return false;
+d371 1
+a371 1
+								return false;
+d377 1
+a377 1
+								return false;
+d385 1
+a385 1
+								return false;
+d392 1
+a392 1
+			return true;
+@
+
+
+1.10
+log
+@- Duplicated attributes (even unknown ones) must result in a parse error.
+- Attributes must have a non-empty value.
+@
+text
+@d138 5
+d384 18
+a401 1
+			if (parts.Length == 4)
+d403 1
+a403 5
+				ushort major, minor, build, revision;
+				if (ushort.TryParse(parts[0], System.Globalization.NumberStyles.Integer, null, out major)
+					&& ushort.TryParse(parts[1], System.Globalization.NumberStyles.Integer, null, out minor)
+					&& ushort.TryParse(parts[2], System.Globalization.NumberStyles.Integer, null, out build)
+					&& ushort.TryParse(parts[3], System.Globalization.NumberStyles.Integer, null, out revision))
+a405 1
+					return true;
+d407 9
+@
+
+
+1.9
+log
+@Fixed a couple of parsing errors:
+- a backslash is never legal
+- equals sign must be escaped
+- quote must be escaped or inside other quotes
+- name may not be empty
+- assembly name may not end with comma
+@
+text
+@d304 1
+d355 15
+@
+
+
+1.8
+log
+@Fixed assembly name parsing to handle quoted names.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2010 Jeroen Frijters
+d263 4
+d287 4
+d294 9
+a302 1
+			if (pos < fullName.Length)
+@
+
+
+1.7
+log
+@Improve partial trust support.
+@
+text
+@d244 9
+d264 1
+a264 1
+				else if (ch == ',')
+d266 15
+@
+
+
+1.6
+log
+@Patch by Marek Safar to implement framework unification.
+@
+text
+@d42 15
+a56 1
+		private static readonly bool UseNativeFusion = Environment.OSVersion.Platform == PlatformID.Win32NT && System.Type.GetType("Mono.Runtime") == null && Environment.GetEnvironmentVariable("IKVM_DISABLE_FUSION") == null;
+d62 1
+a62 3
+				bool equivalent;
+				Marshal.ThrowExceptionForHR(CompareAssemblyIdentity(assemblyIdentity1, unified1, assemblyIdentity2, unified2, out equivalent, out result));
+				return equivalent;
+d70 7
+@
+
+
+1.5
+log
+@Made CompareAssemblyIdentityPure internal to allow mcs to use it.
+@
+text
+@d3 1
+d114 5
+d163 56
+@
+
+
+1.4
+log
+@Fixed managed CompareAssemblyIdentityPure implementation bug.
+@
+text
+@d60 2
+a61 1
+		private static bool CompareAssemblyIdentityPure(string assemblyIdentity1, bool unified1, string assemblyIdentity2, bool unified2, out AssemblyComparisonResult result)
+@
+
+
+1.3
+log
+@It turns out that name and culture should be compared case insensitive.
+@
+text
+@d144 5
+@
+
+
+1.2
+log
+@Added "PublicKey=" support.
+@
+text
+@d79 1
+a79 1
+			if (name1.Name != name2.Name)
+d84 1
+a84 1
+			if (name1.Name == "mscorlib")
+d92 1
+a92 1
+			else if (name1.Culture != name2.Culture)
+@
+
+
+1.1
+log
+@Added implementation of Fusion's CompareAssemblyIdentity API.
+@
+text
+@d217 10
+d270 19
+a288 1
+			publicKeyToken = str;
+@
+

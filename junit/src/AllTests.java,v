@@ -1,0 +1,347 @@
+head	1.18;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.18
+date	2014.12.17.12.11.11;	author smallsql;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2012.04.15.16.15.53;	author smallsql;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2011.08.28.13.09.02;	author smallsql;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2010.12.20.21.57.17;	author smallsql;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2010.12.03.11.57.40;	author smallsql;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2010.11.28.21.12.32;	author smallsql;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2010.11.08.09.57.40;	author smallsql;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2010.08.09.11.58.36;	author smallsql;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2010.08.03.18.59.38;	author smallsql;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2010.01.30.15.22.59;	author smallsql;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2009.12.30.09.50.30;	author smallsql;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2009.11.28.17.16.06;	author smallsql;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2009.11.25.14.56.47;	author smallsql;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2009.11.08.12.49.40;	author smallsql;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2009.11.08.10.30.11;	author smallsql;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2009.10.28.15.46.13;	author smallsql;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2009.10.28.11.33.40;	author smallsql;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2009.10.27.18.55.42;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.18
+log
+@Tests for implements OperatingSystemMXBean.getFreePhysicalMemorySize and  OperatingSystemMXBean.getTotalPhysicalMemorySize
+@
+text
+@/*
+  Copyright (C) 2009, 2010 Volker Berlin (i-net software)
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+
+/**
+ * To run this compatibility test suite you need to call first the follow line to create the reference data: <br>
+ *      java -cp junit-4.7.jar;. org.junit.runner.JUnitCore AllTests
+ * <p> and then call: <br>
+ *      ikvm -cp junit-4.7.jar;. org.junit.runner.JUnitCore AllTests
+ *      
+ * <p> Of course you can also run this in an IDE like Eclipse. If you want run this compatibility test suite
+ * with any other Java VM as the Java SE and the IKVM then you can use the command line parameter
+ * -Dreference=true and reference=false to mark the one Java VM as reference VM and the other as to test Java VM.  
+ */
+@@RunWith(Suite.class)
+@@Suite.SuiteClasses({
+	cacar.CompareAvailableClassesAndResources.class,
+	com.sun.management.AllTests.class,
+    java_.awt.AllTests.class,
+    java_.awt.datatransfer.AllTests.class,
+    java_.awt.color.AllTests.class,
+    java_.awt.font.AllTests.class,
+    java_.awt.image.AllTests.class,
+    java_.awt.print.AllTests.class,
+    java_.lang.management.ThreadInfoTest.class,
+    java_.net.AllTests.class,
+    java_.text.AllTests.class,
+    java_.util.prefs.AllTests.class,
+    javax.imageio.ImageIOTest.class,
+    javax.print.AllTests.class,
+    javax.swing.AllTests.class,
+    sun.awt.shell.AllTests.class,
+    sun.font.AllTests.class,
+    sun.misc.AllTests.class,
+})
+public class AllTests{
+    //Nothing
+}
+@
+
+
+1.17
+log
+@JUnit test for ThreadMXBean
+@
+text
+@d40 1
+@
+
+
+1.16
+log
+@integrate the compare tool in the junit test suite
+@
+text
+@d29 1
+a29 1
+ *      java -cp junit.jar;. org.junit.runner.JUnitCore AllTests
+d31 1
+a31 1
+ *      ikvm -cp junit.jar;. org.junit.runner.JUnitCore AllTests
+d46 1
+@
+
+
+1.15
+log
+@add test for BufferedImage
+@
+text
+@d39 1
+@
+
+
+1.14
+log
+@Preferences tests improved
+@
+text
+@d43 1
+@
+
+
+1.13
+log
+@Make the test suite runnable with other Java VMs like Apache Harmony
+@
+text
+@d46 1
+a46 1
+    java_.util.prefs.PreferencesTest.class,
+@
+
+
+1.12
+log
+@JUnit Tests for ColorSpace
+@
+text
+@d28 1
+a28 1
+ * To run this test cases you need call first the follow line to create the reference data: <br>
+d33 3
+a35 1
+ * <p> Of course you can also run this in an IDE like Eclipse.     
+@
+
+
+1.11
+log
+@Tests for Regression with getDisabledIcon
+@
+text
+@d39 1
+@
+
+
+1.10
+log
+@Socket Tests added
+@
+text
+@d46 1
+@
+
+
+1.9
+log
+@JUnit tests for sun.misc.Signal
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Volker Berlin (i-net software)
+d28 1
+a28 1
+ * To run this test cases you need call first
+d30 1
+a30 1
+ * and then 
+d32 2
+d41 1
+@
+
+
+1.8
+log
+@Some ImageIO tests
+@
+text
+@d45 1
+@
+
+
+1.7
+log
+@Test for Preferences
+@
+text
+@d41 1
+@
+
+
+1.6
+log
+@Tests for sun.font
+@
+text
+@d40 1
+@
+
+
+1.5
+log
+@Tests for ShellFolder
+@
+text
+@d42 1
+@
+
+
+1.4
+log
+@Test for TextLayout.getLogicalHighlightShape
+@
+text
+@d40 2
+a41 1
+    javax.print.AllTests.class
+@
+
+
+1.3
+log
+@Copy & Paste Test added
+@
+text
+@d37 1
+@
+
+
+1.2
+log
+@Show a bug in java.text.Bidi
+@
+text
+@d36 1
+@
+
+
+1.1
+log
+@First JUnit tests for IKVM
+@
+text
+@d37 1
+@
+

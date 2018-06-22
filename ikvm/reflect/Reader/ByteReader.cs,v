@@ -1,0 +1,403 @@
+head	1.5;
+access;
+symbols
+	v8_1_5717_0:1.5
+	v8_1:1.5.0.8
+	v8_0_5449_1:1.5
+	v8_0_5449_0:1.5
+	v8_0:1.5.0.6
+	v7_4_5196_0:1.5
+	v7_4:1.5.0.4
+	v7_3:1.5.0.2
+	v7_2_4630_6:1.3.8.1
+	v7_2_4630_5:1.3.8.1
+	v7_2_4630_4:1.3.8.1
+	v7_2_4630_3:1.3.8.1
+	v7_2_4630_2:1.3
+	v0_46_0_4:1.3
+	v7_2_4630_1:1.3
+	v7_2:1.3.0.8
+	v7_1_4532_2:1.3
+	v7_1_4532_1:1.3
+	v7_1_4532_0:1.3
+	v7_1:1.3.0.6
+	v7_0_4335_3:1.3
+	v7_0_4335_2:1.3
+	v7_0_4335_1:1.3
+	v0_46_0_2:1.3
+	v7_0_4335_0:1.3
+	v7_0:1.3.0.4
+	v0_46_0_1:1.3
+	v0_46_0_0:1.3
+	v0_46:1.3.0.2
+	v0_44_0_6:1.2
+	v0_44_0_5:1.2
+	v0_44_0_4:1.2
+	v0_44_0_3:1.2
+	v0_44_0_2:1.2
+	v0_44_0_1:1.2
+	v0_44_0_0:1.2
+	v0_44:1.2.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.5
+date	2012.10.13.21.48.36;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2012.10.13.20.12.32;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2011.01.11.05.16.48;	author jfrijters;	state Exp;
+branches
+	1.3.8.1;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.02;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.32;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.3.8.1
+date	2012.10.23.08.15.53;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.5
+log
+@Bug fix. While reading the Cecil source I realized that array bounds are signed.
+@
+text
+@/*
+  Copyright (C) 2009 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace IKVM.Reflection.Reader
+{
+	sealed class ByteReader
+	{
+		private byte[] buffer;
+		private int pos;
+		private int end;
+
+		internal ByteReader(byte[] buffer, int offset, int length)
+		{
+			this.buffer = buffer;
+			this.pos = offset;
+			this.end = pos + length;
+		}
+
+		internal static ByteReader FromBlob(byte[] blobHeap, int blob)
+		{
+			ByteReader br = new ByteReader(blobHeap, blob, 4);
+			int length = br.ReadCompressedUInt();
+			br.end = br.pos + length;
+			return br;
+		}
+
+		internal int Length
+		{
+			get { return end - pos; }
+		}
+
+		internal byte PeekByte()
+		{
+			if (pos == end)
+				throw new BadImageFormatException();
+			return buffer[pos];
+		}
+
+		internal byte ReadByte()
+		{
+			if (pos == end)
+				throw new BadImageFormatException();
+			return buffer[pos++];
+		}
+
+		internal byte[] ReadBytes(int count)
+		{
+			if (count < 0)
+				throw new BadImageFormatException();
+			if (end - pos < count)
+				throw new BadImageFormatException();
+			byte[] buf = new byte[count];
+			Buffer.BlockCopy(buffer, pos, buf, 0, count);
+			pos += count;
+			return buf;
+		}
+
+		internal int ReadCompressedUInt()
+		{
+			byte b1 = ReadByte();
+			if (b1 <= 0x7F)
+			{
+				return b1;
+			}
+			else if ((b1 & 0xC0) == 0x80)
+			{
+				byte b2 = ReadByte();
+				return ((b1 & 0x3F) << 8) | b2;
+			}
+			else
+			{
+				byte b2 = ReadByte();
+				byte b3 = ReadByte();
+				byte b4 = ReadByte();
+				return ((b1 & 0x3F) << 24) + (b2 << 16) + (b3 << 8) + b4;
+			}
+		}
+
+		internal int ReadCompressedInt()
+		{
+			byte b1 = PeekByte();
+			int value = ReadCompressedUInt();
+			if ((value & 1) == 0)
+			{
+				return value >> 1;
+			}
+			else
+			{
+				switch (b1 & 0xC0)
+				{
+					case 0:
+					case 0x40:
+						return (value >> 1) - 0x40;
+					case 0x80:
+						return (value >> 1) - 0x2000;
+					default:
+						return (value >> 1) - 0x10000000;
+				}
+			}
+		}
+
+		internal string ReadString()
+		{
+			if (PeekByte() == 0xFF)
+			{
+				pos++;
+				return null;
+			}
+			int length = ReadCompressedUInt();
+			string str = Encoding.UTF8.GetString(buffer, pos, length);
+			pos += length;
+			return str;
+		}
+
+		internal char ReadChar()
+		{
+			return (char)ReadInt16();
+		}
+
+		internal sbyte ReadSByte()
+		{
+			return (sbyte)ReadByte();
+		}
+
+		internal short ReadInt16()
+		{
+			if (end - pos < 2)
+				throw new BadImageFormatException();
+			byte b1 = buffer[pos++];
+			byte b2 = buffer[pos++];
+			return (short)(b1 | (b2 << 8));
+		}
+
+		internal ushort ReadUInt16()
+		{
+			return (ushort)ReadInt16();
+		}
+
+		internal int ReadInt32()
+		{
+			if (end - pos < 4)
+				throw new BadImageFormatException();
+			byte b1 = buffer[pos++];
+			byte b2 = buffer[pos++];
+			byte b3 = buffer[pos++];
+			byte b4 = buffer[pos++];
+			return (int)(b1 | (b2 << 8) | (b3 << 16) | (b4 << 24));
+		}
+
+		internal uint ReadUInt32()
+		{
+			return (uint)ReadInt32();
+		}
+
+		internal long ReadInt64()
+		{
+			ulong lo = ReadUInt32();
+			ulong hi = ReadUInt32();
+			return (long)(lo | (hi << 32));
+		}
+
+		internal ulong ReadUInt64()
+		{
+			return (ulong)ReadInt64();
+		}
+
+		internal float ReadSingle()
+		{
+			return SingleConverter.Int32BitsToSingle(ReadInt32());
+		}
+
+		internal double ReadDouble()
+		{
+			return BitConverter.Int64BitsToDouble(ReadInt64());
+		}
+
+		internal ByteReader Slice(int length)
+		{
+			if (end - pos < length)
+				throw new BadImageFormatException();
+			ByteReader br = new ByteReader(buffer, pos, length);
+			pos += length;
+			return br;
+		}
+
+		// NOTE this method only works if the original offset was aligned and for alignments that are a power of 2
+		internal void Align(int alignment)
+		{
+			alignment--;
+			pos = (pos + alignment) & ~alignment;
+		}
+	}
+}
+@
+
+
+1.4
+log
+@Renamed methods that deal with unsigned compressed integers to *CompressedUInt instead of *CompressedInt.
+@
+text
+@d103 23
+@
+
+
+1.3
+log
+@Fix for big endian systems. Thanks to Marek Safar for reporting this.
+@
+text
+@d46 1
+a46 1
+			int length = br.ReadCompressedInt();
+d82 1
+a82 1
+		internal int ReadCompressedInt()
+d110 1
+a110 1
+			int length = ReadCompressedInt();
+@
+
+
+1.3.8.1
+log
+@Backported fixes for rc 3.
+- Bug fix. Off-by-one error in local ref index reusing. Fix for bug #3575555.
+- Bug fix. Don't try to inject DynamicMethod in array types (applies to array.clone() method for MethodHandles).
+- IKVM.Reflection: Bug fix. ModuleReader.ResolveMember() should support types. Thanks to Jb Evain for finding this.
+- IKVM.Reflection: Bug fix. While reading the Cecil source I realized that array bounds are signed.
+- IKVM.Reflection: Bug fix. LocalBuilder should extend LocalVariableInfo.
+- IKVM.Reflection: Implemented LocalVariableInfo.ToString().
+@
+text
+@d46 1
+a46 1
+			int length = br.ReadCompressedUInt();
+d82 1
+a82 1
+		internal int ReadCompressedUInt()
+a102 23
+		internal int ReadCompressedInt()
+		{
+			byte b1 = PeekByte();
+			int value = ReadCompressedUInt();
+			if ((value & 1) == 0)
+			{
+				return value >> 1;
+			}
+			else
+			{
+				switch (b1 & 0xC0)
+				{
+					case 0:
+					case 0x40:
+						return (value >> 1) - 0x40;
+					case 0x80:
+						return (value >> 1) - 0x2000;
+					default:
+						return (value >> 1) - 0x10000000;
+				}
+			}
+		}
+
+d110 1
+a110 1
+			int length = ReadCompressedUInt();
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d170 1
+a170 5
+			if (end - pos < 4)
+				throw new BadImageFormatException();
+			float value = BitConverter.ToSingle(buffer, pos);
+			pos += 4;
+			return value;
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

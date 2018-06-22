@@ -1,0 +1,76 @@
+head	1.2;
+access;
+symbols
+	v7_2_4630_6:1.1
+	v7_2_4630_5:1.1
+	v7_2_4630_4:1.1
+	v7_2_4630_3:1.1
+	v7_2_4630_2:1.1
+	v7_2_4630_1:1.1
+	v7_2:1.1.0.4
+	v7_1_4532_2:1.1
+	v7_1_4532_1:1.1
+	v7_1_4532_0:1.1
+	v7_1:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2013.02.07.12.11.02;	author jfrijters;	state dead;
+branches;
+next	1.1;
+
+1.1
+date	2012.01.17.14.43.11;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@Removed resource compiler dependency from JVM.DLL build.
+@
+text
+@1 VERSIONINFO
+ FILEVERSION @@VERSIONLIST@@
+ PRODUCTVERSION @@VERSIONLIST@@
+ FILEFLAGSMASK 0x3fL
+ FILEFLAGS 0x0L
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004b0"
+        BEGIN
+            VALUE "CompanyName", "Jeroen Frijters"
+            VALUE "FileDescription", "IKVM.NET JVM for .NET"
+            VALUE "FileVersion", "@@VERSION@@"
+            VALUE "InternalName", "jvm"
+            VALUE "LegalCopyright", "Copyright (C) 2002-2011 Jeroen Frijters"
+            VALUE "OriginalFilename", "jvm.dll"
+            VALUE "ProductName", "IKVM.NET"
+            VALUE "ProductVersion", "@@VERSION@@"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0, 1200
+    END
+END
+@
+
+
+1.1
+log
+@Add version info resource to JVM.DLL. Modified version of patch #3472413.
+@
+text
+@@
+

@@ -1,0 +1,636 @@
+head	1.10;
+access;
+symbols
+	v8_1_5717_0:1.10
+	v8_1:1.10.0.2
+	v8_0_5449_1:1.9
+	v8_0_5449_0:1.9
+	v8_0:1.9.0.6
+	v7_4_5196_0:1.9
+	v7_4:1.9.0.4
+	v7_3:1.9.0.2
+	v7_2_4630_6:1.8
+	v7_2_4630_5:1.8
+	v7_2_4630_4:1.8
+	v7_2_4630_3:1.8
+	v7_2_4630_2:1.8
+	v0_46_0_4:1.4
+	v7_2_4630_1:1.8
+	v7_2:1.8.0.2
+	v7_1_4532_2:1.7
+	v7_1_4532_1:1.7
+	v7_1_4532_0:1.7
+	v7_1:1.7.0.2
+	v7_0_4335_3:1.6
+	v7_0_4335_2:1.6
+	v7_0_4335_1:1.6
+	v0_46_0_2:1.4
+	v7_0_4335_0:1.6
+	v7_0:1.6.0.2
+	v0_46_0_1:1.4
+	v0_46_0_0:1.4
+	v0_46:1.4.0.4
+	v0_44_0_6:1.4
+	v0_44_0_5:1.4
+	v0_44_0_4:1.4
+	v0_44_0_3:1.4
+	v0_44_0_2:1.4
+	v0_44_0_1:1.4
+	v0_44_0_0:1.4
+	v0_44:1.4.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.10
+date	2015.04.06.07.12.29;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2012.10.15.23.14.45;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2012.07.16.10.14.38;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2012.04.10.06.18.32;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2011.03.10.10.56.57;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2011.03.06.06.42.31;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.02.26.09.26.20;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.02.09.05.17.58;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.10
+log
+@Fixed known custom attribute handling. They should be recognized by type name, not type identity.
+@
+text
+@/*
+  Copyright (C) 2008-2011 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using IKVM.Reflection.Writer;
+using IKVM.Reflection.Metadata;
+
+namespace IKVM.Reflection.Emit
+{
+	public sealed class PropertyBuilder : PropertyInfo
+	{
+		private readonly TypeBuilder typeBuilder;
+		private readonly string name;
+		private PropertyAttributes attributes;
+		private PropertySignature sig;
+		private MethodBuilder getter;
+		private MethodBuilder setter;
+		private readonly List<Accessor> accessors = new List<Accessor>();
+		private int lazyPseudoToken;
+		private bool patchCallingConvention;
+
+		private struct Accessor
+		{
+			internal short Semantics;
+			internal MethodBuilder Method;
+		}
+
+		internal PropertyBuilder(TypeBuilder typeBuilder, string name, PropertyAttributes attributes, PropertySignature sig, bool patchCallingConvention)
+		{
+			this.typeBuilder = typeBuilder;
+			this.name = name;
+			this.attributes = attributes;
+			this.sig = sig;
+			this.patchCallingConvention = patchCallingConvention;
+		}
+
+		internal override PropertySignature PropertySignature
+		{
+			get { return sig; }
+		}
+
+		public void SetGetMethod(MethodBuilder mdBuilder)
+		{
+			getter = mdBuilder;
+			Accessor acc;
+			acc.Semantics = MethodSemanticsTable.Getter;
+			acc.Method = mdBuilder;
+			accessors.Add(acc);
+		}
+
+		public void SetSetMethod(MethodBuilder mdBuilder)
+		{
+			setter = mdBuilder;
+			Accessor acc;
+			acc.Semantics = MethodSemanticsTable.Setter;
+			acc.Method = mdBuilder;
+			accessors.Add(acc);
+		}
+
+		public void AddOtherMethod(MethodBuilder mdBuilder)
+		{
+			Accessor acc;
+			acc.Semantics = MethodSemanticsTable.Other;
+			acc.Method = mdBuilder;
+			accessors.Add(acc);
+		}
+
+		public void SetCustomAttribute(ConstructorInfo con, byte[] binaryAttribute)
+		{
+			SetCustomAttribute(new CustomAttributeBuilder(con, binaryAttribute));
+		}
+
+		public void SetCustomAttribute(CustomAttributeBuilder customBuilder)
+		{
+			if (customBuilder.KnownCA == KnownCA.SpecialNameAttribute)
+			{
+				attributes |= PropertyAttributes.SpecialName;
+			}
+			else
+			{
+				if (lazyPseudoToken == 0)
+				{
+					lazyPseudoToken = typeBuilder.ModuleBuilder.AllocPseudoToken();
+				}
+				typeBuilder.ModuleBuilder.SetCustomAttribute(lazyPseudoToken, customBuilder);
+			}
+		}
+
+		public override object GetRawConstantValue()
+		{
+			if (lazyPseudoToken != 0)
+			{
+				return typeBuilder.ModuleBuilder.Constant.GetRawConstantValue(typeBuilder.ModuleBuilder, lazyPseudoToken);
+			}
+			throw new InvalidOperationException();
+		}
+
+		public override PropertyAttributes Attributes
+		{
+			get { return attributes; }
+		}
+
+		public override bool CanRead
+		{
+			get { return getter != null; }
+		}
+
+		public override bool CanWrite
+		{
+			get { return setter != null; }
+		}
+
+		public override MethodInfo GetGetMethod(bool nonPublic)
+		{
+			return nonPublic || (getter != null && getter.IsPublic) ? getter : null;
+		}
+
+		public override MethodInfo GetSetMethod(bool nonPublic)
+		{
+			return nonPublic || (setter != null && setter.IsPublic) ? setter : null;
+		}
+
+		public override MethodInfo[] GetAccessors(bool nonPublic)
+		{
+			List<MethodInfo> list = new List<MethodInfo>();
+			foreach (Accessor acc in accessors)
+			{
+				AddAccessor(list, nonPublic, acc.Method);
+			}
+			return list.ToArray();
+		}
+
+		private static void AddAccessor(List<MethodInfo> list, bool nonPublic, MethodInfo method)
+		{
+			if (method != null && (nonPublic || method.IsPublic))
+			{
+				list.Add(method);
+			}
+		}
+
+		public override Type DeclaringType
+		{
+			get { return typeBuilder; }
+		}
+
+		public override string Name
+		{
+			get { return name; }
+		}
+
+		public override Module Module
+		{
+			get { return typeBuilder.Module; }
+		}
+
+		public void SetConstant(object defaultValue)
+		{
+			if (lazyPseudoToken == 0)
+			{
+				lazyPseudoToken = typeBuilder.ModuleBuilder.AllocPseudoToken();
+			}
+			attributes |= PropertyAttributes.HasDefault;
+			typeBuilder.ModuleBuilder.AddConstant(lazyPseudoToken, defaultValue);
+		}
+
+		internal void Bake()
+		{
+			if (patchCallingConvention)
+			{
+				sig.HasThis = !this.IsStatic;
+			}
+
+			PropertyTable.Record rec = new PropertyTable.Record();
+			rec.Flags = (short)attributes;
+			rec.Name = typeBuilder.ModuleBuilder.Strings.Add(name);
+			rec.Type = typeBuilder.ModuleBuilder.GetSignatureBlobIndex(sig);
+			int token = 0x17000000 | typeBuilder.ModuleBuilder.Property.AddRecord(rec);
+
+			if (lazyPseudoToken == 0)
+			{
+				lazyPseudoToken = token;
+			}
+			else
+			{
+				typeBuilder.ModuleBuilder.RegisterTokenFixup(lazyPseudoToken, token);
+			}
+
+			foreach (Accessor acc in accessors)
+			{
+				AddMethodSemantics(acc.Semantics, acc.Method.MetadataToken, token);
+			}
+		}
+
+		private void AddMethodSemantics(short semantics, int methodToken, int propertyToken)
+		{
+			MethodSemanticsTable.Record rec = new MethodSemanticsTable.Record();
+			rec.Semantics = semantics;
+			rec.Method = methodToken;
+			rec.Association = propertyToken;
+			typeBuilder.ModuleBuilder.MethodSemantics.AddRecord(rec);
+		}
+
+		internal override bool IsPublic
+		{
+			get
+			{
+				foreach (Accessor acc in accessors)
+				{
+					if (acc.Method.IsPublic)
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+		}
+
+		internal override bool IsNonPrivate
+		{
+			get
+			{
+				foreach (Accessor acc in accessors)
+				{
+					if ((acc.Method.Attributes & MethodAttributes.MemberAccessMask) > MethodAttributes.Private)
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+		}
+
+		internal override bool IsStatic
+		{
+			get
+			{
+				foreach (Accessor acc in accessors)
+				{
+					if (acc.Method.IsStatic)
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+		}
+
+		internal override bool IsBaked
+		{
+			get { return typeBuilder.IsBaked; }
+		}
+
+		internal override int GetCurrentToken()
+		{
+			if (typeBuilder.ModuleBuilder.IsSaved && ModuleBuilder.IsPseudoToken(lazyPseudoToken))
+			{
+				return typeBuilder.ModuleBuilder.ResolvePseudoToken(lazyPseudoToken);
+			}
+			else
+			{
+				return lazyPseudoToken;
+			}
+		}
+	}
+}
+@
+
+
+1.9
+log
+@Made ModuleBuilder.IsPseudoToken() method static.
+@
+text
+@d97 1
+a97 2
+			Universe u = typeBuilder.ModuleBuilder.universe;
+			if (customBuilder.Constructor.DeclaringType == u.System_Runtime_CompilerServices_SpecialNameAttribute)
+@
+
+
+1.8
+log
+@Refactored custom attribute handling of MemberInfo types.
+@
+text
+@d278 1
+a278 1
+			if (typeBuilder.ModuleBuilder.IsSaved && typeBuilder.ModuleBuilder.IsPseudoToken(lazyPseudoToken))
+@
+
+
+1.7
+log
+@Moved GetEvents(), GetFields(), GetConstructors(), GetNestedTypes() and GetProperties() to a common implementation that fixes a number of bugs.
+@
+text
+@d202 5
+a206 1
+			if (lazyPseudoToken != 0)
+d270 17
+@
+
+
+1.6
+log
+@- Delay calling convention patching until Bake (because accessors may be set while they aren't done yet).
+- Allow multiple getter/setter methods.
+- Fixed GetAccessors() regression introduced with recent order retention fixes.
+@
+text
+@d237 15
+@
+
+
+1.5
+log
+@Preserve accessor ordering.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008 Jeroen Frijters
+d40 1
+a40 1
+		private readonly List<MethodBuilder> accessors = new List<MethodBuilder>();
+d44 6
+a63 8
+		private void PatchCallingConvention(MethodBuilder mdBuilder)
+		{
+			if (patchCallingConvention && !mdBuilder.IsStatic)
+			{
+				sig.HasThis = true;
+			}
+		}
+
+a65 2
+			PatchCallingConvention(mdBuilder);
+			accessors.Remove(getter);
+d67 4
+a70 1
+			accessors.Add(mdBuilder);
+a74 2
+			PatchCallingConvention(mdBuilder);
+			accessors.Remove(setter);
+d76 4
+a79 1
+			accessors.Add(mdBuilder);
+d84 4
+a87 2
+			PatchCallingConvention(mdBuilder);
+			accessors.Add(mdBuilder);
+d149 1
+a149 3
+			AddAccessor(list, nonPublic, getter);
+			AddAccessor(list, nonPublic, setter);
+			if (accessors != null)
+d151 1
+a151 4
+				foreach (MethodInfo method in accessors)
+				{
+					AddAccessor(list, nonPublic, method);
+				}
+d191 5
+d207 1
+a207 1
+			foreach (MethodBuilder method in accessors)
+d209 1
+a209 14
+				short semantics;
+				if (method == getter)
+				{
+					semantics = MethodSemanticsTable.Getter;
+				}
+				else if (method == setter)
+				{
+					semantics = MethodSemanticsTable.Setter;
+				}
+				else
+				{
+					semantics = MethodSemanticsTable.Other;
+				}
+				AddMethodSemantics(semantics, method.MetadataToken, token);
+d226 1
+a226 1
+				foreach (MethodBuilder method in accessors)
+d228 1
+a228 1
+					if (method.IsPublic)
+d241 1
+a241 1
+				foreach (MethodBuilder method in accessors)
+d243 1
+a243 1
+					if (method.IsStatic)
+@
+
+
+1.4
+log
+@Made property and event public/static flag handling compatible with .NET
+@
+text
+@d40 1
+a40 1
+		private List<MethodBuilder> otherMethods;
+d69 1
+d71 1
+d77 1
+d79 1
+d85 1
+a85 5
+			if (otherMethods == null)
+			{
+				otherMethods = new List<MethodBuilder>();
+			}
+			otherMethods.Add(mdBuilder);
+d149 1
+a149 1
+			if (otherMethods != null)
+d151 1
+a151 1
+				foreach (MethodInfo method in otherMethods)
+d205 1
+a205 1
+			if (getter != null)
+d207 10
+a216 9
+				AddMethodSemantics(MethodSemanticsTable.Getter, getter.MetadataToken, token);
+			}
+			if (setter != null)
+			{
+				AddMethodSemantics(MethodSemanticsTable.Setter, setter.MetadataToken, token);
+			}
+			if (otherMethods != null)
+			{
+				foreach (MethodBuilder method in otherMethods)
+d218 1
+a218 1
+					AddMethodSemantics(MethodSemanticsTable.Other, method.MetadataToken, token);
+d220 1
+d237 1
+a237 1
+				if ((getter != null && getter.IsPublic) || (setter != null && setter.IsPublic))
+d239 1
+a239 5
+					return true;
+				}
+				if (otherMethods != null)
+				{
+					foreach (MethodBuilder method in otherMethods)
+d241 1
+a241 4
+						if (method.IsPublic)
+						{
+							return true;
+						}
+d252 1
+a252 5
+				if ((getter != null && getter.IsStatic) || (setter != null && setter.IsStatic))
+				{
+					return true;
+				}
+				if (otherMethods != null)
+d254 1
+a254 1
+					foreach (MethodBuilder method in otherMethods)
+d256 1
+a256 4
+						if (method.IsStatic)
+						{
+							return true;
+						}
+@
+
+
+1.3
+log
+@Fix NPE. Don't try to iterator over otherMethods if it is null.
+@
+text
+@d233 40
+a272 1
+			get { return GetGetMethod() != null || GetSetMethod() != null; }
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d149 1
+a149 1
+			foreach (MethodInfo method in otherMethods)
+d151 4
+a154 1
+				AddAccessor(list, nonPublic, method);
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

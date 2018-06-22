@@ -1,0 +1,986 @@
+head	1.6;
+access;
+symbols
+	v8_1_5717_0:1.6
+	v8_1:1.6.0.14
+	v8_0_5449_1:1.6
+	v8_0_5449_0:1.6
+	v8_0:1.6.0.12
+	v7_4_5196_0:1.6
+	v7_4:1.6.0.10
+	v7_3:1.6.0.8
+	v7_2_4630_6:1.6
+	v7_2_4630_5:1.6
+	v7_2_4630_4:1.6
+	v7_2_4630_3:1.6
+	v7_2_4630_2:1.6
+	v0_46_0_4:1.4
+	v7_2_4630_1:1.6
+	v7_2:1.6.0.6
+	v7_1_4532_2:1.6
+	v7_1_4532_1:1.6
+	v7_1_4532_0:1.6
+	v7_1:1.6.0.4
+	v7_0_4335_3:1.6
+	v7_0_4335_2:1.6
+	v7_0_4335_1:1.6
+	v0_46_0_2:1.4
+	v7_0_4335_0:1.6
+	v7_0:1.6.0.2
+	v0_40_0_6:1.4
+	v0_40_0_5:1.4
+	v0_46_0_1:1.4
+	v0_46_0_0:1.4
+	v0_46:1.4.0.8
+	v0_44_0_6:1.4
+	v0_44_0_5:1.4
+	v0_44_0_4:1.4
+	v0_44_0_3:1.4
+	v0_44_0_2:1.4
+	v0_42_0_7:1.4
+	v0_44_0_1:1.4
+	v0_44_0_0:1.4
+	v0_44:1.4.0.6
+	v0_42_0_6:1.4
+	v0_42_0_5:1.4
+	v0_42_0_4:1.4
+	v0_42_0_3:1.4
+	v0_42_0_2:1.4
+	v0_42_0_1:1.4
+	v0_42_0_0:1.4
+	v0_42:1.4.0.4
+	v0_40_0_3:1.4
+	v0_40_0_2:1.4
+	v0_40_0_1:1.4
+	v0_40_0_0:1.4
+	v0_40:1.4.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.6
+date	2011.06.21.19.42.45;	author smallsql;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2011.06.20.18.25.46;	author smallsql;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2009.02.01.10.39.43;	author smallsql;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2009.01.25.09.03.24;	author smallsql;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2009.01.18.21.47.51;	author smallsql;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2009.01.15.21.40.00;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.6
+log
+@Updated ODBC Bridge to OpenJDK7 part 2
+@
+text
+@/*
+  Copyright (C) 2009, 2011 Volker Berlin (i-net software)
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+ */
+package sun.jdbc.odbc;
+
+import cli.System.Data.*;
+import cli.System.Data.Common.*;
+import cli.System.Data.Odbc.*;
+
+import java.sql.*;
+import java.util.Map;
+import java.util.Properties;
+import java.util.concurrent.Executor;
+
+/**
+ * This JDBC Driver is a wrapper to the ODBC.NET Data Provider
+ */
+public class JdbcOdbcConnection implements Connection{
+
+    private final OdbcConnection netConn;
+
+    private DbTransaction transaction;
+
+    private int isolation = TRANSACTION_READ_COMMITTED;
+
+
+    JdbcOdbcConnection(String connectString, Properties info) throws SQLException{
+        try{
+            boolean isDSN = connectString.indexOf('=') < 0;
+            StringBuilder connStr = new StringBuilder();
+            if(isDSN){
+                connStr.append("DSN=");
+            }
+            connStr.append(connectString);
+
+            String uid = info.getProperty("user");
+            String pwd = info.getProperty("password");
+
+            if(uid != null){
+                connStr.append(";UID=").append(uid);
+            }
+            if(pwd != null){
+                connStr.append(";PWD=").append(pwd);
+            }
+
+            netConn = new OdbcConnection(connStr.toString());
+
+            netConn.Open();
+        }catch(Throwable th){
+            throw JdbcOdbcUtils.createSQLException(th);
+        }
+    }
+
+
+    @@Override
+	public void clearWarnings() throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    @@Override
+	public void close() throws SQLException{
+        try{
+            netConn.Close();
+        }catch(Throwable ex){
+            throw JdbcOdbcUtils.createSQLException(ex);
+        }
+    }
+
+
+    @@Override
+	public Array createArrayOf(String typeName, Object[] elements){
+        throw new UnsupportedOperationException();
+    }
+
+
+    @@Override
+	public Blob createBlob(){
+        throw new UnsupportedOperationException();
+    }
+
+
+    @@Override
+	public Clob createClob(){
+        throw new UnsupportedOperationException();
+    }
+
+
+    @@Override
+	public NClob createNClob(){
+        throw new UnsupportedOperationException();
+    }
+
+
+    @@Override
+	public SQLXML createSQLXML(){
+        throw new UnsupportedOperationException();
+    }
+
+
+    @@Override
+	public Statement createStatement() throws SQLException{
+        return createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+    }
+
+
+    @@Override
+	public Statement createStatement(int resultSetType, int resultSetConcurrency) throws SQLException{
+        try{
+            return new JdbcOdbcStatement(this, netConn.CreateCommand(), resultSetType, resultSetConcurrency);
+        }catch(Throwable ex){
+            throw JdbcOdbcUtils.createSQLException(ex);
+        }
+    }
+
+
+    @@Override
+	public Statement createStatement(int resultSetType, int resultSetConcurrency, int resultSetHoldability){
+        throw new UnsupportedOperationException();
+    }
+
+
+    @@Override
+	public Struct createStruct(String typeName, Object[] attributes){
+        throw new UnsupportedOperationException();
+    }
+
+
+    @@Override
+	public void setAutoCommit(boolean autoCommit) throws SQLException{
+        try{
+            if(autoCommit && transaction != null){
+                return; // no change
+            }
+            if(!autoCommit && transaction == null){
+                return; // no change
+            }
+            int level;
+            switch(isolation){
+                case TRANSACTION_READ_COMMITTED:
+                    level = IsolationLevel.ReadUncommitted;
+                    break;
+                case TRANSACTION_READ_UNCOMMITTED:
+                    level = IsolationLevel.ReadCommitted;
+                    break;
+                case TRANSACTION_REPEATABLE_READ:
+                    level = IsolationLevel.RepeatableRead;
+                    break;
+                case TRANSACTION_SERIALIZABLE:
+                    level = IsolationLevel.Serializable;
+                    break;
+                default:
+                    level = IsolationLevel.ReadCommitted;
+            }
+            if(autoCommit){
+                transaction = netConn.BeginTransaction(IsolationLevel.wrap(level));
+            }else{
+                transaction.Commit();
+                transaction = null;
+            }
+        }catch(Throwable ex){
+            throw JdbcOdbcUtils.createSQLException(ex);
+        }
+    }
+
+
+    @@Override
+	public boolean getAutoCommit(){
+        return transaction != null;
+    }
+
+
+    @@Override
+	public void commit() throws SQLException{
+        try{
+            if(transaction == null){
+                // auto commit == true
+                return;
+            }
+            transaction.Commit();
+            transaction = netConn.BeginTransaction(transaction.get_IsolationLevel());
+        }catch(Throwable ex){
+            throw JdbcOdbcUtils.createSQLException(ex);
+        }
+    }
+
+
+    @@Override
+	public void rollback() throws SQLException{
+        try{
+            if(transaction == null){
+                // auto commit == true
+                return;
+            }
+            transaction.Rollback();
+            transaction = netConn.BeginTransaction(transaction.get_IsolationLevel());
+        }catch(Throwable ex){
+            throw JdbcOdbcUtils.createSQLException(ex);
+        }
+    }
+
+
+    @@Override
+	public void setTransactionIsolation(int level){
+        isolation = level;
+    }
+
+
+    @@Override
+	public int getTransactionIsolation(){
+        return isolation;
+    }
+
+
+    @@Override
+	public String getClientInfo(String name){
+        throw new UnsupportedOperationException();
+    }
+
+
+    @@Override
+	public Properties getClientInfo(){
+        throw new UnsupportedOperationException();
+    }
+
+
+    @@Override
+	public int getHoldability(){
+        throw new UnsupportedOperationException();
+    }
+
+
+    @@Override
+	public DatabaseMetaData getMetaData(){
+        return new JdbcOdbcDatabaseMetaData(this, netConn);
+    }
+
+
+    @@Override
+	public Map<String, Class<?>> getTypeMap(){
+        throw new UnsupportedOperationException();
+    }
+
+
+    @@Override
+	public SQLWarning getWarnings() throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    @@Override
+	public boolean isClosed() throws SQLException{
+        return netConn.get_State().Value == ConnectionState.Closed;
+    }
+
+
+    @@Override
+	public boolean isReadOnly() throws SQLException{
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+
+    @@Override
+	public boolean isValid(int timeout) throws SQLException{
+        throw new UnsupportedOperationException();
+    }
+
+
+    @@Override
+	public String nativeSQL(String sql) throws SQLException{
+        // TODO Auto-generated method stub
+        return sql;
+    }
+
+
+    @@Override
+	public CallableStatement prepareCall(String sql) throws SQLException{
+        return prepareCall(sql, ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+    }
+
+
+    @@Override
+	public CallableStatement prepareCall(String sql, int resultSetType, int resultSetConcurrency) throws SQLException{
+        try{
+            return new JdbcOdbcCallableStatement(this, netConn.CreateCommand(), sql, resultSetType,
+                    resultSetConcurrency);
+        }catch(Throwable th){
+            throw JdbcOdbcUtils.createSQLException(th);
+        }
+    }
+
+
+    @@Override
+	public CallableStatement prepareCall(String sql, int resultSetType, int resultSetConcurrency,
+            int resultSetHoldability){
+        throw new UnsupportedOperationException();
+    }
+
+
+    @@Override
+	public PreparedStatement prepareStatement(String sql) throws SQLException{
+        return prepareStatement(sql, ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+    }
+
+
+    @@Override
+	public PreparedStatement prepareStatement(String sql, int resultSetType, int resultSetConcurrency)
+            throws SQLException{
+        try{
+            return new JdbcOdbcPreparedStatement(this, netConn.CreateCommand(), sql, resultSetType,
+                    resultSetConcurrency);
+        }catch(Throwable th){
+            throw JdbcOdbcUtils.createSQLException(th);
+        }
+    }
+
+
+    @@Override
+	public PreparedStatement prepareStatement(String sql, int resultSetType, int resultSetConcurrency,
+            int resultSetHoldability){
+        throw new UnsupportedOperationException();
+    }
+
+
+    @@Override
+	public PreparedStatement prepareStatement(String sql, int autoGeneratedKeys){
+        throw new UnsupportedOperationException();
+    }
+
+
+    @@Override
+	public PreparedStatement prepareStatement(String sql, int[] columnIndexes){
+        throw new UnsupportedOperationException();
+    }
+
+
+    @@Override
+	public PreparedStatement prepareStatement(String sql, String[] columnNames){
+        throw new UnsupportedOperationException();
+    }
+
+
+    @@Override
+	public void releaseSavepoint(Savepoint savepoint){
+        throw new UnsupportedOperationException();
+    }
+
+
+    @@Override
+	public void rollback(Savepoint savepoint){
+        throw new UnsupportedOperationException();
+    }
+
+
+    @@Override
+	public void setCatalog(String catalog) throws SQLException{
+        try{
+            netConn.ChangeDatabase(catalog);
+        }catch(Throwable th){
+            throw JdbcOdbcUtils.createSQLException(th);
+        }
+    }
+
+
+    @@Override
+	public String getCatalog(){
+        return netConn.get_Database();
+    }
+
+
+    @@Override
+	public void setClientInfo(String name, String value){
+        throw new UnsupportedOperationException();
+    }
+
+
+    @@Override
+	public void setClientInfo(Properties properties){
+        throw new UnsupportedOperationException();
+    }
+
+
+    @@Override
+	public void setHoldability(int holdability){
+        throw new UnsupportedOperationException();
+    }
+
+
+    @@Override
+	public void setReadOnly(boolean readOnly) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    @@Override
+	public Savepoint setSavepoint(){
+        throw new UnsupportedOperationException();
+    }
+
+
+    @@Override
+	public Savepoint setSavepoint(String name){
+        throw new UnsupportedOperationException();
+    }
+
+
+	@@Override
+	public void setTypeMap(Map<String, Class<?>> map){
+        throw new UnsupportedOperationException();
+    }
+
+
+    @@Override
+	public boolean isWrapperFor(Class<?> iface){
+        return iface.isAssignableFrom(this.getClass());
+    }
+
+
+    @@Override
+	public <T>T unwrap(Class<T> iface) throws SQLException{
+        if(isWrapperFor(iface)){
+            return (T)this;
+        }
+        throw new SQLException(this.getClass().getName() + " does not implements " + iface.getName() + ".", "01000");
+    }
+
+
+    /**
+     * {@@inheritDoc}
+     */
+	public void setSchema(String schema) throws SQLException {
+	}
+
+
+    /**
+     * {@@inheritDoc}
+     */
+	public String getSchema() throws SQLException {
+		return null;
+	}
+
+
+    /**
+     * {@@inheritDoc}
+     */
+	public void abort(Executor executor) throws SQLException {
+		throw new SQLFeatureNotSupportedException();
+	}
+
+
+    /**
+     * {@@inheritDoc}
+     */
+	public void setNetworkTimeout(Executor executor, int milliseconds)
+			throws SQLException {
+		throw new SQLFeatureNotSupportedException();
+	}
+
+
+    /**
+     * {@@inheritDoc}
+     */
+	public int getNetworkTimeout() throws SQLException {
+		throw new SQLFeatureNotSupportedException();
+	}
+}
+@
+
+
+1.5
+log
+@Updated ODBC Bridge to OpenJDK7 part 1
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Volker Berlin (i-net software)
+@
+
+
+1.4
+log
+@many database metadata implement and updatable resultset added
+@
+text
+@d33 1
+d75 2
+a76 1
+    public void clearWarnings() throws SQLException{
+d82 2
+a83 1
+    public void close() throws SQLException{
+d92 2
+a93 1
+    public Array createArrayOf(String typeName, Object[] elements){
+d98 2
+a99 1
+    public Blob createBlob(){
+d104 2
+a105 1
+    public Clob createClob(){
+d110 2
+a111 1
+    public NClob createNClob(){
+d116 2
+a117 1
+    public SQLXML createSQLXML(){
+d122 2
+a123 1
+    public Statement createStatement() throws SQLException{
+d128 2
+a129 1
+    public Statement createStatement(int resultSetType, int resultSetConcurrency) throws SQLException{
+d138 2
+a139 1
+    public Statement createStatement(int resultSetType, int resultSetConcurrency, int resultSetHoldability){
+d144 2
+a145 1
+    public Struct createStruct(String typeName, Object[] attributes){
+d150 2
+a151 1
+    public void setAutoCommit(boolean autoCommit) throws SQLException{
+d188 2
+a189 1
+    public boolean getAutoCommit(){
+d194 2
+a195 1
+    public void commit() throws SQLException{
+d209 2
+a210 1
+    public void rollback() throws SQLException{
+d224 2
+a225 1
+    public void setTransactionIsolation(int level){
+d230 2
+a231 1
+    public int getTransactionIsolation(){
+d236 2
+a237 1
+    public String getClientInfo(String name){
+d242 2
+a243 1
+    public Properties getClientInfo(){
+d248 2
+a249 1
+    public int getHoldability(){
+d254 2
+a255 1
+    public DatabaseMetaData getMetaData(){
+d260 2
+a261 1
+    public Map<String, Class<?>> getTypeMap(){
+d266 2
+a267 1
+    public SQLWarning getWarnings() throws SQLException{
+d273 2
+a274 1
+    public boolean isClosed() throws SQLException{
+d279 2
+a280 1
+    public boolean isReadOnly() throws SQLException{
+d286 2
+a287 1
+    public boolean isValid(int timeout) throws SQLException{
+d292 2
+a293 1
+    public String nativeSQL(String sql) throws SQLException{
+d299 2
+a300 1
+    public CallableStatement prepareCall(String sql) throws SQLException{
+d305 2
+a306 1
+    public CallableStatement prepareCall(String sql, int resultSetType, int resultSetConcurrency) throws SQLException{
+d316 2
+a317 1
+    public CallableStatement prepareCall(String sql, int resultSetType, int resultSetConcurrency,
+d323 2
+a324 1
+    public PreparedStatement prepareStatement(String sql) throws SQLException{
+d329 2
+a330 1
+    public PreparedStatement prepareStatement(String sql, int resultSetType, int resultSetConcurrency)
+d341 2
+a342 1
+    public PreparedStatement prepareStatement(String sql, int resultSetType, int resultSetConcurrency,
+d348 2
+a349 1
+    public PreparedStatement prepareStatement(String sql, int autoGeneratedKeys){
+d354 2
+a355 1
+    public PreparedStatement prepareStatement(String sql, int[] columnIndexes){
+d360 2
+a361 1
+    public PreparedStatement prepareStatement(String sql, String[] columnNames){
+d366 2
+a367 1
+    public void releaseSavepoint(Savepoint savepoint){
+d372 2
+a373 1
+    public void rollback(Savepoint savepoint){
+d378 2
+a379 1
+    public void setCatalog(String catalog) throws SQLException{
+d388 2
+a389 1
+    public String getCatalog(){
+d394 2
+a395 1
+    public void setClientInfo(String name, String value){
+d400 2
+a401 1
+    public void setClientInfo(Properties properties){
+d406 2
+a407 1
+    public void setHoldability(int holdability){
+d412 2
+a413 1
+    public void setReadOnly(boolean readOnly) throws SQLException{
+d419 2
+a420 1
+    public Savepoint setSavepoint(){
+d425 2
+a426 1
+    public Savepoint setSavepoint(String name){
+d431 2
+a432 1
+    public void setTypeMap(Map<String, Class<?>> map){
+d437 2
+a438 1
+    public boolean isWrapperFor(Class<?> iface){
+d443 2
+a444 1
+    public <T>T unwrap(Class<T> iface) throws SQLException{
+d451 39
+@
+
+
+1.3
+log
+@250 TODO in JDBC-ODBC-Bridge fixt
+@
+text
+@d39 1
+a39 1
+    private final DbConnection netConn;
+d89 2
+a90 3
+    public Array createArrayOf(String typeName, Object[] elements) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d94 2
+a95 3
+    public Blob createBlob() throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d99 2
+a100 3
+    public Clob createClob() throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d104 2
+a105 3
+    public NClob createNClob() throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d109 2
+a110 3
+    public SQLXML createSQLXML() throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d115 5
+d121 1
+a121 1
+            return new JdbcOdbcStatement(this, netConn.CreateCommand());
+d128 2
+a129 3
+    public Statement createStatement(int resultSetType, int resultSetConcurrency) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d133 2
+a134 10
+    public Statement createStatement(int resultSetType, int resultSetConcurrency, int resultSetHoldability)
+            throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public Struct createStruct(String typeName, Object[] attributes) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d218 2
+a219 3
+    public String getClientInfo(String name) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d223 2
+a224 3
+    public Properties getClientInfo() throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d228 2
+a229 3
+    public int getHoldability() throws SQLException{
+        // TODO Auto-generated method stub
+        return 0;
+d233 2
+a234 3
+    public DatabaseMetaData getMetaData() throws SQLException{
+        // TODO Auto-generated method stub
+        return new JdbcOdbcDatabaseMetaData(netConn);
+d238 2
+a239 3
+    public Map<String, Class<?>> getTypeMap() throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d261 1
+a261 2
+        // TODO Auto-generated method stub
+        return true;
+d267 1
+a267 1
+        return null;
+d272 1
+a272 1
+        return new JdbcOdbcCallableStatement(this, netConn.CreateCommand(), sql);
+d277 6
+a282 2
+        // TODO Auto-generated method stub
+        return null;
+d287 2
+a288 3
+            int resultSetHoldability) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d293 1
+a293 1
+        return new JdbcOdbcPreparedStatement(this, netConn.CreateCommand(), sql);
+d299 6
+a304 2
+        // TODO Auto-generated method stub
+        return null;
+d309 2
+a310 3
+            int resultSetHoldability) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d314 2
+a315 3
+    public PreparedStatement prepareStatement(String sql, int autoGeneratedKeys) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d319 2
+a320 3
+    public PreparedStatement prepareStatement(String sql, int[] columnIndexes) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d324 2
+a325 3
+    public PreparedStatement prepareStatement(String sql, String[] columnNames) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d329 2
+a330 3
+    public void releaseSavepoint(Savepoint savepoint) throws SQLException{
+        // TODO Auto-generated method stub
+
+d334 2
+a335 3
+    public void rollback(Savepoint savepoint) throws SQLException{
+        // TODO Auto-generated method stub
+
+d348 1
+a348 1
+    public String getCatalog() throws SQLException{
+d353 2
+a354 3
+    public void setClientInfo(String name, String value) throws SQLClientInfoException{
+        // TODO Auto-generated method stub
+
+d358 2
+a359 3
+    public void setClientInfo(Properties properties) throws SQLClientInfoException{
+        // TODO Auto-generated method stub
+
+d363 2
+a364 3
+    public void setHoldability(int holdability) throws SQLException{
+        // TODO Auto-generated method stub
+
+d384 2
+a385 3
+    public void setTypeMap(Map<String, Class<?>> map) throws SQLException{
+        // TODO Auto-generated method stub
+
+@
+
+
+1.2
+log
+@JDBC-ODBC-Bridge Step 2
+@
+text
+@d354 5
+a358 1
+        netConn.ChangeDatabase(catalog);
+@
+
+
+1.1
+log
+@First Step of the JDBC ODBC Bridge
+@
+text
+@d47 7
+a53 6
+        boolean isDSN = connectString.indexOf('=') < 0;
+        StringBuilder connStr = new StringBuilder();
+        if(isDSN){
+            connStr.append("DSN=");
+        }
+        connStr.append(connectString);
+d55 2
+a56 2
+        String uid = info.getProperty("user");
+        String pwd = info.getProperty("password");
+d58 6
+a63 6
+        if(uid != null){
+            connStr.append(";UID=").append(uid);
+        }
+        if(pwd != null){
+            connStr.append(";PWD=").append(pwd);
+        }
+d65 1
+a65 1
+        netConn = new OdbcConnection(connStr.toString());
+d67 4
+a70 1
+        netConn.Open();
+d83 2
+a84 2
+        }catch(Exception ex){
+            throw new SQLException(ex);
+d122 2
+a123 2
+        }catch(Exception ex){
+            throw new SQLException(ex);
+d178 2
+a179 2
+        }catch(Exception ex){
+            throw new SQLException(ex);
+d197 2
+a198 2
+        }catch(Exception ex){
+            throw new SQLException(ex);
+d211 2
+a212 2
+        }catch(Exception ex){
+            throw new SQLException(ex);
+@
+

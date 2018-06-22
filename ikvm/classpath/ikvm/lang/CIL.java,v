@@ -1,0 +1,233 @@
+head	1.4;
+access;
+symbols
+	v8_1_5717_0:1.4
+	v8_1:1.4.0.30
+	v8_0_5449_1:1.4
+	v8_0_5449_0:1.4
+	v8_0:1.4.0.28
+	v7_4_5196_0:1.4
+	v7_4:1.4.0.26
+	v7_3:1.4.0.24
+	v7_2_4630_6:1.4
+	v7_2_4630_5:1.4
+	v7_2_4630_4:1.4
+	v7_2_4630_3:1.4
+	v7_2_4630_2:1.4
+	v0_46_0_4:1.4
+	v7_2_4630_1:1.4
+	v7_2:1.4.0.22
+	v7_1_4532_2:1.4
+	v7_1_4532_1:1.4
+	v7_1_4532_0:1.4
+	v7_1:1.4.0.20
+	v7_0_4335_3:1.4
+	v7_0_4335_2:1.4
+	v7_0_4335_1:1.4
+	v0_46_0_2:1.4
+	v7_0_4335_0:1.4
+	v7_0:1.4.0.18
+	v0_40_0_6:1.4
+	v0_40_0_5:1.4
+	v0_46_0_1:1.4
+	v0_46_0_0:1.4
+	v0_46:1.4.0.16
+	v0_36_0_14:1.4
+	v0_44_0_6:1.4
+	v0_44_0_5:1.4
+	v0_44_0_4:1.4
+	v0_44_0_3:1.4
+	v0_44_0_2:1.4
+	v0_42_0_7:1.4
+	v0_44_0_1:1.4
+	v0_44_0_0:1.4
+	v0_44:1.4.0.14
+	v0_42_0_6:1.4
+	v0_42_0_5:1.4
+	v0_42_0_4:1.4
+	v0_42_0_3:1.4
+	v0_42_0_2:1.4
+	v0_42_0_1:1.4
+	v0_42_0_0:1.4
+	v0_42:1.4.0.12
+	v0_40_0_3:1.4
+	v0_40_0_2:1.4
+	v0_40_0_1:1.4
+	v0_40_0_0:1.4
+	v0_40:1.4.0.10
+	v0_36_0_13:1.4
+	v0_38_0_1:1.4
+	v0_38_0_0:1.4
+	v0_38:1.4.0.8
+	v0_36_0_9:1.4
+	v0_36_0_7:1.4
+	v0_36_0_5:1.4
+	v0_36_0_4:1.4
+	v0_36_0_3:1.4
+	v0_36_0_2:1.4
+	v0_36_0_1:1.4
+	v0_36_0_0:1.4
+	v0_36:1.4.0.6
+	v0_34_0_3:1.4
+	v0_34_0_2:1.4
+	v0_34_0_1:1.4
+	v0_34_0_0:1.4
+	v0_34:1.4.0.4
+	v0_32:1.4.0.2
+	v0_32_0_0:1.4
+	v0_30:1.3.0.2
+	v0_28_0_0:1.3
+	v0_26_0_1:1.3
+	v0_26_0_0:1.3
+	v0_24_0_1:1.3
+	v0_24_0_0:1.3
+	v0_22_0_0:1.3
+	v0_20_0_0:1.3
+	v0_18_0_0:1.3
+	v0_16_0_0:1.3
+	v0_14_0_1:1.3
+	v0_14_0_0:1.3
+	v0_12_0_0:1.3
+	v0_10_0_1:1.2
+	v0_10_0_0:1.2
+	v0_8_0_0:1.2;
+locks; strict;
+comment	@# @;
+
+
+1.4
+date	2006.10.04.09.03.18;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2005.02.02.15.12.01;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2004.06.14.10.36.38;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2003.03.31.14.56.39;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@/*
+  Copyright (C) 2003, 2004, 2005 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+package ikvm.lang;
+
+public class CIL
+{
+    public static native byte unbox_byte(Object o);
+    public static native boolean unbox_boolean(Object o);
+    public static native short unbox_short(Object o);
+    public static native char unbox_char(Object o);
+    public static native int unbox_int(Object o);
+    public static native float unbox_float(Object o);
+    public static native long unbox_long(Object o);
+    public static native double unbox_double(Object o);
+
+    public static native cli.System.Byte box_byte(byte v);
+    public static native cli.System.Boolean box_boolean(boolean v);
+    public static native cli.System.Int16 box_short(short v);
+    public static native cli.System.Char box_char(char v);
+    public static native cli.System.Int32 box_int(int v);
+    public static native cli.System.Single box_float(float v);
+    public static native cli.System.Int64 box_long(long v);
+    public static native cli.System.Double box_double(double v);
+
+    public static native cli.System.SByte box_sbyte(byte v);
+    public static native cli.System.UInt16 box_ushort(short v);
+    public static native cli.System.UInt32 box_uint(int v);
+    public static native cli.System.UInt64 box_ulong(long v);
+
+    public static native byte unbox_sbyte(cli.System.SByte v);
+    public static native short unbox_ushort(cli.System.UInt16 v);
+    public static native int unbox_uint(cli.System.UInt32 v);
+    public static native long unbox_ulong(cli.System.UInt64 v);
+}
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d37 8
+a44 8
+    public static native Object box_byte(byte v);
+    public static native Object box_boolean(boolean v);
+    public static native Object box_short(short v);
+    public static native Object box_char(char v);
+    public static native Object box_int(int v);
+    public static native Object box_float(float v);
+    public static native Object box_long(long v);
+    public static native Object box_double(double v);
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2003, 2004 Jeroen Frijters
+d46 1
+a46 1
+    public static native cli.System.Byte box_ubyte(byte v);
+d51 1
+a51 1
+    public static native byte unbox_ubyte(cli.System.Byte v);
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2003 Jeroen Frijters
+d28 27
+a54 1
+	public static native int unbox_int(Object o);
+@
+

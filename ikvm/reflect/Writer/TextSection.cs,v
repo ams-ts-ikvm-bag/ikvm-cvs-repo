@@ -1,0 +1,1701 @@
+head	1.25;
+access;
+symbols
+	v8_1_5717_0:1.24
+	v8_1:1.24.0.2
+	v8_0_5449_1:1.22
+	v8_0_5449_0:1.22
+	v8_0:1.22.0.4
+	v7_4_5196_0:1.22
+	v7_4:1.22.0.2
+	v7_3:1.20.0.2
+	v7_2_4630_6:1.13.4.1
+	v7_2_4630_5:1.13.4.1
+	v7_2_4630_4:1.13.4.1
+	v7_2_4630_3:1.13.4.1
+	v7_2_4630_2:1.13.4.1
+	v0_46_0_4:1.6.2.1
+	v7_2_4630_1:1.13
+	v7_2:1.13.0.4
+	v7_1_4532_2:1.13
+	v7_1_4532_1:1.13
+	v7_1_4532_0:1.13
+	v7_1:1.13.0.2
+	v7_0_4335_3:1.12
+	v7_0_4335_2:1.12
+	v7_0_4335_1:1.12
+	v0_46_0_2:1.6
+	v7_0_4335_0:1.12
+	v7_0:1.12.0.2
+	v0_46_0_1:1.6
+	v0_46_0_0:1.6
+	v0_46:1.6.0.2
+	v0_44_0_6:1.3.2.2
+	v0_44_0_5:1.3.2.2
+	v0_44_0_4:1.3.2.2
+	v0_44_0_3:1.3
+	v0_44_0_2:1.3
+	v0_44_0_1:1.3
+	v0_44_0_0:1.3
+	v0_44:1.3.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.25
+date	2015.08.27.12.15.45;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2015.02.17.13.48.31;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2015.01.27.09.54.44;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2013.05.30.05.57.48;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2013.05.10.08.56.49;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2013.01.12.12.07.40;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2013.01.12.12.06.30;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2013.01.12.11.57.36;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2013.01.12.11.44.02;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2013.01.12.11.35.43;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2013.01.12.11.08.59;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2012.09.26.18.35.33;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2012.04.19.12.14.52;	author jfrijters;	state Exp;
+branches
+	1.13.4.1;
+next	1.12;
+
+1.12
+date	2011.09.30.11.12.25;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2011.09.30.08.26.28;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2011.07.19.21.26.44;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2011.03.22.09.48.49;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2011.03.18.07.48.34;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2011.03.08.08.41.00;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2010.12.06.10.31.53;	author jfrijters;	state Exp;
+branches
+	1.6.2.1;
+next	1.5;
+
+1.5
+date	2010.08.09.12.07.55;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.08.09.12.05.43;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.05.07.12.04.48;	author jfrijters;	state Exp;
+branches
+	1.3.2.1;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.02;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.32;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.3.2.1
+date	2010.08.09.12.04.33;	author jfrijters;	state Exp;
+branches;
+next	1.3.2.2;
+
+1.3.2.2
+date	2010.08.09.12.10.24;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.6.2.1
+date	2012.10.03.06.18.56;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.13.4.1
+date	2012.10.08.07.43.48;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.25
+log
+@Use uint for file position to support >2GB files. Note that PE spec says that 2GB is the maximum valid size.
+@
+text
+@/*
+  Copyright (C) 2008-2013 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Diagnostics;
+using System.IO;
+using System.Collections.Generic;
+using System.Text;
+using IKVM.Reflection.Emit;
+using IKVM.Reflection.Impl;
+using IKVM.Reflection.Metadata;
+
+namespace IKVM.Reflection.Writer
+{
+	sealed class TextSection
+	{
+		private readonly PEWriter peWriter;
+		private readonly CliHeader cliHeader;
+		private readonly ModuleBuilder moduleBuilder;
+		private readonly uint strongNameSignatureLength;
+		private readonly uint manifestResourcesLength;
+		private readonly ExportTables exportTables;
+		private readonly List<RelocationBlock> relocations = new List<RelocationBlock>();
+
+		internal TextSection(PEWriter peWriter, CliHeader cliHeader, ModuleBuilder moduleBuilder, int strongNameSignatureLength)
+		{
+			this.peWriter = peWriter;
+			this.cliHeader = cliHeader;
+			this.moduleBuilder = moduleBuilder;
+			this.strongNameSignatureLength = (uint)strongNameSignatureLength;
+			this.manifestResourcesLength = (uint)moduleBuilder.GetManifestResourcesLength();
+			if (moduleBuilder.unmanagedExports.Count != 0)
+			{
+				this.exportTables = new ExportTables(this);
+			}
+		}
+
+		internal uint PointerToRawData
+		{
+			get { return peWriter.ToFileAlignment(peWriter.HeaderSize); }
+		}
+
+		internal uint BaseRVA
+		{
+			get { return peWriter.Headers.OptionalHeader.SectionAlignment; }
+		}
+
+		internal uint ImportAddressTableRVA
+		{
+			get { return BaseRVA; }
+		}
+
+		internal uint ImportAddressTableLength
+		{
+			get { return peWriter.Is32Bit ? 8u : 16u; }
+		}
+
+		internal uint ComDescriptorRVA
+		{
+			get { return ImportAddressTableRVA + ImportAddressTableLength; }
+		}
+
+		internal uint ComDescriptorLength
+		{
+			get { return cliHeader.Cb; }
+		}
+
+		internal uint MethodBodiesRVA
+		{
+			get { return (ComDescriptorRVA + ComDescriptorLength + 7) & ~7U; }
+		}
+
+		private uint MethodBodiesLength
+		{
+			get { return (uint)moduleBuilder.methodBodies.Length; }
+		}
+
+		private uint ResourcesRVA
+		{
+			get
+			{
+				switch (peWriter.Headers.FileHeader.Machine)
+				{
+					case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_I386:
+					case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_ARM:
+						return (MethodBodiesRVA + MethodBodiesLength + 3) & ~3U;
+					default:
+						return (MethodBodiesRVA + MethodBodiesLength + 15) & ~15U;
+				}
+			}
+		}
+
+		private uint ResourcesLength
+		{
+			get { return manifestResourcesLength; }
+		}
+
+		internal uint StrongNameSignatureRVA
+		{
+			get
+			{
+				return (ResourcesRVA + ResourcesLength + 3) & ~3U;
+			}
+		}
+
+		internal uint StrongNameSignatureLength
+		{
+			get
+			{
+				return strongNameSignatureLength;
+			}
+		}
+
+		private uint MetadataRVA
+		{
+			get
+			{
+				return (StrongNameSignatureRVA + StrongNameSignatureLength + 3) & ~3U;
+			}
+		}
+
+		private uint MetadataLength
+		{
+			get { return (uint)moduleBuilder.MetadataLength; }
+		}
+
+		private uint VTableFixupsRVA
+		{
+			get { return (MetadataRVA + MetadataLength + 7) & ~7U; }
+		}
+
+		private uint VTableFixupsLength
+		{
+			get { return (uint)moduleBuilder.vtablefixups.Count * 8; }
+		}
+
+		internal uint DebugDirectoryRVA
+		{
+			get { return VTableFixupsRVA + VTableFixupsLength; }
+		}
+
+		internal uint DebugDirectoryLength
+		{
+			get
+			{
+				if (DebugDirectoryContentsLength != 0)
+				{
+					return 28;
+				}
+				return 0;
+			}
+		}
+
+		private uint DebugDirectoryContentsLength
+		{
+			get
+			{
+				if (moduleBuilder.symbolWriter != null)
+				{
+					IMAGE_DEBUG_DIRECTORY idd = new IMAGE_DEBUG_DIRECTORY();
+					return (uint)SymbolSupport.GetDebugInfo(moduleBuilder.symbolWriter, ref idd).Length;
+				}
+				return 0;
+			}
+		}
+
+		internal uint ExportDirectoryRVA
+		{
+			get { return (DebugDirectoryRVA + DebugDirectoryLength + DebugDirectoryContentsLength + 15) & ~15U; }
+		}
+
+		internal uint ExportDirectoryLength
+		{
+			get { return moduleBuilder.unmanagedExports.Count == 0 ? 0U : 40U; }
+		}
+
+		private uint ExportTablesRVA
+		{
+			get { return ExportDirectoryRVA + ExportDirectoryLength; }
+		}
+
+		private uint ExportTablesLength
+		{
+			get { return exportTables == null ? 0U : exportTables.Length; }
+		}
+
+		internal uint ImportDirectoryRVA
+		{
+			// on AMD64 (and probably IA64) the import directory needs to be 16 byte aligned (on I386 4 byte alignment is sufficient)
+			get { return (ExportTablesRVA + ExportTablesLength + 15) & ~15U; }
+		}
+
+		internal uint ImportDirectoryLength
+		{
+			get { return (ImportHintNameTableRVA - ImportDirectoryRVA) + 27; }
+		}
+
+		private uint ImportHintNameTableRVA
+		{
+			get
+			{
+				return peWriter.Is32Bit
+					? (ImportDirectoryRVA + 48 + 15) & ~15U
+					: (ImportDirectoryRVA + 52 + 15) & ~15U;
+			}
+		}
+
+		internal uint StartupStubRVA
+		{
+			get
+			{
+				if (peWriter.Headers.FileHeader.Machine == IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_IA64)
+				{
+					// note that the alignment is driven by the requirement that the two relocation fixups are in a single page
+					return (ImportDirectoryRVA + ImportDirectoryLength + 15U) & ~15U;
+				}
+				else
+				{
+					// the additional 2 bytes padding are to align the address in the jump (which is a relocation fixup)
+					return 2 + ((ImportDirectoryRVA + ImportDirectoryLength + 3U) & ~3U);
+				}
+			}
+		}
+
+		internal uint StartupStubLength
+		{
+			get
+			{
+				switch (peWriter.Headers.FileHeader.Machine)
+				{
+					case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_I386:
+						return 6;
+					case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_AMD64:
+					case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_ARM:
+						return 12;
+					case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_IA64:
+						return 48;
+					default:
+						throw new NotSupportedException();
+				}
+			}
+		}
+
+		private void WriteRVA(MetadataWriter mw, uint rva)
+		{
+			switch (peWriter.Headers.FileHeader.Machine)
+			{
+				case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_I386:
+				case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_ARM:
+					mw.Write(rva);
+					break;
+				default:
+					mw.Write((ulong)rva);
+					break;
+			}
+		}
+
+		internal void Write(MetadataWriter mw, uint sdataRVA, out uint guidHeapOffset)
+		{
+			// Now that we're ready to start writing, we need to do some fix ups
+			moduleBuilder.TypeRef.Fixup(moduleBuilder);
+			moduleBuilder.MethodDef.Fixup(this);
+			moduleBuilder.MethodImpl.Fixup(moduleBuilder);
+			moduleBuilder.MethodSemantics.Fixup(moduleBuilder);
+			moduleBuilder.InterfaceImpl.Fixup();
+			moduleBuilder.ResolveInterfaceImplPseudoTokens();
+			moduleBuilder.MemberRef.Fixup(moduleBuilder);
+			moduleBuilder.Constant.Fixup(moduleBuilder);
+			moduleBuilder.FieldMarshal.Fixup(moduleBuilder);
+			moduleBuilder.DeclSecurity.Fixup(moduleBuilder);
+			moduleBuilder.GenericParam.Fixup(moduleBuilder);
+			moduleBuilder.CustomAttribute.Fixup(moduleBuilder);
+			moduleBuilder.FieldLayout.Fixup(moduleBuilder);
+			moduleBuilder.FieldRVA.Fixup(moduleBuilder, (int)sdataRVA, (int)this.MethodBodiesRVA);
+			moduleBuilder.ImplMap.Fixup(moduleBuilder);
+			moduleBuilder.ExportedType.Fixup(moduleBuilder);
+			moduleBuilder.ManifestResource.Fixup(moduleBuilder);
+			moduleBuilder.MethodSpec.Fixup(moduleBuilder);
+			moduleBuilder.GenericParamConstraint.Fixup(moduleBuilder);
+
+			// Import Address Table
+			AssertRVA(mw, ImportAddressTableRVA);
+			if (ImportAddressTableLength != 0)
+			{
+				WriteRVA(mw, ImportHintNameTableRVA);
+				WriteRVA(mw, 0);
+			}
+
+			// CLI Header
+			AssertRVA(mw, ComDescriptorRVA);
+			cliHeader.MetaData.VirtualAddress = MetadataRVA;
+			cliHeader.MetaData.Size = MetadataLength;
+			if (ResourcesLength != 0)
+			{
+				cliHeader.Resources.VirtualAddress = ResourcesRVA;
+				cliHeader.Resources.Size = ResourcesLength;
+			}
+			if (StrongNameSignatureLength != 0)
+			{
+				cliHeader.StrongNameSignature.VirtualAddress = StrongNameSignatureRVA;
+				cliHeader.StrongNameSignature.Size = StrongNameSignatureLength;
+			}
+			if (VTableFixupsLength != 0)
+			{
+				cliHeader.VTableFixups.VirtualAddress = VTableFixupsRVA;
+				cliHeader.VTableFixups.Size = VTableFixupsLength;
+			}
+			cliHeader.Write(mw);
+
+			// alignment padding
+			for (int i = (int)(MethodBodiesRVA - (ComDescriptorRVA + ComDescriptorLength)); i > 0; i--)
+			{
+				mw.Write((byte)0);
+			}
+
+			// Method Bodies
+			mw.Write(moduleBuilder.methodBodies);
+
+			// alignment padding
+			for (int i = (int)(ResourcesRVA - (MethodBodiesRVA + MethodBodiesLength)); i > 0; i--)
+			{
+				mw.Write((byte)0);
+			}
+
+			// Resources
+			moduleBuilder.WriteResources(mw);
+
+			// The strong name signature live here (if it exists), but it will written later
+			// and the following alignment padding will take care of reserving the space.
+
+			// alignment padding
+			for (int i = (int)(MetadataRVA - (ResourcesRVA + ResourcesLength)); i > 0; i--)
+			{
+				mw.Write((byte)0);
+			}
+
+			// Metadata
+			AssertRVA(mw, MetadataRVA);
+			moduleBuilder.WriteMetadata(mw, out guidHeapOffset);
+
+			// alignment padding
+			for (int i = (int)(VTableFixupsRVA - (MetadataRVA + MetadataLength)); i > 0; i--)
+			{
+				mw.Write((byte)0);
+			}
+
+			// VTableFixups
+			AssertRVA(mw, VTableFixupsRVA);
+			WriteVTableFixups(mw, sdataRVA);
+
+			// Debug Directory
+			AssertRVA(mw, DebugDirectoryRVA);
+			WriteDebugDirectory(mw);
+
+			// alignment padding
+			for (int i = (int)(ExportDirectoryRVA - (DebugDirectoryRVA + DebugDirectoryLength + DebugDirectoryContentsLength)); i > 0; i--)
+			{
+				mw.Write((byte)0);
+			}
+
+			// Export Directory
+			AssertRVA(mw, ExportDirectoryRVA);
+			WriteExportDirectory(mw);
+
+			// Export Tables
+			AssertRVA(mw, ExportTablesRVA);
+			WriteExportTables(mw, sdataRVA);
+	
+			// alignment padding
+			for (int i = (int)(ImportDirectoryRVA - (ExportTablesRVA + ExportTablesLength)); i > 0; i--)
+			{
+				mw.Write((byte)0);
+			}
+
+			// Import Directory
+			AssertRVA(mw, ImportDirectoryRVA);
+			if (ImportDirectoryLength != 0)
+			{
+				WriteImportDirectory(mw);
+			}
+
+			// alignment padding
+			for (int i = (int)(StartupStubRVA - (ImportDirectoryRVA + ImportDirectoryLength)); i > 0; i--)
+			{
+				mw.Write((byte)0);
+			}
+
+			// Startup Stub
+			AssertRVA(mw, StartupStubRVA);
+			if (peWriter.Headers.FileHeader.Machine == IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_AMD64)
+			{
+				/*
+				 *   48 A1 00 20 40 00 00 00 00 00        mov         rax,qword ptr [0000000000402000h]
+				 *   FF E0                                jmp         rax
+				 */
+				mw.Write((ushort)0xA148);
+				mw.Write(peWriter.Headers.OptionalHeader.ImageBase + ImportAddressTableRVA);
+				mw.Write((ushort)0xE0FF);
+			}
+			else if (peWriter.Headers.FileHeader.Machine == IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_IA64)
+			{
+				mw.Write(new byte[] {
+						0x0B, 0x48, 0x00, 0x02, 0x18, 0x10, 0xA0, 0x40, 0x24, 0x30, 0x28, 0x00, 0x00, 0x00, 0x04, 0x00,
+						0x10, 0x08, 0x00, 0x12, 0x18, 0x10, 0x60, 0x50, 0x04, 0x80, 0x03, 0x00, 0x60, 0x00, 0x80, 0x00
+					});
+				mw.Write(peWriter.Headers.OptionalHeader.ImageBase + StartupStubRVA);
+				mw.Write(peWriter.Headers.OptionalHeader.ImageBase + BaseRVA);
+			}
+			else if (peWriter.Headers.FileHeader.Machine == IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_I386)
+			{
+				mw.Write((ushort)0x25FF);
+				mw.Write((uint)peWriter.Headers.OptionalHeader.ImageBase + ImportAddressTableRVA);
+			}
+			else if (peWriter.Headers.FileHeader.Machine == IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_ARM)
+			{
+				uint rva = (uint)peWriter.Headers.OptionalHeader.ImageBase + ImportAddressTableRVA;
+				ushort lo = (ushort)rva;
+				ushort hi = (ushort)(rva >> 16);
+				mw.Write((ushort)(0xF240 + (lo >> 12)));
+				mw.Write((ushort)(0x0C00 + ((lo << 4) & 0xF000) + (lo & 0xFF)));
+				mw.Write((ushort)(0xF2C0 + (hi >> 12)));
+				mw.Write((ushort)(0x0C00 + ((hi << 4) & 0xF000) + (hi & 0xFF)));
+				mw.Write((ushort)0xF8DC);
+				mw.Write((ushort)0xF000);
+			}
+			else
+			{
+				throw new NotSupportedException();
+			}
+		}
+
+		[Conditional("DEBUG")]
+		private void AssertRVA(MetadataWriter mw, uint rva)
+		{
+			Debug.Assert(mw.Position - PointerToRawData + BaseRVA == rva);
+		}
+
+		private void WriteVTableFixups(MetadataWriter mw, uint sdataRVA)
+		{
+			foreach (ModuleBuilder.VTableFixups fixups in moduleBuilder.vtablefixups)
+			{
+				mw.Write(fixups.initializedDataOffset + sdataRVA);
+				mw.Write(fixups.count);
+				mw.Write(fixups.type);
+			}
+		}
+
+		private void WriteDebugDirectory(MetadataWriter mw)
+		{
+			if (DebugDirectoryLength != 0)
+			{
+				IMAGE_DEBUG_DIRECTORY idd = new IMAGE_DEBUG_DIRECTORY();
+				idd.Characteristics = 0;
+				idd.TimeDateStamp = peWriter.Headers.FileHeader.TimeDateStamp;
+				byte[] buf = SymbolSupport.GetDebugInfo(moduleBuilder.symbolWriter, ref idd);
+				idd.PointerToRawData = (DebugDirectoryRVA - BaseRVA) + DebugDirectoryLength + PointerToRawData;
+				idd.AddressOfRawData = DebugDirectoryRVA + DebugDirectoryLength;
+				mw.Write(idd.Characteristics);
+				mw.Write(idd.TimeDateStamp);
+				mw.Write(idd.MajorVersion);
+				mw.Write(idd.MinorVersion);
+				mw.Write(idd.Type);
+				mw.Write(idd.SizeOfData);
+				mw.Write(idd.AddressOfRawData);
+				mw.Write(idd.PointerToRawData);
+				mw.Write(buf);
+			}
+		}
+
+		private sealed class ExportTables
+		{
+			private readonly TextSection text;
+			internal readonly uint entries;
+			internal readonly uint ordinalBase;
+			internal readonly uint nameCount;
+			internal readonly uint namesLength;
+			internal readonly uint exportAddressTableRVA;
+			internal readonly uint exportNamePointerTableRVA;
+			internal readonly uint exportOrdinalTableRVA;
+			internal readonly uint namesRVA;
+			internal readonly uint stubsRVA;
+			private readonly uint stubLength;
+
+			internal ExportTables(TextSection text)
+			{
+				this.text = text;
+				ordinalBase = GetOrdinalBase(out entries);
+				namesLength = GetExportNamesLength(out nameCount);
+				exportAddressTableRVA = text.ExportTablesRVA;
+				exportNamePointerTableRVA = exportAddressTableRVA + 4 * entries;
+				exportOrdinalTableRVA = exportNamePointerTableRVA + 4 * nameCount;
+				namesRVA = exportOrdinalTableRVA + 2 * nameCount;
+				stubsRVA = (namesRVA + namesLength + 15) & ~15U;
+				// note that we align the stubs to avoid having to deal with the relocation crossing a page boundary
+				switch (text.peWriter.Headers.FileHeader.Machine)
+				{
+					case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_I386:
+						stubLength = 8;
+						break;
+					case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_AMD64:
+					case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_ARM:
+						stubLength = 16;
+						break;
+					default:
+						throw new NotSupportedException();
+				}
+			}
+
+			internal uint Length
+			{
+				get { return (stubsRVA + stubLength * (uint)text.moduleBuilder.unmanagedExports.Count) - text.ExportTablesRVA; }
+			}
+
+			private uint GetOrdinalBase(out uint entries)
+			{
+				uint min = uint.MaxValue;
+				uint max = uint.MinValue;
+				foreach (UnmanagedExport exp in text.moduleBuilder.unmanagedExports)
+				{
+					uint ordinal = (uint)exp.ordinal;
+					min = Math.Min(min, ordinal);
+					max = Math.Max(max, ordinal);
+				}
+				entries = 1 + (max - min);
+				return min;
+			}
+
+			private uint GetExportNamesLength(out uint nameCount)
+			{
+				nameCount = 0;
+				// the first name in the names list is the module name (the Export Directory contains a name of the current module)
+				uint length = (uint)text.moduleBuilder.fileName.Length + 1;
+				foreach (UnmanagedExport exp in text.moduleBuilder.unmanagedExports)
+				{
+					if (exp.name != null)
+					{
+						nameCount++;
+						length += (uint)exp.name.Length + 1;
+					}
+				}
+				return length;
+			}
+
+			internal void Write(MetadataWriter mw, uint sdataRVA)
+			{
+				// sort the exports by ordinal
+				text.moduleBuilder.unmanagedExports.Sort(CompareUnmanagedExportOrdinals);
+
+				// Now write the Export Address Table
+				text.AssertRVA(mw, exportAddressTableRVA);
+				for (int i = 0, pos = 0; i < entries; i++)
+				{
+					if (text.moduleBuilder.unmanagedExports[pos].ordinal == i + ordinalBase)
+					{
+						mw.Write(text.peWriter.Thumb + stubsRVA + (uint)pos * stubLength);
+						pos++;
+					}
+					else
+					{
+						mw.Write(0);
+					}
+				}
+
+				// sort the exports by name
+				text.moduleBuilder.unmanagedExports.Sort(CompareUnmanagedExportNames);
+
+				// Now write the Export Name Pointer Table
+				text.AssertRVA(mw, exportNamePointerTableRVA);
+				uint nameOffset = (uint)text.moduleBuilder.fileName.Length + 1;
+				foreach (UnmanagedExport exp in text.moduleBuilder.unmanagedExports)
+				{
+					if (exp.name != null)
+					{
+						mw.Write(namesRVA + nameOffset);
+						nameOffset += (uint)exp.name.Length + 1;
+					}
+				}
+
+				// Now write the Export Ordinal Table
+				text.AssertRVA(mw, exportOrdinalTableRVA);
+				foreach (UnmanagedExport exp in text.moduleBuilder.unmanagedExports)
+				{
+					if (exp.name != null)
+					{
+						mw.Write((ushort)(exp.ordinal - ordinalBase));
+					}
+				}
+
+				// Now write the actual names
+				text.AssertRVA(mw, namesRVA);
+				mw.WriteAsciiz(text.moduleBuilder.fileName);
+				foreach (UnmanagedExport exp in text.moduleBuilder.unmanagedExports)
+				{
+					if (exp.name != null)
+					{
+						mw.WriteAsciiz(exp.name);
+					}
+				}
+				text.AssertRVA(mw, namesRVA + namesLength);
+
+				// alignment padding
+				for (int i = (int)(stubsRVA - (namesRVA + namesLength)); i > 0; i--)
+				{
+					mw.Write((byte)0);
+				}
+
+				// sort the exports by ordinal
+				text.moduleBuilder.unmanagedExports.Sort(CompareUnmanagedExportOrdinals);
+
+				// Now write the stubs
+				text.AssertRVA(mw, stubsRVA);
+
+				for (int i = 0, pos = 0; i < entries; i++)
+				{
+					if (text.moduleBuilder.unmanagedExports[pos].ordinal == i + ordinalBase)
+					{
+						switch (text.peWriter.Headers.FileHeader.Machine)
+						{
+							case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_I386:
+								mw.Write((byte)0xFF);
+								mw.Write((byte)0x25);
+								mw.Write((uint)text.peWriter.Headers.OptionalHeader.ImageBase + text.moduleBuilder.unmanagedExports[pos].rva.initializedDataOffset + sdataRVA);
+								mw.Write((short)0);	// alignment
+								break;
+							case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_AMD64:
+								mw.Write((byte)0x48);
+								mw.Write((byte)0xA1);
+								mw.Write(text.peWriter.Headers.OptionalHeader.ImageBase + text.moduleBuilder.unmanagedExports[pos].rva.initializedDataOffset + sdataRVA);
+								mw.Write((byte)0xFF);
+								mw.Write((byte)0xE0);
+								mw.Write(0); // alignment
+								break;
+							case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_ARM:
+								mw.Write((ushort)0xF8DF);
+								mw.Write((ushort)0xC008);
+								mw.Write((ushort)0xF8DC);
+								mw.Write((ushort)0xC000);
+								mw.Write((ushort)0x4760);
+								mw.Write((ushort)0xDEFE);
+								mw.Write((uint)text.peWriter.Headers.OptionalHeader.ImageBase + text.moduleBuilder.unmanagedExports[pos].rva.initializedDataOffset + sdataRVA);
+								break;
+							default:
+								throw new NotSupportedException();
+						}
+						pos++;
+					}
+				}
+			}
+
+			private static int CompareUnmanagedExportNames(UnmanagedExport x, UnmanagedExport y)
+			{
+				if (x.name == null)
+				{
+					return y.name == null ? 0 : 1;
+				}
+				if (y.name == null)
+				{
+					return -1;
+				}
+				return String.CompareOrdinal(x.name, y.name);
+			}
+
+			private static int CompareUnmanagedExportOrdinals(UnmanagedExport x, UnmanagedExport y)
+			{
+				return x.ordinal.CompareTo(y.ordinal);
+			}
+
+			internal void GetRelocations(List<Relocation> list)
+			{
+				ushort type;
+				uint rva;
+				switch (text.peWriter.Headers.FileHeader.Machine)
+				{
+					case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_I386:
+						type = 0x3000;
+						rva = stubsRVA + 2;
+						break;
+					case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_AMD64:
+						type = 0xA000;
+						rva = stubsRVA + 2;
+						break;
+					case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_ARM:
+						type = 0x3000;
+						rva = stubsRVA + 12;
+						break;
+					default:
+						throw new NotSupportedException();
+				}
+
+				// we assume that unmanagedExports is still sorted by ordinal
+				for (int i = 0, pos = 0; i < entries; i++)
+				{
+					if (text.moduleBuilder.unmanagedExports[pos].ordinal == i + ordinalBase)
+					{
+						list.Add(new Relocation(type, rva + (uint)pos * stubLength));
+						pos++;
+					}
+				}
+			}
+		}
+
+		private uint GetOrdinalBase(out uint entries)
+		{
+			uint min = uint.MaxValue;
+			uint max = uint.MinValue;
+			foreach (UnmanagedExport exp in moduleBuilder.unmanagedExports)
+			{
+				uint ordinal = (uint)exp.ordinal;
+				min = Math.Min(min, ordinal);
+				max = Math.Max(max, ordinal);
+			}
+			entries = 1 + (max - min);
+			return min;
+		}
+
+		private uint GetExportNamesLength(out uint nameCount)
+		{
+			nameCount = 0;
+			uint length = 0;
+			foreach (UnmanagedExport exp in moduleBuilder.unmanagedExports)
+			{
+				if (exp.name != null)
+				{
+					nameCount++;
+					length += (uint)exp.name.Length + 1;
+				}
+			}
+			return length;
+		}
+
+		private void WriteExportDirectory(MetadataWriter mw)
+		{
+			if (ExportDirectoryLength != 0)
+			{
+				// Flags
+				mw.Write(0);
+				// Date/Time Stamp
+				mw.Write(peWriter.Headers.FileHeader.TimeDateStamp);
+				// Major Version
+				mw.Write((short)0);
+				// Minor Version
+				mw.Write((short)0);
+				// Name RVA
+				mw.Write(exportTables.namesRVA);
+				// Ordinal Base
+				mw.Write(exportTables.ordinalBase);
+				// Address Table Entries
+				mw.Write(exportTables.entries);
+				// Number of Name Pointers
+				mw.Write(exportTables.nameCount);
+				// Export Address Table RVA
+				mw.Write(exportTables.exportAddressTableRVA);
+				// Name Pointer RVA
+				mw.Write(exportTables.exportNamePointerTableRVA);
+				// Ordinal Table RVA
+				mw.Write(exportTables.exportOrdinalTableRVA);
+			}
+		}
+
+		private void WriteExportTables(MetadataWriter mw, uint sdataRVA)
+		{
+			if (exportTables != null)
+			{
+				exportTables.Write(mw, sdataRVA);
+			}
+		}
+
+		private void WriteImportDirectory(MetadataWriter mw)
+		{
+			mw.Write(ImportDirectoryRVA + 40);		// ImportLookupTable
+			mw.Write(0);							// DateTimeStamp
+			mw.Write(0);							// ForwarderChain
+			mw.Write(ImportHintNameTableRVA + 14);	// Name
+			mw.Write(ImportAddressTableRVA);
+			mw.Write(new byte[20]);
+			// Import Lookup Table
+			mw.Write(ImportHintNameTableRVA);		// Hint/Name Table RVA
+			int size = 48;
+			if (!peWriter.Is32Bit)
+			{
+				size += 4;
+				mw.Write(0);
+			}
+			mw.Write(0);
+
+			// alignment padding
+			for (int i = (int)(ImportHintNameTableRVA - (ImportDirectoryRVA + size)); i > 0; i--)
+			{
+				mw.Write((byte)0);
+			}
+
+			// Hint/Name Table
+			AssertRVA(mw, ImportHintNameTableRVA);
+			mw.Write((ushort)0);		// Hint
+			if ((peWriter.Headers.FileHeader.Characteristics & IMAGE_FILE_HEADER.IMAGE_FILE_DLL) != 0)
+			{
+				mw.WriteAsciiz("_CorDllMain");
+			}
+			else
+			{
+				mw.WriteAsciiz("_CorExeMain");
+			}
+			// Name
+			mw.WriteAsciiz("mscoree.dll");
+			mw.Write((byte)0);
+		}
+
+		internal int Length
+		{
+			get { return (int)(StartupStubRVA - BaseRVA + StartupStubLength); }
+		}
+
+		struct Relocation : IComparable<Relocation>
+		{
+			internal readonly uint rva;
+			internal readonly ushort type;
+
+			internal Relocation(ushort type, uint rva)
+			{
+				this.type = type;
+				this.rva = rva;
+			}
+
+			int IComparable<Relocation>.CompareTo(Relocation other)
+			{
+				return rva.CompareTo(other.rva);
+			}
+		}
+
+		struct RelocationBlock
+		{
+			internal readonly uint PageRVA;
+			internal readonly ushort[] TypeOffset;
+
+			internal RelocationBlock(uint pageRva, ushort[] typeOffset)
+			{
+				this.PageRVA = pageRva;
+				this.TypeOffset = typeOffset;
+			}
+		}
+
+		internal void WriteRelocations(MetadataWriter mw)
+		{
+			foreach (RelocationBlock block in relocations)
+			{
+				mw.Write(block.PageRVA);
+				mw.Write(8 + block.TypeOffset.Length * 2);
+				foreach (ushort typeOffset in block.TypeOffset)
+				{
+					mw.Write(typeOffset);
+				}
+			}
+		}
+
+		internal uint PackRelocations()
+		{
+			List<Relocation> list = new List<Relocation>();
+			switch (peWriter.Headers.FileHeader.Machine)
+			{
+				case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_I386:
+					list.Add(new Relocation(0x3000, this.StartupStubRVA + 2));
+					break;
+				case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_AMD64:
+					list.Add(new Relocation(0xA000, this.StartupStubRVA + 2));
+					break;
+				case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_IA64:
+					list.Add(new Relocation(0xA000, this.StartupStubRVA + 0x20));
+					list.Add(new Relocation(0xA000, this.StartupStubRVA + 0x28));
+					break;
+				case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_ARM:
+					list.Add(new Relocation(0x7000, this.StartupStubRVA));
+					break;
+				default:
+					throw new NotSupportedException();
+			}
+			if (exportTables != null)
+			{
+				exportTables.GetRelocations(list);
+			}
+			list.Sort();
+			uint size = 0;
+			for (int i = 0; i < list.Count; )
+			{
+				uint pageRVA = list[i].rva & ~0xFFFU;
+				int count = 1;
+				while (i + count < list.Count && (list[i + count].rva & ~0xFFFU) == pageRVA)
+				{
+					count++;
+				}
+				ushort[] typeOffset = new ushort[(count + 1) & ~1];
+				for (int j = 0; j < count; j++, i++)
+				{
+					typeOffset[j] = (ushort)(list[i].type + (list[i].rva - pageRVA));
+				}
+				relocations.Add(new RelocationBlock(pageRVA, typeOffset));
+				size += (uint)(8 + typeOffset.Length * 2);
+			}
+			return size;
+		}
+	}
+}
+@
+
+
+1.24
+log
+@Added UniverseOptions.DeterministicOutput to enable deterministic output (i.e. setting the PE file header time stamp to zero and computing the module version id based on the contents, instead of using a random guid).
+@
+text
+@d278 1
+a278 1
+		internal void Write(MetadataWriter mw, uint sdataRVA, out int guidHeapOffset)
+@
+
+
+1.23
+log
+@Fixed ModuleBuilder.DefineManifestResource() to support very large resources.
+@
+text
+@d278 1
+a278 1
+		internal void Write(MetadataWriter mw, uint sdataRVA)
+d359 1
+a359 1
+			moduleBuilder.WriteMetadata(mw);
+@
+
+
+1.22
+log
+@Fixed unmanaged export table name sorting.
+@
+text
+@d41 1
+d51 1
+d115 1
+a115 1
+			get { return (uint)moduleBuilder.manifestResources.Length; }
+d346 1
+a346 1
+			mw.Write(moduleBuilder.manifestResources);
+@
+
+
+1.21
+log
+@Added WriteAsciiz() method to MetadataWriter.
+@
+text
+@d678 1
+a678 1
+				return x.name.CompareTo(y.name);
+@
+
+
+1.20
+log
+@Implemented ARM unmanaged exports.
+@
+text
+@d609 1
+a609 2
+				mw.Write(Encoding.ASCII.GetBytes(text.moduleBuilder.fileName));
+				mw.Write((byte)0);
+d614 1
+a614 2
+						mw.Write(Encoding.ASCII.GetBytes(exp.name));
+						mw.Write((byte)0);
+d815 1
+a815 1
+				mw.Write(System.Text.Encoding.ASCII.GetBytes("_CorDllMain"));
+d819 1
+a819 1
+				mw.Write(System.Text.Encoding.ASCII.GetBytes("_CorExeMain"));
+d821 2
+a823 3
+			// Name
+			mw.Write(System.Text.Encoding.ASCII.GetBytes("mscoree.dll"));
+			mw.Write((ushort)0);
+@
+
+
+1.19
+log
+@Implemented ARM startup stub.
+@
+text
+@d519 1
+d573 1
+a573 1
+						mw.Write(stubsRVA + (uint)pos * stubLength);
+d653 9
+d702 4
+@
+
+
+1.18
+log
+@WoA requires 4K section alignment (not 8K).
+@
+text
+@d73 1
+a73 12
+			get
+			{
+				switch (peWriter.Headers.FileHeader.Machine)
+				{
+					case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_I386:
+						return 8;
+					case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_ARM:
+						return 0;
+					default:
+						return 16;
+				}
+			}
+d213 1
+a213 10
+			get
+			{
+				switch (peWriter.Headers.FileHeader.Machine)
+				{
+					case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_ARM:
+						return 0;
+					default:
+						return (ImportHintNameTableRVA - ImportDirectoryRVA) + 27;
+				}
+			}
+d252 1
+a255 2
+					case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_ARM:
+						return 0;
+d432 12
+d877 3
+@
+
+
+1.17
+log
+@Added Is32Bit property to PEWriter to remove the need to check for different architectures with the same pointer size.
+@
+text
+@d63 1
+a63 1
+			get { return 0x2000; }
+@
+
+
+1.16
+log
+@Throw NotSupportedException instead of NotImplementedException for unsupported architectures.
+@
+text
+@d240 3
+a242 8
+				if (peWriter.Headers.FileHeader.Machine == IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_I386)
+				{
+					return (ImportDirectoryRVA + 48 + 15) & ~15U;
+				}
+				else
+				{
+					return (ImportDirectoryRVA + 48 + 4 + 15) & ~15U;
+				}
+d794 1
+a794 1
+			if (peWriter.Headers.FileHeader.Machine != IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_I386)
+@
+
+
+1.15
+log
+@Restructured relocation writing to pack all relocation in a page in the same block, as WoA apparently requires this.
+@
+text
+@d280 2
+d283 1
+a283 1
+						return 0;
+d458 4
+d536 1
+a536 1
+						throw new NotImplementedException();
+d667 1
+a667 1
+								throw new NotImplementedException();
+@
+
+
+1.14
+log
+@Bug fix. Set AddressOfRawData in IMAGE_DEBUG_DIRECTORY.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008-2011 Jeroen Frijters
+d42 1
+d686 1
+a686 1
+			internal void WriteRelocations(MetadataWriter mw)
+d688 16
+d709 1
+a709 2
+						// both I386 and AMD64 have the address at offset 2
+						text.WriteRelocationBlock(mw, stubsRVA + 2 + (uint)pos * stubLength);
+d828 18
+a845 1
+		internal void WriteRelocations(MetadataWriter mw)
+d847 4
+a850 2
+			uint relocAddress = this.StartupStubRVA;
+			switch (peWriter.Headers.FileHeader.Machine)
+d852 2
+a853 7
+				case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_I386:
+				case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_AMD64:
+					relocAddress += 2;
+					break;
+				case IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_IA64:
+					relocAddress += 0x20;
+					break;
+d855 5
+a859 2
+			WriteRelocationBlock(mw, relocAddress);
+			if (exportTables != null)
+d861 6
+a866 1
+				exportTables.WriteRelocations(mw);
+d870 1
+a870 3
+		// note that we're lazy and write a new relocation block for every relocation
+		// even if they are in the same page (since there is typically only one anyway)
+		private void WriteRelocationBlock(MetadataWriter mw, uint relocAddress)
+d872 1
+a872 3
+			uint pageRVA = relocAddress & ~0xFFFU;
+			mw.Write(pageRVA);	// PageRVA
+			mw.Write(0x000C);	// Block Size
+d876 1
+a876 1
+					mw.Write(0x3000 + relocAddress - pageRVA);				// Type / Offset
+d879 1
+a879 1
+					mw.Write(0xA000 + relocAddress - pageRVA);				// Type / Offset
+d882 2
+a883 3
+					// on IA64 the StartupStubRVA is 16 byte aligned, so these two addresses won't cross a page boundary
+					mw.Write((short)(0xA000 + relocAddress - pageRVA));		// Type / Offset
+					mw.Write((short)(0xA000 + relocAddress - pageRVA + 8));	// Type / Offset
+d885 24
+d910 1
+@
+
+
+1.13
+log
+@- Added ModuleBuilder.__GetAssemblyToken() API.
+- Changed assembly refs to use general pseudo mechanism, instead of its own special case.
+@
+text
+@d482 1
+@
+
+
+1.13.4.1
+log
+@Changes:
+- Set version to 7.2.4630.2.
+- Bug fix. Class.forName("") should not throw System.ArgumentException.
+- Bug fix. Transient field modifier should be retained on literal fields.
+- Bug fix. Field.getModifiers() should only return the relevant modifiers.
+- IKVM.Reflection: Bug fix. Ignore unknown metadata streams.
+- IKVM.Reflection: Bug fix. Set AddressOfRawData in IMAGE_DEBUG_DIRECTORY.
+@
+text
+@a481 1
+				idd.AddressOfRawData = DebugDirectoryRVA + DebugDirectoryLength;
+@
+
+
+1.12
+log
+@Added support for ARM.
+@
+text
+@d302 1
+d317 2
+@
+
+
+1.11
+log
+@Added API extension to set custom attributes on interfaceimpl records.
+@
+text
+@d74 1
+a74 1
+				if (peWriter.Headers.FileHeader.Machine == IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_I386)
+d76 6
+a81 5
+					return 8;
+				}
+				else
+				{
+					return 16;
+d110 1
+a110 1
+				if (peWriter.Headers.FileHeader.Machine == IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_I386)
+d112 5
+a116 5
+					return (MethodBodiesRVA + MethodBodiesLength + 3) & ~3U;
+				}
+				else
+				{
+					return (MethodBodiesRVA + MethodBodiesLength + 15) & ~15U;
+d223 10
+a232 1
+			get { return (ImportHintNameTableRVA - ImportDirectoryRVA) + 27; }
+d271 1
+a271 1
+				if (peWriter.Headers.FileHeader.Machine == IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_AMD64)
+d273 8
+a280 9
+					return 12;
+				}
+				else if (peWriter.Headers.FileHeader.Machine == IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_IA64)
+				{
+					return 48;
+				}
+				else
+				{
+					return 6;
+d287 1
+a287 1
+			if (peWriter.Headers.FileHeader.Machine == IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_I386)
+d289 7
+a295 5
+				mw.Write(rva);
+			}
+			else
+			{
+				mw.Write((ulong)rva);
+d321 5
+a325 2
+			WriteRVA(mw, ImportHintNameTableRVA);
+			WriteRVA(mw, 0);
+d415 4
+a418 1
+			WriteImportDirectory(mw);
+d447 1
+a447 1
+			else
+@
+
+
+1.10
+log
+@Fixed CliHeader read bug. Thanks to Oleg Mihailik for reporting this.
+@
+text
+@d295 1
+@
+
+
+1.9
+log
+@Added API extension ModuleBuilder.__AddUnmanagedExportStub().
+@
+text
+@d314 2
+a315 2
+			cliHeader.MetaDataRVA = MetadataRVA;
+			cliHeader.MetaDataSize = MetadataLength;
+d318 2
+a319 2
+				cliHeader.ResourcesRVA = ResourcesRVA;
+				cliHeader.ResourcesSize = ResourcesLength;
+d323 2
+a324 2
+				cliHeader.StrongNameSignatureRVA = StrongNameSignatureRVA;
+				cliHeader.StrongNameSignatureSize = StrongNameSignatureLength;
+d328 2
+a329 2
+				cliHeader.VTableFixupsRVA = VTableFixupsRVA;
+				cliHeader.VTableFixupsSize = VTableFixupsLength;
+@
+
+
+1.8
+log
+@Added API extension ModuleBuilder.__AddVTableFixups().
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008 Jeroen Frijters
+d41 1
+d49 4
+d194 20
+d217 1
+a217 1
+			get { return (DebugDirectoryRVA + DebugDirectoryLength + DebugDirectoryContentsLength + 15) & ~15U; }
+d379 15
+a393 1
+			for (int i = (int)(ImportDirectoryRVA - (DebugDirectoryRVA + DebugDirectoryLength + DebugDirectoryContentsLength)); i > 0; i--)
+d473 271
+d789 43
+@
+
+
+1.7
+log
+@Added FieldBuilder.__SetReadOnlyDataAndRVA() to define read-only initialized data.
+@
+text
+@d149 10
+d161 1
+a161 1
+			get { return MetadataRVA + MetadataLength; }
+d263 1
+a263 1
+		internal void Write(MetadataWriter mw, int sdataRVA)
+d277 1
+a277 1
+			moduleBuilder.FieldRVA.Fixup(moduleBuilder, sdataRVA, (int)this.MethodBodiesRVA);
+d301 5
+d339 10
+d403 10
+@
+
+
+1.6
+log
+@Custom attributes applied to GenericTypeParameterBuilder were attached to the type token, instead of the type parameter token.
+@
+text
+@d267 1
+a267 1
+			moduleBuilder.FieldRVA.Fixup(moduleBuilder, sdataRVA);
+@
+
+
+1.6.2.1
+log
+@Backported fixes for 0.46.0.3:
+- Bug fix. java.lang.Package was not populated from manifest for ikvmc compiled assemblies.
+- Bug fix. When writing a direct ByteBuffer to a non-blocking socket and the write fails because there is no kernel buffer available, we should not advance the ByteBuffer position.
+- Bug fix. When adding certificates to virtual cacerts file make sure that the aliases are unique.
+- Bug fix. If a finally/fault handler contains reachable code before the handler's start index, the handler should branch to the handler start index.
+- Bug fix. After emitting a finally/fault handler block, we should emit the block leave stubs (even though you can't leave the block, they also emit the backward branch stubs).
+- Bug fix. If a Java class extends a remapped .NET type (cli.System.Object or cli.System.Exception), we should correctly report the base class.
+- Bug fix. If we encounter a jsr or ret instruction, we should throw a VerifyError (instead of NotImplementedException).
+- Bug fix. If an exception block ends with an astore, we need to propagate the local variable type after the astore to the exception handler.
+- Disable AppDomain.ProcessExit hook to run shutdown hooks when running on Mono to workaround https://bugzilla.xamarin.com/show_bug.cgi?id=5650
+- Bug fix. Custom attribute properties that don't have a public getter and setter should not be exposed as annotation properties.
+- Bug fix. Non-public property getter/setter methods should be ignored when we create properties to hide properties inherited from shadow types. This fixes a build break with .NET 4.5 beta which introduces a protected setter for Exception.HResult.
+- Bug fix. The $Method inner class for delegates should also be loadable for generic delegates. Thanks to Michael Bayne for reporting this.
+- Bug fix. When constructing a generic class loader we can't use GetWrapperFromType() on the type arguments, because they might refer to a subtype that is currently being loaded.
+- Replaced non-ascii character (micro) with ascii 'u' in Win32PrintService.java.
+- IKVM.Reflection: Bug fix. Resource Directory Entries must be sorted and names are case-insensitive
+
+Backported for 0.46.0.4:
+- Fixed ikvmc to retain transient modifier on constant static final fields.
+- Fixed Field.getModifiers() to only return the relevant modifiers.
+- Fixed IKVM.Reflection to set AddressOfRawData in IMAGE_DEBUG_DIRECTORY.
+@
+text
+@a386 1
+				idd.AddressOfRawData = DebugDirectoryRVA + DebugDirectoryLength;
+@
+
+
+1.5
+log
+@Fix bug #3040528.
+@
+text
+@d264 1
+a268 1
+			moduleBuilder.GenericParam.Fixup(moduleBuilder);
+@
+
+
+1.4
+log
+@Fixed x64 import directory alignment.
+@
+text
+@d40 1
+a40 1
+		private readonly bool strongName;
+d42 1
+a42 1
+		internal TextSection(PEWriter peWriter, CliHeader cliHeader, ModuleBuilder moduleBuilder, bool strongName)
+d47 1
+a47 1
+			this.strongName = strongName;
+d132 1
+a132 8
+				if (strongName)
+				{
+					return 128;
+				}
+				else
+				{
+					return 0;
+				}
+@
+
+
+1.3
+log
+@Delay signing fix.
+@
+text
+@d188 2
+a189 1
+			get { return (DebugDirectoryRVA + DebugDirectoryLength + DebugDirectoryContentsLength + 3) & ~3U; }
+@
+
+
+1.3.2.1
+log
+@Fixed x64 import directory alignment.
+@
+text
+@d188 1
+a188 2
+			// on AMD64 (and probably IA64) the import directory needs to be 16 byte aligned (on I386 4 byte alignment is sufficient)
+			get { return (DebugDirectoryRVA + DebugDirectoryLength + DebugDirectoryContentsLength + 15) & ~15U; }
+@
+
+
+1.3.2.2
+log
+@Fix bug #3040528.
+@
+text
+@d40 1
+a40 1
+		private readonly uint strongNameSignatureLength;
+d42 1
+a42 1
+		internal TextSection(PEWriter peWriter, CliHeader cliHeader, ModuleBuilder moduleBuilder, int strongNameSignatureLength)
+d47 1
+a47 1
+			this.strongNameSignatureLength = (uint)strongNameSignatureLength;
+d132 8
+a139 1
+				return strongNameSignatureLength;
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d40 1
+d42 1
+a42 1
+		internal TextSection(PEWriter peWriter, CliHeader cliHeader, ModuleBuilder moduleBuilder)
+d47 1
+d132 1
+a132 1
+				if ((cliHeader.Flags & CliHeader.COMIMAGE_FLAGS_STRONGNAMESIGNED) != 0)
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

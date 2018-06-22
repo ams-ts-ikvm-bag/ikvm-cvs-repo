@@ -1,0 +1,290 @@
+head	1.7;
+access;
+symbols
+	v0_36_0_14:1.6
+	v0_36_0_13:1.6
+	v0_36_0_9:1.6
+	v0_36_0_7:1.6
+	v0_36_0_5:1.6
+	v0_36_0_4:1.6
+	v0_36_0_3:1.6
+	v0_36_0_2:1.6
+	v0_36_0_1:1.6
+	v0_36_0_0:1.6
+	v0_36:1.6.0.6
+	v0_34_0_3:1.6
+	v0_34_0_2:1.6
+	v0_34_0_1:1.6
+	v0_34_0_0:1.6
+	v0_34:1.6.0.4
+	v0_32:1.6.0.2
+	v0_32_0_0:1.6
+	v0_30:1.5.0.2
+	v0_28_0_0:1.5
+	v0_26_0_1:1.4
+	v0_26_0_0:1.4
+	v0_24_0_1:1.4
+	v0_24_0_0:1.4
+	v0_22_0_0:1.4
+	v0_20_0_0:1.4
+	v0_18_0_0:1.2
+	v0_16_0_0:1.2
+	v0_14_0_1:1.2
+	v0_14_0_0:1.2
+	v0_12_0_0:1.2
+	v0_10_0_1:1.1
+	v0_10_0_0:1.1;
+locks; strict;
+comment	@# @;
+
+
+1.7
+date	2008.08.06.12.51.21;	author jfrijters;	state dead;
+branches;
+next	1.6;
+
+1.6
+date	2006.10.19.06.12.48;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2006.03.27.16.21.32;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2005.08.03.14.10.01;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2005.07.25.10.20.12;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2005.02.02.15.12.02;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2004.11.23.17.46.43;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.7
+log
+@Removed files that are no longer needed no that GNU Classpath support has been dropped.
+@
+text
+@/*
+  Copyright (C) 2004, 2005, 2006 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+package java.nio;
+
+import gnu.classpath.Pointer;
+import gnu.classpath.PointerUtil;
+import cli.System.IntPtr;
+import cli.System.Runtime.InteropServices.Marshal;
+
+@@ikvm.lang.Internal
+public class VMDirectByteBuffer
+{
+    // this method is used by JNI.NewDirectByteBuffer
+    public static ByteBuffer NewDirectByteBuffer(IntPtr p, int capacity)
+    {
+        return new DirectByteBufferImpl(null, p, capacity, capacity, 0);
+    }
+
+    public static IntPtr GetDirectBufferAddress(Buffer buf)
+    {
+        return buf.address != null ? PointerUtil.toIntPtr(buf.address) : IntPtr.Zero;
+    }
+
+    static Pointer adjustAddress(Pointer r, int pos)
+    {
+        return PointerUtil.add(r, pos);
+    }
+}
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2004, 2005 Jeroen Frijters
+d27 1
+d37 1
+a37 1
+        return new DirectByteBufferImpl.ReadWrite(null, new Pointer(p), capacity, capacity, 0);
+d42 1
+a42 38
+        return buf.address != null ? buf.address.p() : IntPtr.Zero;
+    }
+
+    static Pointer allocate(int capacity)
+    {
+        return new Pointer(Marshal.AllocHGlobal(capacity));
+    }
+
+    static void free(Pointer r)
+    {
+        Marshal.FreeHGlobal(r.p());
+    }
+
+    static byte get(Pointer r, int index)
+    {
+        return r.ReadByte(index);
+    }
+
+    static void get(Pointer r, int index, byte[] dst, int offset, int length)
+    {
+        IntPtr address = new IntPtr(r.p().ToInt64() + index);
+        Marshal.Copy(address, dst, offset, length);
+    }
+
+    static void put(Pointer r, int index, byte value)
+    {
+        r.WriteByte(index, value);
+    }
+
+    static void put(Pointer r, int index, byte[] src, int offset, int length)
+    {
+        IntPtr address = new IntPtr(r.p().ToInt64() + index);
+        Marshal.Copy(src, offset, address, length);
+    }
+
+    static void shiftDown(Pointer r, int dst_offset, int src_offset, int count)
+    {
+        r.MoveMemory(dst_offset, src_offset, count);
+d47 1
+a47 1
+        return new Pointer(new IntPtr(r.p().ToInt64() + pos));
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d30 2
+a31 1
+class VMDirectByteBuffer
+d34 1
+a34 1
+    static ByteBuffer NewDirectByteBuffer(IntPtr p, int capacity)
+d39 1
+a39 1
+    static IntPtr GetDirectBufferAddress(Buffer buf)
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d26 1
+a26 1
+import gnu.classpath.RawData;
+d35 1
+a35 1
+        return new DirectByteBufferImpl.ReadWrite(null, new RawData(p), capacity, capacity, 0);
+d43 1
+a43 1
+    static RawData allocate(int capacity)
+d45 1
+a45 1
+        return new RawData(Marshal.AllocHGlobal(capacity));
+d48 1
+a48 1
+    static void free(RawData r)
+d53 1
+a53 1
+    static byte get(RawData r, int index)
+d58 1
+a58 1
+    static void get(RawData r, int index, byte[] dst, int offset, int length)
+d64 1
+a64 1
+    static void put(RawData r, int index, byte value)
+d69 1
+a69 1
+    static void put(RawData r, int index, byte[] src, int offset, int length)
+d75 1
+a75 1
+    static void shiftDown(RawData r, int dst_offset, int src_offset, int count)
+d80 1
+a80 1
+    static RawData adjustAddress(RawData r, int pos)
+d82 1
+a82 1
+        return new RawData(new IntPtr(r.p().ToInt64() + pos));
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d69 6
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@d1 23
+d38 1
+a38 1
+    static IntPtr GetDirectBufferAddress(ByteBuffer buf)
+d40 1
+a40 1
+        return ((DirectByteBufferImpl)buf).address.p();
+d61 1
+a61 1
+        Marshal.Copy(address, ikvm.lang.ByteArrayHack.cast(dst), offset, length);
+@
+

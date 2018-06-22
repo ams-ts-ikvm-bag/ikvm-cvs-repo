@@ -1,0 +1,77 @@
+head	1.2;
+access;
+symbols
+	v0_40_0_6:1.1
+	v0_40_0_5:1.1
+	v0_42_0_7:1.1
+	v0_42_0_6:1.1
+	v0_42_0_5:1.1
+	v0_42_0_4:1.1
+	v0_42_0_3:1.1
+	v0_42_0_2:1.1
+	v0_42_0_1:1.1
+	v0_42_0_0:1.1
+	v0_42:1.1.0.4
+	v0_40_0_3:1.1
+	v0_40_0_2:1.1
+	v0_40_0_1:1.1
+	v0_40_0_0:1.1
+	v0_40:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2010.04.02.04.03.42;	author jfrijters;	state dead;
+branches;
+next	1.1;
+
+1.1
+date	2009.03.26.14.32.28;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@Removed old refemit code.
+@
+text
+@<?xml version="1.0"?>
+<project name="MdbWriter" default="IKVM.MdbWriter">
+    <target name="IKVM.MdbWriter">
+        <property name="defs" value="IKVM_MDBWRITER" />
+        <if test="${property::exists('signed')}">
+            <property name="defs" value="${defs};${signed}" />
+        </if>
+        <csc target="library" output="../../bin/IKVM.Reflection.Emit.MdbWriter.dll" define="${defs}">
+            <sources>
+                <include name="../../CommonAssemblyInfo.cs" />
+                <include name="Properties/AssemblyInfo.cs" />
+                <include name="SymbolWriter.cs" />
+            </sources>
+            <references>
+                <include name="${path::combine(framework::get-assembly-directory('mono-2.0'), 'Mono.CompilerServices.SymbolWriter.dll')}" />
+                <include name="../../bin/IKVM.Reflection.Emit.dll" />
+            </references>
+        </csc>
+    </target>
+</project>
+@
+
+
+1.1
+log
+@- Renamed IKVM.PdbWriter.dll to IKVM.Reflection.Emit.PdbWriter.dll.
+- Added IKVM.Reflection.Emit.MdbWriter.dll (untested and not yet complete).
+- Changed SymbolWriter plug-in API to be more flexible.
+- Added ModuleBuilder.ResolveMethod() API.
+- Don't write PE debug directory if symbol writer doesn't supply debug data.
+@
+text
+@@
+

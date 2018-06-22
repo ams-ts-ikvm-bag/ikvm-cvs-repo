@@ -1,0 +1,2953 @@
+head	1.23;
+access;
+symbols
+	initial:1.1.1.1 ikvm:1.1.1;
+locks; strict;
+comment	@ * @;
+
+
+1.23
+date	2004.05.27.07.12.13;	author jfrijters;	state dead;
+branches;
+next	1.22;
+
+1.22
+date	2004.03.20.13.25.08;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2004.03.16.17.10.09;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2004.03.08.15.18.47;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2004.02.02.09.46.13;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2004.01.17.11.12.12;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2003.12.24.11.51.41;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2003.12.19.22.19.18;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2003.11.17.12.01.51;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2003.10.17.08.08.31;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2003.08.21.10.06.34;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2003.08.13.15.00.41;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2003.06.20.13.46.13;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2003.06.10.13.28.47;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2003.05.30.12.08.59;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2003.03.17.14.04.27;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2003.02.20.14.18.38;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2003.02.18.09.31.18;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2003.02.15.16.31.54;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2003.01.06.14.02.10;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2003.01.02.15.44.17;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2002.12.27.09.02.28;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2002.12.18.16.01.11;	author jfrijters;	state Exp;
+branches
+	1.1.1.1;
+next	;
+
+1.1.1.1
+date	2002.12.18.16.01.11;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.23
+log
+@*** empty log message ***
+@
+text
+@/*
+  Copyright (C) 2002, 2003, 2004 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.IO;
+using System.Collections;
+using OpenSystem.Java;
+
+class ClassFile
+{
+	private ConstantPoolItem[] constantpool;
+	private Modifiers access_flags;
+	private ConstantPoolItemClass this_cpi;
+	private ConstantPoolItemClass super_cpi;
+	private ConstantPoolItemClass[] interfaces;
+	private TypeWrapper[] interfaceTypeWrappers;
+	private Field[] fields;
+	private Method[] methods;
+	private Attribute[] attributes;
+	private string sourceFile;
+	private bool sourceFileCached;
+	private ClassFile outerClass;
+	private int majorVersion;
+	private static readonly char[] illegalcharacters = { '<', '>' };
+
+	internal class ClassFormatError : ApplicationException
+	{
+		internal ClassFormatError(string msg, params object[] p)
+			: base(string.Format(msg, p))
+		{
+		}
+	}
+
+	internal class UnsupportedClassVersionError : ClassFormatError
+	{
+		internal UnsupportedClassVersionError(string msg)
+			: base(msg)
+		{
+		}
+	}
+
+	internal ClassFile(byte[] buf, int offset, int length, string inputClassName)
+	{
+		try
+		{
+			BigEndianBinaryReader br = new BigEndianBinaryReader(buf, offset);
+			if(br.ReadUInt32() != 0xCAFEBABE)
+			{
+				throw new ClassFormatError("Bad magic number");
+			}
+			int minorVersion = br.ReadUInt16();
+			majorVersion = br.ReadUInt16();
+			if(majorVersion < 45 || majorVersion > 49)
+			{
+				throw new UnsupportedClassVersionError(majorVersion + "." + minorVersion);
+			}
+			if(majorVersion == 49)
+			{
+				Tracer.Warning(Tracer.Runtime, "WARNING: Support for JDK 1.5 is experimental");
+			}
+			int constantpoolcount = br.ReadUInt16();
+			constantpool = new ConstantPoolItem[constantpoolcount];
+			for(int i = 1; i < constantpoolcount; i++)
+			{
+				constantpool[i] = ConstantPoolItem.Read(inputClassName, br);
+				// LONG and DOUBLE items take up two slots...
+				if(constantpool[i].IsWide)
+				{
+					i++;
+				}
+			}
+			for(int i = 1; i < constantpoolcount; i++)
+			{
+				if(constantpool[i] != null)
+				{
+					try
+					{
+						constantpool[i].Resolve(this);
+					}
+					catch(IndexOutOfRangeException)
+					{
+						throw new ClassFormatError("{0} (Invalid constant pool item #{1})", inputClassName, i);
+					}
+					catch(InvalidCastException)
+					{
+						throw new ClassFormatError("{0} (Invalid constant pool item #{1})", inputClassName, i);
+					}
+				}
+			}
+			access_flags = (Modifiers)br.ReadUInt16();
+			// NOTE although the vmspec says (in 4.1) that interfaces must be marked abstract, earlier versions of
+			// javac (JDK 1.1) didn't do this, so the VM doesn't enforce this rule
+			// NOTE although the vmspec implies (in 4.1) that ACC_SUPER is illegal on interfaces, it doesn't enforce this
+			if((IsInterface && IsFinal) || (IsAbstract && IsFinal))
+			{
+				throw new ClassFormatError("{0} (Illegal class modifiers 0x{1:X})", inputClassName, access_flags);
+			}
+			int this_class = br.ReadUInt16();
+			try
+			{
+				this_cpi = (ConstantPoolItemClass)constantpool[this_class];
+			}
+			catch(Exception)
+			{
+				throw new ClassFormatError("{0} (Class name has bad constant pool index)", inputClassName);
+			}
+			int super_class = br.ReadUInt16();
+			// NOTE for convenience we allow parsing java/lang/Object (which has no super class), so
+			// we check for super_class != 0
+			if(super_class != 0)
+			{
+				try
+				{
+					super_cpi = (ConstantPoolItemClass)constantpool[super_class];
+				}
+				catch(Exception)
+				{
+					throw new ClassFormatError("{0} (Bad superclass constant pool index)", inputClassName);
+				}
+			}
+			else
+			{
+				if(this.Name != "java.lang.Object")
+				{
+					throw new ClassFormatError("{0} (Bad superclass index)", Name);
+				}
+			}
+			if(IsInterface && (super_class == 0 || super_cpi.Name != "java.lang.Object"))
+			{
+				throw new ClassFormatError("{0} (Interfaces must have java.lang.Object as superclass)", Name);
+			}
+			int interfaces_count = br.ReadUInt16();
+			interfaces = new ConstantPoolItemClass[interfaces_count];
+			Hashtable interfaceNames = new Hashtable();
+			for(int i = 0; i < interfaces_count; i++)
+			{
+				int index = br.ReadUInt16();
+				if(index == 0 || index >= constantpool.Length)
+				{
+					throw new ClassFormatError("{0} (Illegal constant pool index)", Name);
+				}
+				ConstantPoolItemClass cpi = constantpool[index] as ConstantPoolItemClass;
+				if(cpi == null)
+				{
+					throw new ClassFormatError("{0} (Interface name has bad constant type)", Name);
+				}
+				interfaces[i] = (ConstantPoolItemClass)GetConstantPoolItem(index);
+				if(interfaceNames.ContainsKey(interfaces[i]))
+				{
+					throw new ClassFormatError("{0} (Repetitive interface name)", Name);
+				}
+				interfaceNames.Add(interfaces[i], interfaces[i]);
+			}
+			int fields_count = br.ReadUInt16();
+			fields = new Field[fields_count];
+			Hashtable fieldNameSigs = new Hashtable();
+			for(int i = 0; i < fields_count; i++)
+			{
+				fields[i] = new Field(this, br);
+				string name = fields[i].Name;
+				// NOTE It's not in the vmspec (as far as I can tell), but Sun's VM doens't allow names that
+				// contain '<' or '>'
+				if(name.Length == 0 || name.IndexOfAny(illegalcharacters) != -1)
+				{
+					throw new ClassFormatError("{0} (Illegal field name \"{1}\")", Name, name);
+				}
+				string nameSig = name + fields[i].Signature;
+				if(fieldNameSigs.ContainsKey(nameSig))
+				{
+					throw new ClassFormatError("{0} (Repetitive field name/signature)", Name);
+				}
+				fieldNameSigs.Add(nameSig, nameSig);
+			}
+			int methods_count = br.ReadUInt16();
+			methods = new Method[methods_count];
+			Hashtable methodNameSigs = new Hashtable();
+			for(int i = 0; i < methods_count; i++)
+			{
+				methods[i] = new Method(this, br);
+				string name = methods[i].Name;
+				string sig = methods[i].Signature;
+				if(name.Length == 0 || (name.IndexOfAny(illegalcharacters) != -1 && name != "<init>" && name != "<clinit>"))
+				{
+					throw new ClassFormatError("{0} (Illegal method name \"{1}\")", Name, name);
+				}
+				if((name == "<init>" || name == "<clinit>") && !sig.EndsWith("V"))
+				{
+					throw new ClassFormatError("{0} (Method \"{1}\" has illegal signature \"{2}\")", Name, name, sig);
+				}
+				string nameSig = name + sig;
+				if(methodNameSigs.ContainsKey(nameSig))
+				{
+					throw new ClassFormatError("{0} (Repetitive method name/signature)", Name);
+				}
+				methodNameSigs.Add(nameSig, nameSig);
+			}
+			int attributes_count = br.ReadUInt16();
+			attributes = new Attribute[attributes_count];
+			for(int i = 0; i < attributes_count; i++)
+			{
+				attributes[i] = Attribute.Read(this, br);
+			}
+			if(br.Position != offset + length)
+			{
+				if(br.Position > offset + length)
+				{
+					throw new ClassFormatError("Truncated class file");
+				}
+				else
+				{
+					throw new ClassFormatError("Extra bytes at the end of the class file");
+				}
+			}
+		}
+		catch(IndexOutOfRangeException)
+		{
+			throw new ClassFormatError("Truncated class file");
+		}
+//		catch(Exception)
+//		{
+//			FileStream fs = File.Create(inputClassName + ".broken");
+//			fs.Write(buf, offset, length);
+//			fs.Close();
+//			throw;
+//		}
+	}
+
+	internal int MajorVersion
+	{
+		get
+		{
+			return majorVersion;
+		}
+	}
+
+	// NOTE this property is only used when statically compiling
+	// (and it is set by the static compiler's class loader in vm.cs)
+	internal ClassFile OuterClass
+	{
+		get
+		{
+			return outerClass;
+		}
+		set
+		{
+			outerClass = value;
+		}
+	}
+
+	internal void LoadAllReferencedTypes(ClassLoaderWrapper classLoader)
+	{
+		for(int i = 1; i < constantpool.Length; i++)
+		{
+			if(constantpool[i] != null)
+			{
+				constantpool[i].LoadAllReferencedTypes(classLoader);
+			}
+		}
+		for(int i = 0; i < fields.Length; i++)
+		{
+			fields[i].GetFieldType(classLoader);
+		}
+		for(int i = 0; i < methods.Length; i++)
+		{
+			methods[i].GetArgTypes(classLoader);
+			methods[i].GetRetType(classLoader);
+		}
+	}
+
+	internal Modifiers Modifiers
+	{
+		get
+		{
+			return access_flags;
+		}
+	}
+
+	internal bool IsAbstract
+	{
+		get
+		{
+			return (access_flags & Modifiers.Abstract) != 0;
+		}
+	}
+
+	internal bool IsFinal
+	{
+		get
+		{
+			return (access_flags & Modifiers.Final) != 0;
+		}
+	}
+
+	internal bool IsPublic
+	{
+		get
+		{
+			return (access_flags & Modifiers.Public) != 0;
+		}
+	}
+
+	internal bool IsInterface
+	{
+		get
+		{
+			return (access_flags & Modifiers.Interface) != 0;
+		}
+	}
+
+	internal bool IsSuper
+	{
+		get
+		{
+			return (access_flags & Modifiers.Super) != 0;
+		}
+	}
+
+	internal ConstantPoolItemFieldref GetFieldref(int index)
+	{
+		return (ConstantPoolItemFieldref)constantpool[index];
+	}
+
+	// NOTE this returns an FMI, because it used for both normal methods and interface methods
+	internal ConstantPoolItemFMI GetMethodref(int index)
+	{
+		return (ConstantPoolItemFMI)constantpool[index];
+	}
+
+	private ConstantPoolItem GetConstantPoolItem(int index)
+	{
+		return constantpool[index];
+	}
+
+	internal string GetConstantPoolClass(int index)
+	{
+		return ((ConstantPoolItemClass)constantpool[index]).Name;
+	}
+
+	internal TypeWrapper GetConstantPoolClassType(int index, ClassLoaderWrapper classLoader)
+	{
+		return ((ConstantPoolItemClass)constantpool[index]).GetClassType(classLoader);
+	}
+
+	private string GetConstantPoolString(int index)
+	{
+		return ((ConstantPoolItemString)constantpool[index]).Value;
+	}
+
+	private ConstantPoolItemUtf8 GetConstantPoolUtf8(int index)
+	{
+		return ((ConstantPoolItemUtf8)constantpool[index]);
+	}
+
+	internal string GetConstantPoolUtf8String(int index)
+	{
+		return GetConstantPoolUtf8(index).Value;
+	}
+
+	internal ConstantType GetConstantPoolConstantType(int index)
+	{
+		return constantpool[index].GetConstantType();
+	}
+
+	internal double GetConstantPoolConstantDouble(int index)
+	{
+		return ((ConstantPoolItemDouble)constantpool[index]).Value;
+	}
+
+	internal float GetConstantPoolConstantFloat(int index)
+	{
+		return ((ConstantPoolItemFloat)constantpool[index]).Value;
+	}
+
+	internal int GetConstantPoolConstantInteger(int index)
+	{
+		return ((ConstantPoolItemInteger)constantpool[index]).Value;
+	}
+
+	internal long GetConstantPoolConstantLong(int index)
+	{
+		return ((ConstantPoolItemLong)constantpool[index]).Value;
+	}
+
+	internal string GetConstantPoolConstantString(int index)
+	{
+		return ((ConstantPoolItemString)constantpool[index]).Value;
+	}
+
+	internal string Name
+	{
+		get
+		{
+			return this_cpi.Name;
+		}
+	}
+
+	internal string PackageName
+	{
+		get
+		{
+			string name = Name;
+			int index = name.LastIndexOf('.');
+			if(index == -1)
+			{
+				return "";
+			}
+			return name.Substring(0, index);
+		}
+	}
+
+	internal TypeWrapper GetSuperTypeWrapper(ClassLoaderWrapper classLoader)
+	{
+		return super_cpi.GetClassType(classLoader);
+	}
+
+	internal string SuperClass
+	{
+		get
+		{
+			return super_cpi.Name;
+		}
+	}
+
+	internal Field[] Fields
+	{
+		get
+		{
+			return fields;
+		}
+	}
+
+	internal Method[] Methods
+	{
+		get
+		{
+			return methods;
+		}
+	}
+
+	internal TypeWrapper[] GetInterfaceTypeWrappers(ClassLoaderWrapper classLoader)
+	{
+		if(interfaceTypeWrappers == null)
+		{
+			TypeWrapper[] tw = new TypeWrapper[interfaces.Length];
+			for(int i = 0; i < tw.Length; i++)
+			{
+				tw[i] = interfaces[i].GetClassType(classLoader);
+			}
+			interfaceTypeWrappers = tw;
+		}
+		return interfaceTypeWrappers;
+	}
+
+	// TODO this is legacy and needs to be removed in the future
+	internal string[] Interfaces
+	{
+		get
+		{
+			string[] s = new string[interfaces.Length];
+			for(int i = 0; i < s.Length; i++)
+			{
+				s[i] = interfaces[i].Name;
+			}
+			return s;
+		}
+	}
+
+	private Attribute GetAttribute(string name)
+	{
+		for(int i = 0; i < attributes.Length; i++)
+		{
+			if(attributes[i].Name == name)
+			{
+				return attributes[i];
+			}
+		}
+		return null;
+	}
+
+	internal string SourceFileAttribute
+	{
+		get
+		{
+			if(!sourceFileCached)
+			{
+				sourceFileCached = true;
+				Attribute attr = GetAttribute("SourceFile");
+				if(attr != null)
+				{
+					sourceFile = ((ConstantPoolItemUtf8)GetConstantPoolItem(attr.Data.ReadUInt16())).Value;
+				}
+			}
+			return sourceFile;
+		}
+	}
+
+	internal string NetExpAssemblyAttribute
+	{
+		get
+		{
+			Attribute attr = GetAttribute("IKVM.NET.Assembly");
+			if(attr != null)
+			{
+				return ((ConstantPoolItemUtf8)GetConstantPoolItem(attr.Data.ReadUInt16())).Value;
+			}
+			return null;
+		}
+	}
+
+	internal bool DeprecatedAttribute
+	{
+		get
+		{
+			return GetAttribute("Deprecated") != null;
+		}
+	}
+
+	internal struct InnerClass
+	{
+		internal int innerClass;		// ConstantPoolItemClass
+		internal int outerClass;		// ConstantPoolItemClass
+		internal int name;				// ConstantPoolItemUtf8
+		internal Modifiers accessFlags;
+	}
+
+	internal InnerClass[] InnerClasses
+	{
+		get
+		{
+			Attribute attr = GetAttribute("InnerClasses");
+			if(attr != null)
+			{
+				BigEndianBinaryReader rdr = attr.Data;
+				ushort count = rdr.ReadUInt16();
+				InnerClass[] list = new InnerClass[count];
+				for(int i = 0; i < list.Length; i++)
+				{
+					list[i].innerClass = rdr.ReadUInt16();
+					list[i].outerClass = rdr.ReadUInt16();
+					list[i].name = rdr.ReadUInt16();
+					list[i].accessFlags = (Modifiers)rdr.ReadUInt16();
+				}
+				return list;
+			}
+			return null;
+		}
+	}
+
+	internal enum ConstantType
+	{
+		Integer,
+		Long,
+		Float,
+		Double,
+		String,
+		Class
+	}
+
+	internal abstract class ConstantPoolItem
+	{
+		internal virtual bool IsWide
+		{
+			get
+			{
+				return false;
+			}
+		}
+
+		internal virtual void Resolve(ClassFile classFile)
+		{
+		}
+
+		internal virtual void LoadAllReferencedTypes(ClassLoaderWrapper classLoader)
+		{
+		}
+
+		internal virtual ConstantType GetConstantType()
+		{
+			throw new InvalidOperationException();
+		}
+
+		internal static ConstantPoolItem Read(string inputClassName, BigEndianBinaryReader br)
+		{
+			byte tag = br.ReadByte();
+			switch((Constant)tag)
+			{
+				case Constant.Class:
+					return new ConstantPoolItemClass(br);
+				case Constant.Double:
+					return new ConstantPoolItemDouble(br);
+				case Constant.Fieldref:
+					return new ConstantPoolItemFieldref(br);
+				case Constant.Float:
+					return new ConstantPoolItemFloat(br);
+				case Constant.Integer:
+					return new ConstantPoolItemInteger(br);
+				case Constant.InterfaceMethodref:
+					return new ConstantPoolItemInterfaceMethodref(br);
+				case Constant.Long:
+					return new ConstantPoolItemLong(br);
+				case Constant.Methodref:
+					return new ConstantPoolItemMethodref(br);
+				case Constant.NameAndType:
+					return new ConstantPoolItemNameAndType(br);
+				case Constant.String:
+					return new ConstantPoolItemString(br);
+				case Constant.Utf8:
+					return new ConstantPoolItemUtf8(inputClassName, br);
+				default:
+					throw new ClassFormatError("{0} (Illegal constant pool type 0x{1:X})", inputClassName, tag);
+			}
+		}
+	}
+
+	private class ConstantPoolItemClass : ConstantPoolItem
+	{
+		private ushort name_index;
+		private string name;
+		private TypeWrapper typeWrapper;
+
+		internal ConstantPoolItemClass(BigEndianBinaryReader br)
+		{
+			name_index = br.ReadUInt16();
+		}
+
+		internal override void Resolve(ClassFile classFile)
+		{
+			name = ((ConstantPoolItemUtf8)classFile.GetConstantPoolItem(name_index)).DottifiedValue;;
+		}
+
+		internal override void LoadAllReferencedTypes(ClassLoaderWrapper classLoader)
+		{
+			GetClassType(classLoader);
+		}
+
+		internal string Name
+		{
+			get
+			{
+				return name;
+			}
+		}
+
+		internal TypeWrapper GetClassType(ClassLoaderWrapper classLoader)
+		{
+			if(typeWrapper == null)
+			{
+				typeWrapper = LoadClassHelper(classLoader, name);
+			}
+			return typeWrapper;
+		}
+
+		internal override ConstantType GetConstantType()
+		{
+			return ConstantType.Class;
+		}
+	}
+
+	private static TypeWrapper LoadClassHelper(ClassLoaderWrapper classLoader, string name)
+	{
+		try
+		{
+			TypeWrapper wrapper = classLoader.LoadClassByDottedNameFast(name);
+			if(wrapper == null)
+			{
+				Tracer.Error(Tracer.ClassLoading, "Class not found: {0}", name);
+				wrapper = new UnloadableTypeWrapper(name);
+			}
+			return wrapper;
+		}
+		catch(Exception x)
+		{
+			// TODO it might not be a good idea to catch .NET system exceptions here
+			if(Tracer.ClassLoading.TraceError)
+			{
+				object cl = classLoader.GetJavaClassLoader();
+				if(cl != null)
+				{
+					System.Text.StringBuilder sb = new System.Text.StringBuilder();
+					Type type = cl.GetType();
+					while(type.FullName != "java.lang.ClassLoader")
+					{
+						type = type.BaseType;
+					}
+					string sep = "";
+					while(cl != null)
+					{
+						sb.Append(sep).Append(cl);
+						sep = " -> ";
+						cl = type.InvokeMember("getParent", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.InvokeMethod | System.Reflection.BindingFlags.Instance, null, cl, new object[0]);
+					}
+					Tracer.Error(Tracer.ClassLoading, "ClassLoader chain: {0}", sb);
+				}
+				x = ExceptionHelper.MapExceptionFast(x);
+				Tracer.Error(Tracer.ClassLoading, x.ToString() + Environment.NewLine + x.StackTrace);
+			}
+			return new UnloadableTypeWrapper(name);
+		}
+	}
+
+	private static TypeWrapper SigDecoderWrapper(ClassLoaderWrapper classLoader, ref int index, string sig)
+	{
+		switch(sig[index++])
+		{
+			case 'B':
+				return PrimitiveTypeWrapper.BYTE;
+			case 'C':
+				return PrimitiveTypeWrapper.CHAR;
+			case 'D':
+				return PrimitiveTypeWrapper.DOUBLE;
+			case 'F':
+				return PrimitiveTypeWrapper.FLOAT;
+			case 'I':
+				return PrimitiveTypeWrapper.INT;
+			case 'J':
+				return PrimitiveTypeWrapper.LONG;
+			case 'L':
+			{
+				int pos = index;
+				index = sig.IndexOf(';', index) + 1;
+				return LoadClassHelper(classLoader, sig.Substring(pos, index - pos - 1));
+			}
+			case 'S':
+				return PrimitiveTypeWrapper.SHORT;
+			case 'Z':
+				return PrimitiveTypeWrapper.BOOLEAN;
+			case 'V':
+				return PrimitiveTypeWrapper.VOID;
+			case '[':
+			{
+				// TODO this can be optimized
+				string array = "[";
+				while(sig[index] == '[')
+				{
+					index++;
+					array += "[";
+				}
+				switch(sig[index])
+				{
+					case 'L':
+					{
+						int pos = index;
+						index = sig.IndexOf(';', index) + 1;
+						return LoadClassHelper(classLoader, array + sig.Substring(pos, index - pos));
+					}
+					case 'B':
+					case 'C':
+					case 'D':
+					case 'F':
+					case 'I':
+					case 'J':
+					case 'S':
+					case 'Z':
+						return LoadClassHelper(classLoader, array + sig[index++]);
+					default:
+						// TODO this should never happen, because ClassFile should validate the descriptors
+						throw new InvalidOperationException(sig.Substring(index));
+				}
+			}
+			default:
+				// TODO this should never happen, because ClassFile should validate the descriptors
+				throw new InvalidOperationException(sig.Substring(index));
+		}
+	}
+
+	private static TypeWrapper[] ArgTypeWrapperListFromSig(ClassLoaderWrapper classLoader, string sig)
+	{
+		if(sig[1] == ')')
+		{
+			return TypeWrapper.EmptyArray;
+		}
+		ArrayList list = new ArrayList();
+		for(int i = 1; sig[i] != ')';)
+		{
+			list.Add(SigDecoderWrapper(classLoader, ref i, sig));
+		}
+		TypeWrapper[] types = new TypeWrapper[list.Count];
+		list.CopyTo(types);
+		return types;
+	}
+
+	private static TypeWrapper FieldTypeWrapperFromSig(ClassLoaderWrapper classLoader, string sig)
+	{
+		int index = 0;
+		return SigDecoderWrapper(classLoader, ref index, sig);
+	}
+
+	private static TypeWrapper RetTypeWrapperFromSig(ClassLoaderWrapper classLoader, string sig)
+	{
+		int index = sig.IndexOf(')') + 1;
+		return SigDecoderWrapper(classLoader, ref index, sig);
+	}
+
+	private class ConstantPoolItemDouble : ConstantPoolItem
+	{
+		private double d;
+
+		internal ConstantPoolItemDouble(BigEndianBinaryReader br)
+		{
+			d = br.ReadDouble();
+		}
+
+		internal override ConstantType GetConstantType()
+		{
+			return ConstantType.Double;
+		}
+
+		internal double Value
+		{
+			get
+			{
+				return d;
+			}
+		}
+
+		internal override bool IsWide
+		{
+			get
+			{
+				return true;
+			}
+		}
+	}
+
+	internal class ConstantPoolItemFMI : ConstantPoolItem
+	{
+		private ushort class_index;
+		private ushort name_and_type_index;
+		private ConstantPoolItemNameAndType name_and_type;
+		private ConstantPoolItemClass clazz;
+
+		internal ConstantPoolItemFMI(BigEndianBinaryReader br)
+		{
+			class_index = br.ReadUInt16();
+			name_and_type_index = br.ReadUInt16();
+		}
+
+		internal override void Resolve(ClassFile classFile)
+		{
+			name_and_type = (ConstantPoolItemNameAndType)classFile.GetConstantPoolItem(name_and_type_index);
+			clazz = (ConstantPoolItemClass)classFile.GetConstantPoolItem(class_index);
+		}
+
+		internal string Name
+		{
+			get
+			{
+				return name_and_type.Name;
+			}
+		}
+
+		internal string Signature
+		{
+			get
+			{
+				return name_and_type.Type;
+			}
+		}
+
+		internal string Class
+		{
+			get
+			{
+				return clazz.Name;
+			}
+		}
+
+		internal TypeWrapper GetClassType(ClassLoaderWrapper classLoader)
+		{
+			return clazz.GetClassType(classLoader);
+		}
+
+		internal TypeWrapper[] GetArgTypes(ClassLoaderWrapper classLoader)
+		{
+			return name_and_type.GetArgTypes(classLoader);
+		}
+
+		internal TypeWrapper GetRetType(ClassLoaderWrapper classLoader)
+		{
+			return name_and_type.GetRetType(classLoader);
+		}
+
+		internal TypeWrapper GetFieldType(ClassLoaderWrapper classLoader)
+		{
+			return name_and_type.GetFieldType(classLoader);
+		}
+	}
+
+	internal class ConstantPoolItemFieldref : ConstantPoolItemFMI
+	{
+		internal ConstantPoolItemFieldref(BigEndianBinaryReader br) : base(br)
+		{
+		}
+	}
+
+	internal class ConstantPoolItemMethodref : ConstantPoolItemFMI
+	{
+		internal ConstantPoolItemMethodref(BigEndianBinaryReader br) : base(br)
+		{
+		}
+	}
+
+	internal class ConstantPoolItemInterfaceMethodref : ConstantPoolItemFMI
+	{
+		internal ConstantPoolItemInterfaceMethodref(BigEndianBinaryReader br) : base(br)
+		{
+		}
+	}
+
+	private class ConstantPoolItemFloat : ConstantPoolItem
+	{
+		private float v;
+
+		internal ConstantPoolItemFloat(BigEndianBinaryReader br)
+		{
+			v = br.ReadSingle();
+		}
+
+		internal override ConstantType GetConstantType()
+		{
+			return ConstantType.Float;
+		}
+
+		internal float Value
+		{
+			get
+			{
+				return v;
+			}
+		}
+	}
+
+	private class ConstantPoolItemInteger : ConstantPoolItem
+	{
+		private int v;
+
+		internal ConstantPoolItemInteger(BigEndianBinaryReader br)
+		{
+			v = br.ReadInt32();
+		}
+
+		internal override ConstantType GetConstantType()
+		{
+			return ConstantType.Integer;
+		}
+
+		internal int Value
+		{
+			get
+			{
+				return v;
+			}
+		}
+	}
+
+	private class ConstantPoolItemLong : ConstantPoolItem
+	{
+		private long l;
+
+		internal ConstantPoolItemLong(BigEndianBinaryReader br)
+		{
+			l = br.ReadInt64();
+		}
+
+		internal override ConstantType GetConstantType()
+		{
+			return ConstantType.Long;
+		}
+
+		internal long Value
+		{
+			get
+			{
+				return l;
+			}
+		}
+
+		internal override bool IsWide
+		{
+			get
+			{
+				return true;
+			}
+		}
+	}
+
+	private class ConstantPoolItemNameAndType : ConstantPoolItem
+	{
+		private ushort name_index;
+		private ushort descriptor_index;
+		private string name;
+		private string descriptor;
+		private TypeWrapper[] argTypeWrappers;
+		private TypeWrapper retTypeWrapper;
+		private TypeWrapper fieldTypeWrapper;
+
+		internal ConstantPoolItemNameAndType(BigEndianBinaryReader br)
+		{
+			name_index = br.ReadUInt16();
+			descriptor_index = br.ReadUInt16();
+		}
+
+		internal override void Resolve(ClassFile classFile)
+		{
+			ConstantPoolItemUtf8 nameUtf8 = (ConstantPoolItemUtf8)classFile.GetConstantPoolItem(name_index);
+			nameUtf8.Resolve(classFile);
+			name = nameUtf8.Value;
+			ConstantPoolItemUtf8 descriptorUtf8 = (ConstantPoolItemUtf8)classFile.GetConstantPoolItem(descriptor_index);
+			descriptorUtf8.Resolve(classFile);
+			descriptor = descriptorUtf8.DottifiedValue;
+		}
+
+		internal override void LoadAllReferencedTypes(ClassLoaderWrapper classLoader)
+		{
+			if(descriptor[0] == '(')
+			{
+				GetArgTypes(classLoader);
+				GetRetType(classLoader);
+			}
+			else
+			{
+				GetFieldType(classLoader);
+			}
+		}
+
+		internal string Name
+		{
+			get
+			{
+				return name;
+			}
+		}
+
+		internal string Type
+		{
+			get
+			{
+				return descriptor;
+			}
+		}
+
+		internal TypeWrapper[] GetArgTypes(ClassLoaderWrapper classLoader)
+		{
+			if(argTypeWrappers == null)
+			{
+				argTypeWrappers = ArgTypeWrapperListFromSig(classLoader, descriptor);
+			}
+			return argTypeWrappers;
+		}
+
+		internal TypeWrapper GetRetType(ClassLoaderWrapper classLoader)
+		{
+			if(retTypeWrapper == null)
+			{
+				retTypeWrapper = RetTypeWrapperFromSig(classLoader, descriptor);
+			}
+			return retTypeWrapper;
+		}
+
+		internal TypeWrapper GetFieldType(ClassLoaderWrapper classLoader)
+		{
+			if(fieldTypeWrapper == null)
+			{
+				fieldTypeWrapper = FieldTypeWrapperFromSig(classLoader, descriptor);
+			}
+			return fieldTypeWrapper;
+		}
+	}
+
+	private class ConstantPoolItemString : ConstantPoolItem
+	{
+		private ushort string_index;
+		private string s;
+
+		internal ConstantPoolItemString(BigEndianBinaryReader br)
+		{
+			string_index = br.ReadUInt16();
+		}
+
+		internal override void Resolve(ClassFile classFile)
+		{
+			ConstantPoolItemUtf8 utf8 = (ConstantPoolItemUtf8)classFile.GetConstantPoolItem(string_index);
+			utf8.Resolve(classFile);
+			s = utf8.Value;
+		}
+
+		internal override ConstantType GetConstantType()
+		{
+			return ConstantType.String;
+		}
+
+		internal string Value
+		{
+			get
+			{
+				return s;
+			}
+		}
+	}
+
+	private class ConstantPoolItemUtf8 : ConstantPoolItem
+	{
+		private string s;
+
+		internal ConstantPoolItemUtf8(string inputClassName, BigEndianBinaryReader br)
+		{
+			try
+			{
+				s = br.ReadString();
+			}
+			catch(FormatException)
+			{
+				throw new ClassFormatError("{0} (Illegal UTF8 string in constant pool)", inputClassName);
+			}
+		}
+
+		internal string Value
+		{
+			get
+			{
+				return s;
+			}
+		}
+
+		internal string DottifiedValue
+		{
+			get
+			{
+				return s.Replace('/', '.');
+			}
+		}
+	}
+
+	private enum Constant
+	{
+		Utf8 = 1,
+		Integer = 3,
+		Float = 4,
+		Long = 5,
+		Double = 6,
+		Class = 7,
+		String = 8,
+		Fieldref = 9,
+		Methodref = 10,
+		InterfaceMethodref = 11,
+		NameAndType = 12
+	}
+
+	internal class Attribute
+	{
+		private string name;
+		private BigEndianBinaryReader data;
+
+		private Attribute()
+		{
+		}
+
+		internal static Attribute Read(ClassFile classFile, BigEndianBinaryReader br)
+		{
+			try
+			{
+				int name_index = br.ReadUInt16();
+				string name = classFile.GetConstantPoolUtf8(name_index).Value;
+				int attribute_length = br.ReadInt32();
+				Attribute a = new Attribute();
+				a.name = name;
+				a.data = br.Duplicate();
+				br.Skip(attribute_length);
+				return a;
+			}
+			catch(InvalidCastException)
+			{
+			}
+			catch(NullReferenceException)
+			{
+			}
+			catch(IndexOutOfRangeException)
+			{
+			}
+			throw new ClassFormatError("{0} (Attribute name invalid type)", classFile.Name);
+		}
+
+		internal string Name
+		{
+			get
+			{
+				return name;
+			}
+		}
+
+		internal BigEndianBinaryReader Data
+		{
+			get
+			{
+				return data.Duplicate();
+			}
+		}
+	}
+
+	internal class FieldOrMethod
+	{
+		private ClassFile classFile;
+		protected Modifiers access_flags;
+		private ushort name_index;
+		private ushort descriptor_index;
+		private Attribute[] attributes;
+		private TypeWrapper[] argTypeWrappers;
+		private TypeWrapper retTypeWrapper;
+		private TypeWrapper fieldTypeWrapper;
+
+		internal FieldOrMethod(ClassFile classFile, BigEndianBinaryReader br)
+		{
+			this.classFile = classFile;
+			access_flags = (Modifiers)br.ReadUInt16();
+			// TODO check that name is ConstantPoolItemUtf8
+			name_index = br.ReadUInt16();
+			// TODO check that descriptor is ConstantPoolItemUtf8 and validate the descriptor
+			descriptor_index = br.ReadUInt16();
+			int attributes_count = br.ReadUInt16();
+			attributes = new Attribute[attributes_count];
+			for(int i = 0; i < attributes_count; i++)
+			{
+				attributes[i] = Attribute.Read(classFile, br);
+			}
+		}
+
+		internal string Name
+		{
+			get
+			{
+				return classFile.GetConstantPoolUtf8(name_index).Value;
+			}
+		}
+
+		internal string Signature
+		{
+			get
+			{
+				return classFile.GetConstantPoolUtf8(descriptor_index).DottifiedValue;
+			}
+		}
+
+		internal TypeWrapper[] GetArgTypes(ClassLoaderWrapper classLoader)
+		{
+			if(argTypeWrappers == null)
+			{
+				argTypeWrappers = ArgTypeWrapperListFromSig(classLoader, Signature);
+			}
+			return argTypeWrappers;
+		}
+
+		internal TypeWrapper GetRetType(ClassLoaderWrapper classLoader)
+		{
+			if(retTypeWrapper == null)
+			{
+				retTypeWrapper = RetTypeWrapperFromSig(classLoader, Signature);
+			}
+			return retTypeWrapper;
+		}
+
+		internal TypeWrapper GetFieldType(ClassLoaderWrapper classLoader)
+		{
+			if(fieldTypeWrapper == null)
+			{
+				fieldTypeWrapper = FieldTypeWrapperFromSig(classLoader, Signature);
+			}
+			return fieldTypeWrapper;
+		}
+
+		internal Modifiers Modifiers
+		{
+			get
+			{
+				return (Modifiers)access_flags;
+			}
+		}
+
+		internal bool IsAbstract
+		{
+			get
+			{
+				return (access_flags & Modifiers.Abstract) != 0;
+			}
+		}
+
+		internal bool IsFinal
+		{
+			get
+			{
+				return (access_flags & Modifiers.Final) != 0;
+			}
+		}
+
+		internal bool IsPublic
+		{
+			get
+			{
+				return (access_flags & Modifiers.Public) != 0;
+			}
+		}
+
+		internal bool IsPrivate
+		{
+			get
+			{
+				return (access_flags & Modifiers.Private) != 0;
+			}
+		}
+
+		internal bool IsProtected
+		{
+			get
+			{
+				return (access_flags & Modifiers.Protected) != 0;
+			}
+		}
+
+		internal bool IsStatic
+		{
+			get
+			{
+				return (access_flags & Modifiers.Static) != 0;
+			}
+		}
+
+		internal bool IsSynchronized
+		{
+			get
+			{
+				return (access_flags & Modifiers.Synchronized) != 0;
+			}
+		}
+
+		internal bool IsVolatile
+		{
+			get
+			{
+				return (access_flags & Modifiers.Volatile) != 0;
+			}
+		}
+
+		internal bool IsTransient
+		{
+			get
+			{
+				return (access_flags & Modifiers.Transient) != 0;
+			}
+		}
+
+		internal bool IsNative
+		{
+			get
+			{
+				return (access_flags & Modifiers.Native) != 0;
+			}
+		}
+
+		protected Attribute GetAttribute(string name)
+		{
+			foreach(Attribute attr in attributes)
+			{
+				if(attr.Name == name)
+				{
+					return attr;
+				}
+			}
+			return null;
+		}
+
+		internal ClassFile ClassFile
+		{
+			get
+			{
+				return classFile;
+			}
+		}
+
+		internal bool DeprecatedAttribute
+		{
+			get
+			{
+				return GetAttribute("Deprecated") != null;
+			}
+		}
+	}
+
+	internal class Field : FieldOrMethod
+	{
+		private object constantValue;
+
+		internal Field(ClassFile classFile, BigEndianBinaryReader br) : base(classFile, br)
+		{
+			if((IsPrivate && IsPublic) || (IsPrivate && IsProtected) || (IsPublic && IsProtected)
+				|| (IsFinal && IsVolatile)
+				|| (classFile.IsInterface && (!IsPublic || !IsStatic || !IsFinal || IsTransient)))
+			{
+				throw new ClassFormatError("{0} (Illegal field modifiers: 0x{1:X})", classFile.Name, access_flags);
+			}
+			// spec (4.7.2) says we should silently ignore ConstantValue attribute on non-static fields
+			// NOTE a field doesn't have to be final to have a constant value!
+			if(IsStatic)
+			{
+				Attribute attr = GetAttribute("ConstantValue");
+				if(attr != null)
+				{
+					ushort index = attr.Data.ReadUInt16();
+					try
+					{
+						switch(Signature)
+						{
+							case "I":
+								constantValue = classFile.GetConstantPoolConstantInteger(index);
+								break;
+							case "S":
+								constantValue = (short)classFile.GetConstantPoolConstantInteger(index);
+								break;
+							case "B":
+								constantValue = (sbyte)classFile.GetConstantPoolConstantInteger(index);
+								break;
+							case "C":
+								constantValue = (char)classFile.GetConstantPoolConstantInteger(index);
+								break;
+							case "Z":
+								constantValue = classFile.GetConstantPoolConstantInteger(index) != 0;
+								break;
+							case "J":
+								constantValue = classFile.GetConstantPoolConstantLong(index);
+								break;
+							case "F":
+								constantValue = classFile.GetConstantPoolConstantFloat(index);
+								break;
+							case "D":
+								constantValue = classFile.GetConstantPoolConstantDouble(index);
+								break;
+							case "Ljava.lang.String;":
+								constantValue = classFile.GetConstantPoolConstantString(index);
+								break;
+							default:
+								throw new ClassFormatError("{0} (Invalid signature for constant)", classFile.Name);
+						}
+					}
+					catch(InvalidCastException)
+					{
+						throw new ClassFormatError("{0} (Bad index into constant pool)", classFile.Name);
+					}
+					catch(IndexOutOfRangeException)
+					{
+						throw new ClassFormatError("{0} (Bad index into constant pool)", classFile.Name);
+					}
+					catch(InvalidOperationException)
+					{
+						throw new ClassFormatError("{0} (Bad index into constant pool)", classFile.Name);
+					}
+					catch(NullReferenceException)
+					{
+						throw new ClassFormatError("{0} (Bad index into constant pool)", classFile.Name);
+					}
+				}
+			}
+		}
+
+		internal object ConstantValue
+		{
+			get
+			{
+				return constantValue;
+			}
+		}
+	}
+
+	internal class Method : FieldOrMethod
+	{
+		private Code code;
+
+		internal Method(ClassFile classFile, BigEndianBinaryReader br) : base(classFile, br)
+		{
+			// vmspec 4.6 says that all flags, except ACC_STRICT are ignored on <clinit>
+			if(Name == "<clinit>" && Signature == "()V")
+			{
+				access_flags &= Modifiers.Strictfp;
+				access_flags |= (Modifiers.Static | Modifiers.Private);
+			}
+			else
+			{
+				if((Name == "<init>" && (IsStatic || IsSynchronized || IsFinal || IsAbstract))
+					|| (IsPrivate && IsPublic) || (IsPrivate && IsProtected) || (IsPublic && IsProtected)
+					|| (IsAbstract && (IsFinal || IsNative || IsPrivate || IsStatic || IsStrictfp || IsSynchronized))
+					|| (classFile.IsInterface && (!IsPublic || !IsAbstract)))
+				{
+					throw new ClassFormatError("{0} (Illegal method modifiers: 0x{1:X})", classFile.Name, access_flags);
+				}
+			}
+			// TODO if the method is abstract or native it may not have a Code attribute (right?)
+			// and if it is not abstract or native, it must have a Code attribute
+		}
+
+		internal bool IsStrictfp
+		{
+			get
+			{
+				return (access_flags & Modifiers.Strictfp) != 0;
+			}
+		}
+
+		// Is this the <clinit>()V method?
+		internal bool IsClassInitializer
+		{
+			get
+			{
+				return Name == "<clinit>" && Signature == "()V";
+			}
+		}
+
+		internal string[] NetExpSigAttribute
+		{
+			get
+			{
+				Attribute attr = GetAttribute("IK.VM.NET.Sig");
+				if(attr != null)
+				{
+					string s = ClassFile.GetConstantPoolUtf8(attr.Data.ReadUInt16()).Value;
+					if(s.Length == 0)
+					{
+						return new string[0];
+					}
+					return s.Split('|');
+				}
+				return null;
+			}
+		}
+
+		internal Code CodeAttribute
+		{
+			get
+			{
+				if(code == null)
+				{
+					Attribute attr = GetAttribute("Code");
+					if(attr != null)
+					{
+						code = new Code(this, attr);
+					}
+				}
+				return code;
+			}
+		}
+
+		internal string[] ExceptionsAttribute
+		{
+			get
+			{
+				Attribute attr = GetAttribute("Exceptions");
+				if(attr != null)
+				{
+					BigEndianBinaryReader rdr = attr.Data;
+					ushort count = rdr.ReadUInt16();
+					string[] exceptions = new string[count];
+					for(int i = 0; i < count; i++)
+					{
+						exceptions[i] = ClassFile.GetConstantPoolClass(rdr.ReadUInt16());
+					}
+					return exceptions;
+				}
+				return null;
+			}
+		}
+
+		internal class Code
+		{
+			private Method method;
+			private ushort max_stack;
+			private ushort max_locals;
+			private Instruction[] instructions;
+			private int[] pcIndexMap;
+			private ExceptionTableEntry[] exception_table;
+			private Attribute[] codeAttributes;
+			private int[] argmap;
+			private LineNumberTableEntry[] lineNumberTable;
+			private bool lineNumberTableCached;
+			private LocalVariableTableEntry[] localVariableTable;
+			private bool localVariableTableCached;
+
+			internal Code(Method method, Attribute attr)
+			{
+				this.method = method;
+				BigEndianBinaryReader br = attr.Data;
+				max_stack = br.ReadUInt16();
+				max_locals = br.ReadUInt16();
+				uint code_length = br.ReadUInt32();
+				ArrayList instructions = new ArrayList();
+				int basePosition = br.Position;
+				while(br.Position - basePosition < code_length)
+				{
+					instructions.Add(Instruction.Read(this, br.Position - basePosition, br));
+				}
+				// we add an additional nop instruction to make it easier for consumers of the code array
+				instructions.Add(new Instruction(this, br.Position - basePosition, ByteCode.__nop));
+				this.instructions = (Instruction[])instructions.ToArray(typeof(Instruction));
+				ushort exception_table_length = br.ReadUInt16();
+				exception_table = new ExceptionTableEntry[exception_table_length];
+				for(int i = 0; i < exception_table_length; i++)
+				{
+					exception_table[i] = new ExceptionTableEntry();
+					exception_table[i].start_pc = br.ReadUInt16();
+					exception_table[i].end_pc = br.ReadUInt16();
+					exception_table[i].handler_pc = br.ReadUInt16();
+					exception_table[i].catch_type = br.ReadUInt16();
+					exception_table[i].ordinal = i;
+				}
+				ushort attributes_count = br.ReadUInt16();
+				codeAttributes = new Attribute[attributes_count];
+				for(int i = 0; i < attributes_count; i++)
+				{
+					codeAttributes[i] = Attribute.Read(method.ClassFile, br);
+				}
+				// build the pcIndexMap
+				pcIndexMap = new int[this.instructions[this.instructions.Length - 1].PC + 1];
+				for(int i = 0; i < pcIndexMap.Length; i++)
+				{
+					pcIndexMap[i] = -1;
+				}
+				for(int i = 0; i < this.instructions.Length - 1; i++)
+				{
+					pcIndexMap[this.instructions[i].PC] = i;
+				}
+			}
+
+			// maps argument 'slot' (as encoded in the xload/xstore instructions) into the ordinal
+			internal int[] ArgMap
+			{
+				get
+				{
+					if(argmap == null)
+					{
+						string sig = method.Signature;
+						ArrayList args = new ArrayList();
+						int pos = 0;
+						if(!method.IsStatic)
+						{
+							args.Add(pos++);
+						}
+						for(int i = 1; sig[i] != ')'; i++)
+						{
+							args.Add(pos++);
+							switch(sig[i])
+							{
+								case 'L':
+									i = sig.IndexOf(';', i);
+									break;
+								case 'D':
+								case 'J':
+									args.Add(-1);
+									break;
+								case '[':
+								{
+									while(sig[i] == '[')
+									{
+										i++;
+									}
+									if(sig[i] == 'L')
+									{
+										i = sig.IndexOf(';', i);
+									}
+									break;
+								}
+							}
+						}
+						argmap = new int[args.Count];
+						args.CopyTo(argmap);
+					}
+					return argmap;
+				}
+			}
+
+			internal Method Method
+			{
+				get
+				{
+					return method;
+				}
+			}
+
+			internal int MaxStack
+			{
+				get
+				{
+					return max_stack;
+				}
+			}
+
+			internal int MaxLocals
+			{
+				get
+				{
+					return max_locals;
+				}
+			}
+
+			internal Instruction[] Instructions
+			{
+				get
+				{
+					return instructions;
+				}
+			}
+
+			// maps a PC to an index in the Instruction[], invalid PCs return -1
+			internal int[] PcIndexMap
+			{
+				get
+				{
+					return pcIndexMap;
+				}
+			}
+
+			internal ExceptionTableEntry[] ExceptionTable
+			{
+				get
+				{
+					return exception_table;
+				}
+			}
+
+			private Attribute GetAttribute(string name)
+			{
+				foreach(Attribute attr in codeAttributes)
+				{
+					if(attr.Name == name)
+					{
+						return attr;
+					}
+				}
+				return null;
+			}
+
+			internal LineNumberTableEntry[] LineNumberTableAttribute
+			{
+				get
+				{
+					if(!lineNumberTableCached)
+					{
+						lineNumberTableCached = true;
+						Attribute attr = GetAttribute("LineNumberTable");
+						if(attr != null)
+						{
+							BigEndianBinaryReader rdr = attr.Data;
+							int count = rdr.ReadUInt16();
+							lineNumberTable = new LineNumberTableEntry[count];
+							for(int i = 0; i < count; i++)
+							{
+								lineNumberTable[i].start_pc = rdr.ReadUInt16();
+								lineNumberTable[i].line_number = rdr.ReadUInt16();
+							}
+						}
+					}
+					return lineNumberTable;
+				}
+			}
+
+			internal LocalVariableTableEntry[] LocalVariableTableAttribute
+			{
+				get
+				{
+					if(!localVariableTableCached)
+					{
+						localVariableTableCached = true;
+						Attribute attr = GetAttribute("LocalVariableTable");
+						if(attr != null)
+						{
+							BigEndianBinaryReader rdr = attr.Data;
+							int count = rdr.ReadUInt16();
+							localVariableTable = new LocalVariableTableEntry[count];
+							for(int i = 0; i < count; i++)
+							{
+								localVariableTable[i].start_pc = rdr.ReadUInt16();
+								localVariableTable[i].length = rdr.ReadUInt16();
+								localVariableTable[i].name = method.ClassFile.GetConstantPoolUtf8(rdr.ReadUInt16()).Value;
+								localVariableTable[i].descriptor = method.ClassFile.GetConstantPoolUtf8(rdr.ReadUInt16()).DottifiedValue;
+								localVariableTable[i].index = rdr.ReadUInt16();
+							}
+						}
+					}
+					return localVariableTable;
+				}
+			}
+		}
+
+		internal class ExceptionTableEntry
+		{
+			internal ushort start_pc;
+			internal ushort end_pc;
+			internal ushort handler_pc;
+			internal ushort catch_type;
+			internal int ordinal;
+		}
+
+		internal class Instruction
+		{
+			private Method.Code method;
+			private int pc;
+			private ByteCode opcode;
+			private int arg1;
+			private int arg2;
+			private int default_offset;
+			private int[] values;
+			private int[] target_offsets;
+
+			internal Instruction(Method.Code method, int pc, ByteCode opcode)
+				: this(method, pc, opcode, 0)
+			{
+			}
+
+			private Instruction(Method.Code method, int pc, ByteCode opcode, int arg1)
+				: this(method, pc, opcode, arg1, 0)
+			{
+			}
+
+			private Instruction(Method.Code method, int pc, ByteCode opcode, int arg1, int arg2)
+			{
+				this.method = method;
+				this.pc = pc;
+				this.opcode = opcode;
+				this.arg1 = arg1;
+				this.arg2 = arg2;
+			}
+
+			private Instruction(Method.Code method, int pc, ByteCode opcode, int default_offset, int[] values, int[] target_offsets)
+				: this(method, pc, opcode)
+			{
+				this.default_offset = default_offset;
+				this.values = values;
+				this.target_offsets = target_offsets;
+			}
+
+			internal static Instruction Read(Method.Code method, int pc, BigEndianBinaryReader br)
+			{
+				ByteCode bc = (ByteCode)br.ReadByte();
+				ByteCodeMode mode = ByteCodeMetaData.GetMode(bc);
+				if(bc == ByteCode.__wide)
+				{
+					bc = (ByteCode)br.ReadByte();
+					// NOTE the PC of a wide instruction is actually the PC of the
+					// wide prefix, not the following instruction (vmspec 4.9.2)
+					mode = ByteCodeMetaData.GetWideMode(bc);
+				}
+				switch(mode)
+				{
+					case ByteCodeMode.Simple:
+						return new Instruction(method, pc, bc);
+					case ByteCodeMode.Constant_1:
+					case ByteCodeMode.Local_1:
+						return new Instruction(method, pc, bc, br.ReadByte());
+					case ByteCodeMode.Constant_2:
+					case ByteCodeMode.Local_2:
+						return new Instruction(method, pc, bc, br.ReadUInt16());
+					case ByteCodeMode.Branch_2:
+						return new Instruction(method, pc, bc, br.ReadInt16());
+					case ByteCodeMode.Branch_4:
+						return new Instruction(method, pc, bc, br.ReadInt32());
+					case ByteCodeMode.Constant_2_1_1:
+					{
+						Instruction instr = new Instruction(method, pc, bc, br.ReadUInt16());
+						// TODO validate these
+						br.ReadByte();	// count
+						br.ReadByte();	// unused
+						return instr;
+					}
+					case ByteCodeMode.Immediate_1:
+						return new Instruction(method, pc, bc, br.ReadSByte());
+					case ByteCodeMode.Immediate_2:
+						return new Instruction(method, pc, bc, br.ReadInt16());
+					case ByteCodeMode.Local_1_Immediate_1:
+						return new Instruction(method, pc, bc, br.ReadByte(), br.ReadSByte());
+					case ByteCodeMode.Local_2_Immediate_2:
+						return new Instruction(method, pc, bc, br.ReadUInt16(), br.ReadInt16());
+					case ByteCodeMode.Constant_2_Immediate_1:
+						return new Instruction(method, pc, bc, br.ReadUInt16(), br.ReadSByte());
+					case ByteCodeMode.Tableswitch:
+					{
+						// skip the padding
+						int p = pc + 1;
+						int align = ((p + 3) & 0x7ffffffc) - p;
+						for(int i = 0; i < align; i++)
+						{
+							br.ReadByte();
+						}
+						int default_offset = br.ReadInt32();
+						int low = br.ReadInt32();
+						int high = br.ReadInt32();
+						int[] values = new int[high - low + 1];
+						int[] target_offset = new int[high - low + 1];
+						for(int i = low; i <= high; i++)
+						{
+							values[i - low] = i;
+							target_offset[i - low] = br.ReadInt32();
+						}
+						return new Instruction(method, pc, bc, default_offset, values, target_offset);
+					}
+					case ByteCodeMode.Lookupswitch:
+					{
+						// skip the padding
+						int p = pc + 1;
+						int align = ((p + 3) & 0x7ffffffc) - p;
+						for(int i = 0; i < align; i++)
+						{
+							br.ReadByte();
+						}
+						int default_offset = br.ReadInt32();
+						int count = br.ReadInt32();
+						int[] values = new int[count];
+						int[] target_offset = new int[count];
+						for(int i = 0; i < count; i++)
+						{
+							values[i] = br.ReadInt32();
+							target_offset[i] = br.ReadInt32();
+						}
+						return new Instruction(method, pc, bc, default_offset, values, target_offset);
+					}
+					default:
+						throw new ClassFormatError("Invalid opcode: {0}", bc);
+				}
+			}
+
+			internal int PC
+			{
+				get
+				{
+					return pc;
+				}
+			}
+
+			internal ByteCode OpCode
+			{
+				get
+				{
+					return opcode;
+				}
+			}
+
+			internal NormalizedByteCode NormalizedOpCode
+			{
+				get
+				{
+					return ByteCodeMetaData.GetNormalizedByteCode(opcode);
+				}
+			}
+
+			internal int Arg1
+			{
+				get
+				{
+					return arg1;
+				}
+			}
+
+			internal int Arg2
+			{
+				get
+				{
+					return arg2;
+				}
+			}
+
+			internal int NormalizedArg1
+			{
+				get
+				{
+					return ByteCodeMetaData.GetArg(opcode, arg1);
+				}
+			}
+
+			internal int DefaultOffset
+			{
+				get
+				{
+					return default_offset;
+				}
+			}
+
+			internal int[] Values
+			{
+				get
+				{
+					return values;
+				}
+			}
+
+			internal int[] TargetOffsets
+			{
+				get
+				{
+					return target_offsets;
+				}
+			}
+
+			internal Method.Code MethodCode
+			{
+				get
+				{
+					return method;
+				}
+			}
+		}
+
+		internal struct LineNumberTableEntry
+		{
+			internal int start_pc;
+			internal int line_number;
+		}
+
+		internal struct LocalVariableTableEntry
+		{
+			internal int start_pc;
+			internal int length;
+			internal string name;
+			internal string descriptor;
+			internal int index;
+		}
+	}
+}
+@
+
+
+1.22
+log
+@*** empty log message ***
+@
+text
+@@
+
+
+1.21
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002 Jeroen Frijters
+d721 93
+d1066 1
+a1066 1
+				argTypeWrappers = classLoader.ArgTypeWrapperListFromSig(descriptor);
+d1075 1
+a1075 1
+				retTypeWrapper = classLoader.RetTypeWrapperFromSig(descriptor);
+d1084 1
+a1084 1
+				fieldTypeWrapper = classLoader.FieldTypeWrapperFromSig(descriptor);
+d1267 1
+a1267 1
+				argTypeWrappers = classLoader.ArgTypeWrapperListFromSig(Signature);
+d1276 1
+a1276 1
+				retTypeWrapper = classLoader.RetTypeWrapperFromSig(Signature);
+d1285 1
+a1285 1
+				fieldTypeWrapper = classLoader.FieldTypeWrapperFromSig(Signature);
+@
+
+
+1.20
+log
+@*** empty log message ***
+@
+text
+@d43 1
+d71 3
+a73 3
+			int minor = br.ReadUInt16();
+			int major = br.ReadUInt16();
+			if(major < 45 || major > 48)
+d75 5
+a79 1
+				throw new UnsupportedClassVersionError(major + "." + minor);
+d248 8
+d575 2
+a576 1
+		String
+d672 5
+a720 87
+	private static TypeWrapper SigDecoderWrapper(ClassLoaderWrapper classLoader, ref int index, string sig)
+	{
+		switch(sig[index++])
+		{
+			case 'B':
+				return PrimitiveTypeWrapper.BYTE;
+			case 'C':
+				return PrimitiveTypeWrapper.CHAR;
+			case 'D':
+				return PrimitiveTypeWrapper.DOUBLE;
+			case 'F':
+				return PrimitiveTypeWrapper.FLOAT;
+			case 'I':
+				return PrimitiveTypeWrapper.INT;
+			case 'J':
+				return PrimitiveTypeWrapper.LONG;
+			case 'L':
+			{
+				int pos = index;
+				index = sig.IndexOf(';', index) + 1;
+				return LoadClassHelper(classLoader, sig.Substring(pos, index - pos - 1));
+			}
+			case 'S':
+				return PrimitiveTypeWrapper.SHORT;
+			case 'Z':
+				return PrimitiveTypeWrapper.BOOLEAN;
+			case 'V':
+				return PrimitiveTypeWrapper.VOID;
+			case '[':
+			{
+				// TODO this can be optimized
+				string array = "[";
+				while(sig[index] == '[')
+				{
+					index++;
+					array += "[";
+				}
+				switch(sig[index])
+				{
+					case 'L':
+					{
+						int pos = index;
+						index = sig.IndexOf(';', index) + 1;
+						return LoadClassHelper(classLoader, array + sig.Substring(pos, index - pos));
+					}
+					case 'B':
+					case 'C':
+					case 'D':
+					case 'F':
+					case 'I':
+					case 'J':
+					case 'S':
+					case 'Z':
+						return LoadClassHelper(classLoader, array + sig[index++]);
+					default:
+						// TODO this should never happen, because ClassFile should validate the descriptors
+						throw new InvalidOperationException(sig.Substring(index));
+				}
+			}
+			default:
+				// TODO this should never happen, because ClassFile should validate the descriptors
+				throw new InvalidOperationException(sig.Substring(index));
+		}
+	}
+
+	private static TypeWrapper[] ArgTypeWrapperListFromSig(ClassLoaderWrapper classLoader, string sig)
+	{
+		if(sig[1] == ')')
+		{
+			return TypeWrapper.EmptyArray;
+		}
+		ArrayList list = new ArrayList();
+		for(int i = 1; sig[i] != ')';)
+		{
+			list.Add(SigDecoderWrapper(classLoader, ref i, sig));
+		}
+		TypeWrapper[] types = new TypeWrapper[list.Count];
+		list.CopyTo(types);
+		return types;
+	}
+
+	private static TypeWrapper RetTypeWrapperFromSig(ClassLoaderWrapper classLoader, string sig)
+	{
+		int index = sig.IndexOf(')') + 1;
+		return SigDecoderWrapper(classLoader, ref index, sig);
+	}
+
+d973 1
+a973 1
+				argTypeWrappers = ArgTypeWrapperListFromSig(classLoader, descriptor);
+d982 1
+a982 1
+				retTypeWrapper = RetTypeWrapperFromSig(classLoader, descriptor);
+d991 1
+a991 2
+				// HACK
+				fieldTypeWrapper = RetTypeWrapperFromSig(classLoader, "()" + descriptor);
+d1174 1
+a1174 1
+				argTypeWrappers = ArgTypeWrapperListFromSig(classLoader, Signature);
+d1183 1
+a1183 1
+				retTypeWrapper = RetTypeWrapperFromSig(classLoader, Signature);
+d1192 1
+a1192 2
+				// HACK
+				fieldTypeWrapper = RetTypeWrapperFromSig(classLoader, "()" + Signature);
+@
+
+
+1.19
+log
+@*** empty log message ***
+@
+text
+@d667 1
+a667 4
+				if(JVM.LogClassLoadFailures)
+				{
+					Console.Error.WriteLine("Class not found: {0}", name);
+				}
+d675 1
+a675 1
+			if(JVM.LogClassLoadFailures)
+d693 1
+a693 1
+					Console.Error.WriteLine("ClassLoader chain: {0}", sb);
+d695 2
+a696 1
+				ExceptionHelper.printStackTrace(ExceptionHelper.MapExceptionFast(x));
+@
+
+
+1.18
+log
+@*** empty log message ***
+@
+text
+@d45 16
+d68 1
+a68 1
+				throw JavaException.ClassFormatError("Bad magic number");
+d74 1
+a74 1
+				throw JavaException.UnsupportedClassVersionError(major + "." + minor);
+d97 1
+a97 1
+						throw JavaException.ClassFormatError("{0} (Invalid constant pool item #{1})", inputClassName, i);
+d101 1
+a101 1
+						throw JavaException.ClassFormatError("{0} (Invalid constant pool item #{1})", inputClassName, i);
+d111 1
+a111 1
+				throw JavaException.ClassFormatError("{0} (Illegal class modifiers 0x{1:X})", inputClassName, access_flags);
+d120 1
+a120 1
+				throw JavaException.ClassFormatError("{0} (Class name has bad constant pool index)", inputClassName);
+d133 1
+a133 1
+					throw JavaException.ClassFormatError("{0} (Bad superclass constant pool index)", inputClassName);
+d140 1
+a140 1
+					throw JavaException.ClassFormatError("{0} (Bad superclass index)", Name);
+d145 1
+a145 1
+				throw JavaException.ClassFormatError("{0} (Interfaces must have java.lang.Object as superclass)", Name);
+d155 1
+a155 1
+					throw JavaException.ClassFormatError("{0} (Illegal constant pool index)", Name);
+d160 1
+a160 1
+					throw JavaException.ClassFormatError("{0} (Interface name has bad constant type)", Name);
+d165 1
+a165 1
+					throw JavaException.ClassFormatError("{0} (Repetitive interface name)", Name);
+d180 1
+a180 1
+					throw JavaException.ClassFormatError("{0} (Illegal field name \"{1}\")", Name, name);
+d185 1
+a185 1
+					throw JavaException.ClassFormatError("{0} (Repetitive field name/signature)", Name);
+d199 1
+a199 1
+					throw JavaException.ClassFormatError("{0} (Illegal method name \"{1}\")", Name, name);
+d203 1
+a203 1
+					throw JavaException.ClassFormatError("{0} (Method \"{1}\" has illegal signature \"{2}\")", Name, name, sig);
+d208 1
+a208 1
+					throw JavaException.ClassFormatError("{0} (Repetitive method name/signature)", Name);
+d222 1
+a222 1
+					throw JavaException.ClassFormatError("Truncated class file");
+d226 1
+a226 1
+					throw JavaException.ClassFormatError("Extra bytes at the end of the class file");
+d232 1
+a232 1
+			throw JavaException.ClassFormatError("Truncated class file");
+d616 1
+a616 1
+					throw JavaException.ClassFormatError("{0} (Illegal constant pool type 0x{1:X})", inputClassName, tag);
+d1111 1
+a1111 1
+				throw JavaException.ClassFormatError("{0} (Illegal UTF8 string in constant pool)", inputClassName);
+d1178 1
+a1178 1
+			throw JavaException.ClassFormatError("{0} (Attribute name invalid type)", classFile.Name);
+d1396 1
+a1396 1
+				throw JavaException.ClassFormatError("{0} (Illegal field modifiers: 0x{1:X})", classFile.Name, access_flags);
+d1438 1
+a1438 1
+								throw JavaException.ClassFormatError("{0} (Invalid signature for constant)", classFile.Name);
+d1443 1
+a1443 1
+						throw JavaException.ClassFormatError("{0} (Bad index into constant pool)", classFile.Name);
+d1447 1
+a1447 1
+						throw JavaException.ClassFormatError("{0} (Bad index into constant pool)", classFile.Name);
+d1451 1
+a1451 1
+						throw JavaException.ClassFormatError("{0} (Bad index into constant pool)", classFile.Name);
+d1455 1
+a1455 1
+						throw JavaException.ClassFormatError("{0} (Bad index into constant pool)", classFile.Name);
+d1489 1
+a1489 1
+					throw JavaException.ClassFormatError("{0} (Illegal method modifiers: 0x{1:X})", classFile.Name, access_flags);
+d1919 1
+a1919 1
+						throw JavaException.ClassFormatError("Invalid opcode: {0}", bc);
+@
+
+
+1.17
+log
+@*** empty log message ***
+@
+text
+@d1470 1
+a1470 1
+					|| (IsAbstract && (IsFinal || IsNative || IsPrivate || IsStatic || IsStrict || IsSynchronized))
+d1480 1
+a1480 1
+		internal bool IsStrict
+@
+
+
+1.16
+log
+@*** empty log message ***
+@
+text
+@d648 10
+a657 1
+			return classLoader.LoadClassByDottedName(name);
+d680 1
+a680 1
+					Console.Error.WriteLine("ClassLoader chain: " + sb);
+@
+
+
+1.15
+log
+@*** empty log message ***
+@
+text
+@d350 1
+a350 1
+	internal object GetConstantPoolConstant(int index)
+d352 26
+a377 25
+		ConstantPoolItem cpi = constantpool[index];
+		if(cpi is ConstantPoolItemDouble)
+		{
+			return ((ConstantPoolItemDouble)cpi).Value;
+		}
+		else if(cpi is ConstantPoolItemFloat)
+		{
+			return ((ConstantPoolItemFloat)cpi).Value;
+		}
+		else if(cpi is ConstantPoolItemInteger)
+		{
+			return ((ConstantPoolItemInteger)cpi).Value;
+		}
+		else if(cpi is ConstantPoolItemLong)
+		{
+			return ((ConstantPoolItemLong)cpi).Value;
+		}
+		else if(cpi is ConstantPoolItemString)
+		{
+			return ((ConstantPoolItemString)cpi).Value;
+		}
+		else
+		{
+			return null;
+		}
+d540 9
+d567 5
+d775 5
+d891 5
+d914 5
+d937 5
+d1060 5
+d1373 3
+a1375 2
+			Attribute attr = GetAttribute("ConstantValue");
+			if(attr != null)
+d1377 2
+a1378 2
+				ushort index = attr.Data.ReadUInt16();
+				try
+d1380 41
+a1420 2
+					object o = classFile.GetConstantPoolConstant(index);
+					if(o == null)
+d1424 1
+a1424 1
+					switch(Signature)
+d1426 5
+a1430 29
+						case "I":
+							constantValue = (int)o;
+							break;
+						case "S":
+							constantValue = (short)(int)o;
+							break;
+						case "B":
+							constantValue = (sbyte)(int)o;
+							break;
+						case "C":
+							constantValue = (char)(int)o;
+							break;
+						case "Z":
+							constantValue = ((int)o) != 0;
+							break;
+						case "J":
+							constantValue = (long)o;
+							break;
+						case "F":
+							constantValue = (float)o;
+							break;
+						case "D":
+							constantValue = (double)o;
+							break;
+						case "Ljava.lang.String;":
+							constantValue = (string)o;
+							break;
+						default:
+							throw JavaException.ClassFormatError("{0} (Invalid signature for constant)", classFile.Name);
+a1431 8
+				}
+				catch(InvalidCastException)
+				{
+					throw JavaException.ClassFormatError("{0} (Bad index into constant pool)", classFile.Name);
+				}
+				catch(IndexOutOfRangeException)
+				{
+					throw JavaException.ClassFormatError("{0} (Bad index into constant pool)", classFile.Name);
+@
+
+
+1.14
+log
+@*** empty log message ***
+@
+text
+@d500 8
+d1311 8
+d1471 20
+@
+
+
+1.13
+log
+@*** empty log message ***
+@
+text
+@a631 1
+				System.Text.StringBuilder sb = new System.Text.StringBuilder();
+d633 1
+a633 2
+				Type type = cl.GetType();
+				while(type.FullName != "java.lang.ClassLoader")
+d635 14
+a648 1
+					type = type.BaseType;
+a649 8
+				string sep = "";
+				while(cl != null)
+				{
+					sb.Append(sep).Append(cl);
+					sep = " -> ";
+					cl = type.InvokeMember("getParent", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.InvokeMethod | System.Reflection.BindingFlags.Instance, null, cl, new object[0]);
+				}
+				Console.Error.WriteLine("ClassLoader chain: " + sb);
+@
+
+
+1.12
+log
+@*** empty log message ***
+@
+text
+@d487 1
+a487 1
+	internal string NetExpTypeAttribute
+d491 1
+a491 1
+			Attribute attr = GetAttribute("IK.VM.NET.Type");
+@
+
+
+1.11
+log
+@*** empty log message ***
+@
+text
+@d1412 9
+@
+
+
+1.10
+log
+@*** empty log message ***
+@
+text
+@d1385 1
+a1385 1
+			if(Name == "<clinit>")
+@
+
+
+1.9
+log
+@*** empty log message ***
+@
+text
+@d250 9
+d632 16
+a647 1
+				Console.Error.WriteLine(x);
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@d27 1
+a27 20
+
+[Flags]
+public enum Modifiers : ushort
+{
+	Public			= 0x0001,
+	Private			= 0x0002,
+	Protected		= 0x0004,
+	Static			= 0x0008,
+	Final			= 0x0010,
+	Super			= 0x0020,
+	Synchronized	= 0x0020,
+	Volatile		= 0x0040,
+	Transient		= 0x0080,
+	Native			= 0x0100,
+	Interface		= 0x0200,
+	Abstract		= 0x0400,
+	Strictfp		= 0x0800,
+	Synthetic		= 0x8000		// we use this to record the fact that we created the method/field/property
+									// so the member should not be visible through reflection
+}
+d122 1
+a122 1
+				if(this.Name != "java/lang/Object")
+d127 1
+a127 1
+			if(IsInterface && (super_class == 0 || super_cpi.Name != "java/lang/Object"))
+d227 2
+d331 6
+a336 1
+	private string GetConstantPoolUtf8(int index)
+d338 1
+a338 1
+		return ((ConstantPoolItemUtf8)constantpool[index]).Value;
+d383 1
+a383 1
+			int index = name.LastIndexOf('/');
+d518 1
+a518 1
+			return new InnerClass[0];
+d586 1
+a586 1
+			name = ((ConstantPoolItemUtf8)classFile.GetConstantPoolItem(name_index)).Value;;
+d616 1
+a616 1
+			return classLoader.LoadClassBySlashedName(name);
+d698 1
+a698 1
+			return new TypeWrapper[0];
+d912 1
+a912 1
+			descriptor = descriptorUtf8.Value;
+d1022 8
+d1061 1
+a1061 1
+				string name = classFile.GetConstantPoolUtf8(name_index);
+d1129 1
+a1129 1
+				return classFile.GetConstantPoolUtf8(name_index);
+d1137 1
+a1137 1
+				return classFile.GetConstantPoolUtf8(descriptor_index);
+d1327 1
+a1327 1
+						case "Ljava/lang/String;":
+d1395 1
+a1395 1
+					string s = ClassFile.GetConstantPoolUtf8(attr.Data.ReadUInt16());
+d1631 2
+a1632 2
+								localVariableTable[i].name = method.ClassFile.GetConstantPoolUtf8(rdr.ReadUInt16());
+								localVariableTable[i].descriptor = method.ClassFile.GetConstantPoolUtf8(rdr.ReadUInt16());
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d630 1
+a630 1
+		catch(Exception)
+a631 1
+			// TODO consider what to do with this error, may be a command line switch?
+d633 4
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d61 1
+d244 12
+@
+
+
+1.5
+log
+@no message
+@
+text
+@d492 3
+a494 3
+		internal string innerClass;
+		internal string outerClass;
+		internal string name;
+d510 3
+a512 15
+					ushort u = rdr.ReadUInt16();
+					if(u != 0)
+					{
+						list[i].innerClass = GetConstantPoolClass(u);
+					}
+					u = rdr.ReadUInt16();
+					if(u != 0)
+					{
+						list[i].outerClass = GetConstantPoolClass(u);
+					}
+					u = rdr.ReadUInt16();
+					if(u != 0)
+					{
+						list[i].name = GetConstantPoolUtf8(u);
+					}
+d517 1
+a517 1
+			return null;
+@
+
+
+1.4
+log
+@no message
+@
+text
+@d29 1
+a29 1
+public enum Modifiers : short
+d44 1
+a44 1
+	Synthetic		= -1			// we use this to record the fact that we created the method/field/property
+d485 43
+@
+
+
+1.3
+log
+@no message
+@
+text
+@d52 4
+a55 3
+	private string name;
+	private string supername;
+	private string[] interfaces;
+d118 1
+a118 1
+				name = ((ConstantPoolItemClass)constantpool[this_class]).Name;
+d131 1
+a131 1
+					supername = ((ConstantPoolItemClass)constantpool[super_class]).Name;
+d145 1
+a145 1
+			if(IsInterface && (super_class == 0 || supername != "java/lang/Object"))
+d150 1
+a150 1
+			interfaces = new string[interfaces_count];
+d164 1
+a164 1
+				interfaces[i] = ((ConstantPoolItemClass)GetConstantPoolItem(index)).Name;
+d325 5
+d373 1
+a373 1
+			return name;
+d381 1
+d391 5
+d400 1
+a400 1
+			return supername;
+d420 15
+d439 6
+a444 1
+			return interfaces;
+d574 1
+a574 1
+				typeWrapper = classLoader.LoadClassBySlashedName(name);
+d580 101
+d764 5
+d913 1
+a913 1
+				argTypeWrappers = classLoader.ArgTypeWrapperListFromSig(descriptor);
+d922 1
+a922 1
+				retTypeWrapper = classLoader.RetTypeWrapperFromSig(descriptor);
+d931 2
+a932 1
+				fieldTypeWrapper = classLoader.RetTypeWrapperFromSig("()" + descriptor);
+d1062 3
+d1096 28
+@
+
+
+1.2
+log
+@no message
+@
+text
+@d244 11
+d472 4
+d513 1
+d525 5
+d537 9
+d616 15
+d722 3
+d742 13
+d769 27
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d548 2
+a549 3
+		private string name;
+		private string signature;
+		private string clazz;
+d559 2
+a560 7
+			ConstantPoolItemNameAndType nat = (ConstantPoolItemNameAndType)classFile.GetConstantPoolItem(name_and_type_index);
+			nat.Resolve(classFile);
+			name = nat.Name;
+			signature = nat.Type;
+			ConstantPoolItemClass cls = (ConstantPoolItemClass)classFile.GetConstantPoolItem(class_index);
+			cls.Resolve(classFile);
+			clazz = cls.Name;
+d567 1
+a567 1
+				return name;
+d575 1
+a575 1
+				return signature;
+d583 1
+a583 1
+				return clazz;
+d1175 1
+a1175 1
+				for(int i = 0; i < this.instructions.Length; i++)
+@
+
+
+1.1.1.1
+log
+@no message
+@
+text
+@@

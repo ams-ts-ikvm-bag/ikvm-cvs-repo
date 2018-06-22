@@ -1,0 +1,145 @@
+head	1.3;
+access;
+symbols
+	v8_1_5717_0:1.3
+	v8_1:1.3.0.8
+	v8_0_5449_1:1.3
+	v8_0_5449_0:1.3
+	v8_0:1.3.0.6
+	v7_4_5196_0:1.3
+	v7_4:1.3.0.4
+	v7_3:1.3.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.3
+date	2012.12.13.17.53.35;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2012.12.13.10.11.17;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2012.10.25.18.32.06;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.3
+log
+@Generate stubs for referenced assemblies and pass them to javac -classpath option.
+@
+text
+@﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{D7FF23BC-49C2-490D-B702-8EEE8F5AF296}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputType>Library</OutputType>
+    <RootNamespace>IKVM.MSBuild</RootNamespace>
+    <AssemblyName>IKVM.MSBuild</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IKVM.OpenJDK.Core">
+      <HintPath>..\bin\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Tools">
+      <HintPath>..\bin\IKVM.OpenJDK.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.Build.Tasks" />
+    <Reference Include="Microsoft.Build.Utilities" />
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="JavaTask.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IKVM.MSBuild.Java.Targets">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\reflect\IKVM.Reflection.csproj">
+      <Project>{4CB170EF-DFE6-4A56-9E1B-A85449E827A7}</Project>
+      <Name>IKVM.Reflection</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+</Project>@
+
+
+1.2
+log
+@Ported MSBuild task to .NET 2.0 and included the project in the VS solution.
+@
+text
+@d45 6
+@
+
+
+1.1
+log
+@Java MsBuild task based on IKVM
+@
+text
+@d2 1
+a2 1
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+d6 3
+a8 1
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+d12 2
+a13 2
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+d15 1
+a15 4
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+d22 1
+a22 8
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+d33 1
+a33 1
+    <Reference Include="Microsoft.Build.Utilities.v4.0" />
+a34 2
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+d42 1
+a42 1
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+@
+

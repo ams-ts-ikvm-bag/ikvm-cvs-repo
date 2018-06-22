@@ -1,0 +1,283 @@
+head	1.8;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.8
+date	2011.06.16.16.20.42;	author smallsql;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2010.12.03.11.55.38;	author smallsql;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2010.09.07.09.21.02;	author smallsql;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2009.12.29.14.38.57;	author smallsql;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2009.12.11.13.26.07;	author smallsql;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2009.11.22.10.30.42;	author smallsql;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2009.11.08.12.54.13;	author smallsql;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2009.10.28.09.48.47;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.8
+log
+@use only character for the test that has the same metrics on .NET and Java
+@
+text
+@/*
+  Copyright (C) 2009 - 2011 Volker Berlin (i-net software)
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+package java_.awt;
+
+import java.awt.*;
+import java.awt.font.FontRenderContext;
+import java.awt.geom.Rectangle2D;
+import java.io.File;
+import java.io.FileInputStream;
+
+import junit.ikvm.ReferenceData;
+
+import static org.junit.Assert.*;
+import org.junit.*;
+
+
+
+public class FontTest{
+    
+    private static ReferenceData reference;
+
+
+    @@BeforeClass
+    public static void setUpBeforeClass() throws Exception{
+        reference = new ReferenceData();
+    }
+
+
+    @@AfterClass
+    public static void tearDownAfterClass() throws Exception{
+        if(reference != null){
+            reference.save();
+        }
+    }
+
+    
+    @@Test
+    public void getStringBounds_Fixed(){
+        Font font = new Font("Arial", 0, 12);
+        //not all characters has the same metrics on Java and .NET, cause is the mystic algorithms for the fixed string width in java.
+        //follow character are different for the used font: m,s,x,y
+        Rectangle2D bounds = font.getStringBounds("unknown", new FontRenderContext(null, false, false) );
+        reference.assertEquals("getStringBounds", (Rectangle2D.Float)bounds);
+    }
+
+
+    @@Test
+    public void getStringBounds_Fractional(){
+        Font font = new Font("Arial", 0, 12);
+        Rectangle2D bounds = font.getStringBounds("any text", new FontRenderContext(null, false, true) );
+        reference.assertEquals("getStringBounds_Fixed", (Rectangle2D.Float)bounds);
+    }
+
+
+    @@Test
+    public void createFontFromFile() throws Exception{
+    	String windir = System.getenv("windir");
+    	File file = new File(windir + "/fonts/Arial.ttf");
+    	Font font = Font.createFont(Font.TRUETYPE_FONT, file);
+    	testCreatedFont( font );
+    }
+
+
+    @@Test
+    public void createFontFromStream() throws Exception{
+    	String windir = System.getenv("windir");
+    	File file = new File(windir + "/fonts/Arial.ttf");
+    	Font font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(file));
+    	testCreatedFont( font );
+    }
+    
+    private void testCreatedFont(Font font) throws Exception{
+        assertEquals( 1, font.getSize());
+        reference.assertEquals("testCreatedFont.bounds", (Rectangle2D.Float)font.getStringBounds("any text", new FontRenderContext(null, false, true) ) );
+    }
+    
+    @@Test
+    public void getFamilyAndNameLogical(){
+    	getFamilyAndName(Font.DIALOG);
+    	getFamilyAndName(Font.DIALOG_INPUT);
+    	getFamilyAndName(Font.MONOSPACED);
+    	getFamilyAndName(Font.SERIF);
+    	getFamilyAndName(Font.SANS_SERIF);
+    }
+    
+    @@Test
+    public void getFamilyAndNameReal(){
+    	Font font = new Font("Arial Bold", 0, 1);
+    	assertEquals("Arial Bold", font.getName());
+    	assertEquals("Arial", font.getFamily());
+    	
+    	font = new Font("Arial Black Standard", 0, 1);
+    	assertEquals("Arial Black Standard", font.getName());
+    	assertEquals("Arial Black", font.getFamily());
+    	
+    }
+    
+    private void getFamilyAndName(String name){
+    	Font font = new Font(name, 0, 1);
+    	assertEquals(name, font.getName());
+    	assertEquals(name, font.getFamily());
+    }
+}
+@
+
+
+1.7
+log
+@createFont Tests improved
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009, 2010 Volker Berlin (i-net software)
+d61 3
+a63 1
+        Rectangle2D bounds = font.getStringBounds("any text", new FontRenderContext(null, false, false) );
+@
+
+
+1.6
+log
+@Add FontMetricsTest and improve FontTest
+@
+text
+@a27 1
+import java.awt.font.TextAttribute;
+a30 4
+import java.io.IOException;
+import java.text.AttributedCharacterIterator.Attribute;
+import java.util.HashMap;
+import java.util.Map;
+d79 1
+a79 1
+    	assertEquals( 1, font.getSize());
+d88 6
+a93 1
+    	assertEquals( 1, font.getSize());
+@
+
+
+1.5
+log
+@Test Font.getName and Font.getFamily for logical and styled fonts
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Volker Berlin (i-net software)
+d64 1
+a64 1
+    public void getStringBounds(){
+d72 8
+@
+
+
+1.4
+log
+@Test for Font.createFont added
+@
+text
+@d28 1
+d33 3
+d87 27
+@
+
+
+1.3
+log
+@Add tests for default values of java.awt.Frame. Make the use of ReferenceData simpler.
+@
+text
+@d29 3
+d35 2
+a36 3
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+d66 17
+@
+
+
+1.2
+log
+@author removed
+@
+text
+@d45 1
+a45 1
+        reference = new ReferenceData(FontTest.class);
+@
+
+
+1.1
+log
+@Test for Font.getStringBounds
+@
+text
+@a37 4
+
+/**
+ * @@author Volker Berlin
+ */
+@
+

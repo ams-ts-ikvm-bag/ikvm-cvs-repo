@@ -1,0 +1,2036 @@
+head	1.16;
+access;
+symbols
+	v8_1_5717_0:1.16
+	v8_1:1.16.0.2
+	v8_0_5449_1:1.15
+	v8_0_5449_0:1.15
+	v8_0:1.15.0.2
+	v7_4_5196_0:1.14
+	v7_4:1.14.0.2
+	v7_3:1.13.0.8
+	v7_2_4630_6:1.13
+	v7_2_4630_5:1.13
+	v7_2_4630_4:1.13
+	v7_2_4630_3:1.13
+	v7_2_4630_2:1.13
+	v0_46_0_4:1.8.2.1
+	v7_2_4630_1:1.13
+	v7_2:1.13.0.6
+	v7_1_4532_2:1.13
+	v7_1_4532_1:1.13
+	v7_1_4532_0:1.13
+	v7_1:1.13.0.4
+	v7_0_4335_3:1.13
+	v7_0_4335_2:1.13
+	v7_0_4335_1:1.13
+	v0_46_0_2:1.8
+	v7_0_4335_0:1.13
+	v7_0:1.13.0.2
+	v0_40_0_6:1.6
+	v0_40_0_5:1.6
+	v0_46_0_1:1.8
+	v0_46_0_0:1.8
+	v0_46:1.8.0.2
+	v0_36_0_14:1.4.2.1
+	v0_44_0_6:1.6
+	v0_44_0_5:1.6
+	v0_44_0_4:1.6
+	v0_44_0_3:1.6
+	v0_44_0_2:1.6
+	v0_42_0_7:1.6
+	v0_44_0_1:1.6
+	v0_44_0_0:1.6
+	v0_44:1.6.0.8
+	v0_42_0_6:1.6
+	v0_42_0_5:1.6
+	v0_42_0_4:1.6
+	v0_42_0_3:1.6
+	v0_42_0_2:1.6
+	v0_42_0_1:1.6
+	v0_42_0_0:1.6
+	v0_42:1.6.0.6
+	v0_40_0_3:1.6
+	v0_40_0_2:1.6
+	v0_40_0_1:1.6
+	v0_40_0_0:1.6
+	v0_40:1.6.0.4
+	v0_36_0_13:1.4.2.1
+	v0_38_0_1:1.6
+	v0_38_0_0:1.6
+	v0_38:1.6.0.2
+	v0_36_0_9:1.4.2.1
+	v0_36_0_7:1.4.2.1
+	v0_36_0_5:1.4.2.1
+	v0_36_0_4:1.4.2.1
+	v0_36_0_3:1.4.2.1
+	v0_36_0_2:1.4.2.1
+	v0_36_0_1:1.4
+	v0_36_0_0:1.4
+	v0_36:1.4.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.16
+date	2015.06.09.09.28.44;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2014.05.19.12.43.41;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2013.08.15.16.25.09;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2011.07.15.09.05.27;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2011.07.12.05.56.22;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2011.07.10.09.15.37;	author smallsql;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2011.07.09.16.52.12;	author smallsql;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2011.07.09.09.41.39;	author smallsql;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2011.01.24.16.40.23;	author jfrijters;	state Exp;
+branches
+	1.8.2.1;
+next	1.7;
+
+1.7
+date	2010.08.27.06.21.56;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2008.06.11.09.05.59;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2007.09.17.05.06.34;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2007.08.23.09.29.12;	author jfrijters;	state Exp;
+branches
+	1.4.2.1;
+next	1.3;
+
+1.3
+date	2007.07.20.15.10.38;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.07.20.09.17.26;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.07.18.05.46.38;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.4.2.1
+date	2007.09.20.13.54.23;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.8.2.1
+date	2012.10.03.06.18.56;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.16
+log
+@Integrated OpenJDK 8u45.
+@
+text
+@/*
+ * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 only, as
+ * published by the Free Software Foundation.  Oracle designates this
+ * particular file as subject to the "Classpath" exception as provided
+ * by Oracle in the LICENSE file that accompanied this code.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * You should have received a copy of the GNU General Public License version
+ * 2 along with this work; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+ * or visit www.oracle.com if you need additional information or have any
+ * questions.
+ */
+
+package sun.nio.ch;
+
+import java.io.*;
+import java.net.*;
+import jdk.net.*;
+import java.nio.channels.*;
+import java.util.*;
+import java.security.AccessController;
+import java.security.PrivilegedAction;
+import java.security.PrivilegedExceptionAction;
+import sun.net.ExtendedOptionsImpl;
+
+
+public class Net {
+
+    private Net() { }
+
+    // unspecified protocol family
+    static final ProtocolFamily UNSPEC = new ProtocolFamily() {
+        public String name() {
+            return "UNSPEC";
+        }
+    };
+
+    // set to true if exclusive binding is on for Windows
+    private static final boolean exclusiveBind;
+
+    static {
+        int availLevel = isExclusiveBindAvailable();
+        if (availLevel >= 0) {
+            String exclBindProp =
+                java.security.AccessController.doPrivileged(
+                    new PrivilegedAction<String>() {
+                        @@Override
+                        public String run() {
+                            return System.getProperty(
+                                    "sun.net.useExclusiveBind");
+                        }
+                    });
+            if (exclBindProp != null) {
+                exclusiveBind = exclBindProp.length() == 0 ?
+                        true : Boolean.parseBoolean(exclBindProp);
+            } else if (availLevel == 1) {
+                exclusiveBind = true;
+            } else {
+                exclusiveBind = false;
+            }
+        } else {
+            exclusiveBind = false;
+        }
+    }
+
+    // -- Miscellaneous utilities --
+
+    private static volatile boolean checkedIPv6 = false;
+    private static volatile boolean isIPv6Available;
+
+    /**
+     * Tells whether dual-IPv4/IPv6 sockets should be used.
+     */
+    static boolean isIPv6Available() {
+        if (!checkedIPv6) {
+            isIPv6Available = isIPv6Available0();
+            checkedIPv6 = true;
+        }
+        return isIPv6Available;
+    }
+
+    /**
+     * Returns true if exclusive binding is on
+     */
+    static boolean useExclusiveBind() {
+        return exclusiveBind;
+    }
+
+    /**
+     * Tells whether IPv6 sockets can join IPv4 multicast groups
+     */
+    static boolean canIPv6SocketJoinIPv4Group() {
+        return canIPv6SocketJoinIPv4Group0();
+    }
+
+    /**
+     * Tells whether {@@link #join6} can be used to join an IPv4
+     * multicast group (IPv4 group as IPv4-mapped IPv6 address)
+     */
+    static boolean canJoin6WithIPv4Group() {
+        return canJoin6WithIPv4Group0();
+    }
+
+    public static InetSocketAddress checkAddress(SocketAddress sa) {
+        if (sa == null)
+            throw new NullPointerException();
+        if (!(sa instanceof InetSocketAddress))
+            throw new UnsupportedAddressTypeException(); // ## needs arg
+        InetSocketAddress isa = (InetSocketAddress)sa;
+        if (isa.isUnresolved())
+            throw new UnresolvedAddressException(); // ## needs arg
+        InetAddress addr = isa.getAddress();
+        if (!(addr instanceof Inet4Address || addr instanceof Inet6Address))
+            throw new IllegalArgumentException("Invalid address type");
+        return isa;
+    }
+
+    static InetSocketAddress asInetSocketAddress(SocketAddress sa) {
+        if (!(sa instanceof InetSocketAddress))
+            throw new UnsupportedAddressTypeException();
+        return (InetSocketAddress)sa;
+    }
+
+    static void translateToSocketException(Exception x)
+        throws SocketException
+    {
+        if (x instanceof SocketException)
+            throw (SocketException)x;
+        Exception nx = x;
+        if (x instanceof ClosedChannelException)
+            nx = new SocketException("Socket is closed");
+        else if (x instanceof NotYetConnectedException)
+            nx = new SocketException("Socket is not connected");
+        else if (x instanceof AlreadyBoundException)
+            nx = new SocketException("Already bound");
+        else if (x instanceof NotYetBoundException)
+            nx = new SocketException("Socket is not bound yet");
+        else if (x instanceof UnsupportedAddressTypeException)
+            nx = new SocketException("Unsupported address type");
+        else if (x instanceof UnresolvedAddressException) {
+            nx = new SocketException("Unresolved address");
+        }
+        if (nx != x)
+            nx.initCause(x);
+
+        if (nx instanceof SocketException)
+            throw (SocketException)nx;
+        else if (nx instanceof RuntimeException)
+            throw (RuntimeException)nx;
+        else
+            throw new Error("Untranslated exception", nx);
+    }
+
+    static void translateException(Exception x,
+                                   boolean unknownHostForUnresolved)
+        throws IOException
+    {
+        if (x instanceof IOException)
+            throw (IOException)x;
+        // Throw UnknownHostException from here since it cannot
+        // be thrown as a SocketException
+        if (unknownHostForUnresolved &&
+            (x instanceof UnresolvedAddressException))
+        {
+             throw new UnknownHostException();
+        }
+        translateToSocketException(x);
+    }
+
+    static void translateException(Exception x)
+        throws IOException
+    {
+        translateException(x, false);
+    }
+
+    /**
+     * Returns the local address after performing a SecurityManager#checkConnect.
+     */
+    static InetSocketAddress getRevealedLocalAddress(InetSocketAddress addr) {
+        SecurityManager sm = System.getSecurityManager();
+        if (addr == null || sm == null)
+            return addr;
+
+        try{
+            sm.checkConnect(addr.getAddress().getHostAddress(), -1);
+            // Security check passed
+        } catch (SecurityException e) {
+            // Return loopback address only if security check fails
+            addr = getLoopbackAddress(addr.getPort());
+        }
+        return addr;
+    }
+
+    static String getRevealedLocalAddressAsString(InetSocketAddress addr) {
+        return System.getSecurityManager() == null ? addr.toString() :
+                getLoopbackAddress(addr.getPort()).toString();
+    }
+
+    private static InetSocketAddress getLoopbackAddress(int port) {
+        return new InetSocketAddress(InetAddress.getLoopbackAddress(),
+                                     port);
+    }
+
+    /**
+     * Returns any IPv4 address of the given network interface, or
+     * null if the interface does not have any IPv4 addresses.
+     */
+    static Inet4Address anyInet4Address(final NetworkInterface interf) {
+        return AccessController.doPrivileged(new PrivilegedAction<Inet4Address>() {
+            public Inet4Address run() {
+                Enumeration<InetAddress> addrs = interf.getInetAddresses();
+                while (addrs.hasMoreElements()) {
+                    InetAddress addr = addrs.nextElement();
+                    if (addr instanceof Inet4Address) {
+                        return (Inet4Address)addr;
+                    }
+                }
+                return null;
+            }
+        });
+    }
+
+    /**
+     * Returns an IPv4 address as an int.
+     */
+    static int inet4AsInt(InetAddress ia) {
+        if (ia instanceof Inet4Address) {
+            byte[] addr = ia.getAddress();
+            int address  = addr[3] & 0xFF;
+            address |= ((addr[2] << 8) & 0xFF00);
+            address |= ((addr[1] << 16) & 0xFF0000);
+            address |= ((addr[0] << 24) & 0xFF000000);
+            return address;
+        }
+        throw new AssertionError("Should not reach here");
+    }
+
+    /**
+     * Returns an InetAddress from the given IPv4 address
+     * represented as an int.
+     */
+    static InetAddress inet4FromInt(int address) {
+        byte[] addr = new byte[4];
+        addr[0] = (byte) ((address >>> 24) & 0xFF);
+        addr[1] = (byte) ((address >>> 16) & 0xFF);
+        addr[2] = (byte) ((address >>> 8) & 0xFF);
+        addr[3] = (byte) (address & 0xFF);
+        try {
+            return InetAddress.getByAddress(addr);
+        } catch (UnknownHostException uhe) {
+            throw new AssertionError("Should not reach here");
+        }
+    }
+
+    /**
+     * Returns an IPv6 address as a byte array
+     */
+    static byte[] inet6AsByteArray(InetAddress ia) {
+        if (ia instanceof Inet6Address) {
+            return ia.getAddress();
+        }
+
+        // need to construct IPv4-mapped address
+        if (ia instanceof Inet4Address) {
+            byte[] ip4address = ia.getAddress();
+            byte[] address = new byte[16];
+            address[10] = (byte)0xff;
+            address[11] = (byte)0xff;
+            address[12] = ip4address[0];
+            address[13] = ip4address[1];
+            address[14] = ip4address[2];
+            address[15] = ip4address[3];
+            return address;
+        }
+
+        throw new AssertionError("Should not reach here");
+    }
+
+    // -- Socket options
+
+    static void setSocketOption(FileDescriptor fd, ProtocolFamily family,
+                                SocketOption<?> name, Object value)
+        throws IOException
+    {
+        if (value == null)
+            throw new IllegalArgumentException("Invalid option value");
+
+        // only simple values supported by this method
+        Class<?> type = name.type();
+
+        if (type == SocketFlow.class) {
+            SecurityManager sm = System.getSecurityManager();
+            if (sm != null) {
+                sm.checkPermission(new NetworkPermission("setOption.SO_FLOW_SLA"));
+            }
+            ExtendedOptionsImpl.setFlowOption(fd, (SocketFlow)value);
+            return;
+        }
+
+        if (type != Integer.class && type != Boolean.class)
+            throw new AssertionError("Should not reach here");
+
+        // special handling
+        if (name == StandardSocketOptions.SO_RCVBUF ||
+            name == StandardSocketOptions.SO_SNDBUF)
+        {
+            int i = ((Integer)value).intValue();
+            if (i < 0)
+                throw new IllegalArgumentException("Invalid send/receive buffer size");
+        }
+        if (name == StandardSocketOptions.SO_LINGER) {
+            int i = ((Integer)value).intValue();
+            if (i < 0)
+                value = Integer.valueOf(-1);
+            if (i > 65535)
+                value = Integer.valueOf(65535);
+        }
+        if (name == StandardSocketOptions.IP_TOS) {
+            int i = ((Integer)value).intValue();
+            if (i < 0 || i > 255)
+                throw new IllegalArgumentException("Invalid IP_TOS value");
+        }
+        if (name == StandardSocketOptions.IP_MULTICAST_TTL) {
+            int i = ((Integer)value).intValue();
+            if (i < 0 || i > 255)
+                throw new IllegalArgumentException("Invalid TTL/hop value");
+        }
+
+        // map option name to platform level/name
+        OptionKey key = SocketOptionRegistry.findOption(name, family);
+        if (key == null)
+            throw new AssertionError("Option not found");
+
+        int arg;
+        if (type == Integer.class) {
+            arg = ((Integer)value).intValue();
+        } else {
+            boolean b = ((Boolean)value).booleanValue();
+            arg = (b) ? 1 : 0;
+        }
+
+        boolean mayNeedConversion = (family == UNSPEC);
+        boolean isIPv6 = (family == StandardProtocolFamily.INET6);
+        setIntOption0(fd, mayNeedConversion, key.level(), key.name(), arg, isIPv6);
+    }
+
+    static Object getSocketOption(FileDescriptor fd, ProtocolFamily family,
+                                  SocketOption<?> name)
+        throws IOException
+    {
+        Class<?> type = name.type();
+
+        if (type == SocketFlow.class) {
+            SecurityManager sm = System.getSecurityManager();
+            if (sm != null) {
+                sm.checkPermission(new NetworkPermission("getOption.SO_FLOW_SLA"));
+            }
+            SocketFlow flow = SocketFlow.create();
+            ExtendedOptionsImpl.getFlowOption(fd, flow);
+            return flow;
+        }
+
+        // only simple values supported by this method
+        if (type != Integer.class && type != Boolean.class)
+            throw new AssertionError("Should not reach here");
+
+        // map option name to platform level/name
+        OptionKey key = SocketOptionRegistry.findOption(name, family);
+        if (key == null)
+            throw new AssertionError("Option not found");
+
+        boolean mayNeedConversion = (family == UNSPEC);
+        int value = getIntOption0(fd, mayNeedConversion, key.level(), key.name());
+
+        if (type == Integer.class) {
+            return Integer.valueOf(value);
+        } else {
+            return (value == 0) ? Boolean.FALSE : Boolean.TRUE;
+        }
+    }
+
+    // -- Socket operations --
+
+    private static native boolean isIPv6Available0();
+
+    /*
+     * Returns 1 for Windows versions that support exclusive binding by default, 0
+     * for those that do not, and -1 for Solaris/Linux/Mac OS
+     */
+    private static native int isExclusiveBindAvailable();
+
+    private static native boolean canIPv6SocketJoinIPv4Group0();
+
+    private static native boolean canJoin6WithIPv4Group0();
+
+    static FileDescriptor socket(boolean stream) throws IOException {
+        return socket(UNSPEC, stream);
+    }
+
+    static FileDescriptor socket(ProtocolFamily family, boolean stream)
+        throws IOException {
+        boolean preferIPv6 = isIPv6Available() &&
+            (family != StandardProtocolFamily.INET);
+        return socket0(preferIPv6, stream, false);
+    }
+
+    static FileDescriptor serverSocket(boolean stream) {
+        return socket0(isIPv6Available(), stream, true);
+    }
+
+    // Due to oddities SO_REUSEADDR on windows reuse is ignored
+    private static native FileDescriptor socket0(boolean preferIPv6, boolean stream, boolean reuse);
+
+    public static void bind(FileDescriptor fd, InetAddress addr, int port)
+        throws IOException
+    {
+        bind(UNSPEC, fd, addr, port);
+    }
+
+    static void bind(ProtocolFamily family, FileDescriptor fd,
+                     InetAddress addr, int port) throws IOException
+    {
+        boolean preferIPv6 = isIPv6Available() &&
+            (family != StandardProtocolFamily.INET);
+        bind0(fd, preferIPv6, exclusiveBind, addr, port);
+    }
+
+    private static native void bind0(FileDescriptor fd, boolean preferIPv6,
+                                     boolean useExclBind, InetAddress addr,
+                                     int port)
+        throws IOException;
+
+    static native void listen(FileDescriptor fd, int backlog) throws IOException;
+
+    static int connect(FileDescriptor fd, InetAddress remote, int remotePort)
+        throws IOException
+    {
+        return connect(UNSPEC, fd, remote, remotePort);
+    }
+
+    static int connect(ProtocolFamily family, FileDescriptor fd, InetAddress remote, int remotePort)
+        throws IOException
+    {
+        boolean preferIPv6 = isIPv6Available() &&
+            (family != StandardProtocolFamily.INET);
+        return connect0(preferIPv6, fd, remote, remotePort);
+    }
+
+    private static native int connect0(boolean preferIPv6,
+                                       FileDescriptor fd,
+                                       InetAddress remote,
+                                       int remotePort)
+        throws IOException;
+
+
+    public final static int SHUT_RD = 0;
+    public final static int SHUT_WR = 1;
+    public final static int SHUT_RDWR = 2;
+
+    static native void shutdown(FileDescriptor fd, int how) throws IOException;
+
+    private static native int localPort(FileDescriptor fd)
+        throws IOException;
+
+    private static native InetAddress localInetAddress(FileDescriptor fd)
+        throws IOException;
+
+    public static InetSocketAddress localAddress(FileDescriptor fd)
+        throws IOException
+    {
+        return new InetSocketAddress(localInetAddress(fd), localPort(fd));
+    }
+
+    private static native int remotePort(FileDescriptor fd)
+        throws IOException;
+
+    private static native InetAddress remoteInetAddress(FileDescriptor fd)
+        throws IOException;
+
+    static InetSocketAddress remoteAddress(FileDescriptor fd)
+        throws IOException
+    {
+        return new InetSocketAddress(remoteInetAddress(fd), remotePort(fd));
+    }
+
+    private static native int getIntOption0(FileDescriptor fd, boolean mayNeedConversion,
+                                            int level, int opt)
+        throws IOException;
+
+    private static native void setIntOption0(FileDescriptor fd, boolean mayNeedConversion,
+                                             int level, int opt, int arg, boolean isIPv6)
+        throws IOException;
+
+    static native int poll(FileDescriptor fd, int events, long timeout)
+        throws IOException;
+
+    // -- Multicast support --
+
+
+    /**
+     * Join IPv4 multicast group
+     */
+    static int join4(FileDescriptor fd, int group, int interf, int source)
+        throws IOException
+    {
+        return joinOrDrop4(true, fd, group, interf, source);
+    }
+
+    /**
+     * Drop membership of IPv4 multicast group
+     */
+    static void drop4(FileDescriptor fd, int group, int interf, int source)
+        throws IOException
+    {
+        joinOrDrop4(false, fd, group, interf, source);
+    }
+
+    private static native int joinOrDrop4(boolean join, FileDescriptor fd, int group, int interf, int source)
+        throws IOException;
+
+    /**
+     * Block IPv4 source
+     */
+    static int block4(FileDescriptor fd, int group, int interf, int source)
+        throws IOException
+    {
+        return blockOrUnblock4(true, fd, group, interf, source);
+    }
+
+    /**
+     * Unblock IPv6 source
+     */
+    static void unblock4(FileDescriptor fd, int group, int interf, int source)
+        throws IOException
+    {
+        blockOrUnblock4(false, fd, group, interf, source);
+    }
+
+    private static native int blockOrUnblock4(boolean block, FileDescriptor fd, int group,
+                                              int interf, int source)
+        throws IOException;
+
+    /**
+     * Join IPv6 multicast group
+     */
+    static int join6(FileDescriptor fd, byte[] group, int index, byte[] source)
+        throws IOException
+    {
+        return joinOrDrop6(true, fd, group, index, source);
+    }
+
+    /**
+     * Drop membership of IPv6 multicast group
+     */
+    static void drop6(FileDescriptor fd, byte[] group, int index, byte[] source)
+        throws IOException
+    {
+        joinOrDrop6(false, fd, group, index, source);
+    }
+
+    private static native int joinOrDrop6(boolean join, FileDescriptor fd, byte[] group, int index, byte[] source)
+        throws IOException;
+
+    /**
+     * Block IPv6 source
+     */
+    static int block6(FileDescriptor fd, byte[] group, int index, byte[] source)
+        throws IOException
+    {
+        return blockOrUnblock6(true, fd, group, index, source);
+    }
+
+    /**
+     * Unblock IPv6 source
+     */
+    static void unblock6(FileDescriptor fd, byte[] group, int index, byte[] source)
+        throws IOException
+    {
+        blockOrUnblock6(false, fd, group, index, source);
+    }
+
+    static native int blockOrUnblock6(boolean block, FileDescriptor fd, byte[] group, int index, byte[] source)
+        throws IOException;
+
+    static native void setInterface4(FileDescriptor fd, int interf) throws IOException;
+
+    static native int getInterface4(FileDescriptor fd) throws IOException;
+
+    static native void setInterface6(FileDescriptor fd, int index) throws IOException;
+
+    static native int getInterface6(FileDescriptor fd) throws IOException;
+
+    /**
+     * Event masks for the various poll system calls.
+     * They will be set platform dependant in the static initializer below.
+     */
+    public static final short POLLIN       = 0x0001;
+    public static final short POLLCONN     = 0x0002;
+    public static final short POLLOUT      = 0x0004;
+    public static final short POLLERR      = 0x0008;
+    public static final short POLLHUP      = 0x0010;
+    public static final short POLLNVAL     = 0x0020;
+    public static final short POLLREMOVE   = 0x0800;
+}
+@
+
+
+1.15
+log
+@First part of OpenJDK 8 integration.
+@
+text
+@d30 1
+d36 1
+d302 10
+d355 2
+a356 1
+        setIntOption0(fd, mayNeedConversion, key.level(), key.name(), arg);
+d365 10
+d503 1
+a503 1
+                                             int level, int opt, int arg)
+d605 11
+@
+
+
+1.14
+log
+@Merged 7u40 changes in sun/nio/ch/Net.java and partially merged DatagramChannelImpl.java.
+@
+text
+@d2 1
+a2 1
+ * Copyright (c) 2000, 2011, Oracle and/or its affiliates. All rights reserved.
+d37 1
+a37 1
+class Net {                                             // package-private
+a47 6
+    // Value of jdk.net.revealLocalAddress
+    private static boolean revealLocalAddress;
+
+    // True if jdk.net.revealLocalAddress had been read
+    private static volatile boolean propRevealLocalAddress;
+
+d56 2
+a57 2
+                      new PrivilegedAction<String>() {
+                          @@Override
+d114 1
+a114 1
+    static InetSocketAddress checkAddress(SocketAddress sa) {
+d194 4
+a197 1
+        if (!getRevealLocalAddress()) {
+d199 1
+a199 7
+            try{
+                sm.checkConnect(addr.getAddress().getHostAddress(), -1);
+                //Security check passed
+            } catch (SecurityException e) {
+                //Return loopback address
+                addr = getLoopbackAddress(addr.getPort());
+            }
+d205 2
+a206 23
+        if (!getRevealLocalAddress() && System.getSecurityManager() != null)
+            addr = getLoopbackAddress(addr.getPort());
+        return addr.toString();
+    }
+
+    private static boolean getRevealLocalAddress() {
+        if (!propRevealLocalAddress) {
+            try {
+                revealLocalAddress = Boolean.parseBoolean(
+                      AccessController.doPrivileged(
+                          new PrivilegedExceptionAction<String>() {
+                              public String run() {
+                                  return System.getProperty(
+                                      "jdk.net.revealLocalAddress");
+                              }
+                          }));
+
+            } catch (Exception e) {
+                // revealLocalAddress is false
+            }
+            propRevealLocalAddress = true;
+        }
+        return revealLocalAddress;
+d403 1
+a403 1
+    static void bind(FileDescriptor fd, InetAddress addr, int port)
+d457 1
+a457 1
+    static InetSocketAddress localAddress(FileDescriptor fd)
+d483 3
+@
+
+
+1.13
+log
+@Updated bulk of java.nio to OpenJDK 7.
+@
+text
+@d34 1
+d48 34
+d99 7
+d193 52
+d405 6
+d444 1
+a444 1
+        bind0(preferIPv6, fd, addr, port);
+d447 3
+a449 2
+    private static native void bind0(boolean preferIPv6, FileDescriptor fd,
+                                     InetAddress addr, int port)
+@
+
+
+1.12
+log
+@We don't yet have a nio IPv6 implementation, so we should return false and there is no need to print a stack trace.
+@
+text
+@a27 13
+import cli.System.Net.IPAddress;
+import cli.System.Net.IPEndPoint;
+import cli.System.Net.Sockets.LingerOption;
+import cli.System.Net.Sockets.SelectMode;
+import cli.System.Net.Sockets.SocketOptionName;
+import cli.System.Net.Sockets.SocketOptionLevel;
+import cli.System.Net.Sockets.SocketFlags;
+import cli.System.Net.Sockets.SocketType;
+import cli.System.Net.Sockets.ProtocolType;
+import cli.System.Net.Sockets.AddressFamily;
+import cli.System.Net.Sockets.SocketShutdown;
+import ikvm.internal.NotYetImplementedError;
+import ikvm.lang.CIL;
+a29 1
+import java.nio.ByteBuffer;
+a35 1
+
+d47 5
+d56 3
+a58 27
+        return false;
+    }
+    
+    static FileDescriptor serverSocket(boolean stream) throws IOException
+    {
+        return socket(stream);
+    }
+
+    static FileDescriptor socket(boolean stream) throws IOException
+    {
+        try
+        {
+            if (false) throw new cli.System.Net.Sockets.SocketException();
+            FileDescriptor fd = new FileDescriptor();
+            if (stream)
+            {
+                fd.setSocket(new cli.System.Net.Sockets.Socket(AddressFamily.wrap(AddressFamily.InterNetwork), SocketType.wrap(SocketType.Stream), ProtocolType.wrap(ProtocolType.Tcp)));
+            }
+            else
+            {
+                fd.setSocket(new cli.System.Net.Sockets.Socket(AddressFamily.wrap(AddressFamily.InterNetwork), SocketType.wrap(SocketType.Dgram), ProtocolType.wrap(ProtocolType.Udp)));
+            }
+            return fd;
+        }
+        catch (cli.System.Net.Sockets.SocketException x)
+        {
+            throw SocketUtil.convertSocketExceptionToIOException(x);
+d60 1
+d63 5
+a67 16
+    static void bind(FileDescriptor fd, InetAddress addr, int port) throws IOException
+    {
+        try
+        {
+            if (false) throw new cli.System.Net.Sockets.SocketException();
+            if (false) throw new cli.System.ObjectDisposedException("");
+            fd.getSocket().Bind(new IPEndPoint(SocketUtil.getAddressFromInetAddress(addr), port));
+        }
+        catch (cli.System.Net.Sockets.SocketException x)
+        {
+            throw SocketUtil.convertSocketExceptionToIOException(x);
+        }
+        catch (cli.System.ObjectDisposedException x1)
+        {
+            throw new SocketException("Socket is closed");
+        }
+d70 6
+a75 111
+    static void configureBlocking(FileDescriptor fd, boolean blocking) throws IOException
+    {
+        try
+        {
+            if (false) throw new cli.System.Net.Sockets.SocketException();
+            if (false) throw new cli.System.ObjectDisposedException("");
+            fd.getSocket().set_Blocking(blocking);
+        }
+        catch (cli.System.Net.Sockets.SocketException x)
+        {
+            if (x.get_ErrorCode() == SocketUtil.WSAEINVAL)
+            {
+                // Work around for winsock issue. You can't set a socket to blocking if a connection request is pending,
+                // so we'll have to set the blocking again in SocketChannelImpl.checkConnect().
+                return;
+            }
+            throw SocketUtil.convertSocketExceptionToIOException(x);
+        }
+        catch (cli.System.ObjectDisposedException _)
+        {
+            throw new SocketException("Socket is closed");
+        }
+    }
+
+    static InetSocketAddress localAddress(FileDescriptor fd)
+    {
+        try
+        {
+            if (false) throw new cli.System.Net.Sockets.SocketException();
+            if (false) throw new cli.System.ObjectDisposedException("");
+            IPEndPoint ep = (IPEndPoint)fd.getSocket().get_LocalEndPoint();
+            return new InetSocketAddress(SocketUtil.getInetAddressFromIPEndPoint(ep), ep.get_Port());
+        }
+        catch (cli.System.Net.Sockets.SocketException x)
+        {
+            throw new Error(x);
+        }
+        catch (cli.System.ObjectDisposedException x)
+        {
+            throw new Error(x);
+        }
+    }
+
+    static int localPortNumber(FileDescriptor fd)
+    {
+        try
+        {
+            if (false) throw new cli.System.Net.Sockets.SocketException();
+            if (false) throw new cli.System.ObjectDisposedException("");
+            IPEndPoint ep = (IPEndPoint)fd.getSocket().get_LocalEndPoint();
+            return ep == null ? 0 : ep.get_Port();
+        }
+        catch (cli.System.Net.Sockets.SocketException x)
+        {
+            throw new Error(x);
+        }
+        catch (cli.System.ObjectDisposedException x)
+        {
+            throw new Error(x);
+        }
+    }
+
+    private static int mapSocketOptionLevel(int opt) throws IOException
+    {
+        switch (opt)
+        {
+            case SocketOptions.SO_BROADCAST:
+            case SocketOptions.SO_KEEPALIVE:
+            case SocketOptions.SO_LINGER:
+            case SocketOptions.SO_OOBINLINE:
+            case SocketOptions.SO_RCVBUF:
+            case SocketOptions.SO_SNDBUF:
+            case SocketOptions.SO_REUSEADDR:
+                return SocketOptionLevel.Socket;
+            case SocketOptions.IP_MULTICAST_LOOP:
+            case SocketOptions.IP_TOS:
+                return SocketOptionLevel.IP;
+            case SocketOptions.TCP_NODELAY:
+                return SocketOptionLevel.Tcp;
+            default:
+                throw new SocketException("unsupported socket option: " + opt);
+        }
+    }
+
+    private static int mapSocketOptionName(int opt) throws IOException
+    {
+        switch (opt)
+        {
+            case SocketOptions.SO_BROADCAST:
+                return SocketOptionName.Broadcast;
+            case SocketOptions.SO_KEEPALIVE:
+                return SocketOptionName.KeepAlive;
+            case SocketOptions.SO_LINGER:
+                return SocketOptionName.Linger;
+            case SocketOptions.SO_OOBINLINE:
+                return SocketOptionName.OutOfBandInline;
+            case SocketOptions.SO_RCVBUF:
+                return SocketOptionName.ReceiveBuffer;
+            case SocketOptions.SO_SNDBUF:
+                return SocketOptionName.SendBuffer;
+            case SocketOptions.SO_REUSEADDR:
+                return SocketOptionName.ReuseAddress;
+            case SocketOptions.IP_MULTICAST_LOOP:
+                return SocketOptionName.MulticastLoopback;
+            case SocketOptions.IP_TOS:
+                return SocketOptionName.TypeOfService;
+            case SocketOptions.TCP_NODELAY:
+                return SocketOptionName.NoDelay;
+            default:
+                throw new SocketException("unsupported socket option: " + opt);
+        }
+a77 216
+    static void setIntOption(FileDescriptor fd, int opt, int arg) throws IOException
+    {
+        try
+        {
+            if (false) throw new cli.System.Net.Sockets.SocketException();
+            if (false) throw new cli.System.ObjectDisposedException("");
+            int level = mapSocketOptionLevel(opt);
+            int name = mapSocketOptionName(opt);
+            fd.getSocket().SetSocketOption(SocketOptionLevel.wrap(level), SocketOptionName.wrap(name), arg);
+        }
+        catch (cli.System.Net.Sockets.SocketException x)
+        {
+            throw SocketUtil.convertSocketExceptionToIOException(x);
+        }
+        catch (cli.System.ObjectDisposedException x1)
+        {
+            throw new SocketException("Socket is closed");
+        }
+    }
+
+    static int getIntOption(FileDescriptor fd, int opt) throws IOException
+    {
+        try
+        {
+            if (false) throw new cli.System.Net.Sockets.SocketException();
+            if (false) throw new cli.System.ObjectDisposedException("");
+            int level = mapSocketOptionLevel(opt);
+            int name = mapSocketOptionName(opt);
+            Object obj = fd.getSocket().GetSocketOption(SocketOptionLevel.wrap(level), SocketOptionName.wrap(name));
+            if (obj instanceof LingerOption)
+            {
+                LingerOption lo = (LingerOption)obj;
+                return lo.get_Enabled() ? lo.get_LingerTime() : -1;
+            }
+            return CIL.unbox_int(obj);
+        }
+        catch (cli.System.Net.Sockets.SocketException x)
+        {
+            throw SocketUtil.convertSocketExceptionToIOException(x);
+        }
+        catch (cli.System.ObjectDisposedException x1)
+        {
+            throw new SocketException("Socket is closed");
+        }
+    }
+
+    private static int readImpl(FileDescriptor fd, byte[] buf, int offset, int length) throws IOException
+    {
+        if (length == 0)
+        {
+            return 0;
+        }
+        try
+        {
+            if (false) throw new cli.System.Net.Sockets.SocketException();
+            if (false) throw new cli.System.ObjectDisposedException("");
+            int read = fd.getSocket().Receive(buf, offset, length, SocketFlags.wrap(SocketFlags.None));
+            return read == 0 ? IOStatus.EOF : read;
+        }
+        catch (cli.System.Net.Sockets.SocketException x)
+        {
+            if (x.get_ErrorCode() == SocketUtil.WSAESHUTDOWN)
+            {
+                // the socket was shutdown, so we have to return EOF
+                return IOStatus.EOF;
+            }
+            else if (x.get_ErrorCode() == SocketUtil.WSAEWOULDBLOCK)
+            {
+                // nothing to read and would block
+                return IOStatus.UNAVAILABLE;
+            }
+            throw SocketUtil.convertSocketExceptionToIOException(x);
+        }
+        catch (cli.System.ObjectDisposedException x1)
+        {
+            throw new SocketException("Socket is closed");
+        }
+    }
+
+    static int read(FileDescriptor fd, ByteBuffer dst) throws IOException
+    {
+        if (dst.hasArray())
+        {
+            byte[] buf = dst.array();
+            int len = readImpl(fd, buf, dst.arrayOffset() + dst.position(), dst.remaining());
+            if (len > 0)
+            {
+                dst.position(dst.position() + len);
+            }
+            return len;
+        }
+        else
+        {
+            byte[] buf = new byte[dst.remaining()];
+            int len = readImpl(fd, buf, 0, buf.length);
+            if (len > 0)
+            {
+                dst.put(buf, 0, len);
+            }
+            return len;
+        }
+    }
+
+    static long read(FileDescriptor fd, ByteBuffer[] dsts) throws IOException
+    {
+        long totalRead = 0;
+        for (int i = 0; i < dsts.length; i++)
+        {
+            int size = dsts[i].remaining();
+            if (size > 0)
+            {
+                int read = read(fd, dsts[i]);
+                if (read < 0)
+                {
+                    break;
+                }
+                totalRead += read;
+                if (read < size || safeGetAvailable(fd) == 0)
+                {
+                    break;
+                }
+            }
+        }
+        return totalRead;
+    }
+
+    private static int safeGetAvailable(FileDescriptor fd)
+    {
+        try
+        {
+            if (false) throw new cli.System.Net.Sockets.SocketException();
+            if (false) throw new cli.System.ObjectDisposedException("");
+            return fd.getSocket().get_Available();
+        }
+        catch (cli.System.Net.Sockets.SocketException x)
+        {
+        }
+        catch (cli.System.ObjectDisposedException x1)
+        {
+        }
+        return 0;
+    }
+
+    private static int writeImpl(FileDescriptor fd, byte[] buf, int offset, int length) throws IOException
+    {
+        try
+        {
+            if (false) throw new cli.System.Net.Sockets.SocketException();
+            if (false) throw new cli.System.ObjectDisposedException("");
+            return fd.getSocket().Send(buf, offset, length, SocketFlags.wrap(SocketFlags.None));
+        }
+        catch (cli.System.Net.Sockets.SocketException x)
+        {
+            if (x.get_ErrorCode() == SocketUtil.WSAEWOULDBLOCK)
+            {
+                return IOStatus.UNAVAILABLE;
+            }
+            throw SocketUtil.convertSocketExceptionToIOException(x);
+        }
+        catch (cli.System.ObjectDisposedException x1)
+        {
+            throw new SocketException("Socket is closed");
+        }
+    }
+
+    static int write(FileDescriptor fd, ByteBuffer src) throws IOException
+    {
+        if (src.hasArray())
+        {
+            byte[] buf = src.array();
+            int len = writeImpl(fd, buf, src.arrayOffset() + src.position(), src.remaining());
+            if (len > 0)
+            {
+                src.position(src.position() + len);
+            }
+            return len;
+        }
+        else
+        {
+            int pos = src.position();
+            byte[] buf = new byte[src.remaining()];
+            src.get(buf);
+            int len = writeImpl(fd, buf, 0, buf.length);
+            if (len > 0)
+            {
+                src.position(pos + len);
+            }
+            return len;
+        }
+    }
+
+    static long write(FileDescriptor fd, ByteBuffer[] srcs) throws IOException
+    {
+        long totalWritten = 0;
+        for (int i = 0; i < srcs.length; i++)
+        {
+            int size = srcs[i].remaining();
+            if (size > 0)
+            {
+                int written = write(fd, srcs[i]);
+                if (written < 0)
+                {
+                    break;
+                }
+                totalWritten += written;
+                if (written < size)
+                {
+                    break;
+                }
+            }
+        }
+        return totalWritten;
+    }
+
+    // -- Miscellaneous utilities --
+
+d80 1
+a80 1
+            throw new IllegalArgumentException();
+d106 2
+a226 1
+
+d228 2
+a229 2
+            SocketOption<?> name, Object value)
+         throws IOException
+d283 3
+a285 3
+            SocketOption<?> name)
+         throws IOException
+	{
+d305 68
+a372 1
+	}
+a373 1
+    
+d378 10
+a387 1
+    static /*native*/ void shutdown(FileDescriptor fd, int how) throws IOException
+d389 1
+a389 1
+    	throw new NotYetImplementedError(); //TODO JDK7
+d392 5
+a396 6
+    private static /*native*/ int getIntOption0(FileDescriptor fd, boolean mayNeedConversion,
+            int level, int opt)
+          throws IOException
+      {
+      	throw new NotYetImplementedError(); //TODO JDK7
+      }
+d398 2
+a399 2
+    private static /*native*/ void setIntOption0(FileDescriptor fd, boolean mayNeedConversion,
+             int level, int opt, int arg)
+d401 1
+a401 1
+    	throw new NotYetImplementedError(); //TODO JDK7
+d404 16
+a419 1
+    static /*native*/ void setInterface4(FileDescriptor fd, int interf) throws IOException
+d421 1
+a421 1
+    	throw new NotYetImplementedError(); //TODO JDK7
+d423 6
+a428 2
+    
+    static /*native*/ int getInterface4(FileDescriptor fd) throws IOException
+d430 1
+a430 1
+    	throw new NotYetImplementedError(); //TODO JDK7
+d432 9
+a440 2
+    
+    static /*native*/ void setInterface6(FileDescriptor fd, int index) throws IOException
+d442 1
+a442 1
+    	throw new NotYetImplementedError(); //TODO JDK7
+d444 6
+a449 2
+    
+    static /*native*/ int getInterface6(FileDescriptor fd) throws IOException
+d451 1
+a451 1
+    	throw new NotYetImplementedError(); //TODO JDK7
+d453 55
+@
+
+
+1.11
+log
+@Add methods in DatagramChannelImpl for Java 7
+@
+text
+@d66 1
+a66 2
+    	new NotYetImplementedError().printStackTrace(); //TODO JDK7
+        return true;
+@
+
+
+1.10
+log
+@Add methods in SocketChannelImpl for Java 7
+@
+text
+@d2 1
+a2 1
+ * Copyright (c) 2000, 2005, Oracle and/or its affiliates. All rights reserved.
+a41 1
+import java.lang.reflect.*;
+d45 4
+d514 78
+d695 19
+@
+
+
+1.9
+log
+@Add some stup methods to sun.nio.ch.Net with a NotYetImplementedError to compile the Java 7 sources.
+@
+text
+@d59 8
+@
+
+
+1.8
+log
+@Integrated OpenJDK 6 b21.
+@
+text
+@d39 1
+d52 7
+d502 104
+@
+
+
+1.8.2.1
+log
+@Backported fixes for 0.46.0.3:
+- Bug fix. java.lang.Package was not populated from manifest for ikvmc compiled assemblies.
+- Bug fix. When writing a direct ByteBuffer to a non-blocking socket and the write fails because there is no kernel buffer available, we should not advance the ByteBuffer position.
+- Bug fix. When adding certificates to virtual cacerts file make sure that the aliases are unique.
+- Bug fix. If a finally/fault handler contains reachable code before the handler's start index, the handler should branch to the handler start index.
+- Bug fix. After emitting a finally/fault handler block, we should emit the block leave stubs (even though you can't leave the block, they also emit the backward branch stubs).
+- Bug fix. If a Java class extends a remapped .NET type (cli.System.Object or cli.System.Exception), we should correctly report the base class.
+- Bug fix. If we encounter a jsr or ret instruction, we should throw a VerifyError (instead of NotImplementedException).
+- Bug fix. If an exception block ends with an astore, we need to propagate the local variable type after the astore to the exception handler.
+- Disable AppDomain.ProcessExit hook to run shutdown hooks when running on Mono to workaround https://bugzilla.xamarin.com/show_bug.cgi?id=5650
+- Bug fix. Custom attribute properties that don't have a public getter and setter should not be exposed as annotation properties.
+- Bug fix. Non-public property getter/setter methods should be ignored when we create properties to hide properties inherited from shadow types. This fixes a build break with .NET 4.5 beta which introduces a protected setter for Exception.HResult.
+- Bug fix. The $Method inner class for delegates should also be loadable for generic delegates. Thanks to Michael Bayne for reporting this.
+- Bug fix. When constructing a generic class loader we can't use GetWrapperFromType() on the type arguments, because they might refer to a subtype that is currently being loaded.
+- Replaced non-ascii character (micro) with ascii 'u' in Win32PrintService.java.
+- IKVM.Reflection: Bug fix. Resource Directory Entries must be sorted and names are case-insensitive
+
+Backported for 0.46.0.4:
+- Fixed ikvmc to retain transient modifier on constant static final fields.
+- Fixed Field.getModifiers() to only return the relevant modifiers.
+- Fixed IKVM.Reflection to set AddressOfRawData in IMAGE_DEBUG_DIRECTORY.
+@
+text
+@a390 1
+            src.position(pos);
+@
+
+
+1.7
+log
+@Moved shared socket functionality from PlainSocketImpl.java to SocketUtil.java.
+@
+text
+@d2 1
+a2 1
+ * Copyright 2000-2005 Sun Microsystems, Inc.  All Rights Reserved.
+d7 1
+a7 1
+ * published by the Free Software Foundation.  Sun designates this
+d9 1
+a9 1
+ * by Sun in the LICENSE file that accompanied this code.
+d21 3
+a23 3
+ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
+ * CA 95054 USA or visit www.sun.com if you need additional information or
+ * have any questions.
+d433 3
+d448 1
+a448 1
+        if (x instanceof SocketException) 
+d462 1
+a462 1
+        if (nx != x) 
+@
+
+
+1.6
+log
+@Converted tabs to spaces.
+@
+text
+@a50 13
+    // Winsock Error Codes
+    static final int WSAEINVAL = 10022;
+    static final int WSAEWOULDBLOCK = 10035;
+    static final int WSAEMSGSIZE = 10040;
+    static final int WSAEADDRINUSE = 10048;
+    static final int WSAENETUNREACH = 10051;
+    static final int WSAECONNRESET = 10054;
+    static final int WSAESHUTDOWN = 10058;
+    static final int WSAETIMEDOUT = 10060;
+    static final int WSAECONNREFUSED = 10061;
+    static final int WSAEHOSTUNREACH = 10065;
+    static final int WSAHOST_NOT_FOUND = 11001;
+
+d74 1
+a74 1
+            throw PlainSocketImpl.convertSocketExceptionToIOException(x);
+d84 1
+a84 1
+            fd.getSocket().Bind(new IPEndPoint(PlainSocketImpl.getAddressFromInetAddress(addr), port));
+d88 1
+a88 1
+            throw PlainSocketImpl.convertSocketExceptionToIOException(x);
+d106 1
+a106 1
+            if (x.get_ErrorCode() == WSAEINVAL)
+d112 1
+a112 1
+            throw PlainSocketImpl.convertSocketExceptionToIOException(x);
+d127 1
+a127 1
+            return new InetSocketAddress(PlainSocketImpl.getInetAddressFromIPEndPoint(ep), ep.get_Port());
+d221 1
+a221 1
+            throw PlainSocketImpl.convertSocketExceptionToIOException(x);
+d247 1
+a247 1
+            throw PlainSocketImpl.convertSocketExceptionToIOException(x);
+d270 1
+a270 1
+            if (x.get_ErrorCode() == PlainSocketImpl.WSAESHUTDOWN)
+d275 1
+a275 1
+            else if (x.get_ErrorCode() == PlainSocketImpl.WSAEWOULDBLOCK)
+d280 1
+a280 1
+            throw PlainSocketImpl.convertSocketExceptionToIOException(x);
+d362 1
+a362 1
+            if (x.get_ErrorCode() == PlainSocketImpl.WSAEWOULDBLOCK)
+d366 1
+a366 1
+            throw PlainSocketImpl.convertSocketExceptionToIOException(x);
+@
+
+
+1.5
+log
+@Don't return -1 when attempting to read 0 bytes.
+@
+text
+@d47 1
+a47 1
+class Net {						// package-private
+d66 1
+a66 1
+	return socket(stream);
+d71 18
+a88 18
+	try
+	{
+	    if (false) throw new cli.System.Net.Sockets.SocketException();
+	    FileDescriptor fd = new FileDescriptor();
+	    if (stream)
+	    {
+		fd.setSocket(new cli.System.Net.Sockets.Socket(AddressFamily.wrap(AddressFamily.InterNetwork), SocketType.wrap(SocketType.Stream), ProtocolType.wrap(ProtocolType.Tcp)));
+	    }
+	    else
+	    {
+		fd.setSocket(new cli.System.Net.Sockets.Socket(AddressFamily.wrap(AddressFamily.InterNetwork), SocketType.wrap(SocketType.Dgram), ProtocolType.wrap(ProtocolType.Udp)));
+	    }
+	    return fd;
+	}
+	catch (cli.System.Net.Sockets.SocketException x)
+	{
+	    throw PlainSocketImpl.convertSocketExceptionToIOException(x);
+	}
+d93 14
+a106 14
+	try
+	{
+	    if (false) throw new cli.System.Net.Sockets.SocketException();
+	    if (false) throw new cli.System.ObjectDisposedException("");
+	    fd.getSocket().Bind(new IPEndPoint(PlainSocketImpl.getAddressFromInetAddress(addr), port));
+	}
+	catch (cli.System.Net.Sockets.SocketException x)
+	{
+	    throw PlainSocketImpl.convertSocketExceptionToIOException(x);
+	}
+	catch (cli.System.ObjectDisposedException x1)
+	{
+	    throw new SocketException("Socket is closed");
+	}
+d111 20
+a130 20
+	try
+	{
+	    if (false) throw new cli.System.Net.Sockets.SocketException();
+	    if (false) throw new cli.System.ObjectDisposedException("");
+	    fd.getSocket().set_Blocking(blocking);
+	}
+	catch (cli.System.Net.Sockets.SocketException x)
+	{
+	    if (x.get_ErrorCode() == WSAEINVAL)
+	    {
+		// Work around for winsock issue. You can't set a socket to blocking if a connection request is pending,
+		// so we'll have to set the blocking again in SocketChannelImpl.checkConnect().
+		return;
+	    }
+	    throw PlainSocketImpl.convertSocketExceptionToIOException(x);
+	}
+	catch (cli.System.ObjectDisposedException _)
+	{
+	    throw new SocketException("Socket is closed");
+	}
+d135 15
+a149 15
+	try
+	{
+	    if (false) throw new cli.System.Net.Sockets.SocketException();
+	    if (false) throw new cli.System.ObjectDisposedException("");
+	    IPEndPoint ep = (IPEndPoint)fd.getSocket().get_LocalEndPoint();
+	    return new InetSocketAddress(PlainSocketImpl.getInetAddressFromIPEndPoint(ep), ep.get_Port());
+	}
+	catch (cli.System.Net.Sockets.SocketException x)
+	{
+	    throw new Error(x);
+	}
+	catch (cli.System.ObjectDisposedException x)
+	{
+	    throw new Error(x);
+	}
+d154 15
+a168 15
+	try
+	{
+	    if (false) throw new cli.System.Net.Sockets.SocketException();
+	    if (false) throw new cli.System.ObjectDisposedException("");
+	    IPEndPoint ep = (IPEndPoint)fd.getSocket().get_LocalEndPoint();
+	    return ep == null ? 0 : ep.get_Port();
+	}
+	catch (cli.System.Net.Sockets.SocketException x)
+	{
+	    throw new Error(x);
+	}
+	catch (cli.System.ObjectDisposedException x)
+	{
+	    throw new Error(x);
+	}
+d173 18
+a190 18
+	switch (opt)
+	{
+	    case SocketOptions.SO_BROADCAST:
+	    case SocketOptions.SO_KEEPALIVE:
+	    case SocketOptions.SO_LINGER:
+	    case SocketOptions.SO_OOBINLINE:
+	    case SocketOptions.SO_RCVBUF:
+	    case SocketOptions.SO_SNDBUF:
+	    case SocketOptions.SO_REUSEADDR:
+		return SocketOptionLevel.Socket;
+	    case SocketOptions.IP_MULTICAST_LOOP:
+	    case SocketOptions.IP_TOS:
+		return SocketOptionLevel.IP;
+	    case SocketOptions.TCP_NODELAY:
+		return SocketOptionLevel.Tcp;
+	    default:
+		throw new SocketException("unsupported socket option: " + opt);
+	}
+d195 25
+a219 25
+	switch (opt)
+	{
+	    case SocketOptions.SO_BROADCAST:
+		return SocketOptionName.Broadcast;
+	    case SocketOptions.SO_KEEPALIVE:
+		return SocketOptionName.KeepAlive;
+	    case SocketOptions.SO_LINGER:
+		return SocketOptionName.Linger;
+	    case SocketOptions.SO_OOBINLINE:
+		return SocketOptionName.OutOfBandInline;
+	    case SocketOptions.SO_RCVBUF:
+		return SocketOptionName.ReceiveBuffer;
+	    case SocketOptions.SO_SNDBUF:
+		return SocketOptionName.SendBuffer;
+	    case SocketOptions.SO_REUSEADDR:
+		return SocketOptionName.ReuseAddress;
+	    case SocketOptions.IP_MULTICAST_LOOP:
+		return SocketOptionName.MulticastLoopback;
+	    case SocketOptions.IP_TOS:
+		return SocketOptionName.TypeOfService;
+	    case SocketOptions.TCP_NODELAY:
+		return SocketOptionName.NoDelay;
+	    default:
+		throw new SocketException("unsupported socket option: " + opt);
+	}
+d224 16
+a239 16
+	try
+	{
+	    if (false) throw new cli.System.Net.Sockets.SocketException();
+	    if (false) throw new cli.System.ObjectDisposedException("");
+	    int level = mapSocketOptionLevel(opt);
+	    int name = mapSocketOptionName(opt);
+	    fd.getSocket().SetSocketOption(SocketOptionLevel.wrap(level), SocketOptionName.wrap(name), arg);
+	}
+	catch (cli.System.Net.Sockets.SocketException x)
+	{
+	    throw PlainSocketImpl.convertSocketExceptionToIOException(x);
+	}
+	catch (cli.System.ObjectDisposedException x1)
+	{
+	    throw new SocketException("Socket is closed");
+	}
+d244 22
+a265 22
+	try
+	{
+	    if (false) throw new cli.System.Net.Sockets.SocketException();
+	    if (false) throw new cli.System.ObjectDisposedException("");
+	    int level = mapSocketOptionLevel(opt);
+	    int name = mapSocketOptionName(opt);
+	    Object obj = fd.getSocket().GetSocketOption(SocketOptionLevel.wrap(level), SocketOptionName.wrap(name));
+	    if (obj instanceof LingerOption)
+	    {
+		LingerOption lo = (LingerOption)obj;
+		return lo.get_Enabled() ? lo.get_LingerTime() : -1;
+	    }
+	    return CIL.unbox_int(obj);
+	}
+	catch (cli.System.Net.Sockets.SocketException x)
+	{
+	    throw PlainSocketImpl.convertSocketExceptionToIOException(x);
+	}
+	catch (cli.System.ObjectDisposedException x1)
+	{
+	    throw new SocketException("Socket is closed");
+	}
+d270 29
+a298 29
+	if (length == 0)
+	{
+	    return 0;
+	}
+	try
+	{
+	    if (false) throw new cli.System.Net.Sockets.SocketException();
+	    if (false) throw new cli.System.ObjectDisposedException("");
+	    int read = fd.getSocket().Receive(buf, offset, length, SocketFlags.wrap(SocketFlags.None));
+	    return read == 0 ? IOStatus.EOF : read;
+	}
+	catch (cli.System.Net.Sockets.SocketException x)
+	{
+	    if (x.get_ErrorCode() == PlainSocketImpl.WSAESHUTDOWN)
+	    {
+		// the socket was shutdown, so we have to return EOF
+		return IOStatus.EOF;
+	    }
+	    else if (x.get_ErrorCode() == PlainSocketImpl.WSAEWOULDBLOCK)
+	    {
+		// nothing to read and would block
+		return IOStatus.UNAVAILABLE;
+	    }
+	    throw PlainSocketImpl.convertSocketExceptionToIOException(x);
+	}
+	catch (cli.System.ObjectDisposedException x1)
+	{
+	    throw new SocketException("Socket is closed");
+	}
+d303 20
+a322 20
+	if (dst.hasArray())
+	{
+	    byte[] buf = dst.array();
+	    int len = readImpl(fd, buf, dst.arrayOffset() + dst.position(), dst.remaining());
+	    if (len > 0)
+	    {
+		dst.position(dst.position() + len);
+	    }
+	    return len;
+	}
+	else
+	{
+	    byte[] buf = new byte[dst.remaining()];
+	    int len = readImpl(fd, buf, 0, buf.length);
+	    if (len > 0)
+	    {
+		dst.put(buf, 0, len);
+	    }
+	    return len;
+	}
+d327 19
+a345 19
+	long totalRead = 0;
+	for (int i = 0; i < dsts.length; i++)
+	{
+	    int size = dsts[i].remaining();
+	    if (size > 0)
+	    {
+		int read = read(fd, dsts[i]);
+		if (read < 0)
+		{
+		    break;
+		}
+		totalRead += read;
+		if (read < size || safeGetAvailable(fd) == 0)
+		{
+		    break;
+		}
+	    }
+	}
+	return totalRead;
+d350 13
+a362 13
+	try
+	{
+	    if (false) throw new cli.System.Net.Sockets.SocketException();
+	    if (false) throw new cli.System.ObjectDisposedException("");
+	    return fd.getSocket().get_Available();
+	}
+	catch (cli.System.Net.Sockets.SocketException x)
+	{
+	}
+	catch (cli.System.ObjectDisposedException x1)
+	{
+	}
+	return 0;
+d367 18
+a384 18
+	try
+	{
+	    if (false) throw new cli.System.Net.Sockets.SocketException();
+	    if (false) throw new cli.System.ObjectDisposedException("");
+	    return fd.getSocket().Send(buf, offset, length, SocketFlags.wrap(SocketFlags.None));
+	}
+	catch (cli.System.Net.Sockets.SocketException x)
+	{
+	    if (x.get_ErrorCode() == PlainSocketImpl.WSAEWOULDBLOCK)
+	    {
+		return IOStatus.UNAVAILABLE;
+	    }
+	    throw PlainSocketImpl.convertSocketExceptionToIOException(x);
+	}
+	catch (cli.System.ObjectDisposedException x1)
+	{
+	    throw new SocketException("Socket is closed");
+	}
+d389 22
+a410 22
+	if (src.hasArray())
+	{
+	    byte[] buf = src.array();
+	    int len = writeImpl(fd, buf, src.arrayOffset() + src.position(), src.remaining());
+	    if (len > 0)
+	    {
+		src.position(src.position() + len);
+	    }
+	    return len;
+	}
+	else
+	{
+	    int pos = src.position();
+	    byte[] buf = new byte[src.remaining()];
+	    src.get(buf);
+	    int len = writeImpl(fd, buf, 0, buf.length);
+	    if (len > 0)
+	    {
+		src.position(pos + len);
+	    }
+	    return len;
+	}
+d415 19
+a433 19
+	long totalWritten = 0;
+	for (int i = 0; i < srcs.length; i++)
+	{
+	    int size = srcs[i].remaining();
+	    if (size > 0)
+	    {
+		int written = write(fd, srcs[i]);
+		if (written < 0)
+		{
+		    break;
+		}
+		totalWritten += written;
+		if (written < size)
+		{
+		    break;
+		}
+	    }
+	}
+	return totalWritten;
+d439 8
+a446 8
+	if (sa == null)
+	    throw new IllegalArgumentException();
+	if (!(sa instanceof InetSocketAddress))
+	    throw new UnsupportedAddressTypeException(); // ## needs arg
+	InetSocketAddress isa = (InetSocketAddress)sa;
+	if (isa.isUnresolved())
+	    throw new UnresolvedAddressException(); // ## needs arg
+	return isa;
+d450 3
+a452 3
+	if (!(sa instanceof InetSocketAddress))
+	    throw new UnsupportedAddressTypeException();
+	return (InetSocketAddress)sa;
+d456 1
+a456 1
+	throws SocketException
+d458 16
+a473 16
+	if (x instanceof SocketException) 
+	    throw (SocketException)x;
+	Exception nx = x;
+	if (x instanceof ClosedChannelException)
+	    nx = new SocketException("Socket is closed");
+	else if (x instanceof AlreadyBoundException)
+	    nx = new SocketException("Already bound");
+	else if (x instanceof NotYetBoundException)
+	    nx = new SocketException("Socket is not bound yet");
+	else if (x instanceof UnsupportedAddressTypeException)
+	    nx = new SocketException("Unsupported address type");
+	else if (x instanceof UnresolvedAddressException) {
+	    nx = new SocketException("Unresolved address");
+	}
+	if (nx != x) 
+	    nx.initCause(x);
+d475 2
+a476 2
+	if (nx instanceof SocketException)
+	    throw (SocketException)nx;
+d478 3
+a480 3
+	    throw (RuntimeException)nx;
+	else
+	    throw new Error("Untranslated exception", nx);
+d484 2
+a485 2
+				   boolean unknownHostForUnresolved)
+	throws IOException
+d487 2
+a488 2
+	if (x instanceof IOException)
+	    throw (IOException)x;
+d491 1
+a491 1
+	if (unknownHostForUnresolved &&
+d496 1
+a496 1
+	translateToSocketException(x);
+d500 1
+a500 1
+	throws IOException
+d502 1
+a502 1
+	translateException(x, false);
+@
+
+
+1.4
+log
+@Fixed writeImpl() to return IOStatus.UNAVAILABLE if the socket is in non-blocking mode and the write failed because of this.
+@
+text
+@d270 4
+@
+
+
+1.4.2.1
+log
+@Backported fixes from trunk. Changed version to 0.36.0.2.
+@
+text
+@a269 4
+	if (length == 0)
+	{
+	    return 0;
+	}
+@
+
+
+1.3
+log
+@Restructured to reduce the number of differences with OpenJDK sources.
+@
+text
+@d275 1
+a275 1
+	    return read == 0 ? -1 : read;
+d282 1
+a282 1
+		return -1;
+d287 1
+a287 1
+		return 0;
+d371 4
+d389 4
+a392 1
+	    src.position(src.position() + len);
+d401 4
+a404 1
+	    src.position(pos + len);
+d418 4
+@
+
+
+1.2
+log
+@- Implemented DatagramChannelImpl and PipeImpl.
+- More nio fixes.
+@
+text
+@d52 1
+d64 6
+a69 1
+    static FileDescriptor socket(boolean streaming) throws IOException
+d75 1
+a75 1
+	    if (streaming)
+d119 6
+@
+
+
+1.1
+log
+@Implement SocketChannelImpl & DotNetSelectorImpl.
+@
+text
+@d28 12
+d43 1
+d51 354
+@
+

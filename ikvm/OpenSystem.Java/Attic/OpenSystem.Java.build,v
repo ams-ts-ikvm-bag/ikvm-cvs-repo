@@ -1,0 +1,47 @@
+head	1.2;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2004.05.27.07.12.16;	author jfrijters;	state dead;
+branches;
+next	1.1;
+
+1.1
+date	2003.05.30.12.09.01;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@<?xml version="1.0"?>
+<project name="OpenSystem.Java" default="OpenSystem.Java">
+    <target name="OpenSystem.Java">
+        <csc target="library" output="../bin/OpenSystem.Java.dll">
+            <sources>
+                <includes name="*.cs" />
+            </sources>
+        </csc>
+    </target>
+</project>
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@@
+

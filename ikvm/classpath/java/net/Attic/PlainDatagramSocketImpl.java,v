@@ -1,0 +1,902 @@
+head	1.9;
+access;
+symbols
+	v0_8_0_0:1.7
+	initial:1.1.1.1
+	ikvm:1.1.1;
+locks; strict;
+comment	@# @;
+
+
+1.9
+date	2004.11.16.11.11.55;	author jfrijters;	state dead;
+branches;
+next	1.8;
+
+1.8
+date	2004.11.04.12.50.33;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2004.02.05.16.29.27;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2004.02.02.09.46.26;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2003.08.21.10.06.36;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2003.07.21.12.13.13;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2003.04.17.13.15.21;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2003.03.31.14.57.07;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2002.12.18.16.01.06;	author jfrijters;	state Exp;
+branches
+	1.1.1.1;
+next	;
+
+1.1.1.1
+date	2002.12.18.16.01.06;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.9
+log
+@*** empty log message ***
+@
+text
+@/* PlainDatagramSocketImpl.java -- Default DatagramSocket implementation
+   Copyright (C) 1998, 1999, 2001 Free Software Foundation, Inc.
+
+This file is part of GNU Classpath.
+
+GNU Classpath is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2, or (at your option)
+any later version.
+ 
+GNU Classpath is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with GNU Classpath; see the file COPYING.  If not, write to the
+Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+02111-1307 USA.
+
+Linking this library statically or dynamically with other modules is
+making a combined work based on this library.  Thus, the terms and
+conditions of the GNU General Public License cover the whole
+combination.
+
+As a special exception, the copyright holders of this library give you
+permission to link this library with independent modules to produce an
+executable, regardless of the license terms of these independent
+modules, and to copy and distribute the resulting executable under
+terms of your choice, provided that you also meet, for each linked
+independent module, the terms and conditions of the license of that
+module.  An independent module is a module which is not derived from
+or based on this library.  If you modify this library, you may extend
+this exception to your version of the library, but you are not
+obligated to do so.  If you do not wish to do so, delete this
+exception statement from your version. */
+
+
+package java.net;
+
+import java.io.IOException;
+import cli.System.Net.*;
+import cli.System.Net.Sockets.*;
+import ikvm.lang.CIL;
+import ikvm.lang.ByteArrayHack;
+
+/**
+* This is the default socket implementation for datagram sockets.
+* It makes native calls to C routines that implement BSD style
+* SOCK_DGRAM sockets in the AF_INET family.
+*
+* @@version 0.1
+*
+* @@author Aaron M. Renn (arenn@@urbanophile.com)
+*/
+public class PlainDatagramSocketImpl extends DatagramSocketImpl
+{
+	/*
+	 * Static Variables
+	 */
+
+	/**
+	 * This is the actual underlying socket
+	 */
+	private cli.System.Net.Sockets.Socket socket = new cli.System.Net.Sockets.Socket(
+	    AddressFamily.wrap(AddressFamily.InterNetwork), 
+	    SocketType.wrap(SocketType.Dgram),
+	    ProtocolType.wrap(ProtocolType.Udp));
+
+	/*************************************************************************/
+
+	/*
+	 * Constructors
+	 */
+
+	/**
+	 * Default do nothing constructor
+	 */
+	public PlainDatagramSocketImpl()
+	{
+	}
+
+	/*************************************************************************/
+
+	/*
+	 * Instance Methods
+	 */
+
+	/**
+	 * Creates a new datagram socket
+	 *
+	 * @@exception SocketException If an error occurs
+	 */
+	protected void create() throws SocketException
+	{
+	}
+
+	/*************************************************************************/
+
+	/**
+	 * Closes the socket
+	 */
+	protected void close()
+	{
+	    if(socket != null)
+	    {
+		socket.Close();
+		socket = null;
+	    }
+	}
+
+	/*************************************************************************/
+
+	/**
+	 * Binds this socket to a particular port and interface
+	 *
+	 * @@param port The port to bind to
+	 * @@param addr The address to bind to
+	 *
+	 * @@exception SocketException If an error occurs
+	 */
+	protected void bind(int port, InetAddress addr) throws SocketException
+	{
+	    try
+	    {
+		if(false) throw new cli.System.Net.Sockets.SocketException();
+		socket.Bind(new IPEndPoint(PlainSocketImpl.getAddressFromInetAddress(addr), port));
+		localPort = ((IPEndPoint)socket.get_LocalEndPoint()).get_Port();
+	    }
+	    catch(cli.System.Net.Sockets.SocketException x)
+	    {
+		throw new BindException(x.getMessage());
+	    }
+	}
+
+	/*************************************************************************/
+
+	/**
+	 * Sends a packet of data to a remote host
+	 *
+	 * @@param packet The packet to send
+	 *
+	 * @@exception IOException If an error occurs
+	 */
+	protected void send(DatagramPacket packet) throws IOException
+	{
+	    try		
+	    {
+		if(false) throw new cli.System.Net.Sockets.SocketException();
+		int len = packet.getLength();
+		if(socket.SendTo(ByteArrayHack.cast(packet.getData()), len, SocketFlags.wrap(SocketFlags.None), new IPEndPoint(PlainSocketImpl.getAddressFromInetAddress(packet.getAddress()), packet.getPort())) != len)
+		{
+		    throw new SocketException("Not all data was sent");
+		}
+	    }
+	    catch(cli.System.Net.Sockets.SocketException x)
+	    {
+		throw PlainSocketImpl.convertSocketExceptionToIOException(x);
+	    }
+	}
+
+	/*************************************************************************/
+
+	/**
+	 * What does this method really do?
+	 */
+	protected int peek(InetAddress addr) throws IOException
+	{
+		throw new IOException("Not Implemented Yet");
+	}
+
+	/*************************************************************************/
+
+	/**
+	 * Receives a UDP packet from the network
+	 *
+	 * @@param packet The packet to fill in with the data received
+	 *
+	 * @@exception IOException IOException If an error occurs
+	 */
+	protected void receive(DatagramPacket packet) throws IOException
+	{
+	    try
+	    {
+		if(false) throw new cli.System.Net.Sockets.SocketException();
+		byte[] data = packet.getData();
+		cli.System.Net.EndPoint[] remoteEP = new cli.System.Net.EndPoint[] {
+		    new cli.System.Net.IPEndPoint(0, 0)
+		};
+		int length = socket.ReceiveFrom(ByteArrayHack.cast(data), remoteEP);
+		packet.setLength(length);
+		int remoteIP = (int)((cli.System.Net.IPEndPoint)remoteEP[0]).get_Address().get_Address();
+		byte[] ipv4 = new byte[] { (byte)remoteIP, (byte)(remoteIP >> 8), (byte)(remoteIP >> 16), (byte)(remoteIP >> 24) };
+		InetAddress remoteAddress = InetAddress.getByAddress(ipv4);
+		packet.setAddress(remoteAddress);
+		packet.setPort(((cli.System.Net.IPEndPoint)remoteEP[0]).get_Port());
+	    }
+	    catch(cli.System.Net.Sockets.SocketException x)
+	    {
+		throw PlainSocketImpl.convertSocketExceptionToIOException(x);
+	    }
+	}
+
+	/*************************************************************************/
+
+	/**
+	 * Joins a multicast group
+	 *
+	 * @@param addr The group to join
+	 *
+	 * @@exception IOException If an error occurs
+	 */
+	protected void join(InetAddress addr) throws IOException
+	{
+		try
+		{
+			if(false) throw new cli.System.Net.Sockets.SocketException();
+			if(false) throw new cli.System.ArgumentException();
+			socket.SetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.IP), SocketOptionName.wrap(SocketOptionName.AddMembership), new MulticastOption(new cli.System.Net.IPAddress(PlainSocketImpl.getAddressFromInetAddress(addr))));
+		}
+		catch(cli.System.Net.Sockets.SocketException x)
+		{
+		    throw PlainSocketImpl.convertSocketExceptionToIOException(x);
+		}
+		catch(cli.System.ArgumentException x1)
+		{
+		    throw new IOException(x1.getMessage());
+		}
+	}
+
+	/*************************************************************************/
+
+	/**
+	 * Leaves a multicast group
+	 *
+	 * @@param addr The group to leave
+	 *
+	 * @@exception IOException If an error occurs
+	 */
+	protected void leave(InetAddress addr) throws IOException
+	{
+		try
+		{
+			if(false) throw new cli.System.Net.Sockets.SocketException();
+			if(false) throw new cli.System.ArgumentException();
+    			socket.SetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.IP), SocketOptionName.wrap(SocketOptionName.DropMembership), new MulticastOption(new cli.System.Net.IPAddress(PlainSocketImpl.getAddressFromInetAddress(addr))));
+		}
+		catch(cli.System.Net.Sockets.SocketException x)
+		{
+		    throw PlainSocketImpl.convertSocketExceptionToIOException(x);
+		}
+		catch(cli.System.ArgumentException x1)
+		{
+		    throw new IOException(x1.getMessage());
+		}
+	}
+
+	/*************************************************************************/
+
+	/**
+	 * Gets the Time to Live value for the socket
+	 *
+	 * @@return The TTL value
+	 *
+	 * @@exception IOException If an error occurs
+	 */
+	protected byte getTTL() throws IOException
+	{
+	    return (byte)CIL.unbox_int(socket.GetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.IP), SocketOptionName.wrap(SocketOptionName.IpTimeToLive)));
+	}
+
+	/*************************************************************************/
+
+	/**
+	 * Sets the Time to Live value for the socket
+	 *
+	 * @@param ttl The new TTL value
+	 *
+	 * @@exception IOException If an error occurs
+	 */
+	protected void setTTL(byte ttl) throws IOException
+	{
+	    socket.SetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.IP), SocketOptionName.wrap(SocketOptionName.IpTimeToLive), ttl & 0xff);
+	}
+
+	/*************************************************************************/
+
+	/**
+	 * Gets the Time to Live value for the socket
+	 *
+	 * @@return The TTL value
+	 *
+	 * @@exception IOException If an error occurs
+	 */
+	protected int getTimeToLive() throws IOException
+	{
+	    return CIL.unbox_int(socket.GetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.IP), SocketOptionName.wrap(SocketOptionName.IpTimeToLive)));
+	}
+
+	/*************************************************************************/
+
+	/**
+	 * Sets the Time to Live value for the socket
+	 *
+	 * @@param ttl The new TTL value
+	 *
+	 * @@exception IOException If an error occurs
+	 */
+	protected void setTimeToLive(int ttl) throws IOException
+	{
+	    socket.SetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.IP), SocketOptionName.wrap(SocketOptionName.IpTimeToLive), ttl);
+	}
+
+	/*************************************************************************/
+
+    /**
+     * Retrieves the value of an option on the socket
+     *
+     * @@param option_id The identifier of the option to retrieve
+     *
+     * @@return The value of the option
+     *
+     * @@exception SocketException If an error occurs
+     */
+    public Object getOption(int option_id) throws SocketException
+    {
+	try
+	{
+	    if(false) throw new cli.System.Net.Sockets.SocketException();
+	    switch(option_id)
+	    {
+		case SocketOptions.SO_REUSEADDR:
+		    return new Boolean(CIL.unbox_int(socket.GetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.Socket), SocketOptionName.wrap(SocketOptionName.ReuseAddress))) != 0);
+		case SocketOptions.SO_BROADCAST:
+		    return new Boolean(CIL.unbox_int(socket.GetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.Socket), SocketOptionName.wrap(SocketOptionName.Broadcast))) != 0);
+		case SocketOptions.IP_MULTICAST_IF:
+		    return getInetAddressFromInt(CIL.unbox_int(socket.GetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.IP), SocketOptionName.wrap(SocketOptionName.MulticastInterface))));
+		case SocketOptions.IP_MULTICAST_IF2:
+		    throw new SocketException("SocketOptions.IP_MULTICAST_IF2 not implemented");
+		case SocketOptions.IP_MULTICAST_LOOP:
+		    return new Boolean(CIL.unbox_int(socket.GetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.IP), SocketOptionName.wrap(SocketOptionName.MulticastLoopback))) != 0);
+		default:
+		    return PlainSocketImpl.getCommonSocketOption(socket, option_id);
+	    }
+	}
+	catch(cli.System.Net.Sockets.SocketException x)
+	{
+	    throw new SocketException(x.getMessage());
+	}
+    }
+
+    private static InetAddress getInetAddressFromInt(int i) throws SocketException
+    {
+	byte[] b = new byte[4];
+	b[0] = (byte)(i >>  0);
+	b[1] = (byte)(i >>  8);
+	b[2] = (byte)(i >> 16);
+	b[3] = (byte)(i >> 24);
+	try
+	{
+	    return InetAddress.getByAddress(b);
+	}
+	catch(UnknownHostException x)
+	{
+	    throw new SocketException(x.getMessage());
+	}
+    }
+
+	/*************************************************************************/
+
+   /**
+    * Sets the value of an option on the socket
+    *
+    * @@param option_id The identifier of the option to set
+    * @@param val The value of the option to set
+    *
+    * @@exception SocketException If an error occurs
+    */
+    public void setOption(int option_id, Object val) throws SocketException
+    {
+	try
+	{
+	    if(false) throw new cli.System.Net.Sockets.SocketException();
+	    switch(option_id)
+	    {
+		case SocketOptions.SO_REUSEADDR:
+		    socket.SetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.Socket), SocketOptionName.wrap(SocketOptionName.ReuseAddress), ((Boolean)val).booleanValue() ? 1 : 0);
+		    break;
+		case SocketOptions.SO_BROADCAST:
+		    socket.SetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.Socket), SocketOptionName.wrap(SocketOptionName.Broadcast), ((Boolean)val).booleanValue() ? 1 : 0);
+		    break;
+		case SocketOptions.IP_MULTICAST_IF:
+		    socket.SetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.IP), SocketOptionName.wrap(SocketOptionName.MulticastInterface), (int)PlainSocketImpl.getAddressFromInetAddress((InetAddress)val));
+		    break;
+		case SocketOptions.IP_MULTICAST_IF2:
+		    throw new SocketException("SocketOptions.IP_MULTICAST_IF2 not implemented");
+		case SocketOptions.IP_MULTICAST_LOOP:
+		    socket.SetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.IP), SocketOptionName.wrap(SocketOptionName.MulticastLoopback), ((Boolean)val).booleanValue() ? 1 : 0);
+		    break;
+		default:
+		    PlainSocketImpl.setCommonSocketOption(socket, option_id, val);
+		    break;
+	    }
+	}
+	catch(cli.System.Net.Sockets.SocketException x)
+	{
+	    throw new SocketException(x.getMessage());
+	}
+    }
+
+	public int peekData(DatagramPacket packet)
+	{
+		throw new InternalError ("PlainDatagramSocketImpl::peekData is not implemented");
+	}
+
+	public void joinGroup(SocketAddress address, NetworkInterface netIf)
+	{
+		throw new InternalError ("PlainDatagramSocketImpl::joinGroup is not implemented");
+	}
+
+	public void leaveGroup(SocketAddress address, NetworkInterface netIf)
+	{
+		throw new InternalError ("PlainDatagramSocketImpl::leaveGroup is not implemented");
+	}
+} // class PlainDatagramSocketImpl
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d147 3
+a149 1
+		// TODO error handling
+d153 1
+a153 2
+			// TODO
+			throw new IOException();
+d155 5
+d200 1
+a200 4
+		if(x.get_ErrorCode() == 10060)
+		    throw new java.io.InterruptedIOException(x.getMessage());
+		// TODO error handling
+		throw new IOException(x.getMessage());
+d223 1
+a223 2
+			// TODO error handling
+			throw new IOException(x.getMessage());
+d250 1
+a250 2
+			// TODO error handling
+			throw new IOException(x.getMessage());
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@a62 5
+	 * Option id for the IP_TTL (time to live) value.
+	 */
+	private static final int IP_TTL = 0x1E61; // 7777
+
+	/**
+d268 1
+a268 6
+		Object obj = getOption(IP_TTL);
+
+		if (!(obj instanceof Integer))
+			throw new IOException("Internal Error");
+
+		return(((Integer)obj).byteValue());
+d282 1
+a282 1
+		setOption(IP_TTL, new Integer(ttl & 0xFF));
+d296 1
+a296 6
+		Object obj = getOption(IP_TTL);
+
+		if (!(obj instanceof Integer))
+			throw new IOException("Internal Error");
+
+		return(((Integer)obj).intValue());
+d310 1
+a310 1
+		setOption(IP_TTL, new Integer(ttl));
+d315 48
+a362 10
+	/**
+	 * Retrieves the value of an option on the socket
+	 *
+	 * @@param option_id The identifier of the option to retrieve
+	 *
+	 * @@return The value of the option
+	 *
+	 * @@exception SocketException If an error occurs
+	 */
+	public Object getOption(int option_id) throws SocketException
+d364 1
+a364 26
+		try
+		{
+			if(false) throw new cli.System.Net.Sockets.SocketException();
+			switch(option_id)
+			{
+				case IP_TTL:
+					return new Integer(CIL.unbox_int(socket.GetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.IP), SocketOptionName.wrap(SocketOptionName.IpTimeToLive))));
+				case SocketOptions.SO_TIMEOUT:
+				        return new Integer(CIL.unbox_int(socket.GetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.Socket), SocketOptionName.wrap(SocketOptionName.ReceiveTimeout))));
+				case SocketOptions.SO_BINDADDR:
+					try
+					{
+						return InetAddress.getByAddress(PlainSocketImpl.getLocalAddress(socket));
+					}
+					catch(UnknownHostException x)
+					{
+						throw new SocketException(x.getMessage());
+					}
+				default:
+					throw new Error("getOption(" + option_id + ") not implemented");
+			}
+		}
+		catch(cli.System.Net.Sockets.SocketException x)
+		{
+			throw new SocketException(x.getMessage());
+		}
+d366 1
+d370 11
+a380 9
+	/**
+	 * Sets the value of an option on the socket
+	 *
+	 * @@param option_id The identifier of the option to set
+	 * @@param val The value of the option to set
+	 *
+	 * @@exception SocketException If an error occurs
+	 */
+	public void setOption(int option_id, Object val) throws SocketException
+d382 2
+a383 1
+	    try
+d385 17
+a401 20
+		    if(false) throw new cli.System.Net.Sockets.SocketException();
+		    switch(option_id)
+		    {
+			    case IP_TTL:
+				    socket.SetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.IP), SocketOptionName.wrap(SocketOptionName.IpTimeToLive), ((Integer)val).intValue());
+				    break;
+			    case SocketOptions.SO_TIMEOUT:
+				    socket.SetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.Socket), SocketOptionName.wrap(SocketOptionName.ReceiveTimeout), ((Integer)val).intValue());
+				    socket.SetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.Socket), SocketOptionName.wrap(SocketOptionName.SendTimeout), ((Integer)val).intValue());
+				    break;
+			    case SocketOptions.SO_REUSEADDR:
+				    socket.SetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.Socket), SocketOptionName.wrap(SocketOptionName.ReuseAddress), ((Boolean)val).booleanValue() ? 1 : 0);
+				    break;
+			    default:
+				    throw new Error("setOption(" + option_id + ") not implemented");
+		    }
+	    }
+	    catch(cli.System.Net.Sockets.SocketException x)
+	    {
+		    throw new SocketException(x.getMessage());
+d404 5
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@a66 18
+
+	/*
+	 * Instance Variables
+	 */
+
+	private static class MyUdpClient extends UdpClient
+	{
+		MyUdpClient(cli.System.Net.IPEndPoint ep)
+		{
+			super(ep);
+		}
+
+		cli.System.Net.Sockets.Socket getSocket()
+		{
+			return super.get_Client();
+		}
+	}
+
+d70 4
+a73 1
+	private MyUdpClient socket;
+d110 2
+d113 2
+d129 10
+a138 2
+		// TODO error handling
+		socket = new MyUdpClient(new IPEndPoint(PlainSocketImpl.getAddressFromInetAddress(addr), port));
+d154 1
+a154 1
+		if(socket.Send(ByteArrayHack.cast(packet.getData()), len, new IPEndPoint(PlainSocketImpl.getAddressFromInetAddress(packet.getAddress()), packet.getPort())) != len)
+d186 1
+a186 2
+		int length = packet.getLength();
+		cli.System.Net.IPEndPoint[] remoteEP = new cli.System.Net.IPEndPoint[] {
+d189 3
+a191 7
+		byte[] buf = ByteArrayHack.cast(socket.Receive(remoteEP));
+		System.arraycopy(buf, 0, data, 0, Math.min(length, buf.length));
+		// I think the spec says that the Length property of DatagramPacket
+		// contains the number of bytes in the network packet (even if
+		// the buffer was smaller than the network packet)
+		packet.setLength(buf.length);
+		int remoteIP = (int)remoteEP[0].get_Address().get_Address();
+d195 1
+a195 1
+		packet.setPort(remoteEP[0].get_Port());
+d199 2
+d220 2
+a221 1
+			socket.JoinMulticastGroup(new cli.System.Net.IPAddress(PlainSocketImpl.getAddressFromInetAddress(addr)));
+d228 4
+d248 2
+a249 1
+			socket.DropMulticastGroup(new cli.System.Net.IPAddress(PlainSocketImpl.getAddressFromInetAddress(addr)));
+d256 4
+d347 1
+a347 1
+					return new Integer(CIL.unbox_int(socket.getSocket().GetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.IP), SocketOptionName.wrap(SocketOptionName.IpTimeToLive))));
+d349 10
+a358 1
+				        return new Integer(CIL.unbox_int(socket.getSocket().GetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.Socket), SocketOptionName.wrap(SocketOptionName.ReceiveTimeout))));
+d381 23
+a403 23
+		try
+		{
+			if(false) throw new cli.System.Net.Sockets.SocketException();
+			switch(option_id)
+			{
+				case IP_TTL:
+					socket.getSocket().SetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.IP), SocketOptionName.wrap(SocketOptionName.IpTimeToLive), ((Integer)val).intValue());
+					break;
+				case SocketOptions.SO_TIMEOUT:
+				        socket.getSocket().SetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.Socket), SocketOptionName.wrap(SocketOptionName.ReceiveTimeout), ((Integer)val).intValue());
+					socket.getSocket().SetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.Socket), SocketOptionName.wrap(SocketOptionName.SendTimeout), ((Integer)val).intValue());
+					break;
+				case SocketOptions.SO_REUSEADDR:
+					socket.getSocket().SetSocketOption(SocketOptionLevel.wrap(SocketOptionLevel.Socket), SocketOptionName.wrap(SocketOptionName.ReuseAddress), ((Boolean)val).booleanValue() ? 1 : 0);
+					break;
+				default:
+					throw new Error("setOption(" + option_id + ") not implemented");
+			}
+		}
+		catch(cli.System.Net.Sockets.SocketException x)
+		{
+			throw new SocketException(x.getMessage());
+		}
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d42 2
+a43 2
+import system.net.*;
+import system.net.sockets.*;
+d45 1
+d74 1
+a74 1
+		MyUdpClient(system.net.IPEndPoint ep)
+d79 1
+a79 1
+		system.net.sockets.Socket getSocket()
+d157 1
+a157 1
+		if(socket.Send(packet.getData(), len, new IPEndPoint(PlainSocketImpl.getAddressFromInetAddress(packet.getAddress()), packet.getPort())) != len)
+d187 1
+a187 1
+		if(false) throw new system.net.sockets.SocketException();
+d190 2
+a191 2
+		system.net.IPEndPoint[] remoteEP = new system.net.IPEndPoint[] {
+		    new system.net.IPEndPoint(0, 0)
+d193 1
+a193 1
+		byte[] buf = socket.Receive(remoteEP);
+d205 1
+a205 1
+	    catch(system.net.sockets.SocketException x)
+d208 1
+a208 1
+		throw new IOException(x.get_Message());
+d225 2
+a226 2
+			if(false) throw new system.net.sockets.SocketException();
+			socket.JoinMulticastGroup(new system.net.IPAddress(PlainSocketImpl.getAddressFromInetAddress(addr)));
+d228 1
+a228 1
+		catch(system.net.sockets.SocketException x)
+d231 1
+a231 1
+			throw new IOException(x.get_Message());
+d248 2
+a249 2
+			if(false) throw new system.net.sockets.SocketException();
+			socket.DropMulticastGroup(new system.net.IPAddress(PlainSocketImpl.getAddressFromInetAddress(addr)));
+d251 1
+a251 1
+		catch(system.net.sockets.SocketException x)
+d254 1
+a254 1
+			throw new IOException(x.get_Message());
+d339 1
+a339 1
+			if(false) throw new system.net.sockets.SocketException();
+d343 1
+a343 1
+					return new Integer(CIL.unbox_int(socket.getSocket().GetSocketOption(SocketOptionLevel.IP, SocketOptionName.IpTimeToLive)));
+d345 1
+a345 1
+				        return new Integer(CIL.unbox_int(socket.getSocket().GetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReceiveTimeout)));
+d350 1
+a350 1
+		catch(system.net.sockets.SocketException x)
+d352 1
+a352 1
+			throw new SocketException(x.get_Message());
+d370 1
+a370 1
+			if(false) throw new system.net.sockets.SocketException();
+d374 1
+a374 1
+					socket.getSocket().SetSocketOption(SocketOptionLevel.IP, SocketOptionName.IpTimeToLive, ((Integer)val).intValue());
+d377 2
+a378 2
+				        socket.getSocket().SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReceiveTimeout, ((Integer)val).intValue());
+					socket.getSocket().SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.SendTimeout, ((Integer)val).intValue());
+d381 1
+a381 1
+					socket.getSocket().SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, ((Boolean)val).booleanValue() ? 1 : 0);
+d387 1
+a387 1
+		catch(system.net.sockets.SocketException x)
+d389 1
+a389 1
+			throw new SocketException(x.get_Message());
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d343 2
+d375 7
+d383 1
+a383 1
+					throw new Error("getOption(" + option_id + ") not implemented");
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d182 28
+a209 1
+	protected native void receive(DatagramPacket packet) throws IOException;
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d44 1
+d71 13
+d87 1
+a87 1
+	private UdpClient socket;
+d140 1
+a140 1
+		socket = new UdpClient(new IPEndPoint(PlainSocketImpl.getAddressFromInetAddress(addr), port));
+d195 10
+a204 2
+		System.out.println("PlainDatagramSocketImpl.join not implemented");
+		throw new IOException("join not implemented");
+d218 10
+a227 2
+		System.out.println("PlainDatagramSocketImpl.leave not implemented");
+		throw new IOException("leave not implemented");
+d260 1
+a260 1
+		setOption(IP_TTL, new Integer(ttl));
+d309 15
+a323 2
+		// TODO
+		return null;
+d338 16
+a353 1
+		// TODO
+@
+
+
+1.1.1.1
+log
+@no message
+@
+text
+@@

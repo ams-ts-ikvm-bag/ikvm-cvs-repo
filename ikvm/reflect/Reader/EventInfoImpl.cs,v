@@ -1,0 +1,323 @@
+head	1.7;
+access;
+symbols
+	v8_1_5717_0:1.7
+	v8_1:1.7.0.10
+	v8_0_5449_1:1.7
+	v8_0_5449_0:1.7
+	v8_0:1.7.0.8
+	v7_4_5196_0:1.7
+	v7_4:1.7.0.6
+	v7_3:1.7.0.4
+	v7_2_4630_6:1.7
+	v7_2_4630_5:1.7
+	v7_2_4630_4:1.7
+	v7_2_4630_3:1.7
+	v7_2_4630_2:1.7
+	v0_46_0_4:1.4
+	v7_2_4630_1:1.7
+	v7_2:1.7.0.2
+	v7_1_4532_2:1.6
+	v7_1_4532_1:1.6
+	v7_1_4532_0:1.6
+	v7_1:1.6.0.2
+	v7_0_4335_3:1.5
+	v7_0_4335_2:1.5
+	v7_0_4335_1:1.5
+	v0_46_0_2:1.4
+	v7_0_4335_0:1.5
+	v7_0:1.5.0.2
+	v0_46_0_1:1.4
+	v0_46_0_0:1.4
+	v0_46:1.4.0.4
+	v0_44_0_6:1.4
+	v0_44_0_5:1.4
+	v0_44_0_4:1.4
+	v0_44_0_3:1.4
+	v0_44_0_2:1.4
+	v0_44_0_1:1.4
+	v0_44_0_0:1.4
+	v0_44:1.4.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.7
+date	2012.07.16.10.14.38;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2012.04.10.06.18.32;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2011.03.10.11.05.54;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.02.26.09.26.20;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.02.09.07.53.28;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.02;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.32;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.7
+log
+@Refactored custom attribute handling of MemberInfo types.
+@
+text
+@/*
+  Copyright (C) 2009-2012 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Text;
+using IKVM.Reflection.Metadata;
+
+namespace IKVM.Reflection.Reader
+{
+	sealed class EventInfoImpl : EventInfo
+	{
+		private readonly ModuleReader module;
+		private readonly Type declaringType;
+		private readonly int index;
+		private bool isPublic;
+		private bool isNonPrivate;
+		private bool isStatic;
+		private bool flagsCached;
+
+		internal EventInfoImpl(ModuleReader module, Type declaringType, int index)
+		{
+			this.module = module;
+			this.declaringType = declaringType;
+			this.index = index;
+		}
+
+		public override bool Equals(object obj)
+		{
+			EventInfoImpl other = obj as EventInfoImpl;
+			return other != null && other.declaringType == declaringType && other.index == index;
+		}
+
+		public override int GetHashCode()
+		{
+			return declaringType.GetHashCode() * 123 + index;
+		}
+
+		public override EventAttributes Attributes
+		{
+			get { return (EventAttributes)module.Event.records[index].EventFlags; }
+		}
+
+		public override MethodInfo GetAddMethod(bool nonPublic)
+		{
+			return module.MethodSemantics.GetMethod(module, this.MetadataToken, nonPublic, MethodSemanticsTable.AddOn);
+		}
+
+		public override MethodInfo GetRaiseMethod(bool nonPublic)
+		{
+			return module.MethodSemantics.GetMethod(module, this.MetadataToken, nonPublic, MethodSemanticsTable.Fire);
+		}
+
+		public override MethodInfo GetRemoveMethod(bool nonPublic)
+		{
+			return module.MethodSemantics.GetMethod(module, this.MetadataToken, nonPublic, MethodSemanticsTable.RemoveOn);
+		}
+
+		public override MethodInfo[] GetOtherMethods(bool nonPublic)
+		{
+			return module.MethodSemantics.GetMethods(module, this.MetadataToken, nonPublic, MethodSemanticsTable.Other);
+		}
+
+		public override MethodInfo[] __GetMethods()
+		{
+			return module.MethodSemantics.GetMethods(module, this.MetadataToken, true, -1);
+		}
+
+		public override Type EventHandlerType
+		{
+			get { return module.ResolveType(module.Event.records[index].EventType, declaringType); }
+		}
+
+		public override string Name
+		{
+			get { return module.GetString(module.Event.records[index].Name); }
+		}
+
+		public override Type DeclaringType
+		{
+			get { return declaringType; }
+		}
+
+		public override Module Module
+		{
+			get { return module; }
+		}
+
+		public override int MetadataToken
+		{
+			get { return (EventTable.Index << 24) + index + 1; }
+		}
+
+		internal override bool IsPublic
+		{
+			get
+			{
+				if (!flagsCached)
+				{
+					ComputeFlags();
+				}
+				return isPublic;
+			}
+		}
+
+		internal override bool IsNonPrivate
+		{
+			get
+			{
+				if (!flagsCached)
+				{
+					ComputeFlags();
+				}
+				return isNonPrivate;
+			}
+		}
+
+		internal override bool IsStatic
+		{
+			get
+			{
+				if (!flagsCached)
+				{
+					ComputeFlags();
+				}
+				return isStatic;
+			}
+		}
+
+		private void ComputeFlags()
+		{
+			module.MethodSemantics.ComputeFlags(module, this.MetadataToken, out isPublic, out isNonPrivate, out isStatic);
+			flagsCached = true;
+		}
+
+		internal override bool IsBaked
+		{
+			get { return true; }
+		}
+
+		internal override int GetCurrentToken()
+		{
+			return this.MetadataToken;
+		}
+	}
+}
+@
+
+
+1.6
+log
+@Moved GetEvents(), GetFields(), GetConstructors(), GetNestedTypes() and GetProperties() to a common implementation that fixes a number of bugs.
+@
+text
+@d155 10
+@
+
+
+1.5
+log
+@- Retain event method ordering.
+- Allow duplicate event methods.
+- Added API extension EventInfo.__GetMethods() to get all methods associated with an event.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Jeroen Frijters
+d37 1
+d126 12
+d152 1
+a152 1
+			module.MethodSemantics.ComputeFlags(module, this.MetadataToken, out isPublic, out isStatic);
+@
+
+
+1.4
+log
+@Made property and event public/static flag handling compatible with .NET
+@
+text
+@d83 5
+@
+
+
+1.3
+log
+@Since we don't cache PropertyInfoImpls and EventInfoImpls, they should at least override Equals/GetHashCode to do by value equality.
+@
+text
+@d36 3
+d107 30
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d44 11
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

@@ -1,0 +1,624 @@
+head	1.8;
+access;
+symbols
+	v8_1_5717_0:1.7
+	v8_1:1.7.0.8
+	v8_0_5449_1:1.7
+	v8_0_5449_0:1.7
+	v8_0:1.7.0.6
+	v7_4_5196_0:1.7
+	v7_4:1.7.0.4
+	v7_3:1.7.0.2
+	v7_2_4630_6:1.6.4.1
+	v7_2_4630_5:1.6.4.1
+	v7_2_4630_4:1.6.4.1
+	v7_2_4630_3:1.6.4.1
+	v7_2_4630_2:1.6
+	v0_46_0_4:1.4
+	v7_2_4630_1:1.6
+	v7_2:1.6.0.4
+	v7_1_4532_2:1.6
+	v7_1_4532_1:1.6
+	v7_1_4532_0:1.6
+	v7_1:1.6.0.2
+	v7_0_4335_3:1.5
+	v7_0_4335_2:1.5
+	v7_0_4335_1:1.5
+	v0_46_0_2:1.4
+	v7_0_4335_0:1.5
+	v7_0:1.5.0.2
+	v0_46_0_1:1.4
+	v0_46_0_0:1.4
+	v0_46:1.4.0.2
+	v0_44_0_6:1.3
+	v0_44_0_5:1.3
+	v0_44_0_4:1.3
+	v0_44_0_3:1.3
+	v0_44_0_2:1.3
+	v0_44_0_1:1.3
+	v0_44_0_0:1.3
+	v0_44:1.3.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.8
+date	2015.08.27.12.15.45;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2012.10.13.20.12.32;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2012.01.30.14.24.28;	author jfrijters;	state Exp;
+branches
+	1.6.4.1;
+next	1.5;
+
+1.5
+date	2011.03.08.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2011.01.26.05.59.24;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.06.09.04.50.02;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.02;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.32;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.6.4.1
+date	2012.10.23.08.15.53;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.8
+log
+@Use uint for file position to support >2GB files. Note that PE spec says that 2GB is the maximum valid size.
+@
+text
+@/*
+  Copyright (C) 2008 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Diagnostics;
+using IKVM.Reflection.Metadata;
+
+namespace IKVM.Reflection.Writer
+{
+	abstract class Heap
+	{
+		protected bool frozen;
+		protected int unalignedlength;
+
+		internal void Write(MetadataWriter mw)
+		{
+			uint pos = mw.Position;
+			WriteImpl(mw);
+			Debug.Assert(mw.Position == pos + unalignedlength);
+			int align = Length - unalignedlength;
+			for (int i = 0; i < align; i++)
+			{
+				mw.Write((byte)0);
+			}
+		}
+
+		internal bool IsBig
+		{
+			get { return Length > 65535; }
+		}
+
+		internal int Length
+		{
+			get
+			{
+				if (!frozen)
+					throw new InvalidOperationException();
+				return (unalignedlength + 3) & ~3;
+			}
+		}
+
+		protected abstract void WriteImpl(MetadataWriter mw);
+	}
+
+	abstract class SimpleHeap : Heap
+	{
+		internal void Freeze()
+		{
+			if (frozen)
+				throw new InvalidOperationException();
+			frozen = true;
+			unalignedlength = GetLength();
+		}
+
+		protected abstract int GetLength();
+	}
+
+	sealed class TableHeap : Heap
+	{
+		internal void Freeze(MetadataWriter mw)
+		{
+			if (frozen)
+				throw new InvalidOperationException();
+			frozen = true;
+			unalignedlength = GetLength(mw);
+		}
+
+		protected override void WriteImpl(MetadataWriter mw)
+		{
+			Table[] tables = mw.ModuleBuilder.GetTables();
+			// Header
+			mw.Write(0);		// Reserved
+			int ver = mw.ModuleBuilder.MDStreamVersion;
+			mw.Write((byte)(ver >> 16));	// MajorVersion
+			mw.Write((byte)ver);			// MinorVersion
+			byte heapSizes = 0;
+			if (mw.ModuleBuilder.Strings.IsBig)
+			{
+				heapSizes |= 0x01;
+			}
+			if (mw.ModuleBuilder.Guids.IsBig)
+			{
+				heapSizes |= 0x02;
+			}
+			if (mw.ModuleBuilder.Blobs.IsBig)
+			{
+				heapSizes |= 0x04;
+			}
+			mw.Write(heapSizes);// HeapSizes
+			// LAMESPEC spec says reserved, but .NET 2.0 Ref.Emit sets it to 0x10
+			mw.Write((byte)0x10);	// Reserved
+			long bit = 1;
+			long valid = 0;
+			foreach (Table table in tables)
+			{
+				if (table != null && table.RowCount > 0)
+				{
+					valid |= bit;
+				}
+				bit <<= 1;
+			}
+			mw.Write(valid);	// Valid
+			mw.Write(0x0016003301FA00L);	// Sorted
+			// Rows
+			foreach (Table table in tables)
+			{
+				if (table != null && table.RowCount > 0)
+				{
+					mw.Write(table.RowCount);
+				}
+			}
+			// Tables
+			foreach (Table table in tables)
+			{
+				if (table != null && table.RowCount > 0)
+				{
+					uint pos = mw.Position;
+					table.Write(mw);
+					Debug.Assert(mw.Position - pos == table.GetLength(mw));
+				}
+			}
+			// unexplained extra padding
+			mw.Write((byte)0);
+		}
+
+		private static int GetLength(MetadataWriter mw)
+		{
+			int len = 4 + 4 + 8 + 8;
+			foreach (Table table in mw.ModuleBuilder.GetTables())
+			{
+				if (table != null && table.RowCount > 0)
+				{
+					len += 4;	// row count
+					len += table.GetLength(mw);
+				}
+			}
+			// note that we pad one extra (unexplained) byte
+			return len + 1;
+		}
+	}
+
+	sealed class StringHeap : SimpleHeap
+	{
+		private List<string> list = new List<string>();
+		private Dictionary<string, int> strings = new Dictionary<string, int>();
+		private int nextOffset;
+
+		internal StringHeap()
+		{
+			Add("");
+		}
+
+		internal int Add(string str)
+		{
+			Debug.Assert(!frozen);
+			int offset;
+			if (!strings.TryGetValue(str, out offset))
+			{
+				offset = nextOffset;
+				nextOffset += System.Text.Encoding.UTF8.GetByteCount(str) + 1;
+				list.Add(str);
+				strings.Add(str, offset);
+			}
+			return offset;
+		}
+
+		internal string Find(int index)
+		{
+			foreach (KeyValuePair<string, int> kv in strings)
+			{
+				if (kv.Value == index)
+				{
+					return kv.Key;
+				}
+			}
+			return null;
+		}
+
+		protected override int GetLength()
+		{
+			return nextOffset;
+		}
+
+		protected override void WriteImpl(MetadataWriter mw)
+		{
+			foreach (string str in list)
+			{
+				mw.Write(System.Text.Encoding.UTF8.GetBytes(str));
+				mw.Write((byte)0);
+			}
+		}
+	}
+
+	sealed class UserStringHeap : SimpleHeap
+	{
+		private List<string> list = new List<string>();
+		private Dictionary<string, int> strings = new Dictionary<string, int>();
+		private int nextOffset;
+
+		internal UserStringHeap()
+		{
+			nextOffset = 1;
+		}
+
+		internal bool IsEmpty
+		{
+			get { return nextOffset == 1; }
+		}
+
+		internal int Add(string str)
+		{
+			Debug.Assert(!frozen);
+			int offset;
+			if (!strings.TryGetValue(str, out offset))
+			{
+				int length = str.Length * 2 + 1 + MetadataWriter.GetCompressedUIntLength(str.Length * 2 + 1);
+				if (nextOffset + length > 0xFFFFFF)
+				{
+					throw new FileFormatLimitationExceededException("No logical space left to create more user strings.", FileFormatLimitationExceededException.META_E_STRINGSPACE_FULL);
+				}
+				offset = nextOffset;
+				nextOffset += length;
+				list.Add(str);
+				strings.Add(str, offset);
+			}
+			return offset;
+		}
+
+		protected override int GetLength()
+		{
+			return nextOffset;
+		}
+
+		protected override void WriteImpl(MetadataWriter mw)
+		{
+			mw.Write((byte)0);
+			foreach (string str in list)
+			{
+				mw.WriteCompressedUInt(str.Length * 2 + 1);
+				byte hasSpecialChars = 0;
+				foreach (char ch in str)
+				{
+					mw.Write((ushort)ch);
+					if (hasSpecialChars == 0 && (ch < 0x20 || ch > 0x7E))
+					{
+						if (ch > 0x7E
+							|| (ch >= 0x01 && ch <= 0x08)
+							|| (ch >= 0x0E && ch <= 0x1F)
+							|| ch == 0x27
+							|| ch == 0x2D)
+						{
+							hasSpecialChars = 1;
+						}
+					}
+				}
+				mw.Write(hasSpecialChars);
+			}
+		}
+	}
+
+	sealed class GuidHeap : SimpleHeap
+	{
+		private List<Guid> list = new List<Guid>();
+
+		internal GuidHeap()
+		{
+		}
+
+		internal int Add(Guid guid)
+		{
+			Debug.Assert(!frozen);
+			list.Add(guid);
+			return list.Count;
+		}
+
+		protected override int GetLength()
+		{
+			return list.Count * 16;
+		}
+
+		protected override void WriteImpl(MetadataWriter mw)
+		{
+			foreach (Guid guid in list)
+			{
+				mw.Write(guid.ToByteArray());
+			}
+		}
+	}
+
+	sealed class BlobHeap : SimpleHeap
+	{
+		private Key[] map = new Key[8179];
+		private readonly ByteBuffer buf = new ByteBuffer(32);
+
+		private struct Key
+		{
+			internal Key[] next;
+			internal int len;
+			internal int hash;
+			internal int offset;
+		}
+
+		internal BlobHeap()
+		{
+			buf.Write((byte)0);
+		}
+
+		internal int Add(ByteBuffer bb)
+		{
+			Debug.Assert(!frozen);
+			int bblen = bb.Length;
+			if (bblen == 0)
+			{
+				return 0;
+			}
+			int lenlen = MetadataWriter.GetCompressedUIntLength(bblen);
+			int hash = bb.Hash();
+			int index = (hash & 0x7FFFFFFF) % map.Length;
+			Key[] keys = map;
+			int last = index;
+			while (keys[index].offset != 0)
+			{
+				if (keys[index].hash == hash
+					&& keys[index].len == bblen
+					&& buf.Match(keys[index].offset + lenlen, bb, 0, bblen))
+				{
+					return keys[index].offset;
+				}
+				if (index == last)
+				{
+					if (keys[index].next == null)
+					{
+						keys[index].next = new Key[4];
+						keys = keys[index].next;
+						index = 0;
+						break;
+					}
+					keys = keys[index].next;
+					index = -1;
+					last = keys.Length - 1;
+				}
+				index++;
+			}
+			int offset = buf.Position;
+			buf.WriteCompressedUInt(bblen);
+			buf.Write(bb);
+			keys[index].len = bblen;
+			keys[index].hash = hash;
+			keys[index].offset = offset;
+			return offset;
+		}
+
+		protected override int GetLength()
+		{
+			return buf.Position;
+		}
+
+		protected override void WriteImpl(MetadataWriter mw)
+		{
+			mw.Write(buf);
+		}
+
+		internal bool IsEmpty
+		{
+			get { return buf.Position == 1; }
+		}
+
+		internal IKVM.Reflection.Reader.ByteReader GetBlob(int blobIndex)
+		{
+			return buf.GetBlob(blobIndex);
+		}
+	}
+}
+@
+
+
+1.7
+log
+@Renamed methods that deal with unsigned compressed integers to *CompressedUInt instead of *CompressedInt.
+@
+text
+@d39 1
+a39 1
+			int pos = mw.Position;
+d139 1
+a139 1
+					int pos = mw.Position;
+@
+
+
+1.6
+log
+@Made two methods static and removed an unused method.
+@
+text
+@d238 1
+a238 1
+				int length = str.Length * 2 + 1 + MetadataWriter.GetCompressedIntLength(str.Length * 2 + 1);
+d261 1
+a261 1
+				mw.WriteCompressedInt(str.Length * 2 + 1);
+d338 1
+a338 1
+			int lenlen = MetadataWriter.GetCompressedIntLength(bblen);
+d367 1
+a367 1
+			buf.WriteCompressedInt(bblen);
+@
+
+
+1.6.4.1
+log
+@Backported fixes for rc 3.
+- Bug fix. Off-by-one error in local ref index reusing. Fix for bug #3575555.
+- Bug fix. Don't try to inject DynamicMethod in array types (applies to array.clone() method for MethodHandles).
+- IKVM.Reflection: Bug fix. ModuleReader.ResolveMember() should support types. Thanks to Jb Evain for finding this.
+- IKVM.Reflection: Bug fix. While reading the Cecil source I realized that array bounds are signed.
+- IKVM.Reflection: Bug fix. LocalBuilder should extend LocalVariableInfo.
+- IKVM.Reflection: Implemented LocalVariableInfo.ToString().
+@
+text
+@d238 1
+a238 1
+				int length = str.Length * 2 + 1 + MetadataWriter.GetCompressedUIntLength(str.Length * 2 + 1);
+d261 1
+a261 1
+				mw.WriteCompressedUInt(str.Length * 2 + 1);
+d338 1
+a338 1
+			int lenlen = MetadataWriter.GetCompressedUIntLength(bblen);
+d367 1
+a367 1
+			buf.WriteCompressedUInt(bblen);
+@
+
+
+1.5
+log
+@Added API extensions to get and add referenced modules.
+@
+text
+@d148 1
+a148 1
+		private int GetLength(MetadataWriter mw)
+@
+
+
+1.4
+log
+@Performance tweaks by Marek.
+@
+text
+@d189 12
+@
+
+
+1.3
+log
+@Fix. When the user string heap overflows, throw an exception instead of silently creating corrupt image.
+@
+text
+@d321 2
+a322 1
+			if (bb.Length == 0)
+d326 1
+a326 1
+			int lenlen = MetadataWriter.GetCompressedIntLength(bb.Length);
+d334 2
+a335 2
+					&& keys[index].len == bb.Length
+					&& buf.Match(keys[index].offset + lenlen, bb, 0, bb.Length))
+d355 1
+a355 1
+			buf.WriteCompressedInt(bb.Length);
+d357 1
+a357 1
+			keys[index].len = bb.Length;
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d226 5
+d232 1
+a232 1
+				nextOffset += str.Length * 2 + 1 + MetadataWriter.GetCompressedIntLength(str.Length * 2 + 1);
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

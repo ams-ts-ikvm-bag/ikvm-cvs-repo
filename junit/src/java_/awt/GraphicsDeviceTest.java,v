@@ -1,0 +1,140 @@
+head	1.4;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.4
+date	2009.12.11.14.02.18;	author smallsql;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2009.11.22.10.30.42;	author smallsql;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2009.11.08.12.54.13;	author smallsql;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2009.10.27.18.55.42;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.4
+log
+@Tests for GraphicsEnvironment added
+@
+text
+@/*
+  Copyright (C) 2009 Volker Berlin (i-net software)
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+package java_.awt;
+
+
+import java.awt.*;
+
+import junit.ikvm.ReferenceData;
+
+import org.junit.*;
+
+
+
+public class GraphicsDeviceTest{
+
+    private static ReferenceData reference;
+
+
+    @@BeforeClass
+    public static void setUpBeforeClass() throws Exception{
+        reference = new ReferenceData();
+    }
+
+
+    @@AfterClass
+    public static void tearDownAfterClass() throws Exception{
+        if(reference != null){
+            reference.save();
+            reference = null;
+        }
+    }
+
+    private GraphicsDevice getFirstDevice(){
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        GraphicsDevice[] gs = ge.getScreenDevices();
+        return gs[0];
+    }
+    
+    @@Test
+    public void getDisplayMode(){
+        DisplayMode mode = getFirstDevice().getDisplayMode();
+        reference.assertEquals("DisplayMode", mode.getWidth()+":"+mode.getWidth()+":"+mode.getBitDepth());
+    }
+}
+@
+
+
+1.3
+log
+@Add tests for default values of java.awt.Frame. Make the use of ReferenceData simpler.
+@
+text
+@d50 1
+d55 1
+a55 2
+        GraphicsEnvironment ge = GraphicsEnvironment.
+        getLocalGraphicsEnvironment();
+@
+
+
+1.2
+log
+@author removed
+@
+text
+@d42 1
+a42 1
+        reference = new ReferenceData(GraphicsDeviceTest.class);
+@
+
+
+1.1
+log
+@First JUnit tests for IKVM
+@
+text
+@a34 3
+/**
+ * @@author Volker Berlin
+ */
+@
+

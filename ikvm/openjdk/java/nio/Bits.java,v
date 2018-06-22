@@ -1,0 +1,1323 @@
+head	1.8;
+access;
+symbols
+	v8_1_5717_0:1.8
+	v8_1:1.8.0.12
+	v8_0_5449_1:1.8
+	v8_0_5449_0:1.8
+	v8_0:1.8.0.10
+	v7_4_5196_0:1.8
+	v7_4:1.8.0.8
+	v7_3:1.8.0.6
+	v7_2_4630_6:1.8
+	v7_2_4630_5:1.8
+	v7_2_4630_4:1.8
+	v7_2_4630_3:1.8
+	v7_2_4630_2:1.8
+	v0_46_0_4:1.3
+	v7_2_4630_1:1.8
+	v7_2:1.8.0.4
+	v7_1_4532_2:1.8
+	v7_1_4532_1:1.8
+	v7_1_4532_0:1.8
+	v7_1:1.8.0.2
+	v7_0_4335_3:1.7
+	v7_0_4335_2:1.7
+	v7_0_4335_1:1.7
+	v0_46_0_2:1.3
+	v7_0_4335_0:1.7
+	v7_0:1.7.0.2
+	v0_40_0_6:1.1
+	v0_40_0_5:1.1
+	v0_46_0_1:1.3
+	v0_46_0_0:1.3
+	v0_46:1.3.0.2
+	v0_44_0_6:1.2
+	v0_44_0_5:1.2
+	v0_44_0_4:1.2
+	v0_44_0_3:1.2
+	v0_44_0_2:1.2
+	v0_42_0_7:1.1
+	v0_44_0_1:1.2
+	v0_44_0_0:1.2
+	v0_44:1.2.0.2
+	v0_42_0_6:1.1
+	v0_42_0_5:1.1
+	v0_42_0_4:1.1
+	v0_42_0_3:1.1
+	v0_42_0_2:1.1
+	v0_42_0_1:1.1
+	v0_42_0_0:1.1
+	v0_42:1.1.0.6
+	v0_40_0_3:1.1
+	v0_40_0_2:1.1
+	v0_40_0_1:1.1
+	v0_40_0_0:1.1
+	v0_40:1.1.0.4
+	v0_38_0_1:1.1
+	v0_38_0_0:1.1
+	v0_38:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.8
+date	2012.05.23.10.00.03;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2011.07.30.09.55.22;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2011.07.29.12.09.34;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2011.07.15.09.05.27;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2011.07.07.07.04.32;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2011.01.24.16.40.23;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.04.12.06.38.46;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.09.01.04.00.25;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.8
+log
+@Integrated OpenJDK 7u4. Not all forked files have been merged yet, just the ones necessary to get things building.
+@
+text
+@/*
+ * Copyright (c) 2000, 2012, Oracle and/or its affiliates. All rights reserved.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 only, as
+ * published by the Free Software Foundation.  Oracle designates this
+ * particular file as subject to the "Classpath" exception as provided
+ * by Oracle in the LICENSE file that accompanied this code.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * You should have received a copy of the GNU General Public License version
+ * 2 along with this work; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+ * or visit www.oracle.com if you need additional information or have any
+ * questions.
+ */
+
+package java.nio;
+
+import java.security.AccessController;
+import sun.misc.Unsafe;
+import sun.misc.VM;
+
+/**
+ * Access to bits, native and otherwise.
+ */
+
+class Bits {                            // package-private
+
+    private Bits() { }
+
+
+    // -- Swapping --
+
+    static short swap(short x) {
+        return Short.reverseBytes(x);
+    }
+
+    static char swap(char x) {
+        return Character.reverseBytes(x);
+    }
+
+    static int swap(int x) {
+        return Integer.reverseBytes(x);
+    }
+
+    static long swap(long x) {
+        return Long.reverseBytes(x);
+    }
+
+
+    // -- get/put char --
+
+    static private char makeChar(byte b1, byte b0) {
+        return (char)((b1 << 8) | (b0 & 0xff));
+    }
+
+    static char getCharL(ByteBuffer bb, int bi) {
+        return makeChar(bb._get(bi + 1),
+                        bb._get(bi    ));
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static char getCharL(long a) {
+        return makeChar(_get(a + 1),
+                        _get(a    ));
+    }
+
+    static char getCharB(ByteBuffer bb, int bi) {
+        return makeChar(bb._get(bi    ),
+                        bb._get(bi + 1));
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static char getCharB(long a) {
+        return makeChar(_get(a    ),
+                        _get(a + 1));
+    }
+
+    static char getChar(ByteBuffer bb, int bi, boolean bigEndian) {
+        return bigEndian ? getCharB(bb, bi) : getCharL(bb, bi);
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static char getChar(long a, boolean bigEndian) {
+        return bigEndian ? getCharB(a) : getCharL(a);
+    }
+
+    private static byte char1(char x) { return (byte)(x >> 8); }
+    private static byte char0(char x) { return (byte)(x     ); }
+
+    static void putCharL(ByteBuffer bb, int bi, char x) {
+        bb._put(bi    , char0(x));
+        bb._put(bi + 1, char1(x));
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static void putCharL(long a, char x) {
+        _put(a    , char0(x));
+        _put(a + 1, char1(x));
+    }
+
+    static void putCharB(ByteBuffer bb, int bi, char x) {
+        bb._put(bi    , char1(x));
+        bb._put(bi + 1, char0(x));
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static void putCharB(long a, char x) {
+        _put(a    , char1(x));
+        _put(a + 1, char0(x));
+    }
+
+    static void putChar(ByteBuffer bb, int bi, char x, boolean bigEndian) {
+        if (bigEndian)
+            putCharB(bb, bi, x);
+        else
+            putCharL(bb, bi, x);
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static void putChar(long a, char x, boolean bigEndian) {
+        if (bigEndian)
+            putCharB(a, x);
+        else
+            putCharL(a, x);
+    }
+
+
+    // -- get/put short --
+
+    static private short makeShort(byte b1, byte b0) {
+        return (short)((b1 << 8) | (b0 & 0xff));
+    }
+
+    static short getShortL(ByteBuffer bb, int bi) {
+        return makeShort(bb._get(bi + 1),
+                         bb._get(bi    ));
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static short getShortL(long a) {
+        return makeShort(_get(a + 1),
+                         _get(a    ));
+    }
+
+    static short getShortB(ByteBuffer bb, int bi) {
+        return makeShort(bb._get(bi    ),
+                         bb._get(bi + 1));
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static short getShortB(long a) {
+        return makeShort(_get(a    ),
+                         _get(a + 1));
+    }
+
+    static short getShort(ByteBuffer bb, int bi, boolean bigEndian) {
+        return bigEndian ? getShortB(bb, bi) : getShortL(bb, bi);
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static short getShort(long a, boolean bigEndian) {
+        return bigEndian ? getShortB(a) : getShortL(a);
+    }
+
+    private static byte short1(short x) { return (byte)(x >> 8); }
+    private static byte short0(short x) { return (byte)(x     ); }
+
+    static void putShortL(ByteBuffer bb, int bi, short x) {
+        bb._put(bi    , short0(x));
+        bb._put(bi + 1, short1(x));
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static void putShortL(long a, short x) {
+        _put(a    , short0(x));
+        _put(a + 1, short1(x));
+    }
+
+    static void putShortB(ByteBuffer bb, int bi, short x) {
+        bb._put(bi    , short1(x));
+        bb._put(bi + 1, short0(x));
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static void putShortB(long a, short x) {
+        _put(a    , short1(x));
+        _put(a + 1, short0(x));
+    }
+
+    static void putShort(ByteBuffer bb, int bi, short x, boolean bigEndian) {
+        if (bigEndian)
+            putShortB(bb, bi, x);
+        else
+            putShortL(bb, bi, x);
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static void putShort(long a, short x, boolean bigEndian) {
+        if (bigEndian)
+            putShortB(a, x);
+        else
+            putShortL(a, x);
+    }
+
+
+    // -- get/put int --
+
+    static private int makeInt(byte b3, byte b2, byte b1, byte b0) {
+        return (((b3       ) << 24) |
+                ((b2 & 0xff) << 16) |
+                ((b1 & 0xff) <<  8) |
+                ((b0 & 0xff)      ));
+    }
+
+    static int getIntL(ByteBuffer bb, int bi) {
+        return makeInt(bb._get(bi + 3),
+                       bb._get(bi + 2),
+                       bb._get(bi + 1),
+                       bb._get(bi    ));
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static int getIntL(long a) {
+        return makeInt(_get(a + 3),
+                       _get(a + 2),
+                       _get(a + 1),
+                       _get(a    ));
+    }
+
+    static int getIntB(ByteBuffer bb, int bi) {
+        return makeInt(bb._get(bi    ),
+                       bb._get(bi + 1),
+                       bb._get(bi + 2),
+                       bb._get(bi + 3));
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static int getIntB(long a) {
+        return makeInt(_get(a    ),
+                       _get(a + 1),
+                       _get(a + 2),
+                       _get(a + 3));
+    }
+
+    static int getInt(ByteBuffer bb, int bi, boolean bigEndian) {
+        return bigEndian ? getIntB(bb, bi) : getIntL(bb, bi) ;
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static int getInt(long a, boolean bigEndian) {
+        return bigEndian ? getIntB(a) : getIntL(a) ;
+    }
+
+    private static byte int3(int x) { return (byte)(x >> 24); }
+    private static byte int2(int x) { return (byte)(x >> 16); }
+    private static byte int1(int x) { return (byte)(x >>  8); }
+    private static byte int0(int x) { return (byte)(x      ); }
+
+    static void putIntL(ByteBuffer bb, int bi, int x) {
+        bb._put(bi + 3, int3(x));
+        bb._put(bi + 2, int2(x));
+        bb._put(bi + 1, int1(x));
+        bb._put(bi    , int0(x));
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static void putIntL(long a, int x) {
+        _put(a + 3, int3(x));
+        _put(a + 2, int2(x));
+        _put(a + 1, int1(x));
+        _put(a    , int0(x));
+    }
+
+    static void putIntB(ByteBuffer bb, int bi, int x) {
+        bb._put(bi    , int3(x));
+        bb._put(bi + 1, int2(x));
+        bb._put(bi + 2, int1(x));
+        bb._put(bi + 3, int0(x));
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static void putIntB(long a, int x) {
+        _put(a    , int3(x));
+        _put(a + 1, int2(x));
+        _put(a + 2, int1(x));
+        _put(a + 3, int0(x));
+    }
+
+    static void putInt(ByteBuffer bb, int bi, int x, boolean bigEndian) {
+        if (bigEndian)
+            putIntB(bb, bi, x);
+        else
+            putIntL(bb, bi, x);
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static void putInt(long a, int x, boolean bigEndian) {
+        if (bigEndian)
+            putIntB(a, x);
+        else
+            putIntL(a, x);
+    }
+
+
+    // -- get/put long --
+
+    static private long makeLong(byte b7, byte b6, byte b5, byte b4,
+                                 byte b3, byte b2, byte b1, byte b0)
+    {
+        return ((((long)b7       ) << 56) |
+                (((long)b6 & 0xff) << 48) |
+                (((long)b5 & 0xff) << 40) |
+                (((long)b4 & 0xff) << 32) |
+                (((long)b3 & 0xff) << 24) |
+                (((long)b2 & 0xff) << 16) |
+                (((long)b1 & 0xff) <<  8) |
+                (((long)b0 & 0xff)      ));
+    }
+
+    static long getLongL(ByteBuffer bb, int bi) {
+        return makeLong(bb._get(bi + 7),
+                        bb._get(bi + 6),
+                        bb._get(bi + 5),
+                        bb._get(bi + 4),
+                        bb._get(bi + 3),
+                        bb._get(bi + 2),
+                        bb._get(bi + 1),
+                        bb._get(bi    ));
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static long getLongL(long a) {
+        return makeLong(_get(a + 7),
+                        _get(a + 6),
+                        _get(a + 5),
+                        _get(a + 4),
+                        _get(a + 3),
+                        _get(a + 2),
+                        _get(a + 1),
+                        _get(a    ));
+    }
+
+    static long getLongB(ByteBuffer bb, int bi) {
+        return makeLong(bb._get(bi    ),
+                        bb._get(bi + 1),
+                        bb._get(bi + 2),
+                        bb._get(bi + 3),
+                        bb._get(bi + 4),
+                        bb._get(bi + 5),
+                        bb._get(bi + 6),
+                        bb._get(bi + 7));
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static long getLongB(long a) {
+        return makeLong(_get(a    ),
+                        _get(a + 1),
+                        _get(a + 2),
+                        _get(a + 3),
+                        _get(a + 4),
+                        _get(a + 5),
+                        _get(a + 6),
+                        _get(a + 7));
+    }
+
+    static long getLong(ByteBuffer bb, int bi, boolean bigEndian) {
+        return bigEndian ? getLongB(bb, bi) : getLongL(bb, bi);
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static long getLong(long a, boolean bigEndian) {
+        return bigEndian ? getLongB(a) : getLongL(a);
+    }
+
+    private static byte long7(long x) { return (byte)(x >> 56); }
+    private static byte long6(long x) { return (byte)(x >> 48); }
+    private static byte long5(long x) { return (byte)(x >> 40); }
+    private static byte long4(long x) { return (byte)(x >> 32); }
+    private static byte long3(long x) { return (byte)(x >> 24); }
+    private static byte long2(long x) { return (byte)(x >> 16); }
+    private static byte long1(long x) { return (byte)(x >>  8); }
+    private static byte long0(long x) { return (byte)(x      ); }
+
+    static void putLongL(ByteBuffer bb, int bi, long x) {
+        bb._put(bi + 7, long7(x));
+        bb._put(bi + 6, long6(x));
+        bb._put(bi + 5, long5(x));
+        bb._put(bi + 4, long4(x));
+        bb._put(bi + 3, long3(x));
+        bb._put(bi + 2, long2(x));
+        bb._put(bi + 1, long1(x));
+        bb._put(bi    , long0(x));
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static void putLongL(long a, long x) {
+        _put(a + 7, long7(x));
+        _put(a + 6, long6(x));
+        _put(a + 5, long5(x));
+        _put(a + 4, long4(x));
+        _put(a + 3, long3(x));
+        _put(a + 2, long2(x));
+        _put(a + 1, long1(x));
+        _put(a    , long0(x));
+    }
+
+    static void putLongB(ByteBuffer bb, int bi, long x) {
+        bb._put(bi    , long7(x));
+        bb._put(bi + 1, long6(x));
+        bb._put(bi + 2, long5(x));
+        bb._put(bi + 3, long4(x));
+        bb._put(bi + 4, long3(x));
+        bb._put(bi + 5, long2(x));
+        bb._put(bi + 6, long1(x));
+        bb._put(bi + 7, long0(x));
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static void putLongB(long a, long x) {
+        _put(a    , long7(x));
+        _put(a + 1, long6(x));
+        _put(a + 2, long5(x));
+        _put(a + 3, long4(x));
+        _put(a + 4, long3(x));
+        _put(a + 5, long2(x));
+        _put(a + 6, long1(x));
+        _put(a + 7, long0(x));
+    }
+
+    static void putLong(ByteBuffer bb, int bi, long x, boolean bigEndian) {
+        if (bigEndian)
+            putLongB(bb, bi, x);
+        else
+            putLongL(bb, bi, x);
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static void putLong(long a, long x, boolean bigEndian) {
+        if (bigEndian)
+            putLongB(a, x);
+        else
+            putLongL(a, x);
+    }
+
+
+    // -- get/put float --
+
+    static float getFloatL(ByteBuffer bb, int bi) {
+        return Float.intBitsToFloat(getIntL(bb, bi));
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static float getFloatL(long a) {
+        return Float.intBitsToFloat(getIntL(a));
+    }
+
+    static float getFloatB(ByteBuffer bb, int bi) {
+        return Float.intBitsToFloat(getIntB(bb, bi));
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static float getFloatB(long a) {
+        return Float.intBitsToFloat(getIntB(a));
+    }
+
+    static float getFloat(ByteBuffer bb, int bi, boolean bigEndian) {
+        return bigEndian ? getFloatB(bb, bi) : getFloatL(bb, bi);
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static float getFloat(long a, boolean bigEndian) {
+        return bigEndian ? getFloatB(a) : getFloatL(a);
+    }
+
+    static void putFloatL(ByteBuffer bb, int bi, float x) {
+        putIntL(bb, bi, Float.floatToRawIntBits(x));
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static void putFloatL(long a, float x) {
+        putIntL(a, Float.floatToRawIntBits(x));
+    }
+
+    static void putFloatB(ByteBuffer bb, int bi, float x) {
+        putIntB(bb, bi, Float.floatToRawIntBits(x));
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static void putFloatB(long a, float x) {
+        putIntB(a, Float.floatToRawIntBits(x));
+    }
+
+    static void putFloat(ByteBuffer bb, int bi, float x, boolean bigEndian) {
+        if (bigEndian)
+            putFloatB(bb, bi, x);
+        else
+            putFloatL(bb, bi, x);
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static void putFloat(long a, float x, boolean bigEndian) {
+        if (bigEndian)
+            putFloatB(a, x);
+        else
+            putFloatL(a, x);
+    }
+
+
+    // -- get/put double --
+
+    static double getDoubleL(ByteBuffer bb, int bi) {
+        return Double.longBitsToDouble(getLongL(bb, bi));
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static double getDoubleL(long a) {
+        return Double.longBitsToDouble(getLongL(a));
+    }
+
+    static double getDoubleB(ByteBuffer bb, int bi) {
+        return Double.longBitsToDouble(getLongB(bb, bi));
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static double getDoubleB(long a) {
+        return Double.longBitsToDouble(getLongB(a));
+    }
+
+    static double getDouble(ByteBuffer bb, int bi, boolean bigEndian) {
+        return bigEndian ? getDoubleB(bb, bi) : getDoubleL(bb, bi);
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static double getDouble(long a, boolean bigEndian) {
+        return bigEndian ? getDoubleB(a) : getDoubleL(a);
+    }
+
+    static void putDoubleL(ByteBuffer bb, int bi, double x) {
+        putLongL(bb, bi, Double.doubleToRawLongBits(x));
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static void putDoubleL(long a, double x) {
+        putLongL(a, Double.doubleToRawLongBits(x));
+    }
+
+    static void putDoubleB(ByteBuffer bb, int bi, double x) {
+        putLongB(bb, bi, Double.doubleToRawLongBits(x));
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static void putDoubleB(long a, double x) {
+        putLongB(a, Double.doubleToRawLongBits(x));
+    }
+
+    static void putDouble(ByteBuffer bb, int bi, double x, boolean bigEndian) {
+        if (bigEndian)
+            putDoubleB(bb, bi, x);
+        else
+            putDoubleL(bb, bi, x);
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static void putDouble(long a, double x, boolean bigEndian) {
+        if (bigEndian)
+            putDoubleB(a, x);
+        else
+            putDoubleL(a, x);
+    }
+
+
+    // -- Unsafe access --
+
+    private static final Unsafe unsafe = Unsafe.getUnsafe();
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    private static byte _get(long a) {
+        return unsafe.getByte(a);
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    private static void _put(long a, byte b) {
+        unsafe.putByte(a, b);
+    }
+
+    static Unsafe unsafe() {
+        return unsafe;
+    }
+
+
+    // -- Processor and memory-system properties --
+
+    private static final ByteOrder byteOrder;
+
+    static ByteOrder byteOrder() {
+        if (byteOrder == null)
+            throw new Error("Unknown byte order");
+        return byteOrder;
+    }
+
+    static {
+        if (cli.System.BitConverter.IsLittleEndian) {
+            byteOrder = ByteOrder.LITTLE_ENDIAN;
+        } else {
+            byteOrder = ByteOrder.BIG_ENDIAN;
+        }
+    }
+
+
+    private static int pageSize = -1;
+
+    static int pageSize() {
+        if (pageSize == -1)
+            pageSize = unsafe().pageSize();
+        return pageSize;
+    }
+
+    static int pageCount(long size) {
+        return (int)(size + (long)pageSize() - 1L) / pageSize();
+    }
+
+    private static boolean unaligned;
+    private static boolean unalignedKnown = false;
+
+    static boolean unaligned() {
+        if (unalignedKnown)
+            return unaligned;
+        String arch = AccessController.doPrivileged(
+            new sun.security.action.GetPropertyAction("os.arch"));
+        unaligned = arch.equals("i386") || arch.equals("x86")
+            || arch.equals("amd64") || arch.equals("x86_64");
+        unalignedKnown = true;
+        return unaligned;
+    }
+
+
+    // -- Direct memory management --
+
+    // A user-settable upper limit on the maximum amount of allocatable
+    // direct buffer memory.  This value may be changed during VM
+    // initialization if it is launched with "-XX:MaxDirectMemorySize=<size>".
+    private static volatile long maxMemory = VM.maxDirectMemory();
+    private static volatile long reservedMemory;
+    private static volatile long totalCapacity;
+    private static volatile long count;
+    private static boolean memoryLimitSet = false;
+
+    // These methods should be called whenever direct memory is allocated or
+    // freed.  They allow the user to control the amount of direct memory
+    // which a process may access.  All sizes are specified in bytes.
+    static void reserveMemory(long size, int cap) {
+        synchronized (Bits.class) {
+            if (!memoryLimitSet && VM.isBooted()) {
+                maxMemory = VM.maxDirectMemory();
+                memoryLimitSet = true;
+            }
+            // -XX:MaxDirectMemorySize limits the total capacity rather than the
+            // actual memory usage, which will differ when buffers are page
+            // aligned.
+            if (cap <= maxMemory - totalCapacity) {
+                reservedMemory += size;
+                totalCapacity += cap;
+                count++;
+                return;
+            }
+        }
+
+        System.gc();
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException x) {
+            // Restore interrupt status
+            Thread.currentThread().interrupt();
+        }
+        synchronized (Bits.class) {
+            if (totalCapacity + cap > maxMemory)
+                throw new OutOfMemoryError("Direct buffer memory");
+            reservedMemory += size;
+            totalCapacity += cap;
+            count++;
+        }
+
+    }
+
+    static synchronized void unreserveMemory(long size, int cap) {
+        if (reservedMemory > 0) {
+            reservedMemory -= size;
+            totalCapacity -= cap;
+            count--;
+            assert (reservedMemory > -1);
+        }
+    }
+
+    // -- Monitoring of direct buffer usage --
+
+    static {
+        // setup access to this package in SharedSecrets
+        sun.misc.SharedSecrets.setJavaNioAccess(
+            new sun.misc.JavaNioAccess() {
+                @@Override
+                public sun.misc.JavaNioAccess.BufferPool getDirectBufferPool() {
+                    return new sun.misc.JavaNioAccess.BufferPool() {
+                        @@Override
+                        public String getName() {
+                            return "direct";
+                        }
+                        @@Override
+                        public long getCount() {
+                            return Bits.count;
+                        }
+                        @@Override
+                        public long getTotalCapacity() {
+                            return Bits.totalCapacity;
+                        }
+                        @@Override
+                        public long getMemoryUsed() {
+                            return Bits.reservedMemory;
+                        }
+                    };
+                }
+                @@Override
+                public ByteBuffer newDirectByteBuffer(long addr, int cap, Object ob) {
+                    return new DirectByteBuffer(addr, cap, ob);
+                }
+                @@Override
+                public void truncate(Buffer buf) {
+                    buf.truncate();
+                }
+        });
+    }
+
+    // -- Bulk get/put acceleration --
+
+    // These numbers represent the point at which we have empirically
+    // determined that the average cost of a JNI call exceeds the expense
+    // of an element by element copy.  These numbers may change over time.
+    static final int JNI_COPY_TO_ARRAY_THRESHOLD   = 6;
+    static final int JNI_COPY_FROM_ARRAY_THRESHOLD = 6;
+
+    // This number limits the number of bytes to copy per call to Unsafe's
+    // copyMemory method. A limit is imposed to allow for safepoint polling
+    // during a large copy
+    static final long UNSAFE_COPY_THRESHOLD = 1024L * 1024L;
+
+    // These methods do no bounds checking.  Verification that the copy will not
+    // result in memory corruption should be done prior to invocation.
+    // All positions and lengths are specified in bytes.
+
+    /**
+     * Copy from given source array to destination address.
+     *
+     * @@param   src
+     *          source array
+     * @@param   srcBaseOffset
+     *          offset of first element of storage in source array
+     * @@param   srcPos
+     *          offset within source array of the first element to read
+     * @@param   dstAddr
+     *          destination address
+     * @@param   length
+     *          number of bytes to copy
+     */
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static void copyFromArray(Object src, long srcBaseOffset, long srcPos,
+                              long dstAddr, long length)
+    {
+        long offset = srcBaseOffset + srcPos;
+        while (length > 0) {
+            long size = (length > UNSAFE_COPY_THRESHOLD) ? UNSAFE_COPY_THRESHOLD : length;
+            unsafe.copyMemory(src, offset, null, dstAddr, size);
+            length -= size;
+            offset += size;
+            dstAddr += size;
+        }
+    }
+
+    /**
+     * Copy from source address into given destination array.
+     *
+     * @@param   srcAddr
+     *          source address
+     * @@param   dst
+     *          destination array
+     * @@param   dstBaseOffset
+     *          offset of first element of storage in destination array
+     * @@param   dstPos
+     *          offset within destination array of the first element to write
+     * @@param   length
+     *          number of bytes to copy
+     */
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static void copyToArray(long srcAddr, Object dst, long dstBaseOffset, long dstPos,
+                            long length)
+    {
+        long offset = dstBaseOffset + dstPos;
+        while (length > 0) {
+            long size = (length > UNSAFE_COPY_THRESHOLD) ? UNSAFE_COPY_THRESHOLD : length;
+            unsafe.copyMemory(null, srcAddr, dst, offset, size);
+            length -= size;
+            srcAddr += size;
+            offset += size;
+        }
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static void copyFromCharArray(Object src, long srcPos, long dstAddr,
+                                  long length)
+    {
+        copyFromShortArray(src, srcPos, dstAddr, length);
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static void copyToCharArray(long srcAddr, Object dst, long dstPos,
+                                long length)
+    {
+        copyToShortArray(srcAddr, dst, dstPos, length);
+    }
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static native void copyFromShortArray(Object src, long srcPos, long dstAddr,
+                                          long length);
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static native void copyToShortArray(long srcAddr, Object dst, long dstPos,
+                                        long length);
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static native void copyFromIntArray(Object src, long srcPos, long dstAddr,
+                                        long length);
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static native void copyToIntArray(long srcAddr, Object dst, long dstPos,
+                                      long length);
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static native void copyFromLongArray(Object src, long srcPos, long dstAddr,
+                                         long length);
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static native void copyToLongArray(long srcAddr, Object dst, long dstPos,
+                                       long length);
+
+}
+@
+
+
+1.7
+log
+@Added .NET 4 security attribute.
+@
+text
+@d2 1
+a2 1
+ * Copyright (c) 2000, 2010, Oracle and/or its affiliates. All rights reserved.
+d641 1
+a641 1
+            || arch.equals("amd64");
+d731 8
+@
+
+
+1.6
+log
+@Removed temp OpenJDK 6 methods.
+@
+text
+@d765 1
+@
+
+
+1.5
+log
+@Updated bulk of java.nio to OpenJDK 7.
+@
+text
+@a840 15
+
+
+    // [TEMP] while we're updating from OpenJDK 6 to 7 we need these OpenJDK 6 methods
+
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static native void copyFromByteArray(Object src, long srcPos, long dstAddr,
+                                         long length);
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static native void copyToByteArray(long srcAddr, Object dst, long dstPos,
+                                       long length);
+
+    static void reserveMemory(long size) {
+    }
+    static void unreserveMemory(long size) {
+    }
+@
+
+
+1.4
+log
+@Updated java.nio.Bits to OpenJDK 7.
+@
+text
+@d792 1
+@
+
+
+1.3
+log
+@Integrated OpenJDK 6 b21.
+@
+text
+@d2 1
+a2 1
+ * Copyright (c) 2000, 2007, Oracle and/or its affiliates. All rights reserved.
+a28 1
+import java.security.PrivilegedAction;
+d44 1
+a44 2
+        return (short)((x << 8) |
+                       ((char)x >>> 8));
+d48 1
+a48 2
+        return (char)((x << 8) |
+                      (x >>> 8));
+d52 1
+a52 4
+        return ((x << 24) |
+                ((x & 0x0000ff00) <<  8) |
+                ((x & 0x00ff0000) >>> 8) |
+                (x >>> 24));
+d56 1
+a56 2
+        return (((long)swap((int)x) << 32) |
+                ((long)swap((int)(x >>> 32)) & 0xffffffffL));
+d68 1
+a68 1
+                        bb._get(bi + 0));
+d74 1
+a74 1
+                        _get(a + 0));
+d78 1
+a78 1
+        return makeChar(bb._get(bi + 0),
+d84 1
+a84 1
+        return makeChar(_get(a + 0),
+d89 1
+a89 1
+        return (bigEndian ? getCharB(bb, bi) : getCharL(bb, bi));
+d94 1
+a94 1
+        return (bigEndian ? getCharB(a) : getCharL(a));
+d98 1
+a98 1
+    private static byte char0(char x) { return (byte)(x >> 0); }
+d101 1
+a101 1
+        bb._put(bi + 0, char0(x));
+d107 1
+a107 1
+        _put(a + 0, char0(x));
+d112 1
+a112 1
+        bb._put(bi + 0, char1(x));
+d118 1
+a118 1
+        _put(a + 0, char1(x));
+d146 1
+a146 1
+                         bb._get(bi + 0));
+d152 1
+a152 1
+                         _get(a));
+d156 1
+a156 1
+        return makeShort(bb._get(bi + 0),
+d162 1
+a162 1
+        return makeShort(_get(a),
+d167 1
+a167 1
+        return (bigEndian ? getShortB(bb, bi) : getShortL(bb, bi));
+d172 1
+a172 1
+        return (bigEndian ? getShortB(a) : getShortL(a));
+d176 1
+a176 1
+    private static byte short0(short x) { return (byte)(x >> 0); }
+d179 1
+a179 1
+        bb._put(bi + 0, short0(x));
+d185 1
+a185 1
+        _put(a, short0(x));
+d190 1
+a190 1
+        bb._put(bi + 0, short1(x));
+d196 1
+a196 1
+        _put(a, short1(x));
+d219 1
+a219 1
+        return (((b3 & 0xff) << 24) |
+d222 1
+a222 1
+                ((b0 & 0xff) <<  0));
+d229 1
+a229 1
+                       bb._get(bi + 0));
+d237 1
+a237 1
+                       _get(a + 0));
+d241 1
+a241 1
+        return makeInt(bb._get(bi + 0),
+d249 1
+a249 1
+        return makeInt(_get(a + 0),
+d256 1
+a256 1
+        return (bigEndian ? getIntB(bb, bi) : getIntL(bb, bi));
+d261 1
+a261 1
+        return (bigEndian ? getIntB(a) : getIntL(a));
+d267 1
+a267 1
+    private static byte int0(int x) { return (byte)(x >>  0); }
+d273 1
+a273 1
+        bb._put(bi + 0, int0(x));
+d281 1
+a281 1
+        _put(a + 0, int0(x));
+d285 1
+a285 1
+        bb._put(bi + 0, int3(x));
+d293 1
+a293 1
+        _put(a + 0, int3(x));
+d320 1
+a320 1
+        return ((((long)b7 & 0xff) << 56) |
+d327 1
+a327 1
+                (((long)b0 & 0xff) <<  0));
+d338 1
+a338 1
+                        bb._get(bi + 0));
+d350 1
+a350 1
+                        _get(a + 0));
+d354 1
+a354 1
+        return makeLong(bb._get(bi + 0),
+d366 1
+a366 1
+        return makeLong(_get(a + 0),
+d377 1
+a377 1
+        return (bigEndian ? getLongB(bb, bi) : getLongL(bb, bi));
+d382 1
+a382 1
+        return (bigEndian ? getLongB(a) : getLongL(a));
+d392 1
+a392 1
+    private static byte long0(long x) { return (byte)(x >>  0); }
+d402 1
+a402 1
+        bb._put(bi + 0, long0(x));
+d414 1
+a414 1
+        _put(a + 0, long0(x));
+d418 1
+a418 1
+        bb._put(bi + 0, long7(x));
+d430 1
+a430 1
+        _put(a + 0, long7(x));
+d477 1
+a477 1
+        return (bigEndian ? getFloatB(bb, bi) : getFloatL(bb, bi));
+d482 1
+a482 1
+        return (bigEndian ? getFloatB(a) : getFloatL(a));
+d540 1
+a540 1
+        return (bigEndian ? getDoubleB(bb, bi) : getDoubleL(bb, bi));
+d545 1
+a545 1
+        return (bigEndian ? getDoubleB(a) : getDoubleL(a));
+d628 3
+d653 3
+a655 1
+    private static volatile long reservedMemory = 0;
+d661 1
+a661 2
+    static void reserveMemory(long size) {
+
+d667 4
+a670 1
+            if (size <= maxMemory - reservedMemory) {
+d672 2
+d686 1
+a686 1
+            if (reservedMemory + size > maxMemory)
+d689 2
+d695 1
+a695 1
+    static synchronized void unreserveMemory(long size) {
+d698 2
+d704 29
+d742 5
+d751 53
+a803 6
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static native void copyFromByteArray(Object src, long srcPos, long dstAddr,
+                                         long length);
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    static native void copyToByteArray(long srcAddr, Object dst, long dstPos,
+                                       long length);
+d831 1
+a831 1
+                                        long length);
+d840 15
+@
+
+
+1.2
+log
+@Prep for .NET 4.0 security model:
+- added more SecurityCritical attributes
+- added SecuritySafeCritical/TreatAsSafe attributes to Direct-X-Buffer classes
+@
+text
+@d2 1
+a2 1
+ * Copyright 2000-2007 Sun Microsystems, Inc.  All Rights Reserved.
+d7 1
+a7 1
+ * published by the Free Software Foundation.  Sun designates this
+d9 1
+a9 1
+ * by Sun in the LICENSE file that accompanied this code.
+d21 3
+a23 3
+ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
+ * CA 95054 USA or visit www.sun.com if you need additional information or
+ * have any questions.
+@
+
+
+1.1
+log
+@Forked java/nio/Bits.java to remove unsafe code from static initializer.
+@
+text
+@d78 1
+d89 1
+d99 1
+d112 1
+d123 1
+d136 1
+d156 1
+d167 1
+d177 1
+d190 1
+d201 1
+d214 1
+d239 1
+d254 1
+d266 1
+d283 1
+d298 1
+d313 1
+d348 1
+d371 1
+d387 1
+d412 1
+d435 1
+d454 1
+d469 1
+d478 1
+d487 1
+d496 1
+d505 1
+d517 1
+d532 1
+d541 1
+d550 1
+d559 1
+d568 1
+d580 1
+d593 1
+d598 1
+d711 1
+d714 1
+d718 1
+d725 1
+d732 1
+d735 1
+d739 1
+d742 1
+d746 1
+d749 1
+@
+

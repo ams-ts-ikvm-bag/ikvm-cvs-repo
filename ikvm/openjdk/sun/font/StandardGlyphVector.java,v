@@ -1,0 +1,1392 @@
+head	1.17;
+access;
+symbols
+	v8_1_5717_0:1.17
+	v8_1:1.17.0.6
+	v8_0_5449_1:1.17
+	v8_0_5449_0:1.17
+	v8_0:1.17.0.4
+	v7_4_5196_0:1.17
+	v7_4:1.17.0.2
+	v7_3:1.16.0.2
+	v7_2_4630_6:1.14
+	v7_2_4630_5:1.14
+	v7_2_4630_4:1.14
+	v7_2_4630_3:1.14
+	v7_2_4630_2:1.14
+	v0_46_0_4:1.11
+	v7_2_4630_1:1.14
+	v7_2:1.14.0.2
+	v7_1_4532_2:1.13
+	v7_1_4532_1:1.13
+	v7_1_4532_0:1.13
+	v7_1:1.13.0.4
+	v7_0_4335_3:1.13
+	v7_0_4335_2:1.13
+	v7_0_4335_1:1.13
+	v0_46_0_2:1.11
+	v7_0_4335_0:1.13
+	v7_0:1.13.0.2
+	v0_46_0_1:1.11
+	v0_46_0_0:1.11
+	v0_46:1.11.0.2
+	v0_44_0_6:1.5
+	v0_44_0_5:1.5
+	v0_44_0_4:1.5
+	v0_44_0_3:1.5
+	v0_44_0_2:1.5
+	v0_42_0_7:1.3
+	v0_44_0_1:1.5
+	v0_44_0_0:1.5
+	v0_44:1.5.0.2
+	v0_42_0_6:1.3
+	v0_42_0_5:1.3
+	v0_42_0_4:1.3
+	v0_42_0_3:1.3
+	v0_42_0_2:1.3
+	v0_42_0_1:1.3
+	v0_42_0_0:1.3
+	v0_42:1.3.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.17
+date	2013.10.21.14.28.22;	author smallsql;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2013.02.13.09.45.41;	author smallsql;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2012.11.18.18.25.46;	author smallsql;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2012.07.31.03.34.04;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2011.07.28.13.32.44;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2011.04.16.19.59.16;	author smallsql;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2011.01.23.11.20.38;	author smallsql;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2011.01.17.05.42.41;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2010.11.04.11.10.43;	author smallsql;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2010.10.21.12.17.22;	author smallsql;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2010.10.06.08.31.53;	author smallsql;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2010.09.07.09.26.45;	author smallsql;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2009.11.25.15.01.20;	author smallsql;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2009.10.30.15.38.16;	author smallsql;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2009.05.30.21.32.32;	author smallsql;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2009.05.16.16.34.40;	author smallsql;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2009.04.25.21.18.50;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.17
+log
+@Implements the StandardGlypVector constuctor with glyphs
+@
+text
+@/*
+  Copyright (C) 2009 - 2013 Volker Berlin (i-net software)
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+ */
+package sun.font;
+
+import ikvm.awt.IkvmToolkit;
+
+import java.awt.Font;
+import java.awt.Shape;
+import java.awt.font.FontRenderContext;
+import java.awt.font.GlyphMetrics;
+import java.awt.font.GlyphJustificationInfo;
+import java.awt.font.GlyphVector;
+import java.awt.font.LineMetrics;
+import java.awt.geom.AffineTransform;
+import java.awt.geom.Point2D;
+import java.awt.geom.Rectangle2D;
+import java.text.CharacterIterator;
+
+import ikvm.internal.NotYetImplementedError;
+
+/**
+ * Standard implementation of GlyphVector used by Font, GlyphList, and SunGraphics2D.
+ * 
+ */
+public class StandardGlyphVector extends GlyphVector{
+    private Font font;
+    private FontRenderContext frc;
+    private final String glyphs; // always
+    private float[] positions; // only if not default advances
+
+
+
+    private Font2D font2D;
+    private FontStrike strike;
+    
+    
+    /////////////////////////////
+    // Constructors and Factory methods
+    /////////////////////////////
+
+    public StandardGlyphVector(Font font, String str, FontRenderContext frc) {
+        if(str == null){
+            throw new NullPointerException("Glyphs are null");
+        }
+        this.font = font;
+        if( frc == null ){
+            frc = new FontRenderContext( null, false, false );
+        }
+        this.frc = frc;
+        this.glyphs = str;
+        this.font2D = FontUtilities.getFont2D(font);
+        this.strike = font2D.getStrike(font, frc);
+    }
+
+    public StandardGlyphVector(Font font, char[] text, FontRenderContext frc) {
+        this(font, text, 0, text.length, frc);
+    }
+
+    public StandardGlyphVector(Font font, char[] text, int start, int count,
+                               FontRenderContext frc) {
+        this(font, new String(text, start, count), frc);
+    }
+
+    private float getTracking(Font font) {
+        if (font.hasLayoutAttributes()) {
+            AttributeValues values = ((AttributeMap)font.getAttributes()).getValues();
+            return values.getTracking();
+        }
+        return 0;
+    }
+
+    public StandardGlyphVector(Font font, CharacterIterator iter, FontRenderContext frc) {
+        this(font, getString(iter), frc);
+    }
+
+    public StandardGlyphVector( Font font, int[] glyphs, FontRenderContext frc ) {
+        this( font, glyphs2chars(glyphs), frc );
+    }
+    
+    /**
+     * Symmetric to {@@link #getGlyphCodes(int, int, int[])}
+     * Currently there is no real mapping possible between the chars and the glyph IDs in the TTF file
+     */
+    private static char[] glyphs2chars( int[] glyphs ) {
+        int count = glyphs.length;
+        char[] text = new char[count];
+        for( int i = 0; i < count; ++i ) {
+            text[i] = (char)glyphs[i];
+        }
+        return text;
+    }
+
+    /////////////////////////////
+    // GlyphVector API
+    /////////////////////////////
+
+    @@Override
+    public Font getFont() {
+        return this.font;
+    }
+
+    @@Override
+    public FontRenderContext getFontRenderContext() {
+        return this.frc;
+    }
+
+    @@Override
+    public void performDefaultLayout() {
+        positions = null;
+    }
+
+    @@Override
+    public int getNumGlyphs() {
+        return glyphs.length();
+    }
+
+    @@Override
+    public int getGlyphCode(int glyphIndex) {
+        return glyphs.charAt(glyphIndex);
+    }
+
+    @@Override
+    public int[] getGlyphCodes(int start, int count, int[] result) {
+        if (count < 0) {
+            throw new IllegalArgumentException("count = " + count);
+        }
+        if (start < 0) {
+            throw new IndexOutOfBoundsException("start = " + start);
+        }        
+        if (start > glyphs.length() - count) { // watch out for overflow if index + count overlarge
+            throw new IndexOutOfBoundsException("start + count = " + (start + count));
+        }
+
+        if (result == null) {
+            result = new int[count];
+        }
+        for (int i = 0; i < count; ++i) {
+            result[i] = glyphs.charAt(i + start);
+        }
+        return result;
+    }
+
+    // !!! not cached, assume TextLayout will cache if necessary
+    // !!! reexamine for per-glyph-transforms
+    // !!! revisit for text-on-a-path, vertical
+    @@Override
+    public Rectangle2D getLogicalBounds() {
+        initPositions();
+
+        LineMetrics lm = font.getLineMetrics("", frc);
+
+        float minX, minY, maxX, maxY;
+        // horiz only for now...
+        minX = 0;
+        minY = -lm.getAscent();
+        maxX = 0;
+        maxY = lm.getDescent() + lm.getLeading();
+        if (glyphs.length() > 0) {
+            maxX = positions[positions.length - 2];
+        }
+
+        return new Rectangle2D.Float(minX, minY, maxX - minX, maxY - minY);
+    }
+
+    // !!! not cached, assume TextLayout will cache if necessary
+    @@Override
+    public Rectangle2D getVisualBounds() {
+        return getOutline().getBounds2D();
+    }
+
+    @@Override
+    public Shape getOutline() {
+        return getOutline( 0, 0 );
+    }
+
+    @@Override
+    public Shape getOutline(float x, float y) {
+        return IkvmToolkit.DefaultToolkit.get().outline( font, frc, glyphs, x, y );
+    }
+
+    @@Override
+    public Shape getGlyphOutline( int glyphIndex ) {
+        return getGlyphOutline( glyphIndex, 0, 0 );
+    }
+
+    @@Override
+    public Shape getGlyphOutline( int glyphIndex, float x, float y ) {
+        initPositions();
+        
+        return IkvmToolkit.DefaultToolkit.get().outline( font, frc, glyphs.substring( glyphIndex, glyphIndex + 1 ), x + positions[glyphIndex * 2], y );
+    }
+    
+    @@Override
+    public Point2D getGlyphPosition(int ix) {
+        initPositions();
+
+        ix *= 2;
+        return new Point2D.Float(positions[ix], positions[ix + 1]);
+    }
+
+    @@Override
+    public void setGlyphPosition(int ix, Point2D pos) {
+        initPositions();
+
+        int ix2 = ix << 1;
+        positions[ix2] = (float)pos.getX();
+        positions[ix2 + 1] = (float)pos.getY();
+    }
+
+    @@Override
+    public AffineTransform getGlyphTransform(int ix) {
+        throw new NotYetImplementedError();
+    }
+
+    @@Override
+    public float[] getGlyphPositions(int start, int count, float[] result) {
+        if (count < 0) {
+            throw new IllegalArgumentException("count = " + count);
+        }
+        if (start < 0) {
+            throw new IndexOutOfBoundsException("start = " + start);
+        }
+        if (start > this.glyphs.length() + 1 - count) {
+            throw new IndexOutOfBoundsException("start + count = " + (start + count));
+        }
+        int count2 = count * 2;
+        if( result == null ) {
+            result = new float[count2];
+        }
+        initPositions();
+        System.arraycopy( positions, start * 2, result, 0, count2 );
+        return result;
+    }
+
+    @@Override
+    public Shape getGlyphLogicalBounds(int ix) {
+        if (ix < 0 || ix >= glyphs.length()) {
+            throw new IndexOutOfBoundsException("ix = " + ix);
+        }
+
+        initPositions();
+        StrikeMetrics metrics = strike.getFontMetrics();
+        float x = positions[ix * 2];
+        return new Rectangle2D.Float( x, -metrics.getAscent(), positions[(ix + 1) * 2] - x, metrics.getAscent()
+                        + metrics.getDescent() + metrics.getLeading() );
+    }
+    
+    @@Override
+    public Shape getGlyphVisualBounds(int ix) {
+        if (ix < 0 || ix >= glyphs.length()) {
+            throw new IndexOutOfBoundsException("ix = " + ix);
+        }
+
+        initPositions();
+        return IkvmToolkit.DefaultToolkit.get().outline( font, frc, glyphs.substring( ix, ix + 1 ), positions[ix * 2], 0 );
+    }
+
+    @@Override
+    public GlyphMetrics getGlyphMetrics(int ix) {
+        if (ix < 0 || ix >= glyphs.length()) {
+            throw new IndexOutOfBoundsException("ix = " + ix);
+        }
+
+        Rectangle2D vb = getGlyphVisualBounds(ix).getBounds2D();
+        Point2D pt = getGlyphPosition(ix);
+        vb.setRect(vb.getMinX() - pt.getX(),
+                   vb.getMinY() - pt.getY(),
+                   vb.getWidth(),
+                   vb.getHeight());
+        Point2D.Float adv =
+        		strike.getGlyphMetrics( glyphs.charAt( ix ) );
+        GlyphMetrics gm = new GlyphMetrics(true, adv.x, adv.y,
+                                           vb,
+                                          (byte)0);
+        return gm;
+    }
+
+    @@Override
+    public GlyphJustificationInfo getGlyphJustificationInfo(int ix) {
+        if (ix < 0 || ix >= glyphs.length()) {
+            throw new IndexOutOfBoundsException("ix = " + ix);
+        }
+
+        // currently we don't have enough information to do this right.  should
+        // get info from the font and use real OT/GX justification.  Right now
+        // sun/font/ExtendedTextSourceLabel assigns one of three infos
+        // based on whether the char is kanji, space, or other.
+
+        return null;
+    }
+
+    @@Override
+    public boolean equals(GlyphVector rhs) {
+        if(!(rhs instanceof StandardGlyphVector)){
+            return false;
+        }
+        StandardGlyphVector sgv = (StandardGlyphVector)rhs;
+        if(!glyphs.equals(sgv.glyphs)){
+            return false;
+        }
+        if(equals(font, sgv.font)){
+            return false;
+        }
+        if(equals(frc, sgv.frc)){
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Compare 2 objects via equals where both can be null
+     */
+    private static boolean equals(Object obj1, Object obj2){
+        if(obj1 != null){
+            if(!obj1.equals(obj2)){
+                return false;
+            }
+        }else{
+            if(obj2 != null){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * As a concrete subclass of GlyphVector, this must implement clone.
+     */
+    @@Override
+    public Object clone() {
+        // positions, gti are mutable so we have to clone them
+        // font2d can be shared
+        // fsref is a cache and can be shared
+        try {
+            StandardGlyphVector result = (StandardGlyphVector)super.clone();
+
+            if (positions != null) {
+                result.positions = (float[])positions.clone();
+            }
+
+            return result;
+        }
+        catch (CloneNotSupportedException e) {
+        }
+
+        return this;
+    }
+
+    //////////////////////
+    // StandardGlyphVector new public methods
+    /////////////////////
+
+    /**
+     * Set all the glyph positions, including the 'after last glyph' position.
+     * The srcPositions array must be of length (numGlyphs + 1) * 2.
+     */
+    public void setGlyphPositions(float[] srcPositions) {
+        int requiredLength = glyphs.length() * 2 + 2;
+        if (srcPositions.length != requiredLength) {
+            throw new IllegalArgumentException("srcPositions.length != " + requiredLength);
+        }
+
+        positions = (float[])srcPositions.clone();
+
+    }
+
+    /**
+     * This is a convenience overload that gets all the glyph positions, which
+     * is what you usually want to do if you're getting more than one.
+     * !!! should I bother taking result parameter?
+     */
+    public float[] getGlyphPositions(float[] result) {
+        initPositions();
+        return positions;
+    }
+
+    /**
+     * For each glyph return posx, posy, advx, advy, visx, visy, visw, vish.
+     */
+    public float[] getGlyphInfo() {
+        initPositions();
+        float[] result = new float[glyphs.length() * 8];
+        for (int i = 0, n = 0; i < glyphs.length(); ++i, n += 8) {
+            float x = positions[i*2];
+            float y = positions[i*2+1];
+            result[n] = x;
+            result[n+1] = y;
+
+            int glyphID = glyphs.charAt(i);
+            Point2D.Float adv = strike.getGlyphMetrics(glyphID);
+            result[n+2] = adv.x;
+            result[n+3] = adv.y;
+
+            Rectangle2D vb = getGlyphVisualBounds(i).getBounds2D();
+            result[n+4] = (float)(vb.getMinX());
+            result[n+5] = (float)(vb.getMinY());
+            result[n+6] = (float)(vb.getWidth());
+            result[n+7] = (float)(vb.getHeight());
+        }
+        return result;
+    }
+
+    @@Override
+    public void setGlyphTransform(int glyphIndex, AffineTransform newTX){
+        throw new NotYetImplementedError();
+    }
+
+
+    /**
+     * Convert a CharacterIterator to a string
+     * @@param iterator the iterator
+     * @@return the string
+     */
+    private static String getString(java.text.CharacterIterator iterator){
+        iterator.first();
+        StringBuilder sb = new StringBuilder();
+
+        while(true){
+            char c = iterator.current();
+            if(c == CharacterIterator.DONE){
+                break;
+            }
+            sb.append(c);
+            iterator.next();
+        }
+
+        return sb.toString();
+    }
+
+    /**
+     * Ensure that the positions array exists and holds position data.
+     * If the array is null, this allocates it and sets default positions.
+     */
+    private void initPositions() {
+        if (positions == null) {
+            positions = new float[glyphs.length() * 2 + 2];
+
+            Point2D.Float trackPt = null;
+            float track = getTracking(font);
+            if (track != 0) {
+                track *= font.getSize2D();
+                trackPt = new Point2D.Float(track, 0); // advance delta
+            }
+
+            Point2D.Float pt = new Point2D.Float(0, 0);
+            if (font.isTransformed()) {
+                AffineTransform at = font.getTransform();
+                at.transform(pt, pt);
+                positions[0] = pt.x;
+                positions[1] = pt.y;
+
+                if (trackPt != null) {
+                    at.deltaTransform(trackPt, trackPt);
+                }
+            }
+            for (int i = 0, n = 2; i < glyphs.length(); ++i, n += 2) {
+                addDefaultGlyphAdvance(glyphs.charAt(i), pt);
+                if (trackPt != null) {
+                    pt.x += trackPt.x;
+                    pt.y += trackPt.y;
+                }
+                positions[n] = pt.x;
+                positions[n+1] = pt.y;
+            }
+        }
+    }
+
+    private void addDefaultGlyphAdvance(int glyphID, Point2D.Float result) {
+        Point2D.Float adv = strike.getGlyphMetrics(glyphID);
+        result.x += adv.x;
+        result.y += adv.y;
+    }
+    
+    /**
+     * If the text is a simple text and we can use FontDesignMetrics without a stackoverflow.
+     * @@see FontDesignMetrics#stringWidth(String)
+     * @@return true, if a simple text. false it is a complex text.
+     */
+	public static boolean isSimpleString(Font font, String str) {
+		if (font.hasLayoutAttributes()) {
+			return false;
+		}
+		for (int i = 0; i < str.length(); ++i) {
+			if (FontUtilities.isNonSimpleChar(str.charAt(i))) {
+				return false;
+			}
+		}
+		return true;
+	}
+}
+@
+
+
+1.16
+log
+@implements getGlyphOutline
+@
+text
+@d97 15
+a111 2
+    public StandardGlyphVector(Font font, int[] glyphs, FontRenderContext frc) {
+        throw new NotYetImplementedError();
+@
+
+
+1.15
+log
+@Implements performDefaultLayout(), setGlyphPosition(int,Point2D)
+reorder the methods like the Oracle implementation for simpler merging,
+add some range checks from the Oracle implementation
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 - 2011 Volker Berlin (i-net software)
+d190 2
+a191 2
+    public Shape getGlyphOutline(int ix) {
+        throw new NotYetImplementedError();
+d195 7
+@
+
+
+1.14
+log
+@Add support for running with headless awt toolkit. Fix for #3552089.
+@
+text
+@a29 1
+import java.awt.Toolkit;
+d31 1
+a32 1
+import java.awt.font.GlyphMetrics;
+d47 3
+a49 1
+
+a51 3
+    private final Font font;
+
+    private final FontRenderContext frc;
+a52 1
+    private final String glyphs;
+d58 5
+a62 1
+    public StandardGlyphVector(Font font, String str, FontRenderContext frc){
+d76 8
+d85 6
+a90 2
+    public StandardGlyphVector(Font font, CharacterIterator ci, FontRenderContext frc){
+        this(font, getString(ci), frc);
+d93 3
+d97 1
+a97 1
+    public StandardGlyphVector(Font font, int[] glyphCodes, FontRenderContext frc){
+d101 3
+d105 3
+a107 2
+    public StandardGlyphVector(Font font, char[] chars, FontRenderContext frc){
+        this(font, chars, 0, chars.length, frc);
+d110 3
+a112 3
+
+    public StandardGlyphVector(Font font, char[] chars, int beginIndex, int length, FontRenderContext frc){
+        this(font, new String(chars, beginIndex, length), frc);
+a114 4
+
+    /**
+     * As a concrete subclass of GlyphVector, this must implement clone.
+     */
+d116 2
+a117 10
+    public Object clone(){
+        try{
+            StandardGlyphVector result = (StandardGlyphVector)super.clone();
+
+            return result;
+        }catch(CloneNotSupportedException e){
+            e.printStackTrace();
+        }
+
+        return this;
+d120 3
+a122 11
+
+    // ////////////////////
+    // StandardGlyphVector new public methods
+    // ///////////////////
+
+    /**
+     * Set all the glyph positions, including the 'after last glyph' position. The srcPositions array must be of length
+     * (numGlyphs + 1) * 2.
+     */
+    public void setGlyphPositions(float[] srcPositions){
+        positions = srcPositions.clone();
+d125 3
+a127 8
+
+    /**
+     * This is a convenience overload that gets all the glyph positions, which is what you usually want to do if you're
+     * getting more than one. !!! should I bother taking result parameter?
+     */
+    public float[] getGlyphPositions(float[] result){
+        initPositions();
+        return positions;
+d130 11
+d142 5
+a146 22
+    /**
+     * For each glyph return posx, posy, advx, advy, visx, visy, visw, vish.
+     */
+    public float[] getGlyphInfo(){
+        initPositions();
+        float[] result = new float[glyphs.length() * 8];
+        for (int i = 0, n = 0; i < glyphs.length(); ++i, n += 8) {
+            float x = positions[i*2];
+            float y = positions[i*2+1];
+            result[n] = x;
+            result[n+1] = y;
+
+            int glyphID = glyphs.charAt(i);
+            Point2D.Float adv = strike.getGlyphMetrics(glyphID);
+            result[n+2] = adv.x;
+            result[n+3] = adv.y;
+
+            Rectangle2D vb = getGlyphVisualBounds(i).getBounds2D();
+            result[n+4] = (float)(vb.getMinX());
+            result[n+5] = (float)(vb.getMinY());
+            result[n+6] = (float)(vb.getWidth());
+            result[n+7] = (float)(vb.getHeight());
+d151 8
+d160 8
+a167 30
+    @@Override
+    public boolean equals(GlyphVector gv){
+        if(!(gv instanceof StandardGlyphVector)){
+            return false;
+        }
+        StandardGlyphVector sgv = (StandardGlyphVector)gv;
+        if(!glyphs.equals(sgv.glyphs)){
+            return false;
+        }
+        if(equals(font, sgv.font)){
+            return false;
+        }
+        if(equals(frc, sgv.frc)){
+            return false;
+        }
+        return true;
+    }
+    
+    /**
+     * Compare 2 objects via equals where both can be null
+     */
+    private static boolean equals(Object obj1, Object obj2){
+        if(obj1 != null){
+            if(!obj1.equals(obj2)){
+                return false;
+            }
+        }else{
+            if(obj2 != null){
+                return false;
+            }
+a168 2
+        return true;
+    }
+d170 1
+a170 4
+
+    @@Override
+    public Font getFont(){
+        return font;
+d173 1
+a173 1
+
+d175 2
+a176 2
+    public FontRenderContext getFontRenderContext(){
+        return frc;
+a178 1
+
+d180 2
+a181 2
+    public int getGlyphCode(int glyphIndex){
+        return glyphs.charAt(glyphIndex);
+a183 1
+
+d185 2
+a186 8
+    public int[] getGlyphCodes(int beginGlyphIndex, int numEntries, int[] codeReturn){
+        if(codeReturn == null || codeReturn.length < numEntries){
+            codeReturn = new int[numEntries];
+        }
+        for(int i=0; i<numEntries; i++){
+            codeReturn[i] = glyphs.charAt(i + beginGlyphIndex);
+        }
+        return codeReturn;
+a188 1
+
+d190 1
+a190 1
+    public GlyphJustificationInfo getGlyphJustificationInfo(int glyphIndex){
+a193 1
+
+d195 2
+a196 9
+    public GlyphMetrics getGlyphMetrics( int glyphIndex ) {
+        if( (glyphIndex < 0) || (glyphIndex >= glyphs.length()) ) {
+            throw new IndexOutOfBoundsException( "ix = " + glyphIndex );
+        }
+        Rectangle2D bounds = getGlyphVisualBounds( glyphIndex ).getBounds2D();
+        Point2D pos = getGlyphPosition( glyphIndex );
+        bounds.setRect( bounds.getX() - pos.getX(), bounds.getY()- pos.getY(), bounds.getWidth(), bounds.getHeight() );
+
+        Point2D.Float advance = strike.getGlyphMetrics( glyphs.charAt( glyphIndex ) );
+d198 2
+a199 1
+        return new GlyphMetrics( true, advance.x, advance.y, bounds, (byte)0 );
+d203 6
+a208 2
+    public Shape getGlyphOutline(int glyphIndex){
+        throw new NotYetImplementedError();
+a210 1
+
+d212 2
+a213 3
+    public Point2D getGlyphPosition( int glyphIndex ) {
+        initPositions();
+        return new Point2D.Float( positions[glyphIndex * 2], positions[glyphIndex * 2 + 1] );
+d217 13
+a229 13
+    public float[] getGlyphPositions( int beginGlyphIndex, int numEntries, float[] positionReturn ) {
+        if( numEntries < 0 ) {
+            throw new IllegalArgumentException( "count = " + numEntries );
+        }
+        if( beginGlyphIndex < 0 ) {
+            throw new IndexOutOfBoundsException( "start = " + beginGlyphIndex );
+        }
+        if( beginGlyphIndex > this.glyphs.length() + 1 - numEntries ) {
+            throw new IndexOutOfBoundsException( "start + count = " + (beginGlyphIndex + numEntries) );
+        }
+        int count = numEntries * 2;
+        if( positionReturn == null ) {
+            positionReturn = new float[count];
+d232 2
+a233 2
+        System.arraycopy( positions, beginGlyphIndex * 2, positionReturn, 0, count );
+        return positionReturn;
+d237 4
+a240 4
+    public AffineTransform getGlyphTransform(int glyphIndex){
+        throw new NotYetImplementedError();
+    }
+
+a241 3
+    @@Override
+    public Shape getGlyphLogicalBounds( int glyphIndex ) {
+        //return getMetrics().getStringBounds( glyphs.substring( glyphIndex, glyphIndex + 1 ), getGraphics() );
+d244 2
+a245 2
+        float x = positions[glyphIndex * 2];
+        return new Rectangle2D.Float( x, -metrics.getAscent(), positions[(glyphIndex + 1) * 2] - x, metrics.getAscent()
+d249 5
+a254 2
+    @@Override
+    public Shape getGlyphVisualBounds( int glyphIndex ) {
+d256 1
+a256 1
+        return IkvmToolkit.DefaultToolkit.get().outline( font, frc, glyphs.substring( glyphIndex, glyphIndex + 1 ), positions[glyphIndex * 2], 0 );
+d260 4
+a263 2
+    public Rectangle2D getLogicalBounds(){
+        initPositions();
+d265 13
+a277 1
+        LineMetrics lm = font.getLineMetrics("", frc);
+d279 4
+a282 8
+        float minX, minY, maxX, maxY;
+        // horiz only for now...
+        minX = 0;
+        minY = -lm.getAscent();
+        maxX = 0;
+        maxY = lm.getDescent() + lm.getLeading();
+        if (glyphs.length() > 0) {
+            maxX = positions[positions.length - 2];
+d285 6
+a290 1
+        return new Rectangle2D.Float(minX, minY, maxX - minX, maxY - minY);
+a292 1
+
+d294 15
+a308 2
+    public Rectangle2D getVisualBounds(){
+        return getOutline().getBounds2D();
+d311 15
+d327 3
+d331 17
+a347 2
+    public int getNumGlyphs(){
+        return glyphs.length();
+d350 3
+d354 9
+a362 4
+    @@Override
+    public Shape getOutline(){
+        return getOutline( 0, 0 );
+    }
+d364 1
+a365 3
+    @@Override
+    public Shape getOutline(float x, float y){
+        return IkvmToolkit.DefaultToolkit.get().outline( font, frc, glyphs, x, y );
+d368 9
+d378 11
+a388 4
+    @@Override
+    public void performDefaultLayout(){
+        throw new NotYetImplementedError();
+    }
+d390 4
+d395 7
+a401 3
+    @@Override
+    public void setGlyphPosition(int glyphIndex, Point2D newPos){
+        throw new NotYetImplementedError();
+a403 1
+
+a430 8
+    private float getTracking(Font font) {
+        if (font.hasLayoutAttributes()) {
+            AttributeValues values = ((AttributeMap)font.getAttributes()).getValues();
+            return values.getTracking();
+        }
+        return 0;
+    }
+
+@
+
+
+1.13
+log
+@Complete migration to OpenJDK 7. Thanks to Volker Berlin for the bulk of this patch.
+@
+text
+@d300 1
+a300 1
+        return ((IkvmToolkit)Toolkit.getDefaultToolkit()).outline( font, frc, glyphs.substring( glyphIndex, glyphIndex + 1 ), positions[glyphIndex * 2], 0 );
+d343 1
+a343 1
+        return ((IkvmToolkit)Toolkit.getDefaultToolkit()).outline( font, frc, glyphs, x, y );
+@
+
+
+1.12
+log
+@Add a emulation for fixed metrix to make drawString and stringWidth compatible.
+@
+text
+@d71 1
+a71 1
+        this.font2D = FontManager.getFont2D(font);
+d448 1
+a448 1
+			if (FontManager.isNonSimpleChar(str.charAt(i))) {
+@
+
+
+1.11
+log
+@Currently there are an inconsistency between NetFontMetrics and FontDesignMetrics. To prevent this we replace all with FontDesignMetrics and remove NetFontMetrics.
+@
+text
+@d432 1
+a432 1
+    void addDefaultGlyphAdvance(int glyphID, Point2D.Float result) {
+d437 17
+@
+
+
+1.10
+log
+@Added ikvm.internal.NotYetImplementedError. Replaced all throw sun.reflect.generics.reflectiveObjects.NotImplementedException code with throw NotYetImplementedError.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009, 2010 Volker Berlin (i-net software)
+a28 4
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+d35 1
+a38 1
+import java.awt.image.BufferedImage;
+a39 1
+import java.util.WeakHashMap;
+a40 1
+import cli.System.Drawing.Drawing2D.GraphicsPath;
+a48 2
+    private static final BufferedImage IMAGE = new BufferedImage( 1, 1, BufferedImage.TYPE_INT_ARGB );
+
+a56 2
+    private transient FontMetrics metrics;
+
+a59 2
+    private Graphics2D graphics;
+    
+a96 14
+     * Create and get
+     * 
+     * @@return
+     */
+    @@SuppressWarnings( "deprecation" )
+    private FontMetrics getMetrics(){
+        if(metrics == null){
+            metrics = Toolkit.getDefaultToolkit().getFontMetrics(font);
+        }
+        return metrics;
+    }
+
+
+    /**
+a284 23
+    /**
+     * Get/Create a Graphics with the settings of the current FontMetrics
+     * 
+     * @@return
+     */
+    private Graphics2D getGraphics() {
+        if( graphics == null ){
+            graphics = createGraphics( frc );
+        }
+        return graphics;
+    }
+
+    /**
+     * Create a Graphics with the settings for the given FontRenderContext
+     * 
+     * @@return
+     */
+    static Graphics2D createGraphics( FontRenderContext frc ) {
+        Graphics2D g = (Graphics2D)IMAGE.getGraphics();
+        g.setRenderingHint( RenderingHints.KEY_FRACTIONALMETRICS, frc.usesFractionalMetrics() ? RenderingHints.VALUE_FRACTIONALMETRICS_ON : RenderingHints.VALUE_FRACTIONALMETRICS_OFF );
+        g.setRenderingHint( RenderingHints.KEY_TEXT_ANTIALIASING, frc.usesFractionalMetrics() ? RenderingHints.VALUE_TEXT_ANTIALIAS_ON : RenderingHints.VALUE_TEXT_ANTIALIAS_OFF);
+        return g;
+    }    
+d305 15
+a319 1
+        return getMetrics().getStringBounds(glyphs, getGraphics());
+@
+
+
+1.9
+log
+@implements getGlyphMetrics(), getGlyphPosition(), getGlyphPositions() and fixed getGlyphLogicalBounds(), getGlyphVisualBounds() in class StandardGlyphVector
+@
+text
+@d47 1
+a47 2
+
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+d94 1
+a94 1
+        throw new NotImplementedException();
+d256 1
+a256 1
+        throw new NotImplementedException();
+d276 1
+a276 1
+        throw new NotImplementedException();
+d308 1
+a308 1
+        throw new NotImplementedException();
+d384 1
+a384 1
+        throw new NotImplementedException();
+d390 1
+a390 1
+        throw new NotImplementedException();
+d396 1
+a396 1
+        throw new NotImplementedException();
+@
+
+
+1.8
+log
+@Java part of StandardGlypVector.getOutline
+@
+text
+@d262 11
+a272 2
+    public GlyphMetrics getGlyphMetrics(int glyphIndex){
+        throw new NotImplementedException();
+a274 1
+
+d282 3
+a284 2
+    public Point2D getGlyphPosition(int glyphIndex){
+        throw new NotImplementedException();
+a286 1
+
+d288 17
+a304 2
+    public float[] getGlyphPositions(int beginGlyphIndex, int numEntries, float[] positionReturn){
+        throw new NotImplementedException();
+a306 1
+
+d338 6
+a343 1
+        return getMetrics().getStringBounds( glyphs.substring( glyphIndex, glyphIndex + 1 ), getGraphics() );
+d349 2
+a350 1
+        return ((IkvmToolkit)Toolkit.getDefaultToolkit()).outline( font, frc, glyphs.substring( glyphIndex, glyphIndex + 1 ), 0, 0 );
+@
+
+
+1.7
+log
+@Fix a rounding problem with FontMetrics
+@
+text
+@d26 2
+d46 2
+d114 1
+d322 1
+a322 2
+        // TODO Visual is a little smaller, see the JUnit test
+        return getGlyphLogicalBounds( glyphIndex );
+d333 1
+a333 2
+        // TODO Visual is a little smaller, see the JUnit test
+        return getLogicalBounds();
+d345 1
+a345 1
+        throw new NotImplementedException();
+d351 1
+a351 1
+        throw new NotImplementedException();
+@
+
+
+1.6
+log
+@Improve the StandardGlypVector; implements some not implemented methods; use the FontRenderContex for calculating the metrix
+@
+text
+@d52 2
+d67 3
+a69 2
+    private static WeakHashMap<FontRenderContext, Graphics2D> graphicsMap = new WeakHashMap<FontRenderContext, Graphics2D>();
+
+d75 3
+d291 2
+a292 8
+        Graphics2D g = graphicsMap.get( frc );
+        if( g == null ) {
+            BufferedImage img = new BufferedImage( 1, 1, BufferedImage.TYPE_INT_ARGB );
+            g = (Graphics2D)img.getGraphics();
+            if( frc.usesFractionalMetrics() ) {
+                g.setRenderingHint( RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON );
+            }
+            graphicsMap.put( frc, g );
+d294 12
+d307 1
+a307 2
+    }
+    
+@
+
+
+1.5
+log
+@Implements some methods in the sun.font package
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Volker Berlin (i-net software)
+d28 3
+d40 1
+d42 1
+d64 2
+a250 6
+    public Shape getGlyphLogicalBounds(int glyphIndex){
+        throw new NotImplementedException();
+    }
+
+
+    @@Override
+d279 18
+d299 2
+a300 2
+    public Shape getGlyphVisualBounds(int index){
+        return getMetrics().getStringBounds(glyphs.substring(index, index + 1), null);
+d302 1
+d304 5
+d312 8
+a319 1
+        return getMetrics().getStringBounds(glyphs, null);
+a341 6
+    public Rectangle2D getVisualBounds(){
+        throw new NotImplementedException();
+    }
+
+
+    @@Override
+@
+
+
+1.4
+log
+@first implementation of getLogicalBounds()  but it is not 100% right
+@
+text
+@d57 2
+d67 2
+d140 1
+d149 20
+a168 1
+        throw new NotImplementedException();
+d354 51
+@
+
+
+1.3
+log
+@fixing the painting of the GlyphVector with the StandardGlyphVector from Sun
+@
+text
+@d263 1
+a263 1
+        throw new NotImplementedException();
+@
+
+
+1.2
+log
+@Replace the GNU ClasspathToolkit with the SunToolkit in .NET Code. Replace the usage of the FontPeer with the Java2D. Replace the NetGlyphVector with the StandardGlyphVector
+@
+text
+@d149 31
+a179 2
+    public boolean equals(GlyphVector set){
+        throw new NotImplementedException();
+d197 1
+a197 1
+        throw new NotImplementedException();
+d203 7
+a209 1
+        throw new NotImplementedException();
+d311 1
+a311 1
+     * @@param iterator the itereator
+@
+
+
+1.1
+log
+@replace many of the GNU font code with the Sun implementation
+@
+text
+@d26 7
+d34 4
+d39 1
+d42 2
+a43 3
+ * Standard implementation of GlyphVector used by Font, GlyphList, and
+ * SunGraphics2D.
+ *
+d45 2
+a46 1
+public abstract class StandardGlyphVector extends GlyphVector{
+d48 53
+a100 1
+    
+d104 3
+a106 2
+    public Object clone() {
+        try {
+d110 2
+a111 2
+        }
+        catch (CloneNotSupportedException e) {
+d117 2
+a118 1
+    //////////////////////
+d120 1
+a120 1
+    /////////////////////
+d123 2
+a124 2
+     * Set all the glyph positions, including the 'after last glyph' position.
+     * The srcPositions array must be of length (numGlyphs + 1) * 2.
+d126 3
+a128 1
+    public void setGlyphPositions(float[] srcPositions) {
+a129 1
+        positions = (float[])srcPositions.clone();
+d131 6
+d139 1
+d141 1
+a141 3
+     * This is a convenience overload that gets all the glyph positions, which
+     * is what you usually want to do if you're getting more than one.
+     * !!! should I bother taking result parameter?
+d143 128
+a270 2
+    public float[] getGlyphPositions(float[] result) {
+        return positions;
+d273 1
+d275 3
+a277 1
+     * For each glyph return posx, posy, advx, advy, visx, visy, visw, vish.
+d279 14
+a292 2
+    public float[] getGlyphInfo() {
+        throw new Error("getGlyphInfo is not implemented.");
+a295 1
+
+@
+

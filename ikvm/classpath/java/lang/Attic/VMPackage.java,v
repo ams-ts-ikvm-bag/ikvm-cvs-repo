@@ -1,0 +1,53 @@
+head	1.2;
+access;
+symbols
+	v0_26_0_1:1.1
+	v0_26_0_0:1.1
+	v0_24_0_1:1.1
+	v0_24_0_0:1.1
+	v0_22_0_0:1.1;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2006.04.23.10.46.51;	author jfrijters;	state dead;
+branches;
+next	1.1;
+
+1.1
+date	2005.11.01.14.01.43;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@package java.lang;
+
+import java.lang.annotation.Annotation;
+
+class VMPackage
+{
+  static Annotation[] getDeclaredAnnotations(Package pack)
+  {
+    throw new Error("Not implemented");
+  }
+}
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@@
+

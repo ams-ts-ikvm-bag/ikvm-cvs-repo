@@ -1,0 +1,327 @@
+head	1.2;
+access;
+symbols
+	v8_1_5717_0:1.2
+	v8_1:1.2.0.24
+	v8_0_5449_1:1.2
+	v8_0_5449_0:1.2
+	v8_0:1.2.0.22
+	v7_4_5196_0:1.2
+	v7_4:1.2.0.20
+	v7_3:1.2.0.18
+	v7_2_4630_6:1.2
+	v7_2_4630_5:1.2
+	v7_2_4630_4:1.2
+	v7_2_4630_3:1.2
+	v7_2_4630_2:1.2
+	v0_46_0_4:1.2
+	v7_2_4630_1:1.2
+	v7_2:1.2.0.16
+	v7_1_4532_2:1.2
+	v7_1_4532_1:1.2
+	v7_1_4532_0:1.2
+	v7_1:1.2.0.14
+	v7_0_4335_3:1.2
+	v7_0_4335_2:1.2
+	v7_0_4335_1:1.2
+	v0_46_0_2:1.2
+	v7_0_4335_0:1.2
+	v7_0:1.2.0.12
+	v0_40_0_6:1.2
+	v0_40_0_5:1.2
+	v0_46_0_1:1.2
+	v0_46_0_0:1.2
+	v0_46:1.2.0.10
+	v0_36_0_14:1.1
+	v0_44_0_6:1.2
+	v0_44_0_5:1.2
+	v0_44_0_4:1.2
+	v0_44_0_3:1.2
+	v0_44_0_2:1.2
+	v0_42_0_7:1.2
+	v0_44_0_1:1.2
+	v0_44_0_0:1.2
+	v0_44:1.2.0.8
+	v0_42_0_6:1.2
+	v0_42_0_5:1.2
+	v0_42_0_4:1.2
+	v0_42_0_3:1.2
+	v0_42_0_2:1.2
+	v0_42_0_1:1.2
+	v0_42_0_0:1.2
+	v0_42:1.2.0.6
+	v0_40_0_3:1.2
+	v0_40_0_2:1.2
+	v0_40_0_1:1.2
+	v0_40_0_0:1.2
+	v0_40:1.2.0.4
+	v0_36_0_13:1.1
+	v0_38_0_1:1.2
+	v0_38_0_0:1.2
+	v0_38:1.2.0.2
+	v0_36_0_9:1.1
+	v0_36_0_7:1.1
+	v0_36_0_5:1.1
+	v0_36_0_4:1.1
+	v0_36_0_3:1.1
+	v0_36_0_2:1.1
+	v0_36_0_1:1.1
+	v0_36_0_0:1.1
+	v0_36:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2008.06.11.09.05.40;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.08.16.09.53.04;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@Converted tabs to spaces.
+@
+text
+@/* java.util.zip.PendingBuffer
+   Copyright (C) 2001 Free Software Foundation, Inc.
+
+This file is part of GNU Classpath.
+
+GNU Classpath is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2, or (at your option)
+any later version.
+
+GNU Classpath is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with GNU Classpath; see the file COPYING.  If not, write to the
+Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301 USA.
+
+Linking this library statically or dynamically with other modules is
+making a combined work based on this library.  Thus, the terms and
+conditions of the GNU General Public License cover the whole
+combination.
+
+As a special exception, the copyright holders of this library give you
+permission to link this library with independent modules to produce an
+executable, regardless of the license terms of these independent
+modules, and to copy and distribute the resulting executable under
+terms of your choice, provided that you also meet, for each linked
+independent module, the terms and conditions of the license of that
+module.  An independent module is a module which is not derived from
+or based on this library.  If you modify this library, you may extend
+this exception to your version of the library, but you are not
+obligated to do so.  If you do not wish to do so, delete this
+exception statement from your version. */
+
+package java.util.zip;
+
+/**
+ * This class is general purpose class for writing data to a buffer.
+ *
+ * It allows you to write bits as well as bytes 
+ *
+ * Based on DeflaterPending.java
+ *
+ * @@author Jochen Hoenicke
+ * @@date Jan 5, 2000 
+ */
+
+class PendingBuffer
+{
+  protected byte[] buf;
+  int    start;
+  int    end;
+
+  int    bits;
+  int    bitCount;
+
+  public PendingBuffer()
+  {
+    this( 4096 );
+  }
+
+  public PendingBuffer(int bufsize)
+  {
+    buf = new byte[bufsize];
+  }
+
+  public final void reset() {
+    start = end = bitCount = 0;
+  }
+
+  public final void writeByte(int b) 
+  {
+    if (DeflaterConstants.DEBUGGING && start != 0)
+      throw new IllegalStateException();
+    buf[end++] = (byte) b;
+  }
+
+  public final void writeShort(int s) 
+  {
+    if (DeflaterConstants.DEBUGGING && start != 0)
+      throw new IllegalStateException();
+    buf[end++] = (byte) s;
+    buf[end++] = (byte) (s >> 8);
+  }
+
+  public final void writeInt(int s) 
+  {
+    if (DeflaterConstants.DEBUGGING && start != 0)
+      throw new IllegalStateException();
+    buf[end++] = (byte) s;
+    buf[end++] = (byte) (s >> 8);
+    buf[end++] = (byte) (s >> 16);
+    buf[end++] = (byte) (s >> 24);
+  }
+
+  public final void writeBlock(byte[] block, int offset, int len) 
+  {
+    if (DeflaterConstants.DEBUGGING && start != 0)
+      throw new IllegalStateException();
+    System.arraycopy(block, offset, buf, end, len);
+    end += len;
+  }
+
+  public final int getBitCount() {
+    return bitCount;
+  }
+
+  public final void alignToByte() {
+    if (DeflaterConstants.DEBUGGING && start != 0)
+      throw new IllegalStateException();
+    if (bitCount > 0)
+      {
+        buf[end++] = (byte) bits;
+        if (bitCount > 8)
+          buf[end++] = (byte) (bits >>> 8);
+      }
+    bits = 0;
+    bitCount = 0;
+  }
+
+  public final void writeBits(int b, int count)
+  {
+     if (DeflaterConstants.DEBUGGING && start != 0)
+       throw new IllegalStateException();
+     if (DeflaterConstants.DEBUGGING)
+       System.err.println("writeBits("+Integer.toHexString(b)+","+count+")");
+    bits |= b << bitCount;
+    bitCount += count;
+    if (bitCount >= 16) {
+      buf[end++] = (byte) bits;
+      buf[end++] = (byte) (bits >>> 8);
+      bits >>>= 16;
+      bitCount -= 16;
+    }
+  }
+
+  public final void writeShortMSB(int s) {
+    if (DeflaterConstants.DEBUGGING && start != 0)
+      throw new IllegalStateException();
+    buf[end++] = (byte) (s >> 8);
+    buf[end++] = (byte) s;
+  }
+
+  public final boolean isFlushed() {
+    return end == 0;
+  }
+
+  /**
+   * Flushes the pending buffer into the given output array.  If the
+   * output array is to small, only a partial flush is done.
+   *
+   * @@param output the output array;
+   * @@param offset the offset into output array;
+   * @@param length the maximum number of bytes to store;
+   * @@exception IndexOutOfBoundsException if offset or length are
+   * invalid.
+   */
+  public final int flush(byte[] output, int offset, int length) {
+    if (bitCount >= 8)
+      {
+        buf[end++] = (byte) bits;
+        bits >>>= 8;
+        bitCount -= 8;
+      }
+    if (length > end - start)
+      {
+        length = end - start;
+        System.arraycopy(buf, start, output, offset, length);
+        start = 0;
+        end = 0;
+      }
+    else
+      {
+        System.arraycopy(buf, start, output, offset, length);
+        start += length;
+      }
+    return length;
+  }
+
+  /**
+   * Flushes the pending buffer and returns that data in a new array
+   * 
+   * @@return the output stream
+   */
+
+  public final byte[] toByteArray()
+  {
+    byte[] ret = new byte[ end - start ];
+    System.arraycopy(buf, start, ret, 0, ret.length);
+    start = 0;
+    end = 0;
+    return ret;
+  }
+
+
+}
+
+@
+
+
+1.1
+log
+@- Switched GNU Classpath AWT/Swing back to version 0.95.
+- Copied GNU Classpath version of java.text.Bidi into openjdk directory.
+- Copied and integrated GNU Classpath's pure Java zip support with OpenJDK zip classes.
+- Added GNU Classpath 0.95 compatible versions of awt\font.cs and awt\toolkit.cs.
+@
+text
+@d116 3
+a118 3
+	buf[end++] = (byte) bits;
+	if (bitCount > 8)
+	  buf[end++] = (byte) (bits >>> 8);
+d164 3
+a166 3
+	buf[end++] = (byte) bits;
+	bits >>>= 8;
+	bitCount -= 8;
+d170 4
+a173 4
+	length = end - start;
+	System.arraycopy(buf, start, output, offset, length);
+	start = 0;
+	end = 0;
+d177 2
+a178 2
+	System.arraycopy(buf, start, output, offset, length);
+	start += length;
+@
+

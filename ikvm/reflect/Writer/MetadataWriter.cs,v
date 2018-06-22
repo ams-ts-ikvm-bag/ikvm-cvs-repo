@@ -1,0 +1,812 @@
+head	1.9;
+access;
+symbols
+	v8_1_5717_0:1.8
+	v8_1:1.8.0.2
+	v8_0_5449_1:1.7
+	v8_0_5449_0:1.7
+	v8_0:1.7.0.4
+	v7_4_5196_0:1.7
+	v7_4:1.7.0.2
+	v7_3:1.6.0.2
+	v7_2_4630_6:1.5.2.1
+	v7_2_4630_5:1.5.2.1
+	v7_2_4630_4:1.5.2.1
+	v7_2_4630_3:1.5.2.1
+	v7_2_4630_2:1.5
+	v0_46_0_4:1.3
+	v7_2_4630_1:1.5
+	v7_2:1.5.0.2
+	v7_1_4532_2:1.3
+	v7_1_4532_1:1.3
+	v7_1_4532_0:1.3
+	v7_1:1.3.0.6
+	v7_0_4335_3:1.3
+	v7_0_4335_2:1.3
+	v7_0_4335_1:1.3
+	v0_46_0_2:1.3
+	v7_0_4335_0:1.3
+	v7_0:1.3.0.4
+	v0_46_0_1:1.3
+	v0_46_0_0:1.3
+	v0_46:1.3.0.2
+	v0_44_0_6:1.2
+	v0_44_0_5:1.2
+	v0_44_0_4:1.2
+	v0_44_0_3:1.2
+	v0_44_0_2:1.2
+	v0_44_0_1:1.2
+	v0_44_0_0:1.2
+	v0_44:1.2.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.9
+date	2015.08.27.12.15.45;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2015.01.27.09.54.44;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2013.05.10.08.56.49;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2012.10.13.20.12.32;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2012.07.13.09.45.43;	author jfrijters;	state Exp;
+branches
+	1.5.2.1;
+next	1.4;
+
+1.4
+date	2012.07.13.09.12.29;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2011.02.14.05.36.59;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.02;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.32;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.5.2.1
+date	2012.10.23.08.15.53;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.9
+log
+@Use uint for file position to support >2GB files. Note that PE spec says that 2GB is the maximum valid size.
+@
+text
+@/*
+  Copyright (C) 2008 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Text;
+using IKVM.Reflection.Emit;
+using IKVM.Reflection.Metadata;
+
+namespace IKVM.Reflection.Writer
+{
+	sealed class MetadataWriter : MetadataRW
+	{
+		private readonly ModuleBuilder moduleBuilder;
+		private readonly Stream stream;
+		private readonly byte[] buffer = new byte[8];
+
+		internal MetadataWriter(ModuleBuilder module, Stream stream)
+			: base(module, module.Strings.IsBig, module.Guids.IsBig, module.Blobs.IsBig)
+		{
+			this.moduleBuilder = module;
+			this.stream = stream;
+		}
+
+		internal ModuleBuilder ModuleBuilder
+		{
+			get { return moduleBuilder; }
+		}
+
+		internal uint Position
+		{
+			get { return (uint)stream.Position; }
+		}
+
+		internal void Write(ByteBuffer bb)
+		{
+			bb.WriteTo(stream);
+		}
+
+		internal void WriteAsciiz(string value)
+		{
+			foreach (char c in value)
+			{
+				stream.WriteByte((byte)c);
+			}
+			stream.WriteByte(0);
+		}
+
+		internal void Write(byte[] value)
+		{
+			stream.Write(value, 0, value.Length);
+		}
+
+		internal void Write(byte[] buffer, int offset, int count)
+		{
+			stream.Write(buffer, offset, count);
+		}
+
+		internal void Write(byte value)
+		{
+			stream.WriteByte(value);
+		}
+
+		internal void Write(ushort value)
+		{
+			Write((short)value);
+		}
+
+		internal void Write(short value)
+		{
+			stream.WriteByte((byte)value);
+			stream.WriteByte((byte)(value >> 8));
+		}
+
+		internal void Write(uint value)
+		{
+			Write((int)value);
+		}
+
+		internal void Write(int value)
+		{
+			buffer[0] = (byte)value;
+			buffer[1] = (byte)(value >> 8);
+			buffer[2] = (byte)(value >> 16);
+			buffer[3] = (byte)(value >> 24);
+			stream.Write(buffer, 0, 4);
+		}
+
+		internal void Write(ulong value)
+		{
+			Write((long)value);
+		}
+
+		internal void Write(long value)
+		{
+			buffer[0] = (byte)value;
+			buffer[1] = (byte)(value >> 8);
+			buffer[2] = (byte)(value >> 16);
+			buffer[3] = (byte)(value >> 24);
+			buffer[4] = (byte)(value >> 32);
+			buffer[5] = (byte)(value >> 40);
+			buffer[6] = (byte)(value >> 48);
+			buffer[7] = (byte)(value >> 56);
+			stream.Write(buffer, 0, 8);
+		}
+
+		internal void WriteCompressedUInt(int value)
+		{
+			if (value <= 0x7F)
+			{
+				Write((byte)value);
+			}
+			else if (value <= 0x3FFF)
+			{
+				Write((byte)(0x80 | (value >> 8)));
+				Write((byte)value);
+			}
+			else
+			{
+				Write((byte)(0xC0 | (value >> 24)));
+				Write((byte)(value >> 16));
+				Write((byte)(value >> 8));
+				Write((byte)value);
+			}
+		}
+
+		internal static int GetCompressedUIntLength(int value)
+		{
+			if (value <= 0x7F)
+			{
+				return 1;
+			}
+			else if (value <= 0x3FFF)
+			{
+				return 2;
+			}
+			else
+			{
+				return 4;
+			}
+		}
+
+		internal void WriteStringIndex(int index)
+		{
+			if (bigStrings)
+			{
+				Write(index);
+			}
+			else
+			{
+				Write((short)index);
+			}
+		}
+
+		internal void WriteGuidIndex(int index)
+		{
+			if (bigGuids)
+			{
+				Write(index);
+			}
+			else
+			{
+				Write((short)index);
+			}
+		}
+
+		internal void WriteBlobIndex(int index)
+		{
+			if (bigBlobs)
+			{
+				Write(index);
+			}
+			else
+			{
+				Write((short)index);
+			}
+		}
+
+		internal void WriteTypeDefOrRef(int token)
+		{
+			switch (token >> 24)
+			{
+				case 0:
+					break;
+				case TypeDefTable.Index:
+					token = (token & 0xFFFFFF) << 2 | 0;
+					break;
+				case TypeRefTable.Index:
+					token = (token & 0xFFFFFF) << 2 | 1;
+					break;
+				case TypeSpecTable.Index:
+					token = (token & 0xFFFFFF) << 2 | 2;
+					break;
+				default:
+					throw new InvalidOperationException();
+			}
+			if (bigTypeDefOrRef)
+			{
+				Write(token);
+			}
+			else
+			{
+				Write((short)token);
+			}
+		}
+
+		internal void WriteEncodedTypeDefOrRef(int encodedToken)
+		{
+			if (bigTypeDefOrRef)
+			{
+				Write(encodedToken);
+			}
+			else
+			{
+				Write((short)encodedToken);
+			}
+		}
+
+		internal void WriteHasCustomAttribute(int token)
+		{
+			int encodedToken = CustomAttributeTable.EncodeHasCustomAttribute(token);
+			if (bigHasCustomAttribute)
+			{
+				Write(encodedToken);
+			}
+			else
+			{
+				Write((short)encodedToken);
+			}
+		}
+
+		internal void WriteCustomAttributeType(int token)
+		{
+			switch (token >> 24)
+			{
+				case MethodDefTable.Index:
+					token = (token & 0xFFFFFF) << 3 | 2;
+					break;
+				case MemberRefTable.Index:
+					token = (token & 0xFFFFFF) << 3 | 3;
+					break;
+				default:
+					throw new InvalidOperationException();
+			}
+			if (bigCustomAttributeType)
+			{
+				Write(token);
+			}
+			else
+			{
+				Write((short)token);
+			}
+		}
+
+		internal void WriteField(int index)
+		{
+			if (bigField)
+			{
+				Write(index & 0xFFFFFF);
+			}
+			else
+			{
+				Write((short)index);
+			}
+		}
+
+		internal void WriteMethodDef(int index)
+		{
+			if (bigMethodDef)
+			{
+				Write(index & 0xFFFFFF);
+			}
+			else
+			{
+				Write((short)index);
+			}
+		}
+
+		internal void WriteParam(int index)
+		{
+			if (bigParam)
+			{
+				Write(index & 0xFFFFFF);
+			}
+			else
+			{
+				Write((short)index);
+			}
+		}
+
+		internal void WriteTypeDef(int index)
+		{
+			if (bigTypeDef)
+			{
+				Write(index & 0xFFFFFF);
+			}
+			else
+			{
+				Write((short)index);
+			}
+		}
+
+		internal void WriteEvent(int index)
+		{
+			if (bigEvent)
+			{
+				Write(index & 0xFFFFFF);
+			}
+			else
+			{
+				Write((short)index);
+			}
+		}
+
+		internal void WriteProperty(int index)
+		{
+			if (bigProperty)
+			{
+				Write(index & 0xFFFFFF);
+			}
+			else
+			{
+				Write((short)index);
+			}
+		}
+
+		internal void WriteGenericParam(int index)
+		{
+			if (bigGenericParam)
+			{
+				Write(index & 0xFFFFFF);
+			}
+			else
+			{
+				Write((short)index);
+			}
+		}
+
+		internal void WriteModuleRef(int index)
+		{
+			if (bigModuleRef)
+			{
+				Write(index & 0xFFFFFF);
+			}
+			else
+			{
+				Write((short)index);
+			}
+		}
+
+		internal void WriteResolutionScope(int token)
+		{
+			switch (token >> 24)
+			{
+				case ModuleTable.Index:
+					token = (token & 0xFFFFFF) << 2 | 0;
+					break;
+				case ModuleRefTable.Index:
+					token = (token & 0xFFFFFF) << 2 | 1;
+					break;
+				case AssemblyRefTable.Index:
+					token = (token & 0xFFFFFF) << 2 | 2;
+					break;
+				case TypeRefTable.Index:
+					token = (token & 0xFFFFFF) << 2 | 3;
+					break;
+				default:
+					throw new InvalidOperationException();
+			}
+			if (bigResolutionScope)
+			{
+				Write(token);
+			}
+			else
+			{
+				Write((short)token);
+			}
+		}
+
+		internal void WriteMemberRefParent(int token)
+		{
+			switch (token >> 24)
+			{
+				case TypeDefTable.Index:
+					token = (token & 0xFFFFFF) << 3 | 0;
+					break;
+				case TypeRefTable.Index:
+					token = (token & 0xFFFFFF) << 3 | 1;
+					break;
+				case ModuleRefTable.Index:
+					token = (token & 0xFFFFFF) << 3 | 2;
+					break;
+				case MethodDefTable.Index:
+					token = (token & 0xFFFFFF) << 3 | 3;
+					break;
+				case TypeSpecTable.Index:
+					token = (token & 0xFFFFFF) << 3 | 4;
+					break;
+				default:
+					throw new InvalidOperationException();
+			}
+			if (bigMemberRefParent)
+			{
+				Write(token);
+			}
+			else
+			{
+				Write((short)token);
+			}
+		}
+
+		internal void WriteMethodDefOrRef(int token)
+		{
+			switch (token >> 24)
+			{
+				case MethodDefTable.Index:
+					token = (token & 0xFFFFFF) << 1 | 0;
+					break;
+				case MemberRefTable.Index:
+					token = (token & 0xFFFFFF) << 1 | 1;
+					break;
+				default:
+					throw new InvalidOperationException();
+			}
+			if (bigMethodDefOrRef)
+			{
+				Write(token);
+			}
+			else
+			{
+				Write((short)token);
+			}
+		}
+
+		internal void WriteHasConstant(int token)
+		{
+			int encodedToken = ConstantTable.EncodeHasConstant(token);
+			if (bigHasConstant)
+			{
+				Write(encodedToken);
+			}
+			else
+			{
+				Write((short)encodedToken);
+			}
+		}
+
+		internal void WriteHasSemantics(int encodedToken)
+		{
+			// NOTE because we've already had to do the encoding (to be able to sort the table)
+			// here we simple write the value
+			if (bigHasSemantics)
+			{
+				Write(encodedToken);
+			}
+			else
+			{
+				Write((short)encodedToken);
+			}
+		}
+
+		internal void WriteImplementation(int token)
+		{
+			switch (token >> 24)
+			{
+				case 0:
+					break;
+				case FileTable.Index:
+					token = (token & 0xFFFFFF) << 2 | 0;
+					break;
+				case AssemblyRefTable.Index:
+					token = (token & 0xFFFFFF) << 2 | 1;
+					break;
+				case ExportedTypeTable.Index:
+					token = (token & 0xFFFFFF) << 2 | 2;
+					break;
+				default:
+					throw new InvalidOperationException();
+			}
+			if (bigImplementation)
+			{
+				Write(token);
+			}
+			else
+			{
+				Write((short)token);
+			}
+		}
+
+		internal void WriteTypeOrMethodDef(int encodedToken)
+		{
+			// NOTE because we've already had to do the encoding (to be able to sort the table)
+			// here we simple write the value
+			if (bigTypeOrMethodDef)
+			{
+				Write(encodedToken);
+			}
+			else
+			{
+				Write((short)encodedToken);
+			}
+		}
+
+		internal void WriteHasDeclSecurity(int encodedToken)
+		{
+			// NOTE because we've already had to do the encoding (to be able to sort the table)
+			// here we simple write the value
+			if (bigHasDeclSecurity)
+			{
+				Write(encodedToken);
+			}
+			else
+			{
+				Write((short)encodedToken);
+			}
+		}
+
+		internal void WriteMemberForwarded(int token)
+		{
+			switch (token >> 24)
+			{
+				case FieldTable.Index:
+					token = (token & 0xFFFFFF) << 1 | 0;
+				    break;
+				case MethodDefTable.Index:
+					token = (token & 0xFFFFFF) << 1 | 1;
+					break;
+				default:
+					throw new InvalidOperationException();
+			}
+			if (bigMemberForwarded)
+			{
+				Write(token);
+			}
+			else
+			{
+				Write((short)token);
+			}
+		}
+
+		internal void WriteHasFieldMarshal(int token)
+		{
+			int encodedToken = FieldMarshalTable.EncodeHasFieldMarshal(token);
+			if (bigHasFieldMarshal)
+			{
+				Write(encodedToken);
+			}
+			else
+			{
+				Write((short)encodedToken);
+			}
+		}
+	}
+}
+@
+
+
+1.8
+log
+@Fixed ModuleBuilder.DefineManifestResource() to support very large resources.
+@
+text
+@d51 1
+a51 1
+		internal int Position
+d53 1
+a53 1
+			get { return (int)stream.Position; }
+@
+
+
+1.7
+log
+@Added WriteAsciiz() method to MetadataWriter.
+@
+text
+@d75 5
+@
+
+
+1.6
+log
+@Renamed methods that deal with unsigned compressed integers to *CompressedUInt instead of *CompressedInt.
+@
+text
+@d61 9
+@
+
+
+1.5
+log
+@Bug fix. FieldBuilder.GetRawConstantValue() didn't work after saving the module.
+@
+text
+@d114 1
+a114 1
+		internal void WriteCompressedInt(int value)
+d134 1
+a134 1
+		internal static int GetCompressedIntLength(int value)
+@
+
+
+1.5.2.1
+log
+@Backported fixes for rc 3.
+- Bug fix. Off-by-one error in local ref index reusing. Fix for bug #3575555.
+- Bug fix. Don't try to inject DynamicMethod in array types (applies to array.clone() method for MethodHandles).
+- IKVM.Reflection: Bug fix. ModuleReader.ResolveMember() should support types. Thanks to Jb Evain for finding this.
+- IKVM.Reflection: Bug fix. While reading the Cecil source I realized that array bounds are signed.
+- IKVM.Reflection: Bug fix. LocalBuilder should extend LocalVariableInfo.
+- IKVM.Reflection: Implemented LocalVariableInfo.ToString().
+@
+text
+@d114 1
+a114 1
+		internal void WriteCompressedUInt(int value)
+d134 1
+a134 1
+		internal static int GetCompressedUIntLength(int value)
+@
+
+
+1.4
+log
+@Bug fix. Don't do the HasCustomAttribute and HasFieldMarshal in the tables, but only when writing the final data. Previously we weren't able to lookup anything in these tables after the module was saved.
+@
+text
+@d442 1
+a442 1
+		internal void WriteHasConstant(int encodedToken)
+d444 1
+a444 2
+			// NOTE because we've already had to do the encoding (to be able to sort the table)
+			// here we simple write the value
+@
+
+
+1.3
+log
+@Performance tweak by Marek.
+@
+text
+@d226 1
+a226 1
+		internal void WriteHasCustomAttribute(int encodedToken)
+d228 1
+a228 2
+			// NOTE because we've already had to do the encoding (to be able to sort the table)
+			// here we simple write the value
+d549 1
+a549 1
+		internal void WriteHasFieldMarshal(int encodedToken)
+d551 1
+a551 2
+			// NOTE because we've already had to do the encoding (to be able to sort the table)
+			// here we simple write the value
+d554 1
+a554 1
+				Write(encodedToken & 0xFFFFFF);
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d78 2
+a79 3
+			buffer[0] = (byte)value;
+			buffer[1] = (byte)(value >> 8);
+			stream.Write(buffer, 0, 2);
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

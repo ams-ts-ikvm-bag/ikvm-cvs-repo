@@ -1,0 +1,1091 @@
+head	1.34;
+access;
+symbols
+	v0_40_0_6:1.17.2.7
+	v0_40_0_5:1.17.2.6
+	v0_44_0_6:1.33.2.7
+	v0_44_0_5:1.33.2.6
+	v0_44_0_4:1.33.2.5
+	v0_44_0_3:1.33.2.4
+	v0_44_0_2:1.33.2.3
+	v0_42_0_7:1.23.2.8
+	v0_44_0_1:1.33.2.2
+	v0_44_0_0:1.33.2.1
+	v0_44:1.33.0.2
+	v0_42_0_6:1.23.2.7
+	v0_42_0_5:1.23.2.6
+	v0_42_0_4:1.23.2.5
+	v0_42_0_3:1.23.2.4
+	v0_42_0_2:1.23.2.3
+	v0_42_0_1:1.23.2.2
+	v0_42_0_0:1.23.2.1
+	v0_42:1.23.0.2
+	v0_40_0_3:1.17.2.4
+	v0_40_0_2:1.17.2.3
+	v0_40_0_1:1.17.2.2
+	v0_40_0_0:1.17.2.1
+	v0_40:1.17.0.2
+	v0_38_0_1:1.9.2.2
+	v0_38_0_0:1.9.2.1
+	v0_38:1.9.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.34
+date	2010.08.20.13.15.47;	author jfrijters;	state dead;
+branches;
+next	1.33;
+
+1.33
+date	2010.06.14.08.44.01;	author jfrijters;	state Exp;
+branches
+	1.33.2.1;
+next	1.32;
+
+1.32
+date	2010.06.08.06.19.40;	author jfrijters;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2010.05.31.09.32.40;	author jfrijters;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2010.05.25.04.31.23;	author jfrijters;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2010.05.18.15.01.02;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2010.05.10.07.16.32;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2010.04.23.06.29.53;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2010.01.27.08.57.59;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2009.12.07.07.38.34;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2009.11.04.06.06.45;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2009.10.02.04.34.40;	author jfrijters;	state Exp;
+branches
+	1.23.2.1;
+next	1.22;
+
+1.22
+date	2009.07.16.06.31.50;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2009.06.02.08.06.52;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2009.05.25.05.09.42;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2009.04.21.05.54.19;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2009.04.16.05.34.20;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2009.03.18.08.55.31;	author jfrijters;	state Exp;
+branches
+	1.17.2.1;
+next	1.16;
+
+1.16
+date	2009.03.13.04.58.39;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2009.03.02.04.53.16;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2009.02.20.05.01.46;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2009.02.10.07.41.14;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2009.01.21.05.18.37;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2008.12.23.07.28.20;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2008.11.14.07.51.31;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2008.09.22.04.13.01;	author jfrijters;	state Exp;
+branches
+	1.9.2.1;
+next	1.8;
+
+1.8
+date	2008.09.01.06.47.45;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2008.08.07.06.33.41;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2008.06.13.09.33.08;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2008.06.04.05.14.27;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2008.05.21.04.49.04;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.04.14.05.15.09;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.02.19.04.51.18;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.01.03.09.45.49;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.9.2.1
+date	2008.09.23.10.18.47;	author jfrijters;	state Exp;
+branches;
+next	1.9.2.2;
+
+1.9.2.2
+date	2008.11.04.05.29.19;	author jfrijters;	state Exp;
+branches;
+next	1.9.2.3;
+
+1.9.2.3
+date	2008.11.11.18.32.19;	author jfrijters;	state Exp;
+branches;
+next	1.9.2.4;
+
+1.9.2.4
+date	2009.02.02.05.58.20;	author jfrijters;	state Exp;
+branches;
+next	1.9.2.5;
+
+1.9.2.5
+date	2009.02.05.14.44.56;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.17.2.1
+date	2009.04.06.07.26.38;	author jfrijters;	state Exp;
+branches;
+next	1.17.2.2;
+
+1.17.2.2
+date	2009.04.21.05.36.20;	author jfrijters;	state Exp;
+branches;
+next	1.17.2.3;
+
+1.17.2.3
+date	2009.06.15.04.56.37;	author jfrijters;	state Exp;
+branches;
+next	1.17.2.4;
+
+1.17.2.4
+date	2009.07.31.06.35.23;	author jfrijters;	state Exp;
+branches;
+next	1.17.2.5;
+
+1.17.2.5
+date	2009.08.27.04.43.45;	author jfrijters;	state Exp;
+branches;
+next	1.17.2.6;
+
+1.17.2.6
+date	2011.05.16.06.55.27;	author jfrijters;	state Exp;
+branches;
+next	1.17.2.7;
+
+1.17.2.7
+date	2011.10.14.11.25.23;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.23.2.1
+date	2009.10.08.04.17.28;	author jfrijters;	state Exp;
+branches;
+next	1.23.2.2;
+
+1.23.2.2
+date	2009.10.19.04.50.41;	author jfrijters;	state Exp;
+branches;
+next	1.23.2.3;
+
+1.23.2.3
+date	2009.10.26.04.47.17;	author jfrijters;	state Exp;
+branches;
+next	1.23.2.4;
+
+1.23.2.4
+date	2009.11.30.05.45.00;	author jfrijters;	state Exp;
+branches;
+next	1.23.2.5;
+
+1.23.2.5
+date	2010.01.12.16.56.51;	author jfrijters;	state Exp;
+branches;
+next	1.23.2.6;
+
+1.23.2.6
+date	2010.02.19.08.13.55;	author jfrijters;	state Exp;
+branches;
+next	1.23.2.7;
+
+1.23.2.7
+date	2010.04.06.05.24.23;	author jfrijters;	state Exp;
+branches;
+next	1.23.2.8;
+
+1.23.2.8
+date	2010.07.27.06.49.15;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.33.2.1
+date	2010.07.07.13.31.06;	author jfrijters;	state Exp;
+branches;
+next	1.33.2.2;
+
+1.33.2.2
+date	2010.07.12.07.05.27;	author jfrijters;	state Exp;
+branches;
+next	1.33.2.3;
+
+1.33.2.3
+date	2010.07.27.07.15.20;	author jfrijters;	state Exp;
+branches;
+next	1.33.2.4;
+
+1.33.2.4
+date	2010.08.03.15.18.44;	author jfrijters;	state Exp;
+branches;
+next	1.33.2.5;
+
+1.33.2.5
+date	2010.08.09.12.50.52;	author jfrijters;	state Exp;
+branches;
+next	1.33.2.6;
+
+1.33.2.6
+date	2010.08.23.04.37.12;	author jfrijters;	state Exp;
+branches;
+next	1.33.2.7;
+
+1.33.2.7
+date	2010.10.22.07.54.29;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.34
+log
+@Auto-generate CommonAssemblyInfo.cs with today's build number.
+@
+text
+@/*
+  Copyright (C) 2008 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System.Reflection;
+
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Jeroen Frijters")]
+[assembly: AssemblyProduct("IKVM.NET")]
+[assembly: AssemblyCopyright("Copyright (C) 2002-2010 Jeroen Frijters")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+[assembly: AssemblyVersion("0.43.3817.0")]
+
+#if SIGNCODE
+	#pragma warning disable 1699
+	[assembly: AssemblyKeyName("ikvm-key")]
+#endif
+@
+
+
+1.33
+log
+@Latest snapshot version.
+@
+text
+@@
+
+
+1.33.2.1
+log
+@0.44 rc 0 version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.44.0.0")]
+@
+
+
+1.33.2.2
+log
+@New rc version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.44.0.1")]
+@
+
+
+1.33.2.3
+log
+@New rc version.
+- Fix for bug #3033769.
+- Improved handling of protected/public member access that requires InternalsVisibleTo in multiple target mode.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.44.0.2")]
+@
+
+
+1.33.2.4
+log
+@*** empty log message ***
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.44.0.3")]
+@
+
+
+1.33.2.5
+log
+@Next rc version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.44.0.4")]
+@
+
+
+1.33.2.6
+log
+@New RC version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.44.0.5")]
+@
+
+
+1.33.2.7
+log
+@Updated version to 0.44.0.6.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.44.0.6")]
+@
+
+
+1.32
+log
+@New development snapshot version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.43.3811.0")]
+@
+
+
+1.31
+log
+@New snapshot version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.43.3803.0")]
+@
+
+
+1.30
+log
+@New snapshot version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.43.3797.0")]
+@
+
+
+1.29
+log
+@New snapshot version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.43.3790.0")]
+@
+
+
+1.28
+log
+@New snapshot version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.43.3782.0")]
+@
+
+
+1.27
+log
+@Next snapshot version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.43.3765.0")]
+@
+
+
+1.26
+log
+@Updated copyright year.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.43.3628.0")]
+@
+
+
+1.25
+log
+@- New snapshot version.
+- Update base addresses.
+@
+text
+@d29 1
+a29 1
+[assembly: AssemblyCopyright("Copyright (C) 2002-2009 Jeroen Frijters")]
+@
+
+
+1.24
+log
+@New snapshot version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.43.3595.0")]
+@
+
+
+1.23
+log
+@New snapshot version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.41.3562.0")]
+@
+
+
+1.23.2.1
+log
+@0.42 release branch.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.42.0.0")]
+@
+
+
+1.23.2.2
+log
+@New release candidate version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.42.0.1")]
+@
+
+
+1.23.2.3
+log
+@New release candidate version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.42.0.2")]
+@
+
+
+1.23.2.4
+log
+@New rc version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.42.0.3")]
+@
+
+
+1.23.2.5
+log
+@- Update version to 0.42.0.4
+Backported:
+- Mangle all artificial type names if they clash with Java type names in the same assembly.
+- Fix for http://gcc.gnu.org/bugzilla/show_bug.cgi?id=41696
+- Fixed exception sorter to be correct when invoked with two references to the same object.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.42.0.4")]
+@
+
+
+1.23.2.6
+log
+@Next rc version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.42.0.5")]
+@
+
+
+1.23.2.7
+log
+@New rc.
+@
+text
+@d29 1
+a29 1
+[assembly: AssemblyCopyright("Copyright (C) 2002-2010 Jeroen Frijters")]
+d32 1
+a32 1
+[assembly: AssemblyVersion("0.42.0.6")]
+@
+
+
+1.23.2.8
+log
+@Fix for bug #3033769.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.42.0.7")]
+@
+
+
+1.22
+log
+@Next snapshot version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.41.3484.0")]
+@
+
+
+1.21
+log
+@Development snapshot version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.41.3440.0")]
+@
+
+
+1.20
+log
+@Snapshot version
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.41.3432.0")]
+@
+
+
+1.19
+log
+@New snapshot version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.41.3398.0")]
+@
+
+
+1.18
+log
+@Added support for inlining subroutines (jsr/ret) to allow the verifier and compiler to be simplified and to hopefully pave the way for future codegen optimizations.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.41.3393.0")]
+@
+
+
+1.17
+log
+@Yesterday's snapshot version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.39.3363.0")]
+@
+
+
+1.17.2.1
+log
+@0.40 version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.40.0.0")]
+@
+
+
+1.17.2.2
+log
+@Backported MDB symbol writer fixes.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.40.0.1")]
+@
+
+
+1.17.2.3
+log
+@- Changed version to 0.40.0.2
+- Added rmic step to build to remove dependency on .class files
+- Fixed verifier bug in merging of jsr/ret state
+- Fixed verifier bugs that could cause potential LocalStoreSites corruption
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.40.0.2")]
+@
+
+
+1.17.2.4
+log
+@New 0.40 release candidate.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.40.0.3")]
+@
+
+
+1.17.2.5
+log
+@Workaround for #2843805.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.40.0.4")]
+@
+
+
+1.17.2.6
+log
+@- Update version to 0.40.0.5.
+- Include lib/flavormap.properties and lib/content-types.properties resources.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.40.0.5")]
+@
+
+
+1.17.2.7
+log
+@Backported com.sun.security.auth.module.NTSystem implementation.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.40.0.6")]
+@
+
+
+1.16
+log
+@New snapshot version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.39.3358.0")]
+@
+
+
+1.15
+log
+@New snapshot version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.39.3348.0")]
+@
+
+
+1.14
+log
+@New snapshot version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.39.3338.0")]
+@
+
+
+1.13
+log
+@New snapshot version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.39.3328.0")]
+@
+
+
+1.12
+log
+@Next snapshot version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.39.3308.0")]
+@
+
+
+1.11
+log
+@Updated build to split IKVM.OpenJDK.ClassLibrary.dll into ten parts.
+@
+text
+@d29 1
+a29 1
+[assembly: AssemblyCopyright("Copyright (C) 2002-2008 Jeroen Frijters")]
+d32 1
+a32 1
+[assembly: AssemblyVersion("0.39.3280.0")]
+@
+
+
+1.10
+log
+@Changed version to 0.39.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.39.3240.0")]
+@
+
+
+1.9
+log
+@Updated version number.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.37.3187.0")]
+@
+
+
+1.9.2.1
+log
+@Set version no. to 0.38.0.0.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.38.0.0")]
+@
+
+
+1.9.2.2
+log
+@Backported fixes and updated version to 0.38.0.1:
+- Hide callerID nested types.
+- Made finalize() and clone() methods in cli.System.Object and cli.System.Exception final.
+- Fixed reflection to work on .NET 2.0 RTM.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.38.0.1")]
+@
+
+
+1.9.2.3
+log
+@- Changed version to 0.38.0.2
+- Fixed openjdk.build BOM issue on Linux
+- Fixed verifier bug in handling of jsr instruction
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.38.0.2")]
+@
+
+
+1.9.2.4
+log
+@Changed version to 0.38.0.3 and backported these fixes:
+- Fixed the stack trace when an unwrapped java.lang.Error (or subclass) escapes from a static initializer.
+- It turns out that we really should create an MBeanServer in sun.management.ManagementFactory.createPlatformMBeanServer(), even if we don't populate it with anything useful, applications might still want to register their own MBeans. This fix allows Derby 10.4.2.0 to work.
+- Added helpful message to ClassCastException generated for ghost array casts.
+- Added check for constructor with missing body in map.xml.
+- Removed over eager state checking from java.util.zip.Deflater. Fixes Lucene issue.
+- Fixed enclosing method discovery to work for ReflectionOnly assemblies. This allows ikvmstub to work with ikvmc generated assemblies.
+- Always emit an explicit method override if we've mangled the name/sig, because we can't predict whether it will be needed or not (without keeping track of the mangling in the base classes) and the cost is minimal since this doesn't happen all that often.
+- Miranda method should use mangled name (if the name is mangled).
+- Fixed pointer detection to work for types with multiple indirection levels.
+- If the last call site of a subroutine wasn't reachable, the return switch would fall through potentially causing the code to be unverifiable.
+- The check for unloadable types on the stack indexed the stack in the wrong order.
+- Fixed exception wrapping for java.security.AccessController.doPrivileged().
+- Fixed tracer to only add a trace listener in executables.
+@
+text
+@d29 1
+a29 1
+[assembly: AssemblyCopyright("Copyright (C) 2002-2009 Jeroen Frijters")]
+d32 1
+a32 1
+[assembly: AssemblyVersion("0.38.0.3")]
+@
+
+
+1.9.2.5
+log
+@- Updated version to 0.38.0.4
+- Backported fix to PassiveWeakDictionary.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.38.0.4")]
+@
+
+
+1.8
+log
+@New version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.37.3166.0")]
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.37.3141.0")]
+@
+
+
+1.6
+log
+@Updated version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.37.3086.0")]
+@
+
+
+1.5
+log
+@Updated version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.37.3077.0")]
+@
+
+
+1.4
+log
+@Updated version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.37.3063.0")]
+@
+
+
+1.3
+log
+@Updated build version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.37.3026.0")]
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.37.2970.0")]
+@
+
+
+1.1
+log
+@- Moved common assembly attributes to single file (CommonAssemblyInfo.cs).
+- Added IKVM.Runtime.JNI project to Visual Studio solution.
+- Added atomic.cs to Visual Studio projects.
+- Added SecurityCritical and AllowPartiallyTrustedCallers attributes to IKVM.Runtime.dll.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.37.2923.0")]
+@
+

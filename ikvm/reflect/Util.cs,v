@@ -1,0 +1,760 @@
+head	1.17;
+access;
+symbols
+	v8_1_5717_0:1.15
+	v8_1:1.15.0.2
+	v8_0_5449_1:1.14
+	v8_0_5449_0:1.14
+	v8_0:1.14.0.8
+	v7_4_5196_0:1.14
+	v7_4:1.14.0.6
+	v7_3:1.14.0.4
+	v7_2_4630_6:1.14
+	v7_2_4630_5:1.14
+	v7_2_4630_4:1.14
+	v7_2_4630_3:1.14
+	v7_2_4630_2:1.14
+	v0_46_0_4:1.10
+	v7_2_4630_1:1.14
+	v7_2:1.14.0.2
+	v7_1_4532_2:1.13
+	v7_1_4532_1:1.13
+	v7_1_4532_0:1.13
+	v7_1:1.13.0.2
+	v7_0_4335_3:1.11
+	v7_0_4335_2:1.11
+	v7_0_4335_1:1.11
+	v0_46_0_2:1.10
+	v7_0_4335_0:1.11
+	v7_0:1.11.0.2
+	v0_46_0_1:1.10
+	v0_46_0_0:1.10
+	v0_46:1.10.0.2
+	v0_44_0_6:1.8
+	v0_44_0_5:1.8
+	v0_44_0_4:1.8
+	v0_44_0_3:1.8
+	v0_44_0_2:1.8
+	v0_44_0_1:1.8
+	v0_44_0_0:1.8
+	v0_44:1.8.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.17
+date	2016.07.01.05.44.41;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2016.07.01.05.15.22;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2015.02.16.12.24.28;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2012.05.31.12.16.27;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2012.01.30.14.22.37;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2011.12.01.06.30.50;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2011.03.17.14.40.50;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2011.01.11.05.16.48;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2010.11.26.13.44.06;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2010.06.09.04.50.02;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2010.05.20.12.17.16;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2010.04.20.13.06.09;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2010.04.18.08.39.20;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.02.04.09.59.42;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.02.04.09.40.05;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.17
+log
+@Replaced CORECLR symbol with NETSTANDARD.
+@
+text
+@/*
+  Copyright (C) 2008-2011 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+
+namespace IKVM.Reflection
+{
+	public interface ICustomAttributeProvider
+	{
+		bool IsDefined(Type attributeType, bool inherit);
+		IList<CustomAttributeData> __GetCustomAttributes(Type attributeType, bool inherit);
+	}
+
+#if !NETSTANDARD
+	[Serializable]
+#endif
+	public sealed class FileFormatLimitationExceededException : InvalidOperationException
+	{
+		public const int META_E_STRINGSPACE_FULL = unchecked((int)0x80131198);
+
+		public FileFormatLimitationExceededException(string message, int hresult)
+			: base(message)
+		{
+			this.HResult = hresult;
+		}
+
+#if !NETSTANDARD
+		private FileFormatLimitationExceededException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+			: base(info, context)
+		{
+		}
+#endif
+
+		public int ErrorCode
+		{
+			get { return this.HResult; }
+		}
+	}
+
+#if !NETSTANDARD
+	[Serializable]
+#endif
+	public sealed class Missing
+#if !NETSTANDARD
+		: System.Runtime.Serialization.ISerializable
+#endif
+	{
+		public static readonly Missing Value = new Missing();
+
+		private Missing() { }
+
+#if !NETSTANDARD
+		void System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+		{
+			info.SetType(typeof(SingletonSerializationHelper));
+		}
+
+		[Serializable]
+		private sealed class SingletonSerializationHelper : System.Runtime.Serialization.IObjectReference
+		{
+			public object GetRealObject(System.Runtime.Serialization.StreamingContext context)
+			{
+				return Value;
+			}
+		}
+#endif
+	}
+
+	static class Empty<T>
+	{
+		internal static readonly T[] Array = new T[0];
+	}
+
+	static class Util
+	{
+		internal static int[] Copy(int[] array)
+		{
+			if (array == null || array.Length == 0)
+			{
+				return Empty<int>.Array;
+			}
+			int[] copy = new int[array.Length];
+			Array.Copy(array, copy, array.Length);
+			return copy;
+		}
+
+		internal static Type[] Copy(Type[] array)
+		{
+			if (array == null || array.Length == 0)
+			{
+				return Type.EmptyTypes;
+			}
+			Type[] copy = new Type[array.Length];
+			Array.Copy(array, copy, array.Length);
+			return copy;
+		}
+
+		internal static T[] ToArray<T, V>(List<V> list, T[] empty) where V : T
+		{
+			if (list == null || list.Count == 0)
+			{
+				return empty;
+			}
+			T[] array = new T[list.Count];
+			for (int i = 0; i < array.Length; i++)
+			{
+				array[i] = list[i];
+			}
+			return array;
+		}
+
+		internal static T[] ToArray<T>(IEnumerable<T> values)
+		{
+			return values == null
+				? Empty<T>.Array
+				: new List<T>(values).ToArray();
+		}
+
+		// note that an empty array matches a null reference
+		internal static bool ArrayEquals(Type[] t1, Type[] t2)
+		{
+			if (t1 == t2)
+			{
+				return true;
+			}
+			if (t1 == null)
+			{
+				return t2.Length == 0;
+			}
+			else if (t2 == null)
+			{
+				return t1.Length == 0;
+			}
+			if (t1.Length == t2.Length)
+			{
+				for (int i = 0; i < t1.Length; i++)
+				{
+					if (!TypeEquals(t1[i], t2[i]))
+					{
+						return false;
+					}
+				}
+				return true;
+			}
+			return false;
+		}
+
+		internal static bool TypeEquals(Type t1, Type t2)
+		{
+			if (t1 == t2)
+			{
+				return true;
+			}
+			if (t1 == null)
+			{
+				return false;
+			}
+			return t1.Equals(t2);
+		}
+
+		internal static int GetHashCode(Type[] types)
+		{
+			if (types == null)
+			{
+				return 0;
+			}
+			int h = 0;
+			foreach (Type t in types)
+			{
+				if (t != null)
+				{
+					h *= 3;
+					h ^= t.GetHashCode();
+				}
+			}
+			return h;
+		}
+
+		internal static bool ArrayEquals(CustomModifiers[] m1, CustomModifiers[] m2)
+		{
+			if (m1 == null || m2 == null)
+			{
+				return m1 == m2;
+			}
+			if (m1.Length != m2.Length)
+			{
+				return false;
+			}
+			for (int i = 0; i < m1.Length; i++)
+			{
+				if (!m1[i].Equals(m2[i]))
+				{
+					return false;
+				}
+			}
+			return true;
+		}
+
+		internal static int GetHashCode(CustomModifiers[] mods)
+		{
+			int h = 0;
+			if (mods != null)
+			{
+				foreach (CustomModifiers mod in mods)
+				{
+					h ^= mod.GetHashCode();
+				}
+			}
+			return h;
+		}
+
+		internal static T NullSafeElementAt<T>(T[] array, int index)
+		{
+			return array == null ? default(T) : array[index];
+		}
+
+		internal static int NullSafeLength<T>(T[] array)
+		{
+			return array == null ? 0 : array.Length;
+		}
+	}
+
+	[System.Runtime.InteropServices.StructLayout(System.Runtime.InteropServices.LayoutKind.Explicit)]
+	struct SingleConverter
+	{
+		[System.Runtime.InteropServices.FieldOffset(0)]
+		private int i;
+		[System.Runtime.InteropServices.FieldOffset(0)]
+		private float f;
+
+		internal static int SingleToInt32Bits(float v)
+		{
+			SingleConverter c = new SingleConverter();
+			c.f = v;
+			return c.i;
+		}
+
+		internal static float Int32BitsToSingle(int v)
+		{
+			SingleConverter c = new SingleConverter();
+			c.i = v;
+			return c.f;
+		}
+	}
+
+    static class TypeUtil
+    {
+        internal static bool IsEnum(System.Type type)
+        {
+#if NETSTANDARD
+            return System.Reflection.IntrospectionExtensions.GetTypeInfo(type).IsEnum;
+#else
+            return type.IsEnum;
+#endif
+        }
+
+        internal static System.Reflection.Assembly GetAssembly(System.Type type)
+        {
+#if NETSTANDARD
+            return System.Reflection.IntrospectionExtensions.GetTypeInfo(type).Assembly;
+#else
+            return type.Assembly;
+#endif
+        }
+
+        internal static System.Reflection.MethodBase GetDeclaringMethod(System.Type type)
+        {
+#if NETSTANDARD
+            return System.Reflection.IntrospectionExtensions.GetTypeInfo(type).DeclaringMethod;
+#else
+            return type.DeclaringMethod;
+#endif
+        }
+
+        internal static bool IsGenericType(System.Type type)
+        {
+#if NETSTANDARD
+            return System.Reflection.IntrospectionExtensions.GetTypeInfo(type).IsGenericType;
+#else
+            return type.IsGenericType;
+#endif
+        }
+
+        internal static bool IsGenericTypeDefinition(System.Type type)
+        {
+#if NETSTANDARD
+            return System.Reflection.IntrospectionExtensions.GetTypeInfo(type).IsGenericTypeDefinition;
+#else
+            return type.IsGenericTypeDefinition;
+#endif
+        }
+
+        internal static System.Type[] GetGenericArguments(System.Type type)
+        {
+#if NETSTANDARD
+            return System.Reflection.IntrospectionExtensions.GetTypeInfo(type).GenericTypeArguments;
+#else
+            return type.GetGenericArguments();
+#endif
+        }
+    }
+}
+@
+
+
+1.16
+log
+@Added support for building against .NET Standard 1.3.
+@
+text
+@d35 1
+a35 1
+#if !CORECLR
+d48 1
+a48 1
+#if !CORECLR
+d61 1
+a61 1
+#if !CORECLR
+d65 1
+a65 1
+#if !CORECLR
+d73 1
+a73 1
+#if !CORECLR
+@
+
+
+1.15
+log
+@Added CoreCLR target for IKVM.Reflection.
+@
+text
+@d266 57
+@
+
+
+1.14
+log
+@- Added .NET 4.5 ModuleBuilder APIs GetMethodToken(MethodInfo, IEnumerable<Type>) and GetConstructorToken(MethodInfo, IEnumerable<Type>).
+- Added API extensions ModuleBuilder.__GetMethodToken() and ModuleBuilder.__GetConstructorToken().
+@
+text
+@a25 1
+using System.Runtime.Serialization;
+d35 1
+d37 1
+d48 1
+d53 1
+d61 1
+d63 5
+a67 1
+	public sealed class Missing : ISerializable
+d73 2
+a74 1
+		void ISerializable.GetObjectData(SerializationInfo info, StreamingContext context)
+d80 1
+a80 1
+		private sealed class SingletonSerializationHelper : IObjectReference
+d82 1
+a82 1
+			public object GetRealObject(StreamingContext context)
+d87 1
+@
+
+
+1.13
+log
+@Removed unused methods.
+@
+text
+@d123 7
+@
+
+
+1.12
+log
+@- Rewrote custom modifier handling to retain ordering.
+- Added ConstructorInfo.__ReturnParameter to expose custom modifiers.
+- Added __GetCustomModifiers() to various *Info types.
+- Added CustomModifiers type to encapsulate a custom modifier sequence.
+- Added CustomModifiersBuilder to create a CustomModifiers sequence.
+- Marked a number of IKVM.Reflection specific methods Obsolete, because they are replaced with method that take CustomModifiers value(s).
+@
+text
+@a108 14
+		internal static Type[][] Copy(Type[][] types)
+		{
+			if (types == null || types.Length == 0)
+			{
+				return types;
+			}
+			Type[][] newArray = new Type[types.Length][];
+			for (int i = 0; i < newArray.Length; i++)
+			{
+				newArray[i] = Copy(types[i]);
+			}
+			return newArray;
+		}
+
+@
+
+
+1.11
+log
+@Added support for array Type sizes/lower bounds.
+@
+text
+@a165 56
+		internal static bool ArrayEquals(Type[][] t1, Type[][] t2)
+		{
+			if (t1 == t2)
+			{
+				return true;
+			}
+			if (t1 == null)
+			{
+				return t2.Length == 0;
+			}
+			else if (t2 == null)
+			{
+				return t1.Length == 0;
+			}
+			if (t1.Length == t2.Length)
+			{
+				for (int i = 0; i < t1.Length; i++)
+				{
+					if (!ArrayEquals(t1[i], t2[i]))
+					{
+						return false;
+					}
+				}
+				return true;
+			}
+			return false;
+		}
+
+		internal static bool ArrayEquals(Type[][][] t1, Type[][][] t2)
+		{
+			if (t1 == t2)
+			{
+				return true;
+			}
+			if (t1 == null)
+			{
+				return t2.Length == 0;
+			}
+			else if (t2 == null)
+			{
+				return t1.Length == 0;
+			}
+			if (t1.Length == t2.Length)
+			{
+				for (int i = 0; i < t1.Length; i++)
+				{
+					if (!ArrayEquals(t1[i], t2[i]))
+					{
+						return false;
+					}
+				}
+				return true;
+			}
+			return false;
+		}
+
+d197 1
+a197 1
+		internal static int GetHashCode(Type[][] types)
+d199 9
+a207 2
+			int h = 0;
+			if (types != null)
+d209 1
+a209 1
+				foreach (Type[] array in types)
+d211 1
+a211 1
+					h ^= GetHashCode(array);
+d214 1
+a214 1
+			return h;
+d217 1
+a217 1
+		internal static int GetHashCode(Type[][][] types)
+d220 1
+a220 1
+			if (types != null)
+d222 1
+a222 1
+				foreach (Type[][] array in types)
+d224 1
+a224 1
+					h ^= GetHashCode(array);
+d229 10
+@
+
+
+1.10
+log
+@Fix for big endian systems. Thanks to Marek Safar for reporting this.
+@
+text
+@d87 11
+@
+
+
+1.9
+log
+@- Added IKVM.Reflection.Missing type.
+- Fixed ParameterInfo.RawDefaultValue to return Missing.Value if the parameter is optional, but doesn't have a default and to return null, if the parameter isn't optional (and doesn't have a default).
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008-2010 Jeroen Frijters
+d268 23
+@
+
+
+1.8
+log
+@Fix. When the user string heap overflows, throw an exception instead of silently creating corrupt image.
+@
+text
+@d26 1
+d58 22
+@
+
+
+1.7
+log
+@Added ICustomAttributeProvider interface.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008 Jeroen Frijters
+d35 22
+@
+
+
+1.6
+log
+@Made custom modifier packing more efficient and shared between MethodSignature and MethodBuilder.
+@
+text
+@d29 6
+@
+
+
+1.5
+log
+@Introduced Empty<T> to cache zero length arrays.
+@
+text
+@d132 28
+d203 13
+@
+
+
+1.4
+log
+@Implemented __GetDeclaredFields(), __GetDeclaredEvents() and __GetDeclaredProperties() on TypeBuilder.
+@
+text
+@d29 5
+@
+
+
+1.3
+log
+@Avoid Clone(), because we want to return a Type[], not an array of some subtype of Type.
+@
+text
+@d25 1
+d56 14
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d36 3
+a38 1
+			return (Type[])array.Clone();
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

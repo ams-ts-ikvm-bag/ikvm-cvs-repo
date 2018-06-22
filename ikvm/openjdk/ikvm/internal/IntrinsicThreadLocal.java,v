@@ -1,0 +1,101 @@
+head	1.1;
+access;
+symbols
+	v8_1_5717_0:1.1
+	v8_1:1.1.0.18
+	v8_0_5449_1:1.1
+	v8_0_5449_0:1.1
+	v8_0:1.1.0.16
+	v7_4_5196_0:1.1
+	v7_4:1.1.0.14
+	v7_3:1.1.0.12
+	v7_2_4630_6:1.1
+	v7_2_4630_5:1.1
+	v7_2_4630_4:1.1
+	v7_2_4630_3:1.1
+	v7_2_4630_2:1.1
+	v0_46_0_4:1.1
+	v7_2_4630_1:1.1
+	v7_2:1.1.0.10
+	v7_1_4532_2:1.1
+	v7_1_4532_1:1.1
+	v7_1_4532_0:1.1
+	v7_1:1.1.0.8
+	v7_0_4335_3:1.1
+	v7_0_4335_2:1.1
+	v7_0_4335_1:1.1
+	v0_46_0_2:1.1
+	v7_0_4335_0:1.1
+	v7_0:1.1.0.6
+	v0_46_0_1:1.1
+	v0_46_0_0:1.1
+	v0_46:1.1.0.4
+	v0_44_0_6:1.1
+	v0_44_0_5:1.1
+	v0_44_0_4:1.1
+	v0_44_0_3:1.1
+	v0_44_0_2:1.1
+	v0_44_0_1:1.1
+	v0_44_0_0:1.1
+	v0_44:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	2010.02.11.10.36.01;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Intrinsified ThreadLocal (under specific circumstances).
+@
+text
+@/*
+  Copyright (C) 2010 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+package ikvm.internal;
+
+// This is the base class for intrinsified ThreadLocals, it's main purpose
+// is to avoid having to add a remove() method to every generated class,
+// but it also gives us some maneuvering room should a future JDK version
+// change ThreadLocal.
+// Note that because this class is abstract, getClass() on an intrinsified
+// ThreadLocal instance will return java.lang.ThreadLocal instead of this class.
+// We don't use HideFromJava for this, because that would make the life of
+// the runtime/ikvmc more difficult (because it needs a TypeWrapper for this class).
+
+public abstract class IntrinsicThreadLocal extends ThreadLocal
+{
+    public final void remove()
+    {
+        set(null);
+    }
+}
+@

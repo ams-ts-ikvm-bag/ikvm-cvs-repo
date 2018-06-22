@@ -1,0 +1,1395 @@
+head	1.25;
+access;
+symbols
+	v8_1_5717_0:1.23
+	v8_1:1.23.0.2
+	v8_0_5449_1:1.22
+	v8_0_5449_0:1.22
+	v8_0:1.22.0.4
+	v7_4_5196_0:1.22
+	v7_4:1.22.0.2
+	v7_3:1.18.0.2
+	v7_2_4630_6:1.17.2.1
+	v7_2_4630_5:1.17.2.1
+	v7_2_4630_4:1.17.2.1
+	v7_2_4630_3:1.17.2.1
+	v7_2_4630_2:1.17
+	v0_46_0_4:1.5
+	v7_2_4630_1:1.17
+	v7_2:1.17.0.2
+	v7_1_4532_2:1.16
+	v7_1_4532_1:1.16
+	v7_1_4532_0:1.16
+	v7_1:1.16.0.2
+	v7_0_4335_3:1.15
+	v7_0_4335_2:1.15
+	v7_0_4335_1:1.15
+	v0_46_0_2:1.5
+	v7_0_4335_0:1.15
+	v7_0:1.15.0.2
+	v0_46_0_1:1.5
+	v0_46_0_0:1.5
+	v0_46:1.5.0.2
+	v0_44_0_6:1.4
+	v0_44_0_5:1.4
+	v0_44_0_4:1.4
+	v0_44_0_3:1.4
+	v0_44_0_2:1.4
+	v0_44_0_1:1.4
+	v0_44_0_0:1.4
+	v0_44:1.4.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.25
+date	2016.07.01.05.15.22;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2015.11.03.10.36.58;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2015.04.06.07.12.29;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2013.09.13.12.09.43;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2013.05.10.11.12.20;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2013.05.10.10.12.37;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2013.05.10.10.10.08;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2012.10.13.20.12.32;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2012.07.12.09.13.42;	author jfrijters;	state Exp;
+branches
+	1.17.2.1;
+next	1.16;
+
+1.16
+date	2012.01.18.07.58.24;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2011.03.17.06.53.45;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2011.03.13.09.09.43;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2011.03.11.10.43.46;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2011.03.11.09.22.33;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2011.03.11.06.27.30;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2011.03.10.12.03.20;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2011.03.07.07.21.47;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2011.03.07.07.09.05;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2011.03.06.06.40.04;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2011.03.03.12.42.57;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2011.01.26.05.59.24;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.05.07.16.37.28;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.05.06.12.40.07;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.17.2.1
+date	2012.10.23.08.15.53;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.25
+log
+@Added support for building against .NET Standard 1.3.
+@
+text
+@/*
+  Copyright (C) 2008-2013 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Text;
+using IKVM.Reflection.Writer;
+
+namespace IKVM.Reflection.Emit
+{
+	public sealed class CustomAttributeBuilder
+	{
+		internal static readonly ConstructorInfo LegacyPermissionSet = new ConstructorBuilder(null);
+		private readonly ConstructorInfo con;
+		private readonly byte[] blob;
+		private readonly object[] constructorArgs;
+		private readonly PropertyInfo[] namedProperties;
+		private readonly object[] propertyValues;
+		private readonly FieldInfo[] namedFields;
+		private readonly object[] fieldValues;
+
+		internal CustomAttributeBuilder(ConstructorInfo con, byte[] blob)
+		{
+			this.con = con;
+			this.blob = blob;
+		}
+
+		private CustomAttributeBuilder(ConstructorInfo con, int securityAction, byte[] blob)
+		{
+			this.con = con;
+			this.blob = blob;
+			this.constructorArgs = new object[] { securityAction };
+		}
+
+		public CustomAttributeBuilder(ConstructorInfo con, object[] constructorArgs)
+			: this(con, constructorArgs, null, null, null,null)
+		{
+		}
+
+		public CustomAttributeBuilder(ConstructorInfo con, object[] constructorArgs, FieldInfo[] namedFields, object[] fieldValues)
+			: this(con, constructorArgs, null, null, namedFields, fieldValues)
+		{
+		}
+
+		public CustomAttributeBuilder(ConstructorInfo con, object[] constructorArgs, PropertyInfo[] namedProperties, object[] propertyValues)
+			: this(con, constructorArgs, namedProperties, propertyValues, null, null)
+		{
+		}
+
+		public CustomAttributeBuilder(ConstructorInfo con, object[] constructorArgs, PropertyInfo[] namedProperties, object[] propertyValues, FieldInfo[] namedFields, object[] fieldValues)
+		{
+			this.con = con;
+			this.constructorArgs = constructorArgs;
+			this.namedProperties = namedProperties;
+			this.propertyValues = propertyValues;
+			this.namedFields = namedFields;
+			this.fieldValues = fieldValues;
+		}
+
+		public static CustomAttributeBuilder __FromBlob(ConstructorInfo con, byte[] blob)
+		{
+			return new CustomAttributeBuilder(con, blob);
+		}
+
+		public static CustomAttributeBuilder __FromBlob(ConstructorInfo con, int securityAction, byte[] blob)
+		{
+			return new CustomAttributeBuilder(con, securityAction, blob);
+		}
+
+		public static CustomAttributeTypedArgument __MakeTypedArgument(Type type, object value)
+		{
+			return new CustomAttributeTypedArgument(type, value);
+		}
+
+		private sealed class BlobWriter
+		{
+			private readonly Assembly assembly;
+			private readonly CustomAttributeBuilder cab;
+			private readonly ByteBuffer bb;
+
+			internal BlobWriter(Assembly assembly, CustomAttributeBuilder cab, ByteBuffer bb)
+			{
+				this.assembly = assembly;
+				this.cab = cab;
+				this.bb = bb;
+			}
+
+			internal void WriteCustomAttributeBlob()
+			{
+				// prolog
+				WriteUInt16(1);
+				ParameterInfo[] pi = cab.con.GetParameters();
+				for (int i = 0; i < pi.Length; i++)
+				{
+					WriteFixedArg(pi[i].ParameterType, cab.constructorArgs[i]);
+				}
+				WriteNamedArguments(false);
+			}
+
+			internal void WriteNamedArguments(bool forDeclSecurity)
+			{
+				// NumNamed
+				int named = 0;
+				if (cab.namedFields != null)
+				{
+					named += cab.namedFields.Length;
+				}
+				if (cab.namedProperties != null)
+				{
+					named += cab.namedProperties.Length;
+				}
+				if (forDeclSecurity)
+				{
+					WritePackedLen(named);
+				}
+				else
+				{
+					WriteUInt16((ushort)named);
+				}
+				if (cab.namedFields != null)
+				{
+					for (int i = 0; i < cab.namedFields.Length; i++)
+					{
+						WriteNamedArg(0x53, cab.namedFields[i].FieldType, cab.namedFields[i].Name, cab.fieldValues[i]);
+					}
+				}
+				if (cab.namedProperties != null)
+				{
+					for (int i = 0; i < cab.namedProperties.Length; i++)
+					{
+						WriteNamedArg(0x54, cab.namedProperties[i].PropertyType, cab.namedProperties[i].Name, cab.propertyValues[i]);
+					}
+				}
+			}
+
+			private void WriteNamedArg(byte fieldOrProperty, Type type, string name, object value)
+			{
+				WriteByte(fieldOrProperty);
+				WriteFieldOrPropType(type);
+				WriteString(name);
+				WriteFixedArg(type, value);
+			}
+
+			private void WriteByte(byte value)
+			{
+				bb.Write(value);
+			}
+
+			private void WriteUInt16(ushort value)
+			{
+				bb.Write(value);
+			}
+
+			private void WriteInt32(int value)
+			{
+				bb.Write(value);
+			}
+
+			private void WriteFixedArg(Type type, object value)
+			{
+				Universe u = assembly.universe;
+				if (type == u.System_String)
+				{
+					WriteString((string)value);
+				}
+				else if (type == u.System_Boolean)
+				{
+					WriteByte((bool)value ? (byte)1 : (byte)0);
+				}
+				else if (type == u.System_Char)
+				{
+					WriteUInt16((char)value);
+				}
+				else if (type == u.System_SByte)
+				{
+					WriteByte((byte)(sbyte)value);
+				}
+				else if (type == u.System_Byte)
+				{
+					WriteByte((byte)value);
+				}
+				else if (type == u.System_Int16)
+				{
+					WriteUInt16((ushort)(short)value);
+				}
+				else if (type == u.System_UInt16)
+				{
+					WriteUInt16((ushort)value);
+				}
+				else if (type == u.System_Int32)
+				{
+					WriteInt32((int)value);
+				}
+				else if (type == u.System_UInt32)
+				{
+					WriteInt32((int)(uint)value);
+				}
+				else if (type == u.System_Int64)
+				{
+					WriteInt64((long)value);
+				}
+				else if (type == u.System_UInt64)
+				{
+					WriteInt64((long)(ulong)value);
+				}
+				else if (type == u.System_Single)
+				{
+					WriteSingle((float)value);
+				}
+				else if (type == u.System_Double)
+				{
+					WriteDouble((double)value);
+				}
+				else if (type == u.System_Type)
+				{
+					WriteTypeName((Type)value);
+				}
+				else if (type == u.System_Object)
+				{
+					if (value == null)
+					{
+						type = u.System_String;
+					}
+					else if (value is Type)
+					{
+						// value.GetType() would return a subclass of Type, but we don't want to deal with that
+						type = u.System_Type;
+					}
+					else if (value is CustomAttributeTypedArgument)
+					{
+						CustomAttributeTypedArgument cta = (CustomAttributeTypedArgument)value;
+						value = cta.Value;
+						type = cta.ArgumentType;
+					}
+					else
+					{
+						type = u.Import(value.GetType());
+					}
+					WriteFieldOrPropType(type);
+					WriteFixedArg(type, value);
+				}
+				else if (type.IsArray)
+				{
+					if (value == null)
+					{
+						WriteInt32(-1);
+					}
+					else
+					{
+						Array array = (Array)value;
+						Type elemType = type.GetElementType();
+						WriteInt32(array.Length);
+						foreach (object val in array)
+						{
+							WriteFixedArg(elemType, val);
+						}
+					}
+				}
+				else if (type.IsEnum)
+				{
+					WriteFixedArg(type.GetEnumUnderlyingTypeImpl(), value);
+				}
+				else
+				{
+					throw new ArgumentException();
+				}
+			}
+
+			private void WriteInt64(long value)
+			{
+				bb.Write(value);
+			}
+
+			private void WriteSingle(float value)
+			{
+				bb.Write(value);
+			}
+
+			private void WriteDouble(double value)
+			{
+				bb.Write(value);
+			}
+
+			private void WriteTypeName(Type type)
+			{
+				string name = null;
+				if (type != null)
+				{
+					StringBuilder sb = new StringBuilder();
+					GetTypeName(sb, type, false);
+					name = sb.ToString();
+				}
+				WriteString(name);
+			}
+
+			private void GetTypeName(StringBuilder sb, Type type, bool isTypeParam)
+			{
+				bool v1 = !assembly.ManifestModule.__IsMissing && assembly.ManifestModule.MDStreamVersion < 0x20000;
+				bool includeAssemblyName = type.Assembly != assembly && (!v1 || type.Assembly != type.Module.universe.Mscorlib);
+				if (isTypeParam && includeAssemblyName)
+				{
+					sb.Append('[');
+				}
+				GetTypeNameImpl(sb, type);
+				if (includeAssemblyName)
+				{
+					if (v1)
+					{
+						sb.Append(',');
+					}
+					else
+					{
+						sb.Append(", ");
+					}
+					if (isTypeParam)
+					{
+						sb.Append(type.Assembly.FullName.Replace("]", "\\]")).Append(']');
+					}
+					else
+					{
+						sb.Append(type.Assembly.FullName);
+					}
+				}
+			}
+
+			private void GetTypeNameImpl(StringBuilder sb, Type type)
+			{
+				if (type.HasElementType)
+				{
+					GetTypeNameImpl(sb, type.GetElementType());
+					sb.Append(((ElementHolderType)type).GetSuffix());
+				}
+				else if (type.IsConstructedGenericType)
+				{
+					sb.Append(type.GetGenericTypeDefinition().FullName);
+					sb.Append('[');
+					string sep = "";
+					foreach (Type typeParam in type.GetGenericArguments())
+					{
+						sb.Append(sep);
+						GetTypeName(sb, typeParam, true);
+						sep = ",";
+					}
+					sb.Append(']');
+				}
+				else
+				{
+					sb.Append(type.FullName);
+				}
+			}
+	
+			private void WriteString(string val)
+			{
+				bb.Write(val);
+			}
+
+			private void WritePackedLen(int len)
+			{
+				bb.WriteCompressedUInt(len);
+			}
+
+			private void WriteFieldOrPropType(Type type)
+			{
+				Universe u = type.Module.universe;
+				if (type == u.System_Type)
+				{
+					WriteByte(0x50);
+				}
+				else if (type == u.System_Object)
+				{
+					WriteByte(0x51);
+				}
+				else if (type == u.System_Boolean)
+				{
+					WriteByte(0x02);
+				}
+				else if (type == u.System_Char)
+				{
+					WriteByte(0x03);
+				}
+				else if (type == u.System_SByte)
+				{
+					WriteByte(0x04);
+				}
+				else if (type == u.System_Byte)
+				{
+					WriteByte(0x05);
+				}
+				else if (type == u.System_Int16)
+				{
+					WriteByte(0x06);
+				}
+				else if (type == u.System_UInt16)
+				{
+					WriteByte(0x07);
+				}
+				else if (type == u.System_Int32)
+				{
+					WriteByte(0x08);
+				}
+				else if (type == u.System_UInt32)
+				{
+					WriteByte(0x09);
+				}
+				else if (type == u.System_Int64)
+				{
+					WriteByte(0x0A);
+				}
+				else if (type == u.System_UInt64)
+				{
+					WriteByte(0x0B);
+				}
+				else if (type == u.System_Single)
+				{
+					WriteByte(0x0C);
+				}
+				else if (type == u.System_Double)
+				{
+					WriteByte(0x0D);
+				}
+				else if (type == u.System_String)
+				{
+					WriteByte(0x0E);
+				}
+				else if (type.IsArray)
+				{
+					WriteByte(0x1D);
+					WriteFieldOrPropType(type.GetElementType());
+				}
+				else if (type.IsEnum)
+				{
+					WriteByte(0x55);
+					WriteTypeName(type);
+				}
+				else
+				{
+					throw new ArgumentException();
+				}
+			}
+		}
+
+		internal ConstructorInfo Constructor
+		{
+			get { return con; }
+		}
+
+		internal int WriteBlob(ModuleBuilder moduleBuilder)
+		{
+			ByteBuffer bb;
+			if (blob != null)
+			{
+				bb = ByteBuffer.Wrap(blob);
+			}
+			else
+			{
+				bb = new ByteBuffer(100);
+				BlobWriter bw = new BlobWriter(moduleBuilder.Assembly, this, bb);
+				bw.WriteCustomAttributeBlob();
+			}
+			return moduleBuilder.Blobs.Add(bb);
+		}
+
+		internal object GetConstructorArgument(int pos)
+		{
+			return constructorArgs[pos];
+		}
+
+		internal int ConstructorArgumentCount
+		{
+			get { return constructorArgs == null ? 0 : constructorArgs.Length; }
+		}
+
+		internal T? GetFieldValue<T>(string name) where T : struct
+		{
+			object val = GetFieldValue(name);
+			if (val is T)
+			{
+				return (T)val;
+			}
+			else if (val != null)
+			{
+				if (TypeUtil.IsEnum(typeof(T)))
+				{
+					Debug.Assert(Enum.GetUnderlyingType(typeof(T)) == val.GetType());
+					return (T)Enum.ToObject(typeof(T), val);
+				}
+				else
+				{
+					Debug.Assert(Enum.GetUnderlyingType(val.GetType()) == typeof(T));
+					return (T)Convert.ChangeType(val, typeof(T));
+				}
+			}
+			else
+			{
+				return null;
+			}
+		}
+
+		internal object GetFieldValue(string name)
+		{
+			if (namedFields != null)
+			{
+				for (int i = 0; i < namedFields.Length; i++)
+				{
+					if (namedFields[i].Name == name)
+					{
+						return fieldValues[i];
+					}
+				}
+			}
+			return null;
+		}
+
+		internal bool IsLegacyDeclSecurity
+		{
+			get
+			{
+				return ReferenceEquals(con, LegacyPermissionSet)
+					|| (con.DeclaringType == con.Module.universe.System_Security_Permissions_PermissionSetAttribute
+						&& blob == null
+						&& (namedFields == null || namedFields.Length == 0)
+						&& namedProperties != null
+						&& namedProperties.Length == 1
+						&& namedProperties[0].Name == "XML"
+						&& propertyValues[0] is string);
+			}
+		}
+
+		internal int WriteLegacyDeclSecurityBlob(ModuleBuilder moduleBuilder)
+		{
+			if (blob != null)
+			{
+				return moduleBuilder.Blobs.Add(ByteBuffer.Wrap(blob));
+			}
+			else
+			{
+				return moduleBuilder.Blobs.Add(ByteBuffer.Wrap(Encoding.Unicode.GetBytes((string)propertyValues[0])));
+			}
+		}
+
+		internal void WriteNamedArgumentsForDeclSecurity(ModuleBuilder moduleBuilder, ByteBuffer bb)
+		{
+			if (blob != null)
+			{
+				bb.Write(blob);
+			}
+			else
+			{
+				BlobWriter bw = new BlobWriter(moduleBuilder.Assembly, this, bb);
+				bw.WriteNamedArguments(true);
+			}
+		}
+
+		internal CustomAttributeData ToData(Assembly asm)
+		{
+			if (blob != null)
+			{
+				if (constructorArgs != null)
+				{
+					return new CustomAttributeData(asm, con, (int)constructorArgs[0], blob, -1);
+				}
+				return new CustomAttributeData(asm, con, new IKVM.Reflection.Reader.ByteReader(blob, 0, blob.Length));
+			}
+			else
+			{
+				List<CustomAttributeNamedArgument> namedArgs = new List<CustomAttributeNamedArgument>();
+				if (namedProperties != null)
+				{
+					for (int i = 0; i < namedProperties.Length; i++)
+					{
+						namedArgs.Add(new CustomAttributeNamedArgument(namedProperties[i], RewrapValue(namedProperties[i].PropertyType, propertyValues[i])));
+					}
+				}
+				if (namedFields != null)
+				{
+					for (int i = 0; i < namedFields.Length; i++)
+					{
+						namedArgs.Add(new CustomAttributeNamedArgument(namedFields[i], RewrapValue(namedFields[i].FieldType, fieldValues[i])));
+					}
+				}
+				List<CustomAttributeTypedArgument> args = new List<CustomAttributeTypedArgument>(constructorArgs.Length);
+				ParameterInfo[] parameters = this.Constructor.GetParameters();
+				for (int i = 0; i < constructorArgs.Length; i++)
+				{
+					args.Add(RewrapValue(parameters[i].ParameterType, constructorArgs[i]));
+				}
+				return new CustomAttributeData(asm.ManifestModule, con, args, namedArgs);
+			}
+		}
+
+		private static CustomAttributeTypedArgument RewrapValue(Type type, object value)
+		{
+			if (value is Array)
+			{
+				Array array = (Array)value;
+				Type arrayType = type.Module.universe.Import(array.GetType());
+				return RewrapArray(arrayType, array);
+			}
+			else if (value is CustomAttributeTypedArgument)
+			{
+				CustomAttributeTypedArgument arg = (CustomAttributeTypedArgument)value;
+				if (arg.Value is Array)
+				{
+					return RewrapArray(arg.ArgumentType, (Array)arg.Value);
+				}
+				return arg;
+			}
+			else
+			{
+				return new CustomAttributeTypedArgument(type, value);
+			}
+		}
+
+		private static CustomAttributeTypedArgument RewrapArray(Type arrayType, Array array)
+		{
+			Type elementType = arrayType.GetElementType();
+			CustomAttributeTypedArgument[] newArray = new CustomAttributeTypedArgument[array.Length];
+			for (int i = 0; i < newArray.Length; i++)
+			{
+				newArray[i] = RewrapValue(elementType, array.GetValue(i));
+			}
+			return new CustomAttributeTypedArgument(arrayType, newArray);
+		}
+
+		internal bool HasBlob
+		{
+			get { return blob != null; }
+		}
+
+		internal CustomAttributeBuilder DecodeBlob(Assembly asm)
+		{
+			if (blob == null)
+			{
+				return this;
+			}
+			else
+			{
+				return ToData(asm).__ToBuilder();
+			}
+		}
+
+		internal byte[] GetBlob(Assembly asm)
+		{
+			ByteBuffer bb = new ByteBuffer(100);
+			BlobWriter bw = new BlobWriter(asm, this, bb);
+			bw.WriteCustomAttributeBlob();
+			return bb.ToArray();
+		}
+
+		internal KnownCA KnownCA
+		{
+			get
+			{
+				Type attributeType = con.DeclaringType;
+				if (attributeType.IsConstructedGenericType)
+				{
+					// a constructed generic type doesn't have a TypeName and we already know it's not a Known CA
+					return KnownCA.Unknown;
+				}
+				TypeName typeName = attributeType.TypeName;
+				switch (typeName.Namespace)
+				{
+					case "System":
+						switch (typeName.Name)
+						{
+							case "SerializableAttribute":
+								return KnownCA.SerializableAttribute;
+							case "NonSerializedAttribute":
+								return KnownCA.NonSerializedAttribute;
+						}
+						break;
+					case "System.Runtime.CompilerServices":
+						switch (typeName.Name)
+						{
+							case "MethodImplAttribute":
+								return KnownCA.MethodImplAttribute;
+							case "SpecialNameAttribute":
+								return KnownCA.SpecialNameAttribute;
+						}
+						break;
+					case "System.Runtime.InteropServices":
+						switch (typeName.Name)
+						{
+							case "DllImportAttribute":
+								return KnownCA.DllImportAttribute;
+							case "ComImportAttribute":
+								return KnownCA.ComImportAttribute;
+							case "MarshalAsAttribute":
+								return KnownCA.MarshalAsAttribute;
+							case "PreserveSigAttribute":
+								return KnownCA.PreserveSigAttribute;
+							case "InAttribute":
+								return KnownCA.InAttribute;
+							case "OutAttribute":
+								return KnownCA.OutAttribute;
+							case "OptionalAttribute":
+								return KnownCA.OptionalAttribute;
+							case "StructLayoutAttribute":
+								return KnownCA.StructLayoutAttribute;
+							case "FieldOffsetAttribute":
+								return KnownCA.FieldOffsetAttribute;
+						}
+						break;
+				}
+				if (typeName.Matches("System.Security.SuppressUnmanagedCodeSecurityAttribute"))
+				{
+					return KnownCA.SuppressUnmanagedCodeSecurityAttribute;
+				}
+				return KnownCA.Unknown;
+			}
+		}
+	}
+
+	// These are the pseudo-custom attributes that are recognized by name by the runtime (i.e. the type identity is not considered).
+	// The corresponding list in the runtime is at https://github.com/dotnet/coreclr/blob/1afe5ce4f45045d724a4e129df4b816655d486fb/src/md/compiler/custattr_emit.cpp#L38
+	// Note that we only need to handle a subset of the types, since we don't need the ones that are only used for validation by the runtime.
+	enum KnownCA
+	{
+		Unknown,
+		DllImportAttribute,
+		ComImportAttribute,
+		SerializableAttribute,
+		NonSerializedAttribute,
+		MethodImplAttribute,
+		MarshalAsAttribute,
+		PreserveSigAttribute,
+		InAttribute,
+		OutAttribute,
+		OptionalAttribute,
+		StructLayoutAttribute,
+		FieldOffsetAttribute,
+		SpecialNameAttribute,
+		// the following is not part of the runtime known custom attributes, but we handle it here for efficiency and convenience
+		SuppressUnmanagedCodeSecurityAttribute,
+	}
+}
+@
+
+
+1.24
+log
+@Bug fix. Don't crash on generic custom attributes.
+@
+text
+@d504 1
+a504 1
+				if (typeof(T).IsEnum)
+@
+
+
+1.23
+log
+@Fixed known custom attribute handling. They should be recognized by type name, not type identity.
+@
+text
+@d676 7
+a682 1
+				TypeName typeName = con.DeclaringType.TypeName;
+@
+
+
+1.22
+log
+@Fixed regression introduced when legacy PermissionSet handling was simplified.
+@
+text
+@d671 80
+@
+
+
+1.21
+log
+@Unified legacy DeclSecurity handling.
+@
+text
+@d540 1
+a540 1
+				return con == LegacyPermissionSet
+@
+
+
+1.20
+log
+@Removed bogus assert.
+@
+text
+@d536 1
+a536 1
+		internal string GetLegacyDeclSecurity()
+d538 1
+a538 6
+			if (con.DeclaringType == con.Module.universe.System_Security_Permissions_PermissionSetAttribute
+				&& blob == null
+				&& (namedFields == null || namedFields.Length == 0)
+				&& namedProperties != null
+				&& namedProperties.Length == 1
+				&& namedProperties[0].Name == "XML")
+d540 20
+a559 1
+				return propertyValues[0] as string;
+a560 1
+			return null;
+@
+
+
+1.19
+log
+@Simplified legacy PermissionSet handling.
+@
+text
+@a463 5
+		internal bool IsPseudoCustomAttribute
+		{
+			get { return con.DeclaringType.IsPseudoCustomAttribute; }
+		}
+
+@
+
+
+1.18
+log
+@Renamed methods that deal with unsigned compressed integers to *CompressedUInt instead of *CompressedInt.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008-2011 Jeroen Frijters
+d35 1
+@
+
+
+1.17
+log
+@Added new .NET 4.5 API Type.IsConstructedGenericType.
+@
+text
+@d380 1
+a380 1
+				bb.WriteCompressedInt(len);
+@
+
+
+1.17.2.1
+log
+@Backported fixes for rc 3.
+- Bug fix. Off-by-one error in local ref index reusing. Fix for bug #3575555.
+- Bug fix. Don't try to inject DynamicMethod in array types (applies to array.clone() method for MethodHandles).
+- IKVM.Reflection: Bug fix. ModuleReader.ResolveMember() should support types. Thanks to Jb Evain for finding this.
+- IKVM.Reflection: Bug fix. While reading the Cecil source I realized that array bounds are signed.
+- IKVM.Reflection: Bug fix. LocalBuilder should extend LocalVariableInfo.
+- IKVM.Reflection: Implemented LocalVariableInfo.ToString().
+@
+text
+@d380 1
+a380 1
+				bb.WriteCompressedUInt(len);
+@
+
+
+1.16
+log
+@- Added Module.__EnumerateCustomAttributeTable() API.
+- Removed Module.__GetDeclarativeSecurityFor() API.
+- Added CustomAttributeData.__Parent API.
+@
+text
+@d354 1
+a354 1
+				else if (type.IsGenericTypeInstance)
+@
+
+
+1.15
+log
+@Always write XML declarative security in .NET 1.1 format.
+@
+text
+@d573 1
+a573 1
+					return new CustomAttributeData(asm, con, (int)constructorArgs[0], blob);
+@
+
+
+1.14
+log
+@Type parameter type names need not assembly qualified if the types live in the current assembly.
+@
+text
+@d540 1
+a540 1
+		internal object GetPropertyValue(string name)
+d542 6
+a547 1
+			if (namedProperties != null)
+d549 1
+a549 7
+				for (int i = 0; i < namedProperties.Length; i++)
+				{
+					if (namedProperties[i].Name == name)
+					{
+						return propertyValues[i];
+					}
+				}
+@
+
+
+1.13
+log
+@When target .NET 1.x adjust the type name writing algorithm to match the quirks of the Microsoft .NET 1.x metadata writer.
+@
+text
+@d28 1
+d310 23
+a332 2
+					bool v1 = !assembly.ManifestModule.__IsMissing && assembly.ManifestModule.MDStreamVersion < 0x20000;
+					if (type.Assembly == assembly || (v1 && type.Assembly == type.Module.universe.Mscorlib))
+d334 1
+a334 1
+						name = type.FullName;
+d336 1
+a336 1
+					else if (v1)
+d338 1
+a338 1
+						name = type.FullName + "," + type.Assembly.FullName;
+d342 1
+a342 1
+						name = type.AssemblyQualifiedName;
+a344 1
+				WriteString(name);
+d347 26
+@
+
+
+1.12
+log
+@Fixed CustomAttributeBuilder.ToData().
+@
+text
+@d309 2
+a310 1
+					if (type.Assembly == assembly)
+d314 4
+@
+
+
+1.11
+log
+@Added API extension CustomAttributeBuilder.__MakeTypedArgument() to make it possible to box an enum or create an array of an enum type in a location typed as object.
+@
+text
+@d533 1
+a533 1
+						namedArgs.Add(new CustomAttributeNamedArgument(namedProperties[i], new CustomAttributeTypedArgument(namedProperties[i].PropertyType, propertyValues[i])));
+d540 1
+a540 1
+						namedArgs.Add(new CustomAttributeNamedArgument(namedFields[i], new CustomAttributeTypedArgument(namedFields[i].FieldType, fieldValues[i])));
+d543 40
+a582 1
+				return new CustomAttributeData(asm.ManifestModule, con, constructorArgs, namedArgs);
+d584 1
+@
+
+
+1.10
+log
+@Automatically emit .NET 1.x compatible declarative security when appropriate.
+@
+text
+@d90 5
+d249 6
+@
+
+
+1.9
+log
+@Write out types in fixed arg reading/writing to allow missing types to be recognized (before calling IsEnum on them).
+@
+text
+@d477 15
+@
+
+
+1.8
+log
+@Added API extension __FromBlob overload to create declarative security "attribute" from blob.
+@
+text
+@d181 48
+d274 1
+a274 41
+					switch (Type.GetTypeCode(type))
+					{
+						case TypeCode.Boolean:
+							WriteByte((bool)value ? (byte)1 : (byte)0);
+							break;
+						case TypeCode.Char:
+							WriteUInt16((char)value);
+							break;
+						case TypeCode.SByte:
+							WriteByte((byte)(sbyte)value);
+							break;
+						case TypeCode.Byte:
+							WriteByte((byte)value);
+							break;
+						case TypeCode.Int16:
+							WriteUInt16((ushort)(short)value);
+							break;
+						case TypeCode.UInt16:
+							WriteUInt16((ushort)value);
+							break;
+						case TypeCode.Int32:
+							WriteInt32((int)value);
+							break;
+						case TypeCode.UInt32:
+							WriteInt32((int)(uint)value);
+							break;
+						case TypeCode.Int64:
+							WriteInt64((long)value);
+							break;
+						case TypeCode.UInt64:
+							WriteInt64((long)(ulong)value);
+							break;
+						case TypeCode.Single:
+							WriteSingle((float)value);
+							break;
+						case TypeCode.Double:
+							WriteDouble((double)value);
+							break;
+						default:
+							throw new ArgumentException();
+					}
+@
+
+
+1.7
+log
+@Allow missing primitive types to be used in custom attribute blob writing.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008 Jeroen Frijters
+d48 7
+d85 5
+d471 9
+a479 2
+			BlobWriter bw = new BlobWriter(moduleBuilder.Assembly, this, bb);
+			bw.WriteNamedArguments(true);
+d486 4
+@
+
+
+1.6
+log
+@- Fixed CustomAttributeData.__GetBlob() to work for pseudo-custom attributes.
+- Added CustomAttributeBuilder.__FromBlob() to avoid having to use two overloads of SetCustomAttribute when dealing with both builders and blobs.
+@
+text
+@d311 52
+d375 1
+a375 44
+					switch (Type.GetTypeCode(type))
+					{
+						case TypeCode.Boolean:
+							WriteByte(0x02);
+							break;
+						case TypeCode.Char:
+							WriteByte(0x03);
+							break;
+						case TypeCode.SByte:
+							WriteByte(0x04);
+							break;
+						case TypeCode.Byte:
+							WriteByte(0x05);
+							break;
+						case TypeCode.Int16:
+							WriteByte(0x06);
+							break;
+						case TypeCode.UInt16:
+							WriteByte(0x07);
+							break;
+						case TypeCode.Int32:
+							WriteByte(0x08);
+							break;
+						case TypeCode.UInt32:
+							WriteByte(0x09);
+							break;
+						case TypeCode.Int64:
+							WriteByte(0x0A);
+							break;
+						case TypeCode.UInt64:
+							WriteByte(0x0B);
+							break;
+						case TypeCode.Single:
+							WriteByte(0x0C);
+							break;
+						case TypeCode.Double:
+							WriteByte(0x0D);
+							break;
+						case TypeCode.String:
+							WriteByte(0x0E);
+							break;
+						default:
+							throw new ArgumentException();
+					}
+@
+
+
+1.5
+log
+@Performance tweaks by Marek.
+@
+text
+@d73 5
+d80 1
+a80 1
+			private readonly ModuleBuilder moduleBuilder;
+d84 1
+a84 1
+			internal BlobWriter(ModuleBuilder moduleBuilder, CustomAttributeBuilder cab, ByteBuffer bb)
+d86 1
+a86 1
+				this.moduleBuilder = moduleBuilder;
+d164 1
+a164 1
+				Universe u = moduleBuilder.universe;
+d278 1
+a278 1
+					if (type.Assembly == moduleBuilder.Assembly)
+d391 1
+a391 1
+				BlobWriter bw = new BlobWriter(moduleBuilder, this, bb);
+d450 1
+a450 1
+			BlobWriter bw = new BlobWriter(moduleBuilder, this, bb);
+d477 1
+a477 1
+				return new CustomAttributeData(con, constructorArgs, namedArgs);
+d497 8
+@
+
+
+1.4
+log
+@Introduced Type.GetEnumUnderlyingTypeImpl() to avoid CheckBaked for our own usage.
+@
+text
+@d378 1
+a378 1
+			ByteBuffer bb = new ByteBuffer(100);
+d381 1
+a381 1
+				bb.Write(blob);
+d385 1
+@
+
+
+1.3
+log
+@Ignore version info custom attributes that were specified using blob. This is same behavior as .NET.
+@
+text
+@d205 1
+a205 1
+					WriteFixedArg(type.GetEnumUnderlyingType(), value);
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d475 5
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

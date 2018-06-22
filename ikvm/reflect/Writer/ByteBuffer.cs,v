@@ -1,0 +1,624 @@
+head	1.8;
+access;
+symbols
+	v8_1_5717_0:1.8
+	v8_1:1.8.0.2
+	v8_0_5449_1:1.7
+	v8_0_5449_0:1.7
+	v8_0:1.7.0.6
+	v7_4_5196_0:1.7
+	v7_4:1.7.0.4
+	v7_3:1.7.0.2
+	v7_2_4630_6:1.5.2.1
+	v7_2_4630_5:1.5.2.1
+	v7_2_4630_4:1.5.2.1
+	v7_2_4630_3:1.5.2.1
+	v7_2_4630_2:1.5
+	v0_46_0_4:1.3
+	v7_2_4630_1:1.5
+	v7_2:1.5.0.2
+	v7_1_4532_2:1.4
+	v7_1_4532_1:1.4
+	v7_1_4532_0:1.4
+	v7_1:1.4.0.2
+	v7_0_4335_3:1.3
+	v7_0_4335_2:1.3
+	v7_0_4335_1:1.3
+	v0_46_0_2:1.3
+	v7_0_4335_0:1.3
+	v7_0:1.3.0.4
+	v0_46_0_1:1.3
+	v0_46_0_0:1.3
+	v0_46:1.3.0.2
+	v0_44_0_6:1.2
+	v0_44_0_5:1.2
+	v0_44_0_4:1.2
+	v0_44_0_3:1.2
+	v0_44_0_2:1.2
+	v0_44_0_1:1.2
+	v0_44_0_0:1.2
+	v0_44:1.2.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.8
+date	2015.01.27.09.54.44;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2012.10.13.21.48.36;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2012.10.13.20.12.32;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2012.06.01.15.22.59;	author jfrijters;	state Exp;
+branches
+	1.5.2.1;
+next	1.4;
+
+1.4
+date	2012.01.30.14.22.37;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2011.01.11.05.16.48;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.02;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.32;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.5.2.1
+date	2012.10.23.08.15.53;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.8
+log
+@Fixed ModuleBuilder.DefineManifestResource() to support very large resources.
+@
+text
+@/*
+  Copyright (C) 2008 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Text;
+using IKVM.Reflection.Metadata;
+
+namespace IKVM.Reflection.Writer
+{
+	sealed class ByteBuffer
+	{
+		private byte[] buffer;
+		private int pos;
+		private int __length;	// __length is only valid if > pos, otherwise pos is the current length
+
+		internal ByteBuffer(int initialCapacity)
+		{
+			buffer = new byte[initialCapacity];
+		}
+
+		private ByteBuffer(byte[] wrap, int length)
+		{
+			this.buffer = wrap;
+			this.pos = length;
+		}
+
+		internal int Position
+		{
+			get { return pos; }
+			set
+			{
+				if (value > this.Length || value > buffer.Length)
+					throw new ArgumentOutOfRangeException();
+				__length = Math.Max(__length, pos);
+				pos = value;
+			}
+		}
+
+		internal int Length
+		{
+			get { return Math.Max(pos, __length); }
+		}
+
+		// insert count bytes at the current position (without advancing the current position)
+		internal void Insert(int count)
+		{
+			if (count > 0)
+			{
+				int len = this.Length;
+				int free = buffer.Length - len;
+				if (free < count)
+				{
+					Grow(count - free);
+				}
+				Buffer.BlockCopy(buffer, pos, buffer, pos + count, len - pos);
+				__length = Math.Max(__length, pos) + count;
+			}
+			else if (count < 0)
+			{
+				throw new ArgumentOutOfRangeException("count");
+			}
+		}
+
+		private void Grow(int minGrow)
+		{
+			byte[] newbuf = new byte[Math.Max(buffer.Length + minGrow, buffer.Length * 2)];
+			Buffer.BlockCopy(buffer, 0, newbuf, 0, buffer.Length);
+			buffer = newbuf;
+		}
+
+		// NOTE this does not advance the position
+		internal int GetInt32AtCurrentPosition()
+		{
+			return buffer[pos]
+				+ (buffer[pos + 1] << 8)
+				+ (buffer[pos + 2] << 16)
+				+ (buffer[pos + 3] << 24);
+		}
+
+		// NOTE this does not advance the position
+		internal byte GetByteAtCurrentPosition()
+		{
+			return buffer[pos];
+		}
+
+		// return the number of bytes that the compressed int at the current position takes
+		internal int GetCompressedUIntLength()
+		{
+			switch (buffer[pos] & 0xC0)
+			{
+				default:
+					return 1;
+				case 0x80:
+					return 2;
+				case 0xC0:
+					return 4;
+			}
+		}
+
+		internal void Write(byte[] value)
+		{
+			if (pos + value.Length > buffer.Length)
+				Grow(value.Length);
+			Buffer.BlockCopy(value, 0, buffer, pos, value.Length);
+			pos += value.Length;
+		}
+
+		internal void Write(byte value)
+		{
+			if (pos == buffer.Length)
+				Grow(1);
+			buffer[pos++] = value;
+		}
+
+		internal void Write(sbyte value)
+		{
+			Write((byte)value);
+		}
+
+		internal void Write(ushort value)
+		{
+			Write((short)value);
+		}
+
+		internal void Write(short value)
+		{
+			if (pos + 2 > buffer.Length)
+				Grow(2);
+			buffer[pos++] = (byte)value;
+			buffer[pos++] = (byte)(value >> 8);
+		}
+
+		internal void Write(uint value)
+		{
+			Write((int)value);
+		}
+	
+		internal void Write(int value)
+		{
+			if (pos + 4 > buffer.Length)
+				Grow(4);
+			buffer[pos++] = (byte)value;
+			buffer[pos++] = (byte)(value >> 8);
+			buffer[pos++] = (byte)(value >> 16);
+			buffer[pos++] = (byte)(value >> 24);
+		}
+
+		internal void Write(ulong value)
+		{
+			Write((long)value);
+		}
+
+		internal void Write(long value)
+		{
+			if (pos + 8 > buffer.Length)
+				Grow(8);
+			buffer[pos++] = (byte)value;
+			buffer[pos++] = (byte)(value >> 8);
+			buffer[pos++] = (byte)(value >> 16);
+			buffer[pos++] = (byte)(value >> 24);
+			buffer[pos++] = (byte)(value >> 32);
+			buffer[pos++] = (byte)(value >> 40);
+			buffer[pos++] = (byte)(value >> 48);
+			buffer[pos++] = (byte)(value >> 56);
+		}
+
+		internal void Write(float value)
+		{
+			Write(SingleConverter.SingleToInt32Bits(value));
+		}
+
+		internal void Write(double value)
+		{
+			Write(BitConverter.DoubleToInt64Bits(value));
+		}
+
+		internal void Write(string str)
+		{
+			if (str == null)
+			{
+				Write((byte)0xFF);
+			}
+			else
+			{
+				byte[] buf = Encoding.UTF8.GetBytes(str);
+				WriteCompressedUInt(buf.Length);
+				Write(buf);
+			}
+		}
+
+		internal void WriteCompressedUInt(int value)
+		{
+			if (value <= 0x7F)
+			{
+				Write((byte)value);
+			}
+			else if (value <= 0x3FFF)
+			{
+				Write((byte)(0x80 | (value >> 8)));
+				Write((byte)value);
+			}
+			else
+			{
+				Write((byte)(0xC0 | (value >> 24)));
+				Write((byte)(value >> 16));
+				Write((byte)(value >> 8));
+				Write((byte)value);
+			}
+		}
+
+		internal void WriteCompressedInt(int value)
+		{
+			if (value >= 0)
+			{
+				WriteCompressedUInt(value << 1);
+			}
+			else if (value >= -64)
+			{
+				value = ((value << 1) & 0x7F) | 1;
+				Write((byte)value);
+			}
+			else if (value >= -8192)
+			{
+				value = ((value << 1) & 0x3FFF) | 1;
+				Write((byte)(0x80 | (value >> 8)));
+				Write((byte)value);
+			}
+			else
+			{
+				value = ((value << 1) & 0x1FFFFFFF) | 1;
+				Write((byte)(0xC0 | (value >> 24)));
+				Write((byte)(value >> 16));
+				Write((byte)(value >> 8));
+				Write((byte)value);
+			}
+		}
+
+		internal void Write(ByteBuffer bb)
+		{
+			if (pos + bb.Length > buffer.Length)
+				Grow(bb.Length);
+			Buffer.BlockCopy(bb.buffer, 0, buffer, pos, bb.Length);
+			pos += bb.Length;
+		}
+
+		internal void WriteTo(System.IO.Stream stream)
+		{
+			stream.Write(buffer, 0, this.Length);
+		}
+
+		internal void Clear()
+		{
+			pos = 0;
+			__length = 0;
+		}
+
+		internal void Align(int alignment)
+		{
+			if (pos + alignment > buffer.Length)
+				Grow(alignment);
+			int newpos = (pos + alignment - 1) & ~(alignment - 1);
+			while (pos < newpos)
+				buffer[pos++] = 0;
+		}
+
+		internal void WriteTypeDefOrRefEncoded(int token)
+		{
+			switch (token >> 24)
+			{
+				case TypeDefTable.Index:
+					WriteCompressedUInt((token & 0xFFFFFF) << 2 | 0);
+					break;
+				case TypeRefTable.Index:
+					WriteCompressedUInt((token & 0xFFFFFF) << 2 | 1);
+					break;
+				case TypeSpecTable.Index:
+					WriteCompressedUInt((token & 0xFFFFFF) << 2 | 2);
+					break;
+				default:
+					throw new InvalidOperationException();
+			}
+		}
+
+		internal byte[] ToArray()
+		{
+			int len = this.Length;
+			byte[] buf = new byte[len];
+			Buffer.BlockCopy(buffer, 0, buf, 0, len);
+			return buf;
+		}
+
+		internal static ByteBuffer Wrap(byte[] buf)
+		{
+			return new ByteBuffer(buf, buf.Length);
+		}
+
+		internal static ByteBuffer Wrap(byte[] buf, int length)
+		{
+			return new ByteBuffer(buf, length);
+		}
+
+		internal bool Match(int pos, ByteBuffer bb2, int pos2, int len)
+		{
+			for (int i = 0; i < len; i++)
+			{
+				if (buffer[pos + i] != bb2.buffer[pos2 + i])
+				{
+					return false;
+				}
+			}
+			return true;
+		}
+
+		internal int Hash()
+		{
+			int hash = 0;
+			int len = this.Length;
+			for (int i = 0; i < len; i++)
+			{
+				hash *= 37;
+				hash ^= buffer[i];
+			}
+			return hash;
+		}
+
+		internal IKVM.Reflection.Reader.ByteReader GetBlob(int offset)
+		{
+			return IKVM.Reflection.Reader.ByteReader.FromBlob(buffer, offset);
+		}
+	}
+}
+@
+
+
+1.7
+log
+@Bug fix. While reading the Cecil source I realized that array bounds are signed.
+@
+text
+@a304 16
+		internal void Write(System.IO.Stream stream)
+		{
+			const int chunkSize = 8192;
+			for (; ; )
+			{
+				if (pos + chunkSize > buffer.Length)
+					Grow(chunkSize);
+				int read = stream.Read(buffer, pos, chunkSize);
+				if (read <= 0)
+				{
+					break;
+				}
+				pos += read;
+			}
+		}
+
+@
+
+
+1.6
+log
+@Renamed methods that deal with unsigned compressed integers to *CompressedUInt instead of *CompressedInt.
+@
+text
+@d232 27
+@
+
+
+1.5
+log
+@Split SignatureHelper into two implementations. If a ModuleBuilder is supplied when creating the SignatureHelper, an eager implementation is used that only stores the bytes of the signature. Otherwise, the types are stored and later converted into a signature byte array.
+@
+text
+@d108 1
+a108 1
+		internal int GetCompressedIntLength()
+d207 1
+a207 1
+				WriteCompressedInt(buf.Length);
+d212 1
+a212 1
+		internal void WriteCompressedInt(int value)
+d265 1
+a265 1
+					WriteCompressedInt((token & 0xFFFFFF) << 2 | 0);
+d268 1
+a268 1
+					WriteCompressedInt((token & 0xFFFFFF) << 2 | 1);
+d271 1
+a271 1
+					WriteCompressedInt((token & 0xFFFFFF) << 2 | 2);
+@
+
+
+1.5.2.1
+log
+@Backported fixes for rc 3.
+- Bug fix. Off-by-one error in local ref index reusing. Fix for bug #3575555.
+- Bug fix. Don't try to inject DynamicMethod in array types (applies to array.clone() method for MethodHandles).
+- IKVM.Reflection: Bug fix. ModuleReader.ResolveMember() should support types. Thanks to Jb Evain for finding this.
+- IKVM.Reflection: Bug fix. While reading the Cecil source I realized that array bounds are signed.
+- IKVM.Reflection: Bug fix. LocalBuilder should extend LocalVariableInfo.
+- IKVM.Reflection: Implemented LocalVariableInfo.ToString().
+@
+text
+@d108 1
+a108 1
+		internal int GetCompressedUIntLength()
+d207 1
+a207 1
+				WriteCompressedUInt(buf.Length);
+d212 1
+a212 1
+		internal void WriteCompressedUInt(int value)
+a231 27
+		internal void WriteCompressedInt(int value)
+		{
+			if (value >= 0)
+			{
+				WriteCompressedUInt(value << 1);
+			}
+			else if (value >= -64)
+			{
+				value = ((value << 1) & 0x7F) | 1;
+				Write((byte)value);
+			}
+			else if (value >= -8192)
+			{
+				value = ((value << 1) & 0x3FFF) | 1;
+				Write((byte)(0x80 | (value >> 8)));
+				Write((byte)value);
+			}
+			else
+			{
+				value = ((value << 1) & 0x1FFFFFFF) | 1;
+				Write((byte)(0xC0 | (value >> 24)));
+				Write((byte)(value >> 16));
+				Write((byte)(value >> 8));
+				Write((byte)value);
+			}
+		}
+
+d265 1
+a265 1
+					WriteCompressedUInt((token & 0xFFFFFF) << 2 | 0);
+d268 1
+a268 1
+					WriteCompressedUInt((token & 0xFFFFFF) << 2 | 1);
+d271 1
+a271 1
+					WriteCompressedUInt((token & 0xFFFFFF) << 2 | 2);
+@
+
+
+1.4
+log
+@Removed unused methods.
+@
+text
+@d65 20
+d107 14
+d296 3
+a298 2
+			byte[] buf = new byte[pos];
+			Buffer.BlockCopy(buffer, 0, buf, 0, pos);
+@
+
+
+1.3
+log
+@Fix for big endian systems. Thanks to Marek Safar for reporting this.
+@
+text
+@a304 5
+
+		internal void Patch(int offset, byte b)
+		{
+			buffer[offset] = b;
+		}
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d156 1
+a156 1
+			Write(BitConverter.GetBytes(value));
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

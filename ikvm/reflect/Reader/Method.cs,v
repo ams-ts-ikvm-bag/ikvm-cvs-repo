@@ -1,0 +1,1395 @@
+head	1.32;
+access;
+symbols
+	v8_1_5717_0:1.31
+	v8_1:1.31.0.2
+	v8_0_5449_1:1.30
+	v8_0_5449_0:1.30
+	v8_0:1.30.0.8
+	v7_4_5196_0:1.30
+	v7_4:1.30.0.6
+	v7_3:1.30.0.4
+	v7_2_4630_6:1.30
+	v7_2_4630_5:1.30
+	v7_2_4630_4:1.30
+	v7_2_4630_3:1.30
+	v7_2_4630_2:1.30
+	v0_46_0_4:1.13
+	v7_2_4630_1:1.30
+	v7_2:1.30.0.2
+	v7_1_4532_2:1.21
+	v7_1_4532_1:1.21
+	v7_1_4532_0:1.21
+	v7_1:1.21.0.2
+	v7_0_4335_3:1.16
+	v7_0_4335_2:1.16
+	v7_0_4335_1:1.16
+	v0_46_0_2:1.13
+	v7_0_4335_0:1.16
+	v7_0:1.16.0.2
+	v0_46_0_1:1.13
+	v0_46_0_0:1.13
+	v0_46:1.13.0.2
+	v0_44_0_6:1.10
+	v0_44_0_5:1.10
+	v0_44_0_4:1.10
+	v0_44_0_3:1.10
+	v0_44_0_2:1.10
+	v0_44_0_1:1.10
+	v0_44_0_0:1.10
+	v0_44:1.10.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.32
+date	2015.11.03.09.24.21;	author jfrijters;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2015.04.21.10.15.39;	author jfrijters;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2012.07.16.10.14.38;	author jfrijters;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2012.07.16.08.05.37;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2012.07.16.08.02.17;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2012.07.16.07.48.33;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2012.07.16.07.42.55;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2012.07.16.07.23.00;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2012.07.13.13.18.07;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2012.07.13.06.33.30;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2012.07.12.15.10.58;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2012.01.30.14.22.37;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2012.01.27.13.51.09;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2012.01.27.10.11.18;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2012.01.12.06.51.18;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2011.12.01.06.30.51;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2011.03.17.09.18.20;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2011.03.06.08.16.41;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2011.03.03.12.42.57;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2011.01.12.09.34.57;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2010.12.06.11.15.36;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2010.11.26.13.44.06;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2010.05.20.09.28.44;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2010.05.20.09.25.30;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2010.04.20.13.39.53;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2010.04.20.13.18.31;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2010.04.20.09.48.27;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2010.04.20.06.17.21;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.04.19.05.25.02;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.04.18.09.02.54;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.02;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.32;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.32
+log
+@Tiny optimization. There's no need to instantiate the method parameters when getting the return type.
+@
+text
+@/*
+  Copyright (C) 2009-2012 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Text;
+using IKVM.Reflection.Metadata;
+
+namespace IKVM.Reflection.Reader
+{
+	sealed class MethodDefImpl : MethodInfo
+	{
+		private readonly ModuleReader module;
+		private readonly int index;
+		private readonly TypeDefImpl declaringType;
+		private MethodSignature lazyMethodSignature;
+		private ParameterInfo returnParameter;
+		private ParameterInfo[] parameters;
+		private Type[] typeArgs;
+
+		internal MethodDefImpl(ModuleReader module, TypeDefImpl declaringType, int index)
+		{
+			this.module = module;
+			this.index = index;
+			this.declaringType = declaringType;
+		}
+
+		public override MethodBody GetMethodBody()
+		{
+			return GetMethodBody(this);
+		}
+
+		internal MethodBody GetMethodBody(IGenericContext context)
+		{
+			if ((GetMethodImplementationFlags() & MethodImplAttributes.CodeTypeMask) != MethodImplAttributes.IL)
+			{
+				// method is not IL
+				return null;
+			}
+			int rva = module.MethodDef.records[index].RVA;
+			return rva == 0 ? null : new MethodBody(module, rva, context);
+		}
+
+		public override int __MethodRVA
+		{
+			get { return module.MethodDef.records[index].RVA; }
+		}
+
+		public override CallingConventions CallingConvention
+		{
+			get { return this.MethodSignature.CallingConvention; }
+		}
+
+		public override MethodAttributes Attributes
+		{
+			get { return (MethodAttributes)module.MethodDef.records[index].Flags; }
+		}
+
+		public override MethodImplAttributes GetMethodImplementationFlags()
+		{
+			return (MethodImplAttributes)module.MethodDef.records[index].ImplFlags;
+		}
+
+		public override ParameterInfo[] GetParameters()
+		{
+			PopulateParameters();
+			return (ParameterInfo[])parameters.Clone();
+		}
+
+		private void PopulateParameters()
+		{
+			if (parameters == null)
+			{
+				MethodSignature methodSignature = this.MethodSignature;
+				parameters = new ParameterInfo[methodSignature.GetParameterCount()];
+				int parameter = module.MethodDef.records[index].ParamList - 1;
+				int end = module.MethodDef.records.Length > index + 1 ? module.MethodDef.records[index + 1].ParamList - 1 : module.Param.records.Length;
+				for (; parameter < end; parameter++)
+				{
+					int seq = module.Param.records[parameter].Sequence - 1;
+					if (seq == -1)
+					{
+						returnParameter = new ParameterInfoImpl(this, seq, parameter);
+					}
+					else
+					{
+						parameters[seq] = new ParameterInfoImpl(this, seq, parameter);
+					}
+				}
+				for (int i = 0; i < parameters.Length; i++)
+				{
+					if (parameters[i] == null)
+					{
+						parameters[i] = new ParameterInfoImpl(this, i, -1);
+					}
+				}
+				if (returnParameter == null)
+				{
+					returnParameter = new ParameterInfoImpl(this, -1, -1);
+				}
+			}
+		}
+
+		internal override int ParameterCount
+		{
+			get { return this.MethodSignature.GetParameterCount(); }
+		}
+
+		public override ParameterInfo ReturnParameter
+		{
+			get
+			{
+				PopulateParameters();
+				return returnParameter;
+			}
+		}
+
+		public override Type ReturnType
+		{
+			get
+			{
+				return this.MethodSignature.GetReturnType(this);
+			}
+		}
+
+		public override Type DeclaringType
+		{
+			get { return declaringType.IsModulePseudoType ? null : declaringType; }
+		}
+
+		public override string Name
+		{
+			get { return module.GetString(module.MethodDef.records[index].Name); }
+		}
+
+		public override int MetadataToken
+		{
+			get { return (MethodDefTable.Index << 24) + index + 1; }
+		}
+
+		public override bool IsGenericMethodDefinition
+		{
+			get
+			{
+				PopulateGenericArguments();
+				return typeArgs.Length > 0;
+			}
+		}
+
+		public override bool IsGenericMethod
+		{
+			get { return IsGenericMethodDefinition; }
+		}
+
+		public override Type[] GetGenericArguments()
+		{
+			PopulateGenericArguments();
+			return Util.Copy(typeArgs);
+		}
+
+		private void PopulateGenericArguments()
+		{
+			if (typeArgs == null)
+			{
+				int token = this.MetadataToken;
+				int first = module.GenericParam.FindFirstByOwner(token);
+				if (first == -1)
+				{
+					typeArgs = Type.EmptyTypes;
+				}
+				else
+				{
+					List<Type> list = new List<Type>();
+					int len = module.GenericParam.records.Length;
+					for (int i = first; i < len && module.GenericParam.records[i].Owner == token; i++)
+					{
+						list.Add(new GenericTypeParameter(module, i, Signature.ELEMENT_TYPE_MVAR));
+					}
+					typeArgs = list.ToArray();
+				}
+			}
+		}
+
+		internal override Type GetGenericMethodArgument(int index)
+		{
+			PopulateGenericArguments();
+			return typeArgs[index];
+		}
+
+		internal override int GetGenericMethodArgumentCount()
+		{
+			PopulateGenericArguments();
+			return typeArgs.Length;
+		}
+
+		public override MethodInfo GetGenericMethodDefinition()
+		{
+			if (this.IsGenericMethodDefinition)
+			{
+				return this;
+			}
+			throw new InvalidOperationException();
+		}
+
+		public override MethodInfo MakeGenericMethod(params Type[] typeArguments)
+		{
+			return new GenericMethodInstance(declaringType, this, typeArguments);
+		}
+
+		public override Module Module
+		{
+			get { return module; }
+		}
+
+		internal override MethodSignature MethodSignature
+		{
+			get { return lazyMethodSignature ?? (lazyMethodSignature = MethodSignature.ReadSig(module, module.GetBlob(module.MethodDef.records[index].Signature), this)); }
+		}
+
+		internal override int ImportTo(Emit.ModuleBuilder module)
+		{
+			return module.ImportMethodOrField(declaringType, this.Name, this.MethodSignature);
+		}
+
+		public override MethodInfo[] __GetMethodImpls()
+		{
+			Type[] typeArgs = null;
+			List<MethodInfo> list = null;
+			foreach (int i in module.MethodImpl.Filter(declaringType.MetadataToken))
+			{
+				if (module.MethodImpl.records[i].MethodBody == this.MetadataToken)
+				{
+					if (typeArgs == null)
+					{
+						typeArgs = declaringType.GetGenericArguments();
+					}
+					if (list == null)
+					{
+						list = new List<MethodInfo>();
+					}
+					list.Add((MethodInfo)module.ResolveMethod(module.MethodImpl.records[i].MethodDeclaration, typeArgs, null));
+				}
+			}
+			return Util.ToArray(list, Empty<MethodInfo>.Array);
+		}
+
+		internal override int GetCurrentToken()
+		{
+			return this.MetadataToken;
+		}
+
+		internal override bool IsBaked
+		{
+			get { return true; }
+		}
+	}
+
+	sealed class ParameterInfoImpl : ParameterInfo
+	{
+		private readonly MethodDefImpl method;
+		private readonly int position;
+		private readonly int index;
+
+		internal ParameterInfoImpl(MethodDefImpl method, int position, int index)
+		{
+			this.method = method;
+			this.position = position;
+			this.index = index;
+		}
+
+		public override string Name
+		{
+			get { return index == -1 ? null : ((ModuleReader)this.Module).GetString(this.Module.Param.records[index].Name); }
+		}
+
+		public override Type ParameterType
+		{
+			get { return position == -1 ? method.MethodSignature.GetReturnType(method) : method.MethodSignature.GetParameterType(method, position); }
+		}
+
+		public override ParameterAttributes Attributes
+		{
+			get { return index == -1 ? ParameterAttributes.None : (ParameterAttributes)this.Module.Param.records[index].Flags; }
+		}
+
+		public override int Position
+		{
+			get { return position; }
+		}
+
+		public override object RawDefaultValue
+		{
+			get
+			{
+				if ((this.Attributes & ParameterAttributes.HasDefault) != 0)
+				{
+					return this.Module.Constant.GetRawConstantValue(this.Module, this.MetadataToken);
+				}
+				Universe universe = this.Module.universe;
+				if (this.ParameterType == universe.System_Decimal)
+				{
+					Type attr = universe.System_Runtime_CompilerServices_DecimalConstantAttribute;
+					if (attr != null)
+					{
+						foreach (CustomAttributeData cad in CustomAttributeData.__GetCustomAttributes(this, attr, false))
+						{
+							IList<CustomAttributeTypedArgument> args = cad.ConstructorArguments;
+							if (args.Count == 5)
+							{
+								if (args[0].ArgumentType == universe.System_Byte
+									&& args[1].ArgumentType == universe.System_Byte
+									&& args[2].ArgumentType == universe.System_Int32
+									&& args[3].ArgumentType == universe.System_Int32
+									&& args[4].ArgumentType == universe.System_Int32)
+								{
+									return new Decimal((int)args[4].Value, (int)args[3].Value, (int)args[2].Value, (byte)args[1].Value != 0, (byte)args[0].Value);
+								}
+								else if (args[0].ArgumentType == universe.System_Byte
+									&& args[1].ArgumentType == universe.System_Byte
+									&& args[2].ArgumentType == universe.System_UInt32
+									&& args[3].ArgumentType == universe.System_UInt32
+									&& args[4].ArgumentType == universe.System_UInt32)
+								{
+									return new Decimal(unchecked((int)(uint)args[4].Value), unchecked((int)(uint)args[3].Value), unchecked((int)(uint)args[2].Value), (byte)args[1].Value != 0, (byte)args[0].Value);
+								}
+							}
+						}
+					}
+				}
+				if ((this.Attributes & ParameterAttributes.Optional) != 0)
+				{
+					return Missing.Value;
+				}
+				return null;
+			}
+		}
+
+		public override CustomModifiers __GetCustomModifiers()
+		{
+			return position == -1
+				? method.MethodSignature.GetReturnTypeCustomModifiers(method)
+				: method.MethodSignature.GetParameterCustomModifiers(method, position);
+		}
+
+		public override bool __TryGetFieldMarshal(out FieldMarshal fieldMarshal)
+		{
+			return FieldMarshal.ReadFieldMarshal(this.Module, this.MetadataToken, out fieldMarshal);
+		}
+
+		public override MemberInfo Member
+		{
+			get
+			{
+				// return the right ConstructorInfo wrapper
+				return method.Module.ResolveMethod(method.MetadataToken);
+			}
+		}
+
+		public override int MetadataToken
+		{
+			get
+			{
+				// for parameters that don't have a row in the Param table, we return 0x08000000 (because index is -1 in that case),
+				// just like .NET
+				return (ParamTable.Index << 24) + index + 1;
+			}
+		}
+
+		internal override Module Module
+		{
+			get { return method.Module; }
+		}
+	}
+}
+@
+
+
+1.31
+log
+@Use sigElementType to implement IsGenericParameter.
+@
+text
+@d142 1
+a142 1
+				return this.ReturnParameter.ParameterType;
+@
+
+
+1.30
+log
+@Refactored custom attribute handling of MemberInfo types.
+@
+text
+@d197 1
+a197 1
+						list.Add(new GenericTypeParameter(module, i));
+@
+
+
+1.29
+log
+@Moved method pseudo custom attribute synthesis up into MethodInfo to support them on baked MethodBuilders.
+@
+text
+@d271 5
+@
+
+
+1.28
+log
+@Moved CreateDllImportPseudoCustomAttribute() and support methods to CustomAttributeData.
+@
+text
+@a234 24
+		internal override IList<CustomAttributeData> GetCustomAttributesData(Type attributeType)
+		{
+			List<CustomAttributeData> list = module.GetCustomAttributes(this.MetadataToken, attributeType);
+			if ((this.Attributes & MethodAttributes.PinvokeImpl) != 0
+				&& (attributeType == null || attributeType.IsAssignableFrom(module.universe.System_Runtime_InteropServices_DllImportAttribute)))
+			{
+				ImplMapFlags flags;
+				string importName;
+				string importScope;
+				if (__TryGetImplMap(out flags, out importName, out importScope))
+				{
+					list.Add(CustomAttributeData.CreateDllImportPseudoCustomAttribute(module, flags, importName, importScope, GetMethodImplementationFlags()));
+				}
+			}
+			if ((GetMethodImplementationFlags() & MethodImplAttributes.PreserveSig) != 0
+				&& (attributeType == null || attributeType.IsAssignableFrom(module.universe.System_Runtime_InteropServices_PreserveSigAttribute)))
+			{
+				Type type = module.universe.System_Runtime_InteropServices_PreserveSigAttribute;
+				ConstructorInfo constructor = type.GetPseudoCustomAttributeConstructor();
+				list.Add(new CustomAttributeData(module, constructor, Empty<object>.Array, null));
+			}
+			return list;
+		}
+
+@
+
+
+1.27
+log
+@Changed DllImportAttribute synthesis to always include CharSet, BestFitMapping and ThrowOnUnmappableChar to be compatible with .NET. Now that we have __TryGetImplMap() we don't need to distinguish anymore between not set and set to the default value.
+@
+text
+@d241 7
+a247 1
+				CreateDllImportPseudoCustomAttribute(list);
+a258 81
+		private void CreateDllImportPseudoCustomAttribute(List<CustomAttributeData> attribs)
+		{
+			ImplMapFlags flags;
+			string entryPoint;
+			string dllName;
+			if (__TryGetImplMap(out flags, out entryPoint, out dllName))
+			{
+				Type type = module.universe.System_Runtime_InteropServices_DllImportAttribute;
+				ConstructorInfo constructor = type.GetPseudoCustomAttributeConstructor(module.universe.System_String);
+				List<CustomAttributeNamedArgument> list = new List<CustomAttributeNamedArgument>();
+				System.Runtime.InteropServices.CharSet charSet;
+				switch (flags & ImplMapFlags.CharSetMask)
+				{
+					case ImplMapFlags.CharSetAnsi:
+						charSet = System.Runtime.InteropServices.CharSet.Ansi;
+						break;
+					case ImplMapFlags.CharSetUnicode:
+						charSet = System.Runtime.InteropServices.CharSet.Unicode;
+						break;
+					case ImplMapFlags.CharSetAuto:
+						charSet = System.Runtime.InteropServices.CharSet.Auto;
+						break;
+					case ImplMapFlags.CharSetNotSpec:
+					default:
+						charSet = System.Runtime.InteropServices.CharSet.None;
+						break;
+				}
+				System.Runtime.InteropServices.CallingConvention callingConvention;
+				switch (flags & ImplMapFlags.CallConvMask)
+				{
+					case ImplMapFlags.CallConvCdecl:
+						callingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl;
+						break;
+					case ImplMapFlags.CallConvFastcall:
+						callingConvention = System.Runtime.InteropServices.CallingConvention.FastCall;
+						break;
+					case ImplMapFlags.CallConvStdcall:
+						callingConvention = System.Runtime.InteropServices.CallingConvention.StdCall;
+						break;
+					case ImplMapFlags.CallConvThiscall:
+						callingConvention = System.Runtime.InteropServices.CallingConvention.ThisCall;
+						break;
+					case ImplMapFlags.CallConvWinapi:
+						callingConvention = System.Runtime.InteropServices.CallingConvention.Winapi;
+						break;
+					default:
+						callingConvention = 0;
+						break;
+				}
+				AddNamedArgument(list, type, "EntryPoint", entryPoint);
+				AddNamedArgument(list, type, "CharSet", module.universe.System_Runtime_InteropServices_CharSet, (int)charSet);
+				AddNamedArgument(list, type, "ExactSpelling", (int)flags, (int)ImplMapFlags.NoMangle);
+				AddNamedArgument(list, type, "SetLastError", (int)flags, (int)ImplMapFlags.SupportsLastError);
+				AddNamedArgument(list, type, "PreserveSig", (int)GetMethodImplementationFlags(), (int)MethodImplAttributes.PreserveSig);
+				AddNamedArgument(list, type, "CallingConvention", module.universe.System_Runtime_InteropServices_CallingConvention, (int)callingConvention);
+				AddNamedArgument(list, type, "BestFitMapping", (int)flags, (int)ImplMapFlags.BestFitOn);
+				AddNamedArgument(list, type, "ThrowOnUnmappableChar", (int)flags, (int)ImplMapFlags.CharMapErrorOn);
+				attribs.Add(new CustomAttributeData(module, constructor, new object[] { dllName }, list));
+			}
+		}
+
+		private static void AddNamedArgument(List<CustomAttributeNamedArgument> list, Type type, string fieldName, string value)
+		{
+			AddNamedArgument(list, type, fieldName, type.Module.universe.System_String, value);
+		}
+
+		private static void AddNamedArgument(List<CustomAttributeNamedArgument> list, Type type, string fieldName, int flags, int flagMask)
+		{
+			AddNamedArgument(list, type, fieldName, type.Module.universe.System_Boolean, (flags & flagMask) != 0);
+		}
+
+		private static void AddNamedArgument(List<CustomAttributeNamedArgument> list, Type attributeType, string fieldName, Type valueType, object value)
+		{
+			// some fields are not available on the .NET Compact Framework version of DllImportAttribute
+			FieldInfo field = attributeType.FindField(fieldName, FieldSignature.Create(valueType, new CustomModifiers()));
+			if (field != null)
+			{
+				list.Add(new CustomAttributeNamedArgument(field, new CustomAttributeTypedArgument(valueType, value)));
+			}
+		}
+
+@
+
+
+1.26
+log
+@Changed CreateDllImportPseudoCustomAttribute() to use __TryGetImplMap().
+@
+text
+@d263 1
+a263 1
+				System.Runtime.InteropServices.CharSet? charSet;
+d277 1
+a277 1
+						charSet = null;
+d303 1
+d308 2
+a309 12
+				if (charSet.HasValue)
+				{
+					AddNamedArgument(list, type, "CharSet", module.universe.System_Runtime_InteropServices_CharSet, (int)charSet.Value);
+				}
+				if ((flags & (ImplMapFlags.BestFitOn | ImplMapFlags.BestFitOff)) != 0)
+				{
+					AddNamedArgument(list, type, "BestFitMapping", (int)flags, (int)ImplMapFlags.BestFitOn);
+				}
+				if ((flags & (ImplMapFlags.CharMapErrorOn | ImplMapFlags.CharMapErrorOff)) != 0)
+				{
+					AddNamedArgument(list, type, "ThrowOnUnmappableChar", (int)flags, (int)ImplMapFlags.CharMapErrorOn);
+				}
+@
+
+
+1.25
+log
+@Added new API MethodInfo.__TryGetImplMap().
+@
+text
+@d255 4
+a258 1
+			foreach (int i in module.ImplMap.Filter(this.MetadataToken))
+a259 19
+				const short NoMangle = 0x0001;
+				const short CharSetMask = 0x0006;
+				const short CharSetNotSpec = 0x0000;
+				const short CharSetAnsi = 0x0002;
+				const short CharSetUnicode = 0x0004;
+				const short CharSetAuto = 0x0006;
+				const short SupportsLastError = 0x0040;
+				const short CallConvMask = 0x0700;
+				const short CallConvWinapi = 0x0100;
+				const short CallConvCdecl = 0x0200;
+				const short CallConvStdcall = 0x0300;
+				const short CallConvThiscall = 0x0400;
+				const short CallConvFastcall = 0x0500;
+				// non-standard flags
+				const short BestFitOn = 0x0010;
+				const short BestFitOff = 0x0020;
+				const short CharMapErrorOn = 0x1000;
+				const short CharMapErrorOff = 0x2000;
+
+a262 3
+				int flags = module.ImplMap.records[i].MappingFlags;
+				string entryPoint = module.GetString(module.ImplMap.records[i].ImportName);
+				string dllName = module.GetString(module.ModuleRef.records[(module.ImplMap.records[i].ImportScope & 0xFFFFFF) - 1]);
+d264 1
+a264 1
+				switch (flags & CharSetMask)
+d266 1
+a266 1
+					case CharSetAnsi:
+d269 1
+a269 1
+					case CharSetUnicode:
+d272 1
+a272 1
+					case CharSetAuto:
+d275 1
+a275 1
+					case CharSetNotSpec:
+d281 1
+a281 1
+				switch (flags & CallConvMask)
+d283 1
+a283 1
+					case CallConvCdecl:
+d286 1
+a286 1
+					case CallConvFastcall:
+d289 1
+a289 1
+					case CallConvStdcall:
+d292 1
+a292 1
+					case CallConvThiscall:
+d295 1
+a295 1
+					case CallConvWinapi:
+d303 2
+a304 2
+				AddNamedArgument(list, type, "ExactSpelling", flags, NoMangle);
+				AddNamedArgument(list, type, "SetLastError", flags, SupportsLastError);
+d311 1
+a311 1
+				if ((flags & (BestFitOn | BestFitOff)) != 0)
+d313 1
+a313 1
+					AddNamedArgument(list, type, "BestFitMapping", flags, BestFitOn);
+d315 1
+a315 1
+				if ((flags & (CharMapErrorOn | CharMapErrorOff)) != 0)
+d317 1
+a317 1
+					AddNamedArgument(list, type, "ThrowOnUnmappableChar", flags, CharMapErrorOn);
+a319 1
+				return;
+@
+
+
+1.24
+log
+@Bug fix. MethodInfo should return PreserveSigAttribute pseudo custom attribute if MethodImplAttributes.PreserveSig is set.
+@
+text
+@d394 5
+@
+
+
+1.23
+log
+@- Changed [Field|Parameter]Info.__FieldMarshal property to __TryGetFieldMarshal method.
+- Changed FieldMarshal class into a value type with public fields.
+@
+text
+@d243 7
+@
+
+
+1.22
+log
+@- Added new public APIs FieldInfo.__FieldMarshal and ParameterInfo.__FieldMarshal.
+- Moved ParameterInfo pseudo custom attribute handling to CustomAttributeData.
+- Ignore HasFieldMarshal attribute and always return the pseudo custom attribute if a FieldMarshal record exists. This is similar to .NET reflection.
+@
+text
+@d476 1
+a476 1
+		public override FieldMarshal __FieldMarshal
+d478 1
+a478 1
+			get { return FieldMarshal.ReadFieldMarshal(this.Module, this.MetadataToken); }
+@
+
+
+1.21
+log
+@Removed unused methods.
+@
+text
+@d436 1
+a436 1
+						foreach (CustomAttributeData cad in GetCustomAttributesData(attr))
+d476 5
+a503 11
+
+		internal override IList<CustomAttributeData> GetCustomAttributesData(Type attributeType)
+		{
+			IList<CustomAttributeData> list = base.GetCustomAttributesData(attributeType);
+			if ((this.Attributes & ParameterAttributes.HasFieldMarshal) != 0
+				&& (attributeType == null || attributeType.IsAssignableFrom(this.Module.universe.System_Runtime_InteropServices_MarshalAsAttribute)))
+			{
+				list.Add(MarshalSpec.GetMarshalAsAttribute(this.Module, this.MetadataToken));
+			}
+			return list;
+		}
+@
+
+
+1.20
+log
+@Added new API MethodInfo.__GetMethodImpls() to efficiently get the MethodImpls for a specific method.
+@
+text
+@a340 5
+		private static void AddNamedArgument(List<CustomAttributeNamedArgument> list, Type type, string fieldName, int value)
+		{
+			AddNamedArgument(list, type, fieldName, type.Module.universe.System_Int32, value);
+		}
+
+@
+
+
+1.19
+log
+@Generalized sorted metadata table lookups with binary search.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009-2011 Jeroen Frijters
+d370 22
+@
+
+
+1.18
+log
+@Added MethodBase.__MethodRVA property.
+@
+text
+@d248 82
+a329 89
+			int token = this.MetadataToken;
+			// TODO use binary search?
+			for (int i = 0; i < module.ImplMap.records.Length; i++)
+			{
+				if (module.ImplMap.records[i].MemberForwarded == token)
+				{
+					const short NoMangle = 0x0001;
+					const short CharSetMask = 0x0006;
+					const short CharSetNotSpec = 0x0000;
+					const short CharSetAnsi = 0x0002;
+					const short CharSetUnicode = 0x0004;
+					const short CharSetAuto = 0x0006;
+					const short SupportsLastError = 0x0040;
+					const short CallConvMask = 0x0700;
+					const short CallConvWinapi = 0x0100;
+					const short CallConvCdecl = 0x0200;
+					const short CallConvStdcall = 0x0300;
+					const short CallConvThiscall = 0x0400;
+					const short CallConvFastcall = 0x0500;
+					// non-standard flags
+					const short BestFitOn = 0x0010;
+					const short BestFitOff = 0x0020;
+					const short CharMapErrorOn = 0x1000;
+					const short CharMapErrorOff = 0x2000;
+
+					Type type = module.universe.System_Runtime_InteropServices_DllImportAttribute;
+					ConstructorInfo constructor = type.GetPseudoCustomAttributeConstructor(module.universe.System_String);
+					List<CustomAttributeNamedArgument> list = new List<CustomAttributeNamedArgument>();
+					int flags = module.ImplMap.records[i].MappingFlags;
+					string entryPoint = module.GetString(module.ImplMap.records[i].ImportName);
+					string dllName = module.GetString(module.ModuleRef.records[(module.ImplMap.records[i].ImportScope & 0xFFFFFF) - 1]);
+					System.Runtime.InteropServices.CharSet? charSet;
+					switch (flags & CharSetMask)
+					{
+						case CharSetAnsi:
+							charSet = System.Runtime.InteropServices.CharSet.Ansi;
+							break;
+						case CharSetUnicode:
+							charSet = System.Runtime.InteropServices.CharSet.Unicode;
+							break;
+						case CharSetAuto:
+							charSet = System.Runtime.InteropServices.CharSet.Auto;
+							break;
+						case CharSetNotSpec:
+						default:
+							charSet = null;
+							break;
+					}
+					System.Runtime.InteropServices.CallingConvention callingConvention;
+					switch (flags & CallConvMask)
+					{
+						case CallConvCdecl:
+							callingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl;
+							break;
+						case CallConvFastcall:
+							callingConvention = System.Runtime.InteropServices.CallingConvention.FastCall;
+							break;
+						case CallConvStdcall:
+							callingConvention = System.Runtime.InteropServices.CallingConvention.StdCall;
+							break;
+						case CallConvThiscall:
+							callingConvention = System.Runtime.InteropServices.CallingConvention.ThisCall;
+							break;
+						case CallConvWinapi:
+							callingConvention = System.Runtime.InteropServices.CallingConvention.Winapi;
+							break;
+						default:
+							callingConvention = 0;
+							break;
+					}
+					AddNamedArgument(list, type, "EntryPoint", entryPoint);
+					AddNamedArgument(list, type, "ExactSpelling", flags, NoMangle);
+					AddNamedArgument(list, type, "SetLastError", flags, SupportsLastError);
+					AddNamedArgument(list, type, "PreserveSig", (int)GetMethodImplementationFlags(), (int)MethodImplAttributes.PreserveSig);
+					AddNamedArgument(list, type, "CallingConvention", module.universe.System_Runtime_InteropServices_CallingConvention, (int)callingConvention);
+					if (charSet.HasValue)
+					{
+						AddNamedArgument(list, type, "CharSet", module.universe.System_Runtime_InteropServices_CharSet, (int)charSet.Value);
+					}
+					if ((flags & (BestFitOn | BestFitOff)) != 0)
+					{
+						AddNamedArgument(list, type, "BestFitMapping", flags, BestFitOn);
+					}
+					if ((flags & (CharMapErrorOn | CharMapErrorOff)) != 0)
+					{
+						AddNamedArgument(list, type, "ThrowOnUnmappableChar", flags, CharMapErrorOn);
+					}
+					attribs.Add(new CustomAttributeData(module, constructor, new object[] { dllName }, list));
+					return;
+d331 2
+@
+
+
+1.17
+log
+@- Rewrote custom modifier handling to retain ordering.
+- Added ConstructorInfo.__ReturnParameter to expose custom modifiers.
+- Added __GetCustomModifiers() to various *Info types.
+- Added CustomModifiers type to encapsulate a custom modifier sequence.
+- Added CustomModifiersBuilder to create a CustomModifiers sequence.
+- Marked a number of IKVM.Reflection specific methods Obsolete, because they are replaced with method that take CustomModifiers value(s).
+@
+text
+@d64 5
+@
+
+
+1.16
+log
+@Fix. Don't map unspecified pinvoke calling convention to winapi.
+@
+text
+@d354 1
+a354 1
+			FieldInfo field = attributeType.FindField(fieldName, FieldSignature.Create(valueType, null, null));
+d452 1
+a452 1
+		public override Type[] GetRequiredCustomModifiers()
+d454 3
+a456 6
+			return Util.Copy(position == -1 ? method.MethodSignature.GetReturnTypeRequiredCustomModifiers(method) : method.MethodSignature.GetParameterRequiredCustomModifiers(method, position));
+		}
+
+		public override Type[] GetOptionalCustomModifiers()
+		{
+			return Util.Copy(position == -1 ? method.MethodSignature.GetReturnTypeOptionalCustomModifiers(method) : method.MethodSignature.GetParameterOptionalCustomModifiers(method, position));
+@
+
+
+1.15
+log
+@Add support for returning pseudo-custom attributes based on missing types.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Jeroen Frijters
+d307 2
+d310 1
+a310 1
+							callingConvention = System.Runtime.InteropServices.CallingConvention.Winapi;
+@
+
+
+1.14
+log
+@- Fixed CustomAttributeData.__GetBlob() to work for pseudo-custom attributes.
+- Added CustomAttributeBuilder.__FromBlob() to avoid having to use two overloads of SetCustomAttribute when dealing with both builders and blobs.
+@
+text
+@d269 1
+a269 1
+					ConstructorInfo constructor = type.GetConstructor(new Type[] { module.universe.System_String });
+d315 1
+a315 1
+					AddNamedArgument(list, type, "CallingConvention", (int)callingConvention);
+d318 1
+a318 1
+						AddNamedArgument(list, type, "CharSet", (int)charSet.Value);
+d352 1
+a352 1
+			FieldInfo field = attributeType.GetField(fieldName);
+@
+
+
+1.13
+log
+@Add support for NETCF in rendering pseudo DllImportAttribute (i.e. skip fields that don't exist).
+@
+text
+@d328 1
+a328 1
+					attribs.Add(new CustomAttributeData(constructor, new object[] { dllName }, list));
+@
+
+
+1.12
+log
+@Added support for reading decimal parameter default values with ParamterInfo.RawDefaultValue.
+@
+text
+@d311 5
+a315 5
+					list.Add(MakeNamedArgument(type, "EntryPoint", entryPoint));
+					list.Add(MakeNamedArgument(type, "ExactSpelling", flags, NoMangle));
+					list.Add(MakeNamedArgument(type, "SetLastError", flags, SupportsLastError));
+					list.Add(MakeNamedArgument(type, "PreserveSig", (int)GetMethodImplementationFlags(), (int)MethodImplAttributes.PreserveSig));
+					list.Add(MakeNamedArgument(type, "CallingConvention", (int)callingConvention));
+d318 1
+a318 1
+						list.Add(MakeNamedArgument(type, "CharSet", (int)charSet.Value));
+d322 1
+a322 1
+						list.Add(MakeNamedArgument(type, "BestFitMapping", flags, BestFitOn));
+d326 1
+a326 1
+						list.Add(MakeNamedArgument(type, "ThrowOnUnmappableChar", flags, CharMapErrorOn));
+d334 1
+a334 1
+		private static CustomAttributeNamedArgument MakeNamedArgument(Type type, string field, string value)
+d336 1
+a336 1
+			return new CustomAttributeNamedArgument(type.GetField(field), new CustomAttributeTypedArgument(type.Module.universe.System_String, value));
+d339 1
+a339 1
+		private static CustomAttributeNamedArgument MakeNamedArgument(Type type, string field, int value)
+d341 1
+a341 1
+			return new CustomAttributeNamedArgument(type.GetField(field), new CustomAttributeTypedArgument(type.Module.universe.System_Int32, value));
+d344 1
+a344 1
+		private static CustomAttributeNamedArgument MakeNamedArgument(Type type, string field, int flags, int flagMask)
+d346 11
+a356 1
+			return new CustomAttributeNamedArgument(type.GetField(field), new CustomAttributeTypedArgument(type.Module.universe.System_Boolean, (flags & flagMask) != 0));
+@
+
+
+1.11
+log
+@- Added IKVM.Reflection.Missing type.
+- Fixed ParameterInfo.RawDefaultValue to return Missing.Value if the parameter is optional, but doesn't have a default and to return null, if the parameter isn't optional (and doesn't have a default).
+@
+text
+@d401 31
+@
+
+
+1.10
+log
+@Copy/paste bug.
+@
+text
+@d395 12
+a406 1
+			get { return this.Module.Constant.GetRawConstantValue(this.Module, this.MetadataToken); }
+@
+
+
+1.9
+log
+@Implemented custom attribute filtering at the source. Added support for custom attribute sub typing.
+@
+text
+@d234 1
+a234 1
+				&& (attributeType == null || attributeType.IsAssignableFrom(this.Module.universe.System_Runtime_InteropServices_MarshalAsAttribute)))
+@
+
+
+1.8
+log
+@Made MethodDefImpl's ParameterInfoImpl a little more light weight by getting the type and custom modifiers from the method's signature instead of caching it.
+@
+text
+@d230 1
+a230 1
+		internal override IList<CustomAttributeData> GetCustomAttributesData()
+d232 3
+a234 2
+			List<CustomAttributeData> list = module.GetCustomAttributes(this.MetadataToken);
+			if ((this.Attributes & MethodAttributes.PinvokeImpl) != 0)
+d432 1
+a432 1
+		internal override IList<CustomAttributeData> GetCustomAttributesData()
+d434 3
+a436 2
+			IList<CustomAttributeData> list = base.GetCustomAttributesData();
+			if ((this.Attributes & ParameterAttributes.HasFieldMarshal) != 0)
+@
+
+
+1.7
+log
+@Use Util.Copy() instead of Clone() to copy a Type arrays.
+@
+text
+@d98 1
+a98 1
+						returnParameter = new ParameterInfoImpl(this, seq, parameter, methodSignature.GetReturnType(this), methodSignature.GetReturnTypeRequiredCustomModifiers(this), methodSignature.GetReturnTypeOptionalCustomModifiers(this));
+d102 1
+a102 1
+						parameters[seq] = new ParameterInfoImpl(this, seq, parameter, methodSignature.GetParameterType(this, seq), methodSignature.GetParameterRequiredCustomModifiers(this, seq), methodSignature.GetParameterOptionalCustomModifiers(this, seq));
+d109 1
+a109 1
+						parameters[i] = new ParameterInfoImpl(this, i, -1, methodSignature.GetParameterType(this, i), methodSignature.GetParameterRequiredCustomModifiers(this, i), methodSignature.GetParameterOptionalCustomModifiers(this, i));
+d114 1
+a114 1
+					returnParameter = new ParameterInfoImpl(this, -1, -1, methodSignature.GetReturnType(this), methodSignature.GetReturnTypeRequiredCustomModifiers(this), methodSignature.GetReturnTypeOptionalCustomModifiers(this));
+d361 1
+a361 1
+		private readonly MemberInfo member;
+a363 3
+		private readonly Type type;
+		private readonly Type[] requiredCustomModifiers;
+		private readonly Type[] optionalCustomModifiers;
+d365 1
+a365 1
+		internal ParameterInfoImpl(MemberInfo member, int position, int index, Type type, Type[] requiredCustomModifiers, Type[] optionalCustomModifiers)
+d367 1
+a367 1
+			this.member = member;
+a369 3
+			this.type = type;
+			this.requiredCustomModifiers = requiredCustomModifiers;
+			this.optionalCustomModifiers = optionalCustomModifiers;
+d379 1
+a379 1
+			get { return type; }
+d399 1
+a399 1
+			return Util.Copy(requiredCustomModifiers);
+d404 1
+a404 1
+			return Util.Copy(optionalCustomModifiers);
+d412 1
+a412 1
+				return member.Module.ResolveMethod(member.MetadataToken);
+d428 1
+a428 1
+			get { return member.Module; }
+@
+
+
+1.6
+log
+@Don't eagerly get or cache method name.
+@
+text
+@d173 1
+a173 1
+			return (Type[])typeArgs.Clone();
+d405 1
+a405 1
+			return requiredCustomModifiers == null ? Type.EmptyTypes : (Type[])requiredCustomModifiers.Clone();
+d410 1
+a410 1
+			return optionalCustomModifiers == null ? Type.EmptyTypes : (Type[])optionalCustomModifiers.Clone();
+@
+
+
+1.5
+log
+@Made method signature reading lazy. This makes building assemblies with circular dependencies easier (and probably increases perf).
+@
+text
+@a35 1
+		private readonly string name;
+a45 1
+			this.name = module.GetString(module.MethodDef.records[index].Name);
+d148 1
+a148 1
+			get { return name; }
+@
+
+
+1.4
+log
+@Having PinvokeImpl set doesn't necessarily imply having an ImplMap record (for mixed mode assemblies).
+@
+text
+@d37 1
+a37 1
+		private readonly MethodSignature methodSignature;
+a47 1
+			this.methodSignature = MethodSignature.ReadSig(module, module.GetBlob(module.MethodDef.records[index].Signature), this);
+d68 1
+a68 1
+			get { return methodSignature.CallingConvention; }
+d91 1
+d123 1
+a123 1
+			get { return methodSignature.GetParameterCount(); }
+d352 1
+a352 1
+			get { return methodSignature; }
+d357 1
+a357 1
+			return module.ImportMethodOrField(declaringType, this.Name, methodSignature);
+@
+
+
+1.3
+log
+@Don't try to return a MethodBody if it isn't in IL.
+@
+text
+@d237 1
+a237 1
+				list.Add(CreateDllImportPseudoCustomAttribute());
+d242 1
+a242 1
+		private CustomAttributeData CreateDllImportPseudoCustomAttribute()
+d329 2
+a330 1
+					return new CustomAttributeData(constructor, new object[] { dllName }, list);
+a332 1
+			throw new BadImageFormatException();
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d58 5
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

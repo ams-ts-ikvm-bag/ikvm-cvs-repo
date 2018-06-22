@@ -1,0 +1,781 @@
+head	1.13;
+access;
+symbols
+	v8_1_5717_0:1.13
+	v8_1:1.13.0.10
+	v8_0_5449_1:1.13
+	v8_0_5449_0:1.13
+	v8_0:1.13.0.8
+	v7_4_5196_0:1.13
+	v7_4:1.13.0.6
+	v7_3:1.13.0.4
+	v7_2_4630_6:1.13
+	v7_2_4630_5:1.13
+	v7_2_4630_4:1.13
+	v7_2_4630_3:1.13
+	v7_2_4630_2:1.13
+	v0_46_0_4:1.7
+	v7_2_4630_1:1.13
+	v7_2:1.13.0.2
+	v7_1_4532_2:1.11
+	v7_1_4532_1:1.11
+	v7_1_4532_0:1.11
+	v7_1:1.11.0.2
+	v7_0_4335_3:1.8
+	v7_0_4335_2:1.8
+	v7_0_4335_1:1.8
+	v0_46_0_2:1.7
+	v7_0_4335_0:1.8
+	v7_0:1.8.0.2
+	v0_46_0_1:1.7
+	v0_46_0_0:1.7
+	v0_46:1.7.0.2
+	v0_44_0_6:1.5
+	v0_44_0_5:1.5
+	v0_44_0_4:1.5
+	v0_44_0_3:1.5
+	v0_44_0_2:1.5
+	v0_44_0_1:1.5
+	v0_44_0_0:1.5
+	v0_44:1.5.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.13
+date	2012.07.16.10.31.19;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2012.07.16.10.14.37;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2012.04.10.09.07.54;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2012.01.12.06.51.17;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2011.12.01.06.30.50;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2011.03.07.07.56.52;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2011.01.26.06.59.57;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2011.01.13.05.58.54;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2010.05.27.08.23.46;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.05.20.09.25.30;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.01.27.06.12.36;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.13
+log
+@Moved methods shared by subclasses into ConstructorInfo.
+@
+text
+@/*
+  Copyright (C) 2009-2012 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+
+namespace IKVM.Reflection
+{
+	public abstract class ConstructorInfo : MethodBase
+	{
+		// prevent external subclasses
+		internal ConstructorInfo()
+		{
+		}
+
+		public sealed override string ToString()
+		{
+			return GetMethodInfo().ToString();
+		}
+
+		public static readonly string ConstructorName = ".ctor";
+		public static readonly string TypeConstructorName = ".cctor";
+
+		internal abstract MethodInfo GetMethodInfo();
+
+		internal override MethodBase BindTypeParameters(Type type)
+		{
+			return new ConstructorInfoImpl((MethodInfo)GetMethodInfo().BindTypeParameters(type));
+		}
+
+		public sealed override MethodBase __GetMethodOnTypeDefinition()
+		{
+			return new ConstructorInfoImpl((MethodInfo)GetMethodInfo().__GetMethodOnTypeDefinition());
+		}
+
+		public sealed override MemberTypes MemberType
+		{
+			get { return MemberTypes.Constructor; }
+		}
+
+		public sealed override int __MethodRVA
+		{
+			get { return GetMethodInfo().__MethodRVA; }
+		}
+
+		public sealed override bool ContainsGenericParameters
+		{
+			get { return GetMethodInfo().ContainsGenericParameters; }
+		}
+
+		public ParameterInfo __ReturnParameter
+		{
+			get { return new ParameterInfoWrapper(this, GetMethodInfo().ReturnParameter); }
+		}
+
+		public sealed override ParameterInfo[] GetParameters()
+		{
+			ParameterInfo[] parameters = GetMethodInfo().GetParameters();
+			for (int i = 0; i < parameters.Length; i++)
+			{
+				parameters[i] = new ParameterInfoWrapper(this, parameters[i]);
+			}
+			return parameters;
+		}
+
+		public sealed override CallingConventions CallingConvention
+		{
+			get { return GetMethodInfo().CallingConvention; }
+		}
+
+		public sealed override MethodAttributes Attributes
+		{
+			get { return GetMethodInfo().Attributes; }
+		}
+
+		public sealed override MethodImplAttributes GetMethodImplementationFlags()
+		{
+			return GetMethodInfo().GetMethodImplementationFlags();
+		}
+
+		public sealed override Type DeclaringType
+		{
+			get { return GetMethodInfo().DeclaringType; }
+		}
+
+		public sealed override string Name
+		{
+			get { return GetMethodInfo().Name; }
+		}
+
+		public sealed override int MetadataToken
+		{
+			get { return GetMethodInfo().MetadataToken; }
+		}
+
+		public sealed override Module Module
+		{
+			get { return GetMethodInfo().Module; }
+		}
+
+		public sealed override MethodBody GetMethodBody()
+		{
+			return GetMethodInfo().GetMethodBody();
+		}
+
+		public sealed override bool __IsMissing
+		{
+			get { return GetMethodInfo().__IsMissing; }
+		}
+
+		internal sealed override int ParameterCount
+		{
+			get { return GetMethodInfo().ParameterCount; }
+		}
+
+		internal sealed override MemberInfo SetReflectedType(Type type)
+		{
+			return new ConstructorInfoWithReflectedType(type, this);
+		}
+
+		internal sealed override int GetCurrentToken()
+		{
+			return GetMethodInfo().GetCurrentToken();
+		}
+
+		internal sealed override List<CustomAttributeData> GetPseudoCustomAttributes(Type attributeType)
+		{
+			return GetMethodInfo().GetPseudoCustomAttributes(attributeType);
+		}
+
+		internal sealed override bool IsBaked
+		{
+			get { return GetMethodInfo().IsBaked; }
+		}
+
+		internal sealed override MethodSignature MethodSignature
+		{
+			get { return GetMethodInfo().MethodSignature; }
+		}
+
+		internal sealed override int ImportTo(Emit.ModuleBuilder module)
+		{
+			return GetMethodInfo().ImportTo(module);
+		}
+	}
+
+	sealed class ConstructorInfoImpl : ConstructorInfo
+	{
+		private readonly MethodInfo method;
+
+		internal ConstructorInfoImpl(MethodInfo method)
+		{
+			this.method = method;
+		}
+
+		public override bool Equals(object obj)
+		{
+			ConstructorInfoImpl other = obj as ConstructorInfoImpl;
+			return other != null && other.method.Equals(method);
+		}
+
+		public override int GetHashCode()
+		{
+			return method.GetHashCode();
+		}
+
+		internal override MethodInfo GetMethodInfo()
+		{
+			return method;
+		}
+
+		internal override MethodInfo GetMethodOnTypeDefinition()
+		{
+			return method.GetMethodOnTypeDefinition();
+		}
+	}
+
+	sealed class ConstructorInfoWithReflectedType : ConstructorInfo
+	{
+		private readonly Type reflectedType;
+		private readonly ConstructorInfo ctor;
+
+		internal ConstructorInfoWithReflectedType(Type reflectedType, ConstructorInfo ctor)
+		{
+			Debug.Assert(reflectedType != ctor.DeclaringType);
+			this.reflectedType = reflectedType;
+			this.ctor = ctor;
+		}
+
+		public override bool Equals(object obj)
+		{
+			ConstructorInfoWithReflectedType other = obj as ConstructorInfoWithReflectedType;
+			return other != null
+				&& other.reflectedType == reflectedType
+				&& other.ctor == ctor;
+		}
+
+		public override int GetHashCode()
+		{
+			return reflectedType.GetHashCode() ^ ctor.GetHashCode();
+		}
+
+		public override Type ReflectedType
+		{
+			get { return reflectedType; }
+		}
+
+		internal override MethodInfo GetMethodInfo()
+		{
+			return ctor.GetMethodInfo();
+		}
+
+		internal override MethodInfo GetMethodOnTypeDefinition()
+		{
+			return ctor.GetMethodOnTypeDefinition();
+		}
+	}
+}
+@
+
+
+1.12
+log
+@Refactored custom attribute handling of MemberInfo types.
+@
+text
+@d37 5
+d87 1
+a87 1
+		internal sealed override MemberInfo SetReflectedType(Type type)
+d89 1
+a89 1
+			return new ConstructorInfoWithReflectedType(type, this);
+d92 1
+a92 1
+		internal sealed override int GetCurrentToken()
+d94 1
+a94 1
+			return GetMethodInfo().GetCurrentToken();
+d97 1
+a97 1
+		internal sealed override List<CustomAttributeData> GetPseudoCustomAttributes(Type attributeType)
+d99 1
+a99 1
+			return GetMethodInfo().GetPseudoCustomAttributes(attributeType);
+d102 1
+a102 1
+		internal sealed override bool IsBaked
+d104 1
+a104 1
+			get { return GetMethodInfo().IsBaked; }
+a105 1
+	}
+d107 4
+a110 3
+	sealed class ConstructorInfoImpl : ConstructorInfo
+	{
+		private readonly MethodInfo method;
+d112 1
+a112 1
+		internal ConstructorInfoImpl(MethodInfo method)
+d114 1
+a114 1
+			this.method = method;
+d117 1
+a117 1
+		public override bool Equals(object obj)
+d119 1
+a119 2
+			ConstructorInfoImpl other = obj as ConstructorInfoImpl;
+			return other != null && other.method.Equals(method);
+d122 1
+a122 1
+		public override int GetHashCode()
+d124 1
+a124 1
+			return method.GetHashCode();
+d127 1
+a127 1
+		public override MethodBody GetMethodBody()
+d129 1
+a129 1
+			return method.GetMethodBody();
+d132 1
+a132 1
+		public override CallingConventions CallingConvention
+d134 1
+a134 1
+			get { return method.CallingConvention; }
+d137 1
+a137 1
+		public override MethodAttributes Attributes
+d139 1
+a139 1
+			get { return method.Attributes; }
+d142 1
+a142 1
+		public override MethodImplAttributes GetMethodImplementationFlags()
+d144 1
+a144 1
+			return method.GetMethodImplementationFlags();
+d147 1
+a147 1
+		internal override int ParameterCount
+d149 1
+a149 1
+			get { return method.ParameterCount; }
+d152 1
+a152 1
+		public override Type DeclaringType
+d154 1
+a154 1
+			get { return method.DeclaringType; }
+d157 1
+a157 1
+		public override string Name
+d159 1
+a159 1
+			get { return method.Name; }
+d162 1
+a162 1
+		public override string ToString()
+d164 1
+a164 1
+			return method.ToString();
+d166 5
+d172 1
+a172 1
+		public override Module Module
+d174 1
+a174 1
+			get { return method.Module; }
+d177 1
+a177 1
+		public override int MetadataToken
+d179 2
+a180 1
+			get { return method.MetadataToken; }
+d183 1
+a183 1
+		public override bool __IsMissing
+d185 1
+a185 1
+			get { return method.__IsMissing; }
+a196 10
+
+		internal override MethodSignature MethodSignature
+		{
+			get { return method.MethodSignature; }
+		}
+
+		internal override int ImportTo(Emit.ModuleBuilder module)
+		{
+			return method.ImportTo(module);
+		}
+a223 30
+		public override MethodBody GetMethodBody()
+		{
+			return ctor.GetMethodBody();
+		}
+
+		public override CallingConventions CallingConvention
+		{
+			get { return ctor.CallingConvention; }
+		}
+
+		public override MethodAttributes Attributes
+		{
+			get { return ctor.Attributes; }
+		}
+
+		public override MethodImplAttributes GetMethodImplementationFlags()
+		{
+			return ctor.GetMethodImplementationFlags();
+		}
+
+		internal override int ParameterCount
+		{
+			get { return ctor.ParameterCount; }
+		}
+
+		public override Type DeclaringType
+		{
+			get { return ctor.DeclaringType; }
+		}
+
+a228 25
+		public override string Name
+		{
+			get { return ctor.Name; }
+		}
+
+		public override string ToString()
+		{
+			return ctor.ToString();
+		}
+
+		public override Module Module
+		{
+			get { return ctor.Module; }
+		}
+
+		public override int MetadataToken
+		{
+			get { return ctor.MetadataToken; }
+		}
+
+		public override bool __IsMissing
+		{
+			get { return ctor.__IsMissing; }
+		}
+
+a237 10
+
+		internal override MethodSignature MethodSignature
+		{
+			get { return ctor.MethodSignature; }
+		}
+
+		internal override int ImportTo(Emit.ModuleBuilder module)
+		{
+			return ctor.ImportTo(module);
+		}
+@
+
+
+1.11
+log
+@Added MemberInfo.ReflectedType.
+@
+text
+@d86 15
+a182 5
+		internal override IList<CustomAttributeData> GetCustomAttributesData(Type attributeType)
+		{
+			return method.GetCustomAttributesData(attributeType);
+		}
+
+a288 5
+		internal override IList<CustomAttributeData> GetCustomAttributesData(Type attributeType)
+		{
+			return ctor.GetCustomAttributesData(attributeType);
+		}
+
+@
+
+
+1.10
+log
+@Added MethodBase.__MethodRVA property.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Jeroen Frijters
+d26 1
+d62 1
+a62 1
+		public override bool ContainsGenericParameters
+d82 1
+a82 1
+		private sealed class ParameterInfoWrapper : ParameterInfo
+d84 1
+a84 58
+			private readonly ConstructorInfo ctor;
+			private readonly ParameterInfo forward;
+
+			internal ParameterInfoWrapper(ConstructorInfo ctor, ParameterInfo forward)
+			{
+				this.ctor = ctor;
+				this.forward = forward;
+			}
+
+			public override string Name
+			{
+				get { return forward.Name; }
+			}
+
+			public override Type ParameterType
+			{
+				get { return forward.ParameterType; }
+			}
+
+			public override ParameterAttributes Attributes
+			{
+				get { return forward.Attributes; }
+			}
+
+			public override int Position
+			{
+				get { return forward.Position; }
+			}
+
+			public override object RawDefaultValue
+			{
+				get { return forward.RawDefaultValue; }
+			}
+
+			public override CustomModifiers __GetCustomModifiers()
+			{
+				return forward.__GetCustomModifiers();
+			}
+
+			public override MemberInfo Member
+			{
+				get { return ctor; }
+			}
+
+			public override int MetadataToken
+			{
+				get { return forward.MetadataToken; }
+			}
+
+			internal override Module Module
+			{
+				get { return ctor.Module; }
+			}
+
+			internal override IList<CustomAttributeData> GetCustomAttributesData(Type attributeType)
+			{
+				return forward.GetCustomAttributesData(attributeType);
+			}
+d188 111
+@
+
+
+1.9
+log
+@- Rewrote custom modifier handling to retain ordering.
+- Added ConstructorInfo.__ReturnParameter to expose custom modifiers.
+- Added __GetCustomModifiers() to various *Info types.
+- Added CustomModifiers type to encapsulate a custom modifier sequence.
+- Added CustomModifiersBuilder to create a CustomModifiers sequence.
+- Marked a number of IKVM.Reflection specific methods Obsolete, because they are replaced with method that take CustomModifiers value(s).
+@
+text
+@d56 5
+@
+
+
+1.8
+log
+@Added API extension __GetMethodOnTypeDefinition() to easily go from MethodBase on generic type instance to the equivalent MethodBase on the generic type definition.
+The alternative way of doing this (mb.Module.ResolveMethod(mb.MetadataToken)) doesn't work with missing members, because they don't have a metadata token.
+@
+text
+@d61 5
+d112 1
+a112 6
+			public override Type[] GetOptionalCustomModifiers()
+			{
+				return forward.GetOptionalCustomModifiers();
+			}
+
+			public override Type[] GetRequiredCustomModifiers()
+d114 1
+a114 1
+				return forward.GetRequiredCustomModifiers();
+@
+
+
+1.7
+log
+@Added support for resolving methods in missing types (primarily to enable CustomAttributeData.Constructor to work for missing attribute types).
+@
+text
+@d46 5
+@
+
+
+1.6
+log
+@Prevent external subclassing. It's not part of the design to suppor that, now it is also enforced.
+@
+text
+@d204 5
+@
+
+
+1.5
+log
+@ConstructorInfoImpl.ImportTo() should forward to MethodInfo.ImportTo() because we don't want to cache the non-canonical underlying MethodInfo in the module as this is both unneeded and breaks for ModuleBuilder which also uses the cache to reverse lookup tokens.
+@
+text
+@d31 5
+@
+
+
+1.4
+log
+@Implemented custom attribute filtering at the source. Added support for custom attribute sub typing.
+@
+text
+@d221 1
+a221 1
+			return module.ImportMember(method);
+@
+
+
+1.3
+log
+@Several IKVM.Reflection fixes related to generics.
+- MethodImpls in generic type definitions should be resolved with typeArgs as context.
+- Cleaned up member on generic type rebinding.
+- Fixed __GetDeclaredProperties and __GetDeclaredEvents to rebind properly.
+@
+text
+@d122 1
+a122 1
+			internal override IList<CustomAttributeData> GetCustomAttributesData()
+d124 1
+a124 1
+				return forward.GetCustomAttributesData();
+d204 1
+a204 1
+		internal override IList<CustomAttributeData> GetCustomAttributesData()
+d206 1
+a206 1
+			return method.GetCustomAttributesData();
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d36 5
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

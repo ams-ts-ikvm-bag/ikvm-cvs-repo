@@ -1,0 +1,78 @@
+head	1.2;
+access;
+symbols
+	v0_40_0_6:1.1
+	v0_40_0_5:1.1
+	v0_36_0_14:1.1
+	v0_40_0_3:1.1
+	v0_40_0_2:1.1
+	v0_40_0_1:1.1
+	v0_40_0_0:1.1
+	v0_40:1.1.0.12
+	v0_36_0_13:1.1
+	v0_38_0_1:1.1
+	v0_38_0_0:1.1
+	v0_38:1.1.0.10
+	v0_36_0_9:1.1
+	v0_36_0_7:1.1
+	v0_36_0_5:1.1
+	v0_36_0_4:1.1
+	v0_36_0_3:1.1
+	v0_36_0_2:1.1
+	v0_36_0_1:1.1
+	v0_36_0_0:1.1
+	v0_36:1.1.0.8
+	v0_34_0_3:1.1
+	v0_34_0_2:1.1
+	v0_34_0_1:1.1
+	v0_34_0_0:1.1
+	v0_34:1.1.0.6
+	v0_32:1.1.0.4
+	v0_32_0_0:1.1
+	v0_30:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2009.05.26.05.44.06;	author jfrijters;	state dead;
+branches;
+next	1.1;
+
+1.1
+date	2006.06.08.09.26.42;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@Removed no longer needed GNU Classpath classes and copied two GNU Classpath utility classes into IKVM.
+@
+text
+@package gnu.java.awt.peer.gtk;
+
+import java.awt.image.BufferedImage;
+
+// HACK this is a placeholder to make gnu.java.awt.JavaPrinterGraphics compile
+public class CairoSurface
+{
+    public static BufferedImage getBufferedImage(int width, int height)
+    {
+        return new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+    }
+}
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@@
+

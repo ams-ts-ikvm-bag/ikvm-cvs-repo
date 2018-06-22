@@ -1,0 +1,642 @@
+head	1.11;
+access;
+symbols
+	v8_1_5717_0:1.11
+	v8_1:1.11.0.12
+	v8_0_5449_1:1.11
+	v8_0_5449_0:1.11
+	v8_0:1.11.0.10
+	v7_4_5196_0:1.11
+	v7_4:1.11.0.8
+	v7_3:1.11.0.6
+	v7_2_4630_6:1.11
+	v7_2_4630_5:1.11
+	v7_2_4630_4:1.11
+	v7_2_4630_3:1.11
+	v7_2_4630_2:1.11
+	v0_46_0_4:1.10
+	v7_2_4630_1:1.11
+	v7_2:1.11.0.4
+	v7_1_4532_2:1.11
+	v7_1_4532_1:1.11
+	v7_1_4532_0:1.11
+	v7_1:1.11.0.2
+	v7_0_4335_3:1.10
+	v7_0_4335_2:1.10
+	v7_0_4335_1:1.10
+	v0_46_0_2:1.10
+	v7_0_4335_0:1.10
+	v7_0:1.10.0.4
+	v0_46_0_1:1.10
+	v0_46_0_0:1.10
+	v0_46:1.10.0.2
+	v0_44_0_6:1.7
+	v0_44_0_5:1.7
+	v0_44_0_4:1.7
+	v0_44_0_3:1.7
+	v0_44_0_2:1.7
+	v0_42_0_7:1.5
+	v0_44_0_1:1.7
+	v0_44_0_0:1.7
+	v0_44:1.7.0.2
+	v0_42_0_6:1.5
+	v0_42_0_5:1.5
+	v0_42_0_4:1.5
+	v0_42_0_3:1.5
+	v0_42_0_2:1.5
+	v0_42_0_1:1.5
+	v0_42_0_0:1.5
+	v0_42:1.5.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.11
+date	2012.05.07.21.11.24;	author smallsql;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2011.01.23.11.20.38;	author smallsql;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2011.01.17.05.42.41;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2010.10.06.08.31.53;	author smallsql;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2009.11.29.10.20.27;	author smallsql;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2009.11.25.15.01.20;	author smallsql;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2009.07.26.08.05.18;	author smallsql;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2009.07.09.19.07.53;	author smallsql;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2009.05.31.20.18.09;	author smallsql;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2009.05.16.16.34.40;	author smallsql;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2009.05.07.18.47.07;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.11
+log
+@Fix a thread bug in font metrics
+@
+text
+@/*
+  Copyright (C) 2009 - 2011 Volker Berlin (i-net software)
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+ */
+package sun.font;
+
+import java.awt.Font;
+import java.awt.Rectangle;
+import java.awt.font.FontRenderContext;
+import java.awt.geom.GeneralPath;
+import java.awt.geom.Point2D.Float;
+
+import cli.System.Drawing.Bitmap;
+import cli.System.Drawing.CharacterRange;
+import cli.System.Drawing.FontFamily;
+import cli.System.Drawing.FontStyle;
+import cli.System.Drawing.Graphics;
+import cli.System.Drawing.RectangleF;
+import cli.System.Drawing.Region;
+import cli.System.Drawing.SizeF;
+import cli.System.Drawing.StringFormat;
+import cli.System.Drawing.StringFormatFlags;
+import cli.System.Drawing.StringTrimming;
+import cli.System.Drawing.Drawing2D.PixelOffsetMode;
+import cli.System.Drawing.Drawing2D.SmoothingMode;
+import cli.System.Drawing.Text.TextRenderingHint;
+
+import ikvm.internal.NotYetImplementedError;
+
+/**
+ * A FontStrike implementation that based on .NET fonts. 
+ * It replace the equals naming Sun class
+ */
+public class PhysicalStrike extends FontStrike{
+
+    private static final Bitmap BITMAP = new Bitmap( 1, 1 );
+    private static Graphics FRACT_GRAPHICS = createGraphics(true);
+    private static Graphics FIXED_GRAPHICS = createGraphics(false);
+
+    private final Font font;
+    private final FontFamily family;
+    private final FontStyle style;
+    private final FontRenderContext frc;
+    private final float size2D;
+    private final float factor;
+    
+    private StrikeMetrics strike;
+    
+    public PhysicalStrike(Font font, FontFamily family, FontStyle style, FontRenderContext frc){
+        this.font = font;
+        this.family = family;
+        this.style = style;
+        this.frc = frc;
+        this.size2D = font.getNetFont().get_Size();
+        this.factor = size2D / family.GetEmHeight(style);
+    }
+    
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    Float getCharMetrics(char ch){
+        return new Float(getCodePointAdvance(ch), 0);
+    }
+
+
+    /**
+     * Create a Graphics with the settings for fractional or fixed FontRenderContext
+     * 
+     * @@return
+     */
+    private static Graphics createGraphics(boolean fractional){
+        Graphics g = Graphics.FromImage(BITMAP);
+        g.set_SmoothingMode(SmoothingMode.wrap(fractional ? SmoothingMode.None : SmoothingMode.AntiAlias));
+        g.set_PixelOffsetMode(PixelOffsetMode.wrap(fractional ? PixelOffsetMode.None : PixelOffsetMode.HighQuality));
+        g.set_TextRenderingHint(TextRenderingHint.wrap(fractional ? TextRenderingHint.SingleBitPerPixelGridFit : TextRenderingHint.AntiAliasGridFit));
+        return g;
+    }
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    float getCodePointAdvance( int cp ) {
+        StringFormat format = new StringFormat(StringFormat.get_GenericTypographic());
+
+        format.set_FormatFlags( StringFormatFlags.wrap( StringFormatFlags.MeasureTrailingSpaces | StringFormatFlags.NoWrap |
+                             StringFormatFlags.FitBlackBox ));
+        format.set_Trimming( StringTrimming.wrap( StringTrimming.None ) );
+        format.SetMeasurableCharacterRanges(new CharacterRange[] {new CharacterRange(0, 1)});
+        boolean fractional = frc.usesFractionalMetrics();
+        Graphics g = fractional ? FRACT_GRAPHICS : FIXED_GRAPHICS;
+        SizeF size;
+        synchronized (g) {
+        	Region[] regions = g.MeasureCharacterRanges(String.valueOf((char)cp), font.getNetFont(),
+        			new RectangleF(0, 0, Integer.MAX_VALUE, Integer.MAX_VALUE), format);
+        	size = regions[0].GetBounds(g).get_Size();
+        	regions[0].Dispose();
+		}
+        return frc.usesFractionalMetrics() ? size.get_Width() :  Math.round(size.get_Width());
+    }
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    StrikeMetrics getFontMetrics(){
+        if(strike == null){
+            float ascent = family.GetCellAscent(style) * factor;
+            float descent = family.GetCellDescent(style) * factor;
+            float height = family.GetLineSpacing(style) * factor;
+            float leading = height - ascent - descent;
+            strike = new StrikeMetrics(
+                    0, -ascent - leading/2, 
+                    0, descent - leading/2, 
+                    0.25f, 0, 
+                    0, leading, 
+                    size2D * 2, 0);
+        }
+        return strike;
+    }
+
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    float getGlyphAdvance(int glyphCode){
+        return getCodePointAdvance( glyphCode );
+    }
+
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    void getGlyphImageBounds(int glyphcode, Float pt, Rectangle result){
+        throw new NotYetImplementedError();
+    }
+
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    long getGlyphImagePtr(int glyphcode){
+        throw new NotYetImplementedError();
+    }
+
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    void getGlyphImagePtrs(int[] glyphCodes, long[] images, int len){
+        throw new NotYetImplementedError();
+    }
+
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    Float getGlyphMetrics(int glyphcode){
+        return getCharMetrics((char)glyphcode);
+    }
+
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    GeneralPath getGlyphOutline(int glyphCode, float x, float y){
+        throw new NotYetImplementedError();
+    }
+
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    java.awt.geom.Rectangle2D.Float getGlyphOutlineBounds(int glyphCode){
+        throw new NotYetImplementedError();
+    }
+
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    GeneralPath getGlyphVectorOutline(int[] glyphs, float x, float y){
+        throw new NotYetImplementedError();
+    }
+
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    public int getNumGlyphs(){
+        throw new NotYetImplementedError();
+    }
+
+}
+@
+
+
+1.10
+log
+@Currently there are an inconsistency between NetFontMetrics and FontDesignMetrics. To prevent this we replace all with FontDesignMetrics and remove NetFontMetrics.
+@
+text
+@d56 2
+d87 1
+a87 1
+     * Create a Graphics with the settings for the given FontRenderContext
+d91 1
+a91 1
+    private static Graphics createGraphics(FontRenderContext frc){
+d93 3
+a95 4
+        boolean fm = frc.usesFractionalMetrics();
+        g.set_SmoothingMode(SmoothingMode.wrap(fm ? SmoothingMode.None : SmoothingMode.AntiAlias));
+        g.set_PixelOffsetMode(PixelOffsetMode.wrap(fm ? PixelOffsetMode.None : PixelOffsetMode.HighQuality));
+        g.set_TextRenderingHint(TextRenderingHint.wrap(fm ? TextRenderingHint.SingleBitPerPixelGridFit : TextRenderingHint.AntiAliasGridFit));
+d110 9
+a118 5
+        Graphics g = createGraphics( frc );
+        Region[] regions = g.MeasureCharacterRanges(String.valueOf((char)cp), font.getNetFont(),
+                                                    new RectangleF(0, 0, Integer.MAX_VALUE, Integer.MAX_VALUE), format);
+        SizeF size = regions[0].GetBounds(g).get_Size();
+        regions[0].Dispose();
+@
+
+
+1.9
+log
+@Added ikvm.internal.NotYetImplementedError. Replaced all throw sun.reflect.generics.reflectiveObjects.NotImplementedException code with throw NotYetImplementedError.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009, 2010 Volker Berlin (i-net software)
+d26 2
+a27 1
+import java.awt.*;
+a29 1
+import java.awt.geom.Rectangle2D;
+d32 2
+d36 11
+d55 2
+a65 2
+    private FontMetrics metrics;
+    
+d85 14
+d103 12
+a114 6
+        Graphics2D g = StandardGlyphVector.createGraphics( frc );
+        if( metrics == null ) {
+            metrics = Toolkit.getDefaultToolkit().getFontMetrics( font );
+        }
+        Rectangle2D.Float bounds = (Rectangle2D.Float)metrics.getStringBounds( String.valueOf( (char)cp ), g );
+        return bounds.width;
+@
+
+
+1.8
+log
+@Fix a rounding problem with FontMetrics
+@
+text
+@d34 1
+a34 2
+
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+d119 1
+a119 1
+        throw new NotImplementedException();
+d128 1
+a128 1
+        throw new NotImplementedException();
+d137 1
+a137 1
+        throw new NotImplementedException();
+d155 1
+a155 1
+        throw new NotImplementedException();
+d164 1
+a164 1
+        throw new NotImplementedException();
+d173 1
+a173 1
+        throw new NotImplementedException();
+d182 1
+a182 1
+        throw new NotImplementedException();
+@
+
+
+1.7
+log
+@Fix the LineMetrics and solve some JUnit tests
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Volker Berlin (i-net software)
+d26 1
+a26 1
+import java.awt.Rectangle;
+d29 1
+d32 3
+a36 2
+import cli.System.Drawing.*;
+
+d52 1
+a52 8
+    private static final Bitmap bitmap = new Bitmap(1, 1);
+    private static final Graphics g = Graphics.FromImage(bitmap);
+    private static final StringFormat format = new cli.System.Drawing.StringFormat(StringFormat.get_GenericTypographic());
+    static{
+        StringFormatFlags flags = format.get_FormatFlags();
+        flags = StringFormatFlags.wrap(flags.Value | StringFormatFlags.MeasureTrailingSpaces);
+        format.set_FormatFlags( flags );
+    }
+d59 1
+a59 1
+        this.size2D = font.get_Size();
+d68 1
+a68 6
+        SizeF sizeF = g.MeasureString(String.valueOf(ch), font, Integer.MAX_VALUE, format);
+        if(frc.usesFractionalMetrics()){
+            return new Float(sizeF.get_Width(), 0);
+        }else{
+            return new Float((int)(sizeF.get_Width() + 0.5F), 0);
+        }
+d76 4
+a79 6
+    float getCodePointAdvance(int cp){
+        SizeF sizeF = g.MeasureString(String.valueOf((char)cp), font, Integer.MAX_VALUE, format);
+        if(frc.usesFractionalMetrics()){
+            return sizeF.get_Width();
+        } else {
+            return (int)(sizeF.get_Width() + 0.5F);
+d81 2
+a84 1
+
+d111 1
+a111 1
+        throw new NotImplementedException();
+@
+
+
+1.6
+log
+@Implements some methods in the sun.font package
+@
+text
+@d107 2
+a108 2
+                    0, -ascent, 
+                    0, descent, 
+@
+
+
+1.5
+log
+@fix a copy & paste mistake
+@
+text
+@d73 6
+a78 1
+        throw new NotImplementedException();
+d158 1
+a158 1
+        throw new NotImplementedException();
+@
+
+
+1.4
+log
+@Fix some font metrics problems
+@
+text
+@d82 1
+a82 1
+        SizeF sizeF = g.MeasureString("i", font, Integer.MAX_VALUE, format);
+@
+
+
+1.3
+log
+@The ascent and height was negative
+@
+text
+@d27 1
+d31 3
+a33 2
+import cli.System.Drawing.FontFamily;
+import cli.System.Drawing.FontStyle;
+d41 1
+d44 1
+d50 8
+d59 2
+a60 1
+    public PhysicalStrike(float size2D, FontFamily family, FontStyle style){
+d63 3
+a65 2
+        this.size2D = size2D;
+        factor = size2D / family.GetEmHeight(style);
+d73 1
+a73 2
+        // TODO Auto-generated method stub
+        return null;
+d82 6
+a87 2
+        // TODO Auto-generated method stub
+        return 0;
+d117 1
+a117 2
+        // TODO Auto-generated method stub
+        return 0;
+d126 1
+a126 2
+        // TODO Auto-generated method stub
+
+d135 1
+a135 2
+        // TODO Auto-generated method stub
+        return 0;
+d144 1
+a144 2
+        // TODO Auto-generated method stub
+
+d153 1
+a153 2
+        // TODO Auto-generated method stub
+        return null;
+d162 1
+a162 2
+        // TODO Auto-generated method stub
+        return null;
+d171 1
+a171 2
+        // TODO Auto-generated method stub
+        return null;
+d180 1
+a180 2
+        // TODO Auto-generated method stub
+        return null;
+d189 1
+a189 2
+        // TODO Auto-generated method stub
+        return 0;
+@
+
+
+1.2
+log
+@Replace the GNU ClasspathToolkit with the SunToolkit in .NET Code. Replace the usage of the FontPeer with the Java2D. Replace the NetGlyphVector with the StandardGlyphVector
+@
+text
+@d85 1
+a85 1
+                    0, ascent, 
+@
+
+
+1.1
+log
+@fix some NPE in the package sun.font
+@
+text
+@a25 1
+import java.awt.Font;
+a26 1
+import java.awt.font.LineMetrics;
+a28 2
+import java.text.StringCharacterIterator;
+
+d30 2
+d39 4
+a42 1
+    private final Font font;
+d46 6
+a51 2
+    public PhysicalStrike(Font font){
+        this.font = font;
+d53 1
+a53 1
+
+d80 4
+a83 2
+            gnu.java.awt.peer.ClasspathFontPeer peer = (gnu.java.awt.peer.ClasspathFontPeer)font.getPeer();
+            LineMetrics metrics = peer.getLineMetrics(font, new StringCharacterIterator(""), 0, 0, null);
+d85 2
+a86 2
+                    0, metrics.getAscent(), 
+                    0, metrics.getDescent(), 
+d88 2
+a89 2
+                    0, metrics.getLeading(), 
+                    font.getSize2D() * 2, 0);
+@
+

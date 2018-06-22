@@ -1,0 +1,166 @@
+head	1.1;
+access;
+symbols
+	v8_1_5717_0:1.1
+	v8_1:1.1.0.16
+	v8_0_5449_1:1.1
+	v8_0_5449_0:1.1
+	v8_0:1.1.0.14
+	v7_4_5196_0:1.1
+	v7_4:1.1.0.12
+	v7_3:1.1.0.10
+	v7_2_4630_6:1.1
+	v7_2_4630_5:1.1
+	v7_2_4630_4:1.1
+	v7_2_4630_3:1.1
+	v7_2_4630_2:1.1
+	v0_46_0_4:1.1
+	v7_2_4630_1:1.1
+	v7_2:1.1.0.8
+	v7_1_4532_2:1.1
+	v7_1_4532_1:1.1
+	v7_1_4532_0:1.1
+	v7_1:1.1.0.6
+	v7_0_4335_3:1.1
+	v7_0_4335_2:1.1
+	v7_0_4335_1:1.1
+	v0_46_0_2:1.1
+	v7_0_4335_0:1.1
+	v7_0:1.1.0.4
+	v0_46_0_1:1.1
+	v0_46_0_0:1.1
+	v0_46:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	2010.09.09.06.55.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Implemented IPv6 support for java.net package APIs.
+@
+text
+@/*
+  Copyright (C) 2010 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+
+*/
+
+package ikvm.internal;
+
+@@ikvm.lang.Internal
+public final class JNI
+{
+    public static final Object NULL = null;
+    public static final boolean TRUE = true;
+    public static final boolean FALSE = false;
+    public static final boolean JNI_TRUE = true;
+    public static final boolean JNI_FALSE = false;
+
+    public static final String JNU_JAVAIOPKG = "java.io.";
+    public static final String JNU_JAVANETPKG = "java.net.";
+
+    public static long JVM_CurrentTimeMillis(JNIEnv env, int ignored)
+    {
+        return System.currentTimeMillis();
+    }
+
+    public static void JNU_ThrowNullPointerException(JNIEnv env, String message)
+    {
+        env.Throw(new NullPointerException(message));
+    }
+
+    public static void JNU_ThrowByName(JNIEnv env, String exceptionClass, String message)
+    {
+        if (exceptionClass.equals("java.net.SocketException"))
+        {
+            env.Throw(new java.net.SocketException(message));
+        }
+        else if (exceptionClass.equals("java.net.SocketTimeoutException"))
+        {
+            env.Throw(new java.net.SocketTimeoutException(message));
+        }
+        else if (exceptionClass.equals("java.net.PortUnreachableException"))
+        {
+            env.Throw(new java.net.PortUnreachableException(message));
+        }
+        else if (exceptionClass.equals("java.io.InterruptedIOException"))
+        {
+            env.Throw(new java.io.InterruptedIOException(message));
+        }
+        else
+        {
+            try
+            {
+                env.ThrowNew(Class.forName(exceptionClass), message);
+            }
+            catch (ClassNotFoundException x)
+            {
+                env.Throw(x);
+            }
+        }
+    }
+
+    public static final class JNIEnv
+    {
+        private Throwable pendingException;
+
+        public void Throw(Throwable t)
+        {
+            pendingException = t;
+        }
+
+        public void ThrowNew(Class c, String msg)
+        {
+            try
+            {
+                pendingException = (Throwable)c.getConstructor(String.class).newInstance(msg);
+            }
+            catch (Exception x)
+            {
+                pendingException = x;
+            }
+        }
+
+        public Throwable ExceptionOccurred()
+        {
+            return pendingException;
+        }
+
+        public void ThrowPendingException()
+        {
+            if (pendingException != null)
+            {
+                sun.misc.Unsafe.getUnsafe().throwException(pendingException);
+            }
+        }
+    }
+}
+@

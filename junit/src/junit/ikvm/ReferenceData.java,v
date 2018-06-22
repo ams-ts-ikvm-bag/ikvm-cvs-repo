@@ -1,0 +1,1060 @@
+head	1.23;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.23
+date	2012.03.22.20.35.07;	author smallsql;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2012.03.22.20.15.20;	author smallsql;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2012.03.20.20.26.05;	author smallsql;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2012.03.12.20.52.34;	author smallsql;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2012.03.12.17.20.26;	author smallsql;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2011.08.28.13.09.01;	author smallsql;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2010.12.26.17.20.14;	author smallsql;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2010.11.28.21.12.32;	author smallsql;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2010.11.08.09.57.40;	author smallsql;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2010.11.04.11.18.44;	author smallsql;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2010.11.01.12.31.53;	author smallsql;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2010.10.21.13.31.44;	author smallsql;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2010.10.21.11.08.13;	author smallsql;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2010.10.07.10.52.53;	author smallsql;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2010.10.01.22.06.36;	author smallsql;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2010.09.02.09.34.50;	author smallsql;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2009.12.11.13.10.05;	author smallsql;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2009.11.25.14.56.47;	author smallsql;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2009.11.22.10.30.41;	author smallsql;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2009.11.08.12.54.13;	author smallsql;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2009.11.08.10.11.06;	author smallsql;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2009.11.07.22.10.08;	author smallsql;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2009.10.27.18.55.42;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.23
+log
+@replace Hashtable with synchronized Map because a Hashtable can not hold null values
+@
+text
+@/*
+  Copyright (C) 2009 - 2012 Volker Berlin (i-net software)
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+ */
+package junit.ikvm;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.imageio.ImageIO;
+
+import org.junit.Assert;
+
+import static org.junit.Assert.fail;
+
+/**
+ * RefererenceData to compare. With Sun Java it will save the data. With IKVM it will read the data.
+ */
+public class ReferenceData{
+
+    private static final boolean IKVM;
+    static{
+        String referenceProp = System.getProperty( "reference" );
+        IKVM = referenceProp == null ? 
+                System.getProperty( "java.vm.name" ).equals( "IKVM.NET" ) :
+                    !Boolean.parseBoolean( referenceProp );
+    }
+
+    private static final String NO_DATA_MSG = " Please run the test first with a Sun Java VM to create reference data for your system.";
+
+    private final Map<String, Serializable> data;
+
+    private final File file;
+
+
+    /**
+     * Create ReferenceData for the calling class. The class is reading from stacktrace. All keys must be unique for the
+     * calling class. It should be called in a method which is marked with @@BeforeClass. Typical this method is named
+     * setUpBeforeClass().
+     * 
+     * @@throws Exception
+     *             If it run with IKVM and the data can not be read.
+     */
+    public ReferenceData() throws Exception{
+        StackTraceElement ste = new Throwable().getStackTrace()[1];
+        String name = ste.getClassName();
+        String path = "references/" + name.replace('.', '/');
+        file = new File(path).getAbsoluteFile();
+        if(IKVM){
+            if(!file.exists()){
+                fail(NO_DATA_MSG);
+            }
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            data = (Map<String, Serializable>)ois.readObject();
+            fis.close();
+        }else{
+            data = Collections.synchronizedMap( new HashMap<String, Serializable>() );  // synchronized for multi thread tests
+        }
+    }
+
+
+    /**
+     * Save the data if it is a Sun VM. It should be called in a method which is marked with @@AfterClass. Typical this
+     * method is named tearDownAfterClass().
+     * 
+     * @@throws Exception
+     *             If it run with Sun VM and can not save this reference data.
+     */
+    public void save() throws Exception{
+        if(!IKVM){
+            file.getParentFile().mkdirs();
+            FileOutputStream fos = new FileOutputStream(file);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(data);
+            oos.flush();
+            oos.close();
+        }
+    }
+
+
+    public static boolean isIkvm(){
+        return IKVM;
+    }
+
+    
+	/**
+	 * Get a saved object from serialized data cache.
+	 * 
+	 * @@param key
+	 *            The key in the reference data. It must be unique for the class
+	 *            that create this ReferenceData
+	 * @@return the value if exists
+	 */
+	public Object get(String key) {
+		Object expected = data.get(key);
+		if (expected == null && !data.containsKey(key)) {
+			fail("No Reference value for key:" + key + NO_DATA_MSG);
+		}
+		return expected;
+	}
+	
+
+    /**
+     * Asserts that two objects are equal which come from Sun VM and IKVM run.
+     * 
+     * @@param key
+     *            The key in the reference data. It must be unique for the class that create this ReferenceData
+     * @@param value
+     *            the value will be saved in Sun VM and compared in IKVM. It must be Serializable that it can be saved
+     *            and loaded on hard disk.
+     */
+    public void assertEquals(String key, Serializable value){
+        if(key == null){
+            fail("Key is null.");
+        }
+        if(IKVM){
+            Object expected = get(key);
+            if(expected instanceof float[]){
+                Assert.assertArrayEquals(key, (float[])expected, (float[])value, 0.0F);
+                return;
+            }
+            Assert.assertEquals(key, expected, value);
+        }else{
+            data.put(key, value);
+        }
+    }
+
+
+    /**
+     * Asserts that two objects are equal which come from Sun VM and IKVM run.
+     * 
+     * @@param key
+     *            The key in the reference data. It must be unique for the class that create this ReferenceData
+     * @@param value
+     *            the value will be saved in Sun VM and compared in IKVM. It must be Serializable that it can be saved
+     *            and loaded on hard disk.
+     * @@param delta
+     *            The maximum difference
+     */
+    public void assertEquals( String key, float value, float delta ) {
+        if( key == null ) {
+            fail( "Key is null." );
+        }
+        if( IKVM ) {
+            Float expected = (Float)get( key );
+            Assert.assertEquals( key, (float)expected, value, delta );
+        } else {
+            data.put( key, value );
+        }
+    }
+    
+    /**
+     * Asserts that two objects are equal which come from Sun VM and IKVM run.
+     * 
+     * @@param key
+     *            The key in the reference data. It must be unique for the class that create this ReferenceData
+     * @@param value
+     *            the value will be saved in Sun VM and compared in IKVM. It must be Serializable that it can be saved
+     *            and loaded on hard disk.
+     * @@param delta
+     *            The maximum difference
+     */
+    public void assertEquals( String key, double value, double delta ) {
+        if( key == null ) {
+            fail( "Key is null." );
+        }
+        if( IKVM ) {
+        	Double expected = (Double)get( key );
+            Assert.assertEquals( key, (double)expected, value, delta );
+        } else {
+            data.put( key, value );
+        }
+    }
+    
+    /**
+     * Asserts that two objects are equal which come from Sun VM and IKVM run.
+     * 
+     * @@param key
+     *            The key in the reference data. It must be unique for the class that create this ReferenceData
+     * @@param values
+     *            the values will be saved in Sun VM and compared in IKVM. It must be Serializable that it can be saved
+     *            and loaded on hard disk.
+     * @@param delta
+     *            The maximum difference
+     */
+    public void assertEquals( String key, float[] values, float delta ) {
+        if( key == null ) {
+            fail( "Key is null." );
+        }
+        if( IKVM ) {
+            float[] expected = (float[])get( key );
+            Assert.assertArrayEquals( key, expected, values, delta );
+        } else {
+            data.put( key, values );
+        }
+    }
+    
+    /**
+     * Asserts that two images are equal which come from Sun VM and IKVM run.
+     * 
+     * @@param key
+     *            The key in the reference data. It must be unique for the class that create this ReferenceData
+     * @@param value
+     *            the value will be saved in Sun VM and compared in IKVM. The value will be saved as png image. If a
+     *            difference occur then a second png file will be saved which ended with _ikvm. This make it easer to
+     *            see the image differences.
+     */
+    public void assertEquals( String key, BufferedImage img ) throws Exception {
+        assertEquals( key, img, 0.0, false );
+    }
+    
+    /**
+     * Asserts that two images are equal which come from Sun VM and IKVM run.
+     * 
+     * @@param key
+     *            The key in the reference data. It must be unique for the class that create this ReferenceData
+     * @@param img
+     *            the value will be saved in Sun VM and compared in IKVM. The value will be saved as png image. If a
+     *            difference occur then a second png file will be saved which ended with _ikvm. This make it easer to
+     *            see the image differences.
+     * @@param delta
+     *            The maximum difference between hue, saturation and brightness of every pixel
+     * @@param useMediumValue
+     *            if true then compare the medium value of 9 pixel instead of every pixel
+     */
+    public void assertEquals( String key, BufferedImage img, double delta, boolean useMediumValue ) throws Exception {
+        if( key == null ) {
+            fail( "Key is null." );
+        }
+        File imgFile = new File( file.getParent(), key + ".png" );
+        if( IKVM ) {
+        	if( !imgFile.exists() ){
+        		fail("No Reference value for key:" + key + NO_DATA_MSG);
+        	}
+            if( imgFile.length() == 0 ) {
+                Assert.assertEquals( key, null, img );
+                return;
+            }
+            BufferedImage expected = ImageIO.read( imgFile );
+            File file_ikvm = new File( file.getParent(), key + "_ikvm.png" );
+            file_ikvm.delete();
+            if( expected == null ) {
+                fail( "No Reference value for key:" + key + NO_DATA_MSG );
+                return;
+            }
+            try {
+                assertEquals( key, expected, img , delta, useMediumValue );
+            } catch( Error ex ) {
+                // save the IKVM result for better compare the differences
+                ImageIO.write( img, "png", file_ikvm );
+                throw ex;
+            }
+        } else {
+            file.getParentFile().mkdirs();
+            if( img == null ) {
+                // create a empty file
+                imgFile.delete();
+                imgFile.createNewFile();
+            } else {
+                ImageIO.write( img, "png", imgFile );
+            }
+        }
+    }
+    
+    /**
+     * Asserts that two images are equal.
+     * 
+     * @@param baseMsg
+     *            The base message in asserts
+     * @@param expected
+     *            The expected image
+     * @@param img
+     *            the value will be saved in Sun VM and compared in IKVM. The value will be saved as png image. If a
+     *            difference occur then a second png file will be saved which ended with _ikvm. This make it easer to
+     *            see the image differences.
+     * @@param delta
+     *            The maximum difference between hue, saturation and brightness of every pixel
+     * @@param useMediumValue
+     *            if true then compare the medium value of 9 pixel instead of every pixel
+     */
+    public static void assertEquals( String baseMsg, Image expected, Image img, double delta, boolean useMediumValue ) throws Exception {
+        BufferedImage bExpected = toBufferedImage( expected );
+        BufferedImage bImg = toBufferedImage( img );
+        Assert.assertEquals( baseMsg + " width", bExpected.getWidth(), bImg.getWidth() );
+        Assert.assertEquals( baseMsg + " height", bExpected.getHeight(), bImg.getHeight() );
+        float[] hsbExpected = null;
+        float[] hsbCurrent = null;
+        for( int x = 0; x < bExpected.getWidth(); x++ ) {
+            for( int y = 0; y < bExpected.getHeight(); y++ ) {
+                int rgbExpected = bExpected.getRGB( x, y );
+                int rgbCurrent = bImg.getRGB( x, y );
+                String pixelName = baseMsg + " pixel " + x + "," + y;
+                if( delta > 0 ) {
+                    hsbExpected = rgbToHSB( rgbExpected, hsbExpected );
+                    hsbCurrent = rgbToHSB( rgbCurrent, hsbCurrent );
+                    try {
+                        assertEqualsColor( pixelName, hsbExpected, hsbCurrent, delta );
+                        Assert.assertEquals( pixelName + " alpha", ((rgbExpected >> 24) & 0xFF)/255.0, ((rgbCurrent >> 24) & 0xFF)/255.0, delta);
+                    } catch( Error e ) {
+                        if( useMediumValue ){
+                            getMediumHSB( bExpected, x, y, hsbExpected );
+                            getMediumHSB( bImg, x, y, hsbCurrent );
+                            try {
+                                assertEqualsColor( pixelName, hsbExpected, hsbCurrent, delta );
+                            } catch( Error e1 ) {
+                                // throw the first exception
+                                throw e;
+                            }
+                        } else {
+                            throw e;
+                        }
+                    }
+                } else {
+                    Assert.assertEquals( baseMsg + " pixel " + x + "," + y, rgbExpected, rgbCurrent );
+                }
+            }
+        }     
+    }
+    
+    /**
+     * COnvert any Image to a BufferedImage
+     * @@param img base image
+     * @@return a BufferedImage
+     */
+    public static BufferedImage toBufferedImage( Image img ){
+        if( img instanceof BufferedImage ){
+            return (BufferedImage)img;
+        }
+        BufferedImage bufImg = new BufferedImage( img.getWidth(null), img.getHeight(null), BufferedImage.TYPE_INT_ARGB );
+        Graphics g = bufImg.getGraphics();
+        g.drawImage( img, 0, 0, null );
+        g.dispose();
+        return bufImg;
+    }
+    
+    /**
+     * Compare 2 HSB color values with a delta
+     * 
+     * @@param key
+     *            message for assert
+     * @@param hsbExpected
+     *            expected value
+     * @@param hsbCurrent
+     *            current value
+     * @@param delta
+     *            the delta
+     */
+    public static void assertEqualsColor( String key, float[] hsbExpected, float[] hsbCurrent, double delta ) {
+        try {
+            Assert.assertEquals( key + " hue", hsbExpected[0], hsbCurrent[0], delta );
+        } catch( Error e ) {
+            try {
+                float newCurrent = hsbCurrent[0] + hsbCurrent[0] < 0.5F ? 1 : -1;
+                Assert.assertEquals( key + " hue", hsbExpected[0], newCurrent, delta );
+            } catch( Error e1 ) {
+                // throw the first exception
+                throw e;
+            }
+        }
+        Assert.assertEquals( key + " saturation", hsbExpected[1], hsbCurrent[1], delta );
+        Assert.assertEquals( key + " brightness", hsbExpected[2], hsbCurrent[2], delta );
+    }
+    
+    /**
+     * Calculate the medium of 9 pixel
+     * 
+     * @@param img
+     *            the pixel source
+     * @@param x
+     *            the x position of the middle
+     * @@param y
+     *            the y position of the middle
+     * @@param hsb
+     *            the array used to return the three HSB values, or null
+     * @@return the hsb value
+     */
+    private static float[] getMediumHSB( BufferedImage img, int x, int y, float[] hsb ) {
+        int r = 0, g = 0, b = 0;
+        int count = 0;
+
+        int minX = Math.max( x - 1, 0 );
+        int maxX = Math.min( x + 1, img.getWidth() - 1 );
+        int minY = Math.max( 0, y - 1 );
+        int maxY = Math.min( y + 1, img.getHeight() - 1 );
+        for( int i = minX; i <= maxX; i++ ) {
+            for( int j = minY; j <= maxY; j++ ) {
+                int rgb = img.getRGB( i, j );
+                r += (rgb >> 16) & 0xFF;
+                g += (rgb >> 8) & 0xFF;
+                b += (rgb >> 0) & 0xFF;
+                count++;
+            }
+        }
+        return Color.RGBtoHSB( r / count, g / count, b / count, hsb );
+    }
+    
+    /**
+     * Converts the rgb color to an equivalent set of values for hue, saturation, and brightness that are the three
+     * components of the HSB model.
+     * 
+     * If the hsb argument is null, then a new array is allocated to return the result. Otherwise, the method returns
+     * the array hsb, with the values put into that array.
+     * 
+     * @@param rgb
+     *            the rgb value
+     * @@param hsb
+     *            the array used to return the three HSB values, or null
+     * @@return the the hsb value
+     */
+    private static float[] rgbToHSB( int rgb, float[] hsb ) {
+        return Color.RGBtoHSB( (rgb >> 16) & 0xFF, (rgb >> 8) & 0xFF, (rgb) & 0xFF, hsb );
+    }
+    
+    /**
+     * Asserts that the size of the draw object in the middle of the images are equal with which come from Sun VM and IKVM run.
+     * @@param key The key in the reference data. It must be unique for the class that create this ReferenceData
+     * @@param img A Image that contain some graphics object. The border pixel must be identical color.
+     */
+    public void assertEqualsMetrics( String key, BufferedImage img ) throws Exception{
+        int color = img.getRGB(0, 0);
+        int height = img.getHeight();
+        int width = img.getWidth();
+        
+        int y1 = 0;       
+        L: for(; y1 < height; y1++){
+            for(int x = 0; x < width; x++){
+                if(img.getRGB(x, y1) != color){
+                    break L;
+                }
+            }
+        }
+        
+        int y2 = height-1;       
+        L: for(; y2 >=0; y2--){
+            for(int x = 0; x < width; x++){
+                if(img.getRGB(x, y2) != color){
+                    break L;
+                }
+            }
+        }
+        
+        int x1 = 0;       
+        L: for(; x1 < width; x1++){
+            for(int y = 0; y < height; y++){
+                if(img.getRGB(x1, y) != color){
+                    break L;
+                }
+            }
+        }
+        
+        int x2 = width - 1;       
+        L: for(; x2 >= 0; x2--){
+            for(int y = 0; y < height; y++){
+                if(img.getRGB(x2, y) != color){
+                    break L;
+                }
+            }
+        }
+
+        Assert.assertTrue( "Object not found x", x1 <= x2 );
+        Assert.assertTrue( "Object not found y", y1 <= y2 );
+        assertEquals( key, new Rectangle( x1, y1, x2 - x1, y2 - y1 ) );
+    }
+
+}
+@
+
+
+1.22
+log
+@synchronized the reference data to fix a thread bug with multi threaded tests
+@
+text
+@d32 1
+d34 1
+a34 1
+import java.util.Hashtable;
+d57 1
+a57 1
+    private final Hashtable<String, Serializable> data; // Hashtable for multi thread tests
+d81 1
+a81 1
+            data = (Hashtable<String, Serializable>)ois.readObject();
+d84 1
+a84 1
+            data = new Hashtable<String, Serializable>();
+@
+
+
+1.21
+log
+@return after a valid assertEquals
+@
+text
+@d33 1
+d56 1
+a56 1
+    private final HashMap<String, Serializable> data;
+d80 1
+a80 1
+            data = (HashMap<String, Serializable>)ois.readObject();
+d83 1
+a83 1
+            data = new HashMap<String, Serializable>();
+@
+
+
+1.20
+log
+@Mark some failing tests with @@Ignore or add rounding to the tests
+@
+text
+@d262 1
+@
+
+
+1.19
+log
+@handle not existing image reference
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009, 2010, 2012 Volker Berlin (i-net software)
+d182 23
+@
+
+
+1.18
+log
+@integrate the compare tool in the junit test suite
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009, 2010 Volker Berlin (i-net software)
+d234 3
+@
+
+
+1.17
+log
+@fix the clipboard test
+@
+text
+@d110 17
+d142 1
+a142 4
+            Object expected = data.get(key);
+            if(expected == null && !data.containsKey(key)){
+                fail("No Reference value for key:" + key + NO_DATA_MSG);
+            }
+d170 1
+a170 4
+            Float expected = (Float)data.get( key );
+            if( expected == null && !data.containsKey( key ) ) {
+                fail( "No Reference value for key:" + key + NO_DATA_MSG );
+            }
+d193 1
+a193 4
+            float[] expected = (float[])data.get( key );
+            if( expected == null && !data.containsKey( key ) ) {
+                fail( "No Reference value for key:" + key + NO_DATA_MSG );
+            }
+@
+
+
+1.16
+log
+@Make the test suite runnable with other Java VMs like Apache Harmony
+@
+text
+@d27 2
+d211 1
+a211 1
+     * @@param value
+d237 1
+a237 34
+                Assert.assertEquals( key + " width", expected.getWidth(), img.getWidth() );
+                Assert.assertEquals( key + " height", expected.getHeight(), img.getHeight() );
+                float[] hsbExpected = null;
+                float[] hsbCurrent = null;
+                for( int x = 0; x < expected.getWidth(); x++ ) {
+                    for( int y = 0; y < expected.getHeight(); y++ ) {
+                        int rgbExpected = expected.getRGB( x, y );
+                        int rgbCurrent = img.getRGB( x, y );
+                        String pixelName = key + " pixel " + x + "," + y;
+                        if( delta > 0 ) {
+                            hsbExpected = rgbToHSB( rgbExpected, hsbExpected );
+                            hsbCurrent = rgbToHSB( rgbCurrent, hsbCurrent );
+                            try {
+                                assertEqualsColor( pixelName, hsbExpected, hsbCurrent, delta );
+                                Assert.assertEquals( pixelName + " alpha", ((rgbExpected >> 24) & 0xFF)/255.0, ((rgbCurrent >> 24) & 0xFF)/255.0, delta);
+                            } catch( Error e ) {
+                                if( useMediumValue ){
+                                    getMediumHSB( expected, x, y, hsbExpected );
+                                    getMediumHSB( img, x, y, hsbCurrent );
+                                    try {
+                                        assertEqualsColor( pixelName, hsbExpected, hsbCurrent, delta );
+                                    } catch( Error e1 ) {
+                                        // throw the first exception
+                                        throw e;
+                                    }
+                                } else {
+                                    throw e;
+                                }
+                            }
+                        } else {
+                            Assert.assertEquals( key + " pixel " + x + "," + y, rgbExpected, rgbCurrent );
+                        }
+                    }
+                }
+d256 71
+d367 1
+a367 1
+    private float[] getMediumHSB( BufferedImage img, int x, int y, float[] hsb ) {
+d400 1
+a400 1
+    private float[] rgbToHSB( int rgb, float[] hsb ) {
+@
+
+
+1.15
+log
+@JUnit Tests for ColorSpace
+@
+text
+@d43 7
+a49 1
+    private static final boolean IKVM = System.getProperty("java.vm.name").equals("IKVM.NET");
+@
+
+
+1.14
+log
+@fix compare float[]
+@
+text
+@d159 26
+@
+
+
+1.13
+log
+@Also compare the alpha value
+@
+text
+@d123 1
+@
+
+
+1.12
+log
+@Test getOutline for empty strings, Test getVisualBounds_Fractional is ok now.
+@
+text
+@d216 1
+@
+
+
+1.11
+log
+@Test for getOutline()
+@
+text
+@d132 26
+@
+
+
+1.10
+log
+@Test for Graphics.setPaint with a LinearGradientPaint.
+@
+text
+@d142 1
+a142 1
+        assertEquals( key, img, 0.0 );
+d156 2
+d159 7
+a165 7
+    public void assertEquals( String key, BufferedImage img, double delta ) throws Exception {
+        if(key == null){
+            fail("Key is null.");
+        }
+        File imgFile = new File(file.getParent(), key + ".png");
+        if(IKVM){
+            if( imgFile.length() == 0 ){
+d169 1
+a169 1
+            File file_ikvm = new File(file.getParent(), key + "_ikvm.png");
+d171 2
+a172 2
+            if(expected == null){
+                fail("No Reference value for key:" + key + NO_DATA_MSG);
+d175 3
+a177 3
+            try{
+                Assert.assertEquals(key + " width", expected.getWidth(), img.getWidth());
+                Assert.assertEquals(key + " height", expected.getHeight(), img.getHeight());
+d180 1
+a180 1
+                for(int x = 0; x < expected.getWidth(); x++){
+d184 1
+d186 2
+a187 4
+                            hsbExpected =
+                                            Color.RGBtoHSB( (rgbExpected >> 16) & 0xFF, (rgbExpected >> 8) & 0xFF, (rgbExpected) & 0xFF, hsbExpected );
+                            hsbCurrent =
+                                            Color.RGBtoHSB( (rgbCurrent >> 16) & 0xFF, (rgbCurrent >> 8) & 0xFF, (rgbCurrent) & 0xFF, hsbCurrent );
+d189 1
+a189 1
+                                Assert.assertEquals( key + " pixel hue " + x + "," + y, hsbExpected[0], hsbCurrent[0], delta );
+d191 10
+a200 5
+                                try {
+                                    float newCurrent = hsbCurrent[0] + hsbCurrent[0] < 0.5F ? 1 : -1;
+                                    Assert.assertEquals( key + " pixel hue " + x + "," + y, hsbExpected[0], newCurrent, delta );
+                                } catch( Exception e1 ) {
+                                    // throw the first exception
+a203 2
+                            Assert.assertEquals( key + " pixel saturation " + x + "," + y, hsbExpected[1], hsbCurrent[1], delta );
+                            Assert.assertEquals( key + " pixel brightness " + x + "," + y, hsbExpected[2], hsbCurrent[2], delta );
+d209 1
+a209 1
+            }catch(Error ex){
+d211 1
+a211 1
+                ImageIO.write(img, "png", file_ikvm);
+d214 69
+a282 9
+        }else{
+        	file.getParentFile().mkdirs();
+        	if( img == null ){
+        	    // create a empty file
+        	    imgFile.delete();
+        	    imgFile.createNewFile();
+        	} else {
+        	    ImageIO.write( img, "png", imgFile );
+        	}
+d284 18
+@
+
+
+1.9
+log
+@Test the drawn size of drawString and drawGlyphVector.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Volker Berlin (i-net software)
+d26 1
+d141 17
+a157 1
+    public void assertEquals(String key, BufferedImage img) throws Exception{
+d176 2
+d179 24
+a202 2
+                    for(int y = 0; y < expected.getHeight(); y++){
+                        Assert.assertEquals(key + " pixel " + x + "," + y, expected.getRGB(x, y), img.getRGB(x, y));
+@
+
+
+1.8
+log
+@Compare also null values for images
+@
+text
+@d26 1
+d34 1
+d180 51
+@
+
+
+1.7
+log
+@Prevent exception on first run with Java
+@
+text
+@d142 1
+d144 4
+a147 1
+            BufferedImage expected = ImageIO.read(new File(file.getParent(), key + ".png"));
+d169 7
+a175 1
+            ImageIO.write(img, "png", new File(file.getParent(), key + ".png"));
+@
+
+
+1.6
+log
+@Tests for sun.font
+@
+text
+@d164 1
+@
+
+
+1.5
+log
+@Add tests for default values of java.awt.Frame. Make the use of ReferenceData simpler.
+@
+text
+@d32 2
+a33 2
+import junit.framework.Assert;
+import static junit.framework.Assert.fail;
+d118 3
+@
+
+
+1.4
+log
+@author removed
+@
+text
+@d23 1
+a23 1
+*/
+d35 4
+a39 2
+public class ReferenceData{
+    
+d41 1
+a41 1
+    
+d45 1
+d47 13
+a59 3
+    
+    public ReferenceData(Class<? extends Object> clazz) throws Exception{
+        String name = clazz.getName();
+d74 9
+a82 1
+    
+d93 2
+a94 1
+    
+d99 10
+d123 12
+a134 2
+    
+    
+d155 2
+a156 2
+            }catch (Error ex) {
+                //save the IKVM result for better compare the differences
+@
+
+
+1.3
+log
+@save the image of ikvm if not identical
+@
+text
+@a35 3
+/**
+ * @@author Volker Berlin
+ */
+@
+
+
+1.2
+log
+@JUnit test for copyArea
+@
+text
+@d102 2
+d108 7
+a114 5
+            Assert.assertEquals(key + " width", expected.getWidth(), img.getWidth());
+            Assert.assertEquals(key + " height", expected.getHeight(), img.getHeight());
+            for(int x = 0; x < expected.getWidth(); x++){
+                for(int y = 0; y < expected.getHeight(); y++){
+                    Assert.assertEquals(key + " pixel " + x + "," + y, expected.getRGB(x, y), img.getRGB(x, y));
+d116 4
+@
+
+
+1.1
+log
+@First JUnit tests for IKVM
+@
+text
+@d26 1
+d30 2
+d45 1
+a45 1
+    private final HashMap<String, Object> data;
+d58 1
+a58 1
+            data = (HashMap<String, Object>)ois.readObject();
+d61 1
+a61 1
+            data = new HashMap<String, Object>();
+d76 1
+a76 1
+    public boolean isIkvm(){
+d94 24
+@
+

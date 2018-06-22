@@ -1,0 +1,310 @@
+head	1.7;
+access;
+symbols
+	v8_1_5717_0:1.7
+	v8_1:1.7.0.22
+	v8_0_5449_1:1.7
+	v8_0_5449_0:1.7
+	v8_0:1.7.0.20
+	v7_4_5196_0:1.7
+	v7_4:1.7.0.18
+	v7_3:1.7.0.16
+	v7_2_4630_6:1.7
+	v7_2_4630_5:1.7
+	v7_2_4630_4:1.7
+	v7_2_4630_3:1.7
+	v7_2_4630_2:1.7
+	v0_46_0_4:1.7
+	v7_2_4630_1:1.7
+	v7_2:1.7.0.14
+	v7_1_4532_2:1.7
+	v7_1_4532_1:1.7
+	v7_1_4532_0:1.7
+	v7_1:1.7.0.12
+	v7_0_4335_3:1.7
+	v7_0_4335_2:1.7
+	v7_0_4335_1:1.7
+	v0_46_0_2:1.7
+	v7_0_4335_0:1.7
+	v7_0:1.7.0.10
+	v0_40_0_6:1.7
+	v0_40_0_5:1.7
+	v0_46_0_1:1.7
+	v0_46_0_0:1.7
+	v0_46:1.7.0.8
+	v0_44_0_6:1.7
+	v0_44_0_5:1.7
+	v0_44_0_4:1.7
+	v0_44_0_3:1.7
+	v0_44_0_2:1.7
+	v0_42_0_7:1.7
+	v0_44_0_1:1.7
+	v0_44_0_0:1.7
+	v0_44:1.7.0.6
+	v0_42_0_6:1.7
+	v0_42_0_5:1.7
+	v0_42_0_4:1.7
+	v0_42_0_3:1.7
+	v0_42_0_2:1.7
+	v0_42_0_1:1.7
+	v0_42_0_0:1.7
+	v0_42:1.7.0.4
+	v0_40_0_3:1.7
+	v0_40_0_2:1.7
+	v0_40_0_1:1.7
+	v0_40_0_0:1.7
+	v0_40:1.7.0.2;
+locks; strict;
+comment	@# @;
+expand	@k@;
+
+
+1.7
+date	2009.02.22.09.09.42;	author smallsql;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2009.02.20.22.20.41;	author smallsql;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2009.02.18.21.39.49;	author smallsql;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2009.02.12.20.49.23;	author smallsql;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2009.02.04.19.08.20;	author smallsql;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2009.02.04.18.56.12;	author smallsql;	state dead;
+branches;
+next	1.1;
+
+1.1
+date	2009.02.03.19.38.34;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.7
+log
+@handling the first debuggee event (ThreadStart)
+@
+text
+@﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5ED34D44-6606-4AD5-9BAA-D392E527F8E5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ikvm.debugger</RootNamespace>
+    <AssemblyName>debugger</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <StartupObject>ikvm.debugger.Debugger</StartupObject>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'bin|AnyCPU' ">
+    <OutputPath>..\bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Debugger.Core, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debugger.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DebuggerUtils.cs" />
+    <Compile Include="EventRequest.cs" />
+    <Compile Include="JdwpConnection.cs" />
+    <Compile Include="JdwpConst.cs" />
+    <Compile Include="JdwpEventHandler.cs" />
+    <Compile Include="JdwpHandler.cs" />
+    <Compile Include="JdwpParameters.cs" />
+    <Compile Include="Packet.cs" />
+    <Compile Include="Debugger.cs" />
+    <Compile Include="..\CommonAssemblyInfo.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="win\TargetVM.cs" />
+    <Compile Include="win\TargetMethod.cs" />
+    <Compile Include="win\TargetType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>@
+
+
+1.6
+log
+@First type and method handling
+@
+text
+@d72 1
+@
+
+
+1.5
+log
+@Use MTA2STA to prevent thread problems
+@
+text
+@d15 2
+a28 1
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+a30 1
+    <StartupObject>ikvm.debugger.Debugger</StartupObject>
+d51 5
+d63 1
+d65 1
+a74 1
+    <Compile Include="TargetVM.cs" />
+d78 20
+@
+
+
+1.4
+log
+@next step
+@
+text
+@d58 1
+a58 2
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+@
+
+
+1.3
+log
+@Second step of a Java debugger implementation based on the JDWP
+@
+text
+@d12 1
+a12 1
+    <AssemblyName>java</AssemblyName>
+d30 1
+d50 1
+a50 1
+    <OutputPath>bin\bin\</OutputPath>
+d53 4
+d63 1
+d69 4
+a72 19
+    <Compile Include="Test.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+@
+
+
+1.2
+log
+@remove because wrong content type
+@
+text
+@d59 2
+@
+
+
+1.1
+log
+@First step of a Java debugger implementation based on the JDWP
+@
+text
+@@
+

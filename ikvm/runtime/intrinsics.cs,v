@@ -1,0 +1,2751 @@
+head	1.48;
+access;
+symbols
+	v8_1_5717_0:1.48
+	v8_1:1.48.0.2
+	v8_0_5449_1:1.47
+	v8_0_5449_0:1.47
+	v8_0:1.47.0.2
+	v7_4_5196_0:1.44
+	v7_4:1.44.0.2
+	v7_3:1.43.0.4
+	v7_2_4630_6:1.43
+	v7_2_4630_5:1.43
+	v7_2_4630_4:1.43
+	v7_2_4630_3:1.43
+	v7_2_4630_2:1.43
+	v0_46_0_4:1.32
+	v7_2_4630_1:1.43
+	v7_2:1.43.0.2
+	v7_1_4532_2:1.38
+	v7_1_4532_1:1.38
+	v7_1_4532_0:1.38
+	v7_1:1.38.0.2
+	v7_0_4335_3:1.34
+	v7_0_4335_2:1.34
+	v7_0_4335_1:1.34
+	v0_46_0_2:1.32
+	v7_0_4335_0:1.34
+	v7_0:1.34.0.2
+	v0_40_0_6:1.14
+	v0_40_0_5:1.14
+	v0_46_0_1:1.32
+	v0_46_0_0:1.32
+	v0_46:1.32.0.2
+	v0_44_0_6:1.25
+	v0_44_0_5:1.25
+	v0_44_0_4:1.25
+	v0_44_0_3:1.25
+	v0_44_0_2:1.25
+	v0_42_0_7:1.17
+	v0_44_0_1:1.25
+	v0_44_0_0:1.25
+	v0_44:1.25.0.2
+	v0_42_0_6:1.17
+	v0_42_0_5:1.17
+	v0_42_0_4:1.17
+	v0_42_0_3:1.17
+	v0_42_0_2:1.17
+	v0_42_0_1:1.17
+	v0_42_0_0:1.17
+	v0_42:1.17.0.2
+	v0_40_0_3:1.14
+	v0_40_0_2:1.14
+	v0_40_0_1:1.14
+	v0_40_0_0:1.14
+	v0_40:1.14.0.2
+	v0_38_0_1:1.6
+	v0_38_0_0:1.6
+	v0_38:1.6.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.48
+date	2015.06.29.09.56.13;	author jfrijters;	state Exp;
+branches;
+next	1.47;
+
+1.47
+date	2014.11.18.11.34.04;	author jfrijters;	state Exp;
+branches;
+next	1.46;
+
+1.46
+date	2014.11.14.15.28.34;	author jfrijters;	state Exp;
+branches;
+next	1.45;
+
+1.45
+date	2014.05.19.12.43.43;	author jfrijters;	state Exp;
+branches;
+next	1.44;
+
+1.44
+date	2013.08.12.07.55.58;	author jfrijters;	state Exp;
+branches;
+next	1.43;
+
+1.43
+date	2012.08.31.15.03.12;	author jfrijters;	state Exp;
+branches;
+next	1.42;
+
+1.42
+date	2012.08.31.14.01.59;	author jfrijters;	state Exp;
+branches;
+next	1.41;
+
+1.41
+date	2012.07.08.07.53.27;	author jfrijters;	state Exp;
+branches;
+next	1.40;
+
+1.40
+date	2012.07.05.09.57.09;	author jfrijters;	state Exp;
+branches;
+next	1.39;
+
+1.39
+date	2012.07.03.14.45.51;	author jfrijters;	state Exp;
+branches;
+next	1.38;
+
+1.38
+date	2012.03.25.09.10.29;	author jfrijters;	state Exp;
+branches;
+next	1.37;
+
+1.37
+date	2012.02.23.11.51.07;	author jfrijters;	state Exp;
+branches;
+next	1.36;
+
+1.36
+date	2011.12.15.14.43.08;	author jfrijters;	state Exp;
+branches;
+next	1.35;
+
+1.35
+date	2011.12.09.15.26.57;	author jfrijters;	state Exp;
+branches;
+next	1.34;
+
+1.34
+date	2011.08.10.09.06.27;	author jfrijters;	state Exp;
+branches;
+next	1.33;
+
+1.33
+date	2011.07.07.07.53.00;	author jfrijters;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2010.10.01.08.11.50;	author jfrijters;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2010.09.30.08.04.46;	author jfrijters;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2010.09.30.04.03.33;	author jfrijters;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2010.09.29.07.21.51;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2010.09.22.04.01.36;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2010.09.14.14.15.07;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2010.09.14.13.40.17;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2010.06.07.06.13.05;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2010.04.12.06.44.29;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2010.02.11.10.36.01;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2010.01.28.09.18.34;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2010.01.25.07.53.31;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2009.10.23.05.58.41;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2009.10.21.04.54.39;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2009.10.14.14.58.41;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2009.08.31.05.02.36;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2009.07.16.06.29.32;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2009.07.14.06.20.23;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2009.03.02.06.31.55;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2009.02.27.06.17.06;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2009.02.23.05.18.44;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2009.02.22.08.19.30;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2009.02.10.05.53.57;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2009.01.20.05.13.49;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2009.01.05.06.30.13;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2008.11.14.08.42.07;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2008.08.25.05.12.08;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2008.06.03.12.10.35;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2008.06.03.06.52.33;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.05.31.15.20.46;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.05.31.10.22.39;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.05.09.05.58.04;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.48
+log
+@Added MethodWrapper.IsClassInitializer and use it and IsConstructor instead of name comparisons.
+@
+text
+@﻿/*
+  Copyright (C) 2008-2013 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+
+using System;
+using System.Collections.Generic;
+#if STATIC_COMPILER
+using IKVM.Reflection;
+using IKVM.Reflection.Emit;
+using Type = IKVM.Reflection.Type;
+#else
+using System.Reflection;
+using System.Reflection.Emit;
+#endif
+using System.Diagnostics;
+using Instruction = IKVM.Internal.ClassFile.Method.Instruction;
+using InstructionFlags = IKVM.Internal.ClassFile.Method.InstructionFlags;
+
+namespace IKVM.Internal
+{
+	sealed class EmitIntrinsicContext
+	{
+		internal readonly MethodWrapper Method;
+		internal readonly DynamicTypeWrapper.FinishContext Context;
+		internal readonly CodeEmitter Emitter;
+		private readonly CodeInfo ma;
+		internal readonly int OpcodeIndex;
+		internal readonly MethodWrapper Caller;
+		internal readonly ClassFile ClassFile;
+		internal readonly Instruction[] Code;
+		internal readonly InstructionFlags[] Flags;
+		internal bool NonLeaf = true;
+
+		internal EmitIntrinsicContext(MethodWrapper method, DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, CodeInfo ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, Instruction[] code, InstructionFlags[] flags)
+		{
+			this.Method = method;
+			this.Context = context;
+			this.Emitter = ilgen;
+			this.ma = ma;
+			this.OpcodeIndex = opcodeIndex;
+			this.Caller = caller;
+			this.ClassFile = classFile;
+			this.Code = code;
+			this.Flags = flags;
+		}
+
+		internal bool MatchRange(int offset, int length)
+		{
+			if (OpcodeIndex + offset < 0)
+			{
+				return false;
+			}
+			if (OpcodeIndex + offset + length > Code.Length)
+			{
+				return false;
+			}
+			// we check for branches *into* the range, the start of the range may be a branch target
+			for (int i = OpcodeIndex + offset + 1, end = OpcodeIndex + offset + length; i < end; i++)
+			{
+				if ((Flags[i] & InstructionFlags.BranchTarget) != 0)
+				{
+					return false;
+				}
+			}
+			return true;
+		}
+
+		internal bool Match(int offset, NormalizedByteCode opcode)
+		{
+			return Code[OpcodeIndex + offset].NormalizedOpCode == opcode;
+		}
+
+		internal bool Match(int offset, NormalizedByteCode opcode, int arg)
+		{
+			return Code[OpcodeIndex + offset].NormalizedOpCode == opcode && Code[OpcodeIndex + offset].Arg1 == arg;
+		}
+
+		internal TypeWrapper GetStackTypeWrapper(int offset, int pos)
+		{
+			return ma.GetStackTypeWrapper(OpcodeIndex + offset, pos);
+		}
+
+		internal ClassFile.ConstantPoolItemMI GetMethodref(int offset)
+		{
+			return ClassFile.GetMethodref(Code[OpcodeIndex + offset].Arg1);
+		}
+
+		internal ClassFile.ConstantPoolItemFieldref GetFieldref(int offset)
+		{
+			return ClassFile.GetFieldref(Code[OpcodeIndex + offset].Arg1);
+		}
+
+		internal TypeWrapper GetClassLiteral(int offset)
+		{
+			return ClassFile.GetConstantPoolClassType(Code[OpcodeIndex + offset].Arg1);
+		}
+
+		internal string GetStringLiteral(int offset)
+		{
+			return ClassFile.GetConstantPoolConstantString(Code[OpcodeIndex + offset].Arg1);
+		}
+
+		internal ClassFile.ConstantType GetConstantType(int offset)
+		{
+			return ClassFile.GetConstantPoolConstantType(Code[OpcodeIndex + offset].Arg1);
+		}
+
+		internal void PatchOpCode(int offset, NormalizedByteCode opc)
+		{
+			Code[OpcodeIndex + offset].PatchOpCode(opc);
+		}
+	}
+
+	static class Intrinsics
+	{
+		private delegate bool Emitter(EmitIntrinsicContext eic);
+		private struct IntrinsicKey : IEquatable<IntrinsicKey>
+		{
+			private readonly string className;
+			private readonly string methodName;
+			private readonly string methodSignature;
+
+			internal IntrinsicKey(string className, string methodName, string methodSignature)
+			{
+				this.className = string.Intern(className);
+				this.methodName = string.Intern(methodName);
+				this.methodSignature = string.Intern(methodSignature);
+			}
+
+			internal IntrinsicKey(MethodWrapper mw)
+			{
+				this.className = mw.DeclaringType.Name;
+				this.methodName = mw.Name;
+				this.methodSignature = mw.Signature;
+			}
+
+			public override bool Equals(object obj)
+			{
+				return Equals((IntrinsicKey)obj);
+			}
+
+			public bool Equals(IntrinsicKey other)
+			{
+				return ReferenceEquals(className, other.className) && ReferenceEquals(methodName, other.methodName) && ReferenceEquals(methodSignature, other.methodSignature);
+			}
+
+			public override int GetHashCode()
+			{
+				return methodName.GetHashCode();
+			}
+		}
+		private static readonly Dictionary<IntrinsicKey, Emitter> intrinsics = Register();
+#if STATIC_COMPILER
+		private static readonly Type typeofFloatConverter = StaticCompiler.GetRuntimeType("IKVM.Runtime.FloatConverter");
+		private static readonly Type typeofDoubleConverter = StaticCompiler.GetRuntimeType("IKVM.Runtime.DoubleConverter");
+#else
+		private static readonly Type typeofFloatConverter = typeof(IKVM.Runtime.FloatConverter);
+		private static readonly Type typeofDoubleConverter = typeof(IKVM.Runtime.DoubleConverter);
+#endif
+
+		private static Dictionary<IntrinsicKey, Emitter> Register()
+		{
+			Dictionary<IntrinsicKey, Emitter> intrinsics = new Dictionary<IntrinsicKey, Emitter>();
+			intrinsics.Add(new IntrinsicKey("java.lang.Object", "getClass", "()Ljava.lang.Class;"), Object_getClass);
+			intrinsics.Add(new IntrinsicKey("java.lang.Class", "desiredAssertionStatus", "()Z"), Class_desiredAssertionStatus);
+			intrinsics.Add(new IntrinsicKey("java.lang.Float", "floatToRawIntBits", "(F)I"), Float_floatToRawIntBits);
+			intrinsics.Add(new IntrinsicKey("java.lang.Float", "intBitsToFloat", "(I)F"), Float_intBitsToFloat);
+			intrinsics.Add(new IntrinsicKey("java.lang.Double", "doubleToRawLongBits", "(D)J"), Double_doubleToRawLongBits);
+			intrinsics.Add(new IntrinsicKey("java.lang.Double", "longBitsToDouble", "(J)D"), Double_longBitsToDouble);
+			intrinsics.Add(new IntrinsicKey("java.lang.System", "arraycopy", "(Ljava.lang.Object;ILjava.lang.Object;II)V"), System_arraycopy);
+			intrinsics.Add(new IntrinsicKey("java.util.concurrent.atomic.AtomicReferenceFieldUpdater", "newUpdater", "(Ljava.lang.Class;Ljava.lang.Class;Ljava.lang.String;)Ljava.util.concurrent.atomic.AtomicReferenceFieldUpdater;"), AtomicReferenceFieldUpdater_newUpdater);
+#if STATIC_COMPILER
+			// String_toCharArray relies on globals, which aren't usable in dynamic mode
+			intrinsics.Add(new IntrinsicKey("java.lang.String", "toCharArray", "()[C"), String_toCharArray);
+			intrinsics.Add(new IntrinsicKey("sun.reflect.Reflection", "getCallerClass", "()Ljava.lang.Class;"), Reflection_getCallerClass);
+			intrinsics.Add(new IntrinsicKey("ikvm.internal.CallerID", "getCallerID", "()Likvm.internal.CallerID;"), CallerID_getCallerID);
+#endif
+			intrinsics.Add(new IntrinsicKey("ikvm.runtime.Util", "getInstanceTypeFromClass", "(Ljava.lang.Class;)Lcli.System.Type;"), Util_getInstanceTypeFromClass);
+#if STATIC_COMPILER
+			// this only applies to the core class library, so makes no sense in dynamic mode
+			intrinsics.Add(new IntrinsicKey("java.lang.Class", "getPrimitiveClass", "(Ljava.lang.String;)Ljava.lang.Class;"), Class_getPrimitiveClass);
+			intrinsics.Add(new IntrinsicKey("java.lang.Class", "getDeclaredField", "(Ljava.lang.String;)Ljava.lang.reflect.Field;"), Class_getDeclaredField);
+#endif
+			intrinsics.Add(new IntrinsicKey("java.lang.ThreadLocal", "<init>", "()V"), ThreadLocal_new);
+			intrinsics.Add(new IntrinsicKey("sun.misc.Unsafe", "ensureClassInitialized", "(Ljava.lang.Class;)V"), Unsafe_ensureClassInitialized);
+			// note that the following intrinsics don't pay off on CLR v2, but they do on CLR v4
+			intrinsics.Add(new IntrinsicKey("sun.misc.Unsafe", "putObject", "(Ljava.lang.Object;JLjava.lang.Object;)V"), Unsafe_putObject);
+			intrinsics.Add(new IntrinsicKey("sun.misc.Unsafe", "putOrderedObject", "(Ljava.lang.Object;JLjava.lang.Object;)V"), Unsafe_putOrderedObject);
+			intrinsics.Add(new IntrinsicKey("sun.misc.Unsafe", "putObjectVolatile", "(Ljava.lang.Object;JLjava.lang.Object;)V"), Unsafe_putObjectVolatile);
+			intrinsics.Add(new IntrinsicKey("sun.misc.Unsafe", "getObjectVolatile", "(Ljava.lang.Object;J)Ljava.lang.Object;"), Unsafe_getObjectVolatile);
+			intrinsics.Add(new IntrinsicKey("sun.misc.Unsafe", "getObject", "(Ljava.lang.Object;J)Ljava.lang.Object;"), Unsafe_getObjectVolatile);
+			intrinsics.Add(new IntrinsicKey("sun.misc.Unsafe", "compareAndSwapObject", "(Ljava.lang.Object;JLjava.lang.Object;Ljava.lang.Object;)Z"), Unsafe_compareAndSwapObject);
+			intrinsics.Add(new IntrinsicKey("sun.misc.Unsafe", "getAndSetObject", "(Ljava.lang.Object;JLjava.lang.Object;)Ljava.lang.Object;"), Unsafe_getAndSetObject);
+			intrinsics.Add(new IntrinsicKey("sun.misc.Unsafe", "compareAndSwapInt", "(Ljava.lang.Object;JII)Z"), Unsafe_compareAndSwapInt);
+			intrinsics.Add(new IntrinsicKey("sun.misc.Unsafe", "getAndAddInt", "(Ljava.lang.Object;JI)I"), Unsafe_getAndAddInt);
+			intrinsics.Add(new IntrinsicKey("sun.misc.Unsafe", "compareAndSwapLong", "(Ljava.lang.Object;JJJ)Z"), Unsafe_compareAndSwapLong);
+			return intrinsics;
+		}
+
+		internal static bool IsIntrinsic(MethodWrapper mw)
+		{
+			return intrinsics.ContainsKey(new IntrinsicKey(mw)) && mw.DeclaringType.GetClassLoader() == CoreClasses.java.lang.Object.Wrapper.GetClassLoader();
+		}
+
+		internal static bool Emit(EmitIntrinsicContext context)
+		{
+			// note that intrinsics can always refuse to emit code and the code generator will fall back to a normal method call
+			return intrinsics[new IntrinsicKey(context.Method)](context);
+		}
+
+		private static bool Object_getClass(EmitIntrinsicContext eic)
+		{
+			// this is the null-check idiom that javac uses (both in its own source and in the code it generates)
+			if (eic.MatchRange(0, 2)
+				&& eic.Match(1, NormalizedByteCode.__pop))
+			{
+				eic.Emitter.Emit(OpCodes.Dup);
+				eic.Emitter.EmitNullCheck();
+				return true;
+			}
+			// this optimizes obj1.getClass() ==/!= obj2.getClass()
+			else if (eic.MatchRange(0, 4)
+				&& eic.Match(1, NormalizedByteCode.__aload)
+				&& eic.Match(2, NormalizedByteCode.__invokevirtual)
+				&& (eic.Match(3, NormalizedByteCode.__if_acmpeq) || eic.Match(3, NormalizedByteCode.__if_acmpne))
+				&& (IsSafeForGetClassOptimization(eic.GetStackTypeWrapper(0, 0)) || IsSafeForGetClassOptimization(eic.GetStackTypeWrapper(2, 0))))
+			{
+				ClassFile.ConstantPoolItemMI cpi = eic.GetMethodref(2);
+				if (cpi.Class == "java.lang.Object" && cpi.Name == "getClass" && cpi.Signature == "()Ljava.lang.Class;")
+				{
+					// we can't patch the current opcode, so we have to emit the first call to GetTypeHandle here
+					eic.Emitter.Emit(OpCodes.Callvirt, Compiler.getTypeMethod);
+					eic.PatchOpCode(2, NormalizedByteCode.__intrinsic_gettype);
+					return true;
+				}
+			}
+			// this optimizes obj.getClass() == Xxx.class
+			else if (eic.MatchRange(0, 3)
+				&& eic.Match(1, NormalizedByteCode.__ldc) && eic.GetConstantType(1) == ClassFile.ConstantType.Class
+				&& (eic.Match(2, NormalizedByteCode.__if_acmpeq) || eic.Match(2, NormalizedByteCode.__if_acmpne)))
+			{
+				TypeWrapper tw = eic.GetClassLiteral(1);
+				if (tw.IsGhost || tw.IsGhostArray || tw.IsUnloadable || (tw.IsRemapped && tw.IsFinal && tw is DotNetTypeWrapper))
+				{
+					return false;
+				}
+				eic.Emitter.Emit(OpCodes.Callvirt, Compiler.getTypeMethod);
+				eic.Emitter.Emit(OpCodes.Ldtoken, (tw.IsRemapped && tw.IsFinal) ? tw.TypeAsTBD : tw.TypeAsBaseType);
+				eic.Emitter.Emit(OpCodes.Call, Compiler.getTypeFromHandleMethod);
+				eic.PatchOpCode(1, NormalizedByteCode.__nop);
+				return true;
+			}
+			return false;
+		}
+
+		private static bool Class_desiredAssertionStatus(EmitIntrinsicContext eic)
+		{
+			if (eic.MatchRange(-1, 2)
+				&& eic.Match(-1, NormalizedByteCode.__ldc))
+			{
+				TypeWrapper classLiteral = eic.GetClassLiteral(-1);
+				if (!classLiteral.IsUnloadable && classLiteral.GetClassLoader().RemoveAsserts)
+				{
+					eic.Emitter.Emit(OpCodes.Pop);
+					eic.Emitter.EmitLdc_I4(0);
+					return true;
+				}
+			}
+			return false;
+		}
+
+#if STATIC_COMPILER
+		// this intrinsifies the following two patterns:
+		//   unsafe.objectFieldOffset(XXX.class.getDeclaredField("xxx"));
+		// and
+		//   Class k = XXX.class;
+		//   unsafe.objectFieldOffset(k.getDeclaredField("xxx"));
+		// to avoid initializing the full reflection machinery at this point
+		private static bool Class_getDeclaredField(EmitIntrinsicContext eic)
+		{
+			if (eic.Caller.DeclaringType.GetClassLoader() != CoreClasses.java.lang.Object.Wrapper.GetClassLoader())
+			{
+				// we can only do this optimization when compiling the trusted core classes
+				return false;
+			}
+			TypeWrapper fieldClass;
+			if (eic.MatchRange(-2, 4)
+				&& eic.Match(-2, NormalizedByteCode.__ldc)
+				&& eic.Match(-1, NormalizedByteCode.__ldc_nothrow)
+				&& eic.Match(1, NormalizedByteCode.__invokevirtual))
+			{
+				// unsafe.objectFieldOffset(XXX.class.getDeclaredField("xxx"));
+				fieldClass = eic.GetClassLiteral(-2);
+			}
+			else if (eic.MatchRange(-5, 7)
+				&& eic.Match(-5, NormalizedByteCode.__ldc)
+				&& eic.Match(-4, NormalizedByteCode.__astore)
+				&& eic.Match(-3, NormalizedByteCode.__getstatic)
+				&& eic.Match(-2, NormalizedByteCode.__aload, eic.Code[eic.OpcodeIndex - 4].NormalizedArg1)
+				&& eic.Match(-1, NormalizedByteCode.__ldc_nothrow)
+				&& eic.Match(1, NormalizedByteCode.__invokevirtual))
+			{
+				// Class k = XXX.class;
+				// unsafe.objectFieldOffset(k.getDeclaredField("xxx"));
+				fieldClass = eic.GetClassLiteral(-5);
+			}
+			else
+			{
+				return false;
+			}
+			FieldWrapper field = null;
+			string fieldName = eic.GetStringLiteral(-1);
+			foreach (FieldWrapper fw in fieldClass.GetFields())
+			{
+				if (fw.Name == fieldName)
+				{
+					if (field != null)
+					{
+						return false;
+					}
+					field = fw;
+				}
+			}
+			if (field == null || field.IsStatic)
+			{
+				return false;
+			}
+			ClassFile.ConstantPoolItemMI cpi = eic.GetMethodref(1);
+			if (cpi.Class == "sun.misc.Unsafe" && cpi.Name == "objectFieldOffset" && cpi.Signature == "(Ljava.lang.reflect.Field;)J")
+			{
+				MethodWrapper mw = ClassLoaderWrapper.LoadClassCritical("sun.misc.Unsafe")
+					.GetMethodWrapper("objectFieldOffset", "(Ljava.lang.Class;Ljava.lang.String;)J", false);
+				mw.Link();
+				mw.EmitCallvirt(eic.Emitter);
+				eic.PatchOpCode(1, NormalizedByteCode.__nop);
+				return true;
+			}
+			return false;
+		}
+#endif
+
+		private static bool IsSafeForGetClassOptimization(TypeWrapper tw)
+		{
+			// because of ghost arrays, we don't optimize if both types are either java.lang.Object or an array
+			return tw != CoreClasses.java.lang.Object.Wrapper && !tw.IsArray;
+		}
+
+		private static bool Float_floatToRawIntBits(EmitIntrinsicContext eic)
+		{
+			EmitConversion(eic.Emitter, typeofFloatConverter, "ToInt");
+			return true;
+		}
+
+		private static bool Float_intBitsToFloat(EmitIntrinsicContext eic)
+		{
+			EmitConversion(eic.Emitter, typeofFloatConverter, "ToFloat");
+			return true;
+		}
+
+		private static bool Double_doubleToRawLongBits(EmitIntrinsicContext eic)
+		{
+			EmitConversion(eic.Emitter, typeofDoubleConverter, "ToLong");
+			return true;
+		}
+
+		private static bool Double_longBitsToDouble(EmitIntrinsicContext eic)
+		{
+			EmitConversion(eic.Emitter, typeofDoubleConverter, "ToDouble");
+			return true;
+		}
+
+		private static void EmitConversion(CodeEmitter ilgen, Type converterType, string method)
+		{
+			CodeEmitterLocal converter = ilgen.UnsafeAllocTempLocal(converterType);
+			ilgen.Emit(OpCodes.Ldloca, converter);
+			ilgen.Emit(OpCodes.Call, converterType.GetMethod(method));
+		}
+
+		private static bool System_arraycopy(EmitIntrinsicContext eic)
+		{
+			// if the array arguments on the stack are of a known array type, we can redirect to an optimized version of arraycopy.
+			TypeWrapper dst_type = eic.GetStackTypeWrapper(0, 2);
+			TypeWrapper src_type = eic.GetStackTypeWrapper(0, 4);
+			if (!dst_type.IsUnloadable && dst_type.IsArray && dst_type == src_type)
+			{
+				switch (dst_type.Name[1])
+				{
+					case 'J':
+					case 'D':
+						eic.Emitter.Emit(OpCodes.Call, ByteCodeHelperMethods.arraycopy_primitive_8);
+						break;
+					case 'I':
+					case 'F':
+						eic.Emitter.Emit(OpCodes.Call, ByteCodeHelperMethods.arraycopy_primitive_4);
+						break;
+					case 'S':
+					case 'C':
+						eic.Emitter.Emit(OpCodes.Call, ByteCodeHelperMethods.arraycopy_primitive_2);
+						break;
+					case 'B':
+					case 'Z':
+						eic.Emitter.Emit(OpCodes.Call, ByteCodeHelperMethods.arraycopy_primitive_1);
+						break;
+					default:
+						// TODO once the verifier tracks actual types (i.e. it knows that
+						// a particular reference is the result of a "new" opcode) we can
+						// use the fast version if the exact destination type is known
+						// (in that case the "dst_type == src_type" above should
+						// be changed to "src_type.IsAssignableTo(dst_type)".
+						TypeWrapper elemtw = dst_type.ElementTypeWrapper;
+						// note that IsFinal returns true for array types, so we have to be careful!
+						if (!elemtw.IsArray && elemtw.IsFinal)
+						{
+							eic.Emitter.Emit(OpCodes.Call, ByteCodeHelperMethods.arraycopy_fast);
+						}
+						else
+						{
+							eic.Emitter.Emit(OpCodes.Call, ByteCodeHelperMethods.arraycopy);
+						}
+						break;
+				}
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+		private static bool AtomicReferenceFieldUpdater_newUpdater(EmitIntrinsicContext eic)
+		{
+			return AtomicReferenceFieldUpdaterEmitter.Emit(eic.Context, eic.Caller.DeclaringType, eic.Emitter, eic.ClassFile, eic.OpcodeIndex, eic.Code, eic.Flags);
+		}
+
+#if STATIC_COMPILER
+		private static bool String_toCharArray(EmitIntrinsicContext eic)
+		{
+			if (eic.MatchRange(-1, 2)
+				&& eic.Match(-1, NormalizedByteCode.__ldc_nothrow))
+			{
+				string str = eic.GetStringLiteral(-1);
+				// arbitrary length for "big" strings
+				if (str.Length > 128)
+				{
+					eic.Emitter.Emit(OpCodes.Pop);
+					EmitLoadCharArrayLiteral(eic.Emitter, str, eic.Caller.DeclaringType);
+					return true;
+				}
+			}
+			return false;
+		}
+
+		private static void EmitLoadCharArrayLiteral(CodeEmitter ilgen, string str, TypeWrapper tw)
+		{
+			ModuleBuilder mod = tw.GetClassLoader().GetTypeWrapperFactory().ModuleBuilder;
+			// FXBUG on .NET 1.1 & 2.0 the value type that Ref.Emit automatically generates is public,
+			// so we pre-create a non-public type with the right name here and it will "magically" use
+			// that instead.
+			// If we're running on Mono this isn't necessary, but for simplicitly we'll simply create
+			// the type as well (it is useless, but all it does is waste a little space).
+			int length = str.Length * 2;
+			string typename = "$ArrayType$" + length;
+			Type type = mod.GetType(typename, false, false);
+			if (type == null)
+			{
+				if (tw.GetClassLoader().GetTypeWrapperFactory().ReserveName(typename))
+				{
+					TypeBuilder tb = mod.DefineType(typename, TypeAttributes.Sealed | TypeAttributes.Class | TypeAttributes.ExplicitLayout | TypeAttributes.NotPublic, Types.ValueType, PackingSize.Size1, length);
+					AttributeHelper.HideFromJava(tb);
+					type = tb.CreateType();
+				}
+			}
+			if (type == null
+				|| !type.IsValueType
+				|| type.StructLayoutAttribute.Pack != 1 || type.StructLayoutAttribute.Size != length)
+			{
+				// the type that we found doesn't match (must mean we've compiled a Java type with that name),
+				// so we fall back to the string approach
+				ilgen.Emit(OpCodes.Ldstr, str);
+				ilgen.Emit(OpCodes.Call, Types.String.GetMethod("ToCharArray", Type.EmptyTypes));
+				return;
+			}
+			ilgen.EmitLdc_I4(str.Length);
+			ilgen.Emit(OpCodes.Newarr, Types.Char);
+			ilgen.Emit(OpCodes.Dup);
+			byte[] data = new byte[length];
+			for (int j = 0; j < str.Length; j++)
+			{
+				data[j * 2 + 0] = (byte)(str[j] >> 0);
+				data[j * 2 + 1] = (byte)(str[j] >> 8);
+			}
+			// NOTE we define a module field, because type fields on Mono don't use the global $ArrayType$<n> type.
+			// NOTE this also means that this will only work during static compilation, because ModuleBuilder.CreateGlobalFunctions() must
+			// be called before the field can be used.
+			FieldBuilder fb = mod.DefineInitializedData("__<str>", data, FieldAttributes.Static | FieldAttributes.PrivateScope);
+			ilgen.Emit(OpCodes.Ldtoken, fb);
+			ilgen.Emit(OpCodes.Call, JVM.Import(typeof(System.Runtime.CompilerServices.RuntimeHelpers)).GetMethod("InitializeArray", new Type[] { Types.Array, JVM.Import(typeof(RuntimeFieldHandle)) }));
+		}
+
+		private static bool Reflection_getCallerClass(EmitIntrinsicContext eic)
+		{
+			if (eic.Caller.HasCallerID)
+			{
+				int arg = eic.Caller.GetParametersForDefineMethod().Length - 1;
+				if (!eic.Caller.IsStatic)
+				{
+					arg++;
+				}
+				eic.Emitter.EmitLdarg(arg);
+				MethodWrapper mw;
+				if (MatchInvokeStatic(eic, 1, "java.lang.ClassLoader", "getClassLoader", "(Ljava.lang.Class;)Ljava.lang.ClassLoader;"))
+				{
+					eic.PatchOpCode(1, NormalizedByteCode.__nop);
+					mw = CoreClasses.ikvm.@@internal.CallerID.Wrapper.GetMethodWrapper("getCallerClassLoader", "()Ljava.lang.ClassLoader;", false);
+				}
+				else
+				{
+					mw = CoreClasses.ikvm.@@internal.CallerID.Wrapper.GetMethodWrapper("getCallerClass", "()Ljava.lang.Class;", false);
+				}
+				mw.Link();
+				mw.EmitCallvirt(eic.Emitter);
+				return true;
+			}
+			else if (DynamicTypeWrapper.RequiresDynamicReflectionCallerClass(eic.ClassFile.Name, eic.Caller.Name, eic.Caller.Signature))
+			{
+				// since the non-intrinsic version of Reflection.getCallerClass() always throws an exception, we have to redirect to the dynamic version
+				MethodWrapper getCallerClass = ClassLoaderWrapper.LoadClassCritical("sun.reflect.Reflection").GetMethodWrapper("getCallerClass", "(I)Ljava.lang.Class;", false);
+				getCallerClass.Link();
+				eic.Emitter.EmitLdc_I4(2);
+				getCallerClass.EmitCall(eic.Emitter);
+				return true;
+			}
+			else
+			{
+				StaticCompiler.IssueMessage(Message.ReflectionCallerClassRequiresCallerID, eic.ClassFile.Name, eic.Caller.Name, eic.Caller.Signature);
+			}
+			return false;
+		}
+
+		private static bool CallerID_getCallerID(EmitIntrinsicContext eic)
+		{
+			if (eic.Caller.HasCallerID)
+			{
+				int arg = eic.Caller.GetParametersForDefineMethod().Length - 1;
+				if (!eic.Caller.IsStatic)
+				{
+					arg++;
+				}
+				eic.Emitter.EmitLdarg(arg);
+				return true;
+			}
+			else
+			{
+				throw new FatalCompilerErrorException(Message.CallerIDRequiresHasCallerIDAnnotation);
+			}
+		}
+#endif
+
+		private static bool Util_getInstanceTypeFromClass(EmitIntrinsicContext eic)
+		{
+			if (eic.MatchRange(-1, 2)
+				&& eic.Match(-1, NormalizedByteCode.__ldc))
+			{
+				TypeWrapper tw = eic.GetClassLiteral(-1);
+				if (!tw.IsUnloadable)
+				{
+					eic.Emitter.Emit(OpCodes.Pop);
+					if (tw.IsRemapped && tw.IsFinal)
+					{
+						eic.Emitter.Emit(OpCodes.Ldtoken, tw.TypeAsTBD);
+					}
+					else
+					{
+						eic.Emitter.Emit(OpCodes.Ldtoken, tw.TypeAsBaseType);
+					}
+					eic.Emitter.Emit(OpCodes.Call, Compiler.getTypeFromHandleMethod);
+					return true;
+				}
+			}
+			return false;
+		}
+
+#if STATIC_COMPILER
+		private static bool Class_getPrimitiveClass(EmitIntrinsicContext eic)
+		{
+			eic.Emitter.Emit(OpCodes.Pop);
+			eic.Emitter.Emit(OpCodes.Ldnull);
+			MethodWrapper mw = CoreClasses.java.lang.Class.Wrapper.GetMethodWrapper("<init>", "(Lcli.System.Type;)V", false);
+			mw.Link();
+			mw.EmitNewobj(eic.Emitter);
+			return true;
+		}
+#endif
+
+		private static bool ThreadLocal_new(EmitIntrinsicContext eic)
+		{
+			// it is only valid to replace a ThreadLocal instantiation by our ThreadStatic based version, if we can prove that the instantiation only happens once
+			// (which is the case when we're in <clinit> and there aren't any branches that lead to the current position)
+			if (!eic.Caller.IsClassInitializer)
+			{
+				return false;
+			}
+#if CLASSGC
+			if (JVM.classUnloading)
+			{
+				// RunAndCollect assemblies do not support ThreadStaticAttribute
+				return false;
+			}
+#endif
+			for (int i = 0; i <= eic.OpcodeIndex; i++)
+			{
+				if ((eic.Flags[i] & InstructionFlags.BranchTarget) != 0)
+				{
+					return false;
+				}
+			}
+			eic.Emitter.Emit(OpCodes.Newobj, eic.Context.DefineThreadLocalType());
+			return true;
+		}
+
+		private static bool Unsafe_ensureClassInitialized(EmitIntrinsicContext eic)
+		{
+			if (eic.MatchRange(-1, 2)
+				&& eic.Match(-1, NormalizedByteCode.__ldc))
+			{
+				TypeWrapper classLiteral = eic.GetClassLiteral(-1);
+				if (!classLiteral.IsUnloadable)
+				{
+					eic.Emitter.Emit(OpCodes.Pop);
+					eic.Emitter.EmitNullCheck();
+					classLiteral.EmitRunClassConstructor(eic.Emitter);
+					return true;
+				}
+			}
+			return false;
+		}
+
+		internal static bool IsSupportedArrayTypeForUnsafeOperation(TypeWrapper tw)
+		{
+			return tw.IsArray
+				&& !tw.IsGhostArray
+				&& !tw.ElementTypeWrapper.IsPrimitive
+				&& !tw.ElementTypeWrapper.IsNonPrimitiveValueType;
+		}
+
+		private static bool Unsafe_putObject(EmitIntrinsicContext eic)
+		{
+			return Unsafe_putObjectImpl(eic, false);
+		}
+
+		private static bool Unsafe_putOrderedObject(EmitIntrinsicContext eic)
+		{
+			return Unsafe_putObjectImpl(eic, false);
+		}
+
+		private static bool Unsafe_putObjectVolatile(EmitIntrinsicContext eic)
+		{
+			return Unsafe_putObjectImpl(eic, true);
+		}
+
+		private static bool Unsafe_putObjectImpl(EmitIntrinsicContext eic, bool membarrier)
+		{
+			TypeWrapper tw = eic.GetStackTypeWrapper(0, 2);
+			if (IsSupportedArrayTypeForUnsafeOperation(tw)
+				&& eic.GetStackTypeWrapper(0, 0).IsAssignableTo(tw.ElementTypeWrapper))
+			{
+				CodeEmitterLocal value = eic.Emitter.AllocTempLocal(tw.ElementTypeWrapper.TypeAsLocalOrStackType);
+				CodeEmitterLocal index = eic.Emitter.AllocTempLocal(Types.Int32);
+				CodeEmitterLocal array = eic.Emitter.AllocTempLocal(tw.TypeAsLocalOrStackType);
+				eic.Emitter.Emit(OpCodes.Stloc, value);
+				eic.Emitter.Emit(OpCodes.Conv_Ovf_I4);
+				eic.Emitter.Emit(OpCodes.Stloc, index);
+				eic.Emitter.Emit(OpCodes.Stloc, array);
+				EmitConsumeUnsafe(eic);
+				eic.Emitter.Emit(OpCodes.Ldloc, array);
+				eic.Emitter.Emit(OpCodes.Ldloc, index);
+				eic.Emitter.Emit(OpCodes.Ldloc, value);
+				eic.Emitter.ReleaseTempLocal(array);
+				eic.Emitter.ReleaseTempLocal(index);
+				eic.Emitter.ReleaseTempLocal(value);
+				eic.Emitter.Emit(OpCodes.Stelem_Ref);
+				if (membarrier)
+				{
+					eic.Emitter.EmitMemoryBarrier();
+				}
+				eic.NonLeaf = false;
+				return true;
+			}
+			if ((eic.Flags[eic.OpcodeIndex] & InstructionFlags.BranchTarget) != 0
+				|| (eic.Flags[eic.OpcodeIndex - 1] & InstructionFlags.BranchTarget) != 0)
+			{
+				return false;
+			}
+			if ((eic.Match(-1, NormalizedByteCode.__aload) || eic.Match(-1, NormalizedByteCode.__aconst_null))
+				&& eic.Match(-2, NormalizedByteCode.__getstatic))
+			{
+				FieldWrapper fw = GetUnsafeField(eic, eic.GetFieldref(-2));
+				if (fw != null
+					&& (!fw.IsFinal || (!fw.IsStatic && eic.Caller.Name == "<init>") || (fw.IsStatic && eic.Caller.Name == "<clinit>"))
+					&& fw.IsAccessibleFrom(fw.DeclaringType, eic.Caller.DeclaringType, fw.DeclaringType)
+					&& eic.GetStackTypeWrapper(0, 0).IsAssignableTo(fw.FieldTypeWrapper)
+					&& (fw.IsStatic || fw.DeclaringType == eic.GetStackTypeWrapper(0, 2)))
+				{
+					CodeEmitterLocal value = eic.Emitter.AllocTempLocal(fw.FieldTypeWrapper.TypeAsLocalOrStackType);
+					eic.Emitter.Emit(OpCodes.Stloc, value);
+					eic.Emitter.Emit(OpCodes.Pop);		// discard offset field
+					if (fw.IsStatic)
+					{
+						eic.Emitter.Emit(OpCodes.Pop);	// discard object
+						EmitConsumeUnsafe(eic);
+					}
+					else
+					{
+						CodeEmitterLocal obj = eic.Emitter.AllocTempLocal(fw.DeclaringType.TypeAsLocalOrStackType);
+						eic.Emitter.Emit(OpCodes.Stloc, obj);
+						EmitConsumeUnsafe(eic);
+						eic.Emitter.Emit(OpCodes.Ldloc, obj);
+						eic.Emitter.ReleaseTempLocal(obj);
+					}
+					eic.Emitter.Emit(OpCodes.Ldloc, value);
+					eic.Emitter.ReleaseTempLocal(value);
+					// note that we assume the CLR memory model where all writes are ordered,
+					// so we don't need a volatile store or a memory barrier and putOrderedObject
+					// is typically used with a volatile field, so to avoid the memory barrier,
+					// we don't use FieldWrapper.EmitSet(), but emit the store directly
+					eic.Emitter.Emit(fw.IsStatic ? OpCodes.Stsfld : OpCodes.Stfld, fw.GetField());
+					if (membarrier)
+					{
+						eic.Emitter.EmitMemoryBarrier();
+					}
+					eic.NonLeaf = false;
+					return true;
+				}
+			}
+			return false;
+		}
+
+		private static bool Unsafe_getObjectVolatile(EmitIntrinsicContext eic)
+		{
+			// the check here must be kept in sync with the hack in MethodAnalyzer.AnalyzeTypeFlow()
+			TypeWrapper tw = eic.GetStackTypeWrapper(0, 1);
+			if (IsSupportedArrayTypeForUnsafeOperation(tw))
+			{
+				CodeEmitterLocal index = eic.Emitter.AllocTempLocal(Types.Int32);
+				CodeEmitterLocal obj = eic.Emitter.AllocTempLocal(tw.TypeAsLocalOrStackType);
+				eic.Emitter.Emit(OpCodes.Conv_Ovf_I4);
+				eic.Emitter.Emit(OpCodes.Stloc, index);
+				eic.Emitter.Emit(OpCodes.Stloc, obj);
+				EmitConsumeUnsafe(eic);
+				eic.Emitter.Emit(OpCodes.Ldloc, obj);
+				eic.Emitter.Emit(OpCodes.Ldloc, index);
+				eic.Emitter.ReleaseTempLocal(obj);
+				eic.Emitter.ReleaseTempLocal(index);
+				eic.Emitter.Emit(OpCodes.Ldelema, tw.TypeAsLocalOrStackType.GetElementType());
+				eic.Emitter.Emit(OpCodes.Volatile);
+				eic.Emitter.Emit(OpCodes.Ldind_Ref);
+				// remove the redundant checkcast that usually follows
+				if (eic.Code[eic.OpcodeIndex + 1].NormalizedOpCode == NormalizedByteCode.__checkcast
+					&& tw.ElementTypeWrapper.IsAssignableTo(eic.ClassFile.GetConstantPoolClassType(eic.Code[eic.OpcodeIndex + 1].Arg1)))
+				{
+					eic.PatchOpCode(1, NormalizedByteCode.__nop);
+				}
+				eic.NonLeaf = false;
+				return true;
+			}
+			return false;
+		}
+
+		private static bool Unsafe_compareAndSwapObject(EmitIntrinsicContext eic)
+		{
+			TypeWrapper tw = eic.GetStackTypeWrapper(0, 3);
+			if (IsSupportedArrayTypeForUnsafeOperation(tw)
+				&& eic.GetStackTypeWrapper(0, 0).IsAssignableTo(tw.ElementTypeWrapper)
+				&& eic.GetStackTypeWrapper(0, 1).IsAssignableTo(tw.ElementTypeWrapper))
+			{
+				Type type = tw.TypeAsLocalOrStackType.GetElementType();
+				CodeEmitterLocal update = eic.Emitter.AllocTempLocal(type);
+				CodeEmitterLocal expect = eic.Emitter.AllocTempLocal(type);
+				CodeEmitterLocal index = eic.Emitter.AllocTempLocal(Types.Int32);
+				CodeEmitterLocal obj = eic.Emitter.AllocTempLocal(tw.TypeAsLocalOrStackType);
+				eic.Emitter.Emit(OpCodes.Stloc, update);
+				eic.Emitter.Emit(OpCodes.Stloc, expect);
+				eic.Emitter.Emit(OpCodes.Conv_Ovf_I4);
+				eic.Emitter.Emit(OpCodes.Stloc, index);
+				eic.Emitter.Emit(OpCodes.Stloc, obj);
+				EmitConsumeUnsafe(eic);
+				eic.Emitter.Emit(OpCodes.Ldloc, obj);
+				eic.Emitter.Emit(OpCodes.Ldloc, index);
+				eic.Emitter.Emit(OpCodes.Ldelema, type);
+				eic.Emitter.Emit(OpCodes.Ldloc, update);
+				eic.Emitter.Emit(OpCodes.Ldloc, expect);
+				eic.Emitter.Emit(OpCodes.Call, AtomicReferenceFieldUpdaterEmitter.MakeCompareExchange(type));
+				eic.Emitter.Emit(OpCodes.Ldloc, expect);
+				eic.Emitter.Emit(OpCodes.Ceq);
+				eic.Emitter.ReleaseTempLocal(obj);
+				eic.Emitter.ReleaseTempLocal(index);
+				eic.Emitter.ReleaseTempLocal(expect);
+				eic.Emitter.ReleaseTempLocal(update);
+				eic.NonLeaf = false;
+				return true;
+			}
+			if ((eic.Flags[eic.OpcodeIndex] & InstructionFlags.BranchTarget) != 0
+				|| (eic.Flags[eic.OpcodeIndex - 1] & InstructionFlags.BranchTarget) != 0
+				|| (eic.Flags[eic.OpcodeIndex - 2] & InstructionFlags.BranchTarget) != 0)
+			{
+				return false;
+			}
+			if ((eic.Match(-1, NormalizedByteCode.__aload) || eic.Match(-1, NormalizedByteCode.__aconst_null))
+				&& (eic.Match(-2, NormalizedByteCode.__aload) || eic.Match(-2, NormalizedByteCode.__aconst_null))
+				&& eic.Match(-3, NormalizedByteCode.__getstatic))
+			{
+				FieldWrapper fw = GetUnsafeField(eic, eic.GetFieldref(-3));
+				if (fw != null
+					&& fw.IsAccessibleFrom(fw.DeclaringType, eic.Caller.DeclaringType, fw.DeclaringType)
+					&& eic.GetStackTypeWrapper(0, 0).IsAssignableTo(fw.FieldTypeWrapper)
+					&& eic.GetStackTypeWrapper(0, 1).IsAssignableTo(fw.FieldTypeWrapper)
+					&& (fw.IsStatic || fw.DeclaringType == eic.GetStackTypeWrapper(0, 3)))
+				{
+					Type type = fw.FieldTypeWrapper.TypeAsLocalOrStackType;
+					CodeEmitterLocal update = eic.Emitter.AllocTempLocal(type);
+					CodeEmitterLocal expect = eic.Emitter.AllocTempLocal(type);
+					eic.Emitter.Emit(OpCodes.Stloc, update);
+					eic.Emitter.Emit(OpCodes.Stloc, expect);
+					eic.Emitter.Emit(OpCodes.Pop);			// discard index
+					if (fw.IsStatic)
+					{
+						eic.Emitter.Emit(OpCodes.Pop);		// discard obj
+						EmitConsumeUnsafe(eic);
+						eic.Emitter.Emit(OpCodes.Ldsflda, fw.GetField());
+					}
+					else
+					{
+						CodeEmitterLocal obj = eic.Emitter.AllocTempLocal(eic.Caller.DeclaringType.TypeAsLocalOrStackType);
+						eic.Emitter.Emit(OpCodes.Stloc, obj);
+						EmitConsumeUnsafe(eic);
+						eic.Emitter.Emit(OpCodes.Ldloc, obj);
+						eic.Emitter.ReleaseTempLocal(obj);
+						eic.Emitter.Emit(OpCodes.Ldflda, fw.GetField());
+					}
+					eic.Emitter.Emit(OpCodes.Ldloc, update);
+					eic.Emitter.Emit(OpCodes.Ldloc, expect);
+					eic.Emitter.Emit(OpCodes.Call, AtomicReferenceFieldUpdaterEmitter.MakeCompareExchange(type));
+					eic.Emitter.Emit(OpCodes.Ldloc, expect);
+					eic.Emitter.Emit(OpCodes.Ceq);
+					eic.Emitter.ReleaseTempLocal(expect);
+					eic.Emitter.ReleaseTempLocal(update);
+					eic.NonLeaf = false;
+					return true;
+				}
+			}
+			// stack layout at call site:
+			// 4 Unsafe (receiver)
+			// 3 Object (obj)
+			// 2 long (offset)
+			// 1 Object (expect)
+			// 0 Object (update)
+			TypeWrapper twUnsafe = eic.GetStackTypeWrapper(0, 4);
+			if (twUnsafe == VerifierTypeWrapper.Null)
+			{
+				return false;
+			}
+			for (int i = 0; ; i--)
+			{
+				if ((eic.Flags[eic.OpcodeIndex + i] & InstructionFlags.BranchTarget) != 0)
+				{
+					return false;
+				}
+				if (eic.GetStackTypeWrapper(i, 0) == twUnsafe)
+				{
+					// the pattern we recognize is:
+					// aload
+					// getstatic <offset field>
+					if (eic.Match(i, NormalizedByteCode.__aload) && eic.GetStackTypeWrapper(i + 1, 0) == eic.Caller.DeclaringType
+						&& eic.Match(i + 1, NormalizedByteCode.__getstatic))
+					{
+						FieldWrapper fw = GetUnsafeField(eic, eic.GetFieldref(i + 1));
+						if (fw != null && !fw.IsStatic && fw.DeclaringType == eic.Caller.DeclaringType)
+						{
+							Type type = fw.FieldTypeWrapper.TypeAsLocalOrStackType;
+							CodeEmitterLocal update = eic.Emitter.AllocTempLocal(type);
+							CodeEmitterLocal expect = eic.Emitter.AllocTempLocal(type);
+							CodeEmitterLocal obj = eic.Emitter.AllocTempLocal(eic.Caller.DeclaringType.TypeAsLocalOrStackType);
+							eic.Emitter.Emit(OpCodes.Stloc, update);
+							eic.Emitter.Emit(OpCodes.Stloc, expect);
+							eic.Emitter.Emit(OpCodes.Pop);			// discard offset
+							eic.Emitter.Emit(OpCodes.Stloc, obj);
+							EmitConsumeUnsafe(eic);
+							eic.Emitter.Emit(OpCodes.Ldloc, obj);
+							eic.Emitter.Emit(OpCodes.Ldflda, fw.GetField());
+							eic.Emitter.Emit(OpCodes.Ldloc, update);
+							eic.Emitter.Emit(OpCodes.Ldloc, expect);
+							eic.Emitter.Emit(OpCodes.Call, AtomicReferenceFieldUpdaterEmitter.MakeCompareExchange(type));
+							eic.Emitter.Emit(OpCodes.Ldloc, expect);
+							eic.Emitter.Emit(OpCodes.Ceq);
+							eic.Emitter.ReleaseTempLocal(expect);
+							eic.Emitter.ReleaseTempLocal(update);
+							eic.NonLeaf = false;
+							return true;
+						}
+					}
+					return false;
+				}
+			}
+		}
+
+		private static bool Unsafe_getAndSetObject(EmitIntrinsicContext eic)
+		{
+			TypeWrapper tw = eic.GetStackTypeWrapper(0, 2);
+			if (IsSupportedArrayTypeForUnsafeOperation(tw)
+				&& eic.GetStackTypeWrapper(0, 0).IsAssignableTo(tw.ElementTypeWrapper))
+			{
+				Type type = tw.TypeAsLocalOrStackType.GetElementType();
+				CodeEmitterLocal newValue = eic.Emitter.AllocTempLocal(type);
+				CodeEmitterLocal index = eic.Emitter.AllocTempLocal(Types.Int32);
+				CodeEmitterLocal obj = eic.Emitter.AllocTempLocal(tw.TypeAsLocalOrStackType);
+				eic.Emitter.Emit(OpCodes.Stloc, newValue);
+				eic.Emitter.Emit(OpCodes.Conv_Ovf_I4);
+				eic.Emitter.Emit(OpCodes.Stloc, index);
+				eic.Emitter.Emit(OpCodes.Stloc, obj);
+				EmitConsumeUnsafe(eic);
+				eic.Emitter.Emit(OpCodes.Ldloc, obj);
+				eic.Emitter.Emit(OpCodes.Ldloc, index);
+				eic.Emitter.Emit(OpCodes.Ldelema, type);
+				eic.Emitter.Emit(OpCodes.Ldloc, newValue);
+				eic.Emitter.Emit(OpCodes.Call, MakeExchange(type));
+				eic.Emitter.ReleaseTempLocal(obj);
+				eic.Emitter.ReleaseTempLocal(index);
+				eic.Emitter.ReleaseTempLocal(newValue);
+				eic.NonLeaf = false;
+				return true;
+			}
+			return false;
+		}
+
+		private static bool Unsafe_compareAndSwapInt(EmitIntrinsicContext eic)
+		{
+			// stack layout at call site:
+			// 4 Unsafe (receiver)
+			// 3 Object (obj)
+			// 2 long (offset)
+			// 1 int (expect)
+			// 0 int (update)
+			TypeWrapper twUnsafe = eic.GetStackTypeWrapper(0, 4);
+			if (twUnsafe == VerifierTypeWrapper.Null)
+			{
+				return false;
+			}
+			for (int i = 0; ; i--)
+			{
+				if ((eic.Flags[eic.OpcodeIndex + i] & InstructionFlags.BranchTarget) != 0)
+				{
+					return false;
+				}
+				if (eic.GetStackTypeWrapper(i, 0) == twUnsafe)
+				{
+					// the pattern we recognize is:
+					// aload
+					// getstatic <offset field>
+					if (eic.Match(i, NormalizedByteCode.__aload) && eic.GetStackTypeWrapper(i + 1, 0) == eic.Caller.DeclaringType
+						&& eic.Match(i + 1, NormalizedByteCode.__getstatic))
+					{
+						FieldWrapper fw = GetUnsafeField(eic, eic.GetFieldref(i + 1));
+						if (fw != null && !fw.IsStatic && fw.DeclaringType == eic.Caller.DeclaringType)
+						{
+							CodeEmitterLocal update = eic.Emitter.AllocTempLocal(Types.Int32);
+							CodeEmitterLocal expect = eic.Emitter.AllocTempLocal(Types.Int32);
+							CodeEmitterLocal obj = eic.Emitter.AllocTempLocal(eic.Caller.DeclaringType.TypeAsLocalOrStackType);
+							eic.Emitter.Emit(OpCodes.Stloc, update);
+							eic.Emitter.Emit(OpCodes.Stloc, expect);
+							eic.Emitter.Emit(OpCodes.Pop);			// discard offset
+							eic.Emitter.Emit(OpCodes.Stloc, obj);
+							EmitConsumeUnsafe(eic);
+							eic.Emitter.Emit(OpCodes.Ldloc, obj);
+							eic.Emitter.Emit(OpCodes.Ldflda, fw.GetField());
+							eic.Emitter.Emit(OpCodes.Ldloc, update);
+							eic.Emitter.Emit(OpCodes.Ldloc, expect);
+							eic.Emitter.Emit(OpCodes.Call, InterlockedMethods.CompareExchangeInt32);
+							eic.Emitter.Emit(OpCodes.Ldloc, expect);
+							eic.Emitter.Emit(OpCodes.Ceq);
+							eic.Emitter.ReleaseTempLocal(expect);
+							eic.Emitter.ReleaseTempLocal(update);
+							eic.NonLeaf = false;
+							return true;
+						}
+					}
+					return false;
+				}
+			}
+		}
+
+		private static bool Unsafe_getAndAddInt(EmitIntrinsicContext eic)
+		{
+			// stack layout at call site:
+			// 3 Unsafe (receiver)
+			// 2 Object (obj)
+			// 1 long (offset)
+			// 0 int (delta)
+			TypeWrapper twUnsafe = eic.GetStackTypeWrapper(0, 3);
+			if (twUnsafe == VerifierTypeWrapper.Null)
+			{
+				return false;
+			}
+			for (int i = 0; ; i--)
+			{
+				if ((eic.Flags[eic.OpcodeIndex + i] & InstructionFlags.BranchTarget) != 0)
+				{
+					return false;
+				}
+				if (eic.GetStackTypeWrapper(i, 0) == twUnsafe)
+				{
+					// the pattern we recognize is:
+					// aload_0 
+					// getstatic <offset field>
+					if (eic.Match(i, NormalizedByteCode.__aload, 0)
+						&& eic.Match(i + 1, NormalizedByteCode.__getstatic))
+					{
+						FieldWrapper fw = GetUnsafeField(eic, eic.GetFieldref(i + 1));
+						if (fw != null && !fw.IsStatic && fw.DeclaringType == eic.Caller.DeclaringType)
+						{
+							CodeEmitterLocal delta = eic.Emitter.AllocTempLocal(Types.Int32);
+							eic.Emitter.Emit(OpCodes.Stloc, delta);
+							eic.Emitter.Emit(OpCodes.Pop);			// discard offset
+							eic.Emitter.Emit(OpCodes.Pop);			// discard obj
+							EmitConsumeUnsafe(eic);
+							eic.Emitter.Emit(OpCodes.Ldarg_0);
+							eic.Emitter.Emit(OpCodes.Ldflda, fw.GetField());
+							eic.Emitter.Emit(OpCodes.Ldloc, delta);
+							eic.Emitter.Emit(OpCodes.Call, InterlockedMethods.AddInt32);
+							eic.Emitter.Emit(OpCodes.Ldloc, delta);
+							eic.Emitter.Emit(OpCodes.Sub);
+							eic.Emitter.ReleaseTempLocal(delta);
+							eic.NonLeaf = false;
+							return true;
+						}
+					}
+					return false;
+				}
+			}
+		}
+
+		private static bool Unsafe_compareAndSwapLong(EmitIntrinsicContext eic)
+		{
+			// stack layout at call site:
+			// 4 Unsafe (receiver)
+			// 3 Object (obj)
+			// 2 long (offset)
+			// 1 long (expect)
+			// 0 long (update)
+			TypeWrapper twUnsafe = eic.GetStackTypeWrapper(0, 4);
+			if (twUnsafe == VerifierTypeWrapper.Null)
+			{
+				return false;
+			}
+			for (int i = 0; ; i--)
+			{
+				if ((eic.Flags[eic.OpcodeIndex + i] & InstructionFlags.BranchTarget) != 0)
+				{
+					return false;
+				}
+				if (eic.GetStackTypeWrapper(i, 0) == twUnsafe)
+				{
+					// the pattern we recognize is:
+					// aload
+					// getstatic <offset field>
+					if (eic.Match(i, NormalizedByteCode.__aload) && eic.GetStackTypeWrapper(i + 1, 0) == eic.Caller.DeclaringType
+						&& eic.Match(i + 1, NormalizedByteCode.__getstatic))
+					{
+						FieldWrapper fw = GetUnsafeField(eic, eic.GetFieldref(i + 1));
+						if (fw != null && !fw.IsStatic && fw.DeclaringType == eic.Caller.DeclaringType)
+						{
+							CodeEmitterLocal update = eic.Emitter.AllocTempLocal(Types.Int64);
+							CodeEmitterLocal expect = eic.Emitter.AllocTempLocal(Types.Int64);
+							CodeEmitterLocal obj = eic.Emitter.AllocTempLocal(eic.Caller.DeclaringType.TypeAsLocalOrStackType);
+							eic.Emitter.Emit(OpCodes.Stloc, update);
+							eic.Emitter.Emit(OpCodes.Stloc, expect);
+							eic.Emitter.Emit(OpCodes.Pop);			// discard offset
+							eic.Emitter.Emit(OpCodes.Stloc, obj);
+							EmitConsumeUnsafe(eic);
+							eic.Emitter.Emit(OpCodes.Ldloc, obj);
+							eic.Emitter.Emit(OpCodes.Ldflda, fw.GetField());
+							eic.Emitter.Emit(OpCodes.Ldloc, update);
+							eic.Emitter.Emit(OpCodes.Ldloc, expect);
+							eic.Emitter.Emit(OpCodes.Call, InterlockedMethods.CompareExchangeInt64);
+							eic.Emitter.Emit(OpCodes.Ldloc, expect);
+							eic.Emitter.Emit(OpCodes.Ceq);
+							eic.Emitter.ReleaseTempLocal(expect);
+							eic.Emitter.ReleaseTempLocal(update);
+							eic.NonLeaf = false;
+							return true;
+						}
+					}
+					return false;
+				}
+			}
+		}
+
+		internal static MethodInfo MakeExchange(Type type)
+		{
+			return InterlockedMethods.ExchangeOfT.MakeGenericMethod(type);
+		}
+
+		private static void EmitConsumeUnsafe(EmitIntrinsicContext eic)
+		{
+#if STATIC_COMPILER
+			if (eic.Caller.DeclaringType.GetClassLoader() == CoreClasses.java.lang.Object.Wrapper.GetClassLoader())
+			{
+				// we're compiling the core library (which is obviously trusted), so we don't need to check
+				// if we really have an Unsafe instance
+				eic.Emitter.Emit(OpCodes.Pop);
+			}
+			else
+#endif
+			{
+				eic.Emitter.EmitNullCheck();
+			}
+		}
+
+		private static FieldWrapper GetUnsafeField(EmitIntrinsicContext eic, ClassFile.ConstantPoolItemFieldref field)
+		{
+			if (eic.Caller.DeclaringType.GetClassLoader() != CoreClasses.java.lang.Object.Wrapper.GetClassLoader())
+			{
+				// this code does not solve the general problem and assumes non-hostile, well behaved static initializers
+				// so we only support the core class library
+				return null;
+			}
+
+			// the field offset field must be a static field inside the current class
+			// (we don't need to check that the field is static, because the caller already ensured that)
+			if (field.GetField().DeclaringType == eic.Caller.DeclaringType)
+			{
+				// now look inside the static initializer to see if we can found out what field it refers to
+				foreach (ClassFile.Method method in eic.ClassFile.Methods)
+				{
+					if (method.IsClassInitializer)
+					{
+						// TODO should we first verify the method?
+						// TODO should we attempt to make sure the field is definitely assigned (and only once)?
+
+						// TODO special case/support the pattern used by:
+						//  - java.util.concurrent.atomic.AtomicMarkableReference
+						//  - java.util.concurrent.atomic.AtomicStampedReference
+						//  - java.util.concurrent.locks.AbstractQueuedLongSynchronizer
+
+						/*
+						 *  ldc_w test
+						 *  astore_0
+						 *  ...
+						 *  getstatic <Field test sun/misc/Unsafe UNSAFE>
+						 *  aload_0 | ldc <Class>
+						 *  ldc "next"
+						 *  invokevirtual <Method java/lang/Class getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;>
+						 *  invokevirtual <Method sun/misc/Unsafe objectFieldOffset(Ljava/lang/reflect/Field;)J>
+						 *  putstatic <Field test long nextOffset>
+						 */
+						for (int i = 0; i < method.Instructions.Length; i++)
+						{
+							if (method.Instructions[i].NormalizedOpCode == NormalizedByteCode.__putstatic
+								&& eic.ClassFile.GetFieldref(method.Instructions[i].Arg1) == field)
+							{
+								if (MatchInvokeVirtual(eic, ref method.Instructions[i - 1], "sun.misc.Unsafe", "objectFieldOffset", "(Ljava.lang.reflect.Field;)J")
+									&& MatchInvokeVirtual(eic, ref method.Instructions[i - 2], "java.lang.Class", "getDeclaredField", "(Ljava.lang.String;)Ljava.lang.reflect.Field;")
+									&& MatchLdc(eic, ref method.Instructions[i - 3], ClassFile.ConstantType.String)
+									&& (method.Instructions[i - 4].NormalizedOpCode == NormalizedByteCode.__aload || method.Instructions[i - 4].NormalizedOpCode == NormalizedByteCode.__ldc)
+									&& method.Instructions[i - 5].NormalizedOpCode == NormalizedByteCode.__getstatic && eic.ClassFile.GetFieldref(method.Instructions[i - 5].Arg1).Signature == "Lsun.misc.Unsafe;")
+								{
+									if (method.Instructions[i - 4].NormalizedOpCode == NormalizedByteCode.__ldc)
+									{
+										if (eic.ClassFile.GetConstantPoolClassType(method.Instructions[i - 4].Arg1) == eic.Caller.DeclaringType)
+										{
+											string fieldName = eic.ClassFile.GetConstantPoolConstantString(method.Instructions[i - 3].Arg1);
+											FieldWrapper fw = null;
+											foreach (FieldWrapper fw1 in eic.Caller.DeclaringType.GetFields())
+											{
+												if (fw1.Name == fieldName)
+												{
+													if (fw == null)
+													{
+														fw = fw1;
+													}
+													else
+													{
+														// duplicate name
+														return null;
+													}
+												}
+											}
+											return fw;
+										}
+										return null;
+									}
+									// search backward for the astore that corresponds to the aload (of the class object)
+									for (int j = i - 6; j > 0; j--)
+									{
+										if (method.Instructions[j].NormalizedOpCode == NormalizedByteCode.__astore
+											&& method.Instructions[j].Arg1 == method.Instructions[i - 4].Arg1
+											&& MatchLdc(eic, ref method.Instructions[j - 1], ClassFile.ConstantType.Class)
+											&& eic.ClassFile.GetConstantPoolClassType(method.Instructions[j - 1].Arg1) == eic.Caller.DeclaringType)
+										{
+											string fieldName = eic.ClassFile.GetConstantPoolConstantString(method.Instructions[i - 3].Arg1);
+											FieldWrapper fw = null;
+											foreach (FieldWrapper fw1 in eic.Caller.DeclaringType.GetFields())
+											{
+												if (fw1.Name == fieldName)
+												{
+													if (fw == null)
+													{
+														fw = fw1;
+													}
+													else
+													{
+														// duplicate name
+														return null;
+													}
+												}
+											}
+											return fw;
+										}
+									}
+									break;
+								}
+							}
+						}
+						break;
+					}
+				}
+			}
+			return null;
+		}
+
+		private static bool MatchInvokeVirtual(EmitIntrinsicContext eic, ref Instruction instr, string clazz, string name, string sig)
+		{
+			return MatchInvoke(eic, ref instr, NormalizedByteCode.__invokevirtual, clazz, name, sig);
+		}
+
+		private static bool MatchInvokeStatic(EmitIntrinsicContext eic, int offset, string clazz, string name, string sig)
+		{
+			return MatchInvoke(eic, ref eic.Code[eic.OpcodeIndex + offset], NormalizedByteCode.__invokestatic, clazz, name, sig);
+		}
+
+		private static bool MatchInvoke(EmitIntrinsicContext eic, ref Instruction instr, NormalizedByteCode opcode, string clazz, string name, string sig)
+		{
+			if (instr.NormalizedOpCode == opcode)
+			{
+				ClassFile.ConstantPoolItemMI method = eic.ClassFile.GetMethodref(instr.Arg1);
+				return method.Class == clazz
+					&& method.Name == name
+					&& method.Signature == sig;
+			}
+			return false;
+		}
+
+		private static bool MatchLdc(EmitIntrinsicContext eic, ref Instruction instr, ClassFile.ConstantType constantType)
+		{
+			return (instr.NormalizedOpCode == NormalizedByteCode.__ldc || instr.NormalizedOpCode == NormalizedByteCode.__ldc_nothrow)
+				&& eic.ClassFile.GetConstantPoolConstantType(instr.NormalizedArg1) == constantType;
+		}
+	}
+}
+@
+
+
+1.47
+log
+@More Unsafe intrinsics.
+@
+text
+@d619 1
+a619 1
+			if (eic.Caller.Name != StringConstants.CLINIT)
+@
+
+
+1.46
+log
+@Added intrinsic for array version of Unsafe.getAndSetObject().
+@
+text
+@d206 1
+d214 3
+d871 53
+a923 1
+			return false;
+d955 107
+a1061 1
+		internal static MethodInfo MakeExchange(Type type)
+d1063 12
+a1074 2
+			MethodInfo interlockedExchange = null;
+			foreach (MethodInfo m in JVM.Import(typeof(System.Threading.Interlocked)).GetMethods())
+d1076 1
+a1076 1
+				if (m.Name == "Exchange" && m.IsGenericMethodDefinition)
+d1078 35
+a1112 2
+					interlockedExchange = m;
+					break;
+d1115 5
+a1119 1
+			return interlockedExchange.MakeGenericMethod(type);
+d1169 1
+a1169 1
+						 *  aload_0
+d1183 1
+a1183 1
+									&& method.Instructions[i - 4].NormalizedOpCode == NormalizedByteCode.__aload
+d1186 25
+@
+
+
+1.45
+log
+@First part of OpenJDK 8 integration.
+@
+text
+@d212 1
+d870 43
+@
+
+
+1.44
+log
+@Switched from @@HasCallerID to @@CallerSensitive and merged CallerSenstive related 7u40 changes.
+@
+text
+@d539 10
+a548 1
+			else if (!DynamicTypeWrapper.RequiresDynamicReflectionCallerClass(eic.ClassFile.Name, eic.Caller.Name, eic.Caller.Signature))
+@
+
+
+1.43
+log
+@Added another Object.getClass() intrinsification (specifically for java.util.Hashtable's check if the key is a String, where for some reason they use "k.getClass() == String.class" instead of "k instanceof String").
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008-2012 Jeroen Frijters
+d195 2
+a197 3
+			intrinsics.Add(new IntrinsicKey("sun.reflect.Reflection", "getCallerClass", "(I)Ljava.lang.Class;"), Reflection_getCallerClass);
+			intrinsics.Add(new IntrinsicKey("java.lang.ClassLoader", "getCallerClassLoader", "()Ljava.lang.ClassLoader;"), ClassLoader_getCallerClassLoader);
+			intrinsics.Add(new IntrinsicKey("ikvm.internal.CallerID", "getCallerID", "()Likvm.internal.CallerID;"), CallerID_getCallerID);
+a513 1
+#endif
+d517 1
+a517 3
+			if (eic.Caller.HasCallerID
+				&& eic.MatchRange(-1, 2)
+				&& eic.Match(-1, NormalizedByteCode.__iconst, 2))
+a518 1
+				eic.Emitter.Emit(OpCodes.Pop);
+d525 10
+a534 1
+				MethodWrapper mw = CoreClasses.ikvm.@@internal.CallerID.Wrapper.GetMethodWrapper("getCallerClass", "()Ljava.lang.Class;", false);
+d539 1
+a539 6
+			return false;
+		}
+
+		private static bool ClassLoader_getCallerClassLoader(EmitIntrinsicContext eic)
+		{
+			if (eic.Caller.HasCallerID)
+d541 1
+a541 10
+				int arg = eic.Caller.GetParametersForDefineMethod().Length - 1;
+				if (!eic.Caller.IsStatic)
+				{
+					arg++;
+				}
+				eic.Emitter.EmitLdarg(arg);
+				MethodWrapper mw = CoreClasses.ikvm.@@internal.CallerID.Wrapper.GetMethodWrapper("getCallerClassLoader", "()Ljava.lang.ClassLoader;", false);
+				mw.Link();
+				mw.EmitCallvirt(eic.Emitter);
+				return true;
+a559 1
+#if STATIC_COMPILER
+a560 4
+#else
+				JVM.CriticalFailure("CallerID.getCallerID() requires a HasCallerID annotation", null);
+				return false;
+#endif
+d563 1
+d965 11
+a975 1
+			if (instr.NormalizedOpCode == NormalizedByteCode.__invokevirtual)
+@
+
+
+1.42
+log
+@Made the intrinsification of Unsafe.objectFieldOffset(Class.getDeclaredField("xxx")) applicable to more cases (but it is now restricted to core class library).
+@
+text
+@d123 5
+d253 16
+@
+
+
+1.41
+log
+@Allow intrinsic methods to bypass the setting of nonleaf (which makes a method non-inlinable) for the intrinsic method call.
+@
+text
+@a180 1
+			intrinsics.Add(new IntrinsicKey("java.lang.Class", "getDeclaredField", "(Ljava.lang.String;)Ljava.lang.reflect.Field;"), Class_getDeclaredField);
+d198 1
+d267 6
+a272 1
+		// this intrinsifies the unsafe.objectFieldOffset(XXX.class.getDeclaredField("xxx")) pattern
+d276 6
+a281 1
+			// validate that we're inside the XXX class and that xxx is an instance field of that class
+d283 12
+a294 1
+				&& eic.Match(-2, NormalizedByteCode.__ldc) && eic.GetClassLiteral(-2) == eic.Caller.DeclaringType
+d298 13
+a310 3
+				FieldWrapper field = null;
+				string fieldName = eic.GetStringLiteral(-1);
+				foreach (FieldWrapper fw in eic.Caller.DeclaringType.GetFields())
+d312 1
+a312 1
+					if (fw.Name == fieldName)
+d314 1
+a314 5
+						if (field != null)
+						{
+							return false;
+						}
+						field = fw;
+d316 1
+d318 14
+a331 14
+				if (field == null || field.IsStatic)
+				{
+					return false;
+				}
+				ClassFile.ConstantPoolItemMI cpi = eic.GetMethodref(1);
+				if (cpi.Class == "sun.misc.Unsafe" && cpi.Name == "objectFieldOffset" && cpi.Signature == "(Ljava.lang.reflect.Field;)J")
+				{
+					MethodWrapper mw = ClassLoaderWrapper.LoadClassCritical("sun.misc.Unsafe")
+						.GetMethodWrapper("objectFieldOffset", "(Ljava.lang.Class;Ljava.lang.String;)J", false);
+					mw.Link();
+					mw.EmitCallvirt(eic.Emitter);
+					eic.PatchOpCode(1, NormalizedByteCode.__nop);
+					return true;
+				}
+d335 1
+@
+
+
+1.40
+log
+@Added intrinsics for (some usages of) Unsafe methods: putObject, putOrderedObject, putObjectVolatile, getObjectVolatile, getObject, compareAndSwapObject.
+@
+text
+@d52 1
+d656 1
+d701 1
+d733 1
+d769 1
+d817 1
+@
+
+
+1.39
+log
+@- Made CodeEmitter more "type safe" by adding specific EmitXxx methods instead of following the more general ILGenerator pattern.
+- Added some new optimizations to CodeEmitter (disabled unless experimental optimizations are enabled).
+- Added some invariant checks to CodeEmitter to help debug optimizations (and document the invariants).
+@
+text
+@d107 5
+d201 6
+d606 332
+@
+
+
+1.38
+log
+@More ikvmc error handling clean up.
+@
+text
+@d248 1
+a248 1
+					eic.Emitter.Emit_Ldc_I4(0);
+d437 1
+a437 1
+			ilgen.Emit(OpCodes.Ldc_I4, str.Length);
+d467 1
+a467 1
+				eic.Emitter.Emit(OpCodes.Ldarg, (short)arg);
+d485 1
+a485 1
+				eic.Emitter.Emit(OpCodes.Ldarg, (short)arg);
+d503 1
+a503 1
+				eic.Emitter.Emit(OpCodes.Ldarg, (short)arg);
+@
+
+
+1.37
+log
+@Intrinsified the unsafe.objectFieldOffset(XXX.class.getDeclaredField("xxx")) pattern to avoid expensive reflection field lookup in static initializers of common OpenJDK classes.
+@
+text
+@d389 1
+a449 6
+			// MONOBUG Type.Equals(Type) is broken on Mono. We have to use the virtual method that ends up in our implementation
+			if (!fb.FieldType.Equals((object)type))
+			{
+				// this is actually relatively harmless, but I would like to know about it, so we abort and hope that users report this when they encounter it
+				JVM.CriticalFailure("Unsupported runtime: ModuleBuilder.DefineInitializedData() field type mispredicted", null);
+			}
+d453 1
+d508 3
+d512 2
+a514 1
+			return false;
+@
+
+
+1.36
+log
+@Removed obsolete comment.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008-2011 Jeroen Frijters
+d112 5
+d175 1
+d255 41
+d394 1
+a394 1
+				string str = eic.ClassFile.GetConstantPoolConstantString(eic.Code[eic.OpcodeIndex - 1].Arg1);
+@
+
+
+1.35
+log
+@Moved DefineThreadLocalType() into FinishContext because that way it better encapsulates the behavior.
+@
+text
+@a288 2
+			// Note that we also have to handle VMSystem.arraycopy, because on GNU Classpath StringBuffer directly calls
+			// this method to avoid prematurely initialising System.
+@
+
+
+1.34
+log
+@Bug fix. The "ldc <class>" bytecode can throw an exception, so we need to treat it as such (previously it wasn't marked as throwing an exception, so an exception handler surrounding it could be "optimized" away). The new scheme is to patch the safe versions of ldc opcode into a ldc_nothrow.
+@
+text
+@d530 1
+a530 1
+			eic.Emitter.Emit(OpCodes.Newobj, DefineThreadLocalType(eic.Context, eic.OpcodeIndex, eic.Caller));
+a533 31
+		private static ConstructorBuilder DefineThreadLocalType(DynamicTypeWrapper.FinishContext context, int opcodeIndex, MethodWrapper caller)
+		{
+			TypeWrapper threadLocal = ClassLoaderWrapper.LoadClassCritical("ikvm.internal.IntrinsicThreadLocal");
+			TypeBuilder tb = caller.DeclaringType.TypeAsBuilder.DefineNestedType("__<tls>_" + opcodeIndex, TypeAttributes.NestedPrivate | TypeAttributes.Sealed, threadLocal.TypeAsBaseType);
+			FieldBuilder fb = tb.DefineField("field", Types.Object, FieldAttributes.Private | FieldAttributes.Static);
+			fb.SetCustomAttribute(new CustomAttributeBuilder(JVM.Import(typeof(ThreadStaticAttribute)).GetConstructor(Type.EmptyTypes), new object[0]));
+			MethodBuilder mbGet = tb.DefineMethod("get", MethodAttributes.Public | MethodAttributes.Virtual | MethodAttributes.Final, Types.Object, Type.EmptyTypes);
+			ILGenerator ilgen = mbGet.GetILGenerator();
+			ilgen.Emit(OpCodes.Ldsfld, fb);
+			ilgen.Emit(OpCodes.Ret);
+			MethodBuilder mbSet = tb.DefineMethod("set", MethodAttributes.Public | MethodAttributes.Virtual | MethodAttributes.Final, null, new Type[] { Types.Object });
+			ilgen = mbSet.GetILGenerator();
+			ilgen.Emit(OpCodes.Ldarg_1);
+			ilgen.Emit(OpCodes.Stsfld, fb);
+			ilgen.Emit(OpCodes.Ret);
+			ConstructorBuilder cb = tb.DefineConstructor(MethodAttributes.Assembly, CallingConventions.Standard, Type.EmptyTypes);
+			CodeEmitter ctorilgen = CodeEmitter.Create(cb);
+			ctorilgen.Emit(OpCodes.Ldarg_0);
+			MethodWrapper basector = threadLocal.GetMethodWrapper("<init>", "()V", false);
+			basector.Link();
+			basector.EmitCall(ctorilgen);
+			ctorilgen.Emit(OpCodes.Ret);
+			ctorilgen.DoEmit();
+			context.RegisterPostFinishProc(delegate
+			{
+				threadLocal.Finish();
+				tb.CreateType();
+			});
+			return cb;
+		}
+
+@
+
+
+1.33
+log
+@Made sun.misc.Unsafe.ensureClassInitialized() into an intrinsic.
+@
+text
+@d347 1
+a347 1
+				&& eic.Match(-1, NormalizedByteCode.__ldc))
+@
+
+
+1.32
+log
+@- Removed unnecessary methods from CodeEmitter.
+- Removed "Lazy" prefixes in CodeEmitter.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008-2010 Jeroen Frijters
+d189 1
+d564 17
+@
+
+
+1.31
+log
+@Remove usage of emitter stack peek methods (PeekLazyClassLiteral and PopLazyLdstr).
+@
+text
+@d240 2
+a241 2
+					eic.Emitter.LazyEmitPop();
+					eic.Emitter.LazyEmitLdc_I4(0);
+d419 1
+a419 1
+				eic.Emitter.LazyEmitPop();
+d479 1
+a479 1
+					eic.Emitter.LazyEmitPop();
+d498 1
+a498 1
+			eic.Emitter.LazyEmitPop();
+@
+
+
+1.30
+log
+@Build intermediate store of MSIL code in CodeEmitter to allow post-processing optimization steps.
+@
+text
+@d107 5
+d234 2
+a235 2
+			TypeWrapper classLiteral = eic.Emitter.PeekLazyClassLiteral();
+			if (classLiteral != null && classLiteral.GetClassLoader().RemoveAsserts)
+d237 7
+a243 7
+				eic.Emitter.LazyEmitPop();
+				eic.Emitter.LazyEmitLdc_I4(0);
+				return true;
+			}
+			else
+			{
+				return false;
+d245 1
+d345 2
+a346 2
+			string str = eic.Emitter.PopLazyLdstr();
+			if (str != null)
+d348 1
+d352 1
+a355 1
+				eic.Emitter.Emit(OpCodes.Ldstr, str);
+d473 2
+a474 2
+			TypeWrapper tw = eic.Emitter.PeekLazyClassLiteral();
+			if (tw != null)
+d476 2
+a477 2
+				eic.Emitter.LazyEmitPop();
+				if (tw.IsRemapped && tw.IsFinal)
+d479 11
+a489 5
+					eic.Emitter.Emit(OpCodes.Ldtoken, tw.TypeAsTBD);
+				}
+				else
+				{
+					eic.Emitter.Emit(OpCodes.Ldtoken, tw.TypeAsBaseType);
+a490 2
+				eic.Emitter.Emit(OpCodes.Call, Compiler.getTypeFromHandleMethod);
+				return true;
+@
+
+
+1.29
+log
+@Wrapped LocalBuilder in new CodeEmitterLocal class to allow CodeEmitter to encapsulate the ILGenerator fully.
+@
+text
+@d544 1
+@
+
+
+1.28
+log
+@Restructured method analyzer/verifier to make data flow more obvious and keep less data alive during compilation.
+@
+text
+@d274 1
+a274 1
+			LocalBuilder converter = ilgen.UnsafeAllocTempLocal(converterType);
+@
+
+
+1.27
+log
+@Move construction of EmitIntrinsicContext to compiler.
+@
+text
+@d46 1
+a46 1
+		readonly MethodAnalyzer ma;
+d53 1
+a53 1
+		internal EmitIntrinsicContext(MethodWrapper method, DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, Instruction[] code, InstructionFlags[] flags)
+@
+
+
+1.26
+log
+@Added wrapper class for intrinsic emitter method arguments to make things more manageable and to have a place to stick helper methods.
+@
+text
+@d43 1
+d53 1
+a53 1
+		internal EmitIntrinsicContext(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, Instruction[] code, InstructionFlags[] flags)
+d55 1
+d192 1
+a192 1
+		internal static bool Emit(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, Instruction[] code, InstructionFlags[] flags)
+d195 1
+a195 1
+			return intrinsics[new IntrinsicKey(method)](new EmitIntrinsicContext(context, ilgen, method, ma, opcodeIndex, caller, classFile, code, flags));
+@
+
+
+1.25
+log
+@Removed mutable flags field from Instruction.
+@
+text
+@d41 70
+d113 1
+a113 1
+		private delegate bool Emitter(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, Instruction[] code, InstructionFlags[] flags);
+d193 1
+a193 1
+			return intrinsics[new IntrinsicKey(method)](context, ilgen, method, ma, opcodeIndex, caller, classFile, code, flags);
+d196 1
+a196 1
+		private static bool Object_getClass(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, Instruction[] code, InstructionFlags[] flags)
+d199 2
+a200 1
+			if (code[opcodeIndex + 1].NormalizedOpCode == NormalizedByteCode.__pop)
+d202 2
+a203 2
+				ilgen.Emit(OpCodes.Dup);
+				ilgen.EmitNullCheck();
+d207 5
+a211 8
+			else if (opcodeIndex + 3 < code.Length
+				&& (flags[opcodeIndex + 1] & InstructionFlags.BranchTarget) == 0
+				&& (flags[opcodeIndex + 2] & InstructionFlags.BranchTarget) == 0
+				&& (flags[opcodeIndex + 3] & InstructionFlags.BranchTarget) == 0
+				&& code[opcodeIndex + 1].NormalizedOpCode == NormalizedByteCode.__aload
+				&& code[opcodeIndex + 2].NormalizedOpCode == NormalizedByteCode.__invokevirtual
+				&& (code[opcodeIndex + 3].NormalizedOpCode == NormalizedByteCode.__if_acmpeq || code[opcodeIndex + 3].NormalizedOpCode == NormalizedByteCode.__if_acmpne)
+				&& (IsSafeForGetClassOptimization(ma.GetStackTypeWrapper(opcodeIndex, 0)) || IsSafeForGetClassOptimization(ma.GetStackTypeWrapper(opcodeIndex + 2, 0))))
+d213 1
+a213 1
+				ClassFile.ConstantPoolItemMI cpi = classFile.GetMethodref(code[opcodeIndex + 2].Arg1);
+d217 2
+a218 2
+					ilgen.Emit(OpCodes.Callvirt, Compiler.getTypeMethod);
+					code[opcodeIndex + 2].PatchOpCode(NormalizedByteCode.__intrinsic_gettype);
+d225 1
+a225 1
+		private static bool Class_desiredAssertionStatus(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, Instruction[] code, InstructionFlags[] flags)
+d227 1
+a227 1
+			TypeWrapper classLiteral = ilgen.PeekLazyClassLiteral();
+d230 2
+a231 2
+				ilgen.LazyEmitPop();
+				ilgen.LazyEmitLdc_I4(0);
+d246 1
+a246 1
+		private static bool Float_floatToRawIntBits(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, Instruction[] code, InstructionFlags[] flags)
+d248 1
+a248 1
+			EmitConversion(ilgen, typeofFloatConverter, "ToInt");
+d252 1
+a252 1
+		private static bool Float_intBitsToFloat(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, Instruction[] code, InstructionFlags[] flags)
+d254 1
+a254 1
+			EmitConversion(ilgen, typeofFloatConverter, "ToFloat");
+d258 1
+a258 1
+		private static bool Double_doubleToRawLongBits(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, Instruction[] code, InstructionFlags[] flags)
+d260 1
+a260 1
+			EmitConversion(ilgen, typeofDoubleConverter, "ToLong");
+d264 1
+a264 1
+		private static bool Double_longBitsToDouble(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, Instruction[] code, InstructionFlags[] flags)
+d266 1
+a266 1
+			EmitConversion(ilgen, typeofDoubleConverter, "ToDouble");
+d277 1
+a277 1
+		private static bool System_arraycopy(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, Instruction[] code, InstructionFlags[] flags)
+d282 2
+a283 2
+			TypeWrapper dst_type = ma.GetStackTypeWrapper(opcodeIndex, 2);
+			TypeWrapper src_type = ma.GetStackTypeWrapper(opcodeIndex, 4);
+d290 1
+a290 1
+						ilgen.Emit(OpCodes.Call, ByteCodeHelperMethods.arraycopy_primitive_8);
+d294 1
+a294 1
+						ilgen.Emit(OpCodes.Call, ByteCodeHelperMethods.arraycopy_primitive_4);
+d298 1
+a298 1
+						ilgen.Emit(OpCodes.Call, ByteCodeHelperMethods.arraycopy_primitive_2);
+d302 1
+a302 1
+						ilgen.Emit(OpCodes.Call, ByteCodeHelperMethods.arraycopy_primitive_1);
+d314 1
+a314 1
+							ilgen.Emit(OpCodes.Call, ByteCodeHelperMethods.arraycopy_fast);
+d318 1
+a318 1
+							ilgen.Emit(OpCodes.Call, ByteCodeHelperMethods.arraycopy);
+d330 1
+a330 1
+		private static bool AtomicReferenceFieldUpdater_newUpdater(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, Instruction[] code, InstructionFlags[] flags)
+d332 1
+a332 1
+			return AtomicReferenceFieldUpdaterEmitter.Emit(context, caller.DeclaringType, ilgen, classFile, opcodeIndex, code, flags);
+d335 1
+a335 1
+		private static bool String_toCharArray(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, Instruction[] code, InstructionFlags[] flags)
+d337 1
+a337 1
+			string str = ilgen.PopLazyLdstr();
+d343 1
+a343 1
+					EmitLoadCharArrayLiteral(ilgen, str, caller.DeclaringType);
+d346 1
+a346 1
+				ilgen.Emit(OpCodes.Ldstr, str);
+d404 1
+a404 1
+		private static bool Reflection_getCallerClass(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, Instruction[] code, InstructionFlags[] flags)
+d406 7
+a412 9
+			if (caller.HasCallerID
+				&& opcodeIndex > 0
+				&& (flags[opcodeIndex - 1] & InstructionFlags.BranchTarget) == 0
+				&& code[opcodeIndex - 1].NormalizedOpCode == NormalizedByteCode.__iconst
+				&& code[opcodeIndex - 1].Arg1 == 2)
+			{
+				ilgen.LazyEmitPop();
+				int arg = caller.GetParametersForDefineMethod().Length - 1;
+				if (!caller.IsStatic)
+d416 1
+a416 1
+				ilgen.Emit(OpCodes.Ldarg, (short)arg);
+d419 1
+a419 1
+				mw.EmitCallvirt(ilgen);
+d425 1
+a425 1
+		private static bool ClassLoader_getCallerClassLoader(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, Instruction[] code, InstructionFlags[] flags)
+d427 1
+a427 1
+			if (caller.HasCallerID)
+d429 2
+a430 2
+				int arg = caller.GetParametersForDefineMethod().Length - 1;
+				if (!caller.IsStatic)
+d434 1
+a434 1
+				ilgen.Emit(OpCodes.Ldarg, (short)arg);
+d437 1
+a437 1
+				mw.EmitCallvirt(ilgen);
+d443 1
+a443 1
+		private static bool CallerID_getCallerID(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, Instruction[] code, InstructionFlags[] flags)
+d445 1
+a445 1
+			if (caller.HasCallerID)
+d447 2
+a448 2
+				int arg = caller.GetParametersForDefineMethod().Length - 1;
+				if (!caller.IsStatic)
+d452 1
+a452 1
+				ilgen.Emit(OpCodes.Ldarg, (short)arg);
+d462 1
+a462 1
+		private static bool Util_getInstanceTypeFromClass(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, Instruction[] code, InstructionFlags[] flags)
+d464 1
+a464 1
+			TypeWrapper tw = ilgen.PeekLazyClassLiteral();
+d467 1
+a467 1
+				ilgen.LazyEmitPop();
+d470 1
+a470 1
+					ilgen.Emit(OpCodes.Ldtoken, tw.TypeAsTBD);
+d474 1
+a474 1
+					ilgen.Emit(OpCodes.Ldtoken, tw.TypeAsBaseType);
+d476 1
+a476 1
+				ilgen.Emit(OpCodes.Call, Compiler.getTypeFromHandleMethod);
+d483 1
+a483 1
+		private static bool Class_getPrimitiveClass(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, Instruction[] code, InstructionFlags[] flags)
+d485 2
+a486 2
+			ilgen.LazyEmitPop();
+			ilgen.Emit(OpCodes.Ldnull);
+d489 1
+a489 1
+			mw.EmitNewobj(ilgen);
+d494 1
+a494 1
+		private static bool ThreadLocal_new(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, Instruction[] code, InstructionFlags[] flags)
+d498 1
+a498 1
+			if (caller.Name != StringConstants.CLINIT)
+d509 1
+a509 1
+			for (int i = 0; i <= opcodeIndex; i++)
+d511 1
+a511 1
+				if ((flags[i] & InstructionFlags.BranchTarget) != 0)
+d516 1
+a516 1
+			ilgen.Emit(OpCodes.Newobj, DefineThreadLocalType(context, opcodeIndex, caller));
+@
+
+
+1.24
+log
+@If class GC is enabled, don't intrinsify thread locals, because the CLR doesn't support ThreadStaticAttribute in RunAndCollect assemblies.
+@
+text
+@d36 2
+d43 1
+a43 1
+		private delegate bool Emitter(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code);
+d120 1
+a120 1
+		internal static bool Emit(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d123 1
+a123 1
+			return intrinsics[new IntrinsicKey(method)](context, ilgen, method, ma, opcodeIndex, caller, classFile, code);
+d126 1
+a126 1
+		private static bool Object_getClass(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d137 6
+a142 3
+				&& !code[opcodeIndex + 1].IsBranchTarget && code[opcodeIndex + 1].NormalizedOpCode == NormalizedByteCode.__aload
+				&& !code[opcodeIndex + 2].IsBranchTarget && code[opcodeIndex + 2].NormalizedOpCode == NormalizedByteCode.__invokevirtual
+				&& !code[opcodeIndex + 3].IsBranchTarget && (code[opcodeIndex + 3].NormalizedOpCode == NormalizedByteCode.__if_acmpeq || code[opcodeIndex + 3].NormalizedOpCode == NormalizedByteCode.__if_acmpne)
+d157 1
+a157 1
+		private static bool Class_desiredAssertionStatus(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d178 1
+a178 1
+		private static bool Float_floatToRawIntBits(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d184 1
+a184 1
+		private static bool Float_intBitsToFloat(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d190 1
+a190 1
+		private static bool Double_doubleToRawLongBits(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d196 1
+a196 1
+		private static bool Double_longBitsToDouble(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d209 1
+a209 1
+		private static bool System_arraycopy(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d262 1
+a262 1
+		private static bool AtomicReferenceFieldUpdater_newUpdater(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d264 1
+a264 1
+			return AtomicReferenceFieldUpdaterEmitter.Emit(context, caller.DeclaringType, ilgen, classFile, opcodeIndex, code);
+d267 1
+a267 1
+		private static bool String_toCharArray(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d336 1
+a336 1
+		private static bool Reflection_getCallerClass(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d340 1
+a340 1
+				&& !code[opcodeIndex - 1].IsBranchTarget
+d359 1
+a359 1
+		private static bool ClassLoader_getCallerClassLoader(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d377 1
+a377 1
+		private static bool CallerID_getCallerID(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d396 1
+a396 1
+		private static bool Util_getInstanceTypeFromClass(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d417 1
+a417 1
+		private static bool Class_getPrimitiveClass(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d428 1
+a428 1
+		private static bool ThreadLocal_new(DynamicTypeWrapper.FinishContext context, CodeEmitter ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d445 1
+a445 1
+				if (code[i].IsBranchTarget)
+@
+
+
+1.23
+log
+@Intrinsified ThreadLocal (under specific circumstances).
+@
+text
+@d431 7
+@
+
+
+1.22
+log
+@Removed IKVM_REF_EMIT, as STATIC_COMPILER or STUB_GENERATOR now always implies IKVM.Reflection.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008, 2009 Jeroen Frijters
+d109 1
+d422 49
+@
+
+
+1.21
+log
+@Integrated new IKVM.Reflection implementation.
+@
+text
+@d27 1
+a27 1
+#if IKVM_REF_EMIT
+@
+
+
+1.20
+log
+@Simplified the obj1.getClass() == obj2.getClass() intrinsic to avoid RuntimeTypeHandle. It turns out that on .NET 4.0 RuntimeTypeHandle.Value requires full trust and using RuntimeTypeHandle.Equals is actually slower than simply comparing the types (on .NET 4.0 beta 2, on .NET 2.0 this new approach is actually a bit slower, but the fact that the code is simpler and smaller is also worth something).
+@
+text
+@a26 1
+using System.Reflection;
+d28 1
+d30 1
+d32 1
+@
+
+
+1.19
+log
+@More ikvmc assembly/type refactoring.
+@
+text
+@d141 2
+a142 4
+					ilgen.Emit(OpCodes.Dup);
+					ilgen.EmitNullCheck();
+					ilgen.EmitGetTypeHandleValue();
+					code[opcodeIndex + 2].PatchOpCode(NormalizedByteCode.__intrinsic_gettypehandlevalue);
+@
+
+
+1.18
+log
+@Replaced most type literals with static field access (in Types class) or warpped JVM.Import() around them.
+@
+text
+@d77 2
+a78 2
+		private static readonly Type typeofFloatConverter = StaticCompiler.GetType("IKVM.Runtime.FloatConverter");
+		private static readonly Type typeofDoubleConverter = StaticCompiler.GetType("IKVM.Runtime.DoubleConverter");
+@
+
+
+1.17
+log
+@Removed EmitHelper class and moved its methods into CodeEmitter.
+@
+text
+@d292 1
+a292 1
+					TypeBuilder tb = mod.DefineType(typename, TypeAttributes.Sealed | TypeAttributes.Class | TypeAttributes.ExplicitLayout | TypeAttributes.NotPublic, typeof(ValueType), PackingSize.Size1, length);
+d304 1
+a304 1
+				ilgen.Emit(OpCodes.Call, typeof(string).GetMethod("ToCharArray", Type.EmptyTypes));
+d308 1
+a308 1
+			ilgen.Emit(OpCodes.Newarr, typeof(char));
+d327 1
+a327 1
+			ilgen.Emit(OpCodes.Call, typeof(System.Runtime.CompilerServices.RuntimeHelpers).GetMethod("InitializeArray", new Type[] { typeof(Array), typeof(RuntimeFieldHandle) }));
+@
+
+
+1.16
+log
+@Optimized primitive class literals.
+@
+text
+@d127 1
+a127 1
+				EmitHelper.NullCheck(ilgen);
+d142 2
+a143 2
+					EmitHelper.NullCheck(ilgen);
+					EmitHelper.GetTypeHandleValue(ilgen);
+@
+
+
+1.15
+log
+@Made ikvm.runtime.Util.getInstanceTypeFromClass() into an instrinsic, when used with a class literal.
+@
+text
+@d103 4
+d409 12
+@
+
+
+1.14
+log
+@- Moved class literal TypeWrapper -> Type step into expression emitter.
+- Fixed Class.desiredAssertionStatus() instrinsic to use the RemoveAsserts flag from the right class loader.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008 Jeroen Frijters
+d102 1
+d385 20
+@
+
+
+1.13
+log
+@- Added support for multi level stack tracking to CodeEmitter.
+- Made most Pop emitting lazy to enable optimizing them away (together with corresponding push).
+- Made loading class literal lazy, to enable optimizing them away when they aren't used (e.g. because an atomic intrinsic).
+- Made Class.desiredAssertionStatus() into an intrinsic, to be able to optimize it away when -removeassertions is used.
+@
+text
+@d148 2
+a149 1
+			if (caller.DeclaringType.GetClassLoader().RemoveAsserts)
+@
+
+
+1.12
+log
+@Added explicit null check (to avoid Type.GetTypeHandle form showing up in the stack trace) and don't do the optimization if we can't prove that either object isn't a ghost array.
+@
+text
+@d88 1
+d146 14
+d332 1
+a332 1
+				ilgen.Emit(OpCodes.Pop);
+@
+
+
+1.11
+log
+@Intrisified two uses of Object.getClass().
+@
+text
+@d128 2
+a129 1
+				&& !code[opcodeIndex + 3].IsBranchTarget && (code[opcodeIndex + 3].NormalizedOpCode == NormalizedByteCode.__if_acmpeq || code[opcodeIndex + 3].NormalizedOpCode == NormalizedByteCode.__if_acmpne))
+d135 2
+d145 6
+@
+
+
+1.10
+log
+@Disable String.toCharArray() intrinsic, because it relies on globals.
+@
+text
+@d87 1
+d115 27
+@
+
+
+1.9
+log
+@Workaround for Mono bug 467229.
+@
+text
+@d93 2
+d96 1
+@
+
+
+1.8
+log
+@Added critical failure for, what should be, an impossible code path.
+@
+text
+@d259 2
+a260 1
+			if (!fb.FieldType.Equals(type))
+@
+
+
+1.7
+log
+@Integrated IKVM.Reflection.Emit in ikvmc.
+@
+text
+@d321 4
+@
+
+
+1.6
+log
+@Removed GNU Classpath specific code that I missed.
+@
+text
+@d28 3
+d32 1
+@
+
+
+1.5
+log
+@- Renamed CountingILGenerator to CodeEmitter.
+- Renamed CountingLabel to CodeEmitterLabel.
+@
+text
+@a87 3
+#if !OPENDJK
+			intrinsics.Add(new IntrinsicKey("java.lang.VMSystem", "arraycopy", "(Ljava.lang.Object;ILjava.lang.Object;II)V"), System_arraycopy);
+#endif
+@
+
+
+1.4
+log
+@Refactored finish state/methods from JavaTypeImpl into FinishContext.
+@
+text
+@d35 1
+a35 1
+		private delegate bool Emitter(DynamicTypeWrapper.FinishContext context, CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code);
+d104 1
+a104 1
+		internal static bool Emit(DynamicTypeWrapper.FinishContext context, CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d110 1
+a110 1
+		private static bool Float_floatToRawIntBits(DynamicTypeWrapper.FinishContext context, CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d116 1
+a116 1
+		private static bool Float_intBitsToFloat(DynamicTypeWrapper.FinishContext context, CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d122 1
+a122 1
+		private static bool Double_doubleToRawLongBits(DynamicTypeWrapper.FinishContext context, CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d128 1
+a128 1
+		private static bool Double_longBitsToDouble(DynamicTypeWrapper.FinishContext context, CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d134 1
+a134 1
+		private static void EmitConversion(CountingILGenerator ilgen, Type converterType, string method)
+d141 1
+a141 1
+		private static bool System_arraycopy(DynamicTypeWrapper.FinishContext context, CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d194 1
+a194 1
+		private static bool AtomicReferenceFieldUpdater_newUpdater(DynamicTypeWrapper.FinishContext context, CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d199 1
+a199 1
+		private static bool String_toCharArray(DynamicTypeWrapper.FinishContext context, CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d215 1
+a215 1
+		private static void EmitLoadCharArrayLiteral(CountingILGenerator ilgen, string str, TypeWrapper tw)
+d267 1
+a267 1
+		private static bool Reflection_getCallerClass(DynamicTypeWrapper.FinishContext context, CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d290 1
+a290 1
+		private static bool ClassLoader_getCallerClassLoader(DynamicTypeWrapper.FinishContext context, CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d308 1
+a308 1
+		private static bool CallerID_getCallerID(DynamicTypeWrapper.FinishContext context, CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+@
+
+
+1.3
+log
+@- Implemented CallerID infrastructure.
+- Marked various methods with HasCallerID annotation.
+- Rewrote some methods to explicitly use CallerID.
+@
+text
+@d35 1
+a35 1
+		private delegate bool Emitter(CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code);
+d104 1
+a104 1
+		internal static bool Emit(CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d107 1
+a107 1
+			return intrinsics[new IntrinsicKey(method)](ilgen, method, ma, opcodeIndex, caller, classFile, code);
+d110 1
+a110 1
+		private static bool Float_floatToRawIntBits(CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d116 1
+a116 1
+		private static bool Float_intBitsToFloat(CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d122 1
+a122 1
+		private static bool Double_doubleToRawLongBits(CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d128 1
+a128 1
+		private static bool Double_longBitsToDouble(CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d141 1
+a141 1
+		private static bool System_arraycopy(CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d194 1
+a194 1
+		private static bool AtomicReferenceFieldUpdater_newUpdater(CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d196 1
+a196 1
+			return AtomicReferenceFieldUpdaterEmitter.Emit(caller.DeclaringType, ilgen, classFile, opcodeIndex, code);
+d199 1
+a199 1
+		private static bool String_toCharArray(CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d267 1
+a267 1
+		private static bool Reflection_getCallerClass(CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d290 1
+a290 1
+		private static bool ClassLoader_getCallerClassLoader(CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d308 1
+a308 1
+		private static bool CallerID_getCallerID(CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, MethodWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+@
+
+
+1.2
+log
+@Pass caller method instead of type to intrinsic infrastructure.
+@
+text
+@d93 3
+d266 56
+@
+
+
+1.1
+log
+@- added more efficient float/double to/from int/long bits converters
+- made Double.doubleToRawLongBits/longBitsToDouble and Float.floatToRawIntBits/intBitsToFloat intrinsics
+- generalized the intrinsics support
+@
+text
+@d35 1
+a35 1
+		private delegate bool Emitter(CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, TypeWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code);
+d101 1
+a101 1
+		internal static bool Emit(CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, TypeWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d107 1
+a107 1
+		private static bool Float_floatToRawIntBits(CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, TypeWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d113 1
+a113 1
+		private static bool Float_intBitsToFloat(CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, TypeWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d119 1
+a119 1
+		private static bool Double_doubleToRawLongBits(CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, TypeWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d125 1
+a125 1
+		private static bool Double_longBitsToDouble(CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, TypeWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d138 1
+a138 1
+		private static bool System_arraycopy(CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, TypeWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d191 1
+a191 1
+		private static bool AtomicReferenceFieldUpdater_newUpdater(CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, TypeWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d193 1
+a193 1
+			return AtomicReferenceFieldUpdaterEmitter.Emit(caller, ilgen, classFile, opcodeIndex, code);
+d196 1
+a196 1
+		private static bool String_toCharArray(CountingILGenerator ilgen, MethodWrapper method, MethodAnalyzer ma, int opcodeIndex, TypeWrapper caller, ClassFile classFile, ClassFile.Method.Instruction[] code)
+d204 1
+a204 1
+					EmitLoadCharArrayLiteral(ilgen, str, caller);
+@
+

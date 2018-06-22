@@ -1,0 +1,87 @@
+head	1.2;
+access;
+symbols
+	v8_1_5717_0:1.2
+	v8_1:1.2.0.14
+	v8_0_5449_1:1.2
+	v8_0_5449_0:1.2
+	v8_0:1.2.0.12
+	v7_4_5196_0:1.2
+	v7_4:1.2.0.10
+	v7_3:1.2.0.8
+	v7_2_4630_6:1.2
+	v7_2_4630_5:1.2
+	v7_2_4630_4:1.2
+	v7_2_4630_3:1.2
+	v7_2_4630_2:1.2
+	v0_46_0_4:1.1
+	v7_2_4630_1:1.2
+	v7_2:1.2.0.6
+	v7_1_4532_2:1.2
+	v7_1_4532_1:1.2
+	v7_1_4532_0:1.2
+	v7_1:1.2.0.4
+	v7_0_4335_3:1.2
+	v7_0_4335_2:1.2
+	v7_0_4335_1:1.2
+	v0_46_0_2:1.1
+	v7_0_4335_0:1.2
+	v7_0:1.2.0.2
+	v0_46_0_1:1.1
+	v0_46_0_0:1.1
+	v0_46:1.1.0.6
+	v0_44_0_6:1.1
+	v0_44_0_5:1.1
+	v0_44_0_4:1.1
+	v0_44_0_3:1.1
+	v0_44_0_2:1.1
+	v0_42_0_7:1.1
+	v0_44_0_1:1.1
+	v0_44_0_0:1.1
+	v0_44:1.1.0.4
+	v0_42_0_6:1.1
+	v0_42_0_5:1.1
+	v0_42_0_4:1.1
+	v0_42_0_3:1.1
+	v0_42_0_2:1.1
+	v0_42_0_1:1.1
+	v0_42_0_0:1.1
+	v0_42:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2011.05.13.10.21.48;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2009.06.26.06.53.09;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@Changed build and JNI code to use different names for the Windows x86 and x64 versions of the native dll.
+@
+text
+@This directory contains the Windows x86 specific version of JVM.DLL.
+@
+
+
+1.1
+log
+@Changed build to put architecture specific binaries in bin-x86 or bin-x64 directory. Note that the gcc build of libikvm-native.so still goes to bin.
+@
+text
+@d1 1
+a1 1
+This directory contains the Windows x86 specific versions of ikvm-native.dll and JVM.DLL.
+@
+

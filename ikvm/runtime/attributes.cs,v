@@ -1,0 +1,2768 @@
+head	1.49;
+access;
+symbols
+	v8_1_5717_0:1.49
+	v8_1:1.49.0.4
+	v8_0_5449_1:1.49
+	v8_0_5449_0:1.49
+	v8_0:1.49.0.2
+	v7_4_5196_0:1.45
+	v7_4:1.45.0.2
+	v7_3:1.42.0.2
+	v7_2_4630_6:1.40
+	v7_2_4630_5:1.40
+	v7_2_4630_4:1.40
+	v7_2_4630_3:1.40
+	v7_2_4630_2:1.40
+	v0_46_0_4:1.35
+	v7_2_4630_1:1.40
+	v7_2:1.40.0.2
+	v7_1_4532_2:1.39
+	v7_1_4532_1:1.39
+	v7_1_4532_0:1.39
+	v7_1:1.39.0.2
+	v7_0_4335_3:1.36
+	v7_0_4335_2:1.36
+	v7_0_4335_1:1.36
+	v0_46_0_2:1.35
+	v7_0_4335_0:1.36
+	v7_0:1.36.0.2
+	v0_40_0_6:1.27
+	v0_40_0_5:1.27
+	v0_46_0_1:1.35
+	v0_46_0_0:1.35
+	v0_46:1.35.0.2
+	v0_36_0_14:1.24.6.2
+	v0_44_0_6:1.33
+	v0_44_0_5:1.33
+	v0_44_0_4:1.33
+	v0_44_0_3:1.33
+	v0_44_0_2:1.33
+	v0_42_0_7:1.27
+	v0_44_0_1:1.33
+	v0_44_0_0:1.33
+	v0_44:1.33.0.2
+	v0_42_0_6:1.27
+	v0_42_0_5:1.27
+	v0_42_0_4:1.27
+	v0_42_0_3:1.27
+	v0_42_0_2:1.27
+	v0_42_0_1:1.27
+	v0_42_0_0:1.27
+	v0_42:1.27.0.6
+	v0_40_0_3:1.27
+	v0_40_0_2:1.27
+	v0_40_0_1:1.27
+	v0_40_0_0:1.27
+	v0_40:1.27.0.4
+	v0_36_0_13:1.24.6.2
+	v0_38_0_1:1.27
+	v0_38_0_0:1.27
+	v0_38:1.27.0.2
+	v0_36_0_9:1.24.6.2
+	v0_36_0_7:1.24.6.2
+	v0_36_0_5:1.24.6.2
+	v0_36_0_4:1.24.6.1
+	v0_36_0_3:1.24
+	v0_36_0_2:1.24
+	v0_36_0_1:1.24
+	v0_36_0_0:1.24
+	v0_36:1.24.0.6
+	v0_34_0_3:1.24
+	v0_34_0_2:1.24
+	v0_34_0_1:1.24
+	v0_34_0_0:1.24
+	v0_34:1.24.0.4
+	v0_32:1.24.0.2
+	v0_32_0_0:1.24
+	v0_30:1.21.0.2
+	v0_28_0_0:1.21
+	v0_26_0_1:1.18
+	v0_26_0_0:1.18
+	v0_24_0_1:1.18
+	v0_24_0_0:1.18
+	v0_22_0_0:1.17
+	v0_20_0_0:1.15
+	v0_18_0_0:1.13
+	v0_16_0_0:1.12
+	v0_14_0_1:1.10
+	v0_14_0_0:1.10
+	v0_12_0_0:1.10
+	v0_10_0_1:1.9
+	v0_10_0_0:1.9
+	v0_8_0_0:1.2;
+locks; strict;
+comment	@ * @;
+
+
+1.49
+date	2014.06.13.06.54.06;	author jfrijters;	state Exp;
+branches;
+next	1.48;
+
+1.48
+date	2014.06.05.12.38.09;	author jfrijters;	state Exp;
+branches;
+next	1.47;
+
+1.47
+date	2014.06.03.09.13.56;	author jfrijters;	state Exp;
+branches;
+next	1.46;
+
+1.46
+date	2014.06.02.13.25.40;	author jfrijters;	state Exp;
+branches;
+next	1.45;
+
+1.45
+date	2014.03.04.07.53.35;	author jfrijters;	state Exp;
+branches;
+next	1.44;
+
+1.44
+date	2014.02.24.17.00.24;	author jfrijters;	state Exp;
+branches;
+next	1.43;
+
+1.43
+date	2013.08.07.06.46.28;	author jfrijters;	state Exp;
+branches;
+next	1.42;
+
+1.42
+date	2013.02.05.14.54.20;	author jfrijters;	state Exp;
+branches;
+next	1.41;
+
+1.41
+date	2013.01.04.16.01.26;	author jfrijters;	state Exp;
+branches;
+next	1.40;
+
+1.40
+date	2012.08.06.12.12.03;	author jfrijters;	state Exp;
+branches;
+next	1.39;
+
+1.39
+date	2011.11.25.12.47.17;	author jfrijters;	state Exp;
+branches;
+next	1.38;
+
+1.38
+date	2011.11.23.06.20.34;	author jfrijters;	state Exp;
+branches;
+next	1.37;
+
+1.37
+date	2011.11.18.15.22.46;	author jfrijters;	state Exp;
+branches;
+next	1.36;
+
+1.36
+date	2011.06.27.13.15.18;	author jfrijters;	state Exp;
+branches;
+next	1.35;
+
+1.35
+date	2010.12.07.06.47.30;	author jfrijters;	state Exp;
+branches;
+next	1.34;
+
+1.34
+date	2010.08.05.13.43.01;	author jfrijters;	state Exp;
+branches;
+next	1.33;
+
+1.33
+date	2010.01.28.09.18.34;	author jfrijters;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2010.01.28.08.44.57;	author jfrijters;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2010.01.28.07.10.31;	author jfrijters;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2010.01.27.08.59.17;	author jfrijters;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2010.01.25.07.53.28;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2009.12.02.05.48.51;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2007.11.26.08.38.39;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2007.10.21.07.14.53;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2007.10.10.05.31.57;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2006.10.12.06.44.16;	author jfrijters;	state Exp;
+branches
+	1.24.6.1;
+next	1.23;
+
+1.23
+date	2006.10.09.08.29.43;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2006.08.17.13.18.46;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2006.05.15.09.08.01;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2006.04.10.09.09.10;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2006.04.05.08.19.00;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2005.12.07.09.06.32;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2005.11.01.14.01.43;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2005.10.01.11.16.12;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2005.08.22.12.50.42;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2005.08.14.15.49.50;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2005.07.07.11.24.10;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2005.06.19.10.44.53;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2005.05.31.15.30.39;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2005.02.02.15.12.20;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2004.12.22.08.04.10;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2004.12.21.10.26.54;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2004.11.23.17.46.43;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2004.11.16.11.11.54;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2004.10.19.13.43.57;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2004.09.09.11.17.55;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2004.08.17.09.05.25;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2004.06.07.08.28.57;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2004.05.27.07.12.12;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.24.6.1
+date	2007.10.12.16.18.41;	author jfrijters;	state Exp;
+branches;
+next	1.24.6.2;
+
+1.24.6.2
+date	2007.12.04.06.04.33;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.49
+log
+@Bug fix. Handle malformed UTF-16 (invalid surrogates) in type/member names and annotations.
+@
+text
+@/*
+  Copyright (C) 2002-2014 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using IKVM.Internal;
+#if STATIC_COMPILER || STUB_GENERATOR
+using IKVM.Reflection;
+using Type = IKVM.Reflection.Type;
+#else
+using System.Reflection;
+#endif
+
+namespace IKVM.Attributes
+{
+	[AttributeUsage(AttributeTargets.Module | AttributeTargets.Class | AttributeTargets.Interface | AttributeTargets.Struct | AttributeTargets.Delegate)]
+	public sealed class SourceFileAttribute : Attribute
+	{
+		private string file;
+
+		public SourceFileAttribute(string file)
+		{
+			this.file = file;
+		}
+
+		public string SourceFile
+		{
+			get
+			{
+				return file;
+			}
+		}
+	}
+
+	[AttributeUsage(AttributeTargets.Method | AttributeTargets.Constructor)]
+	public sealed class LineNumberTableAttribute : Attribute
+	{
+		private byte[] table;
+
+		public LineNumberTableAttribute(ushort lineno)
+		{
+			LineNumberWriter w = new LineNumberWriter(1);
+			w.AddMapping(0, lineno);
+			table = w.ToArray();
+		}
+
+		public LineNumberTableAttribute(byte[] table)
+		{
+			this.table = table;
+		}
+
+		public sealed class LineNumberWriter
+		{
+			private System.IO.MemoryStream stream;
+			private int prevILOffset;
+			private int prevLineNum;
+			private int count;
+
+			public LineNumberWriter(int estimatedCount)
+			{
+				stream = new System.IO.MemoryStream(estimatedCount * 2);
+			}
+
+			public void AddMapping(int ilOffset, int linenumber)
+			{
+				if(count == 0)
+				{
+					if(ilOffset == 0 && linenumber != 0)
+					{
+						prevLineNum = linenumber;
+						count++;
+						WritePackedInteger(linenumber - (64 + 50));
+						return;
+					}
+					else
+					{
+						prevLineNum = linenumber & ~3;
+						WritePackedInteger(((-prevLineNum / 4) - (64 + 50)));
+					}
+				}
+				bool pc_overflow;
+				bool lineno_overflow;
+				byte lead;
+				int deltaPC = ilOffset - prevILOffset;
+				if(deltaPC >= 0 && deltaPC < 31)
+				{
+					lead = (byte)deltaPC;
+					pc_overflow = false;
+				}
+				else
+				{
+					lead = (byte)31;
+					pc_overflow = true;
+				}
+				int deltaLineNo = linenumber - prevLineNum;
+				const int bias = 2;
+				if(deltaLineNo >= -bias && deltaLineNo < 7 - bias)
+				{
+					lead |= (byte)((deltaLineNo + bias) << 5);
+					lineno_overflow = false;
+				}
+				else
+				{
+					lead |= (byte)(7 << 5);
+					lineno_overflow = true;
+				}
+				stream.WriteByte(lead);
+				if(pc_overflow)
+				{
+					WritePackedInteger(deltaPC - (64 + 31));
+				}
+				if(lineno_overflow)
+				{
+					WritePackedInteger(deltaLineNo);
+				}
+				prevILOffset = ilOffset;
+				prevLineNum = linenumber;
+				count++;
+			}
+
+			public int Count
+			{
+				get
+				{
+					return count;
+				}
+			}
+
+			public int LineNo
+			{
+				get
+				{
+					return prevLineNum;
+				}
+			}
+
+			public byte[] ToArray()
+			{
+				return stream.ToArray();
+			}
+
+			/*
+			 * packed integer format:
+			 * ----------------------
+			 * 
+			 * First byte:
+			 * 00 - 7F      Single byte integer (-64 - 63)
+			 * 80 - BF      Double byte integer (-8192 - 8191)
+			 * C0 - DF      Triple byte integer (-1048576 - 1048576)
+			 * E0 - FE      Reserved
+			 * FF           Five byte integer
+			 */
+			private void WritePackedInteger(int val)
+			{
+				if(val >= -64 && val < 64)
+				{
+					val += 64;
+					stream.WriteByte((byte)val);
+				}
+				else if(val >= -8192 && val < 8192)
+				{
+					val += 8192;
+					stream.WriteByte((byte)(0x80 + (val >> 8)));
+					stream.WriteByte((byte)val);
+				}
+				else if(val >= -1048576 && val < 1048576)
+				{
+					val += 1048576;
+					stream.WriteByte((byte)(0xC0 + (val >> 16)));
+					stream.WriteByte((byte)(val >> 8));
+					stream.WriteByte((byte)val);
+				}
+				else
+				{
+					stream.WriteByte(0xFF);
+					stream.WriteByte((byte)(val >> 24));
+					stream.WriteByte((byte)(val >> 16));
+					stream.WriteByte((byte)(val >>  8));
+					stream.WriteByte((byte)(val >>  0));
+				}
+			}
+		}
+
+		private int ReadPackedInteger(ref int position)
+		{
+			byte b = table[position++];
+			if(b < 128)
+			{
+				return b - 64;
+			}
+			else if((b & 0xC0) == 0x80)
+			{
+				return ((b & 0x7F) << 8) + table[position++] - 8192;
+			}
+			else if((b & 0xE0) == 0xC0)
+			{
+				int val = ((b & 0x3F) << 16);
+				val += (table[position++] << 8);
+				val += table[position++];
+				return val - 1048576;
+			}
+			else if(b == 0xFF)
+			{
+				int val = table[position++] << 24;
+				val += table[position++] << 16;
+				val += table[position++] <<  8;
+				val += table[position++] <<  0;
+				return val;
+			}
+			else
+			{
+				throw new InvalidProgramException();
+			}
+		}
+
+		public int GetLineNumber(int ilOffset)
+		{
+			int i = 0;
+			int prevILOffset = 0;
+			int prevLineNum = ReadPackedInteger(ref i) + (64 + 50);
+			int line;
+			if(prevLineNum > 0)
+			{
+				line = prevLineNum;
+			}
+			else
+			{
+				prevLineNum = 4 * -prevLineNum;
+				line = -1;
+			}
+			while(i < table.Length)
+			{
+				byte lead = table[i++];
+				int deltaPC = lead & 31;
+				int deltaLineNo = (lead >> 5) - 2;
+				if(deltaPC == 31)
+				{
+					deltaPC = ReadPackedInteger(ref i) + (64 + 31);
+				}
+				if(deltaLineNo == 5)
+				{
+					deltaLineNo = ReadPackedInteger(ref i);
+				}
+				int currILOffset = prevILOffset + deltaPC;
+				if(currILOffset > ilOffset)
+				{
+					return line;
+				}
+				line = prevLineNum + deltaLineNo;
+				prevILOffset = currILOffset;
+				prevLineNum = line;
+			}
+			return line;
+		}
+	}
+
+	[AttributeUsage(AttributeTargets.Class)]
+	public sealed class ExceptionIsUnsafeForMappingAttribute : Attribute
+	{
+	}
+
+	[AttributeUsage(AttributeTargets.Interface)]
+	public sealed class RemappedInterfaceMethodAttribute : Attribute
+	{
+		private string name;
+		private string mappedTo;
+		private string[] throws;
+
+		public RemappedInterfaceMethodAttribute(string name, string mappedTo, string[] throws)
+		{
+			this.name = name;
+			this.mappedTo = mappedTo;
+			this.throws = throws;
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+		}
+
+		public string MappedTo
+		{
+			get
+			{
+				return mappedTo;
+			}
+		}
+
+		public string[] Throws
+		{
+			get
+			{
+				return throws;
+			}
+		}
+	}
+
+	[AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]
+	public sealed class RemappedClassAttribute : Attribute
+	{
+		private string name;
+		private Type remappedType;
+
+#if STUB_GENERATOR
+		public RemappedClassAttribute(string name, System.Type remappedType)
+		{
+		}
+#endif
+
+		public RemappedClassAttribute(string name, Type remappedType)
+		{
+			this.name = name;
+			this.remappedType = remappedType;
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+		}
+
+		public Type RemappedType
+		{
+			get
+			{
+				return remappedType;
+			}
+		}
+	}
+
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface)]
+	public sealed class RemappedTypeAttribute : Attribute
+	{
+		private Type type;
+
+#if STUB_GENERATOR
+		public RemappedTypeAttribute(System.Type type)
+		{
+		}
+#endif
+
+		public RemappedTypeAttribute(Type type)
+		{
+			this.type = type;
+		}
+
+		public Type Type
+		{
+			get
+			{
+				return type;
+			}
+		}
+	}
+
+	[AttributeUsage(AttributeTargets.Module)]
+	public sealed class JavaModuleAttribute : Attribute
+	{
+		private string[] classMap;
+		private string[] jars;
+
+		public JavaModuleAttribute()
+		{
+		}
+
+		public JavaModuleAttribute(string[] classMap)
+		{
+			this.classMap = UnicodeUtil.UnescapeInvalidSurrogates(classMap);
+		}
+
+		public string[] GetClassMap()
+		{
+			return classMap;
+		}
+
+		public string[] Jars
+		{
+			get { return jars; }
+			set { jars = value; }
+		}
+	}
+
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Interface | AttributeTargets.Delegate | AttributeTargets.Enum | AttributeTargets.Assembly)]
+	public sealed class NoPackagePrefixAttribute : Attribute
+	{
+	}
+
+	[AttributeUsage(AttributeTargets.Struct)]
+	public sealed class GhostInterfaceAttribute : Attribute
+	{
+	}
+
+	// Whenever the VM or compiler generates a helper class/method/field, it should be marked
+	// with this custom attribute, so that it can be hidden from Java.
+	[AttributeUsage(AttributeTargets.All)]
+	public sealed class HideFromJavaAttribute : Attribute
+	{
+		private readonly HideFromJavaFlags flags;
+
+		public HideFromJavaAttribute()
+		{
+			flags = HideFromJavaFlags.All;
+		}
+
+		public HideFromJavaAttribute(HideFromJavaFlags flags)
+		{
+			this.flags = flags;
+		}
+
+		public HideFromJavaFlags Flags
+		{
+			get { return flags; }
+		}
+	}
+
+	[Flags]
+	public enum HideFromJavaFlags : byte
+	{
+		All = Code | Reflection | StackWalk | StackTrace,
+		None = 0,
+		Code = 1,
+		Reflection = 2,
+		StackWalk = 4,		// used for LambdaForm$Compiled
+		StackTrace = 8,		// used for LambdaForm$Hidden
+	}
+
+	[Flags]
+	public enum Modifiers : ushort
+	{
+		Public			= 0x0001,
+		Private			= 0x0002,
+		Protected		= 0x0004,
+		Static			= 0x0008,
+		Final			= 0x0010,
+		Super			= 0x0020,
+		Synchronized	= 0x0020,
+		Volatile		= 0x0040,
+		Bridge			= 0x0040,
+		Transient		= 0x0080,
+		VarArgs			= 0x0080,
+		Native			= 0x0100,
+		Interface		= 0x0200,
+		Abstract		= 0x0400,
+		Strictfp		= 0x0800,
+		Synthetic		= 0x1000,
+		Annotation		= 0x2000,
+		Enum			= 0x4000,
+
+		// Masks
+		AccessMask		= Public | Private | Protected
+	}
+
+	[AttributeUsage(AttributeTargets.All)]
+	public sealed class ModifiersAttribute : Attribute
+	{
+		private Modifiers modifiers;
+		private bool isInternal;
+
+		public ModifiersAttribute(Modifiers modifiers)
+		{
+			this.modifiers = modifiers;
+		}
+
+		public ModifiersAttribute(Modifiers modifiers, bool isInternal)
+		{
+			this.modifiers = modifiers;
+			this.isInternal = isInternal;
+		}
+
+		public bool IsInternal
+		{
+			get
+			{
+				return isInternal;
+			}
+		}
+
+		public Modifiers Modifiers
+		{
+			get
+			{
+				return modifiers;
+			}
+		}
+	}
+
+	[AttributeUsage(AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Field)]
+	public sealed class NameSigAttribute : Attribute
+	{
+		private string name;
+		private string sig;
+
+		public NameSigAttribute(string name, string sig)
+		{
+			this.name = UnicodeUtil.UnescapeInvalidSurrogates(name);
+			this.sig = UnicodeUtil.UnescapeInvalidSurrogates(sig);
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+		}
+
+		public string Sig
+		{
+			get
+			{
+				return sig;
+			}
+		}
+	}
+
+	[AttributeUsage(AttributeTargets.Constructor | AttributeTargets.Method)]
+	public sealed class ThrowsAttribute : Attribute
+	{
+		internal string[] classes;
+		internal Type[] types;
+
+		// this constructor is used by ikvmc, the other constructors are for use in other .NET languages
+		public ThrowsAttribute(string[] classes)
+		{
+			this.classes = UnicodeUtil.UnescapeInvalidSurrogates(classes);
+		}
+
+		public ThrowsAttribute(Type type)
+			: this(new Type[] { type })
+		{
+		}
+
+		public ThrowsAttribute(params Type[] types)
+		{
+			this.types = types;
+		}
+
+		// dotted Java class names (e.g. java.lang.Throwable)
+		[Obsolete]
+		public string[] Classes
+		{
+			get
+			{
+				return classes;
+			}
+		}
+	}
+
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface)]
+	public sealed class ImplementsAttribute : Attribute
+	{
+		private string[] interfaces;
+
+		// NOTE this is not CLS compliant, so maybe we should have a couple of overloads
+		public ImplementsAttribute(string[] interfaces)
+		{
+			this.interfaces = UnicodeUtil.UnescapeInvalidSurrogates(interfaces);
+		}
+
+		public string[] Interfaces
+		{
+			get
+			{
+				return interfaces;
+			}
+		}
+	}
+
+	// NOTE this attribute is also used by annotation attribute classes,
+	// to give them a different name in the Java world ($Proxy[Annotation]).
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface)]
+	public sealed class InnerClassAttribute : Attribute
+	{
+		private string innerClassName;
+		private Modifiers modifiers;
+
+		public InnerClassAttribute(string innerClassName, Modifiers modifiers)
+		{
+			this.innerClassName = UnicodeUtil.UnescapeInvalidSurrogates(innerClassName);
+			this.modifiers = modifiers;
+		}
+
+		public string InnerClassName
+		{
+			get
+			{
+				return innerClassName;
+			}
+		}
+
+		public Modifiers Modifiers
+		{
+			get
+			{
+				return modifiers;
+			}
+		}
+	}
+
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = true)]
+	public sealed class NonNestedInnerClassAttribute : Attribute
+	{
+		private string innerClassName;
+
+		public NonNestedInnerClassAttribute(string innerClassName)
+		{
+			this.innerClassName = UnicodeUtil.UnescapeInvalidSurrogates(innerClassName);
+		}
+
+		public string InnerClassName
+		{
+			get
+			{
+				return innerClassName;
+			}
+		}
+	}
+
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface)]
+	public sealed class NonNestedOuterClassAttribute : Attribute
+	{
+		private string outerClassName;
+
+		public NonNestedOuterClassAttribute(string outerClassName)
+		{
+			this.outerClassName = UnicodeUtil.UnescapeInvalidSurrogates(outerClassName);
+		}
+
+		public string OuterClassName
+		{
+			get
+			{
+				return outerClassName;
+			}
+		}
+	}
+
+	[AttributeUsage(AttributeTargets.Assembly)]
+	public sealed class CustomAssemblyClassLoaderAttribute : Attribute
+	{
+		private Type type;
+
+		public CustomAssemblyClassLoaderAttribute(Type type)
+		{
+			this.type = type;
+		}
+
+		public Type Type
+		{
+			get
+			{
+				return type;
+			}
+		}
+	}
+
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface | AttributeTargets.Method | AttributeTargets.Field)]
+	public sealed class SignatureAttribute : Attribute
+	{
+		private string signature;
+
+		public SignatureAttribute(string signature)
+		{
+			this.signature = UnicodeUtil.UnescapeInvalidSurrogates(signature);
+		}
+
+		public string Signature
+		{
+			get
+			{
+				return signature;
+			}
+		}
+	}
+
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface)]
+	public sealed class EnclosingMethodAttribute : Attribute
+	{
+		private string className;
+		private string methodName;
+		private string methodSig;
+
+		public EnclosingMethodAttribute(string className, string methodName, string methodSig)
+		{
+			this.className = UnicodeUtil.UnescapeInvalidSurrogates(className);
+			this.methodName = UnicodeUtil.UnescapeInvalidSurrogates(methodName);
+			this.methodSig = UnicodeUtil.UnescapeInvalidSurrogates(methodSig);
+		}
+
+		internal EnclosingMethodAttribute SetClassName(Type type)
+		{
+			if (className == null)
+			{
+				className = IKVM.Internal.ClassLoaderWrapper.GetWrapperFromType(type.DeclaringType).Name;
+			}
+			return this;
+		}
+
+		public string ClassName
+		{
+			get
+			{
+				return className;
+			}
+		}
+
+		public string MethodName
+		{
+			get
+			{
+				return methodName;
+			}
+		}
+
+		public string MethodSignature
+		{
+			get
+			{
+				return methodSig;
+			}
+		}
+	}
+
+	[AttributeUsage(AttributeTargets.Method)]
+	public sealed class AnnotationDefaultAttribute : Attribute
+	{
+		public const byte TAG_ENUM = (byte)'e';
+		public const byte TAG_CLASS = (byte)'c';
+		public const byte TAG_ANNOTATION = (byte)'@@';
+		public const byte TAG_ARRAY = (byte)'[';
+		public const byte TAG_ERROR = (byte)'?';
+		private object defaultValue;
+
+		// element_value encoding:
+		// primitives:
+		//   boxed values
+		// string:
+		//   string
+		// enum:
+		//   new object[] { (byte)'e', "<EnumType>", "<enumvalue>" }
+		// class:
+		//   new object[] { (byte)'c', "<Type>" }
+		// annotation:
+		//   new object[] { (byte)'@@', "<AnnotationType>", ("name", (element_value))* }
+		// array:
+		//   new object[] { (byte)'[', (element_value)* }
+		// error:
+		//   new object[] { (byte)'?', "<exceptionClass>", "<exceptionMessage>" }
+		public AnnotationDefaultAttribute(object defaultValue)
+		{
+			this.defaultValue = Unescape(defaultValue);
+		}
+
+		public object Value
+		{
+			get
+			{
+				return defaultValue;
+			}
+		}
+
+		internal static object Escape(object obj)
+		{
+			return EscapeOrUnescape(obj, true);
+		}
+
+		internal static object Unescape(object obj)
+		{
+			return EscapeOrUnescape(obj, false);
+		}
+
+		private static object EscapeOrUnescape(object obj, bool escape)
+		{
+			string str = obj as string;
+			if (str != null)
+			{
+				return escape
+					? UnicodeUtil.EscapeInvalidSurrogates(str)
+					: UnicodeUtil.UnescapeInvalidSurrogates(str);
+			}
+			object[] arr = obj as object[];
+			if (arr != null)
+			{
+				for (int i = 0; i < arr.Length; i++)
+				{
+					arr[i] = EscapeOrUnescape(arr[i], escape);
+				}
+			}
+			return obj;
+		}
+	}
+
+	[AttributeUsage(AttributeTargets.Interface)]
+	public sealed class AnnotationAttributeAttribute : Attribute
+	{
+		private string attributeType;
+
+		public AnnotationAttributeAttribute(string attributeType)
+		{
+			this.attributeType = UnicodeUtil.UnescapeInvalidSurrogates(attributeType);
+		}
+
+		public string AttributeType
+		{
+			get
+			{
+				return attributeType;
+			}
+		}
+	}
+
+	[AttributeUsage(AttributeTargets.Module, AllowMultiple = true)]
+	public sealed class PackageListAttribute : Attribute
+	{
+		internal string jar;
+		internal string[] packages;
+
+		public PackageListAttribute(string jar, string[] packages)
+		{
+			this.jar = jar;
+			this.packages = UnicodeUtil.UnescapeInvalidSurrogates(packages);
+		}
+
+		public string[] GetPackages()
+		{
+			return packages;
+		}
+	}
+
+	[AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]
+	public sealed class JavaResourceAttribute : Attribute
+	{
+		private readonly string javaName;
+		private readonly string resourceName;
+
+		public JavaResourceAttribute(string javaName, string resourceName)
+		{
+			this.javaName = javaName;
+			this.resourceName = resourceName;
+		}
+
+		public string JavaName
+		{
+			get { return javaName; }
+		}
+
+		public string ResourceName
+		{
+			get { return resourceName; }
+		}
+	}
+
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Delegate | AttributeTargets.Enum | AttributeTargets.Interface | AttributeTargets.Struct | AttributeTargets.Field | AttributeTargets.Property | AttributeTargets.Method | AttributeTargets.Constructor | AttributeTargets.Parameter, AllowMultiple = false)]
+	public sealed class DynamicAnnotationAttribute : Attribute
+	{
+		private readonly object[] definition;
+
+		public DynamicAnnotationAttribute(object[] definition)
+		{
+			this.definition = (object[])AnnotationDefaultAttribute.Unescape(definition);
+		}
+
+		public object[] Definition
+		{
+			get { return definition; }
+		}
+	}
+
+	[AttributeUsage(AttributeTargets.Method | AttributeTargets.Constructor)]
+	public sealed class MethodParametersAttribute : Attribute
+	{
+		private readonly Modifiers[] modifiers;
+
+		public MethodParametersAttribute(Modifiers[] modifiers)
+		{
+			this.modifiers = modifiers;
+		}
+
+		public Modifiers[] Modifiers
+		{
+			get { return modifiers; }
+		}
+
+		public bool IsMalformed
+		{
+			get { return modifiers == null; }
+		}
+	}
+
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface)]
+	public sealed class ConstantPoolAttribute : Attribute
+	{
+		internal readonly object[] constantPool;
+
+		public ConstantPoolAttribute(object[] constantPool)
+		{
+			this.constantPool = Decompress(constantPool);
+		}
+
+		internal static object[] Decompress(object[] constantPool)
+		{
+			List<object> list = new List<object>();
+			foreach (object obj in constantPool)
+			{
+				int emptySlots = obj as byte? ?? obj as ushort? ?? 0;
+				if (emptySlots == 0)
+				{
+					list.Add(Unescape(obj));
+				}
+				else
+				{
+					for (int i = 0; i < emptySlots; i++)
+					{
+						list.Add(null);
+					}
+				}
+			}
+			return list.ToArray();
+		}
+
+		private static object Unescape(object obj)
+		{
+			string str = obj as string;
+			if (str != null)
+			{
+				obj = UnicodeUtil.UnescapeInvalidSurrogates(str);
+			}
+			return obj;
+		}
+
+		internal static object[] Compress(object[] constantPool, bool[] inUse)
+		{
+			int length = constantPool.Length;
+			while (!inUse[length - 1])
+			{
+				length--;
+			}
+			int write = 0;
+			for (int read = 0; read < length; read++)
+			{
+				int start = read;
+				while (!inUse[read])
+				{
+					read++;
+				}
+				int emptySlots = read - start;
+				if (emptySlots > 255)
+				{
+					constantPool[write++] = (ushort)emptySlots;
+				}
+				else if (emptySlots > 0)
+				{
+					constantPool[write++] = (byte)emptySlots;
+				}
+				constantPool[write++] = Escape(constantPool[read]);
+			}
+			Array.Resize(ref constantPool, write);
+			return constantPool;
+		}
+
+		private static object Escape(object obj)
+		{
+			string str = obj as string;
+			if (str != null)
+			{
+				obj = UnicodeUtil.EscapeInvalidSurrogates(str);
+			}
+			return obj;
+		}
+	}
+
+	[AttributeUsage(AttributeTargets.Method | AttributeTargets.Constructor | AttributeTargets.Field)]
+	public sealed class RuntimeVisibleTypeAnnotationsAttribute : Attribute
+	{
+		internal readonly byte[] data;
+
+		public RuntimeVisibleTypeAnnotationsAttribute(byte[] data)
+		{
+			this.data = data;
+		}
+	}
+
+	// used in custom modifier for access stubs
+	public static class AccessStub { }
+}
+@
+
+
+1.48
+log
+@Implemented type annotation reflection for statically compiled classes.
+@
+text
+@d26 1
+d393 1
+a393 1
+			this.classMap = classMap;
+d520 2
+a521 2
+			this.name = name;
+			this.sig = sig;
+d550 1
+a550 1
+			this.classes = classes;
+d582 1
+a582 1
+			this.interfaces = interfaces;
+d604 1
+a604 1
+			this.innerClassName = innerClassName;
+d632 1
+a632 1
+			this.innerClassName = innerClassName;
+d651 1
+a651 1
+			this.outerClassName = outerClassName;
+d689 1
+a689 1
+			this.signature = signature;
+d710 3
+a712 3
+			this.className = className;
+			this.methodName = methodName;
+			this.methodSig = methodSig;
+d776 1
+a776 1
+			this.defaultValue = defaultValue;
+d786 30
+d825 1
+a825 1
+			this.attributeType = attributeType;
+d846 1
+a846 1
+			this.packages = packages;
+d885 1
+a885 1
+			this.definition = definition;
+d925 1
+a925 1
+		private static object[] Decompress(object[] constantPool)
+d933 1
+a933 1
+					list.Add(obj);
+d946 10
+d980 1
+a980 1
+				constantPool[write++] = constantPool[read];
+d985 10
+@
+
+
+1.47
+log
+@Added support for MethodParameters in statically compiled classes.
+@
+text
+@d884 73
+@
+
+
+1.46
+log
+@Fixed PackageListAttribute to be ECMA compliant.
+@
+text
+@d863 21
+@
+
+
+1.45
+log
+@Added support for getting package information from the right jar manifest for ikvmc compiled jars.
+@
+text
+@d806 1
+a806 1
+	[AttributeUsage(AttributeTargets.Module)]
+d809 2
+a810 1
+		internal string[][] packageInfo;
+d812 1
+a812 5
+		/*
+		 * Format:
+		 *    [ [ "jar file", "package 1", ..., "package N" ], ... ]
+		 */
+		public PackageListAttribute(string[][] packageInfo)
+d814 2
+a815 1
+			this.packageInfo = packageInfo;
+d820 1
+a820 9
+			List<string> list = new List<string>();
+			foreach (string[] packages in packageInfo)
+			{
+				for (int i = 1; i < packages.Length; i++)
+				{
+					list.Add(packages[i]);
+				}
+			}
+			return list.ToArray();
+@
+
+
+1.44
+log
+@- Removed HideFromReflectionAttribute.
+- Added flags to HideFromJavaAttribute to support different levels of hiding (including the previous usage of HideFromReflectionAttribute and adding specific ability to hide from security stack walking and from stack traces, for future LamdbaForm support).
+@
+text
+@d25 1
+d809 1
+a809 1
+		private string[] packages;
+d811 5
+a815 1
+		public PackageListAttribute(string[] packages)
+d817 1
+a817 1
+			this.packages = packages;
+d822 9
+a830 1
+			return packages;
+@
+
+
+1.43
+log
+@Don't store class name in EnclosingMethodAttribute if we can use the DeclaringType.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002-2011 Jeroen Frijters
+d421 16
+d439 2
+a440 2
+	[AttributeUsage(AttributeTargets.Method | AttributeTargets.Field | AttributeTargets.Property)]
+	public sealed class HideFromReflectionAttribute : Attribute
+d442 6
+@
+
+
+1.42
+log
+@Added support for "dynamic" (non-loadable type) annotations in statically compiled code.
+@
+text
+@d691 9
+@
+
+
+1.41
+log
+@- Expose .NET resources in non-Java assemblies as Java resources.
+- Add custom attribute to expose .NET resource under a different name.
+@
+text
+@d813 16
+@
+
+
+1.40
+log
+@- Marked MemberWrapper class abstract.
+- Marked all classes that don't (and shouldn't) have subclasses sealed.
+@
+text
+@d790 23
+@
+
+
+1.39
+log
+@Don't mangle property accessor method names, but use a custom modifier instead.
+@
+text
+@d70 1
+a70 1
+		public class LineNumberWriter
+@
+
+
+1.38
+log
+@Implemented type 2 access stubs for methods (not constructors) and rewrote how type 1 access stubs are handled.
+@
+text
+@d789 3
+@
+
+
+1.37
+log
+@Fixed several type 1 method access stub issues.
+@
+text
+@a425 22
+		private readonly int reason;
+		// reasons
+		public const int Unknown = 0;
+		public const int Type1aAccessStub = 1;
+		public const int Type1bAccessStubVirtual = 2;
+		public const int Type1bAccessStubNonVirtual = 3;
+		public const int Type1bAccessStubStatic = 4;
+
+		public HideFromReflectionAttribute()
+			: this(Unknown)
+		{
+		}
+
+		public HideFromReflectionAttribute(int reason)
+		{
+			this.reason = reason;
+		}
+
+		public int Reason
+		{
+			get { return reason; }
+		}
+@
+
+
+1.36
+log
+@Added support for declaring exceptions on shadow interface methods.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002, 2003, 2004, 2005, 2006 Jeroen Frijters
+d423 1
+a423 1
+	[AttributeUsage(AttributeTargets.Method | AttributeTargets.Property)]
+d426 22
+@
+
+
+1.35
+log
+@Added support for encoding incorrect annotation values and reporting the exception back when the annotation is queried.
+Removed old (GNU Classpath based) version of AnnotationAttributeBase.java.
+@
+text
+@d280 1
+a280 1
+	[AttributeUsage(AttributeTargets.Method)]
+d285 1
+d287 1
+a287 1
+		public RemappedInterfaceMethodAttribute(string name, string mappedTo)
+d291 1
+d309 8
+@
+
+
+1.34
+log
+@Massive change to change resource handling. Java resources are now stored in jars that are stored as managed .NET resources. The jars are projected into VFS and the assembly class loaders know how to load resources from these jars.
+@
+text
+@d713 1
+d729 2
+@
+
+
+1.33
+log
+@Removed IKVM_REF_EMIT, as STATIC_COMPILER or STUB_GENERATOR now always implies IKVM.Reflection.
+@
+text
+@d373 1
+d388 6
+@
+
+
+1.32
+log
+@Removed "constant" instance field support (which was only used by ikvmstub and doesn't make any sense anyway).
+@
+text
+@d25 1
+a25 1
+#if IKVM_REF_EMIT
+@
+
+
+1.31
+log
+@More preparations for new stub generator.
+- When compiling ikvmstub, do type comparisons by name only.
+- Replace two cases of typeof() with references to Types fields.
+- Added RemappedClassAttribute and RemappedTypeAttribute constructors that explicitly take System.Type (when compiling ikvmstub)
+- Avoid unnecessary reference to System.Configuration.dll in tracer.cs (when compiling ikvmstub).
+@
+text
+@a640 56
+	[AttributeUsage(AttributeTargets.Field)]
+	public sealed class ConstantValueAttribute : Attribute
+	{
+		private object val;
+
+		public ConstantValueAttribute(bool val)
+		{
+			this.val = val;
+		}
+
+		public ConstantValueAttribute(byte val)
+		{
+			this.val = val;
+		}
+
+		public ConstantValueAttribute(short val)
+		{
+			this.val = val;
+		}
+
+		public ConstantValueAttribute(char val)
+		{
+			this.val = val;
+		}
+
+		public ConstantValueAttribute(int val)
+		{
+			this.val = val;
+		}
+
+		public ConstantValueAttribute(long val)
+		{
+			this.val = val;
+		}
+
+		public ConstantValueAttribute(float val)
+		{
+			this.val = val;
+		}
+
+		public ConstantValueAttribute(double val)
+		{
+			this.val = val;
+		}
+
+		public ConstantValueAttribute(string val)
+		{
+			this.val = val;
+		}
+
+		public object GetConstantValue()
+		{
+			return val;
+		}
+	}
+
+@
+
+
+1.30
+log
+@RemappedClassAttribute should have AllowMultiple = true.
+@
+text
+@d315 6
+d349 6
+@
+
+
+1.29
+log
+@Integrated new IKVM.Reflection implementation.
+@
+text
+@d309 1
+a309 1
+	[AttributeUsage(AttributeTargets.Assembly)]
+@
+
+
+1.28
+log
+@Added two constructors to ThowsAttribute that take a Type and a Type[] for greater convenience when applying the attribute to user code and for compatibility with Grasshopper's ThrowsAttribute.
+@
+text
+@d25 4
+d30 1
+@
+
+
+1.27
+log
+@- Removed .NET 1.1 specific code
+- Removed conditional compilation of .NET 2.0 specific code
+@
+text
+@d486 2
+a487 1
+		private string[] classes;
+d489 1
+a489 1
+		// NOTE this is not CLS compliant, so maybe we should have a couple of overloads
+d495 10
+d506 1
+@
+
+
+1.26
+log
+@Added support for custom assembly class loaders.
+@
+text
+@d29 1
+d48 1
+d372 1
+a372 1
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Interface | AttributeTargets.Assembly)]
+@
+
+
+1.25
+log
+@JLS binary compat fix. Public inner classes should not be nested inside non public types.
+@
+text
+@d591 19
+@
+
+
+1.24
+log
+@*** empty log message ***
+@
+text
+@d553 38
+@
+
+
+1.24.6.1
+log
+@Backported fixes. Changed version to 0.36.0.4.
+@
+text
+@a552 38
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = true)]
+	public sealed class NonNestedInnerClassAttribute : Attribute
+	{
+		private string innerClassName;
+
+		public NonNestedInnerClassAttribute(string innerClassName)
+		{
+			this.innerClassName = innerClassName;
+		}
+
+		public string InnerClassName
+		{
+			get
+			{
+				return innerClassName;
+			}
+		}
+	}
+
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface)]
+	public sealed class NonNestedOuterClassAttribute : Attribute
+	{
+		private string outerClassName;
+
+		public NonNestedOuterClassAttribute(string outerClassName)
+		{
+			this.outerClassName = outerClassName;
+		}
+
+		public string OuterClassName
+		{
+			get
+			{
+				return outerClassName;
+			}
+		}
+	}
+
+@
+
+
+1.24.6.2
+log
+@Backported fixes and changed version to 0.36.0.5
+@
+text
+@a590 19
+	[AttributeUsage(AttributeTargets.Assembly)]
+	public sealed class CustomAssemblyClassLoaderAttribute : Attribute
+	{
+		private Type type;
+
+		public CustomAssemblyClassLoaderAttribute(Type type)
+		{
+			this.type = type;
+		}
+
+		public Type Type
+		{
+			get
+			{
+				return type;
+			}
+		}
+	}
+
+@
+
+
+1.23
+log
+@*** empty log message ***
+@
+text
+@d160 1
+a160 1
+			 * C0 - DF      Triple byte integer (-2097152 - 2097151)
+d177 1
+a177 1
+				else if(val >= -2097152 && val < 2097152)
+d179 1
+a179 1
+					val += 2097152;
+d211 1
+a211 1
+				return val - 2097152;
+@
+
+
+1.22
+log
+@*** empty log message ***
+@
+text
+@d353 15
+d721 16
+@
+
+
+1.21
+log
+@*** empty log message ***
+@
+text
+@a28 139
+	/*
+	[Flags]
+	public enum TypeMetadataFlags : byte
+	{
+		None = 0,
+		HideFromJava = 1,
+		SourceNameIsClassName = 2,
+		ExceptionIsUnsafeForMapping = 4,
+		InternalAccess = 8,
+	}
+
+	public sealed class TypeMetadataAttribute : Attribute
+	{
+		private TypeMetadataFlags flags;
+		private string sourceFileName;
+		private string[] implements;
+		private string name;
+		private Modifiers modifiers;
+		private Modifiers innerClassModifiers;
+		private string genericSignature;
+		private string enclosingMethodClass;
+		private string enclosingMethodName;
+		private string enclosingMethodSig;
+		private string annotationAttributeType;
+
+		public TypeMetadataAttribute(TypeMetadataFlags flags, string sourceFileName, string[] implements)
+		{
+			this.flags = flags;
+			this.sourceFileName = sourceFileName;
+			this.implements = implements;
+		}
+
+		public TypeMetadataAttribute(TypeMetadataFlags flags, string sourceFileName, string[] implements,
+			string name, Modifiers modifiers, Modifiers innerClassModifiers, string genericSignature,
+			string enclosingMethodClass, string enclosingMethodName, string enclosingMethodSig,
+			string annotationAttributeType)
+		{
+			this.flags = flags;
+			this.sourceFileName = sourceFileName;
+			this.implements = implements;
+			this.name = name;
+			this.modifiers = modifiers;
+			this.innerClassModifiers = innerClassModifiers;
+			this.genericSignature = genericSignature;
+			this.enclosingMethodClass = enclosingMethodClass;
+			this.enclosingMethodName = enclosingMethodName;
+			this.enclosingMethodSig = enclosingMethodSig;
+			this.annotationAttributeType = annotationAttributeType;
+		}
+
+		public TypeMetadataFlags Flags
+		{
+			get
+			{
+				return flags;
+			}
+		}
+		public string SourceFile
+		{
+			get
+			{
+				return sourceFileName;
+			}
+		}
+
+		public string[] Implements
+		{
+			get
+			{
+				return implements;
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+		}
+
+		public Modifiers Modifiers
+		{
+			get
+			{
+				return modifiers;
+			}
+		}
+
+		public Modifiers InnerClassModifiers
+		{
+			get
+			{
+				return innerClassModifiers;
+			}
+		}
+
+		public string GenericSignature
+		{
+			get
+			{
+				return genericSignature;
+			}
+		}
+
+		public string EnclosingMethodClass
+		{
+			get
+			{
+				return enclosingMethodClass;
+			}
+		}
+
+		public string EnclosingMethodName
+		{
+			get
+			{
+				return enclosingMethodName;
+			}
+		}
+
+		public string EnclosingMethodSig
+		{
+			get
+			{
+				return enclosingMethodSig;
+			}
+		}
+
+		public string AnnotationAttributeType
+		{
+			get
+			{
+				return annotationAttributeType;
+			}
+		}
+	}
+	*/
+
+@
+
+
+1.20
+log
+@*** empty log message ***
+@
+text
+@d29 139
+@
+
+
+1.19
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002, 2003, 2004 Jeroen Frijters
+d63 1
+a63 1
+		internal class LineNumberWriter
+d70 1
+a70 1
+			internal LineNumberWriter(int estimatedCount)
+d75 1
+a75 1
+			internal void AddMapping(int ilOffset, int linenumber)
+d132 1
+a132 1
+			internal int Count
+d140 1
+a140 1
+			internal int LineNo
+d148 1
+a148 1
+			internal byte[] ToArray()
+@
+
+
+1.18
+log
+@*** empty log message ***
+@
+text
+@d407 1
+d414 14
+@
+
+
+1.17
+log
+@*** empty log message ***
+@
+text
+@a25 1
+using System.Reflection.Emit;
+@
+
+
+1.16
+log
+@*** empty log message ***
+@
+text
+@d493 2
+d637 55
+@
+
+
+1.15
+log
+@*** empty log message ***
+@
+text
+@d389 1
+d391 1
+d396 3
+d577 58
+@
+
+
+1.14
+log
+@Fixed bug 1257044.
+@
+text
+@d52 7
+d69 1
+d78 50
+a127 2
+				WritePackedInteger(ilOffset - prevILOffset);
+				WritePackedInteger(linenumber - prevLineNum);
+d130 17
+d230 1
+d232 3
+a234 3
+			int prevLineNum = 0;
+			int line = -1;
+			for(int i = 0; i < table.Length;)
+d236 21
+a256 1
+				int currILOffset = ReadPackedInteger(ref i) + prevILOffset;
+d261 1
+a261 1
+				line = ReadPackedInteger(ref i) + prevLineNum;
+@
+
+
+1.13
+log
+@*** empty log message ***
+@
+text
+@d279 2
+a280 2
+	[AttributeUsage(AttributeTargets.Method)]
+	public sealed class MirandaMethodAttribute : Attribute
+@
+
+
+1.12
+log
+@*** empty log message ***
+@
+text
+@a397 2
+		private string outerClassName;
+		private string name;
+d400 1
+a400 1
+		public InnerClassAttribute(string innerClassName, string outerClassName, string name, Modifiers modifiers)
+a402 2
+			this.outerClassName = outerClassName;
+			this.name = name;
+a413 17
+		public string OuterClassName
+		{
+			get
+			{
+				return outerClassName;
+			}
+		}
+
+		// NOTE returns null for anonymous inner classes
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+		}
+
+@
+
+
+1.11
+log
+@*** empty log message ***
+@
+text
+@d57 17
+a73 27
+		/**
+		 * packed integer format:
+		 * ----------------------
+		 * 
+		 * First byte:
+		 * 00 - 7F      Single byte integer (0 - 127)
+		 * 80 - BF      Double byte integer (0 - 16383)
+		 * C0 - DF      Triple byte integer (0 - 4194303)
+		 * E0 - FE      Reserved
+		 * FF           Five byte integer
+		 */
+		internal static void WritePackedInteger(System.IO.MemoryStream stream, uint val)
+		{
+			if(val < 128)
+			{
+				stream.WriteByte((byte)val);
+			}
+			else if(val < 16384)
+			{
+				stream.WriteByte((byte)(0x80 + (val >> 8)));
+				stream.WriteByte((byte)val);
+			}
+			else if(val < 4194304)
+			{
+				stream.WriteByte((byte)(0xC0 + (val >> 16)));
+				stream.WriteByte((byte)(val >> 8));
+				stream.WriteByte((byte)val);
+d75 18
+a92 1
+			else
+d94 26
+a119 5
+				stream.WriteByte(0xFF);
+				stream.WriteByte((byte)(val >> 24));
+				stream.WriteByte((byte)(val >> 16));
+				stream.WriteByte((byte)(val >>  8));
+				stream.WriteByte((byte)(val >>  0));
+d128 1
+a128 1
+				return b;
+d132 1
+a132 1
+				return ((b & 0x7F) << 8) + table[position++];
+d139 1
+a139 1
+				return val;
+d157 2
+d162 2
+a163 1
+				if(ReadPackedInteger(ref i) > ilOffset)
+d167 3
+a169 1
+				line = ReadPackedInteger(ref i);
+@
+
+
+1.10
+log
+@*** empty log message ***
+@
+text
+@d389 1
+a389 1
+				return OuterClassName;
+@
+
+
+1.9
+log
+@*** empty log message ***
+@
+text
+@d421 1
+a421 1
+		public ConstantValueAttribute(sbyte val)
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@d266 4
+a269 1
+		Strictfp		= 0x0800
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d413 20
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d50 1
+a50 2
+		private ushort[] table;
+		private byte[] wideTable;
+d52 1
+a52 1
+		public LineNumberTableAttribute(ushort[] table)
+d57 39
+a95 1
+		public LineNumberTableAttribute(byte[] table)
+d97 28
+a124 1
+			this.wideTable = table;
+d130 1
+a130 12
+			if(table != null)
+			{
+				for(int i = 0; i < table.Length; i += 2)
+				{
+					if(table[i + 0] > ilOffset)
+					{
+						return line;
+					}
+					line = table[i + 1];
+				}
+			}
+			else
+d132 1
+a132 1
+				for(int i = 0; i < wideTable.Length; i += 6)
+d134 1
+a134 10
+					int offset =
+						(wideTable[i + 0] << 0) +
+						(wideTable[i + 1] << 8) +
+						(wideTable[i + 2] << 16) +
+						(wideTable[i + 3] << 24);
+					if(offset > ilOffset)
+					{
+						return line;
+					}
+					line = wideTable[i + 4] + (wideTable[i + 5] << 8);
+d136 1
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d362 36
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d30 67
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d28 1
+a28 2
+[AttributeUsage(AttributeTargets.Class)]
+public sealed class ExceptionIsUnsafeForMappingAttribute : Attribute
+d30 2
+a31 9
+}
+
+[AttributeUsage(AttributeTargets.Method)]
+public sealed class RemappedInterfaceMethodAttribute : Attribute
+{
+	private string name;
+	private string mappedTo;
+
+	public RemappedInterfaceMethodAttribute(string name, string mappedTo)
+a32 2
+		this.name = name;
+		this.mappedTo = mappedTo;
+d35 2
+a36 1
+	public string Name
+d38 18
+a55 1
+		get
+d57 4
+a60 1
+			return name;
+d64 2
+a65 1
+	public string MappedTo
+d67 4
+a70 1
+		get
+d72 2
+a73 1
+			return mappedTo;
+a74 2
+	}
+}
+d76 7
+a82 5
+[AttributeUsage(AttributeTargets.Assembly)]
+public sealed class RemappedClassAttribute : Attribute
+{
+	private string name;
+	private Type remappedType;
+d84 7
+a90 4
+	public RemappedClassAttribute(string name, Type remappedType)
+	{
+		this.name = name;
+		this.remappedType = remappedType;
+d93 2
+a94 1
+	public string Name
+d96 3
+a98 1
+		get
+d100 1
+a100 1
+			return name;
+a101 1
+	}
+d103 1
+a103 3
+	public Type RemappedType
+	{
+		get
+d105 4
+a108 1
+			return remappedType;
+a110 1
+}
+d112 4
+a115 4
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface)]
+public sealed class RemappedTypeAttribute : Attribute
+{
+	private Type type;
+d117 2
+a118 1
+	public RemappedTypeAttribute(Type type)
+a119 1
+		this.type = type;
+d122 2
+a123 1
+	public Type Type
+a124 4
+		get
+		{
+			return type;
+		}
+a125 51
+}
+
+[AttributeUsage(AttributeTargets.Module)]
+public sealed class JavaModuleAttribute : Attribute
+{
+}
+
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Interface | AttributeTargets.Assembly)]
+public sealed class NoPackagePrefixAttribute : Attribute
+{
+}
+
+[AttributeUsage(AttributeTargets.Struct)]
+public sealed class GhostInterfaceAttribute : Attribute
+{
+}
+
+// Whenever the VM or compiler generates a helper class/method/field, it should be marked
+// with this custom attribute, so that it can be hidden from Java.
+[AttributeUsage(AttributeTargets.All)]
+public sealed class HideFromJavaAttribute : Attribute
+{
+}
+
+[AttributeUsage(AttributeTargets.Method)]
+public sealed class MirandaMethodAttribute : Attribute
+{
+}
+
+[Flags]
+public enum Modifiers : ushort
+{
+	Public			= 0x0001,
+	Private			= 0x0002,
+	Protected		= 0x0004,
+	Static			= 0x0008,
+	Final			= 0x0010,
+	Super			= 0x0020,
+	Synchronized	= 0x0020,
+	Volatile		= 0x0040,
+	Transient		= 0x0080,
+	Native			= 0x0100,
+	Interface		= 0x0200,
+	Abstract		= 0x0400,
+	Strictfp		= 0x0800
+}
+
+[AttributeUsage(AttributeTargets.All)]
+public sealed class ModifiersAttribute : Attribute
+{
+	private Modifiers modifiers;
+d127 4
+a130 1
+	public ModifiersAttribute(Modifiers modifiers)
+a131 1
+		this.modifiers = modifiers;
+d134 2
+a135 1
+	public Modifiers Modifiers
+a136 4
+		get
+		{
+			return modifiers;
+		}
+a137 1
+}
+d139 2
+a140 7
+[AttributeUsage(AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Field)]
+public sealed class NameSigAttribute : Attribute
+{
+	private string name;
+	private string sig;
+
+	public NameSigAttribute(string name, string sig)
+d142 13
+a154 2
+		this.name = name;
+		this.sig = sig;
+d157 2
+a158 1
+	public string Name
+d160 8
+a167 1
+		get
+d169 4
+a172 1
+			return name;
+d176 2
+a177 1
+	public string Sig
+d179 4
+a182 1
+		get
+d184 2
+a185 1
+			return sig;
+a186 2
+	}
+}
+d188 7
+a194 4
+[AttributeUsage(AttributeTargets.Constructor | AttributeTargets.Method)]
+public sealed class ThrowsAttribute : Attribute
+{
+	private string[] classes;
+d196 7
+a202 4
+	// NOTE this is not CLS compliant, so maybe we should have a couple of overloads
+	public ThrowsAttribute(string[] classes)
+	{
+		this.classes = classes;
+d205 2
+a206 2
+	// dotted Java class names (e.g. java.lang.Throwable)
+	public string[] Classes
+d208 4
+a211 1
+		get
+d213 10
+a222 1
+			return classes;
+a224 1
+}
+d226 4
+a229 4
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface)]
+public sealed class ImplementsAttribute : Attribute
+{
+	private string[] interfaces;
+d231 5
+a235 5
+	// NOTE this is not CLS compliant, so maybe we should have a couple of overloads
+	public ImplementsAttribute(string[] interfaces)
+	{
+		this.interfaces = interfaces;
+	}
+d237 1
+a237 3
+	public string[] Interfaces
+	{
+		get
+d239 4
+a242 1
+			return interfaces;
+a244 1
+}
+d246 7
+a252 7
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface)]
+public sealed class InnerClassAttribute : Attribute
+{
+	private string innerClassName;
+	private string outerClassName;
+	private string name;
+	private Modifiers modifiers;
+d254 7
+a260 7
+	public InnerClassAttribute(string innerClassName, string outerClassName, string name, Modifiers modifiers)
+	{
+		this.innerClassName = innerClassName;
+		this.outerClassName = outerClassName;
+		this.name = name;
+		this.modifiers = modifiers;
+	}
+d262 1
+a262 3
+	public string InnerClassName
+	{
+		get
+d264 4
+a267 1
+			return innerClassName;
+a268 1
+	}
+d270 1
+a270 3
+	public string OuterClassName
+	{
+		get
+d272 4
+a275 1
+			return OuterClassName;
+a276 1
+	}
+d278 2
+a279 4
+	// NOTE returns null for anonymous inner classes
+	public string Name
+	{
+		get
+d281 4
+a284 1
+			return name;
+a285 1
+	}
+d287 1
+a287 3
+	public Modifiers Modifiers
+	{
+		get
+d289 4
+a292 1
+			return modifiers;
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@a119 19
+[AttributeUsage(AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.Method)]
+public sealed class UnloadableTypeAttribute : Attribute
+{
+	private string name;
+
+	public UnloadableTypeAttribute(string name)
+	{
+		this.name = name;
+	}
+
+	public string Name
+	{
+		get
+		{
+			return name;
+		}
+	}
+}
+
+d126 1
+a126 3
+// with this custom attribute, so that it can be hidden from Java reflection.
+// NOTE when this attribute is applied to a class, it means that instances of this class
+// will appear to be instances of the base class.
+d128 6
+a133 1
+public sealed class HideFromReflectionAttribute : Attribute
+d174 29
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@a112 14
+	private string version;
+
+	public JavaModuleAttribute(string version)
+	{
+		this.version = version;
+	}
+
+	public Version Version
+	{
+		get
+		{
+			return new Version(version);
+		}
+	}
+@
+

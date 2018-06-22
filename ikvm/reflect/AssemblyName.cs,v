@@ -1,0 +1,1596 @@
+head	1.37;
+access;
+symbols
+	v8_1_5717_0:1.33
+	v8_1:1.33.0.2
+	v8_0_5449_1:1.32
+	v8_0_5449_0:1.32
+	v8_0:1.32.0.4
+	v7_4_5196_0:1.32
+	v7_4:1.32.0.2
+	v7_3:1.23.0.2
+	v7_2_4630_6:1.17
+	v7_2_4630_5:1.17
+	v7_2_4630_4:1.17
+	v7_2_4630_3:1.17
+	v7_2_4630_2:1.17
+	v0_46_0_4:1.6
+	v7_2_4630_1:1.17
+	v7_2:1.17.0.2
+	v7_1_4532_2:1.14.2.1
+	v7_1_4532_1:1.14.2.1
+	v7_1_4532_0:1.14
+	v7_1:1.14.0.2
+	v7_0_4335_3:1.8
+	v7_0_4335_2:1.8
+	v7_0_4335_1:1.8
+	v0_46_0_2:1.6
+	v7_0_4335_0:1.8
+	v7_0:1.8.0.2
+	v0_46_0_1:1.6
+	v0_46_0_0:1.6
+	v0_46:1.6.0.2
+	v0_44_0_6:1.5
+	v0_44_0_5:1.5
+	v0_44_0_4:1.5
+	v0_44_0_3:1.5
+	v0_44_0_2:1.5
+	v0_44_0_1:1.5
+	v0_44_0_0:1.5
+	v0_44:1.5.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.37
+date	2016.07.01.05.44.41;	author jfrijters;	state Exp;
+branches;
+next	1.36;
+
+1.36
+date	2016.07.01.05.15.22;	author jfrijters;	state Exp;
+branches;
+next	1.35;
+
+1.35
+date	2016.07.01.04.51.51;	author jfrijters;	state Exp;
+branches;
+next	1.34;
+
+1.34
+date	2015.11.03.08.19.21;	author jfrijters;	state Exp;
+branches;
+next	1.33;
+
+1.33
+date	2015.02.16.12.24.28;	author jfrijters;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2013.09.25.09.04.48;	author jfrijters;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2013.09.25.08.57.44;	author jfrijters;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2013.09.25.07.57.26;	author jfrijters;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2013.09.11.13.30.51;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2013.09.11.13.18.54;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2013.09.11.13.03.26;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2013.09.11.10.41.23;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2013.06.04.10.11.23;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2013.05.10.06.16.58;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2012.10.24.17.08.07;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2012.10.14.14.33.28;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2012.10.14.14.29.36;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2012.10.14.14.20.51;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2012.10.11.09.40.31;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2012.10.11.09.38.40;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2012.06.26.15.51.53;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2012.06.21.09.34.54;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2012.06.04.14.50.00;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2012.01.24.17.26.26;	author jfrijters;	state Exp;
+branches
+	1.14.2.1;
+next	1.13;
+
+1.13
+date	2012.01.12.06.49.35;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2011.11.08.09.49.26;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2011.11.08.09.47.53;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2011.11.08.09.46.35;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2011.11.07.14.05.52;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2011.10.13.11.01.12;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2011.03.13.09.51.01;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2010.12.06.13.59.52;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2010.05.11.09.03.59;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.05.11.06.07.20;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.05.06.06.45.30;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.14.2.1
+date	2012.06.04.15.23.01;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.37
+log
+@Replaced CORECLR symbol with NETSTANDARD.
+@
+text
+@/*
+  Copyright (C) 2009-2012 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Globalization;
+#if !NETSTANDARD
+using System.Configuration.Assemblies;
+#endif
+using System.IO;
+using System.Security.Cryptography;
+using System.Text;
+using IKVM.Reflection.Reader;
+
+namespace IKVM.Reflection
+{
+	public sealed class AssemblyName
+#if !NETSTANDARD
+		: ICloneable
+#endif
+	{
+		private string name;
+		private string culture;
+		private Version version;
+		private byte[] publicKeyToken;
+		private byte[] publicKey;
+		private StrongNameKeyPair keyPair;
+		private AssemblyNameFlags flags;
+		private AssemblyHashAlgorithm hashAlgorithm;
+		private AssemblyVersionCompatibility versionCompatibility = AssemblyVersionCompatibility.SameMachine;
+		private string codeBase;
+		internal byte[] hash;
+
+		public AssemblyName()
+		{
+		}
+
+		public AssemblyName(string assemblyName)
+		{
+			if (assemblyName == null)
+			{
+				throw new ArgumentNullException("assemblyName");
+			}
+			if (assemblyName == "")
+			{
+				throw new ArgumentException();
+			}
+			ParsedAssemblyName parsed;
+			switch (Fusion.ParseAssemblyName(assemblyName, out parsed))
+			{
+				case ParseAssemblyResult.GenericError:
+				case ParseAssemblyResult.DuplicateKey:
+					throw new FileLoadException();
+			}
+			if (!ParseVersion(parsed.Version, parsed.Retargetable.HasValue, out version))
+			{
+				throw new FileLoadException();
+			}
+			name = parsed.Name;
+			if (parsed.Culture != null)
+			{
+				if (parsed.Culture.Equals("neutral", StringComparison.OrdinalIgnoreCase))
+				{
+					culture = "";
+				}
+				else if (parsed.Culture == "")
+				{
+					throw new FileLoadException();
+				}
+				else
+				{
+					culture = new CultureInfo(parsed.Culture).Name;
+				}
+			}
+			if (parsed.PublicKeyToken != null)
+			{
+				if (parsed.PublicKeyToken.Equals("null", StringComparison.OrdinalIgnoreCase))
+				{
+					publicKeyToken = Empty<byte>.Array;
+				}
+				else if (parsed.PublicKeyToken.Length != 16)
+				{
+					throw new FileLoadException();
+				}
+				else
+				{
+					publicKeyToken = ParseKey(parsed.PublicKeyToken);
+				}
+			}
+			if (parsed.Retargetable.HasValue)
+			{
+				if (parsed.Culture == null || parsed.PublicKeyToken == null || version == null)
+				{
+					throw new FileLoadException();
+				}
+				if (parsed.Retargetable.Value)
+				{
+					flags |= AssemblyNameFlags.Retargetable;
+				}
+			}
+			ProcessorArchitecture = parsed.ProcessorArchitecture;
+			if (parsed.WindowsRuntime)
+			{
+				ContentType = AssemblyContentType.WindowsRuntime;
+			}
+		}
+
+		private static byte[] ParseKey(string key)
+		{
+			if ((key.Length & 1) != 0)
+			{
+				throw new FileLoadException();
+			}
+			byte[] buf = new byte[key.Length / 2];
+			for (int i = 0; i < buf.Length; i++)
+			{
+				buf[i] = (byte)(ParseHexDigit(key[i * 2]) * 16 + ParseHexDigit(key[i * 2 + 1]));
+			}
+			return buf;
+		}
+
+		private static int ParseHexDigit(char digit)
+		{
+			if (digit >= '0' && digit <= '9')
+			{
+				return digit - '0';
+			}
+			else
+			{
+				digit |= (char)0x20;
+				if (digit >= 'a' && digit <= 'f')
+				{
+					return 10 + digit - 'a';
+				}
+				else
+				{
+					throw new FileLoadException();
+				}
+			}
+		}
+
+		public override string ToString()
+		{
+			return FullName;
+		}
+
+		public string Name
+		{
+			get { return name; }
+			set { name = value; }
+		}
+
+		public CultureInfo CultureInfo
+		{
+			get { return culture == null ? null : new CultureInfo(culture); }
+			set { culture = value == null ? null : value.Name; }
+		}
+
+		public string CultureName
+		{
+			get { return culture; }
+			set { culture = value; }
+		}
+
+		public Version Version
+		{
+			get { return version; }
+			set { version = value; }
+		}
+
+		public StrongNameKeyPair KeyPair
+		{
+			get { return keyPair; }
+			set { keyPair = value; }
+		}
+
+		public string CodeBase
+		{
+			get { return codeBase; }
+			set { codeBase = value; }
+		}
+
+#if !NETSTANDARD
+		public string EscapedCodeBase
+		{
+			get
+			{
+				// HACK use the real AssemblyName to escape the codebase
+				System.Reflection.AssemblyName tmp = new System.Reflection.AssemblyName();
+				tmp.CodeBase = codeBase;
+				return tmp.EscapedCodeBase;
+			}
+		}
+#endif
+
+		public ProcessorArchitecture ProcessorArchitecture
+		{
+			get { return (ProcessorArchitecture)(((int)flags & 0x70) >> 4); }
+			set
+			{
+				if (value >= ProcessorArchitecture.None && value <= ProcessorArchitecture.Arm)
+				{
+					flags = (flags & ~(AssemblyNameFlags)0x70) | (AssemblyNameFlags)((int)value << 4);
+				}
+			}
+		}
+
+		public AssemblyNameFlags Flags
+		{
+			get { return flags & (AssemblyNameFlags)~0xEF0; }
+			set { flags = (flags & (AssemblyNameFlags)0xEF0) | (value & (AssemblyNameFlags)~0xEF0); }
+		}
+
+		public AssemblyVersionCompatibility VersionCompatibility
+		{
+			get { return versionCompatibility; }
+			set { versionCompatibility = value; }
+		}
+
+		public AssemblyContentType ContentType
+		{
+			get { return (AssemblyContentType)(((int)flags & 0xE00) >> 9); }
+			set
+			{
+				if (value >= AssemblyContentType.Default && value <= AssemblyContentType.WindowsRuntime)
+				{
+					flags = (flags & ~(AssemblyNameFlags)0xE00) | (AssemblyNameFlags)((int)value << 9);
+				}
+			}
+		}
+
+		public byte[] GetPublicKey()
+		{
+			return publicKey;
+		}
+
+		public void SetPublicKey(byte[] publicKey)
+		{
+			this.publicKey = publicKey;
+			flags = (flags & ~AssemblyNameFlags.PublicKey) | (publicKey == null ? 0 : AssemblyNameFlags.PublicKey);
+		}
+
+		public byte[] GetPublicKeyToken()
+		{
+			if (publicKeyToken == null && publicKey != null)
+			{
+				// note that GetPublicKeyToken() has a side effect in this case, because we retain this token even after the public key subsequently gets changed
+				publicKeyToken = ComputePublicKeyToken(publicKey);
+			}
+			return publicKeyToken;
+		}
+
+		public void SetPublicKeyToken(byte[] publicKeyToken)
+		{
+			this.publicKeyToken = publicKeyToken;
+		}
+
+		public AssemblyHashAlgorithm HashAlgorithm
+		{
+			get { return hashAlgorithm; }
+			set { hashAlgorithm = value; }
+		}
+
+		public byte[] __Hash
+		{
+			get { return hash; }
+		}
+
+		public string FullName
+		{
+			get
+			{
+				if (name == null)
+				{
+					return "";
+				}
+				ushort versionMajor = 0xFFFF;
+				ushort versionMinor = 0xFFFF;
+				ushort versionBuild = 0xFFFF;
+				ushort versionRevision = 0xFFFF;
+				if (version != null)
+				{
+					versionMajor = (ushort)version.Major;
+					versionMinor = (ushort)version.Minor;
+					versionBuild = (ushort)version.Build;
+					versionRevision = (ushort)version.Revision;
+				}
+				byte[] publicKeyToken = this.publicKeyToken;
+				if ((publicKeyToken == null || publicKeyToken.Length == 0) && publicKey != null)
+				{
+					publicKeyToken = ComputePublicKeyToken(publicKey);
+				}
+				return GetFullName(name, versionMajor, versionMinor, versionBuild, versionRevision, culture, publicKeyToken, (int)flags);
+			}
+		}
+
+		internal static string GetFullName(string name, ushort versionMajor, ushort versionMinor, ushort versionBuild, ushort versionRevision, string culture, byte[] publicKeyToken, int flags)
+		{
+			StringBuilder sb = new StringBuilder();
+			bool doubleQuotes = name.StartsWith(" ") || name.EndsWith(" ") || name.IndexOf('\'') != -1;
+			bool singleQuotes = name.IndexOf('"') != -1;
+			if (singleQuotes)
+			{
+				sb.Append('\'');
+			}
+			else if (doubleQuotes)
+			{
+				sb.Append('"');
+			}
+			if (name.IndexOf(',') != -1 || name.IndexOf('\\') != -1 || name.IndexOf('=') != -1 || (singleQuotes && name.IndexOf('\'') != -1))
+			{
+				for (int i = 0; i < name.Length; i++)
+				{
+					char c = name[i];
+					if (c == ',' || c == '\\' || c == '=' || (singleQuotes && c == '\''))
+					{
+						sb.Append('\\');
+					}
+					sb.Append(c);
+				}
+			}
+			else
+			{
+				sb.Append(name);
+			}
+			if (singleQuotes)
+			{
+				sb.Append('\'');
+			}
+			else if (doubleQuotes)
+			{
+				sb.Append('"');
+			}
+			if (versionMajor != 0xFFFF)
+			{
+				sb.Append(", Version=").Append(versionMajor);
+				if (versionMinor != 0xFFFF)
+				{
+					sb.Append('.').Append(versionMinor);
+					if (versionBuild != 0xFFFF)
+					{
+						sb.Append('.').Append(versionBuild);
+						if (versionRevision != 0xFFFF)
+						{
+							sb.Append('.').Append(versionRevision);
+						}
+					}
+				}
+			}
+			if (culture != null)
+			{
+				sb.Append(", Culture=").Append(culture == "" ? "neutral" : culture);
+			}
+			if (publicKeyToken != null)
+			{
+				sb.Append(", PublicKeyToken=");
+				if (publicKeyToken.Length == 0)
+				{
+					sb.Append("null");
+				}
+				else
+				{
+					AppendPublicKey(sb, publicKeyToken);
+				}
+			}
+			if ((flags & (int)AssemblyNameFlags.Retargetable) != 0)
+			{
+				sb.Append(", Retargetable=Yes");
+			}
+			if ((AssemblyContentType)((flags & 0xE00) >> 9) == AssemblyContentType.WindowsRuntime)
+			{
+				sb.Append(", ContentType=WindowsRuntime");
+			}
+			return sb.ToString();
+		}
+
+		internal static byte[] ComputePublicKeyToken(byte[] publicKey)
+		{
+			if (publicKey.Length == 0)
+			{
+				return publicKey;
+			}
+			byte[] hash;
+			using (SHA1 sha1 = SHA1.Create())
+			{
+				hash = sha1.ComputeHash(publicKey);
+			}
+			byte[] token = new byte[8];
+			for (int i = 0; i < token.Length; i++)
+			{
+				token[i] = hash[hash.Length - 1 - i];
+			}
+			return token;
+		}
+
+		internal static string ComputePublicKeyToken(string publicKey)
+		{
+			StringBuilder sb = new StringBuilder(16);
+			AppendPublicKey(sb, ComputePublicKeyToken(ParseKey(publicKey)));
+			return sb.ToString();
+		}
+
+		private static void AppendPublicKey(StringBuilder sb, byte[] publicKey)
+		{
+			for (int i = 0; i < publicKey.Length; i++)
+			{
+				sb.Append("0123456789abcdef"[publicKey[i] >> 4]);
+				sb.Append("0123456789abcdef"[publicKey[i] & 0x0F]);
+			}
+		}
+
+		public override bool Equals(object obj)
+		{
+			AssemblyName other = obj as AssemblyName;
+			return other != null && other.FullName == this.FullName;
+		}
+
+		public override int GetHashCode()
+		{
+			return FullName.GetHashCode();
+		}
+
+		public object Clone()
+		{
+			AssemblyName copy = (AssemblyName)MemberwiseClone();
+			copy.publicKey = Copy(publicKey);
+			copy.publicKeyToken = Copy(publicKeyToken);
+			return copy;
+		}
+
+		private static byte[] Copy(byte[] b)
+		{
+			return b == null || b.Length == 0 ? b : (byte[])b.Clone();
+		}
+
+#if !NETSTANDARD
+		public static bool ReferenceMatchesDefinition(AssemblyName reference, AssemblyName definition)
+		{
+			// HACK use the real AssemblyName to implement the (broken) ReferenceMatchesDefinition method
+			return System.Reflection.AssemblyName.ReferenceMatchesDefinition(new System.Reflection.AssemblyName(reference.FullName), new System.Reflection.AssemblyName(definition.FullName));
+		}
+#endif
+
+		public static AssemblyName GetAssemblyName(string path)
+		{
+			try
+			{
+				path = Path.GetFullPath(path);
+				using (FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read))
+				{
+					ModuleReader module = new ModuleReader(null, null, fs, path, false);
+					if (module.Assembly == null)
+					{
+						throw new BadImageFormatException("Module does not contain a manifest");
+					}
+					return module.Assembly.GetName();
+				}
+			}
+			catch (IOException x)
+			{
+				throw new FileNotFoundException(x.Message, x);
+			}
+			catch (UnauthorizedAccessException x)
+			{
+				throw new FileNotFoundException(x.Message, x);
+			}
+		}
+
+		internal AssemblyNameFlags RawFlags
+		{
+			get { return flags; }
+			set { flags = value; }
+		}
+
+		private static bool ParseVersion(string str, bool mustBeComplete, out Version version)
+		{
+			if (str == null)
+			{
+				version = null;
+				return true;
+			}
+			string[] parts = str.Split('.');
+			if (parts.Length < 2 || parts.Length > 4)
+			{
+				version = null;
+				ushort dummy;
+				// if the version consists of a single integer, it is invalid, but not invalid enough to fail the parse of the whole assembly name
+				return parts.Length == 1 && ushort.TryParse(parts[0], NumberStyles.Integer, null, out dummy);
+			}
+			if (parts[0] == "" || parts[1] == "")
+			{
+				// this is a strange scenario, the version is invalid, but not invalid enough to fail the parse of the whole assembly name
+				version = null;
+				return true;
+			}
+			ushort major, minor, build = 65535, revision = 65535;
+			if (ushort.TryParse(parts[0], NumberStyles.Integer, null, out major)
+				&& ushort.TryParse(parts[1], NumberStyles.Integer, null, out minor)
+				&& (parts.Length <= 2 || parts[2] == "" || ushort.TryParse(parts[2], NumberStyles.Integer, null, out build))
+				&& (parts.Length <= 3 || parts[3] == "" || (parts[2] != "" && ushort.TryParse(parts[3], NumberStyles.Integer, null, out revision))))
+			{
+				if (mustBeComplete && (parts.Length < 4 || parts[2] == "" || parts[3] == ""))
+				{
+					version = null;
+				}
+				else if (major == 65535 || minor == 65535)
+				{
+					version = null;
+				}
+				else
+				{
+					version = new Version(major, minor, build, revision);
+				}
+				return true;
+			}
+			version = null;
+			return false;
+		}
+	}
+}
+@
+
+
+1.36
+log
+@Added support for building against .NET Standard 1.3.
+@
+text
+@d37 1
+a37 1
+#if !CORECLR
+d202 1
+a202 1
+#if !CORECLR
+d455 1
+a455 1
+#if !CORECLR
+@
+
+
+1.35
+log
+@Avoid SHA1Managed.
+@
+text
+@d26 1
+d28 1
+@
+
+
+1.34
+log
+@Added AssemblyName.CultureName property setter that was introduced with .NET 4.6.
+@
+text
+@d400 5
+a404 1
+			byte[] hash = new SHA1Managed().ComputeHash(publicKey);
+@
+
+
+1.33
+log
+@Added CoreCLR target for IKVM.Reflection.
+@
+text
+@a178 5
+		}
+
+		internal string Culture
+		{
+			get { return culture; }
+@
+
+
+1.32
+log
+@Slightly simplified version number parsing.
+@
+text
+@d34 4
+a37 1
+	public sealed class AssemblyName : ICloneable
+d205 1
+d216 1
+d454 1
+d460 1
+@
+
+
+1.31
+log
+@Forked version number parser.
+@
+text
+@d69 1
+a69 2
+			Version version;
+			if (!ParseVersion(parsed.Version, out version))
+a88 5
+			if (version != null && version.Major != 65535 && version.Minor != 65535)
+			{
+				// our version parser returns -1 for build and revision for incomplete version numbers (and we want 65535)
+				this.version = new Version(version.Major, version.Minor, version.Build & 0xFFFF, version.Revision & 0xFFFF);
+			}
+d106 1
+a106 1
+				if (parsed.Culture == null || parsed.PublicKeyToken == null || version == null || version.Build == -1 || version.Revision == -1)
+d486 1
+a486 1
+		private static bool ParseVersion(string str, out Version version)
+d499 1
+a499 1
+				return parts.Length == 1 && ushort.TryParse(parts[0], System.Globalization.NumberStyles.Integer, null, out dummy);
+d508 4
+a511 4
+			if (ushort.TryParse(parts[0], System.Globalization.NumberStyles.Integer, null, out major)
+				&& ushort.TryParse(parts[1], System.Globalization.NumberStyles.Integer, null, out minor)
+				&& (parts.Length <= 2 || parts[2] == "" || ushort.TryParse(parts[2], System.Globalization.NumberStyles.Integer, null, out build))
+				&& (parts.Length <= 3 || parts[3] == "" || (parts[2] != "" && ushort.TryParse(parts[3], System.Globalization.NumberStyles.Integer, null, out revision))))
+d513 1
+a513 1
+				if (parts.Length == 4 && parts[3] != "" && parts[2] != "")
+d515 1
+a515 1
+					version = new Version(major, minor, build, revision);
+d517 1
+a517 1
+				else if (parts.Length == 3 && parts[2] != "")
+d519 1
+a519 1
+					version = new Version(major, minor, build);
+d523 1
+a523 1
+					version = new Version(major, minor);
+@
+
+
+1.30
+log
+@Moved version number parsing out of assembly name parser, because it turns out that AssemblyName and Fusion use different version number parsing rules.
+@
+text
+@d70 1
+a70 1
+			if (!Fusion.ParseVersion(parsed.Version, out version))
+d92 1
+a92 1
+				// our Fusion parser returns -1 for build and revision for incomplete version numbers (and we want 65535)
+d491 45
+@
+
+
+1.29
+log
+@Fixed ResolveAssemblyRefImpl() to use AssemblyName.GetFullName() to fix a number of bugs:
+- Name was not escaped.
+- Retargetable and ContentType attributes were not added.
+- PublicKey was not converted to PublicKeyToken.
+@
+text
+@d69 5
+d90 1
+a90 1
+			if (parsed.Version != null && parsed.Version.Major != 65535 && parsed.Version.Minor != 65535)
+d93 1
+a93 1
+				version = new Version(parsed.Version.Major, parsed.Version.Minor, parsed.Version.Build & 0xFFFF, parsed.Version.Revision & 0xFFFF);
+d112 1
+a112 1
+				if (parsed.Culture == null || parsed.PublicKeyToken == null || parsed.Version == null || parsed.Version.Build == -1 || parsed.Version.Revision == -1)
+@
+
+
+1.28
+log
+@Turned GetFullName() into a static more reusable method.
+@
+text
+@d315 1
+a315 1
+		private static string GetFullName(string name, ushort versionMajor, ushort versionMinor, ushort versionBuild, ushort versionRevision, string culture, byte[] publicKeyToken, int flags)
+d395 1
+a395 1
+		private static byte[] ComputePublicKeyToken(byte[] publicKey)
+@
+
+
+1.27
+log
+@Moved FullName computation into a separate method.
+@
+text
+@d295 17
+a311 1
+				return GetFullName();
+d315 1
+a315 1
+		private string GetFullName()
+d352 1
+a352 1
+			if (version != null)
+d354 2
+a355 1
+				if ((version.Major & 0xFFFF) != 0xFFFF)
+d357 2
+a358 2
+					sb.Append(", Version=").Append(version.Major & 0xFFFF);
+					if ((version.Minor & 0xFFFF) != 0xFFFF)
+d360 2
+a361 2
+						sb.Append('.').Append(version.Minor & 0xFFFF);
+						if ((version.Build & 0xFFFF) != 0xFFFF)
+d363 1
+a363 5
+							sb.Append('.').Append(version.Build & 0xFFFF);
+							if ((version.Revision & 0xFFFF) != 0xFFFF)
+							{
+								sb.Append('.').Append(version.Revision & 0xFFFF);
+							}
+a371 5
+			byte[] publicKeyToken = this.publicKeyToken;
+			if ((publicKeyToken == null || publicKeyToken.Length == 0) && publicKey != null)
+			{
+				publicKeyToken = ComputePublicKeyToken(publicKey);
+			}
+d384 1
+a384 1
+			if ((Flags & AssemblyNameFlags.Retargetable) != 0)
+d388 1
+a388 1
+			if (ContentType == AssemblyContentType.WindowsRuntime)
+@
+
+
+1.26
+log
+@ProcessorArchitecture should be read from flags and not its own field. This fixes the bug that GetReferencedAssemblies() did not return the ProcessorArchitecture part of the assembly flags.
+@
+text
+@d295 20
+a314 12
+				StringBuilder sb = new StringBuilder();
+				bool doubleQuotes = name.StartsWith(" ") || name.EndsWith(" ") || name.IndexOf('\'') != -1;
+				bool singleQuotes = name.IndexOf('"') != -1;
+				if (singleQuotes)
+				{
+					sb.Append('\'');
+				}
+				else if (doubleQuotes)
+				{
+					sb.Append('"');
+				}
+				if (name.IndexOf(',') != -1 || name.IndexOf('\\') != -1 || name.IndexOf('=') != -1 || (singleQuotes && name.IndexOf('\'') != -1))
+d316 2
+a317 1
+					for (int i = 0; i < name.Length; i++)
+d319 1
+a319 6
+						char c = name[i];
+						if (c == ',' || c == '\\' || c == '=' || (singleQuotes && c == '\''))
+						{
+							sb.Append('\\');
+						}
+						sb.Append(c);
+d321 1
+d323 16
+a338 5
+				else
+				{
+					sb.Append(name);
+				}
+				if (singleQuotes)
+d340 2
+a341 9
+					sb.Append('\'');
+				}
+				else if (doubleQuotes)
+				{
+					sb.Append('"');
+				}
+				if (version != null)
+				{
+					if ((version.Major & 0xFFFF) != 0xFFFF)
+d343 2
+a344 2
+						sb.Append(", Version=").Append(version.Major & 0xFFFF);
+						if ((version.Minor & 0xFFFF) != 0xFFFF)
+d346 2
+a347 2
+							sb.Append('.').Append(version.Minor & 0xFFFF);
+							if ((version.Build & 0xFFFF) != 0xFFFF)
+d349 1
+a349 5
+								sb.Append('.').Append(version.Build & 0xFFFF);
+								if ((version.Revision & 0xFFFF) != 0xFFFF)
+								{
+									sb.Append('.').Append(version.Revision & 0xFFFF);
+								}
+d354 14
+a367 1
+				if (culture != null)
+d369 1
+a369 1
+					sb.Append(", Culture=").Append(culture == "" ? "neutral" : culture);
+d371 1
+a371 2
+				byte[] publicKeyToken = this.publicKeyToken;
+				if ((publicKeyToken == null || publicKeyToken.Length == 0) && publicKey != null)
+d373 1
+a373 1
+					publicKeyToken = ComputePublicKeyToken(publicKey);
+a374 21
+				if (publicKeyToken != null)
+				{
+					sb.Append(", PublicKeyToken=");
+					if (publicKeyToken.Length == 0)
+					{
+						sb.Append("null");
+					}
+					else
+					{
+						AppendPublicKey(sb, publicKeyToken);
+					}
+				}
+				if ((Flags & AssemblyNameFlags.Retargetable) != 0)
+				{
+					sb.Append(", Retargetable=Yes");
+				}
+				if (ContentType == AssemblyContentType.WindowsRuntime)
+				{
+					sb.Append(", ContentType=WindowsRuntime");
+				}
+				return sb.ToString();
+d376 9
+@
+
+
+1.25
+log
+@Added Universe.OpenMappedRawModule() API to enable reading modules from memory or a crash dump file.
+@
+text
+@a44 1
+		private ProcessorArchitecture processorArchitecture;
+d216 1
+a216 1
+			get { return processorArchitecture; }
+a220 1
+					processorArchitecture = value;
+@
+
+
+1.24
+log
+@Replaced incorrect usage of StringComparison.InvariantCultureIgnoreCase with StringComparison.OrdinalIgnoreCase.
+@
+text
+@d452 1
+a452 1
+					ModuleReader module = new ModuleReader(null, null, fs, path);
+@
+
+
+1.23
+log
+@Bug fix. Changed AssemblyName.ProcessorArchitecture to match (weird) .NET behavior. When reading the property it returns the architecture of the PE file, not the field from the AssemblyDef record.
+@
+text
+@d73 1
+a73 1
+				if (parsed.Culture.Equals("neutral", StringComparison.InvariantCultureIgnoreCase))
+d93 1
+a93 1
+				if (parsed.PublicKeyToken.Equals("null", StringComparison.InvariantCultureIgnoreCase))
+@
+
+
+1.22
+log
+@Added helper method to AssemblyName to help Fusion parser convert public key to public key token.
+@
+text
+@d45 1
+d217 1
+a217 1
+			get { return (ProcessorArchitecture)(((int)flags & 0x70) >> 4); }
+d222 1
+@
+
+
+1.21
+log
+@Stop relying on System.Reflection.AssemblyName to compute public key token from public key.
+@
+text
+@d397 7
+@
+
+
+1.20
+log
+@Moved hex key parser to separate method.
+@
+text
+@d28 1
+d388 5
+a392 9
+			// HACK use the real AssemblyName to convert PublicKey to PublicKeyToken
+			StringBuilder sb = new StringBuilder("Foo, PublicKey=", 20 + publicKey.Length * 2);
+			AppendPublicKey(sb, publicKey);
+			string str = sb.ToString();
+			if (str == "Foo, PublicKey=00000000000000000400000000000000")
+			{
+				// MONOBUG workaround Mono 2.10 bug (fixed in 2.11)
+				// it does not return the correct public key token for the ECMA key
+				return new byte[] { 0xB7, 0x7A, 0x5C, 0x56, 0x19, 0x34, 0xE0, 0x89 };
+d394 1
+a394 1
+			return new System.Reflection.AssemblyName(str).GetPublicKeyToken();
+@
+
+
+1.19
+log
+@When an assembly name has a duplicate key, throw FileLoadException like .NET 4.x does instead of COMException like .NET 2.0 does.
+@
+text
+@d101 1
+a101 6
+					publicKeyToken = new byte[8];
+					for (int i = 0, pos = 0; i < publicKeyToken.Length; i++, pos += 2)
+					{
+						publicKeyToken[i] = (byte)("0123456789abcdef".IndexOf(char.ToLowerInvariant(parsed.PublicKeyToken[pos])) * 16
+							+ "0123456789abcdef".IndexOf(char.ToLowerInvariant(parsed.PublicKeyToken[pos + 1])));
+					}
+d122 34
+@
+
+
+1.18
+log
+@Added new .NET 4.5 property AssemblyName.CultureName.
+@
+text
+@d65 1
+a66 2
+				case ParseAssemblyResult.DuplicateKey:
+					throw new System.Runtime.InteropServices.COMException();
+@
+
+
+1.17
+log
+@Added support for ContentType=WindowsRuntime in AssemblyName.
+@
+text
+@d145 5
+@
+
+
+1.16
+log
+@Added .NET 4.5 AssemblyName.ContentType property. Defining WinRT assemblies is not yet implemented.
+@
+text
+@d122 4
+d340 4
+@
+
+
+1.15
+log
+@Added Mono 2.10 bug workaround.
+@
+text
+@d190 2
+a191 2
+			get { return flags & (AssemblyNameFlags)~0xF0; }
+			set { flags = (flags & (AssemblyNameFlags)0xF0) | (value & (AssemblyNameFlags)~0xF0); }
+d200 12
+@
+
+
+1.14
+log
+@Performance tweak to AssemblyName.FullName. Inspired by Marek Safar.
+@
+text
+@d337 8
+a344 1
+			return new System.Reflection.AssemblyName(sb.ToString()).GetPublicKeyToken();
+@
+
+
+1.14.2.1
+log
+@Updated revision number and backported fixes:
+- Fixed Linux build issue due to assembly.class filename case error in tools.rsp
+- Added workaround for Mono 2.10 bug in AssemblyName (public key token for ECMA public key is not created correctly).
+- Added workaround for Mono to StrongNameKeyPair.
+- Disallow key container constructor of StrongNameKeyPair when running on Mono on Windows.
+- Introduced Universe.MonoRuntime to ease checking of Mono runtime.
+@
+text
+@d337 1
+a337 8
+			string str = sb.ToString();
+			if (str == "Foo, PublicKey=00000000000000000400000000000000")
+			{
+				// MONOBUG workaround Mono 2.10 bug (fixed in 2.11)
+				// it does not return the correct public key token for the ECMA key
+				return new byte[] { 0xB7, 0x7A, 0x5C, 0x56, 0x19, 0x34, 0xE0, 0x89 };
+			}
+			return new System.Reflection.AssemblyName(str).GetPublicKeyToken();
+@
+
+
+1.13
+log
+@Add AssemblyName.__Hash property (to expose the hash in an AssemblyRef).
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009-2011 Jeroen Frijters
+d284 1
+a284 1
+						sb.AppendFormat(", Version={0}", version.Major & 0xFFFF);
+d287 1
+a287 1
+							sb.AppendFormat(".{0}", version.Minor & 0xFFFF);
+d290 1
+a290 1
+								sb.AppendFormat(".{0}", version.Build & 0xFFFF);
+d293 1
+a293 1
+									sb.AppendFormat(".{0}", version.Revision & 0xFFFF);
+d317 1
+a317 4
+						for (int i = 0; i < publicKeyToken.Length; i++)
+						{
+							sb.AppendFormat("{0:x2}", publicKeyToken[i]);
+						}
+d336 6
+d344 2
+a345 1
+				sb.AppendFormat("{0:x2}", publicKey[i]);
+a346 1
+			return new System.Reflection.AssemblyName(sb.ToString()).GetPublicKeyToken();
+@
+
+
+1.12
+log
+@Re-use (our) Fusion assembly name parser in AssemblyName.
+@
+text
+@d232 5
+@
+
+
+1.11
+log
+@Fixed version handling in FullName.
+@
+text
+@d53 69
+a121 8
+			// HACK use the real AssemblyName to parse the string
+			System.Reflection.AssemblyName impl = new System.Reflection.AssemblyName(assemblyName);
+			name = impl.Name;
+			culture = impl.CultureInfo == null ? null : impl.CultureInfo.Name;
+			version = impl.Version;
+			publicKeyToken = impl.GetPublicKeyToken();
+			flags = (AssemblyNameFlags)(int)impl.Flags;
+			ProcessorArchitecture = (ProcessorArchitecture)impl.ProcessorArchitecture;
+@
+
+
+1.10
+log
+@Equals sign should be escaped.
+@
+text
+@d216 1
+a216 3
+					sb.AppendFormat(", Version={0}.{1}", version.Major, version.Minor);
+					// TODO what's this all about?
+					if (version.Build != 65535 && version.Build != -1)
+d218 2
+a219 2
+						sb.AppendFormat(".{0}", version.Build);
+						if (version.Revision != 65535 && version.Revision != -1)
+d221 9
+a229 1
+							sb.AppendFormat(".{0}", version.Revision);
+@
+
+
+1.9
+log
+@Implemented most of AssemblyName (except parsing) without dependency on System.Reflection.AssemblyName.
+@
+text
+@d190 1
+a190 1
+				if (name.IndexOf(',') != -1 || name.IndexOf('\\') != -1 || (singleQuotes && name.IndexOf('\'') != -1))
+d195 1
+a195 1
+						if (c == ',' || c == '\\' || (singleQuotes && c == '\''))
+@
+
+
+1.8
+log
+@Added support for process architecture in assembly flags.
+@
+text
+@d28 1
+d35 10
+a44 2
+		private const AssemblyNameFlags afPA_Specified = (AssemblyNameFlags)0x0080;
+		private readonly System.Reflection.AssemblyName name;
+a45 9
+		private string culture;
+		private bool processorArchitectureSpecified;
+
+		private AssemblyName(System.Reflection.AssemblyName name, string culture, bool processorArchitectureSpecified)
+		{
+			this.name = name;
+			this.culture = culture;
+			this.processorArchitectureSpecified = processorArchitectureSpecified;
+		}
+a48 1
+			name = new System.Reflection.AssemblyName();
+d53 8
+a60 1
+			name = new System.Reflection.AssemblyName(assemblyName);
+d65 1
+a65 6
+			string str = name.ToString();
+			if (culture != null)
+			{
+				str = str.Replace("Culture=neutral", "Culture=" + culture);
+			}
+			return str;
+d70 2
+a71 2
+			get { return name.Name; }
+			set { name.Name = value; }
+d76 2
+a77 6
+			get { return name.CultureInfo; }
+			set
+			{
+				name.CultureInfo = value;
+				culture = null;
+			}
+d82 2
+a83 5
+			set
+			{
+				culture = value;
+				name.CultureInfo = CultureInfo.InvariantCulture;
+			}
+d88 2
+a89 2
+			get { return name.Version; }
+			set { name.Version = value; }
+d94 2
+a95 2
+			get { return name.KeyPair == null ?  null : new StrongNameKeyPair(name.KeyPair); }
+			set { name.KeyPair = value == null ? null : value.keyPair; }
+d100 13
+a112 2
+			get { return name.CodeBase; }
+			set { name.CodeBase = value; }
+d117 8
+a124 2
+			get { return (ProcessorArchitecture)name.ProcessorArchitecture; }
+			set { name.ProcessorArchitecture = (System.Reflection.ProcessorArchitecture)value; }
+d129 2
+a130 2
+			get { return (AssemblyNameFlags)name.Flags; }
+			set { name.Flags = (System.Reflection.AssemblyNameFlags)value; }
+d135 2
+a136 2
+			get { return name.VersionCompatibility; }
+			set { name.VersionCompatibility = value; }
+d141 1
+a141 1
+			return name.GetPublicKey();
+d146 2
+a147 1
+			name.SetPublicKey(publicKey);
+d152 6
+a157 1
+			return name.GetPublicKeyToken();
+d162 1
+a162 1
+			name.SetPublicKeyToken(publicKeyToken);
+d167 2
+a168 2
+			get { return name.HashAlgorithm; }
+			set { name.HashAlgorithm = value; }
+d175 52
+a226 1
+				string str = name.FullName;
+d229 25
+a253 1
+					str = str.Replace("Culture=neutral", "Culture=" + culture);
+d255 1
+a255 1
+				return str;
+d259 15
+d287 9
+a295 1
+			return new AssemblyName((System.Reflection.AssemblyName)name.Clone(), culture, processorArchitectureSpecified);
+d300 2
+a301 1
+			return System.Reflection.AssemblyName.ReferenceMatchesDefinition(reference.name, definition.name);
+d331 2
+a332 7
+			get { return (AssemblyNameFlags)name.Flags | (AssemblyNameFlags)((int)name.ProcessorArchitecture << 4) | (processorArchitectureSpecified ? afPA_Specified : 0); }
+			set
+			{
+				name.Flags = (System.Reflection.AssemblyNameFlags)value;
+				name.ProcessorArchitecture = (System.Reflection.ProcessorArchitecture)((int)value >> 4);
+				processorArchitectureSpecified = (value & afPA_Specified) != 0;
+			}
+@
+
+
+1.7
+log
+@Support roundtripping hash in AssemblyRef record.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Jeroen Frijters
+d34 1
+d38 1
+d40 1
+a40 1
+		private AssemblyName(System.Reflection.AssemblyName name, string culture)
+d44 1
+d180 1
+a180 1
+			return new AssemblyName((System.Reflection.AssemblyName)name.Clone(), culture);
+d212 11
+@
+
+
+1.6
+log
+@Added support for emitting assemblies with non-existing cultures.
+@
+text
+@d35 1
+@
+
+
+1.5
+log
+@Added ToString().
+@
+text
+@d35 1
+d37 1
+a37 1
+		private AssemblyName(System.Reflection.AssemblyName name)
+d40 1
+d55 6
+a60 1
+			return name.ToString();
+d72 14
+a85 1
+			set { name.CultureInfo = value; }
+d152 9
+a160 1
+			get { return name.FullName; }
+d176 1
+a176 1
+			return new AssemblyName((System.Reflection.AssemblyName)name.Clone());
+@
+
+
+1.4
+log
+@Added Assembly.CodeBase property and fixes Assembly.GetName() and AssemblyName.GetAssemblyName() to set the CodeBase of the AssemblyName.
+@
+text
+@d51 5
+@
+
+
+1.3
+log
+@Fixed AssemblyName.GetAssemblyName() to throw the proper exceptions (and by consequence Universe.LoadFile() now also throws the proper exceptions, module a race condition).
+@
+text
+@d155 1
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d153 1
+a153 1
+			using (FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read))
+d155 17
+a171 2
+				ModuleReader module = new ModuleReader(null, null, fs, path);
+				return module.Assembly.GetName();
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

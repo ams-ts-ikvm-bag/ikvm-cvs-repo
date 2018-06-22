@@ -1,0 +1,899 @@
+head	1.21;
+access;
+symbols
+	v8_1_5717_0:1.20
+	v8_1:1.20.0.2
+	v8_0_5449_1:1.18
+	v8_0_5449_0:1.18
+	v8_0:1.18.0.6
+	v7_4_5196_0:1.18
+	v7_4:1.18.0.4
+	v7_3:1.18.0.2
+	v7_2_4630_6:1.15
+	v7_2_4630_5:1.15
+	v7_2_4630_4:1.15
+	v7_2_4630_3:1.15
+	v7_2_4630_2:1.15
+	v0_46_0_4:1.5
+	v7_2_4630_1:1.15
+	v7_2:1.15.0.2
+	v7_1_4532_2:1.13
+	v7_1_4532_1:1.13
+	v7_1_4532_0:1.13
+	v7_1:1.13.0.2
+	v7_0_4335_3:1.8
+	v7_0_4335_2:1.8
+	v7_0_4335_1:1.8
+	v0_46_0_2:1.5
+	v7_0_4335_0:1.8
+	v7_0:1.8.0.2
+	v0_46_0_1:1.5
+	v0_46_0_0:1.5
+	v0_46:1.5.0.2
+	v0_44_0_6:1.2
+	v0_44_0_5:1.2
+	v0_44_0_4:1.2
+	v0_44_0_3:1.2
+	v0_44_0_2:1.2
+	v0_44_0_1:1.2
+	v0_44_0_0:1.2
+	v0_44:1.2.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.21
+date	2015.11.03.09.10.24;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2015.06.23.11.47.48;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2015.04.21.10.15.39;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2012.12.24.10.49.51;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2012.12.23.10.48.25;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2012.09.05.08.58.52;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2012.07.16.10.14.38;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2012.07.12.09.13.43;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2012.04.17.12.59.37;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2012.04.17.11.21.55;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2012.04.09.10.04.58;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2012.01.27.10.11.18;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2011.12.01.07.37.48;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2011.03.08.06.43.01;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2011.03.08.06.14.22;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2011.03.08.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2011.02.14.05.58.49;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2011.01.20.05.38.12;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.12.08.06.33.03;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.02;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.32;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.21
+log
+@Added caching to Type.IsValueType.
+@
+text
+@/*
+  Copyright (C) 2009-2012 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Text;
+using IKVM.Reflection.Metadata;
+
+namespace IKVM.Reflection.Reader
+{
+	abstract class TypeParameterType : TypeInfo
+	{
+		protected TypeParameterType(byte sigElementType)
+			: base(sigElementType)
+		{
+		}
+
+		public sealed override string AssemblyQualifiedName
+		{
+			get { return null; }
+		}
+
+		protected sealed override bool IsValueTypeImpl
+		{
+			get { return (this.GenericParameterAttributes & GenericParameterAttributes.NotNullableValueTypeConstraint) != 0; }
+		}
+
+		public sealed override Type BaseType
+		{
+			get
+			{
+				foreach (Type type in GetGenericParameterConstraints())
+				{
+					if (!type.IsInterface && !type.IsGenericParameter)
+					{
+						return type;
+					}
+				}
+				return this.IsValueType ? this.Module.universe.System_ValueType : this.Module.universe.System_Object;
+			}
+		}
+
+		public override Type[] __GetDeclaredInterfaces()
+		{
+			List<Type> list = new List<Type>();
+			foreach (Type type in GetGenericParameterConstraints())
+			{
+				if (type.IsInterface)
+				{
+					list.Add(type);
+				}
+			}
+			return list.ToArray();
+		}
+
+		public sealed override TypeAttributes Attributes
+		{
+			get { return TypeAttributes.Public; }
+		}
+
+		public sealed override string FullName
+		{
+			get { return null; }
+		}
+
+		public sealed override string ToString()
+		{
+			return this.Name;
+		}
+
+		protected sealed override bool ContainsMissingTypeImpl
+		{
+			get { return ContainsMissingType(GetGenericParameterConstraints()); }
+		}
+	}
+
+	sealed class UnboundGenericMethodParameter : TypeParameterType
+	{
+		private static readonly DummyModule module = new DummyModule();
+		private readonly int position;
+
+		private sealed class DummyModule : NonPEModule
+		{
+			internal DummyModule()
+				: base(new Universe())
+			{
+			}
+
+			protected override Exception NotSupportedException()
+			{
+				return new InvalidOperationException();
+			}
+
+			protected override Exception ArgumentOutOfRangeException()
+			{
+				return new InvalidOperationException();
+			}
+
+			public override bool Equals(object obj)
+			{
+				throw new InvalidOperationException();
+			}
+
+			public override int GetHashCode()
+			{
+				throw new InvalidOperationException();
+			}
+
+			public override string ToString()
+			{
+				throw new InvalidOperationException();
+			}
+
+			public override int MDStreamVersion
+			{
+				get { throw new InvalidOperationException(); }
+			}
+
+			public override Assembly Assembly
+			{
+				get { throw new InvalidOperationException(); }
+			}
+
+			internal override Type FindType(TypeName typeName)
+			{
+				throw new InvalidOperationException();
+			}
+
+			internal override Type FindTypeIgnoreCase(TypeName lowerCaseName)
+			{
+				throw new InvalidOperationException();
+			}
+
+			internal override void GetTypesImpl(List<Type> list)
+			{
+				throw new InvalidOperationException();
+			}
+
+			public override string FullyQualifiedName
+			{
+				get { throw new InvalidOperationException(); }
+			}
+
+			public override string Name
+			{
+				get { throw new InvalidOperationException(); }
+			}
+
+			public override Guid ModuleVersionId
+			{
+				get { throw new InvalidOperationException(); }
+			}
+
+			public override string ScopeName
+			{
+				get { throw new InvalidOperationException(); }
+			}
+		}
+
+		internal static Type Make(int position)
+		{
+			return module.universe.CanonicalizeType(new UnboundGenericMethodParameter(position));
+		}
+
+		private UnboundGenericMethodParameter(int position)
+			: base(Signature.ELEMENT_TYPE_MVAR)
+		{
+			this.position = position;
+		}
+
+		public override bool Equals(object obj)
+		{
+			UnboundGenericMethodParameter other = obj as UnboundGenericMethodParameter;
+			return other != null && other.position == position;
+		}
+
+		public override int GetHashCode()
+		{
+			return position;
+		}
+
+		public override string Namespace
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		public override string Name
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		public override int MetadataToken
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		public override Module Module
+		{
+			get { return module; }
+		}
+
+		public override int GenericParameterPosition
+		{
+			get { return position; }
+		}
+
+		public override Type DeclaringType
+		{
+			get { return null; }
+		}
+
+		public override MethodBase DeclaringMethod
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		public override Type[] GetGenericParameterConstraints()
+		{
+			throw new InvalidOperationException();
+		}
+
+		public override CustomModifiers[] __GetGenericParameterConstraintCustomModifiers()
+		{
+			throw new InvalidOperationException();
+		}
+
+		public override GenericParameterAttributes GenericParameterAttributes
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		internal override Type BindTypeParameters(IGenericBinder binder)
+		{
+			return binder.BindMethodParameter(this);
+		}
+
+		internal override bool IsBaked
+		{
+			get { throw new InvalidOperationException(); }
+		}
+	}
+
+	sealed class GenericTypeParameter : TypeParameterType
+	{
+		private readonly ModuleReader module;
+		private readonly int index;
+
+		internal GenericTypeParameter(ModuleReader module, int index, byte sigElementType)
+			: base(sigElementType)
+		{
+			this.module = module;
+			this.index = index;
+		}
+
+		public override bool Equals(object obj)
+		{
+			return base.Equals(obj);
+		}
+
+		public override int GetHashCode()
+		{
+			return base.GetHashCode();
+		}
+
+		public override string Namespace
+		{
+			get { return DeclaringType.Namespace; }
+		}
+
+		public override string Name
+		{
+			get { return module.GetString(module.GenericParam.records[index].Name); }
+		}
+
+		public override Module Module
+		{
+			get { return module; }
+		}
+
+		public override int MetadataToken
+		{
+			get { return (GenericParamTable.Index << 24) + index + 1; }
+		}
+
+		public override int GenericParameterPosition
+		{
+			get { return module.GenericParam.records[index].Number; }
+		}
+
+		public override Type DeclaringType
+		{
+			get
+			{
+				int owner = module.GenericParam.records[index].Owner;
+				return (owner >> 24) == TypeDefTable.Index ? module.ResolveType(owner) : null;
+			}
+		}
+
+		public override MethodBase DeclaringMethod
+		{
+			get
+			{
+				int owner = module.GenericParam.records[index].Owner;
+				return (owner >> 24) == MethodDefTable.Index ? module.ResolveMethod(owner) : null;
+			}
+		}
+
+		public override Type[] GetGenericParameterConstraints()
+		{
+			IGenericContext context = (this.DeclaringMethod as IGenericContext) ?? this.DeclaringType;
+			List<Type> list = new List<Type>();
+			foreach (int i in module.GenericParamConstraint.Filter(this.MetadataToken))
+			{
+				list.Add(module.ResolveType(module.GenericParamConstraint.records[i].Constraint, context));
+			}
+			return list.ToArray();
+		}
+
+		public override CustomModifiers[] __GetGenericParameterConstraintCustomModifiers()
+		{
+			IGenericContext context = (this.DeclaringMethod as IGenericContext) ?? this.DeclaringType;
+			List<CustomModifiers> list = new List<CustomModifiers>();
+			foreach (int i in module.GenericParamConstraint.Filter(this.MetadataToken))
+			{
+				CustomModifiers mods = new CustomModifiers();
+				int metadataToken = module.GenericParamConstraint.records[i].Constraint;
+				if ((metadataToken >> 24) == TypeSpecTable.Index)
+				{
+					int index = (metadataToken & 0xFFFFFF) - 1;
+					mods = CustomModifiers.Read(module, module.GetBlob(module.TypeSpec.records[index]), context);
+				}
+				list.Add(mods);
+			}
+			return list.ToArray();
+		}
+
+		public override GenericParameterAttributes GenericParameterAttributes
+		{
+			get { return (GenericParameterAttributes)module.GenericParam.records[index].Flags; }
+		}
+
+		internal override Type BindTypeParameters(IGenericBinder binder)
+		{
+			int owner = module.GenericParam.records[index].Owner;
+			if ((owner >> 24) == MethodDefTable.Index)
+			{
+				return binder.BindMethodParameter(this);
+			}
+			else
+			{
+				return binder.BindTypeParameter(this);
+			}
+		}
+
+		internal override bool IsBaked
+		{
+			get { return true; }
+		}
+	}
+}
+@
+
+
+1.20
+log
+@Added Type.__GetGenericParameterConstraintCustomModifiers() API.
+@
+text
+@d43 1
+a43 1
+		public sealed override bool IsValueType
+@
+
+
+1.19
+log
+@Use sigElementType to implement IsGenericParameter.
+@
+text
+@d242 5
+d339 18
+@
+
+
+1.18
+log
+@- Implemented __ContainsMissingType for function pointer types.
+- Changed __ContainsMissingType to take custom modifiers into account.
+@
+text
+@d33 5
+a90 5
+		public sealed override bool IsGenericParameter
+		{
+			get { return true; }
+		}
+
+d186 1
+d263 2
+a264 1
+		internal GenericTypeParameter(ModuleReader module, int index)
+@
+
+
+1.17
+log
+@Added caching for Type.__ContainsMissingType property to simplify the prevention of infinite recursion while evaluating generic parameter constraints.
+@
+text
+@d93 1
+a93 11
+			get
+			{
+				foreach (Type type in GetGenericParameterConstraints())
+				{
+					if (type.__ContainsMissingType)
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+@
+
+
+1.16
+log
+@Added TypeInfo (from .NET 4.5).
+@
+text
+@d91 1
+a91 1
+		public sealed override bool __ContainsMissingType
+d95 1
+a95 2
+				bool freeList = false;
+				try
+d97 1
+a97 1
+					foreach (Type type in GetGenericParameterConstraints())
+d99 1
+a99 36
+						if (type.__IsMissing)
+						{
+							return true;
+						}
+						else if (type.IsConstructedGenericType || type.HasElementType || type.__IsFunctionPointer)
+						{
+							// if a constructed type contains generic parameters,
+							// it might contain this type parameter again and
+							// to prevent infinite recurssion, we keep a thread local
+							// list of type parameters we've already processed
+							if (type.ContainsGenericParameters)
+							{
+								if (containsMissingTypeHack == null)
+								{
+									freeList = true;
+									containsMissingTypeHack = new List<Type>();
+								}
+								else if (containsMissingTypeHack.Contains(this))
+								{
+									return false;
+								}
+								containsMissingTypeHack.Add(this);
+							}
+							if (type.__ContainsMissingType)
+							{
+								return true;
+							}
+						}
+					}
+					return false;
+				}
+				finally
+				{
+					if (freeList)
+					{
+						containsMissingTypeHack = null;
+d102 1
+a104 3
+
+		[ThreadStatic]
+		private static List<Type> containsMissingTypeHack;
+@
+
+
+1.15
+log
+@Refactored custom attribute handling of MemberInfo types.
+@
+text
+@d31 1
+a31 1
+	abstract class TypeParameterType : Type
+@
+
+
+1.14
+log
+@Added new .NET 4.5 API Type.IsConstructedGenericType.
+@
+text
+@d298 5
+d397 5
+@
+
+
+1.13
+log
+@Added ugly hack to fix infinite recursion for recursive type constraints.
+@
+text
+@d104 1
+a104 1
+						else if (type.IsGenericTypeInstance || type.HasElementType || type.__IsFunctionPointer)
+@
+
+
+1.12
+log
+@Make Type.__ContainsMissingType return true for generic type parameters that have constraints that return true for __ContainsMissingType.
+@
+text
+@d95 2
+a96 1
+				foreach (Type type in GetGenericParameterConstraints())
+d98 1
+a98 1
+					if (type.__ContainsMissingType)
+d100 36
+a135 1
+						return true;
+a137 1
+				return false;
+d140 3
+@
+
+
+1.11
+log
+@Added support for case-insensitive type lookup.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Jeroen Frijters
+d90 15
+@
+
+
+1.10
+log
+@Generalized sorted metadata table lookups with binary search.
+@
+text
+@d144 5
+@
+
+
+1.9
+log
+@Added support for function pointer types.
+@
+text
+@d310 1
+a310 3
+			int token = this.MetadataToken;
+			// TODO use binary search
+			for (int i = 0; i < module.GenericParamConstraint.records.Length; i++)
+d312 1
+a312 4
+				if (module.GenericParamConstraint.records[i].Owner == token)
+				{
+					list.Add(module.ResolveType(module.GenericParamConstraint.records[i].Constraint, context));
+				}
+@
+
+
+1.8
+log
+@Introduced base class for virtual Module classes to have common place to implement abstract Module methods that aren't supported.
+@
+text
+@d172 1
+a172 1
+			return module.CanonicalizeType(new UnboundGenericMethodParameter(position));
+@
+
+
+1.7
+log
+@Added API extension __ImageBase to Module.
+@
+text
+@d97 1
+a97 1
+		private sealed class DummyModule : Module
+d104 10
+a163 30
+			public override Type ResolveType(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+			{
+				throw new InvalidOperationException();
+			}
+
+			public override MethodBase ResolveMethod(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+			{
+				throw new InvalidOperationException();
+			}
+
+			public override FieldInfo ResolveField(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+			{
+				throw new InvalidOperationException();
+			}
+
+			public override MemberInfo ResolveMember(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+			{
+				throw new InvalidOperationException();
+			}
+
+			public override string ResolveString(int metadataToken)
+			{
+				throw new InvalidOperationException();
+			}
+
+			public override Type[] __ResolveOptionalParameterTypes(int metadataToken)
+			{
+				throw new InvalidOperationException();
+			}
+
+a167 25
+
+			public override AssemblyName[] __GetReferencedAssemblies()
+			{
+				throw new InvalidOperationException();
+			}
+
+			public override string[] __GetReferencedModules()
+			{
+				throw new InvalidOperationException();
+			}
+
+			internal override Type GetModuleType()
+			{
+				throw new InvalidOperationException();
+			}
+
+			internal override ByteReader GetBlob(int blobIndex)
+			{
+				throw new InvalidOperationException();
+			}
+
+			protected override long GetImageBaseImpl()
+			{
+				throw new InvalidOperationException();
+			}
+@
+
+
+1.6
+log
+@Added API extensions to get and add referenced modules.
+@
+text
+@d208 5
+@
+
+
+1.5
+log
+@Optimized the Type == operator.
+@
+text
+@d194 5
+@
+
+
+1.4
+log
+@More type name fixes. This time to support the fact that the CLR and Mono both treat TypeNamespace and TypeName as separate names and do not consider fullName to be relevant.
+@
+text
+@a75 5
+		public sealed override Type UnderlyingSystemType
+		{
+			get { return this; }
+		}
+
+@
+
+
+1.3
+log
+@Added Module.__GetReferencedAssemblies() API.
+@
+text
+@d134 1
+a134 1
+			internal override Type GetTypeImpl(string typeName)
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d194 5
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

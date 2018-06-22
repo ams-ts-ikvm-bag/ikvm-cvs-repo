@@ -1,0 +1,1252 @@
+head	1.19;
+access;
+symbols
+	initial:1.1.1.1 ikvm:1.1.1;
+locks; strict;
+comment	@ * @;
+
+
+1.19
+date	2004.05.27.07.12.15;	author jfrijters;	state dead;
+branches;
+next	1.18;
+
+1.18
+date	2004.04.23.14.21.43;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2004.03.20.13.25.08;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2004.03.16.17.10.10;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2004.03.08.15.18.47;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2004.02.10.17.16.35;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2004.01.11.13.14.43;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2003.12.19.22.19.18;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2003.11.17.12.01.52;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2003.10.17.08.08.31;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2003.08.21.10.06.35;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2003.08.13.15.00.42;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2003.08.08.12.37.25;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2003.08.07.15.41.23;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2003.05.30.12.09.00;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2003.04.14.09.41.58;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2003.01.02.13.48.38;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2002.12.27.09.09.02;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2002.12.18.16.01.18;	author jfrijters;	state Exp;
+branches
+	1.1.1.1;
+next	;
+
+1.1.1.1
+date	2002.12.18.16.01.18;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.19
+log
+@*** empty log message ***
+@
+text
+@/*
+  Copyright (C) 2002, 2003, 2004 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Xml.Serialization;
+using System.Collections;
+using System.Reflection;
+using System.Reflection.Emit;
+using System.Diagnostics;
+using OpenSystem.Java;
+
+namespace MapXml
+{
+	public abstract class Instruction
+	{
+		internal abstract void Generate(Hashtable context, ILGenerator ilgen);
+	}
+
+	[XmlType("ldstr")]
+	public sealed class Ldstr : Instruction
+	{
+		[XmlAttribute("value")]
+		public string Value;
+
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+		{
+			ilgen.Emit(OpCodes.Ldstr, Value);
+		}
+	}
+
+	[XmlType("ldnull")]
+	public sealed class Ldnull : Simple
+	{
+		public Ldnull() : base(OpCodes.Ldnull)
+		{
+		}
+	}
+
+	[XmlType("call")]
+	public class Call : Instruction
+	{
+		public Call() : this(OpCodes.Call)
+		{
+		}
+
+		internal Call(OpCode opcode)
+		{
+			this.opcode = opcode;
+		}
+
+		[XmlAttribute("class")]
+		public string Class;
+		[XmlAttribute("type")]
+		public string type;
+		[XmlAttribute("name")]
+		public string Name;
+		[XmlAttribute("sig")]
+		public string Sig;
+
+		private CodeEmitter emitter;
+		private OpCode opcode;
+
+		internal sealed override void Generate(Hashtable context, ILGenerator ilgen)
+		{
+			if(emitter == null)
+			{
+				Debug.Assert(Name != null);
+				if(Name == ".ctor")
+				{
+					Debug.Assert(Class == null && type != null);
+					Type[] argTypes = ClassLoaderWrapper.GetBootstrapClassLoader().ArgTypeListFromSig(Sig);
+					emitter = CodeEmitter.Create(opcode, Type.GetType(type, true).GetConstructor(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance, null, CallingConventions.Standard, argTypes, null));
+				}
+				else
+				{
+					Debug.Assert(Class == null ^ type == null);
+					if(Class != null)
+					{
+						Debug.Assert(Sig != null);
+						MethodWrapper method = ClassLoaderWrapper.GetBootstrapClassLoader().LoadClassByDottedName(Class).GetMethodWrapper(MethodDescriptor.FromNameSig(ClassLoaderWrapper.GetBootstrapClassLoader(), Name, Sig), false);
+						if(method == null)
+						{
+							throw new InvalidOperationException("method not found: " + Class + "." + Name + Sig);
+						}
+						if(opcode.Value == OpCodes.Call.Value)
+						{
+							emitter = method.EmitCall;
+						}
+						else if(opcode.Value == OpCodes.Callvirt.Value)
+						{
+							emitter = method.EmitCallvirt;
+						}
+						else if(opcode.Value == OpCodes.Newobj.Value)
+						{
+							emitter = method.EmitNewobj;
+						}
+						else
+						{
+							throw new InvalidOperationException();
+						}
+						// TODO this code is part of what Compiler.CastInterfaceArgs (in compiler.cs) does,
+						// it would be nice if we could avoid this duplication...
+						TypeWrapper[] argTypeWrappers = method.Descriptor.ArgTypeWrappers;
+						for(int i = 0; i < argTypeWrappers.Length; i++)
+						{
+							if(argTypeWrappers[i].IsGhost)
+							{
+								LocalBuilder[] temps = new LocalBuilder[argTypeWrappers.Length + (method.IsStatic ? 0 : 1)];
+								for(int j = temps.Length - 1; j >= 0; j--)
+								{
+									TypeWrapper tw;
+									if(method.IsStatic)
+									{
+										tw = argTypeWrappers[j];
+									}
+									else
+									{
+										if(j == 0)
+										{
+											tw = method.DeclaringType;
+										}
+										else
+										{
+											tw = argTypeWrappers[j - 1];
+										}
+									}
+									if(tw.IsGhost)
+									{
+										tw.EmitConvStackToParameterType(ilgen, tw);
+									}
+									temps[j] = ilgen.DeclareLocal(tw.TypeAsParameterType);
+									ilgen.Emit(OpCodes.Stloc, temps[j]);
+								}
+								for(int j = 0; j < temps.Length; j++)
+								{
+									ilgen.Emit(OpCodes.Ldloc, temps[j]);
+								}
+								break;
+							}
+						}
+					}
+					else
+					{
+						if(Sig != null)
+						{
+							Type[] argTypes = ClassLoaderWrapper.GetBootstrapClassLoader().ArgTypeListFromSig(Sig);
+							emitter = CodeEmitter.Create(opcode, Type.GetType(type, true).GetMethod(Name, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static, null, argTypes, null));
+						}
+						else
+						{
+							emitter = CodeEmitter.Create(opcode, Type.GetType(type, true).GetMethod(Name, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static));
+						}
+					}
+				}
+				if(emitter == null)
+				{
+					// TODO better error handling
+					throw new InvalidOperationException("method not found: " + Name);
+				}
+			}
+			emitter.Emit(ilgen);
+		}
+	}
+
+	[XmlType("callvirt")]
+	public sealed class Callvirt : Call
+	{
+		public Callvirt() : base(OpCodes.Callvirt)
+		{
+		}
+	}
+
+	[XmlType("newobj")]
+	public sealed class NewObj : Call
+	{
+		public NewObj() : base(OpCodes.Newobj)
+		{
+		}
+	}
+
+	public abstract class Simple : Instruction
+	{
+		private OpCode opcode;
+
+		public Simple(OpCode opcode)
+		{
+			this.opcode = opcode;
+		}
+
+		internal sealed override void Generate(Hashtable context, ILGenerator ilgen)
+		{
+			ilgen.Emit(opcode);
+		}
+	}
+
+	[XmlType("dup")]
+	public sealed class Dup : Simple
+	{
+		public Dup() : base(OpCodes.Dup)
+		{
+		}
+	}
+
+	[XmlType("pop")]
+	public sealed class Pop : Simple
+	{
+		public Pop() : base(OpCodes.Pop)
+		{
+		}
+	}
+
+	public abstract class TypeOrTypeWrapperInstruction : Instruction
+	{
+		[XmlAttribute("class")]
+		public string Class;
+		[XmlAttribute("type")]
+		public string type;
+
+		internal TypeWrapper typeWrapper;
+		internal Type typeType;
+
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+		{
+			if(typeWrapper == null && typeType == null)
+			{
+				Debug.Assert(Class == null ^ type == null);
+				if(Class != null)
+				{
+					typeWrapper = ClassLoaderWrapper.GetBootstrapClassLoader().LoadClassByDottedName(Class);
+				}
+				else
+				{
+					typeType = Type.GetType(type, true);
+				}
+			}
+		}
+	}
+
+	[XmlType("isinst")]
+	public sealed class IsInst : TypeOrTypeWrapperInstruction
+	{
+		public IsInst()
+		{
+		}
+	
+		// TODO isinst is broken, because for Java types it returns true/false while for
+		// .NET types it returns null/reference.
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+		{
+			base.Generate(context, ilgen);
+			if(typeType != null)
+			{
+				ilgen.Emit(OpCodes.Isinst, typeType);
+			}
+			else
+			{
+				// NOTE we pass a null context, but that shouldn't be a problem, because
+				// typeWrapper should never be an UnloadableTypeWrapper
+				typeWrapper.EmitInstanceOf(null, ilgen);
+			}
+		}
+	}
+
+	[XmlType("castclass")]
+	public sealed class Castclass : TypeOrTypeWrapperInstruction
+	{
+		public Castclass()
+		{
+		}
+
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+		{
+			base.Generate(context, ilgen);
+			if(typeType != null)
+			{
+				ilgen.Emit(OpCodes.Castclass, typeType);
+			}
+			else
+			{
+				// NOTE we pass a null context, but that shouldn't be a problem, because
+				// typeWrapper should never be an UnloadableTypeWrapper
+				typeWrapper.EmitCheckcast(null, ilgen);
+			}
+		}
+	}
+
+	public abstract class TypeInstruction : Instruction
+	{
+		[XmlAttribute("type")]
+		public string type;
+
+		private OpCode opcode;
+		private Type typeType;
+
+		internal TypeInstruction(OpCode opcode)
+		{
+			this.opcode = opcode;
+		}
+
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+		{
+			if(typeType == null)
+			{
+				Debug.Assert(type != null);
+				typeType = Type.GetType(type, true);
+			}
+			ilgen.Emit(opcode, typeType);
+		}
+	}
+
+	[XmlType("unbox")]
+	public sealed class Unbox : TypeInstruction
+	{
+		public Unbox() : base(OpCodes.Unbox)
+		{
+		}
+	}
+
+	[XmlType("box")]
+	public sealed class Box : TypeInstruction
+	{
+		public Box() : base(OpCodes.Box)
+		{
+		}
+	}
+
+	public abstract class Branch : Instruction
+	{
+		private OpCode opcode;
+
+		public Branch(OpCode opcode)
+		{
+			this.opcode = opcode;
+		}
+
+		internal sealed override void Generate(Hashtable context, ILGenerator ilgen)
+		{
+			Label l;
+			if(context[Name] == null)
+			{
+				l = ilgen.DefineLabel();
+				context[Name] = l;
+			}
+			else
+			{
+				l = (Label)context[Name];
+			}
+			ilgen.Emit(opcode, l);
+		}
+
+		[XmlAttribute("name")]
+		public string Name;
+	}
+
+	[XmlType("brfalse")]
+	public sealed class BrFalse : Branch
+	{
+		public BrFalse() : base(OpCodes.Brfalse)
+		{
+		}
+	}
+
+	[XmlType("brtrue")]
+	public sealed class BrTrue : Branch
+	{
+		public BrTrue() : base(OpCodes.Brtrue)
+		{
+		}
+	}
+
+	[XmlType("br")]
+	public sealed class Br : Branch
+	{
+		public Br() : base(OpCodes.Br)
+		{
+		}
+	}
+
+	[XmlType("label")]
+	public sealed class BrLabel : Instruction
+	{
+		[XmlAttribute("name")]
+		public string Name;
+
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+		{
+			Label l;
+			if(context[Name] == null)
+			{
+				l = ilgen.DefineLabel();
+				context[Name] = l;
+			}
+			else
+			{
+				l = (Label)context[Name];
+			}
+			ilgen.MarkLabel(l);
+		}
+	}
+
+	[XmlType("stloc")]
+	public sealed class StLoc : Instruction
+	{
+		[XmlAttribute("name")]
+		public string Name;
+		[XmlAttribute("class")]
+		public string Class;
+		[XmlAttribute("type")]
+		public string type;
+
+		private TypeWrapper typeWrapper;
+		private Type typeType;
+
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+		{
+			LocalBuilder lb = (LocalBuilder)context[Name];
+			if(lb == null)
+			{
+				if(typeWrapper == null && typeType == null)
+				{
+					Debug.Assert(Class == null ^ type == null);
+					if(type != null)
+					{
+						typeType = Type.GetType(type, true);
+					}
+					else
+					{
+						typeWrapper = ClassLoaderWrapper.GetBootstrapClassLoader().LoadClassByDottedName(Class);
+					}
+				}
+				lb = ilgen.DeclareLocal(typeType != null ? typeType : typeWrapper.TypeAsTBD);
+				context[Name] = lb;
+			}
+			ilgen.Emit(OpCodes.Stloc, lb);
+		}
+	}
+
+	[XmlType("ldloc")]
+	public sealed class LdLoc : Instruction
+	{
+		[XmlAttribute("name")]
+		public string Name;
+		
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+		{
+			ilgen.Emit(OpCodes.Ldloc, (LocalBuilder)context[Name]);
+		}
+	}
+
+	[XmlType("ldarg_0")]
+	public sealed class LdArg_0 : Simple
+	{
+		public LdArg_0() : base(OpCodes.Ldarg_0)
+		{
+		}
+	}
+
+	[XmlType("ldarg_1")]
+	public sealed class LdArg_1 : Simple
+	{
+		public LdArg_1() : base(OpCodes.Ldarg_1)
+		{
+		}
+	}
+
+	[XmlType("ldarg_2")]
+	public sealed class LdArg_2 : Simple
+	{
+		public LdArg_2() : base(OpCodes.Ldarg_2)
+		{
+		}
+	}
+
+	[XmlType("ldarg_3")]
+	public sealed class LdArg_3 : Simple
+	{
+		public LdArg_3() : base(OpCodes.Ldarg_3)
+		{
+		}
+	}
+
+	[XmlType("ldind_i4")]
+	public sealed class Ldind_i4 : Simple
+	{
+		public Ldind_i4() : base(OpCodes.Ldind_I4)
+		{
+		}
+	}
+
+	[XmlType("ret")]
+	public sealed class Ret : Simple
+	{
+		public Ret() : base(OpCodes.Ret)
+		{
+		}
+	}
+
+	[XmlType("throw")]
+	public sealed class Throw : Simple
+	{
+		public Throw() : base(OpCodes.Throw)
+		{
+		}
+	}
+
+	[XmlType("stsfld")]
+	public sealed class Stsfld : Instruction
+	{
+		[XmlAttribute("class")]
+		public string Class;
+		[XmlAttribute("name")]
+		public string Name;
+		[XmlAttribute("sig")]
+		public string Sig;
+
+		internal override void Generate(Hashtable context, ILGenerator ilgen)
+		{
+			ClassLoaderWrapper.LoadClassCritical(Class).GetFieldWrapper(Name, ClassLoaderWrapper.GetBootstrapClassLoader().FieldTypeWrapperFromSig(Sig)).EmitSet.Emit(ilgen);
+		}
+	}
+
+	[XmlType("ldc_i4_0")]
+	public sealed class Ldc_I4_0 : Simple
+	{
+		public Ldc_I4_0() : base(OpCodes.Ldc_I4_0)
+		{
+		}
+	}
+
+	public class InstructionList : CodeEmitter
+	{
+		[XmlElement(typeof(Ldstr))]
+		[XmlElement(typeof(Call))]
+		[XmlElement(typeof(Callvirt))]
+		[XmlElement(typeof(Dup))]
+		[XmlElement(typeof(Pop))]
+		[XmlElement(typeof(IsInst))]
+		[XmlElement(typeof(Castclass))]
+		[XmlElement(typeof(Unbox))]
+		[XmlElement(typeof(Box))]
+		[XmlElement(typeof(BrFalse))]
+		[XmlElement(typeof(BrTrue))]
+		[XmlElement(typeof(Br))]
+		[XmlElement(typeof(BrLabel))]
+		[XmlElement(typeof(NewObj))]
+		[XmlElement(typeof(StLoc))]
+		[XmlElement(typeof(LdLoc))]
+		[XmlElement(typeof(LdArg_0))]
+		[XmlElement(typeof(LdArg_1))]
+		[XmlElement(typeof(LdArg_2))]
+		[XmlElement(typeof(LdArg_3))]
+		[XmlElement(typeof(Ldind_i4))]
+		[XmlElement(typeof(Ret))]
+		[XmlElement(typeof(Throw))]
+		[XmlElement(typeof(Ldnull))]
+		[XmlElement(typeof(Stsfld))]
+		[XmlElement(typeof(Ldc_I4_0))]
+		public Instruction[] invoke;
+
+		internal sealed override void Emit(ILGenerator ilgen)
+		{
+			Hashtable context = new Hashtable();
+			for(int i = 0; i < invoke.Length; i++)
+			{
+				invoke[i].Generate(context, ilgen);
+			}
+		}
+	}
+
+	public class Throws
+	{
+		[XmlAttribute("class")]
+		public string Class;
+	}
+
+	public class Constructor
+	{
+		[XmlAttribute("sig")]
+		public string Sig;
+		[XmlAttribute("modifiers")]
+		public MapModifiers Modifiers;
+		public InstructionList body;
+		public InstructionList alternateBody;
+		public Redirect redirect;
+		[XmlElement("throws", typeof(Throws))]
+		public Throws[] throws;
+	}
+
+	public class Redirect
+	{
+		[XmlAttribute("class")]
+		public string Class;
+		[XmlAttribute("name")]
+		public string Name;
+		[XmlAttribute("sig")]
+		public string Sig;
+		[XmlAttribute("type")]
+		public string Type;
+	}
+
+	public class Override
+	{
+		[XmlAttribute("name")]
+		public string Name;
+	}
+
+	public class Method
+	{
+		[XmlAttribute("name")]
+		public string Name;
+		[XmlAttribute("sig")]
+		public string Sig;
+		[XmlAttribute("modifiers")]
+		public MapModifiers Modifiers;
+		[XmlAttribute("type")]
+		public string Type;
+		public InstructionList body;
+		public InstructionList alternateBody;
+		public Redirect redirect;
+		public Override @@override;
+		[XmlElement("throws", typeof(Throws))]
+		public Throws[] throws;
+	}
+
+	public class Field
+	{
+		[XmlAttribute("name")]
+		public string Name;
+		[XmlAttribute("sig")]
+		public string Sig;
+		[XmlAttribute("modifiers")]
+		public MapModifiers Modifiers;
+		[XmlAttribute("constant")]
+		public string Constant;
+		public Redirect redirect;
+	}
+
+	public class Interface
+	{
+		[XmlAttribute("class")]
+		public string Name;
+	}
+
+	[Flags]
+	public enum MapModifiers
+	{
+		[XmlEnum("public")]
+		Public = Modifiers.Public,
+		[XmlEnum("protected")]
+		Protected = Modifiers.Protected,
+		[XmlEnum("private")]
+		Private = Modifiers.Private,
+		[XmlEnum("final")]
+		Final = Modifiers.Final,
+		[XmlEnum("interface")]
+		Interface = Modifiers.Interface,
+		[XmlEnum("static")]
+		Static = Modifiers.Static,
+		[XmlEnum("abstract")]
+		Abstract = Modifiers.Abstract
+	}
+
+	public enum Scope
+	{
+		[XmlEnum("public")]
+		Public = 0,
+		[XmlEnum("private")]
+		Private = 1
+	}
+
+	[XmlType("class")]
+	public class Class
+	{
+		[XmlAttribute("name")]
+		public string Name;
+		[XmlAttribute("shadows")]
+		public string Shadows;
+		[XmlAttribute("modifiers")]
+		public MapModifiers Modifiers;
+		[XmlAttribute("scope")]
+		public Scope scope;
+		[XmlElement("constructor")]
+		public Constructor[] Constructors;
+		[XmlElement("method")]
+		public Method[] Methods;
+		[XmlElement("field")]
+		public Field[] Fields;
+		[XmlElement("implements")]
+		public Interface[] Interfaces;
+		[XmlElement("box")]
+		public InstructionList Box;
+		[XmlElement("clinit")]
+		public Method Clinit;
+	}
+
+	[XmlType("exception")]
+	public class ExceptionMapping
+	{
+		[XmlAttribute]
+		public string src;
+		[XmlAttribute]
+		public string dst;
+		public InstructionList code;
+	}
+
+	[XmlRoot("root")]
+	public class Root
+	{
+		public Class[] assembly;
+		public ExceptionMapping[] exceptionMappings;
+	}
+}
+@
+
+
+1.18
+log
+@*** empty log message ***
+@
+text
+@@
+
+
+1.17
+log
+@*** empty log message ***
+@
+text
+@d1 23
+d101 13
+a113 1
+						if(method != null)
+d115 5
+a119 16
+							if(opcode.Value == OpCodes.Call.Value)
+							{
+								emitter = method.EmitCall;
+							}
+							else if(opcode.Value == OpCodes.Callvirt.Value)
+							{
+								emitter = method.EmitCallvirt;
+							}
+							else if(opcode.Value == OpCodes.Newobj.Value)
+							{
+								emitter = method.EmitNewobj;
+							}
+							else
+							{
+								throw new InvalidOperationException();
+							}
+d683 8
+d696 2
+a697 2
+		[XmlAttribute("type")]
+		public string Type;
+d700 2
+a701 2
+		[XmlAttribute("oneway")]
+		public bool OneWay;
+d729 1
+a729 2
+		public Class[] remappings;
+		public Class[] nativeMethods;
+@
+
+
+1.16
+log
+@*** empty log message ***
+@
+text
+@d668 2
+@
+
+
+1.15
+log
+@*** empty log message ***
+@
+text
+@d97 40
+d514 1
+a514 1
+			ClassLoaderWrapper.LoadClassCritical(Class).GetFieldWrapper(Name, ClassLoaderWrapper.GetBootstrapClassLoader().RetTypeWrapperFromSig("()" + Sig)).EmitSet.Emit(ilgen);
+@
+
+
+1.14
+log
+@*** empty log message ***
+@
+text
+@d80 16
+a95 1
+							emitter = CodeEmitter.Create(opcode, method.GetMethod());
+d202 2
+d462 24
+d512 2
+d538 2
+a539 2
+		public InstructionList invokespecial;
+		public InstructionList newobj;
+d563 1
+a563 1
+	public class Method : InstructionList
+d573 2
+a574 3
+		public InstructionList invokevirtual;
+		public InstructionList invokespecial;
+		public InstructionList invokestatic;
+d638 2
+@
+
+
+1.13
+log
+@*** empty log message ***
+@
+text
+@d243 1
+a243 1
+				Debug.Assert(type == null);
+@
+
+
+1.12
+log
+@*** empty log message ***
+@
+text
+@d98 1
+d153 1
+a153 1
+	public abstract class TypeInstruction : Instruction
+d160 2
+a161 8
+		private OpCode opcode;
+		private TypeWrapper typeWrapper;
+		private Type typeType;
+
+		internal TypeInstruction(OpCode opcode)
+		{
+			this.opcode = opcode;
+		}
+a176 1
+			ilgen.Emit(opcode, typeType != null ? typeType : typeWrapper.TypeAsBaseType);
+d181 1
+a181 1
+	public sealed class IsInst : TypeInstruction
+d183 1
+a183 1
+		public IsInst() : base(OpCodes.Isinst)
+d186 15
+d204 23
+a226 1
+	public sealed class Castclass : TypeInstruction
+d228 7
+a234 1
+		public Castclass() : base(OpCodes.Castclass)
+d236 11
+d370 1
+a370 1
+				lb = ilgen.DeclareLocal(typeType != null ? typeType : typeWrapper.Type);
+@
+
+
+1.11
+log
+@*** empty log message ***
+@
+text
+@d550 10
+d565 1
+@
+
+
+1.10
+log
+@*** empty log message ***
+@
+text
+@d28 8
+d210 8
+d407 1
+d422 1
+d435 6
+d450 2
+d487 2
+d499 2
+d517 2
+d546 2
+@
+
+
+1.9
+log
+@*** empty log message ***
+@
+text
+@d174 1
+a174 1
+			ilgen.Emit(opcode, typeType != null ? typeType : typeWrapper.Type);
+d492 3
+a494 1
+		Static = Modifiers.Static
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@d61 1
+a61 1
+					emitter = CodeEmitter.Create(opcode, ClassLoaderWrapper.GetType(type).GetConstructor(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance, null, CallingConventions.Standard, argTypes, null));
+d80 1
+a80 1
+							emitter = CodeEmitter.Create(opcode, ClassLoaderWrapper.GetType(type).GetMethod(Name, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static, null, argTypes, null));
+d84 1
+a84 1
+							emitter = CodeEmitter.Create(opcode, ClassLoaderWrapper.GetType(type).GetMethod(Name, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static));
+d171 1
+a171 1
+					typeType = ClassLoaderWrapper.GetType(type);
+d299 1
+a299 1
+						typeType = ClassLoaderWrapper.GetType(type);
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d69 1
+a69 1
+						MethodWrapper method = ClassLoaderWrapper.GetBootstrapClassLoader().LoadClassByDottedName(Class).GetMethodWrapper(new MethodDescriptor(ClassLoaderWrapper.GetBootstrapClassLoader(), Name, Sig), false);
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d174 1
+a174 1
+			ilgen.Emit(OpCodes.Isinst, typeType != null ? typeType : typeWrapper.Type);
+d194 8
+d357 8
+d390 1
+d402 1
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d61 1
+a61 1
+					emitter = CodeEmitter.Create(opcode, Type.GetType(type, true).GetConstructor(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance, null, CallingConventions.Standard, argTypes, null));
+d80 1
+a80 1
+							emitter = CodeEmitter.Create(opcode, Type.GetType(type, true).GetMethod(Name, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static, null, argTypes, null));
+d84 1
+a84 1
+							emitter = CodeEmitter.Create(opcode, Type.GetType(type, true).GetMethod(Name, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static));
+d171 1
+a171 1
+					typeType = Type.GetType(type, true);
+d291 1
+a291 1
+						typeType = Type.GetType(type, true);
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d7 1
+@
+
+
+1.3
+log
+@no message
+@
+text
+@d6 1
+d41 2
+d48 1
+a48 1
+		private MethodBase method;
+d53 1
+a53 1
+			if(method == null)
+d55 2
+a56 2
+				string name = Name;
+				if(name == ".ctor")
+d58 3
+a60 4
+					string sig = Sig;
+					Type[] argTypes = ClassLoaderWrapper.GetBootstrapClassLoader().ArgTypeListFromSig(sig);
+					// TODO use our own reflection, because the type might not have been finished
+					method = Type.GetType(Class, true).GetConstructor(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance, null, CallingConventions.Standard, argTypes, null);
+d64 2
+a65 1
+					if(Type.GetType(Class, true).Assembly is AssemblyBuilder)
+d67 3
+a69 2
+						MethodWrapper[] methods = ClassLoaderWrapper.GetBootstrapClassLoader().LoadClassByDottedName(Class).GetMethods();
+						for(int i = 0; i < methods.Length; i++)
+d71 1
+a71 5
+							if(methods[i].Name == name)
+							{
+								method = methods[i].GetMethod();
+								break;
+							}
+d76 9
+a84 1
+						method = Type.GetType(Class, true).GetMethod(name, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static);
+d87 1
+a87 1
+				if(method == null)
+d89 1
+a89 1
+					throw new InvalidOperationException("method not found: " + name);
+d92 1
+a92 8
+			if(method.IsConstructor)
+			{
+				ilgen.Emit(opcode, (ConstructorInfo)method);
+			}
+			else
+			{
+				ilgen.Emit(opcode, (MethodInfo)method);
+			}
+d143 1
+a143 2
+	[XmlType("isinst")]
+	public sealed class IsInst : Instruction
+d147 6
+d154 4
+a157 1
+		private Type type;
+d161 1
+a161 1
+			if(type == null)
+d163 9
+a171 1
+				type = Type.GetType(Class, true);
+d173 17
+a189 1
+			ilgen.Emit(OpCodes.Isinst, type);
+d229 8
+d274 5
+a278 2
+	
+		private Type type;
+d285 1
+a285 1
+				if(type == null)
+d287 9
+a295 1
+					type = Type.GetType(Class, true);
+d297 1
+a297 1
+				lb = ilgen.DeclareLocal(type);
+d356 8
+d372 1
+d374 1
+d385 1
+@
+
+
+1.2
+log
+@no message
+@
+text
+@d57 1
+d62 16
+a77 1
+					method = Type.GetType(Class, true).GetMethod(name, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static);
+d272 24
+d319 3
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d349 6
+d385 2
+@
+
+
+1.1.1.1
+log
+@no message
+@
+text
+@@

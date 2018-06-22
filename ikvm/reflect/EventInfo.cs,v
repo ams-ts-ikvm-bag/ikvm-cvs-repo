@@ -1,0 +1,539 @@
+head	1.13;
+access;
+symbols
+	v8_1_5717_0:1.13
+	v8_1:1.13.0.8
+	v8_0_5449_1:1.13
+	v8_0_5449_0:1.13
+	v8_0:1.13.0.6
+	v7_4_5196_0:1.13
+	v7_4:1.13.0.4
+	v7_3:1.13.0.2
+	v7_2_4630_6:1.12
+	v7_2_4630_5:1.12
+	v7_2_4630_4:1.12
+	v7_2_4630_3:1.12
+	v7_2_4630_2:1.12
+	v0_46_0_4:1.6
+	v7_2_4630_1:1.12
+	v7_2:1.12.0.2
+	v7_1_4532_2:1.11
+	v7_1_4532_1:1.11
+	v7_1_4532_0:1.11
+	v7_1:1.11.0.2
+	v7_0_4335_3:1.8
+	v7_0_4335_2:1.8
+	v7_0_4335_1:1.8
+	v0_46_0_2:1.6
+	v7_0_4335_0:1.8
+	v7_0:1.8.0.2
+	v0_46_0_1:1.6
+	v0_46_0_0:1.6
+	v0_46:1.6.0.2
+	v0_44_0_6:1.5
+	v0_44_0_5:1.5
+	v0_44_0_4:1.5
+	v0_44_0_3:1.5
+	v0_44_0_2:1.5
+	v0_44_0_1:1.5
+	v0_44_0_0:1.5
+	v0_44:1.5.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.13
+date	2012.10.11.10.01.54;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2012.07.16.10.14.37;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2012.04.11.13.00.31;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2012.04.10.09.07.54;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2012.04.10.06.18.32;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2011.09.29.05.51.30;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2011.03.10.11.05.54;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2011.01.13.05.58.54;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2010.04.18.08.39.20;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.02.26.09.26.20;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.01.27.06.12.37;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.13
+log
+@Added new .NET 4.5 properties EventInfo.AddMethod, EventInfo.RaiseMethod and EventInfo.RemoveMethod.
+@
+text
+@/*
+  Copyright (C) 2009-2012 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System.Collections.Generic;
+using System.Diagnostics;
+
+namespace IKVM.Reflection
+{
+	public abstract class EventInfo : MemberInfo
+	{
+		// prevent external subclasses
+		internal EventInfo()
+		{
+		}
+
+		public sealed override MemberTypes MemberType
+		{
+			get { return MemberTypes.Event; }
+		}
+
+		public abstract EventAttributes Attributes { get; }
+		public abstract MethodInfo GetAddMethod(bool nonPublic);
+		public abstract MethodInfo GetRaiseMethod(bool nonPublic);
+		public abstract MethodInfo GetRemoveMethod(bool nonPublic);
+		public abstract MethodInfo[] GetOtherMethods(bool nonPublic);
+		public abstract MethodInfo[] __GetMethods();
+		public abstract Type EventHandlerType { get; }
+		internal abstract bool IsPublic { get; }
+		internal abstract bool IsNonPrivate { get; }
+		internal abstract bool IsStatic { get; }
+
+		public bool IsSpecialName
+		{
+			get { return (Attributes & EventAttributes.SpecialName) != 0; }
+		}
+
+		public MethodInfo GetAddMethod()
+		{
+			return GetAddMethod(false);
+		}
+
+		public MethodInfo GetRaiseMethod()
+		{
+			return GetRaiseMethod(false);
+		}
+
+		public MethodInfo GetRemoveMethod()
+		{
+			return GetRemoveMethod(false);
+		}
+
+		public MethodInfo[] GetOtherMethods()
+		{
+			return GetOtherMethods(false);
+		}
+
+		public MethodInfo AddMethod
+		{
+			get { return GetAddMethod(true); }
+		}
+
+		public MethodInfo RaiseMethod
+		{
+			get { return GetRaiseMethod(true); }
+		}
+
+		public MethodInfo RemoveMethod
+		{
+			get { return GetRemoveMethod(true); }
+		}
+
+		internal virtual EventInfo BindTypeParameters(Type type)
+		{
+			return new GenericEventInfo(this.DeclaringType.BindTypeParameters(type), this);
+		}
+
+		public override string ToString()
+		{
+			return this.DeclaringType.ToString() + " " + Name;
+		}
+
+		internal sealed override bool BindingFlagsMatch(BindingFlags flags)
+		{
+			return BindingFlagsMatch(IsPublic, flags, BindingFlags.Public, BindingFlags.NonPublic)
+				&& BindingFlagsMatch(IsStatic, flags, BindingFlags.Static, BindingFlags.Instance);
+		}
+
+		internal sealed override bool BindingFlagsMatchInherited(BindingFlags flags)
+		{
+			return IsNonPrivate
+				&& BindingFlagsMatch(IsPublic, flags, BindingFlags.Public, BindingFlags.NonPublic)
+				&& BindingFlagsMatch(IsStatic, flags, BindingFlags.Static | BindingFlags.FlattenHierarchy, BindingFlags.Instance);
+		}
+
+		internal sealed override MemberInfo SetReflectedType(Type type)
+		{
+			return new EventInfoWithReflectedType(type, this);
+		}
+
+		internal sealed override List<CustomAttributeData> GetPseudoCustomAttributes(Type attributeType)
+		{
+			// events don't have pseudo custom attributes
+			return null;
+		}
+	}
+
+	sealed class EventInfoWithReflectedType : EventInfo
+	{
+		private readonly Type reflectedType;
+		private readonly EventInfo eventInfo;
+
+		internal EventInfoWithReflectedType(Type reflectedType, EventInfo eventInfo)
+		{
+			Debug.Assert(reflectedType != eventInfo.DeclaringType);
+			this.reflectedType = reflectedType;
+			this.eventInfo = eventInfo;
+		}
+
+		public override EventAttributes Attributes
+		{
+			get { return eventInfo.Attributes; }
+		}
+
+		public override MethodInfo GetAddMethod(bool nonPublic)
+		{
+			return SetReflectedType(eventInfo.GetAddMethod(nonPublic), reflectedType);
+		}
+
+		public override MethodInfo GetRaiseMethod(bool nonPublic)
+		{
+			return SetReflectedType(eventInfo.GetRaiseMethod(nonPublic), reflectedType);
+		}
+
+		public override MethodInfo GetRemoveMethod(bool nonPublic)
+		{
+			return SetReflectedType(eventInfo.GetRemoveMethod(nonPublic), reflectedType);
+		}
+
+		public override MethodInfo[] GetOtherMethods(bool nonPublic)
+		{
+			return SetReflectedType(eventInfo.GetOtherMethods(nonPublic), reflectedType);
+		}
+
+		public override MethodInfo[] __GetMethods()
+		{
+			return SetReflectedType(eventInfo.__GetMethods(), reflectedType);
+		}
+
+		public override Type EventHandlerType
+		{
+			get { return eventInfo.EventHandlerType; }
+		}
+
+		internal override bool IsPublic
+		{
+			get { return eventInfo.IsPublic; }
+		}
+
+		internal override bool IsNonPrivate
+		{
+			get { return eventInfo.IsNonPrivate; }
+		}
+
+		internal override bool IsStatic
+		{
+			get { return eventInfo.IsStatic; }
+		}
+
+		internal override EventInfo BindTypeParameters(Type type)
+		{
+			return eventInfo.BindTypeParameters(type);
+		}
+
+		public override string ToString()
+		{
+			return eventInfo.ToString();
+		}
+
+		public override bool __IsMissing
+		{
+			get { return eventInfo.__IsMissing; }
+		}
+
+		public override Type DeclaringType
+		{
+			get { return eventInfo.DeclaringType; }
+		}
+
+		public override Type ReflectedType
+		{
+			get { return reflectedType; }
+		}
+
+		public override bool Equals(object obj)
+		{
+			EventInfoWithReflectedType other = obj as EventInfoWithReflectedType;
+			return other != null
+				&& other.reflectedType == reflectedType
+				&& other.eventInfo == eventInfo;
+		}
+
+		public override int GetHashCode()
+		{
+			return reflectedType.GetHashCode() ^ eventInfo.GetHashCode();
+		}
+
+		public override int MetadataToken
+		{
+			get { return eventInfo.MetadataToken; }
+		}
+
+		public override Module Module
+		{
+			get { return eventInfo.Module; }
+		}
+
+		public override string Name
+		{
+			get { return eventInfo.Name; }
+		}
+
+		internal override bool IsBaked
+		{
+			get { return eventInfo.IsBaked; }
+		}
+
+		internal override int GetCurrentToken()
+		{
+			return eventInfo.GetCurrentToken();
+		}
+	}
+}
+@
+
+
+1.12
+log
+@Refactored custom attribute handling of MemberInfo types.
+@
+text
+@d77 15
+@
+
+
+1.11
+log
+@Fixed two bugs in the ReflectedType wrappers for PropertyInfo and EventInfo:
+- GetXxxMethod would throw a NullReferenceException if the corresponding method didn't exist.
+- EventInfo.GetAccessors() called itself instead of the wrapped object.
+@
+text
+@d104 6
+a211 5
+		internal override IList<CustomAttributeData> GetCustomAttributesData(Type attributeType)
+		{
+			return eventInfo.GetCustomAttributesData(attributeType);
+		}
+
+d226 10
+@
+
+
+1.10
+log
+@Added MemberInfo.ReflectedType.
+@
+text
+@d125 1
+a125 1
+			return (MethodInfo)eventInfo.GetAddMethod(nonPublic).SetReflectedType(reflectedType);
+d130 1
+a130 1
+			return (MethodInfo)eventInfo.GetRaiseMethod(nonPublic).SetReflectedType(reflectedType);
+d135 1
+a135 1
+			return (MethodInfo)eventInfo.GetRemoveMethod(nonPublic).SetReflectedType(reflectedType);
+d140 1
+a140 6
+			MethodInfo[] methods = eventInfo.GetOtherMethods(nonPublic);
+			for (int i = 0; i < methods.Length; i++)
+			{
+				methods[i] = (MethodInfo)methods[i].SetReflectedType(reflectedType);
+			}
+			return methods;
+d145 1
+a145 6
+			MethodInfo[] methods = eventInfo.__GetMethods();
+			for (int i = 0; i < methods.Length; i++)
+			{
+				methods[i] = (MethodInfo)methods[i].SetReflectedType(reflectedType);
+			}
+			return methods;
+@
+
+
+1.9
+log
+@Moved GetEvents(), GetFields(), GetConstructors(), GetNestedTypes() and GetProperties() to a common implementation that fixes a number of bugs.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Jeroen Frijters
+d24 2
+d99 136
+@
+
+
+1.8
+log
+@Implemented ToString() for EventInfo and PropertyInfo.
+@
+text
+@d47 1
+d84 13
+@
+
+
+1.7
+log
+@- Retain event method ordering.
+- Allow duplicate event methods.
+- Added API extension EventInfo.__GetMethods() to get all methods associated with an event.
+@
+text
+@d78 5
+@
+
+
+1.6
+log
+@Prevent external subclassing. It's not part of the design to suppor that, now it is also enforced.
+@
+text
+@d44 1
+@
+
+
+1.5
+log
+@Introduced Empty<T> to cache zero length arrays.
+@
+text
+@d29 5
+@
+
+
+1.4
+log
+@Made property and event public/static flag handling compatible with .NET
+@
+text
+@a28 2
+		internal static readonly EventInfo[] EmptyArray = new EventInfo[0];
+
+@
+
+
+1.3
+log
+@Several IKVM.Reflection fixes related to generics.
+- MethodImpls in generic type definitions should be resolved with typeArgs as context.
+- Cleaned up member on generic type rebinding.
+- Fixed __GetDeclaredProperties and __GetDeclaredEvents to rebind properly.
+@
+text
+@d42 2
+a69 10
+		internal bool IsStatic
+		{
+			get { return GetAddMethod(true).IsStatic; }
+		}
+
+		internal bool IsPublic
+		{
+			get { return GetAddMethod(true).IsPublic; }
+		}
+
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d77 5
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

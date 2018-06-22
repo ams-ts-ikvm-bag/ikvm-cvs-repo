@@ -1,0 +1,49 @@
+head	1.1;
+access;
+symbols
+	v8_1_5717_0:1.1
+	v8_1:1.1.0.14
+	v8_0_5449_1:1.1
+	v8_0_5449_0:1.1
+	v8_0:1.1.0.12
+	v7_4_5196_0:1.1
+	v7_4:1.1.0.10
+	v7_3:1.1.0.8
+	v7_2_4630_6:1.1
+	v7_2_4630_5:1.1
+	v7_2_4630_4:1.1
+	v7_2_4630_3:1.1
+	v7_2_4630_2:1.1
+	v7_2_4630_1:1.1
+	v7_2:1.1.0.6
+	v7_1_4532_2:1.1
+	v7_1_4532_1:1.1
+	v7_1_4532_0:1.1
+	v7_1:1.1.0.4
+	v7_0_4335_3:1.1
+	v7_0_4335_2:1.1
+	v7_0_4335_1:1.1
+	v7_0_4335_0:1.1
+	v7_0:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	2011.07.28.07.33.21;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@With Java 7 there is a new JulesRenderingEngine with native methods. That we support only the PiscesRenderingEngine for now like in Java 6
+@
+text
+@#  Pisces Rendering Engine module
+sun.java2d.pisces.PiscesRenderingEngine
+@

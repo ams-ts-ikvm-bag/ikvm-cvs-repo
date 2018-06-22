@@ -1,0 +1,769 @@
+head	1.27;
+access;
+symbols
+	v8_1_5717_0:1.27
+	v8_1:1.27.0.8
+	v8_0_5449_1:1.27
+	v8_0_5449_0:1.27
+	v8_0:1.27.0.6
+	v7_4_5196_0:1.27
+	v7_4:1.27.0.4
+	v7_3:1.27.0.2
+	v7_2_4630_6:1.26
+	v7_2_4630_5:1.26
+	v7_2_4630_4:1.26
+	v7_2_4630_3:1.26
+	v7_2_4630_2:1.26
+	v0_46_0_4:1.24
+	v7_2_4630_1:1.26
+	v7_2:1.26.0.2
+	v7_1_4532_2:1.25
+	v7_1_4532_1:1.25
+	v7_1_4532_0:1.25
+	v7_1:1.25.0.2
+	v7_0_4335_3:1.24
+	v7_0_4335_2:1.24
+	v7_0_4335_1:1.24
+	v0_46_0_2:1.24
+	v7_0_4335_0:1.24
+	v7_0:1.24.0.4
+	v0_40_0_6:1.23
+	v0_40_0_5:1.23
+	v0_46_0_1:1.24
+	v0_46_0_0:1.24
+	v0_46:1.24.0.2
+	v0_36_0_14:1.20.2.1
+	v0_44_0_6:1.23
+	v0_44_0_5:1.23
+	v0_44_0_4:1.23
+	v0_44_0_3:1.23
+	v0_44_0_2:1.23
+	v0_42_0_7:1.23
+	v0_44_0_1:1.23
+	v0_44_0_0:1.23
+	v0_44:1.23.0.6
+	v0_42_0_6:1.23
+	v0_42_0_5:1.23
+	v0_42_0_4:1.23
+	v0_42_0_3:1.23
+	v0_42_0_2:1.23
+	v0_42_0_1:1.23
+	v0_42_0_0:1.23
+	v0_42:1.23.0.4
+	v0_40_0_3:1.23
+	v0_40_0_2:1.23
+	v0_40_0_1:1.23
+	v0_40_0_0:1.23
+	v0_40:1.23.0.2
+	v0_36_0_13:1.20.2.1
+	v0_38_0_1:1.21
+	v0_38_0_0:1.21
+	v0_38:1.21.0.2
+	v0_36_0_9:1.20.2.1
+	v0_36_0_7:1.20.2.1
+	v0_36_0_5:1.20.2.1
+	v0_36_0_4:1.20.2.1
+	v0_36_0_3:1.20.2.1
+	v0_36_0_2:1.20.2.1
+	v0_36_0_1:1.20
+	v0_36_0_0:1.20
+	v0_36:1.20.0.2
+	v0_34_0_3:1.17.2.1
+	v0_34_0_2:1.17.2.1
+	v0_34_0_1:1.17.2.1
+	v0_34_0_0:1.17.2.1
+	v0_34:1.17.0.2
+	v0_32:1.16.0.2
+	v0_32_0_0:1.16
+	v0_30:1.14.0.2
+	v0_28_0_0:1.14
+	v0_26_0_1:1.12
+	v0_26_0_0:1.12
+	v0_24_0_1:1.11
+	v0_24_0_0:1.11
+	v0_22_0_0:1.11
+	v0_20_0_0:1.11
+	v0_18_0_0:1.10
+	v0_16_0_0:1.9
+	v0_14_0_1:1.8
+	v0_14_0_0:1.8
+	v0_12_0_0:1.6
+	v0_10_0_1:1.4
+	v0_10_0_0:1.4;
+locks; strict;
+comment	@# @;
+
+
+1.27
+date	2013.02.27.16.23.19;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2012.07.07.08.34.40;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2012.01.05.07.58.08;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2010.12.24.06.17.00;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2009.02.13.07.23.49;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2008.11.14.07.51.31;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2008.08.28.06.48.20;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2007.08.22.11.51.18;	author jfrijters;	state Exp;
+branches
+	1.20.2.1;
+next	1.19;
+
+1.19
+date	2007.06.15.13.54.10;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2007.04.09.08.32.49;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2007.01.05.08.14.18;	author jfrijters;	state Exp;
+branches
+	1.17.2.1;
+next	1.16;
+
+1.16
+date	2006.08.04.13.13.22;	author jfrijters;	state Exp;
+branches
+	1.16.2.1;
+next	1.15;
+
+1.15
+date	2006.08.04.12.39.33;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2006.05.16.09.10.11;	author jfrijters;	state Exp;
+branches
+	1.14.2.1;
+next	1.13;
+
+1.13
+date	2006.04.05.11.04.44;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2006.03.07.09.34.32;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2005.09.07.07.21.28;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2005.07.18.07.28.16;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2005.07.01.09.25.35;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2005.05.02.11.11.53;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2005.04.18.08.34.16;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2005.03.02.09.01.36;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2005.02.02.15.12.03;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2005.01.07.09.42.04;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2004.11.16.11.11.54;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2004.11.08.10.01.46;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2004.11.04.12.50.34;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.14.2.1
+date	2006.08.09.12.03.05;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.16.2.1
+date	2006.12.11.08.27.52;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.17.2.1
+date	2007.04.13.06.46.40;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.20.2.1
+date	2007.09.20.13.54.22;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.27
+log
+@Added license headers to build scripts.
+@
+text
+@<?xml version="1.0"?>
+<!--
+  Copyright (C) 2002-2013 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+-->
+<project name="japi-status" default="default">
+
+    <property name="REFERENCE_API_JARS" value="c:\jdk1.7.0_04\jre\lib\rt.jar c:\jdk1.7.0_04\jre\lib\jce.jar c:\jdk1.7.0_04\jre\lib\jsse.jar" />
+    <property name="REFERENCE_API_NAME" value="JDK-1.7.0_04" />
+    <property name="JAPI_HOME" value="c:\japi\japitools" />
+    <property name="IKVM_VERSION" value="7.2" />
+
+    <target name="default">
+	<call target="status" />
+	<call target="clean" />
+    </target>
+
+    <target name="status" depends="japi.diff">
+	<exec program="perl" commandline="${JAPI_HOME}/bin/japiohtml japi1.diff" output="IKVM-${IKVM_VERSION}-vs-${REFERENCE_API_NAME}.html" />
+	<exec program="perl" commandline="${JAPI_HOME}/bin/japiohtml japi2.diff" output="${REFERENCE_API_NAME}-vs-IKVM-${IKVM_VERSION}.html" />
+    </target>
+
+    <target name="japi.diff" depends="ikvm.japi,jdk.japi">
+        <exec program="perl" commandline="${JAPI_HOME}/bin/japicompat -v -j -o japi1.diff IKVM-${IKVM_VERSION}.japi ${REFERENCE_API_NAME}.japi" />
+        <exec program="perl" commandline="${JAPI_HOME}/bin/japicompat -v -j -o japi2.diff ${REFERENCE_API_NAME}.japi IKVM-${IKVM_VERSION}.japi" />
+    </target>
+
+    <target name="jdk.japi" depends="japize">
+	<exec program="../bin/japize.exe" useruntimeengine="true" commandline="unzip as ${REFERENCE_API_NAME} apis ${REFERENCE_API_JARS} +java, +javax, +org," />
+    </target>
+
+    <target name="ikvm.japi" depends="jar,japize">
+	<exec program="../bin/japize.exe" useruntimeengine="true" commandline="unzip as IKVM-${IKVM_VERSION} apis IKVM.OpenJDK.Core.jar +java, +javax, +org," />
+    </target>
+
+    <target name="jar">
+	<exec program="../bin/ikvmstub.exe" useruntimeengine="true" commandline="-japi -shared -lib:../bin IKVM.OpenJDK.Core -r:../openjdk/System.Core.dll" />
+    </target>
+
+    <target name="japize">
+	<exec program="../bin/ikvmc.exe" useruntimeengine="true" commandline="-main:net.wuffies.japi.Japize -out:..\bin\japize.exe ${JAPI_HOME}/share/java/japitools.jar" />
+    </target>
+
+    <target name="clean">
+        <delete failonerror="false">
+	    <fileset>
+                <include name="IKVM.OpenJDK.Core.jar" />
+                <include name="japi1.diff" />
+                <include name="japi2.diff" />
+                <include name="${REFERENCE_API_NAME}.japi" />
+                <include name="IKVM-${IKVM_VERSION}.japi" />
+		<include name="../bin/japize.exe" />
+            </fileset>
+        </delete>
+    </target>
+</project>
+@
+
+
+1.26
+log
+@- Updated for IKVM.NET 7.2 and JDK 1.7.0_04.
+- Removed list of packages that were previously skipped.
+- Use ikvmstub -japi option.
+@
+text
+@d2 23
+@
+
+
+1.25
+log
+@Updated for JDK 7.
+@
+text
+@d4 2
+a5 2
+    <property name="REFERENCE_API_JARS" value="c:\jdk1.7\jre\lib\rt.jar c:\jdk1.7\jre\lib\jce.jar c:\jdk1.7\jre\lib\jsse.jar" />
+    <property name="REFERENCE_API_NAME" value="JDK-1.7" />
+d7 1
+a7 1
+    <property name="IKVM_VERSION" value="7.1" />
+d25 1
+a25 1
+	<exec program="../bin/japize.exe" useruntimeengine="true" commandline="unzip as ${REFERENCE_API_NAME} apis ${REFERENCE_API_JARS} +java +javax +org -java.awt.dnd.peer -java.awt.peer -org.apache -org.w3c.dom.css -org.w3c.dom.events -org.w3c.dom.html -org.w3c.dom.stylesheets -org.w3c.dom.traversal -org.w3c.dom.views -java.text.resources" />
+d29 1
+a29 1
+	<exec program="../bin/japize.exe" useruntimeengine="true" commandline="unzip as IKVM-${IKVM_VERSION} apis IKVM.OpenJDK.Core.jar +java +javax +org -java.awt.dnd.peer -java.awt.peer -org.apache -org.w3c.dom.css -org.w3c.dom.events -org.w3c.dom.html -org.w3c.dom.stylesheets -org.w3c.dom.traversal -org.w3c.dom.views -java.text.resources" />
+d33 1
+a33 1
+	<exec program="../bin/ikvmstub.exe" useruntimeengine="true" commandline="-serialver -shared -lib:../bin IKVM.OpenJDK.Core -r:../openjdk/System.Core.dll" />
+@
+
+
+1.24
+log
+@Fixed to work with "new" ikvmstub.
+@
+text
+@d4 2
+a5 2
+    <property name="REFERENCE_API_JARS" value="c:\jdk1.6-x86\jre\lib\rt.jar c:\jdk1.6-x86\jre\lib\jce.jar c:\jdk1.6-x86\jre\lib\jsse.jar" />
+    <property name="REFERENCE_API_NAME" value="JDK-1.6" />
+d7 1
+a7 1
+    <property name="IKVM_VERSION" value="0.45" />
+d19 1
+a19 1
+    <target name="japi.diff" depends="jdk.japi,ikvm.japi">
+@
+
+
+1.23
+log
+@Updated for modularized class libraries.
+@
+text
+@d7 1
+a7 1
+    <property name="IKVM_VERSION" value="0.39" />
+d33 1
+a33 1
+	<exec program="../bin/ikvmstub.exe" useruntimeengine="true" commandline="-serialver -shared IKVM.OpenJDK.Core" />
+@
+
+
+1.22
+log
+@Changed version to 0.39.
+@
+text
+@d29 1
+a29 1
+	<exec program="../bin/japize.exe" useruntimeengine="true" commandline="unzip as IKVM-${IKVM_VERSION} apis IKVM.OpenJDK.ClassLibrary.jar +java +javax +org -java.awt.dnd.peer -java.awt.peer -org.apache -org.w3c.dom.css -org.w3c.dom.events -org.w3c.dom.html -org.w3c.dom.stylesheets -org.w3c.dom.traversal -org.w3c.dom.views -java.text.resources" />
+d33 1
+a33 1
+	<exec program="../bin/ikvmstub.exe" useruntimeengine="true" commandline="-serialver IKVM.OpenJDK.ClassLibrary" />
+d43 1
+a43 1
+                <include name="IKVM.OpenJDK.ClassLibrary.jar" />
+@
+
+
+1.21
+log
+@Updated ikvm version and removed GNU Classpath support.
+@
+text
+@d7 1
+a7 1
+    <property name="IKVM_VERSION" value="0.38" />
+@
+
+
+1.20
+log
+@Renamed IKVM.Hybrid.GNU.Classpath.OpenJDK.dll to IKVM.OpenJDK.ClassLibrary.dll and made OpenJDK build the default.
+@
+text
+@d4 1
+a4 1
+    <property name="REFERENCE_API_JARS" value="c:\jdk1.6\jre\lib\rt.jar c:\jdk1.6\jre\lib\jce.jar c:\jdk1.6\jre\lib\jsse.jar" />
+d7 1
+a7 7
+    <property name="IKVM_VERSION" value="0.35" />
+    <property name="CORE_LIBRARY" value="IKVM.OpenJDK.ClassLibrary" />
+
+    <target name="classpath">
+        <property name="CORE_LIBRARY" value="IKVM.GNU.Classpath" />
+        <call target="default" />
+    </target>
+d29 1
+a29 1
+	<exec program="../bin/japize.exe" useruntimeengine="true" commandline="unzip as IKVM-${IKVM_VERSION} apis ${CORE_LIBRARY}.jar +java +javax +org -java.awt.dnd.peer -java.awt.peer -org.apache -org.w3c.dom.css -org.w3c.dom.events -org.w3c.dom.html -org.w3c.dom.stylesheets -org.w3c.dom.traversal -org.w3c.dom.views -java.text.resources" />
+d33 1
+a33 1
+	<exec program="../bin/ikvmstub.exe" useruntimeengine="true" commandline="-serialver ${CORE_LIBRARY}" />
+d43 1
+a43 1
+                <include name="IKVM.GNU.Classpath.jar" />
+@
+
+
+1.20.2.1
+log
+@Backported fixes from trunk. Changed version to 0.36.0.2.
+@
+text
+@d7 1
+a7 1
+    <property name="IKVM_VERSION" value="0.36" />
+@
+
+
+1.19
+log
+@Added hybrid target.
+@
+text
+@d8 1
+a8 1
+    <property name="CORE_LIBRARY" value="IKVM.GNU.Classpath" />
+d10 2
+a11 2
+    <target name="hybrid">
+        <property name="CORE_LIBRARY" value="IKVM.Hybrid.GNU.Classpath.OpenJDK" />
+@
+
+
+1.18
+log
+@Updated version numbers.
+@
+text
+@d8 6
+d34 2
+a35 2
+    <target name="ikvm.japi" depends="IKVM.GNU.Classpath.jar,japize">
+	<exec program="../bin/japize.exe" useruntimeengine="true" commandline="unzip as IKVM-${IKVM_VERSION} apis IKVM.GNU.Classpath.jar +java +javax +org -java.awt.dnd.peer -java.awt.peer -org.apache -org.w3c.dom.css -org.w3c.dom.events -org.w3c.dom.html -org.w3c.dom.stylesheets -org.w3c.dom.traversal -org.w3c.dom.views -java.text.resources" />
+d38 2
+a39 2
+    <target name="IKVM.GNU.Classpath.jar">
+	<exec program="../bin/ikvmstub.exe" useruntimeengine="true" commandline="IKVM.GNU.Classpath" />
+@
+
+
+1.17
+log
+@*** empty log message ***
+@
+text
+@d7 1
+a7 1
+    <property name="IKVM_VERSION" value="0.33" />
+@
+
+
+1.17.2.1
+log
+@Preparing for release.
+@
+text
+@d7 1
+a7 1
+    <property name="IKVM_VERSION" value="0.34" />
+@
+
+
+1.16
+log
+@*** empty log message ***
+@
+text
+@d4 2
+a5 6
+<!--
+    <property name="REFERENCE_API_JARS" value="c:\j2sdk1.4.0\jre\lib\rt.jar c:\j2sdk1.4.0\jre\lib\jce.jar c:\j2sdk1.4.0\jre\lib\jsse.jar" />
+    <property name="REFERENCE_API_NAME" value="JDK-1.4" />
+-->
+    <property name="REFERENCE_API_JARS" value="c:\jdk1.5\jre\lib\rt.jar c:\jdk1.5\jre\lib\jce.jar c:\jdk1.5\jre\lib\jsse.jar" />
+    <property name="REFERENCE_API_NAME" value="JDK-1.5" />
+d7 1
+a7 1
+    <property name="IKVM_VERSION" value="0.31" />
+@
+
+
+1.16.2.1
+log
+@*** empty log message ***
+@
+text
+@d11 1
+a11 1
+    <property name="IKVM_VERSION" value="0.32" />
+@
+
+
+1.15
+log
+@*** empty log message ***
+@
+text
+@d47 6
+a52 6
+                <includes name="IKVM.GNU.Classpath.jar" />
+                <includes name="japi1.diff" />
+                <includes name="japi2.diff" />
+                <includes name="${REFERENCE_API_NAME}.japi" />
+                <includes name="IKVM-${IKVM_VERSION}.japi" />
+		<includes name="../bin/japize.exe" />
+@
+
+
+1.14
+log
+@*** empty log message ***
+@
+text
+@d11 1
+a11 1
+    <property name="IKVM_VERSION" value="0.28" />
+@
+
+
+1.14.2.1
+log
+@*** empty log message ***
+@
+text
+@d11 1
+a11 1
+    <property name="IKVM_VERSION" value="0.30" />
+@
+
+
+1.13
+log
+@*** empty log message ***
+@
+text
+@d11 1
+a11 1
+    <property name="IKVM_VERSION" value="0.27" />
+@
+
+
+1.12
+log
+@*** empty log message ***
+@
+text
+@d4 1
+d7 1
+a7 1
+<!--
+a9 1
+-->
+d11 1
+a11 1
+    <property name="IKVM_VERSION" value="0.26.0.0" />
+@
+
+
+1.11
+log
+@*** empty log message ***
+@
+text
+@d11 1
+a11 1
+    <property name="IKVM_VERSION" value="0.20.0.0" />
+@
+
+
+1.10
+log
+@*** empty log message ***
+@
+text
+@d11 1
+a11 1
+    <property name="IKVM_VERSION" value="0.18.0.0" />
+@
+
+
+1.9
+log
+@*** empty log message ***
+@
+text
+@d11 1
+a11 1
+    <property name="IKVM_VERSION" value="0.16.0.0" />
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@d11 1
+a11 1
+    <property name="IKVM_VERSION" value="0.14.0.0" />
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d11 1
+a11 1
+    <property name="IKVM_VERSION" value="0.13.0.0" />
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d11 1
+a11 1
+    <property name="IKVM_VERSION" value="0.12.0.0" />
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d11 1
+a11 1
+    <property name="IKVM_VERSION" value="0.11.0.0" />
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d11 1
+a11 1
+    <property name="IKVM_VERSION" value="0.10.0.0" />
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d11 1
+a11 1
+    <property name="IKVM_VERSION" value="0.9" />
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+<project name="japi-status" default="ikvm-japi-status.html">
+d4 6
+a9 2
+    <property name="REFERENCE_API_JARS" value="c:\j2re1.4.1\lib\rt.jar c:\j2re1.4.1\lib\jce.jar c:\j2re1.4.1\lib\jsse.jar" />
+    <property name="REFERENCE_API_NAME" value="JDK-1.4.1" />
+d13 2
+a14 2
+    <target name="ikvm-japi-status.html" depends="japi.diff">
+	<exec program="perl" commandline="${JAPI_HOME}/bin/japiohtml japi.diff" output="ikvm-japi-status.html" />
+d18 5
+d24 2
+a25 1
+        <exec program="perl" commandline="${JAPI_HOME}/bin/japicompat -j -o japi.diff ${REFERENCE_API_NAME}.japi IKVM-${IKVM_VERSION}.japi" />
+d48 2
+a49 1
+                <includes name="japi.diff" />
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@d4 1
+a4 1
+    <property name="REFERENCE_API_JAR" value="c:\j2re1.4.1\lib\rt.jar" />
+d19 1
+a19 1
+	<exec program="../bin/japize.exe" useruntimeengine="true" commandline="unzip as ${REFERENCE_API_NAME} apis ${REFERENCE_API_JAR} +java +javax" />
+d23 1
+a23 1
+	<exec program="../bin/japize.exe" useruntimeengine="true" commandline="unzip as IKVM-${IKVM_VERSION} apis IKVM.GNU.Classpath.jar +java +javax" />
+@
+

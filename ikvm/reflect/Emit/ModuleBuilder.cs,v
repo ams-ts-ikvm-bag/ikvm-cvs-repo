@@ -1,0 +1,4473 @@
+head	1.109;
+access;
+symbols
+	v8_1_5717_0:1.104
+	v8_1:1.104.0.2
+	v8_0_5449_1:1.98
+	v8_0_5449_0:1.98
+	v8_0:1.98.0.4
+	v7_4_5196_0:1.98
+	v7_4:1.98.0.2
+	v7_3:1.91.0.2
+	v7_2_4630_6:1.85.2.1
+	v7_2_4630_5:1.85.2.1
+	v7_2_4630_4:1.85.2.1
+	v7_2_4630_3:1.85.2.1
+	v7_2_4630_2:1.85
+	v0_46_0_4:1.31.2.1
+	v7_2_4630_1:1.85
+	v7_2:1.85.0.2
+	v7_1_4532_2:1.72
+	v7_1_4532_1:1.72
+	v7_1_4532_0:1.72
+	v7_1:1.72.0.2
+	v7_0_4335_3:1.59
+	v7_0_4335_2:1.59
+	v7_0_4335_1:1.59
+	v0_46_0_2:1.31.2.1
+	v7_0_4335_0:1.59
+	v7_0:1.59.0.2
+	v0_46_0_1:1.31.2.1
+	v0_46_0_0:1.31
+	v0_46:1.31.0.2
+	v0_44_0_6:1.17
+	v0_44_0_5:1.17
+	v0_44_0_4:1.17
+	v0_44_0_3:1.17
+	v0_44_0_2:1.17
+	v0_44_0_1:1.17
+	v0_44_0_0:1.17
+	v0_44:1.17.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.109
+date	2016.07.04.05.15.00;	author jfrijters;	state Exp;
+branches;
+next	1.108;
+
+1.108
+date	2016.07.01.05.44.41;	author jfrijters;	state Exp;
+branches;
+next	1.107;
+
+1.107
+date	2016.07.01.05.15.22;	author jfrijters;	state Exp;
+branches;
+next	1.106;
+
+1.106
+date	2015.11.03.08.19.22;	author jfrijters;	state Exp;
+branches;
+next	1.105;
+
+1.105
+date	2015.08.27.12.15.44;	author jfrijters;	state Exp;
+branches;
+next	1.104;
+
+1.104
+date	2015.04.06.07.06.31;	author jfrijters;	state Exp;
+branches;
+next	1.103;
+
+1.103
+date	2015.04.06.06.54.43;	author jfrijters;	state Exp;
+branches;
+next	1.102;
+
+1.102
+date	2015.02.17.13.48.31;	author jfrijters;	state Exp;
+branches;
+next	1.101;
+
+1.101
+date	2015.02.17.10.23.55;	author jfrijters;	state Exp;
+branches;
+next	1.100;
+
+1.100
+date	2015.02.16.12.24.28;	author jfrijters;	state Exp;
+branches;
+next	1.99;
+
+1.99
+date	2015.01.27.09.54.44;	author jfrijters;	state Exp;
+branches;
+next	1.98;
+
+1.98
+date	2013.11.16.08.50.32;	author jfrijters;	state Exp;
+branches;
+next	1.97;
+
+1.97
+date	2013.11.16.07.21.34;	author jfrijters;	state Exp;
+branches;
+next	1.96;
+
+1.96
+date	2013.11.01.06.58.30;	author jfrijters;	state Exp;
+branches;
+next	1.95;
+
+1.95
+date	2013.05.10.11.12.20;	author jfrijters;	state Exp;
+branches;
+next	1.94;
+
+1.94
+date	2013.05.10.10.19.48;	author jfrijters;	state Exp;
+branches;
+next	1.93;
+
+1.93
+date	2013.05.10.10.12.37;	author jfrijters;	state Exp;
+branches;
+next	1.92;
+
+1.92
+date	2013.05.10.10.10.08;	author jfrijters;	state Exp;
+branches;
+next	1.91;
+
+1.91
+date	2013.01.12.12.07.40;	author jfrijters;	state Exp;
+branches;
+next	1.90;
+
+1.90
+date	2013.01.12.11.30.48;	author jfrijters;	state Exp;
+branches;
+next	1.89;
+
+1.89
+date	2012.12.06.14.12.21;	author jfrijters;	state Exp;
+branches;
+next	1.88;
+
+1.88
+date	2012.11.20.15.17.24;	author jfrijters;	state Exp;
+branches;
+next	1.87;
+
+1.87
+date	2012.10.15.23.14.45;	author jfrijters;	state Exp;
+branches;
+next	1.86;
+
+1.86
+date	2012.10.13.20.12.32;	author jfrijters;	state Exp;
+branches;
+next	1.85;
+
+1.85
+date	2012.07.16.12.36.31;	author jfrijters;	state Exp;
+branches
+	1.85.2.1;
+next	1.84;
+
+1.84
+date	2012.07.16.10.14.38;	author jfrijters;	state Exp;
+branches;
+next	1.83;
+
+1.83
+date	2012.07.16.07.22.59;	author jfrijters;	state Exp;
+branches;
+next	1.82;
+
+1.82
+date	2012.07.13.07.35.25;	author jfrijters;	state Exp;
+branches;
+next	1.81;
+
+1.81
+date	2012.07.12.09.13.42;	author jfrijters;	state Exp;
+branches;
+next	1.80;
+
+1.80
+date	2012.07.07.08.07.58;	author jfrijters;	state Exp;
+branches;
+next	1.79;
+
+1.79
+date	2012.06.26.15.53.33;	author jfrijters;	state Exp;
+branches;
+next	1.78;
+
+1.78
+date	2012.06.26.13.24.48;	author jfrijters;	state Exp;
+branches;
+next	1.77;
+
+1.77
+date	2012.06.26.13.12.55;	author jfrijters;	state Exp;
+branches;
+next	1.76;
+
+1.76
+date	2012.06.26.13.07.02;	author jfrijters;	state Exp;
+branches;
+next	1.75;
+
+1.75
+date	2012.06.26.12.59.12;	author jfrijters;	state Exp;
+branches;
+next	1.74;
+
+1.74
+date	2012.06.26.12.55.35;	author jfrijters;	state Exp;
+branches;
+next	1.73;
+
+1.73
+date	2012.05.31.12.16.27;	author jfrijters;	state Exp;
+branches;
+next	1.72;
+
+1.72
+date	2012.04.19.12.14.51;	author jfrijters;	state Exp;
+branches;
+next	1.71;
+
+1.71
+date	2012.04.17.13.03.54;	author jfrijters;	state Exp;
+branches;
+next	1.70;
+
+1.70
+date	2012.04.09.10.04.58;	author jfrijters;	state Exp;
+branches;
+next	1.69;
+
+1.69
+date	2012.04.07.08.28.14;	author jfrijters;	state Exp;
+branches;
+next	1.68;
+
+1.68
+date	2012.04.07.08.22.24;	author jfrijters;	state Exp;
+branches;
+next	1.67;
+
+1.67
+date	2012.03.21.12.36.44;	author jfrijters;	state Exp;
+branches;
+next	1.66;
+
+1.66
+date	2012.03.21.11.32.08;	author jfrijters;	state Exp;
+branches;
+next	1.65;
+
+1.65
+date	2012.03.21.11.09.22;	author jfrijters;	state Exp;
+branches;
+next	1.64;
+
+1.64
+date	2012.01.16.06.19.58;	author jfrijters;	state Exp;
+branches;
+next	1.63;
+
+1.63
+date	2012.01.12.06.51.18;	author jfrijters;	state Exp;
+branches;
+next	1.62;
+
+1.62
+date	2011.12.01.12.03.23;	author jfrijters;	state Exp;
+branches;
+next	1.61;
+
+1.61
+date	2011.12.01.06.30.51;	author jfrijters;	state Exp;
+branches;
+next	1.60;
+
+1.60
+date	2011.11.07.14.05.52;	author jfrijters;	state Exp;
+branches;
+next	1.59;
+
+1.59
+date	2011.10.13.11.01.12;	author jfrijters;	state Exp;
+branches;
+next	1.58;
+
+1.58
+date	2011.09.30.08.26.28;	author jfrijters;	state Exp;
+branches;
+next	1.57;
+
+1.57
+date	2011.09.30.06.19.06;	author jfrijters;	state Exp;
+branches;
+next	1.56;
+
+1.56
+date	2011.03.22.10.34.01;	author jfrijters;	state Exp;
+branches;
+next	1.55;
+
+1.55
+date	2011.03.22.10.26.52;	author jfrijters;	state Exp;
+branches;
+next	1.54;
+
+1.54
+date	2011.03.22.09.48.49;	author jfrijters;	state Exp;
+branches;
+next	1.53;
+
+1.53
+date	2011.03.21.07.09.46;	author jfrijters;	state Exp;
+branches;
+next	1.52;
+
+1.52
+date	2011.03.21.04.49.07;	author jfrijters;	state Exp;
+branches;
+next	1.51;
+
+1.51
+date	2011.03.18.07.48.34;	author jfrijters;	state Exp;
+branches;
+next	1.50;
+
+1.50
+date	2011.03.17.08.15.02;	author jfrijters;	state Exp;
+branches;
+next	1.49;
+
+1.49
+date	2011.03.17.06.53.45;	author jfrijters;	state Exp;
+branches;
+next	1.48;
+
+1.48
+date	2011.03.14.05.03.30;	author jfrijters;	state Exp;
+branches;
+next	1.47;
+
+1.47
+date	2011.03.13.09.51.01;	author jfrijters;	state Exp;
+branches;
+next	1.46;
+
+1.46
+date	2011.03.11.15.15.25;	author jfrijters;	state Exp;
+branches;
+next	1.45;
+
+1.45
+date	2011.03.11.14.26.31;	author jfrijters;	state Exp;
+branches;
+next	1.44;
+
+1.44
+date	2011.03.11.14.10.15;	author jfrijters;	state Exp;
+branches;
+next	1.43;
+
+1.43
+date	2011.03.10.12.03.20;	author jfrijters;	state Exp;
+branches;
+next	1.42;
+
+1.42
+date	2011.03.09.06.02.44;	author jfrijters;	state Exp;
+branches;
+next	1.41;
+
+1.41
+date	2011.03.08.07.47.45;	author jfrijters;	state Exp;
+branches;
+next	1.40;
+
+1.40
+date	2011.03.08.06.14.22;	author jfrijters;	state Exp;
+branches;
+next	1.39;
+
+1.39
+date	2011.03.08.06.05.56;	author jfrijters;	state Exp;
+branches;
+next	1.38;
+
+1.38
+date	2011.03.08.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.37;
+
+1.37
+date	2011.03.06.07.36.55;	author jfrijters;	state Exp;
+branches;
+next	1.36;
+
+1.36
+date	2011.03.06.07.25.38;	author jfrijters;	state Exp;
+branches;
+next	1.35;
+
+1.35
+date	2011.03.06.07.09.14;	author jfrijters;	state Exp;
+branches;
+next	1.34;
+
+1.34
+date	2011.03.06.07.07.17;	author jfrijters;	state Exp;
+branches;
+next	1.33;
+
+1.33
+date	2011.03.06.07.04.47;	author jfrijters;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2011.03.03.12.52.44;	author jfrijters;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2011.01.21.12.58.56;	author jfrijters;	state Exp;
+branches
+	1.31.2.1;
+next	1.30;
+
+1.30
+date	2011.01.20.05.49.49;	author jfrijters;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2011.01.20.05.38.12;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2011.01.18.07.11.23;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2011.01.12.14.22.04;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2011.01.12.14.09.54;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2011.01.12.13.45.20;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2010.12.09.06.12.19;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2010.12.08.06.33.03;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2010.12.08.06.02.53;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2010.11.29.11.20.47;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2010.11.29.09.28.48;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2010.11.29.08.16.54;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2010.11.29.06.36.17;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2010.06.28.09.37.08;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2010.06.28.09.33.27;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2010.06.28.07.41.51;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2010.06.28.06.43.44;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2010.06.24.08.49.14;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2010.06.24.08.44.33;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2010.06.18.06.57.18;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2010.06.18.06.52.08;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2010.06.18.06.47.36;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2010.05.11.09.05.41;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2010.05.07.13.56.17;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2010.05.07.04.44.11;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2010.05.06.12.35.42;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.05.06.06.03.34;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.04.18.08.58.19;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.31.2.1
+date	2011.03.17.05.18.42;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.85.2.1
+date	2012.10.23.08.15.53;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.109
+log
+@Removed [Obsolete] methods from NETSTANDARD build.
+@
+text
+@/*
+  Copyright (C) 2008-2015 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Diagnostics;
+#if !NO_SYMBOL_WRITER
+using System.Diagnostics.SymbolStore;
+#endif
+using System.Security.Cryptography;
+using System.Resources;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using IKVM.Reflection.Impl;
+using IKVM.Reflection.Metadata;
+using IKVM.Reflection.Writer;
+
+namespace IKVM.Reflection.Emit
+{
+	public sealed class ModuleBuilder : Module, ITypeOwner
+	{
+		private static readonly bool usePublicKeyAssemblyReference = false;
+		private Guid mvid;
+		private uint timestamp;
+		private long imageBaseAddress = 0x00400000;
+		private long stackReserve = -1;
+		private int fileAlignment = 0x200;
+		private DllCharacteristics dllCharacteristics = DllCharacteristics.DynamicBase | DllCharacteristics.NoSEH | DllCharacteristics.NXCompat | DllCharacteristics.TerminalServerAware;
+		private readonly AssemblyBuilder asm;
+		internal readonly string moduleName;
+		internal readonly string fileName;
+		internal readonly ISymbolWriterImpl symbolWriter;
+		private readonly TypeBuilder moduleType;
+		private readonly List<TypeBuilder> types = new List<TypeBuilder>();
+		private readonly Dictionary<Type, int> typeTokens = new Dictionary<Type, int>();
+		private readonly Dictionary<Type, int> memberRefTypeTokens = new Dictionary<Type, int>();
+		internal readonly ByteBuffer methodBodies = new ByteBuffer(128 * 1024);
+		internal readonly List<int> tokenFixupOffsets = new List<int>();
+		internal readonly ByteBuffer initializedData = new ByteBuffer(512);
+		internal ResourceSection unmanagedResources;
+		private readonly Dictionary<MemberRefKey, int> importedMemberRefs = new Dictionary<MemberRefKey, int>();
+		private readonly Dictionary<MethodSpecKey, int> importedMethodSpecs = new Dictionary<MethodSpecKey, int>();
+		private readonly Dictionary<Assembly, int> referencedAssemblies = new Dictionary<Assembly, int>();
+		private List<AssemblyName> referencedAssemblyNames;
+		private int nextPseudoToken = -1;
+		private readonly List<int> resolvedTokens = new List<int>();
+		internal readonly TableHeap Tables = new TableHeap();
+		internal readonly StringHeap Strings = new StringHeap();
+		internal readonly UserStringHeap UserStrings = new UserStringHeap();
+		internal readonly GuidHeap Guids = new GuidHeap();
+		internal readonly BlobHeap Blobs = new BlobHeap();
+		internal readonly List<VTableFixups> vtablefixups = new List<VTableFixups>();
+		internal readonly List<UnmanagedExport> unmanagedExports = new List<UnmanagedExport>();
+		private List<InterfaceImplCustomAttribute> interfaceImplCustomAttributes;
+		private readonly List<ResourceWriterRecord> resourceWriters = new List<ResourceWriterRecord>();
+		private bool saved;
+
+		private struct ResourceWriterRecord
+		{
+			private readonly string name;
+#if !NETSTANDARD
+			private readonly ResourceWriter rw;
+#endif
+			private readonly Stream stream;
+			private readonly ResourceAttributes attributes;
+
+#if NETSTANDARD
+			internal ResourceWriterRecord(string name, Stream stream, ResourceAttributes attributes)
+			{
+				this.name = name;
+				this.stream = stream;
+				this.attributes = attributes;
+			}
+#else
+			internal ResourceWriterRecord(string name, Stream stream, ResourceAttributes attributes)
+				: this(name, null, stream, attributes)
+			{
+			}
+
+			internal ResourceWriterRecord(string name, ResourceWriter rw, Stream stream, ResourceAttributes attributes)
+			{
+				this.name = name;
+				this.rw = rw;
+				this.stream = stream;
+				this.attributes = attributes;
+			}
+#endif
+
+			internal void Emit(ModuleBuilder mb, int offset)
+			{
+#if !NETSTANDARD
+				if (rw != null)
+				{
+					rw.Generate();
+				}
+#endif
+				ManifestResourceTable.Record rec = new ManifestResourceTable.Record();
+				rec.Offset = offset;
+				rec.Flags = (int)attributes;
+				rec.Name = mb.Strings.Add(name);
+				rec.Implementation = 0;
+				mb.ManifestResource.AddRecord(rec);
+			}
+
+			internal int GetLength()
+			{
+				return 4 + (int)stream.Length;
+			}
+
+			internal void Write(MetadataWriter mw)
+			{
+				mw.Write((int)stream.Length);
+				stream.Position = 0;
+				byte[] buffer = new byte[8192];
+				int length;
+				while ((length = stream.Read(buffer, 0, buffer.Length)) != 0)
+				{
+					mw.Write(buffer, 0, length);
+				}
+			}
+
+			internal void Close()
+			{
+#if !NETSTANDARD
+				if (rw != null)
+				{
+					rw.Close();
+				}
+#endif
+			}
+		}
+
+		internal struct VTableFixups
+		{
+			internal uint initializedDataOffset;
+			internal ushort count;
+			internal ushort type;
+
+			internal int SlotWidth
+			{
+				get { return (type & 0x02) == 0 ? 4 : 8; }
+			}
+		}
+
+		struct InterfaceImplCustomAttribute
+		{
+			internal int type;
+			internal int interfaceType;
+			internal int pseudoToken;
+		}
+
+		struct MemberRefKey : IEquatable<MemberRefKey>
+		{
+			private readonly Type type;
+			private readonly string name;
+			private readonly Signature signature;
+
+			internal MemberRefKey(Type type, string name, Signature signature)
+			{
+				this.type = type;
+				this.name = name;
+				this.signature = signature;
+			}
+
+			public bool Equals(MemberRefKey other)
+			{
+				return other.type.Equals(type)
+					&& other.name == name
+					&& other.signature.Equals(signature);
+			}
+
+			public override bool Equals(object obj)
+			{
+				MemberRefKey? other = obj as MemberRefKey?;
+				return other != null && Equals(other.Value);
+			}
+
+			public override int GetHashCode()
+			{
+				return type.GetHashCode() + name.GetHashCode() + signature.GetHashCode();
+			}
+
+			internal MethodBase LookupMethod()
+			{
+				return type.FindMethod(name, (MethodSignature)signature);
+			}
+		}
+
+		struct MethodSpecKey : IEquatable<MethodSpecKey>
+		{
+			private readonly Type type;
+			private readonly string name;
+			private readonly MethodSignature signature;
+			private readonly Type[] genericParameters;
+
+			internal MethodSpecKey(Type type, string name, MethodSignature signature, Type[] genericParameters)
+			{
+				this.type = type;
+				this.name = name;
+				this.signature = signature;
+				this.genericParameters = genericParameters;
+			}
+
+			public bool Equals(MethodSpecKey other)
+			{
+				return other.type.Equals(type)
+					&& other.name == name
+					&& other.signature.Equals(signature)
+					&& Util.ArrayEquals(other.genericParameters, genericParameters);
+			}
+
+			public override bool Equals(object obj)
+			{
+				MethodSpecKey? other = obj as MethodSpecKey?;
+				return other != null && Equals(other.Value);
+			}
+
+			public override int GetHashCode()
+			{
+				return type.GetHashCode() + name.GetHashCode() + signature.GetHashCode() + Util.GetHashCode(genericParameters);
+			}
+		}
+
+		internal ModuleBuilder(AssemblyBuilder asm, string moduleName, string fileName, bool emitSymbolInfo)
+			: base(asm.universe)
+		{
+			this.asm = asm;
+			this.moduleName = moduleName;
+			this.fileName = fileName;
+			if (emitSymbolInfo)
+			{
+				symbolWriter = SymbolSupport.CreateSymbolWriterFor(this);
+				if (universe.Deterministic && !symbolWriter.IsDeterministic)
+				{
+					throw new NotSupportedException();
+				}
+			}
+			if (!universe.Deterministic)
+			{
+				__PEHeaderTimeDateStamp = DateTime.UtcNow;
+				mvid = Guid.NewGuid();
+			}
+			// <Module> must be the first record in the TypeDef table
+			moduleType = new TypeBuilder(this, null, "<Module>");
+			types.Add(moduleType);
+		}
+
+		internal void PopulatePropertyAndEventTables()
+		{
+			// LAMESPEC the PropertyMap and EventMap tables are not required to be sorted by the CLI spec,
+			// but .NET sorts them and Mono requires them to be sorted, so we have to populate the
+			// tables in the right order
+			foreach (TypeBuilder type in types)
+			{
+				type.PopulatePropertyAndEventTables();
+			}
+		}
+
+		internal void WriteTypeDefTable(MetadataWriter mw)
+		{
+			int fieldList = 1;
+			int methodList = 1;
+			foreach (TypeBuilder type in types)
+			{
+				type.WriteTypeDefRecord(mw, ref fieldList, ref methodList);
+			}
+		}
+
+		internal void WriteMethodDefTable(int baseRVA, MetadataWriter mw)
+		{
+			int paramList = 1;
+			foreach (TypeBuilder type in types)
+			{
+				type.WriteMethodDefRecords(baseRVA, mw, ref paramList);
+			}
+		}
+
+		internal void WriteParamTable(MetadataWriter mw)
+		{
+			foreach (TypeBuilder type in types)
+			{
+				type.WriteParamRecords(mw);
+			}
+		}
+
+		internal void WriteFieldTable(MetadataWriter mw)
+		{
+			foreach (TypeBuilder type in types)
+			{
+				type.WriteFieldRecords(mw);
+			}
+		}
+
+		internal int AllocPseudoToken()
+		{
+			return nextPseudoToken--;
+		}
+
+		public TypeBuilder DefineType(string name)
+		{
+			return DefineType(name, TypeAttributes.Class);
+		}
+
+		public TypeBuilder DefineType(string name, TypeAttributes attr)
+		{
+			return DefineType(name, attr, null);
+		}
+
+		public TypeBuilder DefineType(string name, TypeAttributes attr, Type parent)
+		{
+			return DefineType(name, attr, parent, PackingSize.Unspecified, 0);
+		}
+
+		public TypeBuilder DefineType(string name, TypeAttributes attr, Type parent, int typesize)
+		{
+			return DefineType(name, attr, parent, PackingSize.Unspecified, typesize);
+		}
+
+		public TypeBuilder DefineType(string name, TypeAttributes attr, Type parent, PackingSize packsize)
+		{
+			return DefineType(name, attr, parent, packsize, 0);
+		}
+
+		public TypeBuilder DefineType(string name, TypeAttributes attr, Type parent, Type[] interfaces)
+		{
+			TypeBuilder tb = DefineType(name, attr, parent);
+			foreach (Type iface in interfaces)
+			{
+				tb.AddInterfaceImplementation(iface);
+			}
+			return tb;
+		}
+
+		public TypeBuilder DefineType(string name, TypeAttributes attr, Type parent, PackingSize packingSize, int typesize)
+		{
+			string ns = null;
+			int lastdot = name.LastIndexOf('.');
+			if (lastdot > 0)
+			{
+				ns = name.Substring(0, lastdot);
+				name = name.Substring(lastdot + 1);
+			}
+			TypeBuilder typeBuilder = __DefineType(ns, name);
+			typeBuilder.__SetAttributes(attr);
+			typeBuilder.SetParent(parent);
+			if (packingSize != PackingSize.Unspecified || typesize != 0)
+			{
+				typeBuilder.__SetLayout((int)packingSize, typesize);
+			}
+			return typeBuilder;
+		}
+
+		public TypeBuilder __DefineType(string ns, string name)
+		{
+			return DefineType(this, ns, name);
+		}
+
+		internal TypeBuilder DefineType(ITypeOwner owner, string ns, string name)
+		{
+			TypeBuilder typeBuilder = new TypeBuilder(owner, ns, name);
+			types.Add(typeBuilder);
+			return typeBuilder;
+		}
+
+		public EnumBuilder DefineEnum(string name, TypeAttributes visibility, Type underlyingType)
+		{
+			TypeBuilder tb = DefineType(name, (visibility & TypeAttributes.VisibilityMask) | TypeAttributes.Sealed, universe.System_Enum);
+			FieldBuilder fb = tb.DefineField("value__", underlyingType, FieldAttributes.Public | FieldAttributes.SpecialName | FieldAttributes.RTSpecialName);
+			return new EnumBuilder(tb, fb);
+		}
+
+		public FieldBuilder __DefineField(string name, Type type, CustomModifiers customModifiers, FieldAttributes attributes)
+		{
+			return moduleType.__DefineField(name, type, customModifiers, attributes);
+		}
+
+#if !NETSTANDARD
+		[Obsolete("Please use __DefineField(string, Type, CustomModifiers, FieldAttributes) instead.")]
+		public FieldBuilder __DefineField(string name, Type type, Type[] requiredCustomModifiers, Type[] optionalCustomModifiers, FieldAttributes attributes)
+		{
+			return moduleType.DefineField(name, type, requiredCustomModifiers, optionalCustomModifiers, attributes);
+		}
+#endif
+
+		public ConstructorBuilder __DefineModuleInitializer(MethodAttributes visibility)
+		{
+			return moduleType.DefineConstructor(visibility | MethodAttributes.Static | MethodAttributes.SpecialName | MethodAttributes.RTSpecialName, CallingConventions.Standard, Type.EmptyTypes);
+		}
+
+		public FieldBuilder DefineUninitializedData(string name, int size, FieldAttributes attributes)
+		{
+			return moduleType.DefineUninitializedData(name, size, attributes);
+		}
+
+		public FieldBuilder DefineInitializedData(string name, byte[] data, FieldAttributes attributes)
+		{
+			return moduleType.DefineInitializedData(name, data, attributes);
+		}
+
+		public MethodBuilder DefineGlobalMethod(string name, MethodAttributes attributes, Type returnType, Type[] parameterTypes)
+		{
+			return moduleType.DefineMethod(name, attributes, returnType, parameterTypes);
+		}
+
+		public MethodBuilder DefineGlobalMethod(string name, MethodAttributes attributes, CallingConventions callingConvention, Type returnType, Type[] parameterTypes)
+		{
+			return moduleType.DefineMethod(name, attributes, callingConvention, returnType, parameterTypes);
+		}
+
+		public MethodBuilder DefineGlobalMethod(string name, MethodAttributes attributes, CallingConventions callingConvention, Type returnType, Type[] requiredReturnTypeCustomModifiers, Type[] optionalReturnTypeCustomModifiers, Type[] parameterTypes, Type[][] requiredParameterTypeCustomModifiers, Type[][] optionalParameterTypeCustomModifiers)
+		{
+			return moduleType.DefineMethod(name, attributes, callingConvention, returnType, requiredReturnTypeCustomModifiers, optionalReturnTypeCustomModifiers, parameterTypes, requiredParameterTypeCustomModifiers, optionalParameterTypeCustomModifiers);
+		}
+
+		public MethodBuilder DefinePInvokeMethod(string name, string dllName, MethodAttributes attributes, CallingConventions callingConvention, Type returnType, Type[] parameterTypes, CallingConvention nativeCallConv, CharSet nativeCharSet)
+		{
+			return moduleType.DefinePInvokeMethod(name, dllName, attributes, callingConvention, returnType, parameterTypes, nativeCallConv, nativeCharSet);
+		}
+
+		public MethodBuilder DefinePInvokeMethod(string name, string dllName, string entryName, MethodAttributes attributes, CallingConventions callingConvention, Type returnType, Type[] parameterTypes, CallingConvention nativeCallConv, CharSet nativeCharSet)
+		{
+			return moduleType.DefinePInvokeMethod(name, dllName, entryName, attributes, callingConvention, returnType, parameterTypes, nativeCallConv, nativeCharSet);
+		}
+
+		public void CreateGlobalFunctions()
+		{
+			moduleType.CreateType();
+		}
+
+		internal void AddTypeForwarder(Type type, bool includeNested)
+		{
+			ExportType(type);
+			if (includeNested && !type.__IsMissing)
+			{
+				foreach (Type nested in type.GetNestedTypes(BindingFlags.Public | BindingFlags.NonPublic))
+				{
+					// we export all nested types (i.e. even the private ones)
+					// (this behavior is the same as the C# compiler)
+					AddTypeForwarder(nested, true);
+				}
+			}
+		}
+
+		private int ExportType(Type type)
+		{
+			ExportedTypeTable.Record rec = new ExportedTypeTable.Record();
+			if (asm.ImageRuntimeVersion == "v2.0.50727")
+			{
+				// HACK we should *not* set the TypeDefId in this case, but 2.0 and 3.5 peverify gives a warning if it is missing (4.5 doesn't)
+				rec.TypeDefId = type.MetadataToken;
+			}
+			SetTypeNameAndTypeNamespace(type.TypeName, out rec.TypeName, out rec.TypeNamespace);
+			if (type.IsNested)
+			{
+				rec.Flags = 0;
+				rec.Implementation = ExportType(type.DeclaringType);
+			}
+			else
+			{
+				rec.Flags = 0x00200000;	// CorTypeAttr.tdForwarder
+				rec.Implementation = ImportAssemblyRef(type.Assembly);
+			}
+			return 0x27000000 | this.ExportedType.FindOrAddRecord(rec);
+		}
+
+		private void SetTypeNameAndTypeNamespace(TypeName name, out int typeName, out int typeNamespace)
+		{
+			typeName = this.Strings.Add(name.Name);
+			typeNamespace = name.Namespace == null ? 0 : this.Strings.Add(name.Namespace);
+		}
+
+		public void SetCustomAttribute(ConstructorInfo con, byte[] binaryAttribute)
+		{
+			SetCustomAttribute(new CustomAttributeBuilder(con, binaryAttribute));
+		}
+
+		public void SetCustomAttribute(CustomAttributeBuilder customBuilder)
+		{
+			SetCustomAttribute(0x00000001, customBuilder);
+		}
+
+		internal void SetCustomAttribute(int token, CustomAttributeBuilder customBuilder)
+		{
+			CustomAttributeTable.Record rec = new CustomAttributeTable.Record();
+			rec.Parent = token;
+			rec.Type = asm.IsWindowsRuntime ? customBuilder.Constructor.ImportTo(this) : GetConstructorToken(customBuilder.Constructor).Token;
+			rec.Value = customBuilder.WriteBlob(this);
+			this.CustomAttribute.AddRecord(rec);
+		}
+
+		private void AddDeclSecurityRecord(int token, int action, int blob)
+		{
+			DeclSecurityTable.Record rec = new DeclSecurityTable.Record();
+			rec.Action = (short)action;
+			rec.Parent = token;
+			rec.PermissionSet = blob;
+			this.DeclSecurity.AddRecord(rec);
+		}
+
+#if !NETSTANDARD
+		internal void AddDeclarativeSecurity(int token, System.Security.Permissions.SecurityAction securityAction, System.Security.PermissionSet permissionSet)
+		{
+			// like Ref.Emit, we're using the .NET 1.x xml format
+			AddDeclSecurityRecord(token, (int)securityAction, this.Blobs.Add(ByteBuffer.Wrap(System.Text.Encoding.Unicode.GetBytes(permissionSet.ToXml().ToString()))));
+		}
+#endif
+
+		internal void AddDeclarativeSecurity(int token, List<CustomAttributeBuilder> declarativeSecurity)
+		{
+			Dictionary<int, List<CustomAttributeBuilder>> ordered = new Dictionary<int, List<CustomAttributeBuilder>>();
+			foreach (CustomAttributeBuilder cab in declarativeSecurity)
+			{
+				int action;
+				// check for HostProtectionAttribute without SecurityAction
+				if (cab.ConstructorArgumentCount == 0)
+				{
+#if NETSTANDARD
+					action = 6;
+#else
+					action = (int)System.Security.Permissions.SecurityAction.LinkDemand;
+#endif
+				}
+				else
+				{
+					action = (int)cab.GetConstructorArgument(0);
+				}
+				if (cab.IsLegacyDeclSecurity)
+				{
+					AddDeclSecurityRecord(token, action, cab.WriteLegacyDeclSecurityBlob(this));
+					continue;
+				}
+				List<CustomAttributeBuilder> list;
+				if (!ordered.TryGetValue(action, out list))
+				{
+					list = new List<CustomAttributeBuilder>();
+					ordered.Add(action, list);
+				}
+				list.Add(cab);
+			}
+			foreach (KeyValuePair<int, List<CustomAttributeBuilder>> kv in ordered)
+			{
+				AddDeclSecurityRecord(token, kv.Key, WriteDeclSecurityBlob(kv.Value));
+			}
+		}
+
+		private int WriteDeclSecurityBlob(List<CustomAttributeBuilder> list)
+		{
+			ByteBuffer namedArgs = new ByteBuffer(100);
+			ByteBuffer bb = new ByteBuffer(list.Count * 100);
+			bb.Write((byte)'.');
+			bb.WriteCompressedUInt(list.Count);
+			foreach (CustomAttributeBuilder cab in list)
+			{
+				bb.Write(cab.Constructor.DeclaringType.AssemblyQualifiedName);
+				namedArgs.Clear();
+				cab.WriteNamedArgumentsForDeclSecurity(this, namedArgs);
+				bb.WriteCompressedUInt(namedArgs.Length);
+				bb.Write(namedArgs);
+			}
+			return this.Blobs.Add(bb);
+		}
+
+		public void DefineManifestResource(string name, Stream stream, ResourceAttributes attribute)
+		{
+			resourceWriters.Add(new ResourceWriterRecord(name, stream, attribute));
+		}
+
+#if !NETSTANDARD
+		public IResourceWriter DefineResource(string name, string description)
+		{
+			return DefineResource(name, description, ResourceAttributes.Public);
+		}
+
+		public IResourceWriter DefineResource(string name, string description, ResourceAttributes attribute)
+		{
+			// FXBUG we ignore the description, because there is no such thing
+
+			MemoryStream mem = new MemoryStream();
+			ResourceWriter rw = new ResourceWriter(mem);
+			resourceWriters.Add(new ResourceWriterRecord(name, rw, mem, attribute));
+			return rw;
+		}
+#endif
+
+		internal void EmitResources()
+		{
+			int offset = 0;
+			foreach (ResourceWriterRecord rwr in resourceWriters)
+			{
+				// resources must be 8-byte aligned
+				offset = (offset + 7) & ~7;
+				rwr.Emit(this, offset);
+				offset += rwr.GetLength();
+			}
+		}
+
+		internal void WriteResources(MetadataWriter mw)
+		{
+			int offset = 0;
+			foreach (ResourceWriterRecord rwr in resourceWriters)
+			{
+				// resources must be 8-byte aligned
+				int alignment = ((offset + 7) & ~7) - offset;
+				for (int i = 0; i < alignment; i++)
+				{
+					mw.Write((byte)0);
+				}
+				rwr.Write(mw);
+				offset += rwr.GetLength() + alignment;
+			}
+		}
+
+		internal void CloseResources()
+		{
+			foreach (ResourceWriterRecord rwr in resourceWriters)
+			{
+				rwr.Close();
+			}
+		}
+
+		internal int GetManifestResourcesLength()
+		{
+			int length = 0;
+			foreach (ResourceWriterRecord rwr in resourceWriters)
+			{
+				// resources must be 8-byte aligned
+				length = (length + 7) & ~7;
+				length += rwr.GetLength();
+			}
+			return length;
+		}
+
+		public override Assembly Assembly
+		{
+			get { return asm; }
+		}
+
+		internal override Type FindType(TypeName name)
+		{
+			foreach (Type type in types)
+			{
+				if (type.TypeName == name)
+				{
+					return type;
+				}
+			}
+			return null;
+		}
+
+		internal override Type FindTypeIgnoreCase(TypeName lowerCaseName)
+		{
+			foreach (Type type in types)
+			{
+				if (type.TypeName.ToLowerInvariant() == lowerCaseName)
+				{
+					return type;
+				}
+			}
+			return null;
+		}
+
+		internal override void GetTypesImpl(List<Type> list)
+		{
+			foreach (Type type in types)
+			{
+				if (type != moduleType)
+				{
+					list.Add(type);
+				}
+			}
+		}
+
+#if !NO_SYMBOL_WRITER
+		public ISymbolDocumentWriter DefineDocument(string url, Guid language, Guid languageVendor, Guid documentType)
+		{
+			return symbolWriter.DefineDocument(url, language, languageVendor, documentType);
+		}
+#endif
+
+		public int __GetAssemblyToken(Assembly assembly)
+		{
+			return ImportAssemblyRef(assembly);
+		}
+
+		public TypeToken GetTypeToken(string name)
+		{
+			return new TypeToken(GetType(name, true, false).MetadataToken);
+		}
+
+		public TypeToken GetTypeToken(Type type)
+		{
+			if (type.Module == this && !asm.IsWindowsRuntime)
+			{
+				return new TypeToken(type.GetModuleBuilderToken());
+			}
+			else
+			{
+				return new TypeToken(ImportType(type));
+			}
+		}
+
+		internal int GetTypeTokenForMemberRef(Type type)
+		{
+			if (type.__IsMissing)
+			{
+				return ImportType(type);
+			}
+			else if (type.IsGenericTypeDefinition)
+			{
+				int token;
+				if (!memberRefTypeTokens.TryGetValue(type, out token))
+				{
+					ByteBuffer spec = new ByteBuffer(5);
+					Signature.WriteTypeSpec(this, spec, type);
+					token = 0x1B000000 | this.TypeSpec.AddRecord(this.Blobs.Add(spec));
+					memberRefTypeTokens.Add(type, token);
+				}
+				return token;
+			}
+			else if (type.IsModulePseudoType)
+			{
+				return 0x1A000000 | this.ModuleRef.FindOrAddRecord(this.Strings.Add(type.Module.ScopeName));
+			}
+			else
+			{
+				return GetTypeToken(type).Token;
+			}
+		}
+
+		private static bool IsFromGenericTypeDefinition(MemberInfo member)
+		{
+			Type decl = member.DeclaringType;
+			return decl != null && !decl.__IsMissing && decl.IsGenericTypeDefinition;
+		}
+
+		public FieldToken GetFieldToken(FieldInfo field)
+		{
+			// NOTE for some reason, when TypeBuilder.GetFieldToken() is used on a field in a generic type definition,
+			// a memberref token is returned (confirmed on .NET) unlike for Get(Method|Constructor)Token which always
+			// simply returns the MethodDef token (if the method is from the same module).
+			FieldBuilder fb = field as FieldBuilder;
+			if (fb != null && fb.Module == this && !IsFromGenericTypeDefinition(fb))
+			{
+				return new FieldToken(fb.MetadataToken);
+			}
+			else
+			{
+				return new FieldToken(field.ImportTo(this));
+			}
+		}
+
+		public MethodToken GetMethodToken(MethodInfo method)
+		{
+			MethodBuilder mb = method as MethodBuilder;
+			if (mb != null && mb.ModuleBuilder == this)
+			{
+				return new MethodToken(mb.MetadataToken);
+			}
+			else
+			{
+				return new MethodToken(method.ImportTo(this));
+			}
+		}
+
+		// new in .NET 4.5
+		public MethodToken GetMethodToken(MethodInfo method, IEnumerable<Type> optionalParameterTypes)
+		{
+			return __GetMethodToken(method, Util.ToArray(optionalParameterTypes), null);
+		}
+
+		public MethodToken __GetMethodToken(MethodInfo method, Type[] optionalParameterTypes, CustomModifiers[] customModifiers)
+		{
+			ByteBuffer sig = new ByteBuffer(16);
+			method.MethodSignature.WriteMethodRefSig(this, sig, optionalParameterTypes, customModifiers);
+			MemberRefTable.Record record = new MemberRefTable.Record();
+			if (method.Module == this)
+			{
+				record.Class = method.MetadataToken;
+			}
+			else
+			{
+				record.Class = GetTypeTokenForMemberRef(method.DeclaringType ?? method.Module.GetModuleType());
+			}
+			record.Name = Strings.Add(method.Name);
+			record.Signature = Blobs.Add(sig);
+			return new MethodToken(0x0A000000 | MemberRef.FindOrAddRecord(record));
+		}
+
+		// when we refer to a method on a generic type definition in the IL stream,
+		// we need to use a MemberRef (even if the method is in the same module)
+		internal MethodToken GetMethodTokenForIL(MethodInfo method)
+		{
+			if (method.IsGenericMethodDefinition)
+			{
+				method = method.MakeGenericMethod(method.GetGenericArguments());
+			}
+			if (IsFromGenericTypeDefinition(method))
+			{
+				return new MethodToken(method.ImportTo(this));
+			}
+			else
+			{
+				return GetMethodToken(method);
+			}
+		}
+
+		internal int GetMethodTokenWinRT(MethodInfo method)
+		{
+			return asm.IsWindowsRuntime ? method.ImportTo(this) : GetMethodToken(method).Token;
+		}
+
+		public MethodToken GetConstructorToken(ConstructorInfo constructor)
+		{
+			return GetMethodToken(constructor.GetMethodInfo());
+		}
+
+		// new in .NET 4.5
+		public MethodToken GetConstructorToken(ConstructorInfo constructor, IEnumerable<Type> optionalParameterTypes)
+		{
+			return GetMethodToken(constructor.GetMethodInfo(), optionalParameterTypes);
+		}
+
+		public MethodToken __GetConstructorToken(ConstructorInfo constructor, Type[] optionalParameterTypes, CustomModifiers[] customModifiers)
+		{
+			return __GetMethodToken(constructor.GetMethodInfo(), optionalParameterTypes, customModifiers);
+		}
+
+		internal int ImportMethodOrField(Type declaringType, string name, Signature sig)
+		{
+			int token;
+			MemberRefKey key = new MemberRefKey(declaringType, name, sig);
+			if (!importedMemberRefs.TryGetValue(key, out token))
+			{
+				MemberRefTable.Record rec = new MemberRefTable.Record();
+				rec.Class = GetTypeTokenForMemberRef(declaringType);
+				rec.Name = this.Strings.Add(name);
+				ByteBuffer bb = new ByteBuffer(16);
+				sig.WriteSig(this, bb);
+				rec.Signature = this.Blobs.Add(bb);
+				token = 0x0A000000 | this.MemberRef.AddRecord(rec);
+				importedMemberRefs.Add(key, token);
+			}
+			return token;
+		}
+
+		internal int ImportMethodSpec(Type declaringType, MethodInfo method, Type[] genericParameters)
+		{
+			Debug.Assert(method.__IsMissing || method.GetMethodOnTypeDefinition() == method);
+			int token;
+			MethodSpecKey key = new MethodSpecKey(declaringType, method.Name, method.MethodSignature, genericParameters);
+			if (!importedMethodSpecs.TryGetValue(key, out token))
+			{
+				MethodSpecTable.Record rec = new MethodSpecTable.Record();
+				MethodBuilder mb = method as MethodBuilder;
+				if (mb != null && mb.ModuleBuilder == this && !declaringType.IsGenericType)
+				{
+					rec.Method = mb.MetadataToken;
+				}
+				else
+				{
+					// we're calling ImportMethodOrField directly here, because 'method' may be a MethodDef on a generic TypeDef and 'declaringType' the type instance
+					// (in order words the method and type have already been decoupled by the caller)
+					rec.Method = ImportMethodOrField(declaringType, method.Name, method.MethodSignature);
+				}
+				Writer.ByteBuffer spec = new Writer.ByteBuffer(10);
+				Signature.WriteMethodSpec(this, spec, genericParameters);
+				rec.Instantiation = this.Blobs.Add(spec);
+				token = 0x2B000000 | this.MethodSpec.FindOrAddRecord(rec);
+				importedMethodSpecs.Add(key, token);
+			}
+			return token;
+		}
+
+		internal int ImportType(Type type)
+		{
+			int token;
+			if (!typeTokens.TryGetValue(type, out token))
+			{
+				if (type.HasElementType || type.IsConstructedGenericType || type.__IsFunctionPointer)
+				{
+					ByteBuffer spec = new ByteBuffer(5);
+					Signature.WriteTypeSpec(this, spec, type);
+					token = 0x1B000000 | this.TypeSpec.AddRecord(this.Blobs.Add(spec));
+				}
+				else
+				{
+					TypeRefTable.Record rec = new TypeRefTable.Record();
+					if (type.IsNested)
+					{
+						rec.ResolutionScope = GetTypeToken(type.DeclaringType).Token;
+					}
+					else if (type.Module == this)
+					{
+						rec.ResolutionScope = 1;
+					}
+					else
+					{
+						rec.ResolutionScope = ImportAssemblyRef(type.Assembly);
+					}
+					SetTypeNameAndTypeNamespace(type.TypeName, out rec.TypeName, out rec.TypeNamespace);
+					token = 0x01000000 | this.TypeRef.AddRecord(rec);
+				}
+				typeTokens.Add(type, token);
+			}
+			return token;
+		}
+
+		private int ImportAssemblyRef(Assembly asm)
+		{
+			int token;
+			if (!referencedAssemblies.TryGetValue(asm, out token))
+			{
+				// We can't write the AssemblyRef record here yet, because the identity of the assembly can still change
+				// (if it's an AssemblyBuilder).
+				token = AllocPseudoToken();
+				referencedAssemblies.Add(asm, token);
+			}
+			return token;
+		}
+
+		internal void FillAssemblyRefTable()
+		{
+			foreach (KeyValuePair<Assembly, int> kv in referencedAssemblies)
+			{
+				if (IsPseudoToken(kv.Value))
+				{
+					RegisterTokenFixup(kv.Value, FindOrAddAssemblyRef(kv.Key.GetName(), false));
+				}
+			}
+		}
+
+		private int FindOrAddAssemblyRef(AssemblyName name, bool alwaysAdd)
+		{
+			AssemblyRefTable.Record rec = new AssemblyRefTable.Record();
+			Version ver = name.Version ?? new Version(0, 0, 0, 0);
+			rec.MajorVersion = (ushort)ver.Major;
+			rec.MinorVersion = (ushort)ver.Minor;
+			rec.BuildNumber = (ushort)ver.Build;
+			rec.RevisionNumber = (ushort)ver.Revision;
+			rec.Flags = (int)(name.Flags & ~AssemblyNameFlags.PublicKey);
+			const AssemblyNameFlags afPA_Specified = (AssemblyNameFlags)0x0080;
+			const AssemblyNameFlags afPA_Mask = (AssemblyNameFlags)0x0070;
+			if ((name.RawFlags & afPA_Specified) != 0)
+			{
+				rec.Flags |= (int)(name.RawFlags & afPA_Mask);
+			}
+			if (name.ContentType == AssemblyContentType.WindowsRuntime)
+			{
+				rec.Flags |= 0x0200;
+			}
+			byte[] publicKeyOrToken = null;
+			if (usePublicKeyAssemblyReference)
+			{
+				publicKeyOrToken = name.GetPublicKey();
+			}
+			if (publicKeyOrToken == null || publicKeyOrToken.Length == 0)
+			{
+				publicKeyOrToken = name.GetPublicKeyToken() ?? Empty<byte>.Array;
+			}
+			else
+			{
+				const int PublicKey = 0x0001;
+				rec.Flags |= PublicKey;
+			}
+			rec.PublicKeyOrToken = this.Blobs.Add(ByteBuffer.Wrap(publicKeyOrToken));
+			rec.Name = this.Strings.Add(name.Name);
+			rec.Culture = name.CultureName == null ? 0 : this.Strings.Add(name.CultureName);
+			if (name.hash != null)
+			{
+				rec.HashValue = this.Blobs.Add(ByteBuffer.Wrap(name.hash));
+			}
+			else
+			{
+				rec.HashValue = 0;
+			}
+			return 0x23000000 | (alwaysAdd ? this.AssemblyRef.AddRecord(rec) : this.AssemblyRef.FindOrAddRecord(rec));
+		}
+
+		internal void WriteSymbolTokenMap()
+		{
+			for (int i = 0; i < resolvedTokens.Count; i++)
+			{
+				int newToken = resolvedTokens[i];
+				// The symbol API doesn't support remapping arbitrary integers, the types have to be the same,
+				// so we copy the type from the newToken, because our pseudo tokens don't have a type.
+				// (see MethodToken.SymbolToken)
+				int oldToken = (i + 1) | (newToken & ~0xFFFFFF);
+				SymbolSupport.RemapToken(symbolWriter, oldToken, newToken);
+			}
+		}
+
+		internal void RegisterTokenFixup(int pseudoToken, int realToken)
+		{
+			int index = -(pseudoToken + 1);
+			while (resolvedTokens.Count <= index)
+			{
+				resolvedTokens.Add(0);
+			}
+			resolvedTokens[index] = realToken;
+		}
+
+		internal static bool IsPseudoToken(int token)
+		{
+			return token < 0;
+		}
+
+		internal int ResolvePseudoToken(int pseudoToken)
+		{
+			int index = -(pseudoToken + 1);
+			return resolvedTokens[index];
+		}
+
+		internal void ApplyUnmanagedExports(ImageFileMachine imageFileMachine)
+		{
+			if (unmanagedExports.Count != 0)
+			{
+				int type;
+				int size;
+				switch (imageFileMachine)
+				{
+					case ImageFileMachine.I386:
+					case ImageFileMachine.ARM:
+						type = 0x05;
+						size = 4;
+						break;
+					case ImageFileMachine.AMD64:
+						type = 0x06;
+						size = 8;
+						break;
+					default:
+						throw new NotSupportedException();
+				}
+				List<MethodBuilder> methods = new List<MethodBuilder>();
+				for (int i = 0; i < unmanagedExports.Count; i++)
+				{
+					if (unmanagedExports[i].mb != null)
+					{
+						methods.Add(unmanagedExports[i].mb);
+					}
+				}
+				if (methods.Count != 0)
+				{
+					RelativeVirtualAddress rva = __AddVTableFixups(methods.ToArray(), type);
+					for (int i = 0; i < unmanagedExports.Count; i++)
+					{
+						if (unmanagedExports[i].mb != null)
+						{
+							UnmanagedExport exp = unmanagedExports[i];
+							exp.rva = new RelativeVirtualAddress(rva.initializedDataOffset + (uint)(methods.IndexOf(unmanagedExports[i].mb) * size));
+							unmanagedExports[i] = exp;
+						}
+					}
+				}
+			}
+		}
+
+		internal void FixupMethodBodyTokens()
+		{
+			int methodToken = 0x06000001;
+			int fieldToken = 0x04000001;
+			int parameterToken = 0x08000001;
+			foreach (TypeBuilder type in types)
+			{
+				type.ResolveMethodAndFieldTokens(ref methodToken, ref fieldToken, ref parameterToken);
+			}
+			foreach (int offset in tokenFixupOffsets)
+			{
+				methodBodies.Position = offset;
+				int pseudoToken = methodBodies.GetInt32AtCurrentPosition();
+				methodBodies.Write(ResolvePseudoToken(pseudoToken));
+			}
+			foreach (VTableFixups fixup in vtablefixups)
+			{
+				for (int i = 0; i < fixup.count; i++)
+				{
+					initializedData.Position = (int)fixup.initializedDataOffset + i * fixup.SlotWidth;
+					initializedData.Write(ResolvePseudoToken(initializedData.GetInt32AtCurrentPosition()));
+				}
+			}
+		}
+
+		private int GetHeaderLength()
+		{
+			return
+				4 + // Signature
+				2 + // MajorVersion
+				2 + // MinorVersion
+				4 + // Reserved
+				4 + // ImageRuntimeVersion Length
+				StringToPaddedUTF8Length(asm.ImageRuntimeVersion) +
+				2 + // Flags
+				2 + // Streams
+				4 + // #~ Offset
+				4 + // #~ Size
+				4 + // StringToPaddedUTF8Length("#~")
+				4 + // #Strings Offset
+				4 + // #Strings Size
+				12 + // StringToPaddedUTF8Length("#Strings")
+				4 + // #US Offset
+				4 + // #US Size
+				4 + // StringToPaddedUTF8Length("#US")
+				4 + // #GUID Offset
+				4 + // #GUID Size
+				8 + // StringToPaddedUTF8Length("#GUID")
+				(Blobs.IsEmpty ? 0 :
+				(
+				4 + // #Blob Offset
+				4 + // #Blob Size
+				8   // StringToPaddedUTF8Length("#Blob")
+				));
+		}
+
+		internal int MetadataLength
+		{
+			get
+			{
+				return GetHeaderLength() + (Blobs.IsEmpty ? 0 : Blobs.Length) + Tables.Length + Strings.Length + UserStrings.Length + Guids.Length;
+			}
+		}
+
+		internal void WriteMetadata(MetadataWriter mw, out uint guidHeapOffset)
+		{
+			mw.Write(0x424A5342);			// Signature ("BSJB")
+			mw.Write((ushort)1);			// MajorVersion
+			mw.Write((ushort)1);			// MinorVersion
+			mw.Write(0);					// Reserved
+			byte[] version = StringToPaddedUTF8(asm.ImageRuntimeVersion);
+			mw.Write(version.Length);		// Length
+			mw.Write(version);
+			mw.Write((ushort)0);			// Flags
+			// #Blob is the only optional heap
+			if (Blobs.IsEmpty)
+			{
+				mw.Write((ushort)4);		// Streams
+			}
+			else
+			{
+				mw.Write((ushort)5);		// Streams
+			}
+
+			int offset = GetHeaderLength();
+
+			// Streams
+			mw.Write(offset);				// Offset
+			mw.Write(Tables.Length);		// Size
+			mw.Write(StringToPaddedUTF8("#~"));
+			offset += Tables.Length;
+
+			mw.Write(offset);				// Offset
+			mw.Write(Strings.Length);		// Size
+			mw.Write(StringToPaddedUTF8("#Strings"));
+			offset += Strings.Length;
+
+			mw.Write(offset);				// Offset
+			mw.Write(UserStrings.Length);	// Size
+			mw.Write(StringToPaddedUTF8("#US"));
+			offset += UserStrings.Length;
+
+			mw.Write(offset);				// Offset
+			mw.Write(Guids.Length);			// Size
+			mw.Write(StringToPaddedUTF8("#GUID"));
+			offset += Guids.Length;
+
+			if (!Blobs.IsEmpty)
+			{
+				mw.Write(offset);				// Offset
+				mw.Write(Blobs.Length);			// Size
+				mw.Write(StringToPaddedUTF8("#Blob"));
+			}
+
+			Tables.Write(mw);
+			Strings.Write(mw);
+			UserStrings.Write(mw);
+			guidHeapOffset = mw.Position;
+			Guids.Write(mw);
+			if (!Blobs.IsEmpty)
+			{
+				Blobs.Write(mw);
+			}
+		}
+
+		private static int StringToPaddedUTF8Length(string str)
+		{
+			return (System.Text.Encoding.UTF8.GetByteCount(str) + 4) & ~3;
+		}
+
+		private static byte[] StringToPaddedUTF8(string str)
+		{
+			byte[] buf = new byte[(System.Text.Encoding.UTF8.GetByteCount(str) + 4) & ~3];
+			System.Text.Encoding.UTF8.GetBytes(str, 0, str.Length, buf, 0);
+			return buf;
+		}
+
+		internal override void ExportTypes(int fileToken, ModuleBuilder manifestModule)
+		{
+			manifestModule.ExportTypes(types.ToArray(), fileToken);
+		}
+
+		internal void ExportTypes(Type[] types, int fileToken)
+		{
+			Dictionary<Type, int> declaringTypes = new Dictionary<Type, int>();
+			foreach (Type type in types)
+			{
+				if (!type.IsModulePseudoType && IsVisible(type))
+				{
+					ExportedTypeTable.Record rec = new ExportedTypeTable.Record();
+					rec.Flags = (int)type.Attributes;
+					// LAMESPEC ECMA says that TypeDefId is a row index, but it should be a token
+					rec.TypeDefId = type.MetadataToken;
+					SetTypeNameAndTypeNamespace(type.TypeName, out rec.TypeName, out rec.TypeNamespace);
+					if (type.IsNested)
+					{
+						rec.Implementation = declaringTypes[type.DeclaringType];
+					}
+					else
+					{
+						rec.Implementation = fileToken;
+					}
+					int exportTypeToken = 0x27000000 | this.ExportedType.AddRecord(rec);
+					declaringTypes.Add(type, exportTypeToken);
+				}
+			}
+		}
+
+		private static bool IsVisible(Type type)
+		{
+			// NOTE this is not the same as Type.IsVisible, because that doesn't take into account family access
+			return type.IsPublic || ((type.IsNestedFamily || type.IsNestedFamORAssem || type.IsNestedPublic) && IsVisible(type.DeclaringType));
+		}
+
+		internal void AddConstant(int parentToken, object defaultValue)
+		{
+			ConstantTable.Record rec = new ConstantTable.Record();
+			rec.Parent = parentToken;
+			ByteBuffer val = new ByteBuffer(16);
+			if (defaultValue == null)
+			{
+				rec.Type = Signature.ELEMENT_TYPE_CLASS;
+				val.Write((int)0);
+			}
+			else if (defaultValue is bool)
+			{
+				rec.Type = Signature.ELEMENT_TYPE_BOOLEAN;
+				val.Write((bool)defaultValue ? (byte)1 : (byte)0);
+			}
+			else if (defaultValue is char)
+			{
+				rec.Type = Signature.ELEMENT_TYPE_CHAR;
+				val.Write((char)defaultValue);
+			}
+			else if (defaultValue is sbyte)
+			{
+				rec.Type = Signature.ELEMENT_TYPE_I1;
+				val.Write((sbyte)defaultValue);
+			}
+			else if (defaultValue is byte)
+			{
+				rec.Type = Signature.ELEMENT_TYPE_U1;
+				val.Write((byte)defaultValue);
+			}
+			else if (defaultValue is short)
+			{
+				rec.Type = Signature.ELEMENT_TYPE_I2;
+				val.Write((short)defaultValue);
+			}
+			else if (defaultValue is ushort)
+			{
+				rec.Type = Signature.ELEMENT_TYPE_U2;
+				val.Write((ushort)defaultValue);
+			}
+			else if (defaultValue is int)
+			{
+				rec.Type = Signature.ELEMENT_TYPE_I4;
+				val.Write((int)defaultValue);
+			}
+			else if (defaultValue is uint)
+			{
+				rec.Type = Signature.ELEMENT_TYPE_U4;
+				val.Write((uint)defaultValue);
+			}
+			else if (defaultValue is long)
+			{
+				rec.Type = Signature.ELEMENT_TYPE_I8;
+				val.Write((long)defaultValue);
+			}
+			else if (defaultValue is ulong)
+			{
+				rec.Type = Signature.ELEMENT_TYPE_U8;
+				val.Write((ulong)defaultValue);
+			}
+			else if (defaultValue is float)
+			{
+				rec.Type = Signature.ELEMENT_TYPE_R4;
+				val.Write((float)defaultValue);
+			}
+			else if (defaultValue is double)
+			{
+				rec.Type = Signature.ELEMENT_TYPE_R8;
+				val.Write((double)defaultValue);
+			}
+			else if (defaultValue is string)
+			{
+				rec.Type = Signature.ELEMENT_TYPE_STRING;
+				foreach (char c in (string)defaultValue)
+				{
+					val.Write(c);
+				}
+			}
+			else if (defaultValue is DateTime)
+			{
+				rec.Type = Signature.ELEMENT_TYPE_I8;
+				val.Write(((DateTime)defaultValue).Ticks);
+			}
+			else
+			{
+				throw new ArgumentException();
+			}
+			rec.Value = this.Blobs.Add(val);
+			this.Constant.AddRecord(rec);
+		}
+
+		ModuleBuilder ITypeOwner.ModuleBuilder
+		{
+			get { return this; }
+		}
+
+		internal override Type ResolveType(int metadataToken, IGenericContext context)
+		{
+			if (metadataToken >> 24 != TypeDefTable.Index)
+			{
+				throw new NotImplementedException();
+			}
+			return types[(metadataToken & 0xFFFFFF) - 1];
+		}
+
+		public override MethodBase ResolveMethod(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+		{
+			if (genericTypeArguments != null || genericMethodArguments != null)
+			{
+				throw new NotImplementedException();
+			}
+			// this method is inefficient, but since it isn't used we don't care
+			if ((metadataToken >> 24) == MemberRefTable.Index)
+			{
+				foreach (KeyValuePair<MemberRefKey, int> kv in importedMemberRefs)
+				{
+					if (kv.Value == metadataToken)
+					{
+						return kv.Key.LookupMethod();
+					}
+				}
+			}
+			// HACK if we're given a SymbolToken, we need to convert back
+			if ((metadataToken & 0xFF000000) == 0x06000000)
+			{
+				metadataToken = -(metadataToken & 0x00FFFFFF);
+			}
+			foreach (Type type in types)
+			{
+				MethodBase method = ((TypeBuilder)type).LookupMethod(metadataToken);
+				if (method != null)
+				{
+					return method;
+				}
+			}
+			return ((TypeBuilder)moduleType).LookupMethod(metadataToken);
+		}
+
+		public override FieldInfo ResolveField(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+		{
+			throw new NotImplementedException();
+		}
+
+		public override MemberInfo ResolveMember(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+		{
+			throw new NotImplementedException();
+		}
+
+		public override string ResolveString(int metadataToken)
+		{
+			throw new NotImplementedException();
+		}
+
+		public override string FullyQualifiedName
+		{
+			get { return Path.GetFullPath(Path.Combine(asm.dir, fileName)); }
+		}
+
+		public override string Name
+		{
+			get { return fileName; }
+		}
+
+		internal Guid GetModuleVersionIdOrEmpty()
+		{
+			return mvid;
+		}
+
+		public override Guid ModuleVersionId
+		{
+			get
+			{
+				if (mvid == Guid.Empty && universe.Deterministic)
+				{
+					// if a deterministic GUID is used, it can't be queried before the assembly has been written
+					throw new InvalidOperationException();
+				}
+				return mvid;
+			}
+		}
+
+		public void __SetModuleVersionId(Guid guid)
+		{
+			if (guid == Guid.Empty && universe.Deterministic)
+			{
+				// if you want to use Guid.Empty, don't set UniverseOptions.DeterministicOutput
+				throw new ArgumentOutOfRangeException();
+			}
+			mvid = guid;
+		}
+
+		internal uint GetTimeDateStamp()
+		{
+			return timestamp;
+		}
+
+		public DateTime __PEHeaderTimeDateStamp
+		{
+			get { return new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(timestamp); }
+			set
+			{
+				if (value < new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc) || value > new DateTime(2106, 2, 7, 6, 28, 15, DateTimeKind.Utc))
+				{
+					throw new ArgumentOutOfRangeException();
+				}
+				timestamp = (uint)(value - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalSeconds;
+			}
+		}
+
+		public override Type[] __ResolveOptionalParameterTypes(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments, out CustomModifiers[] customModifiers)
+		{
+			throw new NotImplementedException();
+		}
+
+		public override string ScopeName
+		{
+			get { return moduleName; }
+		}
+
+#if !NO_SYMBOL_WRITER
+		public ISymbolWriter GetSymWriter()
+		{
+			return symbolWriter;
+		}
+#endif
+
+		public void DefineUnmanagedResource(string resourceFileName)
+		{
+			// This method reads the specified resource file (Win32 .res file) and converts it into the appropriate format and embeds it in the .rsrc section,
+			// also setting the Resource Directory entry.
+			unmanagedResources = new ResourceSection();
+			unmanagedResources.ExtractResources(System.IO.File.ReadAllBytes(resourceFileName));
+		}
+
+		public bool IsTransient()
+		{
+			return false;
+		}
+
+		public void SetUserEntryPoint(MethodInfo entryPoint)
+		{
+			int token = entryPoint.MetadataToken;
+			if (token < 0)
+			{
+				token = -token | 0x06000000;
+			}
+#if !NO_SYMBOL_WRITER
+			if (symbolWriter != null)
+			{
+				symbolWriter.SetUserEntryPoint(new SymbolToken(token));
+			}
+#endif
+		}
+
+		public StringToken GetStringConstant(string str)
+		{
+			return new StringToken(this.UserStrings.Add(str) | (0x70 << 24));
+		}
+
+		public SignatureToken GetSignatureToken(SignatureHelper sigHelper)
+		{
+			return new SignatureToken(this.StandAloneSig.FindOrAddRecord(this.Blobs.Add(sigHelper.GetSignature(this))) | (StandAloneSigTable.Index << 24));
+		}
+
+		public SignatureToken GetSignatureToken(byte[] sigBytes, int sigLength)
+		{
+			return new SignatureToken(this.StandAloneSig.FindOrAddRecord(this.Blobs.Add(ByteBuffer.Wrap(sigBytes, sigLength))) | (StandAloneSigTable.Index << 24));
+		}
+
+		public MethodInfo GetArrayMethod(Type arrayClass, string methodName, CallingConventions callingConvention, Type returnType, Type[] parameterTypes)
+		{
+			return new ArrayMethod(this, arrayClass, methodName, callingConvention, returnType, parameterTypes);
+		}
+
+		public MethodToken GetArrayMethodToken(Type arrayClass, string methodName, CallingConventions callingConvention, Type returnType, Type[] parameterTypes)
+		{
+			return GetMethodToken(GetArrayMethod(arrayClass, methodName, callingConvention, returnType, parameterTypes));
+		}
+
+		internal override Type GetModuleType()
+		{
+			return moduleType;
+		}
+
+		internal override IKVM.Reflection.Reader.ByteReader GetBlob(int blobIndex)
+		{
+			return Blobs.GetBlob(blobIndex);
+		}
+
+		internal int GetSignatureBlobIndex(Signature sig)
+		{
+			ByteBuffer bb = new ByteBuffer(16);
+			sig.WriteSig(this, bb);
+			return this.Blobs.Add(bb);
+		}
+
+		// non-standard API
+		public new long __ImageBase
+		{
+			get { return imageBaseAddress; }
+			set { imageBaseAddress = value; }
+		}
+
+		protected override long GetImageBaseImpl()
+		{
+			return imageBaseAddress;
+		}
+
+		public new long __StackReserve
+		{
+			get { return stackReserve; }
+			set { stackReserve = value; }
+		}
+
+		protected override long GetStackReserveImpl()
+		{
+			return stackReserve;
+		}
+
+#if !NETSTANDARD
+		[Obsolete("Use __StackReserve property.")]
+		public void __SetStackReserve(long stackReserve)
+		{
+			__StackReserve = stackReserve;
+		}
+#endif
+
+		internal ulong GetStackReserve(ulong defaultValue)
+		{
+			return stackReserve == -1 ? defaultValue : (ulong)stackReserve;
+		}
+
+		public new int __FileAlignment
+		{
+			get { return fileAlignment; }
+			set { fileAlignment = value; }
+		}
+
+		protected override int GetFileAlignmentImpl()
+		{
+			return fileAlignment;
+		}
+
+		public new DllCharacteristics __DllCharacteristics
+		{
+			get { return dllCharacteristics; }
+			set { dllCharacteristics = value; }
+		}
+
+		protected override DllCharacteristics GetDllCharacteristicsImpl()
+		{
+			return dllCharacteristics;
+		}
+
+		public override int MDStreamVersion
+		{
+			get { return asm.mdStreamVersion; }
+		}
+
+		private int AddTypeRefByName(int resolutionScope, string ns, string name)
+		{
+			TypeRefTable.Record rec = new TypeRefTable.Record();
+			rec.ResolutionScope = resolutionScope;
+			SetTypeNameAndTypeNamespace(new TypeName(ns, name), out rec.TypeName, out rec.TypeNamespace);
+			return 0x01000000 | this.TypeRef.AddRecord(rec);
+		}
+
+		public void __Save(PortableExecutableKinds portableExecutableKind, ImageFileMachine imageFileMachine)
+		{
+			SaveImpl(null, portableExecutableKind, imageFileMachine);
+		}
+
+		public void __Save(Stream stream, PortableExecutableKinds portableExecutableKind, ImageFileMachine imageFileMachine)
+		{
+			if (!stream.CanRead || !stream.CanWrite || !stream.CanSeek || stream.Position != 0)
+			{
+				throw new ArgumentException("Stream must support read/write/seek and current position must be zero.", "stream");
+			}
+			SaveImpl(stream, portableExecutableKind, imageFileMachine);
+		}
+
+		private void SaveImpl(Stream streamOrNull, PortableExecutableKinds portableExecutableKind, ImageFileMachine imageFileMachine)
+		{
+			SetIsSaved();
+			PopulatePropertyAndEventTables();
+			IList<CustomAttributeData> attributes = asm.GetCustomAttributesData(null);
+			if (attributes.Count > 0)
+			{
+				int mscorlib = ImportAssemblyRef(universe.Mscorlib);
+				int[] placeholderTokens = new int[4];
+				string[] placeholderTypeNames = new string[] { "AssemblyAttributesGoHere", "AssemblyAttributesGoHereM", "AssemblyAttributesGoHereS", "AssemblyAttributesGoHereSM" };
+				foreach (CustomAttributeData cad in attributes)
+				{
+					int index;
+					if (cad.Constructor.DeclaringType.BaseType == universe.System_Security_Permissions_CodeAccessSecurityAttribute)
+					{
+						if (cad.Constructor.DeclaringType.IsAllowMultipleCustomAttribute)
+						{
+							index = 3;
+						}
+						else
+						{
+							index = 2;
+						}
+					}
+					else if (cad.Constructor.DeclaringType.IsAllowMultipleCustomAttribute)
+					{
+						index = 1;
+					}
+					else
+					{
+						index = 0;
+					}
+					if (placeholderTokens[index] == 0)
+					{
+						// we manually add a TypeRef without looking it up in mscorlib, because Mono and Silverlight's mscorlib don't have these types
+						placeholderTokens[index] = AddTypeRefByName(mscorlib, "System.Runtime.CompilerServices", placeholderTypeNames[index]);
+					}
+					SetCustomAttribute(placeholderTokens[index], cad.__ToBuilder());
+				}
+			}
+			FillAssemblyRefTable();
+			EmitResources();
+			ModuleWriter.WriteModule(null, null, this, PEFileKinds.Dll, portableExecutableKind, imageFileMachine, unmanagedResources, 0, streamOrNull);
+			CloseResources();
+		}
+
+		public void __AddAssemblyReference(AssemblyName assemblyName)
+		{
+			__AddAssemblyReference(assemblyName, null);
+		}
+
+		public void __AddAssemblyReference(AssemblyName assemblyName, Assembly assembly)
+		{
+			if (referencedAssemblyNames == null)
+			{
+				referencedAssemblyNames = new List<AssemblyName>();
+			}
+			referencedAssemblyNames.Add((AssemblyName)assemblyName.Clone());
+			int token = FindOrAddAssemblyRef(assemblyName, true);
+			if (assembly != null)
+			{
+				referencedAssemblies.Add(assembly, token);
+			}
+		}
+
+		public override AssemblyName[] __GetReferencedAssemblies()
+		{
+			List<AssemblyName> list = new List<AssemblyName>();
+			if (referencedAssemblyNames != null)
+			{
+				foreach (AssemblyName name in referencedAssemblyNames)
+				{
+					if (!list.Contains(name))
+					{
+						list.Add(name);
+					}
+				}
+			}
+			foreach (Assembly asm in referencedAssemblies.Keys)
+			{
+				AssemblyName name = asm.GetName();
+				if (!list.Contains(name))
+				{
+					list.Add(name);
+				}
+			}
+			return list.ToArray();
+		}
+
+		public void __AddModuleReference(string module)
+		{
+			this.ModuleRef.FindOrAddRecord(module == null ? 0 : this.Strings.Add(module));
+		}
+
+		public override string[] __GetReferencedModules()
+		{
+			string[] arr = new string[this.ModuleRef.RowCount];
+			for (int i = 0; i < arr.Length; i++)
+			{
+				arr[i] = this.Strings.Find(this.ModuleRef.records[i]);
+			}
+			return arr;
+		}
+
+		public override Type[] __GetReferencedTypes()
+		{
+			List<Type> list = new List<Type>();
+			foreach (KeyValuePair<Type, int> kv in typeTokens)
+			{
+				if (kv.Value >> 24 == TypeRefTable.Index)
+				{
+					list.Add(kv.Key);
+				}
+			}
+			return list.ToArray();
+		}
+
+		public override Type[] __GetExportedTypes()
+		{
+			throw new NotImplementedException();
+		}
+
+		public int __AddModule(int flags, string name, byte[] hash)
+		{
+			FileTable.Record file = new FileTable.Record();
+			file.Flags = flags;
+			file.Name = this.Strings.Add(name);
+			file.HashValue = this.Blobs.Add(ByteBuffer.Wrap(hash));
+			return 0x26000000 + this.File.AddRecord(file);
+		}
+
+		public int __AddManifestResource(int offset, ResourceAttributes flags, string name, int implementation)
+		{
+			ManifestResourceTable.Record res = new ManifestResourceTable.Record();
+			res.Offset = offset;
+			res.Flags = (int)flags;
+			res.Name = this.Strings.Add(name);
+			res.Implementation = implementation;
+			return 0x28000000 + this.ManifestResource.AddRecord(res);
+		}
+
+		public void __SetCustomAttributeFor(int token, CustomAttributeBuilder customBuilder)
+		{
+			SetCustomAttribute(token, customBuilder);
+		}
+
+		public RelativeVirtualAddress __AddVTableFixups(MethodBuilder[] methods, int type)
+		{
+			initializedData.Align(8);
+			VTableFixups fixups;
+			fixups.initializedDataOffset = (uint)initializedData.Position;
+			fixups.count = (ushort)methods.Length;
+			fixups.type = (ushort)type;
+			foreach (MethodBuilder mb in methods)
+			{
+				initializedData.Write(mb.MetadataToken);
+				if (fixups.SlotWidth == 8)
+				{
+					initializedData.Write(0);
+				}
+			}
+			vtablefixups.Add(fixups);
+			return new RelativeVirtualAddress(fixups.initializedDataOffset);
+		}
+
+		public void __AddUnmanagedExportStub(string name, int ordinal, RelativeVirtualAddress rva)
+		{
+			AddUnmanagedExport(name, ordinal, null, rva);
+		}
+
+		internal void AddUnmanagedExport(string name, int ordinal, MethodBuilder methodBuilder, RelativeVirtualAddress rva)
+		{
+			UnmanagedExport export;
+			export.name = name;
+			export.ordinal = ordinal;
+			export.mb = methodBuilder;
+			export.rva = rva;
+			unmanagedExports.Add(export);
+		}
+
+		internal void SetInterfaceImplementationCustomAttribute(TypeBuilder typeBuilder, Type interfaceType, CustomAttributeBuilder cab)
+		{
+			// NOTE since interfaceimpls are extremely common and custom attributes on them are extremely rare,
+			// we store (and resolve) the custom attributes in such away as to avoid impacting the common case performance
+			if (interfaceImplCustomAttributes == null)
+			{
+				interfaceImplCustomAttributes = new List<InterfaceImplCustomAttribute>();
+			}
+			InterfaceImplCustomAttribute rec;
+			rec.type = typeBuilder.MetadataToken;
+			int token = GetTypeToken(interfaceType).Token;
+			switch (token >> 24)
+			{
+				case TypeDefTable.Index:
+					token = (token & 0xFFFFFF) << 2 | 0;
+					break;
+				case TypeRefTable.Index:
+					token = (token & 0xFFFFFF) << 2 | 1;
+					break;
+				case TypeSpecTable.Index:
+					token = (token & 0xFFFFFF) << 2 | 2;
+					break;
+				default:
+					throw new InvalidOperationException();
+			}
+			rec.interfaceType = token;
+			rec.pseudoToken = AllocPseudoToken();
+			interfaceImplCustomAttributes.Add(rec);
+			SetCustomAttribute(rec.pseudoToken, cab);
+		}
+
+		internal void ResolveInterfaceImplPseudoTokens()
+		{
+			if (interfaceImplCustomAttributes != null)
+			{
+				foreach (InterfaceImplCustomAttribute rec in interfaceImplCustomAttributes)
+				{
+					for (int i = 0; i < InterfaceImpl.records.Length; i++)
+					{
+						if (InterfaceImpl.records[i].Class == rec.type && InterfaceImpl.records[i].Interface == rec.interfaceType)
+						{
+							RegisterTokenFixup(rec.pseudoToken, (InterfaceImplTable.Index << 24) | (i + 1));
+							break;
+						}
+					}
+				}
+			}
+		}
+
+		internal void FixupPseudoToken(ref int token)
+		{
+			if (IsPseudoToken(token))
+			{
+				token = ResolvePseudoToken(token);
+			}
+		}
+
+		internal void SetIsSaved()
+		{
+			if (saved)
+			{
+				throw new InvalidOperationException();
+			}
+			saved = true;
+		}
+
+		internal bool IsSaved
+		{
+			get { return saved; }
+		}
+
+		internal override string GetString(int index)
+		{
+			return this.Strings.Find(index);
+		}
+	}
+
+	struct UnmanagedExport
+	{
+		internal string name;
+		internal int ordinal;
+		internal RelativeVirtualAddress rva;
+		internal MethodBuilder mb;
+	}
+
+	public struct RelativeVirtualAddress
+	{
+		internal readonly uint initializedDataOffset;
+
+		internal RelativeVirtualAddress(uint initializedDataOffset)
+		{
+			this.initializedDataOffset = initializedDataOffset;
+		}
+
+		public static RelativeVirtualAddress operator +(RelativeVirtualAddress rva, int offset)
+		{
+			return new RelativeVirtualAddress(rva.initializedDataOffset + (uint)offset);
+		}
+	}
+
+	class ArrayMethod : MethodInfo
+	{
+		private readonly Module module;
+		private readonly Type arrayClass;
+		private readonly string methodName;
+		private readonly CallingConventions callingConvention;
+		private readonly Type returnType;
+		protected readonly Type[] parameterTypes;
+		private MethodSignature methodSignature;
+
+		internal ArrayMethod(Module module, Type arrayClass, string methodName, CallingConventions callingConvention, Type returnType, Type[] parameterTypes)
+		{
+			this.module = module;
+			this.arrayClass = arrayClass;
+			this.methodName = methodName;
+			this.callingConvention = callingConvention;
+			this.returnType = returnType ?? module.universe.System_Void;
+			this.parameterTypes = Util.Copy(parameterTypes);
+		}
+
+		public override MethodBody GetMethodBody()
+		{
+			throw new InvalidOperationException();
+		}
+
+		public override int __MethodRVA
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		public override MethodImplAttributes GetMethodImplementationFlags()
+		{
+			throw new NotSupportedException();
+		}
+
+		public override ParameterInfo[] GetParameters()
+		{
+			throw new NotSupportedException();
+		}
+
+		internal override int ImportTo(ModuleBuilder module)
+		{
+			return module.ImportMethodOrField(arrayClass, methodName, MethodSignature);
+		}
+
+		public override MethodAttributes Attributes
+		{
+			get { throw new NotSupportedException(); }
+		}
+
+		public override CallingConventions CallingConvention
+		{
+			get { return callingConvention; }
+		}
+
+		public override Type DeclaringType
+		{
+			get { return arrayClass; }
+		}
+
+		internal override MethodSignature MethodSignature
+		{
+			get
+			{
+				if (methodSignature == null)
+				{
+					methodSignature = MethodSignature.MakeFromBuilder(returnType, parameterTypes, new PackedCustomModifiers(), callingConvention, 0);
+				}
+				return methodSignature;
+			}
+		}
+
+		public override Module Module
+		{
+			// FXBUG like .NET, we return the module that GetArrayMethod was called on, not the module associated with the array type
+			get { return module; }
+		}
+
+		public override string Name
+		{
+			get { return methodName; }
+		}
+
+		internal override int ParameterCount
+		{
+			get { return parameterTypes.Length; }
+		}
+
+		public override ParameterInfo ReturnParameter
+		{
+			// FXBUG like .NET, we throw NotImplementedException
+			get { throw new NotImplementedException(); }
+		}
+
+		public override Type ReturnType
+		{
+			get { return returnType; }
+		}
+
+		internal override bool HasThis
+		{
+			get { return (callingConvention & (CallingConventions.HasThis | CallingConventions.ExplicitThis)) == CallingConventions.HasThis; }
+		}
+
+		internal override int GetCurrentToken()
+		{
+			return this.MetadataToken;
+		}
+
+		internal override bool IsBaked
+		{
+			get { return arrayClass.IsBaked; }
+		}
+	}
+}
+@
+
+
+1.108
+log
+@Replaced CORECLR symbol with NETSTANDARD.
+@
+text
+@d398 1
+d404 1
+d1571 1
+d1577 1
+@
+
+
+1.107
+log
+@Added support for building against .NET Standard 1.3.
+@
+text
+@d82 1
+a82 1
+#if !CORECLR
+d88 1
+a88 1
+#if CORECLR
+d112 1
+a112 1
+#if !CORECLR
+d145 1
+a145 1
+#if !CORECLR
+d519 1
+a519 1
+#if !CORECLR
+d587 1
+a587 1
+#if !CORECLR
+@
+
+
+1.106
+log
+@Added AssemblyName.CultureName property setter that was introduced with .NET 4.6.
+@
+text
+@d536 3
+d540 1
+@
+
+
+1.105
+log
+@Use uint for file position to support >2GB files. Note that PE spec says that 2GB is the maximum valid size.
+@
+text
+@d982 1
+a982 1
+			rec.Culture = name.Culture == null ? 0 : this.Strings.Add(name.Culture);
+@
+
+
+1.104
+log
+@Added internal Type.TypeName virtual property to retrieve type name with a single virtual method call.
+@
+text
+@d1136 1
+a1136 1
+		internal void WriteMetadata(MetadataWriter mw, out int guidHeapOffset)
+@
+
+
+1.103
+log
+@Renamed TypeNameSpace to TypeNamespace for consistency.
+@
+text
+@d471 1
+a471 3
+			rec.TypeName = this.Strings.Add(type.__Name);
+			string ns = type.__Namespace;
+			rec.TypeNamespace = ns == null ? 0 : this.Strings.Add(ns);
+d485 6
+d657 1
+a657 1
+				if (type.__Namespace == name.Namespace && type.__Name == name.Name)
+d669 1
+a669 1
+				if (new TypeName(type.__Namespace, type.__Name).ToLowerInvariant() == lowerCaseName)
+d915 1
+a915 3
+					rec.TypeName = this.Strings.Add(type.__Name);
+					string ns = type.__Namespace;
+					rec.TypeNamespace = ns == null ? 0 : this.Strings.Add(ns);
+d1225 1
+a1225 3
+					rec.TypeName = this.Strings.Add(type.__Name);
+					string ns = type.__Namespace;
+					rec.TypeNamespace = ns == null ? 0 : this.Strings.Add(ns);
+d1607 1
+a1607 2
+			rec.TypeName = this.Strings.Add(name);
+			rec.TypeNamespace = ns == null ? 0 : this.Strings.Add(ns);
+@
+
+
+1.102
+log
+@Added UniverseOptions.DeterministicOutput to enable deterministic output (i.e. setting the PE file header time stamp to zero and computing the module version id based on the contents, instead of using a random guid).
+@
+text
+@d913 1
+a913 1
+					rec.TypeNameSpace = ns == null ? 0 : this.Strings.Add(ns);
+d1608 1
+a1608 1
+			rec.TypeNameSpace = ns == null ? 0 : this.Strings.Add(ns);
+@
+
+
+1.101
+log
+@Added new public API ModuleBuilder.__PEHeaderTimeDateStamp property.
+@
+text
+@d44 2
+a45 2
+		private Guid mvid = Guid.NewGuid();
+		private DateTime timestamp = DateTime.UtcNow;
+d254 9
+d1134 1
+a1134 1
+		internal void WriteMetadata(MetadataWriter mw)
+d1187 1
+d1409 5
+d1416 9
+a1424 1
+			get { return mvid; }
+d1429 5
+d1437 5
+d1444 1
+a1444 1
+			get { return timestamp; }
+d1451 1
+a1451 1
+				timestamp = value;
+@
+
+
+1.100
+log
+@Added CoreCLR target for IKVM.Reflection.
+@
+text
+@d45 1
+d1409 13
+@
+
+
+1.99
+log
+@Fixed ModuleBuilder.DefineManifestResource() to support very large resources.
+@
+text
+@d28 1
+d30 1
+d81 1
+d83 1
+d87 13
+d107 1
+d111 1
+d116 1
+d144 1
+d149 1
+d505 1
+d511 1
+d566 1
+a566 1
+			resourceWriters.Add(new ResourceWriterRecord(name, null, stream, attribute));
+d569 1
+d584 1
+d674 1
+d679 1
+d1418 1
+d1423 1
+d1445 1
+d1450 1
+@
+
+
+1.98
+log
+@Added new overload for __AddTypeForwarder() that takes an additional bool to disable automatically forwarding nested types.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008-2012 Jeroen Frijters
+a57 1
+		internal readonly ByteBuffer manifestResources = new ByteBuffer(512);
+d73 1
+a73 1
+		private List<ResourceWriterRecord> resourceWriters;
+d80 1
+a80 1
+			private readonly MemoryStream mem;
+d83 1
+a83 1
+			internal ResourceWriterRecord(string name, ResourceWriter rw, MemoryStream mem, ResourceAttributes attributes)
+d87 1
+a87 1
+				this.mem = mem;
+d91 1
+a91 1
+			internal void Emit(ModuleBuilder mb)
+d93 35
+a127 4
+				rw.Generate();
+				mem.Position = 0;
+				mb.DefineManifestResource(name, mem, attributes);
+				rw.Close();
+d542 1
+a542 13
+			manifestResources.Align(8);
+			ManifestResourceTable.Record rec = new ManifestResourceTable.Record();
+			rec.Offset = manifestResources.Position;
+			rec.Flags = (int)attribute;
+			rec.Name = this.Strings.Add(name);
+			rec.Implementation = 0;
+			this.ManifestResource.AddRecord(rec);
+			manifestResources.Write(0);	// placeholder for the length
+			manifestResources.Write(stream);
+			int savePosition = manifestResources.Position;
+			manifestResources.Position = rec.Offset;
+			manifestResources.Write(savePosition - (manifestResources.Position + 4));
+			manifestResources.Position = savePosition;
+a553 4
+			if (resourceWriters == null)
+			{
+				resourceWriters = new List<ResourceWriterRecord>();
+			}
+d562 14
+a575 1
+			if (resourceWriters != null)
+d577 3
+a579 1
+				foreach (ResourceWriterRecord rwr in resourceWriters)
+d581 1
+a581 1
+					rwr.Emit(this);
+d583 21
+d605 1
+d1590 1
+@
+
+
+1.97
+log
+@Only (incorrectly) set the TypeDefId for exported types from another assembly if we're targetting .NET 2.0 where .NET does so too and peverify warns if it isn't set.
+@
+text
+@d387 1
+a387 1
+		internal void AddTypeForwarder(Type type)
+d390 1
+a390 1
+			if (!type.__IsMissing)
+d396 1
+a396 1
+					AddTypeForwarder(nested);
+@
+
+
+1.96
+log
+@Bug fix. ExceptionHandler.Equals(object) called itself instead of Equals(ExceptionHandler). Also fixed two other instances of this in internal classes (where the Equals(object) is never used).
+@
+text
+@d404 5
+a408 2
+			// HACK we should *not* set the TypeDefId in this case, but 2.0 and 3.5 peverify gives a warning if it is missing (4.5 doesn't)
+			rec.TypeDefId = type.MetadataToken;
+@
+
+
+1.95
+log
+@Unified legacy DeclSecurity handling.
+@
+text
+@d143 1
+a143 1
+				return other != null && Equals(other);
+d183 1
+a183 1
+				return other != null && Equals(other);
+@
+
+
+1.94
+log
+@Moved DeclSecurity record adding into a helper method.
+@
+text
+@d471 1
+a471 1
+				if (cab.Constructor == CustomAttributeBuilder.LegacyPermissionSet)
+d473 1
+a473 1
+					AddDeclSecurityRecord(token, action, cab.WriteBlob(this));
+a491 6
+			string xml;
+			if (list.Count == 1 && (xml = list[0].GetLegacyDeclSecurity()) != null)
+			{
+				// write .NET 1.1 format
+				return this.Blobs.Add(ByteBuffer.Wrap(System.Text.Encoding.Unicode.GetBytes(xml)));
+			}
+@
+
+
+1.93
+log
+@Removed bogus assert.
+@
+text
+@d441 1
+a441 1
+		internal void AddDeclarativeSecurity(int token, System.Security.Permissions.SecurityAction securityAction, System.Security.PermissionSet permissionSet)
+d444 1
+a444 1
+			rec.Action = (short)securityAction;
+d446 6
+d453 1
+a453 2
+			rec.PermissionSet = this.Blobs.Add(ByteBuffer.Wrap(System.Text.Encoding.Unicode.GetBytes(permissionSet.ToXml().ToString())));
+			this.DeclSecurity.AddRecord(rec);
+d473 1
+a473 5
+					DeclSecurityTable.Record rec = new DeclSecurityTable.Record();
+					rec.Action = (short)action;
+					rec.Parent = token;
+					rec.PermissionSet = cab.WriteBlob(this);
+					this.DeclSecurity.AddRecord(rec);
+d486 1
+a486 5
+				DeclSecurityTable.Record rec = new DeclSecurityTable.Record();
+				rec.Action = (short)kv.Key;
+				rec.Parent = token;
+				rec.PermissionSet = WriteDeclSecurityBlob(kv.Value);
+				this.DeclSecurity.AddRecord(rec);
+@
+
+
+1.92
+log
+@Simplified legacy PermissionSet handling.
+@
+text
+@a433 1
+			Debug.Assert(!customBuilder.IsPseudoCustomAttribute);
+@
+
+
+1.91
+log
+@Implemented ARM unmanaged exports.
+@
+text
+@d467 9
+@
+
+
+1.90
+log
+@Throw NotSupportedException when processing unmanaged exports with an unsupported target architecture.
+@
+text
+@d944 1
+@
+
+
+1.89
+log
+@Revert previous fix because peverify 2.0 and 3.5 give an (incorrect) warning when TypeDefId isn't set for an exported type.
+@
+text
+@d941 1
+a941 1
+				if (imageFileMachine == ImageFileMachine.I386)
+d943 10
+a952 7
+					type = 0x05;
+					size = 4;
+				}
+				else
+				{
+					type = 0x06;
+					size = 8;
+@
+
+
+1.88
+log
+@Bug fix. We should not set ExportedType.TypeDefId for forwarded types.
+@
+text
+@d404 2
+@
+
+
+1.87
+log
+@Made ModuleBuilder.IsPseudoToken() method static.
+@
+text
+@a403 1
+			rec.TypeDefId = type.MetadataToken;
+@
+
+
+1.86
+log
+@Renamed methods that deal with unsigned compressed integers to *CompressedUInt instead of *CompressedInt.
+@
+text
+@d923 1
+a923 1
+		internal bool IsPseudoToken(int token)
+@
+
+
+1.85
+log
+@Minor refactoring of Module.ResolveType(). Moved the wrapping of the type arrays into an IGenericContext up into Module.
+@
+text
+@d495 1
+a495 1
+			bb.WriteCompressedInt(list.Count);
+d501 1
+a501 1
+				bb.WriteCompressedInt(namedArgs.Length);
+@
+
+
+1.85.2.1
+log
+@Backported fixes for rc 3.
+- Bug fix. Off-by-one error in local ref index reusing. Fix for bug #3575555.
+- Bug fix. Don't try to inject DynamicMethod in array types (applies to array.clone() method for MethodHandles).
+- IKVM.Reflection: Bug fix. ModuleReader.ResolveMember() should support types. Thanks to Jb Evain for finding this.
+- IKVM.Reflection: Bug fix. While reading the Cecil source I realized that array bounds are signed.
+- IKVM.Reflection: Bug fix. LocalBuilder should extend LocalVariableInfo.
+- IKVM.Reflection: Implemented LocalVariableInfo.ToString().
+@
+text
+@d495 1
+a495 1
+			bb.WriteCompressedUInt(list.Count);
+d501 1
+a501 1
+				bb.WriteCompressedUInt(namedArgs.Length);
+@
+
+
+1.84
+log
+@Refactored custom attribute handling of MemberInfo types.
+@
+text
+@d1245 1
+a1245 1
+		public override Type ResolveType(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+d1247 1
+a1247 1
+			if (genericTypeArguments != null || genericMethodArguments != null)
+@
+
+
+1.83
+log
+@Added new API MethodInfo.__TryGetImplMap().
+@
+text
+@d1876 5
+@
+
+
+1.82
+log
+@Keep track of whether a ModuleBuilder has been saved (and only allow it to be saved once).
+@
+text
+@d1738 5
+d1871 5
+@
+
+
+1.81
+log
+@Added new .NET 4.5 API Type.IsConstructedGenericType.
+@
+text
+@d75 1
+d1491 1
+d1724 14
+@
+
+
+1.80
+log
+@Added missing DefineResource() APIs to ModuleBuilder and AssemblyBuilder.
+@
+text
+@d797 1
+a797 1
+				if (type.HasElementType || type.IsGenericTypeInstance || type.__IsFunctionPointer)
+@
+
+
+1.79
+log
+@Enable to generation of WindowsRuntime assemblies.
+@
+text
+@d30 1
+d74 25
+d523 30
+d1528 1
+@
+
+
+1.78
+log
+@- Construct lookup key only once in ImportMethodOrField.
+- Added FXBUG comments to ArrayMethod.
+@
+text
+@d409 1
+a409 1
+			rec.Type = this.GetConstructorToken(customBuilder.Constructor).Token;
+d554 1
+a554 1
+			if (type.Module == this)
+d669 5
+d754 4
+d811 4
+@
+
+
+1.77
+log
+@Removed unnecessary (and memory leaking) member ref caching level.
+@
+text
+@d688 2
+a689 1
+			if (!importedMemberRefs.TryGetValue(new MemberRefKey(declaringType, name, sig), out token))
+d698 1
+a698 1
+				importedMemberRefs.Add(new MemberRefKey(declaringType, name, sig), token);
+d1751 1
+a1751 1
+			// like .NET, we return the module that GetArrayMethod was called on, not the module associated with the array type
+d1767 1
+@
+
+
+1.76
+log
+@Made MethodSpec handling more consistent with MemberRef handling. This avoids the need for the caching the MethodInfo to token mappings (which leaks memory, because generic method instances are not canonicalized).
+@
+text
+@a58 1
+		private readonly Dictionary<MemberInfo, int> importedMembers = new Dictionary<MemberInfo, int>();
+d610 1
+a610 1
+				return new FieldToken(ImportMember(field));
+d623 1
+a623 1
+				return new MethodToken(ImportMember(method));
+d661 1
+a661 1
+				return new MethodToken(ImportMember(method));
+a684 22
+		internal int ImportMember(MethodBase member)
+		{
+			int token;
+			if (!importedMembers.TryGetValue(member, out token))
+			{
+				token = member.ImportTo(this);
+				importedMembers.Add(member, token);
+			}
+			return token;
+		}
+
+		internal int ImportMember(FieldInfo member)
+		{
+			int token;
+			if (!importedMembers.TryGetValue(member, out token))
+			{
+				token = member.ImportTo(this);
+				importedMembers.Add(member, token);
+			}
+			return token;
+		}
+
+@
+
+
+1.75
+log
+@Bug fix. ModuleBuilder.ResolveMethod() should return ConstructorInfo for constructors.
+@
+text
+@d61 1
+d131 35
+d725 28
+@
+
+
+1.74
+log
+@Forward GetConstructorToken() to GetMethodToken() instead of duplicating the code.
+@
+text
+@d123 5
+d1151 1
+a1151 1
+				foreach (KeyValuePair<MemberInfo, int> kv in importedMembers)
+d1155 1
+a1155 1
+						return (MethodBase)kv.Key;
+@
+
+
+1.73
+log
+@- Added .NET 4.5 ModuleBuilder APIs GetMethodToken(MethodInfo, IEnumerable<Type>) and GetConstructorToken(MethodInfo, IEnumerable<Type>).
+- Added API extensions ModuleBuilder.__GetMethodToken() and ModuleBuilder.__GetConstructorToken().
+@
+text
+@d631 1
+a631 8
+			if (constructor.Module == this && constructor.GetMethodInfo() is MethodBuilder)
+			{
+				return new MethodToken(constructor.MetadataToken);
+			}
+			else
+			{
+				return new MethodToken(ImportMember(constructor));
+			}
+@
+
+
+1.72
+log
+@- Added ModuleBuilder.__GetAssemblyToken() API.
+- Changed assembly refs to use general pseudo mechanism, instead of its own special case.
+@
+text
+@d587 24
+d641 11
+@
+
+
+1.71
+log
+@Bug fix. It should be possible to import a function pointer type into a ModuleBuilder.
+@
+text
+@d502 5
+d695 1
+a695 3
+				// We set the high bit of rid in the token to make sure we emit obviously broken metadata,
+				// if we forget to patch up the token somewhere.
+				token = 0x23800001 + referencedAssemblies.Count;
+a702 1
+			int[] realtokens = new int[referencedAssemblies.Count];
+d705 1
+a705 19
+				if ((kv.Value & 0x7F800000) == 0x23800000)
+				{
+					realtokens[(kv.Value & 0x7FFFFF) - 1] = FindOrAddAssemblyRef(kv.Key.GetName(), false);
+				}
+			}
+			// now fixup the resolution scopes in TypeRef
+			for (int i = 0; i < this.TypeRef.records.Length; i++)
+			{
+				int resolutionScope = this.TypeRef.records[i].ResolutionScope;
+				if ((resolutionScope & 0x7F800000) == 0x23800000)
+				{
+					this.TypeRef.records[i].ResolutionScope = realtokens[(resolutionScope & 0x7FFFFF) - 1];
+				}
+			}
+			// and implementation in ExportedType
+			for (int i = 0; i < this.ExportedType.records.Length; i++)
+			{
+				int implementation = this.ExportedType.records[i].Implementation;
+				if ((implementation & 0x7F800000) == 0x23800000)
+d707 1
+a707 1
+					this.ExportedType.records[i].Implementation = realtokens[(implementation & 0x7FFFFF) - 1];
+d1569 8
+@
+
+
+1.70
+log
+@Added support for case-insensitive type lookup.
+@
+text
+@d656 1
+a656 1
+				if (type.HasElementType || type.IsGenericTypeInstance)
+@
+
+
+1.69
+log
+@Bug fix. When exporting a nested type (via AssemblyBuilder.__AddTypeForwarder()), we should also set the namespace (in practice it is unlikely for a nested type to have a namespace, but is is possible).
+@
+text
+@d474 12
+@
+
+
+1.68
+log
+@Bug fix. When writing an assembly that has a .netmodule, the TypeDefId field in the ExportedType in the manifest module should contain a TypeDef token, not an index as the ECMA spec says.
+@
+text
+@d339 2
+a343 1
+				rec.TypeNamespace = 0;
+a348 2
+				string ns = type.__Namespace;
+				rec.TypeNamespace = ns == null ? 0 : this.Strings.Add(ns);
+@
+
+
+1.67
+log
+@New API. Added Module.__DllCharacteristics and ModuleBuilder.__DllCharacteristics properties to get and set image DLL characteristics flags.
+@
+text
+@d984 2
+a985 1
+					rec.TypeDefId = type.MetadataToken & 0xFFFFFF;
+@
+
+
+1.66
+log
+@New API. Made ModuleBuilder.__FileAlignment writeable.
+@
+text
+@d45 1
+d1309 11
+@
+
+
+1.65
+log
+@Marked ModuleBuilder.__SetStackReserve() obsolete and made ModuleBuilder.__StackReserve property writeable to be consistent with __ImageBase property.
+@
+text
+@d44 1
+d1297 11
+@
+
+
+1.64
+log
+@API change. Allow Type.MetadataToken to be called on missing type (it will return 0 or the token hint when the type was forwarded).
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008-2011 Jeroen Frijters
+d1274 1
+a1274 1
+		public override long __StackReserve
+d1277 1
+d1280 6
+d1288 1
+a1288 1
+			this.stackReserve = stackReserve;
+@
+
+
+1.63
+log
+@Added MethodBase.__MethodRVA property.
+@
+text
+@d335 1
+a335 9
+			MissingType missing = type as MissingType;
+			if (missing != null)
+			{
+				rec.TypeDefId = missing.GetMetadataTokenForMissing();
+			}
+			else
+			{
+				rec.TypeDefId = type.MetadataToken;
+			}
+@
+
+
+1.62
+log
+@Added new overload of __ResolveOptionalParameterTypes() that supports resolving generic type parameters and custom modifiers.
+@
+text
+@d1600 5
+@
+
+
+1.61
+log
+@- Rewrote custom modifier handling to retain ordering.
+- Added ConstructorInfo.__ReturnParameter to expose custom modifiers.
+- Added __GetCustomModifiers() to various *Info types.
+- Added CustomModifiers type to encapsulate a custom modifier sequence.
+- Added CustomModifiersBuilder to create a CustomModifiers sequence.
+- Marked a number of IKVM.Reflection specific methods Obsolete, because they are replaced with method that take CustomModifiers value(s).
+@
+text
+@d1187 1
+a1187 1
+		public override Type[] __ResolveOptionalParameterTypes(int metadataToken)
+@
+
+
+1.60
+log
+@Implemented most of AssemblyName (except parsing) without dependency on System.Reflection.AssemblyName.
+@
+text
+@d262 6
+d1636 1
+a1636 1
+					methodSignature = MethodSignature.MakeFromBuilder(returnType, parameterTypes, null, callingConvention, 0);
+@
+
+
+1.59
+log
+@Added support for process architecture in assembly flags.
+@
+text
+@d748 1
+a748 8
+			if (name.CultureInfo != null)
+			{
+				rec.Culture = this.Strings.Add(name.CultureInfo.Name);
+			}
+			else
+			{
+				rec.Culture = 0;
+			}
+@
+
+
+1.58
+log
+@Added API extension to set custom attributes on interfaceimpl records.
+@
+text
+@d726 6
+@
+
+
+1.57
+log
+@It turns out that when adding an AssemblyRef we should only mess with the PublicKey bit, all others we just take from the assembly being referenced (even though some make no sense in the ref context). This is compatible with Ref.Emit and also fixes the ability to correctly reference WinRT assemblies.
+@
+text
+@d70 1
+d84 7
+d1496 49
+@
+
+
+1.56
+log
+@Don't add emtpy vtable fixup.
+@
+text
+@d717 1
+a717 1
+			rec.Flags = (int)(name.Flags & AssemblyNameFlags.Retargetable);
+@
+
+
+1.55
+log
+@Added high level API extension MethodBuilder.__AddUnmanagedExport().
+@
+text
+@d811 1
+a811 2
+				RelativeVirtualAddress rva = __AddVTableFixups(methods.ToArray(), type);
+				for (int i = 0; i < unmanagedExports.Count; i++)
+d813 2
+a814 1
+					if (unmanagedExports[i].mb != null)
+d816 6
+a821 3
+						UnmanagedExport exp = unmanagedExports[i];
+						exp.rva = new RelativeVirtualAddress(rva.initializedDataOffset + (uint)(methods.IndexOf(unmanagedExports[i].mb) * size));
+						unmanagedExports[i] = exp;
+@
+
+
+1.54
+log
+@Added API extension ModuleBuilder.__AddUnmanagedExportStub().
+@
+text
+@d787 37
+d1473 5
+d1481 1
+d1492 1
+@
+
+
+1.53
+log
+@Only fixup pseudo-assembly reference tokens in ExportedType table.
+@
+text
+@d69 1
+d1433 16
+@
+
+
+1.52
+log
+@Add ModuleBuilder.__AddAssemblyReference(AssemblyName, Assembly) to allow duplicate assembly references.
+@
+text
+@d701 1
+a701 1
+				if ((implementation >> 24) == AssemblyRefTable.Index)
+@
+
+
+1.51
+log
+@Added API extension ModuleBuilder.__AddVTableFixups().
+@
+text
+@d683 4
+a686 1
+				realtokens[(kv.Value & 0x7FFFFF) - 1] = FindOrAddAssemblyRef(kv.Key.GetName());
+d692 1
+a692 1
+				if ((resolutionScope >> 24) == AssemblyRefTable.Index)
+d708 1
+a708 1
+		private int FindOrAddAssemblyRef(AssemblyName name)
+d749 1
+a749 1
+			return 0x23000000 | this.AssemblyRef.FindOrAddRecord(rec);
+d1316 5
+a1324 1
+			FindOrAddAssemblyRef(assemblyName);
+d1326 5
+@
+
+
+1.50
+log
+@- Added API extension to query the types exported from a module.
+- Fixed __AddTypeForwarder() to handle missing types.
+@
+text
+@d68 13
+d798 8
+d1401 34
+@
+
+
+1.49
+log
+@Always write XML declarative security in .NET 1.1 format.
+@
+text
+@d293 1
+a293 1
+			foreach (Type nested in type.GetNestedTypes(BindingFlags.Public | BindingFlags.NonPublic))
+d295 6
+a300 3
+				// we export all nested types (i.e. even the private ones)
+				// (this behavior is the same as the C# compiler)
+				AddTypeForwarder(nested);
+d307 9
+a315 1
+			rec.TypeDefId = type.MetadataToken;
+d1352 5
+@
+
+
+1.48
+log
+@- Removed TypeBuilder.__SetStructLayoutAttribute().
+- Added TypeBuilder.__SetLayout().
+- Added Type.__GetLayout().
+- Fixed Type.StructLayoutAttribute to be compatible with .NET.
+@
+text
+@d387 2
+a388 5
+			if (this.MDStreamVersion < 0x20000
+				&& list.Count == 1
+				&& list[0].Constructor.DeclaringType == universe.System_Security_Permissions_PermissionSetAttribute
+				&& !list[0].HasBlob
+				&& list[0].GetPropertyValue("XML") is string)
+d391 1
+a391 1
+				return this.Blobs.Add(ByteBuffer.Wrap(System.Text.Encoding.Unicode.GetBytes((string)list[0].GetPropertyValue("XML"))));
+@
+
+
+1.47
+log
+@Support roundtripping hash in AssemblyRef record.
+@
+text
+@d214 4
+a217 1
+			typeBuilder.SetPackingSizeAndTypeSize(packingSize, typesize);
+@
+
+
+1.46
+log
+@Added API extension to get/set stack reserve.
+@
+text
+@d714 8
+a721 1
+			rec.HashValue = 0;
+@
+
+
+1.45
+log
+@Added API extensions to get and set custom attributes at the token level.
+@
+text
+@d43 1
+d1186 15
+@
+
+
+1.44
+log
+@Added API extensions to add low-level Module and ManifestResource table records.
+@
+text
+@d1336 5
+@
+
+
+1.43
+log
+@Automatically emit .NET 1.x compatible declarative security when appropriate.
+@
+text
+@d1317 19
+@
+
+
+1.42
+log
+@Allow adding a null module ref.
+@
+text
+@d383 9
+@
+
+
+1.41
+log
+@Added API extension Module.__GetReferencedTypes() to get the TypeRef table contents.
+@
+text
+@d1283 1
+a1283 1
+			this.ModuleRef.FindOrAddRecord(this.Strings.Add(module));
+@
+
+
+1.40
+log
+@Added API extension __ImageBase to Module.
+@
+text
+@a388 5
+				if (cab.Constructor.Module != this)
+				{
+					// to make ildasm show the type properly, we need to have a TypeRef to the type
+					ImportType(cab.Constructor.DeclaringType);
+				}
+d1295 13
+@
+
+
+1.39
+log
+@Align managed resources on 8 bytes.
+@
+text
+@d1170 1
+a1170 1
+		public long __ImageBase
+d1176 5
+@
+
+
+1.38
+log
+@Added API extensions to get and add referenced modules.
+@
+text
+@d405 1
+@
+
+
+1.37
+log
+@Added Type.IsGenericTypeInstance to make it easier (and more efficient) to test for generic type instantiations. Note that this property can be called on missing types (it will return false), unlike both IsGenericType and IsGenericTypeDefinition.
+@
+text
+@d1279 15
+@
+
+
+1.36
+log
+@Added API extension __SetStructLayoutAttribute().
+@
+text
+@d606 1
+a606 1
+				if (type.HasElementType || (!type.__IsMissing && type.IsGenericType && !type.IsGenericTypeDefinition))
+@
+
+
+1.35
+log
+@Bug fix. When adding an assembly ref, support names that don't have Version or PublicKeyToken set. This can happen for explicitly added references or missing assemblies.
+@
+text
+@d213 1
+a213 1
+			SetPackingSizeAndTypeSize(typeBuilder, packingSize, typesize);
+a228 12
+		internal void SetPackingSizeAndTypeSize(TypeBuilder typeBuilder, PackingSize packingSize, int typesize)
+		{
+			if (packingSize != PackingSize.Unspecified || typesize != 0)
+			{
+				ClassLayoutTable.Record rec = new ClassLayoutTable.Record();
+				rec.PackingSize = (short)packingSize;
+				rec.ClassSize = typesize;
+				rec.Parent = typeBuilder.MetadataToken;
+				this.ClassLayout.AddRecord(rec);
+			}
+		}
+
+@
+
+
+1.34
+log
+@Apparently we should emit a TypeRef for types used in DeclSecurity.
+@
+text
+@d690 1
+a690 1
+			Version ver = name.Version;
+d703 1
+a703 1
+				publicKeyOrToken = name.GetPublicKeyToken();
+@
+
+
+1.33
+log
+@Added API extension __SetModuleVersionId().
+@
+text
+@d401 5
+@
+
+
+1.32
+log
+@Allow missing types and methods to be used in emitted assembly.
+@
+text
+@d41 1
+a41 1
+		private readonly Guid mvid = Guid.NewGuid();
+d1087 5
+@
+
+
+1.31
+log
+@Fixed TypeBuilder.SetParent(null) handling. Moved base type defaulting to CreateType() to avoid problems when compiing mscorlib.
+@
+text
+@d478 5
+a482 1
+			if (type.IsGenericTypeDefinition)
+d507 1
+a507 1
+			return decl != null && decl.IsGenericTypeDefinition;
+d613 1
+a613 1
+				if (type.HasElementType || (type.IsGenericType && !type.IsGenericTypeDefinition))
+@
+
+
+1.31.2.1
+log
+@Back ported fixes:
+- Bug fix. BeginExceptFilterBlock() should behave like BeginCatchBlock(), not BeginFinallyBlock().
+- Fix for http://gcc.gnu.org/bugzilla/show_bug.cgi?id=48131.
+- Bug fix. Support loading resources from assemblies added to the boot classloader (with ikvm.runtime.Startup.addBootClassPathAssemby()).
+- Type parameters should be separated by commas.
+- Only the assembly name should escape the ']' characters.
+- Bug fix. <Module> should not extend object.
+- Bug fix. String literals that are invalid UTF-16 should not be "corrected".
+- Bug fix. MaxStack returned incorrect value for tiny header methods.
+- Fix. Module does not inherit members from Object.
+- Align initialized data arrays.
+- Align managed resources on 8 bytes.
+@
+text
+@a411 1
+			manifestResources.Align(8);
+@
+
+
+1.30
+log
+@The type attributes are mutable, so there is no reason to require them in __Define[Nested]Type().
+@
+text
+@a211 4
+			if (parent == null && (attr & TypeAttributes.Interface) == 0)
+			{
+				parent = universe.System_Object;
+			}
+@
+
+
+1.29
+log
+@More type name fixes. This time to support the fact that the CLR and Mono both treat TypeNamespace and TypeName as separate names and do not consider fullName to be relevant.
+@
+text
+@d111 1
+a111 1
+			moduleType = new TypeBuilder(this, null, "<Module>", 0);
+d210 2
+a211 1
+			TypeBuilder typeBuilder = __DefineType(ns, name, attr);
+d221 1
+a221 1
+		public TypeBuilder __DefineType(string ns, string name, TypeAttributes attr)
+d223 1
+a223 1
+			return DefineType(this, ns, name, attr);
+d226 1
+a226 1
+		internal TypeBuilder DefineType(ITypeOwner owner, string ns, string name, TypeAttributes attr)
+d228 1
+a228 1
+			TypeBuilder typeBuilder = new TypeBuilder(owner, ns, name, attr);
+@
+
+
+1.28
+log
+@Added support for saving to a stream instead of a file.
+@
+text
+@a50 1
+		private readonly Dictionary<string, TypeBuilder> fullNameToType = new Dictionary<string, TypeBuilder>();
+a228 1
+			fullNameToType.Add(typeBuilder.FullName, typeBuilder);
+d434 1
+a434 1
+		internal override Type GetTypeImpl(string typeName)
+d436 8
+a443 3
+			TypeBuilder type;
+			fullNameToType.TryGetValue(typeName, out type);
+			return type;
+@
+
+
+1.27
+log
+@Refactored Define[Nested]Type methods to allow __DefineType() and __DefineNestedType() APIs to be added that allow namespace and name to be passed in separately.
+@
+text
+@d1189 14
+d1241 1
+a1241 1
+			ModuleWriter.WriteModule(null, null, this, PEFileKinds.Dll, portableExecutableKind, imageFileMachine, unmanagedResources, 0);
+@
+
+
+1.26
+log
+@Remove parent from TypeBuilder constructor.
+@
+text
+@d112 1
+a112 1
+			moduleType = new TypeBuilder(this, "<Module>", 0);
+d204 8
+a211 1
+			TypeBuilder typeBuilder = new TypeBuilder(this, name, attr);
+d217 1
+a217 1
+			PostDefineType(typeBuilder, packingSize, typesize);
+d221 1
+a221 1
+		public EnumBuilder DefineEnum(string name, TypeAttributes visibility, Type underlyingType)
+d223 1
+a223 3
+			TypeBuilder tb = DefineType(name, (visibility & TypeAttributes.VisibilityMask) | TypeAttributes.Sealed, universe.System_Enum);
+			FieldBuilder fb = tb.DefineField("value__", underlyingType, FieldAttributes.Public | FieldAttributes.SpecialName | FieldAttributes.RTSpecialName);
+			return new EnumBuilder(tb, fb);
+d226 1
+a226 1
+		internal TypeBuilder DefineNestedTypeHelper(TypeBuilder enclosingType, string name, TypeAttributes attr, Type parent, PackingSize packingSize, int typesize)
+d228 3
+a230 14
+			TypeBuilder typeBuilder = new TypeBuilder(enclosingType, name, attr);
+			if (parent == null && (attr & TypeAttributes.Interface) == 0)
+			{
+				parent = universe.System_Object;
+			}
+			typeBuilder.SetParent(parent);
+			PostDefineType(typeBuilder, packingSize, typesize);
+			if (enclosingType != null)
+			{
+				NestedClassTable.Record rec = new NestedClassTable.Record();
+				rec.NestedClass = typeBuilder.MetadataToken;
+				rec.EnclosingClass = enclosingType.MetadataToken;
+				this.NestedClass.AddRecord(rec);
+			}
+d234 1
+a234 1
+		private void PostDefineType(TypeBuilder typeBuilder, PackingSize packingSize, int typesize)
+a235 2
+			types.Add(typeBuilder);
+			fullNameToType.Add(typeBuilder.FullName, typeBuilder);
+d246 7
+@
+
+
+1.25
+log
+@Re-arrange Name/__Name usage to avoid redundant escaping/unescaping.
+Improve support for nested types that use a namespace.
+@
+text
+@d112 1
+a112 1
+			moduleType = new TypeBuilder(this, "<Module>", null, 0);
+d204 1
+d209 1
+a209 1
+			TypeBuilder typeBuilder = new TypeBuilder(this, name, parent, attr);
+d223 1
+d228 1
+a228 1
+			TypeBuilder typeBuilder = new TypeBuilder(enclosingType, name, parent, attr);
+@
+
+
+1.24
+log
+@According to Marek, Mono requires the PropertyMap table to be sorted.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008-2010 Jeroen Frijters
+d317 1
+a317 1
+			rec.TypeName = this.Strings.Add(TypeNameParser.Unescape(type.Name));
+d327 2
+a328 2
+				string ns = type.Namespace;
+				rec.TypeNamespace = ns == null ? 0 : this.Strings.Add(TypeNameParser.Unescape(ns));
+a619 2
+						rec.TypeName = this.Strings.Add(TypeNameParser.Unescape(type.Name));
+						rec.TypeNameSpace = 0;
+a623 3
+						rec.TypeName = this.Strings.Add(TypeNameParser.Unescape(type.Name));
+						string ns = type.Namespace;
+						rec.TypeNameSpace = ns == null ? 0 : this.Strings.Add(TypeNameParser.Unescape(ns));
+d625 3
+d891 3
+a893 3
+					rec.TypeName = this.Strings.Add(TypeNameParser.Unescape(type.Name));
+					string ns = type.Namespace;
+					rec.TypeNamespace = ns == null ? 0 : this.Strings.Add(TypeNameParser.Unescape(ns));
+@
+
+
+1.23
+log
+@Added Module.__GetReferencedAssemblies() API.
+@
+text
+@d116 11
+d1190 1
+@
+
+
+1.22
+log
+@Added ModuleBuilder.__AddAssemblyReference() API to explicitly add assembly references. This can be used in conjunction with AssemblyBuilder.__AddModule() to add the assemblies referenced by the module to the assembly manifest module. It's not clear to me whether this is required, but Microsoft does it and Assembly.GetReferencedAssemblies() only returns the assemblies referenced from the manifest module.
+@
+text
+@d60 1
+d1221 4
+d1226 25
+@
+
+
+1.21
+log
+@Add support for assembly custom attributes on modules (they are applied to a placeholder TypeRef record and compiler consuming the module is supposed to merge them into the assembly manifest).
+@
+text
+@d645 1
+a645 34
+				AssemblyName name = kv.Key.GetName();
+				AssemblyRefTable.Record rec = new AssemblyRefTable.Record();
+				Version ver = name.Version;
+				rec.MajorVersion = (ushort)ver.Major;
+				rec.MinorVersion = (ushort)ver.Minor;
+				rec.BuildNumber = (ushort)ver.Build;
+				rec.RevisionNumber = (ushort)ver.Revision;
+				rec.Flags = (int)(name.Flags & AssemblyNameFlags.Retargetable);
+				byte[] publicKeyOrToken = null;
+				if (usePublicKeyAssemblyReference)
+				{
+					publicKeyOrToken = name.GetPublicKey();
+				}
+				if (publicKeyOrToken == null || publicKeyOrToken.Length == 0)
+				{
+					publicKeyOrToken = name.GetPublicKeyToken();
+				}
+				else
+				{
+					const int PublicKey = 0x0001;
+					rec.Flags |= PublicKey;
+				}
+				rec.PublicKeyOrToken = this.Blobs.Add(ByteBuffer.Wrap(publicKeyOrToken));
+				rec.Name = this.Strings.Add(name.Name);
+				if (name.CultureInfo != null)
+				{
+					rec.Culture = this.Strings.Add(name.CultureInfo.Name);
+				}
+				else
+				{
+					rec.Culture = 0;
+				}
+				rec.HashValue = 0;
+				realtokens[(kv.Value & 0x7FFFFF) - 1] = 0x23000000 | this.AssemblyRef.FindOrAddRecord(rec);
+d667 37
+d1217 5
+@
+
+
+1.20
+log
+@Added AssemblyBuilder.__AddModule() to allow pre-existing modules to be linked in.
+@
+text
+@d1163 9
+d1174 36
+@
+
+
+1.19
+log
+@- Added ModuleBuilder.__Save() to support -target:module option better.
+- Changed ikvmc to use new ModuleBuilder.__Save() instead of workaround of deleting the manifest module after saving the assembly.
+@
+text
+@d862 6
+a867 1
+		internal void ExportTypes(int fileToken, ModuleBuilder manifestModule)
+d870 1
+a870 1
+			foreach (TypeBuilder type in types)
+d872 1
+a872 1
+				if (type != moduleType && IsVisible(type))
+d877 1
+a877 1
+					rec.TypeName = manifestModule.Strings.Add(TypeNameParser.Unescape(type.Name));
+d879 1
+a879 1
+					rec.TypeNamespace = ns == null ? 0 : manifestModule.Strings.Add(TypeNameParser.Unescape(ns));
+d888 1
+a888 1
+					int exportTypeToken = 0x27000000 | manifestModule.ExportedType.AddRecord(rec);
+@
+
+
+1.18
+log
+@Use ResourceSection directly to collect unmanaged resources. To prepare for adding win32 icon resource support.
+@
+text
+@d1157 6
+@
+
+
+1.17
+log
+@Added separate memberref cache to avoid duplicates in the MemberRef table.
+@
+text
+@d56 1
+a56 1
+		internal byte[] unmanagedResources;
+d1082 2
+a1083 1
+			this.unmanagedResources = System.IO.File.ReadAllBytes(resourceFileName);
+@
+
+
+1.16
+log
+@Renamed StandAloneSigTable and ModuleRefTable Add methods to FindOrAddRecord for clarity and consistency with the other FindOrAddRecord methods.
+@
+text
+@d58 1
+d68 32
+d576 13
+a588 7
+			MemberRefTable.Record rec = new MemberRefTable.Record();
+			rec.Class = GetTypeTokenForMemberRef(declaringType);
+			rec.Name = this.Strings.Add(name);
+			ByteBuffer bb = new ByteBuffer(16);
+			sig.WriteSig(this, bb);
+			rec.Signature = this.Blobs.Add(bb);
+			return 0x0A000000 | this.MemberRef.AddRecord(rec);
+@
+
+
+1.15
+log
+@Implemented __GetDeclaredMethods() for ArrayType and MultiArrayType.
+@
+text
+@d446 1
+a446 1
+				return 0x1A000000 | this.ModuleRef.Add(this.Strings.Add(type.Module.ScopeName));
+d1071 1
+a1071 1
+			return new SignatureToken(this.StandAloneSig.Add(this.Blobs.Add(sigHelper.GetSignature(this))) | (StandAloneSigTable.Index << 24));
+d1076 1
+a1076 1
+			return new SignatureToken(this.StandAloneSig.Add(this.Blobs.Add(ByteBuffer.Wrap(sigBytes, sigLength))) | (StandAloneSigTable.Index << 24));
+@
+
+
+1.14
+log
+@Fixed metadata header to account for the actual ImageRuntimeVersion string length, instead of assuming it to be "v2.0.50727".
+@
+text
+@d1119 1
+a1119 1
+	sealed class ArrayMethod : MethodInfo
+d1121 1
+a1121 1
+		private readonly ModuleBuilder moduleBuilder;
+d1126 1
+a1126 1
+		private readonly Type[] parameterTypes;
+d1129 1
+a1129 1
+		internal ArrayMethod(ModuleBuilder moduleBuilder, Type arrayClass, string methodName, CallingConventions callingConvention, Type returnType, Type[] parameterTypes)
+d1131 1
+a1131 1
+			this.moduleBuilder = moduleBuilder;
+d1135 1
+a1135 1
+			this.returnType = returnType ?? moduleBuilder.universe.System_Void;
+d1189 1
+a1189 1
+			get { return moduleBuilder; }
+@
+
+
+1.13
+log
+@It turns out that it is legal to use a generic method definition in a method body. This typically only makes sense inside the same method and is kind of strange, but for ldtoken it makes a little bit of sense.
+@
+text
+@d712 31
+d747 1
+a747 1
+				return (Blobs.IsEmpty ? 92 : 108 + Blobs.Length) + Tables.Length + Strings.Length + UserStrings.Length + Guids.Length;
+a760 1
+			int offset;
+a764 1
+				offset = 92;
+a768 1
+				offset = 108;
+d771 2
+d811 5
+@
+
+
+1.12
+log
+@Moved ImportMethodSpec to GenericMethodInstance and fixed it to make sure that methods on generic type definitions are referred to via MemberRef.
+@
+text
+@d493 4
+@
+
+
+1.11
+log
+@Since referenced assembly identities can change (if they're an AssemblyBuilder), we have to postpone creating an AssemblyRef record until save time.
+Note that we also take into account the possibility of having multiple assemblies with the same identity and collapse those into a single record. This is to support circular ref scenarios where you load a previous version of an assembly while generating a newer version (with the same identity). A future patch will enable this.
+@
+text
+@a536 8
+		internal int ImportMethodSpec(MethodInfo method, ByteBuffer instantiation)
+		{
+			MethodSpecTable.Record rec = new MethodSpecTable.Record();
+			rec.Method = GetMethodToken(method.GetGenericMethodDefinition()).Token;
+			rec.Instantiation = this.Blobs.Add(instantiation);
+			return 0x2B000000 | this.MethodSpec.AddRecord(rec);
+		}
+
+@
+
+
+1.10
+log
+@Don't cache referenced assembly on name, because the name can change (for an AssemblyBuilder).
+@
+text
+@d595 16
+a610 1
+				AssemblyName name = asm.GetName();
+d643 19
+a661 2
+				token = 0x23000000 | this.AssemblyRef.AddRecord(rec);
+				referencedAssemblies.Add(asm, token);
+a662 1
+			return token;
+@
+
+
+1.9
+log
+@Type names must be unescaped.
+@
+text
+@d58 1
+a58 1
+		private readonly Dictionary<AssemblyName, int> referencedAssemblies = new Dictionary<AssemblyName, int>();
+d284 1
+a284 1
+				rec.Implementation = ImportAssemblyRef(type.Assembly.GetName());
+d578 1
+a578 1
+						rec.ResolutionScope = ImportAssemblyRef(type.Assembly.GetName());
+d590 1
+a590 1
+		private int ImportAssemblyRef(AssemblyName asm)
+d595 1
+d597 1
+a597 1
+				Version ver = asm.Version;
+d602 1
+a602 1
+				rec.Flags = (int)(asm.Flags & AssemblyNameFlags.Retargetable);
+d606 1
+a606 1
+					publicKeyOrToken = asm.GetPublicKey();
+d610 1
+a610 1
+					publicKeyOrToken = asm.GetPublicKeyToken();
+d618 2
+a619 2
+				rec.Name = this.Strings.Add(asm.Name);
+				if (asm.CultureInfo != null)
+d621 1
+a621 1
+					rec.Culture = this.Strings.Add(asm.CultureInfo.Name);
+@
+
+
+1.8
+log
+@Support Retargettable assembly name flag.
+@
+text
+@d272 1
+a272 1
+			rec.TypeName = this.Strings.Add(type.Name);
+d283 1
+a283 1
+				rec.TypeNamespace = ns == null ? 0 : this.Strings.Add(ns);
+d770 1
+a770 1
+					rec.TypeName = manifestModule.Strings.Add(type.Name);
+d772 1
+a772 1
+					rec.TypeNamespace = ns == null ? 0 : manifestModule.Strings.Add(ns);
+@
+
+
+1.7
+log
+@Previous change to identity generic type instantiations caused GetTypeTokenForMemberRef() to break.
+@
+text
+@d601 1
+a601 1
+				rec.Flags = 0;
+@
+
+
+1.6
+log
+@Removed support for pseudo custom attributes TypeForwardedToAttribute and DefaultParameterValueAttribute that aren't supported by .NET reflection either.
+@
+text
+@d50 1
+d434 9
+a442 2
+				// this could be optimized, but since this is a very infrequent operation, we don't care
+				return GetTypeToken(type.MakeGenericType(type.GetGenericArguments())).Token;
+@
+
+
+1.5
+log
+@Implemented ModuleBuilder.GetArrayMethod(). Based on patch from Kornel Pal.
+@
+text
+@a287 13
+		internal void SetAssemblyCustomAttribute(CustomAttributeBuilder customBuilder)
+		{
+			if (customBuilder.Constructor.DeclaringType == universe.System_Runtime_CompilerServices_TypeForwardedToAttribute)
+			{
+				customBuilder = customBuilder.DecodeBlob(this.Assembly);
+				AddTypeForwarder((Type)customBuilder.GetConstructorArgument(0));
+			}
+			else
+			{
+				SetCustomAttribute(0x20000001, customBuilder);
+			}
+		}
+
+@
+
+
+1.4
+log
+@Added AssemblyBuilder.__AddTypeForwarder() to allow type forwarders to be added explictly, because the pseudo custom attribute will be removed (because .NET doesn't support that pseudo custom attribute).
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008, 2009 Jeroen Frijters
+d1023 1
+a1023 1
+			throw new NotImplementedException();
+d1060 99
+@
+
+
+1.3
+log
+@Version parts should be treated as unsigned.
+@
+text
+@d256 1
+a256 1
+		private void AddTypeForwarder(Type type)
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d602 4
+a605 4
+				rec.MajorVersion = (short)ver.Major;
+				rec.MinorVersion = (short)ver.Minor;
+				rec.BuildNumber = (short)ver.Build;
+				rec.RevisionNumber = (short)ver.Revision;
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

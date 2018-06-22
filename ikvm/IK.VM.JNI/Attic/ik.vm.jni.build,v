@@ -1,0 +1,97 @@
+head	1.4;
+access;
+symbols
+	initial:1.1.1.1 ikvm:1.1.1;
+locks; strict;
+comment	@# @;
+
+
+1.4
+date	2004.05.27.07.12.12;	author jfrijters;	state dead;
+branches;
+next	1.3;
+
+1.3
+date	2004.04.02.08.13.01;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2003.08.07.15.41.23;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2002.12.18.16.01.06;	author jfrijters;	state Exp;
+branches
+	1.1.1.1;
+next	;
+
+1.1.1.1
+date	2002.12.18.16.01.06;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@<?xml version="1.0"?>
+<project name="ik.vm.jni" default="ik.vm.jni">
+    <target name="ik.vm.jni">
+	<mkdir dir="release"/>
+        <cl outputdir="Release" pchfile="stdafx.h" options="/O2 /D WIN32 /D NDEBUG /D _WINDLL /D _MBCS /FD /EHsc /GS /Zc:wchar_t /Zc:forScope /W3 /nologo /c /Zi /clr /TP /FU ..\bin\ik.vm.net.dll">
+            <sources>
+                <includes name="*.cpp"/>
+            </sources>
+        </cl>
+	<link output="../bin/ik.vm.jni.dll" options="/DLL /FIXED:No">
+            <sources>
+                <includes name="Release/*.obj"/>
+            </sources>
+	</link>
+    </target>
+</project>
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d4 1
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d4 10
+a13 1
+        <echo message="*** TODO ***" />
+@
+
+
+1.1.1.1
+log
+@no message
+@
+text
+@@

@@ -1,0 +1,426 @@
+head	1.13;
+access;
+symbols
+	v8_1_5717_0:1.13
+	v8_1:1.13.0.8
+	v8_0_5449_1:1.13
+	v8_0_5449_0:1.13
+	v8_0:1.13.0.6
+	v7_4_5196_0:1.13
+	v7_4:1.13.0.4
+	v7_3:1.13.0.2
+	v7_2_4630_6:1.12
+	v7_2_4630_5:1.12
+	v7_2_4630_4:1.12
+	v7_2_4630_3:1.12
+	v7_2_4630_2:1.12
+	v0_46_0_4:1.10
+	v7_2_4630_1:1.12
+	v7_2:1.12.0.4
+	v7_1_4532_2:1.12
+	v7_1_4532_1:1.12
+	v7_1_4532_0:1.12
+	v7_1:1.12.0.2
+	v7_0_4335_3:1.10
+	v7_0_4335_2:1.10
+	v7_0_4335_1:1.10
+	v0_46_0_2:1.10
+	v7_0_4335_0:1.10
+	v7_0:1.10.0.4
+	v0_40_0_6:1.5
+	v0_40_0_5:1.5
+	v0_46_0_1:1.10
+	v0_46_0_0:1.10
+	v0_46:1.10.0.2
+	v0_44_0_6:1.9
+	v0_44_0_5:1.9
+	v0_44_0_4:1.9
+	v0_44_0_3:1.9
+	v0_44_0_2:1.9
+	v0_42_0_7:1.6
+	v0_44_0_1:1.9
+	v0_44_0_0:1.9
+	v0_44:1.9.0.2
+	v0_42_0_6:1.6
+	v0_42_0_5:1.6
+	v0_42_0_4:1.6
+	v0_42_0_3:1.6
+	v0_42_0_2:1.6
+	v0_42_0_1:1.6
+	v0_42_0_0:1.6
+	v0_42:1.6.0.2
+	v0_40_0_3:1.5
+	v0_40_0_2:1.5
+	v0_40_0_1:1.5
+	v0_40_0_0:1.5
+	v0_40:1.5.0.2
+	v0_38_0_1:1.3
+	v0_38_0_0:1.3
+	v0_38:1.3.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.13
+date	2012.09.13.13.21.35;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2011.12.14.09.04.57;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2011.12.14.08.26.39;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2010.09.30.04.03.33;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2010.01.28.09.18.34;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2010.01.25.07.52.51;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2009.10.14.14.58.41;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2009.07.29.09.36.56;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2008.11.18.05.32.15;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2008.11.14.08.42.07;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.06.03.12.10.13;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.04.21.04.33.22;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.03.03.07.05.19;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.13
+log
+@Removed remaining ConstructorBuilder usages.
+@
+text
+@﻿/*
+  Copyright (C) 2008 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Text;
+using IKVM.Reflection;
+using IKVM.Reflection.Emit;
+using Type = IKVM.Reflection.Type;
+
+namespace IKVM.Internal
+{
+	static class FakeTypes
+	{
+		private static Type genericEnumEnumType;
+		private static Type genericDelegateInterfaceType;
+		private static Type genericAttributeAnnotationType;
+		private static Type genericAttributeAnnotationMultipleType;
+		private static Type genericAttributeAnnotationReturnValueType;
+
+		internal static Type GetEnumType(Type enumType)
+		{
+			return genericEnumEnumType.MakeGenericType(enumType);
+		}
+
+		internal static Type GetDelegateType(Type delegateType)
+		{
+			return genericDelegateInterfaceType.MakeGenericType(delegateType);
+		}
+
+		internal static Type GetAttributeType(Type attributeType)
+		{
+			return genericAttributeAnnotationType.MakeGenericType(attributeType);
+		}
+
+		internal static Type GetAttributeMultipleType(Type attributeType)
+		{
+			return genericAttributeAnnotationMultipleType.MakeGenericType(attributeType);
+		}
+
+		internal static Type GetAttributeReturnValueType(Type attributeType)
+		{
+			return genericAttributeAnnotationReturnValueType.MakeGenericType(attributeType);
+		}
+
+		internal static void Create(ModuleBuilder modb, ClassLoaderWrapper loader)
+		{
+			TypeBuilder tb = modb.DefineType(DotNetTypeWrapper.GenericDelegateInterfaceTypeName, TypeAttributes.Interface | TypeAttributes.Abstract | TypeAttributes.Public);
+			tb.DefineGenericParameters("T")[0].SetBaseTypeConstraint(Types.MulticastDelegate);
+			genericDelegateInterfaceType = tb.CreateType();
+
+			genericAttributeAnnotationType = CreateAnnotationType(modb, DotNetTypeWrapper.GenericAttributeAnnotationTypeName);
+			genericAttributeAnnotationMultipleType = CreateAnnotationType(modb, DotNetTypeWrapper.GenericAttributeAnnotationMultipleTypeName);
+			genericAttributeAnnotationReturnValueType = CreateAnnotationType(modb, DotNetTypeWrapper.GenericAttributeAnnotationReturnValueTypeName);
+			CreateEnumEnum(modb, loader);
+		}
+
+		internal static void Finish(ClassLoaderWrapper loader)
+		{
+			TypeBuilder tb = (TypeBuilder)genericEnumEnumType;
+			TypeWrapper enumTypeWrapper = loader.LoadClassByDottedName("java.lang.Enum");
+			enumTypeWrapper.Finish();
+			tb.SetParent(enumTypeWrapper.TypeAsBaseType);
+			CodeEmitter ilgen = CodeEmitter.Create(ReflectUtil.DefineConstructor(tb, MethodAttributes.Private, new Type[] { Types.String, Types.Int32 }));
+			ilgen.Emit(OpCodes.Ldarg_0);
+			ilgen.Emit(OpCodes.Ldarg_1);
+			ilgen.Emit(OpCodes.Ldarg_2);
+			enumTypeWrapper.GetMethodWrapper("<init>", "(Ljava.lang.String;I)V", false).EmitCall(ilgen);
+			ilgen.Emit(OpCodes.Ret);
+			ilgen.DoEmit();
+			genericEnumEnumType = tb.CreateType();
+		}
+
+		private static void CreateEnumEnum(ModuleBuilder modb, ClassLoaderWrapper loader)
+		{
+			TypeBuilder tb = modb.DefineType(DotNetTypeWrapper.GenericEnumEnumTypeName, TypeAttributes.Class | TypeAttributes.Sealed | TypeAttributes.Public);
+			GenericTypeParameterBuilder gtpb = tb.DefineGenericParameters("T")[0];
+			gtpb.SetBaseTypeConstraint(Types.Enum);
+			genericEnumEnumType = tb;
+		}
+
+		private static Type CreateAnnotationType(ModuleBuilder modb, string name)
+		{
+			TypeBuilder tb = modb.DefineType(name, TypeAttributes.Interface | TypeAttributes.Abstract | TypeAttributes.Public);
+			tb.DefineGenericParameters("T")[0].SetBaseTypeConstraint(Types.Attribute);
+			return tb.CreateType();
+		}
+
+		internal static void Load(Assembly assembly)
+		{
+			genericEnumEnumType = assembly.GetType(DotNetTypeWrapper.GenericEnumEnumTypeName);
+			genericDelegateInterfaceType = assembly.GetType(DotNetTypeWrapper.GenericDelegateInterfaceTypeName);
+			genericAttributeAnnotationType = assembly.GetType(DotNetTypeWrapper.GenericAttributeAnnotationTypeName);
+			genericAttributeAnnotationMultipleType = assembly.GetType(DotNetTypeWrapper.GenericAttributeAnnotationMultipleTypeName);
+			genericAttributeAnnotationReturnValueType = assembly.GetType(DotNetTypeWrapper.GenericAttributeAnnotationReturnValueTypeName);
+		}
+	}
+}
+@
+
+
+1.12
+log
+@Split compilation into two passes.
+@
+text
+@d84 1
+a84 1
+			CodeEmitter ilgen = CodeEmitter.Create(tb.DefineConstructor(MethodAttributes.Private, CallingConventions.Standard, new Type[] { Types.String, Types.Int32 }));
+@
+
+
+1.11
+log
+@Removed unused java.lang.annotation.Annotation TypeWrapper.
+@
+text
+@d78 1
+a78 1
+		private static void CreateEnumEnum(ModuleBuilder modb, ClassLoaderWrapper loader)
+d80 1
+d83 1
+a83 3
+			TypeBuilder tb = modb.DefineType(DotNetTypeWrapper.GenericEnumEnumTypeName, TypeAttributes.Class | TypeAttributes.Sealed | TypeAttributes.Public, enumTypeWrapper.TypeAsBaseType);
+			GenericTypeParameterBuilder gtpb = tb.DefineGenericParameters("T")[0];
+			gtpb.SetBaseTypeConstraint(Types.Enum);
+d94 8
+@
+
+
+1.10
+log
+@Build intermediate store of MSIL code in CodeEmitter to allow post-processing optimization steps.
+@
+text
+@d72 3
+a74 5
+			TypeWrapper annotationTypeWrapper = loader.LoadClassByDottedName("java.lang.annotation.Annotation");
+			annotationTypeWrapper.Finish();
+			genericAttributeAnnotationType = CreateAnnotationType(modb, DotNetTypeWrapper.GenericAttributeAnnotationTypeName, annotationTypeWrapper);
+			genericAttributeAnnotationMultipleType = CreateAnnotationType(modb, DotNetTypeWrapper.GenericAttributeAnnotationMultipleTypeName, annotationTypeWrapper);
+			genericAttributeAnnotationReturnValueType = CreateAnnotationType(modb, DotNetTypeWrapper.GenericAttributeAnnotationReturnValueTypeName, annotationTypeWrapper);
+d95 1
+a95 1
+		private static Type CreateAnnotationType(ModuleBuilder modb, string name, TypeWrapper annotationTypeWrapper)
+@
+
+
+1.9
+log
+@Removed IKVM_REF_EMIT, as STATIC_COMPILER or STUB_GENERATOR now always implies IKVM.Reflection.
+@
+text
+@d93 1
+@
+
+
+1.8
+log
+@Integrated new IKVM.Reflection implementation.
+@
+text
+@a26 1
+#if IKVM_REF_EMIT
+a29 4
+#else
+using System.Reflection;
+using System.Reflection.Emit;
+#endif
+@
+
+
+1.7
+log
+@Replaced most type literals with static field access (in Types class) or warpped JVM.Import() around them.
+@
+text
+@a26 1
+using System.Reflection;
+d28 1
+d30 1
+d32 1
+@
+
+
+1.6
+log
+@Implemented support for .NET serialization of Java enums.
+(The CreateEnumEnum move in FakeTypes.cs is because java.lang.Enum now has a dependency on custom attribute annotations.)
+@
+text
+@d72 1
+a72 1
+			tb.DefineGenericParameters("T")[0].SetBaseTypeConstraint(typeof(MulticastDelegate));
+d89 2
+a90 2
+			gtpb.SetBaseTypeConstraint(typeof(Enum));
+			CodeEmitter ilgen = CodeEmitter.Create(tb.DefineConstructor(MethodAttributes.Private, CallingConventions.Standard, new Type[] { typeof(string), typeof(int) }));
+d102 1
+a102 1
+			tb.DefineGenericParameters("T")[0].SetBaseTypeConstraint(typeof(Attribute));
+@
+
+
+1.5
+log
+@Simplified creation of "fake" types.
+@
+text
+@a74 2
+			CreateEnumEnum(modb, loader);
+
+d80 1
+@
+
+
+1.4
+log
+@Integrated IKVM.Reflection.Emit in ikvmc.
+@
+text
+@d69 1
+a69 1
+		internal static void CreatePre(ModuleBuilder modb)
+a73 1
+		}
+a74 2
+		internal static void Create(ModuleBuilder modb, ClassLoaderWrapper loader)
+		{
+@
+
+
+1.3
+log
+@- Renamed CountingILGenerator to CodeEmitter.
+- Renamed CountingLabel to CodeEmitterLabel.
+@
+text
+@d28 3
+d32 1
+@
+
+
+1.2
+log
+@Create the generic delegate type before compiling the rest of the core class library, to allow the core class library to use delegates.
+@
+text
+@d90 1
+a90 1
+			CountingILGenerator ilgen = tb.DefineConstructor(MethodAttributes.Private, CallingConventions.Standard, new Type[] { typeof(string), typeof(int) }).GetILGenerator();
+@
+
+
+1.1
+log
+@Replaced notion of DynamicOnly types with Fake types. Fake types are implemented as generic type instances and can have DynamicOnly methods.
+@
+text
+@d65 1
+a65 1
+		internal static void Create(ModuleBuilder modb, ClassLoaderWrapper loader)
+a66 2
+			CreateEnumEnum(modb, loader);
+
+d70 5
+@
+

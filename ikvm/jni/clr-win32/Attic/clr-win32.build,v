@@ -1,0 +1,70 @@
+head	1.3;
+access;
+symbols
+	v0_8_0_0:1.1;
+locks; strict;
+comment	@# @;
+
+
+1.3
+date	2004.08.30.15.56.25;	author jfrijters;	state dead;
+branches;
+next	1.2;
+
+1.2
+date	2004.08.17.09.05.25;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2004.05.27.07.12.12;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@<?xml version="1.0"?>
+<project name="IKVM.JNI.CLR-Win32" default="IKVM.JNI.CLR-Win32">
+    <target name="IKVM.JNI.CLR-Win32">
+	<mkdir dir="release"/>
+        <cl outputdir="Release" pchfile="stdafx.h" options="/O2 /D WIN32 /D NDEBUG /D _WINDLL /D _MBCS /FD /EHac /GS /Zc:wchar_t /Zc:forScope /W3 /nologo /c /Zi /clr /TP /FU ..\..\bin\IKVM.Runtime.dll">
+            <sources>
+                <includes name="*.cpp"/>
+            </sources>
+        </cl>
+	<link output="../../bin/IKVM.JNI.CLR-Win32.dll" options="/DLL /FIXED:No">
+            <sources>
+                <includes name="Release/*.obj"/>
+            </sources>
+	</link>
+    </target>
+</project>
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@d5 1
+a5 1
+        <cl outputdir="Release" pchfile="stdafx.h" options="/O2 /D WIN32 /D NDEBUG /D _WINDLL /D _MBCS /FD /EHsc /GS /Zc:wchar_t /Zc:forScope /W3 /nologo /c /Zi /clr /TP /FU ..\..\bin\IKVM.Runtime.dll">
+@
+

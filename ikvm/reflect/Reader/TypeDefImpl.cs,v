@@ -1,0 +1,1196 @@
+head	1.30;
+access;
+symbols
+	v8_1_5717_0:1.29
+	v8_1:1.29.0.2
+	v8_0_5449_1:1.26
+	v8_0_5449_0:1.26
+	v8_0:1.26.0.4
+	v7_4_5196_0:1.26
+	v7_4:1.26.0.2
+	v7_3:1.25.0.2
+	v7_2_4630_6:1.23
+	v7_2_4630_5:1.23
+	v7_2_4630_4:1.23
+	v7_2_4630_3:1.23
+	v7_2_4630_2:1.23
+	v0_46_0_4:1.15
+	v7_2_4630_1:1.23
+	v7_2:1.23.0.2
+	v7_1_4532_2:1.21
+	v7_1_4532_1:1.21
+	v7_1_4532_0:1.21
+	v7_1:1.21.0.2
+	v7_0_4335_3:1.18
+	v7_0_4335_2:1.18
+	v7_0_4335_1:1.18
+	v0_46_0_2:1.15
+	v7_0_4335_0:1.18
+	v7_0:1.18.0.2
+	v0_46_0_1:1.15
+	v0_46_0_0:1.15
+	v0_46:1.15.0.2
+	v0_44_0_6:1.7
+	v0_44_0_5:1.7
+	v0_44_0_4:1.7
+	v0_44_0_3:1.7
+	v0_44_0_2:1.7
+	v0_44_0_1:1.7
+	v0_44_0_0:1.7
+	v0_44:1.7.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.30
+date	2015.11.03.09.10.24;	author jfrijters;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2015.04.21.10.15.39;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2015.04.21.08.19.33;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2015.04.06.07.06.31;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2013.05.10.08.11.25;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2012.10.01.16.24.32;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2012.09.05.08.58.52;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2012.07.16.12.38.09;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2012.07.16.10.14.38;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2012.01.27.13.52.07;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2012.01.27.10.11.18;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2011.12.01.06.30.51;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2011.09.30.07.26.56;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2011.03.21.04.47.37;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2011.03.14.05.03.30;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2011.03.03.08.34.58;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2011.02.14.05.58.49;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2011.01.26.05.59.24;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2011.01.20.05.38.12;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2011.01.12.13.57.05;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2011.01.12.13.45.20;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2011.01.12.13.31.27;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2011.01.12.13.17.00;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2010.05.07.13.29.05;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2010.04.20.13.18.31;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2010.04.18.08.39.21;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.02.09.05.18.41;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.01.27.06.12.38;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.02;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.32;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.30
+log
+@Added caching to Type.IsValueType.
+@
+text
+@/*
+  Copyright (C) 2009-2011 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Runtime.InteropServices;
+using IKVM.Reflection.Metadata;
+
+namespace IKVM.Reflection.Reader
+{
+	sealed class TypeDefImpl : TypeInfo
+	{
+		private readonly ModuleReader module;
+		private readonly int index;
+		private readonly string typeName;
+		private readonly string typeNamespace;
+		private Type[] typeArgs;
+
+		internal TypeDefImpl(ModuleReader module, int index)
+		{
+			this.module = module;
+			this.index = index;
+			this.typeName = module.GetString(module.TypeDef.records[index].TypeName);
+			this.typeNamespace = module.GetString(module.TypeDef.records[index].TypeNamespace);
+			MarkKnownType(typeNamespace, typeName);
+		}
+
+		public override Type BaseType
+		{
+			get
+			{
+				int extends = module.TypeDef.records[index].Extends;
+				if ((extends & 0xFFFFFF) == 0)
+				{
+					return null;
+				}
+				return module.ResolveType(extends, this);
+			}
+		}
+
+		public override TypeAttributes Attributes
+		{
+			get { return (TypeAttributes)module.TypeDef.records[index].Flags; }
+		}
+
+		public override EventInfo[] __GetDeclaredEvents()
+		{
+			foreach (int i in module.EventMap.Filter(this.MetadataToken))
+			{
+				int evt = module.EventMap.records[i].EventList - 1;
+				int end = module.EventMap.records.Length > i + 1 ? module.EventMap.records[i + 1].EventList - 1 : module.Event.records.Length;
+				EventInfo[] events = new EventInfo[end - evt];
+				if (module.EventPtr.RowCount == 0)
+				{
+					for (int j = 0; evt < end; evt++, j++)
+					{
+						events[j] = new EventInfoImpl(module, this, evt);
+					}
+				}
+				else
+				{
+					for (int j = 0; evt < end; evt++, j++)
+					{
+						events[j] = new EventInfoImpl(module, this, module.EventPtr.records[evt] - 1);
+					}
+				}
+				return events;
+			}
+			return Empty<EventInfo>.Array;
+		}
+
+		public override FieldInfo[] __GetDeclaredFields()
+		{
+			int field = module.TypeDef.records[index].FieldList - 1;
+			int end = module.TypeDef.records.Length > index + 1 ? module.TypeDef.records[index + 1].FieldList - 1 : module.Field.records.Length;
+			FieldInfo[] fields = new FieldInfo[end - field];
+			if (module.FieldPtr.RowCount == 0)
+			{
+				for (int i = 0; field < end; i++, field++)
+				{
+					fields[i] = module.GetFieldAt(this, field);
+				}
+			}
+			else
+			{
+				for (int i = 0; field < end; i++, field++)
+				{
+					fields[i] = module.GetFieldAt(this, module.FieldPtr.records[field] - 1);
+				}
+			}
+			return fields;
+		}
+
+		public override Type[] __GetDeclaredInterfaces()
+		{
+			List<Type> list = null;
+			foreach (int i in module.InterfaceImpl.Filter(this.MetadataToken))
+			{
+				if (list == null)
+				{
+					list = new List<Type>();
+				}
+				list.Add(module.ResolveType(module.InterfaceImpl.records[i].Interface, this));
+			}
+			return Util.ToArray(list, Type.EmptyTypes);
+		}
+
+		public override MethodBase[] __GetDeclaredMethods()
+		{
+			int method = module.TypeDef.records[index].MethodList - 1;
+			int end = module.TypeDef.records.Length > index + 1 ? module.TypeDef.records[index + 1].MethodList - 1 : module.MethodDef.records.Length;
+			MethodBase[] methods = new MethodBase[end - method];
+			if (module.MethodPtr.RowCount == 0)
+			{
+				for (int i = 0; method < end; method++, i++)
+				{
+					methods[i] = module.GetMethodAt(this, method);
+				}
+			}
+			else
+			{
+				for (int i = 0; method < end; method++, i++)
+				{
+					methods[i] = module.GetMethodAt(this, module.MethodPtr.records[method] - 1);
+				}
+			}
+			return methods;
+		}
+
+		public override __MethodImplMap __GetMethodImplMap()
+		{
+			PopulateGenericArguments();
+			List<MethodInfo> bodies = new List<MethodInfo>();
+			List<List<MethodInfo>> declarations = new List<List<MethodInfo>>();
+			foreach (int i in module.MethodImpl.Filter(this.MetadataToken))
+			{
+				MethodInfo body = (MethodInfo)module.ResolveMethod(module.MethodImpl.records[i].MethodBody, typeArgs, null);
+				int index = bodies.IndexOf(body);
+				if (index == -1)
+				{
+					index = bodies.Count;
+					bodies.Add(body);
+					declarations.Add(new List<MethodInfo>());
+				}
+				MethodInfo declaration = (MethodInfo)module.ResolveMethod(module.MethodImpl.records[i].MethodDeclaration, typeArgs, null);
+				declarations[index].Add(declaration);
+			}
+			__MethodImplMap map = new __MethodImplMap();
+			map.TargetType = this;
+			map.MethodBodies = bodies.ToArray();
+			map.MethodDeclarations = new MethodInfo[declarations.Count][];
+			for (int i = 0; i < map.MethodDeclarations.Length; i++)
+			{
+				map.MethodDeclarations[i] = declarations[i].ToArray();
+			}
+			return map;
+		}
+
+		public override Type[] __GetDeclaredTypes()
+		{
+			int token = this.MetadataToken;
+			List<Type> list = new List<Type>();
+			// note that the NestedClass table is sorted on NestedClass, so we can't use binary search
+			for (int i = 0; i < module.NestedClass.records.Length; i++)
+			{
+				if (module.NestedClass.records[i].EnclosingClass == token)
+				{
+					list.Add(module.ResolveType(module.NestedClass.records[i].NestedClass));
+				}
+			}
+			return list.ToArray();
+		}
+
+		public override PropertyInfo[] __GetDeclaredProperties()
+		{
+			foreach (int i in module.PropertyMap.Filter(this.MetadataToken))
+			{
+				int property = module.PropertyMap.records[i].PropertyList - 1;
+				int end = module.PropertyMap.records.Length > i + 1 ? module.PropertyMap.records[i + 1].PropertyList - 1 : module.Property.records.Length;
+				PropertyInfo[] properties = new PropertyInfo[end - property];
+				if (module.PropertyPtr.RowCount == 0)
+				{
+					for (int j = 0; property < end; property++, j++)
+					{
+						properties[j] = new PropertyInfoImpl(module, this, property);
+					}
+				}
+				else
+				{
+					for (int j = 0; property < end; property++, j++)
+					{
+						properties[j] = new PropertyInfoImpl(module, this, module.PropertyPtr.records[property] - 1);
+					}
+				}
+				return properties;
+			}
+			return Empty<PropertyInfo>.Array;
+		}
+
+		internal override TypeName TypeName
+		{
+			get { return new TypeName(typeNamespace, typeName); }
+		}
+
+		public override string Name
+		{
+			get { return TypeNameParser.Escape(typeName); }
+		}
+
+		public override string FullName
+		{
+			get { return GetFullName(); }
+		}
+
+		public override int MetadataToken
+		{
+			get { return (TypeDefTable.Index << 24) + index + 1; }
+		}
+
+		public override Type[] GetGenericArguments()
+		{
+			PopulateGenericArguments();
+			return Util.Copy(typeArgs);
+		}
+
+		private void PopulateGenericArguments()
+		{
+			if (typeArgs == null)
+			{
+				int token = this.MetadataToken;
+				int first = module.GenericParam.FindFirstByOwner(token);
+				if (first == -1)
+				{
+					typeArgs = Type.EmptyTypes;
+				}
+				else
+				{
+					List<Type> list = new List<Type>();
+					int len = module.GenericParam.records.Length;
+					for (int i = first; i < len && module.GenericParam.records[i].Owner == token; i++)
+					{
+						list.Add(new GenericTypeParameter(module, i, Signature.ELEMENT_TYPE_VAR));
+					}
+					typeArgs = list.ToArray();
+				}
+			}
+		}
+
+		internal override Type GetGenericTypeArgument(int index)
+		{
+			PopulateGenericArguments();
+			return typeArgs[index];
+		}
+
+		public override CustomModifiers[] __GetGenericArgumentsCustomModifiers()
+		{
+			PopulateGenericArguments();
+			return new CustomModifiers[typeArgs.Length];
+		}
+
+		public override bool IsGenericType
+		{
+			get { return IsGenericTypeDefinition; }
+		}
+
+		public override bool IsGenericTypeDefinition
+		{
+			get
+			{
+				if ((typeFlags & (TypeFlags.IsGenericTypeDefinition | TypeFlags.NotGenericTypeDefinition)) == 0)
+				{
+					typeFlags |= module.GenericParam.FindFirstByOwner(this.MetadataToken) == -1
+						? TypeFlags.NotGenericTypeDefinition
+						: TypeFlags.IsGenericTypeDefinition;
+				}
+				return (typeFlags & TypeFlags.IsGenericTypeDefinition) != 0;
+			}
+		}
+
+		public override Type GetGenericTypeDefinition()
+		{
+			if (IsGenericTypeDefinition)
+			{
+				return this;
+			}
+			throw new InvalidOperationException();
+		}
+
+		public override string ToString()
+		{
+			StringBuilder sb = new StringBuilder(this.FullName);
+			string sep = "[";
+			foreach (Type arg in GetGenericArguments())
+			{
+				sb.Append(sep);
+				sb.Append(arg);
+				sep = ",";
+			}
+			if (sep != "[")
+			{
+				sb.Append(']');
+			}
+			return sb.ToString();
+		}
+
+		internal bool IsNestedByFlags
+		{
+			get { return (this.Attributes & TypeAttributes.VisibilityMask & ~TypeAttributes.Public) != 0; }
+		}
+
+		public override Type DeclaringType
+		{
+			get
+			{
+				// note that we cannot use Type.IsNested for this, because that calls DeclaringType
+				if (!IsNestedByFlags)
+				{
+					return null;
+				}
+				foreach (int i in module.NestedClass.Filter(this.MetadataToken))
+				{
+					return module.ResolveType(module.NestedClass.records[i].EnclosingClass, null, null);
+				}
+				throw new InvalidOperationException();
+			}
+		}
+
+		public override bool __GetLayout(out int packingSize, out int typeSize)
+		{
+			foreach (int i in module.ClassLayout.Filter(this.MetadataToken))
+			{
+				packingSize = module.ClassLayout.records[i].PackingSize;
+				typeSize = module.ClassLayout.records[i].ClassSize;
+				return true;
+			}
+			packingSize = 0;
+			typeSize = 0;
+			return false;
+		}
+
+		public override Module Module
+		{
+			get { return module; }
+		}
+
+		internal override bool IsModulePseudoType
+		{
+			get { return index == 0; }
+		}
+
+		internal override bool IsBaked
+		{
+			get { return true; }
+		}
+
+		protected override bool IsValueTypeImpl
+		{
+			get
+			{
+				Type baseType = this.BaseType;
+				if (baseType != null && baseType.IsEnumOrValueType && !this.IsEnumOrValueType)
+				{
+					typeFlags |= TypeFlags.ValueType;
+					return true;
+				}
+				else
+				{
+					typeFlags |= TypeFlags.NotValueType;
+					return false;
+				}
+			}
+		}
+	}
+}
+@
+
+
+1.29
+log
+@Use sigElementType to implement IsGenericParameter.
+@
+text
+@d376 18
+@
+
+
+1.28
+log
+@Optimized built-in type handling a bit.
+@
+text
+@d263 1
+a263 1
+						list.Add(new GenericTypeParameter(module, i));
+@
+
+
+1.27
+log
+@Added internal Type.TypeName virtual property to retrieve type name with a single virtual method call.
+@
+text
+@d46 1
+a46 1
+			MarkEnumOrValueType(typeNamespace, typeName);
+@
+
+
+1.26
+log
+@Implemented Type.StructLayoutAttribute in Type.
+@
+text
+@d221 1
+a221 1
+		public override string __Name
+d223 1
+a223 6
+			get { return typeName; }
+		}
+
+		public override string __Namespace
+		{
+			get { return typeNamespace; }
+@
+
+
+1.25
+log
+@Implemented caching for TypeDefImpl.IsGenericTypeDefinition property.
+@
+text
+@a353 43
+		public override StructLayoutAttribute StructLayoutAttribute
+		{
+			get
+			{
+				StructLayoutAttribute layout;
+				switch (this.Attributes & TypeAttributes.LayoutMask)
+				{
+					case TypeAttributes.AutoLayout:
+						layout = new StructLayoutAttribute(LayoutKind.Auto);
+						break;
+					case TypeAttributes.SequentialLayout:
+						layout = new StructLayoutAttribute(LayoutKind.Sequential);
+						break;
+					case TypeAttributes.ExplicitLayout:
+						layout = new StructLayoutAttribute(LayoutKind.Explicit);
+						break;
+					default:
+						throw new BadImageFormatException();
+				}
+				switch (this.Attributes & TypeAttributes.StringFormatMask)
+				{
+					case TypeAttributes.AnsiClass:
+						layout.CharSet = CharSet.Ansi;
+						break;
+					case TypeAttributes.UnicodeClass:
+						layout.CharSet = CharSet.Unicode;
+						break;
+					case TypeAttributes.AutoClass:
+						layout.CharSet = CharSet.Auto;
+						break;
+					default:
+						layout.CharSet = CharSet.None;
+						break;
+				}
+				if (!__GetLayout(out layout.Pack, out layout.Size))
+				{
+					// compatibility with System.Reflection
+					layout.Pack = 8;
+				}
+				return layout;
+			}
+		}
+
+@
+
+
+1.24
+log
+@Added TypeInfo (from .NET 4.5).
+@
+text
+@d294 10
+a303 1
+			get { return module.GenericParam.FindFirstByOwner(this.MetadataToken) != -1; }
+@
+
+
+1.23
+log
+@Moved InterfaceImpl custom attribute handling to CustomAttributeData.
+@
+text
+@d32 1
+a32 1
+	sealed class TypeDefImpl : Type
+@
+
+
+1.22
+log
+@Refactored custom attribute handling of MemberInfo types.
+@
+text
+@a410 12
+		internal override IList<CustomAttributeData> GetInterfaceImplCustomAttributes(Type interfaceType, Type attributeType)
+		{
+			foreach (int i in module.InterfaceImpl.Filter(this.MetadataToken))
+			{
+				if (module.ResolveType(module.InterfaceImpl.records[i].Interface, this) == interfaceType)
+				{
+					return module.GetCustomAttributes((InterfaceImplTable.Index << 24) | (i + 1), attributeType);
+				}
+			}
+			return Empty<CustomAttributeData>.Array;
+		}
+
+@
+
+
+1.21
+log
+@Bug fix. TypeDefImpl.__GetMethodImplMap() should populate typeArgs before using it.
+@
+text
+@d422 5
+@
+
+
+1.20
+log
+@Generalized sorted metadata table lookups with binary search.
+@
+text
+@d153 1
+@
+
+
+1.19
+log
+@- Rewrote custom modifier handling to retain ordering.
+- Added ConstructorInfo.__ReturnParameter to expose custom modifiers.
+- Added __GetCustomModifiers() to various *Info types.
+- Added CustomModifiers type to encapsulate a custom modifier sequence.
+- Added CustomModifiersBuilder to create a CustomModifiers sequence.
+- Marked a number of IKVM.Reflection specific methods Obsolete, because they are replaced with method that take CustomModifiers value(s).
+@
+text
+@d69 1
+a69 3
+			int token = this.MetadataToken;
+			// TODO use binary search?
+			for (int i = 0; i < module.EventMap.records.Length; i++)
+d71 4
+a74 1
+				if (module.EventMap.records[i].Parent == token)
+d76 1
+a76 4
+					int evt = module.EventMap.records[i].EventList - 1;
+					int end = module.EventMap.records.Length > i + 1 ? module.EventMap.records[i + 1].EventList - 1 : module.Event.records.Length;
+					EventInfo[] events = new EventInfo[end - evt];
+					if (module.EventPtr.RowCount == 0)
+d78 1
+a78 4
+						for (int j = 0; evt < end; evt++, j++)
+						{
+							events[j] = new EventInfoImpl(module, this, evt);
+						}
+d80 4
+a83 1
+					else
+d85 1
+a85 4
+						for (int j = 0; evt < end; evt++, j++)
+						{
+							events[j] = new EventInfoImpl(module, this, module.EventPtr.records[evt] - 1);
+						}
+a86 1
+					return events;
+d88 1
+a116 1
+			int token = this.MetadataToken;
+d118 1
+a118 2
+			// TODO use binary search?
+			for (int i = 0; i < module.InterfaceImpl.records.Length; i++)
+d120 1
+a120 1
+				if (module.InterfaceImpl.records[i].Class == token)
+d122 1
+a122 5
+					if (list == null)
+					{
+						list = new List<Type>();
+					}
+					list.Add(module.ResolveType(module.InterfaceImpl.records[i].Interface, this));
+d124 1
+d155 1
+a155 3
+			int token = this.MetadataToken;
+			// TODO use binary search?
+			for (int i = 0; i < module.MethodImpl.records.Length; i++)
+d157 7
+a163 12
+				if (module.MethodImpl.records[i].Class == token)
+				{
+					MethodInfo body = (MethodInfo)module.ResolveMethod(module.MethodImpl.records[i].MethodBody, typeArgs, null);
+					int index = bodies.IndexOf(body);
+					if (index == -1)
+					{
+						index = bodies.Count;
+						bodies.Add(body);
+						declarations.Add(new List<MethodInfo>());
+					}
+					MethodInfo declaration = (MethodInfo)module.ResolveMethod(module.MethodImpl.records[i].MethodDeclaration, typeArgs, null);
+					declarations[index].Add(declaration);
+d165 2
+d183 1
+a183 1
+			// TODO use binary search?
+d196 1
+a196 3
+			int token = this.MetadataToken;
+			// TODO use binary search?
+			for (int i = 0; i < module.PropertyMap.records.Length; i++)
+d198 4
+a201 1
+				if (module.PropertyMap.records[i].Parent == token)
+d203 1
+a203 4
+					int property = module.PropertyMap.records[i].PropertyList - 1;
+					int end = module.PropertyMap.records.Length > i + 1 ? module.PropertyMap.records[i + 1].PropertyList - 1 : module.Property.records.Length;
+					PropertyInfo[] properties = new PropertyInfo[end - property];
+					if (module.PropertyPtr.RowCount == 0)
+d205 1
+a205 4
+						for (int j = 0; property < end; property++, j++)
+						{
+							properties[j] = new PropertyInfoImpl(module, this, property);
+						}
+d207 4
+a210 1
+					else
+d212 1
+a212 4
+						for (int j = 0; property < end; property++, j++)
+						{
+							properties[j] = new PropertyInfoImpl(module, this, module.PropertyPtr.records[property] - 1);
+						}
+a213 1
+					return properties;
+d215 1
+d336 1
+a336 3
+				// TODO use binary search (if sorted)
+				int token = this.MetadataToken;
+				for (int i = 0; i < module.NestedClass.records.Length; i++)
+d338 1
+a338 4
+					if (module.NestedClass.records[i].NestedClass == token)
+					{
+						return module.ResolveType(module.NestedClass.records[i].EnclosingClass, null, null);
+					}
+d389 1
+a389 3
+			int token = this.MetadataToken;
+			// TODO use binary search?
+			for (int i = 0; i < module.ClassLayout.records.Length; i++)
+d391 3
+a393 6
+				if (module.ClassLayout.records[i].Parent == token)
+				{
+					packingSize = module.ClassLayout.records[i].PackingSize;
+					typeSize = module.ClassLayout.records[i].ClassSize;
+					return true;
+				}
+d412 1
+a412 3
+			int token = this.MetadataToken;
+			// TODO use binary search?
+			for (int i = 0; i < module.InterfaceImpl.records.Length; i++)
+d414 1
+a414 2
+				if (module.InterfaceImpl.records[i].Class == token
+					&& module.ResolveType(module.InterfaceImpl.records[i].Interface, this) == interfaceType)
+@
+
+
+1.18
+log
+@Added API extension to query custom attributes on interfaceimpl records.
+@
+text
+@d300 1
+a300 1
+		public override Type[][] __GetGenericArgumentsOptionalCustomModifiers()
+d303 1
+a303 7
+			return Util.Copy(new Type[typeArgs.Length][]);
+		}
+
+		public override Type[][] __GetGenericArgumentsRequiredCustomModifiers()
+		{
+			PopulateGenericArguments();
+			return Util.Copy(new Type[typeArgs.Length][]);
+@
+
+
+1.17
+log
+@Use a bit in typeFlags to mark System.Enum and System.ValueType and detect them dynamically, to allow multiple mscorlib versions to be used.
+@
+text
+@d445 15
+@
+
+
+1.16
+log
+@- Removed TypeBuilder.__SetStructLayoutAttribute().
+- Added TypeBuilder.__SetLayout().
+- Added Type.__GetLayout().
+- Fixed Type.StructLayoutAttribute to be compatible with .NET.
+@
+text
+@d46 1
+@
+
+
+1.15
+log
+@Added limited support for #- metadata stream ("uncompressed" table heap). ParamPtr table is not yet implemented.
+@
+text
+@d382 2
+a383 1
+						return null;
+d393 31
+a423 3
+				int token = this.MetadataToken;
+				// TODO use binary search?
+				for (int i = 0; i < module.ClassLayout.records.Length; i++)
+d425 3
+a427 21
+					if (module.ClassLayout.records[i].Parent == token)
+					{
+						layout.Pack = module.ClassLayout.records[i].PackingSize;
+						layout.Size = module.ClassLayout.records[i].ClassSize;
+						switch (this.Attributes & TypeAttributes.StringFormatMask)
+						{
+							case TypeAttributes.AnsiClass:
+								layout.CharSet = CharSet.Ansi;
+								break;
+							case TypeAttributes.UnicodeClass:
+								layout.CharSet = CharSet.Unicode;
+								break;
+							case TypeAttributes.AutoClass:
+								layout.CharSet = CharSet.Auto;
+								break;
+							default:
+								layout.CharSet = CharSet.None;
+								break;
+						}
+						return layout;
+					}
+a428 1
+				return null;
+d430 3
+@
+
+
+1.14
+log
+@Optimized the Type == operator.
+@
+text
+@d77 1
+a77 1
+					for (int j = 0; evt < end; evt++, j++)
+d79 11
+a89 1
+						events[j] = new EventInfoImpl(module, this, evt);
+d102 1
+a102 1
+			for (int i = 0; field < end; i++, field++)
+d104 11
+a114 1
+				fields[i] = module.GetFieldAt(this, field);
+d143 1
+a143 1
+			for (int i = 0; method < end; method++, i++)
+d145 11
+a155 1
+				methods[i] = module.GetMethodAt(this, method);
+d219 1
+a219 1
+					for (int j = 0; property < end; property++, j++)
+d221 11
+a231 1
+						properties[j] = new PropertyInfoImpl(module, this, property);
+@
+
+
+1.13
+log
+@Performance tweaks by Marek.
+@
+text
+@a218 5
+		public override Type UnderlyingSystemType
+		{
+			get { return this; }
+		}
+
+@
+
+
+1.12
+log
+@More type name fixes. This time to support the fact that the CLR and Mono both treat TypeNamespace and TypeName as separate names and do not consider fullName to be relevant.
+@
+text
+@d102 1
+a102 1
+			List<Type> list = new List<Type>();
+d108 4
+d115 1
+a115 1
+			return list.ToArray();
+@
+
+
+1.11
+log
+@Final set of Name/Namespace/FullName fixes to make everything more compatible (including bugs) with .NET reflection.
+@
+text
+@d308 5
+d318 1
+a318 1
+				if ((this.Attributes & TypeAttributes.VisibilityMask & ~TypeAttributes.Public) == 0)
+@
+
+
+1.10
+log
+@Re-arrange Name/__Name usage to avoid redundant escaping/unescaping.
+Improve support for nested types that use a namespace.
+@
+text
+@d210 1
+a210 1
+		public override string Namespace
+d212 1
+a212 1
+			get { return typeNamespace; }
+@
+
+
+1.9
+log
+@Added virtual __Name and __Namespace properties to Type to allow the real (from the ECMA CLI point of view) namespace and names of types to be queried (for TypeDef and TypeBuilder only).
+@
+text
+@d44 1
+a44 1
+			this.typeName = TypeNameParser.Escape(module.GetString(module.TypeDef.records[index].TypeName));
+d197 1
+a197 1
+			get { return TypeNameParser.Unescape(typeName); }
+d207 1
+a207 1
+			get { return typeName; }
+@
+
+
+1.8
+log
+@Fix. Namespace property should not returned escaped string.
+@
+text
+@d195 10
+@
+
+
+1.7
+log
+@Fixed __GetGenericArgumentsOptionalCustomModifiers() and __GetGenericArgumentsRequiredCustomModifiers() as they should return an array with the same number of elements as the number of generic arguments, even if there aren't any modifiers.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Jeroen Frijters
+d45 1
+a45 1
+			this.typeNamespace = TypeNameParser.Escape(module.GetString(module.TypeDef.records[index].TypeNamespace));
+@
+
+
+1.6
+log
+@Use Util.Copy() instead of Clone() to copy a Type arrays.
+@
+text
+@d250 12
+@
+
+
+1.5
+log
+@Introduced Empty<T> to cache zero length arrays.
+@
+text
+@d218 1
+a218 1
+			return (Type[])typeArgs.Clone();
+@
+
+
+1.4
+log
+@Override GetGenericTypeDefinition(), because it is legal to call that on a TypeDef.
+@
+text
+@d84 1
+a84 1
+			return EventInfo.EmptyArray;
+d192 1
+a192 1
+			return PropertyInfo.EmptyArray;
+@
+
+
+1.3
+log
+@Several IKVM.Reflection fixes related to generics.
+- MethodImpls in generic type definitions should be resolved with typeArgs as context.
+- Cleaned up member on generic type rebinding.
+- Fixed __GetDeclaredProperties and __GetDeclaredEvents to rebind properly.
+@
+text
+@d260 9
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d136 1
+a136 1
+					MethodInfo body = (MethodInfo)module.ResolveMethod(module.MethodImpl.records[i].MethodBody);
+d144 1
+a144 1
+					MethodInfo declaration = (MethodInfo)module.ResolveMethod(module.MethodImpl.records[i].MethodDeclaration);
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

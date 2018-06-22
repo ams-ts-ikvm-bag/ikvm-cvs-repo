@@ -1,0 +1,811 @@
+head	1.39;
+access;
+symbols
+	v8_1_5717_0:1.39
+	v8_1:1.39.0.4
+	v8_0_5449_1:1.39
+	v8_0_5449_0:1.39
+	v8_0:1.39.0.2
+	v7_4_5196_0:1.37
+	v7_4:1.37.0.2
+	v7_3:1.35.0.2
+	v7_2_4630_6:1.33
+	v7_2_4630_5:1.33
+	v7_2_4630_4:1.33
+	v7_2_4630_3:1.33
+	v7_2_4630_2:1.33
+	v0_46_0_4:1.32
+	v7_2_4630_1:1.33
+	v7_2:1.33.0.6
+	v7_1_4532_2:1.33
+	v7_1_4532_1:1.33
+	v7_1_4532_0:1.33
+	v7_1:1.33.0.4
+	v7_0_4335_3:1.33
+	v7_0_4335_2:1.33
+	v7_0_4335_1:1.33
+	v0_46_0_2:1.32
+	v7_0_4335_0:1.33
+	v7_0:1.33.0.2
+	v0_40_0_6:1.19
+	v0_40_0_5:1.19
+	v0_46_0_1:1.32
+	v0_46_0_0:1.32
+	v0_46:1.32.0.2
+	v0_36_0_14:1.10
+	v0_44_0_6:1.31
+	v0_44_0_5:1.31
+	v0_44_0_4:1.31
+	v0_44_0_3:1.31
+	v0_44_0_2:1.31
+	v0_42_0_7:1.27
+	v0_44_0_1:1.31
+	v0_44_0_0:1.31
+	v0_44:1.31.0.2
+	v0_42_0_6:1.27
+	v0_42_0_5:1.27
+	v0_42_0_4:1.27
+	v0_42_0_3:1.27
+	v0_42_0_2:1.27
+	v0_42_0_1:1.27
+	v0_42_0_0:1.27
+	v0_42:1.27.0.2
+	v0_40_0_3:1.19
+	v0_40_0_2:1.19
+	v0_40_0_1:1.19
+	v0_40_0_0:1.19
+	v0_40:1.19.0.2
+	v0_36_0_13:1.10
+	v0_38_0_1:1.17
+	v0_38_0_0:1.17
+	v0_38:1.17.0.2
+	v0_36_0_9:1.10
+	v0_36_0_7:1.10
+	v0_36_0_5:1.10
+	v0_36_0_4:1.10
+	v0_36_0_3:1.10
+	v0_36_0_2:1.10
+	v0_36_0_1:1.10
+	v0_36_0_0:1.10
+	v0_36:1.10.0.8
+	v0_34_0_3:1.10
+	v0_34_0_2:1.10
+	v0_34_0_1:1.10
+	v0_34_0_0:1.10
+	v0_34:1.10.0.6
+	v0_32:1.10.0.4
+	v0_32_0_0:1.10
+	v0_30:1.10.0.2
+	v0_28_0_0:1.10
+	v0_26_0_1:1.7
+	v0_26_0_0:1.7
+	v0_24_0_1:1.7
+	v0_24_0_0:1.7
+	v0_22_0_0:1.6
+	v0_20_0_0:1.6
+	v0_18_0_0:1.6
+	v0_16_0_0:1.6
+	v0_14_0_1:1.6
+	v0_14_0_0:1.6
+	v0_12_0_0:1.6
+	v0_10_0_1:1.6
+	v0_10_0_0:1.6
+	v0_8_0_0:1.5
+	initial:1.1.1.1
+	ikvm:1.1.1;
+locks; strict;
+comment	@# @;
+
+
+1.39
+date	2014.07.01.15.12.34;	author jfrijters;	state Exp;
+branches;
+next	1.38;
+
+1.38
+date	2014.07.01.15.09.11;	author jfrijters;	state Exp;
+branches;
+next	1.37;
+
+1.37
+date	2013.03.29.11.28.24;	author jfrijters;	state Exp;
+branches;
+next	1.36;
+
+1.36
+date	2013.03.29.08.28.17;	author jfrijters;	state Exp;
+branches;
+next	1.35;
+
+1.35
+date	2013.02.27.16.23.18;	author jfrijters;	state Exp;
+branches;
+next	1.34;
+
+1.34
+date	2012.12.12.09.00.17;	author jfrijters;	state Exp;
+branches;
+next	1.33;
+
+1.33
+date	2011.05.12.08.08.08;	author jfrijters;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2010.09.14.07.38.42;	author jfrijters;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2010.04.23.04.58.36;	author jfrijters;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2010.01.28.09.18.34;	author jfrijters;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2010.01.25.07.52.51;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2009.10.14.14.58.41;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2009.09.07.04.19.05;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2009.08.31.06.16.04;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2009.08.31.05.10.11;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2009.07.30.13.14.14;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2009.06.18.05.53.17;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2009.05.26.10.18.40;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2009.05.25.13.40.44;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2009.04.16.05.34.21;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2009.03.04.05.47.19;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2008.11.14.08.42.07;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2008.05.09.05.57.59;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2008.03.03.07.05.19;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2008.01.03.09.45.50;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2007.12.28.10.23.46;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2007.12.04.08.09.53;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2007.11.26.11.01.29;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2007.11.26.08.38.38;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2006.04.11.07.01.46;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2006.04.10.09.18.37;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2006.04.10.09.09.10;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2005.12.07.09.06.32;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2005.01.07.09.34.20;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2004.05.27.07.12.10;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2004.04.23.14.21.46;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2004.03.08.15.18.48;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2003.01.08.13.35.32;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2002.12.18.16.01.25;	author jfrijters;	state Exp;
+branches
+	1.1.1.1;
+next	;
+
+1.1.1.1
+date	2002.12.18.16.01.25;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.39
+log
+@Added intrinsic for LambdaMetafactory.metafactory().
+@
+text
+@<?xml version="1.0"?>
+<!--
+  Copyright (C) 2002-2013 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+-->
+<project name="ikvmc" default="ikvmc">
+    <include buildfile="../ikvm.include" />
+
+    <target name="ikvmc">
+        <property name="defs" value="TRACE;STATIC_COMPILER;EMITTERS" />
+        <if test="${property::exists('signed')}">
+            <property name="defs" value="${defs};${signed}" />
+        </if>
+        <if test="${version::get-major(framework::get-version(framework::get-target-framework() )) == 4}">
+            <property name="defs" value="${defs};NET_4_0" />
+        </if>
+        <csc target="exe" output="../bin/ikvmc.exe" optimize="true" define="${defs}" noconfig="true" nostdlib="true">
+            <sources>
+                <include name="../CommonAssemblyInfo.cs" />
+                <include name="AotTypeWrapper.cs" />
+                <include name="AssemblyInfo.cs" />
+                <include name="AssemblyResolver.cs" />
+                <include name="Compiler.cs" />
+                <include name="CompilerClassLoader.cs" />
+                <include name="FakeTypes.cs" />
+                <include name="Proxy.cs" />
+                <include name="remapper.cs" />
+                <include name="../runtime/AssemblyClassLoader.cs" />
+                <include name="../runtime/atomic.cs" />
+                <include name="../runtime/attributes.cs" />
+                <include name="../runtime/BigEndianBinaryReader.cs" />
+                <include name="../runtime/Boxer.cs" />
+                <include name="../runtime/ByteCode.cs" />
+                <include name="../runtime/ClassFile.cs" />
+                <include name="../runtime/ClassLoaderWrapper.cs" />
+                <include name="../runtime/CodeEmitter.cs" />
+                <include name="../runtime/compiler.cs" />
+                <include name="../runtime/CoreClasses.cs" />
+                <include name="../runtime/DotNetTypeWrapper.cs" />
+                <include name="../runtime/DynamicClassLoader.cs" />
+                <include name="../runtime/DynamicTypeWrapper.cs" />
+                <include name="../runtime/intrinsics.cs" />
+                <include name="../runtime/JavaException.cs" />
+                <include name="../runtime/JsrInliner.cs" />
+                <include name="../runtime/LambdaMetafactory.cs" />
+                <include name="../runtime/LocalVars.cs" />
+                <include name="../runtime/MemberWrapper.cs" />
+                <include name="../runtime/MethodHandleUtil.cs" />
+                <include name="../runtime/profiler.cs" />
+                <include name="../runtime/ReflectUtil.cs" />
+                <include name="../runtime/RuntimeHelperTypes.cs" />
+                <include name="../runtime/Serialization.cs" />
+                <include name="../runtime/tracer.cs" />
+                <include name="../runtime/Types.cs" />
+                <include name="../runtime/TypeWrapper.cs" />
+                <include name="../runtime/verifier.cs" />
+                <include name="../runtime/vm.cs" />
+            </sources>
+            <references>
+                <include name="../bin/ICSharpCode.SharpZipLib.dll" asis="true" />
+                <include name="../bin/IKVM.Reflection.dll" asis="true" />
+                <include name="${ReferencePath}/mscorlib.dll" />
+                <include name="${ReferencePath}/System.dll" />
+                <include name="${ReferencePath}/System.Configuration.dll" />
+                <include name="${ReferencePath}/System.Xml.dll" />
+            </references>
+        </csc>
+    </target>
+</project>
+@
+
+
+1.38
+log
+@Make Boxer helper class available to runtime.
+@
+text
+@d64 1
+@
+
+
+1.37
+log
+@Moved part of MethodHandleUtil that is used by the runtime for JNI non-virtual invocation into a separate file.
+@
+text
+@d51 1
+@
+
+
+1.36
+log
+@Introduced EMITTERS conditional compilation constant.
+@
+text
+@d65 1
+@
+
+
+1.35
+log
+@Added license headers to build scripts.
+@
+text
+@d29 1
+a29 1
+        <property name="defs" value="TRACE;STATIC_COMPILER" />
+@
+
+
+1.34
+log
+@Changed build infrastructure to support targetting .NET 4.0 on systems where 4.5 is installed.
+@
+text
+@d2 23
+@
+
+
+1.33
+log
+@Added experimental (and for the time being undocumented) support for having ikvmc pre-generate proxy classes.
+@
+text
+@d3 2
+d13 1
+a13 1
+        <csc target="exe" output="../bin/ikvmc.exe" optimize="true" define="${defs}">
+d55 4
+a58 2
+                <!-- HACK mcs requires an explicit reference to System.Configuration -->
+                <include name="${framework::get-assembly-directory(framework::get-target-framework())}/System.Configuration.dll" />
+@
+
+
+1.32
+log
+@Moved local variable analysis from verifier.cs to new file LocalVars.cs.
+@
+text
+@d20 1
+@
+
+
+1.31
+log
+@- Rewrote assembly loading for ikvmc and ikvmstub (and unified it). It now no longer depends on the runtime to do assembly name to path resolution and behaves more csc like.
+- Added -nostdlib and -lib options to ikvmc and ikvmstub.
+- openjdk.build now uses our System.Core.dll (unless we're building on .NET 4.0).
+@
+text
+@d37 1
+@
+
+
+1.30
+log
+@Removed IKVM_REF_EMIT, as STATIC_COMPILER or STUB_GENERATOR now always implies IKVM.Reflection.
+@
+text
+@d16 1
+@
+
+
+1.29
+log
+@Integrated new IKVM.Reflection implementation.
+@
+text
+@d4 1
+a4 1
+        <property name="defs" value="TRACE;STATIC_COMPILER;IKVM_REF_EMIT" />
+@
+
+
+1.28
+log
+@Replaced most type literals with static field access (in Types class) or warpped JVM.Import() around them.
+@
+text
+@d49 1
+a49 1
+                <include name="../bin/IKVM.Reflection.Emit.dll" asis="true" />
+@
+
+
+1.27
+log
+@Moved AssemblyClassLoader and BootstrapClassLoader into AssemblyClassLoader.cs.
+@
+text
+@d42 1
+@
+
+
+1.26
+log
+@Moved DotNetTypeWrapper class into its own source file.
+@
+text
+@d20 1
+@
+
+
+1.25
+log
+@Moved DynamicTypeWrapper class into its own source file.
+@
+text
+@d29 1
+@
+
+
+1.24
+log
+@Implemented automatically enabling .NET serialization support for Java classes that are trivially serializable.
+@
+text
+@d30 1
+@
+
+
+1.23
+log
+@Added optimize="true".
+@
+text
+@d37 1
+@
+
+
+1.22
+log
+@Removed unnecessary property setting that causes compiler warning.
+@
+text
+@d11 1
+a11 1
+        <csc target="exe" output="../bin/ikvmc.exe" define="${defs}">
+@
+
+
+1.21
+log
+@Define NET_4_0 when building for .NET 4.0.
+@
+text
+@a3 1
+        <property overwrite="false" name="signed" value="" />
+@
+
+
+1.20
+log
+@Added support for inlining subroutines (jsr/ret) to allow the verifier and compiler to be simplified and to hopefully pave the way for future codegen optimizations.
+@
+text
+@d9 3
+@
+
+
+1.19
+log
+@Implemented ikvm.internal.ClassLiteral<T> to allow for more efficient class literals.
+@
+text
+@d30 1
+@
+
+
+1.18
+log
+@Integrated IKVM.Reflection.Emit in ikvmc.
+@
+text
+@d33 1
+@
+
+
+1.17
+log
+@- added more efficient float/double to/from int/long bits converters
+- made Double.doubleToRawLongBits/longBitsToDouble and Float.floatToRawIntBits/intBitsToFloat intrinsics
+- generalized the intrinsics support
+@
+text
+@d5 1
+a5 1
+        <property name="defs" value="TRACE;STATIC_COMPILER" />
+d32 1
+d40 1
+@
+
+
+1.16
+log
+@Replaced notion of DynamicOnly types with Fake types. Fake types are implemented as generic type instances and can have DynamicOnly methods.
+@
+text
+@d28 1
+@
+
+
+1.15
+log
+@- Moved common assembly attributes to single file (CommonAssemblyInfo.cs).
+- Added IKVM.Runtime.JNI project to Visual Studio solution.
+- Added atomic.cs to Visual Studio projects.
+- Added SecurityCritical and AllowPartiallyTrustedCallers attributes to IKVM.Runtime.dll.
+@
+text
+@d16 1
+@
+
+
+1.14
+log
+@Intrinsified AtomicReferenceFieldUpdater.newUpdater().
+@
+text
+@d11 1
+@
+
+
+1.13
+log
+@Added explicit reference to System.Configuration.dll as required by mcs.
+@
+text
+@d16 1
+@
+
+
+1.12
+log
+@More .NET 1.1 -> 2.0 work.
+@
+text
+@d35 2
+@
+
+
+1.11
+log
+@- Removed .NET 1.1 specific code
+- Removed conditional compilation of .NET 2.0 specific code
+@
+text
+@a8 3
+	<if test="${framework::get-target-framework()=='net-2.0'}">
+            <property name="defs" value="${defs};WHIDBEY" />
+        </if>
+@
+
+
+1.10
+log
+@*** empty log message ***
+@
+text
+@d19 1
+d31 1
+a36 1
+                <include name="../bin/IKVM.Runtime.dll" asis="true" />
+@
+
+
+1.9
+log
+@moved CompilerClassLoader.cs and remapper.cs from runtime to ikvmc
+@
+text
+@d14 1
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@d16 2
+a23 1
+                <include name="../runtime/CompilerClassLoader.cs" />
+a28 1
+                <include name="../runtime/remapper.cs" />
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d5 1
+a5 1
+        <property name="defs" value="TRACE" />
+d14 18
+a31 1
+                <include name="*.cs" />
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d5 8
+a12 1
+        <csc target="exe" output="../bin/ikvmc.exe" define="TRACE;${signed}">
+d14 1
+a14 1
+                <includes name="*.cs" />
+d17 2
+a18 2
+                <includes name="../bin/IKVM.Runtime.dll" asis="true" />
+                <includes name="../bin/ICSharpCode.SharpZipLib.dll" asis="true" />
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d4 2
+a5 1
+        <csc target="exe" output="../bin/ikvmc.exe" define="TRACE">
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d9 1
+a9 1
+                <includes name="../bin/ik.vm.net.dll" asis="true" />
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d10 1
+a10 1
+                <includes name="../bin/SharpZipLib.dll" asis="true" />
+@
+
+
+1.2
+log
+@no message
+@
+text
+@d4 1
+a4 1
+        <csc target="exe" output="../bin/ikvmc.exe">
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@a8 1
+                <includes name="../bin/classpath.dll" asis="true" />
+d10 1
+@
+
+
+1.1.1.1
+log
+@no message
+@
+text
+@@

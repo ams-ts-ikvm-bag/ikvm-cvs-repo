@@ -1,0 +1,244 @@
+head	1.3;
+access;
+symbols
+	v8_1_5717_0:1.3
+	v8_1:1.3.0.12
+	v8_0_5449_1:1.3
+	v8_0_5449_0:1.3
+	v8_0:1.3.0.10
+	v7_4_5196_0:1.3
+	v7_4:1.3.0.8
+	v7_3:1.3.0.6
+	v7_2_4630_6:1.3
+	v7_2_4630_5:1.3
+	v7_2_4630_4:1.3
+	v7_2_4630_3:1.3
+	v7_2_4630_2:1.3
+	v0_46_0_4:1.2
+	v7_2_4630_1:1.3
+	v7_2:1.3.0.4
+	v7_1_4532_2:1.3
+	v7_1_4532_1:1.3
+	v7_1_4532_0:1.3
+	v7_1:1.3.0.2
+	v7_0_4335_3:1.2
+	v7_0_4335_2:1.2
+	v7_0_4335_1:1.2
+	v0_46_0_2:1.2
+	v7_0_4335_0:1.2
+	v7_0:1.2.0.6
+	v0_46_0_1:1.2
+	v0_46_0_0:1.2
+	v0_46:1.2.0.4
+	v0_44_0_6:1.2
+	v0_44_0_5:1.2
+	v0_44_0_4:1.2
+	v0_44_0_3:1.2
+	v0_44_0_2:1.2
+	v0_44_0_1:1.2
+	v0_44_0_0:1.2
+	v0_44:1.2.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.3
+date	2011.12.01.06.30.50;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.3
+log
+@- Rewrote custom modifier handling to retain ordering.
+- Added ConstructorInfo.__ReturnParameter to expose custom modifiers.
+- Added __GetCustomModifiers() to various *Info types.
+- Added CustomModifiers type to encapsulate a custom modifier sequence.
+- Added CustomModifiersBuilder to create a CustomModifiers sequence.
+- Marked a number of IKVM.Reflection specific methods Obsolete, because they are replaced with method that take CustomModifiers value(s).
+@
+text
+@/*
+  Copyright (C) 2009 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using IKVM.Reflection.Emit;
+using IKVM.Reflection.Writer;
+using IKVM.Reflection.Reader;
+
+namespace IKVM.Reflection
+{
+	sealed class FieldSignature : Signature
+	{
+		private readonly Type fieldType;
+		private readonly CustomModifiers mods;
+
+		internal static FieldSignature Create(Type fieldType, CustomModifiers customModifiers)
+		{
+			return new FieldSignature(fieldType, customModifiers);
+		}
+
+		private FieldSignature(Type fieldType, CustomModifiers mods)
+		{
+			this.fieldType = fieldType;
+			this.mods = mods;
+		}
+
+		public override bool Equals(object obj)
+		{
+			FieldSignature other = obj as FieldSignature;
+			return other != null
+				&& other.fieldType.Equals(fieldType)
+				&& other.mods.Equals(mods);
+		}
+
+		public override int GetHashCode()
+		{
+			return fieldType.GetHashCode() ^ mods.GetHashCode();
+		}
+
+		internal Type FieldType
+		{
+			get { return fieldType; }
+		}
+
+		internal CustomModifiers GetCustomModifiers()
+		{
+			return mods;
+		}
+
+		internal FieldSignature ExpandTypeParameters(Type declaringType)
+		{
+			return new FieldSignature(
+				fieldType.BindTypeParameters(declaringType),
+				mods.Bind(declaringType));
+		}
+
+		internal static FieldSignature ReadSig(ModuleReader module, ByteReader br, IGenericContext context)
+		{
+			if (br.ReadByte() != FIELD)
+			{
+				throw new BadImageFormatException();
+			}
+			CustomModifiers mods = CustomModifiers.Read(module, br, context);
+			Type fieldType = ReadType(module, br, context);
+			return new FieldSignature(fieldType, mods);
+		}
+
+		internal override void WriteSig(ModuleBuilder module, ByteBuffer bb)
+		{
+			bb.Write(FIELD);
+			WriteCustomModifiers(module, bb, mods);
+			WriteType(module, bb, fieldType);
+		}
+	}
+}
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d37 1
+a37 2
+		private readonly Type[] optionalCustomModifiers;
+		private readonly Type[] requiredCustomModifiers;
+d39 1
+a39 1
+		internal static FieldSignature Create(Type fieldType, Type[] optionalCustomModifiers, Type[] requiredCustomModifiers)
+d41 1
+a41 1
+			return new FieldSignature(fieldType, Util.Copy(optionalCustomModifiers), Util.Copy(requiredCustomModifiers));
+d44 1
+a44 1
+		private FieldSignature(Type fieldType, Type[] optionalCustomModifiers, Type[] requiredCustomModifiers)
+d47 1
+a47 2
+			this.optionalCustomModifiers = optionalCustomModifiers;
+			this.requiredCustomModifiers = requiredCustomModifiers;
+d55 1
+a55 2
+				&& Util.ArrayEquals(other.optionalCustomModifiers, optionalCustomModifiers)
+				&& Util.ArrayEquals(other.requiredCustomModifiers, requiredCustomModifiers);
+d60 1
+a60 1
+			return fieldType.GetHashCode() ^ Util.GetHashCode(optionalCustomModifiers) ^ Util.GetHashCode(requiredCustomModifiers);
+d68 1
+a68 1
+		internal Type[] GetOptionalCustomModifiers()
+d70 1
+a70 6
+			return Util.Copy(optionalCustomModifiers);
+		}
+
+		internal Type[] GetRequiredCustomModifiers()
+		{
+			return Util.Copy(requiredCustomModifiers);
+d77 1
+a77 2
+				BindTypeParameters(declaringType, optionalCustomModifiers),
+				BindTypeParameters(declaringType, requiredCustomModifiers));
+d86 3
+a88 6
+			Type fieldType;
+			Type[] optionalCustomModifiers;
+			Type[] requiredCustomModifiers;
+			ReadCustomModifiers(module, br, context, out requiredCustomModifiers, out optionalCustomModifiers);
+			fieldType = ReadType(module, br, context);
+			return new FieldSignature(fieldType, optionalCustomModifiers, requiredCustomModifiers);
+d94 1
+a94 2
+			WriteCustomModifiers(module, bb, ELEMENT_TYPE_CMOD_OPT, optionalCustomModifiers);
+			WriteCustomModifiers(module, bb, ELEMENT_TYPE_CMOD_REQD, requiredCustomModifiers);
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

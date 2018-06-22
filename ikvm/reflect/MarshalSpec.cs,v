@@ -1,0 +1,1328 @@
+head	1.18;
+access;
+symbols
+	v8_1_5717_0:1.17
+	v8_1:1.17.0.8
+	v8_0_5449_1:1.17
+	v8_0_5449_0:1.17
+	v8_0:1.17.0.6
+	v7_4_5196_0:1.17
+	v7_4:1.17.0.4
+	v7_3:1.17.0.2
+	v7_2_4630_6:1.15.2.1
+	v7_2_4630_5:1.15.2.1
+	v7_2_4630_4:1.15.2.1
+	v7_2_4630_3:1.15.2.1
+	v7_2_4630_2:1.15
+	v0_46_0_4:1.3
+	v7_2_4630_1:1.15
+	v7_2:1.15.0.2
+	v7_1_4532_2:1.9
+	v7_1_4532_1:1.9
+	v7_1_4532_0:1.9
+	v7_1:1.9.0.2
+	v7_0_4335_3:1.6
+	v7_0_4335_2:1.6
+	v7_0_4335_1:1.6
+	v0_46_0_2:1.3
+	v7_0_4335_0:1.6
+	v7_0:1.6.0.2
+	v0_46_0_1:1.3
+	v0_46_0_0:1.3
+	v0_46:1.3.0.4
+	v0_44_0_6:1.3
+	v0_44_0_5:1.3
+	v0_44_0_4:1.3
+	v0_44_0_3:1.3
+	v0_44_0_2:1.3
+	v0_44_0_1:1.3
+	v0_44_0_0:1.3
+	v0_44:1.3.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.18
+date	2016.07.01.05.15.22;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2013.01.07.11.57.04;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2012.10.13.20.12.32;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2012.07.16.12.58.37;	author jfrijters;	state Exp;
+branches
+	1.15.2.1;
+next	1.14;
+
+1.14
+date	2012.07.16.12.53.13;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2012.07.13.06.33.30;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2012.07.12.15.10.58;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2012.07.12.14.16.43;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2012.07.12.14.14.47;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2012.04.09.10.04.58;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2012.01.27.10.11.18;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2011.12.01.06.30.50;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2011.03.09.07.11.38;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2011.03.06.08.16.41;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2011.03.03.12.42.57;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.06.28.08.25.19;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.15.2.1
+date	2012.10.23.08.15.53;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.18
+log
+@Added support for building against .NET Standard 1.3.
+@
+text
+@/*
+  Copyright (C) 2008-2012 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using System.Text;
+using IKVM.Reflection.Emit;
+using IKVM.Reflection.Reader;
+using IKVM.Reflection.Writer;
+using IKVM.Reflection.Metadata;
+
+#if NETSTANDARD
+// VarEnum, UnmanagedType.IDispatch and UnmanagedType.SafeArray are obsolete
+#pragma warning disable 618
+#endif
+
+namespace IKVM.Reflection
+{
+	public struct FieldMarshal
+	{
+		private const UnmanagedType UnmanagedType_CustomMarshaler = (UnmanagedType)0x2c;
+		private const UnmanagedType NATIVE_TYPE_MAX = (UnmanagedType)0x50;
+		public UnmanagedType UnmanagedType;
+		public UnmanagedType? ArraySubType;
+		public short? SizeParamIndex;
+		public int? SizeConst;
+		public VarEnum? SafeArraySubType;
+		public Type SafeArrayUserDefinedSubType;
+		public int? IidParameterIndex;
+		public string MarshalType;
+		public string MarshalCookie;
+		public Type MarshalTypeRef;
+
+		internal static bool ReadFieldMarshal(Module module, int token, out FieldMarshal fm)
+		{
+			fm = new FieldMarshal();
+			foreach (int i in module.FieldMarshal.Filter(token))
+			{
+				ByteReader blob = module.GetBlob(module.FieldMarshal.records[i].NativeType);
+				fm.UnmanagedType = (UnmanagedType)blob.ReadCompressedUInt();
+				if (fm.UnmanagedType == UnmanagedType.LPArray)
+				{
+					fm.ArraySubType = (UnmanagedType)blob.ReadCompressedUInt();
+					if (fm.ArraySubType == NATIVE_TYPE_MAX)
+					{
+						fm.ArraySubType = null;
+					}
+					if (blob.Length != 0)
+					{
+						fm.SizeParamIndex = (short)blob.ReadCompressedUInt();
+						if (blob.Length != 0)
+						{
+							fm.SizeConst = blob.ReadCompressedUInt();
+							if (blob.Length != 0 && blob.ReadCompressedUInt() == 0)
+							{
+								fm.SizeParamIndex = null;
+							}
+						}
+					}
+				}
+				else if (fm.UnmanagedType == UnmanagedType.SafeArray)
+				{
+					if (blob.Length != 0)
+					{
+						fm.SafeArraySubType = (VarEnum)blob.ReadCompressedUInt();
+						if (blob.Length != 0)
+						{
+							fm.SafeArrayUserDefinedSubType = ReadType(module, blob);
+						}
+					}
+				}
+				else if (fm.UnmanagedType == UnmanagedType.ByValArray)
+				{
+					fm.SizeConst = blob.ReadCompressedUInt();
+					if (blob.Length != 0)
+					{
+						fm.ArraySubType = (UnmanagedType)blob.ReadCompressedUInt();
+					}
+				}
+				else if (fm.UnmanagedType == UnmanagedType.ByValTStr)
+				{
+					fm.SizeConst = blob.ReadCompressedUInt();
+				}
+				else if (fm.UnmanagedType == UnmanagedType.Interface
+					|| fm.UnmanagedType == UnmanagedType.IDispatch
+					|| fm.UnmanagedType == UnmanagedType.IUnknown)
+				{
+					if (blob.Length != 0)
+					{
+						fm.IidParameterIndex = blob.ReadCompressedUInt();
+					}
+				}
+				else if (fm.UnmanagedType == UnmanagedType_CustomMarshaler)
+				{
+					blob.ReadCompressedUInt();
+					blob.ReadCompressedUInt();
+					fm.MarshalType = ReadString(blob);
+					fm.MarshalCookie = ReadString(blob);
+
+					TypeNameParser parser = TypeNameParser.Parse(fm.MarshalType, false);
+					if (!parser.Error)
+					{
+						fm.MarshalTypeRef = parser.GetType(module.universe, module, false, fm.MarshalType, false, false);
+					}
+				}
+				return true;
+			}
+			return false;
+		}
+
+		internal static void SetMarshalAsAttribute(ModuleBuilder module, int token, CustomAttributeBuilder attribute)
+		{
+			attribute = attribute.DecodeBlob(module.Assembly);
+			FieldMarshalTable.Record rec = new FieldMarshalTable.Record();
+			rec.Parent = token;
+			rec.NativeType = WriteMarshallingDescriptor(module, attribute);
+			module.FieldMarshal.AddRecord(rec);
+		}
+
+		private static int WriteMarshallingDescriptor(ModuleBuilder module, CustomAttributeBuilder attribute)
+		{
+			UnmanagedType unmanagedType;
+			object val = attribute.GetConstructorArgument(0);
+			if (val is short)
+			{
+				unmanagedType = (UnmanagedType)(short)val;
+			}
+			else if (val is int)
+			{
+				unmanagedType = (UnmanagedType)(int)val;
+			}
+			else
+			{
+				unmanagedType = (UnmanagedType)val;
+			}
+
+			ByteBuffer bb = new ByteBuffer(5);
+			bb.WriteCompressedUInt((int)unmanagedType);
+
+			if (unmanagedType == UnmanagedType.LPArray)
+			{
+				UnmanagedType arraySubType = attribute.GetFieldValue<UnmanagedType>("ArraySubType") ?? NATIVE_TYPE_MAX;
+				bb.WriteCompressedUInt((int)arraySubType);
+				int? sizeParamIndex = attribute.GetFieldValue<short>("SizeParamIndex");
+				int? sizeConst = attribute.GetFieldValue<int>("SizeConst");
+				if (sizeParamIndex != null)
+				{
+					bb.WriteCompressedUInt(sizeParamIndex.Value);
+					if (sizeConst != null)
+					{
+						bb.WriteCompressedUInt(sizeConst.Value);
+						bb.WriteCompressedUInt(1); // flag that says that SizeParamIndex was specified
+					}
+				}
+				else if (sizeConst != null)
+				{
+					bb.WriteCompressedUInt(0); // SizeParamIndex
+					bb.WriteCompressedUInt(sizeConst.Value);
+					bb.WriteCompressedUInt(0); // flag that says that SizeParamIndex was not specified
+				}
+			}
+			else if (unmanagedType == UnmanagedType.SafeArray)
+			{
+				VarEnum? safeArraySubType = attribute.GetFieldValue<VarEnum>("SafeArraySubType");
+				if (safeArraySubType != null)
+				{
+					bb.WriteCompressedUInt((int)safeArraySubType);
+					Type safeArrayUserDefinedSubType = (Type)attribute.GetFieldValue("SafeArrayUserDefinedSubType");
+					if (safeArrayUserDefinedSubType != null)
+					{
+						WriteType(module, bb, safeArrayUserDefinedSubType);
+					}
+				}
+			}
+			else if (unmanagedType == UnmanagedType.ByValArray)
+			{
+				bb.WriteCompressedUInt(attribute.GetFieldValue<int>("SizeConst") ?? 1);
+				UnmanagedType? arraySubType = attribute.GetFieldValue<UnmanagedType>("ArraySubType");
+				if (arraySubType != null)
+				{
+					bb.WriteCompressedUInt((int)arraySubType);
+				}
+			}
+			else if (unmanagedType == UnmanagedType.ByValTStr)
+			{
+				bb.WriteCompressedUInt(attribute.GetFieldValue<int>("SizeConst").Value);
+			}
+			else if (unmanagedType == UnmanagedType.Interface
+				|| unmanagedType == UnmanagedType.IDispatch
+				|| unmanagedType == UnmanagedType.IUnknown)
+			{
+				int? iidParameterIndex = attribute.GetFieldValue<int>("IidParameterIndex");
+				if (iidParameterIndex != null)
+				{
+					bb.WriteCompressedUInt(iidParameterIndex.Value);
+				}
+			}
+			else if (unmanagedType == UnmanagedType_CustomMarshaler)
+			{
+				bb.WriteCompressedUInt(0);
+				bb.WriteCompressedUInt(0);
+				string marshalType = (string)attribute.GetFieldValue("MarshalType");
+				if (marshalType != null)
+				{
+					WriteString(bb, marshalType);
+				}
+				else
+				{
+					WriteType(module, bb, (Type)attribute.GetFieldValue("MarshalTypeRef"));
+				}
+				WriteString(bb, (string)attribute.GetFieldValue("MarshalCookie") ?? "");
+			}
+
+			return module.Blobs.Add(bb);
+		}
+
+		private static Type ReadType(Module module, ByteReader br)
+		{
+			string str = ReadString(br);
+			if (str == "")
+			{
+				return null;
+			}
+			return module.Assembly.GetType(str) ?? module.universe.GetType(str, true);
+		}
+
+		private static void WriteType(Module module, ByteBuffer bb, Type type)
+		{
+			WriteString(bb, type.Assembly == module.Assembly ? type.FullName : type.AssemblyQualifiedName);
+		}
+
+		private static string ReadString(ByteReader br)
+		{
+			return Encoding.UTF8.GetString(br.ReadBytes(br.ReadCompressedUInt()));
+		}
+
+		private static void WriteString(ByteBuffer bb, string str)
+		{
+			byte[] buf = Encoding.UTF8.GetBytes(str);
+			bb.WriteCompressedUInt(buf.Length);
+			bb.Write(buf);
+		}
+	}
+}
+@
+
+
+1.17
+log
+@Changed type name parser to use Module as context, instead of Assembly.
+@
+text
+@d33 5
+d42 1
+d114 1
+a114 1
+				else if (fm.UnmanagedType == UnmanagedType.CustomMarshaler)
+d219 1
+a219 1
+			else if (unmanagedType == UnmanagedType.CustomMarshaler)
+@
+
+
+1.16
+log
+@Renamed methods that deal with unsigned compressed integers to *CompressedUInt instead of *CompressedInt.
+@
+text
+@d118 1
+a118 1
+						fm.MarshalTypeRef = parser.GetType(module.universe, module.Assembly, false, fm.MarshalType, false, false);
+@
+
+
+1.15
+log
+@Moved FieldMarshal.ToCustomAttribute() to CustomAttributeData.CreateMarshalAsPseudoCustomAttribute().
+@
+text
+@d55 1
+a55 1
+				fm.UnmanagedType = (UnmanagedType)blob.ReadCompressedInt();
+d58 1
+a58 1
+					fm.ArraySubType = (UnmanagedType)blob.ReadCompressedInt();
+d65 1
+a65 1
+						fm.SizeParamIndex = (short)blob.ReadCompressedInt();
+d68 2
+a69 2
+							fm.SizeConst = blob.ReadCompressedInt();
+							if (blob.Length != 0 && blob.ReadCompressedInt() == 0)
+d80 1
+a80 1
+						fm.SafeArraySubType = (VarEnum)blob.ReadCompressedInt();
+d89 1
+a89 1
+					fm.SizeConst = blob.ReadCompressedInt();
+d92 1
+a92 1
+						fm.ArraySubType = (UnmanagedType)blob.ReadCompressedInt();
+d97 1
+a97 1
+					fm.SizeConst = blob.ReadCompressedInt();
+d105 1
+a105 1
+						fm.IidParameterIndex = blob.ReadCompressedInt();
+d110 2
+a111 2
+					blob.ReadCompressedInt();
+					blob.ReadCompressedInt();
+d153 1
+a153 1
+			bb.WriteCompressedInt((int)unmanagedType);
+d158 1
+a158 1
+				bb.WriteCompressedInt((int)arraySubType);
+d163 1
+a163 1
+					bb.WriteCompressedInt(sizeParamIndex.Value);
+d166 2
+a167 2
+						bb.WriteCompressedInt(sizeConst.Value);
+						bb.WriteCompressedInt(1); // flag that says that SizeParamIndex was specified
+d172 3
+a174 3
+					bb.WriteCompressedInt(0); // SizeParamIndex
+					bb.WriteCompressedInt(sizeConst.Value);
+					bb.WriteCompressedInt(0); // flag that says that SizeParamIndex was not specified
+d182 1
+a182 1
+					bb.WriteCompressedInt((int)safeArraySubType);
+d192 1
+a192 1
+				bb.WriteCompressedInt(attribute.GetFieldValue<int>("SizeConst") ?? 1);
+d196 1
+a196 1
+					bb.WriteCompressedInt((int)arraySubType);
+d201 1
+a201 1
+				bb.WriteCompressedInt(attribute.GetFieldValue<int>("SizeConst").Value);
+d210 1
+a210 1
+					bb.WriteCompressedInt(iidParameterIndex.Value);
+d215 2
+a216 2
+				bb.WriteCompressedInt(0);
+				bb.WriteCompressedInt(0);
+d249 1
+a249 1
+			return Encoding.UTF8.GetString(br.ReadBytes(br.ReadCompressedInt()));
+d255 1
+a255 1
+			bb.WriteCompressedInt(buf.Length);
+@
+
+
+1.15.2.1
+log
+@Backported fixes for rc 3.
+- Bug fix. Off-by-one error in local ref index reusing. Fix for bug #3575555.
+- Bug fix. Don't try to inject DynamicMethod in array types (applies to array.clone() method for MethodHandles).
+- IKVM.Reflection: Bug fix. ModuleReader.ResolveMember() should support types. Thanks to Jb Evain for finding this.
+- IKVM.Reflection: Bug fix. While reading the Cecil source I realized that array bounds are signed.
+- IKVM.Reflection: Bug fix. LocalBuilder should extend LocalVariableInfo.
+- IKVM.Reflection: Implemented LocalVariableInfo.ToString().
+@
+text
+@d55 1
+a55 1
+				fm.UnmanagedType = (UnmanagedType)blob.ReadCompressedUInt();
+d58 1
+a58 1
+					fm.ArraySubType = (UnmanagedType)blob.ReadCompressedUInt();
+d65 1
+a65 1
+						fm.SizeParamIndex = (short)blob.ReadCompressedUInt();
+d68 2
+a69 2
+							fm.SizeConst = blob.ReadCompressedUInt();
+							if (blob.Length != 0 && blob.ReadCompressedUInt() == 0)
+d80 1
+a80 1
+						fm.SafeArraySubType = (VarEnum)blob.ReadCompressedUInt();
+d89 1
+a89 1
+					fm.SizeConst = blob.ReadCompressedUInt();
+d92 1
+a92 1
+						fm.ArraySubType = (UnmanagedType)blob.ReadCompressedUInt();
+d97 1
+a97 1
+					fm.SizeConst = blob.ReadCompressedUInt();
+d105 1
+a105 1
+						fm.IidParameterIndex = blob.ReadCompressedUInt();
+d110 2
+a111 2
+					blob.ReadCompressedUInt();
+					blob.ReadCompressedUInt();
+d153 1
+a153 1
+			bb.WriteCompressedUInt((int)unmanagedType);
+d158 1
+a158 1
+				bb.WriteCompressedUInt((int)arraySubType);
+d163 1
+a163 1
+					bb.WriteCompressedUInt(sizeParamIndex.Value);
+d166 2
+a167 2
+						bb.WriteCompressedUInt(sizeConst.Value);
+						bb.WriteCompressedUInt(1); // flag that says that SizeParamIndex was specified
+d172 3
+a174 3
+					bb.WriteCompressedUInt(0); // SizeParamIndex
+					bb.WriteCompressedUInt(sizeConst.Value);
+					bb.WriteCompressedUInt(0); // flag that says that SizeParamIndex was not specified
+d182 1
+a182 1
+					bb.WriteCompressedUInt((int)safeArraySubType);
+d192 1
+a192 1
+				bb.WriteCompressedUInt(attribute.GetFieldValue<int>("SizeConst") ?? 1);
+d196 1
+a196 1
+					bb.WriteCompressedUInt((int)arraySubType);
+d201 1
+a201 1
+				bb.WriteCompressedUInt(attribute.GetFieldValue<int>("SizeConst").Value);
+d210 1
+a210 1
+					bb.WriteCompressedUInt(iidParameterIndex.Value);
+d215 2
+a216 2
+				bb.WriteCompressedUInt(0);
+				bb.WriteCompressedUInt(0);
+d249 1
+a249 1
+			return Encoding.UTF8.GetString(br.ReadBytes(br.ReadCompressedUInt()));
+d255 1
+a255 1
+			bb.WriteCompressedUInt(buf.Length);
+@
+
+
+1.14
+log
+@Made MarshalAsAttribute synthesis more compatible with .NET by always setting ArraySubType, SizeParamIndex, SizeConst and SafeArraySubType properties.
+@
+text
+@a125 42
+		internal CustomAttributeData ToCustomAttribute(Module module)
+		{
+			Type typeofMarshalAs = module.universe.System_Runtime_InteropServices_MarshalAsAttribute;
+			Type typeofUnmanagedType = module.universe.System_Runtime_InteropServices_UnmanagedType;
+			Type typeofVarEnum = module.universe.System_Runtime_InteropServices_VarEnum;
+			Type typeofType = module.universe.System_Type;
+			List<CustomAttributeNamedArgument> named = new List<CustomAttributeNamedArgument>();
+			AddNamedArgument(named, typeofMarshalAs, "ArraySubType", typeofUnmanagedType, ArraySubType ?? 0);
+			AddNamedArgument(named, typeofMarshalAs, "SizeParamIndex", module.universe.System_Int16, SizeParamIndex ?? 0);
+			AddNamedArgument(named, typeofMarshalAs, "SizeConst", module.universe.System_Int32, SizeConst ?? 0);
+			AddNamedArgument(named, typeofMarshalAs, "IidParameterIndex", module.universe.System_Int32, IidParameterIndex ?? 0);
+			AddNamedArgument(named, typeofMarshalAs, "SafeArraySubType", typeofVarEnum, SafeArraySubType ?? 0);
+			if (SafeArrayUserDefinedSubType != null)
+			{
+				AddNamedArgument(named, typeofMarshalAs, "SafeArrayUserDefinedSubType", typeofType, SafeArrayUserDefinedSubType);
+			}
+			if (MarshalType != null)
+			{
+				AddNamedArgument(named, typeofMarshalAs, "MarshalType", module.universe.System_String, MarshalType);
+			}
+			if (MarshalTypeRef != null)
+			{
+				AddNamedArgument(named, typeofMarshalAs, "MarshalTypeRef", module.universe.System_Type, MarshalTypeRef);
+			}
+			if (MarshalCookie != null)
+			{
+				AddNamedArgument(named, typeofMarshalAs, "MarshalCookie", module.universe.System_String, MarshalCookie);
+			}
+			ConstructorInfo constructor = typeofMarshalAs.GetPseudoCustomAttributeConstructor(typeofUnmanagedType);
+			return new CustomAttributeData(module, constructor, new object[] { UnmanagedType }, named);
+		}
+
+		private static void AddNamedArgument(List<CustomAttributeNamedArgument> list, Type attributeType, string fieldName, Type valueType, object value)
+		{
+			// some fields are not available on the .NET Compact Framework version of MarshalAsAttribute
+			FieldInfo field = attributeType.FindField(fieldName, FieldSignature.Create(valueType, new CustomModifiers()));
+			if (field != null)
+			{
+				list.Add(new CustomAttributeNamedArgument(field, new CustomAttributeTypedArgument(valueType, value)));
+			}
+		}
+
+@
+
+
+1.13
+log
+@- Changed [Field|Parameter]Info.__FieldMarshal property to __TryGetFieldMarshal method.
+- Changed FieldMarshal class into a value type with public fields.
+@
+text
+@d133 5
+a137 16
+			if (ArraySubType != null)
+			{
+				AddNamedArgument(named, typeofMarshalAs, "ArraySubType", typeofUnmanagedType, ArraySubType.Value);
+			}
+			if (SizeParamIndex != null)
+			{
+				AddNamedArgument(named, typeofMarshalAs, "SizeParamIndex", module.universe.System_Int16, SizeParamIndex.Value);
+			}
+			if (SizeConst != null)
+			{
+				AddNamedArgument(named, typeofMarshalAs, "SizeConst", module.universe.System_Int32, SizeConst.Value);
+			}
+			if (SafeArraySubType != null)
+			{
+				AddNamedArgument(named, typeofMarshalAs, "SafeArraySubType", typeofVarEnum, SafeArraySubType.Value);
+			}
+a141 4
+			if (IidParameterIndex != null)
+			{
+				AddNamedArgument(named, typeofMarshalAs, "IidParameterIndex", module.universe.System_Int32, IidParameterIndex.Value);
+			}
+@
+
+
+1.12
+log
+@- Added new public APIs FieldInfo.__FieldMarshal and ParameterInfo.__FieldMarshal.
+- Moved ParameterInfo pseudo custom attribute handling to CustomAttributeData.
+- Ignore HasFieldMarshal attribute and always return the pseudo custom attribute if a FieldMarshal record exists. This is similar to .NET reflection.
+@
+text
+@d35 1
+a35 1
+	public sealed class FieldMarshal
+d38 10
+a47 10
+		private readonly UnmanagedType unmanagedType;
+		private readonly UnmanagedType? arraySubType;
+		private readonly short? sizeParamIndex;
+		private readonly int? sizeConst;
+		private readonly VarEnum? safeArraySubType;
+		private readonly Type safeArrayUserDefinedSubType;
+		private readonly int? iidParameterIndex;
+		private readonly string marshalType;
+		private readonly string marshalCookie;
+		private readonly Type marshalTypeRef;
+d49 1
+a49 67
+		public UnmanagedType UnmanagedType
+		{
+			get { return unmanagedType; }
+		}
+
+		public UnmanagedType? ArraySubType
+		{
+			get { return arraySubType; }
+		}
+
+		public short? SizeParamIndex
+		{
+			get { return sizeParamIndex; }
+		}
+
+		public int? SizeConst
+		{
+			get { return sizeConst; }
+		}
+
+		public VarEnum? SafeArraySubType
+		{
+			get { return safeArraySubType; }
+		}
+
+		public Type SafeArrayUserDefinedSubType
+		{
+			get { return safeArrayUserDefinedSubType; }
+		}
+
+		public int? IidParameterIndex
+		{
+			get { return iidParameterIndex; }
+		}
+
+		public string MarshalType
+		{
+			get { return marshalType; }
+		}
+
+		public string MarshalCookie
+		{
+			get { return marshalCookie; }
+		}
+
+		public Type MarshalTypeRef
+		{
+			get { return marshalTypeRef; }
+		}
+
+		private FieldMarshal(UnmanagedType unmanagedType, UnmanagedType? arraySubType, short? sizeParamIndex,
+			int? sizeConst, VarEnum? safeArraySubType, Type safeArrayUserDefinedSubType, int? iidParameterIndex,
+			string marshalType, string marshalCookie, Type marshalTypeRef)
+		{
+			this.unmanagedType = unmanagedType;
+			this.arraySubType = arraySubType;
+			this.sizeParamIndex = sizeParamIndex;
+			this.sizeConst = sizeConst;
+			this.safeArraySubType = safeArraySubType;
+			this.safeArrayUserDefinedSubType = safeArrayUserDefinedSubType;
+			this.iidParameterIndex = iidParameterIndex;
+			this.marshalType = marshalType;
+			this.marshalCookie = marshalCookie;
+			this.marshalTypeRef = marshalTypeRef;
+		}
+
+		internal static FieldMarshal ReadFieldMarshal(Module module, int token)
+d51 1
+d55 2
+a56 11
+				UnmanagedType unmanagedType = (UnmanagedType)blob.ReadCompressedInt();
+				UnmanagedType? arraySubType = null;
+				short? sizeParamIndex = null;
+				int? sizeConst = null;
+				VarEnum? safeArraySubType = null;
+				Type safeArrayUserDefinedSubType = null;
+				int? iidParameterIndex = null;
+				string marshalType = null;
+				string marshalCookie = null;
+				Type marshalTypeRef = null;
+				if (unmanagedType == UnmanagedType.LPArray)
+d58 2
+a59 2
+					arraySubType = (UnmanagedType)blob.ReadCompressedInt();
+					if (arraySubType == NATIVE_TYPE_MAX)
+d61 1
+a61 1
+						arraySubType = null;
+d65 1
+a65 1
+						sizeParamIndex = (short)blob.ReadCompressedInt();
+d68 1
+a68 1
+							sizeConst = blob.ReadCompressedInt();
+d71 1
+a71 1
+								sizeParamIndex = null;
+d76 1
+a76 1
+				else if (unmanagedType == UnmanagedType.SafeArray)
+d80 1
+a80 1
+						safeArraySubType = (VarEnum)blob.ReadCompressedInt();
+d83 1
+a83 1
+							safeArrayUserDefinedSubType = ReadType(module, blob);
+d87 1
+a87 1
+				else if (unmanagedType == UnmanagedType.ByValArray)
+d89 1
+a89 1
+					sizeConst = blob.ReadCompressedInt();
+d92 1
+a92 1
+						arraySubType = (UnmanagedType)blob.ReadCompressedInt();
+d95 1
+a95 1
+				else if (unmanagedType == UnmanagedType.ByValTStr)
+d97 1
+a97 1
+					sizeConst = blob.ReadCompressedInt();
+d99 3
+a101 3
+				else if (unmanagedType == UnmanagedType.Interface
+					|| unmanagedType == UnmanagedType.IDispatch
+					|| unmanagedType == UnmanagedType.IUnknown)
+d105 1
+a105 1
+						iidParameterIndex = blob.ReadCompressedInt();
+d108 1
+a108 1
+				else if (unmanagedType == UnmanagedType.CustomMarshaler)
+d112 2
+a113 2
+					marshalType = ReadString(blob);
+					marshalCookie = ReadString(blob);
+d115 1
+a115 1
+					TypeNameParser parser = TypeNameParser.Parse(marshalType, false);
+d118 1
+a118 1
+						marshalTypeRef = parser.GetType(module.universe, module.Assembly, false, marshalType, false, false);
+d121 1
+a121 2
+				return new FieldMarshal(unmanagedType, arraySubType, sizeParamIndex, sizeConst, safeArraySubType,
+					safeArrayUserDefinedSubType, iidParameterIndex, marshalType, marshalCookie, marshalTypeRef);
+d123 1
+a123 1
+			return null;
+d133 1
+a133 1
+			if (arraySubType != null)
+d135 1
+a135 1
+				AddNamedArgument(named, typeofMarshalAs, "ArraySubType", typeofUnmanagedType, arraySubType.Value);
+d137 1
+a137 1
+			if (sizeParamIndex != null)
+d139 1
+a139 1
+				AddNamedArgument(named, typeofMarshalAs, "SizeParamIndex", module.universe.System_Int16, sizeParamIndex.Value);
+d141 1
+a141 1
+			if (sizeConst != null)
+d143 1
+a143 1
+				AddNamedArgument(named, typeofMarshalAs, "SizeConst", module.universe.System_Int32, sizeConst.Value);
+d145 1
+a145 1
+			if (safeArraySubType != null)
+d147 1
+a147 1
+				AddNamedArgument(named, typeofMarshalAs, "SafeArraySubType", typeofVarEnum, safeArraySubType.Value);
+d149 1
+a149 1
+			if (safeArrayUserDefinedSubType != null)
+d151 1
+a151 1
+				AddNamedArgument(named, typeofMarshalAs, "SafeArrayUserDefinedSubType", typeofType, safeArrayUserDefinedSubType);
+d153 1
+a153 1
+			if (iidParameterIndex != null)
+d155 1
+a155 1
+				AddNamedArgument(named, typeofMarshalAs, "IidParameterIndex", module.universe.System_Int32, iidParameterIndex.Value);
+d157 1
+a157 1
+			if (marshalType != null)
+d159 1
+a159 1
+				AddNamedArgument(named, typeofMarshalAs, "MarshalType", module.universe.System_String, marshalType);
+d161 1
+a161 1
+			if (marshalTypeRef != null)
+d163 1
+a163 1
+				AddNamedArgument(named, typeofMarshalAs, "MarshalTypeRef", module.universe.System_Type, marshalTypeRef);
+d165 1
+a165 1
+			if (marshalCookie != null)
+d167 1
+a167 1
+				AddNamedArgument(named, typeofMarshalAs, "MarshalCookie", module.universe.System_String, marshalCookie);
+d170 1
+a170 1
+			return new CustomAttributeData(module, constructor, new object[] { unmanagedType }, named);
+@
+
+
+1.11
+log
+@Fixed formatting.
+@
+text
+@d35 1
+a35 1
+	sealed class MarshalSpec
+d49 51
+a99 1
+		private MarshalSpec(UnmanagedType unmanagedType, UnmanagedType? arraySubType, short? sizeParamIndex,
+d115 1
+a115 1
+		internal static MarshalSpec ReadFieldMarshal(Module module, int token)
+d195 1
+a195 1
+				return new MarshalSpec(unmanagedType, arraySubType, sizeParamIndex, sizeConst, safeArraySubType,
+d201 1
+a201 11
+		internal static CustomAttributeData GetMarshalAsAttribute(Module module, int token)
+		{
+			MarshalSpec spec = ReadFieldMarshal(module, token);
+			if (spec != null)
+			{
+				return spec.ToCustomAttribute(module);
+			}
+			throw new BadImageFormatException();
+		}
+
+		private CustomAttributeData ToCustomAttribute(Module module)
+@
+
+
+1.10
+log
+@Split FieldMarshal reading and pseudo CustomAttribute creation into two separate steps.
+@
+text
+@d163 43
+a205 43
+				Type typeofMarshalAs = module.universe.System_Runtime_InteropServices_MarshalAsAttribute;
+				Type typeofUnmanagedType = module.universe.System_Runtime_InteropServices_UnmanagedType;
+				Type typeofVarEnum = module.universe.System_Runtime_InteropServices_VarEnum;
+				Type typeofType = module.universe.System_Type;
+				List<CustomAttributeNamedArgument> named = new List<CustomAttributeNamedArgument>();
+				if (arraySubType != null)
+				{
+					AddNamedArgument(named, typeofMarshalAs, "ArraySubType", typeofUnmanagedType, arraySubType.Value);
+				}
+				if (sizeParamIndex != null)
+				{
+					AddNamedArgument(named, typeofMarshalAs, "SizeParamIndex", module.universe.System_Int16, sizeParamIndex.Value);
+				}
+				if (sizeConst != null)
+				{
+					AddNamedArgument(named, typeofMarshalAs, "SizeConst", module.universe.System_Int32, sizeConst.Value);
+				}
+				if (safeArraySubType != null)
+				{
+					AddNamedArgument(named, typeofMarshalAs, "SafeArraySubType", typeofVarEnum, safeArraySubType.Value);
+				}
+				if (safeArrayUserDefinedSubType != null)
+				{
+					AddNamedArgument(named, typeofMarshalAs, "SafeArrayUserDefinedSubType", typeofType, safeArrayUserDefinedSubType);
+				}
+				if (iidParameterIndex != null)
+				{
+					AddNamedArgument(named, typeofMarshalAs, "IidParameterIndex", module.universe.System_Int32, iidParameterIndex.Value);
+				}
+				if (marshalType != null)
+				{
+					AddNamedArgument(named, typeofMarshalAs, "MarshalType", module.universe.System_String, marshalType);
+				}
+				if (marshalTypeRef != null)
+				{
+					AddNamedArgument(named, typeofMarshalAs, "MarshalTypeRef", module.universe.System_Type, marshalTypeRef);
+				}
+				if (marshalCookie != null)
+				{
+					AddNamedArgument(named, typeofMarshalAs, "MarshalCookie", module.universe.System_String, marshalCookie);
+				}
+				ConstructorInfo constructor = typeofMarshalAs.GetPseudoCustomAttributeConstructor(typeofUnmanagedType);
+				return new CustomAttributeData(module, constructor, new object[] { unmanagedType }, named);
+@
+
+
+1.9
+log
+@Added support for case-insensitive type lookup.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008-2011 Jeroen Frijters
+d35 1
+a35 1
+	static class MarshalSpec
+d38 26
+d65 1
+a65 1
+		internal static CustomAttributeData GetMarshalAsAttribute(Module module, int token)
+d145 5
+d151 12
+a205 2
+			}
+			throw new BadImageFormatException();
+@
+
+
+1.8
+log
+@Generalized sorted metadata table lookups with binary search.
+@
+text
+@d116 1
+a116 1
+						marshalTypeRef = parser.GetType(module.universe, module.Assembly, false, marshalType, false);
+@
+
+
+1.7
+log
+@- Rewrote custom modifier handling to retain ordering.
+- Added ConstructorInfo.__ReturnParameter to expose custom modifiers.
+- Added __GetCustomModifiers() to various *Info types.
+- Added CustomModifiers type to encapsulate a custom modifier sequence.
+- Added CustomModifiersBuilder to create a CustomModifiers sequence.
+- Marked a number of IKVM.Reflection specific methods Obsolete, because they are replaced with method that take CustomModifiers value(s).
+@
+text
+@d41 1
+a41 2
+			// TODO use binary search?
+			for (int i = 0; i < module.FieldMarshal.records.Length; i++)
+d43 12
+a54 1
+				if (module.FieldMarshal.records[i].Parent == token)
+d56 2
+a57 12
+					ByteReader blob = module.GetBlob(module.FieldMarshal.records[i].NativeType);
+					UnmanagedType unmanagedType = (UnmanagedType)blob.ReadCompressedInt();
+					UnmanagedType? arraySubType = null;
+					short? sizeParamIndex = null;
+					int? sizeConst = null;
+					VarEnum? safeArraySubType = null;
+					Type safeArrayUserDefinedSubType = null;
+					int? iidParameterIndex = null;
+					string marshalType = null;
+					string marshalCookie = null;
+					Type marshalTypeRef = null;
+					if (unmanagedType == UnmanagedType.LPArray)
+d59 1
+a59 17
+						arraySubType = (UnmanagedType)blob.ReadCompressedInt();
+						if (arraySubType == NATIVE_TYPE_MAX)
+						{
+							arraySubType = null;
+						}
+						if (blob.Length != 0)
+						{
+							sizeParamIndex = (short)blob.ReadCompressedInt();
+							if (blob.Length != 0)
+							{
+								sizeConst = blob.ReadCompressedInt();
+								if (blob.Length != 0 && blob.ReadCompressedInt() == 0)
+								{
+									sizeParamIndex = null;
+								}
+							}
+						}
+d61 1
+a61 1
+					else if (unmanagedType == UnmanagedType.SafeArray)
+d63 1
+d66 2
+a67 2
+							safeArraySubType = (VarEnum)blob.ReadCompressedInt();
+							if (blob.Length != 0)
+d69 1
+a69 1
+								safeArrayUserDefinedSubType = ReadType(module, blob);
+d73 4
+a76 1
+					else if (unmanagedType == UnmanagedType.ByValArray)
+d78 1
+a78 1
+						sizeConst = blob.ReadCompressedInt();
+d81 1
+a81 1
+							arraySubType = (UnmanagedType)blob.ReadCompressedInt();
+d84 5
+a88 1
+					else if (unmanagedType == UnmanagedType.ByValTStr)
+d90 1
+a90 1
+						sizeConst = blob.ReadCompressedInt();
+d92 10
+a101 3
+					else if (unmanagedType == UnmanagedType.Interface
+						|| unmanagedType == UnmanagedType.IDispatch
+						|| unmanagedType == UnmanagedType.IUnknown)
+d103 1
+a103 4
+						if (blob.Length != 0)
+						{
+							iidParameterIndex = blob.ReadCompressedInt();
+						}
+d105 10
+a114 1
+					else if (unmanagedType == UnmanagedType.CustomMarshaler)
+d116 1
+a116 10
+						blob.ReadCompressedInt();
+						blob.ReadCompressedInt();
+						marshalType = ReadString(blob);
+						marshalCookie = ReadString(blob);
+
+						TypeNameParser parser = TypeNameParser.Parse(marshalType, false);
+						if (!parser.Error)
+						{
+							marshalTypeRef = parser.GetType(module.universe, module.Assembly, false, marshalType, false);
+						}
+d118 1
+d120 40
+a159 43
+					Type typeofMarshalAs = module.universe.System_Runtime_InteropServices_MarshalAsAttribute;
+					Type typeofUnmanagedType = module.universe.System_Runtime_InteropServices_UnmanagedType;
+					Type typeofVarEnum = module.universe.System_Runtime_InteropServices_VarEnum;
+					Type typeofType = module.universe.System_Type;
+					List<CustomAttributeNamedArgument> named = new List<CustomAttributeNamedArgument>();
+					if (arraySubType != null)
+					{
+						AddNamedArgument(named, typeofMarshalAs, "ArraySubType", typeofUnmanagedType, arraySubType.Value);
+					}
+					if (sizeParamIndex != null)
+					{
+						AddNamedArgument(named, typeofMarshalAs, "SizeParamIndex", module.universe.System_Int16, sizeParamIndex.Value);
+					}
+					if (sizeConst != null)
+					{
+						AddNamedArgument(named, typeofMarshalAs, "SizeConst", module.universe.System_Int32, sizeConst.Value);
+					}
+					if (safeArraySubType != null)
+					{
+						AddNamedArgument(named, typeofMarshalAs, "SafeArraySubType", typeofVarEnum, safeArraySubType.Value);
+					}
+					if (safeArrayUserDefinedSubType != null)
+					{
+						AddNamedArgument(named, typeofMarshalAs, "SafeArrayUserDefinedSubType", typeofType, safeArrayUserDefinedSubType);
+					}
+					if (iidParameterIndex != null)
+					{
+						AddNamedArgument(named, typeofMarshalAs, "IidParameterIndex", module.universe.System_Int32, iidParameterIndex.Value);
+					}
+					if (marshalType != null)
+					{
+						AddNamedArgument(named, typeofMarshalAs, "MarshalType", module.universe.System_String, marshalType);
+					}
+					if (marshalTypeRef != null)
+					{
+						AddNamedArgument(named, typeofMarshalAs, "MarshalTypeRef", module.universe.System_Type, marshalTypeRef);
+					}
+					if (marshalCookie != null)
+					{
+						AddNamedArgument(named, typeofMarshalAs, "MarshalCookie", module.universe.System_String, marshalCookie);
+					}
+					ConstructorInfo constructor = typeofMarshalAs.GetPseudoCustomAttributeConstructor(typeofUnmanagedType);
+					return new CustomAttributeData(module, constructor, new object[] { unmanagedType }, named);
+d161 2
+@
+
+
+1.6
+log
+@- Fixed support for missing types in generic type parameters in custom attribute values.
+- Fixed TypeParser.GetType() not to throw MissingAssemblyException.
+- Unified type name parsing again.
+@
+text
+@d174 1
+a174 1
+			FieldInfo field = attributeType.FindField(fieldName, FieldSignature.Create(valueType, null, null));
+@
+
+
+1.5
+log
+@Add support for returning pseudo-custom attributes based on missing types.
+@
+text
+@a115 1
+						// we have to use a custom type lookup scheme here, because we want to use FindType to avoid a MissingAssemblyException
+d119 1
+a119 19
+							TypeName n = TypeName.Split(parser.FirstNamePart);
+							Type type = null;
+							if (parser.AssemblyName != null)
+							{
+								Assembly asm = module.Assembly.universe.Load(parser.AssemblyName, module.Assembly, false);
+								if (asm != null)
+								{
+									type = asm.FindType(n);
+								}
+							}
+							else
+							{
+								type = module.Assembly.FindType(n)
+									?? module.universe.Mscorlib.FindType(n);
+							}
+							if (type != null)
+							{
+								marshalTypeRef = parser.Expand(type, module.Assembly, false, marshalType);
+							}
+@
+
+
+1.4
+log
+@- Fixed CustomAttributeData.__GetBlob() to work for pseudo-custom attributes.
+- Added CustomAttributeBuilder.__FromBlob() to avoid having to use two overloads of SetCustomAttribute when dealing with both builders and blobs.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008, 2010 Jeroen Frijters
+d115 25
+a139 1
+						marshalTypeRef = module.Assembly.GetType(marshalType) ?? module.universe.GetType(marshalType);
+d149 1
+a149 1
+						named.Add(new CustomAttributeNamedArgument(typeofMarshalAs.GetField("ArraySubType"), new CustomAttributeTypedArgument(typeofUnmanagedType, arraySubType.Value)));
+d153 1
+a153 1
+						named.Add(new CustomAttributeNamedArgument(typeofMarshalAs.GetField("SizeParamIndex"), new CustomAttributeTypedArgument(module.universe.System_Int16, sizeParamIndex.Value)));
+d157 1
+a157 1
+						named.Add(new CustomAttributeNamedArgument(typeofMarshalAs.GetField("SizeConst"), new CustomAttributeTypedArgument(module.universe.System_Int32, sizeConst.Value)));
+d161 1
+a161 1
+						named.Add(new CustomAttributeNamedArgument(typeofMarshalAs.GetField("SafeArraySubType"), new CustomAttributeTypedArgument(typeofVarEnum, safeArraySubType.Value)));
+d165 1
+a165 1
+						named.Add(new CustomAttributeNamedArgument(typeofMarshalAs.GetField("SafeArrayUserDefinedSubType"), new CustomAttributeTypedArgument(typeofType, safeArrayUserDefinedSubType)));
+d169 1
+a169 1
+						named.Add(new CustomAttributeNamedArgument(typeofMarshalAs.GetField("IidParameterIndex"), new CustomAttributeTypedArgument(module.universe.System_Int32, iidParameterIndex.Value)));
+d173 1
+a173 1
+						named.Add(new CustomAttributeNamedArgument(typeofMarshalAs.GetField("MarshalType"), new CustomAttributeTypedArgument(module.universe.System_String, marshalType)));
+d177 1
+a177 1
+						named.Add(new CustomAttributeNamedArgument(typeofMarshalAs.GetField("MarshalTypeRef"), new CustomAttributeTypedArgument(module.universe.System_Type, marshalTypeRef)));
+d181 1
+a181 1
+						named.Add(new CustomAttributeNamedArgument(typeofMarshalAs.GetField("MarshalCookie"), new CustomAttributeTypedArgument(module.universe.System_String, marshalCookie)));
+d183 1
+a183 1
+					ConstructorInfo constructor = typeofMarshalAs.GetConstructor(new Type[] { typeofUnmanagedType });
+d190 10
+@
+
+
+1.3
+log
+@Handle marshal blob peculiarities.
+@
+text
+@d160 1
+a160 1
+					return new CustomAttributeData(constructor, new object[] { unmanagedType }, named);
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d70 1
+a70 1
+								if (blob.ReadCompressedInt() == 0)
+d275 4
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

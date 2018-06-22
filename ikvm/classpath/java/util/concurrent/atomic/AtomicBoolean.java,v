@@ -1,0 +1,411 @@
+head	1.5;
+access;
+symbols
+	v8_1_5717_0:1.5
+	v8_1:1.5.0.4
+	v8_0_5449_1:1.5
+	v8_0_5449_0:1.5
+	v8_0:1.5.0.2
+	v7_4_5196_0:1.4
+	v7_4:1.4.0.10
+	v7_3:1.4.0.8
+	v7_2_4630_6:1.4
+	v7_2_4630_5:1.4
+	v7_2_4630_4:1.4
+	v7_2_4630_3:1.4
+	v7_2_4630_2:1.4
+	v0_46_0_4:1.3
+	v7_2_4630_1:1.4
+	v7_2:1.4.0.6
+	v7_1_4532_2:1.4
+	v7_1_4532_1:1.4
+	v7_1_4532_0:1.4
+	v7_1:1.4.0.4
+	v7_0_4335_3:1.4
+	v7_0_4335_2:1.4
+	v7_0_4335_1:1.4
+	v0_46_0_2:1.3
+	v7_0_4335_0:1.4
+	v7_0:1.4.0.2
+	v0_40_0_6:1.3
+	v0_40_0_5:1.3
+	v0_46_0_1:1.3
+	v0_46_0_0:1.3
+	v0_46:1.3.0.10
+	v0_36_0_14:1.2
+	v0_44_0_6:1.3
+	v0_44_0_5:1.3
+	v0_44_0_4:1.3
+	v0_44_0_3:1.3
+	v0_44_0_2:1.3
+	v0_42_0_7:1.3
+	v0_44_0_1:1.3
+	v0_44_0_0:1.3
+	v0_44:1.3.0.8
+	v0_42_0_6:1.3
+	v0_42_0_5:1.3
+	v0_42_0_4:1.3
+	v0_42_0_3:1.3
+	v0_42_0_2:1.3
+	v0_42_0_1:1.3
+	v0_42_0_0:1.3
+	v0_42:1.3.0.6
+	v0_40_0_3:1.3
+	v0_40_0_2:1.3
+	v0_40_0_1:1.3
+	v0_40_0_0:1.3
+	v0_40:1.3.0.4
+	v0_36_0_13:1.2
+	v0_38_0_1:1.3
+	v0_38_0_0:1.3
+	v0_38:1.3.0.2
+	v0_36_0_9:1.2
+	v0_36_0_7:1.2
+	v0_36_0_5:1.2
+	v0_36_0_4:1.2
+	v0_36_0_3:1.2
+	v0_36_0_2:1.2
+	v0_36_0_1:1.2
+	v0_36_0_0:1.2
+	v0_36:1.2.0.2
+	v0_34_0_3:1.1
+	v0_34_0_2:1.1
+	v0_34_0_1:1.1
+	v0_34_0_0:1.1
+	v0_34:1.1.0.6
+	v0_32:1.1.0.4
+	v0_32_0_0:1.1
+	v0_30:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.5
+date	2014.05.19.12.43.29;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2011.07.06.12.43.05;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.06.11.09.04.56;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.08.08.09.23.07;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2006.07.03.09.41.02;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.5
+log
+@First part of OpenJDK 8 integration.
+@
+text
+@/*
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 only, as
+ * published by the Free Software Foundation.  Oracle designates this
+ * particular file as subject to the "Classpath" exception as provided
+ * by Oracle in the LICENSE file that accompanied this code.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * You should have received a copy of the GNU General Public License version
+ * 2 along with this work; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+ * or visit www.oracle.com if you need additional information or have any
+ * questions.
+ */
+
+/*
+ * This file is available under and governed by the GNU General Public
+ * License version 2 only, as published by the Free Software Foundation.
+ * However, the following notice accompanied the original version of this
+ * file:
+ *
+ * Written by Doug Lea with assistance from members of JCP JSR-166
+ * Expert Group and released to the public domain, as explained at
+ * http://creativecommons.org/publicdomain/zero/1.0/
+ */
+
+package java.util.concurrent.atomic;
+
+/**
+ * A {@@code boolean} value that may be updated atomically. See the
+ * {@@link java.util.concurrent.atomic} package specification for
+ * description of the properties of atomic variables. An
+ * {@@code AtomicBoolean} is used in applications such as atomically
+ * updated flags, and cannot be used as a replacement for a
+ * {@@link java.lang.Boolean}.
+ *
+ * @@since 1.5
+ * @@author Doug Lea
+ */
+public class AtomicBoolean implements java.io.Serializable {
+    private static final long serialVersionUID = 4654671469794556979L;
+
+    private volatile int value;
+
+    /**
+     * Creates a new {@@code AtomicBoolean} with the given initial value.
+     *
+     * @@param initialValue the initial value
+     */
+    public AtomicBoolean(boolean initialValue) {
+        value = initialValue ? 1 : 0;
+    }
+
+    /**
+     * Creates a new {@@code AtomicBoolean} with initial value {@@code false}.
+     */
+    public AtomicBoolean() {
+    }
+
+    /**
+     * Returns the current value.
+     *
+     * @@return the current value
+     */
+    public final boolean get() {
+        return value != 0;
+    }
+
+    /**
+     * Atomically sets the value to the given updated value
+     * if the current value {@@code ==} the expected value.
+     *
+     * @@param expect the expected value
+     * @@param update the new value
+     * @@return {@@code true} if successful. False return indicates that
+     * the actual value was not equal to the expected value.
+     */
+    public final boolean compareAndSet(boolean expect, boolean update) {
+        int e = expect ? 1 : 0;
+        int u = update ? 1 : 0;
+        return compareAndSwapInt(e, u);
+    }
+    // implemented in map.xml
+    private native boolean compareAndSwapInt(int expected, int update);
+
+    /**
+     * Atomically sets the value to the given updated value
+     * if the current value {@@code ==} the expected value.
+     *
+     * <p><a href="package-summary.html#weakCompareAndSet">May fail
+     * spuriously and does not provide ordering guarantees</a>, so is
+     * only rarely an appropriate alternative to {@@code compareAndSet}.
+     *
+     * @@param expect the expected value
+     * @@param update the new value
+     * @@return {@@code true} if successful
+     */
+    public boolean weakCompareAndSet(boolean expect, boolean update) {
+        return compareAndSet(expect, update);
+    }
+
+    /**
+     * Unconditionally sets to the given value.
+     *
+     * @@param newValue the new value
+     */
+    public final void set(boolean newValue) {
+        value = newValue ? 1 : 0;
+    }
+
+    /**
+     * Eventually sets to the given value.
+     *
+     * @@param newValue the new value
+     * @@since 1.6
+     */
+    public final void lazySet(boolean newValue) {
+        value = newValue ? 1 : 0;
+    }
+
+    /**
+     * Atomically sets to the given value and returns the previous value.
+     *
+     * @@param newValue the new value
+     * @@return the previous value
+     */
+    public final boolean getAndSet(boolean newValue) {
+        boolean prev;
+        do {
+            prev = get();
+        } while (!compareAndSet(prev, newValue));
+        return prev;
+    }
+
+    /**
+     * Returns the String representation of the current value.
+     * @@return the String representation of the current value
+     */
+    public String toString() {
+        return Boolean.toString(get());
+    }
+
+}
+@
+
+
+1.4
+log
+@Updated java.util.concurrent.* packages to OpenJDK 7.
+@
+text
+@d84 1
+a84 1
+     * @@return true if successful. False return indicates that
+d99 3
+a101 3
+     * <p>May <a href="package-summary.html#Spurious">fail spuriously</a>
+     * and does not provide ordering guarantees, so is only rarely an
+     * appropriate alternative to {@@code compareAndSet}.
+d105 1
+a105 1
+     * @@return true if successful.
+d137 5
+a141 5
+        for (;;) {
+            boolean current = get();
+            if (compareAndSet(current, newValue))
+                return current;
+        }
+d146 1
+a146 1
+     * @@return the String representation of the current value.
+@
+
+
+1.3
+log
+@Converted tabs to spaces.
+@
+text
+@d2 17
+a18 3
+ * Written by Doug Lea with assistance from members of JCP JSR-166
+ * Expert Group and released to the public domain, as explained at
+ * http://creativecommons.org/licenses/publicdomain
+d20 3
+a22 1
+ * Modified for IKVM.NET by Jeroen Frijters
+d26 9
+a34 22
+  Parts Copyright (C) 2006 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+d39 1
+a39 1
+ * A <tt>boolean</tt> value that may be updated atomically. See the
+d42 1
+a42 1
+ * <tt>AtomicBoolean</tt> is used in applications such as atomically
+d55 1
+a55 1
+     * Creates a new <tt>AtomicBoolean</tt> with the given initial value.
+d64 1
+a64 1
+     * Creates a new <tt>AtomicBoolean</tt> with initial value <tt>false</tt>.
+d80 1
+a80 1
+     * if the current value <tt>==</tt> the expected value.
+d97 5
+a101 3
+     * if the current value <tt>==</tt> the expected value.
+     * May fail spuriously and does not provide ordering guarantees,
+     * so is only rarely an appropriate alternative to <tt>compareAndSet</tt>.
+@
+
+
+1.2
+log
+@Changed AtomicBoolean.value field to int to be serialization compatible with JDK.
+@
+text
+@d85 3
+a87 3
+	int e = expect ? 1 : 0;
+	int u = update ? 1 : 0;
+	return compareAndSwapInt(e, u);
+d112 1
+a112 1
+	value = newValue ? 1 : 0;
+d122 1
+a122 1
+	value = newValue ? 1 : 0;
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@d49 1
+a49 1
+    private volatile boolean value;
+d57 1
+a57 1
+        value = initialValue;
+d72 1
+a72 1
+        return value;
+d84 4
+a87 6
+    public final synchronized boolean compareAndSet(boolean expect, boolean update) {
+        if (value == expect) {
+            value = update;
+            return true;
+        }
+        return false;
+d89 2
+d112 1
+a112 1
+        value = newValue;
+d122 1
+a122 1
+        value = newValue;
+@
+

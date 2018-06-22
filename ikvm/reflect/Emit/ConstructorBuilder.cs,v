@@ -1,0 +1,421 @@
+head	1.11;
+access;
+symbols
+	v8_1_5717_0:1.9
+	v8_1:1.9.0.2
+	v8_0_5449_1:1.8
+	v8_0_5449_0:1.8
+	v8_0:1.8.0.6
+	v7_4_5196_0:1.8
+	v7_4:1.8.0.4
+	v7_3:1.8.0.2
+	v7_2_4630_6:1.7
+	v7_2_4630_5:1.7
+	v7_2_4630_4:1.7
+	v7_2_4630_3:1.7
+	v7_2_4630_2:1.7
+	v0_46_0_4:1.4
+	v7_2_4630_1:1.7
+	v7_2:1.7.0.2
+	v7_1_4532_2:1.5
+	v7_1_4532_1:1.5
+	v7_1_4532_0:1.5
+	v7_1:1.5.0.2
+	v7_0_4335_3:1.4
+	v7_0_4335_2:1.4
+	v7_0_4335_1:1.4
+	v0_46_0_2:1.4
+	v7_0_4335_0:1.4
+	v7_0:1.4.0.4
+	v0_46_0_1:1.4
+	v0_46_0_0:1.4
+	v0_46:1.4.0.2
+	v0_44_0_6:1.2
+	v0_44_0_5:1.2
+	v0_44_0_4:1.2
+	v0_44_0_3:1.2
+	v0_44_0_2:1.2
+	v0_44_0_1:1.2
+	v0_44_0_0:1.2
+	v0_44:1.2.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.11
+date	2016.07.04.05.15.00;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2016.07.01.05.44.41;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2015.02.16.12.24.28;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2012.10.11.13.28.18;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2012.07.16.10.31.19;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2012.06.26.13.12.55;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2011.12.01.06.30.51;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2011.03.03.07.33.51;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2011.02.14.05.50.46;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.11
+log
+@Removed [Obsolete] methods from NETSTANDARD build.
+@
+text
+@/*
+  Copyright (C) 2008-2011 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+
+namespace IKVM.Reflection.Emit
+{
+	public sealed class ConstructorBuilder : ConstructorInfo
+	{
+		private readonly MethodBuilder methodBuilder;
+
+		internal ConstructorBuilder(MethodBuilder mb)
+		{
+			this.methodBuilder = mb;
+		}
+
+		public override bool Equals(object obj)
+		{
+			ConstructorBuilder other = obj as ConstructorBuilder;
+			return other != null && other.methodBuilder.Equals(methodBuilder);
+		}
+
+		public override int GetHashCode()
+		{
+			return methodBuilder.GetHashCode();
+		}
+
+		public void __SetSignature(Type returnType, CustomModifiers returnTypeCustomModifiers, Type[] parameterTypes, CustomModifiers[] parameterTypeCustomModifiers)
+		{
+			methodBuilder.__SetSignature(returnType, returnTypeCustomModifiers, parameterTypes, parameterTypeCustomModifiers);
+		}
+
+#if !NETSTANDARD
+		[Obsolete("Please use __SetSignature(Type, CustomModifiers, Type[], CustomModifiers[]) instead.")]
+		public void __SetSignature(Type returnType, Type[] returnTypeRequiredCustomModifiers, Type[] returnTypeOptionalCustomModifiers, Type[] parameterTypes, Type[][] parameterTypeRequiredCustomModifiers, Type[][] parameterTypeOptionalCustomModifiers)
+		{
+			methodBuilder.SetSignature(returnType, returnTypeRequiredCustomModifiers, returnTypeOptionalCustomModifiers, parameterTypes, parameterTypeRequiredCustomModifiers, parameterTypeOptionalCustomModifiers);
+		}
+#endif
+
+		public ParameterBuilder DefineParameter(int position, ParameterAttributes attributes, string strParamName)
+		{
+			return methodBuilder.DefineParameter(position, attributes, strParamName);
+		}
+
+		public void SetCustomAttribute(CustomAttributeBuilder customBuilder)
+		{
+			methodBuilder.SetCustomAttribute(customBuilder);
+		}
+
+		public void SetCustomAttribute(ConstructorInfo con,	byte[] binaryAttribute)
+		{
+			methodBuilder.SetCustomAttribute(con, binaryAttribute);
+		}
+
+		public void __AddDeclarativeSecurity(CustomAttributeBuilder customBuilder)
+		{
+			methodBuilder.__AddDeclarativeSecurity(customBuilder);
+		}
+
+#if !NETSTANDARD
+		public void AddDeclarativeSecurity(System.Security.Permissions.SecurityAction securityAction, System.Security.PermissionSet permissionSet)
+		{
+			methodBuilder.AddDeclarativeSecurity(securityAction, permissionSet);
+		}
+#endif
+
+		public void SetImplementationFlags(MethodImplAttributes attributes)
+		{
+			methodBuilder.SetImplementationFlags(attributes);
+		}
+
+		public ILGenerator GetILGenerator()
+		{
+			return methodBuilder.GetILGenerator();
+		}
+
+		public ILGenerator GetILGenerator(int streamSize)
+		{
+			return methodBuilder.GetILGenerator(streamSize);
+		}
+
+		public void __ReleaseILGenerator()
+		{
+			methodBuilder.__ReleaseILGenerator();
+		}
+
+		public Type ReturnType
+		{
+			get { return methodBuilder.ReturnType; }
+		}
+
+		public Module GetModule()
+		{
+			return methodBuilder.GetModule();
+		}
+
+		public MethodToken GetToken()
+		{
+			return methodBuilder.GetToken();
+		}
+
+		public bool InitLocals
+		{
+			get { return methodBuilder.InitLocals; }
+			set { methodBuilder.InitLocals = value; }
+		}
+
+		public void SetMethodBody(byte[] il, int maxStack, byte[] localSignature, IEnumerable<ExceptionHandler> exceptionHandlers, IEnumerable<int> tokenFixups)
+		{
+			methodBuilder.SetMethodBody(il, maxStack, localSignature, exceptionHandlers, tokenFixups);
+		}
+
+		internal override MethodInfo GetMethodInfo()
+		{
+			return methodBuilder;
+		}
+
+		internal override MethodInfo GetMethodOnTypeDefinition()
+		{
+			return methodBuilder;
+		}
+	}
+}
+@
+
+
+1.10
+log
+@Replaced CORECLR symbol with NETSTANDARD.
+@
+text
+@d54 1
+d60 1
+@
+
+
+1.9
+log
+@Added CoreCLR target for IKVM.Reflection.
+@
+text
+@d80 1
+a80 1
+#if !CORECLR
+@
+
+
+1.8
+log
+@Added new .NET 4.5 methods ConstructorBuilder.SetMethodBody() and MethodBuilder.SetMethodBody(). Note that the implementation is currently completely untested.
+@
+text
+@d80 1
+d85 1
+@
+
+
+1.7
+log
+@Moved methods shared by subclasses into ConstructorInfo.
+@
+text
+@d25 1
+d126 5
+@
+
+
+1.6
+log
+@Removed unnecessary (and memory leaking) member ref caching level.
+@
+text
+@a103 15
+		public override CallingConventions CallingConvention
+		{
+			get { return methodBuilder.CallingConvention; }
+		}
+
+		public override MethodAttributes Attributes
+		{
+			get { return methodBuilder.Attributes; }
+		}
+
+		public override MethodImplAttributes GetMethodImplementationFlags()
+		{
+			return methodBuilder.GetMethodImplementationFlags();
+		}
+
+a108 25
+		internal override int ParameterCount
+		{
+			get { return methodBuilder.ParameterCount; }
+		}
+
+		public override Type DeclaringType
+		{
+			get { return methodBuilder.DeclaringType; }
+		}
+
+		public override string Name
+		{
+			get { return methodBuilder.Name; }
+		}
+
+		public override int MetadataToken
+		{
+			get { return methodBuilder.MetadataToken; }
+		}
+
+		public override Module Module
+		{
+			get { return methodBuilder.Module; }
+		}
+
+a118 5
+		public override MethodBody GetMethodBody()
+		{
+			return methodBuilder.GetMethodBody();
+		}
+
+a133 10
+
+		internal override MethodSignature MethodSignature
+		{
+			get { return methodBuilder.MethodSignature; }
+		}
+
+		internal override int ImportTo(ModuleBuilder module)
+		{
+			return methodBuilder.ImportTo(module);
+		}
+@
+
+
+1.5
+log
+@- Rewrote custom modifier handling to retain ordering.
+- Added ConstructorInfo.__ReturnParameter to expose custom modifiers.
+- Added __GetCustomModifiers() to various *Info types.
+- Added CustomModifiers type to encapsulate a custom modifier sequence.
+- Added CustomModifiersBuilder to create a CustomModifiers sequence.
+- Marked a number of IKVM.Reflection specific methods Obsolete, because they are replaced with method that take CustomModifiers value(s).
+@
+text
+@d187 1
+a187 1
+			return module.ImportMember(methodBuilder);
+@
+
+
+1.4
+log
+@Added __SetSignature() API extension to allow constructor to be defined before the parameter types are available and to allow return type custom modifiers.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008 Jeroen Frijters
+d48 6
+@
+
+
+1.3
+log
+@Added MethodBuilder.__ReleaseILGenerator() API to eagerly bake the method body and release the ILGenerator.
+@
+text
+@d48 5
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d88 5
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

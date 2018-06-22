@@ -1,0 +1,873 @@
+head	1.12;
+access;
+symbols
+	v8_1_5717_0:1.11
+	v8_1:1.11.0.8
+	v8_0_5449_1:1.11
+	v8_0_5449_0:1.11
+	v8_0:1.11.0.6
+	v7_4_5196_0:1.11
+	v7_4:1.11.0.4
+	v7_3:1.11.0.2
+	v7_2_4630_6:1.9.2.1
+	v7_2_4630_5:1.9
+	v7_2_4630_4:1.9
+	v7_2_4630_3:1.9
+	v7_2_4630_2:1.9
+	v0_46_0_4:1.5.2.1
+	v7_2_4630_1:1.9
+	v7_2:1.9.0.2
+	v7_1_4532_2:1.8
+	v7_1_4532_1:1.8
+	v7_1_4532_0:1.8
+	v7_1:1.8.0.4
+	v7_0_4335_3:1.8
+	v7_0_4335_2:1.8
+	v7_0_4335_1:1.8
+	v0_46_0_2:1.5
+	v7_0_4335_0:1.8
+	v7_0:1.8.0.2
+	v0_40_0_6:1.4
+	v0_40_0_5:1.4
+	v0_46_0_1:1.5
+	v0_46_0_0:1.5
+	v0_46:1.5.0.2
+	v0_44_0_6:1.4
+	v0_44_0_5:1.4
+	v0_44_0_4:1.4
+	v0_44_0_3:1.4
+	v0_44_0_2:1.4
+	v0_42_0_7:1.4
+	v0_44_0_1:1.4
+	v0_44_0_0:1.4
+	v0_44:1.4.0.8
+	v0_42_0_6:1.4
+	v0_42_0_5:1.4
+	v0_42_0_4:1.4
+	v0_42_0_3:1.4
+	v0_42_0_2:1.4
+	v0_42_0_1:1.4
+	v0_42_0_0:1.4
+	v0_42:1.4.0.6
+	v0_40_0_3:1.4
+	v0_40_0_2:1.4
+	v0_40_0_1:1.4
+	v0_40_0_0:1.4
+	v0_40:1.4.0.4
+	v0_38_0_1:1.4
+	v0_38_0_0:1.4
+	v0_38:1.4.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.12
+date	2017.04.18.13.27.53;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2012.12.18.06.08.29;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2012.12.17.12.45.54;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2012.06.15.14.50.24;	author jfrijters;	state Exp;
+branches
+	1.9.2.1;
+next	1.8;
+
+1.8
+date	2011.07.01.08.56.51;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2011.06.19.10.02.30;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2011.06.17.13.27.30;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2011.01.24.16.40.22;	author jfrijters;	state Exp;
+branches
+	1.5.2.1;
+next	1.4;
+
+1.4
+date	2008.06.12.09.09.32;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.06.11.09.05.17;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.04.23.04.25.21;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.12.19.11.28.12;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.5.2.1
+date	2012.10.03.06.18.56;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.9.2.1
+date	2013.01.15.10.28.01;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.12
+log
+@Use AppDomain.DomainUnload event for shutdown hooks when running in secondary AppDomain.
+@
+text
+@/*
+ * Copyright (c) 1999, 2005, Oracle and/or its affiliates. All rights reserved.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 only, as
+ * published by the Free Software Foundation.  Oracle designates this
+ * particular file as subject to the "Classpath" exception as provided
+ * by Oracle in the LICENSE file that accompanied this code.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * You should have received a copy of the GNU General Public License version
+ * 2 along with this work; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+ * or visit www.oracle.com if you need additional information or have any
+ * questions.
+ */
+
+package java.lang;
+
+import cli.System.AppDomain;
+import cli.System.EventArgs;
+import cli.System.EventHandler;
+import cli.System.Threading.Monitor;
+
+/**
+ * Package-private utility class containing data structures and logic
+ * governing the virtual-machine shutdown sequence.
+ *
+ * @@author   Mark Reinhold
+ * @@since    1.3
+ */
+
+class Shutdown {
+
+    /* Shutdown state */
+    private static final int RUNNING = 0;
+    private static final int HOOKS = 1;
+    private static final int FINALIZERS = 2;
+    private static int state = RUNNING;
+
+    /* Should we run all finalizers upon exit? */
+    static volatile boolean runFinalizersOnExit = false;
+
+    // The system shutdown hooks are registered with a predefined slot.
+    // The list of shutdown hooks is as follows:
+    // (0) Console restore hook
+    // (1) Application hooks
+    // (2) DeleteOnExit hook
+    private static final int MAX_SYSTEM_HOOKS = 10;
+    private static final Runnable[] hooks = new Runnable[MAX_SYSTEM_HOOKS];
+
+    // the index of the currently running shutdown hook to the hooks array
+    private static int currentRunningHook = 0;
+
+    // [IKVM] have we registered the AppDomain.ProcessExit event handler?
+    private static boolean registeredProcessExit;
+
+    /* The preceding static fields are protected by this lock */
+    private static class Lock { };
+    private static Object lock = new Lock();
+
+    /* Lock object for the native halt method */
+    private static Object haltLock = new Lock();
+
+    /* Invoked by Runtime.runFinalizersOnExit */
+    static void setRunFinalizersOnExit(boolean run) {
+        synchronized (lock) {
+            runFinalizersOnExit = run;
+        }
+    }
+    
+    private static void registerProcessExit() {
+        try {
+            // MONOBUG Mono doesn't support starting a new thread during ProcessExit
+            // (and application shutdown hooks are based on threads)
+            // see https://bugzilla.xamarin.com/show_bug.cgi?id=5650
+            if (!ikvm.internal.Util.MONO) {
+                // AppDomain.ProcessExit has a LinkDemand, so we have to have a separate method
+                registerShutdownHook();
+                if (false) throw new cli.System.Security.SecurityException();
+            }
+        }
+        catch (cli.System.Security.SecurityException _) {
+        }
+    }
+
+    private static void registerShutdownHook()
+    {
+        EventHandler eh = new EventHandler(new EventHandler.Method() {
+            public void Invoke(Object sender, EventArgs e) {
+                shutdown();
+            }
+        });
+        AppDomain ad = AppDomain.get_CurrentDomain();
+        if (ad.IsDefaultAppDomain()) {
+            ad.add_ProcessExit(eh);
+        } else {
+            ad.add_DomainUnload(eh);
+        }
+    }
+
+    /**
+     * Add a new shutdown hook.  Checks the shutdown state and the hook itself,
+     * but does not do any security checks.
+     *
+     * The registerShutdownInProgress parameter should be false except
+     * registering the DeleteOnExitHook since the first file may
+     * be added to the delete on exit list by the application shutdown
+     * hooks.
+     *
+     * @@params slot  the slot in the shutdown hook array, whose element
+     *               will be invoked in order during shutdown
+     * @@params registerShutdownInProgress true to allow the hook
+     *               to be registered even if the shutdown is in progress.
+     * @@params hook  the hook to be registered
+     *
+     * @@throw IllegalStateException
+     *        if registerShutdownInProgress is false and shutdown is in progress; or
+     *        if registerShutdownInProgress is true and the shutdown process
+     *           already passes the given slot
+     */
+    static void add(int slot, boolean registerShutdownInProgress, Runnable hook) {
+        synchronized (lock) {
+            if (hooks[slot] != null)
+                throw new InternalError("Shutdown hook at slot " + slot + " already registered");
+
+            if (!registerShutdownInProgress) {
+                if (state > RUNNING)
+                    throw new IllegalStateException("Shutdown in progress");
+            } else {
+                if (state > HOOKS || (state == HOOKS && slot <= currentRunningHook))
+                    throw new IllegalStateException("Shutdown in progress");
+            }
+
+            if (!registeredProcessExit) {
+                registeredProcessExit = true;
+                registerProcessExit();
+            }
+
+            hooks[slot] = hook;
+        }
+    }
+
+    /* Run all registered shutdown hooks
+     */
+    private static void runHooks() {
+        for (int i=0; i < MAX_SYSTEM_HOOKS; i++) {
+            try {
+                Runnable hook;
+                synchronized (lock) {
+                    // acquire the lock to make sure the hook registered during
+                    // shutdown is visible here.
+                    currentRunningHook = i;
+                    hook = hooks[i];
+                }
+                if (hook != null) hook.run();
+            } catch(Throwable t) {
+                if (t instanceof ThreadDeath) {
+                    ThreadDeath td = (ThreadDeath)t;
+                    throw td;
+                }
+            }
+        }
+    }
+
+    /* The halt method is synchronized on the halt lock
+     * to avoid corruption of the delete-on-shutdown file list.
+     * It invokes the true native halt method.
+     */
+    static void halt(int status) {
+        synchronized (haltLock) {
+            halt0(status);
+        }
+    }
+
+    static void halt0(int status) {
+        cli.System.Environment.Exit(status);
+    }
+
+    /* Wormhole for invoking java.lang.ref.Finalizer.runAllFinalizers */
+    private static void runAllFinalizers() { /* [IKVM] Don't need to do anything here */ }
+
+
+    /* The actual shutdown sequence is defined here.
+     *
+     * If it weren't for runFinalizersOnExit, this would be simple -- we'd just
+     * run the hooks and then halt.  Instead we need to keep track of whether
+     * we're running hooks or finalizers.  In the latter case a finalizer could
+     * invoke exit(1) to cause immediate termination, while in the former case
+     * any further invocations of exit(n), for any n, simply stall.  Note that
+     * if on-exit finalizers are enabled they're run iff the shutdown is
+     * initiated by an exit(0); they're never run on exit(n) for n != 0 or in
+     * response to SIGINT, SIGTERM, etc.
+     */
+    private static void sequence() {
+        synchronized (lock) {
+            /* Guard against the possibility of a daemon thread invoking exit
+             * after DestroyJavaVM initiates the shutdown sequence
+             */
+            if (state != HOOKS) return;
+        }
+        runHooks();
+        boolean rfoe;
+        synchronized (lock) {
+            state = FINALIZERS;
+            rfoe = runFinalizersOnExit;
+        }
+        if (rfoe) runAllFinalizers();
+    }
+
+
+    /* Invoked by Runtime.exit, which does all the security checks.
+     * Also invoked by handlers for system-provided termination events,
+     * which should pass a nonzero status code.
+     */
+    static void exit(int status) {
+        boolean runMoreFinalizers = false;
+        synchronized (lock) {
+            if (status != 0) runFinalizersOnExit = false;
+            switch (state) {
+            case RUNNING:       /* Initiate shutdown */
+                state = HOOKS;
+                break;
+            case HOOKS:         /* Stall and halt */
+                break;
+            case FINALIZERS:
+                if (status != 0) {
+                    /* Halt immediately on nonzero status */
+                    halt(status);
+                } else {
+                    /* Compatibility with old behavior:
+                     * Run more finalizers and then halt
+                     */
+                    runMoreFinalizers = runFinalizersOnExit;
+                }
+                break;
+            }
+        }
+        if (runMoreFinalizers) {
+            runAllFinalizers();
+            halt(status);
+        }
+        synchronized (Shutdown.class) {
+            /* Synchronize on the class object, causing any other thread
+             * that attempts to initiate shutdown to stall indefinitely
+             */
+            sequence();
+            halt(status);
+        }
+    }
+
+
+    /* Invoked by the JNI DestroyJavaVM procedure when the last non-daemon
+     * thread has finished.  Unlike the exit method, this method does not
+     * actually halt the VM.
+     */
+    static void shutdown() {
+        synchronized (lock) {
+            switch (state) {
+            case RUNNING:       /* Initiate shutdown */
+                state = HOOKS;
+                break;
+            case HOOKS:         /* Stall and then return */
+            case FINALIZERS:
+                break;
+            }
+        }
+        // [IKVM] We don't block here, because we're being called
+        // from the AppDomain.ProcessExit event and we don't want to
+        // deadlock with the thread that called exit.
+        // Note that our JNI DestroyJavaVM implementation doesn't
+        // call this method.
+        if (Monitor.TryEnter(Shutdown.class)) {
+            try {
+                sequence();
+            } finally {
+                Monitor.Exit(Shutdown.class);
+            }
+        }
+    }
+
+}
+@
+
+
+1.11
+log
+@Only register the AppDomain.ProcessExit event handler when necessary.
+@
+text
+@d97 1
+a97 1
+        AppDomain.get_CurrentDomain().add_ProcessExit(new EventHandler(new EventHandler.Method() {
+d101 7
+a107 1
+        }));
+@
+
+
+1.10
+log
+@Bug fix. Don't deadlock AppDomain.ProcessExit event handler when the event gets called from another thread than the one initiating exit.
+@
+text
+@d63 3
+d80 1
+a80 1
+    static {
+d137 5
+@
+
+
+1.9
+log
+@Disable AppDomain.ProcessExit hook to run shutdown hooks when running on Mono to workaround https://bugzilla.xamarin.com/show_bug.cgi?id=5650
+@
+text
+@d31 1
+d262 11
+a272 2
+        synchronized (Shutdown.class) {
+            sequence();
+@
+
+
+1.9.2.1
+log
+@Updated version to 7.2.4630.6 and changed copyright year to 2013.
+Backported bug fixes:
+- Don't deadlock AppDomain.ProcessExit event handler when the event gets called from another thread than the one initiating exit.
+- Static compiler should not use proxy stubs to implement non-public interfaces in another assembly (because this situation can only arise when compiling the assemblies together and the InternalsVisibileToAttribute will be used and proxy stubs are not understood by CompiledTypeWrapper, so they can only be used in dynamic mode).
+- Don't add duplicate methods to attribute annotation interfaces. The primary cause of this was attributes with virtual properties where we would add the base class property as well as the derived class overridden property.
+- Local variable analysis for finally blocks was incorrect. Fixes bug #3600788.
+@
+text
+@a30 1
+import cli.System.Threading.Monitor;
+d261 2
+a262 11
+        // [IKVM] We don't block here, because we're being called
+        // from the AppDomain.ProcessExit event and we don't want to
+        // deadlock with the thread that called exit.
+        // Note that our JNI DestroyJavaVM implementation doesn't
+        // call this method.
+        if (Monitor.TryEnter(Shutdown.class)) {
+            try {
+                sequence();
+            } finally {
+                Monitor.Exit(Shutdown.class);
+            }
+@
+
+
+1.8
+log
+@Updated java.io package to OpenJDK 7.
+@
+text
+@d78 8
+a85 3
+            // AppDomain.ProcessExit has a LinkDemand, so we have to have a separate method
+            registerShutdownHook();
+            if (false) throw new cli.System.Security.SecurityException();
+@
+
+
+1.7
+log
+@Unforked java.lang.ApplicationShutdownHooks and updated to OpenJDK 7 version.
+@
+text
+@d39 2
+a40 2
+@@ikvm.lang.Internal
+public final class Shutdown {
+a75 4
+    public static void init() {
+        // exists only to trigger class initializer
+    }
+    
+a83 2
+        hooks[0] = sun.misc.SharedSecrets.getJavaIOAccess().consoleRestoreHook();
+        hooks[2] = sun.misc.SharedSecrets.getJavaIODeleteOnExitAccess();
+@
+
+
+1.6
+log
+@Partially updated to OpenJDK 7.
+@
+text
+@a88 1
+        hooks[1] = ApplicationShutdownHooks.hook();
+@
+
+
+1.5
+log
+@Integrated OpenJDK 6 b21.
+@
+text
+@a27 1
+import java.util.ArrayList;
+d51 10
+a60 2
+    /* The set of registered, wrapped hooks, or null if there aren't any */
+    private static ArrayList<Runnable> hooks = new ArrayList<Runnable>();
+d76 3
+a78 1
+    private static boolean initialized;
+d80 11
+a90 22
+    public static void init() {
+        synchronized (lock) {
+            if (initialized || state > RUNNING)
+                return;
+            initialized = true;
+            try
+            {
+                // AppDomain.ProcessExit has a LinkDemand, so we have to have a separate method
+                registerShutdownHook();
+                if (false) throw new cli.System.Security.SecurityException();
+            }
+            catch (cli.System.Security.SecurityException _)
+            {
+            }
+            // The order in with the hooks are added here is important as it
+            // determines the order in which they are run. 
+            // (1)Console restore hook needs to be called first.
+            // (2)Application hooks must be run before calling deleteOnExitHook.
+            hooks.add(sun.misc.SharedSecrets.getJavaIOAccess().consoleRestoreHook());
+            hooks.add(ApplicationShutdownHooks.hook());
+            hooks.add(sun.misc.SharedSecrets.getJavaIODeleteOnExitAccess());
+        }
+d102 2
+a103 1
+    /* Add a new shutdown hook.  Checks the shutdown state and the hook itself,
+d105 25
+a129 22
+     */
+    static void add(Runnable hook) {
+        synchronized (lock) {
+            if (state > RUNNING)
+                throw new IllegalStateException("Shutdown in progress");
+
+            init();
+            hooks.add(hook);
+        }
+    }
+
+
+    /* Remove a previously-registered hook.  Like the add method, this method
+     * does not do any security checks.
+     */
+    static boolean remove(Runnable hook) {
+        synchronized (lock) {
+            if (state > RUNNING)
+                throw new IllegalStateException("Shutdown in progress");
+            if (hook == null) throw new NullPointerException();
+            if (hooks == null) {
+                return false;
+d131 2
+a132 1
+                return hooks.remove(hook);
+d134 2
+a138 1
+
+d142 1
+a142 4
+        /* We needn't bother acquiring the lock just to read the hooks field,
+         * since the hooks can't be modified once shutdown is in progress
+         */
+        for (Runnable hook : hooks) {
+d144 8
+a151 1
+                hook.run();
+@
+
+
+1.5.2.1
+log
+@Backported fixes for 0.46.0.3:
+- Bug fix. java.lang.Package was not populated from manifest for ikvmc compiled assemblies.
+- Bug fix. When writing a direct ByteBuffer to a non-blocking socket and the write fails because there is no kernel buffer available, we should not advance the ByteBuffer position.
+- Bug fix. When adding certificates to virtual cacerts file make sure that the aliases are unique.
+- Bug fix. If a finally/fault handler contains reachable code before the handler's start index, the handler should branch to the handler start index.
+- Bug fix. After emitting a finally/fault handler block, we should emit the block leave stubs (even though you can't leave the block, they also emit the backward branch stubs).
+- Bug fix. If a Java class extends a remapped .NET type (cli.System.Object or cli.System.Exception), we should correctly report the base class.
+- Bug fix. If we encounter a jsr or ret instruction, we should throw a VerifyError (instead of NotImplementedException).
+- Bug fix. If an exception block ends with an astore, we need to propagate the local variable type after the astore to the exception handler.
+- Disable AppDomain.ProcessExit hook to run shutdown hooks when running on Mono to workaround https://bugzilla.xamarin.com/show_bug.cgi?id=5650
+- Bug fix. Custom attribute properties that don't have a public getter and setter should not be exposed as annotation properties.
+- Bug fix. Non-public property getter/setter methods should be ignored when we create properties to hide properties inherited from shadow types. This fixes a build break with .NET 4.5 beta which introduces a protected setter for Exception.HResult.
+- Bug fix. The $Method inner class for delegates should also be loadable for generic delegates. Thanks to Michael Bayne for reporting this.
+- Bug fix. When constructing a generic class loader we can't use GetWrapperFromType() on the type arguments, because they might refer to a subtype that is currently being loaded.
+- Replaced non-ascii character (micro) with ascii 'u' in Win32PrintService.java.
+- IKVM.Reflection: Bug fix. Resource Directory Entries must be sorted and names are case-insensitive
+
+Backported for 0.46.0.4:
+- Fixed ikvmc to retain transient modifier on constant static final fields.
+- Fixed Field.getModifiers() to only return the relevant modifiers.
+- Fixed IKVM.Reflection to set AddressOfRawData in IMAGE_DEBUG_DIRECTORY.
+@
+text
+@d78 3
+a80 8
+                // MONOBUG Mono doesn't support starting a new thread during ProcessExit
+                // (and application shutdown hooks are based on threads)
+                // see https://bugzilla.xamarin.com/show_bug.cgi?id=5650
+                if (!ikvm.internal.Util.MONO) {
+                    // AppDomain.ProcessExit has a LinkDemand, so we have to have a separate method
+                    registerShutdownHook();
+                    if (false) throw new cli.System.Security.SecurityException();
+                }
+@
+
+
+1.4
+log
+@Merged OpenJDK 6 b10 whitespace and comment changes.
+@
+text
+@d2 1
+a2 1
+ * Copyright 1999-2005 Sun Microsystems, Inc.  All Rights Reserved.
+d7 1
+a7 1
+ * published by the Free Software Foundation.  Sun designates this
+d9 1
+a9 1
+ * by Sun in the LICENSE file that accompanied this code.
+d21 3
+a23 3
+ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
+ * CA 95054 USA or visit www.sun.com if you need additional information or
+ * have any questions.
+@
+
+
+1.3
+log
+@Converted tabs to spaces.
+@
+text
+@a37 1
+ * @@version  1.19, 07/05/05
+d144 1
+a144 1
+            } catch(Throwable t) { 
+d148 1
+a148 1
+                } 
+@
+
+
+1.2
+log
+@Refactored class library initialization.
+@
+text
+@d65 3
+a67 3
+	synchronized (lock) {
+	    runFinalizersOnExit = run;
+	}
+d73 21
+a93 21
+	synchronized (lock) {
+	    if (initialized || state > RUNNING)
+		return;
+	    initialized = true;
+	    try
+	    {
+		// AppDomain.ProcessExit has a LinkDemand, so we have to have a separate method
+		registerShutdownHook();
+		if (false) throw new cli.System.Security.SecurityException();
+	    }
+	    catch (cli.System.Security.SecurityException _)
+	    {
+	    }
+	    // The order in with the hooks are added here is important as it
+	    // determines the order in which they are run. 
+	    // (1)Console restore hook needs to be called first.
+	    // (2)Application hooks must be run before calling deleteOnExitHook.
+	    hooks.add(sun.misc.SharedSecrets.getJavaIOAccess().consoleRestoreHook());
+	    hooks.add(ApplicationShutdownHooks.hook());
+	    hooks.add(sun.misc.SharedSecrets.getJavaIODeleteOnExitAccess());
+	}
+d98 5
+a102 5
+	AppDomain.get_CurrentDomain().add_ProcessExit(new EventHandler(new EventHandler.Method() {
+	    public void Invoke(Object sender, EventArgs e) {
+		shutdown();
+	    }
+	}));
+d109 7
+a115 7
+	synchronized (lock) {
+	    if (state > RUNNING)
+		throw new IllegalStateException("Shutdown in progress");
+
+	    init();
+	    hooks.add(hook);
+	}
+d123 10
+a132 10
+	synchronized (lock) {
+	    if (state > RUNNING)
+		throw new IllegalStateException("Shutdown in progress");
+	    if (hook == null) throw new NullPointerException();
+	    if (hooks == null) {
+		return false;
+	    } else {
+		return hooks.remove(hook);
+	    }
+	}
+d139 13
+a151 13
+	/* We needn't bother acquiring the lock just to read the hooks field,
+	 * since the hooks can't be modified once shutdown is in progress
+	 */
+	for (Runnable hook : hooks) {
+	    try {
+		hook.run();
+	    } catch(Throwable t) { 
+		if (t instanceof ThreadDeath) {
+   		    ThreadDeath td = (ThreadDeath)t;
+		    throw td;
+		} 
+	    }
+	}
+d165 1
+a165 1
+	cli.System.Environment.Exit(status);
+d184 13
+a196 13
+	synchronized (lock) {
+	    /* Guard against the possibility of a daemon thread invoking exit
+	     * after DestroyJavaVM initiates the shutdown sequence
+	     */
+	    if (state != HOOKS) return;
+	}
+	runHooks();
+	boolean rfoe;
+	synchronized (lock) {
+	    state = FINALIZERS;
+	    rfoe = runFinalizersOnExit;
+	}
+	if (rfoe) runAllFinalizers();
+d205 28
+a232 28
+	boolean runMoreFinalizers = false;
+	synchronized (lock) {
+	    if (status != 0) runFinalizersOnExit = false;
+	    switch (state) {
+	    case RUNNING:	/* Initiate shutdown */
+		state = HOOKS;
+		break;
+	    case HOOKS:		/* Stall and halt */
+		break;
+	    case FINALIZERS:
+		if (status != 0) {
+		    /* Halt immediately on nonzero status */
+		    halt(status);
+		} else {
+		    /* Compatibility with old behavior:
+		     * Run more finalizers and then halt
+		     */
+		    runMoreFinalizers = runFinalizersOnExit;
+		}
+		break;
+	    }
+	}
+	if (runMoreFinalizers) {
+	    runAllFinalizers();
+	    halt(status);
+	}
+	synchronized (Shutdown.class) {
+	    /* Synchronize on the class object, causing any other thread
+d234 4
+a237 4
+	     */
+	    sequence();
+	    halt(status);
+	}
+d246 13
+a258 13
+	synchronized (lock) {
+	    switch (state) {
+	    case RUNNING:	/* Initiate shutdown */
+		state = HOOKS;
+		break;
+	    case HOOKS:		/* Stall and then return */
+	    case FINALIZERS:
+		break;
+	    }
+	}
+	synchronized (Shutdown.class) {
+	    sequence();
+	}
+@
+
+
+1.1
+log
+@Restructured VM <-> Library interface to take advantage of InternalsVisibleTo to remove public methods and reflection usage.
+@
+text
+@d29 3
+a31 1
+
+d41 2
+a42 2
+
+class Shutdown {
+d69 26
+d96 8
+d113 1
+@
+

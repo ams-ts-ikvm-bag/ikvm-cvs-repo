@@ -1,0 +1,919 @@
+head	1.5;
+access;
+symbols
+	v8_1_5717_0:1.5
+	v8_1:1.5.0.8
+	v8_0_5449_1:1.5
+	v8_0_5449_0:1.5
+	v8_0:1.5.0.6
+	v7_4_5196_0:1.5
+	v7_4:1.5.0.4
+	v7_3:1.5.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.5
+date	2012.12.13.17.53.35;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2012.12.13.15.39.27;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2012.12.13.10.11.17;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2012.10.25.19.48.21;	author smallsql;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2012.10.25.18.32.06;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.5
+log
+@Generate stubs for referenced assemblies and pass them to javac -classpath option.
+@
+text
+@﻿/*
+  Copyright (C) 2012 Volker Berlin (i-net software)
+  Copyright (C) 2012 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
+using System.Reflection.Emit;
+using System.Runtime.Versioning;
+using System.Text;
+
+using Microsoft.Build.Framework;
+using Microsoft.Build.Utilities;
+using Javac = com.sun.tools.javac.Main;
+using PrintWriter = java.io.PrintWriter;
+using System.Diagnostics;
+
+namespace IKVM.MSBuild
+{
+    /// <summary>
+    /// Java compiler task.
+    /// </summary>
+    public sealed class JavaTask : ToolTask
+    {
+        private ITaskItem[] sources;
+        private string[] references;
+        private ITaskItem[] resources;
+        private string configuration = "Debug";
+        private string targetType;
+        private string outputPath;
+        private string mainFile;
+        private string outputAssembly;
+        private bool emitDebugInformation;
+        private string platform = "x86";
+
+        /// <summary>
+        /// Gets or sets the source files that will be compiled. Is called from script.
+        /// </summary>
+        public ITaskItem[] Sources
+        {
+            get { return sources; }
+            set { sources = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the resources to be compiled. Is called from script.
+        /// </summary>
+        public ITaskItem[] Resources
+        {
+            get { return resources; }
+            set { resources = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the output assembly type. Is called from script.
+        /// </summary>
+        public string Configuration
+        {
+            get { return configuration; }
+            set { configuration = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the output assembly type. Is called from script.
+        /// </summary>
+        public string TargetType
+        {
+            get { return targetType; }
+            set { targetType = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the output path. Is called from script.
+        /// </summary>
+        public string OutputPath
+        {
+            get { return outputPath; }
+            set { outputPath = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the output assembly filename. Is called from script.
+        /// </summary>
+        public string OutputAssembly
+        {
+            get { return outputAssembly; }
+            set { outputAssembly = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the class with the main method. Is called from script.
+        /// </summary>
+        public string MainFile
+        {
+            get { return mainFile; }
+            set { mainFile = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the platform that will be targeted by the compiler (e.g. x86). Is called from script.
+        /// </summary>
+        public string Platform
+        {
+            get { return platform; }
+            set { platform = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets whether the compiler should include debug. Is called from script.
+        /// information in the created assembly.
+        /// </summary>
+        public bool EmitDebugInformation
+        {
+            get { return emitDebugInformation; }
+            set { emitDebugInformation = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the assembly references. Is called from script.
+        /// </summary>
+        public string[] References
+        {
+            get { return references; }
+            set { references = value; }
+        }
+
+        protected override string ToolName
+        {
+			get { return "ikvmc.exe"; }
+        }
+
+        protected override string GenerateFullPathToTool()
+        {
+            return Path.Combine(GetAssemblyPath(), ToolName);
+        }
+
+		private static string GetAssemblyPath()
+		{
+			return Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+		}
+
+		private string GetIntermediatePath()
+		{
+			return Path.GetFullPath(Path.Combine(Path.Combine("obj", platform), configuration));
+		}
+
+        protected override string GenerateCommandLineCommands()
+        {
+            CommandLineBuilder commandLine = new CommandLineBuilder();
+
+			commandLine.AppendSwitch("-nologo");
+
+			if (EmitDebugInformation)
+            {
+                commandLine.AppendSwitch("-debug");
+            }
+
+            commandLine.AppendSwitch("-nostdlib");
+
+            if (((outputAssembly == null) && (sources != null)) && ((sources.Length > 0)))
+            {
+                outputAssembly = Path.GetFileNameWithoutExtension(sources[0].ItemSpec);
+            }
+            if (string.Equals(this.TargetType, "library", StringComparison.OrdinalIgnoreCase))
+            {
+                outputAssembly += ".dll";
+            }
+            else
+            {
+                outputAssembly += ".exe";
+            }
+
+            if (references != null)
+            {
+                foreach (string reference in references)
+                {
+                    if (IsIkvmStandardLibrary(reference))
+                    {
+                        continue;
+                    }
+                    commandLine.AppendSwitchIfNotNull("-reference:", reference);
+                }
+            }
+
+			if (resources != null)
+			{
+				foreach (ITaskItem item in resources)
+				{
+					commandLine.AppendSwitch("-resource:" + item.ItemSpec + "=" + Path.GetFullPath(item.ItemSpec));
+				}
+			}
+
+            commandLine.AppendSwitchIfNotNull("-out:", Path.Combine(GetIntermediatePath(), OutputAssembly));
+
+            if (TargetType != null)
+            {
+				commandLine.AppendSwitch("-target:" + TargetType.ToLower());
+            }
+
+            commandLine.AppendSwitch("-recurse:" + GetClassesPath());
+            //Log.LogWarning(commandLine.ToString(), null);
+            return commandLine.ToString();
+        }
+
+        /// <summary>
+        /// Executes the compiler.
+        /// </summary>
+        public override bool Execute()
+        {
+			if (!GenerateStubs())
+			{
+				return false;
+			}
+
+			Stopwatch sw = Stopwatch.StartNew();
+			if (!RunJavac())
+            {
+                return false;
+            }
+			sw.Stop();
+			Log.LogMessage("Javac compilation time was {0} ms", sw.ElapsedMilliseconds);
+
+            CopyIkvm();
+
+            return base.Execute(); // run IKVMC
+        }
+
+		private string GetStubPath()
+		{
+			return Path.Combine("obj", "stubs");
+		}
+
+		private bool GenerateStubs()
+		{
+			// we start by creating the stubs for the boot classes
+			string stubpath = GetStubPath();
+			Directory.CreateDirectory(stubpath);
+			// note that File.GetLastWriteTime() returns Jan 1st, 1601 for non-existing files, so that works out nicely
+			if (File.GetLastWriteTime(Path.Combine(stubpath, "rt.jar")) < File.GetLastWriteTime(Path.Combine(GetAssemblyPath(), "IKVM.OpenJDK.Core.dll")))
+			{
+				if (!GenerateStub("IKVM.OpenJDK.Core", Path.Combine(stubpath, "rt.jar")))
+				{
+					return false;
+				}
+			}
+			// now generate stubs for the referenced assemblies
+			Dictionary<string, string> stubs = new Dictionary<string, string>();
+			using (IKVM.Reflection.Universe universe = new IKVM.Reflection.Universe(IKVM.Reflection.UniverseOptions.MetadataOnly))
+			{
+				foreach (string reference in references)
+				{
+					using (IKVM.Reflection.RawModule module = universe.OpenRawModule(reference))
+					{
+						string fileName = Path.Combine(stubpath, module.GetAssemblyName().Name + "__" + module.ModuleVersionId.ToString("N") + ".jar");
+						stubs.Add(fileName, null);
+						if (!File.Exists(fileName))
+						{
+							if (!GenerateStub(reference, fileName))
+							{
+								return false;
+							}
+						}
+					}
+				}
+			}
+			// clean up any left-over stubs
+			foreach (string file in Directory.GetFiles(stubpath, "*.jar"))
+			{
+				if (!stubs.ContainsKey(file) && Path.GetFileName(file) != "rt.jar")
+				{
+					File.Delete(file);
+				}
+			}
+			return true;
+		}
+
+		private static bool GenerateStub(string assemblyFile, string outputFile)
+		{
+			ProcessStartInfo psi = new ProcessStartInfo(Path.Combine(GetAssemblyPath(), "ikvmstub.exe"), "-shared \"-out:" + outputFile + "\" \"-lib:" + GetAssemblyPath() + "\" \"" + assemblyFile + "\"");
+			psi.UseShellExecute = false;
+			using (Process p = Process.Start(psi))
+			{
+				p.WaitForExit();
+				return p.ExitCode == 0;
+			}
+		}
+
+		private string GetClassesPath()
+		{
+			return Path.Combine(Path.Combine("obj", "classes"), configuration);
+		}
+
+        private bool RunJavac()
+        {
+            List<string> paramList = new List<string>();
+
+			paramList.Add("-bootclasspath");
+			paramList.Add(Path.Combine(GetStubPath(), "rt.jar"));
+
+			string stubpath = GetStubPath();
+			StringBuilder sb = new StringBuilder();
+			foreach (string file in Directory.GetFiles(stubpath, "*.jar"))
+			{
+				if (Path.GetFileName(file) != "rt.jar")
+				{
+					if (sb.Length != 0)
+					{
+						sb.Append(Path.PathSeparator);
+					}
+					sb.Append(file);
+				}
+			}
+			if (sb.Length != 0)
+			{
+				paramList.Add("-classpath");
+				paramList.Add(sb.ToString());
+			}
+
+			string classes = GetClassesPath();
+			Directory.CreateDirectory(classes);
+			paramList.Add("-d");
+			paramList.Add(classes);
+
+			if (emitDebugInformation)
+			{
+				paramList.Add("-g");
+			}
+
+            if (sources != null)
+            {
+                for (int i = 0; i < sources.Length; i++)
+                {
+					string sourceFile = Path.GetFullPath(sources[i].ItemSpec);
+                    RemoveBOM(sourceFile);
+                    paramList.Add(sourceFile);
+                }
+            }
+
+			using (PrintWriter pw = new PrintWriter(new LogWriter(Log), true))
+			{
+				//StringBuilder sb = new StringBuilder();
+				//foreach (string str in paramList)
+				//{
+				//    sb.Append('"').Append(str).Append("\" ");
+				//}
+				//ProcessStartInfo psi = new ProcessStartInfo(Path.Combine(GetAssemblyPath(), "javac.exe"), sb.ToString());
+				//psi.UseShellExecute = false;
+				//using (Process p = Process.Start(psi))
+				//{
+				//    p.WaitForExit();
+				//    if (p.ExitCode != 0)
+				//    {
+				//        return false;
+				//    }
+				//}
+				//return true;
+				return Javac.compile(paramList.ToArray(), pw) == 0;
+			}
+        }
+
+        /// <summary>
+        /// Copy the DLLs of IKVM in the output
+        /// </summary>
+        private void CopyIkvm()
+        {
+            foreach (FileInfo file in new DirectoryInfo(GetAssemblyPath()).GetFiles("*.dll"))
+            {
+                string name = file.Name;
+                if (IsIkvmStandardLibrary(name))
+                {
+                    FileInfo target = new FileInfo(Path.Combine(outputPath, name));
+                    if (!target.Exists || file.Length != target.Length || file.CreationTime != target.CreationTime)
+                    {
+                        try
+                        {
+                            File.Copy(file.FullName, target.FullName, true);
+                            target.CreationTime = file.CreationTime;
+                        }
+                        catch (Exception ex)
+                        {
+                            Log.LogWarningFromException(ex, true);
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Check if the name the name of a library is a standard IKVM library which should not add as reference.
+        /// </summary>
+        /// <param name="fileName">The name of an assambly library</param>
+        /// <returns></returns>
+        private bool IsIkvmStandardLibrary(string fileName)
+        {
+			string name = Path.GetFileNameWithoutExtension(fileName);
+            if (name == "IKVM.Runtime")
+            {
+                return true;
+            }
+            if (name == "IKVM.OpenJDK.Tools")
+            {
+                return false;
+            }
+            if (name.StartsWith("IKVM.OpenJDK."))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Java does not like a BOM at start of UTF8 coded files that we remove it
+        /// </summary>
+        /// <param name="fileName">The name of a Java source file</param>
+        private void RemoveBOM(string fileName)
+        {
+			using (FileStream original = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.Delete | FileShare.Read))
+			{
+				if (original.ReadByte() == 0xef && original.ReadByte() == 0xbb && original.ReadByte() == 0xbf)
+				{
+					//BOM detected
+					string copyName = fileName + ".nobom";
+					using (FileStream copy = File.OpenWrite(copyName))
+					{
+						byte[] buffer = new byte[4096];
+						int count;
+						while ((count = original.Read(buffer, 0, buffer.Length)) > 0)
+						{
+							copy.Write(buffer, 0, count);
+						}
+					}
+					File.Delete(fileName + ".withbom");
+					File.Move(fileName, fileName + ".withbom");
+					File.Move(copyName, fileName);
+					File.Delete(fileName + ".withbom");
+				}
+			}
+        }
+
+        /// <summary>
+        /// Redirect the output of the Java Compiler to the MSBUILD output
+        /// </summary>
+        private sealed class LogWriter : java.io.Writer
+        {
+            private readonly StringBuilder builder = new StringBuilder();
+            private readonly TaskLoggingHelper log;
+
+            internal LogWriter(TaskLoggingHelper log)
+            {
+                this.log = log;
+            }
+
+            public override void write(char[] buf, int off, int len)
+            {
+                builder.Append(buf, off, len);
+            }
+
+            public override void flush()
+            {
+                if (builder.Length > 0)
+                {
+                    string msg = builder.ToString();
+                    if (msg.EndsWith("\r\n"))
+                    {
+                        msg = msg.Substring(0, msg.Length - 2);
+                    }
+                    // parsing the Java error line
+                    if (msg.Length > 2 && msg[1] == ':')
+                    {
+                        int idx = msg.IndexOf(':', 2);
+                        if (idx > 0)
+                        {
+                            string fileName = msg.Substring(0, idx);
+                            idx++;
+                            int idx2 = msg.IndexOf(':', idx);
+                            if (idx2 > 0)
+                            {
+								int lineNr;
+                                if (Int32.TryParse(msg.Substring(idx, idx2 - idx), out lineNr))
+                                {
+                                    msg = msg.Substring(idx2 + 1);
+                                    idx = msg.IndexOf("error:");
+                                    if (idx >= 0)
+                                    {
+                                        msg = msg.Substring(idx + 6).Trim();
+										log.LogError(null, null, null, fileName, lineNr, 0, lineNr, 0, msg);
+									}
+                                    else
+                                    {
+                                        idx = msg.IndexOf("warning:");
+                                        if (idx >= 0)
+                                        {
+                                            msg = msg.Substring(idx + 8).Trim();
+											log.LogWarning(null, null, null, fileName, lineNr, 0, lineNr, 0, msg);
+										}
+                                    }
+                                }
+                            }
+                        }
+                    }
+					builder.Length = 0;
+                }
+            }
+
+            public override void close()
+            {
+                flush();
+            }
+        }
+    }
+}
+@
+
+
+1.4
+log
+@- compile classes to obj\classes\[configuration]
+- generate rt.jar (if necessary) in obj\stubs and let javac use that instead of having the runtime dynamically create the stubs
+- set javac -g option when doing a debug build
+@
+text
+@d262 1
+a262 3
+				ProcessStartInfo psi = new ProcessStartInfo(Path.Combine(GetAssemblyPath(), "ikvmstub.exe"), "-shared \"-out:" + Path.Combine(stubpath, "rt.jar") + "\" \"-lib:" + GetAssemblyPath() + "\" IKVM.OpenJDK.Core");
+				psi.UseShellExecute = false;
+				using (Process p = Process.Start(psi))
+d264 10
+a273 2
+					p.WaitForExit();
+					if (p.ExitCode != 0)
+d275 9
+a283 1
+						return false;
+d287 8
+d298 11
+d321 19
+@
+
+
+1.3
+log
+@Ported MSBuild task to .NET 2.0 and included the project in the VS solution.
+@
+text
+@d37 1
+d221 1
+a221 1
+            commandLine.AppendSwitch("-recurse:" + Path.Combine(GetIntermediatePath(), "*.*"));
+d231 7
+a237 1
+            if (!RunJavac())
+d241 2
+d249 32
+d285 12
+a296 2
+            paramList.Add("-d");
+            paramList.Add(GetIntermediatePath());
+d310 16
+@
+
+
+1.2
+log
+@Build script for msbuild task
+@
+text
+@d3 1
+d43 1
+a43 1
+    public class JavaTask : ToolTask
+d46 1
+a46 1
+        private ITaskItem[] references;
+d48 1
+a48 2
+        private string targetFrameworkVersion;
+        private string configuration;
+d54 1
+a54 7
+        private string platform;
+        private string temp;
+
+        public JavaTask()
+        {
+        }
+
+d141 1
+a141 1
+        public ITaskItem[] References
+a146 9
+        /// <summary>
+        /// Gets or sets the target framework version. Is called from script.
+        /// </summary>
+        public string TargetFrameworkVersion
+        {
+            get { return targetFrameworkVersion; }
+            set { if (value != null && value.StartsWith("v")) targetFrameworkVersion = value.Substring(1); }
+        }
+
+d149 1
+a149 4
+            get
+            {
+                return "ikvmc.exe";
+            }
+d154 2
+a155 2
+            string location = Assembly.GetAssembly(this.GetType()).Location;
+            location = new FileInfo(location).DirectoryName;
+d157 9
+a165 4
+            string path = Path.GetFullPath(Path.Combine(location, ToolName));
+            Log.LogWarning(path);
+            return path;
+        }
+d170 4
+a173 1
+            if (EmitDebugInformation)
+d180 1
+a180 1
+            if (((outputAssembly == null) && (Sources != null)) && ((Sources.Length > 0)))
+d182 1
+a182 1
+                outputAssembly = Path.GetFileNameWithoutExtension(this.Sources[0].ItemSpec);
+d195 1
+a195 3
+
+                HashSet<string> addedReferences = new HashSet<string>();
+                foreach (ITaskItem item in references)
+d197 1
+a197 3
+                    string fileName = item.ItemSpec;
+
+                    if (IsIkvmStandardLibrary(fileName))
+d201 1
+a201 36
+
+                    string hintPath = item.GetMetadata("HintPath");
+                    if (hintPath != null && hintPath.Length != 0)
+                    {
+                        fileName = Path.GetFullPath(Path.Combine(GetCurrentFolder(), hintPath));
+                    }
+                    else
+                    {
+                        string versionStr;
+                        string requiredTargetFramework = item.GetMetadata("RequiredTargetFramework");
+                        if (requiredTargetFramework != null && requiredTargetFramework.Length != 0)
+                        {
+                            versionStr = requiredTargetFramework;
+                        }
+                        else
+                        {
+                            versionStr = targetFrameworkVersion;
+                        }
+
+                        IList<String> pathes = ToolLocationHelper.GetPathToReferenceAssemblies(".NETFramework", versionStr, "");
+                        foreach (String path in pathes)
+                        {
+                            string frameworkFileName = Path.Combine(path, fileName + ".dll");
+                            if (File.Exists(frameworkFileName))
+                            {
+                                fileName = frameworkFileName;
+                                break;
+                            }
+                        }
+
+
+                    }
+                    if (addedReferences.Add(fileName))
+                    {
+                        commandLine.AppendSwitchIfNotNull("-reference:", fileName);
+                    }
+d205 7
+a211 7
+            if (Resources != null)
+            {
+                foreach (ITaskItem item in Resources)
+                {
+                    commandLine.AppendSwitch("-resource:" + item.ItemSpec + "=" + GetFullPath(item.ItemSpec));
+                }
+            }
+d213 1
+a213 2
+
+            commandLine.AppendSwitchIfNotNull("-out:", Path.Combine(outputPath, OutputAssembly));
+d217 1
+a217 15
+                switch (TargetType.ToLower())
+                {
+                    case "library":
+                        commandLine.AppendSwitch("-target:library");
+                        break;
+                    case "module":
+                        commandLine.AppendSwitch("-target:module");
+                        break;
+                    case "exe":
+                        commandLine.AppendSwitch("-target:exe");
+                        break;
+                    case "winexe":
+                        commandLine.AppendSwitch("-target:winexe");
+                        break;
+                }
+d220 2
+a221 2
+            commandLine.AppendSwitch("-recurse:" + Path.Combine(temp, "*.*"));
+            Log.LogWarning(commandLine.ToString(), null);
+d242 1
+a242 1
+            List<String> paramList = new List<String>();
+a243 1
+            temp = GetFullPath(Path.Combine("obj", platform, configuration));
+d245 1
+a245 1
+            paramList.Add(temp);
+d251 1
+a251 1
+                    string sourceFile = GetFullPath(sources[i].ItemSpec);
+d256 5
+a260 5
+            String[] parameters = paramList.ToArray();
+            PrintWriter pw = new PrintWriter(new LogWriter(Log), true);
+            int result = Javac.compile(parameters, pw);
+            pw.close();
+            return result == 0;
+d268 1
+a268 5
+            string location = Assembly.GetAssembly(this.GetType()).Location;
+            FileInfo[] ikvmFiles = new FileInfo(location).Directory.GetFiles("*.dll");
+
+
+            foreach (FileInfo file in ikvmFiles)
+d271 1
+a271 1
+                if (IsIkvmStandardLibrary(name.Substring(0, name.Length - 4)))
+d297 2
+a298 1
+            if (fileName.Equals("IKVM.Runtime"))
+d302 1
+a302 1
+            if (fileName.Equals("IKVM.OpenJDK.Tools"))
+d306 1
+a306 1
+            if (fileName.StartsWith("IKVM.OpenJDK."))
+a313 21
+        /// Gets the current folder where this task is being executed from.
+        /// </summary>
+        private string GetCurrentFolder()
+        {
+            return Directory.GetCurrentDirectory();
+        }
+
+        /// <summary>
+        /// Takes a relative path to a file and turns it into the full path using the current folder
+        /// as the base directory.
+        /// </summary>
+        private string GetFullPath(string fileName)
+        {
+            if (!Path.IsPathRooted(fileName))
+            {
+                return Path.GetFullPath(Path.Combine(GetCurrentFolder(), fileName));
+            }
+            return fileName;
+        }
+
+        /// <summary>
+d319 21
+a339 21
+            FileStream original = File.OpenRead(fileName);
+            if (original.ReadByte() == 0xef && original.ReadByte() == 0xbb && original.ReadByte() == 0xbf)
+            {
+                //BOM detected
+                string copyName = fileName + ".nobom";
+                FileStream copy = File.OpenWrite(copyName);
+                byte[] buffer = new byte[4096];
+                int count;
+                while ((count = original.Read(buffer, 0, buffer.Length)) > 0)
+                {
+                    copy.Write(buffer, 0, count);
+                }
+                copy.Close();
+                original.Close();
+                File.Delete(fileName + ".withbom");
+                File.Move(fileName, fileName + ".withbom");
+                File.Move(copyName, fileName);
+                File.Delete(fileName + ".withbom");
+                return;
+            }
+            original.Close();
+d345 1
+a345 1
+        private class LogWriter : java.io.Writer
+a348 3
+            private string fileName;
+            private int lineNr;
+            private bool error = true;
+a350 1
+                : base()
+d364 1
+a364 1
+                    String msg = builder.ToString();
+d375 1
+a375 1
+                            fileName = msg.Substring(0, idx);
+d380 1
+a386 1
+                                        error = true;
+d388 2
+a389 1
+                                    }
+a394 1
+                                            error = false;
+d396 2
+a397 1
+                                        }
+a399 8
+                                else
+                                {
+                                    lineNr = 0;
+                                }
+                            }
+                            else
+                            {
+                                lineNr = 0;
+d403 1
+a403 9
+                    if (error)
+                    {
+                        log.LogError(null, null, null, fileName, lineNr, 0, lineNr, 0, msg);
+                    }
+                    else
+                    {
+                        log.LogWarning(null, null, null, fileName, lineNr, 0, lineNr, 0, msg);
+                    }
+                    builder.Clear();
+a412 1
+
+@
+
+
+1.1
+log
+@Java MsBuild task based on IKVM
+@
+text
+@a26 1
+using System.Linq;
+@
+

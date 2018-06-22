@@ -1,0 +1,154 @@
+head	1.2;
+access;
+symbols
+	v8_1_5717_0:1.2
+	v8_1:1.2.0.32
+	v8_0_5449_1:1.2
+	v8_0_5449_0:1.2
+	v8_0:1.2.0.30
+	v7_4_5196_0:1.2
+	v7_4:1.2.0.28
+	v7_3:1.2.0.26
+	v7_2_4630_6:1.2
+	v7_2_4630_5:1.2
+	v7_2_4630_4:1.2
+	v7_2_4630_3:1.2
+	v7_2_4630_2:1.2
+	v0_46_0_4:1.2
+	v7_2_4630_1:1.2
+	v7_2:1.2.0.24
+	v7_1_4532_2:1.2
+	v7_1_4532_1:1.2
+	v7_1_4532_0:1.2
+	v7_1:1.2.0.22
+	v7_0_4335_3:1.2
+	v7_0_4335_2:1.2
+	v7_0_4335_1:1.2
+	v0_46_0_2:1.2
+	v7_0_4335_0:1.2
+	v7_0:1.2.0.20
+	v0_40_0_6:1.2
+	v0_40_0_5:1.2
+	v0_46_0_1:1.2
+	v0_46_0_0:1.2
+	v0_46:1.2.0.18
+	v0_36_0_14:1.2
+	v0_44_0_6:1.2
+	v0_44_0_5:1.2
+	v0_44_0_4:1.2
+	v0_44_0_3:1.2
+	v0_44_0_2:1.2
+	v0_42_0_7:1.2
+	v0_44_0_1:1.2
+	v0_44_0_0:1.2
+	v0_44:1.2.0.16
+	v0_42_0_6:1.2
+	v0_42_0_5:1.2
+	v0_42_0_4:1.2
+	v0_42_0_3:1.2
+	v0_42_0_2:1.2
+	v0_42_0_1:1.2
+	v0_42_0_0:1.2
+	v0_42:1.2.0.14
+	v0_40_0_3:1.2
+	v0_40_0_2:1.2
+	v0_40_0_1:1.2
+	v0_40_0_0:1.2
+	v0_40:1.2.0.12
+	v0_36_0_13:1.2
+	v0_38_0_1:1.2
+	v0_38_0_0:1.2
+	v0_38:1.2.0.10
+	v0_36_0_9:1.2
+	v0_36_0_7:1.2
+	v0_36_0_5:1.2
+	v0_36_0_4:1.2
+	v0_36_0_3:1.2
+	v0_36_0_2:1.2
+	v0_36_0_1:1.2
+	v0_36_0_0:1.2
+	v0_36:1.2.0.8
+	v0_34_0_3:1.2
+	v0_34_0_2:1.2
+	v0_34_0_1:1.2
+	v0_34_0_0:1.2
+	v0_34:1.2.0.6
+	v0_32:1.2.0.4
+	v0_32_0_0:1.2
+	v0_30:1.2.0.2
+	v0_28_0_0:1.2
+	v0_26_0_1:1.2
+	v0_26_0_0:1.2
+	v0_24_0_1:1.2
+	v0_24_0_0:1.2
+	v0_22_0_0:1.2
+	v0_20_0_0:1.2
+	v0_18_0_0:1.2
+	v0_16_0_0:1.2
+	v0_14_0_1:1.2
+	v0_14_0_0:1.2
+	v0_12_0_0:1.2
+	v0_10_0_1:1.2
+	v0_10_0_0:1.2;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2004.07.11.15.57.59;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2004.06.29.12.59.30;	author sschaub;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@<?xml version="1.0" ?>
+
+<html>
+<head>
+<title>License</title>
+</head>
+
+<body>
+<tt>
+<p> Copyright (C) 2002, 2003, 2004 Jeroen Frijters</p>
+<p> This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.</p>
+<p> Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:</p>
+<p> 1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.</p>
+<p> 2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.</p>
+<p> 3. This notice may not be removed or altered from any source distribution.</p>
+<p> Jeroen Frijters<br/> <A href="mailto:jeroen@@frijters.net">jeroen@@frijters.net</A><br/></p>
+</tt>
+<h3>Important Notice</h3>
+Included in the download of IKVM.NET is GNU Classpath. The binary IKVM.GNU.Classpath.dll and some of the source files in the ikvm/classpath directory (see individual file headers for details) are licensed under the GPL (+ GNU Classpath specific exception).<br />
+For details on this license please visit the <a href="http://www.gnu.org/software/classpath/license.html">GNU Classpath license site</a>.
+</body>
+</html>
+@
+
+
+1.1
+log
+@Initial website commit
+@
+text
+@d10 6
+a15 3
+<p> Copyright (C) 2002, 2003 Jeroen Frijters</p>
+<p> This software is provided 'as-is', without any express or implied<br/> warranty. In no event will the authors be held liable for any damages<br/> arising from the use of this software.</p>
+<p> Permission is granted to anyone to use this software for any purpose,<br/> including commercial applications, and to alter it and redistribute it<br/> freely, subject to the following restrictions:</p><p> 1. The origin of this software must not be misrepresented; you must not<br/> claim that you wrote the original software. If you use this software<br/> in a product, an acknowledgment in the product documentation would be<br/> appreciated but is not required.<br/> 2. Altered source versions must be plainly marked as such, and must not be<br/> misrepresented as being the original software.<br/> 3. This notice may not be removed or altered from any source distribution.</p>
+d18 3
+@
+

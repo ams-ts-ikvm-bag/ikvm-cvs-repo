@@ -1,0 +1,51 @@
+head	1.2;
+access;
+symbols
+	v0_38_0_1:1.1
+	v0_38_0_0:1.1
+	v0_38:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2008.12.19.11.33.09;	author jfrijters;	state dead;
+branches;
+next	1.1;
+
+1.1
+date	2008.06.13.09.00.59;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@Removed, because it is no longer needed.
+@
+text
+@package sun.awt.image;
+
+// HACK workaround to make /jdk/src/share/classes/com/sun/imageio/plugins/png/PNGImageReader.java compile
+
+public abstract class ByteInterleavedRaster extends java.awt.image.WritableRaster
+{
+    ByteInterleavedRaster()
+    {
+	super(null, null);
+    }
+}
+@
+
+
+1.1
+log
+@Integrated OpenJDK 6 b10.
+@
+text
+@@
+

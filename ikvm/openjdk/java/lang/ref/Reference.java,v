@@ -1,0 +1,602 @@
+head	1.9;
+access;
+symbols
+	v8_1_5717_0:1.9
+	v8_1:1.9.0.6
+	v8_0_5449_1:1.9
+	v8_0_5449_0:1.9
+	v8_0:1.9.0.4
+	v7_4_5196_0:1.9
+	v7_4:1.9.0.2
+	v7_3:1.8.0.4
+	v7_2_4630_6:1.8
+	v7_2_4630_5:1.8
+	v7_2_4630_4:1.8
+	v7_2_4630_3:1.8
+	v7_2_4630_2:1.8
+	v0_46_0_4:1.6
+	v7_2_4630_1:1.8
+	v7_2:1.8.0.2
+	v7_1_4532_2:1.7
+	v7_1_4532_1:1.7
+	v7_1_4532_0:1.7
+	v7_1:1.7.0.2
+	v7_0_4335_3:1.6.4.1
+	v7_0_4335_2:1.6.4.1
+	v7_0_4335_1:1.6
+	v0_46_0_2:1.6
+	v7_0_4335_0:1.6
+	v7_0:1.6.0.4
+	v0_40_0_6:1.5
+	v0_40_0_5:1.5
+	v0_46_0_1:1.6
+	v0_46_0_0:1.6
+	v0_46:1.6.0.2
+	v0_36_0_14:1.2
+	v0_44_0_6:1.5
+	v0_44_0_5:1.5
+	v0_44_0_4:1.5
+	v0_44_0_3:1.5
+	v0_44_0_2:1.5
+	v0_42_0_7:1.5
+	v0_44_0_1:1.5
+	v0_44_0_0:1.5
+	v0_44:1.5.0.8
+	v0_42_0_6:1.5
+	v0_42_0_5:1.5
+	v0_42_0_4:1.5
+	v0_42_0_3:1.5
+	v0_42_0_2:1.5
+	v0_42_0_1:1.5
+	v0_42_0_0:1.5
+	v0_42:1.5.0.6
+	v0_40_0_3:1.5
+	v0_40_0_2:1.5
+	v0_40_0_1:1.5
+	v0_40_0_0:1.5
+	v0_40:1.5.0.4
+	v0_36_0_13:1.2
+	v0_38_0_1:1.5
+	v0_38_0_0:1.5
+	v0_38:1.5.0.2
+	v0_36_0_9:1.2
+	v0_36_0_7:1.2
+	v0_36_0_5:1.2
+	v0_36_0_4:1.2
+	v0_36_0_3:1.2
+	v0_36_0_2:1.2
+	v0_36_0_1:1.2
+	v0_36_0_0:1.2
+	v0_36:1.2.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.9
+date	2014.03.05.09.39.07;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2012.08.30.08.51.10;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2012.02.21.14.29.36;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2010.08.23.13.02.26;	author jfrijters;	state Exp;
+branches
+	1.6.4.1;
+next	1.5;
+
+1.5
+date	2008.06.11.09.05.20;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2007.12.31.12.29.12;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2007.12.28.10.18.18;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.08.29.06.21.28;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.06.15.06.47.53;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.6.4.1
+date	2012.02.27.12.14.26;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.9
+log
+@Change Reference, SoftReference and ReferenceQueue to make ReferenceQueue more efficient.
+@
+text
+@/*
+  Copyright (C) 2014 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+package java.lang.ref;
+
+import sun.misc.Cleaner;
+
+public abstract class Reference<T>
+{
+    private final cli.System.WeakReference weakRef;
+    T strongRef;
+    ReferenceQueue queue;
+    Reference<T> next;
+
+    Reference(T referent)
+    {
+        this(referent, null);
+    }
+
+    Reference(T referent, ReferenceQueue queue)
+    {
+        this.queue = queue == null ? ReferenceQueue.NULL : queue;
+        if (referent instanceof Class && noclassgc())
+        {
+            // We don't do Class gc, so no point in using a weak reference for classes.
+            weakRef = null;
+            strongRef = referent;
+        }
+        else if (referent == null)
+        {
+            weakRef = null;
+        }
+        else
+        {
+            weakRef = new cli.System.WeakReference(referent, this instanceof PhantomReference);
+            if (queue != null)
+            {
+                queue.addToActiveList(this);
+            }
+            if (this instanceof Cleaner)
+            {
+                new CleanerGuard();
+            }
+        }
+    }
+
+    private final class CleanerGuard
+    {
+        protected void finalize()
+        {
+            if (isActive()) {
+                cli.System.GC.ReRegisterForFinalize(this);
+            } else {
+                ((Cleaner)Reference.this).clean();
+            }
+        }
+    }
+
+    public T get()
+    {
+        if (weakRef == null)
+        {
+            return strongRef;
+        }
+        return (T)weakRef.get_Target();
+    }
+
+    public void clear()
+    {
+        if (weakRef != null)
+        {
+            try
+            {
+                if (false) throw new cli.System.InvalidOperationException();
+                weakRef.set_Target(null);
+            }
+            catch (cli.System.InvalidOperationException x)
+            {
+                // we were already finalized
+            }
+        }
+        strongRef = null;
+        queue.clear(this);
+    }
+    
+    public boolean isEnqueued()
+    {
+        if (queue == ReferenceQueue.ENQUEUED) {
+            return true;
+        }
+        if (queue == ReferenceQueue.NULL) {
+            return false;
+        }
+        if (isStrongOrNullRef() || isActive()) {
+            return false;
+        }
+        queue.enqueue(this);
+        return queue == ReferenceQueue.ENQUEUED;
+    }
+
+    public boolean enqueue()
+    {
+        return queue.enqueue(this);
+    }
+
+    final boolean isActive()
+    {
+        return strongRef != null || (weakRef != null && weakRef.get_IsAlive());
+    }
+
+    final boolean isStrongOrNullRef()
+    {
+        return weakRef == null;
+    }
+
+    static native boolean noclassgc();
+}
+@
+
+
+1.8
+log
+@Use .NET Hashtable instead of Java HashSet to avoid initialization order issues.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2003-2012 Jeroen Frijters
+a25 1
+import cli.System.Collections.Hashtable;
+d30 4
+a33 7
+    // accessed by inner class
+    volatile cli.System.WeakReference weakRef;
+    volatile T strongRef;
+    volatile ReferenceQueue<? super T> queue;
+    volatile Reference next;
+    
+    private static native boolean noclassgc();
+d40 1
+a40 1
+    Reference(T referent, ReferenceQueue<? super T> queue)
+d43 7
+a49 1
+        if (referent != null)
+d51 6
+a56 1
+            if (referent instanceof Class && noclassgc())
+d58 1
+a58 2
+                // We don't do Class gc, so no point in using a weak reference for classes.
+                strongRef = referent;
+d60 1
+a60 1
+            else
+d62 1
+a62 5
+                weakRef = new cli.System.WeakReference(referent, this instanceof PhantomReference);
+                if (queue != null || referent instanceof Cleaner || this instanceof SoftReference)
+                {
+                    new QueueWatcher(this);
+                }
+d67 11
+a77 1
+    private static final boolean debug = false;
+d79 1
+a79 1
+    private static final class QueueWatcher
+d81 1
+a81 4
+        private static final Hashtable keepAlive = Hashtable.Synchronized(new Hashtable());
+        private cli.System.WeakReference handle;
+
+        QueueWatcher(Reference r)
+d83 1
+a83 4
+            handle = new cli.System.WeakReference(r, true);
+            // FXBUG when a WeakReference is finalizer reachable, it gets cleared by the GC (even if we call GC.SuppressFinalize),
+            // so we have to maintain a strong reference to it to prevent it from being cleared.
+            keepAlive.Add(handle, null);
+d85 2
+d88 3
+a90 1
+        boolean check(Reference r)
+a91 2
+            r.strongRef = null;
+            boolean alive = false;
+d95 1
+a95 7
+                cli.System.WeakReference referent = r.weakRef;
+                if (referent == null)
+                {
+                    // ref was explicitly cleared, so we don't enqueue
+                    return false;
+                }
+                alive = referent.get_IsAlive();
+d99 1
+a99 38
+                // this happens if the reference is already finalized (if we were
+                // the only one still hanging on to it)
+            }
+            if (alive)
+            {
+                // we don't want to keep creating finalizable objects during shutdown
+                if (!cli.System.Environment.get_HasShutdownStarted())
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                if (r instanceof Cleaner)
+                {
+                    ((Cleaner)r).clean();
+                }
+                else if (r.queue != null)
+                {
+                    r.queue.enqueue(r);
+                }
+            }
+            return false;
+        }
+
+        protected void finalize()
+        {
+            Reference r = (Reference)handle.get_Target();
+            if (debug)
+                cli.System.Console.WriteLine("~QueueWatcher: " + hashCode() + " on " + r);
+            if (r != null && r.next == null && check(r))
+            {
+                cli.System.GC.ReRegisterForFinalize(QueueWatcher.this);
+            }
+            else
+            {
+                handle.set_Target(null);
+                keepAlive.Remove(handle);
+d102 2
+d105 2
+a106 2
+
+    public T get()
+d108 5
+a112 14
+        try
+        {
+            if (false) throw new cli.System.InvalidOperationException();
+            cli.System.WeakReference referent = this.weakRef;
+            if (referent == null)
+            {
+                return strongRef;
+            }
+            T value = (T)referent.get_Target();
+            if (value == null)
+            {
+                queue.enqueue(this);
+            }
+            return value;
+d114 2
+a115 4
+        catch (cli.System.InvalidOperationException x)
+        {
+            // we were already finalized, so we just return null.
+            return null;
+d117 2
+d121 1
+a121 1
+    public void clear()
+d123 1
+a123 2
+        weakRef = null;
+        strongRef = null;
+d126 1
+a126 1
+    public synchronized boolean isEnqueued()
+d128 1
+a128 1
+        return queue != ReferenceQueue.NULL && next != null;
+d131 1
+a131 1
+    public boolean enqueue() 
+d133 1
+a133 1
+        return queue.enqueue(this);
+d135 2
+@
+
+
+1.7
+log
+@Workaround a problem in sun.util.locale.LocaleObjectCache that assumes that a SoftReference is always immediately enqueued when get() returns null. Now we actively enqueue the reference in get() when the reference was cleared by the GC (instead of waiting for the QueueWatcher to eventually enqueue the reference from the finalizer).
+@
+text
+@d26 1
+d69 1
+a69 1
+        private static final java.util.Set keepAlive = java.util.Collections.synchronizedSet(new java.util.HashSet());
+d77 1
+a77 1
+            keepAlive.add(handle);
+d134 1
+a134 1
+                keepAlive.remove(handle);
+@
+
+
+1.6
+log
+@When class GC is enabled, we shouldn't keep a strong reference to Class instances.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2003, 2004, 2005, 2006, 2007 Jeroen Frijters
+d144 10
+a153 1
+            return referent == null ? strongRef : (T)referent.get_Target();
+@
+
+
+1.6.4.1
+log
+@Updated version to 7.0.4335.2 and backported:
+- java.lang.ref.Reference.get() fix to enqueue cleared reference before get() returns null.
+- Removed non-ascii character from openjdk/sun/print/Win32PrintService.java.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2003-2012 Jeroen Frijters
+d144 1
+a144 10
+            if (referent == null)
+            {
+                return strongRef;
+            }
+            T value = (T)referent.get_Target();
+            if (value == null)
+            {
+                queue.enqueue(this);
+            }
+            return value;
+@
+
+
+1.5
+log
+@Converted tabs to spaces.
+@
+text
+@d35 2
+d48 1
+a48 1
+            if (referent instanceof Class)
+@
+
+
+1.4
+log
+@Fixed regression introduced by previous change from GCHandle to WeakReference.
+@
+text
+@d66 1
+a66 1
+	private static final java.util.Set keepAlive = java.util.Collections.synchronizedSet(new java.util.HashSet());
+d74 1
+a74 1
+	    keepAlive.add(handle);
+d79 1
+a79 1
+	    r.strongRef = null;
+d107 8
+a114 8
+		if (r instanceof Cleaner)
+		{
+		    ((Cleaner)r).clean();
+		}
+		else if (r.queue != null)
+		{
+		    r.queue.enqueue(r);
+		}
+d131 1
+a131 1
+		keepAlive.remove(handle);
+d164 1
+a164 1
+	return queue.enqueue(this);
+@
+
+
+1.3
+log
+@Replaced GCHandle with WeakReference to support partial trust.
+@
+text
+@d66 1
+d72 3
+d131 1
+@
+
+
+1.2
+log
+@New SoftReference implementation.
+@
+text
+@a25 2
+import cli.System.Runtime.InteropServices.GCHandle;
+import cli.System.Runtime.InteropServices.GCHandleType;
+d66 1
+a66 1
+        private GCHandle handle;
+d70 1
+a70 1
+            handle = GCHandle.Alloc(r, GCHandleType.wrap(GCHandleType.WeakTrackResurrection));
+d126 1
+a126 1
+                handle.Free();
+@
+
+
+1.1
+log
+@Integrated OpenJDK java.lang.annotation and java.lang.ref packages.
+@
+text
+@d34 1
+a34 1
+    private volatile T strongRef;
+d48 1
+a48 1
+            if (this instanceof SoftReference || referent instanceof Class)
+d50 1
+a50 5
+                // HACK we never clear SoftReferences, because there is no way to
+                // find out about the CLR memory status.
+                // (Eclipse 3.1 startup depends on SoftReferences not being cleared.)
+                // We also don't do Class gc, so no point in using a weak reference
+                // for classes either.
+d56 1
+a56 1
+                if (queue != null || referent instanceof Cleaner)
+d77 1
+d109 1
+a109 1
+		else
+@
+

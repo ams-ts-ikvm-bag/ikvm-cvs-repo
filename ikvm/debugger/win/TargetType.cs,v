@@ -1,0 +1,133 @@
+head	1.1;
+access;
+symbols
+	v8_1_5717_0:1.1
+	v8_1:1.1.0.22
+	v8_0_5449_1:1.1
+	v8_0_5449_0:1.1
+	v8_0:1.1.0.20
+	v7_4_5196_0:1.1
+	v7_4:1.1.0.18
+	v7_3:1.1.0.16
+	v7_2_4630_6:1.1
+	v7_2_4630_5:1.1
+	v7_2_4630_4:1.1
+	v7_2_4630_3:1.1
+	v7_2_4630_2:1.1
+	v0_46_0_4:1.1
+	v7_2_4630_1:1.1
+	v7_2:1.1.0.14
+	v7_1_4532_2:1.1
+	v7_1_4532_1:1.1
+	v7_1_4532_0:1.1
+	v7_1:1.1.0.12
+	v7_0_4335_3:1.1
+	v7_0_4335_2:1.1
+	v7_0_4335_1:1.1
+	v0_46_0_2:1.1
+	v7_0_4335_0:1.1
+	v7_0:1.1.0.10
+	v0_40_0_6:1.1
+	v0_40_0_5:1.1
+	v0_46_0_1:1.1
+	v0_46_0_0:1.1
+	v0_46:1.1.0.8
+	v0_44_0_6:1.1
+	v0_44_0_5:1.1
+	v0_44_0_4:1.1
+	v0_44_0_3:1.1
+	v0_44_0_2:1.1
+	v0_42_0_7:1.1
+	v0_44_0_1:1.1
+	v0_44_0_0:1.1
+	v0_44:1.1.0.6
+	v0_42_0_6:1.1
+	v0_42_0_5:1.1
+	v0_42_0_4:1.1
+	v0_42_0_3:1.1
+	v0_42_0_2:1.1
+	v0_42_0_1:1.1
+	v0_42_0_0:1.1
+	v0_42:1.1.0.4
+	v0_40_0_3:1.1
+	v0_40_0_2:1.1
+	v0_40_0_1:1.1
+	v0_40_0_0:1.1
+	v0_40:1.1.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.1
+date	2009.02.20.22.20.41;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@First type and method handling
+@
+text
+@using System;
+using System.Collections.Generic;
+using System.Text;
+using Debugger.MetaData;
+
+namespace ikvm.debugger.win
+{
+    internal class TargetType
+    {
+        private static int typeIdCounter;
+        private static Dictionary<int, TargetType> typeList = new Dictionary<int, TargetType>();
+
+        private readonly int typeId;
+        private readonly DebugType type;
+
+        internal TargetType(DebugType type)
+        {
+            this.typeId = ++typeIdCounter;
+            this.type = type;
+            typeList.Add(typeId, this);
+        }
+
+        internal static TargetType GetTargetType(int typeId)
+        {
+            return typeList[typeId];
+        }
+
+        internal int TypeId
+        {
+            get { return typeId; }
+        }
+
+        internal bool Identical(DebugType type)
+        {
+            return this.type.Equals(type);
+        }
+
+        internal String GetJniSignature()
+        {
+            //TODO if it is not a class
+            return 'L' + type.Name.Replace('.', '/') + ';';
+        }
+
+        internal IList<TargetMethod> GetMethods()
+        {
+            List<TargetMethod> result = new List<TargetMethod>();
+            IList<MethodInfo> methods = type.GetMethods(BindingFlags.All);
+            foreach (MethodInfo method in methods)
+            {
+                result.Add(new TargetMethod(method));
+            }
+            return result;
+        }
+    }
+
+
+}
+@

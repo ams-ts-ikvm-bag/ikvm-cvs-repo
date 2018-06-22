@@ -1,0 +1,1595 @@
+head	1.31;
+access;
+symbols
+	v8_1_5717_0:1.28
+	v8_1:1.28.0.2
+	v8_0_5449_1:1.24
+	v8_0_5449_0:1.24
+	v8_0:1.24.0.6
+	v7_4_5196_0:1.24
+	v7_4:1.24.0.4
+	v7_3:1.24.0.2
+	v7_2_4630_6:1.20
+	v7_2_4630_5:1.20
+	v7_2_4630_4:1.20
+	v7_2_4630_3:1.20
+	v7_2_4630_2:1.20
+	v0_46_0_4:1.9
+	v7_2_4630_1:1.20
+	v7_2:1.20.0.4
+	v7_1_4532_2:1.20
+	v7_1_4532_1:1.20
+	v7_1_4532_0:1.20
+	v7_1:1.20.0.2
+	v7_0_4335_3:1.17
+	v7_0_4335_2:1.17
+	v7_0_4335_1:1.17
+	v0_46_0_2:1.9
+	v7_0_4335_0:1.17
+	v7_0:1.17.0.2
+	v0_46_0_1:1.9
+	v0_46_0_0:1.9
+	v0_46:1.9.0.2
+	v0_44_0_6:1.4.2.1
+	v0_44_0_5:1.4.2.1
+	v0_44_0_4:1.4.2.1
+	v0_44_0_3:1.4
+	v0_44_0_2:1.4
+	v0_44_0_1:1.4
+	v0_44_0_0:1.4
+	v0_44:1.4.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.31
+date	2016.06.30.06.01.01;	author jfrijters;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2016.06.29.12.28.02;	author jfrijters;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2015.08.27.12.15.45;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2015.02.17.13.48.31;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2015.02.17.10.23.55;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2015.02.16.12.24.28;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2015.01.27.09.54.44;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2013.01.12.12.06.30;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2013.01.12.11.57.36;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2013.01.12.11.08.59;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2012.10.15.23.14.45;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2012.04.26.08.06.30;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2012.03.21.12.36.44;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2012.03.21.11.32.08;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2011.10.11.04.57.58;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2011.09.30.11.38.30;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2011.09.30.11.12.25;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2011.09.30.10.29.42;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2011.03.22.10.26.52;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2011.03.22.09.48.49;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2011.03.18.07.48.34;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2011.03.11.15.15.25;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2011.02.20.06.20.12;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2011.01.24.13.18.51;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2011.01.18.07.11.23;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2010.11.29.06.36.17;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2010.08.09.12.07.55;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.05.07.12.04.48;	author jfrijters;	state Exp;
+branches
+	1.4.2.1;
+next	1.3;
+
+1.3
+date	2010.04.19.13.55.18;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.02;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.32;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.4.2.1
+date	2010.08.09.12.10.24;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.31
+log
+@Avoid SHA1Managed and CryptoStream.
+@
+text
+@/*
+  Copyright (C) 2008-2015 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Security.Cryptography;
+using IKVM.Reflection.Emit;
+using IKVM.Reflection.Impl;
+using IKVM.Reflection.Metadata;
+
+namespace IKVM.Reflection.Writer
+{
+	static class ModuleWriter
+	{
+		internal static void WriteModule(StrongNameKeyPair keyPair, byte[] publicKey, ModuleBuilder moduleBuilder,
+			PEFileKinds fileKind, PortableExecutableKinds portableExecutableKind, ImageFileMachine imageFileMachine,
+			ResourceSection resources, int entryPointToken)
+		{
+			WriteModule(keyPair, publicKey, moduleBuilder, fileKind, portableExecutableKind, imageFileMachine, resources, entryPointToken, null);
+		}
+
+		internal static void WriteModule(StrongNameKeyPair keyPair, byte[] publicKey, ModuleBuilder moduleBuilder,
+			PEFileKinds fileKind, PortableExecutableKinds portableExecutableKind, ImageFileMachine imageFileMachine,
+			ResourceSection resources, int entryPointToken, Stream stream)
+		{
+			if (stream == null)
+			{
+				string fileName = moduleBuilder.FullyQualifiedName;
+				bool mono = System.Type.GetType("Mono.Runtime") != null;
+				if (mono)
+				{
+					try
+					{
+						// Mono mmaps the file, so unlink the previous version since it may be in use
+						File.Delete(fileName);
+					}
+					catch { }
+				}
+				using (FileStream fs = new FileStream(fileName, FileMode.Create))
+				{
+					WriteModuleImpl(keyPair, publicKey, moduleBuilder, fileKind, portableExecutableKind, imageFileMachine, resources, entryPointToken, fs);
+				}
+				// if we're running on Mono, mark the module as executable by using a Mono private API extension
+				if (mono)
+				{
+					File.SetAttributes(fileName, (FileAttributes)(unchecked((int)0x80000000)));
+				}
+			}
+			else
+			{
+				WriteModuleImpl(keyPair, publicKey, moduleBuilder, fileKind, portableExecutableKind, imageFileMachine, resources, entryPointToken, stream);
+			}
+		}
+
+		private static void WriteModuleImpl(StrongNameKeyPair keyPair, byte[] publicKey, ModuleBuilder moduleBuilder,
+			PEFileKinds fileKind, PortableExecutableKinds portableExecutableKind, ImageFileMachine imageFileMachine,
+			ResourceSection resources, int entryPointToken, Stream stream)
+		{
+			moduleBuilder.ApplyUnmanagedExports(imageFileMachine);
+			moduleBuilder.FixupMethodBodyTokens();
+
+			int moduleVersionIdIndex = moduleBuilder.Guids.Add(moduleBuilder.GetModuleVersionIdOrEmpty());
+			moduleBuilder.ModuleTable.Add(0, moduleBuilder.Strings.Add(moduleBuilder.moduleName), moduleVersionIdIndex, 0, 0);
+
+			if (moduleBuilder.UserStrings.IsEmpty)
+			{
+				// for compat with Ref.Emit, if there aren't any user strings, we add one
+				moduleBuilder.UserStrings.Add(" ");
+			}
+
+			if (resources != null)
+			{
+				resources.Finish();
+			}
+
+			PEWriter writer = new PEWriter(stream);
+			writer.Headers.OptionalHeader.FileAlignment = (uint)moduleBuilder.__FileAlignment;
+			switch (imageFileMachine)
+			{
+				case ImageFileMachine.I386:
+					writer.Headers.FileHeader.Machine = IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_I386;
+					writer.Headers.FileHeader.Characteristics |= IMAGE_FILE_HEADER.IMAGE_FILE_32BIT_MACHINE;
+					writer.Headers.OptionalHeader.SizeOfStackReserve = moduleBuilder.GetStackReserve(0x100000);
+					break;
+				case ImageFileMachine.ARM:
+					writer.Headers.FileHeader.Machine = IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_ARM;
+					writer.Headers.FileHeader.Characteristics |= IMAGE_FILE_HEADER.IMAGE_FILE_32BIT_MACHINE | IMAGE_FILE_HEADER.IMAGE_FILE_LARGE_ADDRESS_AWARE;
+					writer.Headers.OptionalHeader.SizeOfStackReserve = moduleBuilder.GetStackReserve(0x100000);
+					writer.Headers.OptionalHeader.SectionAlignment = 0x1000;
+					break;
+				case ImageFileMachine.AMD64:
+					writer.Headers.FileHeader.Machine = IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_AMD64;
+					writer.Headers.FileHeader.Characteristics |= IMAGE_FILE_HEADER.IMAGE_FILE_LARGE_ADDRESS_AWARE;
+					writer.Headers.FileHeader.SizeOfOptionalHeader = 0xF0;
+					writer.Headers.OptionalHeader.Magic = IMAGE_OPTIONAL_HEADER.IMAGE_NT_OPTIONAL_HDR64_MAGIC;
+					writer.Headers.OptionalHeader.SizeOfStackReserve = moduleBuilder.GetStackReserve(0x400000);
+					writer.Headers.OptionalHeader.SizeOfStackCommit = 0x4000;
+					writer.Headers.OptionalHeader.SizeOfHeapCommit = 0x2000;
+					break;
+				case ImageFileMachine.IA64:
+					writer.Headers.FileHeader.Machine = IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_IA64;
+					writer.Headers.FileHeader.Characteristics |= IMAGE_FILE_HEADER.IMAGE_FILE_LARGE_ADDRESS_AWARE;
+					writer.Headers.FileHeader.SizeOfOptionalHeader = 0xF0;
+					writer.Headers.OptionalHeader.Magic = IMAGE_OPTIONAL_HEADER.IMAGE_NT_OPTIONAL_HDR64_MAGIC;
+					writer.Headers.OptionalHeader.SizeOfStackReserve = moduleBuilder.GetStackReserve(0x400000);
+					writer.Headers.OptionalHeader.SizeOfStackCommit = 0x4000;
+					writer.Headers.OptionalHeader.SizeOfHeapCommit = 0x2000;
+					break;
+				default:
+					throw new ArgumentOutOfRangeException("imageFileMachine");
+			}
+			if (fileKind == PEFileKinds.Dll)
+			{
+				writer.Headers.FileHeader.Characteristics |= IMAGE_FILE_HEADER.IMAGE_FILE_DLL;
+			}
+
+			switch (fileKind)
+			{
+				case PEFileKinds.WindowApplication:
+					writer.Headers.OptionalHeader.Subsystem = IMAGE_OPTIONAL_HEADER.IMAGE_SUBSYSTEM_WINDOWS_GUI;
+					break;
+				default:
+					writer.Headers.OptionalHeader.Subsystem = IMAGE_OPTIONAL_HEADER.IMAGE_SUBSYSTEM_WINDOWS_CUI;
+					break;
+			}
+			writer.Headers.OptionalHeader.DllCharacteristics = (ushort)moduleBuilder.__DllCharacteristics;
+
+			CliHeader cliHeader = new CliHeader();
+			cliHeader.Cb = 0x48;
+			cliHeader.MajorRuntimeVersion = 2;
+			cliHeader.MinorRuntimeVersion = moduleBuilder.MDStreamVersion < 0x20000 ? (ushort)0 : (ushort)5;
+			if ((portableExecutableKind & PortableExecutableKinds.ILOnly) != 0)
+			{
+				cliHeader.Flags |= CliHeader.COMIMAGE_FLAGS_ILONLY;
+			}
+			if ((portableExecutableKind & PortableExecutableKinds.Required32Bit) != 0)
+			{
+				cliHeader.Flags |= CliHeader.COMIMAGE_FLAGS_32BITREQUIRED;
+			}
+			if ((portableExecutableKind & PortableExecutableKinds.Preferred32Bit) != 0)
+			{
+				cliHeader.Flags |= CliHeader.COMIMAGE_FLAGS_32BITREQUIRED | CliHeader.COMIMAGE_FLAGS_32BITPREFERRED;
+			}
+			if (keyPair != null)
+			{
+				cliHeader.Flags |= CliHeader.COMIMAGE_FLAGS_STRONGNAMESIGNED;
+			}
+			if (ModuleBuilder.IsPseudoToken(entryPointToken))
+			{
+				entryPointToken = moduleBuilder.ResolvePseudoToken(entryPointToken);
+			}
+			cliHeader.EntryPointToken = (uint)entryPointToken;
+
+			moduleBuilder.Strings.Freeze();
+			moduleBuilder.UserStrings.Freeze();
+			moduleBuilder.Guids.Freeze();
+			moduleBuilder.Blobs.Freeze();
+			MetadataWriter mw = new MetadataWriter(moduleBuilder, stream);
+			moduleBuilder.Tables.Freeze(mw);
+			TextSection code = new TextSection(writer, cliHeader, moduleBuilder, ComputeStrongNameSignatureLength(publicKey));
+
+			// Export Directory
+			if (code.ExportDirectoryLength != 0)
+			{
+				writer.Headers.OptionalHeader.DataDirectory[0].VirtualAddress = code.ExportDirectoryRVA;
+				writer.Headers.OptionalHeader.DataDirectory[0].Size = code.ExportDirectoryLength;
+			}
+
+			// Import Directory
+			if (code.ImportDirectoryLength != 0)
+			{
+				writer.Headers.OptionalHeader.DataDirectory[1].VirtualAddress = code.ImportDirectoryRVA;
+				writer.Headers.OptionalHeader.DataDirectory[1].Size = code.ImportDirectoryLength;
+			}
+
+			// Import Address Table Directory
+			if (code.ImportAddressTableLength != 0)
+			{
+				writer.Headers.OptionalHeader.DataDirectory[12].VirtualAddress = code.ImportAddressTableRVA;
+				writer.Headers.OptionalHeader.DataDirectory[12].Size = code.ImportAddressTableLength;
+			}
+
+			// COM Descriptor Directory
+			writer.Headers.OptionalHeader.DataDirectory[14].VirtualAddress = code.ComDescriptorRVA;
+			writer.Headers.OptionalHeader.DataDirectory[14].Size = code.ComDescriptorLength;
+
+			// Debug Directory
+			if (code.DebugDirectoryLength != 0)
+			{
+				writer.Headers.OptionalHeader.DataDirectory[6].VirtualAddress = code.DebugDirectoryRVA;
+				writer.Headers.OptionalHeader.DataDirectory[6].Size = code.DebugDirectoryLength;
+			}
+
+			// Set the PE File timestamp
+			writer.Headers.FileHeader.TimeDateStamp = moduleBuilder.GetTimeDateStamp();
+
+			// we need to start by computing the number of sections, because code.PointerToRawData depends on that
+			writer.Headers.FileHeader.NumberOfSections = 2;
+
+			if (moduleBuilder.initializedData.Length != 0)
+			{
+				// .sdata
+				writer.Headers.FileHeader.NumberOfSections++;
+			}
+
+			if (resources != null)
+			{
+				// .rsrc
+				writer.Headers.FileHeader.NumberOfSections++;
+			}
+
+			SectionHeader text = new SectionHeader();
+			text.Name = ".text";
+			text.VirtualAddress = code.BaseRVA;
+			text.VirtualSize = (uint)code.Length;
+			text.PointerToRawData = code.PointerToRawData;
+			text.SizeOfRawData = writer.ToFileAlignment((uint)code.Length);
+			text.Characteristics = SectionHeader.IMAGE_SCN_CNT_CODE | SectionHeader.IMAGE_SCN_MEM_EXECUTE | SectionHeader.IMAGE_SCN_MEM_READ;
+
+			SectionHeader sdata = new SectionHeader();
+			sdata.Name = ".sdata";
+			sdata.VirtualAddress = text.VirtualAddress + writer.ToSectionAlignment(text.VirtualSize);
+			sdata.VirtualSize = (uint)moduleBuilder.initializedData.Length;
+			sdata.PointerToRawData = text.PointerToRawData + text.SizeOfRawData;
+			sdata.SizeOfRawData = writer.ToFileAlignment((uint)moduleBuilder.initializedData.Length);
+			sdata.Characteristics = SectionHeader.IMAGE_SCN_CNT_INITIALIZED_DATA | SectionHeader.IMAGE_SCN_MEM_READ | SectionHeader.IMAGE_SCN_MEM_WRITE;
+
+			SectionHeader rsrc = new SectionHeader();
+			rsrc.Name = ".rsrc";
+			rsrc.VirtualAddress = sdata.VirtualAddress + writer.ToSectionAlignment(sdata.VirtualSize);
+			rsrc.PointerToRawData = sdata.PointerToRawData + sdata.SizeOfRawData;
+			rsrc.VirtualSize = resources == null ? 0 : (uint)resources.Length;
+			rsrc.SizeOfRawData = writer.ToFileAlignment(rsrc.VirtualSize);
+			rsrc.Characteristics = SectionHeader.IMAGE_SCN_MEM_READ | SectionHeader.IMAGE_SCN_CNT_INITIALIZED_DATA;
+
+			if (rsrc.SizeOfRawData != 0)
+			{
+				// Resource Directory
+				writer.Headers.OptionalHeader.DataDirectory[2].VirtualAddress = rsrc.VirtualAddress;
+				writer.Headers.OptionalHeader.DataDirectory[2].Size = rsrc.VirtualSize;
+			}
+
+			SectionHeader reloc = new SectionHeader();
+			reloc.Name = ".reloc";
+			reloc.VirtualAddress = rsrc.VirtualAddress + writer.ToSectionAlignment(rsrc.VirtualSize);
+			reloc.VirtualSize = code.PackRelocations();
+			reloc.PointerToRawData = rsrc.PointerToRawData + rsrc.SizeOfRawData;
+			reloc.SizeOfRawData = writer.ToFileAlignment(reloc.VirtualSize);
+			reloc.Characteristics = SectionHeader.IMAGE_SCN_MEM_READ | SectionHeader.IMAGE_SCN_CNT_INITIALIZED_DATA | SectionHeader.IMAGE_SCN_MEM_DISCARDABLE;
+
+			if (reloc.SizeOfRawData != 0)
+			{
+				// Base Relocation Directory
+				writer.Headers.OptionalHeader.DataDirectory[5].VirtualAddress = reloc.VirtualAddress;
+				writer.Headers.OptionalHeader.DataDirectory[5].Size = reloc.VirtualSize;
+			}
+
+			writer.Headers.OptionalHeader.SizeOfCode = text.SizeOfRawData;
+			writer.Headers.OptionalHeader.SizeOfInitializedData = sdata.SizeOfRawData + rsrc.SizeOfRawData + reloc.SizeOfRawData;
+			writer.Headers.OptionalHeader.SizeOfUninitializedData = 0;
+			writer.Headers.OptionalHeader.SizeOfImage = reloc.VirtualAddress + writer.ToSectionAlignment(reloc.VirtualSize);
+			writer.Headers.OptionalHeader.SizeOfHeaders = text.PointerToRawData;
+			writer.Headers.OptionalHeader.BaseOfCode = code.BaseRVA;
+			writer.Headers.OptionalHeader.BaseOfData = sdata.VirtualAddress;
+			writer.Headers.OptionalHeader.ImageBase = (ulong)moduleBuilder.__ImageBase;
+
+			if (imageFileMachine == ImageFileMachine.IA64)
+			{
+				// apparently for IA64 AddressOfEntryPoint points to the address of the entry point
+				// (i.e. there is an additional layer of indirection), so we add the offset to the pointer
+				writer.Headers.OptionalHeader.AddressOfEntryPoint = code.StartupStubRVA + 0x20;
+			}
+			else
+			{
+				writer.Headers.OptionalHeader.AddressOfEntryPoint = code.StartupStubRVA + writer.Thumb;
+			}
+
+			writer.WritePEHeaders();
+			writer.WriteSectionHeader(text);
+			if (sdata.SizeOfRawData != 0)
+			{
+				writer.WriteSectionHeader(sdata);
+			}
+			if (rsrc.SizeOfRawData != 0)
+			{
+				writer.WriteSectionHeader(rsrc);
+			}
+			if (reloc.SizeOfRawData != 0)
+			{
+				writer.WriteSectionHeader(reloc);
+			}
+
+			stream.Seek(text.PointerToRawData, SeekOrigin.Begin);
+			uint guidHeapOffset;
+			code.Write(mw, sdata.VirtualAddress, out guidHeapOffset);
+
+			if (sdata.SizeOfRawData != 0)
+			{
+				stream.Seek(sdata.PointerToRawData, SeekOrigin.Begin);
+				mw.Write(moduleBuilder.initializedData);
+			}
+
+			if (rsrc.SizeOfRawData != 0)
+			{
+				stream.Seek(rsrc.PointerToRawData, SeekOrigin.Begin);
+				resources.Write(mw, rsrc.VirtualAddress);
+			}
+
+			if (reloc.SizeOfRawData != 0)
+			{
+				stream.Seek(reloc.PointerToRawData, SeekOrigin.Begin);
+				code.WriteRelocations(mw);
+			}
+
+			// file alignment
+			stream.SetLength(reloc.PointerToRawData + reloc.SizeOfRawData);
+
+			// if we don't have a guid, generate one based on the contents of the assembly
+			if (moduleBuilder.universe.Deterministic && moduleBuilder.GetModuleVersionIdOrEmpty() == Guid.Empty)
+			{
+				Guid guid = GenerateModuleVersionId(stream);
+				stream.Position = guidHeapOffset + (moduleVersionIdIndex - 1) * 16;
+				stream.Write(guid.ToByteArray(), 0, 16);
+				moduleBuilder.__SetModuleVersionId(guid);
+			}
+
+			// do the strong naming
+			if (keyPair != null)
+			{
+				StrongName(stream, keyPair, writer.HeaderSize, text.PointerToRawData, code.StrongNameSignatureRVA - text.VirtualAddress + text.PointerToRawData, code.StrongNameSignatureLength);
+			}
+
+#if !NO_SYMBOL_WRITER
+			if (moduleBuilder.symbolWriter != null)
+			{
+				moduleBuilder.WriteSymbolTokenMap();
+				moduleBuilder.symbolWriter.Close();
+			}
+#endif
+		}
+
+		private static int ComputeStrongNameSignatureLength(byte[] publicKey)
+		{
+			if (publicKey == null)
+			{
+				return 0;
+			}
+			else if (publicKey.Length == 16)
+			{
+				// it must be the ECMA pseudo public key, we don't know the key size of the real key, but currently both Mono and Microsoft use a 1024 bit key size
+				return 128;
+			}
+			else
+			{
+				// for the supported strong naming algorithms, the signature size is the same as the key size
+				// (we have to subtract 32 for the header)
+				return publicKey.Length - 32;
+			}
+		}
+
+		private static void StrongName(Stream stream, StrongNameKeyPair keyPair, uint headerLength, uint textSectionFileOffset, uint strongNameSignatureFileOffset, uint strongNameSignatureLength)
+		{
+			byte[] hash;
+			using (SHA1 sha1 = SHA1.Create())
+			{
+				stream.Seek(0, SeekOrigin.Begin);
+				Stream skipStream = new SkipStream(stream, strongNameSignatureFileOffset, strongNameSignatureLength);
+				skipStream = new SkipStream(skipStream, headerLength, textSectionFileOffset - headerLength);
+				hash = sha1.ComputeHash(skipStream);
+			}
+			using (RSACryptoServiceProvider rsa = keyPair.CreateRSA())
+			{
+				byte[] signature = rsa.SignHash(hash, "1.3.14.3.2.26");
+				Array.Reverse(signature);
+				if (signature.Length != strongNameSignatureLength)
+				{
+					throw new InvalidOperationException("Signature length mismatch");
+				}
+				stream.Seek(strongNameSignatureFileOffset, SeekOrigin.Begin);
+				stream.Write(signature, 0, signature.Length);
+			}
+
+			// compute the PE checksum
+			stream.Seek(0, SeekOrigin.Begin);
+			int count = (int)stream.Length / 4;
+			BinaryReader br = new BinaryReader(stream);
+			long sum = 0;
+			for (int i = 0; i < count; i++)
+			{
+				sum += br.ReadUInt32();
+				int carry = (int)(sum >> 32);
+				sum &= 0xFFFFFFFFU;
+				sum += carry;
+			}
+			while ((sum >> 16) != 0)
+			{
+				sum = (sum & 0xFFFF) + (sum >> 16);
+			}
+			sum += stream.Length;
+
+			// write the PE checksum, note that it is always at offset 0xD8 in the file
+			ByteBuffer bb = new ByteBuffer(4);
+			bb.Write((int)sum);
+			stream.Seek(0xD8, SeekOrigin.Begin);
+			bb.WriteTo(stream);
+		}
+
+		private static Guid GenerateModuleVersionId(Stream stream)
+		{
+			byte[] hash;
+			using (SHA1 sha1 = SHA1.Create())
+			{
+				stream.Seek(0, SeekOrigin.Begin);
+				hash = sha1.ComputeHash(stream);
+			}
+			byte[] bytes = new byte[16];
+			Buffer.BlockCopy(hash, 0, bytes, 0, bytes.Length);
+			// set GUID type to "version 4" (random)
+			bytes[7] &= 0x0F;
+			bytes[7] |= 0x40;
+			bytes[8] &= 0x3F;
+			bytes[8] |= 0x80;
+			return new Guid(bytes);
+		}
+	}
+
+	sealed class SkipStream : Stream
+	{
+		private readonly Stream stream;
+		private long skipOffset;
+		private long skipLength;
+
+		internal SkipStream(Stream stream, long skipOffset, long skipLength)
+		{
+			if (skipOffset < 0 || skipLength < 0)
+			{
+				throw new ArgumentOutOfRangeException();
+			}
+			this.stream = stream;
+			this.skipOffset = skipOffset;
+			this.skipLength = skipLength;
+		}
+
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing)
+			{
+				stream.Dispose();
+			}
+		}
+
+		public override bool CanRead
+		{
+			get { return stream.CanRead; }
+		}
+
+		public override bool CanSeek
+		{
+			get { return false; }
+		}
+
+		public override bool CanWrite
+		{
+			get { return false; }
+		}
+
+		public override int Read(byte[] buffer, int offset, int count)
+		{
+			if (skipLength != 0 && skipOffset < count)
+			{
+				if (skipOffset != 0)
+				{
+					count = (int)skipOffset;
+				}
+				else
+				{
+					// note that we loop forever if the skipped part lies beyond EOF
+					while (skipLength != 0)
+					{
+						// use the output buffer as scratch space
+						skipLength -= stream.Read(buffer, offset, (int)Math.Min(count, skipLength));
+					}
+				}
+			}
+			int totalBytesRead = stream.Read(buffer, offset, count);
+			skipOffset -= totalBytesRead;
+			return totalBytesRead;
+		}
+
+		public override long Length
+		{
+			get { throw new NotSupportedException(); }
+		}
+
+		public override long Position
+		{
+			get { throw new NotSupportedException(); }
+			set { throw new NotSupportedException(); }
+		}
+
+		public override void Flush()
+		{
+			throw new NotSupportedException();
+		}
+
+		public override long Seek(long offset, SeekOrigin origin)
+		{
+			throw new NotSupportedException();
+		}
+
+		public override void SetLength(long value)
+		{
+			throw new NotSupportedException();
+		}
+
+		public override void Write(byte[] buffer, int offset, int count)
+		{
+			throw new NotSupportedException();
+		}
+	}
+}
+@
+
+
+1.30
+log
+@Bypass RSAPKCS1SignatureFormatter.
+@
+text
+@d385 2
+a386 2
+			SHA1Managed hash = new SHA1Managed();
+			using (CryptoStream cs = new CryptoStream(Stream.Null, hash, CryptoStreamMode.Write))
+d389 3
+a391 6
+				byte[] buf = new byte[8192];
+				HashChunk(stream, cs, buf, (int)headerLength);
+				stream.Seek(textSectionFileOffset, SeekOrigin.Begin);
+				HashChunk(stream, cs, buf, (int)(strongNameSignatureFileOffset - textSectionFileOffset));
+				stream.Seek(strongNameSignatureLength, SeekOrigin.Current);
+				HashChunk(stream, cs, buf, (int)(stream.Length - (strongNameSignatureFileOffset + strongNameSignatureLength)));
+d395 1
+a395 1
+				byte[] signature = rsa.SignHash(hash.Hash, "1.3.14.3.2.26");
+a429 10
+		internal static void HashChunk(Stream stream, CryptoStream cs, byte[] buf, int length)
+		{
+			while (length > 0)
+			{
+				int read = stream.Read(buf, 0, Math.Min(buf.Length, length));
+				cs.Write(buf, 0, read);
+				length -= read;
+			}
+		}
+
+d432 2
+a433 2
+			SHA1Managed hash = new SHA1Managed();
+			using (CryptoStream cs = new CryptoStream(Stream.Null, hash, CryptoStreamMode.Write))
+d436 1
+a436 2
+				byte[] buf = new byte[8192];
+				HashChunk(stream, cs, buf, (int)stream.Length);
+d439 1
+a439 1
+			Buffer.BlockCopy(hash.Hash, 0, bytes, 0, bytes.Length);
+d448 95
+@
+
+
+1.29
+log
+@Use uint for file position to support >2GB files. Note that PE spec says that 2GB is the maximum valid size.
+@
+text
+@d396 1
+a396 1
+			using (RSA rsa = keyPair.CreateRSA())
+d398 1
+a398 2
+				RSAPKCS1SignatureFormatter sign = new RSAPKCS1SignatureFormatter(rsa);
+				byte[] signature = sign.CreateSignature(hash);
+@
+
+
+1.28
+log
+@Added UniverseOptions.DeterministicOutput to enable deterministic output (i.e. setting the PE file header time stamp to zero and computing the module version id based on the contents, instead of using a random guid).
+@
+text
+@d316 1
+a316 1
+			int guidHeapOffset;
+@
+
+
+1.27
+log
+@Added new public API ModuleBuilder.__PEHeaderTimeDateStamp property.
+@
+text
+@d84 2
+a85 1
+			moduleBuilder.ModuleTable.Add(0, moduleBuilder.Strings.Add(moduleBuilder.moduleName), moduleBuilder.Guids.Add(moduleBuilder.ModuleVersionId), 0, 0);
+d217 1
+a217 1
+			writer.Headers.FileHeader.TimeDateStamp = (uint)(moduleBuilder.__PEHeaderTimeDateStamp - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalSeconds;
+d316 2
+a317 1
+			code.Write(mw, sdata.VirtualAddress);
+d340 9
+d443 19
+@
+
+
+1.26
+log
+@Added CoreCLR target for IKVM.Reflection.
+@
+text
+@d215 3
+@
+
+
+1.25
+log
+@Fixed ModuleBuilder.DefineManifestResource() to support very large resources.
+@
+text
+@d341 1
+d347 1
+@
+
+
+1.24
+log
+@Implemented ARM startup stub.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008-2011 Jeroen Frijters
+@
+
+
+1.23
+log
+@WoA requires 4K section alignment (not 8K).
+@
+text
+@d216 1
+a216 1
+			writer.Headers.FileHeader.NumberOfSections = 1;
+a229 6
+			if (imageFileMachine != ImageFileMachine.ARM)
+			{
+				// .reloc
+				writer.Headers.FileHeader.NumberOfSections++;
+			}
+
+d264 1
+a264 4
+			if (imageFileMachine != ImageFileMachine.ARM)
+			{
+				reloc.VirtualSize = code.PackRelocations();
+			}
+d291 1
+a291 1
+			else if (imageFileMachine != ImageFileMachine.ARM)
+d293 1
+a293 1
+				writer.Headers.OptionalHeader.AddressOfEntryPoint = code.StartupStubRVA;
+@
+
+
+1.22
+log
+@Restructured relocation writing to pack all relocation in a page in the same block, as WoA apparently requires this.
+@
+text
+@d108 1
+a108 1
+					writer.Headers.FileHeader.Characteristics |= IMAGE_FILE_HEADER.IMAGE_FILE_32BIT_MACHINE;
+d110 1
+@
+
+
+1.21
+log
+@Made ModuleBuilder.IsPseudoToken() method static.
+@
+text
+@d271 1
+a271 1
+				reloc.VirtualSize = ((uint)moduleBuilder.unmanagedExports.Count + 1) * 12;
+@
+
+
+1.20
+log
+@Rewrote StrongNameKeyPair without depending on System.Reflection.StrongNameKeyPair.
+@
+text
+@d168 1
+a168 1
+			if (moduleBuilder.IsPseudoToken(entryPointToken))
+@
+
+
+1.19
+log
+@New API. Added Module.__DllCharacteristics and ModuleBuilder.__DllCharacteristics properties to get and set image DLL characteristics flags.
+@
+text
+@d388 1
+a388 1
+			using (RSA rsa = CryptoHack.CreateRSA(keyPair))
+@
+
+
+1.18
+log
+@New API. Made ModuleBuilder.__FileAlignment writeable.
+@
+text
+@d146 1
+a146 5
+			writer.Headers.OptionalHeader.DllCharacteristics =
+				IMAGE_OPTIONAL_HEADER.IMAGE_DLLCHARACTERISTICS_DYNAMIC_BASE |
+				IMAGE_OPTIONAL_HEADER.IMAGE_DLLCHARACTERISTICS_NO_SEH |
+				IMAGE_OPTIONAL_HEADER.IMAGE_DLLCHARACTERISTICS_NX_COMPAT |
+				IMAGE_OPTIONAL_HEADER.IMAGE_DLLCHARACTERISTICS_TERMINAL_SERVER_AWARE;
+@
+
+
+1.17
+log
+@Added support for PortableExecutableKinds.Preferred32Bit.
+@
+text
+@d98 1
+@
+
+
+1.16
+log
+@Fixed regression caused by previous change. The number of sections needs to be computed at the beginning because the .text position depends on it.
+@
+text
+@d163 4
+@
+
+
+1.15
+log
+@Added support for ARM.
+@
+text
+@d213 1
+d216 18
+a249 5
+			if (sdata.SizeOfRawData != 0)
+			{
+				writer.Headers.FileHeader.NumberOfSections++;
+			}
+
+a262 2
+
+				writer.Headers.FileHeader.NumberOfSections++;
+a280 2
+
+				writer.Headers.FileHeader.NumberOfSections++;
+@
+
+
+1.14
+log
+@Made optional section handling more consistent and made .reloc optional as well.
+@
+text
+@d105 5
+d189 5
+a193 2
+			writer.Headers.OptionalHeader.DataDirectory[1].VirtualAddress = code.ImportDirectoryRVA;
+			writer.Headers.OptionalHeader.DataDirectory[1].Size = code.ImportDirectoryLength;
+d196 5
+a200 2
+			writer.Headers.OptionalHeader.DataDirectory[12].VirtualAddress = code.ImportAddressTableRVA;
+			writer.Headers.OptionalHeader.DataDirectory[12].Size = code.ImportAddressTableLength;
+d256 4
+a259 1
+			reloc.VirtualSize = ((uint)moduleBuilder.unmanagedExports.Count + 1) * 12;
+d288 1
+a288 1
+			else
+@
+
+
+1.13
+log
+@Added high level API extension MethodBuilder.__AddUnmanagedExport().
+@
+text
+@d202 1
+a202 11
+			writer.Headers.FileHeader.NumberOfSections = 2;
+
+			if (moduleBuilder.initializedData.Length != 0)
+			{
+				writer.Headers.FileHeader.NumberOfSections++;
+			}
+
+			if (resources != null && resources.Length != 0)
+			{
+				writer.Headers.FileHeader.NumberOfSections++;
+			}
+d220 5
+d238 2
+d250 8
+a257 3
+			// Base Relocation Directory
+			writer.Headers.OptionalHeader.DataDirectory[5].VirtualAddress = reloc.VirtualAddress;
+			writer.Headers.OptionalHeader.DataDirectory[5].Size = reloc.VirtualSize;
+d289 4
+a292 1
+			writer.WriteSectionHeader(reloc);
+d297 5
+a301 2
+			stream.Seek(sdata.PointerToRawData, SeekOrigin.Begin);
+			mw.Write(moduleBuilder.initializedData);
+d309 5
+a313 3
+			stream.Seek(reloc.PointerToRawData, SeekOrigin.Begin);
+			// .reloc section
+			code.WriteRelocations(mw);
+d316 1
+a316 1
+			mw.Write(new byte[writer.Headers.OptionalHeader.FileAlignment - (reloc.VirtualSize & (writer.Headers.OptionalHeader.FileAlignment - 1))]);
+@
+
+
+1.12
+log
+@Added API extension ModuleBuilder.__AddUnmanagedExportStub().
+@
+text
+@d81 1
+@
+
+
+1.11
+log
+@Added API extension ModuleBuilder.__AddVTableFixups().
+@
+text
+@d175 7
+d247 1
+a247 1
+			reloc.VirtualSize = 12;
+d302 1
+a302 28
+			uint relocAddress = code.StartupStubRVA;
+			switch (imageFileMachine)
+			{
+				case ImageFileMachine.I386:
+				case ImageFileMachine.AMD64:
+					relocAddress += 2;
+					break;
+				case ImageFileMachine.IA64:
+					relocAddress += 0x20;
+					break;
+			}
+			uint pageRVA = relocAddress & ~0xFFFU;
+			mw.Write(pageRVA);	// PageRVA
+			mw.Write(0x000C);	// Block Size
+			if (imageFileMachine == ImageFileMachine.I386)
+			{
+				mw.Write(0x3000 + relocAddress - pageRVA);				// Type / Offset
+			}
+			else if (imageFileMachine == ImageFileMachine.AMD64)
+			{
+				mw.Write(0xA000 + relocAddress - pageRVA);				// Type / Offset
+			}
+			else if (imageFileMachine == ImageFileMachine.IA64)
+			{
+				// on IA64 the StartupStubRVA is 16 byte aligned, so these two addresses won't cross a page boundary
+				mw.Write((short)(0xA000 + relocAddress - pageRVA));		// Type / Offset
+				mw.Write((short)(0xA000 + relocAddress - pageRVA + 8));	// Type / Offset
+			}
+d305 1
+a305 1
+			mw.Write(new byte[writer.Headers.OptionalHeader.FileAlignment - reloc.VirtualSize]);
+@
+
+
+1.10
+log
+@Added API extension to get/set stack reserve.
+@
+text
+@d282 1
+a282 1
+			code.Write(mw, (int)sdata.VirtualAddress);
+@
+
+
+1.9
+log
+@Added Mono Ref.Emit compatibility feature to allow modules currently in use to be overwritten.
+@
+text
+@d102 1
+d109 1
+a109 1
+					writer.Headers.OptionalHeader.SizeOfStackReserve = 0x400000;
+d118 1
+a118 1
+					writer.Headers.OptionalHeader.SizeOfStackReserve = 0x400000;
+@
+
+
+1.8
+log
+@Mark the just written module as executable (when running on Mono).
+@
+text
+@d50 12
+a61 1
+				using (FileStream fs = new FileStream(moduleBuilder.FullyQualifiedName, FileMode.Create))
+d66 1
+a66 1
+				if (System.Type.GetType("Mono.Runtime") != null)
+d68 1
+a68 1
+					File.SetAttributes(moduleBuilder.FullyQualifiedName, (FileAttributes)(unchecked((int)0x80000000)));
+@
+
+
+1.7
+log
+@Added support for saving to a stream instead of a file.
+@
+text
+@d54 5
+@
+
+
+1.6
+log
+@Use ResourceSection directly to collect unmanaged resources. To prepare for adding win32 icon resource support.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008 Jeroen Frijters
+d41 24
+d80 2
+a81 1
+			using (FileStream fs = new FileStream(moduleBuilder.FullyQualifiedName, FileMode.Create))
+d83 168
+a250 32
+				PEWriter writer = new PEWriter(fs);
+				switch (imageFileMachine)
+				{
+					case ImageFileMachine.I386:
+						writer.Headers.FileHeader.Machine = IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_I386;
+						writer.Headers.FileHeader.Characteristics |= IMAGE_FILE_HEADER.IMAGE_FILE_32BIT_MACHINE;
+						break;
+					case ImageFileMachine.AMD64:
+						writer.Headers.FileHeader.Machine = IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_AMD64;
+						writer.Headers.FileHeader.Characteristics |= IMAGE_FILE_HEADER.IMAGE_FILE_LARGE_ADDRESS_AWARE;
+						writer.Headers.FileHeader.SizeOfOptionalHeader = 0xF0;
+						writer.Headers.OptionalHeader.Magic = IMAGE_OPTIONAL_HEADER.IMAGE_NT_OPTIONAL_HDR64_MAGIC;
+						writer.Headers.OptionalHeader.SizeOfStackReserve = 0x400000;
+						writer.Headers.OptionalHeader.SizeOfStackCommit = 0x4000;
+						writer.Headers.OptionalHeader.SizeOfHeapCommit = 0x2000;
+						break;
+					case ImageFileMachine.IA64:
+						writer.Headers.FileHeader.Machine = IMAGE_FILE_HEADER.IMAGE_FILE_MACHINE_IA64;
+						writer.Headers.FileHeader.Characteristics |= IMAGE_FILE_HEADER.IMAGE_FILE_LARGE_ADDRESS_AWARE;
+						writer.Headers.FileHeader.SizeOfOptionalHeader = 0xF0;
+						writer.Headers.OptionalHeader.Magic = IMAGE_OPTIONAL_HEADER.IMAGE_NT_OPTIONAL_HDR64_MAGIC;
+						writer.Headers.OptionalHeader.SizeOfStackReserve = 0x400000;
+						writer.Headers.OptionalHeader.SizeOfStackCommit = 0x4000;
+						writer.Headers.OptionalHeader.SizeOfHeapCommit = 0x2000;
+						break;
+					default:
+						throw new ArgumentOutOfRangeException("imageFileMachine");
+				}
+				if (fileKind == PEFileKinds.Dll)
+				{
+					writer.Headers.FileHeader.Characteristics |= IMAGE_FILE_HEADER.IMAGE_FILE_DLL;
+				}
+d252 11
+a262 36
+				switch (fileKind)
+				{
+					case PEFileKinds.WindowApplication:
+						writer.Headers.OptionalHeader.Subsystem = IMAGE_OPTIONAL_HEADER.IMAGE_SUBSYSTEM_WINDOWS_GUI;
+						break;
+					default:
+						writer.Headers.OptionalHeader.Subsystem = IMAGE_OPTIONAL_HEADER.IMAGE_SUBSYSTEM_WINDOWS_CUI;
+						break;
+				}
+				writer.Headers.OptionalHeader.DllCharacteristics =
+					IMAGE_OPTIONAL_HEADER.IMAGE_DLLCHARACTERISTICS_DYNAMIC_BASE |
+					IMAGE_OPTIONAL_HEADER.IMAGE_DLLCHARACTERISTICS_NO_SEH |
+					IMAGE_OPTIONAL_HEADER.IMAGE_DLLCHARACTERISTICS_NX_COMPAT |
+					IMAGE_OPTIONAL_HEADER.IMAGE_DLLCHARACTERISTICS_TERMINAL_SERVER_AWARE;
+
+				CliHeader cliHeader = new CliHeader();
+				cliHeader.Cb = 0x48;
+				cliHeader.MajorRuntimeVersion = 2;
+				cliHeader.MinorRuntimeVersion = moduleBuilder.MDStreamVersion < 0x20000 ? (ushort)0 : (ushort)5;
+				if ((portableExecutableKind & PortableExecutableKinds.ILOnly) != 0)
+				{
+					cliHeader.Flags |= CliHeader.COMIMAGE_FLAGS_ILONLY;
+				}
+				if ((portableExecutableKind & PortableExecutableKinds.Required32Bit) != 0)
+				{
+					cliHeader.Flags |= CliHeader.COMIMAGE_FLAGS_32BITREQUIRED;
+				}
+				if (keyPair != null)
+				{
+					cliHeader.Flags |= CliHeader.COMIMAGE_FLAGS_STRONGNAMESIGNED;
+				}
+				if (moduleBuilder.IsPseudoToken(entryPointToken))
+				{
+					entryPointToken = moduleBuilder.ResolvePseudoToken(entryPointToken);
+				}
+				cliHeader.EntryPointToken = (uint)entryPointToken;
+d264 2
+a265 19
+				moduleBuilder.Strings.Freeze();
+				moduleBuilder.UserStrings.Freeze();
+				moduleBuilder.Guids.Freeze();
+				moduleBuilder.Blobs.Freeze();
+				MetadataWriter mw = new MetadataWriter(moduleBuilder, fs);
+				moduleBuilder.Tables.Freeze(mw);
+				TextSection code = new TextSection(writer, cliHeader, moduleBuilder, ComputeStrongNameSignatureLength(publicKey));
+
+				// Import Directory
+				writer.Headers.OptionalHeader.DataDirectory[1].VirtualAddress = code.ImportDirectoryRVA;
+				writer.Headers.OptionalHeader.DataDirectory[1].Size = code.ImportDirectoryLength;
+
+				// Import Address Table Directory
+				writer.Headers.OptionalHeader.DataDirectory[12].VirtualAddress = code.ImportAddressTableRVA;
+				writer.Headers.OptionalHeader.DataDirectory[12].Size = code.ImportAddressTableLength;
+
+				// COM Descriptor Directory
+				writer.Headers.OptionalHeader.DataDirectory[14].VirtualAddress = code.ComDescriptorRVA;
+				writer.Headers.OptionalHeader.DataDirectory[14].Size = code.ComDescriptorLength;
+d267 2
+a268 6
+				// Debug Directory
+				if (code.DebugDirectoryLength != 0)
+				{
+					writer.Headers.OptionalHeader.DataDirectory[6].VirtualAddress = code.DebugDirectoryRVA;
+					writer.Headers.OptionalHeader.DataDirectory[6].Size = code.DebugDirectoryLength;
+				}
+d270 5
+a274 1
+				writer.Headers.FileHeader.NumberOfSections = 2;
+d276 30
+a305 4
+				if (moduleBuilder.initializedData.Length != 0)
+				{
+					writer.Headers.FileHeader.NumberOfSections++;
+				}
+d307 2
+a308 4
+				if (resources != null && resources.Length != 0)
+				{
+					writer.Headers.FileHeader.NumberOfSections++;
+				}
+d310 4
+a313 126
+				SectionHeader text = new SectionHeader();
+				text.Name = ".text";
+				text.VirtualAddress = code.BaseRVA;
+				text.VirtualSize = (uint)code.Length;
+				text.PointerToRawData = code.PointerToRawData;
+				text.SizeOfRawData = writer.ToFileAlignment((uint)code.Length);
+				text.Characteristics = SectionHeader.IMAGE_SCN_CNT_CODE | SectionHeader.IMAGE_SCN_MEM_EXECUTE | SectionHeader.IMAGE_SCN_MEM_READ;
+
+				SectionHeader sdata = new SectionHeader();
+				sdata.Name = ".sdata";
+				sdata.VirtualAddress = text.VirtualAddress + writer.ToSectionAlignment(text.VirtualSize);
+				sdata.VirtualSize = (uint)moduleBuilder.initializedData.Length;
+				sdata.PointerToRawData = text.PointerToRawData + text.SizeOfRawData;
+				sdata.SizeOfRawData = writer.ToFileAlignment((uint)moduleBuilder.initializedData.Length);
+				sdata.Characteristics = SectionHeader.IMAGE_SCN_CNT_INITIALIZED_DATA | SectionHeader.IMAGE_SCN_MEM_READ | SectionHeader.IMAGE_SCN_MEM_WRITE;
+
+				SectionHeader rsrc = new SectionHeader();
+				rsrc.Name = ".rsrc";
+				rsrc.VirtualAddress = sdata.VirtualAddress + writer.ToSectionAlignment(sdata.VirtualSize);
+				rsrc.PointerToRawData = sdata.PointerToRawData + sdata.SizeOfRawData;
+				rsrc.VirtualSize = resources == null ? 0 : (uint)resources.Length;
+				rsrc.SizeOfRawData = writer.ToFileAlignment(rsrc.VirtualSize);
+				rsrc.Characteristics = SectionHeader.IMAGE_SCN_MEM_READ | SectionHeader.IMAGE_SCN_CNT_INITIALIZED_DATA;
+
+				if (rsrc.SizeOfRawData != 0)
+				{
+					// Resource Directory
+					writer.Headers.OptionalHeader.DataDirectory[2].VirtualAddress = rsrc.VirtualAddress;
+					writer.Headers.OptionalHeader.DataDirectory[2].Size = rsrc.VirtualSize;
+				}
+
+				SectionHeader reloc = new SectionHeader();
+				reloc.Name = ".reloc";
+				reloc.VirtualAddress = rsrc.VirtualAddress + writer.ToSectionAlignment(rsrc.VirtualSize);
+				reloc.VirtualSize = 12;
+				reloc.PointerToRawData = rsrc.PointerToRawData + rsrc.SizeOfRawData;
+				reloc.SizeOfRawData = writer.ToFileAlignment(reloc.VirtualSize);
+				reloc.Characteristics = SectionHeader.IMAGE_SCN_MEM_READ | SectionHeader.IMAGE_SCN_CNT_INITIALIZED_DATA | SectionHeader.IMAGE_SCN_MEM_DISCARDABLE;
+
+				// Base Relocation Directory
+				writer.Headers.OptionalHeader.DataDirectory[5].VirtualAddress = reloc.VirtualAddress;
+				writer.Headers.OptionalHeader.DataDirectory[5].Size = reloc.VirtualSize;
+
+				writer.Headers.OptionalHeader.SizeOfCode = text.SizeOfRawData;
+				writer.Headers.OptionalHeader.SizeOfInitializedData = sdata.SizeOfRawData + rsrc.SizeOfRawData + reloc.SizeOfRawData;
+				writer.Headers.OptionalHeader.SizeOfUninitializedData = 0;
+				writer.Headers.OptionalHeader.SizeOfImage = reloc.VirtualAddress + writer.ToSectionAlignment(reloc.VirtualSize);
+				writer.Headers.OptionalHeader.SizeOfHeaders = text.PointerToRawData;
+				writer.Headers.OptionalHeader.BaseOfCode = code.BaseRVA;
+				writer.Headers.OptionalHeader.BaseOfData = sdata.VirtualAddress;
+				writer.Headers.OptionalHeader.ImageBase = (ulong)moduleBuilder.__ImageBase;
+
+				if (imageFileMachine == ImageFileMachine.IA64)
+				{
+					// apparently for IA64 AddressOfEntryPoint points to the address of the entry point
+					// (i.e. there is an additional layer of indirection), so we add the offset to the pointer
+					writer.Headers.OptionalHeader.AddressOfEntryPoint = code.StartupStubRVA + 0x20;
+				}
+				else
+				{
+					writer.Headers.OptionalHeader.AddressOfEntryPoint = code.StartupStubRVA;
+				}
+
+				writer.WritePEHeaders();
+				writer.WriteSectionHeader(text);
+				if (sdata.SizeOfRawData != 0)
+				{
+					writer.WriteSectionHeader(sdata);
+				}
+				if (rsrc.SizeOfRawData != 0)
+				{
+					writer.WriteSectionHeader(rsrc);
+				}
+				writer.WriteSectionHeader(reloc);
+
+				fs.Seek(text.PointerToRawData, SeekOrigin.Begin);
+				code.Write(mw, (int)sdata.VirtualAddress);
+
+				fs.Seek(sdata.PointerToRawData, SeekOrigin.Begin);
+				mw.Write(moduleBuilder.initializedData);
+
+				if (rsrc.SizeOfRawData != 0)
+				{
+					fs.Seek(rsrc.PointerToRawData, SeekOrigin.Begin);
+					resources.Write(mw, rsrc.VirtualAddress);
+				}
+
+				fs.Seek(reloc.PointerToRawData, SeekOrigin.Begin);
+				// .reloc section
+				uint relocAddress = code.StartupStubRVA;
+				switch (imageFileMachine)
+				{
+					case ImageFileMachine.I386:
+					case ImageFileMachine.AMD64:
+						relocAddress += 2;
+						break;
+					case ImageFileMachine.IA64:
+						relocAddress += 0x20;
+						break;
+				}
+				uint pageRVA = relocAddress & ~0xFFFU;
+				mw.Write(pageRVA);	// PageRVA
+				mw.Write(0x000C);	// Block Size
+				if (imageFileMachine == ImageFileMachine.I386)
+				{
+					mw.Write(0x3000 + relocAddress - pageRVA);				// Type / Offset
+				}
+				else if (imageFileMachine == ImageFileMachine.AMD64)
+				{
+					mw.Write(0xA000 + relocAddress - pageRVA);				// Type / Offset
+				}
+				else if (imageFileMachine == ImageFileMachine.IA64)
+				{
+					// on IA64 the StartupStubRVA is 16 byte aligned, so these two addresses won't cross a page boundary
+					mw.Write((short)(0xA000 + relocAddress - pageRVA));		// Type / Offset
+					mw.Write((short)(0xA000 + relocAddress - pageRVA + 8));	// Type / Offset
+				}
+
+				// file alignment
+				mw.Write(new byte[writer.Headers.OptionalHeader.FileAlignment - reloc.VirtualSize]);
+
+				// do the strong naming
+				if (keyPair != null)
+				{
+					StrongName(fs, keyPair, writer.HeaderSize, text.PointerToRawData, code.StrongNameSignatureRVA - text.VirtualAddress + text.PointerToRawData, code.StrongNameSignatureLength);
+				}
+d342 1
+a342 1
+		private static void StrongName(FileStream fs, StrongNameKeyPair keyPair, uint headerLength, uint textSectionFileOffset, uint strongNameSignatureFileOffset, uint strongNameSignatureLength)
+d347 1
+a347 1
+				fs.Seek(0, SeekOrigin.Begin);
+d349 5
+a353 5
+				HashChunk(fs, cs, buf, (int)headerLength);
+				fs.Seek(textSectionFileOffset, SeekOrigin.Begin);
+				HashChunk(fs, cs, buf, (int)(strongNameSignatureFileOffset - textSectionFileOffset));
+				fs.Seek(strongNameSignatureLength, SeekOrigin.Current);
+				HashChunk(fs, cs, buf, (int)(fs.Length - (strongNameSignatureFileOffset + strongNameSignatureLength)));
+d364 2
+a365 2
+				fs.Seek(strongNameSignatureFileOffset, SeekOrigin.Begin);
+				fs.Write(signature, 0, signature.Length);
+d369 3
+a371 3
+			fs.Seek(0, SeekOrigin.Begin);
+			int count = (int)fs.Length / 4;
+			BinaryReader br = new BinaryReader(fs);
+d384 1
+a384 1
+			sum += fs.Length;
+d389 2
+a390 2
+			fs.Seek(0xD8, SeekOrigin.Begin);
+			bb.WriteTo(fs);
+d393 1
+a393 1
+		internal static void HashChunk(FileStream fs, CryptoStream cs, byte[] buf, int length)
+d397 1
+a397 1
+				int read = fs.Read(buf, 0, Math.Min(buf.Length, length));
+@
+
+
+1.5
+log
+@Fix bug #3040528.
+@
+text
+@d37 3
+a39 1
+		internal static void WriteModule(StrongNameKeyPair keyPair, byte[] publicKey, ModuleBuilder moduleBuilder, PEFileKinds fileKind, PortableExecutableKinds portableExecutableKind, ImageFileMachine imageFileMachine, ByteBuffer versionInfoData, byte[] unmanagedResources, int entryPointToken)
+d51 5
+a134 1
+				ResourceSection resources = new ResourceSection(versionInfoData, unmanagedResources);
+d162 1
+a162 1
+				if (resources.Length != 0)
+d187 1
+a187 1
+				rsrc.VirtualSize = (uint)resources.Length;
+@
+
+
+1.4
+log
+@Delay signing fix.
+@
+text
+@d127 1
+a127 1
+				TextSection code = new TextSection(writer, cliHeader, moduleBuilder, publicKey != null);
+d296 19
+d331 1
+a331 2
+				sign.SetHashAlgorithm("SHA1");
+				byte[] signature = sign.CreateSignature(hash.Hash);
+d333 4
+a336 1
+				Debug.Assert(signature.Length == strongNameSignatureLength);
+@
+
+
+1.4.2.1
+log
+@Fix bug #3040528.
+@
+text
+@d127 1
+a127 1
+				TextSection code = new TextSection(writer, cliHeader, moduleBuilder, ComputeStrongNameSignatureLength(publicKey));
+a295 19
+		private static int ComputeStrongNameSignatureLength(byte[] publicKey)
+		{
+			if (publicKey == null)
+			{
+				return 0;
+			}
+			else if (publicKey.Length == 16)
+			{
+				// it must be the ECMA pseudo public key, we don't know the key size of the real key, but currently both Mono and Microsoft use a 1024 bit key size
+				return 128;
+			}
+			else
+			{
+				// for the supported strong naming algorithms, the signature size is the same as the key size
+				// (we have to subtract 32 for the header)
+				return publicKey.Length - 32;
+			}
+		}
+
+d312 2
+a313 1
+				byte[] signature = sign.CreateSignature(hash);
+d315 1
+a315 4
+				if (signature.Length != strongNameSignatureLength)
+				{
+					throw new InvalidOperationException("Signature length mismatch");
+				}
+@
+
+
+1.3
+log
+@Added support for delay signing (i.e. setting the public key without having the private key).
+@
+text
+@d111 1
+a111 1
+				if (publicKey != null)
+d127 1
+a127 1
+				TextSection code = new TextSection(writer, cliHeader, moduleBuilder);
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d37 1
+a37 1
+		internal static void WriteModule(StrongNameKeyPair keyPair, ModuleBuilder moduleBuilder, PEFileKinds fileKind, PortableExecutableKinds portableExecutableKind, ImageFileMachine imageFileMachine, ByteBuffer versionInfoData, byte[] unmanagedResources, int entryPointToken)
+d111 1
+a111 1
+				if (keyPair != null)
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

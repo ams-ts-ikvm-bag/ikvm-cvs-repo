@@ -1,0 +1,808 @@
+head	1.28;
+access;
+symbols
+	v8_1_5717_0:1.28
+	v8_1:1.28.0.8
+	v8_0_5449_1:1.28
+	v8_0_5449_0:1.28
+	v8_0:1.28.0.6
+	v7_4_5196_0:1.28
+	v7_4:1.28.0.4
+	v7_3:1.28.0.2
+	v7_2_4630_6:1.20
+	v7_2_4630_5:1.20
+	v7_2_4630_4:1.20
+	v7_2_4630_3:1.20
+	v7_2_4630_2:1.20
+	v0_46_0_4:1.11
+	v7_2_4630_1:1.20
+	v7_2:1.20.0.2
+	v7_1_4532_2:1.19
+	v7_1_4532_1:1.19
+	v7_1_4532_0:1.19
+	v7_1:1.19.0.2
+	v7_0_4335_3:1.13
+	v7_0_4335_2:1.13
+	v7_0_4335_1:1.13
+	v0_46_0_2:1.11
+	v7_0_4335_0:1.13
+	v7_0:1.13.0.2
+	v0_46_0_1:1.11
+	v0_46_0_0:1.11
+	v0_46:1.11.0.2
+	v0_44_0_6:1.6
+	v0_44_0_5:1.6
+	v0_44_0_4:1.6
+	v0_44_0_3:1.6
+	v0_44_0_2:1.6
+	v0_44_0_1:1.6
+	v0_44_0_0:1.6
+	v0_44:1.6.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.28
+date	2013.01.07.12.03.04;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2013.01.07.11.57.04;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2012.11.20.14.02.54;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2012.10.24.16.50.29;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2012.10.12.07.42.59;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2012.10.11.12.04.18;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2012.10.11.11.57.08;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2012.10.11.10.33.42;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2012.07.11.09.20.13;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2012.04.18.09.19.53;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2012.04.09.10.04.58;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2012.04.09.09.36.02;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2012.04.09.09.33.24;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2012.04.09.09.27.50;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2012.01.25.14.56.34;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2011.03.10.16.09.59;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2011.03.09.07.11.38;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2011.01.23.08.12.13;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2011.01.20.14.31.10;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2011.01.20.05.38.11;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2011.01.13.15.44.28;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2011.01.13.10.44.44;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2010.05.20.12.17.16;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2010.05.20.09.34.34;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.05.20.09.25.30;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.05.11.06.07.20;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.28
+log
+@Added Universe.ResolvedMissingMember event.
+@
+text
+@/*
+  Copyright (C) 2009-2012 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+
+namespace IKVM.Reflection
+{
+	public delegate Module ModuleResolveEventHandler(object sender, ResolveEventArgs e);
+
+	public abstract class Assembly : ICustomAttributeProvider
+	{
+		internal readonly Universe universe;
+		protected string fullName;	// AssemblyBuilder needs access to this field to clear it when the name changes
+		protected List<ModuleResolveEventHandler> resolvers;
+
+		internal Assembly(Universe universe)
+		{
+			this.universe = universe;
+		}
+
+		public sealed override string ToString()
+		{
+			return FullName;
+		}
+
+		public event ModuleResolveEventHandler ModuleResolve
+		{
+			add
+			{
+				if (resolvers == null)
+				{
+					resolvers = new List<ModuleResolveEventHandler>();
+				}
+				resolvers.Add(value);
+			}
+			remove
+			{
+				resolvers.Remove(value);
+			}
+		}
+
+		public abstract Type[] GetTypes();
+		public abstract AssemblyName GetName();
+		public abstract string ImageRuntimeVersion { get; }
+		public abstract Module ManifestModule { get; }
+		public abstract MethodInfo EntryPoint { get; }
+		public abstract string Location { get; }
+		public abstract AssemblyName[] GetReferencedAssemblies();
+		public abstract Module[] GetModules(bool getResourceModules);
+		public abstract Module[] GetLoadedModules(bool getResourceModules);
+		public abstract Module GetModule(string name);
+		public abstract string[] GetManifestResourceNames();
+		public abstract ManifestResourceInfo GetManifestResourceInfo(string resourceName);
+		public abstract System.IO.Stream GetManifestResourceStream(string name);
+
+		internal abstract Type FindType(TypeName name);
+		internal abstract Type FindTypeIgnoreCase(TypeName lowerCaseName);
+
+		// The differences between ResolveType and FindType are:
+		// - ResolveType is only used when a type is assumed to exist (because another module's metadata claims it)
+		// - ResolveType can return a MissingType
+		internal Type ResolveType(Module requester, TypeName typeName)
+		{
+			return FindType(typeName) ?? universe.GetMissingTypeOrThrow(requester, this.ManifestModule, null, typeName);
+		}
+
+		public string FullName
+		{
+			get { return fullName ?? (fullName = GetName().FullName); }
+		}
+
+		public Module[] GetModules()
+		{
+			return GetModules(true);
+		}
+
+		public IEnumerable<Module> Modules
+		{
+			get { return GetLoadedModules(); }
+		}
+
+		public Module[] GetLoadedModules()
+		{
+			return GetLoadedModules(true);
+		}
+
+		public AssemblyName GetName(bool copiedName)
+		{
+			return GetName();
+		}
+
+		public bool ReflectionOnly
+		{
+			get { return true; }
+		}
+
+		public Type[] GetExportedTypes()
+		{
+			List<Type> list = new List<Type>();
+			foreach (Type type in GetTypes())
+			{
+				if (type.IsVisible)
+				{
+					list.Add(type);
+				}
+			}
+			return list.ToArray();
+		}
+
+		public IEnumerable<Type> ExportedTypes
+		{
+			get { return GetExportedTypes(); }
+		}
+
+		public IEnumerable<TypeInfo> DefinedTypes
+		{
+			get
+			{
+				Type[] types = GetTypes();
+				TypeInfo[] typeInfos = new TypeInfo[types.Length];
+				for (int i = 0; i < types.Length; i++)
+				{
+					typeInfos[i] = types[i].GetTypeInfo();
+				}
+				return typeInfos;
+			}
+		}
+
+		public Type GetType(string name)
+		{
+			return GetType(name, false);
+		}
+
+		public Type GetType(string name, bool throwOnError)
+		{
+			return GetType(name, throwOnError, false);
+		}
+
+		public Type GetType(string name, bool throwOnError, bool ignoreCase)
+		{
+			TypeNameParser parser = TypeNameParser.Parse(name, throwOnError);
+			if (parser.Error)
+			{
+				return null;
+			}
+			if (parser.AssemblyName != null)
+			{
+				if (throwOnError)
+				{
+					throw new ArgumentException("Type names passed to Assembly.GetType() must not specify an assembly.");
+				}
+				else
+				{
+					return null;
+				}
+			}
+			TypeName typeName = TypeName.Split(TypeNameParser.Unescape(parser.FirstNamePart));
+			Type type = ignoreCase
+				? FindTypeIgnoreCase(typeName.ToLowerInvariant())
+				: FindType(typeName);
+			if (type == null && __IsMissing)
+			{
+				throw new MissingAssemblyException((MissingAssembly)this);
+			}
+			return parser.Expand(type, this.ManifestModule, throwOnError, name, false, ignoreCase);
+		}
+
+		public virtual Module LoadModule(string moduleName, byte[] rawModule)
+		{
+			throw new NotSupportedException();
+		}
+
+		public Module LoadModule(string moduleName, byte[] rawModule, byte[] rawSymbolStore)
+		{
+			return LoadModule(moduleName, rawModule);
+		}
+
+		public bool IsDefined(Type attributeType, bool inherit)
+		{
+			return CustomAttributeData.__GetCustomAttributes(this, attributeType, inherit).Count != 0;
+		}
+
+		public IList<CustomAttributeData> __GetCustomAttributes(Type attributeType, bool inherit)
+		{
+			return CustomAttributeData.__GetCustomAttributes(this, attributeType, inherit);
+		}
+
+		public IList<CustomAttributeData> GetCustomAttributesData()
+		{
+			return CustomAttributeData.GetCustomAttributes(this);
+		}
+
+		public IEnumerable<CustomAttributeData> CustomAttributes
+		{
+			get { return GetCustomAttributesData(); }
+		}
+
+		public static string CreateQualifiedName(string assemblyName, string typeName)
+		{
+			return typeName + ", " + assemblyName;
+		}
+
+		public static Assembly GetAssembly(Type type)
+		{
+			return type.Assembly;
+		}
+
+		public string CodeBase
+		{
+			get
+			{
+				string path = this.Location.Replace(System.IO.Path.DirectorySeparatorChar, '/');
+				if (!path.StartsWith("/"))
+				{
+					path = "/" + path;
+				}
+				return "file://" + path;
+			}
+		}
+
+		public virtual bool IsDynamic
+		{
+			get { return false; }
+		}
+
+		public virtual bool __IsMissing
+		{
+			get { return false; }
+		}
+
+		public AssemblyNameFlags __AssemblyFlags
+		{
+			get { return GetAssemblyFlags(); }
+		}
+
+		protected virtual AssemblyNameFlags GetAssemblyFlags()
+		{
+			return GetName().Flags;
+		}
+
+		internal abstract IList<CustomAttributeData> GetCustomAttributesData(Type attributeType);
+	}
+}
+@
+
+
+1.27
+log
+@Changed type name parser to use Module as context, instead of Assembly.
+@
+text
+@d83 1
+a83 1
+		internal Type ResolveType(TypeName typeName)
+d85 1
+a85 1
+			return FindType(typeName) ?? universe.GetMissingTypeOrThrow(this.ManifestModule, null, typeName);
+@
+
+
+1.26
+log
+@Added the Assembly.ModuleResolve event.
+@
+text
+@d186 1
+a186 1
+			return parser.Expand(type, this, throwOnError, name, false, ignoreCase);
+@
+
+
+1.25
+log
+@Made AssemblyBuilder.__AssemblyFlags a read/write property and marked __SetAssemblyFlags() obsolete.
+@
+text
+@d29 2
+d35 1
+d47 16
+@
+
+
+1.24
+log
+@Added new .NET 4.0 property Assembly.IsDynamic.
+@
+text
+@d233 1
+a233 1
+		public virtual AssemblyNameFlags __AssemblyFlags
+d235 6
+a240 1
+			get { return GetName().Flags; }
+@
+
+
+1.23
+log
+@Added new .NET 4.5 property Assembly.Modules.
+@
+text
+@d223 5
+@
+
+
+1.22
+log
+@Added new .NET 4.5 properties Assembly.ExportedTypes and Assembly.DefinedTypes.
+@
+text
+@d79 5
+@
+
+
+1.21
+log
+@- Added new .NET 4.0 method GetCustomAttributesData() to Assembly, MemberInfo, Module and ParameterInfo.
+- Added new .NET 4.5 property CustomAttributes to Assembly, MemberInfo, Module and ParameterInfo.
+@
+text
+@d107 19
+@
+
+
+1.20
+log
+@Updated Assembly.CreateQualifiedName() to be compatible with current .NET versions.
+@
+text
+@d166 10
+@
+
+
+1.19
+log
+@Implemented Assembly.ToString().
+@
+text
+@d168 1
+a168 1
+			return assemblyName == null ? typeName : typeName + ", " + assemblyName;
+@
+
+
+1.18
+log
+@Added support for case-insensitive type lookup.
+@
+text
+@d39 5
+@
+
+
+1.17
+log
+@Added Assembly.GetType(string,bool,bool) method.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Jeroen Frijters
+d54 1
+a113 4
+			if (ignoreCase)
+			{
+				throw new NotImplementedException();
+			}
+d131 3
+a133 1
+			Type type = FindType(typeName);
+d138 1
+a138 1
+			return parser.Expand(type, this, throwOnError, name, false);
+@
+
+
+1.16
+log
+@Merged GetTypeImpl into it's only caller.
+@
+text
+@d108 9
+@
+
+
+1.15
+log
+@Fixed a couple of parameter names.
+@
+text
+@a52 10
+		internal Type GetTypeImpl(string typeName)
+		{
+			Type type = FindType(TypeName.Split(TypeNameParser.Unescape(typeName)));
+			if (type == null && __IsMissing)
+			{
+				throw new MissingAssemblyException((MissingAssembly)this);
+			}
+			return type;
+		}
+
+d124 7
+a130 1
+			return parser.Expand(GetTypeImpl(parser.FirstNamePart), this, throwOnError, name, false);
+@
+
+
+1.14
+log
+@Cache the assembly FullName in Assembly. This brings the Assembly.FullName property performance more inline with System.Reflection which also caches the FullName (computing the FullName is expensive).
+@
+text
+@d51 1
+a51 1
+		public abstract System.IO.Stream GetManifestResourceStream(string resourceName);
+d111 1
+a111 1
+		public Type GetType(string typeName)
+d113 1
+a113 1
+			return GetType(typeName, false);
+d116 1
+a116 1
+		public Type GetType(string typeName, bool throwOnError)
+d118 1
+a118 1
+			TypeNameParser parser = TypeNameParser.Parse(typeName, throwOnError);
+d134 1
+a134 1
+			return parser.Expand(GetTypeImpl(parser.FirstNamePart), this, throwOnError, typeName, false);
+@
+
+
+1.13
+log
+@Added API extension Assembly.__AssemblyFlags to query all the assembly flags. The AssemblyName.Flags property returns only a subset of the flags.
+@
+text
+@d32 1
+a39 1
+		public abstract string FullName { get; }
+d73 5
+@
+
+
+1.12
+log
+@- Fixed support for missing types in generic type parameters in custom attribute values.
+- Fixed TypeParser.GetType() not to throw MissingAssemblyException.
+- Unified type name parsing again.
+@
+text
+@d180 5
+@
+
+
+1.11
+log
+@Add support for reflecting on assemblies without loading mscorlib (or with partial mscorlib) when missing type resolution is enabled.
+@
+text
+@d129 1
+a129 1
+			return parser.Expand(GetTypeImpl(parser.FirstNamePart), this, throwOnError, typeName);
+@
+
+
+1.10
+log
+@Move missing type support into universe and optionally allow missing types to be resolved inside all Assemblies.
+@
+text
+@d70 1
+a70 1
+			return FindType(typeName) ?? universe.GetMissingType(this.ManifestModule, null, typeName);
+@
+
+
+1.9
+log
+@More type name fixes. This time to support the fact that the CLR and Mono both treat TypeNamespace and TypeName as separate names and do not consider fullName to be relevant.
+@
+text
+@d70 1
+a70 6
+			return FindType(typeName) ?? GetMissingType(typeName);
+		}
+
+		internal virtual Type GetMissingType(TypeName name)
+		{
+			return null;
+@
+
+
+1.8
+log
+@Added __IsMissing to Module and Assembly and make sure that __GetDeclarativeSecurity() when called with a MissingAssembly.
+@
+text
+@d53 19
+a71 1
+		internal abstract Type GetTypeImpl(string typeName);
+d73 1
+a73 5
+		// The differences between ResolveType and GetTypeImpl are:
+		// - ResolveType is only used when a type is assumed to exist (because another module's metadata claim it)
+		// - ResolveType takes the unescaped namespace and name parts as they exist in the metadata
+		// - ResolveType is overridden in MissingAssembly to return a MissingType
+		internal virtual Type ResolveType(string ns, string name)
+d75 1
+a75 1
+			return GetTypeImpl(TypeNameParser.Escape(ns == null ? name : ns + "." + name));
+@
+
+
+1.7
+log
+@Added support for magic missing assemblies that resolve missing types to allow (some) reflection on assemblies with missing dependencies.
+@
+text
+@d166 5
+@
+
+
+1.6
+log
+@Added ICustomAttributeProvider interface.
+@
+text
+@d55 9
+@
+
+
+1.5
+log
+@Implemented Assembly/Module.IsDefined() in terms of __GetCustomAttributes().Count != 0 to improve efficiency and correctly handle subtyping.
+@
+text
+@d29 1
+a29 1
+	public abstract class Assembly
+d129 5
+@
+
+
+1.4
+log
+@Implemented custom attribute filtering at the source. Added support for custom attribute sub typing.
+@
+text
+@d126 1
+a126 8
+			foreach (CustomAttributeData cad in CustomAttributeData.GetCustomAttributes(this))
+			{
+				if (cad.Constructor.DeclaringType.Equals(attributeType))
+				{
+					return true;
+				}
+			}
+			return false;
+@
+
+
+1.3
+log
+@Added Assembly.CodeBase property and fixes Assembly.GetName() and AssemblyName.GetAssemblyName() to set the CodeBase of the AssemblyName.
+@
+text
+@d159 1
+a159 1
+		internal abstract IList<CustomAttributeData> GetCustomAttributesData();
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d146 13
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

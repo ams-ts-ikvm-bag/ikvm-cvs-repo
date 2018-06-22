@@ -1,0 +1,41 @@
+head	1.2;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2007.07.13.11.42.31;	author jfrijters;	state dead;
+branches;
+next	1.1;
+
+1.1
+date	2007.06.22.09.51.43;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@- Integrated OpenJDK packages: java.net, java.security, java.util.jar, javax.naming, javax.net, javax.security, javax.smartcardio, java.nio.channels.spi
+- Integrated IcedTea crypto/security classes.
+@
+text
+@package sun.security.provider;
+
+public abstract class PolicyFile extends java.security.Policy {}
+@
+
+
+1.1
+log
+@Integrated OpenJDK's java.rmi package.
+@
+text
+@@
+

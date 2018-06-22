@@ -1,0 +1,1936 @@
+head	1.37;
+access;
+symbols
+	v0_36_0_14:1.34.6.1
+	v0_36_0_13:1.34.6.1
+	v0_36_0_9:1.34.6.1
+	v0_36_0_7:1.34.6.1
+	v0_36_0_5:1.34.6.1
+	v0_36_0_4:1.34
+	v0_36_0_3:1.34
+	v0_36_0_2:1.34
+	v0_36_0_1:1.34
+	v0_36_0_0:1.34
+	v0_36:1.34.0.6
+	v0_34_0_3:1.34
+	v0_34_0_2:1.34
+	v0_34_0_1:1.34
+	v0_34_0_0:1.34
+	v0_34:1.34.0.4
+	v0_32:1.34.0.2
+	v0_32_0_0:1.34
+	v0_30:1.30.0.2
+	v0_28_0_0:1.27
+	v0_26_0_1:1.26
+	v0_26_0_0:1.26
+	v0_24_0_1:1.26
+	v0_24_0_0:1.26
+	v0_22_0_0:1.23
+	v0_20_0_0:1.21
+	v0_18_0_0:1.17
+	v0_16_0_0:1.17
+	v0_14_0_1:1.16
+	v0_14_0_0:1.16
+	v0_12_0_0:1.16
+	v0_10_0_1:1.14
+	v0_10_0_0:1.14
+	v0_8_0_0:1.8
+	initial:1.1.1.1
+	ikvm:1.1.1;
+locks; strict;
+comment	@# @;
+
+
+1.37
+date	2008.08.06.12.51.17;	author jfrijters;	state dead;
+branches;
+next	1.36;
+
+1.36
+date	2007.10.25.12.56.22;	author jfrijters;	state Exp;
+branches;
+next	1.35;
+
+1.35
+date	2007.10.24.04.24.12;	author jfrijters;	state Exp;
+branches;
+next	1.34;
+
+1.34
+date	2006.08.24.13.27.00;	author jfrijters;	state Exp;
+branches
+	1.34.6.1;
+next	1.33;
+
+1.33
+date	2006.08.17.08.14.47;	author jfrijters;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2006.08.14.07.57.03;	author jfrijters;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2006.08.04.12.06.41;	author jfrijters;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2006.07.04.10.13.32;	author jfrijters;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2006.06.28.08.07.29;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2006.06.20.14.31.58;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2006.04.23.10.46.51;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2006.01.16.14.18.45;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2006.01.11.07.55.26;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2005.12.07.09.06.32;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2005.10.06.14.05.18;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2005.10.04.11.23.44;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2005.08.01.10.27.06;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2005.07.27.15.57.55;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2005.07.25.14.34.22;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2005.07.25.09.53.25;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2005.05.23.08.24.08;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2005.02.16.11.20.45;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2005.02.02.15.12.02;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2004.12.21.10.26.52;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2004.12.07.09.53.42;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2004.10.19.13.43.55;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2004.10.04.19.30.53;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2004.09.05.09.37.59;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2004.08.17.09.05.25;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2004.04.23.14.21.46;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2004.03.16.17.10.11;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2003.08.21.10.06.36;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2003.04.07.11.40.51;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2003.03.17.14.04.27;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2003.02.25.15.49.23;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2002.12.27.09.01.16;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2002.12.18.16.01.03;	author jfrijters;	state Exp;
+branches
+	1.1.1.1;
+next	;
+
+1.1.1.1
+date	2002.12.18.16.01.03;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.34.6.1
+date	2007.12.04.06.04.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.37
+log
+@Removed files that are no longer needed no that GNU Classpath support has been dropped.
+@
+text
+@/* VMClassLoader.java -- Reference implementation of native interface
+   required by ClassLoader
+   Copyright (C) 1998, 2001, 2002 Free Software Foundation
+
+This file is part of GNU Classpath.
+
+GNU Classpath is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2, or (at your option)
+any later version.
+
+GNU Classpath is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with GNU Classpath; see the file COPYING.  If not, write to the
+Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+02111-1307 USA.
+
+Linking this library statically or dynamically with other modules is
+making a combined work based on this library.  Thus, the terms and
+conditions of the GNU General Public License cover the whole
+combination.
+
+As a special exception, the copyright holders of this library give you
+permission to link this library with independent modules to produce an
+executable, regardless of the license terms of these independent
+modules, and to copy and distribute the resulting executable under
+terms of your choice, provided that you also meet, for each linked
+independent module, the terms and conditions of the license of that
+module.  An independent module is a module which is not derived from
+or based on this library.  If you modify this library, you may extend
+this exception to your version of the library, but you are not
+obligated to do so.  If you do not wish to do so, delete this
+exception statement from your version. */
+
+package java.lang;
+
+import java.security.ProtectionDomain;
+import java.net.URL;
+import java.net.MalformedURLException;
+import java.io.IOException;
+import java.util.Enumeration;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Hashtable;
+import java.util.StringTokenizer;
+import java.util.jar.Attributes;
+import java.util.jar.Manifest;
+import gnu.classpath.SystemProperties;
+import gnu.java.lang.InstrumentationImpl;
+import cli.System.*;
+import cli.System.Reflection.*;
+
+/**
+ * java.lang.VMClassLoader is a package-private helper for VMs to implement
+ * on behalf of java.lang.ClassLoader.
+ *
+ * @@author John Keiser
+ * @@author Mark Wielaard <mark@@klomp.org>
+ * @@author Eric Blake <ebb9@@email.byu.edu>
+ * @@author Jeroen Frijters
+ */
+final class VMClassLoader
+{
+    //static InstrumentationImpl instrumenter;
+
+    private static native Class defineClassImpl(ClassLoader cl, String name, byte[] data, int offset, int len, ProtectionDomain pd)
+        throws ClassNotFoundException;
+
+    // this method is used by java.lang.reflect.Proxy (through reflection)
+    static Class defineClass(ClassLoader cl, String name, byte[] data, int offset, int len, ProtectionDomain pd)
+    {
+        try
+        {
+            return defineClassImpl(cl, name, data, offset, len, pd);
+        }
+        catch(ClassNotFoundException x)
+        {
+            throw new NoClassDefFoundError(x.getMessage());
+        }
+    }
+
+    static Class defineClassWithTransformers(ClassLoader cl, String name, byte[] data, int offset, int len, ProtectionDomain pd)
+    {
+        /*
+        if(instrumenter != null)
+        {
+            if(offset != 0 || len != data.length)
+            {
+                byte[] tmp = new byte[len];
+                System.arraycopy(data, offset, tmp, 0, len);
+                data = tmp;
+                offset = 0;
+            }
+            data = instrumenter.callTransformers(cl, name, null, pd, data);
+            len = data.length;
+        }
+        */
+        try
+        {
+            return defineClassImpl(cl, name, data, offset, len, pd);
+        }
+        catch(ClassNotFoundException x)
+        {
+            throw new NoClassDefFoundError(x.getMessage());
+        }
+    }
+
+    /**
+     * Helper to resolve all references to other classes from this class.
+     *
+     * @@param c the class to resolve
+     */
+    static void resolveClass(Class c)
+    {
+    }
+
+    /**
+     * Helper to load a class from the bootstrap class loader.
+     *
+     * @@param name the class name to load
+     * @@param resolve whether to resolve it
+     * @@return the class, loaded by the bootstrap classloader
+     */
+    static native Class loadClass(String name, boolean resolve) throws ClassNotFoundException;
+
+    private static cli.System.Reflection.Assembly getBootstrapAssembly()
+    {
+	return ikvm.runtime.Util.getInstanceTypeFromClass(Object.class).get_Assembly();
+    }
+
+    /**
+     * Helper to load a resource from the bootstrap class loader.
+     *
+     * @@param name the resource to find
+     * @@return the URL to the resource
+     */
+    static URL getResource(String name)
+    {
+        return ikvm.runtime.AssemblyClassLoader.getResource(null, getBootstrapAssembly(), name);
+    }
+
+    /**
+     * Helper to get a list of resources from the bootstrap class loader.
+     *
+     * @@param name the resource to find
+     * @@return an enumeration of resources
+     * @@throws IOException if one occurs
+     */
+    static Enumeration getResources(String name) throws IOException
+    {
+        return ikvm.runtime.AssemblyClassLoader.getResources(null, getBootstrapAssembly(), name);
+    }
+
+    /**
+     * Helper to get a package from the bootstrap class loader.  The default
+     * implementation of returning null may be adequate, or you may decide
+     * that this needs some native help.
+     *
+     * @@param name the name to find
+     * @@return the named package, if it exists
+     */
+    static Package getPackage(String name)
+    {
+        getPackagesImpl();
+        return (Package)packages.get(name);
+    }
+
+    /**
+     * Helper to get all packages from the bootstrap class loader.  The default
+     * implementation of returning an empty array may be adequate, or you may
+     * decide that this needs some native help.
+     *
+     * @@return all named packages, if any exist
+     */
+    static Package[] getPackages()
+    {
+        getPackagesImpl();
+        Collection coll = packages.values();
+        Package[] pkg = new Package[coll.size()];
+        coll.toArray(pkg);
+        return pkg;
+    }
+
+    private static void getPackagesImpl()
+    {
+        if(packages == null)
+        {
+            Hashtable h = new Hashtable();
+            String[] pkgs = ikvm.runtime.AssemblyClassLoader.GetPackages(null);
+            URL sealBase = null;
+            try
+            {
+                sealBase = new URL(cli.System.Reflection.Assembly.GetExecutingAssembly().get_CodeBase());
+            }
+            catch(MalformedURLException _)
+            {
+            }
+            for(int i = 0; i < pkgs.length; i++)
+            {
+                h.put(pkgs[i],
+                    new Package(pkgs[i],
+                    "Java Platform API Specification",             // specTitle
+                    "1.4",                                         // specVersion
+                    "Sun Microsystems, Inc.",                      // specVendor
+                    "GNU Classpath",                               // implTitle
+                    gnu.classpath.Configuration.CLASSPATH_VERSION, // implVersion
+                    "Free Software Foundation",                    // implVendor
+                    sealBase,                                      // sealBase
+                    null));                                        // class loader
+            }
+            packages = h;
+        }
+    }
+
+    private static Hashtable packages;
+
+    /**
+     * Helper for java.lang.Integer, Byte, etc to get the TYPE class
+     * at initialization time. The type code is one of the chars that
+     * represents the primitive type as in JNI.
+     *
+     * <ul>
+     * <li>'Z' - boolean</li>
+     * <li>'B' - byte</li>
+     * <li>'C' - char</li>
+     * <li>'D' - double</li>
+     * <li>'F' - float</li>
+     * <li>'I' - int</li>
+     * <li>'J' - long</li>
+     * <li>'S' - short</li>
+     * <li>'V' - void</li>
+     * </ul>
+     *
+     * Note that this is currently a java version that converts the type code
+     * to a string and calls the native <code>getPrimitiveClass(String)</code>
+     * method for backwards compatibility with VMs that used old versions of
+     * GNU Classpath. Please replace this method with a native method
+     * <code>final static native Class getPrimitiveClass(char type);</code>
+     * if your VM supports it. <strong>The java version of this method and
+     * the String version of this method will disappear in a future version
+     * of GNU Classpath</strong>.
+     *
+     * @@param type the primitive type
+     * @@return a "bogus" class representing the primitive type
+     */
+    static native Class getPrimitiveClass(char type);
+
+    /**
+     * The system default for assertion status. This is used for all system
+     * classes (those with a null ClassLoader), as well as the initial value for
+     * every ClassLoader's default assertion status.
+     *
+     * @@return the system-wide default assertion status
+     */
+    static boolean defaultAssertionStatus()
+    {
+	return Boolean.valueOf(SystemProperties.getProperty("ikvm.assert.default", "false")).booleanValue();
+    }
+
+    /**
+     * The system default for package assertion status. This is used for all
+     * ClassLoader's packageAssertionStatus defaults. It must be a map of
+     * package names to Boolean.TRUE or Boolean.FALSE, with the unnamed package
+     * represented as a null key.
+     *
+     * @@return a (read-only) map for the default packageAssertionStatus
+     */
+    static Map packageAssertionStatus()
+    {
+	if(packageAssertionMap == null)
+	{
+	    HashMap m = new HashMap();
+	    String enable = SystemProperties.getProperty("ikvm.assert.enable", null);
+	    if(enable != null)
+	    {
+		StringTokenizer st = new StringTokenizer(enable, ":");
+		while(st.hasMoreTokens())
+		{
+		    m.put(st.nextToken(), Boolean.TRUE);
+		}
+	    }
+	    String disable = SystemProperties.getProperty("ikvm.assert.disable", null);
+	    if(disable != null)
+	    {
+		StringTokenizer st = new StringTokenizer(disable, ":");
+		while(st.hasMoreTokens())
+		{
+		    m.put(st.nextToken(), Boolean.FALSE);
+		}
+	    }
+	    packageAssertionMap = m;
+	}
+	return packageAssertionMap;
+    }
+    private static Map packageAssertionMap;
+
+    /**
+     * The system default for class assertion status. This is used for all
+     * ClassLoader's classAssertionStatus defaults. It must be a map of
+     * class names to Boolean.TRUE or Boolean.FALSE
+     *
+     * @@return a (read-only) map for the default classAssertionStatus
+     */
+    static Map classAssertionStatus()
+    {
+	// there is no distinction between the package and the class assertion status map
+	// (because the command line options don't make the distinction either)
+	return packageAssertionStatus();
+    }
+
+    static ClassLoader getSystemClassLoader()
+    {
+        if("".equals(SystemProperties.getProperty("java.class.path")) &&
+            "".equals(SystemProperties.getProperty("java.ext.dirs")))
+        {
+            Assembly entryAssembly = Assembly.GetEntryAssembly();
+            if(entryAssembly != null)
+            {
+                return getAssemblyClassLoader(entryAssembly);
+            }
+        }
+	return ClassLoader.defaultGetSystemClassLoader();
+    }
+    private static native ClassLoader getAssemblyClassLoader(Assembly asm);
+
+    static native Class findLoadedClass(ClassLoader cl, String name);
+}
+@
+
+
+1.36
+log
+@Made AssemblyClassLoader public and moved it to ikvm.runtime package.
+@
+text
+@@
+
+
+1.35
+log
+@Make "classpath" build target build again.
+@
+text
+@d145 1
+a145 1
+        return ikvm.internal.AssemblyClassLoader.getResource(null, getBootstrapAssembly(), name);
+d157 1
+a157 1
+        return ikvm.internal.AssemblyClassLoader.getResources(null, getBootstrapAssembly(), name);
+d195 1
+a195 1
+            String[] pkgs = ikvm.internal.AssemblyClassLoader.GetPackages(null);
+@
+
+
+1.34
+log
+@*** empty log message ***
+@
+text
+@d132 5
+d145 1
+a145 1
+        return ikvm.internal.AssemblyClassLoader.getResource(null, name);
+d157 1
+a157 1
+        return ikvm.internal.AssemblyClassLoader.getResources(null, name);
+@
+
+
+1.34.6.1
+log
+@Backported fixes and changed version to 0.36.0.5
+@
+text
+@a131 5
+    private static cli.System.Reflection.Assembly getBootstrapAssembly()
+    {
+	return ikvm.runtime.Util.getInstanceTypeFromClass(Object.class).get_Assembly();
+    }
+
+d140 1
+a140 1
+        return ikvm.runtime.AssemblyClassLoader.getResource(null, getBootstrapAssembly(), name);
+d152 1
+a152 1
+        return ikvm.runtime.AssemblyClassLoader.getResources(null, getBootstrapAssembly(), name);
+d190 1
+a190 1
+            String[] pkgs = ikvm.runtime.AssemblyClassLoader.GetPackages(null);
+@
+
+
+1.33
+log
+@*** empty log message ***
+@
+text
+@d317 5
+a321 1
+            return getAssemblyClassLoader(Assembly.GetEntryAssembly());
+@
+
+
+1.32
+log
+@*** empty log message ***
+@
+text
+@d317 1
+a317 5
+            // to support running in partial trust (without file access) we special
+            // case the "no class path" scenario (because the default code will assume
+            // a "." class path and fail when it tries to convert the URL to a file path)
+            return ClassLoader.createAuxiliarySystemClassLoader(
+                ClassLoader.createSystemClassLoader(new URL[0], null));
+d321 1
+@
+
+
+1.31
+log
+@*** empty log message ***
+@
+text
+@d50 1
+d140 1
+a140 26
+	try
+	{
+	    Assembly assembly = findResourceAssembly(name);
+	    if(assembly != null)
+	    {
+		return new URL("ikvmres", assembly.get_FullName(), -1, "/" + name);
+	    }
+            if(name.endsWith(".class") && name.indexOf('.') == name.length() - 6)
+            {
+                try
+                {
+                    Class c = loadClass(name.substring(0, name.length() - 6).replace('/', '.'), false);
+                    if(c != null)
+                    {
+                        return new URL("ikvmres", getClassAssembly(c).get_FullName(), -1, "/" + name);                        
+                    }
+                }
+                catch(ClassNotFoundException _)
+                {
+                }
+            }
+	}
+	catch(java.net.MalformedURLException x)
+	{
+	}
+	return null;
+a141 3
+    private static native Assembly findResourceAssembly(String name);
+    private static native Assembly[] findResourceAssemblies(String name);
+    private static native Assembly getClassAssembly(Class c);
+d152 1
+a152 7
+	Assembly[] assemblies = findResourceAssemblies(name);
+	java.util.Vector v = new java.util.Vector();
+	for(int i = 0; i < assemblies.length; i++)
+	{
+	    v.addElement(new URL("ikvmres", assemblies[i].get_FullName(), -1, "/" + name));
+	}
+	return v.elements();
+d165 2
+a166 9
+        Package[] packages = getPackagesImpl();
+        for(int i = 0; i < packages.length; i++)
+        {
+            if(packages[i].getName().equals(name))
+            {
+                return packages[i];
+            }
+        }
+	return null;
+d178 5
+a182 1
+        return (Package[])getPackagesImpl().clone();
+d185 1
+a185 1
+    private static Package[] getPackagesImpl()
+a186 1
+        Package[] packages = packageCache;
+d189 4
+a192 3
+            HashMap h = new HashMap();
+            Assembly[] assemblies = AppDomain.get_CurrentDomain().GetAssemblies();
+            for(int i = 0; i < assemblies.length; i++)
+d194 1
+a194 67
+                if(!(assemblies[i] instanceof cli.System.Reflection.Emit.AssemblyBuilder))
+                {
+                    Manifest manifest = getManifestFromAssembly(assemblies[i]);
+                    Type[] types = assemblies[i].GetTypes();
+                    for(int j = 0; j < types.length; j++)
+                    {
+                        String name = getPackageName(types[j]);
+                        if(name != null && !h.containsKey(name))
+                        {
+                            String specTitle = null;
+                            String specVersion = null;
+                            String specVendor = null;
+                            String implTitle = null;
+                            String implVersion = null;
+                            String implVendor = null;
+                            // TODO do we have a way of getting the URL?
+                            URL url = null;
+                            if(manifest != null)
+                            {
+                                // Compute the name of the package as it may appear in the
+                                // Manifest.
+                                StringBuffer xform = new StringBuffer(name);
+                                for (int k = xform.length () - 1; k >= 0; --k)
+                                    if (xform.charAt(k) == '.')
+                                        xform.setCharAt(k, '/');
+                                xform.append('/');
+                                String xformName = xform.toString();
+
+                                Attributes entryAttr = manifest.getAttributes(xformName);
+                                Attributes attr = manifest.getMainAttributes();
+
+                                specTitle
+                                    = getAttributeValue(Attributes.Name.SPECIFICATION_TITLE,
+                                    entryAttr, attr);
+                                specVersion
+                                    = getAttributeValue(Attributes.Name.SPECIFICATION_VERSION,
+                                    entryAttr, attr);
+                                specVendor
+                                    = getAttributeValue(Attributes.Name.SPECIFICATION_VENDOR,
+                                    entryAttr, attr);
+                                implTitle
+                                    = getAttributeValue(Attributes.Name.IMPLEMENTATION_TITLE,
+                                    entryAttr, attr);
+                                implVersion
+                                    = getAttributeValue(Attributes.Name.IMPLEMENTATION_VERSION,
+                                    entryAttr, attr);
+                                implVendor
+                                    = getAttributeValue(Attributes.Name.IMPLEMENTATION_VENDOR,
+                                    entryAttr, attr);
+
+                                // Look if the Manifest indicates that this package is sealed
+                                // XXX - most likely not completely correct!
+                                // Shouldn't we also check the sealed attribute of the complete jar?
+                                // http://java.sun.com/products/jdk/1.4/docs/guide/extensions/spec.html#bundled
+                                // But how do we get that jar manifest here?
+                                String sealed = attr.getValue(Attributes.Name.SEALED);
+                                if ("false".equals(sealed))
+                                {
+                                    // make sure that the URL is null so the package is not sealed
+                                    url = null;
+                                }
+                            }
+
+                            h.put(name, new Package(name, specTitle, specVendor, specVersion, implTitle, implVendor, implVersion, url, null));
+                        }
+                    }
+                }
+d196 1
+a196 4
+            Collection c = h.values();
+            packages = new Package[c.size()];
+            c.toArray(packages);
+            if(enablePackageCaching)
+a197 1
+                packageCache = packages;
+d199 14
+a213 64
+        return packages;        
+    }
+
+    private static String getAttributeValue(Attributes.Name name, Attributes first, Attributes second)
+    {
+        String result = null;
+        if (first != null)
+            result = first.getValue(name);
+        if (result == null)
+            result = second.getValue(name);
+        return result;
+    }
+
+    private static Manifest getManifestFromAssembly(Assembly asm)
+    {
+        try
+        {
+            // NOTE we cannot use URL here, because that would trigger infinite recursion when a SecurityManager is installed
+            return new Manifest(gnu.java.net.protocol.ikvmres.Handler.readResourceFromAssembly(asm, "/META-INF/MANIFEST.MF"));
+        }
+        catch (MalformedURLException _)
+        {
+        }
+        catch (IOException _)
+        {
+        }
+        return null;
+    }
+
+    private static volatile Package[] packageCache;
+    private static final boolean enablePackageCaching;
+
+    private static void hookUpAssemblyLoadEvent()
+        throws cli.System.Security.SecurityException,
+               cli.System.MissingMethodException
+    {
+        AppDomain.get_CurrentDomain().add_AssemblyLoad(new AssemblyLoadEventHandler(
+            new AssemblyLoadEventHandler.Method() {
+                public void Invoke(Object sender, AssemblyLoadEventArgs args) {
+                    packageCache = null;
+                }
+            }));
+    }
+
+    static
+    {
+        boolean enable = false;
+        try
+        {
+            // add_AssemblyLoad has a LinkDemand, so we need to do it in
+            // a seperate method
+            hookUpAssemblyLoadEvent();
+            enable = true;
+        }
+        catch(cli.System.MissingMethodException _1)
+        {
+            // we're running on the Compact Framework
+        }
+        catch(cli.System.Security.SecurityException _)
+        {
+            // if we don't have the ControlAppDomain permission we can't hook
+            // the event, so we don't enable package caching
+        }
+        enablePackageCaching = enable;
+d216 1
+a216 1
+    private static native String getPackageName(Type type);
+@
+
+
+1.30
+log
+@*** empty log message ***
+@
+text
+@d146 14
+d168 1
+@
+
+
+1.29
+log
+@*** empty log message ***
+@
+text
+@d74 13
+@
+
+
+1.28
+log
+@*** empty log message ***
+@
+text
+@a52 1
+import java.lang.reflect.Constructor;
+d54 1
+a54 1
+import gnu.java.util.DoubleEnumeration;
+d69 4
+a72 20
+    /**
+     * Helper to define a class using a string of bytes. This assumes that
+     * the security checks have already been performed, if necessary.
+     * <strong>This method will be removed in a future version of GNU
+     * Classpath</strong>.
+     *
+     * @@param name the name to give the class, or null if unknown
+     * @@param data the data representing the classfile, in classfile format
+     * @@param offset the offset into the data where the classfile starts
+     * @@param len the length of the classfile data in the array
+     * @@return the class that was defined
+     * @@throws ClassFormatError if data is not in proper classfile format
+     * @@deprecated Implement
+     * {@@link #defineClass(ClassLoader, String, byte[], int, int, ProtectionDomain)}
+     *   instead.
+     */
+    static Class defineClass(ClassLoader cl, String name, byte[] data, int offset, int len)
+    {
+	return defineClass(cl, name, data, offset, len, null);
+    }
+d74 1
+a74 13
+    /**
+     * Helper to define a class using a string of bytes. This assumes that
+     * the security checks have already been performed, if necessary.
+     *
+     * @@param name the name to give the class, or null if unknown
+     * @@param data the data representing the classfile, in classfile format
+     * @@param offset the offset into the data where the classfile starts
+     * @@param len the length of the classfile data in the array
+     * @@param pd the protection domain
+     * @@return the class that was defined
+     * @@throws ClassFormatError if data is not in proper classfile format
+     */
+    static Class defineClass(ClassLoader cl, String name, byte[] data, int offset, int len, ProtectionDomain pd)
+d76 14
+a99 9
+    private static native Class defineClassImpl(ClassLoader cl, String name, byte[] data, int offset, int len, ProtectionDomain pd)
+        throws ClassNotFoundException;
+
+    static Class defineClassWithTransformers(ClassLoader cl, String name, byte[] data, int offset, int len, ProtectionDomain pd)
+    {
+        // TODO handle transformers
+        return defineClass(cl, name, data, offset, len, pd);
+    }
+
+a117 2
+    private static native ClassLoader getBootstrapClassLoader();
+
+a132 9
+	    ClassLoader bootstrap = getBootstrapClassLoader();
+	    if(bootstrap != null)
+	    {
+		URL url = bootstrap.findResource(name);
+		if(url != null)
+		{
+		    return url;
+		}
+	    }
+d151 3
+a153 22
+	if(__tls_nestedGetResourcesHack)
+	{
+	    return gnu.java.util.EmptyEnumeration.getInstance();
+	}
+	__tls_nestedGetResourcesHack = true;
+	try
+	{
+	    Assembly[] assemblies = findResourceAssemblies(name);
+	    java.util.Vector v = new java.util.Vector();
+	    for(int i = 0; i < assemblies.length; i++)
+	    {
+		v.addElement(new URL("ikvmres", assemblies[i].get_FullName(), -1, "/" + name));
+	    }
+	    Enumeration e = v.elements();
+	    ClassLoader bootstrap = getBootstrapClassLoader();
+	    if(bootstrap != null)
+	    {
+		e = new DoubleEnumeration(e, bootstrap.getResources(name));
+	    }
+	    return e;
+	}
+	finally
+d155 1
+a155 1
+	    __tls_nestedGetResourcesHack = false;
+d157 1
+a159 3
+    @@cli.System.ThreadStaticAttribute.Annotation
+    private static boolean __tls_nestedGetResourcesHack;
+
+a197 5
+            ClassLoader boot = getBootstrapClassLoader();
+            if(boot != null && __tls_nestedGetResourcesHack)
+            {
+                return new Package[0];
+            }
+d270 4
+a273 1
+            if(boot != null)
+d275 1
+a275 25
+                Package[] pkgboot;
+                __tls_nestedGetResourcesHack = true;
+                try
+                {
+                    pkgboot = boot.getPackages();
+                }
+                finally
+                {
+                    __tls_nestedGetResourcesHack = false;
+                }
+                Collection c = h.values();
+                packages = new Package[c.size() + pkgboot.length];
+                c.toArray(packages);
+                VMSystem.arraycopy(pkgboot, 0, packages, c.size(), pkgboot.length);
+                // we don't cache the result, because we don't know when the bootstrap class loader loads a new package
+            }
+            else
+            {
+                Collection c = h.values();
+                packages = new Package[c.size()];
+                c.toArray(packages);
+                if(enablePackageCaching)
+                {
+                    packageCache = packages;
+                }
+@
+
+
+1.27
+log
+@*** empty log message ***
+@
+text
+@d213 1
+@
+
+
+1.26
+log
+@*** empty log message ***
+@
+text
+@d325 1
+a325 1
+                            h.put(name, new Package(name, specTitle, specVendor, specVersion, implTitle, implVendor, implVersion, url));
+@
+
+
+1.25
+log
+@*** empty log message ***
+@
+text
+@d118 6
+@
+
+
+1.24
+log
+@*** empty log message ***
+@
+text
+@d370 2
+a371 2
+            URL url = new URL("ikvmres", asm.get_FullName(), -1, "/META-INF/MANIFEST.MF");
+            return new Manifest(url.openStream());
+@
+
+
+1.23
+log
+@*** empty log message ***
+@
+text
+@d386 2
+a387 1
+        throws cli.System.Security.SecurityException
+d407 4
+@
+
+
+1.22
+log
+@*** empty log message ***
+@
+text
+@d258 1
+d263 1
+a263 1
+                        if(name != null)
+a272 1
+                            Manifest manifest = getManifestFromAssembly(assemblies[i]);
+@
+
+
+1.21
+log
+@*** empty log message ***
+@
+text
+@d43 1
+d51 2
+d264 56
+a319 2
+                            // TODO fill out more package details
+                            h.put(name, new Package(name, null, null, null, null, null, null, null));
+d356 26
+@
+
+
+1.20
+log
+@*** empty log message ***
+@
+text
+@a440 2
+    static final boolean USE_VM_CACHE = true;
+
+a441 1
+    static native void registerInitiatingLoader(ClassLoader cl, Class c);
+@
+
+
+1.19
+log
+@*** empty log message ***
+@
+text
+@d444 1
+@
+
+
+1.18
+log
+@*** empty log message ***
+@
+text
+@d441 1
+a441 23
+    /**
+     * If the VM wants to keep its own cache, this method can be replaced.
+     */
+    static Class findLoadedClass(ClassLoader cl, String name)
+    {
+        if(name.startsWith("[") && name.endsWith(";"))
+        {
+            int rank = 1;
+            while(name.charAt(rank) == '[')
+            {
+                rank++;
+            }
+            if(name.charAt(rank) == 'L')
+            {
+                Class c = (Class)cl.loadedClasses.get(name.substring(rank + 1, name.length() - 1));
+                if(c != null)
+                {
+                    return makeArrayClass(c, rank);
+                }
+            }
+        }
+        return (Class)cl.loadedClasses.get(name);
+    }
+d443 1
+a443 1
+    private static native Class makeArrayClass(Class c, int rank);
+@
+
+
+1.17
+log
+@*** empty log message ***
+@
+text
+@d440 26
+@
+
+
+1.16
+log
+@*** empty log message ***
+@
+text
+@a238 2
+    private static boolean runningOnMono = Type.GetType("Mono.Runtime") != null;
+
+a240 5
+        // MONOBUG Assembly.GetTypes() on IKVM.GNU.Classpath dies
+        if(runningOnMono)
+        {
+            return new Package[0];
+        }
+d290 4
+a293 1
+                packageCache = packages;
+d300 1
+d302 2
+a303 1
+    static
+d313 18
+d429 9
+@
+
+
+1.15
+log
+@*** empty log message ***
+@
+text
+@d177 10
+a186 3
+        synchronized(nestedGetResourcesHack)
+        {
+	    if(cli.System.Threading.Thread.GetData(nestedGetResourcesHack) != null)
+d188 1
+a188 1
+	        return gnu.java.util.EmptyEnumeration.getInstance();
+d190 3
+a192 2
+	    cli.System.Threading.Thread.SetData(nestedGetResourcesHack, "");
+	    try
+d194 1
+a194 13
+	        Assembly[] assemblies = findResourceAssemblies(name);
+	        java.util.Vector v = new java.util.Vector();
+	        for(int i = 0; i < assemblies.length; i++)
+	        {
+		    v.addElement(new URL("ikvmres", assemblies[i].get_FullName(), -1, "/" + name));
+	        }
+	        Enumeration e = v.elements();
+	        ClassLoader bootstrap = getBootstrapClassLoader();
+	        if(bootstrap != null)
+	        {
+		    e = new DoubleEnumeration(e, bootstrap.getResources(name));
+	        }
+	        return e;
+d196 6
+a201 5
+	    finally
+	    {
+	        cli.System.Threading.Thread.SetData(nestedGetResourcesHack, null);
+	    }
+        }
+d204 1
+a204 1
+    private static cli.System.LocalDataStoreSlot nestedGetResourcesHack = cli.System.Threading.Thread.AllocateDataSlot();
+d252 1
+a252 1
+            if(boot != null)
+d254 1
+a254 7
+                synchronized(nestedGetResourcesHack)
+                {
+                    if(cli.System.Threading.Thread.GetData(nestedGetResourcesHack) != null)
+                    {
+                        return new Package[0];
+                    }
+                }
+d277 6
+a282 1
+                synchronized(nestedGetResourcesHack)
+d284 1
+a284 9
+                    cli.System.Threading.Thread.SetData(nestedGetResourcesHack, "");
+                    try
+                    {
+                        pkgboot = boot.getPackages();
+                    }
+                    finally
+                    {
+                        cli.System.Threading.Thread.SetData(nestedGetResourcesHack, null);
+                    }
+@
+
+
+1.14
+log
+@*** empty log message ***
+@
+text
+@d48 1
+d177 8
+a184 10
+	if(cli.System.Threading.Thread.GetData(nestedGetResourcesHack) != null)
+	{
+	    return gnu.java.util.EmptyEnumeration.getInstance();
+	}
+	cli.System.Threading.Thread.SetData(nestedGetResourcesHack, "");
+	try
+	{
+	    Assembly[] assemblies = findResourceAssemblies(name);
+	    java.util.Vector v = new java.util.Vector();
+	    for(int i = 0; i < assemblies.length; i++)
+d186 13
+a198 1
+		v.addElement(new URL("ikvmres", assemblies[i].get_FullName(), -1, "/" + name));
+d200 1
+a200 3
+	    Enumeration e = v.elements();
+	    ClassLoader bootstrap = getBootstrapClassLoader();
+	    if(bootstrap != null)
+d202 1
+a202 1
+		e = new DoubleEnumeration(e, bootstrap.getResources(name));
+d204 1
+a204 6
+	    return e;
+	}
+	finally
+	{
+	    cli.System.Threading.Thread.SetData(nestedGetResourcesHack, null);
+	}
+d219 8
+d239 86
+a324 1
+	return new Package[0];
+d327 2
+@
+
+
+1.13
+log
+@*** empty log message ***
+@
+text
+@d82 1
+a82 1
+    static Class defineClass(ClassLoader cl, String name, byte[] data, int offset, int len) throws ClassFormatError
+d99 14
+a112 2
+    static native Class defineClass(ClassLoader cl, String name, byte[] data, int offset, int len, ProtectionDomain pd)
+	throws ClassFormatError;
+d147 1
+a147 1
+		return new URL("ikvmres", assembly.get_FullName(), 0, "/" + name);
+d187 1
+a187 1
+		v.addElement(new URL("ikvmres", assemblies[i].get_FullName(), 0, "/" + name));
+@
+
+
+1.12
+log
+@*** empty log message ***
+@
+text
+@d50 1
+a50 1
+import gnu.java.lang.SystemClassLoader;
+d258 1
+a258 1
+	return Boolean.valueOf(ClassLoader.getSystemProperty("ikvm.assert.default", "false")).booleanValue();
+d274 1
+a274 1
+	    String enable = ClassLoader.getSystemProperty("ikvm.assert.enable", null);
+d283 1
+a283 1
+	    String disable = ClassLoader.getSystemProperty("ikvm.assert.disable", null);
+@
+
+
+1.11
+log
+@*** empty log message ***
+@
+text
+@d82 1
+a82 1
+    static final Class defineClass(ClassLoader cl, String name, byte[] data, int offset, int len) throws ClassFormatError
+d99 1
+a99 1
+    static final native Class defineClass(ClassLoader cl, String name, byte[] data, int offset, int len, ProtectionDomain pd)
+d107 1
+a107 1
+    static final void resolveClass(Class c)
+d191 1
+a191 1
+    private static final cli.System.LocalDataStoreSlot nestedGetResourcesHack = cli.System.Threading.Thread.AllocateDataSlot();
+d258 1
+a258 1
+	return Boolean.valueOf(getSystemProperty("ikvm.assert.default", "false")).booleanValue();
+d274 1
+a274 1
+	    String enable = getSystemProperty("ikvm.assert.enable", null);
+d283 1
+a283 1
+	    String disable = getSystemProperty("ikvm.assert.disable", null);
+a311 49
+    private static URL[] getExtClassLoaderUrls()
+    {
+	String classpath = getSystemProperty("java.ext.dirs", "");
+	java.util.StringTokenizer tok = new java.util.StringTokenizer(classpath, java.io.File.pathSeparator);
+	ArrayList list = new ArrayList();
+	while(tok.hasMoreTokens())
+	{
+	    try
+	    {
+		java.io.File f = new java.io.File(tok.nextToken());
+		java.io.File[] files = f.listFiles();
+		for(int i = 0; i < files.length; i++)
+		{
+		    list.add(files[i].toURL());
+		}
+	    }
+	    catch(Exception x)
+	    {
+	    }
+	}
+	URL[] urls = new URL[list.size()];
+	list.toArray(urls);
+	return urls;
+    }
+
+    private static URL[] getSystemClassLoaderUrls()
+    {
+	return crackClassPath(getSystemProperty("java.class.path", "."));
+    }
+
+    private static URL[] crackClassPath(String classpath)
+    {
+	java.util.StringTokenizer tok = new java.util.StringTokenizer(classpath, java.io.File.pathSeparator);
+	ArrayList list = new ArrayList();
+	while(tok.hasMoreTokens())
+	{
+	    try
+	    {
+		list.add(new java.io.File(tok.nextToken()).toURL());
+	    }
+	    catch(java.net.MalformedURLException x)
+	    {
+	    }
+	}
+	URL[] urls = new URL[list.size()];
+	list.toArray(urls);
+	return urls;
+    }
+
+d314 1
+a314 29
+	ClassLoader extClassLoader = new java.net.URLClassLoader(getExtClassLoaderUrls(), null);
+	ClassLoader systemClassLoader = new java.net.URLClassLoader(getSystemClassLoaderUrls(), extClassLoader);
+	String loader = getSystemProperty("java.system.class.loader", null);
+	if(loader == null)
+	{
+	    return systemClassLoader;
+	}
+	try
+	{
+	    Constructor c = Class.forName(loader, false, systemClassLoader)
+		.getConstructor(new Class[] { ClassLoader.class });
+	    return (ClassLoader)c.newInstance(new Object[] { systemClassLoader });
+	}
+	catch(Exception e)
+	{
+	    System.err.println("Requested system classloader " + loader + " failed.");
+	    throw (Error)new Error("Requested system classloader " + loader + " failed.").initCause(e);
+	}
+    }
+
+    private static String getSystemProperty(String name, String defaultValue)
+    {
+	// access properties directly to bypass security
+	String val = System.properties.getProperty(name);
+	if(val == null)
+	{
+	    val = defaultValue;
+	}
+	return val;
+@
+
+
+1.10
+log
+@*** empty log message ***
+@
+text
+@d48 1
+d62 1
+a253 2
+     * XXX - Not implemented yet; this requires native help.
+     *
+d256 1
+a256 1
+    static final boolean defaultAssertionStatus()
+d258 1
+a258 1
+	return true;
+a266 2
+     * XXX - Not implemented yet; this requires native help.
+     *
+d269 1
+a269 1
+    static final Map packageAssertionStatus()
+d271 24
+a294 1
+	return new HashMap();
+d296 1
+a302 2
+     * XXX - Not implemented yet; this requires native help.
+     *
+d305 1
+a305 1
+    static final Map classAssertionStatus()
+d307 3
+a309 1
+	return new HashMap();
+d314 1
+a314 1
+	String classpath = java.lang.System.getProperty("java.ext.dirs", "");
+d339 1
+a339 1
+	return crackClassPath(java.lang.System.getProperty("java.class.path", "."));
+d365 1
+a365 1
+	String loader = System.getProperty("java.system.class.loader", null);
+d382 11
+@
+
+
+1.9
+log
+@*** empty log message ***
+@
+text
+@d162 1
+a162 1
+	if(nestedGetResourcesHack.get() != null)
+d166 1
+a166 1
+	nestedGetResourcesHack.set("");
+d185 1
+a185 1
+	    nestedGetResourcesHack.set(null);
+d189 1
+a189 1
+    private static ThreadLocal nestedGetResourcesHack = new ThreadLocal();
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@d47 1
+d50 1
+d64 53
+a116 20
+  /**
+   * Helper to define a class using a string of bytes. This assumes that
+   * the security checks have already been performed, if necessary.
+   * <strong>This method will be removed in a future version of GNU
+   * Classpath</strong>.
+   *
+   * @@param name the name to give the class, or null if unknown
+   * @@param data the data representing the classfile, in classfile format
+   * @@param offset the offset into the data where the classfile starts
+   * @@param len the length of the classfile data in the array
+   * @@return the class that was defined
+   * @@throws ClassFormatError if data is not in proper classfile format
+   * @@deprecated Implement
+   * {@@link #defineClass(ClassLoader, String, byte[], int, int, ProtectionDomain)}
+   *   instead.
+   */
+	static final Class defineClass(ClassLoader cl, String name, byte[] data, int offset, int len) throws ClassFormatError
+	{
+		return defineClass(cl, name, data, offset, len, null);
+	}
+d118 1
+a118 28
+  /**
+   * Helper to define a class using a string of bytes. This assumes that
+   * the security checks have already been performed, if necessary.
+   *
+   * <strong>For backward compatibility, this just ignores the protection
+   * domain; that is the wrong behavior, and you should directly implement
+   * this method natively if you can.</strong>
+   *
+   * @@param name the name to give the class, or null if unknown
+   * @@param data the data representing the classfile, in classfile format
+   * @@param offset the offset into the data where the classfile starts
+   * @@param len the length of the classfile data in the array
+   * @@param pd the protection domain
+   * @@return the class that was defined
+   * @@throws ClassFormatError if data is not in proper classfile format
+   */
+  static final native Class defineClass(ClassLoader cl, String name, byte[] data, int offset, int len, ProtectionDomain pd)
+    throws ClassFormatError;
+
+  /**
+   * Helper to resolve all references to other classes from this class.
+   *
+   * @@param c the class to resolve
+   */
+	static final void resolveClass(Class c)
+	{
+		// TODO
+	}
+d120 6
+a125 20
+  /**
+   * Helper to load a class from the bootstrap class loader.
+   *
+   * @@param name the class name to load
+   * @@param resolve whether to resolve it
+   * @@return the class, loaded by the bootstrap classloader
+   */
+  static Class loadClass(String name, boolean resolve) throws ClassNotFoundException
+  {
+    return VMClass.loadBootstrapClass(name, false);
+  }
+
+  /**
+   * Helper to load a resource from the bootstrap class loader.
+   *
+   * XXX - Not implemented yet; this requires native help.
+   *
+   * @@param name the resource to find
+   * @@return the URL to the resource
+   */
+d130 5
+d144 34
+a177 2
+	    Assembly assembly = findResourceAssembly(name);
+	    if(assembly != null)
+d179 1
+a179 1
+		return new URL("ikvmres", assembly.get_FullName(), 0, "/" + name);
+d181 1
+d183 1
+a183 1
+	catch(java.net.MalformedURLException x)
+d185 1
+d187 14
+a202 2
+    private static native Assembly findResourceAssembly(String name);
+    private static native ClassLoader getBootstrapClassLoader();
+d204 156
+a359 150
+  /**
+   * Helper to get a list of resources from the bootstrap class loader.
+   *
+   * XXX - Not implemented yet; this requires native help.
+   *
+   * @@param name the resource to find
+   * @@return an enumeration of resources
+   * @@throws IOException if one occurs
+   */
+  static Enumeration getResources(String name) throws IOException
+  {
+	  System.out.println("*** VMClassLoader.getResources: " + name);
+	// TODO
+	return new java.util.Vector(0).elements();
+	//return ClassLoader.getSystemResources(name);
+  }
+
+  /**
+   * Helper to get a package from the bootstrap class loader.  The default
+   * implementation of returning null may be adequate, or you may decide
+   * that this needs some native help.
+   *
+   * @@param name the name to find
+   * @@return the named package, if it exists
+   */
+  static Package getPackage(String name)
+  {
+    return null;
+  }
+
+  /**
+   * Helper to get all packages from the bootstrap class loader.  The default
+   * implementation of returning an empty array may be adequate, or you may
+   * decide that this needs some native help.
+   *
+   * @@return all named packages, if any exist
+   */
+  static Package[] getPackages()
+  {
+    return new Package[0];
+  }
+
+  /**
+   * Helper for java.lang.Integer, Byte, etc to get the TYPE class
+   * at initialization time. The type code is one of the chars that
+   * represents the primitive type as in JNI.
+   *
+   * <ul>
+   * <li>'Z' - boolean</li>
+   * <li>'B' - byte</li>
+   * <li>'C' - char</li>
+   * <li>'D' - double</li>
+   * <li>'F' - float</li>
+   * <li>'I' - int</li>
+   * <li>'J' - long</li>
+   * <li>'S' - short</li>
+   * <li>'V' - void</li>
+   * </ul>
+   *
+   * Note that this is currently a java version that converts the type code
+   * to a string and calls the native <code>getPrimitiveClass(String)</code>
+   * method for backwards compatibility with VMs that used old versions of
+   * GNU Classpath. Please replace this method with a native method
+   * <code>final static native Class getPrimitiveClass(char type);</code>
+   * if your VM supports it. <strong>The java version of this method and
+   * the String version of this method will disappear in a future version
+   * of GNU Classpath</strong>.
+   *
+   * @@param type the primitive type
+   * @@return a "bogus" class representing the primitive type
+   */
+	static native Class getPrimitiveClass(char type);
+
+  /**
+   * The system default for assertion status. This is used for all system
+   * classes (those with a null ClassLoader), as well as the initial value for
+   * every ClassLoader's default assertion status.
+   *
+   * XXX - Not implemented yet; this requires native help.
+   *
+   * @@return the system-wide default assertion status
+   */
+  static final boolean defaultAssertionStatus()
+  {
+    return true;
+  }
+
+  /**
+   * The system default for package assertion status. This is used for all
+   * ClassLoader's packageAssertionStatus defaults. It must be a map of
+   * package names to Boolean.TRUE or Boolean.FALSE, with the unnamed package
+   * represented as a null key.
+   *
+   * XXX - Not implemented yet; this requires native help.
+   *
+   * @@return a (read-only) map for the default packageAssertionStatus
+   */
+  static final Map packageAssertionStatus()
+  {
+    return new HashMap();
+  }
+
+  /**
+   * The system default for class assertion status. This is used for all
+   * ClassLoader's classAssertionStatus defaults. It must be a map of
+   * class names to Boolean.TRUE or Boolean.FALSE
+   *
+   * XXX - Not implemented yet; this requires native help.
+   *
+   * @@return a (read-only) map for the default classAssertionStatus
+   */
+  static final Map classAssertionStatus()
+  {
+    return new HashMap();
+  }
+
+  static ClassLoader getSystemClassLoader()
+  {
+    // This method is called as the initialization of systemClassLoader,
+    // so if there is a null value, this is the first call and we must check
+    // for java.system.class.loader.
+      String loader = System.getProperty("java.system.class.loader",
+                                           "gnu.java.lang.SystemClassLoader");
+      try
+          {
+	      // Give the new system class loader a null parent.
+	      Constructor c = Class.forName(loader).getConstructor
+		  ( new Class[] { ClassLoader.class } );
+	      return (ClassLoader) c.newInstance(new Object[1]);
+          }
+      catch (Exception e)
+          {
+	      try
+		  {
+		      System.err.println("Requested system classloader "
+					 + loader + " failed, trying "
+					 + "gnu.java.lang.SystemClassLoader");
+		      e.printStackTrace();
+		      // Fallback to gnu.java.lang.SystemClassLoader.
+		      return new SystemClassLoader(null);
+		  }
+	      catch (Exception e1)
+		  {
+		      throw (Error) new InternalError
+			  ("System class loader could not be found: " + e1)
+			  .initCause(e1);
+		  }
+          }
+ 
+  }
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d136 9
+d157 1
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d132 3
+a134 1
+	static URL getResource(String name)
+d136 5
+a140 12
+		try
+		{
+			Assembly assembly = findResourceAssembly(name);
+			if(assembly != null)
+			{
+				return new URL("ikvmres:" + assembly.get_FullName() + ":" + name);
+			}
+		}
+		catch(java.net.MalformedURLException x)
+		{
+		}
+		return null;
+d142 6
+a147 1
+	private static native Assembly findResourceAssembly(String name);
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d49 2
+a50 2
+import system.*;
+import system.reflection.*;
+d220 1
+a220 6
+	static final Class getPrimitiveClass(char type)
+	{
+		return VMClass.getClassFromType(getPrimitiveType(type));
+	}
+	
+	private static native system.Type getPrimitiveType(char type);
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d121 1
+a121 1
+    return Class.loadBootstrapClass(name, false);
+d222 1
+a222 1
+		return Class.getClassFromType(getPrimitiveType(type));
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d121 1
+a121 6
+    Class c = Class.loadBootstrapClass(name, false);
+    if(c == null)
+    {
+       throw new ClassNotFoundException(name);
+    }
+    return c;
+@
+
+
+1.2
+log
+@no message
+@
+text
+@d144 1
+a144 1
+				return new URL("ikvmres:" + name + ":" + assembly.get_FullName());
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d47 2
+d51 1
+d273 35
+@
+
+
+1.1.1.1
+log
+@no message
+@
+text
+@@

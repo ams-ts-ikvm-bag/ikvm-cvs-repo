@@ -1,0 +1,1178 @@
+head	1.18;
+access;
+symbols
+	v8_1_5717_0:1.18
+	v8_1:1.18.0.8
+	v8_0_5449_1:1.18
+	v8_0_5449_0:1.18
+	v8_0:1.18.0.6
+	v7_4_5196_0:1.18
+	v7_4:1.18.0.4
+	v7_3:1.18.0.2
+	v7_2_4630_6:1.17
+	v7_2_4630_5:1.17
+	v7_2_4630_4:1.17
+	v7_2_4630_3:1.17
+	v7_2_4630_2:1.17
+	v0_46_0_4:1.17
+	v7_2_4630_1:1.17
+	v7_2:1.17.0.16
+	v7_1_4532_2:1.17
+	v7_1_4532_1:1.17
+	v7_1_4532_0:1.17
+	v7_1:1.17.0.14
+	v7_0_4335_3:1.17
+	v7_0_4335_2:1.17
+	v7_0_4335_1:1.17
+	v0_46_0_2:1.17
+	v7_0_4335_0:1.17
+	v7_0:1.17.0.12
+	v0_40_0_6:1.17
+	v0_40_0_5:1.17
+	v0_46_0_1:1.17
+	v0_46_0_0:1.17
+	v0_46:1.17.0.10
+	v0_36_0_14:1.16.2.1
+	v0_44_0_6:1.17
+	v0_44_0_5:1.17
+	v0_44_0_4:1.17
+	v0_44_0_3:1.17
+	v0_44_0_2:1.17
+	v0_42_0_7:1.17
+	v0_44_0_1:1.17
+	v0_44_0_0:1.17
+	v0_44:1.17.0.8
+	v0_42_0_6:1.17
+	v0_42_0_5:1.17
+	v0_42_0_4:1.17
+	v0_42_0_3:1.17
+	v0_42_0_2:1.17
+	v0_42_0_1:1.17
+	v0_42_0_0:1.17
+	v0_42:1.17.0.6
+	v0_40_0_3:1.17
+	v0_40_0_2:1.17
+	v0_40_0_1:1.17
+	v0_40_0_0:1.17
+	v0_40:1.17.0.4
+	v0_36_0_13:1.16.2.1
+	v0_38_0_1:1.17
+	v0_38_0_0:1.17
+	v0_38:1.17.0.2
+	v0_36_0_9:1.16.2.1
+	v0_36_0_7:1.16.2.1
+	v0_36_0_5:1.16.2.1
+	v0_36_0_4:1.16
+	v0_36_0_3:1.16
+	v0_36_0_2:1.16
+	v0_36_0_1:1.16
+	v0_36_0_0:1.16
+	v0_36:1.16.0.2
+	v0_34_0_3:1.15
+	v0_34_0_2:1.15
+	v0_34_0_1:1.15
+	v0_34_0_0:1.15
+	v0_34:1.15.0.4
+	v0_32:1.15.0.2
+	v0_32_0_0:1.15
+	v0_30:1.12.0.2
+	v0_28_0_0:1.12
+	v0_26_0_1:1.12
+	v0_26_0_0:1.12
+	v0_24_0_1:1.11
+	v0_24_0_0:1.11
+	v0_22_0_0:1.10
+	v0_20_0_0:1.10
+	v0_18_0_0:1.10
+	v0_16_0_0:1.10
+	v0_14_0_1:1.9
+	v0_14_0_0:1.9
+	v0_12_0_0:1.9
+	v0_10_0_1:1.8
+	v0_10_0_0:1.8
+	v0_8_0_0:1.5
+	initial:1.1.1.1
+	ikvm:1.1.1;
+locks; strict;
+comment	@# @;
+
+
+1.18
+date	2013.02.21.16.56.08;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2007.10.18.05.53.28;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2007.08.15.14.01.23;	author jfrijters;	state Exp;
+branches
+	1.16.2.1;
+next	1.15;
+
+1.15
+date	2006.12.05.07.52.27;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2006.08.14.07.57.03;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2006.08.04.12.06.41;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2006.02.10.12.51.56;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2006.01.11.07.55.26;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2005.05.23.08.24.08;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2005.02.02.15.12.00;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2004.12.21.10.26.52;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2004.09.05.09.37.59;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2004.07.10.07.19.57;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2004.03.16.17.10.11;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2003.08.21.10.06.36;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2003.04.17.13.15.21;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2003.02.25.15.49.03;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2002.12.18.16.00.58;	author jfrijters;	state Exp;
+branches
+	1.1.1.1;
+next	;
+
+1.1.1.1
+date	2002.12.18.16.00.58;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.16.2.1
+date	2007.12.04.06.04.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.18
+log
+@Removed the old Java stub class generator and replaced it with the ikvmstub core.
+@
+text
+@/*
+  Copyright (C) 2002, 2003, 2004, 2005, 2006 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+
+package gnu.java.net.protocol.ikvmres;
+
+import cli.System.Reflection.Assembly;
+import java.net.*;
+import java.io.*;
+
+class IkvmresURLConnection extends URLConnection
+{
+    private InputStream inputStream;
+
+    IkvmresURLConnection(URL url)
+    {
+	super(url);
+	doOutput = false;
+    }
+
+    public void connect() throws IOException
+    {
+	if(!connected)
+	{
+	    String assembly = url.getHost();
+	    String resource = url.getFile();
+	    if(assembly == null || resource == null || !resource.startsWith("/"))
+	    {
+		throw new MalformedURLException(url.toString());
+	    }
+            try
+            {
+                inputStream = Handler.readResourceFromAssembly(assembly, url.getPort(), resource);
+                connected = true;
+            }
+            catch(cli.System.IO.FileNotFoundException x)
+            {
+                throw (IOException)new FileNotFoundException(assembly).initCause(x);
+            }
+            catch(cli.System.BadImageFormatException x1)
+            {
+                throw (IOException)new IOException().initCause(x1);
+            }
+            catch(cli.System.Security.SecurityException x2)
+            {
+                throw (IOException)new IOException().initCause(x2);
+            }
+        }
+    }
+
+    public InputStream getInputStream() throws IOException
+    {
+	if(!connected)
+	{
+	    connect();
+	}
+	return inputStream;
+    }
+
+    public OutputStream getOutputStream() throws IOException
+    {
+	throw new IOException("resource URLs are read only");
+    }
+
+    public long getLastModified()
+    {
+	return -1;
+    }
+
+    public int getContentLength()
+    {
+	return -1;
+    }
+}
+
+public class Handler extends URLStreamHandler
+{
+    private static final String RFC2396_DIGIT = "0123456789";
+    private static final String RFC2396_LOWALPHA = "abcdefghijklmnopqrstuvwxyz";
+    private static final String RFC2396_UPALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private static final String RFC2396_ALPHA = RFC2396_LOWALPHA + RFC2396_UPALPHA;
+    private static final String RFC2396_ALPHANUM = RFC2396_DIGIT + RFC2396_ALPHA;
+    private static final String RFC2396_MARK = "-_.!~*'()";
+    private static final String RFC2396_UNRESERVED = RFC2396_ALPHANUM + RFC2396_MARK;
+    private static final String RFC2396_REG_NAME = RFC2396_UNRESERVED + "$,;:@@&=+";
+    private static final String RFC2396_PCHAR = RFC2396_UNRESERVED + ":@@&=+$,";
+    private static final String RFC2396_SEGMENT = RFC2396_PCHAR + ";";
+    private static final String RFC2396_PATH_SEGMENTS = RFC2396_SEGMENT + "/";
+
+    static InputStream readResourceFromAssembly(String assembly, int port, String resource)
+        throws cli.System.IO.FileNotFoundException,
+               cli.System.BadImageFormatException,
+               cli.System.Security.SecurityException,
+               IOException
+    {
+        if(assembly.equals("gen") && port != -1 && resource.endsWith(".class") && resource.indexOf('.') == resource.length() - 6)
+        {
+            ClassLoader loader = GetGenericClassLoaderById(port);
+            try
+            {
+                Class c = Class.forName(resource.substring(1, resource.length() - 6).replace('/', '.'), false, loader);
+                return new ByteArrayInputStream(GenerateStub(c));
+            }
+            catch(ClassNotFoundException _)
+            {
+            }
+            catch(LinkageError _)
+            {
+            }
+        }
+        return readResourceFromAssembly(LoadAssembly(assembly), resource);
+    }
+
+    public static InputStream readResourceFromAssembly(Assembly asm, String resource)
+        throws IOException
+    {
+        try
+        {
+            if(false) throw new cli.System.Security.SecurityException();
+            if(false) throw new cli.System.IO.FileNotFoundException();
+            if(false) throw new cli.System.IO.IOException();
+            return new ikvm.io.InputStreamWrapper(ReadResourceFromAssemblyImpl(asm, resource));
+        }
+        catch (cli.System.Security.SecurityException x)
+        {
+            throw (IOException)new IOException().initCause(x);
+        }
+        catch (cli.System.IO.FileNotFoundException x)
+        {
+            if(resource.endsWith(".class") && resource.indexOf('.') == resource.length() - 6)
+            {
+                Class c = LoadClassFromAssembly(asm, resource.substring(1, resource.length() - 6).replace('/', '.'));
+                if(c != null)
+                {
+                    return new ByteArrayInputStream(GenerateStub(c));
+                }
+            }
+            throw (FileNotFoundException)new FileNotFoundException().initCause(x);
+        }
+        catch(cli.System.IO.IOException x)
+        {
+            throw (IOException)new IOException().initCause(x);
+        }
+    }
+
+    private static native byte[] GenerateStub(Class c);
+    private static native cli.System.IO.Stream ReadResourceFromAssemblyImpl(Assembly asm, String resource);
+    private static native Class LoadClassFromAssembly(Assembly asm, String className);
+    private static native Assembly LoadAssembly(String name)
+        throws cli.System.IO.FileNotFoundException, cli.System.BadImageFormatException, cli.System.Security.SecurityException;
+    private static native ClassLoader GetGenericClassLoaderById(int id);
+
+    protected URLConnection openConnection(URL url) throws IOException
+    {
+	return new IkvmresURLConnection(url);
+    }
+
+    protected void parseURL(URL url, String url_string, int start, int end)
+    {
+	try
+	{
+	    // NOTE originally I wanted to use java.net.URI to handling parsing and constructing of these things,
+	    // but it turns out that URI uses regex and that depends on resource loading...
+	    url_string = url_string.substring(start, end);
+	    if(url_string.startsWith("//"))
+	    {
+	        int slash = url_string.indexOf('/', 2);
+	        if(slash == -1)
+	        {
+		    throw new RuntimeException("ikvmres: URLs must contain path");
+	        }
+	        String assembly = unquote(url_string.substring(2, slash));
+	        String file = unquote(url_string.substring(slash));
+	        setURL(url, "ikvmres", assembly, -1, file, null);
+            }
+            else if(url_string.startsWith("/"))
+            {
+                setURL(url, "ikvmres", url.getHost(), -1, url_string, null);
+            }
+            else
+            {
+                String[] baseparts = ((cli.System.String)(Object)url.getFile()).Split(new char[] { '/' });
+                String[] relparts = ((cli.System.String)(Object)url_string).Split(new char[] { '/' });
+                String[] target = new String[baseparts.length + relparts.length - 1];
+                for(int i = 1; i < baseparts.length; i++)
+                {
+                    target[i - 1] = baseparts[i];
+                }
+                int p = baseparts.length - 2;
+                for(int i = 0; i < relparts.length; i++)
+                {
+                    if(relparts[i].equals("."))
+                    {
+                    }
+                    else if(relparts[i].equals(".."))
+                    {
+                        p = Math.max(0, p - 1);
+                    }
+                    else
+                    {
+                        target[p++] = relparts[i];
+                    }
+                }
+                StringBuffer file = new StringBuffer();
+                for(int i = 0; i < p; i++)
+                {
+                    file.append('/').append(target[i]);
+                }
+                setURL(url, "ikvmres", url.getHost(), -1, file.toString(), null);
+            }
+	}
+	catch(URISyntaxException x)
+	{
+	    throw new RuntimeException(x.getMessage());
+	}
+    }
+
+    protected String toExternalForm(URL url)
+    {
+	// NOTE originally I wanted to use java.net.URI to handle parsing and constructing of these things,
+	// but it turns out that URI uses regex and that depends on resource loading...
+	return "ikvmres://" + quote(url.getHost(), RFC2396_REG_NAME) + quote(url.getFile(), RFC2396_PATH_SEGMENTS);
+    }
+
+    protected InetAddress getHostAddress(URL url)
+    {
+	return null;
+    }
+
+    private static String quote (String str, String legalCharacters)
+    {
+	StringBuffer sb = new StringBuffer(str.length());
+	for (int i = 0; i < str.length(); i++) 
+	{
+	    char c = str.charAt(i);
+	    if (legalCharacters.indexOf(c) == -1) 
+	    {
+		String hex = "0123456789ABCDEF";
+		if (c <= 127) 
+		{
+		    sb.append('%')
+			.append(hex.charAt(c / 16))
+			.append(hex.charAt(c % 16));
+		} 
+		else 
+		{
+		    try 
+		    {
+			// this is far from optimal, but it works
+			byte[] utf8 = str.substring(i, i + 1).getBytes("utf-8");
+			for (int j = 0; j < utf8.length; j++) 
+			{
+			    sb.append('%')
+				.append(hex.charAt((utf8[j] & 0xff) / 16))
+				.append(hex.charAt((utf8[j] & 0xff) % 16));
+			}
+		    } 
+		    catch (java.io.UnsupportedEncodingException x) 
+		    {
+			throw (Error)new InternalError().initCause(x);
+		    }
+		}
+	    } 
+	    else 
+	    {
+		sb.append(c);
+	    }
+	}
+	return sb.toString();
+    }
+
+    private static String unquote (String str)
+	throws URISyntaxException
+    {
+	if (str == null)
+	    return null;
+	byte[] buf = new byte[str.length()];
+	int pos = 0;
+	for (int i = 0; i < str.length(); i++) 
+	{
+	    char c = str.charAt(i);
+	    if (c > 127)
+		throw new URISyntaxException(str, "Invalid character");
+	    if (c == '%') 
+	    {
+		if (i + 2 >= str.length())
+		    throw new URISyntaxException(str, "Invalid quoted character");
+		String hex = "0123456789ABCDEF";
+		int hi = hex.indexOf(str.charAt(++i));
+		int lo = hex.indexOf(str.charAt(++i));
+		if (lo < 0 || hi < 0)
+		    throw new URISyntaxException(str, "Invalid quoted character");
+		buf[pos++] = (byte)(hi * 16 + lo);
+	    } 
+	    else 
+	    {
+		buf[pos++] = (byte)c;
+	    }
+	}
+	try 
+	{
+	    return new String(buf, 0, pos, "utf-8");
+	} 
+	catch (java.io.UnsupportedEncodingException x2) 
+	{
+	    throw (Error)new InternalError().initCause(x2);
+	}
+    }
+}
+@
+
+
+1.17
+log
+@Fixed URL.equals() for "ikvmres:" urls.
+@
+text
+@d122 1
+a122 1
+                return new ByteArrayInputStream(ikvm.internal.stubgen.StubGenerator.generateStub(c));
+d155 1
+a155 1
+                    return new ByteArrayInputStream(ikvm.internal.stubgen.StubGenerator.generateStub(c));
+d166 1
+@
+
+
+1.16
+log
+@Changed ikvmres protocol handler to be compatible with both GNU Classpath and OpenJDK url parse exception throwing convention.
+@
+text
+@a248 5
+    protected boolean hostsEqual(URL url1, URL url2)
+    {
+	return false;
+    }
+
+@
+
+
+1.16.2.1
+log
+@Backported fixes and changed version to 0.36.0.5
+@
+text
+@d249 5
+@
+
+
+1.15
+log
+@*** empty log message ***
+@
+text
+@d189 1
+a189 1
+		    throw new gnu.java.net.URLParseError("ikvmres: URLs must contain path");
+d233 1
+a233 1
+	    throw new gnu.java.net.URLParseError(x.getMessage());
+@
+
+
+1.14
+log
+@*** empty log message ***
+@
+text
+@d53 1
+a53 1
+                inputStream = Handler.readResourceFromAssembly(assembly, resource);
+d110 1
+a110 1
+    static InputStream readResourceFromAssembly(String assembly, String resource)
+d116 15
+d170 1
+@
+
+
+1.13
+log
+@*** empty log message ***
+@
+text
+@d53 1
+a53 5
+                if(false) throw new cli.System.IO.FileNotFoundException();
+                if(false) throw new cli.System.BadImageFormatException();
+                if(false) throw new cli.System.Security.SecurityException();
+                Assembly asm = Assembly.Load(assembly);
+                inputStream = Handler.readResourceFromAssembly(asm, resource);
+d110 9
+d153 2
+@
+
+
+1.12
+log
+@*** empty log message ***
+@
+text
+@d130 8
+d147 1
+@
+
+
+1.11
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002, 2003, 2004, 2005 Jeroen Frijters
+d27 1
+a27 3
+import cli.System.Resources.*;
+import cli.System.Reflection.*;
+import cli.System.Collections.*;
+a29 142
+import java.io.IOException;
+
+class LZInputStream extends FilterInputStream 
+{
+    private int[] ptr_tbl;
+    private int[] char_tbl;
+    private int[] stack;
+    private int table_size;
+    private int count;
+    private int bitoff;
+    private int bitbuf;
+    private int prev = -1;
+    private int bits;
+    private int cc;
+    private int fc;
+    private int sp;
+
+    public LZInputStream(InputStream in) throws IOException 
+    {
+        super(in);
+        bitoff = 0;
+        count = 0;
+        table_size = 256;
+        bits = 9;
+        ptr_tbl = new int[table_size];
+        char_tbl = new int[table_size];
+        stack = new int[table_size];
+        sp = 0;
+        cc = prev = incode();
+        stack[sp++] = cc;
+    }
+
+    public int read() throws IOException 
+    {
+        if (sp == 0) 
+        {
+            if (stack.length != table_size) 
+            {
+                stack = new int[table_size];
+            }
+            int ic = cc = incode();
+            if (cc == -1) 
+            {
+                return -1;
+            }
+            if (count >= 0 && cc >= count + 256) 
+            {
+                stack[sp++] = fc;
+                cc = prev;
+                ic = find(prev, fc);
+            }
+            while (cc >= 256) 
+            {
+                stack[sp++] = char_tbl[cc - 256];
+                cc = ptr_tbl[cc - 256];
+            }
+            fc = stack[sp++] = cc;
+            if (count >= 0) 
+            {
+                ptr_tbl[count] = prev;
+                char_tbl[count] = fc;
+            }
+            count++;
+            if (count == table_size) 
+            {
+                count = -1;
+                if (bits == 12)
+                {
+                    table_size = 256;
+                    bits = 9;
+                }
+                else
+                {
+                    bits++;
+                    table_size = (1 << bits) - 256;
+                }
+                ptr_tbl = null;
+                char_tbl = null;
+                ptr_tbl = new int[table_size];
+                char_tbl= new int[table_size];
+            }
+            prev = ic;
+        }
+        return stack[--sp] & 0xFF;
+    }
+
+    private int find(int p, int c) 
+    {
+        int i;
+        for (i = 0; i < count; i++) 
+        {
+            if (ptr_tbl[i] == p && char_tbl[i] == c) 
+            {
+                break;
+            }
+        }
+        return i + 256;
+    }
+
+    private int incode() throws IOException 
+    {
+        while (bitoff < bits) 
+        {
+            int v = in.read();
+            if (v == -1) 
+            {
+                return -1;
+            }
+            bitbuf |= (v & 0xFF) << bitoff;
+            bitoff += 8;
+        }
+        bitoff -= bits;
+        int result = bitbuf;
+        bitbuf >>= bits;
+        result -= bitbuf << bits;
+        return result;
+    }
+
+    public int read(byte[] b) throws IOException
+    {
+        return read(b, 0, b.length);
+    }
+
+    public int read(byte[] b, int off, int len) throws IOException
+    {
+        if(len == 0)
+        {
+            return 0;
+        }
+        int i = 0;
+        for (; i < len ; i++)
+        {
+            int r = read();
+            if(r == -1)
+            {
+                break;
+            }
+            b[off + i] = (byte)r;
+        }
+        return (i == 0) ? -1 : i;
+    }
+}
+a40 2
+    static native String MangleResourceName(String name);
+
+a116 2
+        resource = resource.substring(1);
+        cli.System.IO.Stream s;
+d120 3
+a122 5
+            s = asm.GetManifestResourceStream(IkvmresURLConnection.MangleResourceName(resource));
+            if(s == null)
+            {
+                throw new FileNotFoundException("resource " + resource + " not found in assembly " + asm.get_FullName());
+            }
+d124 1
+a124 1
+        catch(cli.System.Security.SecurityException x2)
+d126 1
+a126 1
+            throw (IOException)new IOException().initCause(x2);
+d128 1
+a128 1
+        try
+d130 1
+a130 30
+            Object r = new ResourceReader(s);
+            try
+            {
+                IEnumerator e = ((IEnumerable)r).GetEnumerator();
+                if(!e.MoveNext())
+                {
+                    throw new IOException("Invalid resource " + resource + " found in assembly " + asm.get_FullName());
+                }
+                DictionaryEntry de = (DictionaryEntry)e.get_Current();
+                String key = (String)de.get_Key();
+                byte[] value = (byte[])de.get_Value();
+                InputStream inputStream = new ByteArrayInputStream(value);
+                if(key.equals("lz"))
+                {
+                    inputStream = new LZInputStream(inputStream);
+                }
+                else if(key.equals("ikvm"))
+                {
+                    // not compressed
+                }
+                else
+                {
+                    throw new IOException("Unsupported resource encoding " + key + " for resource " + resource + " found in assembly " + asm.get_FullName());
+                }
+                return inputStream;
+            }
+            finally
+            {
+                ((cli.System.IDisposable)r).Dispose();
+            }
+d132 1
+a132 1
+        finally
+d134 1
+a134 1
+            s.Close();
+d138 2
+@
+
+
+1.10
+log
+@*** empty log message ***
+@
+text
+@d185 1
+a185 1
+    private static native String MangleResourceName(String name);
+a196 2
+	    resource = resource.substring(1);
+            cli.System.IO.Stream s;
+d203 2
+a204 5
+                s = asm.GetManifestResourceStream(MangleResourceName(resource));
+                if(s == null)
+                {
+                    throw new FileNotFoundException("resource " + resource + " not found in assembly " + assembly);
+                }
+d218 1
+a218 46
+	    try
+	    {
+		Object r;
+                try
+                {
+                    r = ResourceReader.class.getConstructor(new Class[] { cli.System.IO.Stream.class }).newInstance(new Object[] { s });
+                }
+                catch(Exception x)
+                {
+                    throw (IOException)new IOException().initCause(x);
+                }
+		try
+		{
+		    IEnumerator e = ((IEnumerable)r).GetEnumerator();
+		    if(!e.MoveNext())
+		    {
+			throw new IOException("Invalid resource " + resource + " found in assembly " + assembly);
+		    }
+                    DictionaryEntry de = (DictionaryEntry)e.get_Current();
+                    String key = (String)de.get_Key();
+                    byte[] value = (byte[])de.get_Value();
+		    inputStream = new ByteArrayInputStream(value);
+                    if(key.equals("lz"))
+                    {
+                        inputStream = new LZInputStream(inputStream);
+                    }
+                    else if(key.equals("ikvm"))
+                    {
+                        // not compressed
+                    }
+                    else
+                    {
+                        throw new IOException("Unsupported resource encoding " + key + " for resource " + resource + " found in assembly " + assembly);
+                    }
+		    connected = true;
+		}
+		finally
+		{
+		    ((cli.System.IDisposable)r).Dispose();
+		}
+	    }
+	    finally
+	    {
+		s.Close();
+	    }
+	}
+d260 57
+@
+
+
+1.9
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002, 2003, 2004 Jeroen Frijters
+d34 141
+d239 1
+a239 1
+			throw new IOException("invalid resource " + resource + " found in assembly " + assembly);
+d241 16
+a256 1
+		    inputStream = new ByteArrayInputStream((byte[])((DictionaryEntry)e.get_Current()).get_Value());
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@d84 9
+a92 1
+		ResourceReader r = new ResourceReader(s);
+d95 1
+a95 1
+		    IEnumerator e = r.GetEnumerator();
+d100 1
+a100 1
+		    inputStream = new ByteArrayInputStream(ikvm.lang.ByteArrayHack.cast((cli.System.Byte[])((DictionaryEntry)e.get_Current()).get_Value()));
+d105 1
+a105 1
+		    r.Close();
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@a26 1
+import cli.System.IO.*;
+d54 1
+a54 1
+		throw new IOException("Malformed ikvmres url");
+d57 25
+a81 10
+	    Assembly asm = Assembly.Load(assembly);
+	    if(asm == null)
+	    {
+		throw new IOException("assembly " + assembly + " not found");
+	    }
+	    Stream s = asm.GetManifestResourceStream(MangleResourceName(resource));
+	    if(s == null)
+	    {
+		throw new IOException("resource " + resource + " not found in assembly " + assembly);
+	    }
+d158 1
+a158 1
+	    if(!url_string.startsWith("//"))
+d160 44
+a203 10
+		throw new gnu.java.net.URLParseError("ikvmres: URLs must start with //");
+	    }
+	    int slash = url_string.indexOf('/', 2);
+	    if(slash == -1)
+	    {
+		throw new gnu.java.net.URLParseError("ikvmres: URLs must contain path");
+	    }
+	    String assembly = unquote(url_string.substring(2, slash));
+	    String file = unquote(url_string.substring(slash));
+	    setURL(url, "ikvmres", assembly, 0, file, null);
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d45 2
+d63 1
+a63 1
+	    Stream s = asm.GetManifestResourceStream("ikvm:" + resource);
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d163 1
+a163 1
+	// NOTE originally I wanted to use java.net.URI to handling parsing and constructing of these things,
+d168 10
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002 Jeroen Frijters
+d28 1
+d30 1
+d37 1
+a37 1
+	private InputStream inputStream;
+d39 31
+a69 9
+	IkvmresURLConnection(URL url)
+	{
+		super(url);
+		doOutput = false;
+	}
+
+	public void connect() throws IOException
+	{
+		if(!connected)
+d71 7
+a77 16
+			String assembly = url.getHost();
+			String resource = url.getFile();
+			Assembly asm = Assembly.Load(assembly);
+			if(asm == null)
+			{
+				throw new IOException("assembly " + assembly + " not found");
+			}
+			FieldInfo fi = asm.GetLoadedModules()[0].GetField(resource);
+			if(fi == null)
+			{
+				throw new IOException("resource " + resource + " not found in assembly " + assembly);
+			}
+			byte[] b = new byte[cli.System.Runtime.InteropServices.Marshal.SizeOf(fi.get_FieldType())];
+			cli.System.Runtime.CompilerServices.RuntimeHelpers.InitializeArray((cli.System.Array)(Object)b, fi.get_FieldHandle());
+			inputStream = new ByteArrayInputStream(b);
+			connected = true;
+d79 1
+a79 5
+	}
+
+	public InputStream getInputStream() throws IOException
+	{
+		if(!connected)
+d81 1
+a81 1
+			connect();
+d83 31
+a113 17
+		return inputStream;
+	}
+
+	public OutputStream getOutputStream() throws IOException
+	{
+		throw new IOException("resource URLs are read only");
+	}
+
+	public long getLastModified()
+	{
+		return -1;
+	}
+
+	public int getContentLength()
+	{
+		return -1;
+	}
+d118 125
+a242 14
+	protected URLConnection openConnection(URL url) throws IOException
+	{
+		return new IkvmresURLConnection(url);
+	}
+
+	protected void parseURL(URL url, String url_string, int start, int end)
+	{
+		int colon = url_string.indexOf(':', start);
+		String assembly = url_string.substring(start, colon);
+		String file = url_string.substring(colon + 1);
+		setURL(url, "ikvmres", assembly, 0, file, null);
+	}
+
+	protected String toExternalForm(URL url)
+d244 1
+a244 1
+		return "ikvmres:" + url.getHost() + ":" + url.getFile();
+d246 1
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d27 2
+a28 2
+import system.io.*;
+import system.reflection.*;
+d59 2
+a60 2
+			byte[] b = new byte[system.runtime.interopservices.Marshal.SizeOf(fi.get_FieldType())];
+			system.runtime.compilerservices.RuntimeHelpers.InitializeArray((system.Array)(Object)b, fi.get_FieldHandle());
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d60 1
+a60 1
+			InitArray(b, fi);
+a64 1
+	private static native void InitArray(byte[] buf, FieldInfo field);
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d49 10
+a58 2
+			// TODO error handling
+			FieldInfo fi = Assembly.Load(assembly).GetLoadedModules()[0].GetField(resource);
+d102 2
+a103 2
+		String file = url_string.substring(start, colon);
+		String assembly = url_string.substring(colon + 1);
+d109 1
+a109 1
+		return "ikvmres:" + url.getFile() + ":" + url.getHost();
+@
+
+
+1.1.1.1
+log
+@no message
+@
+text
+@@

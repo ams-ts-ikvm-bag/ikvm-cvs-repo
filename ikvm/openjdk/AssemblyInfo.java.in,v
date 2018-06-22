@@ -1,0 +1,390 @@
+head	1.10;
+access;
+symbols
+	v8_1_5717_0:1.10
+	v8_1:1.10.0.4
+	v8_0_5449_1:1.10
+	v8_0_5449_0:1.10
+	v8_0:1.10.0.2
+	v7_4_5196_0:1.9
+	v7_4:1.9.0.2
+	v7_3:1.8.0.2
+	v7_2_4630_6:1.7
+	v7_2_4630_5:1.7
+	v7_2_4630_4:1.7
+	v7_2_4630_3:1.7
+	v7_2_4630_2:1.7
+	v0_46_0_4:1.6
+	v7_2_4630_1:1.7
+	v7_2:1.7.0.4
+	v7_1_4532_2:1.7
+	v7_1_4532_1:1.7
+	v7_1_4532_0:1.7
+	v7_1:1.7.0.2
+	v7_0_4335_3:1.6.4.1
+	v7_0_4335_2:1.6.4.1
+	v7_0_4335_1:1.6.4.1
+	v0_46_0_2:1.6
+	v7_0_4335_0:1.6
+	v7_0:1.6.0.4
+	v0_40_0_6:1.2.4.1
+	v0_40_0_5:1.2.4.1
+	v0_46_0_1:1.6
+	v0_46_0_0:1.6
+	v0_46:1.6.0.2
+	v0_44_0_6:1.5
+	v0_44_0_5:1.5
+	v0_44_0_4:1.5
+	v0_44_0_3:1.5
+	v0_44_0_2:1.5
+	v0_42_0_7:1.3
+	v0_44_0_1:1.5
+	v0_44_0_0:1.5
+	v0_44:1.5.0.2
+	v0_42_0_6:1.3
+	v0_42_0_5:1.3
+	v0_42_0_4:1.3
+	v0_42_0_3:1.3
+	v0_42_0_2:1.3
+	v0_42_0_1:1.3
+	v0_42_0_0:1.3
+	v0_42:1.3.0.2
+	v0_40_0_3:1.2.4.1
+	v0_40_0_2:1.2.4.1
+	v0_40_0_1:1.2.4.1
+	v0_40_0_0:1.2
+	v0_40:1.2.0.4
+	v0_38_0_1:1.2
+	v0_38_0_0:1.2
+	v0_38:1.2.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.10
+date	2014.04.29.07.13.11;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2013.05.03.07.53.47;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2013.02.07.09.46.35;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2011.12.13.16.17.43;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2011.01.24.16.40.22;	author jfrijters;	state Exp;
+branches
+	1.6.4.1;
+next	1.5;
+
+1.5
+date	2010.06.16.09.14.30;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.06.11.06.59.24;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2009.04.16.10.12.50;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.09.18.05.01.25;	author jfrijters;	state Exp;
+branches
+	1.2.4.1;
+next	1.1;
+
+1.1
+date	2008.01.03.09.41.13;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.2.4.1
+date	2009.04.21.07.31.17;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.6.4.1
+date	2012.01.03.12.16.37;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.10
+log
+@Add ExtensionAttribute to IKVM.OpenJDK.Core assembly, because Roslyn requires that for the extension methods to be visible.
+@
+text
+@/*
+  Copyright (C) 2006-2014 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+
+@@cli.System.Reflection.AssemblyCopyrightAttribute.Annotation(
+    "This software is licensed under the GNU General Public License version 2 + \"Classpath\" exception.\r\n" +
+    "See http://www.gnu.org/software/classpath/license.html for details.\r\n" +
+@@COPYRIGHT@@)
+
+@@cli.System.Reflection.AssemblyTitleAttribute.Annotation("IKVM.NET OpenJDK Library for .NET")
+@@cli.System.Reflection.AssemblyProductAttribute.Annotation("IKVM.NET")
+@@cli.System.Reflection.AssemblyCompanyAttribute.Annotation("Jeroen Frijters")
+@@cli.System.Reflection.AssemblyInformationalVersionAttribute.Annotation("@@VERSION@@")
+
+@@cli.System.Runtime.CompilerServices.InternalsVisibleToAttribute.Annotation.__Multiple({
+    @@cli.System.Runtime.CompilerServices.InternalsVisibleToAttribute.Annotation("@@RUNTIME@@"),
+    @@cli.System.Runtime.CompilerServices.InternalsVisibleToAttribute.Annotation("@@AWTWINFORMS@@")
+})
+
+@@cli.System.Security.AllowPartiallyTrustedCallersAttribute.Annotation
+
+// type to collect Assembly attributes applicable to all core library assemblies
+interface commonAttributes {}
+
+/////////////////////////////////////////////////////////////////////////////
+
+// Roslyn requires that assemblies that contain types that define extension methods have the attribute on the assembly as well
+@@cli.System.Runtime.CompilerServices.ExtensionAttribute.Annotation
+
+// type to collect Assembly attributes specific to IKVM.OpenJDK.Core
+interface coreAttributes {}
+@
+
+
+1.9
+log
+@- Allow IKVM.AWT.WinForms.dll access to internals of class library.
+- Made BufferedImage.toBitmap() package private.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2006-2013 Jeroen Frijters
+d42 10
+a51 2
+// magic type to collect Assembly attributes
+interface assembly {}
+@
+
+
+1.8
+log
+@Changed the build system to automtically scan all sources files for copyright statements and validate that all GPL licensed files include the Classpath exception.
+@
+text
+@d35 4
+a38 1
+@@cli.System.Runtime.CompilerServices.InternalsVisibleToAttribute.Annotation("@@RUNTIME@@")
+@
+
+
+1.7
+log
+@Added AssemblyInformationalVersionAttribute to OpenJDK assemblies (to set the "Product Version"). Part of patch #3458997.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2006-2009 Jeroen Frijters
+d28 1
+a28 22
+    "Copyright (C) 1988      AT&T\r\n" +
+    "Copyright (C) 2004      BEA Systems\r\n" +
+    "Copyright (C) 1995      Colin Plumb\r\n" +
+    "Copyright (C) 1999-2008 Free Software Foundation, Inc.\r\n" +
+    "Copyright (C) 2001-2005 freebxml.org\r\n" +
+    "Copyright (C) 1998      FundsXpress, Inc.\r\n" +
+    "Copyright (C) 2008-2011 i-net software\r\n" +
+    "Copyright (C) 2000-2007 INRIA, France Telecom\r\n" +
+    "Copyright (C) 1993-2005 International Business Machines, Inc.\r\n" +
+    "Copyright (C) 2002-2011 Jeroen Frijters\r\n" +
+    "Copyright (C) 1993-2010 Oracle and/or its affiliates\r\n" +
+    "Copyright (C) 2007      Red Hat, Inc.\r\n" +
+    "Copyright (C) 1996-1998 Taligent, Inc.\r\n" +
+    "Copyright (C) 2001-2002 Thai Open Source Software Center Ltd\r\n" +
+    "Copyright (C) 1999-2006 The Apache Software Foundation\r\n" +
+    "Copyright (C) 1995-2000 The Cryptix Foundation Limited\r\n" +
+    "Copyright (C) 1997      The Open Group Research Institute\r\n" +
+    "Copyright (C) 1991-2007 Unicode, Inc.\r\n" +
+    "Copyright (C) 1999      Visual Numerics Inc.\r\n" +
+    "Copyright (C) 2003      Wily Technology, Inc.\r\n" +
+    "Copyright (C) 2000-2004 World Wide Web Consortium"
+)
+@
+
+
+1.6
+log
+@Integrated OpenJDK 6 b21.
+@
+text
+@d54 1
+@
+
+
+1.6.4.1
+log
+@Backported fixes:
+- FileStore for non-accessible drive should throw exception when trying to create the FileStore, not when accessing the name() or type() properties.
+- Graphics2D.clip(null) should only throw NPE for a Component graphics.
+- Don't crash when ikvmc -resource: or -externalresource: option doesn't contain an = sign.
+- Handle Main-Class manifest value that spans multiple lines. Fix for bug #3461012.
+- Informational messages should not be treated as error when -warnaserror is specified. Fix for #3443377.
+- Don't enforce pre-1.5 class name rules in ikvmc (since HotSpot doesn't enforce any naming rules for classes loaded by the system (and boot) class loader, by default). Fix for #3443373.
+- Fix for #3441959.
+- Throwable.addSuppressed() didn't have a proper parameter name.
+- mark getSpace0 with SecuritySafeCritical to avoid getting an exception with .NET 4
+- Bug fix. Removed incorrect check for uninitialized objects on backward branch.
+- Don't crash when ikvmc -resource: or -externalresource: option doesn't contain an = sign.
+- Added AssemblyInformationalVersionAttribute to OpenJDK assemblies (to set the "Product Version"). Part of patch #3458997.
+- Include copyright and metadata in IKVM.OpenJDK.Tools.dll. Part of patch #3458997.
+- Bug fix. Don't call Finish on unloadable TypeWrapper.
+- Bug fix. When constructing a generic class loader we can't use GetWrapperFromType() on the type arguments, because they might refer to a subtype that is currently being loaded.
+- Fix. When decoding a NameSigAttribute it is possible that a type does not exist (i.e. is an unloadable) and that results in a warning emitted against the referenced assemblies class loader.
+- Suppress annotation custom attributes when enumerating inner classes.
+- IKVM.Reflection: Bug fix. Fixed copy/paste error. FieldInfo.IsAssembly should test for FieldAttributes.Assembly access, not FieldAttributes.Family.
+@
+text
+@a53 1
+@@cli.System.Reflection.AssemblyInformationalVersionAttribute.Annotation("@@VERSION@@")
+@
+
+
+1.5
+log
+@Updated copyright message.
+@
+text
+@d29 1
+a29 1
+    "Copyright (C) 2003-2004 BEA Systems\r\n" +
+d34 1
+d37 2
+a38 2
+    "Copyright (C) 2002-2010 Jeroen Frijters\r\n" +
+    "Copyright (C) 2009      Oracle Corporation\r\n" +
+a39 1
+    "Copyright (C) 1993-2010 Sun Microsystems, Inc.\r\n" +
+a46 1
+    "Copyright (C) 2008-2009 Volker Berlin (i-net software)\r\n" +
+@
+
+
+1.4
+log
+@OpenJDK assemblies must be transparent on .NET 4.0.
+@
+text
+@d32 1
+d34 1
+d36 2
+a37 1
+    "Copyright (C) 2002-2009 Jeroen Frijters\r\n" +
+d39 1
+a39 1
+    "Copyright (C) 1993-2009 Sun Microsystems, Inc.\r\n" +
+@
+
+
+1.3
+log
+@Updated copyright notices.
+@
+text
+@a54 1
+@@cli.System.Security.SecurityCriticalAttribute.Annotation
+@
+
+
+1.2
+log
+@Updated copyright notices.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2006, 2007, 2008 Jeroen Frijters
+d34 1
+a34 1
+    "Copyright (C) 2002-2008 Jeroen Frijters\r\n" +
+d36 1
+a36 1
+    "Copyright (C) 1994-2008 Sun Microsystems, Inc.\r\n" +
+d43 2
+@
+
+
+1.2.4.1
+log
+@Updated copyright notices.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2006-2009 Jeroen Frijters
+d34 1
+a34 1
+    "Copyright (C) 2002-2009 Jeroen Frijters\r\n" +
+d36 1
+a36 1
+    "Copyright (C) 1993-2009 Sun Microsystems, Inc.\r\n" +
+a42 2
+    "Copyright (C) 1999      Visual Numerics Inc.\r\n" +
+    "Copyright (C) 2008-2009 Volker Berlin (i-net software)\r\n" +
+@
+
+
+1.1
+log
+@- Generate proper InternalsVisibleTo annotation based on whether we're doing a signed or unsigned build.
+- Added SecurityCritical and AllowPartiallyTrustedCallers annotation to IKVM.OpenJDK.ClassLibrary.dll.
+@
+text
+@a29 1
+    "Copyright (C) 2007      Casey Marshall\r\n" +
+d31 1
+a31 2
+    "Copyright (C) 1999-2007 Free Software Foundation, Inc.\r\n" +
+    "Copyright (C) 2001-2005 freebxml.org\r\n" +
+d36 1
+a36 1
+    "Copyright (C) 1994-2007 Sun Microsystems, Inc.\r\n" +
+d40 1
+@
+

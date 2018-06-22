@@ -1,0 +1,394 @@
+head	1.3;
+access;
+symbols
+	v8_1_5717_0:1.3
+	v8_1:1.3.0.4
+	v8_0_5449_1:1.3
+	v8_0_5449_0:1.3
+	v8_0:1.3.0.2
+	v7_4_5196_0:1.2
+	v7_4:1.2.0.12
+	v7_3:1.2.0.10
+	v7_2_4630_6:1.2
+	v7_2_4630_5:1.2
+	v7_2_4630_4:1.2
+	v7_2_4630_3:1.2
+	v7_2_4630_2:1.2
+	v0_46_0_4:1.2
+	v7_2_4630_1:1.2
+	v7_2:1.2.0.8
+	v7_1_4532_2:1.2
+	v7_1_4532_1:1.2
+	v7_1_4532_0:1.2
+	v7_1:1.2.0.6
+	v7_0_4335_3:1.2
+	v7_0_4335_2:1.2
+	v7_0_4335_1:1.2
+	v0_46_0_2:1.2
+	v7_0_4335_0:1.2
+	v7_0:1.2.0.4
+	v0_40_0_6:1.1
+	v0_40_0_5:1.1
+	v0_46_0_1:1.2
+	v0_46_0_0:1.2
+	v0_46:1.2.0.2
+	v0_44_0_6:1.1
+	v0_44_0_5:1.1
+	v0_44_0_4:1.1
+	v0_44_0_3:1.1
+	v0_44_0_2:1.1
+	v0_42_0_7:1.1
+	v0_44_0_1:1.1
+	v0_44_0_0:1.1
+	v0_44:1.1.0.6
+	v0_42_0_6:1.1
+	v0_42_0_5:1.1
+	v0_42_0_4:1.1
+	v0_42_0_3:1.1
+	v0_42_0_2:1.1
+	v0_42_0_1:1.1
+	v0_42_0_0:1.1
+	v0_42:1.1.0.4
+	v0_40_0_3:1.1
+	v0_40_0_2:1.1
+	v0_40_0_1:1.1
+	v0_40_0_0:1.1
+	v0_40:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.3
+date	2014.05.19.12.43.40;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.11.08.10.03.31;	author smallsql;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2009.04.03.08.56.13;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.3
+log
+@First part of OpenJDK 8 integration.
+@
+text
+@/*
+  Copyright (C) 2009 Jeroen Frijters
+  Copyright (C) 2010 Volker Berlin (i-net software)
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+package sun.java2d.cmm.lcms;
+
+import gnu.java.awt.color.TagEntry;
+
+import java.awt.color.CMMException;
+import java.awt.color.ColorSpace;
+import java.awt.color.ICC_Profile;
+import java.awt.color.ICC_ProfileGray;
+import java.awt.color.ICC_ProfileRGB;
+import java.awt.image.BufferedImage;
+import java.awt.image.Raster;
+import java.awt.image.WritableRaster;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.Hashtable;
+
+import sun.java2d.cmm.ColorTransform;
+import sun.java2d.cmm.PCMM;
+import sun.java2d.cmm.Profile;
+
+// dummy color management implementation
+public class LCMS implements PCMM {
+    
+    private static final int HEADER_SIZE = 128;
+    
+    public Profile loadProfile( byte[] data ) {
+        return new ProfileData(data.clone());
+    }
+
+    public void freeProfile(Profile p) {
+    }
+
+    public int getProfileSize(Profile p) {
+        return ((ProfileData)p).data.length;
+    }
+
+    public void getProfileData(Profile p, byte[] data) {
+        byte[] src = ((ProfileData)p).data;
+        System.arraycopy( src, 0, data, 0, src.length );
+    }
+
+    public void getTagData(Profile p, int tagSignature, byte[] data) {
+        ProfileData profile = (ProfileData)p;
+        if( tagSignature == ICC_Profile.icSigHead ) {
+            byte[] src = profile.data;
+            System.arraycopy( src, 0, data, 0, HEADER_SIZE );
+        } else {
+            TagEntry entry = profile.tags.get( tagSignature );
+            if( entry == null ){
+                throw new CMMException( "tag does not exist: " + tagSignature );
+            }
+            byte[] src = entry.getData();
+            System.arraycopy( src, 0, data, 0, src.length );
+        }
+        
+    }
+
+    public int getTagSize(Profile p, int tagSignature) {
+        if( tagSignature == ICC_Profile.icSigHead ) {
+            return HEADER_SIZE;
+        }
+        ProfileData profile = (ProfileData)p;
+        TagEntry entry = profile.tags.get( tagSignature );
+        if( entry == null ){
+            throw new CMMException( "tag does not exist: " + tagSignature );
+        }
+        return entry.getData().length;
+    }
+
+    public void setTagData(Profile p, int tagSignature, byte[] data)
+    {
+        throw new CMMException("Not implemented");
+    }
+
+    public ColorTransform createTransform(ICC_Profile profile, int renderType, int transformType)
+    {
+        return new DummyColorTransform();
+    }
+
+    public ColorTransform createTransform(ColorTransform[] transforms)
+    {
+        return new DummyColorTransform();
+    }
+
+    public static LCMS getModule() {
+        return new LCMS();
+    }
+    
+    private static final class ProfileData extends Profile {
+        
+        private final byte[] data;
+        private final Hashtable<Integer, TagEntry> tags;
+        
+        private ProfileData(byte[] data){
+            super(-1);
+            this.data = data;
+            this.tags = createTagTable( data );
+        }
+        
+        private static Hashtable<Integer, TagEntry> createTagTable( byte[] data ) throws IllegalArgumentException {
+            ByteBuffer buf = ByteBuffer.wrap( data );
+            int nTags = buf.getInt( HEADER_SIZE );
+
+            Hashtable<Integer, TagEntry> tagTable = new Hashtable<Integer, TagEntry>();
+            for( int i = 0; i < nTags; i++ ) {
+                int sig = buf.getInt( HEADER_SIZE + i * TagEntry.entrySize + 4 );
+                int offset = buf.getInt( HEADER_SIZE + i * TagEntry.entrySize + 8 );
+                int size = buf.getInt( HEADER_SIZE + i * TagEntry.entrySize + 12 );
+                TagEntry te = new TagEntry( sig, offset, size, data );
+
+                if( tagTable.put( sig, te ) != null )
+                    throw new IllegalArgumentException( "Duplicate tag in profile:" + te );
+            }
+            return tagTable;
+        }
+
+    }
+    
+    static class DummyColorTransform implements ColorTransform
+    {
+        public int getNumInComponents()
+        {
+            throw new CMMException("Not implemented");
+        }
+
+        public int getNumOutComponents()
+        {
+            throw new CMMException("Not implemented");
+        }
+
+        public void colorConvert(BufferedImage src, BufferedImage dst)
+        {
+            throw new CMMException("Not implemented");
+        }
+
+        public void colorConvert(Raster src, WritableRaster dst, float[] srcMinVal, float[] srcMaxVal, float[] dstMinVal, float[]dstMaxVal)
+        {
+            throw new CMMException("Not implemented");
+        }
+
+        public void colorConvert(Raster src, WritableRaster dst)
+        {
+            throw new CMMException("Not implemented");
+        }
+
+        public short[] colorConvert(short[] src, short[] dest)
+        {
+            throw new CMMException("Not implemented");
+        }
+
+        public byte[] colorConvert(byte[] src, byte[] dest)
+        {
+            throw new CMMException("Not implemented");
+        }
+    }
+}
+@
+
+
+1.2
+log
+@Use the GNU ColorSpace converter
+@
+text
+@d43 1
+d50 2
+a51 12
+    private final ArrayList<ProfileData> profiles = new ArrayList<ProfileData>();
+
+    public synchronized long loadProfile( byte[] data ) {
+        int free = profiles.indexOf( null );
+        if( free != -1 ) {
+            profiles.set( free, new ProfileData( data.clone()) );
+            return free;
+        } else {
+            long id = profiles.size();
+            profiles.add( new ProfileData( data.clone()) );
+            return id;
+        }
+d54 1
+a54 2
+    public synchronized void freeProfile( long profileID ) {
+        profiles.set( (int)profileID, null );
+d57 2
+a58 2
+    public synchronized int getProfileSize( long profileID ) {
+        return profiles.get( (int)profileID ).data.length;
+d61 2
+a62 2
+    public synchronized void getProfileData( long profileID, byte[] data ) {
+        byte[] src = profiles.get( (int)profileID ).data;
+d66 2
+a67 2
+    public void getTagData( long profileID, int tagSignature, byte[] data ) {
+        ProfileData profile = profiles.get( (int)profileID );
+d82 1
+a82 1
+    public int getTagSize( long profileID, int tagSignature ) {
+d86 1
+a86 1
+        ProfileData profile = profiles.get( (int)profileID );
+d94 1
+a94 1
+    public void setTagData(long profileID, int tagSignature, byte[] data)
+d108 4
+d113 1
+a113 1
+    private static class ProfileData{
+d119 1
+@
+
+
+1.1
+log
+@Added dummy color management and cmm files.
+@
+text
+@d3 1
+d27 2
+d30 1
+d32 2
+d37 1
+d39 2
+d45 5
+a49 3
+public class LCMS implements PCMM
+{
+    private final ArrayList<byte[]> profiles = new ArrayList<byte[]>();
+d51 4
+a54 6
+    public synchronized long loadProfile(byte[] data)
+    {
+        int free = profiles.indexOf(null);
+        if (free != -1)
+        {
+            profiles.set(free, data.clone());
+d56 1
+a56 3
+        }
+        else
+        {
+d58 1
+a58 1
+            profiles.add(data.clone());
+d63 2
+a64 3
+    public synchronized void freeProfile(long profileID)
+    {
+        profiles.set((int)profileID, null);
+d67 2
+a68 3
+    public synchronized int getProfileSize(long profileID)
+    {
+        return profiles.get((int)profileID).length;
+d71 3
+a73 4
+    public synchronized void getProfileData(long profileID, byte[] data)
+    {
+        byte[] src = profiles.get((int)profileID);
+        System.arraycopy(src, 0, data, 0, src.length);
+d76 12
+a87 7
+    public void getTagData(long profileID, int tagSignature, byte[] data)
+    {
+        if (tagSignature == ICC_Profile.icSigHead)
+        {
+            byte[] src = profiles.get((int)profileID);
+            System.arraycopy(src, 0, data, 0, 128);
+            return;
+d89 1
+a89 1
+        throw new CMMException("Not implemented");
+d92 8
+a99 5
+    public int getTagSize(long profileID, int tagSignature)
+    {
+        if (tagSignature == ICC_Profile.icSigHead)
+        {
+            return 128;
+d101 1
+a101 1
+        throw new CMMException("Not implemented");
+d119 29
+@
+

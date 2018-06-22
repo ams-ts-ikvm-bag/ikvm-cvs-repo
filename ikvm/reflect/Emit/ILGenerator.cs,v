@@ -1,0 +1,2684 @@
+head	1.42;
+access;
+symbols
+	v8_1_5717_0:1.40
+	v8_1:1.40.0.2
+	v8_0_5449_1:1.39
+	v8_0_5449_0:1.39
+	v8_0:1.39.0.4
+	v7_4_5196_0:1.39
+	v7_4:1.39.0.2
+	v7_3:1.38.0.2
+	v7_2_4630_6:1.33.2.1
+	v7_2_4630_5:1.33.2.1
+	v7_2_4630_4:1.33.2.1
+	v7_2_4630_3:1.33.2.1
+	v7_2_4630_2:1.33
+	v0_46_0_4:1.18.2.1
+	v7_2_4630_1:1.33
+	v7_2:1.33.0.2
+	v7_1_4532_2:1.27
+	v7_1_4532_1:1.27
+	v7_1_4532_0:1.27
+	v7_1:1.27.0.2
+	v7_0_4335_3:1.22
+	v7_0_4335_2:1.22
+	v7_0_4335_1:1.22
+	v0_46_0_2:1.18.2.1
+	v7_0_4335_0:1.22
+	v7_0:1.22.0.2
+	v0_46_0_1:1.18.2.1
+	v0_46_0_0:1.18
+	v0_46:1.18.0.2
+	v0_44_0_6:1.8.2.1
+	v0_44_0_5:1.8
+	v0_44_0_4:1.8
+	v0_44_0_3:1.8
+	v0_44_0_2:1.8
+	v0_44_0_1:1.8
+	v0_44_0_0:1.8
+	v0_44:1.8.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.42
+date	2016.07.20.04.52.37;	author jfrijters;	state Exp;
+branches;
+next	1.41;
+
+1.41
+date	2016.07.01.08.41.04;	author jfrijters;	state Exp;
+branches;
+next	1.40;
+
+1.40
+date	2015.02.16.12.24.28;	author jfrijters;	state Exp;
+branches;
+next	1.39;
+
+1.39
+date	2013.03.25.14.49.28;	author jfrijters;	state Exp;
+branches;
+next	1.38;
+
+1.38
+date	2012.10.19.20.12.36;	author jfrijters;	state Exp;
+branches;
+next	1.37;
+
+1.37
+date	2012.10.15.23.15.36;	author jfrijters;	state Exp;
+branches;
+next	1.36;
+
+1.36
+date	2012.10.14.21.20.06;	author jfrijters;	state Exp;
+branches;
+next	1.35;
+
+1.35
+date	2012.10.11.15.10.38;	author jfrijters;	state Exp;
+branches;
+next	1.34;
+
+1.34
+date	2012.10.11.13.23.18;	author jfrijters;	state Exp;
+branches;
+next	1.33;
+
+1.33
+date	2012.07.31.17.50.07;	author jfrijters;	state Exp;
+branches
+	1.33.2.1;
+next	1.32;
+
+1.32
+date	2012.06.01.15.23.37;	author jfrijters;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2012.06.01.13.48.24;	author jfrijters;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2012.05.31.13.26.26;	author jfrijters;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2012.05.31.12.16.27;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2012.05.31.11.07.01;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2012.01.30.14.22.37;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2011.12.02.08.14.58;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2011.12.01.12.03.23;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2011.12.01.09.47.21;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2011.12.01.08.30.54;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2011.10.06.12.15.16;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2011.03.16.08.07.06;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2011.03.10.10.50.24;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2011.03.06.06.41.14;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2011.03.03.07.36.07;	author jfrijters;	state Exp;
+branches
+	1.18.2.1;
+next	1.17;
+
+1.17
+date	2011.02.15.13.58.06;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2010.12.20.14.07.55;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2010.12.08.08.07.07;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2010.12.08.07.15.23;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2010.12.07.14.30.36;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2010.12.07.13.27.50;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2010.10.05.04.50.04;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2010.09.30.07.30.53;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2010.09.21.05.42.27;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2010.06.28.10.18.07;	author jfrijters;	state Exp;
+branches
+	1.8.2.1;
+next	1.7;
+
+1.7
+date	2010.06.28.09.33.27;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2010.06.28.06.35.56;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2010.06.07.04.13.49;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.05.06.12.35.41;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.04.18.08.54.11;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.8.2.1
+date	2010.10.22.06.19.58;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.18.2.1
+date	2011.03.17.05.18.42;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.33.2.1
+date	2012.10.23.08.15.53;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.42
+log
+@ILGenerator.UsingNamespace() should apply to current scope.
+@
+text
+@/*
+  Copyright (C) 2008-2012 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Runtime.InteropServices;
+using System.Collections.Generic;
+#if !NO_SYMBOL_WRITER
+using System.Diagnostics.SymbolStore;
+#endif
+using System.Diagnostics;
+using IKVM.Reflection.Writer;
+
+namespace IKVM.Reflection.Emit
+{
+	public struct Label
+	{
+		// 1-based here, to make sure that an uninitialized Label isn't valid
+		private readonly int index1;
+
+		internal Label(int index)
+		{
+			this.index1 = index + 1;
+		}
+
+		internal int Index
+		{
+			get { return index1 - 1; }
+		}
+
+		public bool Equals(Label other)
+		{
+			return other.index1 == index1;
+		}
+
+		public override bool Equals(object obj)
+		{
+			return this == obj as Label?;
+		}
+
+		public override int GetHashCode()
+		{
+			return index1;
+		}
+
+		public static bool operator ==(Label arg1, Label arg2)
+		{
+			return arg1.index1 == arg2.index1;
+		}
+
+		public static bool operator !=(Label arg1, Label arg2)
+		{
+			return !(arg1 == arg2);
+		}
+	}
+
+	public sealed class LocalBuilder : LocalVariableInfo
+	{
+		internal string name;
+		internal int startOffset;
+		internal int endOffset;
+
+		internal LocalBuilder(Type localType, int index, bool pinned)
+			: base(index, localType, pinned)
+		{
+		}
+
+		internal LocalBuilder(Type localType, int index, bool pinned, CustomModifiers customModifiers)
+			: base(index, localType, pinned, customModifiers)
+		{
+		}
+
+		public void SetLocalSymInfo(string name)
+		{
+			this.name = name;
+		}
+
+		public void SetLocalSymInfo(string name, int startOffset, int endOffset)
+		{
+			this.name = name;
+			this.startOffset = startOffset;
+			this.endOffset = endOffset;
+		}
+	}
+
+	public sealed class ILGenerator
+	{
+		private readonly ModuleBuilder moduleBuilder;
+		private readonly ByteBuffer code;
+		private readonly SignatureHelper locals;
+		private int localsCount;
+		private readonly List<int> tokenFixups = new List<int>();
+		private readonly List<int> labels = new List<int>();
+		private readonly List<int> labelStackHeight = new List<int>();
+		private readonly List<LabelFixup> labelFixups = new List<LabelFixup>();
+		private readonly List<SequencePoint> sequencePoints = new List<SequencePoint>();
+		private readonly List<ExceptionBlock> exceptions = new List<ExceptionBlock>();
+		private readonly Stack<ExceptionBlock> exceptionStack = new Stack<ExceptionBlock>();
+		private ushort maxStack;
+		private bool fatHeader;
+		private int stackHeight;
+		private Scope scope;
+		private byte exceptionBlockAssistanceMode = EBAM_COMPAT;
+		private const byte EBAM_COMPAT = 0;
+		private const byte EBAM_DISABLE = 1;
+		private const byte EBAM_CLEVER = 2;
+
+		private struct LabelFixup
+		{
+			internal int label;
+			internal int offset;
+		}
+
+		internal sealed class ExceptionBlock : IComparer<ExceptionBlock>
+		{
+			internal readonly int ordinal;
+			internal Label labelEnd;
+			internal int tryOffset;
+			internal int tryLength;
+			internal int handlerOffset;
+			internal int handlerLength;
+			internal int filterOffsetOrExceptionTypeToken;
+			internal ExceptionHandlingClauseOptions kind;
+
+			internal ExceptionBlock(int ordinal)
+			{
+				this.ordinal = ordinal;
+			}
+
+			internal ExceptionBlock(ExceptionHandler h)
+			{
+				this.ordinal = -1;
+				this.tryOffset = h.TryOffset;
+				this.tryLength = h.TryLength;
+				this.handlerOffset = h.HandlerOffset;
+				this.handlerLength = h.HandlerLength;
+				this.kind = h.Kind;
+				this.filterOffsetOrExceptionTypeToken = kind == ExceptionHandlingClauseOptions.Filter ? h.FilterOffset : h.ExceptionTypeToken;
+			}
+
+			int IComparer<ExceptionBlock>.Compare(ExceptionBlock x, ExceptionBlock y)
+			{
+				// Mono's sort insists on doing unnecessary comparisons
+				if (x == y)
+				{
+					return 0;
+				}
+				else if (x.tryOffset == y.tryOffset && x.tryLength == y.tryLength)
+				{
+					return x.ordinal < y.ordinal ? -1 : 1;
+				}
+				else if (x.tryOffset >= y.tryOffset && x.handlerOffset + x.handlerLength <= y.handlerOffset + y.handlerLength)
+				{
+					return -1;
+				}
+				else if (y.tryOffset >= x.tryOffset && y.handlerOffset + y.handlerLength <= x.handlerOffset + x.handlerLength)
+				{
+					return 1;
+				}
+				else
+				{
+					return x.ordinal < y.ordinal ? -1 : 1;
+				}
+			}
+		}
+
+		private struct SequencePoint
+		{
+#if !NO_SYMBOL_WRITER
+			internal ISymbolDocumentWriter document;
+			internal int offset;
+			internal int startLine;
+			internal int startColumn;
+			internal int endLine;
+			internal int endColumn;
+#endif
+		}
+
+		private sealed class Scope
+		{
+			internal readonly Scope parent;
+			internal readonly List<Scope> children = new List<Scope>();
+			internal readonly List<LocalBuilder> locals = new List<LocalBuilder>();
+			internal readonly List<string> namespaces = new List<string>();
+			internal int startOffset;
+			internal int endOffset;
+
+			internal Scope(Scope parent)
+			{
+				this.parent = parent;
+			}
+		}
+
+		internal ILGenerator(ModuleBuilder moduleBuilder, int initialCapacity)
+		{
+			this.code = new ByteBuffer(initialCapacity);
+			this.moduleBuilder = moduleBuilder;
+			this.locals = SignatureHelper.GetLocalVarSigHelper(moduleBuilder);
+			if (moduleBuilder.symbolWriter != null)
+			{
+				scope = new Scope(null);
+			}
+		}
+
+		// non-standard API
+		public void __DisableExceptionBlockAssistance()
+		{
+			exceptionBlockAssistanceMode = EBAM_DISABLE;
+		}
+
+		// non-standard API
+		public void __CleverExceptionBlockAssistance()
+		{
+			exceptionBlockAssistanceMode = EBAM_CLEVER;
+		}
+
+		// non-standard API
+		public int __MaxStackSize
+		{
+			get { return maxStack; }
+			set
+			{
+				maxStack = (ushort)value;
+				fatHeader = true;
+			}
+		}
+
+		// non-standard API
+		// returns -1 if the current position is currently unreachable
+		public int __StackHeight
+		{
+			get { return stackHeight; }
+		}
+
+		// new in .NET 4.0
+		public int ILOffset
+		{
+			get { return code.Position; }
+		}
+
+		public void BeginCatchBlock(Type exceptionType)
+		{
+			if (exceptionType == null)
+			{
+				// this must be a catch block after a filter
+				ExceptionBlock block = exceptionStack.Peek();
+				if (block.kind != ExceptionHandlingClauseOptions.Filter || block.handlerOffset != 0)
+				{
+					throw new ArgumentNullException("exceptionType");
+				}
+				if (exceptionBlockAssistanceMode == EBAM_COMPAT || (exceptionBlockAssistanceMode == EBAM_CLEVER && stackHeight != -1))
+				{
+					Emit(OpCodes.Endfilter);
+				}
+				stackHeight = 0;
+				UpdateStack(1);
+				block.handlerOffset = code.Position;
+			}
+			else
+			{
+				ExceptionBlock block = BeginCatchOrFilterBlock();
+				block.kind = ExceptionHandlingClauseOptions.Clause;
+				block.filterOffsetOrExceptionTypeToken = moduleBuilder.GetTypeTokenForMemberRef(exceptionType);
+				block.handlerOffset = code.Position;
+			}
+		}
+
+		private ExceptionBlock BeginCatchOrFilterBlock()
+		{
+			ExceptionBlock block = exceptionStack.Peek();
+			if (exceptionBlockAssistanceMode == EBAM_COMPAT || (exceptionBlockAssistanceMode == EBAM_CLEVER && stackHeight != -1))
+			{
+				Emit(OpCodes.Leave, block.labelEnd);
+			}
+			stackHeight = 0;
+			UpdateStack(1);
+			if (block.tryLength == 0)
+			{
+				block.tryLength = code.Position - block.tryOffset;
+			}
+			else
+			{
+				block.handlerLength = code.Position - block.handlerOffset;
+				exceptionStack.Pop();
+				ExceptionBlock newBlock = new ExceptionBlock(exceptions.Count);
+				newBlock.labelEnd = block.labelEnd;
+				newBlock.tryOffset = block.tryOffset;
+				newBlock.tryLength = block.tryLength;
+				block = newBlock;
+				exceptions.Add(block);
+				exceptionStack.Push(block);
+			}
+			return block;
+		}
+
+		public Label BeginExceptionBlock()
+		{
+			ExceptionBlock block = new ExceptionBlock(exceptions.Count);
+			block.labelEnd = DefineLabel();
+			block.tryOffset = code.Position;
+			exceptionStack.Push(block);
+			exceptions.Add(block);
+			stackHeight = 0;
+			return block.labelEnd;
+		}
+
+		public void BeginExceptFilterBlock()
+		{
+			ExceptionBlock block = BeginCatchOrFilterBlock();
+			block.kind = ExceptionHandlingClauseOptions.Filter;
+			block.filterOffsetOrExceptionTypeToken = code.Position;
+		}
+
+		public void BeginFaultBlock()
+		{
+			BeginFinallyFaultBlock(ExceptionHandlingClauseOptions.Fault);
+		}
+
+		public void BeginFinallyBlock()
+		{
+			BeginFinallyFaultBlock(ExceptionHandlingClauseOptions.Finally);
+		}
+
+		private void BeginFinallyFaultBlock(ExceptionHandlingClauseOptions kind)
+		{
+			ExceptionBlock block = exceptionStack.Peek();
+			if (exceptionBlockAssistanceMode == EBAM_COMPAT || (exceptionBlockAssistanceMode == EBAM_CLEVER && stackHeight != -1))
+			{
+				Emit(OpCodes.Leave, block.labelEnd);
+			}
+			if (block.handlerOffset == 0)
+			{
+				block.tryLength = code.Position - block.tryOffset;
+			}
+			else
+			{
+				block.handlerLength = code.Position - block.handlerOffset;
+				Label labelEnd;
+				if (exceptionBlockAssistanceMode != EBAM_COMPAT)
+				{
+					labelEnd = block.labelEnd;
+				}
+				else
+				{
+					MarkLabel(block.labelEnd);
+					labelEnd = DefineLabel();
+					Emit(OpCodes.Leave, labelEnd);
+				}
+				exceptionStack.Pop();
+				ExceptionBlock newBlock = new ExceptionBlock(exceptions.Count);
+				newBlock.labelEnd = labelEnd;
+				newBlock.tryOffset = block.tryOffset;
+				newBlock.tryLength = code.Position - block.tryOffset;
+				block = newBlock;
+				exceptions.Add(block);
+				exceptionStack.Push(block);
+			}
+			block.handlerOffset = code.Position;
+			block.kind = kind;
+			stackHeight = 0;
+		}
+
+		public void EndExceptionBlock()
+		{
+			ExceptionBlock block = exceptionStack.Pop();
+			if (exceptionBlockAssistanceMode == EBAM_COMPAT || (exceptionBlockAssistanceMode == EBAM_CLEVER && stackHeight != -1))
+			{
+				if (block.kind != ExceptionHandlingClauseOptions.Finally && block.kind != ExceptionHandlingClauseOptions.Fault)
+				{
+					Emit(OpCodes.Leave, block.labelEnd);
+				}
+				else
+				{
+					Emit(OpCodes.Endfinally);
+				}
+			}
+			MarkLabel(block.labelEnd);
+			block.handlerLength = code.Position - block.handlerOffset;
+		}
+
+		public void BeginScope()
+		{
+			Scope newScope = new Scope(scope);
+			scope.children.Add(newScope);
+			scope = newScope;
+			scope.startOffset = code.Position;
+		}
+
+		public void UsingNamespace(string usingNamespace)
+		{
+#if !NO_SYMBOL_WRITER
+			if (scope != null)
+			{
+				scope.namespaces.Add(usingNamespace);
+			}
+#endif
+		}
+
+		public LocalBuilder DeclareLocal(Type localType)
+		{
+			return DeclareLocal(localType, false);
+		}
+
+		public LocalBuilder DeclareLocal(Type localType, bool pinned)
+		{
+			LocalBuilder local = new LocalBuilder(localType, localsCount++, pinned);
+			locals.AddArgument(localType, pinned);
+			if (scope != null)
+			{
+				scope.locals.Add(local);
+			}
+			return local;
+		}
+
+		public LocalBuilder __DeclareLocal(Type localType, bool pinned, CustomModifiers customModifiers)
+		{
+			LocalBuilder local = new LocalBuilder(localType, localsCount++, pinned, customModifiers);
+			locals.__AddArgument(localType, pinned, customModifiers);
+			if (scope != null)
+			{
+				scope.locals.Add(local);
+			}
+			return local;
+		}
+
+		public Label DefineLabel()
+		{
+			Label label = new Label(labels.Count);
+			labels.Add(-1);
+			labelStackHeight.Add(-1);
+			return label;
+		}
+
+		public void Emit(OpCode opc)
+		{
+			Debug.Assert(opc != OpCodes.Ret || (opc == OpCodes.Ret && stackHeight <= 1));
+			if (opc.Value < 0)
+			{
+				code.Write((byte)(opc.Value >> 8));
+			}
+			code.Write((byte)opc.Value);
+			switch (opc.FlowControl)
+			{
+				case FlowControl.Branch:
+				case FlowControl.Break:
+				case FlowControl.Return:
+				case FlowControl.Throw:
+					stackHeight = -1;
+					break;
+				default:
+					UpdateStack(opc.StackDiff);
+					break;
+			}
+		}
+
+		private void UpdateStack(int stackdiff)
+		{
+			if (stackHeight == -1)
+			{
+				// we're about to emit code that is either unreachable or reachable only via a backward branch
+				stackHeight = 0;
+			}
+			Debug.Assert(stackHeight >= 0 && stackHeight <= ushort.MaxValue);
+			stackHeight += stackdiff;
+			Debug.Assert(stackHeight >= 0 && stackHeight <= ushort.MaxValue);
+			maxStack = Math.Max(maxStack, (ushort)stackHeight);
+		}
+
+		public void Emit(OpCode opc, byte arg)
+		{
+			Emit(opc);
+			code.Write(arg);
+		}
+
+		public void Emit(OpCode opc, double arg)
+		{
+			Emit(opc);
+			code.Write(arg);
+		}
+
+		public void Emit(OpCode opc, FieldInfo field)
+		{
+			Emit(opc);
+			WriteToken(moduleBuilder.GetFieldToken(field).Token);
+		}
+
+		public void Emit(OpCode opc, short arg)
+		{
+			Emit(opc);
+			code.Write(arg);
+		}
+
+		public void Emit(OpCode opc, int arg)
+		{
+			Emit(opc);
+			code.Write(arg);
+		}
+
+		public void Emit(OpCode opc, long arg)
+		{
+			Emit(opc);
+			code.Write(arg);
+		}
+
+		public void Emit(OpCode opc, Label label)
+		{
+			// We need special stackHeight handling for unconditional branches,
+			// because the branch and next flows have differing stack heights.
+			// Note that this assumes that unconditional branches do not push/pop.
+			int flowStackHeight = this.stackHeight;
+			Emit(opc);
+			if (opc == OpCodes.Leave || opc == OpCodes.Leave_S)
+			{
+				flowStackHeight = 0;
+			}
+			else if (opc.FlowControl != FlowControl.Branch)
+			{
+				flowStackHeight = this.stackHeight;
+			}
+			// if the label has already been marked, we can emit the branch offset directly
+			if (labels[label.Index] != -1)
+			{
+				if (labelStackHeight[label.Index] != flowStackHeight && (labelStackHeight[label.Index] != 0 || flowStackHeight != -1))
+				{
+					// the "backward branch constraint" prohibits this, so we don't need to support it
+					throw new NotSupportedException("'Backward branch constraints' violated");
+				}
+				if (opc.OperandType == OperandType.ShortInlineBrTarget)
+				{
+					WriteByteBranchOffset(labels[label.Index] - (code.Position + 1));
+				}
+				else
+				{
+					code.Write(labels[label.Index] - (code.Position + 4));
+				}
+			}
+			else
+			{
+				Debug.Assert(labelStackHeight[label.Index] == -1 || labelStackHeight[label.Index] == flowStackHeight || (flowStackHeight == -1 && labelStackHeight[label.Index] == 0));
+				labelStackHeight[label.Index] = flowStackHeight;
+				LabelFixup fix = new LabelFixup();
+				fix.label = label.Index;
+				fix.offset = code.Position;
+				labelFixups.Add(fix);
+				if (opc.OperandType == OperandType.ShortInlineBrTarget)
+				{
+					code.Write((byte)1);
+				}
+				else
+				{
+					code.Write(4);
+				}
+			}
+		}
+
+		private void WriteByteBranchOffset(int offset)
+		{
+			if (offset < -128 || offset > 127)
+			{
+				throw new NotSupportedException("Branch offset of " + offset + " does not fit in one-byte branch target at position " + code.Position);
+			}
+			code.Write((byte)offset);
+		}
+
+		public void Emit(OpCode opc, Label[] labels)
+		{
+			Emit(opc);
+			LabelFixup fix = new LabelFixup();
+			fix.label = -1;
+			fix.offset = code.Position;
+			labelFixups.Add(fix);
+			code.Write(labels.Length);
+			foreach (Label label in labels)
+			{
+				code.Write(label.Index);
+				if (this.labels[label.Index] != -1)
+				{
+					if (labelStackHeight[label.Index] != stackHeight)
+					{
+						// the "backward branch constraint" prohibits this, so we don't need to support it
+						throw new NotSupportedException();
+					}
+				}
+				else
+				{
+					Debug.Assert(labelStackHeight[label.Index] == -1 || labelStackHeight[label.Index] == stackHeight);
+					labelStackHeight[label.Index] = stackHeight;
+				}
+			}
+		}
+
+		public void Emit(OpCode opc, LocalBuilder local)
+		{
+			if ((opc == OpCodes.Ldloc || opc == OpCodes.Ldloca || opc == OpCodes.Stloc) && local.LocalIndex < 256)
+			{
+				if (opc == OpCodes.Ldloc)
+				{
+					switch (local.LocalIndex)
+					{
+						case 0:
+							Emit(OpCodes.Ldloc_0);
+							break;
+						case 1:
+							Emit(OpCodes.Ldloc_1);
+							break;
+						case 2:
+							Emit(OpCodes.Ldloc_2);
+							break;
+						case 3:
+							Emit(OpCodes.Ldloc_3);
+							break;
+						default:
+							Emit(OpCodes.Ldloc_S);
+							code.Write((byte)local.LocalIndex);
+							break;
+					}
+				}
+				else if (opc == OpCodes.Ldloca)
+				{
+					Emit(OpCodes.Ldloca_S);
+					code.Write((byte)local.LocalIndex);
+				}
+				else if (opc == OpCodes.Stloc)
+				{
+					switch (local.LocalIndex)
+					{
+						case 0:
+							Emit(OpCodes.Stloc_0);
+							break;
+						case 1:
+							Emit(OpCodes.Stloc_1);
+							break;
+						case 2:
+							Emit(OpCodes.Stloc_2);
+							break;
+						case 3:
+							Emit(OpCodes.Stloc_3);
+							break;
+						default:
+							Emit(OpCodes.Stloc_S);
+							code.Write((byte)local.LocalIndex);
+							break;
+					}
+				}
+			}
+			else
+			{
+				Emit(opc);
+				switch (opc.OperandType)
+				{
+					case OperandType.InlineVar:
+						code.Write((ushort)local.LocalIndex);
+						break;
+					case OperandType.ShortInlineVar:
+						code.Write((byte)local.LocalIndex);
+						break;
+				}
+			}
+		}
+
+		private void WriteToken(int token)
+		{
+			if (ModuleBuilder.IsPseudoToken(token))
+			{
+				tokenFixups.Add(code.Position);
+			}
+			code.Write(token);
+		}
+
+		private void UpdateStack(OpCode opc, bool hasthis, Type returnType, int parameterCount)
+		{
+			if (opc == OpCodes.Jmp)
+			{
+				stackHeight = -1;
+			}
+			else if (opc.FlowControl == FlowControl.Call)
+			{
+				int stackdiff = 0;
+				if ((hasthis && opc != OpCodes.Newobj) || opc == OpCodes.Calli)
+				{
+					// pop this
+					stackdiff--;
+				}
+				// pop parameters
+				stackdiff -= parameterCount;
+				if (returnType != moduleBuilder.universe.System_Void)
+				{
+					// push return value
+					stackdiff++;
+				}
+				UpdateStack(stackdiff);
+			}
+		}
+
+		public void Emit(OpCode opc, MethodInfo method)
+		{
+			UpdateStack(opc, method.HasThis, method.ReturnType, method.ParameterCount);
+			Emit(opc);
+			WriteToken(moduleBuilder.GetMethodTokenForIL(method).Token);
+		}
+
+		public void Emit(OpCode opc, ConstructorInfo constructor)
+		{
+			Emit(opc, constructor.GetMethodInfo());
+		}
+
+		public void Emit(OpCode opc, sbyte arg)
+		{
+			Emit(opc);
+			code.Write(arg);
+		}
+
+		public void Emit(OpCode opc, float arg)
+		{
+			Emit(opc);
+			code.Write(arg);
+		}
+
+		public void Emit(OpCode opc, string str)
+		{
+			Emit(opc);
+			code.Write(moduleBuilder.GetStringConstant(str).Token);
+		}
+
+		public void Emit(OpCode opc, Type type)
+		{
+			Emit(opc);
+			if (opc == OpCodes.Ldtoken)
+			{
+				code.Write(moduleBuilder.GetTypeToken(type).Token);
+			}
+			else
+			{
+				code.Write(moduleBuilder.GetTypeTokenForMemberRef(type));
+			}
+		}
+
+		public void Emit(OpCode opcode, SignatureHelper signature)
+		{
+			Emit(opcode);
+			UpdateStack(opcode, signature.HasThis, signature.ReturnType, signature.ParameterCount);
+			code.Write(moduleBuilder.GetSignatureToken(signature).Token);
+		}
+
+		public void EmitCall(OpCode opc, MethodInfo method, Type[] optionalParameterTypes)
+		{
+			__EmitCall(opc, method, optionalParameterTypes, null);
+		}
+
+		public void __EmitCall(OpCode opc, MethodInfo method, Type[] optionalParameterTypes, CustomModifiers[] customModifiers)
+		{
+			if (optionalParameterTypes == null || optionalParameterTypes.Length == 0)
+			{
+				Emit(opc, method);
+			}
+			else
+			{
+				Emit(opc);
+				UpdateStack(opc, method.HasThis, method.ReturnType, method.ParameterCount + optionalParameterTypes.Length);
+				code.Write(moduleBuilder.__GetMethodToken(method, optionalParameterTypes, customModifiers).Token);
+			}
+		}
+
+		public void __EmitCall(OpCode opc, ConstructorInfo constructor, Type[] optionalParameterTypes)
+		{
+			EmitCall(opc, constructor.GetMethodInfo(), optionalParameterTypes);
+		}
+
+		public void __EmitCall(OpCode opc, ConstructorInfo constructor, Type[] optionalParameterTypes, CustomModifiers[] customModifiers)
+		{
+			__EmitCall(opc, constructor.GetMethodInfo(), optionalParameterTypes, customModifiers);
+		}
+
+		public void EmitCalli(OpCode opc, CallingConvention callingConvention, Type returnType, Type[] parameterTypes)
+		{
+			SignatureHelper sig = SignatureHelper.GetMethodSigHelper(moduleBuilder, callingConvention, returnType);
+			sig.AddArguments(parameterTypes, null, null);
+			Emit(opc, sig);
+		}
+
+		public void EmitCalli(OpCode opc, CallingConventions callingConvention, Type returnType, Type[] parameterTypes, Type[] optionalParameterTypes)
+		{
+			SignatureHelper sig = SignatureHelper.GetMethodSigHelper(moduleBuilder, callingConvention, returnType);
+			sig.AddArguments(parameterTypes, null, null);
+			if (optionalParameterTypes != null && optionalParameterTypes.Length != 0)
+			{
+				sig.AddSentinel();
+				sig.AddArguments(optionalParameterTypes, null, null);
+			}
+			Emit(opc, sig);
+		}
+
+		public void __EmitCalli(OpCode opc, __StandAloneMethodSig sig)
+		{
+			Emit(opc);
+			if (sig.IsUnmanaged)
+			{
+				UpdateStack(opc, false, sig.ReturnType, sig.ParameterCount);
+			}
+			else
+			{
+				CallingConventions callingConvention = sig.CallingConvention;
+				UpdateStack(opc, (callingConvention & CallingConventions.HasThis | CallingConventions.ExplicitThis) == CallingConventions.HasThis, sig.ReturnType, sig.ParameterCount);
+			}
+			ByteBuffer bb = new ByteBuffer(16);
+			Signature.WriteStandAloneMethodSig(moduleBuilder, bb, sig);
+			code.Write(0x11000000 | moduleBuilder.StandAloneSig.FindOrAddRecord(moduleBuilder.Blobs.Add(bb)));
+		}
+
+		public void EmitWriteLine(string text)
+		{
+			Universe u = moduleBuilder.universe;
+			Emit(OpCodes.Ldstr, text);
+			Emit(OpCodes.Call, u.System_Console.GetMethod("WriteLine", new Type[] { u.System_String }));
+		}
+
+		public void EmitWriteLine(FieldInfo field)
+		{
+			Universe u = moduleBuilder.universe;
+			Emit(OpCodes.Call, u.System_Console.GetMethod("get_Out"));
+			if (field.IsStatic)
+			{
+				Emit(OpCodes.Ldsfld, field);
+			}
+			else
+			{
+				Emit(OpCodes.Ldarg_0);
+				Emit(OpCodes.Ldfld, field);
+			}
+			Emit(OpCodes.Callvirt, u.System_IO_TextWriter.GetMethod("WriteLine", new Type[] { field.FieldType }));
+		}
+
+		public void EmitWriteLine(LocalBuilder local)
+		{
+			Universe u = moduleBuilder.universe;
+			Emit(OpCodes.Call, u.System_Console.GetMethod("get_Out"));
+			Emit(OpCodes.Ldloc, local);
+			Emit(OpCodes.Callvirt, u.System_IO_TextWriter.GetMethod("WriteLine", new Type[] { local.LocalType }));
+		}
+
+		public void EndScope()
+		{
+			scope.endOffset = code.Position;
+			scope = scope.parent;
+		}
+
+		public void MarkLabel(Label loc)
+		{
+			Debug.Assert(stackHeight == -1 || labelStackHeight[loc.Index] == -1 || stackHeight == labelStackHeight[loc.Index]);
+			labels[loc.Index] = code.Position;
+			if (labelStackHeight[loc.Index] == -1)
+			{
+				if (stackHeight == -1)
+				{
+					// We're at a location that can only be reached by a backward branch,
+					// so according to the "backward branch constraint" that must mean the stack is empty,
+					// but note that this may be an unused label followed by another label that is used and
+					// that does have a non-zero stack height, so we don't yet set stackHeight here.
+					labelStackHeight[loc.Index] = 0;
+				}
+				else
+				{
+					labelStackHeight[loc.Index] = stackHeight;
+				}
+			}
+			else
+			{
+				Debug.Assert(stackHeight == -1 || stackHeight == labelStackHeight[loc.Index]);
+				stackHeight = labelStackHeight[loc.Index];
+			}
+		}
+
+#if !NO_SYMBOL_WRITER
+		public void MarkSequencePoint(ISymbolDocumentWriter document, int startLine, int startColumn, int endLine, int endColumn)
+		{
+			SequencePoint sp = new SequencePoint();
+			sp.document = document;
+			sp.offset = code.Position;
+			sp.startLine = startLine;
+			sp.startColumn = startColumn;
+			sp.endLine = endLine;
+			sp.endColumn = endColumn;
+			sequencePoints.Add(sp);
+		}
+#endif
+
+		public void ThrowException(Type excType)
+		{
+			Emit(OpCodes.Newobj, excType.GetConstructor(Type.EmptyTypes));
+			Emit(OpCodes.Throw);
+		}
+
+		internal int WriteBody(bool initLocals)
+		{
+			if (moduleBuilder.symbolWriter != null)
+			{
+				Debug.Assert(scope != null && scope.parent == null);
+				scope.endOffset = code.Position;
+			}
+
+			ResolveBranches();
+
+			ByteBuffer bb = moduleBuilder.methodBodies;
+
+			int localVarSigTok = 0;
+
+			int rva;
+			if (localsCount == 0 && exceptions.Count == 0 && maxStack <= 8 && code.Length < 64 && !fatHeader)
+			{
+				rva = WriteTinyHeaderAndCode(bb);
+			}
+			else
+			{
+				if (localsCount != 0)
+				{
+					localVarSigTok = moduleBuilder.GetSignatureToken(locals).Token;
+				}
+				rva = WriteFatHeaderAndCode(bb, localVarSigTok, initLocals);
+			}
+
+#if !NO_SYMBOL_WRITER
+			if (moduleBuilder.symbolWriter != null)
+			{
+				if (sequencePoints.Count != 0)
+				{
+					ISymbolDocumentWriter document = sequencePoints[0].document;
+					int[] offsets = new int[sequencePoints.Count];
+					int[] lines = new int[sequencePoints.Count];
+					int[] columns = new int[sequencePoints.Count];
+					int[] endLines = new int[sequencePoints.Count];
+					int[] endColumns = new int[sequencePoints.Count];
+					for (int i = 0; i < sequencePoints.Count; i++)
+					{
+						if (sequencePoints[i].document != document)
+						{
+							throw new NotImplementedException();
+						}
+						offsets[i] = sequencePoints[i].offset;
+						lines[i] = sequencePoints[i].startLine;
+						columns[i] = sequencePoints[i].startColumn;
+						endLines[i] = sequencePoints[i].endLine;
+						endColumns[i] = sequencePoints[i].endColumn;
+					}
+					moduleBuilder.symbolWriter.DefineSequencePoints(document, offsets, lines, columns, endLines, endColumns);
+				}
+
+				WriteScope(scope, localVarSigTok);
+			}
+#endif
+			return rva;
+		}
+
+		private void ResolveBranches()
+		{
+			foreach (LabelFixup fixup in labelFixups)
+			{
+				// is it a switch?
+				if (fixup.label == -1)
+				{
+					code.Position = fixup.offset;
+					int count = code.GetInt32AtCurrentPosition();
+					int offset = fixup.offset + 4 + 4 * count;
+					code.Position += 4;
+					for (int i = 0; i < count; i++)
+					{
+						int index = code.GetInt32AtCurrentPosition();
+						code.Write(labels[index] - offset);
+					}
+				}
+				else
+				{
+					code.Position = fixup.offset;
+					byte size = code.GetByteAtCurrentPosition();
+					int branchOffset = labels[fixup.label] - (code.Position + size);
+					if (size == 1)
+					{
+						WriteByteBranchOffset(branchOffset);
+					}
+					else
+					{
+						code.Write(branchOffset);
+					}
+				}
+			}
+		}
+
+		internal static void WriteTinyHeader(ByteBuffer bb, int length)
+		{
+			const byte CorILMethod_TinyFormat = 0x2;
+			bb.Write((byte)(CorILMethod_TinyFormat | (length << 2)));
+		}
+
+		private int WriteTinyHeaderAndCode(ByteBuffer bb)
+		{
+			int rva = bb.Position;
+			WriteTinyHeader(bb, code.Length);
+			AddTokenFixups(bb.Position, moduleBuilder.tokenFixupOffsets, tokenFixups);
+			bb.Write(code);
+			return rva;
+		}
+
+		internal static void WriteFatHeader(ByteBuffer bb, bool initLocals, bool exceptions, ushort maxStack, int codeLength, int localVarSigTok)
+		{
+			const byte CorILMethod_FatFormat = 0x03;
+			const byte CorILMethod_MoreSects = 0x08;
+			const byte CorILMethod_InitLocals = 0x10;
+
+			short flagsAndSize = (short)(CorILMethod_FatFormat | (3 << 12));
+			if (initLocals)
+			{
+				flagsAndSize |= CorILMethod_InitLocals;
+			}
+
+			if (exceptions)
+			{
+				flagsAndSize |= CorILMethod_MoreSects;
+			}
+
+			bb.Write(flagsAndSize);
+			bb.Write(maxStack);
+			bb.Write(codeLength);
+			bb.Write(localVarSigTok);
+		}
+
+		private int WriteFatHeaderAndCode(ByteBuffer bb, int localVarSigTok, bool initLocals)
+		{
+			// fat headers require 4-byte alignment
+			bb.Align(4);
+			int rva = bb.Position;
+			WriteFatHeader(bb, initLocals, exceptions.Count > 0, maxStack, code.Length, localVarSigTok);
+			AddTokenFixups(bb.Position, moduleBuilder.tokenFixupOffsets, tokenFixups);
+			bb.Write(code);
+			if (exceptions.Count > 0)
+			{
+				exceptions.Sort(exceptions[0]);
+				WriteExceptionHandlers(bb, exceptions);
+			}
+			return rva;
+		}
+
+		internal static void WriteExceptionHandlers(ByteBuffer bb, List<ExceptionBlock> exceptions)
+		{
+			bb.Align(4);
+
+			bool fat = false;
+			if (exceptions.Count * 12 + 4 > 255)
+			{
+				fat = true;
+			}
+			else
+			{
+				foreach (ExceptionBlock block in exceptions)
+				{
+					if (block.tryOffset > 65535 || block.tryLength > 255 || block.handlerOffset > 65535 || block.handlerLength > 255)
+					{
+						fat = true;
+						break;
+					}
+				}
+			}
+
+			const byte CorILMethod_Sect_EHTable = 0x1;
+			const byte CorILMethod_Sect_FatFormat = 0x40;
+
+			if (fat)
+			{
+				bb.Write((byte)(CorILMethod_Sect_EHTable | CorILMethod_Sect_FatFormat));
+				int dataSize = exceptions.Count * 24 + 4;
+				bb.Write((byte)dataSize);
+				bb.Write((short)(dataSize >> 8));
+				foreach (ExceptionBlock block in exceptions)
+				{
+					bb.Write((int)block.kind);
+					bb.Write(block.tryOffset);
+					bb.Write(block.tryLength);
+					bb.Write(block.handlerOffset);
+					bb.Write(block.handlerLength);
+					bb.Write(block.filterOffsetOrExceptionTypeToken);
+				}
+			}
+			else
+			{
+				bb.Write(CorILMethod_Sect_EHTable);
+				bb.Write((byte)(exceptions.Count * 12 + 4));
+				bb.Write((short)0);
+				foreach (ExceptionBlock block in exceptions)
+				{
+					bb.Write((short)block.kind);
+					bb.Write((short)block.tryOffset);
+					bb.Write((byte)block.tryLength);
+					bb.Write((short)block.handlerOffset);
+					bb.Write((byte)block.handlerLength);
+					bb.Write(block.filterOffsetOrExceptionTypeToken);
+				}
+			}
+		}
+
+		internal static void AddTokenFixups(int codeOffset, List<int> tokenFixupOffsets, IEnumerable<int> tokenFixups)
+		{
+			foreach (int fixup in tokenFixups)
+			{
+				tokenFixupOffsets.Add(fixup + codeOffset);
+			}
+		}
+
+#if !NO_SYMBOL_WRITER
+		private void WriteScope(Scope scope, int localVarSigTok)
+		{
+			moduleBuilder.symbolWriter.OpenScope(scope.startOffset);
+			foreach (LocalBuilder local in scope.locals)
+			{
+				if (local.name != null)
+				{
+					int startOffset = local.startOffset;
+					int endOffset = local.endOffset;
+					if (startOffset == 0 && endOffset == 0)
+					{
+						startOffset = scope.startOffset;
+						endOffset = scope.endOffset;
+					}
+					moduleBuilder.symbolWriter.DefineLocalVariable2(local.name, 0, localVarSigTok, SymAddressKind.ILOffset, local.LocalIndex, 0, 0, startOffset, endOffset);
+				}
+			}
+			foreach (string ns in scope.namespaces)
+			{
+				moduleBuilder.symbolWriter.UsingNamespace(ns);
+			}
+			foreach (Scope child in scope.children)
+			{
+				WriteScope(child, localVarSigTok);
+			}
+			moduleBuilder.symbolWriter.CloseScope(scope.endOffset);
+		}
+#endif
+	}
+}
+@
+
+
+1.41
+log
+@Avoid importing System.Console and System.IO.TextWriter.
+@
+text
+@d203 1
+d411 1
+a411 1
+			if (moduleBuilder.symbolWriter != null)
+d413 1
+a413 1
+				moduleBuilder.symbolWriter.UsingNamespace(usingNamespace);
+d1143 4
+@
+
+
+1.40
+log
+@Added CoreCLR target for IKVM.Reflection.
+@
+text
+@d832 1
+a832 1
+			Emit(OpCodes.Call, u.Import(typeof(Console)).GetMethod("WriteLine", new Type[] { u.System_String }));
+d838 1
+a838 1
+			Emit(OpCodes.Call, u.Import(typeof(Console)).GetMethod("get_Out"));
+d848 1
+a848 1
+			Emit(OpCodes.Callvirt, u.Import(typeof(System.IO.TextWriter)).GetMethod("WriteLine", new Type[] { field.FieldType }));
+d854 1
+a854 1
+			Emit(OpCodes.Call, u.Import(typeof(Console)).GetMethod("get_Out"));
+d856 1
+a856 1
+			Emit(OpCodes.Callvirt, u.Import(typeof(System.IO.TextWriter)).GetMethod("WriteLine", new Type[] { local.LocalType }));
+@
+
+
+1.39
+log
+@We should not add the sentinel if there are no varargs.
+@
+text
+@d27 1
+d29 1
+d188 1
+d195 1
+d409 1
+d414 1
+d891 1
+d903 1
+d939 1
+d967 1
+d1124 1
+d1148 1
+@
+
+
+1.38
+log
+@Bug fix. LocalBuilder should extend LocalVariableInfo.
+@
+text
+@d797 5
+a801 2
+			sig.AddSentinel();
+			sig.AddArguments(optionalParameterTypes, null, null);
+@
+
+
+1.37
+log
+@Removed internal IsPseudoToken property from FieldToken and MethodToken.
+@
+text
+@d74 1
+a74 1
+	public sealed class LocalBuilder
+a75 3
+		private readonly Type localType;
+		private readonly int index;
+		private readonly bool pinned;
+d81 6
+a87 3
+			this.localType = localType;
+			this.index = index;
+			this.pinned = pinned;
+a100 15
+
+		public Type LocalType
+		{
+			get { return localType; }
+		}
+
+		public int LocalIndex
+		{
+			get { return index; }
+		}
+
+		public bool IsPinned
+		{
+			get { return pinned; }
+		}
+d429 1
+a429 1
+			LocalBuilder local = new LocalBuilder(localType, localsCount++, pinned);
+@
+
+
+1.36
+log
+@Refactored BeginCatchBlock and BeginExceptFilterBlock to get rid of the last MarkerType.
+@
+text
+@d511 1
+a511 1
+			WriteToken(moduleBuilder.GetFieldToken(field));
+d688 1
+a688 1
+		private void WriteToken(FieldToken token)
+d690 1
+a690 1
+			if (token.IsPseudoToken)
+d694 1
+a694 10
+			code.Write(token.Token);
+		}
+
+		private void WriteToken(MethodToken token)
+		{
+			if (token.IsPseudoToken)
+			{
+				tokenFixups.Add(code.Position);
+			}
+			code.Write(token.Token);
+d726 1
+a726 1
+			WriteToken(moduleBuilder.GetMethodTokenForIL(method));
+@
+
+
+1.35
+log
+@Refactored ILGenerator and MethodBuilder.SetMethodBody() to share more code.
+@
+text
+@d272 1
+a272 2
+			ExceptionBlock block = exceptionStack.Peek();
+			if (exceptionBlockAssistanceMode == EBAM_COMPAT || (exceptionBlockAssistanceMode == EBAM_CLEVER && stackHeight != -1))
+d274 3
+a276 1
+				if (exceptionType == null)
+d278 1
+a278 1
+					Emit(OpCodes.Endfilter);
+d280 1
+a280 1
+				else
+d282 1
+a282 1
+					Emit(OpCodes.Leave, block.labelEnd);
+d284 19
+d306 1
+a306 1
+			if (exceptionType == null)
+d308 1
+a308 5
+				if (block.kind != ExceptionHandlingClauseOptions.Filter || block.handlerOffset != 0)
+				{
+					throw new ArgumentNullException("exceptionType");
+				}
+				block.handlerOffset = code.Position;
+d312 9
+a320 27
+				if (block.tryLength == 0)
+				{
+					block.tryLength = code.Position - block.tryOffset;
+				}
+				else
+				{
+					block.handlerLength = code.Position - block.handlerOffset;
+					exceptionStack.Pop();
+					ExceptionBlock newBlock = new ExceptionBlock(exceptions.Count);
+					newBlock.labelEnd = block.labelEnd;
+					newBlock.tryOffset = block.tryOffset;
+					newBlock.tryLength = block.tryLength;
+					block = newBlock;
+					exceptions.Add(block);
+					exceptionStack.Push(block);
+				}
+				if (exceptionType == MarkerType.Filter)
+				{
+					block.kind = ExceptionHandlingClauseOptions.Filter;
+					block.filterOffsetOrExceptionTypeToken = code.Position;
+				}
+				else
+				{
+					block.kind = ExceptionHandlingClauseOptions.Clause;
+					block.filterOffsetOrExceptionTypeToken = moduleBuilder.GetTypeTokenForMemberRef(exceptionType);
+					block.handlerOffset = code.Position;
+				}
+d322 1
+d338 3
+a340 1
+			BeginCatchBlock(MarkerType.Filter);
+@
+
+
+1.34
+log
+@Moved local var signature token creation to a more logical location.
+@
+text
+@d146 1
+a146 1
+		private sealed class ExceptionBlock : IComparer<ExceptionBlock>
+d154 2
+a155 2
+			internal Type exceptionType;	// MarkerType.Finally = finally block, MarkerType.Filter = handler with filter, MarkerType.Fault = fault block
+			internal int filterOffset;
+d162 11
+d288 1
+a288 1
+				if (block.exceptionType != MarkerType.Filter || block.handlerOffset != 0)
+a311 1
+				block.exceptionType = exceptionType;
+d314 2
+a315 1
+					block.filterOffset = code.Position;
+d319 2
+d344 1
+a344 1
+			BeginFinallyFaultBlock(MarkerType.Fault);
+d349 1
+a349 1
+			BeginFinallyFaultBlock(MarkerType.Finally);
+d352 1
+a352 1
+		private void BeginFinallyFaultBlock(Type type)
+d387 1
+a387 1
+			block.exceptionType = type;
+d396 1
+a396 1
+				if (block.filterOffset != 0 || (block.exceptionType != MarkerType.Finally && block.exceptionType != MarkerType.Fault))
+d1015 6
+d1024 3
+a1026 3
+			const byte CorILMethod_TinyFormat = 0x2;
+			bb.Write((byte)(CorILMethod_TinyFormat | (code.Length << 2)));
+			WriteCode(bb);
+d1030 1
+a1030 1
+		private int WriteFatHeaderAndCode(ByteBuffer bb, int localVarSigTok, bool initLocals)
+a1031 4
+			// fat headers require 4-byte alignment
+			bb.Align(4);
+			int rva = bb.Position;
+
+d1042 1
+a1042 1
+			if (exceptions.Count > 0)
+d1049 1
+a1049 1
+			bb.Write(code.Length);
+d1051 1
+d1053 8
+a1060 2
+			WriteCode(bb);
+
+d1063 5
+a1067 1
+				bb.Align(4);
+d1069 11
+a1079 1
+				bool fat = false;
+d1088 12
+a1099 2
+				exceptions.Sort(exceptions[0]);
+				if (exceptions.Count * 12 + 4 > 255)
+d1101 6
+a1106 1
+					fat = true;
+d1108 7
+a1114 46
+				const byte CorILMethod_Sect_EHTable = 0x1;
+				const byte CorILMethod_Sect_FatFormat = 0x40;
+				const short COR_ILEXCEPTION_CLAUSE_EXCEPTION = 0x0000;
+				const short COR_ILEXCEPTION_CLAUSE_FILTER = 0x0001;
+				const short COR_ILEXCEPTION_CLAUSE_FINALLY = 0x0002;
+				const short COR_ILEXCEPTION_CLAUSE_FAULT = 0x0004;
+
+				if (fat)
+				{
+					bb.Write((byte)(CorILMethod_Sect_EHTable | CorILMethod_Sect_FatFormat));
+					int dataSize = exceptions.Count * 24 + 4;
+					bb.Write((byte)dataSize);
+					bb.Write((short)(dataSize >> 8));
+					foreach (ExceptionBlock block in exceptions)
+					{
+						if (block.exceptionType == MarkerType.Fault)
+						{
+							bb.Write((int)COR_ILEXCEPTION_CLAUSE_FAULT);
+						}
+						else if (block.exceptionType == MarkerType.Filter)
+						{
+							bb.Write((int)COR_ILEXCEPTION_CLAUSE_FILTER);
+						}
+						else if (block.exceptionType == MarkerType.Finally)
+						{
+							bb.Write((int)COR_ILEXCEPTION_CLAUSE_FINALLY);
+						}
+						else
+						{
+							bb.Write((int)COR_ILEXCEPTION_CLAUSE_EXCEPTION);
+						}
+						bb.Write(block.tryOffset);
+						bb.Write(block.tryLength);
+						bb.Write(block.handlerOffset);
+						bb.Write(block.handlerLength);
+						if (block.exceptionType != MarkerType.Fault && block.exceptionType != MarkerType.Filter && block.exceptionType != MarkerType.Finally)
+						{
+							bb.Write(moduleBuilder.GetTypeTokenForMemberRef(block.exceptionType));
+						}
+						else
+						{
+							bb.Write(block.filterOffset);
+						}
+					}
+				}
+				else
+d1116 6
+a1121 34
+					bb.Write(CorILMethod_Sect_EHTable);
+					bb.Write((byte)(exceptions.Count * 12 + 4));
+					bb.Write((short)0);
+					foreach (ExceptionBlock block in exceptions)
+					{
+						if (block.exceptionType == MarkerType.Fault)
+						{
+							bb.Write(COR_ILEXCEPTION_CLAUSE_FAULT);
+						}
+						else if (block.exceptionType == MarkerType.Filter)
+						{
+							bb.Write(COR_ILEXCEPTION_CLAUSE_FILTER);
+						}
+						else if (block.exceptionType == MarkerType.Finally)
+						{
+							bb.Write(COR_ILEXCEPTION_CLAUSE_FINALLY);
+						}
+						else
+						{
+							bb.Write(COR_ILEXCEPTION_CLAUSE_EXCEPTION);
+						}
+						bb.Write((short)block.tryOffset);
+						bb.Write((byte)block.tryLength);
+						bb.Write((short)block.handlerOffset);
+						bb.Write((byte)block.handlerLength);
+						if (block.exceptionType != MarkerType.Fault && block.exceptionType != MarkerType.Filter && block.exceptionType != MarkerType.Finally)
+						{
+							bb.Write(moduleBuilder.GetTypeTokenForMemberRef(block.exceptionType));
+						}
+						else
+						{
+							bb.Write(block.filterOffset);
+						}
+					}
+a1123 1
+			return rva;
+d1126 1
+a1126 1
+		private void WriteCode(ByteBuffer bb)
+d1128 1
+a1128 2
+			int codeOffset = bb.Position;
+			foreach (int fixup in this.tokenFixups)
+d1130 1
+a1130 1
+				moduleBuilder.tokenFixupOffsets.Add(fixup + codeOffset);
+a1131 1
+			bb.Write(code);
+@
+
+
+1.33
+log
+@Removed unused using.
+@
+text
+@d931 5
+a935 1
+				rva = WriteFatHeaderAndCode(bb, ref localVarSigTok, initLocals);
+d1011 1
+a1011 1
+		private int WriteFatHeaderAndCode(ByteBuffer bb, ref int localVarSigTok, bool initLocals)
+a1016 5
+			if (localsCount != 0)
+			{
+				localVarSigTok = moduleBuilder.GetSignatureToken(locals).Token;
+			}
+
+@
+
+
+1.33.2.1
+log
+@Backported fixes for rc 3.
+- Bug fix. Off-by-one error in local ref index reusing. Fix for bug #3575555.
+- Bug fix. Don't try to inject DynamicMethod in array types (applies to array.clone() method for MethodHandles).
+- IKVM.Reflection: Bug fix. ModuleReader.ResolveMember() should support types. Thanks to Jb Evain for finding this.
+- IKVM.Reflection: Bug fix. While reading the Cecil source I realized that array bounds are signed.
+- IKVM.Reflection: Bug fix. LocalBuilder should extend LocalVariableInfo.
+- IKVM.Reflection: Implemented LocalVariableInfo.ToString().
+@
+text
+@d74 1
+a74 1
+	public sealed class LocalBuilder : LocalVariableInfo
+d76 3
+a83 6
+			: base(index, localType, pinned)
+		{
+		}
+
+		internal LocalBuilder(Type localType, int index, bool pinned, CustomModifiers customModifiers)
+			: base(index, localType, pinned, customModifiers)
+d85 3
+d101 15
+@
+
+
+1.32
+log
+@Use SignatureHelper to build locals signature, instead of doing it manually.
+@
+text
+@a28 1
+using IKVM.Reflection.Metadata;
+@
+
+
+1.31
+log
+@Reimplemented EmitCalli using standard SignatureHelper API instead our MakeStandAloneMethodSig().
+@
+text
+@d123 2
+a124 2
+		private readonly List<LocalBuilder> locals = new List<LocalBuilder>();
+		private List<CustomModifiers> localCustomModifiers;
+d217 1
+d420 2
+a421 2
+			LocalBuilder local = new LocalBuilder(localType, locals.Count, pinned);
+			locals.Add(local);
+d431 3
+a433 1
+			if (!customModifiers.IsEmpty)
+d435 1
+a435 12
+				if (localCustomModifiers == null)
+				{
+					localCustomModifiers = new List<CustomModifiers>();
+				}
+				// we lazily fill up the list (to sync with the locals list) and we don't need to
+				// make sure that the list has the same length as the locals list, because
+				// Signature.WriteLocalVarSig() can tolerate that.
+				while (localCustomModifiers.Count < locals.Count)
+				{
+					localCustomModifiers.Add(new CustomModifiers());
+				}
+				localCustomModifiers.Add(customModifiers);
+d437 1
+a437 1
+			return DeclareLocal(localType, pinned);
+d926 1
+a926 1
+			if (locals.Count == 0 && exceptions.Count == 0 && maxStack <= 8 && code.Length < 64 && !fatHeader)
+d1014 1
+a1014 1
+			if (locals.Count != 0)
+d1016 1
+a1016 3
+				ByteBuffer localVarSig = new ByteBuffer(locals.Count + 2);
+				Signature.WriteLocalVarSig(moduleBuilder, localVarSig, locals, localCustomModifiers);
+				localVarSigTok = 0x11000000 | moduleBuilder.StandAloneSig.FindOrAddRecord(moduleBuilder.Blobs.Add(localVarSig));
+@
+
+
+1.30
+log
+@Moved MarkerType from ILGenerator.cs to Type.cs and made all instances static fields in MarkerType.
+@
+text
+@d807 3
+a809 1
+			__EmitCalli(opc, moduleBuilder.universe.MakeStandAloneMethodSig(callingConvention, returnType, new CustomModifiers(), parameterTypes, null));
+d814 5
+a818 1
+			__EmitCalli(opc, moduleBuilder.universe.MakeStandAloneMethodSig(callingConvention, returnType, new CustomModifiers(), parameterTypes, optionalParameterTypes, null));
+@
+
+
+1.29
+log
+@- Added .NET 4.5 ModuleBuilder APIs GetMethodToken(MethodInfo, IEnumerable<Type>) and GetConstructorToken(MethodInfo, IEnumerable<Type>).
+- Added API extensions ModuleBuilder.__GetMethodToken() and ModuleBuilder.__GetConstructorToken().
+@
+text
+@a118 28
+	sealed class MarkerType : Type
+	{
+		public override Type BaseType
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		public override TypeAttributes Attributes
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		public override string Name
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		public override string FullName
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		public override Module Module
+		{
+			get { throw new InvalidOperationException(); }
+		}
+	}
+
+a120 3
+		private static readonly Type FAULT = new MarkerType();
+		private static readonly Type FINALLY = new MarkerType();
+		private static readonly Type FILTER = new MarkerType();
+d155 1
+a155 1
+			internal Type exceptionType;	// FINALLY = finally block, FILTER = handler with filter, FAULT = fault block
+d277 1
+a277 1
+				if (block.exceptionType != FILTER || block.handlerOffset != 0)
+d302 1
+a302 1
+				if (exceptionType == FILTER)
+d326 1
+a326 1
+			BeginCatchBlock(FILTER);
+d331 1
+a331 1
+			BeginFinallyFaultBlock(FAULT);
+d336 1
+a336 1
+			BeginFinallyFaultBlock(FINALLY);
+d383 1
+a383 1
+				if (block.filterOffset != 0 || (block.exceptionType != FINALLY && block.exceptionType != FAULT))
+d1078 1
+a1078 1
+						if (block.exceptionType == FAULT)
+d1082 1
+a1082 1
+						else if (block.exceptionType == FILTER)
+d1086 1
+a1086 1
+						else if (block.exceptionType == FINALLY)
+d1098 1
+a1098 1
+						if (block.exceptionType != FAULT && block.exceptionType != FILTER && block.exceptionType != FINALLY)
+d1115 1
+a1115 1
+						if (block.exceptionType == FAULT)
+d1119 1
+a1119 1
+						else if (block.exceptionType == FILTER)
+d1123 1
+a1123 1
+						else if (block.exceptionType == FINALLY)
+d1135 1
+a1135 1
+						if (block.exceptionType != FAULT && block.exceptionType != FILTER && block.exceptionType != FINALLY)
+@
+
+
+1.28
+log
+@Replaced two instances of unnecessarily inlined token resolution with standard ModuleBuilder API usage.
+@
+text
+@d822 1
+a822 14
+				ByteBuffer sig = new ByteBuffer(16);
+				method.MethodSignature.WriteMethodRefSig(moduleBuilder, sig, optionalParameterTypes, customModifiers);
+				MemberRefTable.Record record = new MemberRefTable.Record();
+				if (method.Module == moduleBuilder)
+				{
+					record.Class = method.MetadataToken;
+				}
+				else
+				{
+					record.Class = moduleBuilder.GetTypeTokenForMemberRef(method.DeclaringType ?? method.Module.GetModuleType());
+				}
+				record.Name = moduleBuilder.Strings.Add(method.Name);
+				record.Signature = moduleBuilder.Blobs.Add(sig);
+				code.Write(0x0A000000 | moduleBuilder.MemberRef.FindOrAddRecord(record));
+@
+
+
+1.27
+log
+@Removed unused methods.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008-2011 Jeroen Frijters
+d784 1
+a784 1
+			code.Write(0x70000000 | moduleBuilder.UserStrings.Add(str));
+d804 1
+a804 1
+			code.Write(0x11000000 | moduleBuilder.StandAloneSig.FindOrAddRecord(moduleBuilder.Blobs.Add(signature.GetSignature(moduleBuilder))));
+@
+
+
+1.26
+log
+@Removed static Create() from __StandAloneMethodSig and added Universe.MakeStandAloneMethodSig().
+@
+text
+@a253 5
+		private bool IsLabelReachable(Label label)
+		{
+			return labelStackHeight[label.Index] != -1;
+		}
+
+@
+
+
+1.25
+log
+@Added new overload of __ResolveOptionalParameterTypes() that supports resolving generic type parameters and custom modifiers.
+@
+text
+@d856 1
+a856 1
+			__EmitCalli(opc, __StandAloneMethodSig.Create(callingConvention, returnType, new CustomModifiers(), parameterTypes, null));
+d861 1
+a861 1
+			__EmitCalli(opc, __StandAloneMethodSig.Create(callingConvention, returnType, new CustomModifiers(), parameterTypes, optionalParameterTypes, null));
+@
+
+
+1.24
+log
+@- Added custom modifier support in local variable signatures.
+- Fixed SignatureHelper to support custom modifiers in method signatures.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008-2010 Jeroen Frijters
+d814 5
+d828 1
+a828 1
+				method.MethodSignature.WriteMethodRefSig(moduleBuilder, sig, optionalParameterTypes);
+d849 5
+@
+
+
+1.23
+log
+@Added support for custom modifiers to StandAloneMethodSig.
+@
+text
+@d155 1
+d464 20
+d1058 1
+a1058 1
+				Signature.WriteLocalVarSig(moduleBuilder, localVarSig, locals);
+@
+
+
+1.22
+log
+@Added ILGenerator.__StackHeight property API extension.
+@
+text
+@d825 1
+a825 6
+			returnType = returnType ?? moduleBuilder.universe.System_Void;
+			Emit(opc);
+			UpdateStack(opc, false, returnType, parameterTypes.Length);
+			ByteBuffer sig = new ByteBuffer(16);
+			Signature.WriteStandAloneMethodSig(moduleBuilder, sig, callingConvention, returnType, parameterTypes);
+			code.Write(0x11000000 | moduleBuilder.StandAloneSig.FindOrAddRecord(moduleBuilder.Blobs.Add(sig)));
+d830 5
+a834 2
+			returnType = returnType ?? moduleBuilder.universe.System_Void;
+			optionalParameterTypes = optionalParameterTypes ?? Type.EmptyTypes;
+d836 12
+a847 4
+			UpdateStack(opc, (callingConvention & CallingConventions.HasThis | CallingConventions.ExplicitThis) == CallingConventions.HasThis, returnType, parameterTypes.Length + optionalParameterTypes.Length);
+			ByteBuffer sig = new ByteBuffer(16);
+			Signature.WriteStandAloneMethodSig(moduleBuilder, sig, callingConvention, returnType, parameterTypes, optionalParameterTypes);
+			code.Write(0x11000000 | moduleBuilder.StandAloneSig.FindOrAddRecord(moduleBuilder.Blobs.Add(sig)));
+@
+
+
+1.21
+log
+@Bug fix. BeginExceptFilterBlock() should behave like BeginCatchBlock(), not BeginFinallyBlock().
+@
+text
+@d281 7
+@
+
+
+1.20
+log
+@Don't emit tiny header if max stack is set explicitly.
+@
+text
+@d119 28
+d149 3
+a151 1
+		private static readonly Type FAULT = new BakedType(null); // the type we use here doesn't matter, as long as it can never be used as a real exception type
+d185 1
+a185 1
+			internal Type exceptionType;	// null = finally block or handler with filter, FAULT = fault block
+d303 1
+a303 1
+			if (block.tryLength == 0)
+d305 5
+a309 1
+				block.tryLength = code.Position - block.tryOffset;
+d311 1
+a311 1
+			else if (exceptionType != null)
+d313 25
+a337 9
+				block.handlerLength = code.Position - block.handlerOffset;
+				exceptionStack.Pop();
+				ExceptionBlock newBlock = new ExceptionBlock(exceptions.Count);
+				newBlock.labelEnd = block.labelEnd;
+				newBlock.tryOffset = block.tryOffset;
+				newBlock.tryLength = block.tryLength;
+				block = newBlock;
+				exceptions.Add(block);
+				exceptionStack.Push(block);
+a338 2
+			block.handlerOffset = code.Position;
+			block.exceptionType = exceptionType;
+d354 1
+a354 3
+			ExceptionBlock block = BeginFinallyFilterFaultBlock();
+			block.filterOffset = code.Position;
+			UpdateStack(1);
+d359 1
+a359 3
+			ExceptionBlock block = BeginFinallyFilterFaultBlock();
+			block.handlerOffset = code.Position;
+			block.exceptionType = FAULT;
+d364 1
+a364 2
+			ExceptionBlock block = BeginFinallyFilterFaultBlock();
+			block.handlerOffset = code.Position;
+d367 1
+a367 1
+		private ExceptionBlock BeginFinallyFilterFaultBlock()
+d401 2
+a403 1
+			return block;
+d411 1
+a411 1
+				if (block.filterOffset != 0 || (block.exceptionType != null && block.exceptionType != FAULT))
+d1087 1
+a1087 1
+						else if (block.filterOffset != 0)
+d1091 1
+a1091 1
+						else if (block.exceptionType != null)
+d1093 1
+a1093 1
+							bb.Write((int)COR_ILEXCEPTION_CLAUSE_EXCEPTION);
+d1097 1
+a1097 1
+							bb.Write((int)COR_ILEXCEPTION_CLAUSE_FINALLY);
+d1103 1
+a1103 1
+						if (block.exceptionType != null && block.exceptionType != FAULT)
+d1124 1
+a1124 1
+						else if (block.filterOffset != 0)
+d1128 1
+a1128 1
+						else if (block.exceptionType != null)
+d1130 1
+a1130 1
+							bb.Write(COR_ILEXCEPTION_CLAUSE_EXCEPTION);
+d1134 1
+a1134 1
+							bb.Write(COR_ILEXCEPTION_CLAUSE_FINALLY);
+d1140 1
+a1140 1
+						if (block.exceptionType != null && block.exceptionType != FAULT)
+@
+
+
+1.19
+log
+@Added API extension to get/set max stack size.
+@
+text
+@d133 1
+d244 5
+a248 1
+			set { maxStack = (ushort)value; }
+d889 1
+a889 1
+			if (locals.Count == 0 && exceptions.Count == 0 && maxStack <= 8 && code.Length < 64)
+@
+
+
+1.18
+log
+@Fixed stack height computation bug. For a newobj the parameters should be popped before the new object is pushed. Previously we could set the maximum stack height one slot too high.
+@
+text
+@d239 7
+@
+
+
+1.18.2.1
+log
+@Back ported fixes:
+- Bug fix. BeginExceptFilterBlock() should behave like BeginCatchBlock(), not BeginFinallyBlock().
+- Fix for http://gcc.gnu.org/bugzilla/show_bug.cgi?id=48131.
+- Bug fix. Support loading resources from assemblies added to the boot classloader (with ikvm.runtime.Startup.addBootClassPathAssemby()).
+- Type parameters should be separated by commas.
+- Only the assembly name should escape the ']' characters.
+- Bug fix. <Module> should not extend object.
+- Bug fix. String literals that are invalid UTF-16 should not be "corrected".
+- Bug fix. MaxStack returned incorrect value for tiny header methods.
+- Fix. Module does not inherit members from Object.
+- Align initialized data arrays.
+- Align managed resources on 8 bytes.
+@
+text
+@a118 28
+	sealed class MarkerType : Type
+	{
+		public override Type BaseType
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		public override TypeAttributes Attributes
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		public override string Name
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		public override string FullName
+		{
+			get { throw new InvalidOperationException(); }
+		}
+
+		public override Module Module
+		{
+			get { throw new InvalidOperationException(); }
+		}
+	}
+
+d121 1
+a121 3
+		private static readonly Type FAULT = new MarkerType();
+		private static readonly Type FINALLY = new MarkerType();
+		private static readonly Type FILTER = new MarkerType();
+d154 1
+a154 1
+			internal Type exceptionType;	// FINALLY = finally block, FILTER = handler with filter, FAULT = fault block
+d261 1
+a261 1
+			if (exceptionType == null)
+d263 1
+a263 5
+				if (block.exceptionType != FILTER || block.handlerOffset != 0)
+				{
+					throw new ArgumentNullException("exceptionType");
+				}
+				block.handlerOffset = code.Position;
+d265 1
+a265 1
+			else
+d267 9
+a275 25
+				if (block.tryLength == 0)
+				{
+					block.tryLength = code.Position - block.tryOffset;
+				}
+				else
+				{
+					block.handlerLength = code.Position - block.handlerOffset;
+					exceptionStack.Pop();
+					ExceptionBlock newBlock = new ExceptionBlock(exceptions.Count);
+					newBlock.labelEnd = block.labelEnd;
+					newBlock.tryOffset = block.tryOffset;
+					newBlock.tryLength = block.tryLength;
+					block = newBlock;
+					exceptions.Add(block);
+					exceptionStack.Push(block);
+				}
+				block.exceptionType = exceptionType;
+				if (exceptionType == FILTER)
+				{
+					block.filterOffset = code.Position;
+				}
+				else
+				{
+					block.handlerOffset = code.Position;
+				}
+d277 2
+d294 3
+a296 1
+			BeginCatchBlock(FILTER);
+d301 3
+a303 1
+			BeginFinallyFaultBlock(FAULT);
+d308 2
+a309 1
+			BeginFinallyFaultBlock(FINALLY);
+d312 1
+a312 1
+		private void BeginFinallyFaultBlock(Type type)
+a345 2
+			block.handlerOffset = code.Position;
+			block.exceptionType = type;
+d347 1
+d355 1
+a355 1
+				if (block.filterOffset != 0 || (block.exceptionType != FINALLY && block.exceptionType != FAULT))
+d1031 1
+a1031 1
+						else if (block.exceptionType == FILTER)
+d1035 1
+a1035 1
+						else if (block.exceptionType == FINALLY)
+d1037 1
+a1037 1
+							bb.Write((int)COR_ILEXCEPTION_CLAUSE_FINALLY);
+d1041 1
+a1041 1
+							bb.Write((int)COR_ILEXCEPTION_CLAUSE_EXCEPTION);
+d1047 1
+a1047 1
+						if (block.exceptionType != FAULT && block.exceptionType != FILTER && block.exceptionType != FINALLY)
+d1068 1
+a1068 1
+						else if (block.exceptionType == FILTER)
+d1072 1
+a1072 1
+						else if (block.exceptionType == FINALLY)
+d1074 1
+a1074 1
+							bb.Write(COR_ILEXCEPTION_CLAUSE_FINALLY);
+d1078 1
+a1078 1
+							bb.Write(COR_ILEXCEPTION_CLAUSE_EXCEPTION);
+d1084 1
+a1084 1
+						if (block.exceptionType != FAULT && block.exceptionType != FILTER && block.exceptionType != FINALLY)
+@
+
+
+1.17
+log
+@Fixed exception table sorting bug.
+@
+text
+@d680 1
+a682 1
+			UpdateStack(opc, method.HasThis, method.ReturnType, method.ParameterCount);
+@
+
+
+1.16
+log
+@Set stack height to zero at the entry of an exception block (instead of -1), otherwise an empty try block will not get an automatic leave in "clever" mode.
+@
+text
+@d169 1
+a169 9
+				if (x.tryOffset >= y.handlerOffset && x.tryOffset + x.tryLength <= y.handlerOffset + y.handlerLength)
+				{
+					return -1;
+				}
+				if (y.tryOffset >= x.handlerOffset && y.tryOffset + y.tryLength <= x.handlerOffset + x.handlerLength)
+				{
+					return 1;
+				}
+				if (x.tryOffset == y.tryOffset && x.tryLength == y.tryLength)
+d173 1
+a173 1
+				if (x.tryOffset + x.tryLength <= y.tryOffset)
+d177 1
+a177 1
+				if (y.tryOffset + y.tryLength <= x.tryOffset)
+a180 4
+				if (x.tryOffset > y.tryOffset || (x.tryOffset == y.tryOffset && x.tryLength < y.tryLength))
+				{
+					return -1;
+				}
+d183 1
+a183 1
+					return 1;
+@
+
+
+1.15
+log
+@Don't emit unnecessary leave instructions in "clever" mode.
+@
+text
+@d300 1
+@
+
+
+1.14
+log
+@The end label of an exception block should always be marked, because you can also backward branch to it.
+@
+text
+@d337 2
+a338 3
+				bool reachable = IsLabelReachable(block.labelEnd);
+				Label labelEnd = new Label();
+				if (reachable)
+d340 1
+a340 1
+					MarkLabel(block.labelEnd);
+d342 1
+a342 2
+				labelEnd = DefineLabel();
+				if (exceptionBlockAssistanceMode == EBAM_COMPAT || (exceptionBlockAssistanceMode == EBAM_CLEVER && reachable))
+d344 2
+@
+
+
+1.13
+log
+@Exception block end label should be marked regardless of exception assistance mode.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008, 2009 Jeroen Frijters
+d375 1
+a375 4
+			if (IsLabelReachable(block.labelEnd))
+			{
+				MarkLabel(block.labelEnd);
+			}
+@
+
+
+1.12
+log
+@At the start of a finally block, the stack height should always be zero (i.e. reachable).
+@
+text
+@d374 4
+a377 4
+				if (IsLabelReachable(block.labelEnd))
+				{
+					MarkLabel(block.labelEnd);
+				}
+@
+
+
+1.11
+log
+@Added exception message for backward branch constraints violations.
+@
+text
+@a329 1
+			stackHeight = 0;
+d357 1
+@
+
+
+1.10
+log
+@Throw a NotSupportException if a branch offset doesn't fit (i.e. when a short form branch is used inappropriately).
+@
+text
+@d514 1
+a514 1
+					throw new NotSupportedException();
+@
+
+
+1.9
+log
+@Fixed ExceptionBlock's Compare method to handle identity comparison, as Mono's sort implementation requires this.
+@
+text
+@d518 1
+a518 1
+					code.Write((byte)(labels[label.Index] - (code.Position + 1)));
+d544 9
+d954 1
+a954 1
+						code.Write((byte)branchOffset);
+@
+
+
+1.8
+log
+@Use GetTypeTokenForMemberRef() instead of GetTypeToken(), where appropriate.
+@
+text
+@d164 5
+@
+
+
+1.8.2.1
+log
+@Backported: Fixed ExceptionBlock's Compare method to handle identity comparison, as Mono's sort implementation requires this.
+@
+text
+@a163 5
+ 				// Mono's sort insists on doing unnecessary comparisons
+ 				if (x == y)
+ 				{
+ 					return 0;
+ 				}
+@
+
+
+1.7
+log
+@Renamed StandAloneSigTable and ModuleRefTable Add methods to FindOrAddRecord for clarity and consistency with the other FindOrAddRecord methods.
+@
+text
+@d1049 1
+a1049 1
+							bb.Write(moduleBuilder.GetTypeToken(block.exceptionType).Token);
+d1086 1
+a1086 1
+							bb.Write(moduleBuilder.GetTypeToken(block.exceptionType).Token);
+@
+
+
+1.6
+log
+@Fixed filter block handling to support having both regular handlers and a filter for the same try block.
+@
+text
+@d725 1
+a725 1
+			code.Write(0x11000000 | moduleBuilder.StandAloneSig.Add(moduleBuilder.Blobs.Add(signature.GetSignature(moduleBuilder))));
+d767 1
+a767 1
+			code.Write(0x11000000 | moduleBuilder.StandAloneSig.Add(moduleBuilder.Blobs.Add(sig)));
+d778 1
+a778 1
+			code.Write(0x11000000 | moduleBuilder.StandAloneSig.Add(moduleBuilder.Blobs.Add(sig)));
+d969 1
+a969 1
+				localVarSigTok = 0x11000000 | moduleBuilder.StandAloneSig.Add(moduleBuilder.Blobs.Add(localVarSig));
+@
+
+
+1.5
+log
+@Order try blocks inside handlers before the entries for that handler. Workaround for CLR x86 JIT null pointer dereference bug.
+@
+text
+@d257 1
+a257 1
+				if (block.filterOffset != 0)
+d272 1
+a272 1
+			else if (block.filterOffset == 0)
+@
+
+
+1.4
+log
+@Implemented ModuleBuilder.GetArrayMethod(). Based on patch from Kornel Pal.
+@
+text
+@d164 8
+@
+
+
+1.3
+log
+@Fixed stack height updating for jmp instruction.
+@
+text
+@d674 1
+a674 1
+			UpdateStack(opc, !method.IsStatic, method.ReturnType, method.ParameterCount);
+d729 1
+a729 1
+				UpdateStack(opc, !method.IsStatic, method.ReturnType, method.ParameterCount + optionalParameterTypes.Length);
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d647 5
+a651 1
+			if (opc.FlowControl == FlowControl.Call)
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

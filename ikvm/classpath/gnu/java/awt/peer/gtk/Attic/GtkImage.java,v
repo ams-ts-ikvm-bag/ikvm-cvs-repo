@@ -1,0 +1,48 @@
+head	1.2;
+access;
+symbols
+	v0_28_0_0:1.1;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2006.06.08.09.26.43;	author jfrijters;	state dead;
+branches;
+next	1.1;
+
+1.1
+date	2006.05.15.09.57.19;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@package gnu.java.awt.peer.gtk;
+
+// HACK this is a placeholder to make gnu.java.awt.JavaPrinterGraphics compile
+public class GtkImage extends java.awt.image.BufferedImage
+{
+    public GtkImage(int width, int height)
+    {
+        super(width, height, TYPE_INT_RGB);
+    }
+}
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@@
+

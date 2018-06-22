@@ -1,0 +1,500 @@
+head	1.4;
+access;
+symbols
+	v8_1_5717_0:1.4
+	v8_1:1.4.0.16
+	v8_0_5449_1:1.4
+	v8_0_5449_0:1.4
+	v8_0:1.4.0.14
+	v7_4_5196_0:1.4
+	v7_4:1.4.0.12
+	v7_3:1.4.0.10
+	v7_2_4630_6:1.4
+	v7_2_4630_5:1.4
+	v7_2_4630_4:1.4
+	v7_2_4630_3:1.4
+	v7_2_4630_2:1.4
+	v0_46_0_4:1.4
+	v7_2_4630_1:1.4
+	v7_2:1.4.0.8
+	v7_1_4532_2:1.4
+	v7_1_4532_1:1.4
+	v7_1_4532_0:1.4
+	v7_1:1.4.0.6
+	v7_0_4335_3:1.4
+	v7_0_4335_2:1.4
+	v7_0_4335_1:1.4
+	v0_46_0_2:1.4
+	v7_0_4335_0:1.4
+	v7_0:1.4.0.4
+	v0_40_0_6:1.1
+	v0_40_0_5:1.1
+	v0_46_0_1:1.4
+	v0_46_0_0:1.4
+	v0_46:1.4.0.2
+	v0_44_0_6:1.2
+	v0_44_0_5:1.2
+	v0_44_0_4:1.2
+	v0_44_0_3:1.2
+	v0_44_0_2:1.2
+	v0_42_0_7:1.2
+	v0_44_0_1:1.2
+	v0_44_0_0:1.2
+	v0_44:1.2.0.4
+	v0_42_0_6:1.2
+	v0_42_0_5:1.2
+	v0_42_0_4:1.2
+	v0_42_0_3:1.2
+	v0_42_0_2:1.2
+	v0_42_0_1:1.2
+	v0_42_0_0:1.2
+	v0_42:1.2.0.2
+	v0_40_0_3:1.1
+	v0_40_0_2:1.1
+	v0_40_0_1:1.1
+	v0_40_0_0:1.1
+	v0_40:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.4
+date	2011.01.24.16.40.23;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.12.27.10.33.40;	author smallsql;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2009.09.26.21.01.58;	author smallsql;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2009.03.04.09.21.42;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.4
+log
+@Integrated OpenJDK 6 b21.
+@
+text
+@/*
+ * Copyright (c) 1995, 2004, Oracle and/or its affiliates. All rights reserved.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 only, as
+ * published by the Free Software Foundation.  Oracle designates this
+ * particular file as subject to the "Classpath" exception as provided
+ * by Oracle in the LICENSE file that accompanied this code.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * You should have received a copy of the GNU General Public License version
+ * 2 along with this work; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+ * or visit www.oracle.com if you need additional information or have any
+ * questions.
+ */
+
+package sun.awt.image;
+
+import java.util.Hashtable;
+import java.util.Enumeration;
+
+import java.awt.Component;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.awt.image.ColorModel;
+import java.awt.image.ImageProducer;
+import java.awt.image.ImageConsumer;
+import java.awt.image.ImageObserver;
+import sun.awt.image.ImageRepresentation;
+
+public class ToolkitImage extends Image {
+
+    /**
+     * The object which is used to reconstruct the original image data
+     * as needed.
+     */
+    ImageProducer source;
+
+    InputStreamImageSource src;
+
+    ImageRepresentation imagerep;
+
+
+    protected ToolkitImage() {
+    }
+
+    /**
+     * Construct an image from an ImageProducer object.
+     */
+    public ToolkitImage(ImageProducer is) {
+        source = is;
+        if (is instanceof InputStreamImageSource) {
+            src = (InputStreamImageSource) is;
+        }
+    }
+
+    public ImageProducer getSource() {
+        if (src != null) {
+            src.checkSecurity(null, false);
+        }
+        return source;
+    }
+
+    private int width = -1;
+    private int height = -1;
+    private Hashtable properties;
+
+    private int availinfo;
+
+    /**
+     * Return the width of the original image source.
+     * If the width isn't known, then the image is reconstructed.
+     */
+    public int getWidth() {
+        if (src != null) {
+            src.checkSecurity(null, false);
+        }
+        if ((availinfo & ImageObserver.WIDTH) == 0) {
+            reconstruct(ImageObserver.WIDTH);
+        }
+        return width;
+    }
+
+    /**
+     * Return the width of the original image source.
+     * If the width isn't known, then the ImageObserver object will be
+     * notified when the data is available.
+     */
+    public synchronized int getWidth(ImageObserver iw) {
+        if (src != null) {
+            src.checkSecurity(null, false);
+        }
+        if ((availinfo & ImageObserver.WIDTH) == 0) {
+            addWatcher(iw, true);
+            if ((availinfo & ImageObserver.WIDTH) == 0) {
+                return -1;
+            }
+        }
+        return width;
+    }
+
+    /**
+     * Return the height of the original image source.
+     * If the height isn't known, then the image is reconstructed.
+     */
+    public int getHeight() {
+        if (src != null) {
+            src.checkSecurity(null, false);
+        }
+        if ((availinfo & ImageObserver.HEIGHT) == 0) {
+            reconstruct(ImageObserver.HEIGHT);
+        }
+        return height;
+    }
+
+    /**
+     * Return the height of the original image source.
+     * If the height isn't known, then the ImageObserver object will be
+     * notified when the data is available.
+     */
+    public synchronized int getHeight(ImageObserver iw) {
+        if (src != null) {
+            src.checkSecurity(null, false);
+        }
+        if ((availinfo & ImageObserver.HEIGHT) == 0) {
+            addWatcher(iw, true);
+            if ((availinfo & ImageObserver.HEIGHT) == 0) {
+                return -1;
+            }
+        }
+        return height;
+    }
+
+    /**
+     * Return a property of the image by name.  Individual property names
+     * are defined by the various image formats.  If a property is not
+     * defined for a particular image, then this method will return the
+     * UndefinedProperty object.  If the properties for this image are
+     * not yet known, then this method will return null and the ImageObserver
+     * object will be notified later.  The property name "comment" should
+     * be used to store an optional comment which can be presented to
+     * the user as a description of the image, its source, or its author.
+     */
+    public Object getProperty(String name, ImageObserver observer) {
+        if (name == null) {
+            throw new NullPointerException("null property name is not allowed");
+        }
+
+        if (src != null) {
+            src.checkSecurity(null, false);
+        }
+        if (properties == null) {
+            addWatcher(observer, true);
+            if (properties == null) {
+                return null;
+            }
+        }
+        Object o = properties.get(name);
+        if (o == null) {
+            o = Image.UndefinedProperty;
+        }
+        return o;
+    }
+
+    public boolean hasError() {
+        if (src != null) {
+            src.checkSecurity(null, false);
+        }
+        return (availinfo & ImageObserver.ERROR) != 0;
+    }
+
+    public int check(ImageObserver iw) {
+        if (src != null) {
+            src.checkSecurity(null, false);
+        }
+        if ((availinfo & ImageObserver.ERROR) == 0 &&
+            ((~availinfo) & (ImageObserver.WIDTH |
+                             ImageObserver.HEIGHT |
+                             ImageObserver.PROPERTIES)) != 0) {
+            addWatcher(iw, false);
+        }
+        return availinfo;
+    }
+
+    public void preload(ImageObserver iw) {
+        if (src != null) {
+            src.checkSecurity(null, false);
+        }
+        if ((availinfo & ImageObserver.ALLBITS) == 0) {
+            addWatcher(iw, true);
+        }
+    }
+
+    private synchronized void addWatcher(ImageObserver iw, boolean load) {
+        if ((availinfo & ImageObserver.ERROR) != 0) {
+            if (iw != null) {
+                iw.imageUpdate(this, ImageObserver.ERROR|ImageObserver.ABORT,
+                               -1, -1, -1, -1);
+            }
+            return;
+        }
+        ImageRepresentation ir = getImageRep();
+        ir.addWatcher(iw);
+        if (load) {
+            ir.startProduction();
+        }
+    }
+
+    private synchronized void reconstruct(int flags) {
+        if ((flags & ~availinfo) != 0) {
+            if ((availinfo & ImageObserver.ERROR) != 0) {
+                return;
+            }
+            ImageRepresentation ir = getImageRep();
+            ir.startProduction();
+            while ((flags & ~availinfo) != 0) {
+                try {
+                    wait();
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    return;
+                }
+                if ((availinfo & ImageObserver.ERROR) != 0) {
+                    return;
+                }
+            }
+        }
+    }
+
+    synchronized void addInfo(int newinfo) {
+        availinfo |= newinfo;
+        notifyAll();
+    }
+
+    void setDimensions(int w, int h) {
+        width = w;
+        height = h;
+        addInfo(ImageObserver.WIDTH | ImageObserver.HEIGHT);
+    }
+
+    void setProperties(Hashtable props) {
+        if (props == null) {
+            props = new Hashtable();
+        }
+        properties = props;
+        addInfo(ImageObserver.PROPERTIES);
+    }
+
+    synchronized void infoDone(int status) {
+        if (status == ImageConsumer.IMAGEERROR ||
+            ((~availinfo) & (ImageObserver.WIDTH |
+                             ImageObserver.HEIGHT)) != 0) {
+            addInfo(ImageObserver.ERROR);
+        } else if ((availinfo & ImageObserver.PROPERTIES) == 0) {
+            setProperties(null);
+        }
+    }
+
+    public void flush() {
+        if (src != null) {
+            src.checkSecurity(null, false);
+        }
+
+        ImageRepresentation ir;
+        synchronized (this) {
+            availinfo &= ~ImageObserver.ERROR;
+            ir = imagerep;
+            imagerep = null;
+        }
+        if (ir != null) {
+            ir.abort();
+        }
+        if (src != null) {
+            src.flush();
+        }
+    }
+
+    protected ImageRepresentation makeImageRep() {
+        return new ImageRepresentation(this);
+    }
+
+    public synchronized ImageRepresentation getImageRep() {
+        if (src != null) {
+            src.checkSecurity(null, false);
+        }
+        if (imagerep == null) {
+            imagerep = makeImageRep();
+        }
+        return imagerep;
+    }
+
+    public Graphics getGraphics() {
+        throw new UnsupportedOperationException("getGraphics() not valid for images " +
+                                     "created with createImage(producer)");
+    }
+
+//    /* this method is needed by printing code */
+//    public ColorModel getColorModel() {
+//        ImageRepresentation imageRep = getImageRep();
+//        return imageRep.getColorModel();
+//    }
+//
+    /* this method is needed by printing code */
+    public BufferedImage getBufferedImage() {
+        ImageRepresentation imageRep = getImageRep();
+        return imageRep.getBufferedImage();
+    }
+//
+//    public void setAccelerationPriority(float priority) {
+//        super.setAccelerationPriority(priority);
+//        ImageRepresentation imageRep = getImageRep();
+//        imageRep.setAccelerationPriority(accelerationPriority);
+//    }
+}
+@
+
+
+1.3
+log
+@* Added Image Content Handler in package sun.net.www.content.image
+* Replace NetProducerImage with the original ToolkitImage and ImageRepresentation. Now this image work correctly with the MediaTracker together.
+* remove some methods Image methods from NetToolkit and use the original of SunToolkit
+@
+text
+@d2 1
+a2 1
+ * Copyright 1995-2004 Sun Microsystems, Inc.  All Rights Reserved.
+d7 1
+a7 1
+ * published by the Free Software Foundation.  Sun designates this
+d9 1
+a9 1
+ * by Sun in the LICENSE file that accompanied this code.
+d21 3
+a23 3
+ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
+ * CA 95054 USA or visit www.sun.com if you need additional information or
+ * have any questions.
+@
+
+
+1.2
+log
+@more files of the print API added
+@
+text
+@d2 23
+a24 1
+  Copyright (C) 2009 Jeroen Frijters
+d26 86
+a111 15
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+d113 13
+a125 2
+  Jeroen Frijters
+  jeroen@@frijters.net 
+d127 17
+a143 1
+*/
+d145 147
+a291 1
+package sun.awt.image;
+d293 9
+a301 1
+import java.awt.image.BufferedImage;
+d303 4
+a306 3
+public abstract class ToolkitImage extends java.awt.Image
+{
+    public abstract ImageRepresentation getImageRep();
+d308 17
+a324 1
+    public abstract BufferedImage getBufferedImage();
+@
+
+
+1.1
+log
+@Switched java.awt.datatransfer package from GNU Classpath to OpenJDK.
+@
+text
+@d27 2
+d32 2
+@
+

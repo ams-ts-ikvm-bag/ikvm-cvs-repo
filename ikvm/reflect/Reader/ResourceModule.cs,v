@@ -1,0 +1,365 @@
+head	1.9;
+access;
+symbols
+	v8_1_5717_0:1.9
+	v8_1:1.9.0.12
+	v8_0_5449_1:1.9
+	v8_0_5449_0:1.9
+	v8_0:1.9.0.10
+	v7_4_5196_0:1.9
+	v7_4:1.9.0.8
+	v7_3:1.9.0.6
+	v7_2_4630_6:1.9
+	v7_2_4630_5:1.9
+	v7_2_4630_4:1.9
+	v7_2_4630_3:1.9
+	v7_2_4630_2:1.9
+	v0_46_0_4:1.4
+	v7_2_4630_1:1.9
+	v7_2:1.9.0.4
+	v7_1_4532_2:1.9
+	v7_1_4532_1:1.9
+	v7_1_4532_0:1.9
+	v7_1:1.9.0.2
+	v7_0_4335_3:1.8
+	v7_0_4335_2:1.8
+	v7_0_4335_1:1.8
+	v0_46_0_2:1.4
+	v7_0_4335_0:1.8
+	v7_0:1.8.0.2
+	v0_46_0_1:1.4
+	v0_46_0_0:1.4
+	v0_46:1.4.0.2
+	v0_44_0_6:1.2
+	v0_44_0_5:1.2
+	v0_44_0_4:1.2
+	v0_44_0_3:1.2
+	v0_44_0_2:1.2
+	v0_44_0_1:1.2
+	v0_44_0_0:1.2
+	v0_44:1.2.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.9
+date	2012.04.09.10.04.58;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2011.03.11.14.11.15;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2011.03.08.06.43.01;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2011.03.08.06.14.22;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2011.03.08.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2011.01.20.05.38.12;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.12.08.06.33.03;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.02;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.32;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.9
+log
+@Added support for case-insensitive type lookup.
+@
+text
+@/*
+  Copyright (C) 2009-2011 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using IKVM.Reflection.Metadata;
+
+namespace IKVM.Reflection.Reader
+{
+	sealed class ResourceModule : NonPEModule
+	{
+		private readonly ModuleReader manifest;
+		private readonly int index;
+		private readonly string location;
+
+		internal ResourceModule(ModuleReader manifest, int index, string location)
+			: base(manifest.universe)
+		{
+			this.manifest = manifest;
+			this.index = index;
+			this.location = location;
+		}
+
+		public override int MDStreamVersion
+		{
+			get { throw new NotSupportedException(); }
+		}
+
+		public override bool IsResource()
+		{
+			return true;
+		}
+
+		public override Assembly Assembly
+		{
+			get { return manifest.Assembly; }
+		}
+
+		public override string FullyQualifiedName
+		{
+			get { return location ?? "<Unknown>"; }
+		}
+
+		public override string Name
+		{
+			get { return location == null ? "<Unknown>" : System.IO.Path.GetFileName(location); }
+		}
+
+		public override string ScopeName
+		{
+			get { return manifest.GetString(manifest.File.records[index].Name); }
+		}
+
+		public override Guid ModuleVersionId
+		{
+			get { throw new NotSupportedException(); }
+		}
+
+		public override byte[] __ModuleHash
+		{
+			get
+			{
+				int blob = manifest.File.records[index].HashValue;
+				return blob == 0 ? Empty<byte>.Array : manifest.GetBlobCopy(blob);
+			}
+		}
+
+		internal override Type FindType(TypeName typeName)
+		{
+			return null;
+		}
+
+		internal override Type FindTypeIgnoreCase(TypeName lowerCaseName)
+		{
+			return null;
+		}
+
+		internal override void GetTypesImpl(List<Type> list)
+		{
+		}
+
+		protected override Exception ArgumentOutOfRangeException()
+		{
+			return new NotSupportedException();
+		}
+	}
+}
+@
+
+
+1.8
+log
+@Added API extension to get the file hash of a resource module.
+@
+text
+@d93 5
+@
+
+
+1.7
+log
+@Introduced base class for virtual Module classes to have common place to implement abstract Module methods that aren't supported.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Jeroen Frijters
+d26 1
+d32 2
+a33 2
+		private readonly Assembly assembly;
+		private readonly string scopeName;
+d36 2
+a37 2
+		internal ResourceModule(Assembly assembly, string scopeName, string location)
+			: base(assembly.universe)
+d39 2
+a40 2
+			this.assembly = assembly;
+			this.scopeName = scopeName;
+d56 1
+a56 1
+			get { return assembly; }
+d71 1
+a71 1
+			get { return scopeName; }
+d79 9
+@
+
+
+1.6
+log
+@Added API extension __ImageBase to Module.
+@
+text
+@d29 1
+a29 1
+	sealed class ResourceModule : Module
+a77 45
+		public override Type ResolveType(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+		{
+			throw new NotSupportedException();
+		}
+
+		public override MethodBase ResolveMethod(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+		{
+			throw new NotSupportedException();
+		}
+
+		public override FieldInfo ResolveField(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+		{
+			throw new NotSupportedException();
+		}
+
+		public override MemberInfo ResolveMember(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+		{
+			throw new NotSupportedException();
+		}
+
+		public override string ResolveString(int metadataToken)
+		{
+			throw new NotSupportedException();
+		}
+
+		public override Type[] __ResolveOptionalParameterTypes(int metadataToken)
+		{
+			throw new NotSupportedException();
+		}
+
+		public override AssemblyName[] __GetReferencedAssemblies()
+		{
+			throw new NotSupportedException();
+		}
+
+		public override string[] __GetReferencedModules()
+		{
+			throw new NotSupportedException();
+		}
+
+		protected override long GetImageBaseImpl()
+		{
+			throw new NotSupportedException();
+		}
+
+d87 1
+a87 6
+		internal override Type GetModuleType()
+		{
+			throw new InvalidOperationException();
+		}
+
+		internal override ByteReader GetBlob(int blobIndex)
+d89 1
+a89 1
+			throw new InvalidOperationException();
+@
+
+
+1.5
+log
+@Added API extensions to get and add referenced modules.
+@
+text
+@d118 5
+@
+
+
+1.4
+log
+@More type name fixes. This time to support the fact that the CLR and Mono both treat TypeNamespace and TypeName as separate names and do not consider fullName to be relevant.
+@
+text
+@d113 5
+@
+
+
+1.3
+log
+@Added Module.__GetReferencedAssemblies() API.
+@
+text
+@d113 1
+a113 1
+		internal override Type GetTypeImpl(string typeName)
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d108 5
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

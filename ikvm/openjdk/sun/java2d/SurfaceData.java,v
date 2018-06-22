@@ -1,0 +1,107 @@
+head	1.2;
+access;
+symbols
+	v8_1_5717_0:1.2
+	v8_1:1.2.0.6
+	v8_0_5449_1:1.2
+	v8_0_5449_0:1.2
+	v8_0:1.2.0.4
+	v7_4_5196_0:1.2
+	v7_4:1.2.0.2
+	v7_3:1.1.0.8
+	v7_2_4630_6:1.1
+	v7_2_4630_5:1.1
+	v7_2_4630_4:1.1
+	v7_2_4630_3:1.1
+	v7_2_4630_2:1.1
+	v7_2_4630_1:1.1
+	v7_2:1.1.0.6
+	v7_1_4532_2:1.1
+	v7_1_4532_1:1.1
+	v7_1_4532_0:1.1
+	v7_1:1.1.0.4
+	v7_0_4335_3:1.1
+	v7_0_4335_2:1.1
+	v7_0_4335_1:1.1
+	v7_0_4335_0:1.1
+	v7_0:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2013.04.01.18.06.26;	author smallsql;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2011.07.09.12.33.22;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@Prepare the usage of SunGraphics2D as super class of all graphics classes.
+@
+text
+@/*
+  Copyright (C) 2011, 2013 Volker Berlin (i-net software)
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+ */
+package sun.java2d;
+
+public class SurfaceData {
+
+	final Object destination;
+	
+	public SurfaceData( Object destination ) {
+		this.destination = destination;
+	}
+	
+	public boolean isSurfaceLost() {
+		return false;
+	}
+
+	public Object getDestination() {
+		return destination;
+	}
+}
+@
+
+
+1.1
+log
+@Minimal implementation of SurfaceData for compiling Java 7 sources
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2011 Volker Berlin (i-net software)
+d28 6
+d38 3
+@
+

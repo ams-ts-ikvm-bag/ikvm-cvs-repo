@@ -1,0 +1,185 @@
+head	1.3;
+access;
+symbols
+	v8_1_5717_0:1.3
+	v8_1:1.3.0.12
+	v8_0_5449_1:1.3
+	v8_0_5449_0:1.3
+	v8_0:1.3.0.10
+	v7_4_5196_0:1.3
+	v7_4:1.3.0.8
+	v7_3:1.3.0.6
+	v7_2_4630_6:1.3
+	v7_2_4630_5:1.3
+	v7_2_4630_4:1.3
+	v7_2_4630_3:1.3
+	v7_2_4630_2:1.3
+	v0_46_0_4:1.2
+	v7_2_4630_1:1.3
+	v7_2:1.3.0.4
+	v7_1_4532_2:1.3
+	v7_1_4532_1:1.3
+	v7_1_4532_0:1.3
+	v7_1:1.3.0.2
+	v7_0_4335_3:1.2
+	v7_0_4335_2:1.2
+	v7_0_4335_1:1.2
+	v0_46_0_2:1.2
+	v7_0_4335_0:1.2
+	v7_0:1.2.0.6
+	v0_46_0_1:1.2
+	v0_46_0_0:1.2
+	v0_46:1.2.0.4
+	v0_44_0_6:1.2
+	v0_44_0_5:1.2
+	v0_44_0_4:1.2
+	v0_44_0_3:1.2
+	v0_44_0_2:1.2
+	v0_44_0_1:1.2
+	v0_44_0_0:1.2
+	v0_44:1.2.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.3
+date	2012.01.30.14.23.24;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.3
+log
+@Added FlagsAttribute to ExceptionHandlingClauseOptions.
+@
+text
+@/*
+  Copyright (C) 2009 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using IKVM.Reflection.Reader;
+
+namespace IKVM.Reflection
+{
+	[Flags]
+	public enum ExceptionHandlingClauseOptions
+	{
+		Clause  = 0x0000,
+		Filter  = 0x0001,
+		Finally = 0x0002,
+		Fault   = 0x0004,
+	}
+
+	public sealed class ExceptionHandlingClause
+	{
+		private readonly int flags;
+		private readonly int tryOffset;
+		private readonly int tryLength;
+		private readonly int handlerOffset;
+		private readonly int handlerLength;
+		private readonly Type catchType;
+		private readonly int filterOffset;
+
+		internal ExceptionHandlingClause(ModuleReader module, int flags, int tryOffset, int tryLength, int handlerOffset, int handlerLength, int classTokenOrfilterOffset, IGenericContext context)
+		{
+			this.flags = flags;
+			this.tryOffset = tryOffset;
+			this.tryLength = tryLength;
+			this.handlerOffset = handlerOffset;
+			this.handlerLength = handlerLength;
+			this.catchType = flags == (int)ExceptionHandlingClauseOptions.Clause && classTokenOrfilterOffset != 0 ? module.ResolveType(classTokenOrfilterOffset, context) : null;
+			this.filterOffset = flags == (int)ExceptionHandlingClauseOptions.Filter ? classTokenOrfilterOffset : 0;
+		}
+
+		public Type CatchType
+		{
+			get { return catchType; }
+		}
+
+		public int FilterOffset
+		{
+			get { return filterOffset; }
+		}
+
+		public ExceptionHandlingClauseOptions Flags
+		{
+			get { return (ExceptionHandlingClauseOptions)flags; }
+		}
+
+		public int HandlerLength
+		{
+			get { return handlerLength; }
+		}
+
+		public int HandlerOffset
+		{
+			get { return handlerOffset; }
+		}
+
+		public int TryLength
+		{
+			get { return tryLength; }
+		}
+
+		public int TryOffset
+		{
+			get { return tryOffset; }
+		}
+	}
+}
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d29 1
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

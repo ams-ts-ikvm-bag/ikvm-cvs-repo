@@ -1,0 +1,887 @@
+head	1.10;
+access;
+symbols
+	v8_1_5717_0:1.10
+	v8_1:1.10.0.2
+	v8_0_5449_1:1.9
+	v8_0_5449_0:1.9
+	v8_0:1.9.0.2
+	v7_4_5196_0:1.8
+	v7_4:1.8.0.2
+	v7_3:1.7.0.4
+	v7_2_4630_6:1.7
+	v7_2_4630_5:1.7
+	v7_2_4630_4:1.7
+	v7_2_4630_3:1.7
+	v7_2_4630_2:1.7
+	v0_46_0_4:1.4
+	v7_2_4630_1:1.7
+	v7_2:1.7.0.2
+	v7_1_4532_2:1.6
+	v7_1_4532_1:1.6
+	v7_1_4532_0:1.6
+	v7_1:1.6.0.4
+	v7_0_4335_3:1.6
+	v7_0_4335_2:1.6
+	v7_0_4335_1:1.6
+	v0_46_0_2:1.4
+	v7_0_4335_0:1.6
+	v7_0:1.6.0.2
+	v0_40_0_6:1.3
+	v0_40_0_5:1.3
+	v0_46_0_1:1.4
+	v0_46_0_0:1.4
+	v0_46:1.4.0.2
+	v0_44_0_6:1.3
+	v0_44_0_5:1.3
+	v0_44_0_4:1.3
+	v0_44_0_3:1.3
+	v0_44_0_2:1.3
+	v0_42_0_7:1.3
+	v0_44_0_1:1.3
+	v0_44_0_0:1.3
+	v0_44:1.3.0.8
+	v0_42_0_6:1.3
+	v0_42_0_5:1.3
+	v0_42_0_4:1.3
+	v0_42_0_3:1.3
+	v0_42_0_2:1.3
+	v0_42_0_1:1.3
+	v0_42_0_0:1.3
+	v0_42:1.3.0.6
+	v0_40_0_3:1.3
+	v0_40_0_2:1.3
+	v0_40_0_1:1.3
+	v0_40_0_0:1.3
+	v0_40:1.3.0.4
+	v0_38_0_1:1.3
+	v0_38_0_0:1.3
+	v0_38:1.3.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.10
+date	2015.06.09.09.28.44;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2014.05.19.12.43.41;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2014.02.07.14.14.12;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2012.08.30.08.56.24;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2011.07.01.08.30.18;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2011.06.17.11.33.06;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2011.01.24.16.40.23;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.06.11.09.05.46;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.04.23.04.25.22;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.03.30.06.59.19;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.10
+log
+@Integrated OpenJDK 8u45.
+@
+text
+@/*
+ * Copyright (c) 1996, 2014, Oracle and/or its affiliates. All rights reserved.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 only, as
+ * published by the Free Software Foundation.  Oracle designates this
+ * particular file as subject to the "Classpath" exception as provided
+ * by Oracle in the LICENSE file that accompanied this code.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * You should have received a copy of the GNU General Public License version
+ * 2 along with this work; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+ * or visit www.oracle.com if you need additional information or have any
+ * questions.
+ */
+
+package sun.misc;
+
+import static java.lang.Thread.State.*;
+import java.util.Properties;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+public class VM {
+
+    /* The following methods used to be native methods that instruct
+     * the VM to selectively suspend certain threads in low-memory
+     * situations. They are inherently dangerous and not implementable
+     * on native threads. We removed them in JDK 1.2. The skeletons
+     * remain so that existing applications that use these methods
+     * will still work.
+     */
+    private static boolean suspended = false;
+
+    /** @@deprecated */
+    @@Deprecated
+    public static boolean threadsSuspended() {
+        return suspended;
+    }
+
+    @@SuppressWarnings("deprecation")
+    public static boolean allowThreadSuspension(ThreadGroup g, boolean b) {
+        return g.allowThreadSuspension(b);
+    }
+
+    /** @@deprecated */
+    @@Deprecated
+    public static boolean suspendThreads() {
+        suspended = true;
+        return true;
+    }
+
+    // Causes any suspended threadgroups to be resumed.
+    /** @@deprecated */
+    @@Deprecated
+    public static void unsuspendThreads() {
+        suspended = false;
+    }
+
+    // Causes threadgroups no longer marked suspendable to be resumed.
+    /** @@deprecated */
+    @@Deprecated
+    public static void unsuspendSomeThreads() {
+    }
+
+    /* Deprecated fields and methods -- Memory advice not supported in 1.2 */
+
+    /** @@deprecated */
+    @@Deprecated
+    public static final int STATE_GREEN = 1;
+
+    /** @@deprecated */
+    @@Deprecated
+    public static final int STATE_YELLOW = 2;
+
+    /** @@deprecated */
+    @@Deprecated
+    public static final int STATE_RED = 3;
+
+    /** @@deprecated */
+    @@Deprecated
+    public static final int getState() {
+        return STATE_GREEN;
+    }
+
+    /** @@deprecated */
+    @@Deprecated
+    public static void registerVMNotification(VMNotification n) { }
+
+    /** @@deprecated */
+    @@Deprecated
+    public static void asChange(int as_old, int as_new) { }
+
+    /** @@deprecated */
+    @@Deprecated
+    public static void asChange_otherthread(int as_old, int as_new) { }
+
+    /*
+     * Not supported in 1.2 because these will have to be exported as
+     * JVM functions, and we are not sure we want do that. Leaving
+     * here so it can be easily resurrected -- just remove the //
+     * comments.
+     */
+
+    /**
+     * Resume Java profiling.  All profiling data is added to any
+     * earlier profiling, unless <code>resetJavaProfiler</code> is
+     * called in between.  If profiling was not started from the
+     * command line, <code>resumeJavaProfiler</code> will start it.
+     * <p>
+     *
+     * NOTE: Profiling must be enabled from the command line for a
+     * java.prof report to be automatically generated on exit; if not,
+     * writeJavaProfilerReport must be invoked to write a report.
+     *
+     * @@see     resetJavaProfiler
+     * @@see     writeJavaProfilerReport
+     */
+
+    // public native static void resumeJavaProfiler();
+
+    /**
+     * Suspend Java profiling.
+     */
+    // public native static void suspendJavaProfiler();
+
+    /**
+     * Initialize Java profiling.  Any accumulated profiling
+     * information is discarded.
+     */
+    // public native static void resetJavaProfiler();
+
+    /**
+     * Write the current profiling contents to the file "java.prof".
+     * If the file already exists, it will be overwritten.
+     */
+    // public native static void writeJavaProfilerReport();
+
+
+    private static volatile boolean booted = false;
+    private static final Object lock = new Object();
+
+    static {
+        // [IKVM] force System properties initialization ("booting")
+        System.lineSeparator();
+    }
+
+    // Invoked by by System.initializeSystemClass just before returning.
+    // Subsystems that are invoked during initialization can check this
+    // property in order to avoid doing things that should wait until the
+    // application class loader has been set up.
+    //
+    // [IKVM] The above isn't applicable. We only use the booted flag
+    // for the system properties (this is required because the system properties
+    // use java.util.Hashtable (via java.util.Properties) and it relies on
+    // the booted flag to determine whether it is safe to query the system
+    // properties).
+    public static void booted() {
+        synchronized (lock) {
+            booted = true;
+            lock.notifyAll();
+        }
+    }
+
+    public static boolean isBooted() {
+        return booted;
+    }
+
+    // Waits until VM completes initialization
+    //
+    // This method is invoked by the Finalizer thread
+    public static void awaitBooted() throws InterruptedException {
+        synchronized (lock) {
+            while (!booted) {
+                lock.wait();
+            }
+        }
+    }
+
+    // Returns the maximum amount of allocatable direct buffer memory.
+    // The directMemory variable is initialized during system initialization
+    // in the saveAndRemoveProperties method.
+    //
+    public static long maxDirectMemory() {
+        // we don't support -XX:MaxDirectMemorySize
+        return Long.MAX_VALUE;
+    }
+
+    // User-controllable flag that determines if direct buffers should be page
+    // aligned. The "-XX:+PageAlignDirectMemory" option can be used to force
+    // buffers, allocated by ByteBuffer.allocateDirect, to be page aligned.
+    private static boolean pageAlignDirectMemory;
+
+    // Returns {@@code true} if the direct buffers should be page aligned. This
+    // variable is initialized by saveAndRemoveProperties.
+    public static boolean isDirectMemoryPageAligned() {
+        return pageAlignDirectMemory;
+    }
+
+    // A user-settable boolean to determine whether ClassLoader.loadClass should
+    // accept array syntax.  This value may be changed during VM initialization
+    // via the system property "sun.lang.ClassLoader.allowArraySyntax".
+    //
+    // The default for 1.5 is "true", array syntax is allowed.  In 1.6, the
+    // default will be "false".  The presence of this system property to
+    // control array syntax allows applications the ability to preview this new
+    // behaviour.
+    //
+    private static boolean defaultAllowArraySyntax = false;
+    private static boolean allowArraySyntax = defaultAllowArraySyntax;
+
+    // The allowArraySyntax boolean is initialized during system initialization
+    // in the saveAndRemoveProperties method.
+    //
+    // It is initialized based on the value of the system property
+    // "sun.lang.ClassLoader.allowArraySyntax".  If the system property is not
+    // provided, the default for 1.5 is "true".  In 1.6, the default will be
+    // "false".  If the system property is provided, then the value of
+    // allowArraySyntax will be equal to "true" if Boolean.parseBoolean()
+    // returns "true".   Otherwise, the field will be set to "false".
+    //
+    public static boolean allowArraySyntax() {
+        return allowArraySyntax;
+    }
+
+    /**
+     * Returns true if the given class loader is in the system domain
+     * in which all permissions are granted.
+     */
+    public static boolean isSystemDomainLoader(ClassLoader loader) {
+        return loader == null;
+    }
+
+    /**
+     * Returns the system property of the specified key saved at
+     * system initialization time.  This method should only be used
+     * for the system properties that are not changed during runtime.
+     * It accesses a private copy of the system properties so
+     * that user's locking of the system properties object will not
+     * cause the library to deadlock.
+     *
+     * Note that the saved system properties do not include
+     * the ones set by sun.misc.Version.init().
+     *
+     */
+    public static String getSavedProperty(String key) {
+        if (Lazy.savedProps.isEmpty())
+            throw new IllegalStateException("Should be non-empty if initialized");
+
+        return Lazy.savedProps.getProperty(key);
+    }
+
+    // TODO: the Property Management needs to be refactored and
+    // the appropriate prop keys need to be accessible to the
+    // calling classes to avoid duplication of keys.
+    static final class Lazy {
+        static final Properties savedProps = new Properties();
+    }
+
+    // Save a private copy of the system properties and remove
+    // the system properties that are not intended for public access.
+    //
+    // This method can only be invoked during system initialization.
+    public static void saveAndRemoveProperties(Properties props) {
+        if (booted)
+            throw new IllegalStateException("System initialization has completed");
+
+        Lazy.savedProps.putAll(props);
+
+        // Set the maximum amount of direct memory.  This value is controlled
+        // by the vm option -XX:MaxDirectMemorySize=<size>.
+        // The maximum amount of allocatable direct buffer memory (in bytes)
+        // from the system property sun.nio.MaxDirectMemorySize set by the VM.
+        // The system property will be removed.
+        String s = (String)props.remove("sun.nio.MaxDirectMemorySize");
+        // [IKVM] we don't support the -XX:MaxDirectMemorySize=<size> option.
+
+        // Check if direct buffers should be page aligned
+        s = (String)props.remove("sun.nio.PageAlignDirectMemory");
+        if ("true".equals(s))
+            pageAlignDirectMemory = true;
+
+        // Set a boolean to determine whether ClassLoader.loadClass accepts
+        // array syntax.  This value is controlled by the system property
+        // "sun.lang.ClassLoader.allowArraySyntax".
+        s = props.getProperty("sun.lang.ClassLoader.allowArraySyntax");
+        allowArraySyntax = (s == null
+                               ? defaultAllowArraySyntax
+                               : Boolean.parseBoolean(s));
+
+        // Remove other private system properties
+        // used by java.lang.Integer.IntegerCache
+        props.remove("java.lang.Integer.IntegerCache.high");
+
+        // used by java.util.zip.ZipFile
+        props.remove("sun.zip.disableMemoryMapping");
+
+        // used by sun.launcher.LauncherHelper
+        props.remove("sun.java.launcher.diag");
+
+        // used by sun.misc.URLClassPath
+        props.remove("sun.cds.enableSharedLookupCache");
+    }
+
+    // Initialize any miscellenous operating system settings that need to be
+    // set for the class libraries.
+    //
+    public static void initializeOSEnvironment() {
+    }
+
+    /* Current count of objects pending for finalization */
+    private static volatile int finalRefCount = 0;
+
+    /* Peak count of objects pending for finalization */
+    private static volatile int peakFinalRefCount = 0;
+
+    /*
+     * Gets the number of objects pending for finalization.
+     *
+     * @@return the number of objects pending for finalization.
+     */
+    public static int getFinalRefCount() {
+        return finalRefCount;
+    }
+
+    /*
+     * Gets the peak number of objects pending for finalization.
+     *
+     * @@return the peak number of objects pending for finalization.
+     */
+    public static int getPeakFinalRefCount() {
+        return peakFinalRefCount;
+    }
+
+    /*
+     * Add <tt>n</tt> to the objects pending for finalization count.
+     *
+     * @@param n an integer value to be added to the objects pending
+     * for finalization count
+     */
+    public static void addFinalRefCount(int n) {
+        // The caller must hold lock to synchronize the update.
+
+        finalRefCount += n;
+        if (finalRefCount > peakFinalRefCount) {
+            peakFinalRefCount = finalRefCount;
+        }
+    }
+
+    /**
+     * Returns Thread.State for the given threadStatus
+     */
+    public static Thread.State toThreadState(int threadStatus) {
+        if ((threadStatus & JVMTI_THREAD_STATE_RUNNABLE) != 0) {
+            return RUNNABLE;
+        } else if ((threadStatus & JVMTI_THREAD_STATE_BLOCKED_ON_MONITOR_ENTER) != 0) {
+            return BLOCKED;
+        } else if ((threadStatus & JVMTI_THREAD_STATE_WAITING_INDEFINITELY) != 0) {
+            return WAITING;
+        } else if ((threadStatus & JVMTI_THREAD_STATE_WAITING_WITH_TIMEOUT) != 0) {
+            return TIMED_WAITING;
+        } else if ((threadStatus & JVMTI_THREAD_STATE_TERMINATED) != 0) {
+            return TERMINATED;
+        } else if ((threadStatus & JVMTI_THREAD_STATE_ALIVE) == 0) {
+            return NEW;
+        } else {
+            return RUNNABLE;
+        }
+    }
+
+    /* The threadStatus field is set by the VM at state transition
+     * in the hotspot implementation. Its value is set according to
+     * the JVM TI specification GetThreadState function.
+     */
+    private final static int JVMTI_THREAD_STATE_ALIVE = 0x0001;
+    private final static int JVMTI_THREAD_STATE_TERMINATED = 0x0002;
+    private final static int JVMTI_THREAD_STATE_RUNNABLE = 0x0004;
+    private final static int JVMTI_THREAD_STATE_BLOCKED_ON_MONITOR_ENTER = 0x0400;
+    private final static int JVMTI_THREAD_STATE_WAITING_INDEFINITELY = 0x0010;
+    private final static int JVMTI_THREAD_STATE_WAITING_WITH_TIMEOUT = 0x0020;
+
+    /*
+     * Returns the first non-null class loader up the execution stack,
+     * or null if only code from the null class loader is on the stack.
+     */
+    public static native ClassLoader latestUserDefinedLoader();
+
+    static {
+        initialize();
+    }
+    private native static void initialize();
+}
+@
+
+
+1.9
+log
+@First part of OpenJDK 8 integration.
+@
+text
+@d2 1
+a2 1
+ * Copyright (c) 1996, 2013, Oracle and/or its affiliates. All rights reserved.
+d310 3
+@
+
+
+1.8
+log
+@Merged OpenJDK 7u40 b34, except for java.lang.invoke and sun.invoke packages.
+@
+text
+@d2 1
+a2 1
+ * Copyright (c) 1996, 2011, Oracle and/or its affiliates. All rights reserved.
+d51 1
+d151 1
+d169 4
+a172 1
+        booted = true;
+d179 11
+d236 6
+a241 9
+    private static boolean allowGetCallerClass = true;
+
+    // Reflection.getCallerClass(int) is enabled by default.
+    // It can be disabled by setting the system property
+    // "jdk.reflect.allowGetCallerClass" to "false". It cannot be
+    // disabled if the logging stack walk (to find resource bundles)
+    // is enabled.
+    public static boolean allowGetCallerClass() {
+        return allowGetCallerClass;
+a300 9
+        // Reflection.getCallerClass(int) is enabled by default.
+        // It can be disabled by setting a system property (but only if
+        // the logging stack walk is not enabled)
+        s = props.getProperty("jdk.reflect.allowGetCallerClass");
+        allowGetCallerClass = (s != null
+                                   ? (s.isEmpty() || Boolean.parseBoolean(s))
+                                   : true) ||
+             Boolean.valueOf(props.getProperty("jdk.logging.allowStackWalkSearch"));
+
+@
+
+
+1.7
+log
+@Implemented VM.isBooted() with respect to system property initialization to support 7u6 which depends on VM.isBooted() to figure out whether it is safe to query a system property in Hashtable (which is itself used during system property initialization, because java.util.Properties is a Hashtable subclass).
+@
+text
+@d148 1
+d220 11
+d288 9
+d385 6
+@
+
+
+1.6
+log
+@Fixed initialization order regression.
+@
+text
+@d148 21
+d170 1
+a170 3
+        // [IKVM] we support arbitrary order class initialization,
+        //  so we don't distinguish between booted and not booted states
+        return true;
+d232 1
+a232 4
+        // [IKVM] force System properties initialization
+        System.lineSeparator();
+
+        if (savedProps.isEmpty())
+d235 1
+a235 1
+        return savedProps.getProperty(key);
+d241 3
+a243 1
+    private static final Properties savedProps = new Properties();
+d250 2
+d253 1
+a253 1
+        savedProps.putAll(props);
+@
+
+
+1.5
+log
+@Updated sun.misc.VM to OpenJDK 7.
+@
+text
+@d213 3
+@
+
+
+1.4
+log
+@Integrated OpenJDK 6 b21.
+@
+text
+@d2 1
+a2 1
+ * Copyright (c) 1996, 2005, Oracle and/or its affiliates. All rights reserved.
+d28 1
+d154 4
+d163 11
+d175 2
+a176 2
+    // accept array syntax.  This value may be changed during VM initialization 
+    // via the system property "sun.lang.ClassLoader.allowArraySyntax". 
+d182 1
+a182 1
+    // 
+d186 4
+a189 2
+    // If this method is invoked during VM initialization, it initializes the
+    // allowArraySyntax boolean based on the value of the system property
+d193 1
+a193 1
+    // allowArraySyntax will be equal to "true" if Boolean.parseBoolean() 
+a195 3
+    // If this method is invoked after the VM is booted, it returns the
+    // allowArraySyntax boolean set during initialization.
+    //    
+d200 62
+a261 8
+    @@ikvm.lang.Internal    
+    public static void initializeAllowArraySyntax()
+    {
+        String s
+            = (String) System.getProperty("sun.lang.ClassLoader.allowArraySyntax");
+        allowArraySyntax = (s == null 
+                            ? defaultAllowArraySyntax
+                            : Boolean.parseBoolean(s));
+d263 1
+a263 1
+    
+d265 1
+a265 1
+    // set for the class libraries. 
+d296 1
+a296 1
+     * 
+d301 1
+a301 1
+        // The caller must hold lock to synchronize the update. 
+d309 3
+a311 1
+
+d313 14
+a326 7
+        // Initialize the threadStateMap
+        initThreadStateMap();
+
+        Thread.State s = threadStateMap.get(threadStatus);
+        if (s == null) {
+            // default to RUNNABLE if the threadStatus value is unknown
+            s = Thread.State.RUNNABLE;
+a327 1
+        return s;
+d330 10
+a339 50
+    // a map of threadStatus values to the corresponding Thread.State
+    private static Map<Integer, Thread.State> threadStateMap = null;
+    private static Map<Integer, String> threadStateNames = null;
+
+    private synchronized static void initThreadStateMap() {
+        if (threadStateMap != null) {
+            return;
+        }
+
+        final Thread.State[] ts = Thread.State.values();
+
+        final int[][] vmThreadStateValues = new int[ts.length][];
+        final String[][] vmThreadStateNames = new String[ts.length][];
+        getThreadStateValues(vmThreadStateValues, vmThreadStateNames);
+
+        threadStateMap = new HashMap<Integer, Thread.State>();
+        threadStateNames = new HashMap<Integer, String>();
+        for (int i = 0; i < ts.length; i++) {
+            String state = ts[i].name();
+            int[] values = null;
+            String[] names = null;
+            for (int j = 0; j < ts.length; j++) {
+                if (vmThreadStateNames[j][0].startsWith(state)) {
+                    values = vmThreadStateValues[j];
+                    names = vmThreadStateNames[j];
+                }
+            }
+            if (values == null) {
+                throw new InternalError("No VM thread state mapped to " +
+                    state);
+            }
+            if (values.length != names.length) {
+                throw new InternalError("VM thread state values and names " +
+                    " mapped to " + state + ": length not matched" );
+            }
+            for (int k = 0; k < values.length; k++) {
+                threadStateMap.put(values[k], ts[i]);
+                threadStateNames.put(values[k], names[k]);
+            }
+        }
+    }
+    // Fill in vmThreadStateValues with int arrays, each of which contains
+    // the threadStatus values mapping to the Thread.State enum constant.
+    // Fill in vmThreadStateNames with String arrays, each of which contains
+    // the name of each threadStatus value of the format:
+    //    <Thread.State.name()>[.<Substate name>]
+    // e.g. WAITING.OBJECT_WAIT
+    //
+    private native static void getThreadStateValues(int[][] vmThreadStateValues,
+                                                    String[][] vmThreadStateNames);
+@
+
+
+1.3
+log
+@Converted tabs to spaces.
+@
+text
+@d2 1
+a2 1
+ * Copyright 1996-2005 Sun Microsystems, Inc.  All Rights Reserved.
+d7 1
+a7 1
+ * published by the Free Software Foundation.  Sun designates this
+d9 1
+a9 1
+ * by Sun in the LICENSE file that accompanied this code.
+d21 3
+a23 3
+ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
+ * CA 95054 USA or visit www.sun.com if you need additional information or
+ * have any questions.
+@
+
+
+1.2
+log
+@Refactored class library initialization.
+@
+text
+@d51 1
+a51 1
+	return g.allowThreadSuspension(b);
+d58 1
+a58 1
+	return true;
+d91 1
+a91 1
+	return STATE_GREEN;
+d124 2
+a125 2
+     * @@see 	resetJavaProfiler
+     * @@see 	writeJavaProfilerReport
+d148 3
+a150 3
+	// [IKVM] we support arbitrary order class initialization,
+	//  so we don't distinguish between booted and not booted states
+	return true;
+d154 2
+a155 2
+	// we don't support -XX:MaxDirectMemorySize
+	return Long.MAX_VALUE;
+d182 1
+a182 1
+	return allowArraySyntax;
+d188 5
+a192 5
+	String s
+	    = (String) System.getProperty("sun.lang.ClassLoader.allowArraySyntax");
+	allowArraySyntax = (s == null 
+			    ? defaultAllowArraySyntax
+			    : Boolean.parseBoolean(s));
+@
+
+
+1.1
+log
+@Forked OpenJDK sources that are going to be modified to refactor the library initialization.
+@
+text
+@a146 12
+
+    private static volatile boolean booted = false;
+
+    // Invoked by by System.initializeSystemClass just before returning.
+    // Subsystems that are invoked during initialization can check this
+    // property in order to avoid doing things that should wait until the
+    // application class loader has been set up.
+    //
+    public static void booted() {
+	booted = true;
+    }
+
+d148 3
+a150 1
+	return booted;
+a152 18
+    // A user-settable upper limit on the maximum amount of allocatable direct
+    // buffer memory.  This value may be changed during VM initialization if
+    // "java" is launched with "-XX:MaxDirectMemorySize=<size>".
+    //
+    // The initial value of this field is arbitrary; during JRE initialization
+    // it will be reset to the value specified on the command line, if any,
+    // otherwise to Runtime.getRuntime.maxDirectMemory().
+    //
+    private static long directMemory = 64 * 1024 * 1024;
+
+    // If this method is invoked during VM initialization, it initializes the
+    // maximum amount of allocatable direct buffer memory (in bytes) from the
+    // system property sun.nio.MaxDirectMemorySize.  The system property will
+    // be removed when it is accessed.
+    //
+    // If this method is invoked after the VM is booted, it returns the
+    // maximum amount of allocatable direct buffer memory.
+    //
+d154 2
+a155 19
+	if (booted)
+	    return directMemory;
+
+	Properties p = System.getProperties();
+	String s = (String)p.remove("sun.nio.MaxDirectMemorySize");
+	System.setProperties(p);
+
+	if (s != null) {
+	    if (s.equals("-1")) {
+		// -XX:MaxDirectMemorySize not given, take default
+		directMemory = Runtime.getRuntime().maxMemory();
+	    } else {
+		long l = Long.parseLong(s);
+		if (l > -1)
+		    directMemory = l;
+	    }
+	}
+
+	return directMemory;
+a181 7
+	if (!booted) {
+	    String s
+		= (String) System.getProperty("sun.lang.ClassLoader.allowArraySyntax");
+	    allowArraySyntax = (s == null 
+				? defaultAllowArraySyntax
+				: Boolean.parseBoolean(s));
+	}
+d184 10
+a198 3
+        if (!booted) {
+            OSEnvironment.initialize();
+        }
+@
+

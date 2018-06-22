@@ -1,0 +1,762 @@
+head	1.30;
+access;
+symbols
+	v0_36_0_14:1.29
+	v0_36_0_13:1.29
+	v0_36_0_9:1.29
+	v0_36_0_7:1.29
+	v0_36_0_5:1.29
+	v0_36_0_4:1.29
+	v0_36_0_3:1.29
+	v0_36_0_2:1.29
+	v0_36_0_1:1.29
+	v0_36_0_0:1.29
+	v0_36:1.29.0.2
+	v0_34_0_3:1.28.2.4
+	v0_34_0_2:1.28.2.3
+	v0_34_0_1:1.28.2.2
+	v0_34_0_0:1.28.2.1
+	v0_34:1.28.0.2
+	v0_32:1.27.0.2
+	v0_32_0_0:1.27
+	v0_30:1.24.0.2
+	v0_28_0_0:1.23
+	v0_26_0_1:1.21
+	v0_26_0_0:1.20
+	v0_24_0_1:1.18
+	v0_24_0_0:1.17
+	v0_22_0_0:1.16
+	v0_20_0_0:1.14
+	v0_18_0_0:1.13
+	v0_16_0_0:1.11
+	v0_14_0_1:1.9
+	v0_14_0_0:1.9
+	v0_12_0_0:1.7
+	v0_10_0_1:1.5
+	v0_10_0_0:1.5
+	v0_8_0_0:1.2
+	initial:1.1.1.1
+	ikvm:1.1.1;
+locks; strict;
+comment	@# @;
+
+
+1.30
+date	2008.08.06.12.51.13;	author jfrijters;	state dead;
+branches;
+next	1.29;
+
+1.29
+date	2007.04.09.08.32.48;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2006.12.11.13.13.27;	author jfrijters;	state Exp;
+branches
+	1.28.2.1;
+next	1.27;
+
+1.27
+date	2006.12.11.07.07.13;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2006.10.19.06.12.48;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2006.08.04.12.06.41;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2006.05.23.12.49.17;	author jfrijters;	state Exp;
+branches
+	1.24.2.1;
+next	1.23;
+
+1.23
+date	2006.05.16.08.34.56;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2006.03.23.11.57.44;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2006.03.11.18.35.30;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2006.03.07.09.34.32;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2006.01.31.10.13.32;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2006.01.23.10.18.44;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2006.01.16.14.18.45;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2005.11.14.10.16.51;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2005.09.21.14.26.38;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2005.09.07.07.02.48;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2005.07.18.07.27.43;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2005.07.14.08.38.54;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2005.07.01.09.25.35;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2005.05.13.11.41.33;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2005.05.02.11.11.53;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2005.03.03.08.20.13;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2005.03.01.08.24.54;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2005.02.02.15.12.00;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2005.01.07.09.34.20;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2004.12.07.09.53.42;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2004.11.16.11.11.54;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2003.10.17.08.08.31;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2002.12.18.16.00.58;	author jfrijters;	state Exp;
+branches
+	1.1.1.1;
+next	;
+
+1.1.1.1
+date	2002.12.18.16.00.58;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.24.2.1
+date	2006.08.09.11.49.09;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.28.2.1
+date	2007.04.13.06.46.39;	author jfrijters;	state Exp;
+branches;
+next	1.28.2.2;
+
+1.28.2.2
+date	2007.04.24.08.27.34;	author jfrijters;	state Exp;
+branches;
+next	1.28.2.3;
+
+1.28.2.3
+date	2007.04.29.08.49.17;	author jfrijters;	state Exp;
+branches;
+next	1.28.2.4;
+
+1.28.2.4
+date	2007.05.30.09.46.48;	author jfrijters;	state Exp;
+branches;
+next	1.28.2.5;
+
+1.28.2.5
+date	2007.08.07.06.34.40;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.30
+log
+@Removed files that are no longer needed no that GNU Classpath support has been dropped.
+@
+text
+@/* gnu.classpath.Configuration
+   Copyright (C) 1998, 2001 Free Software Foundation, Inc.
+
+This file is part of GNU Classpath.
+
+GNU Classpath is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2, or (at your option)
+any later version.
+ 
+GNU Classpath is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with GNU Classpath; see the file COPYING.  If not, write to the
+Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+02111-1307 USA.
+
+Linking this library statically or dynamically with other modules is
+making a combined work based on this library.  Thus, the terms and
+conditions of the GNU General Public License cover the whole
+combination.
+
+As a special exception, the copyright holders of this library give you
+permission to link this library with independent modules to produce an
+executable, regardless of the license terms of these independent
+modules, and to copy and distribute the resulting executable under
+terms of your choice, provided that you also meet, for each linked
+independent module, the terms and conditions of the license of that
+module.  An independent module is a module which is not derived from
+or based on this library.  If you modify this library, you may extend
+this exception to your version of the library, but you are not
+obligated to do so.  If you do not wish to do so, delete this
+exception statement from your version. */
+
+package gnu.classpath;
+
+/**
+ * This file defines compile-time constants that can be accessed by
+ * java code. It is pre-processed by configure.  
+ */
+public interface Configuration
+{
+  // TODO
+  String CLASSPATH_HOME = "";
+  String CLASSPATH_VERSION = "0.96-pre";
+
+
+  /**
+   * The value of DEBUG is substituted according to whether the
+   * "--enable-debug" argument was passed to configure. Code
+   * which is made conditional based on the value of this flag - typically 
+   * code that generates debugging output - will be removed by the optimizer 
+   * in a non-debug build.
+   */
+  boolean DEBUG = false;
+
+  /**
+   * The value of LOAD_LIBRARY is substituted according to whether the
+   * "--enable-load-library" or "--disable-load-library" argument was passed 
+   * to configure.  By default, configure should define this is as true.
+   * If set to false, loadLibrary() calls to load native function
+   * implementations, typically found in static initializers of classes
+   * which contain native functions, will be omitted.  This is useful for
+   * runtimes which pre-link their native function implementations and do
+   * not require additional shared libraries to be loaded.
+   */
+  boolean INIT_LOAD_LIBRARY = false;
+
+  /**
+   * Name of default AWT peer library.
+   */
+  String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms";
+
+  boolean WANT_NATIVE_BIG_INTEGER = false;
+}
+@
+
+
+1.29
+log
+@Updated version numbers.
+@
+text
+@@
+
+
+1.28
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.94-pre";
+@
+
+
+1.28.2.1
+log
+@Preparing for release.
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.95";
+d75 3
+a77 1
+  String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.34.0.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.28.2.2
+log
+@Updated version numbers to 0.34.0.1
+@
+text
+@d75 1
+a75 1
+  String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.34.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.28.2.3
+log
+@Update version to 0.34.0.2
+@
+text
+@d75 1
+a75 1
+  String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.34.0.2, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.28.2.4
+log
+@Updated version numbers to 0.34.0.3
+@
+text
+@d75 1
+a75 1
+  String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.34.0.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.28.2.5
+log
+@Forgot to update the WinForms AWT assembly version.
+@
+text
+@d75 1
+a75 1
+  String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.34.0.4, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.27
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.93";
+d75 1
+a75 1
+  String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.32.0.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.26
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.93-pre";
+d75 1
+a75 1
+  String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms";
+@
+
+
+1.25
+log
+@*** empty log message ***
+@
+text
+@d76 2
+@
+
+
+1.24
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.92-pre";
+@
+
+
+1.24.2.1
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.92";
+d75 1
+a75 1
+  String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.30.0.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.23
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.91";
+d75 1
+a75 1
+  String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.28.0.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.22
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.91-pre";
+d75 1
+a75 1
+  String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms";
+@
+
+
+1.21
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.90";
+d75 1
+a75 1
+  String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.26.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.20
+log
+@*** empty log message ***
+@
+text
+@d75 1
+a75 1
+  String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.26.0.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.19
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.21-pre";
+d75 1
+a75 1
+  String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms";
+@
+
+
+1.18
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.20";
+d75 1
+a75 1
+  String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.24.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.17
+log
+@*** empty log message ***
+@
+text
+@d75 1
+a75 1
+  String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.24.0.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.16
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.19";
+d75 1
+a75 1
+  String default_awt_peer_toolkit = "gnu.java.awt.peer.gtk.GTKToolkit";
+@
+
+
+1.15
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.18+cvs";
+@
+
+
+1.14
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.18";
+a72 27
+   * Set to true if the VM provides a native method to implement
+   * Proxy.getProxyClass completely, including argument verification.
+   * If this is true, HAVE_NATIVE_GET_PROXY_DATA and
+   * HAVE_NATIVE_GENERATE_PROXY_CLASS should be false.
+   * @@see java.lang.reflect.Proxy
+   */
+  boolean HAVE_NATIVE_GET_PROXY_CLASS = false;
+
+  /**
+   * Set to true if the VM provides a native method to implement
+   * the first part of Proxy.getProxyClass: generation of the array
+   * of methods to convert, and verification of the arguments.
+   * If this is true, HAVE_NATIVE_GET_PROXY_CLASS should be false.
+   * @@see java.lang.reflect.Proxy
+   */
+  boolean HAVE_NATIVE_GET_PROXY_DATA = false;
+
+  /**
+   * Set to true if the VM provides a native method to implement
+   * the second part of Proxy.getProxyClass: conversion of an array of
+   * methods into an actual proxy class.
+   * If this is true, HAVE_NATIVE_GET_PROXY_CLASS should be false.
+   * @@see java.lang.reflect.Proxy
+   */
+  boolean HAVE_NATIVE_GENERATE_PROXY_CLASS = false;
+
+  /**
+@
+
+
+1.13
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.17";
+@
+
+
+1.12
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.16+cvs";
+@
+
+
+1.11
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.16";
+@
+
+
+1.10
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.15+cvs";
+@
+
+
+1.9
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.15";
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.14+cvs";
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.14";
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.13+cvs";
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.13";
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "";
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@a102 2
+
+  boolean JAVA_LANG_SYSTEM_EXPLICIT_INITIALIZATION = false;
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d103 2
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d98 5
+@
+
+
+1.1.1.1
+log
+@no message
+@
+text
+@@

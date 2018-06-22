@@ -1,0 +1,2918 @@
+head	1.70;
+access;
+symbols
+	v8_1_5717_0:1.70
+	v8_1:1.70.0.4
+	v8_0_5449_1:1.70
+	v8_0_5449_0:1.70
+	v8_0:1.70.0.2
+	v7_4_5196_0:1.67
+	v7_4:1.67.0.2
+	v7_3:1.62.0.2
+	v7_2_4630_6:1.61
+	v7_2_4630_5:1.61
+	v7_2_4630_4:1.61
+	v7_2_4630_3:1.61
+	v7_2_4630_2:1.61
+	v0_46_0_4:1.55
+	v7_2_4630_1:1.61
+	v7_2:1.61.0.2
+	v7_1_4532_2:1.60
+	v7_1_4532_1:1.60
+	v7_1_4532_0:1.60
+	v7_1:1.60.0.2
+	v7_0_4335_3:1.58
+	v7_0_4335_2:1.58
+	v7_0_4335_1:1.58
+	v0_46_0_2:1.55
+	v7_0_4335_0:1.58
+	v7_0:1.58.0.2
+	v0_40_0_6:1.30
+	v0_40_0_5:1.30
+	v0_46_0_1:1.55
+	v0_46_0_0:1.55
+	v0_46:1.55.0.2
+	v0_36_0_14:1.22.2.1
+	v0_44_0_6:1.52.2.1
+	v0_44_0_5:1.52
+	v0_44_0_4:1.52
+	v0_44_0_3:1.52
+	v0_44_0_2:1.52
+	v0_42_0_7:1.31
+	v0_44_0_1:1.52
+	v0_44_0_0:1.52
+	v0_44:1.52.0.2
+	v0_42_0_6:1.31
+	v0_42_0_5:1.31
+	v0_42_0_4:1.31
+	v0_42_0_3:1.31
+	v0_42_0_2:1.31
+	v0_42_0_1:1.31
+	v0_42_0_0:1.31
+	v0_42:1.31.0.2
+	v0_40_0_3:1.30
+	v0_40_0_2:1.30
+	v0_40_0_1:1.30
+	v0_40_0_0:1.30
+	v0_40:1.30.0.2
+	v0_36_0_13:1.22.2.1
+	v0_38_0_1:1.29
+	v0_38_0_0:1.29
+	v0_38:1.29.0.2
+	v0_36_0_9:1.22
+	v0_36_0_7:1.22
+	v0_36_0_5:1.22
+	v0_36_0_4:1.22
+	v0_36_0_3:1.22
+	v0_36_0_2:1.22
+	v0_36_0_1:1.22
+	v0_36_0_0:1.22
+	v0_36:1.22.0.2
+	v0_34_0_3:1.21
+	v0_34_0_2:1.21
+	v0_34_0_1:1.21
+	v0_34_0_0:1.21
+	v0_34:1.21.0.2
+	v0_32:1.20.0.2
+	v0_32_0_0:1.20
+	v0_30:1.19.0.2
+	v0_28_0_0:1.17
+	v0_26_0_1:1.14
+	v0_26_0_0:1.14
+	v0_24_0_1:1.14
+	v0_24_0_0:1.14
+	v0_22_0_0:1.13
+	v0_20_0_0:1.13
+	v0_18_0_0:1.11
+	v0_16_0_0:1.10
+	v0_14_0_1:1.8
+	v0_14_0_0:1.8
+	v0_12_0_0:1.8
+	v0_10_0_1:1.8
+	v0_10_0_0:1.8
+	v0_8_0_0:1.2;
+locks; strict;
+comment	@ * @;
+
+
+1.70
+date	2014.07.04.11.06.06;	author jfrijters;	state Exp;
+branches;
+next	1.69;
+
+1.69
+date	2014.06.13.06.54.06;	author jfrijters;	state Exp;
+branches;
+next	1.68;
+
+1.68
+date	2014.04.18.07.47.14;	author jfrijters;	state Exp;
+branches;
+next	1.67;
+
+1.67
+date	2014.02.24.17.00.24;	author jfrijters;	state Exp;
+branches;
+next	1.66;
+
+1.66
+date	2014.02.21.14.16.18;	author jfrijters;	state Exp;
+branches;
+next	1.65;
+
+1.65
+date	2014.02.21.07.46.52;	author jfrijters;	state Exp;
+branches;
+next	1.64;
+
+1.64
+date	2013.08.13.14.24.15;	author jfrijters;	state Exp;
+branches;
+next	1.63;
+
+1.63
+date	2013.03.20.14.03.28;	author jfrijters;	state Exp;
+branches;
+next	1.62;
+
+1.62
+date	2013.03.06.15.26.04;	author jfrijters;	state Exp;
+branches;
+next	1.61;
+
+1.61
+date	2012.06.29.12.03.47;	author jfrijters;	state Exp;
+branches;
+next	1.60;
+
+1.60
+date	2012.01.20.16.13.55;	author jfrijters;	state Exp;
+branches;
+next	1.59;
+
+1.59
+date	2011.11.29.09.07.57;	author jfrijters;	state Exp;
+branches;
+next	1.58;
+
+1.58
+date	2011.10.17.07.14.29;	author jfrijters;	state Exp;
+branches;
+next	1.57;
+
+1.57
+date	2011.06.26.11.26.13;	author jfrijters;	state Exp;
+branches;
+next	1.56;
+
+1.56
+date	2011.06.26.06.32.47;	author jfrijters;	state Exp;
+branches;
+next	1.55;
+
+1.55
+date	2010.11.24.06.38.14;	author jfrijters;	state Exp;
+branches;
+next	1.54;
+
+1.54
+date	2010.11.17.13.08.21;	author jfrijters;	state Exp;
+branches;
+next	1.53;
+
+1.53
+date	2010.10.11.10.02.48;	author jfrijters;	state Exp;
+branches;
+next	1.52;
+
+1.52
+date	2010.06.02.10.15.53;	author jfrijters;	state Exp;
+branches
+	1.52.2.1;
+next	1.51;
+
+1.51
+date	2010.05.31.05.58.37;	author jfrijters;	state Exp;
+branches;
+next	1.50;
+
+1.50
+date	2010.05.30.06.53.49;	author jfrijters;	state Exp;
+branches;
+next	1.49;
+
+1.49
+date	2010.05.30.06.20.26;	author jfrijters;	state Exp;
+branches;
+next	1.48;
+
+1.48
+date	2010.05.29.13.53.32;	author jfrijters;	state Exp;
+branches;
+next	1.47;
+
+1.47
+date	2010.05.28.11.06.06;	author jfrijters;	state Exp;
+branches;
+next	1.46;
+
+1.46
+date	2010.05.28.10.22.04;	author jfrijters;	state Exp;
+branches;
+next	1.45;
+
+1.45
+date	2010.05.28.05.48.35;	author jfrijters;	state Exp;
+branches;
+next	1.44;
+
+1.44
+date	2010.05.28.05.36.03;	author jfrijters;	state Exp;
+branches;
+next	1.43;
+
+1.43
+date	2010.05.28.05.18.12;	author jfrijters;	state Exp;
+branches;
+next	1.42;
+
+1.42
+date	2010.05.28.04.23.58;	author jfrijters;	state Exp;
+branches;
+next	1.41;
+
+1.41
+date	2010.05.27.16.07.57;	author jfrijters;	state Exp;
+branches;
+next	1.40;
+
+1.40
+date	2010.05.27.15.24.29;	author jfrijters;	state Exp;
+branches;
+next	1.39;
+
+1.39
+date	2010.05.27.14.54.41;	author jfrijters;	state Exp;
+branches;
+next	1.38;
+
+1.38
+date	2010.05.27.14.08.58;	author jfrijters;	state Exp;
+branches;
+next	1.37;
+
+1.37
+date	2010.05.27.13.23.04;	author jfrijters;	state Exp;
+branches;
+next	1.36;
+
+1.36
+date	2010.05.27.13.03.26;	author jfrijters;	state Exp;
+branches;
+next	1.35;
+
+1.35
+date	2010.05.27.12.36.41;	author jfrijters;	state Exp;
+branches;
+next	1.34;
+
+1.34
+date	2010.05.27.12.08.01;	author jfrijters;	state Exp;
+branches;
+next	1.33;
+
+1.33
+date	2010.05.27.11.21.23;	author jfrijters;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2010.05.27.09.17.56;	author jfrijters;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2009.08.28.06.47.16;	author jfrijters;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2009.03.16.05.50.59;	author jfrijters;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2008.08.21.06.16.40;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2008.08.15.12.01.19;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2008.08.14.06.51.33;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2008.08.06.12.22.07;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2008.05.31.15.20.38;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2008.03.14.09.15.55;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2007.12.18.11.05.30;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2007.08.07.07.42.13;	author jfrijters;	state Exp;
+branches
+	1.22.2.1;
+next	1.21;
+
+1.21
+date	2007.01.16.08.53.15;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2006.08.17.07.33.40;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2006.07.24.15.47.39;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2006.05.23.12.49.18;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2006.05.15.09.08.01;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2006.05.04.08.09.56;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2006.04.10.09.09.10;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2005.12.07.09.06.32;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2005.09.07.07.02.48;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2005.08.14.15.49.50;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2005.07.07.11.24.08;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2005.06.01.09.49.31;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2005.05.23.08.24.08;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2005.01.03.08.26.22;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2004.11.29.13.58.21;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2004.11.29.09.48.05;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2004.10.19.13.43.56;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2004.09.09.11.17.55;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2004.08.17.09.05.25;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2004.06.17.12.01.54;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2004.05.27.07.12.12;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.22.2.1
+date	2008.03.14.06.17.12;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.52.2.1
+date	2010.10.22.07.13.42;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.70
+log
+@Include full class name of anonymous classes in stack trace (i.e. including the "/<identityHashCode>" suffix.)
+@
+text
+@/*
+  Copyright (C) 2002-2014 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Reflection;
+using System.Diagnostics;
+using System.Runtime.Serialization;
+using System.Security;
+using IKVM.Attributes;
+using IKVM.Internal;
+using IDictionary = System.Collections.IDictionary;
+using Interlocked = System.Threading.Interlocked;
+using MethodBase = System.Reflection.MethodBase;
+using ObjectInputStream = java.io.ObjectInputStream;
+using ObjectOutputStream = java.io.ObjectOutputStream;
+using ObjectStreamField = java.io.ObjectStreamField;
+using StackTraceElement = java.lang.StackTraceElement;
+#if !FIRST_PASS
+using Throwable = java.lang.Throwable;
+#endif
+
+namespace IKVM.Internal
+{
+	static class ExceptionHelper
+	{
+		private static readonly Dictionary<string, string> failedTypes = new Dictionary<string, string>();
+		private static readonly Key EXCEPTION_DATA_KEY = new Key();
+		private static readonly Exception NOT_REMAPPED = new Exception();
+		private static readonly Exception[] EMPTY_THROWABLE_ARRAY = new Exception[0];
+		private static readonly bool cleanStackTrace = JVM.SafeGetEnvironmentVariable("IKVM_DISABLE_STACKTRACE_CLEANING") == null;
+#if !FIRST_PASS
+		private static readonly ikvm.@@internal.WeakIdentityMap exceptions = new ikvm.@@internal.WeakIdentityMap();
+
+		static ExceptionHelper()
+		{
+			// make sure the exceptions map continues to work during AppDomain finalization
+			GC.SuppressFinalize(exceptions);
+		}
+
+		[Serializable]
+		internal sealed class ExceptionInfoHelper
+		{
+			[NonSerialized]
+			private StackTrace tracePart1;
+			[NonSerialized]
+			private StackTrace tracePart2;
+			private StackTraceElement[] stackTrace;
+
+			internal ExceptionInfoHelper(StackTraceElement[] stackTrace)
+			{
+				this.stackTrace = stackTrace;
+			}
+
+			internal ExceptionInfoHelper(StackTrace tracePart1, StackTrace tracePart2)
+			{
+				this.tracePart1 = tracePart1;
+				this.tracePart2 = tracePart2;
+			}
+
+			[HideFromJava]
+			internal ExceptionInfoHelper(Exception x, bool captureAdditionalStackTrace)
+			{
+				tracePart1 = new StackTrace(x, true);
+				if (captureAdditionalStackTrace)
+				{
+					tracePart2 = new StackTrace(true);
+				}
+			}
+
+			[OnSerializing]
+			private void OnSerializing(StreamingContext context)
+			{
+				// make sure the stack trace is computed before serializing
+				get_StackTrace(null);
+			}
+
+			private static bool IsPrivateScope(MethodBase mb)
+			{
+				return (mb.Attributes & MethodAttributes.MemberAccessMask) == MethodAttributes.PrivateScope;
+			}
+
+			internal StackTraceElement[] get_StackTrace(Exception t)
+			{
+				lock (this)
+				{
+					if (stackTrace == null)
+					{
+						List<StackTraceElement> list = new List<StackTraceElement>();
+						if (tracePart1 != null)
+						{
+							int skip1 = 0;
+							if (cleanStackTrace && t is java.lang.NullPointerException && tracePart1.FrameCount > 0)
+							{
+								// HACK if a NullPointerException originated inside an instancehelper method,
+								// we assume that the reference the method was called on was really the one that was null,
+								// so we filter it.
+								if (tracePart1.GetFrame(0).GetMethod().Name.StartsWith("instancehelper_") &&
+									!GetMethodName(tracePart1.GetFrame(0).GetMethod()).StartsWith("instancehelper_"))
+								{
+									skip1 = 1;
+								}
+							}
+							Append(list, tracePart1, skip1, false);
+						}
+						if (tracePart2 != null && tracePart2.FrameCount > 0)
+						{
+							int skip = 0;
+							if (cleanStackTrace)
+							{
+								// If fillInStackTrace was called (either directly or from the constructor),
+								// filter out fillInStackTrace and the following constructor frames.
+								if (tracePart1 == null)
+								{
+									MethodBase mb = tracePart2.GetFrame(skip).GetMethod();
+									if (mb.DeclaringType == typeof(Throwable) && mb.Name.EndsWith("fillInStackTrace", StringComparison.Ordinal))
+									{
+										skip++;
+										while (tracePart2.FrameCount > skip)
+										{
+											mb = tracePart2.GetFrame(skip).GetMethod();
+											if (mb.DeclaringType != typeof(Throwable) || !mb.Name.EndsWith("fillInStackTrace", StringComparison.Ordinal))
+											{
+												break;
+											}
+											skip++;
+										}
+										while (tracePart2.FrameCount > skip)
+										{
+											mb = tracePart2.GetFrame(skip).GetMethod();
+											if (mb.Name != ".ctor" || !mb.DeclaringType.IsInstanceOfType(t))
+											{
+												break;
+											}
+											skip++;
+										}
+									}
+								}
+								else
+								{
+									// Skip java.lang.Throwable.__<map> and other mapping methods, because we need to be able to remove the frame
+									// that called map (if it is the same as where the exception was caught).
+									while (tracePart2.FrameCount > skip && IsHideFromJava(tracePart2.GetFrame(skip).GetMethod()))
+									{
+										skip++;
+									}
+									if (tracePart1.FrameCount > 0 &&
+										tracePart2.FrameCount > skip &&
+										tracePart1.GetFrame(tracePart1.FrameCount - 1).GetMethod() == tracePart2.GetFrame(skip).GetMethod())
+									{
+										// skip the caller of the map method
+										skip++;
+									}
+								}
+							}
+							Append(list, tracePart2, skip, true);
+						}
+						if (cleanStackTrace && list.Count > 0)
+						{
+							StackTraceElement elem = list[list.Count - 1];
+							if (elem.getClassName() == "java.lang.reflect.Method")
+							{
+								list.RemoveAt(list.Count - 1);
+							}
+						}
+						tracePart1 = null;
+						tracePart2 = null;
+						this.stackTrace = list.ToArray();
+					}
+				}
+				return (StackTraceElement[])stackTrace.Clone();
+			}
+
+			internal static void Append(List<StackTraceElement> stackTrace, StackTrace st, int skip, bool isLast)
+			{
+				for (int i = skip; i < st.FrameCount; i++)
+				{
+					StackFrame frame = st.GetFrame(i);
+					MethodBase m = frame.GetMethod();
+					if (m == null)
+					{
+						continue;
+					}
+					Type type = m.DeclaringType;
+					if (cleanStackTrace &&
+						(type == null
+						|| typeof(MethodBase).IsAssignableFrom(type)
+						|| type == typeof(RuntimeMethodHandle)
+						|| (type == typeof(Throwable) && m.Name == "instancehelper_fillInStackTrace")
+						|| (m.Name == "ToJava" && typeof(RetargetableJavaException).IsAssignableFrom(type))
+						|| IsHideFromJava(m)
+						|| IsPrivateScope(m))) // NOTE we assume that privatescope methods are always stubs that we should exclude
+					{
+						continue;
+					}
+					int lineNumber = frame.GetFileLineNumber();
+					if (lineNumber == 0)
+					{
+						lineNumber = GetLineNumber(frame);
+					}
+					string fileName = frame.GetFileName();
+					if (fileName != null)
+					{
+						try
+						{
+							fileName = new System.IO.FileInfo(fileName).Name;
+						}
+						catch
+						{
+							// Mono returns "<unknown>" for frame.GetFileName() and the FileInfo constructor
+							// doesn't like that
+							fileName = null;
+						}
+					}
+					if (fileName == null)
+					{
+						fileName = GetFileName(frame);
+					}
+					stackTrace.Add(new StackTraceElement(getClassNameFromType(type), GetMethodName(m), fileName, IsNative(m) ? -2 : lineNumber));
+				}
+				if (cleanStackTrace && isLast)
+				{
+					while (stackTrace.Count > 0 && stackTrace[stackTrace.Count - 1].getClassName().StartsWith("cli.System.Threading.", StringComparison.Ordinal))
+					{
+						stackTrace.RemoveAt(stackTrace.Count - 1);
+					}
+				}
+			}
+		}
+#endif
+
+		[Serializable]
+		private sealed class Key : ISerializable
+		{
+			[Serializable]
+			private sealed class Helper : IObjectReference
+			{
+				[SecurityCritical]
+				public Object GetRealObject(StreamingContext context)
+				{
+					return EXCEPTION_DATA_KEY;
+				}
+			}
+
+			[SecurityCritical]
+			public void GetObjectData(SerializationInfo info, StreamingContext context)
+			{
+				info.SetType(typeof(Helper));
+			}
+		}
+
+		private static bool IsNative(MethodBase m)
+		{
+			object[] methodFlagAttribs = m.GetCustomAttributes(typeof(ModifiersAttribute), false);
+			if(methodFlagAttribs.Length == 1)
+			{
+				ModifiersAttribute modifiersAttrib = (ModifiersAttribute)methodFlagAttribs[0];
+				return (modifiersAttrib.Modifiers & Modifiers.Native) != 0;
+			}
+			return false;
+		}
+
+		private static string GetMethodName(MethodBase mb)
+		{
+			object[] attr = mb.GetCustomAttributes(typeof(NameSigAttribute), false);
+			if(attr.Length == 1)
+			{
+				return ((NameSigAttribute)attr[0]).Name;
+			}
+			else if(mb.Name == ".ctor")
+			{
+				return "<init>";
+			}
+			else if(mb.Name == ".cctor")
+			{
+				return "<clinit>";
+			}
+			else if(mb.Name.StartsWith(NamePrefix.DefaultMethod, StringComparison.Ordinal))
+			{
+				return mb.Name.Substring(NamePrefix.DefaultMethod.Length);
+			}
+			else if(mb.Name.StartsWith(NamePrefix.Bridge, StringComparison.Ordinal))
+			{
+				return mb.Name.Substring(NamePrefix.Bridge.Length);
+			}
+			else if(mb.IsSpecialName)
+			{
+				return UnicodeUtil.UnescapeInvalidSurrogates(mb.Name);
+			}
+			else
+			{
+				return mb.Name;
+			}
+		}
+
+		private static bool IsHideFromJava(MethodBase mb)
+		{
+#if FIRST_PASS
+			return false;
+#else
+			return (Java_sun_reflect_Reflection.GetHideFromJavaFlags(mb) & HideFromJavaFlags.StackTrace) != 0
+				|| (mb.DeclaringType == typeof(ikvm.runtime.Util) && mb.Name == "mapException");
+#endif
+		}
+
+		private static string getClassNameFromType(Type type)
+		{
+			if(type == null)
+			{
+				return "<Module>";
+			}
+			if(ClassLoaderWrapper.IsRemappedType(type))
+			{
+				return DotNetTypeWrapper.GetName(type);
+			}
+			TypeWrapper tw = ClassLoaderWrapper.GetWrapperFromType(type);
+			if(tw != null)
+			{
+				if(tw.IsPrimitive)
+				{
+					return DotNetTypeWrapper.GetName(type);
+				}
+#if !FIRST_PASS
+				if(tw.IsUnsafeAnonymous)
+				{
+					return tw.ClassObject.getName();
+				}
+#endif
+				return tw.Name;
+			}
+			return type.FullName;
+		}
+
+		private static int GetLineNumber(StackFrame frame)
+		{
+			int ilOffset = frame.GetILOffset();
+			if(ilOffset != StackFrame.OFFSET_UNKNOWN)
+			{
+				MethodBase mb = frame.GetMethod();
+				if(mb != null && mb.DeclaringType != null)
+				{
+					if(ClassLoaderWrapper.IsRemappedType(mb.DeclaringType))
+					{
+						return -1;
+					}
+					TypeWrapper tw = ClassLoaderWrapper.GetWrapperFromType(mb.DeclaringType);
+					if(tw != null)
+					{
+						return tw.GetSourceLineNumber(mb, ilOffset);
+					}
+				}
+			}
+			return -1;
+		}
+
+		private static string GetFileName(StackFrame frame)
+		{
+			MethodBase mb = frame.GetMethod();
+			if(mb != null && mb.DeclaringType != null)
+			{
+				if(ClassLoaderWrapper.IsRemappedType(mb.DeclaringType))
+				{
+					return null;
+				}
+				TypeWrapper tw = ClassLoaderWrapper.GetWrapperFromType(mb.DeclaringType);
+				if(tw != null)
+				{
+					return tw.GetSourceFileName();
+				}
+			}
+			return null;
+		}
+
+		// called from map.xml
+		internal static ObjectStreamField[] getPersistentFields()
+		{
+#if FIRST_PASS
+			return null;
+#else
+			return new ObjectStreamField[] {
+				new ObjectStreamField("detailMessage", typeof(global::java.lang.String)),
+				new ObjectStreamField("cause", typeof(global::java.lang.Throwable)),
+				new ObjectStreamField("stackTrace", typeof(global::java.lang.StackTraceElement[])),
+				new ObjectStreamField("suppressedExceptions", typeof(global::java.util.List))
+			};
+#endif
+		}
+
+		internal static void writeObject(Exception x, ObjectOutputStream s)
+		{
+#if !FIRST_PASS
+			lock (x)
+			{
+				ObjectOutputStream.PutField fields = s.putFields();
+				Throwable _thisJava = x as Throwable;
+				if (_thisJava == null)
+				{
+					fields.put("detailMessage", x.Message);
+					fields.put("cause", x.InnerException);
+					// suppressed exceptions are not supported on CLR exceptions
+					fields.put("suppressedExceptions", null);
+					fields.put("stackTrace", getOurStackTrace(x));
+				}
+				else
+				{
+					fields.put("detailMessage", _thisJava.detailMessage);
+					fields.put("cause", _thisJava.cause);
+					fields.put("suppressedExceptions", _thisJava.suppressedExceptions);
+					getOurStackTrace(x);
+					fields.put("stackTrace", _thisJava.stackTrace ?? java.lang.ThrowableHelper.SentinelHolder.STACK_TRACE_SENTINEL);
+				}
+				s.writeFields();
+			}
+#endif
+		}
+
+		internal static void readObject(Exception x, ObjectInputStream s)
+		{
+#if !FIRST_PASS
+			lock (x)
+			{
+				// when you serialize a .NET exception it gets replaced by a com.sun.xml.internal.ws.developer.ServerSideException,
+				// so we know that Exception is always a Throwable
+				Throwable _this = (Throwable)x;
+
+				// this the equivalent of s.defaultReadObject();
+				ObjectInputStream.GetField fields = s.readFields();
+				object detailMessage = fields.get("detailMessage", null);
+				object cause = fields.get("cause", null);
+				ConstructorInfo ctor = typeof(Throwable).GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] { typeof(string), typeof(Exception), typeof(bool), typeof(bool) }, null);
+				if (cause == _this)
+				{
+					ctor.Invoke(_this, new object[] { detailMessage, null, false, false });
+					_this.cause = _this;
+				}
+				else
+				{
+					ctor.Invoke(_this, new object[] { detailMessage, cause, false, false });
+				}
+				_this.stackTrace = (StackTraceElement[])fields.get("stackTrace", null);
+				_this.suppressedExceptions = (java.util.List)fields.get("suppressedExceptions", null);
+
+				// this is where the rest of the Throwable.readObject() code starts
+				if (_this.suppressedExceptions != null)
+				{
+					java.util.List suppressed = null;
+					if (_this.suppressedExceptions.isEmpty())
+					{
+						suppressed = Throwable.SUPPRESSED_SENTINEL;
+					}
+					else
+					{
+						suppressed = new java.util.ArrayList(1);
+						for (int i = 0; i < _this.suppressedExceptions.size(); i++)
+						{
+							Exception entry = (Exception)_this.suppressedExceptions.get(i);
+							if (entry == null)
+							{
+								throw new java.lang.NullPointerException("Cannot suppress a null exception.");
+							}
+							if (entry == _this)
+							{
+								throw new java.lang.IllegalArgumentException("Self-suppression not permitted");
+							}
+							suppressed.add(entry);
+						}
+					}
+					_this.suppressedExceptions = suppressed;
+				}
+
+				if (_this.stackTrace != null)
+				{
+					if (_this.stackTrace.Length == 0)
+					{
+						_this.stackTrace = new StackTraceElement[0];
+					}
+					else if (_this.stackTrace.Length == 1
+						&& java.lang.ThrowableHelper.SentinelHolder.STACK_TRACE_ELEMENT_SENTINEL.equals(_this.stackTrace[0]))
+					{
+						_this.stackTrace = null;
+					}
+					else
+					{
+						foreach (StackTraceElement elem in _this.stackTrace)
+						{
+							if (elem == null)
+							{
+								throw new java.lang.NullPointerException("null StackTraceElement in serial stream. ");
+							}
+						}
+					}
+				}
+				else
+				{
+					_this.stackTrace = new StackTraceElement[0];
+				}
+			}
+#endif
+		}
+
+		internal static string FilterMessage(string message)
+		{
+			return message ?? "";
+		}
+
+		internal static string GetMessageFromCause(Exception cause)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			if (cause == null)
+			{
+				return "";
+			}
+			return ikvm.extensions.ExtensionMethods.toString(cause);
+#endif
+		}
+
+		internal static string getLocalizedMessage(Exception x)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			return ikvm.extensions.ExtensionMethods.getMessage(x);
+#endif
+		}
+
+		internal static string toString(Exception x)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			string message = ikvm.extensions.ExtensionMethods.getLocalizedMessage(x);
+			if (message == null)
+			{
+				return ikvm.extensions.ExtensionMethods.getClass(x).getName();
+			}
+			return ikvm.extensions.ExtensionMethods.getClass(x).getName() + ": " + message;
+#endif
+		}
+
+		internal static Exception getCause(Exception _this)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			lock (_this)
+			{
+				Exception cause = ((Throwable)_this).cause;
+				return cause == _this ? null : cause;
+			}
+#endif
+		}
+
+		internal static void checkInitCause(Exception _this, Exception _this_cause, Exception cause)
+		{
+#if !FIRST_PASS
+			if (_this_cause != _this)
+			{
+				throw new java.lang.IllegalStateException("Can't overwrite cause with " + java.util.Objects.toString(cause, "a null"), _this);
+			}
+			if (cause == _this)
+			{
+				throw new java.lang.IllegalArgumentException("Self-causation not permitted", _this);
+			}
+#endif
+		}
+
+		internal static void addSuppressed(Exception _this, Exception x)
+		{
+#if !FIRST_PASS
+			lock (_this)
+			{
+				if (_this == x)
+				{
+					throw new java.lang.IllegalArgumentException("Self-suppression not permitted", x);
+				}
+				if (x == null)
+				{
+					throw new java.lang.NullPointerException("Cannot suppress a null exception.");
+				}
+				Throwable _thisJava = _this as Throwable;
+				if (_thisJava == null)
+				{
+					// we ignore suppressed exceptions for non-Java exceptions
+				}
+				else
+				{
+					if (_thisJava.suppressedExceptions == null)
+					{
+						return;
+					}
+					if (_thisJava.suppressedExceptions == Throwable.SUPPRESSED_SENTINEL)
+					{
+						_thisJava.suppressedExceptions = new java.util.ArrayList();
+					}
+					_thisJava.suppressedExceptions.add(x);
+				}
+			}
+#endif
+		}
+
+		internal static Exception[] getSuppressed(Exception _this)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			lock (_this)
+			{
+				Throwable _thisJava = _this as Throwable;
+				if (_thisJava == null)
+				{
+					// we ignore suppressed exceptions for non-Java exceptions
+					return EMPTY_THROWABLE_ARRAY;
+				}
+				else
+				{
+					if (_thisJava.suppressedExceptions == Throwable.SUPPRESSED_SENTINEL
+						|| _thisJava.suppressedExceptions == null)
+					{
+						return EMPTY_THROWABLE_ARRAY;
+					}
+					return (Exception[])_thisJava.suppressedExceptions.toArray(EMPTY_THROWABLE_ARRAY);
+				}
+			}
+#endif
+		}
+
+		internal static int getStackTraceDepth(Exception _this)
+		{
+			return getOurStackTrace(_this).Length;
+		}
+
+		internal static StackTraceElement getStackTraceElement(Exception _this, int index)
+		{
+			return getOurStackTrace(_this)[index];
+		}
+
+		internal static StackTraceElement[] getOurStackTrace(Exception x)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			Throwable _this = x as Throwable;
+			if (_this == null)
+			{
+				lock (x)
+				{
+					ExceptionInfoHelper eih = null;
+					IDictionary data = x.Data;
+					if (data != null && !data.IsReadOnly)
+					{
+						lock (data.SyncRoot)
+						{
+							eih = (ExceptionInfoHelper)data[EXCEPTION_DATA_KEY];
+						}
+					}
+					if (eih == null)
+					{
+						return Throwable.UNASSIGNED_STACK;
+					}
+					return eih.get_StackTrace(x);
+				}
+			}
+			else
+			{
+				lock (_this)
+				{
+					if (_this.stackTrace == Throwable.UNASSIGNED_STACK
+						|| (_this.stackTrace == null && (_this.tracePart1 != null || _this.tracePart2 != null)))
+					{
+						ExceptionInfoHelper eih = new ExceptionInfoHelper(_this.tracePart1, _this.tracePart2);
+						_this.stackTrace = eih.get_StackTrace(x);
+						_this.tracePart1 = null;
+						_this.tracePart2 = null;
+					}
+				}
+				return _this.stackTrace ?? Throwable.UNASSIGNED_STACK;
+			}
+#endif
+		}
+
+		internal static void setStackTrace(Exception x, StackTraceElement[] stackTrace)
+		{
+#if !FIRST_PASS
+			StackTraceElement[] copy = (StackTraceElement[])stackTrace.Clone();
+			for (int i = 0; i < copy.Length; i++)
+			{
+				if (copy[i] == null)
+				{
+					throw new java.lang.NullPointerException();
+				}
+			}
+			SetStackTraceImpl(x, copy);
+#endif
+		}
+
+		private static void SetStackTraceImpl(Exception x, StackTraceElement[] stackTrace)
+		{
+#if !FIRST_PASS
+			Throwable _this = x as Throwable;
+			if (_this == null)
+			{
+				ExceptionInfoHelper eih = new ExceptionInfoHelper(stackTrace);
+				IDictionary data = x.Data;
+				if (data != null && !data.IsReadOnly)
+				{
+					lock (data.SyncRoot)
+					{
+						data[EXCEPTION_DATA_KEY] = eih;
+					}
+				}
+			}
+			else
+			{
+				lock (_this)
+				{
+					if (_this.stackTrace == null && _this.tracePart1 == null && _this.tracePart2 == null)
+					{
+						return;
+					}
+					_this.stackTrace = stackTrace;
+				}
+			}
+#endif
+		}
+
+		// this method is *only* for .NET exceptions (i.e. types not derived from java.lang.Throwable)
+		[HideFromJava]
+		internal static void fillInStackTrace(Exception x)
+		{
+#if !FIRST_PASS
+			lock (x)
+			{
+				ExceptionInfoHelper eih = new ExceptionInfoHelper(null, new StackTrace(true));
+				IDictionary data = x.Data;
+				if (data != null && !data.IsReadOnly)
+				{
+					lock (data.SyncRoot)
+					{
+						data[EXCEPTION_DATA_KEY] = eih;
+					}
+				}
+			}
+#endif
+		}
+
+		// this method is *only* for .NET exceptions (i.e. types not derived from java.lang.Throwable)
+		internal static void FixateException(Exception x)
+		{
+#if !FIRST_PASS
+			exceptions.put(x, NOT_REMAPPED);
+#endif
+		}
+
+		internal static Exception UnmapException(Exception x)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			if (x is Throwable)
+			{
+				Exception org = Interlocked.Exchange(ref ((Throwable)x).original, null);
+				if (org != null)
+				{
+					exceptions.put(org, x);
+					x = org;
+				}
+			}
+			return x;
+#endif
+		}
+
+		[HideFromJava]
+		private static Exception MapTypeInitializeException(TypeInitializationException t, Type handler)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			bool wrapped = false;
+			Exception r = MapException<Exception>(t.InnerException, true, false);
+			if (!(r is java.lang.Error))
+			{
+				r = new java.lang.ExceptionInInitializerError(r);
+				wrapped = true;
+			}
+			string type = t.TypeName;
+			if (failedTypes.ContainsKey(type))
+			{
+				r = new java.lang.NoClassDefFoundError("Could not initialize class " + type);
+				wrapped = true;
+			}
+			if (handler != null && !handler.IsInstanceOfType(r))
+			{
+				return null;
+			}
+			failedTypes[type] = type;
+			if (wrapped)
+			{
+				// transplant the stack trace
+				((Throwable)r).setStackTrace(new ExceptionInfoHelper(t, true).get_StackTrace(t));
+			}
+			return r;
+#endif
+		}
+
+		private static bool IsInstanceOfType<T>(Exception t, bool remap)
+			where T : Exception
+		{
+#if FIRST_PASS
+			return false;
+#else
+			if (!remap && typeof(T) == typeof(Exception))
+			{
+				return !(t is Throwable);
+			}
+			return t is T;
+#endif
+		}
+
+		[HideFromJava]
+		internal static T MapException<T>(Exception x, bool remap, bool unused)
+			where T : Exception
+		{
+#if FIRST_PASS
+			return null;
+#else
+			Exception org = x;
+			bool nonJavaException = !(x is Throwable);
+			if (nonJavaException && remap)
+			{
+				if (x is TypeInitializationException)
+				{
+					return (T)MapTypeInitializeException((TypeInitializationException)x, typeof(T));
+				}
+				object obj = exceptions.get(x);
+				Exception remapped = (Exception)obj;
+				if (remapped == null)
+				{
+					remapped = Throwable.__mapImpl(x);
+					if (remapped == x)
+					{
+						exceptions.put(x, NOT_REMAPPED);
+					}
+					else
+					{
+						exceptions.put(x, remapped);
+						x = remapped;
+					}
+				}
+				else if (remapped != NOT_REMAPPED)
+				{
+					x = remapped;
+				}
+			}
+
+			if (IsInstanceOfType<T>(x, remap))
+			{
+				Throwable t = x as Throwable;
+				if (t != null)
+				{
+					if (!unused && t.tracePart1 == null && t.tracePart2 == null && t.stackTrace == Throwable.UNASSIGNED_STACK)
+					{
+						t.tracePart1 = new StackTrace(org, true);
+						t.tracePart2 = new StackTrace(true);
+					}
+					if (t != org)
+					{
+						t.original = org;
+						exceptions.remove(org);
+					}
+				}
+				else
+				{
+					IDictionary data = x.Data;
+					if (data != null && !data.IsReadOnly)
+					{
+						lock (data.SyncRoot)
+						{
+							if (!data.Contains(EXCEPTION_DATA_KEY))
+							{
+								data.Add(EXCEPTION_DATA_KEY, new ExceptionInfoHelper(x, true));
+							}
+						}
+					}
+				}
+
+				if (nonJavaException && !remap)
+				{
+					exceptions.put(x, NOT_REMAPPED);
+				}
+				return (T)x;
+			}
+			return null;
+#endif
+		}
+	}
+}
+@
+
+
+1.69
+log
+@Bug fix. Handle malformed UTF-16 (invalid surrogates) in type/member names and annotations.
+@
+text
+@d343 6
+@
+
+
+1.68
+log
+@Bug fix. Bridge method names should not include <bridge> prefix in stack trace.
+@
+text
+@d306 4
+@
+
+
+1.67
+log
+@- Removed HideFromReflectionAttribute.
+- Added flags to HideFromJavaAttribute to support different levels of hiding (including the previous usage of HideFromReflectionAttribute and adding specific ability to hide from security stack walking and from stack traces, for future LamdbaForm support).
+@
+text
+@d302 4
+@
+
+
+1.66
+log
+@Don't try to get line number information (based on type) for methods without a declaring type.
+@
+text
+@d313 2
+a314 1
+			return Java_sun_reflect_Reflection.IsHideFromJava(mb) || (mb.DeclaringType == typeof(ikvm.runtime.Util) && mb.Name == "mapException");
+@
+
+
+1.65
+log
+@Don't filter DynamicMethods from stack trace if IKVM_DISABLE_STACKTRACE_CLEANING is defined.
+@
+text
+@d345 1
+a345 1
+				if(mb != null)
+@
+
+
+1.64
+log
+@Updated Throwable.initCause() and Throwable.addSuppressed() exceptions to match OpenJDK 7u40.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002-2013 Jeroen Frijters
+d200 1
+a200 1
+					if (m == null || m.DeclaringType == null)
+d206 2
+a207 1
+						(typeof(MethodBase).IsAssignableFrom(type)
+d319 4
+d364 1
+a364 1
+			if(mb != null)
+@
+
+
+1.63
+log
+@Moved the remaining code from openjdk.cs to separate files.
+@
+text
+@d560 1
+a560 1
+				throw new java.lang.IllegalStateException("Can't overwrite cause");
+d564 1
+a564 1
+				throw new java.lang.IllegalArgumentException("Self-causation not permitted");
+d576 1
+a576 1
+					throw new java.lang.IllegalArgumentException("Self-suppression not permitted");
+@
+
+
+1.62
+log
+@Implemented Java 8 default interface methods.
+@
+text
+@d312 1
+a312 1
+			return NativeCode.sun.reflect.Reflection.IsHideFromJava(mb) || (mb.DeclaringType == typeof(ikvm.runtime.Util) && mb.Name == "mapException");
+@
+
+
+1.61
+log
+@Changed NoClassDefFoundError resulting from type initialization failure to be consistent with OpenJDK behavior.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002-2011 Jeroen Frijters
+d297 4
+@
+
+
+1.60
+log
+@Bug fix. Stack trace elements in methods in remapped .NET types should not list the source filename as map.xml.
+@
+text
+@d786 1
+a786 1
+				r = new java.lang.NoClassDefFoundError(type).initCause(r);
+@
+
+
+1.59
+log
+@Use extension methods (explicitly) instead of (now deprecated) instancehelper_ methods.
+@
+text
+@d338 4
+d357 4
+@
+
+
+1.58
+log
+@- Fixed Throwable deserialization issues introduced with OpenJDK 7.
+- Fixed Throwable.getSuppressed() to return a global empty array (OpenJDK tests depend on that).
+@
+text
+@d503 1
+a503 1
+			return java.lang.Object.instancehelper_toString(cause);
+d512 1
+a512 1
+			return Throwable.instancehelper_getMessage(x);
+d521 1
+a521 1
+			string message = Throwable.instancehelper_getLocalizedMessage(x);
+d524 1
+a524 1
+				return java.lang.Object.instancehelper_getClass(x).getName();
+d526 1
+a526 1
+			return java.lang.Object.instancehelper_getClass(x).getName() + ": " + message;
+@
+
+
+1.57
+log
+@Fixed deserialization bug. When stacktrace = null (i.e. it is unmodifiable), setStackTrace would throw a NullPointerException. Fixed that by moving the stackTrace field setting into a seperate method.
+@
+text
+@d50 1
+a329 14
+		private static void initThrowable(object throwable, object detailMessage, object cause)
+		{
+#if !FIRST_PASS
+			if(cause == throwable)
+			{
+				typeof(Throwable).GetConstructor(new Type[] { typeof(string) }).Invoke(throwable, new object[] { detailMessage });
+			}
+			else
+			{
+				typeof(Throwable).GetConstructor(new Type[] { typeof(string), typeof(Exception) }).Invoke(throwable, new object[] { detailMessage, cause });
+			}
+#endif
+		}
+
+d410 5
+d416 4
+a419 4
+				initThrowable(x, fields.get("detailMessage", null), fields.get("cause", null));
+
+				Throwable _thisJava = x as Throwable;
+				if (_thisJava == null)
+d421 2
+a422 1
+					// suppressed exceptions are not supported on CLR exceptions
+d426 10
+a435 2
+					java.util.List suppressedExceptions = (java.util.List)fields.get("suppressedExceptions", null);
+					if (suppressedExceptions != null)
+d437 6
+a442 1
+						if (suppressedExceptions.size() == 0)
+d444 6
+a449 6
+							_thisJava.suppressedExceptions = Throwable.SUPPRESSED_SENTINEL;
+						}
+						else
+						{
+							java.util.ArrayList copy = new java.util.ArrayList();
+							for (int i = 0; i < suppressedExceptions.size(); i++)
+d451 1
+a451 10
+								Exception entry = (Exception)suppressedExceptions.get(i);
+								if (entry == null)
+								{
+									throw new java.lang.NullPointerException("Cannot suppress a null exception.");
+								}
+								if (entry == _thisJava)
+								{
+									throw new java.lang.IllegalArgumentException("Self-suppression not permitted");
+								}
+								copy.add(entry);
+d453 1
+a453 1
+							_thisJava.suppressedExceptions = copy;
+d456 1
+d459 1
+a459 2
+				StackTraceElement[] stackTrace = (StackTraceElement[])fields.get("stackTrace", null);
+				if (stackTrace != null)
+d461 1
+a461 1
+					if (stackTrace.Length == 0)
+d463 1
+a463 1
+						stackTrace = new StackTraceElement[0];
+d465 2
+a466 2
+					else if (stackTrace.Length == 1
+						&& java.lang.ThrowableHelper.SentinelHolder.STACK_TRACE_ELEMENT_SENTINEL.equals(stackTrace[0]))
+d468 1
+a468 1
+						stackTrace = null;
+d472 1
+a472 1
+						foreach (StackTraceElement elem in stackTrace)
+d483 1
+a483 1
+					stackTrace = new StackTraceElement[0];
+a484 1
+				SetStackTraceImpl(x, stackTrace);
+d602 1
+a602 1
+					return new Exception[0];
+d609 1
+a609 1
+						return new Exception[0];
+d611 1
+a611 1
+					return (Exception[])_thisJava.suppressedExceptions.toArray(new Exception[_thisJava.suppressedExceptions.size()]);
+@
+
+
+1.56
+log
+@Updated java.lang.Throwable to OpenJDK 7.
+@
+text
+@d403 1
+d410 2
+a412 6
+				StackTraceElement[] stackTrace = getOurStackTrace(x);
+				if (stackTrace == null)
+				{
+					stackTrace = java.lang.ThrowableHelper.SentinelHolder.STACK_TRACE_SENTINEL;
+				}
+				fields.put("stackTrace", stackTrace);
+d475 7
+a481 1
+						// we don't need to verify non-nullness of the array elements, because setStackTrace will do that
+d488 1
+a488 1
+				setStackTrace(x, stackTrace);
+d686 7
+d696 1
+a696 1
+				ExceptionInfoHelper eih = new ExceptionInfoHelper(copy);
+d714 1
+a714 1
+					_this.stackTrace = copy;
+@
+
+
+1.55
+log
+@Remove implementation specific methods from top of stack trace for threads started from Java.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002-2010 Jeroen Frijters
+d384 2
+a385 1
+				new ObjectStreamField("stackTrace", typeof(global::java.lang.StackTraceElement[]))
+d396 2
+a397 3
+				fields.put("detailMessage", Throwable.instancehelper_getMessage(x));
+				Exception cause = Throwable.instancehelper_getCause(x);
+				if (cause == null && x is Throwable)
+d399 4
+a402 1
+					cause = ((Throwable)x).cause;
+d404 12
+a415 2
+				fields.put("cause", cause);
+				fields.put("stackTrace", Throwable.instancehelper_getStackTrace(x));
+d424 4
+a427 6
+			ObjectInputStream.GetField fields = s.readFields();
+			initThrowable(x, fields.get("detailMessage", null), fields.get("cause", null));
+			StackTraceElement[] stackTrace = (StackTraceElement[])fields.get("stackTrace", null);
+			Throwable.instancehelper_setStackTrace(x, stackTrace == null ? new StackTraceElement[0] : stackTrace);
+#endif
+		}
+d429 2
+a430 13
+		internal static void printStackTrace(Exception x)
+		{
+#if !FIRST_PASS
+			Throwable.instancehelper_printStackTrace(x, java.lang.System.err);
+#endif
+		}
+
+		internal static void printStackTrace(Exception x, java.io.PrintStream printStream)
+		{
+#if !FIRST_PASS
+			lock (printStream)
+			{
+				foreach (string line in BuildStackTrace(x))
+d432 1
+a432 1
+					printStream.println(line);
+d434 1
+a434 10
+			}
+#endif
+		}
+
+		internal static void printStackTrace(Exception x, java.io.PrintWriter printWriter)
+		{
+#if !FIRST_PASS
+			lock (printWriter)
+			{
+				foreach (string line in BuildStackTrace(x))
+d436 2
+a437 34
+					printWriter.println(line);
+				}
+			}
+#endif
+		}
+
+#if !FIRST_PASS
+		private static List<String> BuildStackTrace(Exception x)
+		{
+			List<String> list = new List<String>();
+			list.Add(java.lang.Object.instancehelper_toString(x));
+			StackTraceElement[] stack = Throwable.instancehelper_getStackTrace(x);
+			for (int i = 0; i < stack.Length; i++)
+			{
+				list.Add("\tat " + stack[i]);
+			}
+			Exception cause = Throwable.instancehelper_getCause(x);
+			while (cause != null)
+			{
+				list.Add("Caused by: " + java.lang.Object.instancehelper_toString(cause));
+
+				// Cause stacktrace
+				StackTraceElement[] parentStack = stack;
+				stack = Throwable.instancehelper_getStackTrace(cause);
+				bool equal = false; // Is rest of stack equal to parent frame?
+				for (int i = 0; i < stack.Length && !equal; i++)
+				{
+					// Check if we already printed the rest of the stack
+					// since it was the tail of the parent stack
+					int remaining = stack.Length - i;
+					int element = i;
+					int parentElement = parentStack.Length - remaining;
+					equal = parentElement >= 0 && parentElement < parentStack.Length;
+					while (equal && element < stack.Length)
+d439 1
+a439 1
+						if (stack[element].equals(parentStack[parentElement]))
+d441 1
+a441 2
+							element++;
+							parentElement++;
+d445 15
+a459 1
+							equal = false;
+d462 11
+a472 2
+					// Print stacktrace element or indicate the rest is equal 
+					if (!equal)
+d474 1
+a474 1
+						list.Add("\tat " + stack[i]);
+d478 1
+a478 2
+						list.Add("\t... " + remaining + " more");
+						break; // from stack printing for loop
+d481 5
+a485 1
+				cause = Throwable.instancehelper_getCause(cause);
+d487 1
+a487 1
+			return list;
+a488 1
+#endif
+d531 1
+a531 1
+		internal static Exception getCause(Exception _this, Exception cause)
+d533 9
+a541 1
+			return cause == _this ? null : cause;
+d558 1
+a558 1
+		internal static StackTraceElement[] computeStackTrace(Exception x, StackTrace part1, StackTrace part2)
+d560 29
+a588 5
+#if FIRST_PASS
+			return null;
+#else
+			ExceptionInfoHelper eih = new ExceptionInfoHelper(part1, part2);
+			return eih.get_StackTrace(x);
+d592 1
+a592 2
+		// this method is *only* for .NET exceptions (i.e. types not derived from java.lang.Throwable)
+		internal static StackTraceElement[] getStackTrace(Exception x)
+d597 1
+a597 1
+			lock (x)
+d599 7
+a605 3
+				ExceptionInfoHelper eih = null;
+				IDictionary data = x.Data;
+				if (data != null && !data.IsReadOnly)
+d607 2
+a608 1
+					lock (data.SyncRoot)
+d610 1
+a610 1
+						eih = (ExceptionInfoHelper)data[EXCEPTION_DATA_KEY];
+d612 1
+a613 5
+				if (eih == null)
+				{
+					return new StackTraceElement[0];
+				}
+				return eih.get_StackTrace(x);
+d618 11
+a628 1
+		internal static StackTraceElement[] checkStackTrace(StackTraceElement[] original)
+d633 22
+a654 2
+			StackTraceElement[] copy = (StackTraceElement[])original.Clone();
+			for (int i = 0; i < copy.Length; i++)
+d656 1
+a656 1
+				if (copy[i] == null)
+d658 8
+a665 1
+					throw new java.lang.NullPointerException();
+d667 1
+a668 1
+			return copy;
+a671 1
+		// this method is *only* for .NET exceptions (i.e. types not derived from java.lang.Throwable)
+d675 22
+a696 3
+			ExceptionInfoHelper eih = new ExceptionInfoHelper(checkStackTrace(stackTrace));
+			IDictionary data = x.Data;
+			if (data != null && !data.IsReadOnly)
+d698 1
+a698 1
+				lock (data.SyncRoot)
+d700 5
+a704 1
+					data[EXCEPTION_DATA_KEY] = eih;
+d844 1
+a844 1
+					if (!unused && t.tracePart1 == null && t.tracePart2 == null && t.stackTrace == null)
+@
+
+
+1.54
+log
+@Exception cause in stack trace should use Throwable.toString() not System.Exception.ToString().
+@
+text
+@d123 1
+a123 1
+							Append(list, tracePart1, skip1);
+d175 1
+a175 1
+							Append(list, tracePart2, skip);
+d193 1
+a193 1
+			internal static void Append(List<StackTraceElement> stackTrace, StackTrace st, int skip)
+d239 7
+@
+
+
+1.53
+log
+@Fixed regression in stack trace printing of .NET (not remapped) exceptions introduced in 0.44. The .NET stack trace should not be included in the message.
+@
+text
+@d457 1
+a457 1
+				list.Add("Caused by: " + cause);
+@
+
+
+1.52
+log
+@Add forgotten HideFromJava to ExceptionInfoHelper constructor that collects stack trace.
+@
+text
+@d448 1
+a448 1
+			list.Add(x.ToString());
+@
+
+
+1.52.2.1
+log
+@Backport: Fixed regression in stack trace printing of .NET (not remapped) exceptions introduced in 0.44. The .NET stack trace should not be included in the message.
+@
+text
+@d448 1
+a448 1
+			list.Add(java.lang.Object.instancehelper_toString(x));
+@
+
+
+1.51
+log
+@Made MapException generic, instead of passing the type explicitly.
+@
+text
+@d80 1
+@
+
+
+1.50
+log
+@Removed exception mapping methods from Throwable and consolidated into a single method (actually, two methods, but the dynamic one should not be necessary and should be removed later).
+@
+text
+@d681 1
+a681 1
+			Exception r = MapException(t.InnerException, typeof(Exception), true, false);
+d707 2
+a708 1
+		private static bool isInstanceOfType(Exception t, Type type, bool remap)
+d713 1
+a713 1
+			if (!remap && type == typeof(Exception))
+d717 1
+a717 1
+			return type.IsInstanceOfType(t);
+d722 2
+a723 1
+		internal static Exception MapException(Exception x, Type handler, bool remap, bool unused)
+d734 1
+a734 1
+					return MapTypeInitializeException((TypeInitializationException)x, handler);
+d757 1
+a757 1
+			if (handler == null || isInstanceOfType(x, handler, remap))
+d792 1
+a792 1
+				return x;
+@
+
+
+1.49
+log
+@Removed unused field.
+@
+text
+@a674 10
+		internal static Exception MapExceptionFast(Exception x, bool remap)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			return MapException(x, null, remap);
+#endif
+		}
+
+		[HideFromJava]
+d681 1
+a681 1
+			Exception r = MapExceptionFast(t.InnerException, true);
+a720 6
+		internal static Exception MapException(Exception x, Type handler, bool remap)
+		{
+			return MapException(x, handler, remap, false);
+		}
+
+		[HideFromJava]
+@
+
+
+1.48
+log
+@Disable stack trace collection for remapped exceptions that are discarded in their handler.
+@
+text
+@a50 1
+		private static readonly Type System_Exception = typeof(Exception);
+@
+
+
+1.47
+log
+@Tiny optimization. Don't examine the same frame twice.
+@
+text
+@d734 6
+d777 1
+a777 1
+					if (t.tracePart1 == null && t.tracePart2 == null && t.stackTrace == null)
+@
+
+
+1.46
+log
+@Fix FIRST_PASS build break.
+@
+text
+@d137 1
+@
+
+
+1.45
+log
+@Minor clean up.
+@
+text
+@d296 3
+d300 1
+@
+
+
+1.44
+log
+@- More filtering regression fixes.
+- Synchronize on SyncRoot for Exception.Data collection access.
+@
+text
+@d763 15
+a777 1
+				if (!(x is Throwable))
+a790 9
+				else
+				{
+					if (needStackTraceInfo((Throwable)x))
+					{
+						StackTrace tracePart1 = new StackTrace(org, true);
+						StackTrace tracePart2 = new StackTrace(true);
+						setStackTraceInfo((Throwable)x, tracePart1, tracePart2);
+					}
+				}
+a795 6
+
+				if (x != org)
+				{
+					((Throwable)x).original = org;
+					exceptions.remove(org);
+				}
+a800 13
+
+#if !FIRST_PASS
+	    private static bool needStackTraceInfo(Throwable t)
+		{
+			return t.tracePart1 == null && t.tracePart2 == null && t.stackTrace == null;
+		}
+
+		private static void setStackTraceInfo(Throwable t, StackTrace part1, StackTrace part2)
+		{
+			t.tracePart1 = part1;
+			t.tracePart2 = part2;
+		}
+#endif
+@
+
+
+1.43
+log
+@More clean up and added HideFromJava to two more Map methods.
+@
+text
+@d157 1
+a157 2
+								// skip java.lang.Throwable.__<map>
+								while (tracePart2.FrameCount > skip && IsHideFromJava(tracePart2.GetFrame(skip).GetMethod()))
+d159 13
+a171 8
+									skip++;
+								}
+								if (tracePart1 != null &&
+									tracePart1.FrameCount > 0 &&
+									tracePart2.FrameCount > skip &&
+									tracePart1.GetFrame(tracePart1.FrameCount - 1).GetMethod() == tracePart2.GetFrame(skip).GetMethod())
+								{
+									skip++;
+a206 1
+						|| (type == typeof(ikvm.runtime.Util) && m.Name == "mapException")
+d296 1
+a296 1
+			return NativeCode.sun.reflect.Reflection.IsHideFromJava(mb);
+d577 1
+a577 1
+					lock (data)
+d616 1
+a616 1
+				lock (data)
+d625 1
+d635 1
+a635 1
+					lock (data)
+a651 1
+		// also used by ikvm.extensions.ExtensionMethods.printStackTrace()
+d768 1
+a768 1
+						lock (data)
+@
+
+
+1.42
+log
+@- Util.mapException() shouldn't be HideFromJava as that would be a breaking change, and were explicitly filtering it from the stack trace anyway.
+- Minor ExceptionHelper clean up.
+@
+text
+@a101 6
+			private static string getDeclaringTypeNameSafe(MethodBase mb)
+			{
+				Type type = mb.DeclaringType;
+				return type == null ? "" : type.FullName;
+			}
+
+d125 1
+a125 1
+						if (tracePart2 != null)
+d130 3
+a132 6
+								while (tracePart2.FrameCount > skip &&
+								getDeclaringTypeNameSafe(tracePart2.GetFrame(skip).GetMethod()).StartsWith("java.lang.ExceptionHelper"))
+								{
+									skip++;
+								}
+								if (tracePart2.FrameCount > skip)
+d135 1
+a135 4
+									// here we have to check for both fillInStackTrace and .ctor, because on x64 the fillInStackTrace method
+									// disappears from the stack trace due to the tail call optimization.
+									if (getDeclaringTypeNameSafe(mb).Equals("java.lang.Throwable") &&
+										(mb.Name.EndsWith("fillInStackTrace") || mb.Name.Equals(".ctor")))
+d140 1
+a140 2
+											if (!getDeclaringTypeNameSafe(mb).Equals("java.lang.Throwable")
+												|| !mb.Name.EndsWith("fillInStackTrace"))
+a145 1
+										Type exceptionType = t.GetType();
+d149 1
+a149 2
+											if (!mb.Name.Equals(".ctor")
+												|| !mb.DeclaringType.IsAssignableFrom(exceptionType))
+d163 3
+a165 3
+												tracePart1.FrameCount > 0 &&
+								tracePart2.FrameCount > skip &&
+								tracePart1.GetFrame(tracePart1.FrameCount - 1).GetMethod() == tracePart2.GetFrame(skip).GetMethod())
+d175 1
+a175 1
+							if (elem.getClassName().Equals("java.lang.reflect.Method"))
+d677 1
+d723 1
+@
+
+
+1.41
+log
+@Moved ExceptionHelper into proper namespace and some cleanup.
+@
+text
+@a50 1
+		private static readonly Type System_Reflection_MethodBase = typeof(MethodBase);
+a208 1
+					// TODO I may need more safety checks like these
+d213 1
+a213 2
+					String methodName = GetMethodName(m);
+					String className = getClassNameFromType(m.DeclaringType);
+d215 5
+a219 5
+						(System_Reflection_MethodBase.IsAssignableFrom(m.DeclaringType)
+						|| className.StartsWith("java.lang.ExceptionHelper")
+						|| className.Equals("cli.System.RuntimeMethodHandle")
+						|| (className.Equals("java.lang.Throwable") && m.Name.Equals("instancehelper_fillInStackTrace"))
+						|| methodName.StartsWith("__<")
+d230 1
+a230 1
+					String fileName = frame.GetFileName();
+d248 1
+a248 1
+					stackTrace.Add(new StackTraceElement(className, methodName, fileName, IsNative(m) ? -2 : lineNumber));
+a299 10
+			else if(mb.Name == "ToJava" && typeof(RetargetableJavaException).IsAssignableFrom(mb.DeclaringType))
+			{
+				// hide this method from the stack trace
+				return "__<ToJava>";
+			}
+			else if(mb.Name == "mapException" && mb.DeclaringType.FullName == "ikvm.runtime.Util")
+			{
+				// hide this method from the stack trace
+				return "__<mapException>";
+			}
+@
+
+
+1.40
+log
+@Moved the last part of ExceptionHelper from Java to C# side.
+@
+text
+@d37 1
+d43 1
+a43 1
+namespace IKVM.NativeCode.java.lang
+d54 1
+a54 1
+		private static readonly global::ikvm.@@internal.WeakIdentityMap exceptions = new global::ikvm.@@internal.WeakIdentityMap();
+d119 1
+a119 1
+							if (cleanStackTrace && t is global::java.lang.NullPointerException && tracePart1.FrameCount > 0)
+d160 1
+a160 1
+										Type exceptionType = getTypeFromObject(t);
+d238 1
+a238 1
+							fileName = new global::System.IO.FileInfo(fileName).Name;
+d277 1
+a277 1
+		public static bool IsNative(MethodBase m)
+d288 1
+a288 1
+		public static string GetMethodName(MethodBase mb)
+d319 1
+a319 1
+		public static bool IsHideFromJava(MethodBase mb)
+d324 1
+a324 1
+		public static string getClassNameFromType(Type type)
+d347 1
+a347 1
+				typeof(global::java.lang.Throwable).GetConstructor(new Type[] { typeof(string) }).Invoke(throwable, new object[] { detailMessage });
+d351 1
+a351 1
+				typeof(global::java.lang.Throwable).GetConstructor(new Type[] { typeof(string), typeof(Exception) }).Invoke(throwable, new object[] { detailMessage, cause });
+d356 1
+a356 1
+		public static int GetLineNumber(StackFrame frame)
+d374 1
+a374 1
+		public static string GetFileName(StackFrame frame)
+a387 5
+		public static Type getTypeFromObject(object o)
+		{
+			return o.GetType();
+		}
+
+d389 1
+a389 1
+		internal static global::java.io.ObjectStreamField[] getPersistentFields()
+d394 4
+a397 4
+			return new global::java.io.ObjectStreamField[] {
+				new global::java.io.ObjectStreamField("detailMessage", typeof(global::java.lang.String)),
+				new global::java.io.ObjectStreamField("cause", typeof(global::java.lang.Throwable)),
+				new global::java.io.ObjectStreamField("stackTrace", typeof(global::java.lang.StackTraceElement[]))
+d434 1
+a434 1
+			Throwable.instancehelper_printStackTrace(x, global::java.lang.System.err);
+d438 1
+a438 1
+		internal static void printStackTrace(Exception x, global::java.io.PrintStream printStream)
+d451 1
+a451 1
+		internal static void printStackTrace(Exception x, global::java.io.PrintWriter printWriter)
+d534 1
+a534 1
+			return global::java.lang.Object.instancehelper_toString(cause);
+d555 1
+a555 1
+				return global::java.lang.Object.instancehelper_getClass(x).getName();
+d557 1
+a557 1
+			return global::java.lang.Object.instancehelper_getClass(x).getName() + ": " + message;
+d571 1
+a571 1
+				throw new global::java.lang.IllegalStateException("Can't overwrite cause");
+d575 1
+a575 1
+				throw new global::java.lang.IllegalArgumentException("Self-causation not permitted");
+d626 1
+a626 1
+					throw new global::java.lang.NullPointerException();
+d712 1
+a712 1
+			if (!(r is global::java.lang.Error))
+d714 1
+a714 1
+				r = new global::java.lang.ExceptionInInitializerError(r);
+d720 1
+a720 1
+				r = new global::java.lang.NoClassDefFoundError(type).initCause(r);
+@
+
+
+1.39
+log
+@Moved the remainder of the exception mapping to the C# side.
+@
+text
+@d34 1
+a39 1
+using ExceptionInfoHelper = java.lang.ExceptionHelper.ExceptionInfoHelper;
+d49 3
+d60 194
+a275 5
+		public static string SafeGetEnvironmentVariable(string name)
+		{
+			return JVM.SafeGetEnvironmentVariable(name);
+		}
+
+d589 1
+a589 1
+			global::java.lang.ExceptionHelper.ExceptionInfoHelper eih = new global::java.lang.ExceptionHelper.ExceptionInfoHelper(part1, part2);
+@
+
+
+1.38
+log
+@- Added new public API to unmap exception (ikvm.runtime.Util.unmapException()).
+- Moved (parts of) mapping and unmapping to C# side.
+@
+text
+@d25 1
+d28 2
+a38 1
+using System.Collections.Generic;
+d46 7
+a52 1
+		public static Exception MapExceptionImpl(Exception x)
+d54 3
+a56 4
+#if FIRST_PASS
+			return null;
+#else
+			return global::java.lang.Throwable.__mapImpl(x);
+d58 19
+d416 1
+a416 1
+						eih = (ExceptionInfoHelper)data[global::java.lang.ExceptionHelper.EXCEPTION_DATA_KEY];
+d455 1
+a455 1
+					data[global::java.lang.ExceptionHelper.EXCEPTION_DATA_KEY] = eih;
+d473 1
+a473 1
+						data[global::java.lang.ExceptionHelper.EXCEPTION_DATA_KEY] = eih;
+d484 1
+a484 1
+			global::java.lang.ExceptionHelper.exceptions.put(x, global::java.lang.ExceptionHelper.NOT_REMAPPED);
+d499 1
+a499 1
+					global::java.lang.ExceptionHelper.exceptions.put(org, x);
+d513 1
+a513 1
+			return global::java.lang.ExceptionHelper.MapException(x, null, remap);
+d516 134
+@
+
+
+1.37
+log
+@Moved more ExceptionHelper methods to C# side.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002, 2004-2007, 2010 Jeroen Frijters
+d30 1
+d453 37
+@
+
+
+1.36
+log
+@Yet more ExceptionHelper moving.
+@
+text
+@d29 1
+d36 1
+d374 78
+@
+
+
+1.35
+log
+@Moved a few more ExceptionHelper methods to C# side.
+@
+text
+@d343 29
+@
+
+
+1.34
+log
+@Moved printStackTrace to C# side.
+@
+text
+@d302 41
+@
+
+
+1.33
+log
+@Moved readObject/writeObject to C# side.
+@
+text
+@d34 1
+d213 89
+@
+
+
+1.32
+log
+@First step of moving all exception handling code to C#.
+@
+text
+@d29 6
+d119 1
+a119 1
+		public static void initThrowable(object throwable, object detailMessage, object cause)
+d183 29
+@
+
+
+1.31
+log
+@Removed vestigial compact framework support.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002, 2004, 2005, 2006, 2007 Jeroen Frijters
+d163 14
+@
+
+
+1.30
+log
+@Rewrote exception handling to store Java exception state in our java.lang.Throwable class, instead of an additional object in a weak keyed map.
+@
+text
+@d45 1
+a45 8
+			try
+			{
+				return JVM.SafeGetEnvironmentVariable(name);
+			}
+			catch(MissingMethodException)
+			{
+				return null;
+			}
+a126 1
+#if !COMPACT_FRAMEWORK
+a157 1
+#endif
+@
+
+
+1.29
+log
+@Use .NET reflection instead of soon to be removed MethodWrapper.Invoke().
+@
+text
+@a54 10
+		public static Exception getInnerException(Exception t)
+		{
+			return t.InnerException;
+		}
+
+		public static string getMessageFromCliException(Exception t)
+		{
+			return t.Message;
+		}
+
+@
+
+
+1.28
+log
+@Generified all collections.
+@
+text
+@d135 1
+a135 2
+				MethodWrapper mw = CoreClasses.java.lang.Throwable.Wrapper.GetMethodWrapper("<init>", "(Ljava.lang.String;)V", false);
+				mw.Invoke(throwable, new object[] { detailMessage }, true, null);
+d139 1
+a139 2
+				MethodWrapper mw = CoreClasses.java.lang.Throwable.Wrapper.GetMethodWrapper("<init>", "(Ljava.lang.String;Ljava.lang.Throwable;)V", false);
+				mw.Invoke(throwable, new object[] { detailMessage, cause }, true, null);
+@
+
+
+1.27
+log
+@Moved generated exception mapping code from ExceptionHelper to Throwable and made it slightly less hacky.
+@
+text
+@a26 2
+using System.Text;
+using System.Collections;
+a28 1
+using NetSystem = System;
+@
+
+
+1.26
+log
+@Removed support for building with GNU Classpath class library.
+@
+text
+@d37 9
+@
+
+
+1.25
+log
+@- Implemented CallerID infrastructure.
+- Marked various methods with HasCallerID annotation.
+- Rewrote some methods to explicitly use CallerID.
+@
+text
+@a102 1
+#if OPENJDK
+a103 3
+#else
+			return NativeCode.gnu.classpath.VMStackWalker.isHideFromJava(mb);
+#endif
+@
+
+
+1.24
+log
+@Handle stack frames that contain methods in primitive types.
+@
+text
+@d130 1
+d134 1
+a134 1
+				mw.Invoke(throwable, new object[] { detailMessage }, true);
+d139 1
+a139 1
+				mw.Invoke(throwable, new object[] { detailMessage, cause }, true);
+d141 1
+@
+
+
+1.23
+log
+@Made all "native" method classes internal.
+@
+text
+@d119 4
+@
+
+
+1.22
+log
+@Remoed VMStackWalker dependency (from OpenJDK build)
+@
+text
+@d35 1
+a35 1
+	public class ExceptionHelper
+@
+
+
+1.22.2.1
+log
+@If a method in a primitive type is on the stack, return the .NET name of the type.
+@
+text
+@a118 4
+				if(tw.IsPrimitive)
+				{
+					return DotNetTypeWrapper.GetName(type);
+				}
+@
+
+
+1.21
+log
+@*** empty log message ***
+@
+text
+@d103 3
+d107 1
+@
+
+
+1.20
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002, 2004, 2005, 2006 Jeroen Frijters
+d103 1
+a103 2
+			return mb.IsDefined(typeof(HideFromJavaAttribute), false)
+				|| mb.IsDefined(typeof(HideFromReflectionAttribute), false);
+@
+
+
+1.19
+log
+@*** empty log message ***
+@
+text
+@d90 5
+@
+
+
+1.18
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002, 2004, 2005 Jeroen Frijters
+d85 5
+d113 1
+a113 1
+			return "<unknown>";
+@
+
+
+1.17
+log
+@*** empty log message ***
+@
+text
+@d103 6
+a108 1
+			return TypeWrapper.GetNameFromType(type);
+@
+
+
+1.16
+log
+@*** empty log message ***
+@
+text
+@d130 4
+a133 1
+					return tw.GetSourceLineNumber(mb, ilOffset);
+d145 4
+a148 1
+				return tw.GetSourceFileName();
+@
+
+
+1.15
+log
+@*** empty log message ***
+@
+text
+@d61 2
+a62 1
+			if(m.IsDefined(typeof(ModifiersAttribute), false))
+d64 2
+a65 9
+				object[] methodFlagAttribs = m.GetCustomAttributes(typeof(ModifiersAttribute), false);
+				if(methodFlagAttribs.Length == 1)
+				{
+					ModifiersAttribute modifiersAttrib = (ModifiersAttribute)methodFlagAttribs[0];
+					if((modifiersAttrib.Modifiers & Modifiers.Native) != 0)
+					{
+						return true;
+					}
+				}
+d72 2
+a73 1
+			if(mb.IsDefined(typeof(NameSigAttribute), false))
+d75 1
+a75 6
+				object[] attr = mb.GetCustomAttributes(typeof(NameSigAttribute), false);
+				if(attr.Length == 1)
+				{
+					return ((NameSigAttribute)attr[0]).Name;
+				}
+				return mb.Name;
+d129 2
+a130 5
+					object[] attr = mb.GetCustomAttributes(typeof(LineNumberTableAttribute), false);
+					if(attr.Length == 1)
+					{
+						return ((LineNumberTableAttribute)attr[0]).GetLineNumber(ilOffset);
+					}
+d141 2
+a142 9
+				object[] attr = mb.DeclaringType.GetCustomAttributes(typeof(SourceFileAttribute), false);
+				if(attr.Length == 1)
+				{
+					return ((SourceFileAttribute)attr[0]).SourceFile;
+				}
+				if(mb.DeclaringType.Module.IsDefined(typeof(SourceFileAttribute), false))
+				{
+					return mb.DeclaringType.Name + ".java";
+				}
+@
+
+
+1.14
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002 Jeroen Frijters
+@
+
+
+1.13
+log
+@*** empty log message ***
+@
+text
+@d39 8
+a46 1
+			return JVM.SafeGetEnvironmentVariable(name);
+d130 1
+d166 1
+@
+
+
+1.12
+log
+@Fixed bug 1257044.
+@
+text
+@d37 5
+@
+
+
+1.11
+log
+@*** empty log message ***
+@
+text
+@d91 2
+a92 1
+			return mb.IsDefined(typeof(HideFromJavaAttribute), false);
+@
+
+
+1.10
+log
+@*** empty log message ***
+@
+text
+@d145 4
+@
+
+
+1.9
+log
+@*** empty log message ***
+@
+text
+@d30 1
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@d147 5
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d106 1
+a106 1
+				MethodWrapper mw = CoreClasses.java.lang.Throwable.Wrapper.GetMethodWrapper(new MethodDescriptor("<init>", "(Ljava.lang.String;)V"), false);
+d111 1
+a111 1
+				MethodWrapper mw = CoreClasses.java.lang.Throwable.Wrapper.GetMethodWrapper(new MethodDescriptor("<init>", "(Ljava.lang.String;Ljava.lang.Throwable;)V"), false);
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@a148 42
+
+class ExceptionHelper
+{
+	static MethodInfo mapExceptionFastMethod;
+	static MethodInfo printStackTraceMethod;
+
+	static ExceptionHelper()
+	{
+		// LIBREFLECT
+		TypeWrapper tw = ClassLoaderWrapper.LoadClassCritical("java.lang.ExceptionHelper");
+		tw.Finish();
+		Type exceptionHelper = tw.TypeAsTBD;
+		mapExceptionFastMethod = exceptionHelper.GetMethod("MapExceptionFast");
+		printStackTraceMethod = exceptionHelper.GetMethod("printStackTrace", new Type[] { typeof(Exception) });
+	}
+
+	internal static void printStackTrace(Exception x)
+	{
+		try
+		{
+			printStackTraceMethod.Invoke(null, new object[] { x });
+		}
+		catch(TargetInvocationException t)
+		{
+			throw t.InnerException;
+		}
+	}
+
+	// HACK this is used in ClassFile.cs and MemberWrapper.cs
+	[HideFromJava]
+	internal static Exception MapExceptionFast(Exception x)
+	{
+		try
+		{
+			return (Exception)mapExceptionFastMethod.Invoke(null, new object[] { x });
+		}
+		catch(TargetInvocationException t)
+		{
+			throw t.InnerException;
+		}
+	}
+}
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d157 1
+d178 1
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d36 10
+d63 30
+d95 4
+d115 32
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d29 1
+d32 1
+a32 1
+namespace NativeCode.java.lang
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d61 1
+a61 1
+				MethodWrapper mw = CoreClasses.java.lang.Throwable.Wrapper.GetMethodWrapper(MethodDescriptor.FromNameSig(ClassLoaderWrapper.GetBootstrapClassLoader(), "<init>", "(Ljava.lang.String;)V"), false);
+d66 1
+a66 1
+				MethodWrapper mw = CoreClasses.java.lang.Throwable.Wrapper.GetMethodWrapper(MethodDescriptor.FromNameSig(ClassLoaderWrapper.GetBootstrapClassLoader(), "<init>", "(Ljava.lang.String;Ljava.lang.Throwable;)V"), false);
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@d56 14
+@
+

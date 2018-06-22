@@ -1,0 +1,142 @@
+head	1.2;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2009.11.22.22.07.19;	author smallsql;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2009.11.22.10.30.42;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@Extends the Frame Test also to Window and Dialog
+@
+text
+@/*
+  Copyright (C) 2009 Volker Berlin (i-net software)
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+ */
+package java_.awt;
+
+import java.awt.*;
+
+import junit.ikvm.ReferenceData;
+
+import org.junit.*;
+import static org.junit.Assert.*;
+
+/**
+ * @@author Volker Berlin
+ */
+public class FrameTest extends WindowTest{
+
+    @@BeforeClass
+    public static void setUpBeforeClass() throws Exception{
+        reference = new ReferenceData();
+    }
+
+
+    @@AfterClass
+    public static void tearDownAfterClass() throws Exception{
+        if(reference != null){
+            reference.save();
+        }
+    }
+
+
+    @@Override
+    protected Window createWindow(){
+        return new Frame();
+    }
+}
+@
+
+
+1.1
+log
+@Add tests for default values of java.awt.Frame. Make the use of ReferenceData simpler.
+@
+text
+@d23 1
+a23 1
+*/
+a25 1
+
+d31 1
+a31 2
+
+
+d36 1
+a36 4
+public class FrameTest{
+
+    private static ReferenceData reference;
+
+a49 1
+    
+a50 19
+    @@Test
+    public void getBackground(){
+        Frame frame = new Frame();
+        frame.addNotify();
+        Color color = frame.getBackground();
+        frame.dispose();
+        reference.assertEquals("getBackground", color);
+    }
+        
+
+    @@Test
+    public void getForeground(){
+        Frame frame = new Frame();
+        frame.addNotify();
+        Color color = frame.getForeground();
+        frame.dispose();
+        reference.assertEquals("getForeground", color);
+    }
+    
+d52 3
+a54 7
+    @@Test
+    public void getFont(){
+        Frame frame = new Frame();
+        frame.addNotify();
+        Font font = frame.getFont();
+        frame.dispose();
+        reference.assertEquals("getFont", font);
+a55 2
+
+
+@
+

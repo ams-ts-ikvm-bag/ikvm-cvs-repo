@@ -1,0 +1,585 @@
+head	1.22;
+access;
+symbols
+	v8_1_5717_0:1.22
+	v8_1:1.22.0.4
+	v8_0_5449_1:1.22
+	v8_0_5449_0:1.22
+	v8_0:1.22.0.2
+	v7_4_5196_0:1.20
+	v7_4:1.20.0.2
+	v7_3:1.18.0.8
+	v7_2_4630_6:1.18
+	v7_2_4630_5:1.18
+	v7_2_4630_4:1.18
+	v7_2_4630_3:1.18
+	v7_2_4630_2:1.18
+	v0_46_0_4:1.17
+	v7_2_4630_1:1.18
+	v7_2:1.18.0.6
+	v7_1_4532_2:1.18
+	v7_1_4532_1:1.18
+	v7_1_4532_0:1.18
+	v7_1:1.18.0.4
+	v7_0_4335_3:1.18
+	v7_0_4335_2:1.18
+	v7_0_4335_1:1.18
+	v0_46_0_2:1.17
+	v7_0_4335_0:1.18
+	v7_0:1.18.0.2
+	v0_40_0_6:1.8
+	v0_40_0_5:1.8
+	v0_46_0_1:1.17
+	v0_46_0_0:1.17
+	v0_46:1.17.0.2
+	v0_36_0_14:1.1
+	v0_44_0_6:1.16
+	v0_44_0_5:1.16
+	v0_44_0_4:1.16
+	v0_44_0_3:1.16
+	v0_44_0_2:1.16
+	v0_42_0_7:1.13
+	v0_44_0_1:1.16
+	v0_44_0_0:1.16
+	v0_44:1.16.0.2
+	v0_42_0_6:1.13
+	v0_42_0_5:1.13
+	v0_42_0_4:1.13
+	v0_42_0_3:1.13
+	v0_42_0_2:1.13
+	v0_42_0_1:1.13
+	v0_42_0_0:1.13
+	v0_42:1.13.0.2
+	v0_40_0_3:1.8
+	v0_40_0_2:1.8
+	v0_40_0_1:1.8
+	v0_40_0_0:1.8
+	v0_40:1.8.0.2
+	v0_36_0_13:1.1
+	v0_38_0_1:1.6
+	v0_38_0_0:1.6
+	v0_38:1.6.0.2
+	v0_36_0_9:1.1
+	v0_36_0_7:1.1
+	v0_36_0_5:1.1
+	v0_36_0_4:1.1
+	v0_36_0_3:1.1
+	v0_36_0_2:1.1
+	v0_36_0_1:1.1
+	v0_36_0_0:1.1
+	v0_36:1.1.0.4
+	v0_34_0_3:1.1
+	v0_34_0_2:1.1
+	v0_34_0_1:1.1
+	v0_34_0_0:1.1
+	v0_34:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.22
+date	2014.07.01.15.12.34;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2014.07.01.15.09.11;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2013.03.29.11.28.24;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2013.03.29.08.28.17;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2011.05.12.08.08.08;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2010.09.14.07.38.42;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2010.04.23.04.58.36;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2010.01.25.07.52.42;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2009.10.14.14.58.41;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2009.09.07.04.19.04;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2009.08.31.06.16.04;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2009.08.31.05.44.51;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2009.07.30.13.14.14;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2009.04.16.05.34.21;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2009.03.04.05.47.18;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2008.11.14.08.42.07;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2008.05.09.05.57.55;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2008.03.03.07.05.19;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2008.01.03.09.45.49;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2007.11.26.08.38.38;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.11.21.07.15.44;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.03.29.09.21.09;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.22
+log
+@Added intrinsic for LambdaMetafactory.metafactory().
+@
+text
+@﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4CA3F3DF-D2B7-4FA2-874C-BFC4B04286A2}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>ikvmc</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ikvmc</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>ikvmc\bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;DEBUG;STATIC_COMPILER;EMITTERS</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <Name>ICSharpCode.SharpZipLib</Name>
+      <HintPath>bin\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ikvmc\AotTypeWrapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ikvmc\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ikvmc\AssemblyResolver.cs" />
+    <Compile Include="ikvmc\Compiler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ikvmc\CompilerClassLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ikvmc\FakeTypes.cs" />
+    <Compile Include="ikvmc\Proxy.cs" />
+    <Compile Include="ikvmc\remapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="runtime\AssemblyClassLoader.cs" />
+    <Compile Include="runtime\atomic.cs" />
+    <Compile Include="runtime\attributes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="runtime\BigEndianBinaryReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="runtime\Boxer.cs" />
+    <Compile Include="runtime\ByteCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="runtime\ClassFile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="runtime\ClassLoaderWrapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="runtime\CodeEmitter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="runtime\compiler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="runtime\CoreClasses.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="runtime\DotNetTypeWrapper.cs" />
+    <Compile Include="runtime\DynamicClassLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="runtime\DynamicTypeWrapper.cs" />
+    <Compile Include="runtime\intrinsics.cs" />
+    <Compile Include="runtime\JavaException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="runtime\JsrInliner.cs" />
+    <Compile Include="runtime\LambdaMetafactory.cs" />
+    <Compile Include="runtime\LocalVars.cs" />
+    <Compile Include="runtime\MemberWrapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="runtime\MethodHandleUtil.cs" />
+    <Compile Include="runtime\profiler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="runtime\ReflectUtil.cs" />
+    <Compile Include="runtime\RuntimeHelperTypes.cs" />
+    <Compile Include="runtime\Serialization.cs" />
+    <Compile Include="runtime\tracer.cs" />
+    <Compile Include="runtime\Types.cs" />
+    <Compile Include="runtime\TypeWrapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="runtime\verifier.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="runtime\vm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommonAssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="reflect\IKVM.Reflection.csproj">
+      <Project>{4CB170EF-DFE6-4A56-9E1B-A85449E827A7}</Project>
+      <Name>IKVM.Reflection</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>@
+
+
+1.21
+log
+@Make Boxer helper class available to runtime.
+@
+text
+@d123 1
+@
+
+
+1.20
+log
+@Moved part of MethodHandleUtil that is used by the runtime for JNI non-virtual invocation into a separate file.
+@
+text
+@d94 1
+@
+
+
+1.19
+log
+@Introduced EMITTERS conditional compilation constant.
+@
+text
+@d126 1
+@
+
+
+1.18
+log
+@Added experimental (and for the time being undocumented) support for having ikvmc pre-generate proxy classes.
+@
+text
+@d38 1
+a38 1
+    <DefineConstants>TRACE;DEBUG;STATIC_COMPILER;IKVM_REF_EMIT</DefineConstants>
+@
+
+
+1.17
+log
+@Moved local variable analysis from verifier.cs to new file LocalVars.cs.
+@
+text
+@d82 1
+@
+
+
+1.16
+log
+@- Rewrote assembly loading for ikvmc and ikvmstub (and unified it). It now no longer depends on the runtime to do assembly name to path resolution and behaves more csc like.
+- Added -nostdlib and -lib options to ikvmc and ikvmstub.
+- openjdk.build now uses our System.Core.dll (unless we're building on .NET 4.0).
+@
+text
+@d121 1
+@
+
+
+1.15
+log
+@Integrated new IKVM.Reflection implementation.
+@
+text
+@d74 1
+@
+
+
+1.14
+log
+@Replaced most type literals with static field access (in Types class) or warpped JVM.Import() around them.
+@
+text
+@d143 3
+a145 3
+    <ProjectReference Include="refemit\IKVM.Reflection.Emit.csproj">
+      <Project>{3949055D-38DF-4A8F-A632-0F0E62337428}</Project>
+      <Name>IKVM.Reflection.Emit</Name>
+@
+
+
+1.13
+log
+@Moved AssemblyClassLoader and BootstrapClassLoader into AssemblyClassLoader.cs.
+@
+text
+@d130 1
+@
+
+
+1.12
+log
+@Moved DotNetTypeWrapper class into its own source file.
+@
+text
+@d84 1
+@
+
+
+1.11
+log
+@Added new DynamicTypeWrapper.cs source to project.
+@
+text
+@d109 1
+@
+
+
+1.10
+log
+@Implemented automatically enabling .NET serialization support for Java classes that are trivially serializable.
+@
+text
+@d112 1
+@
+
+
+1.9
+log
+@Added support for inlining subroutines (jsr/ret) to allow the verifier and compiler to be simplified and to hopefully pave the way for future codegen optimizations.
+@
+text
+@d125 1
+@
+
+
+1.8
+log
+@Implemented ikvm.internal.ClassLiteral<T> to allow for more efficient class literals.
+@
+text
+@d116 1
+@
+
+
+1.7
+log
+@Integrated IKVM.Reflection.Emit in ikvmc.
+@
+text
+@d123 1
+@
+
+
+1.6
+log
+@- added more efficient float/double to/from int/long bits converters
+- made Double.doubleToRawLongBits/longBitsToDouble and Float.floatToRawIntBits/intBitsToFloat intrinsics
+- generalized the intrinsics support
+@
+text
+@d4 1
+a4 1
+    <ProductVersion>8.0.50727</ProductVersion>
+d38 1
+a38 1
+    <DefineConstants>TRACE;DEBUG;STATIC_COMPILER;WHIDBEY</DefineConstants>
+d122 1
+d135 6
+@
+
+
+1.5
+log
+@Replaced notion of DynamicOnly types with Fake types. Fake types are implemented as generic type instances and can have DynamicOnly methods.
+@
+text
+@d112 1
+@
+
+
+1.4
+log
+@- Moved common assembly attributes to single file (CommonAssemblyInfo.cs).
+- Added IKVM.Runtime.JNI project to Visual Studio solution.
+- Added atomic.cs to Visual Studio projects.
+- Added SecurityCritical and AllowPartiallyTrustedCallers attributes to IKVM.Runtime.dll.
+@
+text
+@d80 1
+@
+
+
+1.3
+log
+@- Removed .NET 1.1 specific code
+- Removed conditional compilation of .NET 2.0 specific code
+@
+text
+@d83 1
+d130 1
+@
+
+
+1.2
+log
+@- Removed Visual Studio 2003 solution/project files.
+- Added Visual Studio 2008 solution.
+@
+text
+@d62 1
+d83 3
+d119 1
+a129 6
+  <ItemGroup>
+    <ProjectReference Include="runtime\IKVM.Runtime.8.csproj">
+      <Project>{F5C7B588-0403-4AF2-A4DE-5697DE21BC2C}</Project>
+      <Name>IKVM.Runtime.8</Name>
+    </ProjectReference>
+  </ItemGroup>
+@
+
+
+1.1
+log
+@New Visual Studio 2005 solution and project files.
+@
+text
+@d1 1
+a1 1
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+d29 1
+@
+

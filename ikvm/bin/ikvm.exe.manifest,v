@@ -1,0 +1,60 @@
+head	1.2;
+access;
+symbols
+	v8_1_5717_0:1.1
+	v8_1:1.1.0.4
+	v8_0_5449_1:1.1
+	v8_0_5449_0:1.1
+	v8_0:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2015.10.15.11.28.12;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2014.06.13.09.52.28;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@Added Windows 10 as supported OS to manifest.
+@
+text
+@<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+    <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+        <application>
+            <!-- Windows 10 -->
+            <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
+            <!-- Windows 8.1 -->
+            <supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}"/>
+            <!-- Windows 8 -->
+            <supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}"/>
+            <!--The ID below indicates application support for Windows 7 -->
+            <supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>
+            <!--The ID below indicates application support for Windows Vista -->
+            <supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}"/>
+        </application>
+    </compatibility>
+</assembly>
+@
+
+
+1.1
+log
+@Added ikvm.exe.manifest file to enable Windows 8.1 behavior (including getting the right version number).
+@
+text
+@d5 2
+@
+

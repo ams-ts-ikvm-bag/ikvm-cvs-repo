@@ -1,0 +1,327 @@
+head	1.6;
+access;
+symbols
+	v8_1_5717_0:1.6
+	v8_1:1.6.0.14
+	v8_0_5449_1:1.6
+	v8_0_5449_0:1.6
+	v8_0:1.6.0.12
+	v7_4_5196_0:1.6
+	v7_4:1.6.0.10
+	v7_3:1.6.0.8
+	v7_2_4630_6:1.6
+	v7_2_4630_5:1.6
+	v7_2_4630_4:1.6
+	v7_2_4630_3:1.6
+	v7_2_4630_2:1.6
+	v0_46_0_4:1.5
+	v7_2_4630_1:1.6
+	v7_2:1.6.0.6
+	v7_1_4532_2:1.6
+	v7_1_4532_1:1.6
+	v7_1_4532_0:1.6
+	v7_1:1.6.0.4
+	v7_0_4335_3:1.6
+	v7_0_4335_2:1.6
+	v7_0_4335_1:1.6
+	v0_46_0_2:1.5
+	v7_0_4335_0:1.6
+	v7_0:1.6.0.2
+	v0_40_0_6:1.3
+	v0_40_0_5:1.3
+	v0_46_0_1:1.5
+	v0_46_0_0:1.5
+	v0_46:1.5.0.2
+	v0_36_0_14:1.2
+	v0_44_0_6:1.4
+	v0_44_0_5:1.4
+	v0_44_0_4:1.4
+	v0_44_0_3:1.4
+	v0_44_0_2:1.4
+	v0_42_0_7:1.3
+	v0_44_0_1:1.4
+	v0_44_0_0:1.4
+	v0_44:1.4.0.2
+	v0_42_0_6:1.3
+	v0_42_0_5:1.3
+	v0_42_0_4:1.3
+	v0_42_0_3:1.3
+	v0_42_0_2:1.3
+	v0_42_0_1:1.3
+	v0_42_0_0:1.3
+	v0_42:1.3.0.6
+	v0_40_0_3:1.3
+	v0_40_0_2:1.3
+	v0_40_0_1:1.3
+	v0_40_0_0:1.3
+	v0_40:1.3.0.4
+	v0_36_0_13:1.2
+	v0_38_0_1:1.3
+	v0_38_0_0:1.3
+	v0_38:1.3.0.2
+	v0_36_0_9:1.2
+	v0_36_0_7:1.2
+	v0_36_0_5:1.2
+	v0_36_0_4:1.2
+	v0_36_0_3:1.2
+	v0_36_0_2:1.2
+	v0_36_0_1:1.2
+	v0_36_0_0:1.2
+	v0_36:1.2.0.2
+	v0_34_0_3:1.1
+	v0_34_0_2:1.1
+	v0_34_0_1:1.1
+	v0_34_0_0:1.1
+	v0_34:1.1.0.6
+	v0_32:1.1.0.4
+	v0_32_0_0:1.1
+	v0_30:1.1.0.2
+	v0_28_0_0:1.1
+	v0_26_0_1:1.1
+	v0_26_0_0:1.1
+	v0_24_0_1:1.1
+	v0_24_0_0:1.1
+	v0_22_0_0:1.1
+	v0_20_0_0:1.1
+	v0_18_0_0:1.1
+	v0_16_0_0:1.1
+	v0_14_0_1:1.1
+	v0_14_0_0:1.1
+	v0_12_0_0:1.1
+	v0_10_0_1:1.1
+	v0_10_0_0:1.1;
+locks; strict;
+comment	@# @;
+
+
+1.6
+date	2011.05.05.13.29.40;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2010.11.07.11.58.08;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.01.11.07.06.22;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.02.09.17.19.29;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.05.21.15.42.42;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2004.06.29.12.59.30;	author sschaub;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.6
+log
+@- Added Tchatche.com case study.
+- Updated copyright year to 2002-2011.
+@
+text
+@<?xml version="1.0"?>
+
+<!--
+Skin configuration file. This file contains details of your project, which will
+be used to configure the chosen Forrest skin.
+-->
+
+<!DOCTYPE skinconfig [
+
+  <!ENTITY % links.att 'name CDATA #REQUIRED'>
+  <!ENTITY % link.att 'name CDATA #REQUIRED href CDATA #REQUIRED'>
+  <!ELEMENT skinconfig (disable-search?, disable-print-link?, disable-pdf-link?,
+  disable-xml-link?, disable-compliance-links?, obfuscate-mail-links?, searchsite-domain?, searchsite-name?,
+  project-name, project-description?, project-url, project-logo, group-name?, group-description?, group-url?, group-logo?,
+  host-url?, host-logo?, year?, vendor?, trail?, toc?, credits?)*>
+  <!ELEMENT credits (credit*)>
+  <!ELEMENT credit (name, url, image?, width?, height?)>
+  <!-- id uniquely identifies the tool, and role indicates its function -->
+  <!ATTLIST credit id   CDATA #IMPLIED
+                   role CDATA #IMPLIED>
+  <!ELEMENT disable-search (#PCDATA)>
+  <!ELEMENT disable-print-link (#PCDATA)>
+  <!ELEMENT disable-pdf-link (#PCDATA)>
+  <!ELEMENT disable-xml-link (#PCDATA)>    
+  <!ELEMENT disable-compliance-links (#PCDATA)>   
+  <!ELEMENT obfuscate-mail-links (#PCDATA)>   
+  <!ELEMENT searchsite-domain (#PCDATA)>
+  <!ELEMENT searchsite-name (#PCDATA)>  
+  <!ELEMENT project-name (#PCDATA)>
+  <!ELEMENT project-description (#PCDATA)>
+  <!ELEMENT project-url (#PCDATA)>
+  <!ELEMENT project-logo (#PCDATA)>
+  <!ELEMENT group-name (#PCDATA)>
+  <!ELEMENT group-description (#PCDATA)>
+  <!ELEMENT group-url (#PCDATA)>
+  <!ELEMENT group-logo (#PCDATA)>
+  <!ELEMENT host-url (#PCDATA)>
+  <!ELEMENT host-logo (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT vendor (#PCDATA)>
+  <!ELEMENT trail (link1, link2, link3)>
+  <!ELEMENT link1 EMPTY>
+  <!-- Seems we can't use param entity refs until this is DTDified -->
+  <!ATTLIST link1 name CDATA #REQUIRED href CDATA #IMPLIED>
+  <!ELEMENT link2 EMPTY>
+  <!ATTLIST link2 name CDATA #REQUIRED href CDATA #IMPLIED>
+  <!ELEMENT link3 EMPTY>
+  <!ATTLIST link3 name CDATA #REQUIRED href CDATA #IMPLIED>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT url (#PCDATA)>
+  <!ELEMENT image (#PCDATA)>
+  <!ELEMENT width (#PCDATA)>
+  <!ELEMENT height (#PCDATA)>
+  <!ELEMENT toc EMPTY>
+  <!ATTLIST toc level CDATA #IMPLIED>
+  ]>
+
+<skinconfig>
+  <!-- Do we want to disable the Google search box? -->
+  <disable-search>true</disable-search>
+  <!-- Do we want to disable the print link? If enabled, invalid HTML 4.0.1 -->
+  <disable-print-link>true</disable-print-link>  
+  <!-- Do we want to disable the PDF link? -->
+  <disable-pdf-link>true</disable-pdf-link>
+  <!-- Do we want to disable the xml source link? -->
+  <disable-xml-link>true</disable-xml-link>
+  <!-- Do we want to disable w3c compliance links? -->
+  <disable-compliance-links>true</disable-compliance-links>
+  <!-- Whether to render mailto: links unrecognisable by spam harvesters -->
+  <obfuscate-mail-links>true</obfuscate-mail-links>
+
+  <searchsite-domain>google.com</searchsite-domain>  
+  <searchsite-name>Google</searchsite-name>  
+
+  <!-- mandatory project logo
+       skin: forrest-site renders it at the top -->
+  <project-name>IKVM.NET</project-name>
+  <project-description>Java on .NET</project-description>
+  <project-url>http://www.ikvm.net/</project-url>
+  <project-logo>images/project.gif</project-logo>
+  <!-- Alternative static image:
+  <project-logo>images/project-logo.gif</project-logo> -->
+
+  <!-- optional group logo
+       skin: forrest-site renders it at the top-left corner -->
+  <!--
+  <group-name>MyGroup</group-name>
+  <group-description>MyGroup Description</group-description>
+  <group-url>http://mygroup.org</group-url>
+  <group-logo>images/group.png</group-logo>
+  -->
+  <!-- Alternative static image:
+  <group-logo>images/group-logo.gif</group-logo> -->
+
+  <!-- optional host logo (e.g. sourceforge logo)
+       skin: forrest-site renders it at the bottom-left corner -->
+  <host-url></host-url>
+  <host-logo></host-logo>
+
+  <!-- The following are used to construct a copyright statement -->
+  <year>2002-2011</year>
+  <vendor>Jeroen Frijters </vendor>
+
+  <!-- Some skins use this to form a 'breadcrumb trail' of links. If you don't
+  want these, set the attributes to blank. The DTD purposefully requires them.
+  -->
+  <trail>
+    <link1 name="" href=""/>
+    <link2 name="" href=""/>
+    <link3 name="" href=""/>
+  </trail>
+
+  <!-- Configure how many "section" levels need to be included in the
+  generated Table of Contents (TOC). By default, if no toc element is provided
+  below, then 2 levels are included. Level 0 does not generate any TOC at all.
+  -->
+  <toc level="1"/>
+
+  <!-- Credits are typically rendered as a set of small clickable images in the
+  page footer -->
+  <credits>
+    <credit>
+      <name>Built with Apache Forrest</name>
+      <url>http://xml.apache.org/forrest/</url>
+      <image>images/built-with-forrest-button.png</image>
+      <width>88</width>
+      <height>31</height>
+    </credit>
+    <!-- A credit with @@role='pdf' will have its name and url displayed in the
+    PDF page's footer. -->
+  </credits>
+
+</skinconfig>
+@
+
+
+1.5
+log
+@Removed w3c validation icons, the page doesn't validate.
+@
+text
+@d101 1
+a101 1
+  <year>2010</year>
+@
+
+
+1.4
+log
+@Moved User Guide content to wiki.
+@
+text
+@d68 1
+a68 1
+  <disable-compliance-links>false</disable-compliance-links>
+@
+
+
+1.3
+log
+@Updated copyright year and added a case study.
+@
+text
+@d101 1
+a101 1
+  <year>2008</year>
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d101 1
+a101 1
+  <year>2007</year>
+@
+
+
+1.1
+log
+@Initial website commit
+@
+text
+@d101 1
+a101 1
+  <year>2004</year>
+@
+

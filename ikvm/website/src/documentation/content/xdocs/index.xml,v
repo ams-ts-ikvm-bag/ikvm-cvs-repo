@@ -1,0 +1,288 @@
+head	1.6;
+access;
+symbols
+	v8_1_5717_0:1.6
+	v8_1:1.6.0.14
+	v8_0_5449_1:1.6
+	v8_0_5449_0:1.6
+	v8_0:1.6.0.12
+	v7_4_5196_0:1.6
+	v7_4:1.6.0.10
+	v7_3:1.6.0.8
+	v7_2_4630_6:1.6
+	v7_2_4630_5:1.6
+	v7_2_4630_4:1.6
+	v7_2_4630_3:1.6
+	v7_2_4630_2:1.6
+	v0_46_0_4:1.5
+	v7_2_4630_1:1.6
+	v7_2:1.6.0.6
+	v7_1_4532_2:1.6
+	v7_1_4532_1:1.6
+	v7_1_4532_0:1.6
+	v7_1:1.6.0.4
+	v7_0_4335_3:1.6
+	v7_0_4335_2:1.6
+	v7_0_4335_1:1.6
+	v0_46_0_2:1.5
+	v7_0_4335_0:1.6
+	v7_0:1.6.0.2
+	v0_40_0_6:1.4
+	v0_40_0_5:1.4
+	v0_46_0_1:1.5
+	v0_46_0_0:1.5
+	v0_46:1.5.0.4
+	v0_36_0_14:1.3
+	v0_44_0_6:1.5
+	v0_44_0_5:1.5
+	v0_44_0_4:1.5
+	v0_44_0_3:1.5
+	v0_44_0_2:1.5
+	v0_42_0_7:1.4
+	v0_44_0_1:1.5
+	v0_44_0_0:1.5
+	v0_44:1.5.0.2
+	v0_42_0_6:1.4
+	v0_42_0_5:1.4
+	v0_42_0_4:1.4
+	v0_42_0_3:1.4
+	v0_42_0_2:1.4
+	v0_42_0_1:1.4
+	v0_42_0_0:1.4
+	v0_42:1.4.0.6
+	v0_40_0_3:1.4
+	v0_40_0_2:1.4
+	v0_40_0_1:1.4
+	v0_40_0_0:1.4
+	v0_40:1.4.0.4
+	v0_36_0_13:1.3
+	v0_38_0_1:1.4
+	v0_38_0_0:1.4
+	v0_38:1.4.0.2
+	v0_36_0_9:1.3
+	v0_36_0_7:1.3
+	v0_36_0_5:1.3
+	v0_36_0_4:1.3
+	v0_36_0_3:1.3
+	v0_36_0_2:1.3
+	v0_36_0_1:1.3
+	v0_36_0_0:1.3
+	v0_36:1.3.0.2
+	v0_34_0_3:1.2
+	v0_34_0_2:1.2
+	v0_34_0_1:1.2
+	v0_34_0_0:1.2
+	v0_34:1.2.0.6
+	v0_32:1.2.0.4
+	v0_32_0_0:1.2
+	v0_30:1.2.0.2
+	v0_28_0_0:1.2
+	v0_26_0_1:1.2
+	v0_26_0_0:1.2
+	v0_24_0_1:1.2
+	v0_24_0_0:1.2
+	v0_22_0_0:1.2
+	v0_20_0_0:1.2
+	v0_18_0_0:1.2
+	v0_16_0_0:1.2
+	v0_14_0_1:1.2
+	v0_14_0_0:1.2
+	v0_12_0_0:1.2
+	v0_10_0_1:1.2
+	v0_10_0_0:1.2;
+locks; strict;
+comment	@# @;
+
+
+1.6
+date	2011.05.17.11.40.17;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2010.01.11.07.06.22;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2008.07.21.12.17.18;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2007.05.21.15.42.41;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2004.07.05.13.57.40;	author sschaub;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2004.06.29.12.59.30;	author sschaub;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.6
+log
+@Added Scala.NET jdk2ikvm tool to Related Work links.
+@
+text
+@<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.2//EN" "http://apache.org/forrest/dtd/document-v12.dtd">
+<document> 
+  <header> 
+    <title>IKVM.NET Home Page</title> 
+  </header> 
+  <body> 
+    <section>
+      <title>Introduction</title>
+      <p>IKVM.NET is an implementation of Java for <fork href="ext:mono">Mono</fork> and the <fork href="ext:dotnet">Microsoft .NET Framework</fork>.
+      It includes the following components:</p>
+      <ul>
+      <li>A Java Virtual Machine implemented in .NET</li>
+      <li>A .NET implementation of the Java class libraries</li>
+      <li>Tools that enable Java and .NET interoperability</li>
+      </ul>
+      <p><link href="uses.html">Read more</link> about what you can do with IKVM.NET.</p>
+    </section>
+    <section>
+      <title>Related Work</title>
+      <p>The following projects are related to IKVM.NET in some way:</p>
+      <ul>
+        <li><link href="ext:mono">Mono: Open Source .NET implementation that includes IKVM.NET</link></li>
+        <li><link href="ext:monodevelop">MonoDevelop: A Mono IDE with IKVM Support</link></li>
+        <li><link href="ext:ant-ikvmc">Ant task for ikvmc</link></li>
+        <li><link href="ext:jar2ikvmc">Tool to figure out jar dependencies and generate ikvmc script</link></li>
+        <li><link href="ext:scalanet">jdk2ikvm: A source-level conversion tool to migrate Scala programs from JDK to .NET</link></li>
+      </ul>
+    </section>
+  </body>
+</document>
+@
+
+
+1.5
+log
+@Moved User Guide content to wiki.
+@
+text
+@d27 1
+@
+
+
+1.4
+log
+@Website updates.
+@
+text
+@a19 45
+    <title>IKVM.NET Components</title>
+    <p >IKVM.NET 0.36 consists of several parts:</p>
+<ul >
+<li>
+<strong>IKVM.Runtime.dll</strong>: The VM runtime and all supporting code. It contains (among other things):
+<ul>
+<li>Byte Code JIT compiler/verifier: Just-in-time compiles Java Byte Code to CIL.</li>
+<li>Object model remapping infrastructure: Makes System.Object, System.String and System.Exception appear to 
+Java code as java.lang.Object, java.lang.String and java.lang.Throwable.</li>
+<li>Managed .NET re-implementations of the native methods in Classpath. </li>
+</ul>
+</li>
+<li>
+<strong>IKVM.OpenJDK.ClassLibrary.dll</strong>: compiled version of the Java class libraries derived from the <link href="ext:openjdk">OpenJDK</link> class library with some parts filled in with code from <link href="ext:classpath">GNU Classpath</link> and <link href="ext:icedtea">IcedTea</link>, 
+plus some additional IKVM.NET specific code.
+</li>
+<li>
+<strong>ikvm-native.dll</strong>: Unmanaged C library that implements a small part of the JNI interface and some platform specific code on non Windows platforms. On Windows this is an optional part, only required when an application uses its own native libraries. This is not needed for pure Java applications. On non-Windows platforms it is required, but it is included with the Mono distribution so it usually doesn't need to be installed seperately.
+</li>
+<li>
+<strong>ikvm.exe</strong>: Starter executable, comparable to java.exe ("dynamic mode").
+</li>
+<li>
+<strong>ikvmc.exe</strong>: Static compiler. Used to compile Java classes and jars into a .NET assembly ("static mode") .
+</li>
+<li>
+<strong>ikvmstub.exe</strong>: A tool that generates stub class files from a .NET assembly, so that Java code can be compiled against .NET code. IKVM.NET understands the stubs and replaces the references to the stubs by references to the actual .NET types. 
+</li>
+<li>
+<strong>IKVM.AWT.WinForms.dll</strong>: Very limited and broken implementation of a few AWT peers. This is a low priority issue for me.</li>
+</ul>
+  </section>
+    <section>
+      <title>Project Status</title>
+      <p>This project is currently in active development. Compliance with JDK 1.6 is largely implemented, but there are some
+      holes. In particular, </p>
+      <ul>
+      <li>AWT and Swing are not presently functional. This is a low priority item for the project developers.</li>
+      <li>Security is another fairly large hole missing from the IKVM platform. This will be solved by relying on the sophisticated and powerful security model offered by the .NET platform.</li>
+      </ul>
+      <p>Still, enough functionality is in place that several large Java projects run successfully. </p>
+
+      
+    </section>
+    <section>
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d21 1
+a21 1
+    <p >IKVM.NET consists of several parts:</p>
+d33 2
+a34 2
+<strong>IKVM.GNU.Classpath.dll</strong>: compiled version of <link href="ext:classpath">GNU Classpath</link>, the Free Software Foundation's implementation of the Java class libraries, 
+plus some additional IKVM.NET specific code. Note that GNU Classpath isn't <em>part</em> of IKVM.NET, but it is <em>used</em> by IKVM.NET 
+d54 2
+a55 2
+      <p>This project is currently in active development. Compliance with JDK 1.4 is largely implemented, but there are some
+      holes (particularly in the <jump href="http://www.kaffe.org/~stuart/japi/htmlout/h-jdk14-classpath.html">Classpath API's</jump>). In particular, </p>
+d68 1
+d70 2
+a71 1
+        <li><link href="ext:classpath">GNU Classpath: The Free Java Library Project</link></li>
+@
+
+
+1.2
+log
+@Minor fixes; added feedback link to each page
+@
+text
+@d34 1
+a34 1
+plus some additional IKVM.NET specific code. Note that GNU Classpath isn't <em>part</em> of IKVM.NET, but it is <em>used</em> by IK.VM.NET 
+d37 1
+a37 1
+<strong>IKVM.JNI.[Mono|CLR-Win32].dll</strong>: Managed C++ assembly that implements the JNI interface. This is an optional part, only required when an application uses its own native libraries. This is not needed for pure Java applications. 
+a69 1
+        <li><link href="http://msdn.microsoft.com/vjsharp/default.aspx">Microsoft's J# for .NET</link></li>
+@
+
+
+1.1
+log
+@Initial website commit
+@
+text
+@d24 1
+a24 1
+<strong>ikvm.runtime.dll</strong>: The VM runtime and all supporting code. It contains (among other things):
+d33 1
+a33 1
+<strong>ikvm.gnu.classpath.dll</strong>: compiled version of <link href="ext:classpath">GNU Classpath</link>, the Free Software Foundation's implementation of the Java class libraries, 
+d37 1
+a37 1
+<strong>ikvm.jni.[mono|clr-win32].dll</strong>: Managed C++ assembly that implements the JNI interface. This is an optional part, only required when an application uses its own native libraries. This will not be required for pure Java applications, this is important because this code will only run on Microsoft's .NET implementation. 
+@
+

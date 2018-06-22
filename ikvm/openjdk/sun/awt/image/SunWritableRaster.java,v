@@ -1,0 +1,284 @@
+head	1.4;
+access;
+symbols
+	v8_1_5717_0:1.4
+	v8_1:1.4.0.6
+	v8_0_5449_1:1.4
+	v8_0_5449_0:1.4
+	v8_0:1.4.0.4
+	v7_4_5196_0:1.4
+	v7_4:1.4.0.2
+	v7_3:1.3.0.8
+	v7_2_4630_6:1.3
+	v7_2_4630_5:1.3
+	v7_2_4630_4:1.3
+	v7_2_4630_3:1.3
+	v7_2_4630_2:1.3
+	v0_46_0_4:1.2
+	v7_2_4630_1:1.3
+	v7_2:1.3.0.6
+	v7_1_4532_2:1.3
+	v7_1_4532_1:1.3
+	v7_1_4532_0:1.3
+	v7_1:1.3.0.4
+	v7_0_4335_3:1.3
+	v7_0_4335_2:1.3
+	v7_0_4335_1:1.3
+	v0_46_0_2:1.2
+	v7_0_4335_0:1.3
+	v7_0:1.3.0.2
+	v0_40_0_6:1.1
+	v0_40_0_5:1.1
+	v0_46_0_1:1.2
+	v0_46_0_0:1.2
+	v0_46:1.2.0.2
+	v0_44_0_6:1.1
+	v0_44_0_5:1.1
+	v0_44_0_4:1.1
+	v0_44_0_3:1.1
+	v0_44_0_2:1.1
+	v0_42_0_7:1.1
+	v0_44_0_1:1.1
+	v0_44_0_0:1.1
+	v0_44:1.1.0.6
+	v0_42_0_6:1.1
+	v0_42_0_5:1.1
+	v0_42_0_4:1.1
+	v0_42_0_3:1.1
+	v0_42_0_2:1.1
+	v0_42_0_1:1.1
+	v0_42_0_0:1.1
+	v0_42:1.1.0.4
+	v0_40_0_3:1.1
+	v0_40_0_2:1.1
+	v0_40_0_1:1.1
+	v0_40_0_0:1.1
+	v0_40:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.4
+date	2013.05.05.18.07.22;	author smallsql;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2011.07.09.14.52.44;	author smallsql;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2011.01.24.16.40.23;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.12.19.09.53.42;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.4
+log
+@Merged with the current version of OpenJDK
+@
+text
+@/*
+ * Copyright (c) 2001, 2008, Oracle and/or its affiliates. All rights reserved.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 only, as
+ * published by the Free Software Foundation.  Oracle designates this
+ * particular file as subject to the "Classpath" exception as provided
+ * by Oracle in the LICENSE file that accompanied this code.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * You should have received a copy of the GNU General Public License version
+ * 2 along with this work; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+ * or visit www.oracle.com if you need additional information or have any
+ * questions.
+ */
+
+package sun.awt.image;
+
+import java.awt.Point;
+import java.awt.Rectangle;
+import java.awt.Image;
+import java.awt.image.DataBuffer;
+import java.awt.image.DataBufferByte;
+import java.awt.image.DataBufferUShort;
+import java.awt.image.DataBufferInt;
+import java.awt.image.SampleModel;
+import java.awt.image.WritableRaster;
+
+import sun.java2d.StateTrackable.State;
+import sun.java2d.SurfaceData;
+import sun.java2d.StateTrackableDelegate;
+
+/**
+ * This class exists as a middle layer between WritableRaster and its
+ * implementation specific subclasses (ByteComponentRaster, ShortBandedRaster,
+ * etc).
+ * It provides utilities to steal the data arrays from the standard DataBuffer
+ * types and also steals the StateTrackableDelegate from the associated
+ * DataBuffer so that it can be updated when the data is changed.
+ */
+public class SunWritableRaster extends WritableRaster {
+    private static DataStealer stealer;
+
+    public static interface DataStealer {
+        public byte[] getData(DataBufferByte dbb, int bank);
+        public short[] getData(DataBufferUShort dbus, int bank);
+        public int[] getData(DataBufferInt dbi, int bank);
+        public StateTrackableDelegate getTrackable(DataBuffer db);
+        public void setTrackable(DataBuffer db, StateTrackableDelegate trackable);
+    }
+
+    public static void setDataStealer(DataStealer ds) {
+        if (stealer != null) {
+            throw new InternalError("Attempt to set DataStealer twice");
+        }
+        stealer = ds;
+    }
+
+    public static byte[] stealData(DataBufferByte dbb, int bank) {
+        return stealer.getData(dbb, bank);
+    }
+
+    public static short[] stealData(DataBufferUShort dbus, int bank) {
+        return stealer.getData(dbus, bank);
+    }
+
+    public static int[] stealData(DataBufferInt dbi, int bank) {
+        return stealer.getData(dbi, bank);
+    }
+
+    public static StateTrackableDelegate stealTrackable(DataBuffer db) {
+        return stealer.getTrackable(db);
+    }
+
+    public static void setTrackable(DataBuffer db, StateTrackableDelegate trackable) {
+        stealer.setTrackable(db, trackable);
+    }
+
+    public static void makeTrackable(DataBuffer db) {
+        stealer.setTrackable(db, StateTrackableDelegate.createInstance(State.STABLE));
+    }
+
+    public static void markDirty(DataBuffer db) {
+        stealer.getTrackable(db).markDirty();
+    }
+
+    public static void markDirty(WritableRaster wr) {
+        if (wr instanceof SunWritableRaster) {
+            ((SunWritableRaster) wr).markDirty();
+        } else {
+            markDirty(wr.getDataBuffer());
+        }
+    }
+
+    public static void markDirty(Image img) {
+//        SurfaceData.getPrimarySurfaceData(img).markDirty();
+    }
+
+    private StateTrackableDelegate theTrackable;
+
+    public SunWritableRaster(SampleModel sampleModel, Point origin) {
+        super(sampleModel, origin);
+        theTrackable = stealTrackable(dataBuffer);
+    }
+
+    public SunWritableRaster(SampleModel sampleModel,
+                             DataBuffer dataBuffer,
+                             Point origin)
+    {
+        super(sampleModel, dataBuffer, origin);
+        theTrackable = stealTrackable(dataBuffer);
+    }
+
+    public SunWritableRaster(SampleModel sampleModel,
+                             DataBuffer dataBuffer,
+                             Rectangle aRegion,
+                             Point sampleModelTranslate,
+                             WritableRaster parent)
+    {
+        super(sampleModel, dataBuffer, aRegion, sampleModelTranslate, parent);
+        theTrackable = stealTrackable(dataBuffer);
+    }
+
+    /**
+     * Mark the TrackableDelegate of the associated DataBuffer dirty.
+     */
+    public final void markDirty() {
+        theTrackable.markDirty();
+    }
+}
+@
+
+
+1.3
+log
+@Add methods makeTrackable and setTrackable in SunWriteableRaster for Java 7
+@
+text
+@d2 1
+a2 1
+ * Copyright (c) 2001, 2007, Oracle and/or its affiliates. All rights reserved.
+d39 1
+a39 1
+//import sun.java2d.SurfaceData;
+a83 4
+    public static void markDirty(DataBuffer db) {
+        stealer.getTrackable(db).markDirty();
+    }
+
+d92 4
+@
+
+
+1.2
+log
+@Integrated OpenJDK 6 b21.
+@
+text
+@d38 1
+d58 1
+d88 8
+@
+
+
+1.1
+log
+@replace a small part (BufferedImage ff) of classpath with OpenJDK
+@
+text
+@d2 1
+a2 1
+ * Copyright 2001-2007 Sun Microsystems, Inc.  All Rights Reserved.
+d7 1
+a7 1
+ * published by the Free Software Foundation.  Sun designates this
+d9 1
+a9 1
+ * by Sun in the LICENSE file that accompanied this code.
+d21 3
+a23 3
+ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
+ * CA 95054 USA or visit www.sun.com if you need additional information or
+ * have any questions.
+@
+

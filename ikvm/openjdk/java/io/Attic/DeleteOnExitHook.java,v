@@ -1,0 +1,256 @@
+head	1.6;
+access;
+symbols
+	v0_46_0_4:1.5
+	v0_46_0_2:1.5
+	v0_40_0_6:1.4
+	v0_40_0_5:1.4
+	v0_46_0_1:1.5
+	v0_46_0_0:1.5
+	v0_46:1.5.0.2
+	v0_44_0_6:1.4
+	v0_44_0_5:1.4
+	v0_44_0_4:1.4
+	v0_44_0_3:1.4
+	v0_44_0_2:1.4
+	v0_42_0_7:1.4
+	v0_44_0_1:1.4
+	v0_44_0_0:1.4
+	v0_44:1.4.0.8
+	v0_42_0_6:1.4
+	v0_42_0_5:1.4
+	v0_42_0_4:1.4
+	v0_42_0_3:1.4
+	v0_42_0_2:1.4
+	v0_42_0_1:1.4
+	v0_42_0_0:1.4
+	v0_42:1.4.0.6
+	v0_40_0_3:1.4
+	v0_40_0_2:1.4
+	v0_40_0_1:1.4
+	v0_40_0_0:1.4
+	v0_40:1.4.0.4
+	v0_38_0_1:1.4
+	v0_38_0_0:1.4
+	v0_38:1.4.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.6
+date	2011.07.01.08.56.51;	author jfrijters;	state dead;
+branches;
+next	1.5;
+
+1.5
+date	2011.01.24.16.40.22;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2008.06.12.09.09.11;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.06.11.09.05.01;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.04.23.04.25.21;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.03.30.06.59.11;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.6
+log
+@Updated java.io package to OpenJDK 7.
+@
+text
+@/*
+ * Copyright (c) 2005, 2007, Oracle and/or its affiliates. All rights reserved.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 only, as
+ * published by the Free Software Foundation.  Oracle designates this
+ * particular file as subject to the "Classpath" exception as provided
+ * by Oracle in the LICENSE file that accompanied this code.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * You should have received a copy of the GNU General Public License version
+ * 2 along with this work; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+ * or visit www.oracle.com if you need additional information or have any
+ * questions.
+ */
+package java.io;
+
+import java.util.*;
+import java.io.File;
+
+/**
+ * This class holds a set of filenames to be deleted on VM exit through a shutdown hook.
+ * A set is used both to prevent double-insertion of the same file as well as offer
+ * quick removal.
+ */
+
+class DeleteOnExitHook {
+    private static DeleteOnExitHook instance = null;
+
+    private static LinkedHashSet<String> files = new LinkedHashSet<String>();
+    
+    static {
+        // [IKVM] make sure that we are registered with the shutdown process
+        Shutdown.init();
+    }
+
+    static DeleteOnExitHook hook() {
+        if (instance == null)
+            instance = new DeleteOnExitHook();
+
+        return instance;
+    }
+
+    private DeleteOnExitHook() {}
+
+    static synchronized void add(String file) {
+        if(files == null)
+            throw new IllegalStateException("Shutdown in progress");
+
+        files.add(file);
+    }
+
+    void run() {
+        LinkedHashSet<String> theFiles;
+
+        synchronized (DeleteOnExitHook.class) {
+            theFiles = files;
+            files = null;
+        }
+
+        ArrayList<String> toBeDeleted = new ArrayList<String>(theFiles);
+
+        // reverse the list to maintain previous jdk deletion order.
+        // Last in first deleted.
+        Collections.reverse(toBeDeleted);
+        for (String filename : toBeDeleted) {
+            (new File(filename)).delete();
+        }
+    }
+}
+@
+
+
+1.5
+log
+@Integrated OpenJDK 6 b21.
+@
+text
+@@
+
+
+1.4
+log
+@Merged OpenJDK 6 b10 whitespace and comment changes.
+@
+text
+@d2 1
+a2 1
+ * Copyright 2005-2007 Sun Microsystems, Inc.  All Rights Reserved.
+d7 1
+a7 1
+ * published by the Free Software Foundation.  Sun designates this
+d9 1
+a9 1
+ * by Sun in the LICENSE file that accompanied this code.
+d21 3
+a23 3
+ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
+ * CA 95054 USA or visit www.sun.com if you need additional information or
+ * have any questions.
+@
+
+
+1.3
+log
+@Converted tabs to spaces.
+@
+text
+@d32 1
+a32 1
+ * A set is used both to prevent double-insertion of the same file as well as offer 
+a79 1
+
+@
+
+
+1.2
+log
+@Refactored class library initialization.
+@
+text
+@d42 2
+a43 2
+	// [IKVM] make sure that we are registered with the shutdown process
+	Shutdown.init();
+d47 2
+a48 2
+	if (instance == null)
+	    instance = new DeleteOnExitHook();
+d50 1
+a50 1
+	return instance;
+d56 2
+a57 2
+	if(files == null)
+	    throw new IllegalStateException("Shutdown in progress");
+d59 1
+a59 1
+	files.add(file);
+d63 1
+a63 1
+	LinkedHashSet<String> theFiles;
+d65 13
+a77 13
+	synchronized (DeleteOnExitHook.class) {
+	    theFiles = files;
+	    files = null;
+	}
+
+	ArrayList<String> toBeDeleted = new ArrayList<String>(theFiles);
+
+	// reverse the list to maintain previous jdk deletion order.
+	// Last in first deleted.
+	Collections.reverse(toBeDeleted);
+	for (String filename : toBeDeleted) {
+	    (new File(filename)).delete();
+	}
+@
+
+
+1.1
+log
+@Forked OpenJDK sources that are going to be modified to refactor the library initialization.
+@
+text
+@d40 5
+@
+

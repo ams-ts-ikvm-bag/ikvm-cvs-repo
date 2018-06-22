@@ -1,0 +1,313 @@
+head	1.5;
+access;
+symbols
+	v8_1_5717_0:1.5
+	v8_1:1.5.0.22
+	v8_0_5449_1:1.5
+	v8_0_5449_0:1.5
+	v8_0:1.5.0.20
+	v7_4_5196_0:1.5
+	v7_4:1.5.0.18
+	v7_3:1.5.0.16
+	v7_2_4630_6:1.5
+	v7_2_4630_5:1.5
+	v7_2_4630_4:1.5
+	v7_2_4630_3:1.5
+	v7_2_4630_2:1.5
+	v0_46_0_4:1.5
+	v7_2_4630_1:1.5
+	v7_2:1.5.0.14
+	v7_1_4532_2:1.5
+	v7_1_4532_1:1.5
+	v7_1_4532_0:1.5
+	v7_1:1.5.0.12
+	v7_0_4335_3:1.5
+	v7_0_4335_2:1.5
+	v7_0_4335_1:1.5
+	v0_46_0_2:1.5
+	v7_0_4335_0:1.5
+	v7_0:1.5.0.10
+	v0_40_0_6:1.5
+	v0_40_0_5:1.5
+	v0_46_0_1:1.5
+	v0_46_0_0:1.5
+	v0_46:1.5.0.8
+	v0_44_0_6:1.5
+	v0_44_0_5:1.5
+	v0_44_0_4:1.5
+	v0_44_0_3:1.5
+	v0_44_0_2:1.5
+	v0_42_0_7:1.5
+	v0_44_0_1:1.5
+	v0_44_0_0:1.5
+	v0_44:1.5.0.6
+	v0_42_0_6:1.5
+	v0_42_0_5:1.5
+	v0_42_0_4:1.5
+	v0_42_0_3:1.5
+	v0_42_0_2:1.5
+	v0_42_0_1:1.5
+	v0_42_0_0:1.5
+	v0_42:1.5.0.4
+	v0_40_0_3:1.5
+	v0_40_0_2:1.5
+	v0_40_0_1:1.5
+	v0_40_0_0:1.5
+	v0_40:1.5.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.5
+date	2009.02.18.21.39.49;	author smallsql;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2009.02.15.20.57.01;	author smallsql;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2009.02.12.20.49.23;	author smallsql;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2009.02.10.18.19.14;	author smallsql;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2009.02.08.09.30.55;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.5
+log
+@Use MTA2STA to prevent thread problems
+@
+text
+@/*
+  Copyright (C) 2009 Volker Berlin (vberlin@@inetsoftware.de)
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+
+using System.Collections.Generic;
+using System.Text;
+using Debugger;
+using System.Collections;
+using Debugger.MetaData;
+using System.Windows.Forms;
+
+
+namespace ikvm.debugger
+{
+    /// <summary>
+    /// This class represent the target IKVM that should be debugged. The current implementation 
+    /// based on Debugger.Core.dll from the SharpDevelop project.
+    /// </summary>
+    class TargetVM
+    {
+        private readonly NDebugger debugger;
+
+        private readonly Process process;
+
+        private readonly Dictionary<String, DebugType> typeMap = new Dictionary<String, DebugType>();
+
+        /// <summary>
+        /// Create a new target VM for the giveb process id.
+        /// </summary>
+        /// <param name="pid">Process ID of the IKVM</param>
+        internal TargetVM(int pid)
+        {
+            debugger = new NDebugger();
+            System.Diagnostics.Process sysProcess = System.Diagnostics.Process.GetProcessById(pid);
+            process = debugger.Attach(sysProcess);
+            process.Exited += new EventHandler(ProcessExited);
+
+            process.ModuleLoaded += new EventHandler<ModuleEventArgs>(ModuleLoaded);
+            process.Paused += new EventHandler<ProcessEventArgs>(Paused);
+            process.Resumed += new EventHandler<ProcessEventArgs>(Resumed);
+
+        }
+
+        /// <summary>
+        /// Return a list of thread IDs 
+        /// </summary>
+        /// <returns>never null</returns>
+        internal int[] GetThreadIDs()
+        {
+            IList<Thread> list = process.Threads;
+            int[] ids = new int[list.Count];
+            for (int i = 0; i < ids.Length; i++)
+            {
+                ids[i] = (int)list[0].ID;
+            }
+            return ids;
+        }
+
+        internal void Suspend()
+        {
+            debugger.MTA2STA.Call(delegate { process.Break(); });
+        }
+
+        internal void Resume()
+        {
+            debugger.MTA2STA.Call(delegate { process.Continue(); });
+        }
+
+        internal void Exit(int exitCode)
+        {
+            debugger.MTA2STA.Call(delegate { process.Terminate(); });
+        }
+
+        internal int GetTypeID(String jniClassName)
+        {
+            String className = DebuggerUtils.ConvertJniClassName(jniClassName);
+            int id;
+            try
+            {
+                DebugType type = typeMap[className];
+                id = (int)type.Token;
+            }
+            catch (KeyNotFoundException)
+            {
+                id = 0;
+            }
+            Console.Error.WriteLine("GetTypeID:" + jniClassName + " " + className + " " + id);
+            return id;
+        }
+
+        void ProcessExited(object sender, EventArgs ev)
+        {
+            Environment.Exit(0);
+        }
+
+        void ModuleLoaded(object sender, ModuleEventArgs ev)
+        {
+            try
+            {
+                Module module = ev.Module;
+                Console.Error.WriteLine("ModuleLoaded:" + module.Filename + "|");
+                List<DebugType> types = module.GetDefinedTypes();
+                Console.Error.WriteLine("ModuleLoaded:" + types.Count);
+                for (int t = 0; t < types.Count; t++)
+                {
+                    try
+                    {
+                        DebugType type = types[t];
+                        //Console.Error.WriteLine(type + " " + type.FullName);
+                        typeMap.Add(type.FullName, type);
+                    }
+                    catch (ArgumentException)
+                    {
+                        //TODO add support for duplicate values
+                    }
+                }
+            }
+            catch (System.Exception ex)
+            {
+                Console.Error.WriteLine(ex);
+            }
+            Console.Error.WriteLine("ModuleLoaded:" + typeMap.Count);
+        }
+
+        void Paused(object sender, ProcessEventArgs ev)
+        {
+            Console.Error.WriteLine("Paused:" + ev);
+        }
+
+        void Resumed(object sender, ProcessEventArgs ev)
+        {
+            Console.Error.WriteLine("Resumed:" + ev);
+        }
+    }
+}
+@
+
+
+1.4
+log
+@execute first suspend command
+@
+text
+@d31 2
+d49 1
+a49 1
+        /// 
+d82 6
+a87 1
+            process.Break();
+d90 1
+a90 1
+        internal void Exit()
+d92 1
+a92 1
+            process.Terminate();
+@
+
+
+1.3
+log
+@next step
+@
+text
+@d78 5
+d123 1
+a123 1
+                        Console.Error.WriteLine(type + " " + type.FullName);
+a134 1
+                Console.Error.WriteLine(ex.StackTrace);
+@
+
+
+1.2
+log
+@First debugger caller
+@
+text
+@d30 1
+d44 2
+d56 5
+d78 21
+d104 40
+@
+
+
+1.1
+log
+@first use of Debugger.Core.dll
+@
+text
+@d51 2
+a52 1
+            debugger.Attach(sysProcess);
+d69 6
+@
+

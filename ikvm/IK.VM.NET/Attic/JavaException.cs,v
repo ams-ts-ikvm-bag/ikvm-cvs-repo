@@ -1,0 +1,630 @@
+head	1.18;
+access;
+symbols
+	initial:1.1.1.1 ikvm:1.1.1;
+locks; strict;
+comment	@ * @;
+
+
+1.18
+date	2004.05.27.07.12.13;	author jfrijters;	state dead;
+branches;
+next	1.17;
+
+1.17
+date	2004.04.23.14.21.43;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2004.03.08.15.18.47;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2004.01.28.11.28.16;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2004.01.11.13.14.42;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2003.12.24.11.51.41;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2003.12.19.22.35.45;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2003.08.12.13.09.31;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2003.08.05.14.07.22;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2003.06.10.13.28.47;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2003.03.17.14.04.27;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2003.02.27.16.41.49;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2003.02.15.16.22.21;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2003.02.15.11.20.05;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2003.02.15.09.32.21;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2002.12.29.16.29.11;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2002.12.18.16.57.09;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2002.12.18.16.01.17;	author jfrijters;	state Exp;
+branches
+	1.1.1.1;
+next	;
+
+1.1.1.1
+date	2002.12.18.16.01.17;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.18
+log
+@*** empty log message ***
+@
+text
+@/*
+  Copyright (C) 2002, 2003, 2004 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Reflection;
+
+sealed class JavaException
+{
+	private JavaException() {}
+
+	private static Type Load(string clazz)
+	{
+		Tracer.Info(Tracer.Runtime, "Loading exception class: {0}", clazz);
+		TypeWrapper tw = ClassLoaderWrapper.LoadClassCritical(clazz);
+		tw.Finish();
+		return tw.TypeAsTBD;
+	}
+
+	internal static Exception ClassFormatError(string s, params object[] args)
+	{
+		return (Exception)Activator.CreateInstance(Load("java.lang.ClassFormatError"), new object[] { String.Format(s, args) });
+	}
+
+	internal static Exception UnsupportedClassVersionError(string s, params object[] args)
+	{
+		return (Exception)Activator.CreateInstance(Load("java.lang.UnsupportedClassVersionError"), new object[] { String.Format(s, args) });
+	}
+
+	internal static Exception IllegalAccessError(string s, params object[] args)
+	{
+		return (Exception)Activator.CreateInstance(Load("java.lang.IllegalAccessError"), new object[] { String.Format(s, args) });
+	}
+
+	internal static Exception IllegalAccessException(string s, params object[] args)
+	{
+		return (Exception)Activator.CreateInstance(Load("java.lang.IllegalAccessException"), new object[] { String.Format(s, args) });
+	}
+
+	internal static Exception VerifyError(string s, params object[] args)
+	{
+		return (Exception)Activator.CreateInstance(Load("java.lang.VerifyError"), new object[] { String.Format(s, args) });
+	}
+
+	internal static Exception IncompatibleClassChangeError(string s, params object[] args)
+	{
+		return (Exception)Activator.CreateInstance(Load("java.lang.IncompatibleClassChangeError"), new object[] { String.Format(s, args) });
+	}
+
+	internal static Exception ClassNotFoundException(string s, params object[] args)
+	{
+		if(JVM.IsStaticCompilerPhase1)
+		{
+			Tracer.Warning(Tracer.Compiler, "ClassNotFoundException: {0}", s);
+		}
+		return (Exception)Activator.CreateInstance(Load("java.lang.ClassNotFoundException"), new object[] { String.Format(s, args) });
+	}
+
+	internal static Exception NoClassDefFoundError(string s, params object[] args)
+	{
+		if(JVM.IsStaticCompilerPhase1)
+		{
+			Tracer.Warning(Tracer.Compiler, "NoClassDefFoundError: {0}", s);
+		}
+		return (Exception)Activator.CreateInstance(Load("java.lang.NoClassDefFoundError"), new object[] { String.Format(s, args) });
+	}
+
+	internal static Exception UnsatisfiedLinkError(string s, params object[] args)
+	{
+		return (Exception)Activator.CreateInstance(Load("java.lang.UnsatisfiedLinkError"), new object[] { String.Format(s, args) });
+	}
+
+	internal static Exception IllegalStateException(string s, params object[] args)
+	{
+		return (Exception)Activator.CreateInstance(Load("java.lang.IllegalStateException"), new object[] { String.Format(s, args) });
+	}
+
+	internal static Exception IllegalArgumentException(string s, params object[] args)
+	{
+		return (Exception)Activator.CreateInstance(Load("java.lang.IllegalArgumentException"), new object[] { String.Format(s, args) });
+	}
+
+	internal static Exception NegativeArraySizeException()
+	{
+		return (Exception)Activator.CreateInstance(Load("java.lang.NegativeArraySizeException"));
+	}
+
+	internal static Exception ArrayStoreException(string s)
+	{
+		return (Exception)Activator.CreateInstance(Load("java.lang.ArrayStoreException"), new object[] { s });
+	}
+
+	internal static Exception IndexOutOfBoundsException(string s)
+	{
+		return (Exception)Activator.CreateInstance(Load("java.lang.IndexOutOfBoundsException"), new object[] { s });
+	}
+
+	internal static Exception StringIndexOutOfBoundsException(string s)
+	{
+		return (Exception)Activator.CreateInstance(Load("java.lang.StringIndexOutOfBoundsException"), new object[] { s });
+	}
+
+	internal static Exception InvocationTargetException(Exception x)
+	{
+		return (Exception)Activator.CreateInstance(Load("java.lang.reflect.InvocationTargetException"), new object[] { x });
+	}
+
+	internal static Exception IOException(string s, params object[] args)
+	{
+		return (Exception)Activator.CreateInstance(Load("java.io.IOException"), new object[] { String.Format(s, args) });
+	}
+
+	internal static Exception UnknownHostException(string s, params object[] args)
+	{
+		return (Exception)Activator.CreateInstance(Load("java.net.UnknownHostException"), new object[] { String.Format(s, args) });
+	}
+
+	internal static Exception ArrayIndexOutOfBoundsException()
+	{
+		return (Exception)Activator.CreateInstance(Load("java.lang.ArrayIndexOutOfBoundsException"));
+	}
+
+	internal static Exception NumberFormatException(string s, params object[] args)
+	{
+		return (Exception)Activator.CreateInstance(Load("java.lang.NumberFormatException"), new object[] { String.Format(s, args) });
+	}
+
+	internal static Exception CloneNotSupportedException()
+	{
+		return (Exception)Activator.CreateInstance(Load("java.lang.CloneNotSupportedException"));
+	}
+
+	internal static Exception LinkageError(string s, params object[] args)
+	{
+		return (Exception)Activator.CreateInstance(Load("java.lang.LinkageError"), new object[] { String.Format(s, args) });
+	}
+
+	internal static Exception ClassCircularityError(string s, params object[] args)
+	{
+		return (Exception)Activator.CreateInstance(Load("java.lang.ClassCircularityError"), new object[] { String.Format(s, args) });
+	}
+
+	internal static Exception NullPointerException()
+	{
+		// TODO if we ever stop remapping exceptions generated in non-Java code, this needs to use
+		// reflection to get a real java.lang.NullPointerException
+		return new NullReferenceException();
+	}
+
+	internal static Exception ClassCastException(string s, params object[] args)
+	{
+		return (Exception)Activator.CreateInstance(Load("java.lang.ClassCastException"), new object[] { String.Format(s, args) });
+	}
+
+	internal static Exception NoSuchFieldError(string s, params object[] args)
+	{
+		return (Exception)Activator.CreateInstance(Load("java.lang.NoSuchFieldError"), new object[] { String.Format(s, args) });
+	}
+
+	internal static Exception InstantiationError(string s, params object[] args)
+	{
+		return (Exception)Activator.CreateInstance(Load("java.lang.InstantiationError"), new object[] { String.Format(s, args) });
+	}
+}
+@
+
+
+1.17
+log
+@*** empty log message ***
+@
+text
+@@
+
+
+1.16
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002 Jeroen Frijters
+d33 1
+@
+
+
+1.15
+log
+@*** empty log message ***
+@
+text
+@d72 1
+a72 1
+			Console.Error.WriteLine("ClassNotFoundException: {0}", s);
+d81 1
+a81 1
+			Console.Error.WriteLine("NoClassDefFoundError: {0}", s);
+@
+
+
+1.14
+log
+@*** empty log message ***
+@
+text
+@d53 5
+@
+
+
+1.13
+log
+@*** empty log message ***
+@
+text
+@d35 1
+a35 1
+		return tw.Type;
+d171 5
+@
+
+
+1.12
+log
+@*** empty log message ***
+@
+text
+@d31 7
+d40 1
+a40 3
+		s = String.Format(s, args);
+		ConstructorInfo ci = ClassLoaderWrapper.GetType("java.lang.ClassFormatError").GetConstructor(new Type[] { typeof(string) });
+		return (Exception)ci.Invoke(new object[] { s });
+d45 1
+a45 3
+		s = String.Format(s, args);
+		ConstructorInfo ci = ClassLoaderWrapper.GetType("java.lang.UnsupportedClassVersionError").GetConstructor(new Type[] { typeof(string) });
+		return (Exception)ci.Invoke(new object[] { s });
+d50 1
+a50 3
+		s = String.Format(s, args);
+		ConstructorInfo ci = ClassLoaderWrapper.GetType("java.lang.IllegalAccessError").GetConstructor(new Type[] { typeof(string) });
+		return (Exception)ci.Invoke(new object[] { s });
+d55 1
+a55 3
+		s = String.Format(s, args);
+		ConstructorInfo ci = ClassLoaderWrapper.GetType("java.lang.VerifyError").GetConstructor(new Type[] { typeof(string) });
+		return (Exception)ci.Invoke(new object[] { s });
+d60 1
+a60 3
+		s = String.Format(s, args);
+		ConstructorInfo ci = ClassLoaderWrapper.GetType("java.lang.IncompatibleClassChangeError").GetConstructor(new Type[] { typeof(string) });
+		return (Exception)ci.Invoke(new object[] { s });
+a62 7
+	[ThreadStatic]
+	private static bool classNotFound;
+
+	private class BootstrapClassMissing : Exception {}
+
+	private static ConstructorInfo classNotFoundConstructor;
+
+d65 1
+a65 27
+		// HACK if java.lang.ClassNotFoundException is not found, this method would recurse until the
+		// stack overflows, so in order to prevent that, we use this hack
+		if(classNotFound)
+		{
+			throw new BootstrapClassMissing();
+		}
+		if(JVM.IsStaticCompiler)
+		{
+			Console.WriteLine("ClassNotFound: " + s);
+			//Console.WriteLine(new System.Diagnostics.StackTrace(true));
+		}
+		try
+		{
+			classNotFound = true;
+			//Console.WriteLine("ClassNotFoundException: " + s);
+			s = String.Format(s, args);
+			if(classNotFoundConstructor == null)
+			{
+				classNotFoundConstructor = ClassLoaderWrapper.GetType("java.lang.ClassNotFoundException").GetConstructor(new Type[] { typeof(string) });
+			}
+			return (Exception)classNotFoundConstructor.Invoke(new object[] { s });
+		}
+		catch(BootstrapClassMissing)
+		{
+			throw new TypeLoadException("ClassNotFoundException: " + s);
+		}
+		finally
+d67 1
+a67 1
+			classNotFound = false;
+d69 1
+d78 1
+a78 3
+		s = String.Format(s, args);
+		ConstructorInfo ci = ClassLoaderWrapper.GetType("java.lang.NoClassDefFoundError").GetConstructor(new Type[] { typeof(string) });
+		return (Exception)ci.Invoke(new object[] { s });
+d83 1
+a83 3
+		s = String.Format(s, args);
+		ConstructorInfo ci = ClassLoaderWrapper.GetType("java.lang.UnsatisfiedLinkError").GetConstructor(new Type[] { typeof(string) });
+		return (Exception)ci.Invoke(new object[] { s });
+d88 1
+a88 3
+		s = String.Format(s, args);
+		ConstructorInfo ci = ClassLoaderWrapper.GetType("java.lang.IllegalStateException").GetConstructor(new Type[] { typeof(string) });
+		return (Exception)ci.Invoke(new object[] { s });
+d93 1
+a93 3
+		s = String.Format(s, args);
+		ConstructorInfo ci = ClassLoaderWrapper.GetType("java.lang.IllegalArgumentException").GetConstructor(new Type[] { typeof(string) });
+		return (Exception)ci.Invoke(new object[] { s });
+d98 1
+a98 1
+		return (Exception)Activator.CreateInstance(ClassLoaderWrapper.GetType("java.lang.NegativeArraySizeException"));
+d103 1
+a103 2
+		ConstructorInfo ci = ClassLoaderWrapper.GetType("java.lang.ArrayStoreException").GetConstructor(new Type[] { typeof(string) });
+		return (Exception)ci.Invoke(new object[] { s });
+d108 1
+a108 2
+		ConstructorInfo ci = ClassLoaderWrapper.GetType("java.lang.IndexOutOfBoundsException").GetConstructor(new Type[] { typeof(string) });
+		return (Exception)ci.Invoke(new object[] { s });
+d113 2
+a114 3
+		ConstructorInfo ci = ClassLoaderWrapper.GetType("java.lang.StringIndexOutOfBoundsException").GetConstructor(new Type[] { typeof(string) });
+		return (Exception)ci.Invoke(new object[] { s });
+ 	}
+d118 1
+a118 1
+		return (Exception)Activator.CreateInstance(ClassLoaderWrapper.GetType("java.lang.reflect.InvocationTargetException"), new object[] { x });
+d123 1
+a123 3
+		s = String.Format(s, args);
+		ConstructorInfo ci = ClassLoaderWrapper.GetType("java.io.IOException").GetConstructor(new Type[] { typeof(string) });
+		return (Exception)ci.Invoke(new object[] { s });
+d128 1
+a128 3
+		s = String.Format(s, args);
+		ConstructorInfo ci = ClassLoaderWrapper.GetType("java.net.UnknownHostException").GetConstructor(new Type[] { typeof(string) });
+		return (Exception)ci.Invoke(new object[] { s });
+d133 1
+a133 1
+		return (Exception)Activator.CreateInstance(ClassLoaderWrapper.GetType("java.lang.ArrayIndexOutOfBoundsException"));
+d138 1
+a138 3
+		s = String.Format(s, args);
+		ConstructorInfo ci = ClassLoaderWrapper.GetType("java.lang.NumberFormatException").GetConstructor(new Type[] { typeof(string) });
+		return (Exception)ci.Invoke(new object[] { s });
+d143 1
+a143 1
+		return (Exception)Activator.CreateInstance(ClassLoaderWrapper.GetType("java.lang.CloneNotSupportedException"));
+d148 1
+a148 3
+		s = String.Format(s, args);
+		ConstructorInfo ci = ClassLoaderWrapper.GetType("java.lang.LinkageError").GetConstructor(new Type[] { typeof(string) });
+		return (Exception)ci.Invoke(new object[] { s });
+d153 1
+a153 3
+		s = String.Format(s, args);
+		ConstructorInfo ci = ClassLoaderWrapper.GetType("java.lang.ClassCircularityError").GetConstructor(new Type[] { typeof(string) });
+		return (Exception)ci.Invoke(new object[] { s });
+d165 1
+a165 3
+		s = String.Format(s, args);
+		ConstructorInfo ci = ClassLoaderWrapper.GetType("java.lang.ClassCastException").GetConstructor(new Type[] { typeof(string) });
+		return (Exception)ci.Invoke(new object[] { s });
+d170 1
+a170 3
+		s = String.Format(s, args);
+		ConstructorInfo ci = ClassLoaderWrapper.GetType("java.lang.NoSuchFieldError").GetConstructor(new Type[] { typeof(string) });
+		return (Exception)ci.Invoke(new object[] { s });
+@
+
+
+1.11
+log
+@*** empty log message ***
+@
+text
+@d109 4
+@
+
+
+1.10
+log
+@*** empty log message ***
+@
+text
+@d214 14
+@
+
+
+1.9
+log
+@*** empty log message ***
+@
+text
+@d207 7
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@d193 14
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d71 2
+d91 5
+a95 2
+			ConstructorInfo ci = ClassLoaderWrapper.GetType("java.lang.ClassNotFoundException").GetConstructor(new Type[] { typeof(string) });
+			return (Exception)ci.Invoke(new object[] { s });
+@
+
+
+1.6
+log
+@no message
+@
+text
+@d183 5
+@
+
+
+1.5
+log
+@no message
+@
+text
+@d176 7
+@
+
+
+1.4
+log
+@no message
+@
+text
+@d75 4
+a82 4
+			if(classNotFound)
+			{
+				throw new BootstrapClassMissing();
+			}
+d134 18
+@
+
+
+1.3
+log
+@no message
+@
+text
+@d153 5
+@
+
+
+1.2
+log
+@no message
+@
+text
+@d78 1
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d75 1
+a75 1
+		if(JVM.IsStaticCompiler && classNotFound)
+d77 5
+a81 1
+			throw new BootstrapClassMissing();
+@
+
+
+1.1.1.1
+log
+@no message
+@
+text
+@@

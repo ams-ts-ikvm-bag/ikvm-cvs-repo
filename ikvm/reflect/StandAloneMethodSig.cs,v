@@ -1,0 +1,304 @@
+head	1.7;
+access;
+symbols
+	v8_1_5717_0:1.7
+	v8_1:1.7.0.8
+	v8_0_5449_1:1.7
+	v8_0_5449_0:1.7
+	v8_0:1.7.0.6
+	v7_4_5196_0:1.7
+	v7_4:1.7.0.4
+	v7_3:1.7.0.2
+	v7_2_4630_6:1.6
+	v7_2_4630_5:1.6
+	v7_2_4630_4:1.6
+	v7_2_4630_3:1.6
+	v7_2_4630_2:1.6
+	v0_46_0_4:1.3
+	v7_2_4630_1:1.6
+	v7_2:1.6.0.4
+	v7_1_4532_2:1.6
+	v7_1_4532_1:1.6
+	v7_1_4532_0:1.6
+	v7_1:1.6.0.2
+	v7_0_4335_3:1.3
+	v7_0_4335_2:1.3
+	v7_0_4335_1:1.3
+	v0_46_0_2:1.3
+	v7_0_4335_0:1.3
+	v7_0:1.3.0.6
+	v0_46_0_1:1.3
+	v0_46_0_0:1.3
+	v0_46:1.3.0.4
+	v0_44_0_6:1.3
+	v0_44_0_5:1.3
+	v0_44_0_4:1.3
+	v0_44_0_3:1.3
+	v0_44_0_2:1.3
+	v0_44_0_1:1.3
+	v0_44_0_0:1.3
+	v0_44:1.3.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.7
+date	2012.12.24.10.49.51;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2011.12.02.08.14.58;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2011.12.01.08.30.54;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2011.12.01.07.37.48;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.04.20.13.18.31;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.7
+log
+@- Implemented __ContainsMissingType for function pointer types.
+- Changed __ContainsMissingType to take custom modifiers into account.
+@
+text
+@/*
+  Copyright (C) 2010 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Runtime.InteropServices;
+using IKVM.Reflection.Reader;
+
+namespace IKVM.Reflection
+{
+	public sealed class __StandAloneMethodSig
+	{
+		private readonly bool unmanaged;
+		private readonly CallingConvention unmanagedCallingConvention;
+		private readonly CallingConventions callingConvention;
+		private readonly Type returnType;
+		private readonly Type[] parameterTypes;
+		private readonly Type[] optionalParameterTypes;
+		private readonly PackedCustomModifiers customModifiers;
+
+		internal __StandAloneMethodSig(bool unmanaged, CallingConvention unmanagedCallingConvention, CallingConventions callingConvention, Type returnType, Type[] parameterTypes, Type[] optionalParameterTypes, PackedCustomModifiers customModifiers)
+		{
+			this.unmanaged = unmanaged;
+			this.unmanagedCallingConvention = unmanagedCallingConvention;
+			this.callingConvention = callingConvention;
+			this.returnType = returnType;
+			this.parameterTypes = parameterTypes;
+			this.optionalParameterTypes = optionalParameterTypes;
+			this.customModifiers = customModifiers;
+		}
+
+		public bool Equals(__StandAloneMethodSig other)
+		{
+			return other != null
+				&& other.unmanaged == unmanaged
+				&& other.unmanagedCallingConvention == unmanagedCallingConvention
+				&& other.callingConvention == callingConvention
+				&& other.returnType == returnType
+				&& Util.ArrayEquals(other.parameterTypes, parameterTypes)
+				&& Util.ArrayEquals(other.optionalParameterTypes, optionalParameterTypes)
+				&& other.customModifiers.Equals(customModifiers);
+		}
+
+		public override bool Equals(object obj)
+		{
+			return Equals(obj as __StandAloneMethodSig);
+		}
+
+		public override int GetHashCode()
+		{
+			return returnType.GetHashCode()
+				^ Util.GetHashCode(parameterTypes);
+		}
+
+		public bool IsUnmanaged
+		{
+			get { return unmanaged; }
+		}
+
+		public CallingConventions CallingConvention
+		{
+			get { return callingConvention; }
+		}
+
+		public CallingConvention UnmanagedCallingConvention
+		{
+			get { return unmanagedCallingConvention; }
+		}
+
+		public Type ReturnType
+		{
+			get { return returnType; }
+		}
+
+		public CustomModifiers GetReturnTypeCustomModifiers()
+		{
+			return customModifiers.GetReturnTypeCustomModifiers();
+		}
+
+		public Type[] ParameterTypes
+		{
+			get { return Util.Copy(parameterTypes); }
+		}
+
+		public Type[] OptionalParameterTypes
+		{
+			get { return Util.Copy(optionalParameterTypes); }
+		}
+
+		public CustomModifiers GetParameterCustomModifiers(int index)
+		{
+			return customModifiers.GetParameterCustomModifiers(index);
+		}
+
+		public bool ContainsMissingType
+		{
+			get
+			{
+				return returnType.__ContainsMissingType
+					|| Type.ContainsMissingType(parameterTypes)
+					|| Type.ContainsMissingType(optionalParameterTypes)
+					|| customModifiers.ContainsMissingType;
+			}
+		}
+
+		internal int ParameterCount
+		{
+			get { return parameterTypes.Length + optionalParameterTypes.Length; }
+		}
+	}
+}
+@
+
+
+1.6
+log
+@Removed static Create() from __StandAloneMethodSig and added Universe.MakeStandAloneMethodSig().
+@
+text
+@d114 11
+@
+
+
+1.5
+log
+@Added support for custom modifiers to StandAloneMethodSig.
+@
+text
+@a117 12
+
+		public static __StandAloneMethodSig Create(CallingConvention callingConvention, Type returnType, CustomModifiers returnTypeCustomModifiers, Type[] parameterTypes, CustomModifiers[] parameterTypeCustomModifiers)
+		{
+			return new __StandAloneMethodSig(true, callingConvention, 0, returnType, Util.Copy(parameterTypes), Type.EmptyTypes,
+				PackedCustomModifiers.CreateFromExternal(returnTypeCustomModifiers, parameterTypeCustomModifiers, Util.NullSafeLength(parameterTypes)));
+		}
+
+		public static __StandAloneMethodSig Create(CallingConventions callingConvention, Type returnType, CustomModifiers returnTypeCustomModifiers, Type[] parameterTypes, Type[] optionalParameterTypes, CustomModifiers[] parameterTypeCustomModifiers)
+		{
+			return new __StandAloneMethodSig(false, 0, callingConvention, returnType, Util.Copy(parameterTypes), Util.Copy(optionalParameterTypes),
+				PackedCustomModifiers.CreateFromExternal(returnTypeCustomModifiers, parameterTypeCustomModifiers, Util.NullSafeLength(parameterTypes) + Util.NullSafeLength(optionalParameterTypes)));
+		}
+@
+
+
+1.4
+log
+@Added support for function pointer types.
+@
+text
+@d38 1
+d40 1
+a40 1
+		internal __StandAloneMethodSig(bool unmanaged, CallingConvention unmanagedCallingConvention, CallingConventions callingConvention, Type returnType, Type[] parameterTypes, Type[] optionalParameterTypes)
+d48 1
+d59 2
+a60 1
+				&& Util.ArrayEquals(other.optionalParameterTypes, optionalParameterTypes);
+d94 5
+d108 22
+@
+
+
+1.3
+log
+@Use Util.Copy() instead of Clone() to copy a Type arrays.
+@
+text
+@d49 22
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d71 1
+a71 1
+			get { return (Type[])parameterTypes.Clone(); }
+d76 1
+a76 1
+			get { return (Type[])optionalParameterTypes.Clone(); }
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

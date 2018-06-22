@@ -1,0 +1,3375 @@
+head	1.116;
+access;
+symbols
+	v8_1_5717_0:1.114
+	v8_1:1.114.0.2
+	v8_0_5449_1:1.109.2.1
+	v8_0_5449_0:1.109
+	v8_0:1.109.0.2
+	v7_4_5196_0:1.100
+	v7_4:1.100.0.2
+	v7_3:1.98.0.2
+	v7_2_4630_6:1.91.2.1
+	v7_2_4630_5:1.91.2.1
+	v7_2_4630_4:1.91.2.1
+	v7_2_4630_3:1.91
+	v7_2_4630_2:1.91
+	v0_46_0_4:1.74
+	v7_2_4630_1:1.91
+	v7_2:1.91.0.2
+	v7_1_4532_2:1.90
+	v7_1_4532_1:1.90
+	v7_1_4532_0:1.90
+	v7_1:1.90.0.2
+	v7_0_4335_3:1.86.2.1
+	v7_0_4335_2:1.86.2.1
+	v7_0_4335_1:1.86.2.1
+	v0_46_0_2:1.74
+	v7_0_4335_0:1.86
+	v7_0:1.86.0.2
+	v0_40_0_6:1.40.2.2
+	v0_40_0_5:1.40.2.2
+	v0_46_0_1:1.74
+	v0_46_0_0:1.74
+	v0_46:1.74.0.2
+	v0_36_0_14:1.17.2.15
+	v0_44_0_6:1.68.2.1
+	v0_44_0_5:1.68
+	v0_44_0_4:1.68
+	v0_44_0_3:1.68
+	v0_44_0_2:1.68
+	v0_42_0_7:1.55
+	v0_44_0_1:1.68
+	v0_44_0_0:1.68
+	v0_44:1.68.0.2
+	v0_42_0_6:1.55
+	v0_42_0_5:1.55
+	v0_42_0_4:1.55
+	v0_42_0_3:1.55
+	v0_42_0_2:1.55
+	v0_42_0_1:1.55
+	v0_42_0_0:1.55
+	v0_42:1.55.0.2
+	v0_40_0_3:1.40.2.1
+	v0_40_0_2:1.40.2.1
+	v0_40_0_1:1.40
+	v0_40_0_0:1.40
+	v0_40:1.40.0.2
+	v0_36_0_13:1.17.2.14
+	v0_38_0_1:1.29.2.2
+	v0_38_0_0:1.29.2.1
+	v0_38:1.29.0.2
+	v0_36_0_9:1.17.2.11
+	v0_36_0_7:1.17.2.8
+	v0_36_0_5:1.17.2.6
+	v0_36_0_4:1.17.2.5
+	v0_36_0_3:1.17.2.4
+	v0_36_0_2:1.17.2.3
+	v0_36_0_1:1.17.2.2
+	v0_36_0_0:1.17.2.1
+	v0_36:1.17.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.116
+date	2015.11.17.09.02.41;	author jfrijters;	state Exp;
+branches;
+next	1.115;
+
+1.115
+date	2015.11.17.08.30.29;	author jfrijters;	state Exp;
+branches;
+next	1.114;
+
+1.114
+date	2015.06.09.09.28.43;	author jfrijters;	state Exp;
+branches;
+next	1.113;
+
+1.113
+date	2015.04.19.09.55.08;	author jfrijters;	state Exp;
+branches;
+next	1.112;
+
+1.112
+date	2015.02.19.08.14.24;	author jfrijters;	state Exp;
+branches;
+next	1.111;
+
+1.111
+date	2015.02.18.14.35.33;	author jfrijters;	state Exp;
+branches;
+next	1.110;
+
+1.110
+date	2014.12.18.11.05.20;	author jfrijters;	state Exp;
+branches;
+next	1.109;
+
+1.109
+date	2014.06.03.12.43.29;	author jfrijters;	state Exp;
+branches
+	1.109.2.1;
+next	1.108;
+
+1.108
+date	2014.05.29.13.33.52;	author jfrijters;	state Exp;
+branches;
+next	1.107;
+
+1.107
+date	2014.05.23.09.19.18;	author jfrijters;	state Exp;
+branches;
+next	1.106;
+
+1.106
+date	2014.05.21.14.17.51;	author jfrijters;	state Exp;
+branches;
+next	1.105;
+
+1.105
+date	2014.05.21.13.41.29;	author jfrijters;	state Exp;
+branches;
+next	1.104;
+
+1.104
+date	2014.05.19.12.43.36;	author jfrijters;	state Exp;
+branches;
+next	1.103;
+
+1.103
+date	2014.05.06.14.21.10;	author jfrijters;	state Exp;
+branches;
+next	1.102;
+
+1.102
+date	2014.05.06.14.03.03;	author jfrijters;	state Exp;
+branches;
+next	1.101;
+
+1.101
+date	2014.04.14.10.18.39;	author jfrijters;	state Exp;
+branches;
+next	1.100;
+
+1.100
+date	2014.02.07.14.14.10;	author jfrijters;	state Exp;
+branches;
+next	1.99;
+
+1.99
+date	2013.05.03.07.53.47;	author jfrijters;	state Exp;
+branches;
+next	1.98;
+
+1.98
+date	2013.03.16.07.15.50;	author jfrijters;	state Exp;
+branches;
+next	1.97;
+
+1.97
+date	2013.02.27.16.23.19;	author jfrijters;	state Exp;
+branches;
+next	1.96;
+
+1.96
+date	2013.02.27.16.09.44;	author jfrijters;	state Exp;
+branches;
+next	1.95;
+
+1.95
+date	2013.02.07.09.46.35;	author jfrijters;	state Exp;
+branches;
+next	1.94;
+
+1.94
+date	2013.01.30.16.25.23;	author jfrijters;	state Exp;
+branches;
+next	1.93;
+
+1.93
+date	2013.01.15.15.33.50;	author jfrijters;	state Exp;
+branches;
+next	1.92;
+
+1.92
+date	2012.10.29.16.13.01;	author jfrijters;	state Exp;
+branches;
+next	1.91;
+
+1.91
+date	2012.08.31.11.24.28;	author jfrijters;	state Exp;
+branches
+	1.91.2.1;
+next	1.90;
+
+1.90
+date	2012.05.23.10.02.18;	author jfrijters;	state Exp;
+branches;
+next	1.89;
+
+1.89
+date	2012.05.23.10.00.03;	author jfrijters;	state Exp;
+branches;
+next	1.88;
+
+1.88
+date	2011.12.13.16.21.06;	author jfrijters;	state Exp;
+branches;
+next	1.87;
+
+1.87
+date	2011.12.13.16.17.43;	author jfrijters;	state Exp;
+branches;
+next	1.86;
+
+1.86
+date	2011.09.01.07.53.58;	author jfrijters;	state Exp;
+branches
+	1.86.2.1;
+next	1.85;
+
+1.85
+date	2011.08.12.06.15.58;	author jfrijters;	state Exp;
+branches;
+next	1.84;
+
+1.84
+date	2011.08.08.05.19.17;	author jfrijters;	state Exp;
+branches;
+next	1.83;
+
+1.83
+date	2011.08.06.10.28.10;	author jfrijters;	state Exp;
+branches;
+next	1.82;
+
+1.82
+date	2011.07.29.15.00.11;	author jfrijters;	state Exp;
+branches;
+next	1.81;
+
+1.81
+date	2011.07.28.13.32.44;	author jfrijters;	state Exp;
+branches;
+next	1.80;
+
+1.80
+date	2011.07.15.19.32.29;	author smallsql;	state Exp;
+branches;
+next	1.79;
+
+1.79
+date	2011.06.28.06.04.02;	author jfrijters;	state Exp;
+branches;
+next	1.78;
+
+1.78
+date	2011.06.26.06.32.47;	author jfrijters;	state Exp;
+branches;
+next	1.77;
+
+1.77
+date	2011.06.19.09.33.08;	author jfrijters;	state Exp;
+branches;
+next	1.76;
+
+1.76
+date	2011.05.17.06.59.57;	author jfrijters;	state Exp;
+branches;
+next	1.75;
+
+1.75
+date	2011.05.10.09.55.05;	author jfrijters;	state Exp;
+branches;
+next	1.74;
+
+1.74
+date	2011.03.02.07.32.50;	author jfrijters;	state Exp;
+branches;
+next	1.73;
+
+1.73
+date	2011.02.22.20.50.13;	author smallsql;	state Exp;
+branches;
+next	1.72;
+
+1.72
+date	2011.01.24.16.40.22;	author jfrijters;	state Exp;
+branches;
+next	1.71;
+
+1.71
+date	2010.12.24.08.00.53;	author jfrijters;	state Exp;
+branches;
+next	1.70;
+
+1.70
+date	2010.08.24.04.01.39;	author jfrijters;	state Exp;
+branches;
+next	1.69;
+
+1.69
+date	2010.08.20.05.35.49;	author jfrijters;	state Exp;
+branches;
+next	1.68;
+
+1.68
+date	2010.06.10.08.45.40;	author jfrijters;	state Exp;
+branches
+	1.68.2.1;
+next	1.67;
+
+1.67
+date	2010.06.09.12.26.28;	author jfrijters;	state Exp;
+branches;
+next	1.66;
+
+1.66
+date	2010.05.19.15.48.52;	author jfrijters;	state Exp;
+branches;
+next	1.65;
+
+1.65
+date	2010.04.23.05.05.13;	author jfrijters;	state Exp;
+branches;
+next	1.64;
+
+1.64
+date	2010.04.23.04.58.36;	author jfrijters;	state Exp;
+branches;
+next	1.63;
+
+1.63
+date	2010.04.21.06.16.37;	author jfrijters;	state Exp;
+branches;
+next	1.62;
+
+1.62
+date	2010.04.20.05.33.11;	author jfrijters;	state Exp;
+branches;
+next	1.61;
+
+1.61
+date	2010.04.02.03.54.06;	author jfrijters;	state Exp;
+branches;
+next	1.60;
+
+1.60
+date	2010.02.19.14.38.41;	author jfrijters;	state Exp;
+branches;
+next	1.59;
+
+1.59
+date	2010.02.19.14.31.15;	author jfrijters;	state Exp;
+branches;
+next	1.58;
+
+1.58
+date	2010.01.28.08.06.56;	author jfrijters;	state Exp;
+branches;
+next	1.57;
+
+1.57
+date	2009.11.12.07.40.52;	author jfrijters;	state Exp;
+branches;
+next	1.56;
+
+1.56
+date	2009.11.12.07.23.16;	author jfrijters;	state Exp;
+branches;
+next	1.55;
+
+1.55
+date	2009.07.03.14.12.03;	author jfrijters;	state Exp;
+branches;
+next	1.54;
+
+1.54
+date	2009.07.03.12.20.17;	author jfrijters;	state Exp;
+branches;
+next	1.53;
+
+1.53
+date	2009.07.03.09.56.00;	author jfrijters;	state Exp;
+branches;
+next	1.52;
+
+1.52
+date	2009.07.03.06.57.07;	author jfrijters;	state Exp;
+branches;
+next	1.51;
+
+1.51
+date	2009.07.03.06.09.50;	author jfrijters;	state Exp;
+branches;
+next	1.50;
+
+1.50
+date	2009.06.29.10.30.30;	author jfrijters;	state Exp;
+branches;
+next	1.49;
+
+1.49
+date	2009.06.29.09.32.59;	author jfrijters;	state Exp;
+branches;
+next	1.48;
+
+1.48
+date	2009.06.29.08.53.33;	author jfrijters;	state Exp;
+branches;
+next	1.47;
+
+1.47
+date	2009.06.29.08.03.52;	author jfrijters;	state Exp;
+branches;
+next	1.46;
+
+1.46
+date	2009.06.08.15.01.11;	author jfrijters;	state Exp;
+branches;
+next	1.45;
+
+1.45
+date	2009.06.04.18.26.09;	author smallsql;	state Exp;
+branches;
+next	1.44;
+
+1.44
+date	2009.05.26.06.21.39;	author jfrijters;	state Exp;
+branches;
+next	1.43;
+
+1.43
+date	2009.04.22.04.48.39;	author jfrijters;	state Exp;
+branches;
+next	1.42;
+
+1.42
+date	2009.04.17.06.24.30;	author jfrijters;	state Exp;
+branches;
+next	1.41;
+
+1.41
+date	2009.04.16.10.12.35;	author jfrijters;	state Exp;
+branches;
+next	1.40;
+
+1.40
+date	2009.04.03.08.56.10;	author jfrijters;	state Exp;
+branches
+	1.40.2.1;
+next	1.39;
+
+1.39
+date	2009.03.04.11.12.51;	author jfrijters;	state Exp;
+branches;
+next	1.38;
+
+1.38
+date	2009.01.25.10.27.56;	author smallsql;	state Exp;
+branches;
+next	1.37;
+
+1.37
+date	2008.12.30.10.28.10;	author smallsql;	state Exp;
+branches;
+next	1.36;
+
+1.36
+date	2008.12.23.07.28.20;	author jfrijters;	state Exp;
+branches;
+next	1.35;
+
+1.35
+date	2008.11.19.05.42.47;	author jfrijters;	state Exp;
+branches;
+next	1.34;
+
+1.34
+date	2008.11.18.07.59.02;	author jfrijters;	state Exp;
+branches;
+next	1.33;
+
+1.33
+date	2008.11.18.07.46.53;	author jfrijters;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2008.11.18.05.35.58;	author jfrijters;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2008.11.14.07.53.04;	author jfrijters;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2008.11.14.07.51.31;	author jfrijters;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2008.09.23.05.03.07;	author jfrijters;	state Exp;
+branches
+	1.29.2.1;
+next	1.28;
+
+1.28
+date	2008.09.22.04.13.47;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2008.09.21.09.53.06;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2008.09.16.07.00.38;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2008.08.07.07.47.57;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2008.08.07.07.40.57;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2008.06.13.09.00.57;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2008.02.27.09.04.20;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2008.02.10.11.20.53;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2008.01.03.09.41.12;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2007.12.19.11.28.10;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2007.10.22.15.45.52;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2007.08.22.11.51.18;	author jfrijters;	state Exp;
+branches
+	1.17.2.1;
+next	1.16;
+
+1.16
+date	2007.08.16.09.53.02;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2007.08.14.12.07.38;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2007.08.13.13.21.55;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2007.08.07.07.39.45;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2007.07.31.09.40.01;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2007.07.31.08.34.41;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2007.07.24.08.48.25;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2007.07.04.12.20.52;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2007.06.29.08.59.50;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2007.06.27.06.14.55;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2007.06.22.06.47.16;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2007.06.20.11.35.39;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2007.06.14.07.00.10;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2007.06.13.11.47.08;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.06.05.06.57.18;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.05.24.09.23.02;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.17.2.1
+date	2007.08.30.09.25.50;	author jfrijters;	state Exp;
+branches;
+next	1.17.2.2;
+
+1.17.2.2
+date	2007.09.13.07.30.06;	author jfrijters;	state Exp;
+branches;
+next	1.17.2.3;
+
+1.17.2.3
+date	2007.09.20.13.54.23;	author jfrijters;	state Exp;
+branches;
+next	1.17.2.4;
+
+1.17.2.4
+date	2007.10.01.13.02.42;	author jfrijters;	state Exp;
+branches;
+next	1.17.2.5;
+
+1.17.2.5
+date	2007.10.12.16.18.41;	author jfrijters;	state Exp;
+branches;
+next	1.17.2.6;
+
+1.17.2.6
+date	2007.12.04.06.04.32;	author jfrijters;	state Exp;
+branches;
+next	1.17.2.7;
+
+1.17.2.7
+date	2008.01.14.04.58.33;	author jfrijters;	state Exp;
+branches;
+next	1.17.2.8;
+
+1.17.2.8
+date	2008.01.25.07.12.20;	author jfrijters;	state Exp;
+branches;
+next	1.17.2.9;
+
+1.17.2.9
+date	2008.02.03.07.44.12;	author jfrijters;	state Exp;
+branches;
+next	1.17.2.10;
+
+1.17.2.10
+date	2008.02.20.14.24.40;	author jfrijters;	state Exp;
+branches;
+next	1.17.2.11;
+
+1.17.2.11
+date	2008.02.27.07.05.47;	author jfrijters;	state Exp;
+branches;
+next	1.17.2.12;
+
+1.17.2.12
+date	2008.03.14.06.11.16;	author jfrijters;	state Exp;
+branches;
+next	1.17.2.13;
+
+1.17.2.13
+date	2008.05.04.08.23.41;	author jfrijters;	state Exp;
+branches;
+next	1.17.2.14;
+
+1.17.2.14
+date	2008.11.05.07.52.01;	author jfrijters;	state Exp;
+branches;
+next	1.17.2.15;
+
+1.17.2.15
+date	2010.11.11.06.00.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.29.2.1
+date	2008.09.23.10.18.47;	author jfrijters;	state Exp;
+branches;
+next	1.29.2.2;
+
+1.29.2.2
+date	2008.11.04.05.29.20;	author jfrijters;	state Exp;
+branches;
+next	1.29.2.3;
+
+1.29.2.3
+date	2008.11.11.18.32.19;	author jfrijters;	state Exp;
+branches;
+next	1.29.2.4;
+
+1.29.2.4
+date	2009.02.05.14.44.56;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.40.2.1
+date	2009.06.15.04.56.38;	author jfrijters;	state Exp;
+branches;
+next	1.40.2.2;
+
+1.40.2.2
+date	2011.05.16.06.55.27;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.68.2.1
+date	2010.10.22.06.56.11;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.86.2.1
+date	2012.01.03.12.16.37;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.91.2.1
+date	2012.10.31.12.35.37;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.109.2.1
+date	2015.01.09.12.26.20;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.116
+log
+@Fix Linux build (bug #306).
+@
+text
+@<?xml version="1.0"?>
+<!--
+  Copyright (C) 2002-2015 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+-->
+<project name="ClassLibrary" default="all">
+    <include buildfile="../ikvm.include" />
+    <property name="pathsep" value=":" />
+    <property overwrite="false" name="signoption" value="" />
+    <property overwrite="false" name="SkipSystemCoreDependency" value="false" />
+    <property name="OPENJDK_VERSION" value="OpenJDK 8u45 b14" />
+    <property name="IMPLEMENTATION_VERSION" value="1.8.0" />
+    <property name="SPECIFICATION_VERSION" value="1.8" />
+    <property name="FULL_VERSION" value="1.8.0_45-b14" />
+    <property name="OpenJDK.dir" value="${project::get-base-directory()}/../../openjdk-8u45-b14" />
+    <if test="${platform::is-win32()}">
+        <property name="pathsep" value=";" />
+    </if>
+
+    <target name="all" depends="classes rmi run-nasgen vfs resources core">
+    </target>
+
+    <target name="version">
+        <property name="VERSION" value="${assemblyname::get-version(assemblyname::get-assembly-name(path::combine(project::get-base-directory(), '../bin/IKVM.Runtime.dll')))}" />
+    </target>
+
+    <target name="copyright" depends="allsources.gen.lst">
+        <exec program="${project::get-base-directory()}/../tools/SourceLicenseAnalyzer.exe" output="copyright.txt" useruntimeengine="true" />
+        <loadfile file="copyright.txt" property="COPYRIGHT" />
+    </target>
+
+    <target name="allsources.gen.lst">
+        <copy file="allsources.lst" tofile="allsources.gen.lst" outputencoding="ascii" overwrite="true">
+            <filterchain>
+                <replacetokens>
+                    <token key="OPENJDK" value="${OpenJDK.dir}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+    </target>
+
+    <target name="System.Core" unless="${SkipSystemCoreDependency}">
+        <delete file="System.Core.dll" />
+        <if test="${version::get-major(framework::get-version(framework::get-target-framework() )) &lt; 4}">
+            <copy file="../bin/IKVM.Reflection.dll" todir="." overwrite="true" />
+            <csc target="exe" output="GenerateSystemCore.exe">
+                <sources>
+                    <include name="GenerateSystemCore.cs" />
+                </sources>
+                <references>
+                    <include name="IKVM.Reflection.dll" asis="true" />
+                </references>
+            </csc>
+            <exec program="GenerateSystemCore.exe" useruntimeengine="true" />
+            <delete>
+                <fileset basedir=".">
+                    <include name="IKVM.Reflection.dll"/>
+                    <include name="GenerateSystemCore.exe"/>
+                </fileset>
+            </delete>
+        </if>
+    </target>
+
+    <target name="DummySystemCoreJar">
+        <exec program="javac" commandline="-implicit:none ExtensionAttribute.java" useruntimeengine="false" />
+        <zip zipfile="System.Core.jar">
+            <fileset prefix="cli/System/Runtime/CompilerServices">
+                <include name="ExtensionAttribute.class" />
+                <include name="ExtensionAttribute$Annotation.class" />
+            </fileset>
+        </zip>
+        <delete>
+            <fileset basedir=".">
+                <include name="ExtensionAttribute.class" />
+                <include name="ExtensionAttribute$Annotation.class" />
+            </fileset>
+        </delete>
+    </target>
+
+    <target name="clean-classes">
+        <delete>
+            <fileset basedir="../classpath">
+                <include name="**.class"/>
+            </fileset>
+        </delete>
+        <delete>
+            <fileset basedir="${OpenJDK.dir}">
+                <include name="**.class"/>
+            </fileset>
+        </delete>
+        <delete>
+            <fileset basedir=".">
+                <include name="**.class"/>
+            </fileset>
+        </delete>
+    </target>
+
+    <target name="clean-stubjars">
+        <delete>
+            <fileset basedir=".">
+                <include name="mscorlib.jar" />
+                <include name="System.jar" />
+                <include name="System.Core.jar" />
+                <include name="System.Data.jar" />
+                <include name="System.Drawing.jar" />
+                <include name="System.Xml.jar" />
+            </fileset>
+        </delete>
+    </target>
+
+    <target name="stubjars" depends="clean-stubjars System.Core">
+        <exec program="${project::get-base-directory()}/../bin/ikvmstub.exe" commandline="-bootstrap mscorlib" useruntimeengine="true" />
+        <exec program="${project::get-base-directory()}/../bin/ikvmstub.exe" commandline="-bootstrap System" useruntimeengine="true" />
+        <exec program="${project::get-base-directory()}/../bin/ikvmstub.exe" commandline="-bootstrap System.Core" useruntimeengine="true" unless="${SkipSystemCoreDependency}" />
+        <if test="${SkipSystemCoreDependency}">
+            <call target="DummySystemCoreJar" />
+        </if>
+        <exec program="${project::get-base-directory()}/../bin/ikvmstub.exe" commandline="-bootstrap System.Data" useruntimeengine="true" />
+        <exec program="${project::get-base-directory()}/../bin/ikvmstub.exe" commandline="-bootstrap System.Drawing" useruntimeengine="true" />
+        <exec program="${project::get-base-directory()}/../bin/ikvmstub.exe" commandline="-bootstrap System.Xml" useruntimeengine="true" />
+    </target>
+
+    <target name="runtime-identity">
+        <property name="IKVM.Runtime" value="IKVM.Runtime" />
+        <property name="IKVM.AWT.WinForms" value="IKVM.AWT.WinForms" />
+        <if test="${signoption != ''}">
+            <loadfile file="../tools/pubkey.txt" property="publickey" />
+            <property name="IKVM.Runtime" value="IKVM.Runtime, PublicKey=${publickey}" />
+            <property name="IKVM.AWT.WinForms" value="IKVM.AWT.WinForms, PublicKey=${publickey}" />
+        </if>
+    </target>
+
+    <target name="AssemblyInfo.java" depends="runtime-identity version copyright">
+        <copy file="AssemblyInfo.java.in" tofile="AssemblyInfo.java" outputencoding="ascii" overwrite="true">
+            <filterchain>
+                <replacetokens>
+                    <token key="RUNTIME" value="${IKVM.Runtime}" />
+                    <token key="AWTWINFORMS" value="${IKVM.AWT.WinForms}" />
+                    <token key="VERSION" value="${VERSION}" />
+                    <token key="COPYRIGHT" value="${COPYRIGHT}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+    </target>
+
+    <target name="PropertyConstants.java" depends="version">
+        <copy file="java/lang/PropertyConstants.java.in" tofile="java/lang/PropertyConstants.java" outputencoding="ascii" overwrite="true">
+            <filterchain>
+                <replacetokens>
+                    <token key="AWTASSEMBLY" value="${string::replace(assemblyname::get-full-name(assemblyname::get-assembly-name(path::combine(project::get-base-directory(), '../bin/IKVM.Runtime.dll'))), 'IKVM.Runtime', 'IKVM.AWT.WinForms')}" />
+                    <token key="VERSION" value="${VERSION}" />
+                    <token key="OPENJDK_VERSION" value="${OPENJDK_VERSION}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+    </target>
+
+    <target name="classes" depends="clean-classes stubjars allsources.gen.lst AssemblyInfo.java PropertyConstants.java">
+        <exec program="javac" useruntimeengine="false">
+            <arg value="-J-Xmx1536M" />
+            <arg value="-g" />
+            <arg value="-nowarn" />
+            <arg value="-implicit:none" />
+            <arg value="-parameters" />
+            <arg line="-cp dummy" />
+            <arg value="-bootclasspath" />
+            <arg path="mscorlib.jar;System.jar;System.Core.jar;System.Data.jar;System.Drawing.jar;System.Xml.jar;../runtime/IKVM.Runtime.jar" />
+            <arg value="@@allsources.gen.lst" />
+        </exec>
+        <!-- copy the timestamps from the input files, because these timestamps end up in resources.jar and affect deterministics builds -->
+        <touch file="${OpenJDK.dir}/jdk/src/share/classes/sun/reflect/misc/Trampoline.class" datetime="${file::get-last-write-time(property::get-value('OpenJDK.dir') + '/jdk/src/share/classes/sun/reflect/misc/MethodUtil.java')}" />
+        <touch file="${OpenJDK.dir}/jdk/src/share/classes/java/lang/invoke/MethodHandleImpl$BindCaller$T.class" datetime="${file::get-last-write-time(property::get-value('OpenJDK.dir') + '/jdk/src/share/classes/java/lang/invoke/MethodHandleImpl.java')}" />
+    </target>
+
+    <target name="classpath">
+        <property name="CLASSPATH" value="mscorlib.jar${pathsep}System.Xml.jar${pathsep}${OpenJDK.dir}/jdk/src/share/classes/${pathsep}${OpenJDK.dir}/corba/src/share/classes${pathsep}${OpenJDK.dir}/build/linux-x86_64-normal-server-release/jdk/gensrc" />
+    </target>
+
+    <target name="rmi" depends="classpath">
+        <mkdir dir="rmistubs" />
+        <property name="VMARGS" value="-J-client -J-Xmx896m -J-Xms128m" />
+        <property name="OUTPUT" value="rmistubs" />
+        <property name="ARGS" value="${VMARGS} -nowarn -bootclasspath ${CLASSPATH} -d ${OUTPUT}" />
+        <exec program="rmic" commandline="${ARGS} -v1.1 sun.rmi.registry.RegistryImpl" />
+        <exec program="rmic" commandline="${ARGS} -v1.1 sun.rmi.transport.DGCImpl" />
+        <exec program="rmic" commandline="${ARGS} -v1.2 sun.rmi.server.Activation$ActivationSystemImpl" />
+        <exec program="rmic" commandline="${ARGS} -v1.2 java.rmi.activation.ActivationGroup" />
+        <exec program="rmic" commandline="${ARGS} -v1.2 com.sun.jndi.rmi.registry.ReferenceWrapper" />
+        <exec program="rmic" commandline="${ARGS} -v1.2 javax.management.remote.rmi.RMIConnectionImpl" />
+        <exec program="rmic" commandline="${ARGS} -v1.2 -iiop javax.management.remote.rmi.RMIConnectionImpl" />
+        <exec program="rmic" commandline="${ARGS} -v1.2 -iiop -standardPackage javax.management.remote.rmi.RMIConnectionImpl" />
+        <exec program="rmic" commandline="${ARGS} -v1.2 javax.management.remote.rmi.RMIServerImpl" />
+        <exec program="rmic" commandline="${ARGS} -v1.2 -iiop javax.management.remote.rmi.RMIServerImpl" />
+        <exec program="rmic" commandline="${ARGS} -v1.2 -iiop -standardPackage javax.management.remote.rmi.RMIServerImpl" />
+        <exec program="rmic" commandline="${ARGS} -iiop javax.management.remote.rmi.RMIConnection" />
+        <exec program="rmic" commandline="${ARGS} -iiop -standardPackage javax.management.remote.rmi.RMIConnection" />
+        <exec program="rmic" commandline="${ARGS} -iiop javax.management.remote.rmi.RMIServer" />
+        <exec program="rmic" commandline="${ARGS} -iiop -standardPackage javax.management.remote.rmi.RMIServer" />
+    </target>
+
+    <target name="run-nasgen" depends="classpath">
+        <!-- nasgen doesn't understand the MethodParameters attribute, so we have to recompile the classes it processes without parameters -->
+        <property name="nasgen-sources" value="" />
+        <foreach item="File" property="nasgen-src-file">
+            <in>
+                <items>
+                    <include name="${OpenJDK.dir}/nashorn/src/jdk/nashorn/internal/objects/*.java" />
+                </items>
+            </in>
+            <do>
+                <property name="nasgen-sources" value="${nasgen-sources} ${nasgen-src-file}" />
+            </do>
+        </foreach>
+        <exec program="javac" useruntimeengine="false">
+            <arg value="-XDignore.symbol.file" />
+            <arg value="-g" />
+            <arg value="-nowarn" />
+            <arg value="-implicit:none" />
+            <arg value="-bootclasspath" />
+            <arg path="${CLASSPATH};${OpenJDK.dir}/nashorn/src;../runtime/IKVM.Runtime.jar" />
+            <arg line="${nasgen-sources}" />
+        </exec>
+        <exec program="java" useruntimeengine="false">
+            <arg value="-Xbootclasspath/p:${OpenJDK.dir}/nashorn/buildtools/nasgen/src${pathsep}${OpenJDK.dir}/nashorn/src" />
+            <arg value="jdk.nashorn.internal.tools.nasgen.Main" />
+            <arg value="${OpenJDK.dir}/nashorn/src" />
+            <arg value="jdk.nashorn.internal.objects" />
+            <arg value="${OpenJDK.dir}/nashorn/src" />
+        </exec>
+    </target>
+    
+    <target name="vfs">
+        <!-- This file is generated here, but it is added as a resource to IKVM.Runtime.dll, because Ref.Emit on .NET 1.1 doesn't support adding a raw resource. -->
+        <zip zipfile="vfs.zip">
+            <fileset basedir="${OpenJDK.dir}/build/linux-x86_64-normal-server-release/jdk">
+                <include name="lib/calendars.properties" />
+                <include name="lib/logging.properties" />
+                <include name="lib/management/management.properties" />
+                <include name="lib/net.properties" />
+                <include name="lib/psfontj2d.properties" />
+                <include name="lib/sound.properties" />
+                <include name="lib/cmm/*" />
+                <include name="lib/tzdb.dat" />
+                <include name="lib/currency.data" />
+                <include name="lib/security/java.policy" />
+                <include name="lib/security/java.security" />
+                <!--
+                we don't add lib/security/local_policy.jar, because it is the restricted version,
+                instead we'll add a link in vfs from local_policy.jar to US_export_policy.jar
+                (because US_export_policy.jar is unrestricted)
+                -->
+                <include name="lib/security/US_export_policy.jar" />
+            </fileset>
+            <fileset basedir="${OpenJDK.dir}/jdk/src/windows">
+                <include name="lib/flavormap.properties" />
+                <include name="lib/content-types.properties" />
+            </fileset>
+            </zip>
+        </target>
+
+    <target name="resources">
+        <!-- collect the resources in a zip to make it easier to include them in the right assemblies -->
+        <zip zipfile="resources.zip">
+            <fileset basedir="${OpenJDK.dir}/build/linux-x86_64-normal-server-release/jdk/classes">
+                <include name="com/sun/corba/se/impl/orbutil/resources/*.properties" />
+                <include name="com/sun/rowset/*.properties" />
+                <include name="javax/swing/text/html/parser/html32.bdtd" />
+                <include name="sun/rmi/registry/resources/*.properties" />
+                <include name="sun/rmi/server/resources/*.properties" />
+                <include name="sun/text/resources/*IteratorData" />
+                <include name="sun/text/resources/th/*IteratorData_th" />
+                <include name="sun/text/resources/th/thai_dict" />
+            </fileset>
+            <fileset basedir="${OpenJDK.dir}/corba/src/share/classes">
+                <include name="**/*.properties" />
+            </fileset>
+            <fileset basedir="${OpenJDK.dir}/jdk/src/share/classes">
+                <include name="**/*.properties" />
+                <include name="**/*.gif" />
+                <include name="**/*.png" />
+                <include name="**/*.wav" />
+                <include name="com/sun/org/apache/xml/internal/security/resource/config.*" />
+                <include name="com/sun/swing/internal/plaf/**/*" />
+                <include name="javax/swing/text/html/default.css" />
+                <include name="javax/swing/text/rtf/charsets/*.txt" />
+                <include name="sun/text/resources/**/*.icu" />
+            </fileset>
+            <fileset basedir="${OpenJDK.dir}/jaxp/src">
+                <include name="**/*.properties" />
+                <include name="**/*.res" />
+            </fileset>
+            <fileset basedir="${OpenJDK.dir}/jaxws/src/share/jaf_classes">
+                <include name="**/*.properties" />
+            </fileset>
+            <fileset basedir="${OpenJDK.dir}/jaxws/src/share/jaxws_classes">
+                <include name="**/*.properties" />
+                <include name="**/*.xml" />
+            </fileset>
+        </zip>
+    </target>
+
+    <target name="response.gen.txt">
+        <copy file="response.txt" tofile="response.gen.txt" outputencoding="ascii" overwrite="true">
+            <filterchain>
+                <replacetokens>
+                    <token key="OPENJDK" value="${OpenJDK.dir}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+    </target>
+
+    <target name="MANIFEST.MF">
+        <copy file="MANIFEST.MF.in" tofile="MANIFEST.MF" outputencoding="ascii" overwrite="true">
+            <filterchain>
+                <replacetokens>
+                    <token key="IMPLEMENTATION_VERSION" value="${IMPLEMENTATION_VERSION}" />
+                    <token key="SPECIFICATION_VERSION" value="${SPECIFICATION_VERSION}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+        <!-- copy the timestamp from the input file, because the timestamp ends up in resources.jar and affects deterministics builds -->
+        <touch file="MANIFEST.MF" datetime="${file::get-last-write-time('MANIFEST.MF.in')}" />
+    </target>
+
+    <target name="nashorn-version">
+        <copy file="resources/nashorn/version.properties.in" tofile="resources/nashorn/version.properties" outputencoding="ascii" overwrite="true">
+            <filterchain>
+                <replacetokens>
+                    <token key="FULL_VERSION" value="${FULL_VERSION}" />
+                    <token key="IMPLEMENTATION_VERSION" value="${IMPLEMENTATION_VERSION}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+        <!-- copy the timestamp from the input file, because the timestamp ends up in resources.jar and affects deterministics builds -->
+        <touch file="resources/nashorn/version.properties" datetime="${file::get-last-write-time('resources/nashorn/version.properties.in')}" />
+    </target>
+    
+    <target name="core" depends="version response.gen.txt MANIFEST.MF nashorn-version">
+        <copy file="../bin/IKVM.Runtime.dll" todir="." />
+        <copy file="../bin/IKVM.AWT.WinForms.dll" todir="." />
+        <exec program="${project::get-base-directory()}/../bin/ikvmc.exe" useruntimeengine="true">
+            <arg value="-version:${VERSION}" />
+            <arg value="${signoption}" />
+            <arg value="-compressresources" />
+            <arg value="-opt:fields" />
+            <arg value="-strictfinalfieldsemantics" />
+            <arg value="-removeassertions" />
+            <arg value="-target:library" />
+            <arg value="-sharedclassloader" />
+            <arg value="-r:mscorlib.dll" />
+            <arg value="-r:System.dll" />
+            <arg value="-r:System.Core.dll" unless="${SkipSystemCoreDependency}" />
+            <arg value="-r:System.Xml.dll" />
+            <arg value="-r:IKVM.Runtime.dll" />
+            <!-- we already know that the JNI assembly is not available, so suppress the warning -->
+            <arg value="-nowarn:110" />
+            <arg value="-w4" />
+            <arg value="-noparameterreflection" />
+            <arg value="-warnaserror" />
+            <arg value="@@response.gen.txt" />
+        </exec>
+        <if test="${property::exists('peverify')}">
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Beans.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Charsets.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Corba.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Core.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Cldrdata.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Jdbc.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Localedata.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Management.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Media.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Misc.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Naming.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Nashorn.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Remoting.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Security.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.SwingAWT.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Text.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Util.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.XML.API.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.XML.Bind.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.XML.Crypto.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.XML.Parse.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.XML.Transform.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.XML.WebServices.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.XML.XPath.dll" />
+        </if>
+	<!-- make sure that we haven't accidentally introduced new dependencies -->
+        <exec program="${project::get-base-directory()}/../tools/depcheck.exe" commandline="response.txt dependencies.txt" useruntimeengine="true" />
+        <copy todir="../bin">
+            <fileset basedir=".">
+                <include name="IKVM.OpenJDK.*.dll" />
+            </fileset>
+        </copy>
+        <!-- update base addresses in response.txt for next build -->
+        <exec program="${project::get-base-directory()}/../tools/updbaseaddresses.exe" commandline="response.txt" useruntimeengine="true" />
+
+        <!-- generate stubs for the public Java APIs we expose -->
+        <mkdir dir="../lib" />
+        <exec program="${project::get-base-directory()}/../bin/ikvmstub.exe" useruntimeengine="true">
+            <arg value="-out:../lib/ikvm-api.jar" />
+            <arg value="../bin/IKVM.OpenJDK.Core.dll" />
+            <arg value="-namespace:ikvm.io" />
+            <arg value="-namespace:ikvm.lang" />
+            <arg value="-namespace:ikvm.runtime" />
+        </exec>
+    </target>
+
+    <target name="tools.gen.rsp">
+        <copy file="tools.rsp" tofile="tools.gen.rsp" outputencoding="ascii" overwrite="true">
+            <filterchain>
+                <replacetokens>
+                    <token key="OPENJDK" value="${OpenJDK.dir}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+    </target>
+
+    <target name="tools" depends="version tools.gen.rsp">
+        <exec program="${project::get-base-directory()}/../bin/ikvmc.exe" useruntimeengine="true">
+            <arg value="-r:mscorlib.dll" />
+            <arg value="-version:${VERSION}" />
+            <arg value="${signoption}" />
+            <arg value="-warnaserror" />
+            <arg value="-w4" />
+            <arg value="-noparameterreflection" />
+            <arg value="@@tools.gen.rsp" />
+        </exec>
+    </target>
+
+    <target name="jdk-tools" depends="version">
+        <exec program="${project::get-base-directory()}/../bin/ikvmc.exe" useruntimeengine="true">
+            <arg value="-version:${VERSION}" />
+            <arg value="-out:../bin/javac.exe" />
+            <arg value="-main:com.sun.tools.javac.Main" />
+            <arg value="-r:../bin/IKVM.OpenJDK.Tools.dll" />
+        </exec>
+        <exec program="${project::get-base-directory()}/../bin/ikvmc.exe" useruntimeengine="true">
+            <arg value="-version:${VERSION}" />
+            <arg value="-out:../bin/javah.exe" />
+            <arg value="-main:com.sun.tools.javah.Main" />
+            <arg value="-r:../bin/IKVM.OpenJDK.Tools.dll" />
+        </exec>
+        <exec program="${project::get-base-directory()}/../bin/ikvmc.exe" useruntimeengine="true">
+            <arg value="-version:${VERSION}" />
+            <arg value="-out:../bin/javap.exe" />
+            <arg value="-main:com.sun.tools.javap.Main" />
+            <arg value="-r:../bin/IKVM.OpenJDK.Tools.dll" />
+        </exec>
+        <exec program="${project::get-base-directory()}/../bin/ikvmc.exe" useruntimeengine="true">
+            <arg value="-version:${VERSION}" />
+            <arg value="-out:../bin/jjs.exe" />
+            <arg value="-main:jdk.nashorn.tools.Shell" />
+        </exec>
+    </target>
+
+</project>
+@
+
+
+1.115
+log
+@Partial Linux build fix (bug #306).
+@
+text
+@d3 1
+a3 1
+  Copyright (C) 2002-2014 Jeroen Frijters
+d222 11
+d240 1
+a240 1
+            <arg value="${OpenJDK.dir}/nashorn/src/jdk/nashorn/internal/objects/*.java" />
+@
+
+
+1.114
+log
+@Integrated OpenJDK 8u45.
+@
+text
+@d125 1
+a125 1
+                <include name="System.XML.jar" />
+d139 1
+a139 1
+        <exec program="${project::get-base-directory()}/../bin/ikvmstub.exe" commandline="-bootstrap System.XML" useruntimeengine="true" />
+d186 1
+a186 1
+            <arg path="mscorlib.jar;System.jar;System.Core.jar;System.Data.jar;System.Drawing.jar;System.XML.jar;../runtime/IKVM.Runtime.jar" />
+@
+
+
+1.113
+log
+@Fixed build to allow nasgen to work with 1.8.0_40.
+@
+text
+@d30 1
+a30 1
+    <property name="OPENJDK_VERSION" value="OpenJDK 8 b132" />
+d33 2
+a34 2
+    <property name="FULL_VERSION" value="1.8.0-b132" />
+    <property name="OpenJDK.dir" value="${project::get-base-directory()}/../../openjdk-8-b132" />
+d195 1
+a195 1
+        <property name="CLASSPATH" value="mscorlib.jar${pathsep}System.Xml.jar${pathsep}${OpenJDK.dir}/jdk/src/share/classes/${pathsep}${OpenJDK.dir}/corba/src/share/classes" />
+@
+
+
+1.112
+log
+@Make IKVM.OpenJDK.Nashorn.dll build reproducible.
+@
+text
+@d232 1
+a232 1
+            <arg line="-cp ${OpenJDK.dir}/nashorn/buildtools/nasgen/src" />
+@
+
+
+1.111
+log
+@Copy timestamps from source files for generated files that end up in resources.jar.
+@
+text
+@d342 2
+@
+
+
+1.110
+log
+@Fixed build error when using Java 8u25.
+@
+text
+@d189 3
+d329 2
+@
+
+
+1.109
+log
+@Compile core class library with javac -parameters option to capture all method parameter names.
+@
+text
+@d191 5
+a195 1
+    <target name="rmi">
+a197 1
+        <property name="CLASSPATH" value="mscorlib.jar${pathsep}System.Xml.jar${pathsep}${OpenJDK.dir}/jdk/src/share/classes/${pathsep}${OpenJDK.dir}/corba/src/share/classes" />
+d217 1
+a217 1
+    <target name="run-nasgen">
+d224 2
+a225 2
+            <arg value="-cp" />
+            <arg path="mscorlib.jar;../runtime/IKVM.Runtime.jar" />
+@
+
+
+1.109.2.1
+log
+@Updated version to 8.0.5449.1.
+
+Back ported:
+- Implemented OperatingSystemMXBean.getFreePhysicalMemorySize and  OperatingSystemMXBean.getTotalPhysicalMemorySize.
+- Fixed build error when using Java 8u25.
+- Bug fix. Unsafe.compareAndSwapObject should resolve field before passing it to MakeTypedReference.
+@
+text
+@d191 1
+a191 5
+    <target name="classpath">
+        <property name="CLASSPATH" value="mscorlib.jar${pathsep}System.Xml.jar${pathsep}${OpenJDK.dir}/jdk/src/share/classes/${pathsep}${OpenJDK.dir}/corba/src/share/classes" />
+    </target>
+
+    <target name="rmi" depends="classpath">
+d194 1
+d214 1
+a214 1
+    <target name="run-nasgen" depends="classpath">
+d221 2
+a222 2
+            <arg value="-bootclasspath" />
+            <arg path="${CLASSPATH};${OpenJDK.dir}/nashorn/src;../runtime/IKVM.Runtime.jar" />
+@
+
+
+1.108
+log
+@Fixed Linux build.
+@
+text
+@d183 1
+d215 10
+d356 1
+d424 1
+@
+
+
+1.107
+log
+@Moved cldrdata and localedata into separate assemblies and update the dependency map.
+@
+text
+@d193 1
+a193 1
+        <property name="CLASSPATH" value="mscorlib.jar;System.Xml.jar;${OpenJDK.dir}/jdk/src/share/classes/${pathsep}${OpenJDK.dir}/corba/src/share/classes" />
+@
+
+
+1.106
+log
+@Integrated Nashorn.
+@
+text
+@d353 1
+d355 1
+@
+
+
+1.105
+log
+@Fixed javap build.
+@
+text
+@d33 1
+d39 1
+a39 1
+    <target name="all" depends="classes rmi vfs resources core">
+d213 10
+d313 11
+d325 1
+a325 1
+    <target name="core" depends="version response.gen.txt MANIFEST.MF">
+d358 1
+d433 5
+@
+
+
+1.104
+log
+@First part of OpenJDK 8 integration.
+@
+text
+@d407 1
+a407 1
+            <arg value="-main:sun.tools.javap.Main" />
+@
+
+
+1.103
+log
+@Replaced OPENJDK7 with OPENJDK.
+@
+text
+@d30 4
+a33 4
+    <property name="OPENJDK_VERSION" value="OpenJDK 7u40 b34" />
+    <property name="IMPLEMENTATION_VERSION" value="1.7.0_40" />
+    <property name="SPECIFICATION_VERSION" value="1.7" />
+    <property name="OpenJDK.dir" value="${project::get-base-directory()}/../../openjdk-7u40-b34" />
+d190 5
+a194 4
+        <property name="VMARGS" value="-J-client -J-Xmx896m -J-Xms128m -J-XX:PermSize=32m -J-XX:MaxPermSize=160m" />
+        <property name="CLASSPATH" value="${OpenJDK.dir}/jdk/src/share/classes/${pathsep}${OpenJDK.dir}/build/linux-amd64/impsrc/${pathsep}." />
+        <property name="OUTPUT" value="${OpenJDK.dir}/build/linux-amd64/classes/" />
+        <property name="ARGS" value="${VMARGS} -bootclasspath ${CLASSPATH} -d ${OUTPUT}" />
+d215 1
+a215 1
+            <fileset basedir="${OpenJDK.dir}/build/linux-amd64/j2re-image">
+d223 1
+a223 1
+                <include name="lib/zi/**/*" />
+d242 1
+a242 1
+        <!-- resources that are not in @@OPENJDK@@/build/linux-amd64/j2re-image/lib/resources.jar -->
+d244 13
+d258 5
+d264 14
+a277 3
+                <include name="com/sun/java/swing/plaf/**/*.properties" />
+                <include name="com/sun/java/swing/plaf/**/*.gif" />
+                <include name="sun/launcher/resources/*.properties" />
+d322 1
+d386 1
+@
+
+
+1.102
+log
+@Fix build to work with javac from JDK 8.
+@
+text
+@d33 1
+a33 1
+    <property name="OpenJDK7.dir" value="${project::get-base-directory()}/../../openjdk-7u40-b34" />
+d54 1
+a54 1
+                    <token key="OPENJDK" value="${OpenJDK7.dir}" />
+d105 1
+a105 1
+            <fileset basedir="${OpenJDK7.dir}">
+d191 2
+a192 2
+        <property name="CLASSPATH" value="${OpenJDK7.dir}/jdk/src/share/classes/${pathsep}${OpenJDK7.dir}/build/linux-amd64/impsrc/${pathsep}." />
+        <property name="OUTPUT" value="${OpenJDK7.dir}/build/linux-amd64/classes/" />
+d214 1
+a214 1
+            <fileset basedir="${OpenJDK7.dir}/build/linux-amd64/j2re-image">
+d233 1
+a233 1
+            <fileset basedir="${OpenJDK7.dir}/jdk/src/windows">
+d241 1
+a241 1
+        <!-- resources that are not in @@OPENJDK7@@/build/linux-amd64/j2re-image/lib/resources.jar -->
+d243 1
+a243 1
+            <fileset basedir="${OpenJDK7.dir}/jdk/src/share/classes">
+d256 1
+a256 1
+                    <token key="OPENJDK7" value="${OpenJDK7.dir}" />
+d343 1
+a343 1
+                    <token key="OPENJDK7" value="${OpenJDK7.dir}" />
+@
+
+
+1.101
+log
+@Renamed OPENJDK7 replacement token to OPENJDK.
+@
+text
+@d124 1
+d138 1
+d184 1
+a184 1
+            <arg path="mscorlib.jar;System.jar;System.Core.jar;System.Data.jar;System.Drawing.jar;../runtime/IKVM.Runtime.jar" />
+@
+
+
+1.100
+log
+@Merged OpenJDK 7u40 b34, except for java.lang.invoke and sun.invoke packages.
+@
+text
+@d54 1
+a54 1
+                    <token key="OPENJDK7" value="${OpenJDK7.dir}" />
+@
+
+
+1.99
+log
+@- Allow IKVM.AWT.WinForms.dll access to internals of class library.
+- Made BufferedImage.toBitmap() package private.
+@
+text
+@d3 1
+a3 1
+  Copyright (C) 2002-2013 Jeroen Frijters
+d30 2
+a31 2
+    <property name="OPENJDK_VERSION" value="OpenJDK 7u6 b24" />
+    <property name="IMPLEMENTATION_VERSION" value="1.7.0_6" />
+d33 1
+a33 1
+    <property name="OpenJDK7.dir" value="${project::get-base-directory()}/../../openjdk-7u6-b24" />
+@
+
+
+1.98
+log
+@Refactored the java compilation step into multiple targets.
+@
+text
+@d141 1
+d145 1
+d154 1
+@
+
+
+1.97
+log
+@Added license headers to build scripts.
+@
+text
+@d98 1
+a98 1
+    <target name="classes" depends="version copyright allsources.gen.lst System.Core">
+d112 7
+d126 3
+d137 3
+d145 3
+d157 3
+d169 13
+a181 1
+        <exec program="javac" commandline="-J-Xmx1536M -implicit:none -g -nowarn -cp dummy -bootclasspath mscorlib.jar${pathsep}System.jar${pathsep}System.Core.jar${pathsep}System.Data.jar${pathsep}System.Drawing.jar${pathsep}../runtime/IKVM.Runtime.jar @@allsources.gen.lst" useruntimeengine="false" />
+@
+
+
+1.96
+log
+@Generate manifest instead of copying it.
+@
+text
+@d2 23
+@
+
+
+1.95
+log
+@Changed the build system to automtically scan all sources files for copyright statements and validate that all GPL licensed files include the Classpath exception.
+@
+text
+@d8 2
+d203 12
+a214 1
+    <target name="core" depends="version response.gen.txt">
+@
+
+
+1.94
+log
+@Use sun.launcher.LauncherHelper to make the launcher more consistent with Java.
+@
+text
+@d20 5
+d73 1
+a73 1
+    <target name="classes" depends="version allsources.gen.lst System.Core">
+d112 1
+@
+
+
+1.93
+log
+@Disabled automatic assembly loading for ikvmc. All dependencies must now be explicitly referenced (except for the stub jar loophole and secondary assemblies in a shared class loader group).
+@
+text
+@d180 1
+@
+
+
+1.92
+log
+@Added (optional) support for building without System.Core.dll dependency.
+@
+text
+@d209 1
+@
+
+
+1.91
+log
+@Merged OpenJDK 7u6.
+@
+text
+@d6 1
+d30 1
+a30 1
+    <target name="System.Core">
+d52 16
+d91 4
+a94 1
+        <exec program="${project::get-base-directory()}/../bin/ikvmstub.exe" commandline="-bootstrap System.Core" useruntimeengine="true" />
+d208 1
+a208 1
+            <arg value="-r:System.Core.dll" />
+@
+
+
+1.91.2.1
+log
+@- Changed version to 7.2.4630.4.
+Backported fixes for new rc:
+- Added (optional) support for building without System.Core.dll dependency.
+- Bug fix. Abstract generic methods are not supported. Fix for #3579785.
+- Bug fix. Interface mappings can be "incomplete". Fix for bug #3581564.
+- Bug fix. Verifier should not merge state from instruction following exception block to handler. Fix for bug #3580611.
+@
+text
+@a5 1
+    <property overwrite="false" name="SkipSystemCoreDependency" value="false" />
+d29 1
+a29 1
+    <target name="System.Core" unless="${SkipSystemCoreDependency}">
+a50 16
+    <target name="DummySystemCoreJar">
+        <exec program="javac" commandline="-implicit:none ExtensionAttribute.java" useruntimeengine="false" />
+        <zip zipfile="System.Core.jar">
+            <fileset prefix="cli/System/Runtime/CompilerServices">
+                <include name="ExtensionAttribute.class" />
+                <include name="ExtensionAttribute$Annotation.class" />
+            </fileset>
+        </zip>
+        <delete>
+            <fileset basedir=".">
+                <include name="ExtensionAttribute.class" />
+                <include name="ExtensionAttribute$Annotation.class" />
+            </fileset>
+        </delete>
+    </target>
+
+d74 1
+a74 4
+        <exec program="${project::get-base-directory()}/../bin/ikvmstub.exe" commandline="-bootstrap System.Core" useruntimeengine="true" unless="${SkipSystemCoreDependency}" />
+        <if test="${SkipSystemCoreDependency}">
+            <call target="DummySystemCoreJar" />
+        </if>
+d188 1
+a188 1
+            <arg value="-r:System.Core.dll" unless="${SkipSystemCoreDependency}" />
+@
+
+
+1.90
+log
+@Forgot to update the OpenJDK version property.
+@
+text
+@d6 2
+a7 2
+    <property name="OPENJDK_VERSION" value="OpenJDK 7u4 b22" />
+    <property name="OpenJDK7.dir" value="${project::get-base-directory()}/../../openjdk-7u4-b22" />
+@
+
+
+1.89
+log
+@Integrated OpenJDK 7u4. Not all forked files have been merged yet, just the ones necessary to get things building.
+@
+text
+@d6 1
+a16 1
+        <property name="OPENJDK_VERSION" value="OpenJDK 7 b147" />
+@
+
+
+1.88
+log
+@Include copyright and metadata in IKVM.OpenJDK.Tools.dll. Part of patch #3458997.
+@
+text
+@d6 1
+a6 1
+    <property name="OpenJDK7.dir" value="${project::get-base-directory()}/../../openjdk7-b147" />
+@
+
+
+1.87
+log
+@Added AssemblyInformationalVersionAttribute to OpenJDK assemblies (to set the "Product Version"). Part of patch #3458997.
+@
+text
+@d251 1
+@
+
+
+1.86
+log
+@Implemented platform MBean server support (although with very limited information/exposed operations).
+@
+text
+@d86 1
+@
+
+
+1.86.2.1
+log
+@Backported fixes:
+- FileStore for non-accessible drive should throw exception when trying to create the FileStore, not when accessing the name() or type() properties.
+- Graphics2D.clip(null) should only throw NPE for a Component graphics.
+- Don't crash when ikvmc -resource: or -externalresource: option doesn't contain an = sign.
+- Handle Main-Class manifest value that spans multiple lines. Fix for bug #3461012.
+- Informational messages should not be treated as error when -warnaserror is specified. Fix for #3443377.
+- Don't enforce pre-1.5 class name rules in ikvmc (since HotSpot doesn't enforce any naming rules for classes loaded by the system (and boot) class loader, by default). Fix for #3443373.
+- Fix for #3441959.
+- Throwable.addSuppressed() didn't have a proper parameter name.
+- mark getSpace0 with SecuritySafeCritical to avoid getting an exception with .NET 4
+- Bug fix. Removed incorrect check for uninitialized objects on backward branch.
+- Don't crash when ikvmc -resource: or -externalresource: option doesn't contain an = sign.
+- Added AssemblyInformationalVersionAttribute to OpenJDK assemblies (to set the "Product Version"). Part of patch #3458997.
+- Include copyright and metadata in IKVM.OpenJDK.Tools.dll. Part of patch #3458997.
+- Bug fix. Don't call Finish on unloadable TypeWrapper.
+- Bug fix. When constructing a generic class loader we can't use GetWrapperFromType() on the type arguments, because they might refer to a subtype that is currently being loaded.
+- Fix. When decoding a NameSigAttribute it is possible that a type does not exist (i.e. is an unloadable) and that results in a warning emitted against the referenced assemblies class loader.
+- Suppress annotation custom attributes when enumerating inner classes.
+- IKVM.Reflection: Bug fix. Fixed copy/paste error. FieldInfo.IsAssembly should test for FieldAttributes.Assembly access, not FieldAttributes.Family.
+@
+text
+@a85 1
+                    <token key="VERSION" value="${VERSION}" />
+a249 1
+            <arg value="-r:mscorlib.dll" />
+@
+
+
+1.85
+log
+@Fixed build to always run ikvmstub on first-pass version of IKVM.Runtime.dll. Cleaned up runtime.build. Always do a first-pass runtime build.
+@
+text
+@d129 1
+@
+
+
+1.84
+log
+@Fix build issue. IKVM.Runtime.dll now exposes public methods with types from IKVM.OpenJDK.Core.dll, so we need to reference the dummy IKVM.OpenJDK.Core.dll to be able to run ikvmstub (in bootstrap mode) on IKVM.Runtime.dll.
+@
+text
+@a69 1
+                <include name="IKVM.Runtime.jar" />
+a76 1
+        <exec program="${project::get-base-directory()}/../bin/ikvmstub.exe" commandline="-bootstrap ../bin/IKVM.Runtime.dll -r:../runtime/IKVM.OpenJDK.Core.dll" useruntimeengine="true" />
+d98 1
+a98 1
+        <exec program="javac" commandline="-J-Xmx1536M -implicit:none -g -nowarn -cp dummy -bootclasspath mscorlib.jar${pathsep}System.jar${pathsep}System.Core.jar${pathsep}System.Data.jar${pathsep}System.Drawing.jar${pathsep}IKVM.Runtime.jar @@allsources.gen.lst" useruntimeengine="false" />
+@
+
+
+1.83
+log
+@Use javac -implicit:none option to avoid accidentally compiling a .java file not listed in allsources.lst.
+@
+text
+@d78 1
+a78 1
+        <exec program="${project::get-base-directory()}/../bin/ikvmstub.exe" commandline="-bootstrap ../bin/IKVM.Runtime.dll" useruntimeengine="true" />
+@
+
+
+1.82
+log
+@Updated to OpenJDK 7 b147.
+@
+text
+@d100 1
+a100 1
+        <exec program="javac" commandline="-J-Xmx1536M -g -nowarn -cp dummy -bootclasspath mscorlib.jar${pathsep}System.jar${pathsep}System.Core.jar${pathsep}System.Data.jar${pathsep}System.Drawing.jar${pathsep}IKVM.Runtime.jar @@allsources.gen.lst" useruntimeengine="false" />
+@
+
+
+1.81
+log
+@Complete migration to OpenJDK 7. Thanks to Volker Berlin for the bulk of this patch.
+@
+text
+@d6 1
+a6 1
+    <property name="OpenJDK7.dir" value="${project::get-base-directory()}/../../openjdk7-b145" />
+d16 1
+a16 1
+        <property name="OPENJDK_VERSION" value="OpenJDK 7 b145" />
+@
+
+
+1.80
+log
+@add classpath of Java 7 class files
+@
+text
+@a5 1
+    <property name="OpenJDK6.dir" value="${project::get-base-directory()}/../../openjdk6-b22" />
+d16 1
+a16 1
+        <property name="OPENJDK_VERSION" value="OpenJDK 6 b22 / 7 b145 hybrid" />
+a22 1
+                    <token key="OPENJDK6" value="${OpenJDK6.dir}" />
+a57 5
+            <fileset basedir="${OpenJDK6.dir}">
+                <include name="**.class"/>
+            </fileset>
+        </delete>
+        <delete>
+d105 2
+a106 2
+        <property name="CLASSPATH" value="${OpenJDK6.dir}/jdk/src/share/classes/${pathsep}${OpenJDK7.dir}/jdk/src/share/classes/${pathsep}${OpenJDK6.dir}/build/linux-amd64/impsrc/${pathsep}${OpenJDK7.dir}/build/linux-amd64/impsrc/${pathsep}." />
+        <property name="OUTPUT" value="${OpenJDK6.dir}/build/linux-amd64/classes/" />
+d128 1
+a128 1
+            <fileset basedir="${OpenJDK6.dir}/build/linux-amd64/j2re-image">
+d146 1
+a146 1
+            <fileset basedir="${OpenJDK6.dir}/jdk/src/windows">
+d154 1
+a154 1
+        <!-- resources that are not in @@OPENJDK6@@/build/linux-amd64/j2re-image/lib/resources.jar -->
+d156 1
+a156 1
+            <fileset basedir="${OpenJDK6.dir}/jdk/src/share/classes">
+a167 1
+                    <token key="OPENJDK6" value="${OpenJDK6.dir}" />
+a242 1
+                    <token key="OPENJDK6" value="${OpenJDK6.dir}" />
+@
+
+
+1.79
+log
+@Added -warnaserror to the IKVM.OpenJDK.*.dll builds.
+@
+text
+@d112 1
+a112 1
+        <property name="CLASSPATH" value="${OpenJDK6.dir}/jdk/src/share/classes/${pathsep}${OpenJDK7.dir}/jdk/src/share/classes/${pathsep}${OpenJDK6.dir}/build/linux-amd64/impsrc/${pathsep}." />
+@
+
+
+1.78
+log
+@Updated java.lang.Throwable to OpenJDK 7.
+@
+text
+@d200 1
+d262 1
+@
+
+
+1.77
+log
+@- Enable ikvmc support for class file version 51.
+- Change build to support hybrid OpenJDK 6 & 7 build.
+@
+text
+@d112 1
+a112 1
+        <property name="CLASSPATH" value="${OpenJDK6.dir}/jdk/src/share/classes/${pathsep}${OpenJDK6.dir}/build/linux-amd64/impsrc/${pathsep}." />
+@
+
+
+1.76
+log
+@Add missing lib/*.properties files (in particular lib/calendars.properties which caused java.util.JapaneseImperialCalendar to fail).
+@
+text
+@d6 2
+a7 1
+    <property name="OpenJDK.dir" value="${project::get-base-directory()}/../../openjdk6-b22" />
+d17 1
+a17 1
+        <property name="OPENJDK_VERSION" value="OpenJDK 6 b22" />
+d24 2
+a25 1
+                    <token key="OPENJDK" value="${OpenJDK.dir}" />
+d60 6
+a65 1
+            <fileset basedir="${OpenJDK.dir}">
+d112 2
+a113 2
+        <property name="CLASSPATH" value="${OpenJDK.dir}/jdk/src/share/classes/${pathsep}${OpenJDK.dir}/build/linux-amd64/impsrc/${pathsep}." />
+        <property name="OUTPUT" value="${OpenJDK.dir}/build/linux-amd64/classes/" />
+d135 1
+a135 1
+            <fileset basedir="${OpenJDK.dir}/build/linux-amd64/j2re-image">
+d153 1
+a153 1
+            <fileset basedir="${OpenJDK.dir}/jdk/src/windows">
+d161 1
+a161 1
+        <!-- resources that are not in @@OPENJDK@@/build/linux-amd64/j2re-image/lib/resources.jar -->
+d163 1
+a163 1
+            <fileset basedir="${OpenJDK.dir}/jdk/src/share/classes">
+d175 2
+a176 1
+                    <token key="OPENJDK" value="${OpenJDK.dir}" />
+d250 2
+a251 1
+                    <token key="OPENJDK" value="${OpenJDK.dir}" />
+@
+
+
+1.75
+log
+@Specify "-cp dummy" for javac compile to avoid using the CLASSPATH.
+@
+text
+@d129 5
+a136 1
+                <include name="lib/logging.properties" />
+@
+
+
+1.74
+log
+@Update to OpenJDK 6 b22.
+@
+text
+@d100 1
+a100 1
+        <exec program="javac" commandline="-J-Xmx1536M -g -nowarn -bootclasspath mscorlib.jar${pathsep}System.jar${pathsep}System.Core.jar${pathsep}System.Data.jar${pathsep}System.Drawing.jar${pathsep}IKVM.Runtime.jar @@allsources.gen.lst" useruntimeengine="false" />
+@
+
+
+1.73
+log
+@Added missing non-internal look and feel resources to the SwingAWT dll
+@
+text
+@d6 1
+a6 1
+    <property name="OpenJDK.dir" value="${project::get-base-directory()}/../../openjdk6-b21" />
+d16 1
+a16 1
+        <property name="OPENJDK_VERSION" value="OpenJDK 6 b21" />
+d154 2
+a155 2
+				<include name="com/sun/java/swing/plaf/**/*.properties" />
+				<include name="com/sun/java/swing/plaf/**/*.gif" />
+@
+
+
+1.72
+log
+@Integrated OpenJDK 6 b21.
+@
+text
+@d154 2
+@
+
+
+1.71
+log
+@Generate lib/ikvm-api.jar to expose the ikvm API more easily to java code (by shipping this jar as part of ikvmbin.zip).
+@
+text
+@d6 1
+a6 1
+    <property name="OpenJDK.dir" value="${project::get-base-directory()}/../../openjdk6-b18" />
+d16 1
+a16 1
+        <property name="OPENJDK_VERSION" value="OpenJDK 6 b18" />
+@
+
+
+1.70
+log
+@We no longer need an external sun.boot.class.path to run javac, javap and javah.
+@
+text
+@d220 10
+@
+
+
+1.69
+log
+@- Removed the requirement to have peverify and ilasm in the PATH. They are now located automatically and if they are not found, the corresponding build steps are skipped.
+- Added "managed" and "native" targets to ikvm.build to allow building just the managed parts (that don't require a C compiler to be installed).
+@
+text
+@a244 1
+            <arg value="-Dsun.boot.class.path=%JAVA_HOME%/jre/lib/rt.jar" />
+a250 1
+            <arg value="-Dsun.boot.class.path=%JAVA_HOME%/jre/lib/rt.jar" />
+a256 1
+            <arg value="-Dsun.boot.class.path=%JAVA_HOME%/jre/lib/rt.jar" />
+@
+
+
+1.68
+log
+@Added jdk-tools target to build javac.exe, javah.exe and javap.exe. Not built by default.
+@
+text
+@d3 1
+d188 22
+a209 22
+        <if test="${platform::is-win32()}">
+            <exec program="peverify" commandline="-nologo IKVM.OpenJDK.Beans.dll" />
+            <exec program="peverify" commandline="-nologo IKVM.OpenJDK.Charsets.dll" />
+            <exec program="peverify" commandline="-nologo IKVM.OpenJDK.Corba.dll" />
+            <exec program="peverify" commandline="-nologo IKVM.OpenJDK.Core.dll" />
+            <exec program="peverify" commandline="-nologo IKVM.OpenJDK.Jdbc.dll" />
+            <exec program="peverify" commandline="-nologo IKVM.OpenJDK.Management.dll" />
+            <exec program="peverify" commandline="-nologo IKVM.OpenJDK.Media.dll" />
+            <exec program="peverify" commandline="-nologo IKVM.OpenJDK.Misc.dll" />
+            <exec program="peverify" commandline="-nologo IKVM.OpenJDK.Naming.dll" />
+            <exec program="peverify" commandline="-nologo IKVM.OpenJDK.Remoting.dll" />
+            <exec program="peverify" commandline="-nologo IKVM.OpenJDK.Security.dll" />
+            <exec program="peverify" commandline="-nologo IKVM.OpenJDK.SwingAWT.dll" />
+            <exec program="peverify" commandline="-nologo IKVM.OpenJDK.Text.dll" />
+            <exec program="peverify" commandline="-nologo IKVM.OpenJDK.Util.dll" />
+            <exec program="peverify" commandline="-nologo IKVM.OpenJDK.XML.API.dll" />
+            <exec program="peverify" commandline="-nologo IKVM.OpenJDK.XML.Bind.dll" />
+            <exec program="peverify" commandline="-nologo IKVM.OpenJDK.XML.Crypto.dll" />
+            <exec program="peverify" commandline="-nologo IKVM.OpenJDK.XML.Parse.dll" />
+            <exec program="peverify" commandline="-nologo IKVM.OpenJDK.XML.Transform.dll" />
+            <exec program="peverify" commandline="-nologo IKVM.OpenJDK.XML.WebServices.dll" />
+            <exec program="peverify" commandline="-nologo IKVM.OpenJDK.XML.XPath.dll" />
+@
+
+
+1.68.2.1
+log
+@Backported build improvements.
+@
+text
+@a2 1
+    <include buildfile="../ikvm.include" />
+d187 22
+a208 22
+        <if test="${property::exists('peverify')}">
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Beans.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Charsets.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Corba.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Core.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Jdbc.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Management.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Media.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Misc.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Naming.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Remoting.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Security.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.SwingAWT.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Text.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.Util.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.XML.API.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.XML.Bind.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.XML.Crypto.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.XML.Parse.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.XML.Transform.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.XML.WebServices.dll" />
+            <exec program="${peverify}" commandline="-nologo IKVM.OpenJDK.XML.XPath.dll" />
+@
+
+
+1.67
+log
+@Added "first-pass" build of IKVM.AWT.WinForms.dll and moved "native" AWT code from IKVM.Runtime.dll to IKVM.AWT.WinForms.dll.
+@
+text
+@d239 24
+@
+
+
+1.66
+log
+@Removed fake core class library types from ikvmstub and added a -bootstrap option to run without dependency on runtime/core class library.
+@
+text
+@d169 1
+@
+
+
+1.65
+log
+@Added .dll extension to referenced assemblies, to avoid relying on what is now a legacy feature of ikvmc.
+@
+text
+@d72 6
+a77 6
+        <exec program="${project::get-base-directory()}/../bin/ikvmstub.exe" commandline="mscorlib" useruntimeengine="true" />
+        <exec program="${project::get-base-directory()}/../bin/ikvmstub.exe" commandline="System" useruntimeengine="true" />
+        <exec program="${project::get-base-directory()}/../bin/ikvmstub.exe" commandline="System.Core" useruntimeengine="true" />
+        <exec program="${project::get-base-directory()}/../bin/ikvmstub.exe" commandline="System.Data" useruntimeengine="true" />
+        <exec program="${project::get-base-directory()}/../bin/ikvmstub.exe" commandline="System.Drawing" useruntimeengine="true" />
+        <exec program="${project::get-base-directory()}/../bin/ikvmstub.exe" commandline="../bin/IKVM.Runtime.dll" useruntimeengine="true" />
+@
+
+
+1.64
+log
+@- Rewrote assembly loading for ikvmc and ikvmstub (and unified it). It now no longer depends on the runtime to do assembly name to path resolution and behaves more csc like.
+- Added -nostdlib and -lib options to ikvmc and ikvmstub.
+- openjdk.build now uses our System.Core.dll (unless we're building on .NET 4.0).
+@
+text
+@d178 4
+a181 4
+            <arg value="-r:mscorlib" />
+            <arg value="-r:System" />
+            <arg value="-r:System.Core" />
+            <arg value="-r:IKVM.Runtime" />
+@
+
+
+1.63
+log
+@Removed lib/security/local_policy.jar from vfs.zip (because OpenJDK builds the restricted version, by default) and instead make a vfs alias for it that points to the unrestricted US_export_policy.jar.
+@
+text
+@d50 1
+a50 1
+    <target name="classes" depends="version allsources.gen.lst">
+d77 1
+a77 1
+        <exec program="${project::get-base-directory()}/../bin/ikvmstub.exe" commandline="IKVM.Runtime" useruntimeengine="true" />
+d168 1
+a186 1
+            <copy file="../bin/IKVM.Runtime.dll" tofile="IKVM.Runtime.dll" />
+@
+
+
+1.62
+log
+@Added System.Core target to build a tiny custom version of System.Core.dll that contains only System.Runtime.CompilerServices.ExtensionAttribute and will allow us to build on .NET 2.0 without having to figure out where System.Core.dll lives (or without it even being present).
+@
+text
+@d134 5
+a138 1
+                <include name="lib/security/local_policy.jar" />
+@
+
+
+1.61
+log
+@Integrated OpenJDK 6 b18.
+@
+text
+@d28 22
+@
+
+
+1.60
+log
+@Removed ../../openjdk6-b16 path from tools response file.
+@
+text
+@d5 1
+a5 1
+    <property name="OpenJDK.dir" value="${project::get-base-directory()}/../../openjdk6-b16" />
+d15 1
+a15 1
+        <property name="OPENJDK_VERSION" value="OpenJDK 6 b16" />
+@
+
+
+1.59
+log
+@Removed ../../openjdk6-b16 path from response files.
+@
+text
+@d194 11
+a204 1
+    <target name="tools" depends="version">
+d208 1
+a208 1
+            <arg value="@@tools.rsp" />
+@
+
+
+1.58
+log
+@Removed pre-generated stub jars from cvs and modified build process to generate them during the build.
+@
+text
+@d18 11
+a28 1
+    <target name="classes" depends="version">
+d77 1
+a77 1
+        <exec program="javac" commandline="-J-Xmx1536M -g -nowarn -bootclasspath mscorlib.jar${pathsep}System.jar${pathsep}System.Core.jar${pathsep}System.Data.jar${pathsep}System.Drawing.jar${pathsep}IKVM.Runtime.jar @@allsources.lst" useruntimeengine="false" />
+d123 1
+a123 1
+        <!-- resources that are not in ../../openjdk6-b16/build/linux-amd64/j2re-image/lib/resources.jar -->
+d131 11
+a141 1
+    <target name="core" depends="version">
+d157 1
+a157 1
+            <arg value="@@response.txt" />
+@
+
+
+1.57
+log
+@Created IKVM.OpenJDK.Tools.dll (which is going to be the equivalent of tools.jar).
+@
+text
+@d32 6
+d40 6
+d67 1
+a67 1
+        <exec program="javac" commandline="-J-Xmx1536M -g -nowarn -bootclasspath ../classpath/mscorlib.jar${pathsep}../classpath/System.jar${pathsep}../classpath/System.Core.jar${pathsep}../classpath/System.Data.jar${pathsep}../classpath/System.Drawing.jar${pathsep}../classpath/IKVM.Runtime.jar @@allsources.lst" useruntimeengine="false" />
+d132 2
+a134 6
+            <!-- Instead of using -r:System.Core we add System.Core.jar (in response.txt)
+                 (containing only System.Runtime.CompilerServices.ExtensionAttribute).
+                 This allows compilation to succeed (though with warnings) when System.Core.dll is not available.
+                 It also prevents accidentally taking additional dependencies on System.Core.dll.
+            -->
+            <arg value="-r:${framework::get-assembly-directory(framework::get-target-framework())}/System.dll" />
+@
+
+
+1.56
+log
+@Removed classes that aren't supposed to be in the boot class path (they're from tools.jar). This includes the entire IKVM.OpenJDK.XML.RelaxNG assembly.
+@
+text
+@d166 8
+@
+
+
+1.55
+log
+@Split off Beans and Media from Misc.
+@
+text
+@a150 1
+            <exec program="peverify" commandline="-nologo IKVM.OpenJDK.XML.RelaxNG.dll" />
+@
+
+
+1.54
+log
+@Split off IKVM.OpenJDK.Remoting.dll from Misc.
+@
+text
+@d133 1
+d139 1
+@
+
+
+1.53
+log
+@Split IKVM.OpenJDK.Naming.dll off from Misc.
+@
+text
+@d140 1
+@
+
+
+1.52
+log
+@- Set runtime version during build, instead of computing it a runtime.
+- Set OpenJDK version in openjdk.build instead of VMSystemProperty source.
+@
+text
+@d139 1
+@
+
+
+1.51
+log
+@Moved gnu.classpath.Configuration to java.lang.PropertyConstants.
+@
+text
+@d13 6
+a18 1
+    <target name="classes">
+d50 2
+d109 1
+a109 2
+    <target name="core">
+        <property name="VERSION" value="${assemblyname::get-version(assemblyname::get-assembly-name(path::combine(project::get-base-directory(), '../bin/IKVM.Runtime.dll')))}" />
+@
+
+
+1.50
+log
+@Split XPath off from Parse.
+@
+text
+@d41 1
+a41 1
+        <copy file="Configuration.java.in" tofile="Configuration.java" outputencoding="ascii" overwrite="true">
+@
+
+
+1.49
+log
+@Added a mechanism to prevent accidentally introducing new dependencies in the OpenJDK assemblies.
+@
+text
+@d144 1
+@
+
+
+1.48
+log
+@Specify -baseaddress:<address> option for all runtime assemblies. This should make ngen images more efficient.
+@
+text
+@d145 2
+@
+
+
+1.47
+log
+@Split XML assembly into 7 parts. With thanks to Michael Kay.
+@
+text
+@d150 2
+@
+
+
+1.46
+log
+@Added rmi stub generation to build process, instead of relying on .class files in stripped zip.
+@
+text
+@d137 7
+a143 1
+            <exec program="peverify" commandline="-nologo IKVM.OpenJDK.XML.dll" />
+@
+
+
+1.45
+log
+@Add resources in com/sun/swing/internal/plaf/*
+@
+text
+@d10 1
+a10 1
+    <target name="all" depends="classes vfs resources core">
+d21 1
+a21 5
+                <include name="jdk/src/share/classes/**.class"/>
+                <include name="jdk/src/solaris/classes/**.class"/>
+                <include name="jdk/src/windows/classes/**.class"/>
+                <include name="build/linux-amd64/gensrc/**.class"/>
+                <include name="build/linux-amd64/impsrc/**.class"/>
+d51 22
+@
+
+
+1.44
+log
+@Removed classpath-0.95 directory.
+@
+text
+@d10 1
+a10 1
+    <target name="all" depends="classes vfs core">
+d72 9
+@
+
+
+1.43
+log
+@Changed peverify -quiet to -nologo to make sure that warnings show up.
+@
+text
+@a4 1
+    <property name="Classpath.dir" value="${project::get-base-directory()}/../../classpath-0.95" />
+a14 5
+            <fileset basedir="${Classpath.dir}">
+                <include name="**.class"/>
+            </fileset>
+        </delete>
+        <delete>
+@
+
+
+1.42
+log
+@Fixed base path for lib directory included in VFS.
+@
+text
+@d106 11
+a116 11
+            <exec program="peverify" commandline="-quiet IKVM.OpenJDK.Charsets.dll" />
+            <exec program="peverify" commandline="-quiet IKVM.OpenJDK.Corba.dll" />
+            <exec program="peverify" commandline="-quiet IKVM.OpenJDK.Core.dll" />
+            <exec program="peverify" commandline="-quiet IKVM.OpenJDK.Jdbc.dll" />
+            <exec program="peverify" commandline="-quiet IKVM.OpenJDK.Management.dll" />
+            <exec program="peverify" commandline="-quiet IKVM.OpenJDK.Misc.dll" />
+            <exec program="peverify" commandline="-quiet IKVM.OpenJDK.Security.dll" />
+            <exec program="peverify" commandline="-quiet IKVM.OpenJDK.SwingAWT.dll" />
+            <exec program="peverify" commandline="-quiet IKVM.OpenJDK.Text.dll" />
+            <exec program="peverify" commandline="-quiet IKVM.OpenJDK.Util.dll" />
+            <exec program="peverify" commandline="-quiet IKVM.OpenJDK.XML.dll" />
+@
+
+
+1.41
+log
+@Updated to OpenJDK 6 b16
+@
+text
+@d64 1
+a64 1
+            <fileset basedir="${OpenJDK.dir}/control/build/linux-amd64/j2re-image">
+@
+
+
+1.40
+log
+@Added dummy color management and cmm files.
+@
+text
+@d6 1
+a6 1
+    <property name="OpenJDK.dir" value="${project::get-base-directory()}/../../openjdk6-b12" />
+d30 2
+a31 2
+                <include name="control/build/linux-amd64/gensrc/**.class"/>
+                <include name="control/build/linux-amd64/impsrc/**.class"/>
+@
+
+
+1.40.2.1
+log
+@- Changed version to 0.40.0.2
+- Added rmic step to build to remove dependency on .class files
+- Fixed verifier bug in merging of jsr/ret state
+- Fixed verifier bugs that could cause potential LocalStoreSites corruption
+@
+text
+@d11 1
+a11 1
+    <target name="all" depends="classes rmi vfs core">
+d27 5
+a31 1
+                <include name="**.class"/>
+a60 22
+    <target name="rmi">
+        <property name="VMARGS" value="-J-client -J-Xmx896m -J-Xms128m -J-XX:PermSize=32m -J-XX:MaxPermSize=160m" />
+        <property name="CLASSPATH" value="${OpenJDK.dir}/jdk/src/share/classes/${pathsep}${OpenJDK.dir}/control/build/linux-amd64/impsrc/${pathsep}." />
+        <property name="OUTPUT" value="${OpenJDK.dir}/control/build/linux-amd64/classes/" />
+        <property name="ARGS" value="${VMARGS} -bootclasspath ${CLASSPATH} -d ${OUTPUT}" />
+        <exec program="rmic" commandline="${ARGS} -v1.1 sun.rmi.registry.RegistryImpl" />
+        <exec program="rmic" commandline="${ARGS} -v1.1 sun.rmi.transport.DGCImpl" />
+        <exec program="rmic" commandline="${ARGS} -v1.2 sun.rmi.server.Activation$ActivationSystemImpl" />
+        <exec program="rmic" commandline="${ARGS} -v1.2 java.rmi.activation.ActivationGroup" />
+        <exec program="rmic" commandline="${ARGS} -v1.2 com.sun.jndi.rmi.registry.ReferenceWrapper" />
+        <exec program="rmic" commandline="${ARGS} -v1.2 javax.management.remote.rmi.RMIConnectionImpl" />
+        <exec program="rmic" commandline="${ARGS} -v1.2 -iiop javax.management.remote.rmi.RMIConnectionImpl" />
+        <exec program="rmic" commandline="${ARGS} -v1.2 -iiop -standardPackage javax.management.remote.rmi.RMIConnectionImpl" />
+        <exec program="rmic" commandline="${ARGS} -v1.2 javax.management.remote.rmi.RMIServerImpl" />
+        <exec program="rmic" commandline="${ARGS} -v1.2 -iiop javax.management.remote.rmi.RMIServerImpl" />
+        <exec program="rmic" commandline="${ARGS} -v1.2 -iiop -standardPackage javax.management.remote.rmi.RMIServerImpl" />
+        <exec program="rmic" commandline="${ARGS} -iiop javax.management.remote.rmi.RMIConnection" />
+        <exec program="rmic" commandline="${ARGS} -iiop -standardPackage javax.management.remote.rmi.RMIConnection" />
+        <exec program="rmic" commandline="${ARGS} -iiop javax.management.remote.rmi.RMIServer" />
+        <exec program="rmic" commandline="${ARGS} -iiop -standardPackage javax.management.remote.rmi.RMIServer" />
+    </target>
+
+@
+
+
+1.40.2.2
+log
+@- Update version to 0.40.0.5.
+- Include lib/flavormap.properties and lib/content-types.properties resources.
+@
+text
+@d91 2
+@
+
+
+1.39
+log
+@Added flavormap.properties and content-types.properties and added some hacks to make DataTransferer "work".
+@
+text
+@d65 1
+@
+
+
+1.38
+log
+@Build for IKVM.OpenJDK.Jdbc.dll added
+@
+text
+@d73 4
+@
+
+
+1.37
+log
+@Remove NetBufferedImage and merge the code in the class BufferedImage. Now the class BufferedImage has 2 buffers. A Java Raster and .NET Bitmap.
+@
+text
+@d58 1
+a58 1
+        <exec program="javac" commandline="-J-Xmx1536M -g -nowarn -bootclasspath ../classpath/mscorlib.jar${pathsep}../classpath/System.jar${pathsep}../classpath/System.Core.jar${pathsep}../classpath/System.Drawing.jar${pathsep}../classpath/IKVM.Runtime.jar @@allsources.lst" useruntimeengine="false" />
+d104 1
+@
+
+
+1.36
+log
+@Updated build to split IKVM.OpenJDK.ClassLibrary.dll into ten parts.
+@
+text
+@d58 1
+a58 1
+        <exec program="javac" commandline="-J-Xmx1536M -g -nowarn -bootclasspath ../classpath/mscorlib.jar${pathsep}../classpath/System.jar${pathsep}../classpath/System.Core.jar${pathsep}../classpath/IKVM.Runtime.jar @@allsources.lst" useruntimeengine="false" />
+@
+
+
+1.35
+log
+@Generate assembly versions for IKVM.OpenJDK.ClassLibrary.dll and JVM.dll automatically based on IKVM.Runtime.dll version.
+@
+text
+@a84 3
+            <arg value="-out:IKVM.OpenJDK.ClassLibrary.dll" />
+            <arg value="-remap:map.xml" />
+            <arg value="-exclude:exclude.lst" />
+d86 1
+a86 11
+            <arg value="-recurse:./*.class" />
+            <arg value="-recurse:../classpath/*.class" />
+            <arg value="-recurse:${OpenJDK.dir}/jdk/src/share/classes/*.class" />
+            <arg value="-recurse:${OpenJDK.dir}/jdk/src/solaris/classes/*.class" />
+            <arg value="-recurse:${OpenJDK.dir}/jdk/src/windows/classes/*.class" />
+            <arg value="-recurse:${OpenJDK.dir}/control/build/linux-amd64/gensrc/*.class" />
+            <arg value="-recurse:${OpenJDK.dir}/control/build/linux-amd64/impsrc/*.class" />
+            <arg value="-recurse:${OpenJDK.dir}/control/build/linux-amd64/classes/*_Stub.class" />
+            <arg value="-recurse:${OpenJDK.dir}/control/build/linux-amd64/classes/*_Tie.class" />
+            <arg value="-recurse:${OpenJDK.dir}/control/build/linux-amd64/classes/*_Skel.class" />
+            <arg value="-recurse:${Classpath.dir}/*.class" />
+d89 1
+a89 1
+            <!-- Instead of using -r:System.Core we add System.Core.jar
+a93 1
+            <arg value="../classpath/System.Core.jar" />
+a94 3
+            <arg value="${OpenJDK.dir}/control/build/linux-amd64/j2re-image/lib/resources.jar" />
+            <!-- this resource is somehow missing from OpenJDK6 b12's resources.jar -->
+            <arg value="-resource:com/sun/org/apache/xml/internal/serialize/HTMLEntities.res=${OpenJDK.dir}/control/build/linux-amd64/impsrc/com/sun/org/apache/xml/internal/serialize/HTMLEntities.res" />
+d97 1
+a98 1
+        <copy file="IKVM.OpenJDK.ClassLibrary.dll" tofile="../bin/IKVM.OpenJDK.ClassLibrary.dll.new" />
+d100 11
+a110 1
+            <exec program="peverify" commandline="../bin/IKVM.OpenJDK.ClassLibrary.dll.new" />
+d112 5
+a116 2
+        <copy file="IKVM.OpenJDK.ClassLibrary.dll" todir="../bin" />
+        <delete file="../bin/IKVM.OpenJDK.ClassLibrary.dll.new" />
+@
+
+
+1.34
+log
+@Oops. Apparantly NAnt's assemblyname::get-assembly-name() isn't relative to the current project directory.
+@
+text
+@d77 1
+d79 1
+a79 1
+            <arg value="-version:0.39.*" />
+@
+
+
+1.33
+log
+@Changed build to autogenerate the assembly qualified name of the AWT peer toolkit.
+@
+text
+@d54 1
+a54 1
+                    <token key="AWTASSEMBLY" value="${string::replace(assemblyname::get-full-name(assemblyname::get-assembly-name('../bin/IKVM.Runtime.dll')), 'IKVM.Runtime', 'IKVM.AWT.WinForms')}" />
+@
+
+
+1.32
+log
+@Removed our version of System.Runtime.CompilerServices.ExtensionAttribute and instead add System.Core.jar to the compilation, this will allow us to reference the real ExtensionAttribute when it is available and yet the build will still work (albeit with a warning and without the ExtensionAttribute) when it is not available (i.e. when building on .NET 2.0).
+@
+text
+@d51 7
+@
+
+
+1.31
+log
+@Set encoding of AssemblyInfo.java to ascii, to prevent a BOM character on Linux that causes javac to barf.
+@
+text
+@d51 1
+a51 1
+        <exec program="javac" commandline="-J-Xmx1536M -g -nowarn -bootclasspath ../classpath/mscorlib.jar${pathsep}../classpath/System.jar${pathsep}../classpath/IKVM.Runtime.jar @@allsources.lst" useruntimeengine="false" />
+d94 6
+@
+
+
+1.30
+log
+@Changed version to 0.39.
+@
+text
+@d44 1
+a44 1
+        <copy file="AssemblyInfo.java.in" tofile="AssemblyInfo.java" overwrite="true">
+@
+
+
+1.29
+log
+@Added missing resource file.
+@
+text
+@d71 1
+a71 1
+            <arg value="-version:0.37.*" />
+@
+
+
+1.29.2.1
+log
+@Set version no. to 0.38.0.0.
+@
+text
+@d71 1
+a71 1
+            <arg value="-version:0.38.0.0" />
+@
+
+
+1.29.2.2
+log
+@Backported fixes and updated version to 0.38.0.1:
+- Hide callerID nested types.
+- Made finalize() and clone() methods in cli.System.Object and cli.System.Exception final.
+- Fixed reflection to work on .NET 2.0 RTM.
+@
+text
+@d71 1
+a71 1
+            <arg value="-version:0.38.0.1" />
+@
+
+
+1.29.2.3
+log
+@- Changed version to 0.38.0.2
+- Fixed openjdk.build BOM issue on Linux
+- Fixed verifier bug in handling of jsr instruction
+@
+text
+@d44 1
+a44 1
+        <copy file="AssemblyInfo.java.in" tofile="AssemblyInfo.java" outputencoding="ascii" overwrite="true">
+d71 1
+a71 1
+            <arg value="-version:0.38.0.2" />
+@
+
+
+1.29.2.4
+log
+@- Updated version to 0.38.0.4
+- Backported fix to PassiveWeakDictionary.
+@
+text
+@d71 1
+a71 1
+            <arg value="-version:0.38.0.4" />
+@
+
+
+1.28
+log
+@- Removed unneeded MANIFEST.MF (it is already in resources.jar).
+- Added -nowarn:110 to remove warning about missing JNI assembly.
+@
+text
+@d96 2
+@
+
+
+1.27
+log
+@Removed hardcoded ikvm PublicKey from build.
+@
+text
+@a94 1
+            <arg value="-resource:META-INF/MANIFEST.MF=MANIFEST.MF" />
+d96 2
+@
+
+
+1.26
+log
+@Changed path from openjdk6-b10 to openjdk6-b12.
+@
+text
+@d41 2
+a42 1
+            <property name="IKVM.Runtime" value="IKVM.Runtime, PublicKey=0024000004800000940000000602000000240000525341310004000001000100DD6B140E5209CAE3D1C710030021EF589D0F00D05ACA8771101A7E99E10EE063E66040DF96E6F842F717BFC5B62D2EC2B62CEB0282E4649790DACB424DB29B68ADC7EAEAB0356FCE04702379F84400B8427EDBB33DAB8720B9F16A42E2CDB87F885EF413DBC4229F2BD157C9B8DC2CD14866DEC5F31C764BFB9394CC3C60E6C0" />
+d44 1
+a44 1
+        <copy file="AssemblyInfo.java.in" tofile="AssemblyInfo.java">
+@
+
+
+1.25
+log
+@Added "core" target that allows running just the ikvmc step.
+@
+text
+@d6 1
+a6 1
+    <property name="OpenJDK.dir" value="${project::get-base-directory()}/../../openjdk6-b10" />
+@
+
+
+1.24
+log
+@Reformattted.
+@
+text
+@d2 1
+a2 1
+<project name="IKVM.OpenJDK.ClassLibrary.dll" default="IKVM.OpenJDK.ClassLibrary.dll">
+d11 3
+d68 1
+a68 1
+    <target name="IKVM.OpenJDK.ClassLibrary.dll" depends="classes vfs">
+@
+
+
+1.23
+log
+@Integrated OpenJDK 6 b10.
+@
+text
+@d13 4
+a16 9
+		<fileset basedir="${Classpath.dir}">
+			<include name="**.class"/>
+		</fileset>
+	</delete>
+	<delete>
+		<fileset basedir="../classpath">
+			<include name="**.class"/>
+		</fileset>
+	</delete>
+d18 18
+a35 13
+		<fileset basedir="${OpenJDK.dir}">
+			<include name="jdk/src/share/classes/**.class"/>
+			<include name="jdk/src/solaris/classes/**.class"/>
+			<include name="jdk/src/windows/classes/**.class"/>
+			<include name="control/build/linux-amd64/gensrc/**.class"/>
+			<include name="control/build/linux-amd64/impsrc/**.class"/>
+		</fileset>
+	</delete>
+	<delete>
+		<fileset basedir=".">
+			<include name="**.class"/>
+		</fileset>
+	</delete>
+d51 12
+a62 12
+      <!-- This file is generated here, but it is added as a resource to IKVM.Runtime.dll, because Ref.Emit on .NET 1.1 doesn't support adding a raw resource. -->
+      <zip zipfile="vfs.zip">
+          <fileset basedir="${OpenJDK.dir}/control/build/linux-amd64/j2re-image">
+               <include name="lib/zi/**/*" />
+               <include name="lib/currency.data" />
+               <include name="lib/logging.properties" />
+               <include name="lib/security/java.policy" />
+               <include name="lib/security/java.security" />
+               <include name="lib/security/local_policy.jar" />
+               <include name="lib/security/US_export_policy.jar" />
+          </fileset>
+      </zip>
+d67 26
+a92 26
+          <arg value="-version:0.37.*" />
+          <arg value="${signoption}" />
+          <arg value="-compressresources" />
+          <arg value="-opt:fields" />
+          <arg value="-strictfinalfieldsemantics" />
+          <arg value="-removeassertions" />
+          <arg value="-out:IKVM.OpenJDK.ClassLibrary.dll" />
+          <arg value="-remap:map.xml" />
+          <arg value="-exclude:exclude.lst" />
+          <arg value="-target:library" />
+          <arg value="-recurse:./*.class" />
+          <arg value="-recurse:../classpath/*.class" />
+          <arg value="-recurse:${OpenJDK.dir}/jdk/src/share/classes/*.class" />
+          <arg value="-recurse:${OpenJDK.dir}/jdk/src/solaris/classes/*.class" />
+          <arg value="-recurse:${OpenJDK.dir}/jdk/src/windows/classes/*.class" />
+          <arg value="-recurse:${OpenJDK.dir}/control/build/linux-amd64/gensrc/*.class" />
+          <arg value="-recurse:${OpenJDK.dir}/control/build/linux-amd64/impsrc/*.class" />
+          <arg value="-recurse:${OpenJDK.dir}/control/build/linux-amd64/classes/*_Stub.class" />
+          <arg value="-recurse:${OpenJDK.dir}/control/build/linux-amd64/classes/*_Tie.class" />
+          <arg value="-recurse:${OpenJDK.dir}/control/build/linux-amd64/classes/*_Skel.class" />
+          <arg value="-recurse:${Classpath.dir}/*.class" />
+          <arg value="-r:mscorlib" />
+          <arg value="-r:IKVM.Runtime" />
+          <arg value="-r:${framework::get-assembly-directory(framework::get-target-framework())}/System.dll" />
+          <arg value="-resource:META-INF/MANIFEST.MF=MANIFEST.MF" />
+          <arg value="${OpenJDK.dir}/control/build/linux-amd64/j2re-image/lib/resources.jar" />
+d96 1
+a96 1
+          <exec program="peverify" commandline="../bin/IKVM.OpenJDK.ClassLibrary.dll.new" />
+d99 1
+a99 1
+	<delete file="../bin/IKVM.OpenJDK.ClassLibrary.dll.new" />
+@
+
+
+1.22
+log
+@- Added -removeassertions optimization option to ikvmc.
+- Added -removeassertions to IKVM.OpenJDK.ClassLibrary.dll build.
+- Don't look at unreachable instructions when determining if a method needs a line number table.
+@
+text
+@d6 1
+a6 1
+    <property name="OpenJDK.dir" value="${project::get-base-directory()}/../../openjdk-b13" />
+d24 5
+a28 2
+			<include name="j2se/src/**.class"/>
+			<include name="control/build/linux-i586/gensrc/**.class"/>
+d47 1
+a47 1
+        <exec program="javac" commandline="-J-Xmx1024M -g -nowarn -bootclasspath ../classpath/mscorlib.jar${pathsep}../classpath/System.jar${pathsep}../classpath/IKVM.Runtime.jar @@allsources.lst" useruntimeengine="false" />
+d53 1
+a53 1
+          <fileset basedir="${OpenJDK.dir}/control/build/linux-i586/j2re-image">
+d55 1
+d58 3
+a60 3
+          </fileset>
+          <fileset basedir=".">
+               <include name="lib/**/*" />
+d79 8
+a86 5
+          <arg value="-recurse:${OpenJDK.dir}/j2se/src/*.class" />
+          <arg value="-recurse:${OpenJDK.dir}/control/build/linux-i586/gensrc/*.class" />
+          <arg value="-recurse:${OpenJDK.dir}/control/build/linux-i586/classes/*_Stub.class" />
+          <arg value="-recurse:${OpenJDK.dir}/control/build/linux-i586/classes/*_Tie.class" />
+          <arg value="-recurse:${OpenJDK.dir}/control/build/linux-i586/classes/*_Skel.class" />
+d92 1
+a92 1
+          <arg value="${OpenJDK.dir}/control/build/linux-i586/j2re-image/lib/resources.jar" />
+@
+
+
+1.21
+log
+@- Added support for defining extension methods in the core class library assembly (without taking a System.Core.dll dependency).
+- Added the first two extension methods.
+@
+text
+@d68 1
+@
+
+
+1.20
+log
+@- Generate proper InternalsVisibleTo annotation based on whether we're doing a signed or unsigned build.
+- Added SecurityCritical and AllowPartiallyTrustedCallers annotation to IKVM.OpenJDK.ClassLibrary.dll.
+@
+text
+@d44 1
+a44 1
+        <exec program="javac" commandline="-J-Xmx1024M -g -nowarn -bootclasspath ../classpath/mscorlib.jar${pathsep}../classpath/System.jar @@allsources.lst" useruntimeengine="false" />
+@
+
+
+1.19
+log
+@Restructured VM <-> Library interface to take advantage of InternalsVisibleTo to remove public methods and reflection usage.
+@
+text
+@d33 11
+@
+
+
+1.18
+log
+@Updated version numbers to 0.37.
+@
+text
+@d70 1
+@
+
+
+1.17
+log
+@Renamed IKVM.Hybrid.GNU.Classpath.OpenJDK.dll to IKVM.OpenJDK.ClassLibrary.dll and made OpenJDK build the default.
+@
+text
+@d52 1
+a52 1
+          <arg value="-version:0.35.*" />
+@
+
+
+1.17.2.1
+log
+@Updated version numbers to 0.36.0.0
+@
+text
+@d52 1
+a52 1
+          <arg value="-version:0.36.0.0" />
+@
+
+
+1.17.2.2
+log
+@Ported fixes from trunk. Changed version to 0.36.0.1.
+@
+text
+@d52 1
+a52 1
+          <arg value="-version:0.36.0.1" />
+@
+
+
+1.17.2.3
+log
+@Backported fixes from trunk. Changed version to 0.36.0.2.
+@
+text
+@d52 1
+a52 1
+          <arg value="-version:0.36.0.2" />
+@
+
+
+1.17.2.4
+log
+@Backported fixes from trunk. Changed version to 0.36.0.3.
+@
+text
+@d52 1
+a52 1
+          <arg value="-version:0.36.0.3" />
+@
+
+
+1.17.2.5
+log
+@Backported fixes. Changed version to 0.36.0.4.
+@
+text
+@d52 1
+a52 1
+          <arg value="-version:0.36.0.4" />
+@
+
+
+1.17.2.6
+log
+@Backported fixes and changed version to 0.36.0.5
+@
+text
+@d52 1
+a52 1
+          <arg value="-version:0.36.0.5" />
+@
+
+
+1.17.2.7
+log
+@- Updated version to 0.36.0.6
+- Fix for issue reported in http://sourceforge.net/mailarchive/message.php?msg_name=477171a5.1ec37e0a.1f81.7bc8%40mx.google.com
+- Fix for bug #1865922
+@
+text
+@d52 1
+a52 1
+          <arg value="-version:0.36.0.6" />
+@
+
+
+1.17.2.8
+log
+@- Changed version to 0.36.0.7
+- Fixed serialization bug
+@
+text
+@d52 1
+a52 1
+          <arg value="-version:0.36.0.7" />
+@
+
+
+1.17.2.9
+log
+@Set version number to 0.36.0.8.
+@
+text
+@d52 1
+a52 1
+          <arg value="-version:0.36.0.8" />
+@
+
+
+1.17.2.10
+log
+@- Changed version to 0.36.0.9
+- Added java.util.BitSet perf hack to map.xml
+- Back ported codegen optimizations from 0.37.2970
+@
+text
+@d52 1
+a52 1
+          <arg value="-version:0.36.0.9" />
+@
+
+
+1.17.2.11
+log
+@Added workaround for .NET 1.1 bug in Directory.CreateDirectory().
+@
+text
+@a56 1
+          <arg value="-removeassertions" />
+@
+
+
+1.17.2.12
+log
+@- Updated version to 0.36.0.11
+- Updated copyright statements to 2002-2008
+@
+text
+@d52 1
+a52 1
+          <arg value="-version:0.36.0.11" />
+@
+
+
+1.17.2.13
+log
+@Set version to 0.36.0.12.
+@
+text
+@d52 1
+a52 1
+          <arg value="-version:0.36.0.12" />
+@
+
+
+1.17.2.14
+log
+@Back ported various fixes:
+- Changed version to 0.36.0.13.
+- Fixed ikvmc not to open the key file for write access.
+- Added more efficient float/double to/from int/long bits converters.
+- Fixed libikvm-native.so build to include reference to gmodule-2.0 library.
+- Fixed ikvmc not to open the key file for write access.
+- Fixed Graphics2D.rotate() to convert rotation angle from radians (Java) to degrees (.NET).
+- Applied awt patch #1979656 by Daniel Wilson.
+- Fixed three String bugs found by OpenJDK string tests.
+- Fixed ldc <class> where <class> is a ghost array.
+- Fixed bug in instanceof <class> where <class> is a Serializable[].
+- Removed incorrect DataFormatException thrown in java.util.zip.InflaterHuffmanTree.
+- Fixed #2001802 contributed by Andy Malakov.
+- Fixed #2001799.
+- Fixed #2006953.
+- Made finalize() and clone() methods in cli.System.Object and cli.System.Exception final.
+@
+text
+@d52 1
+a52 1
+          <arg value="-version:0.36.0.13" />
+@
+
+
+1.17.2.15
+log
+@Updated version to 0.36.0.14.
+@
+text
+@d52 1
+a52 1
+          <arg value="-version:0.36.0.14" />
+@
+
+
+1.16
+log
+@- Switched GNU Classpath AWT/Swing back to version 0.95.
+- Copied GNU Classpath version of java.text.Bidi into openjdk directory.
+- Copied and integrated GNU Classpath's pure Java zip support with OpenJDK zip classes.
+- Added GNU Classpath 0.95 compatible versions of awt\font.cs and awt\toolkit.cs.
+@
+text
+@d2 1
+a2 1
+<project name="IKVM.Hybrid.GNU.Classpath.OpenJDK.dll" default="IKVM.Hybrid.GNU.Classpath.OpenJDK.dll">
+d50 1
+a50 1
+    <target name="IKVM.Hybrid.GNU.Classpath.OpenJDK.dll" depends="classes vfs">
+d57 1
+a57 1
+          <arg value="-out:IKVM.Hybrid.GNU.Classpath.OpenJDK.dll" />
+d74 1
+a74 1
+        <copy file="IKVM.Hybrid.GNU.Classpath.OpenJDK.dll" tofile="../bin/IKVM.Hybrid.GNU.Classpath.OpenJDK.dll.new" />
+d76 1
+a76 1
+          <exec program="peverify" commandline="../bin/IKVM.Hybrid.GNU.Classpath.OpenJDK.dll.new" />
+d78 2
+a79 2
+        <copy file="IKVM.Hybrid.GNU.Classpath.OpenJDK.dll" todir="../bin" />
+	<delete file="../bin/IKVM.Hybrid.GNU.Classpath.OpenJDK.dll.new" />
+@
+
+
+1.15
+log
+@Added rmi skeleton classes.
+@
+text
+@d5 1
+a5 1
+    <property name="Classpath.dir" value="${project::get-base-directory()}/../../classpath" />
+a70 1
+          <arg value="-resource:lib/security/classpath.security=${Classpath.dir}/resource/java/security/classpath.security" />
+@
+
+
+1.14
+log
+@Added default security policy file to VFS.
+@
+text
+@d67 1
+@
+
+
+1.13
+log
+@Fixed build to include Ties and Stubs (class files generated by OpenJDK build process, not by IKVM build process).
+@
+text
+@d42 1
+@
+
+
+1.12
+log
+@Removed GNU Classpath resources that are no longer needed.
+@
+text
+@d24 2
+a25 1
+			<include name="**.class"/>
+d62 4
+a65 1
+          <arg value="-recurse:${OpenJDK.dir}/*.class" />
+@
+
+
+1.11
+log
+@Added option to set javac heap to 1GB.
+@
+text
+@a62 4
+          <arg value="-recurse:${Classpath.dir}/resource/*.css" />
+          <arg value="-recurse:${Classpath.dir}/resource/*.properties" />
+          <arg value="-recurse:${Classpath.dir}/resource/javax.*" />
+          <arg value="-recurse:${Classpath.dir}/resource/org.xml.*" />
+@
+
+
+1.10
+log
+@Add lib/security/java.security and lib/security/cacerts to vfs.
+@
+text
+@d32 1
+a32 1
+        <exec program="javac" commandline="-g -nowarn -bootclasspath ../classpath/mscorlib.jar${pathsep}../classpath/System.jar @@allsources.lst" useruntimeengine="false" />
+@
+
+
+1.9
+log
+@Switched to javac compiler for building OpenJDK sources.
+@
+text
+@d42 3
+@
+
+
+1.8
+log
+@Added lib/logging.properties to VFS and implemented an additional VFS operation required for reading it.
+@
+text
+@d32 1
+a32 1
+        <exec program="ecj" commandline="-g -1.5 -nowarn -cp ../classpath/mscorlib.jar${pathsep}../classpath/System.jar @@allsources.lst" useruntimeengine="false" />
+@
+
+
+1.7
+log
+@Implemented the beginnings of a virtual file system for the java.home directory.
+@
+text
+@d40 1
+@
+
+
+1.6
+log
+@Integrated OpenJDK's java.text and java.text.spi packages (except for java.text.Bidi class, for which Sun uses native code, so we'll continue to use GNU Classpath's pure Java version.)
+Changed build script to include all resources from OpenJDK generated resources.jar.
+@
+text
+@d35 10
+a44 1
+    <target name="IKVM.Hybrid.GNU.Classpath.OpenJDK.dll" depends="classes">
+@
+
+
+1.5
+log
+@Switched to OpenJDK bundle b13 and get the generated sources from the right place.
+@
+text
+@d58 1
+a58 2
+          <arg value="-resource:sun/text/resources/unorm.icu=${OpenJDK.dir}/j2se/src/share/classes/sun/text/resources/unorm.icu" />
+          <arg value="-resource:sun/text/resources/uprops.icu=${OpenJDK.dir}/j2se/src/share/classes/sun/text/resources/uprops.icu" />
+@
+
+
+1.4
+log
+@- Added some required resources.
+- Removed some unneeded files from allsources.lst.
+- Switched BufferedInputStream.java and DataInputStream.java from GNU Classpath to OpenJDK implementation.
+@
+text
+@d6 1
+a6 1
+    <property name="OpenJDK.dir" value="${project::get-base-directory()}/../../openjdk" />
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d58 2
+@
+
+
+1.2
+log
+@Integrated OpenJDK's java.lang.Thread
+@
+text
+@d37 1
+a37 1
+          <arg value="-version:0.35.0.*" />
+@
+
+
+1.1
+log
+@First batch of OpenJDK integration code.
+@
+text
+@d59 4
+d64 1
+@
+

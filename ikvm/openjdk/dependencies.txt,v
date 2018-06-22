@@ -1,0 +1,447 @@
+head	1.13;
+access;
+symbols
+	v8_1_5717_0:1.13
+	v8_1:1.13.0.4
+	v8_0_5449_1:1.13
+	v8_0_5449_0:1.13
+	v8_0:1.13.0.2
+	v7_4_5196_0:1.10
+	v7_4:1.10.0.2
+	v7_3:1.9.0.8
+	v7_2_4630_6:1.9
+	v7_2_4630_5:1.9
+	v7_2_4630_4:1.9
+	v7_2_4630_3:1.9
+	v7_2_4630_2:1.9
+	v0_46_0_4:1.8
+	v7_2_4630_1:1.9
+	v7_2:1.9.0.6
+	v7_1_4532_2:1.9
+	v7_1_4532_1:1.9
+	v7_1_4532_0:1.9
+	v7_1:1.9.0.4
+	v7_0_4335_3:1.9
+	v7_0_4335_2:1.9
+	v7_0_4335_1:1.9
+	v0_46_0_2:1.8
+	v7_0_4335_0:1.9
+	v7_0:1.9.0.2
+	v0_46_0_1:1.8
+	v0_46_0_0:1.8
+	v0_46:1.8.0.4
+	v0_44_0_6:1.8
+	v0_44_0_5:1.8
+	v0_44_0_4:1.8
+	v0_44_0_3:1.8
+	v0_44_0_2:1.8
+	v0_42_0_7:1.5
+	v0_44_0_1:1.8
+	v0_44_0_0:1.8
+	v0_44:1.8.0.2
+	v0_42_0_6:1.5
+	v0_42_0_5:1.5
+	v0_42_0_4:1.5
+	v0_42_0_3:1.5
+	v0_42_0_2:1.5
+	v0_42_0_1:1.5
+	v0_42_0_0:1.5
+	v0_42:1.5.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.13
+date	2014.05.23.09.19.18;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2014.05.21.14.17.51;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2014.05.19.12.43.30;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2014.02.27.06.57.35;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2011.07.07.06.34.20;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2010.06.09.12.26.28;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2010.04.02.03.54.06;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2009.11.12.07.23.16;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2009.07.03.14.12.03;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2009.07.03.12.20.16;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2009.07.03.09.56.00;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2009.06.29.10.30.30;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2009.06.29.09.32.59;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.13
+log
+@Moved cldrdata and localedata into separate assemblies and update the dependency map.
+@
+text
+@# This file declares the dependencies of the OpenJDK assemblies.
+# It exists to prevent accidentally introducing new dependencies.
+#
+# Note that mscorlib, System, IKVM.Runtime and IKVM.OpenJDK.Core are not very interesting,
+# so these dependencies are ignored by the dependency checker.
+
+IKVM.OpenJDK.Core
+->System.Core
+->IKVM.OpenJDK.Util
+->IKVM.OpenJDK.Security
+->IKVM.OpenJDK.Text
+
+IKVM.OpenJDK.Corba
+->IKVM.OpenJDK.Util
+->IKVM.OpenJDK.SwingAWT
+->IKVM.OpenJDK.Text
+->IKVM.OpenJDK.Naming
+->IKVM.OpenJDK.Remoting
+
+IKVM.OpenJDK.XML.API
+
+IKVM.OpenJDK.XML.XPath
+->IKVM.OpenJDK.XML.API
+->IKVM.OpenJDK.XML.Parse
+->IKVM.OpenJDK.Text
+
+IKVM.OpenJDK.XML.Parse
+->IKVM.OpenJDK.XML.API
+->IKVM.OpenJDK.Text
+->IKVM.OpenJDK.Beans
+->IKVM.OpenJDK.Util
+
+IKVM.OpenJDK.XML.Transform
+->IKVM.OpenJDK.Util
+->IKVM.OpenJDK.XML.Parse
+->IKVM.OpenJDK.XML.API
+->IKVM.OpenJDK.Text
+->IKVM.OpenJDK.XML.XPath
+
+IKVM.OpenJDK.XML.Bind
+->IKVM.OpenJDK.XML.API
+->IKVM.OpenJDK.Util
+->IKVM.OpenJDK.Text
+->IKVM.OpenJDK.SwingAWT
+->IKVM.OpenJDK.Beans
+->IKVM.OpenJDK.Media
+->IKVM.OpenJDK.XML.Parse
+->IKVM.OpenJDK.Misc
+
+IKVM.OpenJDK.XML.WebServices
+->IKVM.OpenJDK.XML.API
+->IKVM.OpenJDK.Text
+->IKVM.OpenJDK.Util
+->IKVM.OpenJDK.Misc
+->IKVM.OpenJDK.SwingAWT
+->IKVM.OpenJDK.XML.Parse
+->IKVM.OpenJDK.XML.Bind
+->IKVM.OpenJDK.Security
+->IKVM.OpenJDK.Remoting
+->IKVM.OpenJDK.Beans
+->IKVM.OpenJDK.Media
+->IKVM.OpenJDK.Management
+
+IKVM.OpenJDK.XML.Crypto
+->IKVM.OpenJDK.Util
+->IKVM.OpenJDK.XML.API
+->IKVM.OpenJDK.Security
+->IKVM.OpenJDK.Text
+->IKVM.OpenJDK.XML.Parse
+->IKVM.OpenJDK.XML.XPath
+
+IKVM.OpenJDK.SwingAWT
+->System.Drawing
+->IKVM.AWT.WinForms
+->IKVM.OpenJDK.Util
+->IKVM.OpenJDK.Text
+->IKVM.OpenJDK.XML.API
+->IKVM.OpenJDK.Charsets
+->IKVM.OpenJDK.Beans
+->IKVM.OpenJDK.Media
+->IKVM.OpenJDK.Remoting
+
+IKVM.OpenJDK.Charsets
+
+IKVM.OpenJDK.Util
+->IKVM.OpenJDK.Security
+->IKVM.OpenJDK.Text
+->IKVM.OpenJDK.XML.API
+
+IKVM.OpenJDK.Text
+->IKVM.OpenJDK.Util
+
+IKVM.OpenJDK.Security
+->IKVM.OpenJDK.Text
+->IKVM.OpenJDK.SwingAWT
+->IKVM.OpenJDK.Util
+->IKVM.OpenJDK.Naming
+
+IKVM.OpenJDK.Management
+->IKVM.OpenJDK.Security
+->IKVM.OpenJDK.Corba
+->IKVM.OpenJDK.Util
+->IKVM.OpenJDK.Naming
+->IKVM.OpenJDK.Remoting
+->IKVM.OpenJDK.Beans
+->IKVM.OpenJDK.Text
+
+IKVM.OpenJDK.Misc
+->IKVM.OpenJDK.Util
+->IKVM.OpenJDK.Text
+->IKVM.OpenJDK.Security
+
+IKVM.OpenJDK.Jdbc
+->System.Data
+->IKVM.OpenJDK.Text
+->IKVM.OpenJDK.XML.API
+->IKVM.OpenJDK.Util
+->IKVM.OpenJDK.Naming
+->IKVM.OpenJDK.Corba
+
+IKVM.OpenJDK.Naming
+->IKVM.OpenJDK.Security
+
+IKVM.OpenJDK.Remoting
+->IKVM.OpenJDK.Naming
+->IKVM.OpenJDK.Security
+->IKVM.OpenJDK.Text
+->IKVM.OpenJDK.Util
+
+IKVM.OpenJDK.Beans
+->IKVM.OpenJDK.SwingAWT
+->IKVM.OpenJDK.XML.API
+->IKVM.OpenJDK.Util
+
+IKVM.OpenJDK.Media
+->System.Drawing
+->IKVM.OpenJDK.SwingAWT
+->IKVM.OpenJDK.XML.API
+->IKVM.OpenJDK.Util
+->IKVM.OpenJDK.Text
+
+IKVM.OpenJDK.Nashorn
+->IKVM.OpenJDK.Util
+->IKVM.OpenJDK.Misc
+->IKVM.OpenJDK.Text
+
+IKVM.OpenJDK.Localedata
+->IKVM.OpenJDK.Util
+
+IKVM.OpenJDK.Cldrdata
+->IKVM.OpenJDK.Util
+@
+
+
+1.12
+log
+@Integrated Nashorn.
+@
+text
+@a8 1
+->IKVM.OpenJDK.Jdbc
+a11 1
+->IKVM.OpenJDK.XML.API
+a13 1
+->IKVM.OpenJDK.Misc
+a91 1
+->IKVM.OpenJDK.SwingAWT
+a108 3
+->System.Drawing
+->IKVM.OpenJDK.SwingAWT
+->IKVM.OpenJDK.XML.API
+a109 1
+->IKVM.OpenJDK.Corba
+a111 2
+->IKVM.OpenJDK.Naming
+->IKVM.OpenJDK.Remoting
+a115 1
+->IKVM.OpenJDK.Misc
+a122 1
+->IKVM.OpenJDK.SwingAWT
+d146 6
+@
+
+
+1.11
+log
+@First part of OpenJDK 8 integration.
+@
+text
+@d153 5
+@
+
+
+1.10
+log
+@Integrated OpenJDK 7u40 JSR-292 implementation (aka LambdaForms).
+@
+text
+@d34 1
+d51 1
+d130 1
+@
+
+
+1.9
+log
+@Removed old sun.management.jmxremote.ConnectorBootstrap hack.
+@
+text
+@d9 1
+@
+
+
+1.8
+log
+@Added "first-pass" build of IKVM.AWT.WinForms.dll and moved "native" AWT code from IKVM.Runtime.dll to IKVM.AWT.WinForms.dll.
+@
+text
+@d107 1
+@
+
+
+1.7
+log
+@Integrated OpenJDK 6 b18.
+@
+text
+@d74 1
+@
+
+
+1.6
+log
+@Removed classes that aren't supposed to be in the boot class path (they're from tools.jar). This includes the entire IKVM.OpenJDK.XML.RelaxNG assembly.
+@
+text
+@d48 1
+d62 1
+@
+
+
+1.5
+log
+@Split off Beans and Media from Misc.
+@
+text
+@a45 1
+->IKVM.OpenJDK.XML.RelaxNG
+a61 4
+IKVM.OpenJDK.XML.RelaxNG
+->IKVM.OpenJDK.XML.API
+->IKVM.OpenJDK.Text
+
+@
+
+
+1.4
+log
+@Split off IKVM.OpenJDK.Remoting.dll from Misc.
+@
+text
+@d32 1
+a32 1
+->IKVM.OpenJDK.Misc
+a41 1
+->IKVM.OpenJDK.Misc
+d47 2
+d60 2
+a76 1
+->IKVM.OpenJDK.Misc
+d81 2
+a88 1
+->IKVM.OpenJDK.Misc
+a102 1
+->IKVM.OpenJDK.Misc
+d108 1
+d138 12
+@
+
+
+1.3
+log
+@Split IKVM.OpenJDK.Naming.dll off from Misc.
+@
+text
+@d20 1
+d58 1
+d79 1
+d105 1
+d116 1
+d129 6
+@
+
+
+1.2
+log
+@Split XPath off from Parse.
+@
+text
+@d19 1
+a90 1
+->IKVM.OpenJDK.Misc
+d94 1
+d101 1
+d111 1
+d119 5
+@
+
+
+1.1
+log
+@Added a mechanism to prevent accidentally introducing new dependencies in the OpenJDK assemblies.
+@
+text
+@d22 5
+d37 1
+d67 1
+@
+

@@ -1,0 +1,807 @@
+head	1.5;
+access;
+symbols
+	v8_1_5717_0:1.4
+	v8_1:1.4.0.16
+	v8_0_5449_1:1.4
+	v8_0_5449_0:1.4
+	v8_0:1.4.0.14
+	v7_4_5196_0:1.4
+	v7_4:1.4.0.12
+	v7_3:1.4.0.10
+	v7_2_4630_6:1.4
+	v7_2_4630_5:1.4
+	v7_2_4630_4:1.4
+	v7_2_4630_3:1.4
+	v7_2_4630_2:1.4
+	v0_46_0_4:1.4
+	v7_2_4630_1:1.4
+	v7_2:1.4.0.8
+	v7_1_4532_2:1.4
+	v7_1_4532_1:1.4
+	v7_1_4532_0:1.4
+	v7_1:1.4.0.6
+	v7_0_4335_3:1.4
+	v7_0_4335_2:1.4
+	v7_0_4335_1:1.4
+	v0_46_0_2:1.4
+	v7_0_4335_0:1.4
+	v7_0:1.4.0.4
+	v0_46_0_1:1.4
+	v0_46_0_0:1.4
+	v0_46:1.4.0.2
+	v0_44_0_6:1.3
+	v0_44_0_5:1.3
+	v0_44_0_4:1.3
+	v0_44_0_3:1.3
+	v0_44_0_2:1.3
+	v0_44_0_1:1.3
+	v0_44_0_0:1.3
+	v0_44:1.3.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.5
+date	2016.07.20.05.16.33;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2011.02.14.05.54.46;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.04.02.03.52.22;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.02;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.32;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.5
+log
+@Bug fix. Handle custom attributes on DeclSecurity, GenericParam, GenericParamConstraint and MethodSpec tables.
+@
+text
+@/*
+  Copyright (C) 2009-2011 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.IO;
+using IKVM.Reflection.Metadata;
+
+namespace IKVM.Reflection.Reader
+{
+	sealed class MetadataReader : MetadataRW
+	{
+		private readonly Stream stream;
+		private const int bufferLength = 2048;
+		private readonly byte[] buffer = new byte[bufferLength];
+		private int pos = bufferLength;
+
+		internal MetadataReader(ModuleReader module, Stream stream, byte heapSizes)
+			: base(module, (heapSizes & 0x01) != 0, (heapSizes & 0x02) != 0, (heapSizes & 0x04) != 0)
+		{
+			this.stream = stream;
+		}
+
+		private void FillBuffer(int needed)
+		{
+			int count = bufferLength - pos;
+			if (count != 0)
+			{
+				// move remaining bytes to the front of the buffer
+				Buffer.BlockCopy(buffer, pos, buffer, 0, count);
+			}
+			pos = 0;
+
+			while (count < needed)
+			{
+				int len = stream.Read(buffer, count, bufferLength - count);
+				if (len == 0)
+				{
+					throw new BadImageFormatException();
+				}
+				count += len;
+			}
+
+			if (count != bufferLength)
+			{
+				// we didn't fill the buffer completely, so have to restore the invariant
+				// that all data from pos up until the end of the buffer is valid
+				Buffer.BlockCopy(buffer, 0, buffer, bufferLength - count, count);
+				pos = bufferLength - count;
+			}
+		}
+
+		internal ushort ReadUInt16()
+		{
+			return (ushort)ReadInt16();
+		}
+
+		internal short ReadInt16()
+		{
+			if (pos > bufferLength - 2)
+			{
+				FillBuffer(2);
+			}
+			byte b1 = buffer[pos++];
+			byte b2 = buffer[pos++];
+			return (short)(b1 | (b2 << 8));
+		}
+
+		internal int ReadInt32()
+		{
+			if (pos > bufferLength - 4)
+			{
+				FillBuffer(4);
+			}
+			byte b1 = buffer[pos++];
+			byte b2 = buffer[pos++];
+			byte b3 = buffer[pos++];
+			byte b4 = buffer[pos++];
+			return b1 | (b2 << 8) | (b3 << 16) | (b4 << 24);
+		}
+
+		private int ReadIndex(bool big)
+		{
+			if (big)
+			{
+				return ReadInt32();
+			}
+			else
+			{
+				return ReadUInt16();
+			}
+		}
+
+		internal int ReadStringIndex()
+		{
+			return ReadIndex(bigStrings);
+		}
+
+		internal int ReadGuidIndex()
+		{
+			return ReadIndex(bigGuids);
+		}
+
+		internal int ReadBlobIndex()
+		{
+			return ReadIndex(bigBlobs);
+		}
+
+		internal int ReadResolutionScope()
+		{
+			int codedIndex = ReadIndex(bigResolutionScope);
+			switch (codedIndex & 3)
+			{
+				case 0:
+					return (ModuleTable.Index << 24) + (codedIndex >> 2);
+				case 1:
+					return (ModuleRefTable.Index << 24) + (codedIndex >> 2);
+				case 2:
+					return (AssemblyRefTable.Index << 24) + (codedIndex >> 2);
+				case 3:
+					return (TypeRefTable.Index << 24) + (codedIndex >> 2);
+				default:
+					throw new BadImageFormatException();
+			}
+		}
+
+		internal int ReadTypeDefOrRef()
+		{
+			int codedIndex = ReadIndex(bigTypeDefOrRef);
+			switch (codedIndex & 3)
+			{
+				case 0:
+					return (TypeDefTable.Index << 24) + (codedIndex >> 2);
+				case 1:
+					return (TypeRefTable.Index << 24) + (codedIndex >> 2);
+				case 2:
+					return (TypeSpecTable.Index << 24) + (codedIndex >> 2);
+				default:
+					throw new BadImageFormatException();
+			}
+		}
+
+		internal int ReadMemberRefParent()
+		{
+			int codedIndex = ReadIndex(bigMemberRefParent);
+			switch (codedIndex & 7)
+			{
+				case 0:
+					return (TypeDefTable.Index << 24) + (codedIndex >> 3);
+				case 1:
+					return (TypeRefTable.Index << 24) + (codedIndex >> 3);
+				case 2:
+					return (ModuleRefTable.Index << 24) + (codedIndex >> 3);
+				case 3:
+					return (MethodDefTable.Index << 24) + (codedIndex >> 3);
+				case 4:
+					return (TypeSpecTable.Index << 24) + (codedIndex >> 3);
+				default:
+					throw new BadImageFormatException();
+			}
+		}
+
+		internal int ReadHasCustomAttribute()
+		{
+			int codedIndex = ReadIndex(bigHasCustomAttribute);
+			switch (codedIndex & 31)
+			{
+				case 0:
+					return (MethodDefTable.Index << 24) + (codedIndex >> 5);
+				case 1:
+					return (FieldTable.Index << 24) + (codedIndex >> 5);
+				case 2:
+					return (TypeRefTable.Index << 24) + (codedIndex >> 5);
+				case 3:
+					return (TypeDefTable.Index << 24) + (codedIndex >> 5);
+				case 4:
+					return (ParamTable.Index << 24) + (codedIndex >> 5);
+				case 5:
+					return (InterfaceImplTable.Index << 24) + (codedIndex >> 5);
+				case 6:
+					return (MemberRefTable.Index << 24) + (codedIndex >> 5);
+				case 7:
+					return (ModuleTable.Index << 24) + (codedIndex >> 5);
+				case 8:
+					return (DeclSecurityTable.Index << 24) + (codedIndex >> 5);
+				case 9:
+					return (PropertyTable.Index << 24) + (codedIndex >> 5);
+				case 10:
+					return (EventTable.Index << 24) + (codedIndex >> 5);
+				case 11:
+					return (StandAloneSigTable.Index << 24) + (codedIndex >> 5);
+				case 12:
+					return (ModuleRefTable.Index << 24) + (codedIndex >> 5);
+				case 13:
+					return (TypeSpecTable.Index << 24) + (codedIndex >> 5);
+				case 14:
+					return (AssemblyTable.Index << 24) + (codedIndex >> 5);
+				case 15:
+					return (AssemblyRefTable.Index << 24) + (codedIndex >> 5);
+				case 16:
+					return (FileTable.Index << 24) + (codedIndex >> 5);
+				case 17:
+					return (ExportedTypeTable.Index << 24) + (codedIndex >> 5);
+				case 18:
+					return (ManifestResourceTable.Index << 24) + (codedIndex >> 5);
+				case 19:
+					return (GenericParamTable.Index << 24) + (codedIndex >> 5);
+				case 20:
+					return (GenericParamConstraintTable.Index << 24) + (codedIndex >> 5);
+				case 21:
+					return (MethodSpecTable.Index << 24) + (codedIndex >> 5);
+				default:
+					throw new BadImageFormatException();
+			}
+		}
+
+		internal int ReadCustomAttributeType()
+		{
+			int codedIndex = ReadIndex(bigCustomAttributeType);
+			switch (codedIndex & 7)
+			{
+				case 2:
+					return (MethodDefTable.Index << 24) + (codedIndex >> 3);
+				case 3:
+					return (MemberRefTable.Index << 24) + (codedIndex >> 3);
+				default:
+					throw new BadImageFormatException();
+			}
+		}
+
+		internal int ReadMethodDefOrRef()
+		{
+			int codedIndex = ReadIndex(bigMethodDefOrRef);
+			switch (codedIndex & 1)
+			{
+				case 0:
+					return (MethodDefTable.Index << 24) + (codedIndex >> 1);
+				case 1:
+					return (MemberRefTable.Index << 24) + (codedIndex >> 1);
+				default:
+					throw new BadImageFormatException();
+			}
+		}
+
+		internal int ReadHasConstant()
+		{
+			int codedIndex = ReadIndex(bigHasConstant);
+			switch (codedIndex & 3)
+			{
+				case 0:
+					return (FieldTable.Index << 24) + (codedIndex >> 2);
+				case 1:
+					return (ParamTable.Index << 24) + (codedIndex >> 2);
+				case 2:
+					return (PropertyTable.Index << 24) + (codedIndex >> 2);
+				default:
+					throw new BadImageFormatException();
+			}
+		}
+
+		internal int ReadHasSemantics()
+		{
+			int codedIndex = ReadIndex(bigHasSemantics);
+			switch (codedIndex & 1)
+			{
+				case 0:
+					return (EventTable.Index << 24) + (codedIndex >> 1);
+				case 1:
+					return (PropertyTable.Index << 24) + (codedIndex >> 1);
+				default:
+					throw new BadImageFormatException();
+			}
+		}
+
+		internal int ReadHasFieldMarshal()
+		{
+			int codedIndex = ReadIndex(bigHasFieldMarshal);
+			switch (codedIndex & 1)
+			{
+				case 0:
+					return (FieldTable.Index << 24) + (codedIndex >> 1);
+				case 1:
+					return (ParamTable.Index << 24) + (codedIndex >> 1);
+				default:
+					throw new BadImageFormatException();
+			}
+		}
+
+		internal int ReadHasDeclSecurity()
+		{
+			int codedIndex = ReadIndex(bigHasDeclSecurity);
+			switch (codedIndex & 3)
+			{
+				case 0:
+					return (TypeDefTable.Index << 24) + (codedIndex >> 2);
+				case 1:
+					return (MethodDefTable.Index << 24) + (codedIndex >> 2);
+				case 2:
+					return (AssemblyTable.Index << 24) + (codedIndex >> 2);
+				default:
+					throw new BadImageFormatException();
+			}
+		}
+
+		internal int ReadTypeOrMethodDef()
+		{
+			int codedIndex = ReadIndex(bigTypeOrMethodDef);
+			switch (codedIndex & 1)
+			{
+				case 0:
+					return (TypeDefTable.Index << 24) + (codedIndex >> 1);
+				case 1:
+					return (MethodDefTable.Index << 24) + (codedIndex >> 1);
+				default:
+					throw new BadImageFormatException();
+			}
+		}
+
+		internal int ReadMemberForwarded()
+		{
+			int codedIndex = ReadIndex(bigMemberForwarded);
+			switch (codedIndex & 1)
+			{
+				case 0:
+					return (FieldTable.Index << 24) + (codedIndex >> 1);
+				case 1:
+					return (MethodDefTable.Index << 24) + (codedIndex >> 1);
+				default:
+					throw new BadImageFormatException();
+			}
+		}
+
+		internal int ReadImplementation()
+		{
+			int codedIndex = ReadIndex(bigImplementation);
+			switch (codedIndex & 3)
+			{
+				case 0:
+					return (FileTable.Index << 24) + (codedIndex >> 2);
+				case 1:
+					return (AssemblyRefTable.Index << 24) + (codedIndex >> 2);
+				case 2:
+					return (ExportedTypeTable.Index << 24) + (codedIndex >> 2);
+				default:
+					throw new BadImageFormatException();
+			}
+		}
+
+		internal int ReadField()
+		{
+			return ReadIndex(bigField);
+		}
+
+		internal int ReadMethodDef()
+		{
+			return ReadIndex(bigMethodDef);
+		}
+
+		internal int ReadParam()
+		{
+			return ReadIndex(bigParam);
+		}
+
+		internal int ReadProperty()
+		{
+			return ReadIndex(bigProperty);
+		}
+
+		internal int ReadEvent()
+		{
+			return ReadIndex(bigEvent);
+		}
+
+		internal int ReadTypeDef()
+		{
+			return ReadIndex(bigTypeDef) | (TypeDefTable.Index << 24);
+		}
+
+		internal int ReadGenericParam()
+		{
+			return ReadIndex(bigGenericParam) | (GenericParamTable.Index << 24);
+		}
+
+		internal int ReadModuleRef()
+		{
+			return ReadIndex(bigModuleRef) | (ModuleRefTable.Index << 24);
+		}
+	}
+}
+@
+
+
+1.4
+log
+@Metadata reading performance optimization. Inspired by Marek.
+@
+text
+@d206 1
+a206 1
+					throw new BadImageFormatException();
+d229 4
+@
+
+
+1.3
+log
+@- Assembly version number parts should be treated as unsigned shorts.
+- Added support for encoding/decoding custom attributes on generic parameters (this encoding is missing from the June 2006 ECMA CLI spec).
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Jeroen Frijters
+d34 4
+a37 1
+		private readonly BinaryReader br;
+d39 1
+a39 1
+		internal MetadataReader(ModuleReader module, BinaryReader br, byte heapSizes)
+d42 1
+a42 1
+			this.br = br;
+d45 1
+a45 1
+		internal short ReadInt16()
+d47 25
+a71 1
+			return br.ReadInt16();
+d76 12
+a87 1
+			return br.ReadUInt16();
+d92 9
+a100 1
+			return br.ReadInt32();
+d103 1
+a103 1
+		internal int ReadStringIndex()
+d105 1
+a105 1
+			if (bigStrings)
+d107 1
+a107 1
+				return br.ReadInt32();
+d111 1
+a111 1
+				return br.ReadUInt16();
+d115 5
+d122 1
+a122 8
+			if (bigGuids)
+			{
+				return br.ReadInt32();
+			}
+			else
+			{
+				return br.ReadUInt16();
+			}
+d127 1
+a127 8
+			if (bigBlobs)
+			{
+				return br.ReadInt32();
+			}
+			else
+			{
+				return br.ReadUInt16();
+			}
+d132 1
+a132 9
+			int codedIndex;
+			if (bigResolutionScope)
+			{
+				codedIndex = br.ReadInt32();
+			}
+			else
+			{
+				codedIndex = br.ReadUInt16();
+			}
+d150 1
+a150 9
+			int codedIndex;
+			if (bigTypeDefOrRef)
+			{
+				codedIndex = br.ReadInt32();
+			}
+			else
+			{
+				codedIndex = br.ReadUInt16();
+			}
+d166 1
+a166 9
+			int codedIndex;
+			if (bigMemberRefParent)
+			{
+				codedIndex = br.ReadInt32();
+			}
+			else
+			{
+				codedIndex = br.ReadUInt16();
+			}
+d186 1
+a186 9
+			int codedIndex;
+			if (bigHasCustomAttribute)
+			{
+				codedIndex = br.ReadInt32();
+			}
+			else
+			{
+				codedIndex = br.ReadUInt16();
+			}
+d236 1
+a236 9
+			int codedIndex;
+			if (bigCustomAttributeType)
+			{
+				codedIndex = br.ReadInt32();
+			}
+			else
+			{
+				codedIndex = br.ReadUInt16();
+			}
+d250 1
+a250 9
+			int codedIndex;
+			if (bigMethodDefOrRef)
+			{
+				codedIndex = br.ReadInt32();
+			}
+			else
+			{
+				codedIndex = br.ReadUInt16();
+			}
+d264 1
+a264 9
+			int codedIndex;
+			if (bigHasConstant)
+			{
+				codedIndex = br.ReadInt32();
+			}
+			else
+			{
+				codedIndex = br.ReadUInt16();
+			}
+d280 1
+a280 9
+			int codedIndex;
+			if (bigHasSemantics)
+			{
+				codedIndex = br.ReadInt32();
+			}
+			else
+			{
+				codedIndex = br.ReadUInt16();
+			}
+d294 1
+a294 9
+			int codedIndex;
+			if (bigHasFieldMarshal)
+			{
+				codedIndex = br.ReadInt32();
+			}
+			else
+			{
+				codedIndex = br.ReadUInt16();
+			}
+d308 1
+a308 9
+			int codedIndex;
+			if (bigHasDeclSecurity)
+			{
+				codedIndex = br.ReadInt32();
+			}
+			else
+			{
+				codedIndex = br.ReadUInt16();
+			}
+d324 1
+a324 9
+			int codedIndex;
+			if (bigTypeOrMethodDef)
+			{
+				codedIndex = br.ReadInt32();
+			}
+			else
+			{
+				codedIndex = br.ReadUInt16();
+			}
+d338 1
+a338 9
+			int codedIndex;
+			if (bigMemberForwarded)
+			{
+				codedIndex = br.ReadInt32();
+			}
+			else
+			{
+				codedIndex = br.ReadUInt16();
+			}
+d352 1
+a352 9
+			int codedIndex;
+			if (bigImplementation)
+			{
+				codedIndex = br.ReadInt32();
+			}
+			else
+			{
+				codedIndex = br.ReadUInt16();
+			}
+a365 14
+		private int ReadToken(int table, bool big)
+		{
+			int rid;
+			if (big)
+			{
+				rid = br.ReadInt32();
+			}
+			else
+			{
+				rid = br.ReadUInt16();
+			}
+			return rid | (table << 24);
+		}
+
+d368 1
+a368 8
+			if (bigField)
+			{
+				return br.ReadInt32();
+			}
+			else
+			{
+				return br.ReadUInt16();
+			}
+d373 1
+a373 8
+			if (bigMethodDef)
+			{
+				return br.ReadInt32();
+			}
+			else
+			{
+				return br.ReadUInt16();
+			}
+d378 1
+a378 8
+			if (bigParam)
+			{
+				return br.ReadInt32();
+			}
+			else
+			{
+				return br.ReadUInt16();
+			}
+d383 1
+a383 8
+			if (bigProperty)
+			{
+				return br.ReadInt32();
+			}
+			else
+			{
+				return br.ReadUInt16();
+			}
+d388 1
+a388 8
+			if (bigEvent)
+			{
+				return br.ReadInt32();
+			}
+			else
+			{
+				return br.ReadUInt16();
+			}
+d393 1
+a393 1
+			return ReadToken(TypeDefTable.Index, bigTypeDef);
+d398 1
+a398 1
+			return ReadToken(GenericParamTable.Index, bigGenericParam);
+d403 1
+a403 1
+			return ReadToken(ModuleRefTable.Index, bigModuleRef);
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d47 5
+d222 2
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

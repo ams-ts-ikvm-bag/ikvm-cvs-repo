@@ -1,0 +1,1117 @@
+head	1.24;
+access;
+symbols
+	v8_1_5717_0:1.24
+	v8_1:1.24.0.12
+	v8_0_5449_1:1.24
+	v8_0_5449_0:1.24
+	v8_0:1.24.0.10
+	v7_4_5196_0:1.24
+	v7_4:1.24.0.8
+	v7_3:1.24.0.6
+	v7_2_4630_6:1.24
+	v7_2_4630_5:1.24
+	v7_2_4630_4:1.24
+	v7_2_4630_3:1.24
+	v7_2_4630_2:1.24
+	v0_46_0_4:1.21
+	v7_2_4630_1:1.24
+	v7_2:1.24.0.4
+	v7_1_4532_2:1.24
+	v7_1_4532_1:1.24
+	v7_1_4532_0:1.24
+	v7_1:1.24.0.2
+	v7_0_4335_3:1.21
+	v7_0_4335_2:1.21
+	v7_0_4335_1:1.21
+	v0_46_0_2:1.21
+	v7_0_4335_0:1.21
+	v7_0:1.21.0.4
+	v0_40_0_6:1.7
+	v0_40_0_5:1.7
+	v0_46_0_1:1.21
+	v0_46_0_0:1.21
+	v0_46:1.21.0.2
+	v0_36_0_14:1.5.4.1
+	v0_44_0_6:1.15
+	v0_44_0_5:1.15
+	v0_44_0_4:1.15
+	v0_44_0_3:1.15
+	v0_44_0_2:1.15
+	v0_42_0_7:1.15
+	v0_44_0_1:1.15
+	v0_44_0_0:1.15
+	v0_44:1.15.0.4
+	v0_42_0_6:1.15
+	v0_42_0_5:1.15
+	v0_42_0_4:1.15
+	v0_42_0_3:1.15
+	v0_42_0_2:1.15
+	v0_42_0_1:1.15
+	v0_42_0_0:1.15
+	v0_42:1.15.0.2
+	v0_40_0_3:1.7
+	v0_40_0_2:1.7
+	v0_40_0_1:1.7
+	v0_40_0_0:1.7
+	v0_40:1.7.0.2
+	v0_36_0_13:1.5.4.1
+	v0_38_0_1:1.6
+	v0_38_0_0:1.6
+	v0_38:1.6.0.2
+	v0_36_0_9:1.5
+	v0_36_0_7:1.5
+	v0_36_0_5:1.5
+	v0_36_0_4:1.5
+	v0_36_0_3:1.5
+	v0_36_0_2:1.5
+	v0_36_0_1:1.5
+	v0_36_0_0:1.5
+	v0_36:1.5.0.4
+	v0_34_0_3:1.5
+	v0_34_0_2:1.5
+	v0_34_0_1:1.5
+	v0_34_0_0:1.5
+	v0_34:1.5.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.24
+date	2012.03.10.14.31.47;	author smallsql;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2012.03.10.11.52.50;	author smallsql;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2012.02.03.20.28.36;	author smallsql;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2010.12.27.21.16.43;	author smallsql;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2010.12.15.14.27.41;	author smallsql;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2010.11.28.10.01.07;	author smallsql;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2010.11.01.12.30.14;	author smallsql;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2010.10.21.13.01.05;	author smallsql;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2010.10.21.11.15.40;	author smallsql;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2009.08.17.23.54.15;	author natl;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2009.07.26.14.03.54;	author smallsql;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2009.07.02.18.06.10;	author smallsql;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2009.06.21.20.41.30;	author smallsql;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2009.06.01.08.44.20;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2009.05.31.09.04.17;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2009.05.22.18.44.48;	author smallsql;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2009.04.15.04.58.12;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2008.12.30.10.28.10;	author smallsql;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2008.06.01.08.11.12;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2007.01.21.14.18.03;	author smallsql;	state Exp;
+branches
+	1.5.4.1;
+next	1.4;
+
+1.4
+date	2007.01.21.12.59.59;	author smallsql;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2007.01.14.16.13.51;	author smallsql;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2006.12.30.15.10.54;	author smallsql;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2006.12.21.08.38.07;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.5.4.1
+date	2008.11.05.07.52.00;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.24
+log
+@Fix a NullReferenceException
+@
+text
+@/*
+  Copyright (C) 2002, 2004, 2005, 2006, 2007 Jeroen Frijters
+  Copyright (C) 2006 Active Endpoints, Inc.
+  Copyright (C) 2006 - 2010 Volker Berlin (i-net software)
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net 
+
+*/
+
+using System;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Text;
+using System.Drawing.Imaging;
+using System.IO;
+using System.Runtime.InteropServices;
+using System.Threading;
+using System.Windows.Forms;
+using System.ComponentModel;
+using System.Reflection;
+using System.Text;
+using java.awt.datatransfer;
+using java.awt.image;
+using java.awt.peer;
+using java.net;
+using java.util;
+
+namespace ikvm.awt
+{
+    /// <summary>
+    /// This class has some static convertion methods from Java to C# objects
+    /// </summary>
+    class J2C
+    {
+
+        internal static Color ConvertColor(java.awt.Color color)
+        {
+            return color == null ? Color.Empty : Color.FromArgb(color.getRGB());
+        }
+
+        internal static Bitmap ConvertImage(java.awt.Image img)
+        {
+            if (img is BufferedImage)
+            {
+                return ((BufferedImage)img).getBitmap();
+            }
+            if (img is NetVolatileImage)
+            {
+                return ((NetVolatileImage)img).bitmap;
+            }
+            if (img is sun.awt.image.ToolkitImage)
+            {
+                sun.awt.image.ImageRepresentation ir = ((sun.awt.image.ToolkitImage)img).getImageRep();
+                // start the production and wait if not produce the image
+                lock( ir ) {
+                	ir.prepare(null);
+                	while ( ir.getBufferedImage() == null )  {
+                       ir.wait();
+                    }
+                }
+                return ir.getBufferedImage().getBitmap();
+            }
+            if (img is NoImage)
+            {
+                return null;
+            }
+            Console.WriteLine(new System.Diagnostics.StackTrace());
+            throw new NotImplementedException("Image class:" + img.GetType().FullName);
+        }
+
+        internal static PointF ConvertPoint(java.awt.geom.Point2D point)
+        {
+            return new PointF((float)point.getX(), (float)point.getY());
+        }
+
+        internal static RectangleF ConvertRect(java.awt.geom.Rectangle2D rect)
+        {
+            return new RectangleF((float)rect.getX(), (float)rect.getY(), (float)rect.getWidth(), (float)rect.getHeight());
+        }
+
+        internal static Rectangle ConvertRect(java.awt.Rectangle rect)
+        {
+            return new Rectangle(rect.x, rect.y, rect.width, rect.height);
+        }
+
+        /// <summary>
+        /// Create a rounded rectangle using lines and arcs
+        /// </summary>
+        /// <param name="x">upper left x coordinate</param>
+        /// <param name="y">upper left y coordinate</param>
+        /// <param name="w">width</param>
+        /// <param name="h">height</param>
+        /// <param name="arcWidth">the horizontal diameter of the arc at the four corners</param>
+        /// <param name="arcHeight">the vertical diameter of the arc at the four corners</param>
+        /// <returns></returns>
+		internal static GraphicsPath ConvertRoundRect(int x, int y, int w, int h, int arcWidth, int arcHeight)
+        {
+            GraphicsPath gp = new GraphicsPath();
+            bool drawArc = arcWidth > 0 && arcHeight > 0;
+            int a = arcWidth / 2;
+            int b = arcHeight / 2;
+			gp.AddLine(x + a, y, x + w - a, y);
+            if (drawArc)
+            {
+                gp.AddArc(x + w - arcWidth, y, arcWidth, arcHeight, 270, 90); //upper right arc
+            }
+            gp.AddLine(x + w, y + b, x + w, y + h - b);
+            if (drawArc)
+            {
+                gp.AddArc(x + w - arcWidth, y + h - arcHeight, arcWidth, arcHeight, 0, 90); //lower right arc
+            }
+            gp.AddLine(x + w - a, y + h, x + a, y + h);
+            if (drawArc)
+            {
+                gp.AddArc(x, y + h - arcHeight, arcWidth, arcHeight, 90, 90);//lower left arc
+            }
+            gp.AddLine(x, y + h - b, x, y + b);
+            if (drawArc)
+            {
+                gp.AddArc(x, y, arcWidth, arcHeight, 180, 90); //upper left arc
+            }
+            gp.CloseFigure();
+
+            return gp;
+        }
+
+        internal static GraphicsPath ConvertShape(java.awt.Shape shape)
+        {
+            java.awt.geom.PathIterator iterator = shape.getPathIterator(null);
+            GraphicsPath gp = new GraphicsPath();
+            gp.FillMode = (FillMode)iterator.getWindingRule();
+            float[] coords = new float[6];
+            float x = 0;
+            float y = 0;
+            while (!iterator.isDone())
+            {
+                int type = iterator.currentSegment(coords);
+                switch (type)
+                {
+                    case java.awt.geom.PathIterator.__Fields.SEG_MOVETO:
+                        x = coords[0];
+                        y = coords[1];
+                        gp.StartFigure();
+                        break;
+                    case java.awt.geom.PathIterator.__Fields.SEG_LINETO:
+                        gp.AddLine(x, y, coords[0], coords[1]);
+                        x = coords[0];
+                        y = coords[1];
+                        break;
+                    case java.awt.geom.PathIterator.__Fields.SEG_QUADTO:
+                        gp.AddBezier(x, y, coords[0], coords[1], coords[0], coords[1], coords[2], coords[3]);
+                        x = coords[2];
+                        y = coords[3];
+                        break;
+                    case java.awt.geom.PathIterator.__Fields.SEG_CUBICTO:
+                        gp.AddBezier(x, y, coords[0], coords[1], coords[2], coords[3], coords[4], coords[5]);
+                        x = coords[4];
+                        y = coords[5];
+                        break;
+                    case java.awt.geom.PathIterator.__Fields.SEG_CLOSE:
+                        gp.CloseFigure();
+                        break;
+                }
+                iterator.next();
+            }
+            return gp;
+        }
+
+        internal static LineJoin ConvertLineJoin(int join)
+        {
+            switch (join)
+            {
+                case java.awt.BasicStroke.JOIN_MITER:
+                    return LineJoin.Miter;
+                case java.awt.BasicStroke.JOIN_ROUND:
+                    return LineJoin.Round;
+                case java.awt.BasicStroke.JOIN_BEVEL:
+                    return LineJoin.Bevel;
+                default:
+                    Console.WriteLine("Unknown line join type:" + join);
+                    return LineJoin.Miter;
+            }
+        }
+
+        internal static Matrix ConvertTransform(java.awt.geom.AffineTransform tx)
+        {
+            return new Matrix(
+                (float)tx.getScaleX(),
+                (float)tx.getShearY(),
+                (float)tx.getShearX(),
+                (float)tx.getScaleY(),
+                (float)tx.getTranslateX(),
+                (float)tx.getTranslateY());
+        }
+
+        internal static FontFamily CreateFontFamily(String name)
+        {
+            String name2 = name == null ? null : name.ToLower();
+			switch (name2)
+			{
+				case "monospaced":
+				case "courier":
+					return FontFamily.GenericMonospace;
+				case "serif":
+					return FontFamily.GenericSerif;
+				case "sansserif":
+				case "dialog":
+				case "dialoginput":
+				case null:
+				case "default":
+					return FontFamily.GenericSansSerif;
+				default:
+					try
+					{
+						return new FontFamily(name);
+					}
+					catch (ArgumentException)
+					{
+						return FontFamily.GenericSansSerif;
+					}
+			}
+        }
+
+		private static FontStyle ConvertFontStyle(int style)
+		{
+			FontStyle fs = FontStyle.Regular;
+			if ((style & java.awt.Font.BOLD) != 0)
+			{
+				fs |= FontStyle.Bold;
+			}
+			if ((style & java.awt.Font.ITALIC) != 0)
+			{
+				fs |= FontStyle.Italic;
+			}
+			return fs;
+		}
+
+        internal static Font ConvertFont(String name, int style, float size)
+		{
+            if (size <= 0)
+            {
+                size = 1;
+            }
+            FontFamily family = CreateFontFamily(name);
+            FontStyle fontStyle = ConvertFontStyle(style);
+            if (!family.IsStyleAvailable(fontStyle))
+            {
+                //Some Fonts (for example Aharoni) does not support Regular style. This throw an exception else it is not documented.
+                if(family.IsStyleAvailable(FontStyle.Regular)){
+                    fontStyle = FontStyle.Regular;
+                }else
+                if(family.IsStyleAvailable(FontStyle.Bold)){
+                    fontStyle = FontStyle.Bold;
+                }else
+                if(family.IsStyleAvailable(FontStyle.Italic)){
+                    fontStyle = FontStyle.Italic;
+                }else
+                if(family.IsStyleAvailable(FontStyle.Bold | FontStyle.Italic)){
+                    fontStyle = FontStyle.Bold | FontStyle.Italic;
+                }
+            }
+            return new Font(family, size, fontStyle, GraphicsUnit.Pixel);
+        }
+
+
+		internal static Region ConvertRegion(sun.java2d.pipe.Region shape)
+		{
+            if (shape == null)
+            {
+                return null;
+            }
+			if (shape.isRectangular())
+			{
+				int x = shape.getLoX();
+				int y = shape.getLoY();
+				int w = shape.getHiX() - x;
+				int h = shape.getHiY() - y;
+				if (w < 0 || h < 0)
+				{
+					return new Region();
+				}
+				else
+				{
+					return new Region(new Rectangle(x, y, w, h));
+				}
+			}
+			else
+			{
+				using (GraphicsPath path = new GraphicsPath())
+				{
+					sun.java2d.pipe.SpanIterator iter = shape.getSpanIterator();
+					int[] box = new int[4];
+					while (iter.nextSpan(box))
+					{
+						path.AddRectangle(new Rectangle(box[0], box[1], box[2] - box[0], box[3] - box[1]));
+					}
+					return new Region(path);
+				}
+			}
+		}
+
+        internal static string ConvertGlyphVector(java.awt.font.GlyphVector gv) {
+            int count = gv.getNumGlyphs();
+            char[] text = new char[count];
+            for (int i = 0; i < count; i++) {
+                text[i] = (char)gv.getGlyphCode(i);
+            }
+            return new string(text);
+        }
+
+    }
+
+    /// <summary>
+    /// This class has some static convertion function from C# to Java objects
+    /// </summary>
+    class C2J
+    {
+        internal static java.awt.geom.AffineTransform ConvertMatrix(Matrix matrix)
+        {
+            float[] elements = matrix.Elements;
+            return new java.awt.geom.AffineTransform(elements);
+        }
+
+        internal static java.awt.Rectangle ConvertRectangle(RectangleF rec)
+        {
+            return new java.awt.Rectangle((int)rec.X, (int)rec.Y, (int)rec.Width, (int)rec.Height);
+        }
+
+        internal static java.awt.Color ConvertColor(Color color)
+        {
+            return color == Color.Empty ? null : new java.awt.Color(color.ToArgb(),true);
+        }
+
+        internal static java.awt.Font ConvertFont(Font font)
+        {
+            float size = font.Size;
+            if (font.Unit != GraphicsUnit.Pixel)
+            {
+                size = font.SizeInPoints * java.awt.Toolkit.getDefaultToolkit().getScreenResolution() / 72;
+            }
+            java.awt.Font jFont = new java.awt.Font(font.Name, (int)font.Style, (int)size);
+            if (jFont.getSize2D() != size)
+            {
+                jFont = jFont.deriveFont(size);
+            }
+            //TODO performance we should set the .NET Font, we can do it with an aditional constructor.
+            return jFont;
+        }
+
+        internal static java.awt.Shape ConvertShape(GraphicsPath path) {
+            java.awt.geom.GeneralPath shape = new java.awt.geom.GeneralPath();
+            shape.setWindingRule((int)path.FillMode);
+            for (int i = 0; i < path.PointCount; i++) {
+                byte pathType = path.PathTypes[i];
+                int type = pathType & 0x07;
+                PointF point = path.PathPoints[i];
+                switch (type) {
+                    case 0:
+                        // Indicates that the point is the start of a figure. 
+                        shape.moveTo(point.X, point.Y);
+                        break;
+                    case 1:
+                        // Indicates that the point is one of the two endpoints of a line. 
+                        shape.lineTo(point.X, point.Y);
+                        break;
+                    case 3:
+                        // Indicates that the point is an endpoint or control point of a cubic Bï¿½zier spline. 
+                        PointF point2 = path.PathPoints[++i];
+                        PointF point3 = path.PathPoints[++i];
+                        shape.curveTo(point.X, point.Y, point2.X, point2.Y, point3.X, point3.Y);
+                        pathType = path.PathTypes[i];
+                        break;
+                    default:
+                        Console.WriteLine("Unknown GraphicsPath type: " + type);
+                        break;
+                }
+                if ((pathType & 0x80) > 0) {
+                    // Specifies that the point is the last point in a closed subpath (figure).
+                    shape.closePath();
+                }
+            }
+            return shape;
+        }
+    }
+}@
+
+
+1.23
+log
+@Fix a deadlock for TooltipImages which complete with a ImageObserver.FRAMEBITS instead with ImageObserver.ALLBITS. The problem occur with JDownloader.
+@
+text
+@d285 4
+@
+
+
+1.22
+log
+@Fix a bug with a ToolkitImage as frame icon.
+@
+text
+@d72 6
+a77 1
+                ir.reconstruct(java.awt.image.ImageObserver.__Fields.ALLBITS);
+@
+
+
+1.21
+log
+@remove NetProducerImage and replace it with ToolkitImage
+@
+text
+@d70 4
+a73 1
+                return ((sun.awt.image.ToolkitImage)img).getImageRep().getBitmap();
+@
+
+
+1.20
+log
+@Not use method removed
+@
+text
+@d58 1
+a58 1
+        internal static Image ConvertImage(java.awt.Image img)
+d68 1
+a68 1
+            if (img is NetProducerImage)
+d70 1
+a70 1
+                return ((NetProducerImage)img).getBitmap();
+@
+
+
+1.19
+log
+@Fix some stroke bugs
+@
+text
+@a315 13
+        internal static StringFormat CreateStringFormat(java.awt.font.FontRenderContext frc) {
+            StringFormat format;
+            if (frc.usesFractionalMetrics()) {
+                // this very mystic, if a StringFormat extends from GenericTypographic then the metric are different but like Java with fractional metrics
+                format = new StringFormat(StringFormat.GenericTypographic);
+            } else {
+                format = new StringFormat();
+            }
+
+            format.FormatFlags = StringFormatFlags.MeasureTrailingSpaces | StringFormatFlags.NoWrap | StringFormatFlags.FitBlackBox;
+            format.Trimming = StringTrimming.None;
+            return format;
+        }
+@
+
+
+1.18
+log
+@Implementation for some of alpha composite blending
+@
+text
+@d4 1
+a4 1
+  Copyright (C) 2006, 2007, 2008, 2009 Volker Berlin (i-net software)
+d189 2
+a190 42
+                    throw new ArgumentException("Invalid LineJoin argument.");
+            }
+        }
+
+        internal static LineCap ConvertLineCap(int cap)
+        {
+            switch (cap)
+            {
+                case java.awt.BasicStroke.CAP_BUTT:
+                    return LineCap.Flat;
+                case java.awt.BasicStroke.CAP_ROUND:
+                    return LineCap.Round;
+                case java.awt.BasicStroke.CAP_SQUARE:
+                    return LineCap.Square;
+                default:
+                    throw new ArgumentException("Invalid LineCap argument.");
+            }
+        }
+
+        internal static float[] ConvertDashArray(float[] dashArray, float lineWidth)
+        {
+            if (dashArray == null || dashArray.Length == 0)
+            {
+                return null;
+            }
+			if (dashArray.Length % 2 == 1)
+			{
+				int len = dashArray.Length;
+				Array.Resize(ref dashArray, len * 2);
+				Array.Copy(dashArray, 0, dashArray, len, len);
+			}
+            float[] dash = (float[])dashArray.Clone();
+            for (int i = 0; i < dash.Length; i++)
+            {
+                //dividing by line thickness because of the representation difference
+                dash[i] = dash[i] / lineWidth;
+            }
+            // To fix the problem where solid style in Java can be represented at { 1.0, 0.0 }.
+            // In .NET, however, array can only have positive value
+            if (dash.Length==2 && dash[dash.Length-1]==0)
+            {
+                Array.Resize(ref dash, 1);
+a191 1
+            return dash;
+d385 1
+a385 1
+                        // Indicates that the point is an endpoint or control point of a cubic Bézier spline. 
+@
+
+
+1.17
+log
+@Fix bug with empty shape
+@
+text
+@a177 5
+        internal static Brush CreateBrush(java.awt.Color color)
+        {
+            return new SolidBrush(Color.FromArgb(color.getRGB()));
+        }
+
+@
+
+
+1.16
+log
+@Add some converter functions for GlyphVector.getOutline
+@
+text
+@d138 1
+a138 1
+            java.awt.geom.PathIterator iterator = shape.getPathIterator(new java.awt.geom.AffineTransform());
+a445 1
+            shape.closePath();
+@
+
+
+1.15
+log
+@Java allows DashPattern to have 0.0 in float array but not in .NET. Java seems to generate {1.0, 0.0} for solid pattern in some cases. Therefore, we need to fiddle with the conversion to make sure the dash pattern is valid in .NET world
+@
+text
+@d138 1
+a138 2
+            java.awt.geom.GeneralPath path = new java.awt.geom.GeneralPath(shape);
+            java.awt.geom.PathIterator iterator = path.getPathIterator(new java.awt.geom.AffineTransform());
+d140 1
+a140 9
+            switch (iterator.getWindingRule())
+            {
+                case java.awt.geom.PathIterator.__Fields.WIND_EVEN_ODD:
+                    gp.FillMode = System.Drawing.Drawing2D.FillMode.Alternate;
+                    break;
+                case java.awt.geom.PathIterator.__Fields.WIND_NON_ZERO:
+                    gp.FillMode = System.Drawing.Drawing2D.FillMode.Winding;
+                    break;
+            }
+d352 24
+a375 1
+	}
+d414 35
+@
+
+
+1.14
+log
+@Fix the wrong converting of Fonts that use another GraphicsUnit as Pixel
+@
+text
+@d240 6
+@
+
+
+1.13
+log
+@First step of Toolkit.lazilyLoadDesktopProperty(String)
+@
+text
+@d380 2
+a381 2
+            java.awt.Font jFont = new java.awt.Font(font.Name, (int)font.Style, (int)font.Size);
+            if (jFont.getSize2D() != font.Size)
+d383 1
+a383 1
+                jFont = jFont.deriveFont(font.Size);
+d385 6
+@
+
+
+1.12
+log
+@Fix a NPE with Graphics2D.setBackgound(null)
+@
+text
+@d378 10
+@
+
+
+1.11
+log
+@Implemented ComponentPeer.applyShape()
+@
+text
+@d55 1
+a55 1
+            return Color.FromArgb(color.getRGB());
+d373 5
+@
+
+
+1.10
+log
+@Handle odd length dash arrays.
+@
+text
+@d323 33
+a355 1
+    }
+@
+
+
+1.9
+log
+@Implement FramePeer.setMaximizedBounds
+@
+text
+@d224 1
+a224 1
+            if (dashArray == null)
+d228 6
+@
+
+
+1.8
+log
+@converter.cs
+- ConvertRoundRect - correction in representation differences
+- LineJoin, LineCap, Dash conversions
+- CreateFontFamily - case sensitivity fix
+fonts.cs, fonts-0.95.cs
+- overriding FontMetrics.getStringBounds
+- y coordinate of the returned rectangle should be the negative ascent in Java
+graphics.cs
+- NetGraphics.drawArc, fillArc - correction in representation differences
+- NetGraphics.drawRoundRect, fillRoundRect - correction in representation differences
+- NetGraphics.drawString - text was mispositioned
+- NetGraphics.setStroke - BasicStroke support for LineCap, LineJoin, LineDash
+- NetGraphicsEnvironment.createGraphics returned empty image
+images.cs
+- NetProducerImage.setPixels - implementation for byte[] argument
+toolkit.cs, toolkit-0.95.cs
+toolkit.cs: NetToolkit implements ikvm.awt.IkvmToolkit, see BufferedImage.createGraphics implementation
+NetToolkit - getBestCursorSize, createCustomCursor implementation
+NetToolkit - DoubleClick, ContextMenu support
+NetToolkit - MapKeyCode did not work for Enter and Delete keys
+NetToolkit - OnBoundsChanged - component resized event seems to be missing
+NetToolkit - createImage(ImageProducer) implementation
+NetToolkit - setCursorImpl, NetCustomCursor
+NetDialogPeer - setting the title of the dialog
+NetFramePeer - setting icon for the frame
+
+Contributed by: Judit Vasko-Szedlar (Chemaxon)
+@
+text
+@d4 1
+a4 1
+  Copyright (C) 2006, 2007, 2008 Volker Berlin (i-net software)
+d90 5
+@
+
+
+1.7
+log
+@Remove NetBufferedImage and merge the code in the class BufferedImage. Now the class BufferedImage has 2 buffers. A Java Raster and .NET Bitmap.
+@
+text
+@d97 2
+a98 1
+        /// <param name="radius">radius of arc</param>
+d100 1
+a100 1
+        internal static GraphicsPath ConvertRoundRect(int x, int y, int w, int h, int radius)
+d103 23
+a125 10
+
+            gp.AddLine(x + radius, y, x + w - (radius * 2), y);
+            gp.AddArc(x + w - (radius * 2), y, radius * 2, radius * 2, 270, 90);
+            gp.AddLine(x + w, y + radius, x + w, y + h - (radius * 2));
+            gp.AddArc(x + w - (radius * 2), y + h - (radius * 2), radius * 2, radius * 2, 0, 90);
+            gp.AddLine(x + w - (radius * 2), y + h, x + radius, y + h);
+            gp.AddArc(x, y + h - (radius * 2), radius * 2, radius * 2, 90, 90);
+            gp.AddLine(x, y + h - (radius * 2), x, y + radius);
+            gp.AddArc(x, y, radius * 2, radius * 2, 180, 90);
+
+d187 45
+d245 24
+a268 24
+            switch (name)
+            {
+                case "Monospaced":
+                case "Courier":
+                case "courier":
+                    return FontFamily.GenericMonospace;
+                case "Serif":
+                    return FontFamily.GenericSerif;
+                case "SansSerif":
+                case "Dialog":
+                case "DialogInput":
+                case null:
+                case "Default":
+                    return FontFamily.GenericSansSerif;
+                default:
+                    try
+                    {
+                        return new FontFamily(name);
+                    }
+                    catch (ArgumentException)
+                    {
+                        return FontFamily.GenericSansSerif;
+                    }
+            }
+@
+
+
+1.6
+log
+@patch #1979656 by Daniel Wilson
+@
+text
+@d4 1
+a4 1
+  Copyright (C) 2006, 2007 Volker Berlin
+d60 1
+a60 1
+            if (img is NetBufferedImage)
+d62 1
+a62 1
+                return ((NetBufferedImage)img).bitmap;
+a71 4
+            if (img is BufferedImage)
+            {
+                return ConvertImage((BufferedImage)img);
+            }
+a79 32
+        private static Image ConvertImage(BufferedImage img)
+        {
+            //First map the pixel from Java type to .NET type
+            PixelFormat format;
+            switch (img.getType())
+            {
+                case BufferedImage.TYPE_INT_ARGB:
+                    format = PixelFormat.Format32bppArgb;
+                    break;
+                default:
+                    throw new NotImplementedException("BufferedImage Type:" + img.getType());
+            }
+
+            //Create a .NET BufferedImage (alias Bitmap)
+            int width = img.getWidth();
+            int height = img.getHeight();
+            Bitmap bitmap = new Bitmap(width, height, format);
+
+            //Request the .NET pixel pointer
+            Rectangle rec = new Rectangle(0, 0, width, height);
+            BitmapData data = bitmap.LockBits(rec, ImageLockMode.WriteOnly, format);
+            IntPtr pixelPtr = data.Scan0;
+
+            //Request the pixel data from Java and copy it to .NET
+            WritableRaster raster = img.getRaster();
+            int[] pixelData = raster.getPixels(0, 0, width, height, (int[])null);
+            Marshal.Copy(pixelData, 0, pixelPtr, pixelData.Length);
+
+            bitmap.UnlockBits(data);
+            return bitmap;
+        }
+
+@
+
+
+1.5
+log
+@Restructing the awt project part 2
+@
+text
+@d178 1
+@
+
+
+1.5.4.1
+log
+@Back ported various fixes:
+- Changed version to 0.36.0.13.
+- Fixed ikvmc not to open the key file for write access.
+- Added more efficient float/double to/from int/long bits converters.
+- Fixed libikvm-native.so build to include reference to gmodule-2.0 library.
+- Fixed ikvmc not to open the key file for write access.
+- Fixed Graphics2D.rotate() to convert rotation angle from radians (Java) to degrees (.NET).
+- Applied awt patch #1979656 by Daniel Wilson.
+- Fixed three String bugs found by OpenJDK string tests.
+- Fixed ldc <class> where <class> is a ghost array.
+- Fixed bug in instanceof <class> where <class> is a Serializable[].
+- Removed incorrect DataFormatException thrown in java.util.zip.InflaterHuffmanTree.
+- Fixed #2001802 contributed by Andy Malakov.
+- Fixed #2001799.
+- Fixed #2006953.
+- Made finalize() and clone() methods in cli.System.Object and cli.System.Exception final.
+@
+text
+@a177 1
+                        gp.StartFigure();
+@
+
+
+1.4
+log
+@* ConvertColor added
+* ConvertPoint added
+* ConvertFont changed
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002, 2004, 2005, 2006 Jeroen Frijters, Volker Berlin
+d4 1
+@
+
+
+1.3
+log
+@Some fixes for SwingSet2 from Jeroen
+@
+text
+@d52 5
+d67 4
+d115 10
+d262 23
+a284 2
+            FontFamily fam = CreateFontFamily(name);
+            return new Font(fam, size, ConvertFontStyle(style), GraphicsUnit.Pixel);
+@
+
+
+1.2
+log
+@Restructing of the awt files step 1
+@
+text
+@d227 13
+a239 4
+        internal static Font ConvertFont(java.awt.Font font)
+        {
+            return ConvertFont( font.getName(), font.getStyle(), font.getSize2D() );
+        }
+d241 2
+a242 1
+        internal static Font ConvertFont(String name, int style, float size){
+d244 1
+a244 1
+            return new Font(fam, size, (FontStyle)style, GraphicsUnit.Pixel);
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@d2 2
+a3 1
+  Copyright (C) 2006 Jeroen Frijters, Volker Berlin
+d98 1
+a98 1
+            Raster raster = img.getData();
+d106 27
+d199 38
+d249 6
+@
+

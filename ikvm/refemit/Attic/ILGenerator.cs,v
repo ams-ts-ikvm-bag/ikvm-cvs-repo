@@ -1,0 +1,1420 @@
+head	1.15;
+access;
+symbols
+	v0_40_0_6:1.4
+	v0_40_0_5:1.4
+	v0_42_0_7:1.13
+	v0_42_0_6:1.13
+	v0_42_0_5:1.13
+	v0_42_0_4:1.13
+	v0_42_0_3:1.13
+	v0_42_0_2:1.13
+	v0_42_0_1:1.13
+	v0_42_0_0:1.13
+	v0_42:1.13.0.2
+	v0_40_0_3:1.4
+	v0_40_0_2:1.4
+	v0_40_0_1:1.4
+	v0_40_0_0:1.4
+	v0_40:1.4.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.15
+date	2010.04.02.04.03.42;	author jfrijters;	state dead;
+branches;
+next	1.14;
+
+1.14
+date	2009.11.06.05.13.37;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2009.10.05.07.21.11;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2009.08.31.15.00.21;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2009.08.25.04.31.36;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2009.08.19.06.12.57;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2009.08.18.14.48.50;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2009.08.14.13.35.31;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2009.08.13.07.15.16;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2009.06.22.15.06.45;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2009.06.22.08.18.41;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2009.03.03.08.12.29;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2009.01.21.05.16.46;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.11.18.05.17.43;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.11.14.07.40.49;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.15
+log
+@Removed old refemit code.
+@
+text
+@﻿/*
+  Copyright (C) 2008, 2009 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Collections.Generic;
+using IKVM.Reflection.Emit.Writer;
+using System.Diagnostics.SymbolStore;
+using System.Diagnostics;
+
+namespace IKVM.Reflection.Emit
+{
+	public struct Label
+	{
+		// 1-based here, to make sure that an uninitialized Label isn't valid
+		private readonly int index1;
+
+		internal Label(int index)
+		{
+			this.index1 = index + 1;
+		}
+
+		internal int Index
+		{
+			get { return index1 - 1; }
+		}
+	}
+
+	public sealed class LocalBuilder
+	{
+		private readonly Type localType;
+		private readonly int index;
+		private readonly bool pinned;
+		internal string name;
+
+		internal LocalBuilder(Type localType, int index, bool pinned)
+		{
+			this.localType = localType;
+			this.index = index;
+			this.pinned = pinned;
+		}
+
+		public void SetLocalSymInfo(string name)
+		{
+			this.name = name;
+		}
+
+		public Type LocalType
+		{
+			get { return localType; }
+		}
+
+		public int LocalIndex
+		{
+			get { return index; }
+		}
+
+		public bool IsPinned
+		{
+			get { return pinned; }
+		}
+	}
+
+	public sealed class ILGenerator
+	{
+		private static readonly Type FAULT = typeof(ExceptionBlock); // the type we use here doesn't matter, as long as it can never be used as a real exception type
+		private readonly ModuleBuilder moduleBuilder;
+		private readonly ByteBuffer code = new ByteBuffer(16);
+		private readonly List<LocalBuilder> locals = new List<LocalBuilder>();
+		private readonly List<int> tokenFixups = new List<int>();
+		private readonly List<int> labels = new List<int>();
+		private readonly List<int> labelStackHeight = new List<int>();
+		private readonly List<LabelFixup> labelFixups = new List<LabelFixup>();
+		private readonly List<SequencePoint> sequencePoints = new List<SequencePoint>();
+		private readonly List<ExceptionBlock> exceptions = new List<ExceptionBlock>();
+		private readonly Stack<ExceptionBlock> exceptionStack = new Stack<ExceptionBlock>();
+		private ushort maxStack;
+		private int stackHeight;
+		private Scope scope;
+		private byte exceptionBlockAssistanceMode = EBAM_COMPAT;
+		private const byte EBAM_COMPAT = 0;
+		private const byte EBAM_DISABLE = 1;
+		private const byte EBAM_CLEVER = 2;
+
+		private struct LabelFixup
+		{
+			internal int label;
+			internal int offset;
+		}
+
+		private class ExceptionBlock : IComparer<ExceptionBlock>
+		{
+			internal readonly int ordinal;
+			internal Label labelEnd;
+			internal int tryOffset;
+			internal int tryLength;
+			internal int handlerOffset;
+			internal int handlerLength;
+			internal Type exceptionType;	// null = finally block, FAULT = fault block
+
+			internal ExceptionBlock(int ordinal)
+			{
+				this.ordinal = ordinal;
+			}
+
+			int IComparer<ExceptionBlock>.Compare(ExceptionBlock x, ExceptionBlock y)
+			{
+				if (x.tryOffset == y.tryOffset && x.tryLength == y.tryLength)
+				{
+					return x.ordinal < y.ordinal ? -1 : 1;
+				}
+				if (x.tryOffset + x.tryLength <= y.tryOffset)
+				{
+					return -1;
+				}
+				if (y.tryOffset + y.tryLength <= x.tryOffset)
+				{
+					return 1;
+				}
+				if (x.tryOffset > y.tryOffset || (x.tryOffset == y.tryOffset && x.tryLength < y.tryLength))
+				{
+					return -1;
+				}
+				else
+				{
+					return 1;
+				}
+			}
+		}
+
+		private struct SequencePoint
+		{
+			internal ISymbolDocumentWriter document;
+			internal int offset;
+			internal int startLine;
+			internal int startColumn;
+			internal int endLine;
+			internal int endColumn;
+		}
+
+		private class Scope
+		{
+			internal readonly Scope parent;
+			internal readonly List<Scope> children = new List<Scope>();
+			internal readonly List<LocalBuilder> locals = new List<LocalBuilder>();
+			internal int startOffset;
+			internal int endOffset;
+
+			internal Scope(Scope parent)
+			{
+				this.parent = parent;
+			}
+		}
+
+		internal ILGenerator(ModuleBuilder moduleBuilder)
+		{
+			this.moduleBuilder = moduleBuilder;
+			if (moduleBuilder.symbolWriter != null)
+			{
+				scope = new Scope(null);
+			}
+		}
+
+		private bool IsLabelReachable(Label label)
+		{
+			return labelStackHeight[label.Index] != -1;
+		}
+
+		// non-standard API
+		public void __DisableExceptionBlockAssistance()
+		{
+			exceptionBlockAssistanceMode = EBAM_DISABLE;
+		}
+
+		// non-standard API
+		public void __CleverExceptionBlockAssistance()
+		{
+			exceptionBlockAssistanceMode = EBAM_CLEVER;
+		}
+
+		// new in .NET 4.0
+		public int ILOffset
+		{
+			get { return code.Position; }
+		}
+
+		public void BeginCatchBlock(Type exceptionType)
+		{
+			ExceptionBlock block = exceptionStack.Peek();
+			if (exceptionBlockAssistanceMode == EBAM_COMPAT || (exceptionBlockAssistanceMode == EBAM_CLEVER && stackHeight != -1))
+			{
+				Emit(OpCodes.Leave, block.labelEnd);
+			}
+			stackHeight = 0;
+			UpdateStack(1);
+			if (block.tryLength == 0)
+			{
+				block.tryLength = code.Position - block.tryOffset;
+			}
+			else
+			{
+				block.handlerLength = code.Position - block.handlerOffset;
+				exceptionStack.Pop();
+				ExceptionBlock newBlock = new ExceptionBlock(exceptions.Count);
+				newBlock.labelEnd = block.labelEnd;
+				newBlock.tryOffset = block.tryOffset;
+				newBlock.tryLength = block.tryLength;
+				block = newBlock;
+				exceptions.Add(block);
+				exceptionStack.Push(block);
+			}
+			block.handlerOffset = code.Position;
+			block.exceptionType = exceptionType;
+		}
+
+		public void BeginExceptFilterBlock()
+		{
+			throw new NotImplementedException();
+		}
+
+		public Label BeginExceptionBlock()
+		{
+			ExceptionBlock block = new ExceptionBlock(exceptions.Count);
+			block.labelEnd = DefineLabel();
+			block.tryOffset = code.Position;
+			exceptionStack.Push(block);
+			exceptions.Add(block);
+			return block.labelEnd;
+		}
+
+		public void BeginFaultBlock()
+		{
+			BeginFinallyBlock();
+			exceptionStack.Peek().exceptionType = FAULT;
+		}
+
+		public void BeginFinallyBlock()
+		{
+			ExceptionBlock block = exceptionStack.Peek();
+			if (exceptionBlockAssistanceMode == EBAM_COMPAT || (exceptionBlockAssistanceMode == EBAM_CLEVER && stackHeight != -1))
+			{
+				Emit(OpCodes.Leave, block.labelEnd);
+			}
+			stackHeight = 0;
+			if (block.handlerOffset == 0)
+			{
+				block.tryLength = code.Position - block.tryOffset;
+			}
+			else
+			{
+				block.handlerLength = code.Position - block.handlerOffset;
+				bool reachable = IsLabelReachable(block.labelEnd);
+				Label labelEnd = new Label();
+				if (reachable)
+				{
+					MarkLabel(block.labelEnd);
+				}
+				labelEnd = DefineLabel();
+				if (exceptionBlockAssistanceMode == EBAM_COMPAT || (exceptionBlockAssistanceMode == EBAM_CLEVER && reachable))
+				{
+					Emit(OpCodes.Leave, labelEnd);
+				}
+				exceptionStack.Pop();
+				ExceptionBlock newBlock = new ExceptionBlock(exceptions.Count);
+				newBlock.labelEnd = labelEnd;
+				newBlock.tryOffset = block.tryOffset;
+				newBlock.tryLength = code.Position - block.tryOffset;
+				block = newBlock;
+				exceptions.Add(block);
+				exceptionStack.Push(block);
+			}
+			block.handlerOffset = code.Position;
+		}
+
+		public void EndExceptionBlock()
+		{
+			ExceptionBlock block = exceptionStack.Pop();
+			if (exceptionBlockAssistanceMode == EBAM_COMPAT || (exceptionBlockAssistanceMode == EBAM_CLEVER && stackHeight != -1))
+			{
+				if (block.exceptionType != null && block.exceptionType != FAULT)
+				{
+					Emit(OpCodes.Leave, block.labelEnd);
+				}
+				else
+				{
+					Emit(OpCodes.Endfinally);
+				}
+				if (IsLabelReachable(block.labelEnd))
+				{
+					MarkLabel(block.labelEnd);
+				}
+			}
+			block.handlerLength = code.Position - block.handlerOffset;
+		}
+
+		public void BeginScope()
+		{
+			Scope newScope = new Scope(scope);
+			scope.children.Add(newScope);
+			scope = newScope;
+			scope.startOffset = code.Position;
+		}
+
+		public LocalBuilder DeclareLocal(Type localType)
+		{
+			return DeclareLocal(localType, false);
+		}
+
+		public LocalBuilder DeclareLocal(Type localType, bool pinned)
+		{
+			LocalBuilder local = new LocalBuilder(localType, locals.Count, pinned);
+			locals.Add(local);
+			if (scope != null)
+			{
+				scope.locals.Add(local);
+			}
+			return local;
+		}
+
+		public Label DefineLabel()
+		{
+			Label label = new Label(labels.Count);
+			labels.Add(-1);
+			labelStackHeight.Add(-1);
+			return label;
+		}
+
+		public void Emit(OpCode opc)
+		{
+			if (opc.Value < 0)
+			{
+				code.Write((byte)(opc.Value >> 8));
+			}
+			code.Write((byte)opc.Value);
+			switch (opc.FlowControl)
+			{
+				case FlowControl.Branch:
+				case FlowControl.Break:
+				case FlowControl.Return:
+				case FlowControl.Throw:
+					stackHeight = -1;
+					break;
+				default:
+					UpdateStack(opc.StackDiff);
+					break;
+			}
+		}
+
+		private void UpdateStack(int stackdiff)
+		{
+			if (stackHeight == -1)
+			{
+				// we're about to emit code that is either unreachable or reachable only via a backward branch
+				stackHeight = 0;
+			}
+			Debug.Assert(stackHeight >= 0 && stackHeight <= ushort.MaxValue);
+			stackHeight += stackdiff;
+			Debug.Assert(stackHeight >= 0 && stackHeight <= ushort.MaxValue);
+			maxStack = Math.Max(maxStack, (ushort)stackHeight);
+		}
+
+		public void Emit(OpCode opc, byte arg)
+		{
+			Emit(opc);
+			code.Write(arg);
+		}
+
+		public void Emit(OpCode opc, double arg)
+		{
+			Emit(opc);
+			code.Write(arg);
+		}
+
+		public void Emit(OpCode opc, FieldInfo field)
+		{
+			Emit(opc);
+			WriteToken(moduleBuilder.GetFieldToken(field));
+		}
+
+		public void Emit(OpCode opc, short arg)
+		{
+			Emit(opc);
+			code.Write(arg);
+		}
+
+		public void Emit(OpCode opc, int arg)
+		{
+			Emit(opc);
+			code.Write(arg);
+		}
+
+		public void Emit(OpCode opc, long arg)
+		{
+			Emit(opc);
+			code.Write(arg);
+		}
+
+		public void Emit(OpCode opc, Label label)
+		{
+			// We need special stackHeight handling for unconditional branches,
+			// because the branch and next flows have differing stack heights.
+			// Note that this assumes that unconditional branches do not push/pop.
+			int flowStackHeight = this.stackHeight;
+			Emit(opc);
+			if (opc.Value == OpCodes.Leave.Value || opc.Value == OpCodes.Leave_S.Value)
+			{
+				flowStackHeight = 0;
+			}
+			else if (opc.FlowControl != FlowControl.Branch)
+			{
+				flowStackHeight = this.stackHeight;
+			}
+			// if the label has already been marked, we can emit the branch offset directly
+			if (labels[label.Index] != -1)
+			{
+				if (labelStackHeight[label.Index] != flowStackHeight && (labelStackHeight[label.Index] != 0 || flowStackHeight != -1))
+				{
+					// the "backward branch constraint" prohibits this, so we don't need to support it
+					throw new NotSupportedException();
+				}
+				switch (opc.OperandType)
+				{
+					case OperandType.InlineBrTarget:
+						code.Write(labels[label.Index] - (code.Position + 4));
+						break;
+					case OperandType.ShortInlineBrTarget:
+						code.Write((byte)(labels[label.Index] - (code.Position + 1)));
+						break;
+					default:
+						throw new NotImplementedException();
+				}
+			}
+			else
+			{
+				Debug.Assert(labelStackHeight[label.Index] == -1 || labelStackHeight[label.Index] == flowStackHeight || (flowStackHeight == -1 && labelStackHeight[label.Index] == 0));
+				labelStackHeight[label.Index] = flowStackHeight;
+				LabelFixup fix = new LabelFixup();
+				fix.label = label.Index;
+				fix.offset = code.Position;
+				labelFixups.Add(fix);
+				switch (opc.OperandType)
+				{
+					case OperandType.InlineBrTarget:
+						code.Write(4);
+						break;
+					case OperandType.ShortInlineBrTarget:
+						code.Write((byte)1);
+						break;
+					default:
+						throw new NotImplementedException();
+				}
+			}
+		}
+
+		public void Emit(OpCode opc, Label[] labels)
+		{
+			Emit(opc);
+			LabelFixup fix = new LabelFixup();
+			fix.label = -1;
+			fix.offset = code.Position;
+			labelFixups.Add(fix);
+			code.Write(labels.Length);
+			foreach (Label label in labels)
+			{
+				code.Write(label.Index);
+				if (this.labels[label.Index] != -1)
+				{
+					if (labelStackHeight[label.Index] != stackHeight)
+					{
+						// the "backward branch constraint" prohibits this, so we don't need to support it
+						throw new NotSupportedException();
+					}
+				}
+				else
+				{
+					Debug.Assert(labelStackHeight[label.Index] == -1 || labelStackHeight[label.Index] == stackHeight);
+					labelStackHeight[label.Index] = stackHeight;
+				}
+			}
+		}
+
+		public void Emit(OpCode opc, LocalBuilder local)
+		{
+			if ((opc.Value == OpCodes.Ldloc.Value || opc.Value == OpCodes.Ldloca.Value || opc.Value == OpCodes.Stloc.Value) && local.LocalIndex < 256)
+			{
+				if (opc.Value == OpCodes.Ldloc.Value)
+				{
+					switch (local.LocalIndex)
+					{
+						case 0:
+							Emit(OpCodes.Ldloc_0);
+							break;
+						case 1:
+							Emit(OpCodes.Ldloc_1);
+							break;
+						case 2:
+							Emit(OpCodes.Ldloc_2);
+							break;
+						case 3:
+							Emit(OpCodes.Ldloc_3);
+							break;
+						default:
+							Emit(OpCodes.Ldloc_S);
+							code.Write((byte)local.LocalIndex);
+							break;
+					}
+				}
+				else if (opc.Value == OpCodes.Ldloca.Value)
+				{
+					Emit(OpCodes.Ldloca_S);
+					code.Write((byte)local.LocalIndex);
+				}
+				else if (opc.Value == OpCodes.Stloc.Value)
+				{
+					switch (local.LocalIndex)
+					{
+						case 0:
+							Emit(OpCodes.Stloc_0);
+							break;
+						case 1:
+							Emit(OpCodes.Stloc_1);
+							break;
+						case 2:
+							Emit(OpCodes.Stloc_2);
+							break;
+						case 3:
+							Emit(OpCodes.Stloc_3);
+							break;
+						default:
+							Emit(OpCodes.Stloc_S);
+							code.Write((byte)local.LocalIndex);
+							break;
+					}
+				}
+			}
+			else
+			{
+				Emit(opc);
+				switch (opc.OperandType)
+				{
+					case OperandType.InlineVar:
+						code.Write((ushort)local.LocalIndex);
+						break;
+					case OperandType.ShortInlineVar:
+						code.Write((byte)local.LocalIndex);
+						break;
+					default:
+						throw new NotImplementedException();
+				}
+			}
+		}
+
+		private void WriteToken(FieldToken token)
+		{
+			if (token.IsPseudoToken)
+			{
+				tokenFixups.Add(code.Position);
+			}
+			code.Write(token.Token);
+		}
+
+		private void WriteToken(MethodToken token)
+		{
+			if (token.IsPseudoToken)
+			{
+				tokenFixups.Add(code.Position);
+			}
+			code.Write(token.Token);
+		}
+
+		private void WriteToken(ConstructorToken token)
+		{
+			if (token.IsPseudoToken)
+			{
+				tokenFixups.Add(code.Position);
+			}
+			code.Write(token.Token);
+		}
+
+		public void Emit(OpCode opc, MethodInfo method)
+		{
+			Emit(opc);
+			WriteToken(moduleBuilder.GetMethodToken(method));
+			if (opc.FlowControl == FlowControl.Call)
+			{
+				int stackdiff = 0;
+				if (!method.IsStatic && opc.Value != OpCodes.Newobj.Value)
+				{
+					// pop this
+					stackdiff--;
+				}
+				// pop parameters
+				stackdiff -= GetParameterCount(method);
+				if (method.ReturnType != typeof(void))
+				{
+					// push return value
+					stackdiff++;
+				}
+				UpdateStack(stackdiff);
+			}
+		}
+
+		public void Emit(OpCode opc, ConstructorInfo constructor)
+		{
+			Emit(opc);
+			WriteToken(moduleBuilder.GetConstructorToken(constructor));
+			if (opc.FlowControl == FlowControl.Call)
+			{
+				int stackdiff = 0;
+				if (!constructor.IsStatic && opc.Value != OpCodes.Newobj.Value)
+				{
+					// pop this
+					stackdiff--;
+				}
+				// pop parameters
+				stackdiff -= GetParameterCount(constructor);
+				UpdateStack(stackdiff);
+			}
+		}
+
+		private static int GetParameterCount(MethodBase mb)
+		{
+			if (mb.IsGenericMethod)
+			{
+				return ((MethodInfo)mb).GetGenericMethodDefinition().GetParameters().Length;
+			}
+			else
+			{
+				return mb.GetParameters().Length;
+			}
+		}
+
+		public void Emit(OpCode opc, sbyte arg)
+		{
+			Emit(opc);
+			code.Write(arg);
+		}
+
+		public void Emit(OpCode opc, SignatureHelper sig)
+		{
+			throw new NotImplementedException();
+		}
+
+		public void Emit(OpCode opc, float arg)
+		{
+			Emit(opc);
+			code.Write(arg);
+		}
+
+		public void Emit(OpCode opc, string str)
+		{
+			Emit(opc);
+			code.Write(0x70000000 | moduleBuilder.UserStrings.Add(str));
+		}
+
+		public void Emit(OpCode opc, Type type)
+		{
+			Emit(opc);
+			if (opc.Value == OpCodes.Ldtoken.Value)
+			{
+				code.Write(moduleBuilder.GetTypeToken(type).Token);
+			}
+			else
+			{
+				code.Write(moduleBuilder.GetTypeTokenForMemberRef(type).Token);
+			}
+		}
+
+		public void EmitCall(OpCode opc, MethodInfo methodInfo, Type[] optionalParameterTypes)
+		{
+			throw new NotImplementedException();
+		}
+
+		public void EmitCalli(OpCode opc, CallingConvention callingConvention, Type returnType, Type[] parameterTypes)
+		{
+			Emit(opc);
+			ByteBuffer sig = new ByteBuffer(16);
+			switch (callingConvention)
+			{
+				case CallingConvention.Cdecl:
+					sig.Write((byte)0x01);	// C
+					break;
+				case CallingConvention.StdCall:
+				case CallingConvention.Winapi:
+					sig.Write((byte)0x02);	// STDCALL
+					break;
+				case CallingConvention.ThisCall:
+					sig.Write((byte)0x03);	// THISCALL
+					break;
+				case CallingConvention.FastCall:
+					sig.Write((byte)0x04);	// FASTCALL
+					break;
+				default:
+					throw new InvalidOperationException();
+			}
+			sig.WriteCompressedInt(parameterTypes.Length);
+			SignatureHelper.WriteType(moduleBuilder, sig, returnType);
+			foreach (Type t in parameterTypes)
+			{
+				SignatureHelper.WriteType(moduleBuilder, sig, t);
+			}
+			code.Write(0x11000000 | moduleBuilder.Tables.StandAloneSig.Add(moduleBuilder.Blobs.Add(sig)));
+		}
+
+		public void EmitCalli(OpCode opc, CallingConventions callingConvention, Type returnType, Type[] parameterTypes, Type[] optionalParameterTypes)
+		{
+			throw new NotImplementedException();
+		}
+
+		public void EmitWriteLine(FieldInfo fld)
+		{
+			throw new NotImplementedException();
+		}
+
+		public void EmitWriteLine(LocalBuilder localBuilder)
+		{
+			throw new NotImplementedException();
+		}
+
+		public void EmitWriteLine(string text)
+		{
+			Emit(OpCodes.Ldstr, text);
+			Emit(OpCodes.Call, typeof(Console).GetMethod("WriteLine", new Type[] { typeof(string) }));
+		}
+
+		public void EndScope()
+		{
+			scope.endOffset = code.Position;
+			scope = scope.parent;
+		}
+
+		public void MarkLabel(Label loc)
+		{
+			Debug.Assert(stackHeight == -1 || labelStackHeight[loc.Index] == -1 || stackHeight == labelStackHeight[loc.Index]);
+			labels[loc.Index] = code.Position;
+			if (labelStackHeight[loc.Index] == -1)
+			{
+				if (stackHeight == -1)
+				{
+					// We're at a location that can only be reached by a backward branch,
+					// so according to the "backward branch constraint" that must mean the stack is empty,
+					// but note that this may be an unused label follow be another used label that does
+					// have a non-zero stack height, so we don't yet set stackHeight here.
+					labelStackHeight[loc.Index] = 0;
+				}
+				else
+				{
+					labelStackHeight[loc.Index] = stackHeight;
+				}
+			}
+			else
+			{
+				Debug.Assert(stackHeight == -1 || stackHeight == labelStackHeight[loc.Index]);
+				stackHeight = labelStackHeight[loc.Index];
+			}
+		}
+
+		public void MarkSequencePoint(ISymbolDocumentWriter document, int startLine, int startColumn, int endLine, int endColumn)
+		{
+			SequencePoint sp = new SequencePoint();
+			sp.document = document;
+			sp.offset = code.Position;
+			sp.startLine = startLine;
+			sp.startColumn = startColumn;
+			sp.endLine = endLine;
+			sp.endColumn = endColumn;
+			sequencePoints.Add(sp);
+		}
+
+		public void ThrowException(Type excType)
+		{
+			Emit(OpCodes.Newobj, excType.GetConstructor(Type.EmptyTypes));
+			Emit(OpCodes.Throw);
+		}
+
+		public void UsingNamespace(string usingNamespace)
+		{
+			throw new NotImplementedException();
+		}
+
+		internal int WriteBody()
+		{
+			if (moduleBuilder.symbolWriter != null)
+			{
+				Debug.Assert(scope != null && scope.parent == null);
+				scope.endOffset = code.Position;
+			}
+
+			ResolveBranches();
+
+			ByteBuffer bb = moduleBuilder.methodBodies;
+
+			int localVarSigTok = 0;
+
+			int rva;
+			if (locals.Count == 0 && exceptions.Count == 0 && maxStack <= 8 && code.Length < 64)
+			{
+				rva = WriteTinyHeaderAndCode(bb);
+			}
+			else
+			{
+				rva = WriteFatHeaderAndCode(bb, ref localVarSigTok);
+			}
+
+			if (moduleBuilder.symbolWriter != null)
+			{
+				if (sequencePoints.Count != 0)
+				{
+					ISymbolDocumentWriter document = sequencePoints[0].document;
+					int[] offsets = new int[sequencePoints.Count];
+					int[] lines = new int[sequencePoints.Count];
+					int[] columns = new int[sequencePoints.Count];
+					int[] endLines = new int[sequencePoints.Count];
+					int[] endColumns = new int[sequencePoints.Count];
+					for (int i = 0; i < sequencePoints.Count; i++)
+					{
+						if (sequencePoints[i].document != document)
+						{
+							throw new NotImplementedException();
+						}
+						offsets[i] = sequencePoints[i].offset;
+						lines[i] = sequencePoints[i].startLine;
+						columns[i] = sequencePoints[i].startColumn;
+						endLines[i] = sequencePoints[i].endLine;
+						endColumns[i] = sequencePoints[i].endColumn;
+					}
+					moduleBuilder.symbolWriter.DefineSequencePoints(document, offsets, lines, columns, endLines, endColumns);
+				}
+
+				WriteScope(scope, localVarSigTok);
+			}
+			return rva;
+		}
+
+		private void ResolveBranches()
+		{
+			foreach (LabelFixup fixup in labelFixups)
+			{
+				// is it a switch?
+				if (fixup.label == -1)
+				{
+					code.Position = fixup.offset;
+					int count = code.GetInt32AtCurrentPosition();
+					int offset = fixup.offset + 4 + 4 * count;
+					code.Position += 4;
+					for (int i = 0; i < count; i++)
+					{
+						int index = code.GetInt32AtCurrentPosition();
+						code.Write(labels[index] - offset);
+					}
+				}
+				else
+				{
+					code.Position = fixup.offset;
+					byte size = code.GetByteAtCurrentPosition();
+					int branchOffset = labels[fixup.label] - (code.Position + size);
+					if (size == 1)
+					{
+						code.Write((byte)branchOffset);
+					}
+					else
+					{
+						code.Write(branchOffset);
+					}
+				}
+			}
+		}
+
+		private int WriteTinyHeaderAndCode(ByteBuffer bb)
+		{
+			int rva = bb.Position;
+			const byte CorILMethod_TinyFormat = 0x2;
+			bb.Write((byte)(CorILMethod_TinyFormat | (code.Length << 2)));
+			WriteCode(bb);
+			return rva;
+		}
+
+		private int WriteFatHeaderAndCode(ByteBuffer bb, ref int localVarSigTok)
+		{
+			// fat headers require 4-byte alignment
+			bb.Align(4);
+			int rva = bb.Position;
+
+			if (locals.Count != 0)
+			{
+				const byte LOCAL_SIG = 0x07;
+				const byte ELEMENT_TYPE_PINNED = 0x45;
+
+				ByteBuffer localVarSig = new ByteBuffer(locals.Count + 2);
+				localVarSig.Write(LOCAL_SIG);
+				localVarSig.WriteCompressedInt(locals.Count);
+				foreach (LocalBuilder local in locals)
+				{
+					if (local.IsPinned)
+					{
+						localVarSig.Write(ELEMENT_TYPE_PINNED);
+					}
+					SignatureHelper.WriteType(moduleBuilder, localVarSig, local.LocalType);
+				}
+
+				localVarSigTok = 0x11000000 | moduleBuilder.Tables.StandAloneSig.Add(moduleBuilder.Blobs.Add(localVarSig));
+			}
+
+			const byte CorILMethod_FatFormat = 0x03;
+			const byte CorILMethod_MoreSects = 0x08;
+			const byte CorILMethod_InitLocals = 0x10;
+
+			short flagsAndSize = (short)(CorILMethod_FatFormat | CorILMethod_InitLocals | (3 << 12));
+
+			if (exceptions.Count > 0)
+			{
+				flagsAndSize |= CorILMethod_MoreSects;
+			}
+
+			bb.Write(flagsAndSize);
+			bb.Write(maxStack);
+			bb.Write(code.Length);
+			bb.Write(localVarSigTok);
+
+			WriteCode(bb);
+
+			if (exceptions.Count > 0)
+			{
+				bb.Align(4);
+
+				bool fat = false;
+				foreach (ExceptionBlock block in exceptions)
+				{
+					if (block.tryOffset > 65535 || block.tryLength > 255 || block.handlerOffset > 65535 || block.handlerLength > 255)
+					{
+						fat = true;
+						break;
+					}
+				}
+				exceptions.Sort(exceptions[0]);
+				if (exceptions.Count * 12 + 4 > 255)
+				{
+					fat = true;
+				}
+				const byte CorILMethod_Sect_EHTable = 0x1;
+				const byte CorILMethod_Sect_FatFormat = 0x40;
+				const short COR_ILEXCEPTION_CLAUSE_EXCEPTION = 0x0000;
+				const short COR_ILEXCEPTION_CLAUSE_FINALLY = 0x0002;
+				const short COR_ILEXCEPTION_CLAUSE_FAULT = 0x0004;
+
+				if (fat)
+				{
+					bb.Write((byte)(CorILMethod_Sect_EHTable | CorILMethod_Sect_FatFormat));
+					int dataSize = exceptions.Count * 24 + 4;
+					bb.Write((byte)dataSize);
+					bb.Write((short)(dataSize >> 8));
+					foreach (ExceptionBlock block in exceptions)
+					{
+						if (block.exceptionType == FAULT)
+						{
+							bb.Write((int)COR_ILEXCEPTION_CLAUSE_FAULT);
+						}
+						else if (block.exceptionType != null)
+						{
+							bb.Write((int)COR_ILEXCEPTION_CLAUSE_EXCEPTION);
+						}
+						else
+						{
+							bb.Write((int)COR_ILEXCEPTION_CLAUSE_FINALLY);
+						}
+						bb.Write(block.tryOffset);
+						bb.Write(block.tryLength);
+						bb.Write(block.handlerOffset);
+						bb.Write(block.handlerLength);
+						if (block.exceptionType != null && block.exceptionType != FAULT)
+						{
+							bb.Write(moduleBuilder.GetTypeToken(block.exceptionType).Token);
+						}
+						else
+						{
+							bb.Write(0);
+						}
+					}
+				}
+				else
+				{
+					bb.Write(CorILMethod_Sect_EHTable);
+					bb.Write((byte)(exceptions.Count * 12 + 4));
+					bb.Write((short)0);
+					foreach (ExceptionBlock block in exceptions)
+					{
+						if (block.exceptionType == FAULT)
+						{
+							bb.Write(COR_ILEXCEPTION_CLAUSE_FAULT);
+						}
+						else if (block.exceptionType != null)
+						{
+							bb.Write(COR_ILEXCEPTION_CLAUSE_EXCEPTION);
+						}
+						else
+						{
+							bb.Write(COR_ILEXCEPTION_CLAUSE_FINALLY);
+						}
+						bb.Write((short)block.tryOffset);
+						bb.Write((byte)block.tryLength);
+						bb.Write((short)block.handlerOffset);
+						bb.Write((byte)block.handlerLength);
+						if (block.exceptionType != null && block.exceptionType != FAULT)
+						{
+							bb.Write(moduleBuilder.GetTypeToken(block.exceptionType).Token);
+						}
+						else
+						{
+							bb.Write(0);
+						}
+					}
+				}
+			}
+			return rva;
+		}
+
+		private void WriteCode(ByteBuffer bb)
+		{
+			int codeOffset = bb.Position;
+			foreach (int fixup in this.tokenFixups)
+			{
+				moduleBuilder.tokenFixupOffsets.Add(fixup + codeOffset);
+			}
+			bb.Write(code);
+		}
+
+		private void WriteScope(Scope scope, int localVarSigTok)
+		{
+			moduleBuilder.symbolWriter.OpenScope(scope.startOffset);
+			foreach (LocalBuilder local in scope.locals)
+			{
+				if (local.name != null)
+				{
+					moduleBuilder.symbolWriter.DefineLocalVariable2(local.name, 0, localVarSigTok, SymAddressKind.ILOffset, local.LocalIndex, 0, 0, scope.startOffset, scope.endOffset);
+				}
+			}
+			foreach (Scope child in scope.children)
+			{
+				WriteScope(child, localVarSigTok);
+			}
+			moduleBuilder.symbolWriter.CloseScope(scope.endOffset);
+		}
+	}
+}
+@
+
+
+1.14
+log
+@Renamed ILGenerator.__GetILOffset() to ILGenerator.ILOffset to match with .NET 4.0.
+@
+text
+@@
+
+
+1.13
+log
+@Fixed assertion.
+@
+text
+@d202 2
+a203 2
+		// non-standard API
+		public int __GetILOffset()
+d205 1
+a205 1
+			return code.Position;
+@
+
+
+1.12
+log
+@Fixed regression introduced with recent label handling changes. Bug #2847725.
+@
+text
+@d456 1
+a456 1
+				Debug.Assert(labelStackHeight[label.Index] == -1 || labelStackHeight[label.Index] == flowStackHeight);
+@
+
+
+1.11
+log
+@Fixed local variable signature in debugging info. This finally fixes the debugging support regression in 0.40.
+@
+text
+@d437 1
+a437 1
+				if (labelStackHeight[label.Index] != flowStackHeight)
+@
+
+
+1.10
+log
+@A more general fix than yesterday's for the issue with marking unreachable labels.
+@
+text
+@d814 2
+d823 1
+a823 1
+				rva = WriteFatHeaderAndCode(bb);
+d851 1
+a851 1
+				WriteScope(scope);
+d899 1
+a899 1
+		private int WriteFatHeaderAndCode(ByteBuffer bb)
+a904 1
+			int localVarSigTok = 0;
+d1048 1
+a1048 1
+		private void WriteScope(Scope scope)
+a1050 1
+			ByteBuffer localVarSig = new ByteBuffer(6);
+d1055 1
+a1055 3
+					localVarSig.Clear();
+					SignatureHelper.WriteType(moduleBuilder, localVarSig, local.LocalType);
+					moduleBuilder.symbolWriter.DefineLocalVariable(local.name, 0, localVarSig.ToArray(), SymAddressKind.ILOffset, local.LocalIndex, 0, 0, scope.startOffset, scope.endOffset);
+d1060 1
+a1060 1
+				WriteScope(child);
+@
+
+
+1.9
+log
+@Fix failed assertions introduced in with "clever" exception block assistance by not marking exception block labels that haven't been used.
+@
+text
+@d374 1
+a374 1
+				// we're about to emit unreachable code
+d761 4
+a764 3
+					// we're at a location that can only be reached by a backward branch,
+					// so according to the "backward branch constraint" that must mean the stack is empty
+					stackHeight = 0;
+@
+
+
+1.8
+log
+@Added "clever" exception block assistance mode to ILGenerator. In this mode, leave and endfinally instructions are only auto inserted when necessary.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008 Jeroen Frijters
+d185 5
+d273 1
+a273 1
+				bool reachable = labelStackHeight[block.labelEnd.Index] != -1;
+d275 4
+a278 1
+				MarkLabel(block.labelEnd);
+d309 4
+a312 1
+				MarkLabel(block.labelEnd);
+@
+
+
+1.7
+log
+@Added an API extension to ILGenerator to get the current IL offset.
+@
+text
+@d101 4
+a104 1
+		private bool exceptionBlockAssistance = true;
+d188 7
+a194 1
+			exceptionBlockAssistance = false;
+d206 1
+a206 1
+			if (exceptionBlockAssistance)
+d256 1
+a256 1
+			if (exceptionBlockAssistance)
+d268 1
+d270 3
+a272 1
+				if (exceptionBlockAssistance)
+a273 2
+					MarkLabel(block.labelEnd);
+					labelEnd = DefineLabel();
+d291 1
+a291 1
+			if (exceptionBlockAssistance)
+@
+
+
+1.6
+log
+@Added support for pinned local variables.
+@
+text
+@d188 6
+@
+
+
+1.5
+log
+@Added non-standard API to disable the "helpful" automatic leave/endfinally instructions.
+@
+text
+@d54 1
+d57 1
+a57 1
+		internal LocalBuilder(Type localType, int index)
+d61 1
+d78 5
+d300 6
+a305 1
+			LocalBuilder local = new LocalBuilder(localType, locals.Count);
+d879 1
+d886 4
+@
+
+
+1.4
+log
+@More generics fixes.
+@
+text
+@d94 1
+d175 6
+d184 4
+a187 1
+			Emit(OpCodes.Leave, block.labelEnd);
+d234 4
+a237 1
+			Emit(OpCodes.Leave, block.labelEnd);
+d246 7
+a252 3
+				MarkLabel(block.labelEnd);
+				Label labelEnd = DefineLabel();
+				Emit(OpCodes.Leave, labelEnd);
+d268 1
+a268 1
+			if (block.exceptionType != null && block.exceptionType != FAULT)
+d270 9
+a278 5
+				Emit(OpCodes.Leave, block.labelEnd);
+			}
+			else
+			{
+				Emit(OpCodes.Endfinally);
+a280 1
+			MarkLabel(block.labelEnd);
+@
+
+
+1.3
+log
+@Removed unused code.
+@
+text
+@d621 8
+a628 1
+			code.Write(moduleBuilder.GetTypeToken(type).Token);
+@
+
+
+1.2
+log
+@Don't write token of FAULT pseudo exception that is used as a marker for fault blocks.
+@
+text
+@a674 5
+		private void EmitWriteLineHelper(Type type)
+		{
+			throw new NotImplementedException();
+		}
+
+@
+
+
+1.1
+log
+@New Ref.Emit implementation.
+@
+text
+@d923 1
+a923 1
+						if (block.exceptionType != null)
+d956 1
+a956 1
+						if (block.exceptionType != null)
+@
+

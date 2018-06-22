@@ -1,0 +1,436 @@
+head	1.10;
+access;
+symbols
+	v8_1_5717_0:1.8
+	v8_1:1.8.0.2
+	v8_0_5449_1:1.7
+	v8_0_5449_0:1.7
+	v8_0:1.7.0.8
+	v7_4_5196_0:1.7
+	v7_4:1.7.0.6
+	v7_3:1.7.0.4
+	v7_2_4630_6:1.7
+	v7_2_4630_5:1.7
+	v7_2_4630_4:1.7
+	v7_2_4630_3:1.7
+	v7_2_4630_2:1.7
+	v0_46_0_4:1.3
+	v7_2_4630_1:1.7
+	v7_2:1.7.0.2
+	v7_1_4532_2:1.6.2.1
+	v7_1_4532_1:1.6.2.1
+	v7_1_4532_0:1.6
+	v7_1:1.6.0.2
+	v7_0_4335_3:1.3
+	v7_0_4335_2:1.3
+	v7_0_4335_1:1.3
+	v0_46_0_2:1.3
+	v7_0_4335_0:1.3
+	v7_0:1.3.0.4
+	v0_46_0_1:1.3
+	v0_46_0_0:1.3
+	v0_46:1.3.0.2
+	v0_44_0_6:1.2
+	v0_44_0_5:1.2
+	v0_44_0_4:1.2
+	v0_44_0_3:1.2
+	v0_44_0_2:1.2
+	v0_44_0_1:1.2
+	v0_44_0_0:1.2
+	v0_44:1.2.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.10
+date	2016.07.01.05.44.41;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2016.07.01.05.15.22;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2015.02.16.12.24.28;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2012.06.04.14.49.38;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2012.04.26.13.45.06;	author jfrijters;	state Exp;
+branches
+	1.6.2.1;
+next	1.5;
+
+1.5
+date	2012.04.26.12.11.05;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2012.04.26.08.06.30;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2011.01.13.05.58.54;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.6.2.1
+date	2012.06.04.15.23.01;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.10
+log
+@Replaced CORECLR symbol with NETSTANDARD.
+@
+text
+@/*
+  Copyright (C) 2009-2012 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.IO;
+using System.Security.Cryptography;
+
+namespace IKVM.Reflection
+{
+	public sealed class StrongNameKeyPair
+	{
+		private readonly byte[] keyPairArray;
+		private readonly string keyPairContainer;
+
+		public StrongNameKeyPair(string keyPairContainer)
+		{
+			if (keyPairContainer == null)
+			{
+				throw new ArgumentNullException("keyPairContainer");
+			}
+#if !NETSTANDARD
+			if (Universe.MonoRuntime && Environment.OSVersion.Platform == PlatformID.Win32NT)
+			{
+				throw new NotSupportedException("IKVM.Reflection does not support key containers when running on Mono");
+			}
+#endif
+			this.keyPairContainer = keyPairContainer;
+		}
+
+		public StrongNameKeyPair(byte[] keyPairArray)
+		{
+			if (keyPairArray == null)
+			{
+				throw new ArgumentNullException("keyPairArray");
+			}
+			this.keyPairArray = (byte[])keyPairArray.Clone();
+		}
+
+		public StrongNameKeyPair(FileStream keyPairFile)
+			: this(ReadAllBytes(keyPairFile))
+		{
+		}
+
+		private static byte[] ReadAllBytes(FileStream keyPairFile)
+		{
+			if (keyPairFile == null)
+			{
+				throw new ArgumentNullException("keyPairFile");
+			}
+			byte[] buf = new byte[keyPairFile.Length - keyPairFile.Position];
+			keyPairFile.Read(buf, 0, buf.Length);
+			return buf;
+		}
+
+		public byte[] PublicKey
+		{
+			get
+			{
+#if !NETSTANDARD
+				if (Universe.MonoRuntime)
+				{
+					// MONOBUG workaround for https://bugzilla.xamarin.com/show_bug.cgi?id=5299
+					return MonoGetPublicKey();
+				}
+#endif
+				using (RSACryptoServiceProvider rsa = CreateRSA())
+				{
+					byte[] cspBlob = rsa.ExportCspBlob(false);
+					byte[] publicKey = new byte[12 + cspBlob.Length];
+					Buffer.BlockCopy(cspBlob, 0, publicKey, 12, cspBlob.Length);
+					publicKey[1] = 36;
+					publicKey[4] = 4;
+					publicKey[5] = 128;
+					publicKey[8] = (byte)(cspBlob.Length >> 0);
+					publicKey[9] = (byte)(cspBlob.Length >> 8);
+					publicKey[10] = (byte)(cspBlob.Length >> 16);
+					publicKey[11] = (byte)(cspBlob.Length >> 24);
+					return publicKey;
+				}
+			}
+		}
+
+		internal RSACryptoServiceProvider CreateRSA()
+		{
+			try
+			{
+				if (keyPairArray != null)
+				{
+					RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
+					rsa.ImportCspBlob(keyPairArray);
+					return rsa;
+				}
+				else
+				{
+					CspParameters parm = new CspParameters();
+					parm.KeyContainerName = keyPairContainer;
+					// MONOBUG Mono doesn't like it when Flags or KeyNumber are set
+					if (!Universe.MonoRuntime)
+					{
+						parm.Flags = CspProviderFlags.UseMachineKeyStore | CspProviderFlags.UseExistingKey;
+						parm.KeyNumber = 2;	// Signature
+					}
+					return new RSACryptoServiceProvider(parm);
+				}
+			}
+			catch
+			{
+				throw new ArgumentException("Unable to obtain public key for StrongNameKeyPair.");
+			}
+		}
+
+#if !NETSTANDARD
+		[System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+		private byte[] MonoGetPublicKey()
+		{
+			return keyPairArray != null
+				? new System.Reflection.StrongNameKeyPair(keyPairArray).PublicKey
+				: new System.Reflection.StrongNameKeyPair(keyPairContainer).PublicKey;
+		}
+#endif
+	}
+}
+@
+
+
+1.9
+log
+@Added support for building against .NET Standard 1.3.
+@
+text
+@d79 1
+a79 1
+#if !CORECLR
+d132 1
+a132 1
+#if !CORECLR
+@
+
+
+1.8
+log
+@Added CoreCLR target for IKVM.Reflection.
+@
+text
+@d41 1
+d46 1
+@
+
+
+1.7
+log
+@Added workarounds for various Mono bugs related to strong naming and disabled use of key containers when running on Mono on Windows (because Mono does not expose the system key containers).
+@
+text
+@d77 1
+d83 1
+d130 1
+d138 1
+@
+
+
+1.6
+log
+@Regression fix. The length was not set correctly in the public key header.
+@
+text
+@d41 4
+d77 5
+a111 1
+					parm.Flags = CspProviderFlags.UseMachineKeyStore | CspProviderFlags.UseExistingKey;
+d113 6
+a118 1
+					parm.KeyNumber = 2;	// Signature
+d127 8
+@
+
+
+1.6.2.1
+log
+@Updated revision number and backported fixes:
+- Fixed Linux build issue due to assembly.class filename case error in tools.rsp
+- Added workaround for Mono 2.10 bug in AssemblyName (public key token for ECMA public key is not created correctly).
+- Added workaround for Mono to StrongNameKeyPair.
+- Disallow key container constructor of StrongNameKeyPair when running on Mono on Windows.
+- Introduced Universe.MonoRuntime to ease checking of Mono runtime.
+@
+text
+@a40 4
+			if (Universe.MonoRuntime && Environment.OSVersion.Platform == PlatformID.Win32NT)
+			{
+				throw new NotSupportedException("IKVM.Reflection does not support key containers when running on Mono");
+			}
+a72 5
+				if (Universe.MonoRuntime)
+				{
+					// MONOBUG workaround for https://bugzilla.xamarin.com/show_bug.cgi?id=5299
+					return MonoGetPublicKey();
+				}
+d103 1
+d105 1
+a105 6
+					// MONOBUG Mono doesn't like it when Flags or KeyNumber are set
+					if (!Universe.MonoRuntime)
+					{
+						parm.Flags = CspProviderFlags.UseMachineKeyStore | CspProviderFlags.UseExistingKey;
+						parm.KeyNumber = 2;	// Signature
+					}
+a113 8
+
+		[System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+		private byte[] MonoGetPublicKey()
+		{
+			return keyPairArray != null
+				? new System.Reflection.StrongNameKeyPair(keyPairArray).PublicKey
+				: new System.Reflection.StrongNameKeyPair(keyPairContainer).PublicKey;
+		}
+@
+
+
+1.5
+log
+@Regression fix. Array passed in constructor should be copied.
+@
+text
+@d81 4
+a84 1
+					publicKey[8] = 148;
+@
+
+
+1.4
+log
+@Rewrote StrongNameKeyPair without depending on System.Reflection.StrongNameKeyPair.
+@
+text
+@d50 1
+a50 1
+			this.keyPairArray = keyPairArray;
+@
+
+
+1.3
+log
+@Prevent external subclassing. It's not part of the design to suppor that, now it is also enforced.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Jeroen Frijters
+d25 2
+a26 2
+using System.Collections.Generic;
+using System.Text;
+d32 2
+a33 1
+		internal readonly System.Reflection.StrongNameKeyPair keyPair;
+d35 1
+a35 1
+		internal StrongNameKeyPair(System.Reflection.StrongNameKeyPair keyPair)
+d37 5
+a41 1
+			this.keyPair = keyPair;
+d44 1
+a44 1
+		public StrongNameKeyPair(string keyPairContainer)
+d46 5
+a50 1
+			this.keyPair = new System.Reflection.StrongNameKeyPair(keyPairContainer);
+d53 2
+a54 1
+		public StrongNameKeyPair(byte[] keyPairArray)
+a55 1
+			this.keyPair = new System.Reflection.StrongNameKeyPair(keyPairArray);
+d58 1
+a58 1
+		public StrongNameKeyPair(System.IO.FileStream fs)
+d60 7
+a66 1
+			this.keyPair = new System.Reflection.StrongNameKeyPair(fs);
+d71 39
+a109 1
+			get { return keyPair.PublicKey; }
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d30 1
+a30 1
+	public class StrongNameKeyPair
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

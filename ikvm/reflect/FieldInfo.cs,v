@@ -1,0 +1,829 @@
+head	1.24;
+access;
+symbols
+	v8_1_5717_0:1.24
+	v8_1:1.24.0.10
+	v8_0_5449_1:1.24
+	v8_0_5449_0:1.24
+	v8_0:1.24.0.8
+	v7_4_5196_0:1.24
+	v7_4:1.24.0.6
+	v7_3:1.24.0.4
+	v7_2_4630_6:1.24
+	v7_2_4630_5:1.24
+	v7_2_4630_4:1.24
+	v7_2_4630_3:1.24
+	v7_2_4630_2:1.24
+	v0_46_0_4:1.6
+	v7_2_4630_1:1.24
+	v7_2:1.24.0.2
+	v7_1_4532_2:1.12
+	v7_1_4532_1:1.12
+	v7_1_4532_0:1.12
+	v7_1:1.12.0.2
+	v7_0_4335_3:1.8.2.1
+	v7_0_4335_2:1.8.2.1
+	v7_0_4335_1:1.8.2.1
+	v0_46_0_2:1.6
+	v7_0_4335_0:1.8
+	v7_0:1.8.0.2
+	v0_46_0_1:1.6
+	v0_46_0_0:1.6
+	v0_46:1.6.0.2
+	v0_44_0_6:1.5
+	v0_44_0_5:1.5
+	v0_44_0_4:1.5
+	v0_44_0_3:1.5
+	v0_44_0_2:1.5
+	v0_44_0_1:1.5
+	v0_44_0_0:1.5
+	v0_44:1.5.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.24
+date	2012.07.16.13.07.43;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2012.07.16.12.58.37;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2012.07.16.10.14.37;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2012.07.13.13.08.28;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2012.07.13.11.01.07;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2012.07.13.10.26.07;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2012.07.13.10.22.19;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2012.07.13.10.17.11;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2012.07.13.07.37.54;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2012.07.13.06.33.30;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2012.07.12.15.10.58;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2012.07.12.13.30.06;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2012.04.10.09.07.54;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2012.04.10.06.18.32;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2011.12.31.09.20.15;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2011.12.01.06.30.50;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2011.03.13.09.03.15;	author jfrijters;	state Exp;
+branches
+	1.8.2.1;
+next	1.7;
+
+1.7
+date	2011.03.09.06.00.33;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2011.01.13.05.58.54;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2010.04.19.05.26.28;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.04.18.08.39.20;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.01.27.06.12.37;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.8.2.1
+date	2012.01.03.12.16.37;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.24
+log
+@Moved FieldOffsetAttribute and PreserveSigAttribute pseudo custom attribute creation into helpers methods in CustomAttributeData.
+@
+text
+@/*
+  Copyright (C) 2009-2012 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+
+namespace IKVM.Reflection
+{
+	public abstract class FieldInfo : MemberInfo
+	{
+		// prevent external subclasses
+		internal FieldInfo()
+		{
+		}
+
+		public sealed override MemberTypes MemberType
+		{
+			get { return MemberTypes.Field; }
+		}
+
+		public abstract FieldAttributes Attributes { get; }
+		public abstract void __GetDataFromRVA(byte[] data, int offset, int length);
+		public abstract int __FieldRVA { get; }
+		public abstract Object GetRawConstantValue();
+		internal abstract FieldSignature FieldSignature { get; }
+
+		public Type FieldType
+		{
+			get { return this.FieldSignature.FieldType; }
+		}
+
+		public CustomModifiers __GetCustomModifiers()
+		{
+			return this.FieldSignature.GetCustomModifiers();
+		}
+
+		public Type[] GetOptionalCustomModifiers()
+		{
+			return __GetCustomModifiers().GetOptional();
+		}
+
+		public Type[] GetRequiredCustomModifiers()
+		{
+			return __GetCustomModifiers().GetRequired();
+		}
+
+		public bool IsStatic
+		{
+			get { return (Attributes & FieldAttributes.Static) != 0; }
+		}
+
+		public bool IsLiteral
+		{
+			get { return (Attributes & FieldAttributes.Literal) != 0; }
+		}
+
+		public bool IsInitOnly
+		{
+			get { return (Attributes & FieldAttributes.InitOnly) != 0; }
+		}
+
+		public bool IsNotSerialized
+		{
+			get { return (Attributes & FieldAttributes.NotSerialized) != 0; }
+		}
+
+		public bool IsSpecialName
+		{
+			get { return (Attributes & FieldAttributes.SpecialName) != 0; }
+		}
+
+		public bool IsPublic
+		{
+			get { return (Attributes & FieldAttributes.FieldAccessMask) == FieldAttributes.Public; }
+		}
+
+		public bool IsPrivate
+		{
+			get { return (Attributes & FieldAttributes.FieldAccessMask) == FieldAttributes.Private; }
+		}
+
+		public bool IsFamily
+		{
+			get { return (Attributes & FieldAttributes.FieldAccessMask) == FieldAttributes.Family; }
+		}
+
+		public bool IsFamilyOrAssembly
+		{
+			get { return (Attributes & FieldAttributes.FieldAccessMask) == FieldAttributes.FamORAssem; }
+		}
+
+		public bool IsAssembly
+		{
+			get { return (Attributes & FieldAttributes.FieldAccessMask) == FieldAttributes.Assembly; }
+		}
+
+		public bool IsFamilyAndAssembly
+		{
+			get { return (Attributes & FieldAttributes.FieldAccessMask) == FieldAttributes.FamANDAssem; }
+		}
+
+		public bool IsPinvokeImpl
+		{
+			get { return (Attributes & FieldAttributes.PinvokeImpl) != 0; }
+		}
+
+		public virtual FieldInfo __GetFieldOnTypeDefinition()
+		{
+			return this;
+		}
+
+		public abstract bool __TryGetFieldOffset(out int offset);
+
+		public bool __TryGetFieldMarshal(out FieldMarshal fieldMarshal)
+		{
+			return FieldMarshal.ReadFieldMarshal(this.Module, GetCurrentToken(), out fieldMarshal);
+		}
+
+		internal abstract int ImportTo(Emit.ModuleBuilder module);
+
+		internal virtual FieldInfo BindTypeParameters(Type type)
+		{
+			return new GenericFieldInstance(this.DeclaringType.BindTypeParameters(type), this);
+		}
+
+		internal sealed override bool BindingFlagsMatch(BindingFlags flags)
+		{
+			return BindingFlagsMatch(IsPublic, flags, BindingFlags.Public, BindingFlags.NonPublic)
+				&& BindingFlagsMatch(IsStatic, flags, BindingFlags.Static, BindingFlags.Instance);
+		}
+
+		internal sealed override bool BindingFlagsMatchInherited(BindingFlags flags)
+		{
+			return (Attributes & FieldAttributes.FieldAccessMask) > FieldAttributes.Private
+				&& BindingFlagsMatch(IsPublic, flags, BindingFlags.Public, BindingFlags.NonPublic)
+				&& BindingFlagsMatch(IsStatic, flags, BindingFlags.Static | BindingFlags.FlattenHierarchy, BindingFlags.Instance);
+		}
+
+		internal sealed override MemberInfo SetReflectedType(Type type)
+		{
+			return new FieldInfoWithReflectedType(type, this);
+		}
+
+		internal sealed override List<CustomAttributeData> GetPseudoCustomAttributes(Type attributeType)
+		{
+			Module module = this.Module;
+			List<CustomAttributeData> list = new List<CustomAttributeData>();
+			if (attributeType == null || attributeType.IsAssignableFrom(module.universe.System_Runtime_InteropServices_MarshalAsAttribute))
+			{
+				FieldMarshal spec;
+				if (__TryGetFieldMarshal(out spec))
+				{
+					list.Add(CustomAttributeData.CreateMarshalAsPseudoCustomAttribute(module, spec));
+				}
+			}
+			if (attributeType == null || attributeType.IsAssignableFrom(module.universe.System_Runtime_InteropServices_FieldOffsetAttribute))
+			{
+				int offset;
+				if (__TryGetFieldOffset(out offset))
+				{
+					list.Add(CustomAttributeData.CreateFieldOffsetPseudoCustomAttribute(module, offset));
+				}
+			}
+			return list;
+		}
+	}
+
+	sealed class FieldInfoWithReflectedType : FieldInfo
+	{
+		private readonly Type reflectedType;
+		private readonly FieldInfo field;
+
+		internal FieldInfoWithReflectedType(Type reflectedType, FieldInfo field)
+		{
+			Debug.Assert(reflectedType != field.DeclaringType);
+			this.reflectedType = reflectedType;
+			this.field = field;
+		}
+
+		public override FieldAttributes Attributes
+		{
+			get { return field.Attributes; }
+		}
+
+		public override void __GetDataFromRVA(byte[] data, int offset, int length)
+		{
+			field.__GetDataFromRVA(data, offset, length);
+		}
+
+		public override int __FieldRVA
+		{
+			get { return field.__FieldRVA; }
+		}
+
+		public override bool __TryGetFieldOffset(out int offset)
+		{
+			return field.__TryGetFieldOffset(out offset);
+		}
+
+		public override Object GetRawConstantValue()
+		{
+			return field.GetRawConstantValue();
+		}
+
+		internal override FieldSignature FieldSignature
+		{
+			get { return field.FieldSignature; }
+		}
+
+		public override FieldInfo __GetFieldOnTypeDefinition()
+		{
+			return field.__GetFieldOnTypeDefinition();
+		}
+
+		internal override int ImportTo(Emit.ModuleBuilder module)
+		{
+			return field.ImportTo(module);
+		}
+
+		internal override FieldInfo BindTypeParameters(Type type)
+		{
+			return field.BindTypeParameters(type);
+		}
+
+		public override bool __IsMissing
+		{
+			get { return field.__IsMissing; }
+		}
+
+		public override Type DeclaringType
+		{
+			get { return field.DeclaringType; }
+		}
+
+		public override Type ReflectedType
+		{
+			get { return reflectedType; }
+		}
+
+		public override bool Equals(object obj)
+		{
+			FieldInfoWithReflectedType other = obj as FieldInfoWithReflectedType;
+			return other != null
+				&& other.reflectedType == reflectedType
+				&& other.field == field;
+		}
+
+		public override int GetHashCode()
+		{
+			return reflectedType.GetHashCode() ^ field.GetHashCode();
+		}
+
+		public override int MetadataToken
+		{
+			get { return field.MetadataToken; }
+		}
+
+		public override Module Module
+		{
+			get { return field.Module; }
+		}
+
+		public override string Name
+		{
+			get { return field.Name; }
+		}
+
+		public override string ToString()
+		{
+			return field.ToString();
+		}
+
+		internal override int GetCurrentToken()
+		{
+			return field.GetCurrentToken();
+		}
+
+		internal override bool IsBaked
+		{
+			get { return field.IsBaked; }
+		}
+	}
+}
+@
+
+
+1.23
+log
+@Moved FieldMarshal.ToCustomAttribute() to CustomAttributeData.CreateMarshalAsPseudoCustomAttribute().
+@
+text
+@d182 1
+a182 2
+					ConstructorInfo constructor = module.universe.System_Runtime_InteropServices_FieldOffsetAttribute.GetPseudoCustomAttributeConstructor(module.universe.System_Int32);
+					list.Add(new CustomAttributeData(module, constructor, new object[] { offset }, null));
+@
+
+
+1.22
+log
+@Refactored custom attribute handling of MemberInfo types.
+@
+text
+@d174 1
+a174 1
+					list.Add(spec.ToCustomAttribute(module));
+@
+
+
+1.21
+log
+@Fixed regression in __TryGetFieldOffset. The FieldLayout.Field field is an index (not a token), except for unsaved modules where it is a pseudo token.
+@
+text
+@a46 1
+		internal abstract int GetCurrentToken();
+d165 1
+a165 1
+		internal override IList<CustomAttributeData> GetCustomAttributesData(Type attributeType)
+d168 1
+a168 1
+			List<CustomAttributeData> list = module.GetCustomAttributes(GetCurrentToken(), attributeType);
+d300 1
+a300 1
+		internal override IList<CustomAttributeData> GetCustomAttributesData(Type attributeType)
+d302 1
+a302 1
+			return field.GetCustomAttributesData(attributeType);
+@
+
+
+1.20
+log
+@Restored GetCustomAttributesData forwarding, to allow FieldBuilder to throw exception if the type has not yet been baked.
+@
+text
+@d134 1
+a134 10
+		public bool __TryGetFieldOffset(out int offset)
+		{
+			foreach (int i in this.Module.FieldLayout.Filter(GetCurrentToken()))
+			{
+				offset = this.Module.FieldLayout.records[i].Offset;
+				return true;
+			}
+			offset = 0;
+			return false;
+		}
+d218 5
+@
+
+
+1.19
+log
+@All FieldInfo subclasses should implement GetCurrentToken().
+@
+text
+@d304 5
+@
+
+
+1.18
+log
+@Moved __TryGetFieldOffset and __TryGetFieldMarshal up into FieldInfo.
+@
+text
+@d47 1
+a197 5
+
+		protected virtual int GetCurrentToken()
+		{
+			return MetadataToken;
+		}
+d299 5
+@
+
+
+1.17
+log
+@Moved common custom attribute code into FieldInfo.
+@
+text
+@a44 2
+		public abstract bool __TryGetFieldOffset(out int offset);
+		public abstract bool __TryGetFieldMarshal(out FieldMarshal fieldMarshal);
+d133 16
+a230 10
+		public override bool __TryGetFieldOffset(out int offset)
+		{
+			return field.__TryGetFieldOffset(out offset);
+		}
+
+		public override bool __TryGetFieldMarshal(out FieldMarshal fieldMarshal)
+		{
+			return field.__TryGetFieldMarshal(out fieldMarshal);
+		}
+
+@
+
+
+1.16
+log
+@- Changed FieldInfo.__FieldOffset property to __TryGetFieldOffset() method.
+- Implemented __TryGetFieldMarshal() & __TryGetFieldOffest() for FieldBuilder.
+- Fixed FieldBuilder to throw NotImplementedException when trying to get custom attributes on unbaked type.
+- Fixed FieldBuilder to return pseudo custom attributes (but it is currently still broken after the module has been saved).
+@
+text
+@d159 29
+a279 5
+		internal override IList<CustomAttributeData> GetCustomAttributesData(Type attributeType)
+		{
+			return field.GetCustomAttributesData(attributeType);
+		}
+
+@
+
+
+1.15
+log
+@- Changed [Field|Parameter]Info.__FieldMarshal property to __TryGetFieldMarshal method.
+- Changed FieldMarshal class into a value type with public fields.
+@
+text
+@d45 1
+a45 1
+		public abstract int __FieldOffset { get; }
+d188 1
+a188 1
+		public override int __FieldOffset
+d190 1
+a190 1
+			get { return field.__FieldOffset; }
+@
+
+
+1.14
+log
+@- Added new public APIs FieldInfo.__FieldMarshal and ParameterInfo.__FieldMarshal.
+- Moved ParameterInfo pseudo custom attribute handling to CustomAttributeData.
+- Ignore HasFieldMarshal attribute and always return the pseudo custom attribute if a FieldMarshal record exists. This is similar to .NET reflection.
+@
+text
+@d46 1
+a46 1
+		public abstract FieldMarshal __FieldMarshal { get; }
+d193 1
+a193 1
+		public override FieldMarshal __FieldMarshal
+d195 1
+a195 1
+			get { return field.__FieldMarshal; }
+@
+
+
+1.13
+log
+@Added public API FieldInfo.__FieldOffset to get the offset of the field (in an explicit layout type) without having to parse the pseudo custom attribute.
+@
+text
+@d46 1
+d193 5
+@
+
+
+1.12
+log
+@Added MemberInfo.ReflectedType.
+@
+text
+@d45 1
+d187 5
+@
+
+
+1.11
+log
+@Moved GetEvents(), GetFields(), GetConstructors(), GetNestedTypes() and GetProperties() to a common implementation that fixes a number of bugs.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Jeroen Frijters
+d25 2
+d152 111
+@
+
+
+1.10
+log
+@Bug fix. Fixed copy/paste error. FieldInfo.IsAssembly should test for FieldAttributes.Assembly access, not FieldAttributes.Family.
+@
+text
+@d137 13
+@
+
+
+1.9
+log
+@- Rewrote custom modifier handling to retain ordering.
+- Added ConstructorInfo.__ReturnParameter to expose custom modifiers.
+- Added __GetCustomModifiers() to various *Info types.
+- Added CustomModifiers type to encapsulate a custom modifier sequence.
+- Added CustomModifiersBuilder to create a CustomModifiers sequence.
+- Marked a number of IKVM.Reflection specific methods Obsolete, because they are replaced with method that take CustomModifiers value(s).
+@
+text
+@d113 1
+a113 1
+			get { return (Attributes & FieldAttributes.FieldAccessMask) == FieldAttributes.Family; }
+@
+
+
+1.8
+log
+@Added API extension FieldInfo.__FieldRVA.
+@
+text
+@d51 5
+d58 1
+a58 1
+			return this.FieldSignature.GetOptionalCustomModifiers();
+d63 1
+a63 1
+			return this.FieldSignature.GetRequiredCustomModifiers();
+@
+
+
+1.8.2.1
+log
+@Backported fixes:
+- FileStore for non-accessible drive should throw exception when trying to create the FileStore, not when accessing the name() or type() properties.
+- Graphics2D.clip(null) should only throw NPE for a Component graphics.
+- Don't crash when ikvmc -resource: or -externalresource: option doesn't contain an = sign.
+- Handle Main-Class manifest value that spans multiple lines. Fix for bug #3461012.
+- Informational messages should not be treated as error when -warnaserror is specified. Fix for #3443377.
+- Don't enforce pre-1.5 class name rules in ikvmc (since HotSpot doesn't enforce any naming rules for classes loaded by the system (and boot) class loader, by default). Fix for #3443373.
+- Fix for #3441959.
+- Throwable.addSuppressed() didn't have a proper parameter name.
+- mark getSpace0 with SecuritySafeCritical to avoid getting an exception with .NET 4
+- Bug fix. Removed incorrect check for uninitialized objects on backward branch.
+- Don't crash when ikvmc -resource: or -externalresource: option doesn't contain an = sign.
+- Added AssemblyInformationalVersionAttribute to OpenJDK assemblies (to set the "Product Version"). Part of patch #3458997.
+- Include copyright and metadata in IKVM.OpenJDK.Tools.dll. Part of patch #3458997.
+- Bug fix. Don't call Finish on unloadable TypeWrapper.
+- Bug fix. When constructing a generic class loader we can't use GetWrapperFromType() on the type arguments, because they might refer to a subtype that is currently being loaded.
+- Fix. When decoding a NameSigAttribute it is possible that a type does not exist (i.e. is an unloadable) and that results in a warning emitted against the referenced assemblies class loader.
+- Suppress annotation custom attributes when enumerating inner classes.
+- IKVM.Reflection: Bug fix. Fixed copy/paste error. FieldInfo.IsAssembly should test for FieldAttributes.Assembly access, not FieldAttributes.Family.
+@
+text
+@d108 1
+a108 1
+			get { return (Attributes & FieldAttributes.FieldAccessMask) == FieldAttributes.Assembly; }
+@
+
+
+1.7
+log
+@Added API extension FieldInfo.__GetFieldOnTypeDefinition().
+@
+text
+@d42 1
+@
+
+
+1.6
+log
+@Prevent external subclassing. It's not part of the design to suppor that, now it is also enforced.
+@
+text
+@d120 5
+@
+
+
+1.5
+log
+@Made __GetDataFromRVA more generic by taking an offset and a length (to be able to reuse the byte array) and this also removes the need for the field type to have a StructLayout.
+@
+text
+@d30 5
+@
+
+
+1.4
+log
+@Introduced Empty<T> to cache zero length arrays.
+@
+text
+@d36 1
+a36 1
+		public abstract void __GetDataFromRVA(byte[] data);
+@
+
+
+1.3
+log
+@Several IKVM.Reflection fixes related to generics.
+- MethodImpls in generic type definitions should be resolved with typeArgs as context.
+- Cleaned up member on generic type rebinding.
+- Fixed __GetDeclaredProperties and __GetDeclaredEvents to rebind properly.
+@
+text
+@a29 2
+		internal static readonly FieldInfo[] EmptyArray = new FieldInfo[0];
+
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d118 5
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

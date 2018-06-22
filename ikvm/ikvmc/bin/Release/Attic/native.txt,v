@@ -1,0 +1,55 @@
+head	1.2;
+access;
+symbols
+	initial:1.1.1.1 ikvm:1.1.1;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2003.12.24.11.51.41;	author jfrijters;	state dead;
+branches;
+next	1.1;
+
+1.1
+date	2002.12.18.16.01.25;	author jfrijters;	state Exp;
+branches
+	1.1.1.1;
+next	;
+
+1.1.1.1
+date	2002.12.18.16.01.25;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@Compiling class files (1)
+Constructing compiler
+Loading remapped types
+Parsing class files
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@@
+
+
+1.1.1.1
+log
+@no message
+@
+text
+@@

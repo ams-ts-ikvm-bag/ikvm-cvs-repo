@@ -1,0 +1,989 @@
+head	1.21;
+access;
+symbols
+	v8_1_5717_0:1.21
+	v8_1:1.21.0.10
+	v8_0_5449_1:1.21
+	v8_0_5449_0:1.21
+	v8_0:1.21.0.8
+	v7_4_5196_0:1.21
+	v7_4:1.21.0.6
+	v7_3:1.21.0.4
+	v7_2_4630_6:1.21
+	v7_2_4630_5:1.21
+	v7_2_4630_4:1.21
+	v7_2_4630_3:1.21
+	v7_2_4630_2:1.21
+	v0_46_0_4:1.20
+	v7_2_4630_1:1.21
+	v7_2:1.21.0.2
+	v7_1_4532_2:1.20
+	v7_1_4532_1:1.20
+	v7_1_4532_0:1.20
+	v7_1:1.20.0.8
+	v7_0_4335_3:1.20
+	v7_0_4335_2:1.20
+	v7_0_4335_1:1.20
+	v0_46_0_2:1.20
+	v7_0_4335_0:1.20
+	v7_0:1.20.0.6
+	v0_40_0_6:1.18
+	v0_40_0_5:1.18
+	v0_46_0_1:1.20
+	v0_46_0_0:1.20
+	v0_46:1.20.0.4
+	v0_36_0_14:1.13
+	v0_44_0_6:1.20
+	v0_44_0_5:1.20
+	v0_44_0_4:1.20
+	v0_44_0_3:1.20
+	v0_44_0_2:1.20
+	v0_42_0_7:1.19
+	v0_44_0_1:1.20
+	v0_44_0_0:1.20
+	v0_44:1.20.0.2
+	v0_42_0_6:1.19
+	v0_42_0_5:1.19
+	v0_42_0_4:1.19
+	v0_42_0_3:1.19
+	v0_42_0_2:1.19
+	v0_42_0_1:1.19
+	v0_42_0_0:1.19
+	v0_42:1.19.0.2
+	v0_40_0_3:1.18
+	v0_40_0_2:1.18
+	v0_40_0_1:1.18
+	v0_40_0_0:1.18
+	v0_40:1.18.0.2
+	v0_36_0_13:1.13
+	v0_38_0_1:1.17
+	v0_38_0_0:1.17
+	v0_38:1.17.0.2
+	v0_36_0_9:1.13
+	v0_36_0_7:1.13
+	v0_36_0_5:1.13
+	v0_36_0_4:1.13
+	v0_36_0_3:1.13
+	v0_36_0_2:1.13
+	v0_36_0_1:1.13
+	v0_36_0_0:1.13
+	v0_36:1.13.0.2
+	v0_34_0_3:1.12
+	v0_34_0_2:1.12
+	v0_34_0_1:1.12
+	v0_34_0_0:1.12
+	v0_34:1.12.0.4
+	v0_32:1.12.0.2
+	v0_32_0_0:1.12
+	v0_30:1.11.0.2
+	v0_28_0_0:1.10
+	v0_26_0_1:1.9
+	v0_26_0_0:1.9
+	v0_24_0_1:1.9
+	v0_24_0_0:1.9
+	v0_22_0_0:1.7
+	v0_20_0_0:1.7
+	v0_18_0_0:1.7
+	v0_16_0_0:1.7
+	v0_14_0_1:1.6
+	v0_14_0_0:1.6
+	v0_12_0_0:1.6
+	v0_10_0_1:1.5
+	v0_10_0_0:1.5
+	v0_8_0_0:1.1;
+locks; strict;
+comment	@ * @;
+
+
+1.21
+date	2012.08.06.12.12.03;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2010.01.28.07.10.31;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2009.08.28.06.47.16;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2009.02.04.07.03.31;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2008.08.15.12.01.22;	author jfrijters;	state Exp;
+branches
+	1.17.2.1;
+next	1.16;
+
+1.16
+date	2007.12.27.15.13.34;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2007.12.18.11.04.53;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2007.11.26.08.38.39;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2007.05.23.12.48.12;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2006.09.12.09.57.36;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2006.06.15.12.29.13;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2006.04.10.09.09.10;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2005.12.29.15.48.33;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2005.12.07.09.06.32;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2005.06.01.09.49.31;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2005.02.23.12.57.50;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2004.10.19.13.43.57;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2004.09.09.11.17.55;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2004.08.17.09.05.25;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2004.07.10.07.19.57;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2004.05.27.07.12.12;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.17.2.1
+date	2009.02.02.05.58.21;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.21
+log
+@- Marked MemberWrapper class abstract.
+- Marked all classes that don't (and shouldn't) have subclasses sealed.
+@
+text
+@/*
+  Copyright (C) 2004, 2005, 2006 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Threading;
+using System.Diagnostics;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using System.Configuration;
+
+namespace IKVM.Internal
+{
+	public static class Tracer
+	{
+		public readonly static TraceSwitch Compiler = new TraceSwitch("compiler", "Static Compiler");
+		public readonly static TraceSwitch FxBug = new TraceSwitch("fxbug", ".NET Framework bug related events");
+		public readonly static TraceSwitch ClassLoading = new TraceSwitch("classloading", "Class loading");
+		public readonly static TraceSwitch Verifier = new TraceSwitch("verifier", "Bytecode Verifier");
+		public readonly static TraceSwitch Runtime = new TraceSwitch("runtime", "Miscellaneous runtime events");
+		public readonly static TraceSwitch Jni = new TraceSwitch("jni", "JNI");
+		//	public readonly static TraceSwitch Methods = new TraceSwitch("methods", "Method Trace");
+		private readonly static Dictionary<string, TraceSwitch> allTraceSwitches = new Dictionary<string, TraceSwitch>();
+
+		private readonly static List<string> methodtraces = new List<string>();
+
+		private sealed class MyTextWriterTraceListener : TextWriterTraceListener
+		{
+			internal MyTextWriterTraceListener(System.IO.TextWriter tw)
+				: base(tw)
+			{
+			}
+
+			public override void Fail(string message)
+			{
+				this.WriteLine("Assert.Fail: " + message);
+				this.WriteLine(new StackTrace(true).ToString());
+				base.Fail(message);
+			}
+
+			public override void Fail(string message, string detailMessage)
+			{
+				this.WriteLine("Assert.Fail: " + message + ".\n" + detailMessage);
+				this.WriteLine(new StackTrace(true).ToString());
+				base.Fail(message, detailMessage);
+			}
+		}
+
+		static Tracer()
+		{
+			try
+			{
+				Init();
+			}
+			catch(System.Security.SecurityException)
+			{
+			}
+		}
+
+		private static void Init()
+		{
+			allTraceSwitches[Compiler.DisplayName] = Compiler;
+			allTraceSwitches[FxBug.DisplayName] = FxBug;
+			allTraceSwitches[ClassLoading.DisplayName] = ClassLoading;
+			allTraceSwitches[Verifier.DisplayName] = Verifier;
+			allTraceSwitches[Runtime.DisplayName] = Runtime;
+			allTraceSwitches[Jni.DisplayName] = Jni;
+
+			try
+			{
+				Trace.AutoFlush = true;
+#if !STUB_GENERATOR
+				/* If the app config file gives some method trace - add it */
+				string trace = ConfigurationManager.AppSettings["Traced Methods"];
+				if(trace != null)
+				{
+					methodtraces.Add(trace);
+				}
+#endif
+			}
+			catch(ConfigurationException)
+			{
+				// app.config is malformed, ignore
+			}
+		}
+
+		[Conditional("DEBUG")]
+		public static void EnableTraceForDebug()
+		{
+			SetTraceLevel("*", TraceLevel.Verbose);
+		}
+
+		public static void EnableTraceConsoleListener()
+		{
+			Trace.Listeners.Add(new MyTextWriterTraceListener(Console.Error));
+		}
+
+		public static void HandleMethodTrace(string name)
+		{
+			methodtraces.Add(name);
+		}
+
+		public static bool IsTracedMethod(string name)
+		{
+			if(methodtraces.Count == 0)
+			{
+				return false;
+			}
+			IEnumerator<string> e = methodtraces.GetEnumerator();
+			while(e.MoveNext())
+			{
+				try 
+				{
+					if(Regex.IsMatch(name, e.Current))
+					{
+						return true;
+					}
+				}
+				catch(Exception x) 
+				{
+					Tracer.Warning(Tracer.Compiler,"Regular Expression match failure: " + e.Current + ":" + x);
+				}
+			}
+			return false;
+		}
+
+		public static void SetTraceLevel(string name)
+		{
+			string[] trace = name.Split('=');
+			System.Diagnostics.TraceLevel level = System.Diagnostics.TraceLevel.Verbose;
+			if(trace.Length == 2)
+			{
+				level = (System.Diagnostics.TraceLevel)Enum.Parse(typeof(System.Diagnostics.TraceLevel), trace[1], true);
+			}
+			SetTraceLevel(trace[0], level);
+		}
+
+		public static void SetTraceLevel(string name, TraceLevel level)
+		{
+			if(name == "*")
+			{
+				foreach(TraceSwitch ts in allTraceSwitches.Values)
+				{
+					ts.Level = level;
+				}
+			}
+			else
+			{
+				TraceSwitch ts;
+				if(allTraceSwitches.TryGetValue(name, out ts))
+				{
+					ts.Level = level;
+				}
+				else
+				{
+					Console.Error.WriteLine("Warning: Invalid traceswitch name: {0}", name);
+				}
+			}
+		}
+
+		private static void WriteLine(string message, object[] p)
+		{
+			if(p.Length > 0)
+			{
+				message = string.Format(message, p);
+			}
+			Trace.WriteLine(string.Format("[{0:HH':'mm':'ss'.'fffff} {1}] {2}", DateTime.Now, Thread.CurrentThread.Name, message));
+		}
+
+		[Conditional("TRACE")]
+		public static void Info(TraceSwitch traceSwitch, string message, params object[] p)
+		{
+			if(traceSwitch.TraceInfo)
+			{
+				WriteLine(message, p);
+			}
+		}
+
+		[Conditional("TRACE")]
+		public static void MethodInfo(string message)
+		{
+			Trace.WriteLine(string.Format("[{0:HH':'mm':'ss'.'fffff} {1}] {2}", DateTime.Now, Thread.CurrentThread.Name, message));
+		}
+
+		[Conditional("TRACE")]
+		public static void Warning(TraceSwitch traceSwitch, string message, params object[] p)
+		{
+			if(traceSwitch.TraceWarning)
+			{
+				WriteLine(message, p);
+			}
+		}
+
+		[Conditional("TRACE")]
+		public static void Error(TraceSwitch traceSwitch, string message, params object[] p)
+		{
+			if(traceSwitch.TraceError)
+			{
+				WriteLine(message, p);
+			}
+		}
+	}
+}
+@
+
+
+1.20
+log
+@More preparations for new stub generator.
+- When compiling ikvmstub, do type comparisons by name only.
+- Replace two cases of typeof() with references to Types fields.
+- Added RemappedClassAttribute and RemappedTypeAttribute constructors that explicitly take System.Type (when compiling ikvmstub)
+- Avoid unnecessary reference to System.Configuration.dll in tracer.cs (when compiling ikvmstub).
+@
+text
+@d46 1
+a46 1
+		private class MyTextWriterTraceListener : TextWriterTraceListener
+@
+
+
+1.19
+log
+@Removed vestigial compact framework support.
+@
+text
+@d91 1
+d98 1
+@
+
+
+1.18
+log
+@- Fixed tracer to only add a trace listener in executables. Bug #2533728.
+@
+text
+@a34 1
+#if !COMPACT_FRAMEWORK
+a218 23
+#else
+		public const int Compiler = 0;
+		public const int FxBug = 0;
+		public const int ClassLoading = 0;
+		public const int Verifier = 0;
+		public const int Runtime = 0;
+		public const int Jni = 0;
+
+		[Conditional("NEVER")]
+		public static void Info(int traceSwitch, string message, params object[] p)
+		{
+		}
+
+		[Conditional("NEVER")]
+		public static void Error(int traceSwitch, string message, params object[] p)
+		{
+		}
+
+		[Conditional("NEVER")]
+		public static void Warning(int traceSwitch, string message, params object[] p)
+		{
+		}
+#endif
+@
+
+
+1.17
+log
+@Generified all collections.
+@
+text
+@a91 1
+				Trace.Listeners.Add(new MyTextWriterTraceListener(Console.Error));
+d111 5
+@
+
+
+1.17.2.1
+log
+@Changed version to 0.38.0.3 and backported these fixes:
+- Fixed the stack trace when an unwrapped java.lang.Error (or subclass) escapes from a static initializer.
+- It turns out that we really should create an MBeanServer in sun.management.ManagementFactory.createPlatformMBeanServer(), even if we don't populate it with anything useful, applications might still want to register their own MBeans. This fix allows Derby 10.4.2.0 to work.
+- Added helpful message to ClassCastException generated for ghost array casts.
+- Added check for constructor with missing body in map.xml.
+- Removed over eager state checking from java.util.zip.Deflater. Fixes Lucene issue.
+- Fixed enclosing method discovery to work for ReflectionOnly assemblies. This allows ikvmstub to work with ikvmc generated assemblies.
+- Always emit an explicit method override if we've mangled the name/sig, because we can't predict whether it will be needed or not (without keeping track of the mangling in the base classes) and the cost is minimal since this doesn't happen all that often.
+- Miranda method should use mangled name (if the name is mangled).
+- Fixed pointer detection to work for types with multiple indirection levels.
+- If the last call site of a subroutine wasn't reachable, the return switch would fall through potentially causing the code to be unverifiable.
+- The check for unloadable types on the stack indexed the stack in the wrong order.
+- Fixed exception wrapping for java.security.AccessController.doPrivileged().
+- Fixed tracer to only add a trace listener in executables.
+@
+text
+@d92 1
+a111 5
+		public static void EnableTraceConsoleListener()
+		{
+			Trace.Listeners.Add(new MyTextWriterTraceListener(Console.Error));
+		}
+
+@
+
+
+1.16
+log
+@Ignore SecurityException when running in partial trust.
+@
+text
+@d27 1
+a27 1
+using System.Collections;
+d43 1
+a43 1
+		private readonly static Hashtable allTraceSwitches = new Hashtable();
+d45 1
+a45 1
+		private readonly static ArrayList methodtraces = new ArrayList();
+d123 1
+a123 1
+			IEnumerator e = methodtraces.GetEnumerator();
+d128 1
+a128 1
+					if(Regex.IsMatch(name, e.Current.ToString()))
+d163 2
+a164 2
+				TraceSwitch ts = (TraceSwitch)allTraceSwitches[name];
+				if(ts != null)
+@
+
+
+1.15
+log
+@Made classes static.
+@
+text
+@d71 11
+@
+
+
+1.14
+log
+@- Removed .NET 1.1 specific code
+- Removed conditional compilation of .NET 2.0 specific code
+@
+text
+@d33 1
+a33 1
+	public class Tracer
+@
+
+
+1.13
+log
+@Changed to avoid warning when compiled on .NET 2.0
+@
+text
+@a29 3
+#if WHIDBEY
+using ConfigurationSettings = System.Configuration.ConfigurationManager;
+#endif
+d83 1
+a83 1
+				string trace = ConfigurationSettings.AppSettings["Traced Methods"];
+@
+
+
+1.12
+log
+@*** empty log message ***
+@
+text
+@d30 3
+@
+
+
+1.11
+log
+@*** empty log message ***
+@
+text
+@a28 6
+using System.Reflection;
+#if !COMPACT_FRAMEWORK
+using System.Reflection.Emit;
+using ILGenerator = IKVM.Internal.CountingILGenerator;
+using Label = IKVM.Internal.CountingLabel;
+#endif
+@
+
+
+1.10
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2004, 2005 Jeroen Frijters
+d84 1
+a84 5
+			Trace.AutoFlush = true;
+			Trace.Listeners.Add(new MyTextWriterTraceListener(Console.Error));
+			/* If the app config file gives some method trace - add it */
+			string trace = ConfigurationSettings.AppSettings["Traced Methods"];
+			if(trace != null)
+d86 12
+a97 1
+				methodtraces.Add(trace);
+@
+
+
+1.9
+log
+@*** empty log message ***
+@
+text
+@a50 3
+		private readonly static MethodInfo methodIsTracedMethod = typeof(Tracer).GetMethod("IsTracedMethod");
+		private readonly static MethodInfo methodMethodInfo = typeof(Tracer).GetMethod("MethodInfo");
+
+a203 19
+
+		[Conditional("TRACE")]
+		internal static void EmitMethodTrace(ILGenerator ilgen, string tracemessage)
+		{
+			if(IsTracedMethod(tracemessage))
+			{
+				Label label = ilgen.DefineLabel();
+				if(JVM.IsStaticCompiler)
+				{
+					// TODO this should be a boolean field test instead of a call to Tracer.IsTracedMessage
+					ilgen.Emit(OpCodes.Ldstr, tracemessage);
+					ilgen.Emit(OpCodes.Call, methodIsTracedMethod);
+					ilgen.Emit(OpCodes.Brfalse_S, label);
+				}
+				ilgen.Emit(OpCodes.Ldstr, tracemessage);
+				ilgen.Emit(OpCodes.Call, methodMethodInfo);
+				ilgen.MarkLabel(label);
+			}
+		}
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@d33 1
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d30 1
+d32 2
+a35 2
+using ILGenerator = IKVM.Internal.CountingILGenerator;
+
+d40 1
+d225 23
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d33 1
+a33 1
+using ILGenerator = CountingILGenerator;
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2004 Jeroen Frijters
+d44 1
+d82 1
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d33 2
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d33 1
+a33 1
+public class Tracer
+d35 9
+a43 7
+	public readonly static TraceSwitch Compiler = new TraceSwitch("compiler", "Static Compiler");
+	public readonly static TraceSwitch FxBug = new TraceSwitch("fxbug", ".NET Framework bug related events");
+	public readonly static TraceSwitch ClassLoading = new TraceSwitch("classloading", "Class loading");
+	public readonly static TraceSwitch Verifier = new TraceSwitch("verifier", "Bytecode Verifier");
+	public readonly static TraceSwitch Runtime = new TraceSwitch("runtime", "Miscellaneous runtime events");
+//	public readonly static TraceSwitch Methods = new TraceSwitch("methods", "Method Trace");
+	private readonly static Hashtable allTraceSwitches = new Hashtable();
+d45 2
+a46 2
+	private readonly static MethodInfo methodIsTracedMethod = typeof(Tracer).GetMethod("IsTracedMethod");
+	private readonly static MethodInfo methodMethodInfo = typeof(Tracer).GetMethod("MethodInfo");
+d48 1
+a48 1
+	private readonly static ArrayList methodtraces = new ArrayList();
+d50 1
+a50 4
+	private class MyTextWriterTraceListener : TextWriterTraceListener
+	{
+		internal MyTextWriterTraceListener(System.IO.TextWriter tw)
+			: base(tw)
+d52 18
+d72 1
+a72 1
+		public override void Fail(string message)
+d74 14
+a87 3
+			this.WriteLine("Assert.Fail: " + message);
+			this.WriteLine(new StackTrace(true).ToString());
+			base.Fail(message);
+d90 2
+a91 1
+		public override void Fail(string message, string detailMessage)
+d93 1
+a93 3
+			this.WriteLine("Assert.Fail: " + message + ".\n" + detailMessage);
+			this.WriteLine(new StackTrace(true).ToString());
+			base.Fail(message, detailMessage);
+a94 1
+	}
+d96 1
+a96 13
+	static Tracer()
+	{
+		allTraceSwitches[Compiler.DisplayName] = Compiler;
+		allTraceSwitches[FxBug.DisplayName] = FxBug;
+		allTraceSwitches[ClassLoading.DisplayName] = ClassLoading;
+		allTraceSwitches[Verifier.DisplayName] = Verifier;
+		allTraceSwitches[Runtime.DisplayName] = Runtime;
+
+		Trace.AutoFlush = true;
+		Trace.Listeners.Add(new MyTextWriterTraceListener(Console.Error));
+		/* If the app config file gives some method trace - add it */
+		string trace = ConfigurationSettings.AppSettings["Traced Methods"];
+		if(trace != null)
+d98 1
+a98 1
+			methodtraces.Add(trace);
+a99 7
+	}
+
+	[Conditional("DEBUG")]
+	public static void EnableTraceForDebug()
+	{
+		SetTraceLevel("*", TraceLevel.Verbose);
+	}
+d101 1
+a101 8
+	public static void HandleMethodTrace(string name)
+	{
+		methodtraces.Add(name);
+	}
+
+	public static bool IsTracedMethod(string name)
+	{
+		if(methodtraces.Count == 0)
+d103 6
+a108 6
+			return false;
+		}
+		IEnumerator e = methodtraces.GetEnumerator();
+		while(e.MoveNext())
+		{
+			try 
+d110 8
+a117 1
+				if(Regex.IsMatch(name, e.Current.ToString()))
+d119 1
+a119 1
+					return true;
+d122 1
+a122 4
+			catch(Exception x) 
+			{
+				Tracer.Warning(Tracer.Compiler,"Regular Expression match failure: " + e.Current + ":" + x);
+			}
+a123 2
+		return false;
+	}
+d125 1
+a125 5
+	public static void SetTraceLevel(string name)
+	{
+		string[] trace = name.Split('=');
+		System.Diagnostics.TraceLevel level = System.Diagnostics.TraceLevel.Verbose;
+		if(trace.Length == 2)
+d127 3
+a129 10
+			level = (System.Diagnostics.TraceLevel)Enum.Parse(typeof(System.Diagnostics.TraceLevel), trace[1], true);
+		}
+		SetTraceLevel(trace[0], level);
+	}
+
+	public static void SetTraceLevel(string name, TraceLevel level)
+	{
+		if(name == "*")
+		{
+			foreach(TraceSwitch ts in allTraceSwitches.Values)
+d131 1
+a131 1
+				ts.Level = level;
+d133 1
+d135 2
+a136 1
+		else
+d138 1
+a138 2
+			TraceSwitch ts = (TraceSwitch)allTraceSwitches[name];
+			if(ts != null)
+d140 4
+a143 1
+				ts.Level = level;
+d147 9
+a155 1
+				Console.Error.WriteLine("Warning: Invalid traceswitch name: {0}", name);
+a157 1
+	}
+d159 1
+a159 3
+	private static void WriteLine(string message, object[] p)
+	{
+		if(p.Length > 0)
+d161 5
+a165 1
+			message = string.Format(message, p);
+a166 2
+		Trace.WriteLine(string.Format("[{0:HH':'mm':'ss'.'fffff} {1}] {2}", DateTime.Now, Thread.CurrentThread.Name, message));
+	}
+d168 2
+a169 4
+	[Conditional("TRACE")]
+	public static void Info(TraceSwitch traceSwitch, string message, params object[] p)
+	{
+		if(traceSwitch.TraceInfo)
+d171 4
+a174 1
+			WriteLine(message, p);
+a175 1
+	}
+d177 5
+a181 5
+	[Conditional("TRACE")]
+	public static void MethodInfo(string message)
+	{
+		Trace.WriteLine(string.Format("[{0:HH':'mm':'ss'.'fffff} {1}] {2}", DateTime.Now, Thread.CurrentThread.Name, message));
+	}
+d183 2
+a184 4
+	[Conditional("TRACE")]
+	public static void Warning(TraceSwitch traceSwitch, string message, params object[] p)
+	{
+		if(traceSwitch.TraceWarning)
+d186 4
+a189 1
+			WriteLine(message, p);
+a190 1
+	}
+d192 2
+a193 4
+	[Conditional("TRACE")]
+	public static void Error(TraceSwitch traceSwitch, string message, params object[] p)
+	{
+		if(traceSwitch.TraceError)
+d195 4
+a198 1
+			WriteLine(message, p);
+a199 1
+	}
+d201 2
+a202 4
+	[Conditional("TRACE")]
+	internal static void EmitMethodTrace(ILGenerator ilgen, string tracemessage)
+	{
+		if(IsTracedMethod(tracemessage))
+d204 1
+a204 2
+			Label label = ilgen.DefineLabel();
+			if(JVM.IsStaticCompiler)
+d206 8
+a213 1
+				// TODO this should be a boolean field test instead of a call to Tracer.IsTracedMessage
+d215 2
+a216 2
+				ilgen.Emit(OpCodes.Call, methodIsTracedMethod);
+				ilgen.Emit(OpCodes.Brfalse_S, label);
+a217 3
+			ilgen.Emit(OpCodes.Ldstr, tracemessage);
+			ilgen.Emit(OpCodes.Call, methodMethodInfo);
+			ilgen.MarkLabel(label);
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d48 22
+d79 1
+a79 1
+		Trace.Listeners.Add(new TextWriterTraceListener(Console.Error));
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@d135 9
+d149 1
+a149 1
+			Trace.WriteLine(string.Format("[{0:HH':'mm':'ss'.'fffff} {1}] {2}", DateTime.Now, Thread.CurrentThread.Name, string.Format(message, p)));
+d164 1
+a164 1
+			Trace.WriteLine(string.Format("[{0:HH':'mm':'ss'.'fffff} {1}] {2}", DateTime.Now, Thread.CurrentThread.Name, string.Format(message, p)));
+d173 1
+a173 1
+			Trace.WriteLine(string.Format("[{0:HH':'mm':'ss'.'fffff} {1}] {2}", DateTime.Now, Thread.CurrentThread.Name, string.Format(message, p)));
+@
+

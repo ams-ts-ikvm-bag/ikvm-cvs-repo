@@ -1,0 +1,1267 @@
+head	1.12;
+access;
+symbols
+	v8_1_5717_0:1.12
+	v8_1:1.12.0.4
+	v8_0_5449_1:1.12
+	v8_0_5449_0:1.12
+	v8_0:1.12.0.2
+	v7_4_5196_0:1.11
+	v7_4:1.11.0.2
+	v7_3:1.5.0.8
+	v7_2_4630_6:1.5
+	v7_2_4630_5:1.5
+	v7_2_4630_4:1.5
+	v7_2_4630_3:1.5
+	v7_2_4630_2:1.5
+	v0_46_0_4:1.4
+	v7_2_4630_1:1.5
+	v7_2:1.5.0.6
+	v7_1_4532_2:1.5
+	v7_1_4532_1:1.5
+	v7_1_4532_0:1.5
+	v7_1:1.5.0.4
+	v7_0_4335_3:1.5
+	v7_0_4335_2:1.5
+	v7_0_4335_1:1.5
+	v0_46_0_2:1.4
+	v7_0_4335_0:1.5
+	v7_0:1.5.0.2
+	v0_40_0_6:1.3
+	v0_40_0_5:1.3
+	v0_46_0_1:1.4
+	v0_46_0_0:1.4
+	v0_46:1.4.0.2
+	v0_36_0_14:1.1.2.2
+	v0_44_0_6:1.3
+	v0_44_0_5:1.3
+	v0_44_0_4:1.3
+	v0_44_0_3:1.3
+	v0_44_0_2:1.3
+	v0_42_0_7:1.3
+	v0_44_0_1:1.3
+	v0_44_0_0:1.3
+	v0_44:1.3.0.8
+	v0_42_0_6:1.3
+	v0_42_0_5:1.3
+	v0_42_0_4:1.3
+	v0_42_0_3:1.3
+	v0_42_0_2:1.3
+	v0_42_0_1:1.3
+	v0_42_0_0:1.3
+	v0_42:1.3.0.6
+	v0_40_0_3:1.3
+	v0_40_0_2:1.3
+	v0_40_0_1:1.3
+	v0_40_0_0:1.3
+	v0_40:1.3.0.4
+	v0_36_0_13:1.1.2.2
+	v0_38_0_1:1.3
+	v0_38_0_0:1.3
+	v0_38:1.3.0.2
+	v0_36_0_9:1.1.2.2
+	v0_36_0_7:1.1.2.2
+	v0_36_0_5:1.1.2.2
+	v0_36_0_4:1.1.2.2
+	v0_36_0_3:1.1.2.2
+	v0_36_0_2:1.1.2.2
+	v0_36_0_1:1.1.2.1
+	v0_36_0_0:1.1
+	v0_36:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.12
+date	2014.06.13.06.54.06;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2013.10.20.08.52.45;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2013.09.02.12.56.16;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2013.03.27.09.09.33;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2013.03.27.08.00.29;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2013.03.26.19.27.25;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2013.03.26.14.51.02;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2011.03.29.12.57.48;	author jfrijters;	state Exp;
+branches
+	1.5.8.1;
+next	1.4;
+
+1.4
+date	2010.12.07.06.47.30;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2007.09.18.13.35.20;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.09.10.06.13.11;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.05.24.09.23.02;	author jfrijters;	state Exp;
+branches
+	1.1.2.1;
+next	;
+
+1.1.2.1
+date	2007.09.13.07.30.06;	author jfrijters;	state Exp;
+branches;
+next	1.1.2.2;
+
+1.1.2.2
+date	2007.09.20.13.54.23;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.5.8.1
+date	2013.03.27.16.12.18;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.12
+log
+@Bug fix. Handle malformed UTF-16 (invalid surrogates) in type/member names and annotations.
+@
+text
+@/*
+  Copyright (C) 2005-2013 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+package ikvm.internal;
+
+import ikvm.lang.CIL;
+import java.io.Serializable;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Array;
+import java.lang.reflect.GenericSignatureFormatError;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.HashMap;
+import sun.reflect.annotation.TypeNotPresentExceptionProxy;
+
+public abstract class AnnotationAttributeBase
+    extends cli.System.Attribute
+    implements Annotation, Serializable
+{
+    private final Class annotationType;
+    private HashMap<String, Object> values;
+    private Object[] definition;
+    private boolean frozen;
+
+    protected AnnotationAttributeBase(Class annotationType)
+    {
+        this.annotationType = annotationType;
+    }
+
+    protected final Object getValue(String name)
+    {
+	freeze();
+        return values.get(name);
+    }
+
+    protected final byte getByteValue(String name)
+    {
+	freeze();
+        return ((Byte)values.get(name)).byteValue();
+    }
+
+    protected final boolean getBooleanValue(String name)
+    {
+	freeze();
+        return ((Boolean)values.get(name)).booleanValue();
+    }
+
+    protected final short getShortValue(String name)
+    {
+	freeze();
+        return ((Short)values.get(name)).shortValue();
+    }
+
+    protected final char getCharValue(String name)
+    {
+	freeze();
+        return ((Character)values.get(name)).charValue();
+    }
+
+    protected final int getIntValue(String name)
+    {
+	freeze();
+        return ((Integer)values.get(name)).intValue();
+    }
+
+    protected final float getFloatValue(String name)
+    {
+	freeze();
+        return ((Float)values.get(name)).floatValue();
+    }
+
+    protected final long getLongValue(String name)
+    {
+	freeze();
+        return ((Long)values.get(name)).longValue();
+    }
+
+    protected final double getDoubleValue(String name)
+    {
+	freeze();
+        return ((Double)values.get(name)).doubleValue();
+    }
+
+    protected final synchronized void setValue(String name, Object value)
+    {
+        if(frozen || definition != null)
+        {
+            throw new IllegalStateException("Annotation properties have already been defined");
+        }
+        try
+        {
+            Class type = annotationType.getMethod(name).getReturnType();
+            if(type.isEnum())
+            {
+                value = Enum.valueOf(type, value.toString());
+            }
+            else if(type == Class.class)
+            {
+                value = ikvm.runtime.Util.getFriendlyClassFromType((cli.System.Type)value);
+            }
+            else if(type == boolean.class)
+            {
+                value = ikvm.lang.CIL.unbox_boolean(value);
+            }
+            else if(type == byte.class)
+            {
+                value = ikvm.lang.CIL.unbox_byte(value);
+            }
+            else if(type == short.class)
+            {
+                value = ikvm.lang.CIL.unbox_short(value);
+            }
+            else if(type == char.class)
+            {
+                value = ikvm.lang.CIL.unbox_char(value);
+            }
+            else if(type == int.class)
+            {
+                value = ikvm.lang.CIL.unbox_int(value);
+            }
+            else if(type == long.class)
+            {
+                value = ikvm.lang.CIL.unbox_long(value);
+            }
+            else if(type == float.class)
+            {
+                value = ikvm.lang.CIL.unbox_float(value);
+            }
+            else if(type == double.class)
+            {
+                value = ikvm.lang.CIL.unbox_double(value);
+            }
+            else if(type == String.class)
+            {
+                // no conversion needed
+            }
+            else if(type.isArray())
+            {
+                type = type.getComponentType();
+                if(type.isEnum())
+                {
+                    cli.System.Array orgarray = (cli.System.Array)value;
+                    Object[] array = (Object[])Array.newInstance(type, orgarray.get_Length());
+                    for(int i = 0; i < array.length; i++)
+                    {
+                        array[i] = Enum.valueOf(type, orgarray.GetValue(i).toString());
+                    }
+                    value = array;
+                }
+                else if(type == Class.class)
+                {
+                    cli.System.Type[] orgarray = (cli.System.Type[])value;
+                    Class[] array = new Class[orgarray.length];
+                    for(int i = 0; i < array.length; i++)
+                    {
+                        array[i] = ikvm.runtime.Util.getFriendlyClassFromType(orgarray[i]);
+                    }
+                    value = array;
+                }
+                else
+                {
+                    // no conversion needed
+                }
+            }
+            else
+            {
+                throw new InternalError("Invalid annotation type: " + type);
+            }
+            if(values == null)
+            {
+                values = new HashMap<String, Object>();
+            }
+            values.put(name, value);
+        }
+        catch (NoSuchMethodException x)
+        {
+            throw (NoSuchMethodError)new NoSuchMethodError().initCause(x);
+        }
+    }
+
+    protected final synchronized void setDefinition(Object[] array)
+    {
+        if(frozen || definition != null)
+        {
+            throw new IllegalStateException("Annotation properties have already been defined");
+        }
+        definition = array;
+    }
+
+    @@ikvm.lang.Internal
+    public final Map getValues()
+    {
+        return values;
+    }
+
+    @@ikvm.lang.Internal
+    public final synchronized void freeze()
+    {
+        if(!frozen)
+        {
+            frozen = true;
+            if(values == null)
+            {
+                values = new HashMap<String, Object>();
+            }
+            if(definition == null)
+            {
+                setDefaults(values, annotationType);
+            }
+            else
+            {
+                // TODO consider checking that the type matches
+                // (or better yet (?), remove the first two redundant elements from the array)
+                decodeValues(values, annotationType, annotationType.getClassLoader(), unescapeInvalidSurrogates(definition));
+                definition = null;
+            }
+        }
+    }
+
+    private static native Object[] unescapeInvalidSurrogates(Object[] definition);
+
+    private static void decodeValues(HashMap map, Class annotationClass, ClassLoader loader, Object[] array)
+    {
+        for (int i = 2; i < array.length; i += 2)
+        {
+            String name = (String)array[i];
+            try
+            {
+                Method method = annotationClass.getDeclaredMethod(name, new Class[0]);
+                map.put(name, decodeElementValue(array[i + 1], method.getReturnType(), loader));
+            }
+            catch (IllegalAccessException x)
+            {
+                // TODO this probably isn't the right exception
+                throw new IncompatibleClassChangeError();
+            }
+            catch (NoSuchMethodException x)
+            {
+                // ignore values for members that are no longer present
+            }
+        }
+        setDefaults(map, annotationClass);
+    }
+
+    private static void setDefaults(HashMap map, Class annotationClass)
+    {
+        for (Method m : annotationClass.getDeclaredMethods())
+        {
+            Object defaultValue = m.getDefaultValue();
+            // TODO throw exception if default is missing for method that doesn't yet have a value
+            if (defaultValue != null && !map.containsKey(m.getName()))
+            {
+                map.put(m.getName(), defaultValue);
+            }
+        }
+    }
+
+    private static Class classFromSig(ClassLoader loader, String name)
+    {
+        if (name.length() == 1)
+        {
+            switch (name.charAt(0))
+            {
+                case 'Z':
+                    return Boolean.TYPE;
+                case 'B':
+                    return Byte.TYPE;
+                case 'C':
+                    return Character.TYPE;
+                case 'S':
+                    return Short.TYPE;
+                case 'I':
+                    return Integer.TYPE;
+                case 'F':
+                    return Float.TYPE;
+                case 'J':
+                    return Long.TYPE;
+                case 'D':
+                    return Double.TYPE;
+                case 'V':
+                    return Void.TYPE;
+                default:
+                    throw new GenericSignatureFormatError();
+            }
+        }
+
+        if (!isValidTypeSig(name, 0, name.length()))
+        {
+            throw new GenericSignatureFormatError();
+        }
+
+        if (name.charAt(0) == 'L')
+        {
+            name = name.substring(1, name.length() - 1).replace('/', '.');
+        }
+        else // must be an array then
+        {
+            name = name.replace('/', '.');
+        }
+        try
+        {
+            return Class.forName(name, false, loader);
+        }
+        catch (ClassNotFoundException x)
+        {
+            throw new TypeNotPresentException(name, x);
+        }
+    }
+
+    private static boolean isValidTypeSig(String sig, int start, int end)
+    {
+        if (start >= end)
+        {
+            return false;
+        }
+        switch (sig.charAt(start))
+        {
+            case 'L':
+                return sig.indexOf(';', start + 1) == end - 1;
+            case '[':
+                while (sig.charAt(start) == '[')
+                {
+                    start++;
+                    if (start == end)
+                    {
+                        return false;
+                    }
+                }
+                return isValidTypeSig(sig, start, end);
+            case 'B':
+            case 'Z':
+            case 'C':
+            case 'S':
+            case 'I':
+            case 'J':
+            case 'F':
+            case 'D':
+                return start == end - 1;
+            default:
+                return false;
+        }
+    }
+
+    @@ikvm.lang.Internal
+    public static Object newAnnotation(ClassLoader loader, Object definition)
+    {
+        Object[] array = (Object[])definition;
+        byte tag = CIL.unbox_byte(array[0]);
+        if (tag != '@@')
+            throw new ClassCastException();
+        Object classNameOrClass = array[1];
+        Class annotationClass;
+        if (classNameOrClass instanceof String)
+        {
+            annotationClass = classFromSig(loader, (String)classNameOrClass);
+            if (!annotationClass.isAnnotation())
+            {
+                return null;
+            }
+            array[1] = annotationClass;
+        }
+        else
+        {
+            annotationClass = (Class)classNameOrClass;
+        }
+        HashMap map = new HashMap();
+        decodeValues(map, annotationClass, loader, array);
+        return Proxy.newProxyInstance(annotationClass.getClassLoader(), new Class<?>[] { annotationClass }, newAnnotationInvocationHandler(annotationClass, map));
+    }
+
+    @@ikvm.lang.Internal
+    public static Object decodeElementValue(Object obj, Class type, ClassLoader loader)
+        throws IllegalAccessException
+    {
+        if (obj instanceof Object[] && CIL.unbox_byte(((Object[])obj)[0]) == '?')
+        {
+            Throwable t;
+            try
+            {
+                Object[] error = (Object[])obj;
+                Class exception = Class.forName((String)error[1]);
+                t = (Throwable)(error.length == 2
+                    ? exception.newInstance()
+                    : exception.getConstructor(String.class).newInstance(error[2]));
+            }
+            catch (Exception x)
+            {
+                t = x;
+            }
+            sun.misc.Unsafe.getUnsafe().throwException(t);
+        }
+        if (type == Byte.TYPE)
+        {
+            return new Byte(CIL.unbox_byte(obj));
+        }
+        else if (type == Boolean.TYPE)
+        {
+            return new Boolean(CIL.unbox_boolean(obj));
+        }
+        else if (type == Short.TYPE)
+        {
+            return new Short(CIL.unbox_short(obj));
+        }
+        else if (type == Character.TYPE)
+        {
+            return new Character(CIL.unbox_char(obj));
+        }
+        else if (type == Integer.TYPE)
+        {
+            return new Integer(CIL.unbox_int(obj));
+        }
+        else if (type == Float.TYPE)
+        {
+            return new Float(CIL.unbox_float(obj));
+        }
+        else if (type == Long.TYPE)
+        {
+            return new Long(CIL.unbox_long(obj));
+        }
+        else if (type == Double.TYPE)
+        {
+            return new Double(CIL.unbox_double(obj));
+        }
+        else if (type == String.class)
+        {
+            return (String)obj;
+        }
+        else if (type == Class.class)
+        {
+            Object[] array = (Object[])obj;
+            byte tag = CIL.unbox_byte(array[0]);
+            if (tag != 'c')
+                throw new ClassCastException();
+            try
+            {
+                return classFromSig(loader, (String)array[1]);
+            }
+            catch (TypeNotPresentException x)
+            {
+                return new TypeNotPresentExceptionProxy(x.typeName(), x);
+            }
+        }
+        else if (type.isArray())
+        {
+            Object[] array = (Object[])obj;
+            byte tag = CIL.unbox_byte(array[0]);
+            if (tag != '[')
+                throw new ClassCastException();
+            type = type.getComponentType();
+            Object dst = Array.newInstance(type, array.length - 1);
+            for (int i = 0; i < array.length - 1; i++)
+            {
+                Object val = decodeElementValue(array[i + 1], type, loader);
+                try
+                {
+                    Array.set(dst, i, val);
+                }
+                catch (IllegalArgumentException _)
+                {
+                    // JDKBUG emulate JDK bug
+                    throw new ArrayStoreException(val.getClass().getName());
+                }
+            }
+            return dst;
+        }
+        else if (type.isEnum())
+        {
+            Object[] array = (Object[])obj;
+            byte tag = CIL.unbox_byte(array[0]);
+            if (tag != 'e')
+                throw new ClassCastException();
+            Class enumClass;
+            try
+            {
+                enumClass = classFromSig(loader, (String)array[1]);
+            }
+            catch (TypeNotPresentException x)
+            {
+                return new TypeNotPresentExceptionProxy(x.typeName(), x);
+            }
+            try
+            {
+                return Enum.valueOf(enumClass, (String)array[2]);
+            }
+            catch (IllegalArgumentException x)
+            {
+                throw new EnumConstantNotPresentException(enumClass, (String)array[2]);
+            }
+        }
+        else // must be an annotation then
+        {
+            Object ann = newAnnotation(loader, obj);
+            if (!type.isInstance(ann))
+            {
+                // JDKBUG if newAnnotation() returns null (because the class is not an annotation),
+                // the next line will throw a NullPointerException (similar to the JDK)
+                return newAnnotationTypeMismatchExceptionProxy(ann.getClass() + "[" + ann + "]");
+            }
+            return ann;
+        }
+    }
+
+    private final Object writeReplace()
+    {
+        freeze();
+	return Proxy.newProxyInstance(annotationType.getClassLoader(),
+	    new Class[] { annotationType },
+	    newAnnotationInvocationHandler(annotationType, values));
+    }
+
+    private static native InvocationHandler newAnnotationInvocationHandler(Class type, Map memberValues);
+    private static native Object newAnnotationTypeMismatchExceptionProxy(String msg);
+
+    public final Class<? extends Annotation> annotationType()
+    {
+        return annotationType;
+    }
+
+    public final boolean Equals(Object o)
+    {
+        freeze();
+        return equals(annotationType, values, o);
+    }
+
+    public final int GetHashCode()
+    {
+        freeze();
+        return hashCode(annotationType, values);
+    }
+
+    public final String ToString()
+    {
+        freeze();
+        return toString(annotationType, values);
+    }
+
+    private static boolean equals(Class type, Map memberValues, Object other)
+    {
+        if (type.isInstance(other))
+        {
+            try
+            {
+                Method[] methods = type.getDeclaredMethods();
+                if (methods.length == memberValues.size())
+                {
+                    for (int i = 0; i < methods.length; i++)
+                    {
+                        String key = methods[i].getName();
+                        Object val = methods[i].invoke(other, new Object[0]);
+                        if (! deepEquals(memberValues.get(key), val))
+                        {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+            }
+            catch (IllegalAccessException _)
+            {
+                // Ignore exception, like the JDK
+            }
+            catch (InvocationTargetException _)
+            {
+                // Ignore exception, like the JDK
+            }
+        }
+        return false;
+    }
+
+    private static boolean deepEquals(Object o1, Object o2)
+    {
+        if (o1 == o2)
+            return true;
+
+        if (o1 == null || o2 == null)
+            return false;
+
+        if (o1 instanceof boolean[] && o2 instanceof boolean[])
+            return Arrays.equals((boolean[]) o1, (boolean[]) o2);
+
+        if (o1 instanceof byte[] && o2 instanceof byte[])
+            return Arrays.equals((byte[]) o1, (byte[]) o2);
+
+        if (o1 instanceof char[] && o2 instanceof char[])
+            return Arrays.equals((char[]) o1, (char[]) o2);
+
+        if (o1 instanceof short[] && o2 instanceof short[])
+            return Arrays.equals((short[]) o1, (short[]) o2);
+
+        if (o1 instanceof int[] && o2 instanceof int[])
+            return Arrays.equals((int[]) o1, (int[]) o2);
+
+        if (o1 instanceof float[] && o2 instanceof float[])
+            return Arrays.equals((float[]) o1, (float[]) o2);
+
+        if (o1 instanceof long[] && o2 instanceof long[])
+            return Arrays.equals((long[]) o1, (long[]) o2);
+
+        if (o1 instanceof double[] && o2 instanceof double[])
+            return Arrays.equals((double[]) o1, (double[]) o2);
+
+        if (o1 instanceof Object[] && o2 instanceof Object[])
+            return Arrays.equals((Object[]) o1, (Object[]) o2);
+
+        return o1.equals(o2);
+    }
+
+    private static int deepHashCode(Object obj)
+    {
+        if (obj instanceof boolean[])
+            return Arrays.hashCode((boolean[]) obj);
+
+        if (obj instanceof byte[])
+            return Arrays.hashCode((byte[]) obj);
+
+        if (obj instanceof char[])
+            return Arrays.hashCode((char[]) obj);
+
+        if (obj instanceof short[])
+            return Arrays.hashCode((short[]) obj);
+
+        if (obj instanceof int[])
+            return Arrays.hashCode((int[]) obj);
+
+        if (obj instanceof float[])
+            return Arrays.hashCode((float[]) obj);
+
+        if (obj instanceof long[])
+            return Arrays.hashCode((long[]) obj);
+
+        if (obj instanceof double[])
+            return Arrays.hashCode((double[]) obj);
+
+        if (obj instanceof Object[])
+            return Arrays.hashCode((Object[]) obj);
+
+        return obj.hashCode();
+    }
+
+    private static int hashCode(Class type, Map memberValues)
+    {
+        int h = 0;
+        Iterator iter = memberValues.keySet().iterator();
+        while (iter.hasNext())
+        {
+            Object key = iter.next();
+            Object val = memberValues.get(key);
+            h += deepHashCode(val) ^ 127 * key.hashCode();
+        }
+        return h;
+    }
+
+    private static String deepToString(Object obj)
+    {
+        if (obj instanceof boolean[])
+            return Arrays.toString((boolean[]) obj);
+
+        if (obj instanceof byte[])
+            return Arrays.toString((byte[]) obj);
+
+        if (obj instanceof char[])
+            return Arrays.toString((char[]) obj);
+
+        if (obj instanceof short[])
+            return Arrays.toString((short[]) obj);
+
+        if (obj instanceof int[])
+            return Arrays.toString((int[]) obj);
+
+        if (obj instanceof float[])
+            return Arrays.toString((float[]) obj);
+
+        if (obj instanceof long[])
+            return Arrays.toString((long[]) obj);
+
+        if (obj instanceof double[])
+            return Arrays.toString((double[]) obj);
+
+        if (obj instanceof Object[])
+            return Arrays.toString((Object[]) obj);
+
+        return obj.toString();
+    }
+
+    private static String toString(Class type, Map memberValues)
+    {
+        StringBuffer sb = new StringBuffer();
+        sb.append('@@').append(type.getName()).append('(');
+        String sep = "";
+        Iterator iter = memberValues.keySet().iterator();
+        while (iter.hasNext())
+        {
+            Object key = iter.next();
+            Object val = memberValues.get(key);
+            sb.append(sep).append(key).append('=').append(deepToString(val));
+            sep = ", ";
+        }
+        sb.append(')');
+        return sb.toString();
+    }
+}
+@
+
+
+1.11
+log
+@Fixed handling of annotations with invalid type signatures.
+@
+text
+@d239 1
+a239 1
+                decodeValues(values, annotationType, annotationType.getClassLoader(), definition);
+d245 2
+@
+
+
+1.10
+log
+@Bug fixes:
+- If an annotation is of a type that is not an annotation, it should be ignored.
+- Annotations that contain no longer existing values should not fail, but just ignore the value.
+- Class or enum values in annotations that refer to non-existing types should use TypeNotPresentExceptionProxy as the value, instead of failing to create the annotation.
+- Emulate some JDK bugs.
+- If an annotation value is of the wrong type, use AnnotationTypeMismatchExceptionProxy as the value, instead of failing to create the annotation.
+@
+text
+@d30 1
+d283 1
+a283 9
+        if (name.startsWith("L") && name.endsWith(";"))
+        {
+            name = name.substring(1, name.length() - 1).replace('/', '.');
+        }
+        else if (name.startsWith("["))
+        {
+            name = name.replace('/', '.');
+        }
+        else if (name.length() == 1)
+d306 1
+a306 1
+                    throw new TypeNotPresentException(name, null);
+d309 14
+d333 34
+d404 4
+a407 1
+                t = (Throwable)Class.forName((String)error[1]).getConstructor(String.class).newInstance(error[2]);
+@
+
+
+1.9
+log
+@- Made getValues() and freeze() methods final.
+- writeReplace() must freeze the attribute.
+- Made values map creation lazy.
+@
+text
+@d38 1
+d261 1
+a261 2
+                // TODO this probably isn't the right exception
+                throw new IncompatibleClassChangeError("Method " + name + " is missing in annotation " + annotationClass.getName());
+d338 4
+d413 8
+a420 1
+            return classFromSig(loader, (String)array[1]);
+d432 10
+a441 1
+                Array.set(dst, i, decodeElementValue(array[i + 1], type, loader));
+a444 4
+        else if (type.isAnnotation())
+        {
+            return type.cast(newAnnotation(loader, obj));
+        }
+d451 9
+a459 1
+            Class enumClass = classFromSig(loader, (String)array[1]);
+d469 1
+a469 1
+        else
+d471 8
+a478 1
+            throw new ClassCastException();
+d491 1
+@
+
+
+1.8
+log
+@Equals/GetHashCode/ToString should all freeze the attribute.
+@
+text
+@a42 1
+    private final HashMap values = new HashMap();
+d44 1
+d192 4
+d214 1
+a214 1
+    public Map getValues()
+d220 1
+a220 1
+    public synchronized void freeze()
+d225 4
+d453 1
+@
+
+
+1.7
+log
+@- Removed unneeded use of reflection.
+- Made accidentally public methods newAnnotation() and decodeElementValue() internal.
+- Made writeReplace() method private.
+@
+text
+@d459 1
+d465 1
+d471 1
+@
+
+
+1.6
+log
+@Make annotation custom attribute decoding lazy to work around issue reported in #3600232.
+@
+text
+@a25 1
+import cli.System.Reflection.BindingFlags;
+d118 1
+a118 1
+                value = type.getMethod("valueOf", String.class).invoke(null, value.toString());
+a164 1
+                    Method valueOf = type.getMethod("valueOf", String.class);
+d169 1
+a169 1
+                        array[i] = valueOf.invoke(null, orgarray.GetValue(i).toString());
+a197 8
+        catch (IllegalAccessException x)
+        {
+            throw (IllegalAccessError)new IllegalAccessError().initCause(x);
+        }
+        catch (InvocationTargetException x)
+        {
+            throw (InternalError)new InternalError().initCause(x);
+        }
+d318 1
+d341 1
+d443 1
+a443 1
+    protected final Object writeReplace()
+d450 1
+a450 13
+    private static cli.System.Reflection.ConstructorInfo annotationInvocationHandlerConstructor;
+
+    private static InvocationHandler newAnnotationInvocationHandler(Class type, Map memberValues)
+    {
+	if (annotationInvocationHandlerConstructor == null)
+	{
+	    cli.System.Type typeofClass = cli.System.Type.GetType("java.lang.Class");
+	    cli.System.Type typeofMap = cli.System.Type.GetType("java.util.Map");
+	    annotationInvocationHandlerConstructor = cli.System.Type.GetType("sun.reflect.annotation.AnnotationInvocationHandler")
+		.GetConstructor(BindingFlags.wrap(BindingFlags.Instance | BindingFlags.NonPublic), null, new cli.System.Type[] { typeofClass, typeofMap }, null);
+	}
+	return (InvocationHandler)annotationInvocationHandlerConstructor.Invoke(new Object[] { type, memberValues });
+    }
+@
+
+
+1.5
+log
+@Expose annotations on statically compiled code as java.lang.reflect.Proxy instead of the custom attribute object, to deal with broken code that assumes annotations are always implemented with Proxy.
+Fix for #3254823.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2005-2011 Jeroen Frijters
+d46 1
+d110 1
+a110 1
+        if(frozen)
+d212 1
+a212 1
+        if(frozen)
+d216 1
+a216 4
+        frozen = true;
+        // TODO consider checking that the type matches
+        // (or better yet (?), remove the first two redundant elements from the array)
+        decodeValues(values, annotationType, annotationType.getClassLoader(), array);
+d231 11
+a241 1
+            setDefaults(values, annotationType);
+@
+
+
+1.5.8.1
+log
+@Backported fixes:
+- Volatile long/double fields should not use slow reflection.
+- Reduce complexity of annotation custom attributes to improve perf and lower risk (in broken apps that should have used ReflectionOnly).
+- Removed accidentally public methods from AnnotationAttributeBase.
+- Fixed AnnotationAttributeBase to freeze in writeReplace/Equals/GetHashCode/ToString.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2005-2013 Jeroen Frijters
+d26 1
+d44 1
+a45 2
+    private HashMap<String, Object> values;
+    private Object[] definition;
+d109 1
+a109 1
+        if(frozen || definition != null)
+d118 1
+a118 1
+                value = Enum.valueOf(type, value.toString());
+d165 1
+d170 1
+a170 1
+                        array[i] = Enum.valueOf(type, orgarray.GetValue(i).toString());
+a192 4
+            if(values == null)
+            {
+                values = new HashMap<String, Object>();
+            }
+d199 8
+d211 1
+a211 1
+        if(frozen || definition != null)
+d215 4
+a218 1
+        definition = array;
+d222 1
+a222 1
+    public final Map getValues()
+d228 1
+a228 1
+    public final synchronized void freeze()
+d233 1
+a233 15
+            if(values == null)
+            {
+                values = new HashMap<String, Object>();
+            }
+            if(definition == null)
+            {
+                setDefaults(values, annotationType);
+            }
+            else
+            {
+                // TODO consider checking that the type matches
+                // (or better yet (?), remove the first two redundant elements from the array)
+                decodeValues(values, annotationType, annotationType.getClassLoader(), definition);
+                definition = null;
+            }
+a319 1
+    @@ikvm.lang.Internal
+a341 1
+    @@ikvm.lang.Internal
+d443 1
+a443 1
+    private final Object writeReplace()
+a444 1
+        freeze();
+d450 13
+a462 1
+    private static native InvocationHandler newAnnotationInvocationHandler(Class type, Map memberValues);
+a470 1
+        freeze();
+a475 1
+        freeze();
+a480 1
+        freeze();
+@
+
+
+1.4
+log
+@Added support for encoding incorrect annotation values and reporting the exception back when the annotation is queried.
+Removed old (GNU Classpath based) version of AnnotationAttributeBase.java.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2005, 2006, 2007 Jeroen Frijters
+d222 1
+a222 1
+    public static void freeze(Object ann)
+d224 1
+a224 4
+        if(ann instanceof AnnotationAttributeBase)
+        {
+            ((AnnotationAttributeBase)ann).freeze();
+        }
+d227 2
+a228 1
+    private synchronized void freeze()
+@
+
+
+1.3
+log
+@Freeze before getting a value, to make sure defaults are set.
+@
+text
+@d347 14
+@
+
+
+1.2
+log
+@Use Enum.valueOf() instead of reflection to get enum value. Reflection would fail if enum wasn't public.
+@
+text
+@d55 1
+d61 1
+d67 1
+d73 1
+d79 1
+d85 1
+d91 1
+d97 1
+d103 1
+@
+
+
+1.1
+log
+@First batch of OpenJDK integration code.
+@
+text
+@d409 1
+a409 1
+                return type.cast(enumClass.getDeclaredField((String)array[2]).get(null));
+d411 1
+a411 1
+            catch (NoSuchFieldException x)
+@
+
+
+1.1.2.1
+log
+@Ported fixes from trunk. Changed version to 0.36.0.1.
+@
+text
+@d409 1
+a409 1
+                return Enum.valueOf(enumClass, (String)array[2]);
+d411 1
+a411 1
+            catch (IllegalArgumentException x)
+@
+
+
+1.1.2.2
+log
+@Backported fixes from trunk. Changed version to 0.36.0.2.
+@
+text
+@a54 1
+	freeze();
+a59 1
+	freeze();
+a64 1
+	freeze();
+a69 1
+	freeze();
+a74 1
+	freeze();
+a79 1
+	freeze();
+a84 1
+	freeze();
+a89 1
+	freeze();
+a94 1
+	freeze();
+@
+
+

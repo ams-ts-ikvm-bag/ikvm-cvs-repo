@@ -1,0 +1,1800 @@
+head	1.27;
+access;
+symbols
+	v8_1_5717_0:1.27
+	v8_1:1.27.0.4
+	v8_0_5449_1:1.27
+	v8_0_5449_0:1.27
+	v8_0:1.27.0.2
+	v7_4_5196_0:1.23
+	v7_4:1.23.0.2
+	v7_3:1.21.0.2
+	v7_2_4630_6:1.17
+	v7_2_4630_5:1.17
+	v7_2_4630_4:1.17
+	v7_2_4630_3:1.17
+	v7_2_4630_2:1.17
+	v0_46_0_4:1.13.2.1
+	v7_2_4630_1:1.17
+	v7_2:1.17.0.4
+	v7_1_4532_2:1.17
+	v7_1_4532_1:1.17
+	v7_1_4532_0:1.17
+	v7_1:1.17.0.2
+	v7_0_4335_3:1.13
+	v7_0_4335_2:1.13
+	v7_0_4335_1:1.13
+	v0_46_0_2:1.13
+	v7_0_4335_0:1.13
+	v7_0:1.13.0.4
+	v0_46_0_1:1.13
+	v0_46_0_0:1.13
+	v0_46:1.13.0.2
+	v0_44_0_6:1.5
+	v0_44_0_5:1.5
+	v0_44_0_4:1.5
+	v0_44_0_3:1.5
+	v0_44_0_2:1.5
+	v0_42_0_7:1.4
+	v0_44_0_1:1.5
+	v0_44_0_0:1.5
+	v0_44:1.5.0.2
+	v0_42_0_6:1.4
+	v0_42_0_5:1.4
+	v0_42_0_4:1.4
+	v0_42_0_3:1.4
+	v0_42_0_2:1.4
+	v0_42_0_1:1.4
+	v0_42_0_0:1.4
+	v0_42:1.4.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.27
+date	2014.10.28.15.42.14;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2014.06.10.12.47.36;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2014.06.03.12.04.42;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2014.05.19.12.43.43;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2013.08.12.09.02.13;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2013.03.20.09.11.21;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2013.02.28.06.51.35;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2013.02.21.16.56.09;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2013.02.17.09.35.26;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2013.02.14.15.57.17;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2012.05.23.10.00.03;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2012.04.28.08.11.07;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2012.04.28.07.55.50;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2012.01.29.08.41.49;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2011.01.07.06.24.30;	author jfrijters;	state Exp;
+branches
+	1.13.2.1;
+next	1.12;
+
+1.12
+date	2010.11.16.13.52.49;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2010.08.20.12.44.07;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2010.08.19.09.26.20;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2010.08.19.09.24.37;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2010.08.19.09.21.14;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2010.08.19.09.12.06;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2010.08.05.13.43.01;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2010.04.21.06.16.37;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2009.10.02.05.36.07;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2009.05.29.12.34.30;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2009.05.12.05.54.07;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2009.05.12.04.30.10;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.13.2.1
+date	2012.10.03.06.18.57;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.27
+log
+@Enable pack200 unpacking.
+@
+text
+@/*
+  Copyright (C) 2007-2011 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
+
+namespace IKVM.Internal
+{
+	static class VirtualFileSystem
+	{
+		internal static readonly string RootPath = JVM.IsUnix ? "/.virtual-ikvm-home/" : @@"C:\.virtual-ikvm-home\";
+
+		internal static bool IsVirtualFS(string path)
+		{
+			return (path.Length == RootPath.Length - 1 && String.CompareOrdinal(path, 0, RootPath, 0, RootPath.Length - 1) == 0)
+				|| String.CompareOrdinal(path, 0, RootPath, 0, RootPath.Length) == 0;
+		}
+
+		internal static string GetAssemblyClassesPath(Assembly asm)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			// we can't use java.io.File.separatorChar here, because we're invoked by the system property setup code
+			return RootPath + "assembly" + System.IO.Path.DirectorySeparatorChar + VfsAssembliesDirectory.GetName(asm) + System.IO.Path.DirectorySeparatorChar + "classes" + System.IO.Path.DirectorySeparatorChar;
+#endif
+		}
+
+		internal static string GetAssemblyResourcesPath(Assembly asm)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			return RootPath + "assembly" + System.IO.Path.DirectorySeparatorChar + VfsAssembliesDirectory.GetName(asm) + System.IO.Path.DirectorySeparatorChar + "resources" + System.IO.Path.DirectorySeparatorChar;
+#endif
+		}
+
+#if !FIRST_PASS
+		private static VfsDirectory root;
+
+		private abstract class VfsEntry
+		{
+		}
+
+		private abstract class VfsFile : VfsEntry
+		{
+			internal abstract long Size { get; }
+			internal abstract System.IO.Stream Open();
+		}
+
+		private class VfsDirectory : VfsEntry
+		{
+			protected readonly Dictionary<string, VfsEntry> entries = new Dictionary<string,VfsEntry>();
+
+			internal VfsDirectory AddDirectory(string name)
+			{
+				VfsDirectory dir = new VfsDirectory();
+				Add(name, dir);
+				return dir;
+			}
+
+			internal void Add(string name, VfsEntry entry)
+			{
+				lock (entries)
+				{
+					entries.Add(name, entry);
+				}
+			}
+
+			internal virtual VfsEntry GetEntry(int index, string[] path)
+			{
+				VfsEntry entry = GetEntry(path[index++]);
+				if (index == path.Length)
+				{
+					return entry;
+				}
+				else
+				{
+					VfsDirectory dir = entry as VfsDirectory;
+					if (dir == null)
+					{
+						return null;
+					}
+					return dir.GetEntry(index, path);
+				}
+			}
+
+			internal virtual VfsEntry GetEntry(string name)
+			{
+				VfsEntry entry;
+				lock (entries)
+				{
+					entries.TryGetValue(name, out entry);
+				}
+				return entry;
+			}
+
+			internal virtual string[] List()
+			{
+				lock (entries)
+				{
+					string[] list = new string[entries.Keys.Count];
+					entries.Keys.CopyTo(list, 0);
+					return list;
+				}
+			}
+		}
+
+		private sealed class VfsAssembliesDirectory : VfsDirectory
+		{
+			internal override VfsEntry GetEntry(string name)
+			{
+				VfsEntry entry = base.GetEntry(name);
+				if (entry == null)
+				{
+					Guid guid;
+					if (TryParseGuid(name, out guid))
+					{
+						foreach (Assembly asm in AppDomain.CurrentDomain.GetAssemblies())
+						{
+							if (asm.ManifestModule.ModuleVersionId == guid
+								&& !ReflectUtil.IsDynamicAssembly(asm))
+							{
+								return GetOrAddEntry(name, asm);
+							}
+						}
+					}
+					string assemblyName = ParseName(name);
+					if (assemblyName != null)
+					{
+						Assembly asm = null;
+						try
+						{
+							asm = Assembly.Load(assemblyName);
+						}
+						catch
+						{
+						}
+						if (asm != null
+							&& !ReflectUtil.IsDynamicAssembly(asm)
+							&& name == GetName(asm))
+						{
+							return GetOrAddEntry(name, asm);
+						}
+					}
+				}
+				return entry;
+			}
+
+			private VfsEntry GetOrAddEntry(string name, Assembly asm)
+			{
+				lock (entries)
+				{
+					VfsEntry entry;
+					if (!entries.TryGetValue(name, out entry))
+					{
+						VfsDirectory dir = new VfsDirectory();
+						dir.Add("resources", new VfsAssemblyResourcesDirectory(asm));
+						dir.Add("classes", new VfsAssemblyClassesDirectory(asm));
+						Add(name, dir);
+						entry = dir;
+					}
+					return entry;
+				}
+			}
+
+			// HACK we try to figure out if an assembly is loaded in the Load context
+			// http://blogs.msdn.com/b/suzcook/archive/2003/05/29/57143.aspx
+			private static bool IsLoadContext(Assembly asm)
+			{
+				if (asm.ReflectionOnly)
+				{
+					return false;
+				}
+
+				if (asm.GlobalAssemblyCache)
+				{
+					return true;
+				}
+
+				if (ReflectUtil.IsDynamicAssembly(asm) || asm.Location == "")
+				{
+					return false;
+				}
+
+				if (System.IO.Path.GetDirectoryName(asm.Location) == System.IO.Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory))
+				{
+					// this is an optimization for the common case were the assembly was loaded from the app directory
+					return true;
+				}
+
+				try
+				{
+					if (Assembly.Load(asm.FullName) == asm)
+					{
+						return true;
+					}
+				}
+				catch
+				{
+				}
+
+				return false;
+			}
+
+			internal static string GetName(Assembly asm)
+			{
+				if (!IsLoadContext(asm))
+				{
+					return asm.ManifestModule.ModuleVersionId.ToString("N");
+				}
+				AssemblyName name = asm.GetName();
+				System.Text.StringBuilder sb = new System.Text.StringBuilder();
+				string simpleName = name.Name;
+				for (int i = 0; i < simpleName.Length; i++)
+				{
+					if (simpleName[i] == '_')
+					{
+						sb.Append("_!");
+					}
+					else
+					{
+						sb.Append(simpleName[i]);
+					}
+				}
+				byte[] publicKeyToken = name.GetPublicKeyToken();
+				if (publicKeyToken != null && publicKeyToken.Length != 0)
+				{
+					sb.Append("__").Append(name.Version).Append("__");
+					for (int i = 0; i < publicKeyToken.Length; i++)
+					{
+						sb.AppendFormat("{0:x2}", publicKeyToken[i]);
+					}
+				}
+				if (name.CultureInfo != null && !string.IsNullOrEmpty(name.CultureInfo.Name))
+				{
+					sb.Append("__").Append(name.CultureInfo.Name);
+				}
+				return sb.ToString();
+			}
+
+			private static bool TryParseGuid(string name, out Guid guid)
+			{
+				if (name.Length != 32)
+				{
+					guid = Guid.Empty;
+					return false;
+				}
+				for (int i = 0; i < 32; i++)
+				{
+					if ("0123456789abcdefABCDEF".IndexOf(name[i]) == -1)
+					{
+						guid = Guid.Empty;
+						return false;
+					}
+				}
+				guid = new Guid(name);
+				return true;
+			}
+
+			private static string ParseName(string directoryName)
+			{
+				try
+				{
+					string simpleName = null;
+					string version = "0.0.0.0";
+					string publicKeyToken = "null";
+					string culture = "neutral";
+					System.Text.StringBuilder sb = new System.Text.StringBuilder();
+					int part = 0;
+					for (int i = 0; i <= directoryName.Length; i++)
+					{
+						if (i == directoryName.Length || directoryName[i] == '_')
+						{
+							if (i < directoryName.Length - 1 && directoryName[i + 1] == '!')
+							{
+								sb.Append('_');
+								i++;
+							}
+							else if (i == directoryName.Length || directoryName[i + 1] == '_')
+							{
+								switch (part++)
+								{
+									case 0:
+										simpleName = sb.ToString();
+										break;
+									case 1:
+										version = sb.ToString();
+										break;
+									case 2:
+										publicKeyToken = sb.ToString();
+										break;
+									case 3:
+										culture = sb.ToString();
+										break;
+									case 4:
+										return null;
+								}
+								sb.Length = 0;
+								i++;
+							}
+							else
+							{
+								int start = i + 1;
+								int end = start;
+								while ('0' <= directoryName[end] && directoryName[end] <= '9')
+								{
+									end++;
+								}
+								int repeatCount;
+								if (directoryName[end] != '_' || !Int32.TryParse(directoryName.Substring(start, end - start), out repeatCount))
+								{
+									return null;
+								}
+								sb.Append('_', repeatCount);
+								i = end;
+							}
+						}
+						else
+						{
+							sb.Append(directoryName[i]);
+						}
+					}
+					sb.Length = 0;
+					sb.Append(simpleName).Append(", Version=").Append(version).Append(", Culture=").Append(culture).Append(", PublicKeyToken=").Append(publicKeyToken);
+					return sb.ToString();
+				}
+				catch
+				{
+					return null;
+				}
+			}
+		}
+
+		private sealed class VfsAssemblyResourcesDirectory : VfsDirectory
+		{
+			private readonly Assembly asm;
+
+			internal VfsAssemblyResourcesDirectory(Assembly asm)
+			{
+				this.asm = asm;
+			}
+
+			internal override VfsEntry GetEntry(string name)
+			{
+				VfsEntry entry = base.GetEntry(name);
+				if (entry == null)
+				{
+					ManifestResourceInfo resource = asm.GetManifestResourceInfo(name);
+					if (resource != null)
+					{
+						lock (entries)
+						{
+							if (!entries.TryGetValue(name, out entry))
+							{
+								entry = new VfsAssemblyResource(asm, name);
+								entries.Add(name, entry);
+							}
+						}
+					}
+				}
+				return entry;
+			}
+
+			internal override string[] List()
+			{
+				return asm.GetManifestResourceNames();
+			}
+		}
+
+		private sealed class VfsAssemblyResource : VfsFile
+		{
+			private readonly Assembly asm;
+			private readonly string name;
+
+			internal VfsAssemblyResource(Assembly asm, string name)
+			{
+				this.asm = asm;
+				this.name = name;
+			}
+
+			internal override System.IO.Stream Open()
+			{
+				return asm.GetManifestResourceStream(name);
+			}
+
+			internal override long Size
+			{
+				get
+				{
+					using (System.IO.Stream stream = Open())
+					{
+						return stream.Length;
+					}
+				}
+			}
+		}
+
+		private sealed class VfsAssemblyClassesDirectory : VfsDirectory
+		{
+			private readonly Assembly asm;
+			private readonly Dictionary<string, VfsEntry> classes = new Dictionary<string, VfsEntry>();
+
+			internal VfsAssemblyClassesDirectory(Assembly asm)
+			{
+				this.asm = asm;
+			}
+
+			internal override VfsEntry GetEntry(int index, string[] path)
+			{
+				if (path[path.Length - 1].EndsWith(".class", StringComparison.Ordinal))
+				{
+					System.Text.StringBuilder sb = new System.Text.StringBuilder();
+					for (int i = index; i < path.Length - 1; i++)
+					{
+						sb.Append(path[i]).Append('.');
+					}
+					sb.Append(path[path.Length - 1], 0, path[path.Length - 1].Length - 6);
+					string className = sb.ToString();
+					VfsEntry entry;
+					lock (classes)
+					{
+						if (classes.TryGetValue(className, out entry))
+						{
+							return entry;
+						}
+					}
+					AssemblyClassLoader acl = AssemblyClassLoader.FromAssembly(asm);
+					TypeWrapper tw = null;
+					try
+					{
+						tw = acl.LoadClassByDottedNameFast(className);
+					}
+					catch
+					{
+					}
+					if (tw != null && !tw.IsArray)
+					{
+						lock (classes)
+						{
+							if (!classes.TryGetValue(className, out entry))
+							{
+								entry = new VfsAssemblyClass(tw);
+								classes.Add(className, entry);
+							}
+						}
+						return entry;
+					}
+					return null;
+				}
+				else
+				{
+					Populate();
+					return base.GetEntry(index, path);
+				}
+			}
+
+			internal override string[] List()
+			{
+				Populate();
+				return base.List();
+			}
+
+			private void Populate()
+			{
+				bool populate;
+				lock (entries)
+				{
+					populate = entries.Count == 0;
+				}
+				if (populate)
+				{
+					Dictionary<string, string> names = new Dictionary<string, string>();
+					AssemblyClassLoader acl = AssemblyClassLoader.FromAssembly(this.asm);
+					foreach (Assembly asm in acl.GetAllAvailableAssemblies())
+					{
+						Type[] types;
+						try
+						{
+							types = asm.GetTypes();
+						}
+						catch (ReflectionTypeLoadException x)
+						{
+							types = x.Types;
+						}
+						catch
+						{
+							types = Type.EmptyTypes;
+						}
+						foreach (Type type in types)
+						{
+							if (type != null)
+							{
+								string name = null;
+								try
+								{
+									bool isJavaType;
+									name = acl.GetTypeNameAndType(type, out isJavaType);
+#if !FIRST_PASS
+									// annotation custom attributes are pseudo proxies and are not loadable by name (and should not exist in the file systems,
+									// because proxies are, ostensibly, created on the fly)
+									if (isJavaType && type.BaseType == typeof(global::ikvm.@@internal.AnnotationAttributeBase) && name.Contains(".$Proxy"))
+									{
+										name = null;
+									}
+#endif
+								}
+								catch
+								{
+								}
+								if (name != null)
+								{
+									names[name] = name;
+								}
+							}
+						}
+					}
+					lock (entries)
+					{
+						if (entries.Count == 0)
+						{
+							foreach (string name in names.Keys)
+							{
+								string[] parts = name.Split('.');
+								VfsDirectory dir = this;
+								for (int i = 0; i < parts.Length - 1; i++)
+								{
+									dir = dir.GetEntry(parts[i]) as VfsDirectory ?? dir.AddDirectory(parts[i]);
+								}
+								// we're adding a dummy file, to make the file appear in the directory listing, it will not actually
+								// be accessed, because the code above handles that
+								dir.Add(parts[parts.Length - 1] + ".class", VfsDummyFile.Instance);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		private sealed class VfsAssemblyClass : VfsFile
+		{
+			private readonly TypeWrapper tw;
+			private volatile byte[] buf;
+
+			internal VfsAssemblyClass(TypeWrapper tw)
+			{
+				this.tw = tw;
+			}
+
+			private void Populate()
+			{
+#if !FIRST_PASS
+				if (buf == null)
+				{
+					System.IO.MemoryStream mem = new System.IO.MemoryStream();
+					bool includeNonPublicInterfaces = !"true".Equals(java.lang.Props.props.getProperty("ikvm.stubgen.skipNonPublicInterfaces"), StringComparison.OrdinalIgnoreCase);
+					IKVM.StubGen.StubGenerator.WriteClass(mem, tw, includeNonPublicInterfaces, false, false, true);
+					buf = mem.ToArray();
+				}
+#endif
+			}
+
+			internal override System.IO.Stream Open()
+			{
+				Populate();
+				return new System.IO.MemoryStream(buf);
+			}
+
+			internal override long Size
+			{
+				get
+				{
+					Populate();
+					return buf.Length;
+				}
+			}
+		}
+
+		private sealed class VfsDummyFile : VfsFile
+		{
+			internal static readonly VfsDummyFile Instance = new VfsDummyFile();
+
+			private VfsDummyFile()
+			{
+			}
+
+			internal override long Size
+			{
+				get { return 0; }
+			}
+
+			internal override System.IO.Stream Open()
+			{
+				return System.IO.Stream.Null;
+			}
+		}
+
+		private sealed class VfsZipEntry : VfsFile
+		{
+			private readonly java.util.zip.ZipFile zipFile;
+			private readonly java.util.zip.ZipEntry entry;
+
+			internal VfsZipEntry(java.util.zip.ZipFile zipFile, java.util.zip.ZipEntry entry)
+			{
+				this.zipFile = zipFile;
+				this.entry = entry;
+			}
+
+			internal override long Size
+			{
+				get { return entry.getSize(); }
+			}
+
+			internal override System.IO.Stream Open()
+			{
+				return new ZipEntryStream(zipFile, entry);
+			}
+		}
+
+		private sealed class VfsCacertsEntry : VfsFile
+		{
+			private volatile byte[] buf;
+
+			internal override long Size
+			{
+				get
+				{
+					Populate();
+					return buf.Length;
+				}
+			}
+
+			internal override System.IO.Stream Open()
+			{
+				Populate();
+				return new System.IO.MemoryStream(buf, false);
+			}
+
+			private void Populate()
+			{
+				if (buf == null)
+				{
+					global::java.security.KeyStore jstore = global::java.security.KeyStore.getInstance("jks");
+					jstore.load(null);
+					global::java.security.cert.CertificateFactory cf = global::java.security.cert.CertificateFactory.getInstance("X509");
+
+					X509Store store = new X509Store(StoreName.Root, StoreLocation.LocalMachine);
+					store.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
+					Dictionary<string, string> aliases = new Dictionary<string, string>();
+					foreach (X509Certificate2 cert in store.Certificates)
+					{
+						if (!cert.HasPrivateKey)
+						{
+							// the alias must be unique, otherwise we overwrite the previous certificate with that alias
+							string alias = cert.Subject;
+							int unique = 0;
+							while (aliases.ContainsKey(alias))
+							{
+								alias = cert.Subject + " #" + (++unique);
+							}
+							aliases.Add(alias, null);
+							jstore.setCertificateEntry(alias, cf.generateCertificate(new global::java.io.ByteArrayInputStream(cert.RawData)));
+						}
+					}
+					store.Close();
+					global::java.io.ByteArrayOutputStream baos = new global::java.io.ByteArrayOutputStream();
+					jstore.store(baos, new char[0]);
+					buf = baos.toByteArray();
+				}
+			}
+		}
+
+		private sealed class VfsVfsZipEntry : VfsFile
+		{
+			internal override long Size
+			{
+				get
+				{
+					using (System.IO.Stream stream = Open())
+					{
+						return stream.Length;
+					}
+				}
+			}
+
+			internal override System.IO.Stream Open()
+			{
+				//return new System.IO.FileStream("c:\\ikvm\\openjdk\\vfs.zip", System.IO.FileMode.Open);
+				return Assembly.GetExecutingAssembly().GetManifestResourceStream("vfs.zip");
+			}
+		}
+
+		private abstract class VfsExecutable : VfsFile
+		{
+			internal override long Size { get { return 0; } }
+
+			internal override System.IO.Stream Open()
+			{
+				return System.IO.Stream.Null;
+			}
+
+			internal abstract string GetPath();
+		}
+
+		private sealed class VfsJavaExe : VfsExecutable
+		{
+			private string path;
+
+			internal override string GetPath()
+			{
+				if (path == null)
+				{
+					path = new System.Uri(Assembly.GetEntryAssembly().CodeBase + "/../ikvm.exe").LocalPath;
+				}
+				return path;
+			}
+		}
+
+		private static void Initialize()
+		{
+			VfsDirectory root = new VfsDirectory();
+			root.AddDirectory("lib").AddDirectory("security").Add("cacerts", new VfsCacertsEntry());
+			VfsDirectory bin = new VfsDirectory();
+			root.Add("bin", bin);
+			root.Add("assembly", new VfsAssembliesDirectory());
+			AddDummyLibrary(bin, "zip");
+			AddDummyLibrary(bin, "awt");
+			AddDummyLibrary(bin, "rmi");
+			AddDummyLibrary(bin, "w2k_lsa_auth");
+			AddDummyLibrary(bin, "jaas_nt");
+			AddDummyLibrary(bin, "jaas_unix");
+			AddDummyLibrary(bin, "net");
+			AddDummyLibrary(bin, "splashscreen");
+			AddDummyLibrary(bin, "osx");
+			AddDummyLibrary(bin, "management");
+			bin.Add("java", new VfsJavaExe());
+			bin.Add("javaw", new VfsJavaExe());
+			bin.Add("java.exe", new VfsJavaExe());
+			bin.Add("javaw.exe", new VfsJavaExe());
+
+			// this is a weird loop back, the vfs.zip resource is loaded from vfs,
+			// because that's the easiest way to construct a ZipFile from a Stream.
+			java.util.zip.ZipFile zf = new java.util.zip.ZipFile(RootPath + "vfs.zip");
+			java.util.Enumeration e = zf.entries();
+			while (e.hasMoreElements())
+			{
+				AddZipEntry(zf, root, (java.util.zip.ZipEntry)e.nextElement());
+			}
+
+			// make "lib/security/local_policy.jar" point to "lib/security/US_export_policy.jar"
+			// to get the unrestricted crypto policy
+			VfsDirectory security = (VfsDirectory)((VfsDirectory)root.GetEntry("lib")).GetEntry("security");
+			security.Add("local_policy.jar", security.GetEntry("US_export_policy.jar"));
+
+			Interlocked.CompareExchange(ref VirtualFileSystem.root, root, null);
+		}
+
+		private static void AddDummyLibrary(VfsDirectory dir, string name)
+		{
+			dir.Add(java.lang.System.mapLibraryName(name), VfsDummyFile.Instance);
+		}
+
+		private static void AddZipEntry(java.util.zip.ZipFile zf, VfsDirectory root, java.util.zip.ZipEntry entry)
+		{
+			if (entry.isDirectory())
+			{
+				return;
+			}
+			string[] path = entry.getName().Split('/');
+			VfsDirectory dir = root;
+			for (int i = 0; i < path.Length - 1; i++)
+			{
+				VfsDirectory existing = dir.GetEntry(path[i]) as VfsDirectory;
+				if (existing == null)
+				{
+					existing = dir.AddDirectory(path[i]);
+				}
+				dir = existing;
+			}
+			dir.Add(path[path.Length - 1], new VfsZipEntry(zf, entry));
+		}
+
+		private static VfsEntry GetVfsEntry(string name)
+		{
+			if (root == null)
+			{
+				if (name == RootPath + "vfs.zip")
+				{
+					return new VfsVfsZipEntry();
+				}
+				Initialize();
+			}
+			if (name.Length <= RootPath.Length)
+			{
+				return root;
+			}
+			string[] path = name.Substring(RootPath.Length).Split(java.io.File.separatorChar);
+			return root.GetEntry(0, path);
+		}
+
+		internal sealed class ZipEntryStream : System.IO.Stream
+		{
+			private readonly java.util.zip.ZipFile zipFile;
+			private readonly java.util.zip.ZipEntry entry;
+			private java.io.InputStream inp;
+			private long position;
+
+			internal ZipEntryStream(java.util.zip.ZipFile zipFile, java.util.zip.ZipEntry entry)
+			{
+				this.zipFile = zipFile;
+				this.entry = entry;
+				inp = zipFile.getInputStream(entry);
+			}
+
+			public override bool CanRead
+			{
+				get { return true; }
+			}
+
+			public override bool CanWrite
+			{
+				get { return false; }
+			}
+
+			public override bool CanSeek
+			{
+				get { return true; }
+			}
+
+			public override long Length
+			{
+				get { return entry.getSize(); }
+			}
+
+			public override int Read(byte[] buffer, int offset, int count)
+			{
+				// For compatibility with real file i/o, we try to read the requested number
+				// of bytes, instead of returning earlier if the underlying InputStream does so.
+				int totalRead = 0;
+				while (count > 0)
+				{
+					int read = inp.read(buffer, offset, count);
+					if (read <= 0)
+					{
+						break;
+					}
+					offset += read;
+					count -= read;
+					totalRead += read;
+					position += read;
+				}
+				return totalRead;
+			}
+
+			public override long Position
+			{
+				get
+				{
+					return position;
+				}
+				set
+				{
+					if (value < position)
+					{
+						if (value < 0)
+						{
+							throw new System.IO.IOException("Negative seek offset");
+						}
+						position = 0;
+						inp.close();
+						inp = zipFile.getInputStream(entry);
+					}
+					long skip = value - position;
+					while (skip > 0)
+					{
+						long skipped = inp.skip(skip);
+						if (skipped == 0)
+						{
+							if (position != entry.getSize())
+							{
+								throw new System.IO.IOException("skip failed");
+							}
+							// we're actually at EOF in the InputStream, but we set the virtual position beyond EOF
+							position += skip;
+							break;
+						}
+						position += skipped;
+						skip -= skipped;
+					}
+				}
+			}
+
+			public override void Flush()
+			{
+			}
+
+			public override long Seek(long offset, System.IO.SeekOrigin origin)
+			{
+				switch (origin)
+				{
+					case System.IO.SeekOrigin.Begin:
+						Position = offset;
+						break;
+					case System.IO.SeekOrigin.Current:
+						Position += offset;
+						break;
+					case System.IO.SeekOrigin.End:
+						Position = entry.getSize() + offset;
+						break;
+				}
+				return position;
+			}
+
+			public override void Write(byte[] buffer, int offset, int count)
+			{
+				throw new NotSupportedException();
+			}
+
+			public override void SetLength(long value)
+			{
+				throw new NotSupportedException();
+			}
+
+			public override void Close()
+			{
+				base.Close();
+				inp.close();
+			}
+		}
+#endif
+
+		internal static System.IO.Stream Open(string name, System.IO.FileMode fileMode, System.IO.FileAccess fileAccess)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			if (fileMode != System.IO.FileMode.Open || fileAccess != System.IO.FileAccess.Read)
+			{
+				throw new System.IO.IOException("vfs is read-only");
+			}
+			VfsFile entry = GetVfsEntry(name) as VfsFile;
+			if (entry == null)
+			{
+				throw new System.IO.FileNotFoundException("File not found");
+			}
+			return entry.Open();
+#endif
+		}
+
+		internal static long GetLength(string path)
+		{
+#if FIRST_PASS
+			return 0;
+#else
+			VfsFile entry = GetVfsEntry(path) as VfsFile;
+			return entry == null ? 0 : entry.Size;
+#endif
+		}
+
+		internal static bool CheckAccess(string path, int access)
+		{
+#if FIRST_PASS
+			return false;
+#else
+			return access == Java_java_io_WinNTFileSystem.ACCESS_READ && GetVfsEntry(path) != null;
+#endif
+		}
+
+		internal static int GetBooleanAttributes(string path)
+		{
+#if FIRST_PASS
+			return 0;
+#else
+			VfsEntry entry = GetVfsEntry(path);
+			if (entry == null)
+			{
+				return 0;
+			}
+			const int BA_EXISTS = 0x01;
+			const int BA_REGULAR = 0x02;
+			const int BA_DIRECTORY = 0x04;
+			return entry is VfsDirectory ? BA_EXISTS | BA_DIRECTORY : BA_EXISTS | BA_REGULAR;
+#endif
+		}
+
+		internal static string MapExecutable(string path)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			VfsExecutable entry = GetVfsEntry(path) as VfsExecutable;
+			if (entry == null)
+			{
+				return path;
+			}
+			return entry.GetPath();
+#endif
+		}
+
+		internal static string[] List(string path)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			VfsDirectory dir = GetVfsEntry(path) as VfsDirectory;
+			return dir == null ? null : dir.List();
+#endif
+		}
+	}
+}
+@
+
+
+1.26
+log
+@Add dummy "management" library to VFS as of the previous unforking commit the management code now tries to load the management library.
+@
+text
+@a754 1
+			AddDummyLibrary(bin, "unpack");
+@
+
+
+1.25
+log
+@- Enabled MethodParameter rendering in runtime stub generator.
+- Support round tripping malformed MethodParameter attribute in stub generator.
+- Use new general method parameter interface in ikvmstub.
+- Added support for method parameter reflection on .NET types.
+@
+text
+@d759 1
+@
+
+
+1.24
+log
+@First part of OpenJDK 8 integration.
+@
+text
+@d580 1
+a580 1
+					IKVM.StubGen.StubGenerator.WriteClass(mem, tw, includeNonPublicInterfaces, false, false, false);
+@
+
+
+1.23
+log
+@Added ikvmstub -parameters option to add parameter names to stub classes.
+@
+text
+@d988 1
+a988 1
+			return access == Java_java_io_Win32FileSystem.ACCESS_READ && GetVfsEntry(path) != null;
+@
+
+
+1.22
+log
+@Moved java.io native methods to separate source file and use "new style" native methods.
+@
+text
+@d580 1
+a580 1
+					IKVM.StubGen.StubGenerator.WriteClass(mem, tw, includeNonPublicInterfaces, false, false);
+@
+
+
+1.21
+log
+@Make VirtualFileSystem.GetAssemblyClassesPath() and GetAssemblyResourcesPath() available during first compilation pass.
+@
+text
+@d988 1
+a988 1
+			return access == IKVM.NativeCode.java.io.Win32FileSystem.ACCESS_READ && GetVfsEntry(path) != null;
+@
+
+
+1.20
+log
+@Removed the old Java stub class generator and replaced it with the ikvmstub core.
+@
+text
+@d42 19
+a131 19
+		internal static string GetAssemblyClassesPath(Assembly asm)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			// we can't use java.io.File.separatorChar here, because we're invoked by the system property setup code
+			return RootPath + "assembly" + System.IO.Path.DirectorySeparatorChar + VfsAssembliesDirectory.GetName(asm) + System.IO.Path.DirectorySeparatorChar + "classes" + System.IO.Path.DirectorySeparatorChar;
+#endif
+		}
+
+		internal static string GetAssemblyResourcesPath(Assembly asm)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			return RootPath + "assembly" + System.IO.Path.DirectorySeparatorChar + VfsAssembliesDirectory.GetName(asm) + System.IO.Path.DirectorySeparatorChar + "resources" + System.IO.Path.DirectorySeparatorChar;
+#endif
+		}
+
+@
+
+
+1.19
+log
+@Project stub classes into the jar the classes originated from.
+@
+text
+@d578 4
+a581 1
+					buf = ikvm.@@internal.stubgen.StubGenerator.generateStub(tw.ClassObject);
+@
+
+
+1.18
+log
+@- Marked some fields readonly.
+- Memory model fixes.
+@
+text
+@d821 1
+a821 1
+		private sealed class ZipEntryStream : System.IO.Stream
+@
+
+
+1.17
+log
+@Integrated OpenJDK 7u4. Not all forked files have been merged yet, just the ones necessary to get things building.
+@
+text
+@d566 1
+a566 1
+			private byte[] buf;
+d620 2
+a621 2
+			private java.util.zip.ZipFile zipFile;
+			private java.util.zip.ZipEntry entry;
+d642 1
+a642 1
+			private byte[] buf;
+d823 2
+a824 2
+			private java.util.zip.ZipFile zipFile;
+			private java.util.zip.ZipEntry entry;
+@
+
+
+1.16
+log
+@Revert the previous commit and fix the bug in a better way. Instead of dropping not currently valid certificates, we just need to make sure the aliases are unique.
+@
+text
+@d755 1
+@
+
+
+1.15
+log
+@Bug fix. Don't add certificates to virtual cacerts file that aren't currently valid, because the Java key store apparently can't contain multiple certificates with the same Subject.
+@
+text
+@d669 1
+d672 1
+a672 1
+						if (!cert.HasPrivateKey && cert.NotBefore < DateTime.Now && DateTime.Now <= cert.NotAfter)
+d674 9
+a682 1
+							jstore.setCertificateEntry(cert.Subject, cf.generateCertificate(new global::java.io.ByteArrayInputStream(cert.RawData)));
+@
+
+
+1.14
+log
+@Add dummy splashscreen native library to VFS. Fix for #3480917.
+@
+text
+@d671 1
+a671 1
+						if (!cert.HasPrivateKey)
+@
+
+
+1.13
+log
+@Added support for loading resources from assemblies loaded in the LoadFrom context.
+@
+text
+@d745 1
+@
+
+
+1.13.2.1
+log
+@Backported fixes for 0.46.0.3:
+- Bug fix. java.lang.Package was not populated from manifest for ikvmc compiled assemblies.
+- Bug fix. When writing a direct ByteBuffer to a non-blocking socket and the write fails because there is no kernel buffer available, we should not advance the ByteBuffer position.
+- Bug fix. When adding certificates to virtual cacerts file make sure that the aliases are unique.
+- Bug fix. If a finally/fault handler contains reachable code before the handler's start index, the handler should branch to the handler start index.
+- Bug fix. After emitting a finally/fault handler block, we should emit the block leave stubs (even though you can't leave the block, they also emit the backward branch stubs).
+- Bug fix. If a Java class extends a remapped .NET type (cli.System.Object or cli.System.Exception), we should correctly report the base class.
+- Bug fix. If we encounter a jsr or ret instruction, we should throw a VerifyError (instead of NotImplementedException).
+- Bug fix. If an exception block ends with an astore, we need to propagate the local variable type after the astore to the exception handler.
+- Disable AppDomain.ProcessExit hook to run shutdown hooks when running on Mono to workaround https://bugzilla.xamarin.com/show_bug.cgi?id=5650
+- Bug fix. Custom attribute properties that don't have a public getter and setter should not be exposed as annotation properties.
+- Bug fix. Non-public property getter/setter methods should be ignored when we create properties to hide properties inherited from shadow types. This fixes a build break with .NET 4.5 beta which introduces a protected setter for Exception.HResult.
+- Bug fix. The $Method inner class for delegates should also be loadable for generic delegates. Thanks to Michael Bayne for reporting this.
+- Bug fix. When constructing a generic class loader we can't use GetWrapperFromType() on the type arguments, because they might refer to a subtype that is currently being loaded.
+- Replaced non-ascii character (micro) with ascii 'u' in Win32PrintService.java.
+- IKVM.Reflection: Bug fix. Resource Directory Entries must be sorted and names are case-insensitive
+
+Backported for 0.46.0.4:
+- Fixed ikvmc to retain transient modifier on constant static final fields.
+- Fixed Field.getModifiers() to only return the relevant modifiers.
+- Fixed IKVM.Reflection to set AddressOfRawData in IMAGE_DEBUG_DIRECTORY.
+@
+text
+@a668 1
+					Dictionary<string, string> aliases = new Dictionary<string, string>();
+d673 1
+a673 9
+							// the alias must be unique, otherwise we overwrite the previous certificate with that alias
+							string alias = cert.Subject;
+							int unique = 0;
+							while (aliases.ContainsKey(alias))
+							{
+								alias = cert.Subject + " #" + (++unique);
+							}
+							aliases.Add(alias, null);
+							jstore.setCertificateEntry(alias, cf.generateCertificate(new global::java.io.ByteArrayInputStream(cert.RawData)));
+@
+
+
+1.12
+log
+@Fixed parsing/generating VFS directory names of assemblies with underscores in the name.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2007-2010 Jeroen Frijters
+d119 1
+a119 1
+			return RootPath + "assembly" + System.IO.Path.DirectorySeparatorChar + VfsAssembliesDirectory.GetName(asm.GetName()) + System.IO.Path.DirectorySeparatorChar + "classes" + System.IO.Path.DirectorySeparatorChar;
+d128 1
+a128 1
+			return RootPath + "assembly" + System.IO.Path.DirectorySeparatorChar + VfsAssembliesDirectory.GetName(asm.GetName()) + System.IO.Path.DirectorySeparatorChar + "resources" + System.IO.Path.DirectorySeparatorChar;
+d139 12
+d164 1
+a164 1
+							&& name == GetName(asm.GetName()))
+d166 1
+a166 11
+							lock (entries)
+							{
+								if (!entries.TryGetValue(name, out entry))
+								{
+									VfsDirectory dir = new VfsDirectory();
+									dir.Add("resources", new VfsAssemblyResourcesDirectory(asm));
+									dir.Add("classes", new VfsAssemblyClassesDirectory(asm));
+									Add(name, dir);
+									entry = dir;
+								}
+							}
+d173 20
+a192 1
+			internal static string GetName(AssemblyName name)
+d194 42
+d265 19
+@
+
+
+1.11
+log
+@- Made VFS class publishing more robust (against types that depend on missing assemblies).
+- Don't publish annotation custom attributes (that show up as $Proxy classes) in VFS /classes/ directory.
+- Refactored Type -> name to enable the VFS class publishing code to get the name without instantiating a TypeWrapper for each type.
+@
+text
+@d179 1
+d216 6
+a221 1
+							if (i == directoryName.Length || directoryName[i + 1] == '_')
+@
+
+
+1.10
+log
+@Set system property "sun.boot.class.path" to point to the /classes/ directory of IKVM.OpenJDK.Core.dll
+@
+text
+@a424 1
+						bool mscorlib = asm == typeof(object).Assembly;
+d429 2
+a430 2
+								TypeWrapper tw = mscorlib ? DotNetTypeWrapper.GetWrapperFromDotNetType(type) : ClassLoaderWrapper.GetWrapperFromType(type);
+								if (tw != null)
+d432 17
+a448 1
+									names[tw.Name] = tw.Name;
+@
+
+
+1.9
+log
+@Expose all types of a shared class loader assembly group in the /classes/ directory of the main assembly of the group.
+@
+text
+@d118 2
+a119 1
+			return RootPath + "assembly" + global::java.io.File.separatorChar + VfsAssembliesDirectory.GetName(asm.GetName()) + global::java.io.File.separatorChar + "classes" + global::java.io.File.separatorChar;
+d128 1
+a128 1
+			return RootPath + "assembly" + global::java.io.File.separatorChar + VfsAssembliesDirectory.GetName(asm.GetName()) + global::java.io.File.separatorChar + "resources" + global::java.io.File.separatorChar;
+@
+
+
+1.8
+log
+@Handle /classes/ directory of mscorlib properly (don't remap types).
+@
+text
+@d408 2
+a409 2
+					Type[] types;
+					try
+d411 15
+a425 14
+						types = asm.GetTypes();
+					}
+					catch (ReflectionTypeLoadException x)
+					{
+						types = x.Types;
+					}
+					catch
+					{
+						types = Type.EmptyTypes;
+					}
+					bool mscorlib = asm == typeof(object).Assembly;
+					foreach (Type type in types)
+					{
+						if (type != null)
+d427 1
+a427 2
+							TypeWrapper tw = mscorlib ? DotNetTypeWrapper.GetWrapperFromDotNetType(type) : ClassLoaderWrapper.GetWrapperFromType(type);
+							if (tw != null)
+d429 5
+a433 1
+								names[tw.Name] = tw.Name;
+@
+
+
+1.7
+log
+@Fixed race condition.
+@
+text
+@d421 1
+d426 1
+a426 1
+							TypeWrapper tw = ClassLoaderWrapper.GetWrapperFromType(type);
+@
+
+
+1.6
+log
+@Massive change to change resource handling. Java resources are now stored in jars that are stored as managed .NET resources. The jars are projected into VFS and the assembly class loaders know how to load resources from these jars.
+@
+text
+@d407 1
+d428 13
+a440 2
+								string[] parts = tw.Name.Split('.');
+								lock (entries)
+d442 1
+a442 8
+									VfsDirectory dir = this;
+									for (int i = 0; i < parts.Length - 1; i++)
+									{
+										dir = dir.GetEntry(parts[i]) as VfsDirectory ?? dir.AddDirectory(parts[i]);
+									}
+									// we're adding a dummy file, to make the file appear in the directory listing, it will not actually
+									// be accessed, because the code above handles that
+									dir.Add(parts[parts.Length - 1] + ".class", VfsDummyFile.Instance);
+d444 3
+@
+
+
+1.5
+log
+@Removed lib/security/local_policy.jar from vfs.zip (because OpenJDK builds the restricted version, by default) and instead make a vfs alias for it that points to the unrestricted US_export_policy.jar.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2007-2009 Jeroen Frijters
+d57 1
+a57 1
+			private readonly Dictionary<string, VfsEntry> entries = new Dictionary<string,VfsEntry>();
+d74 19
+a92 1
+			internal VfsEntry GetEntry(string name)
+d102 1
+a102 1
+			internal string[] List()
+d113 369
+d484 6
+d619 1
+d652 1
+a652 1
+			dir.Add(java.lang.System.mapLibraryName(name), new VfsDummyFile());
+d690 1
+a690 10
+			VfsDirectory dir = root;
+			for (int i = 0; i < path.Length - 1; i++)
+			{
+				dir = dir.GetEntry(path[i]) as VfsDirectory;
+				if (dir == null)
+				{
+					return null;
+				}
+			}
+			return dir.GetEntry(path[path.Length - 1]);
+@
+
+
+1.4
+log
+@Fixed NRE when trying to access a non-existing directory in vfs.
+@
+text
+@a242 1
+			char sep = java.io.File.separatorChar;
+d248 5
+@
+
+
+1.3
+log
+@Added OpenFlags.OpenExistingOnly to X509Store.Open() to reduce required permissions.
+@
+text
+@d295 1
+a299 1
+				dir = dir.GetEntry(path[i]) as VfsDirectory;
+@
+
+
+1.2
+log
+@Some vfs restructuring to make VFS a true hierarchy and added support for File.list().
+@
+text
+@d158 1
+a158 1
+					store.Open(OpenFlags.ReadOnly);
+@
+
+
+1.1
+log
+@Moved Virtual File System into a separate source file.
+@
+text
+@d43 1
+a43 1
+		private static Dictionary<string, VfsEntry> entries;
+d47 4
+a51 1
+			internal virtual bool IsDirectory { get { return false; } }
+d55 1
+a55 1
+		private class VfsDummyEntry : VfsEntry
+d57 1
+a57 1
+			private bool directory;
+d59 1
+a59 1
+			internal VfsDummyEntry(bool directory)
+d61 21
+a81 1
+				this.directory = directory;
+d84 1
+a84 1
+			internal override long Size
+d86 6
+a91 1
+				get { return 0; }
+d93 1
+d95 3
+a97 1
+			internal override bool IsDirectory
+d99 1
+a99 1
+				get { return directory; }
+d108 1
+a108 1
+		private class VfsZipEntry : VfsEntry
+a123 5
+			internal override bool IsDirectory
+			{
+				get { return entry.isDirectory(); }
+			}
+
+d130 1
+a130 1
+		private class VfsCacertsEntry : VfsEntry
+d174 1
+a174 1
+		private class VfsVfsZipEntry : VfsEntry
+d194 1
+a194 1
+		private abstract class VfsExecutable : VfsEntry
+a195 1
+			internal override bool IsDirectory { get { return false; } }
+d206 1
+a206 1
+		private class VfsJavaExe : VfsExecutable
+d222 17
+a242 1
+			Dictionary<string, VfsEntry> dict = new Dictionary<string, VfsEntry>();
+d246 1
+a246 2
+				java.util.zip.ZipEntry entry = (java.util.zip.ZipEntry)e.nextElement();
+				dict[RootPath + entry.getName().Replace('/', sep)] = new VfsZipEntry(zf, entry);
+d248 12
+a259 16
+			dict[RootPath.Substring(0, RootPath.Length - 1)] = new VfsDummyEntry(true);
+			dict[RootPath + "lib/security/cacerts".Replace('/', sep)] = new VfsCacertsEntry();
+			dict[RootPath + "bin"] = new VfsDummyEntry(true);
+			dict[RootPath + "bin" + sep + global::java.lang.System.mapLibraryName("zip")] = new VfsDummyEntry(false);
+			dict[RootPath + "bin" + sep + global::java.lang.System.mapLibraryName("awt")] = new VfsDummyEntry(false);
+			dict[RootPath + "bin" + sep + global::java.lang.System.mapLibraryName("rmi")] = new VfsDummyEntry(false);
+			dict[RootPath + "bin" + sep + global::java.lang.System.mapLibraryName("w2k_lsa_auth")] = new VfsDummyEntry(false);
+			dict[RootPath + "bin" + sep + global::java.lang.System.mapLibraryName("jaas_nt")] = new VfsDummyEntry(false);
+			dict[RootPath + "bin" + sep + global::java.lang.System.mapLibraryName("jaas_unix")] = new VfsDummyEntry(false);
+			dict[RootPath + "bin" + sep + global::java.lang.System.mapLibraryName("unpack")] = new VfsDummyEntry(false);
+			dict[RootPath + "bin" + sep + global::java.lang.System.mapLibraryName("net")] = new VfsDummyEntry(false);
+			dict[RootPath + "bin" + sep + "java"] = new VfsJavaExe();
+			dict[RootPath + "bin" + sep + "javaw"] = new VfsJavaExe();
+			dict[RootPath + "bin" + sep + "java.exe"] = new VfsJavaExe();
+			dict[RootPath + "bin" + sep + "javaw.exe"] = new VfsJavaExe();
+			if (Interlocked.CompareExchange(ref entries, dict, null) != null)
+d261 1
+a261 2
+				// we lost the race, so we close our zip file
+				zf.close();
+d263 12
+d279 1
+a279 1
+			if (entries == null)
+d287 15
+a301 3
+			VfsEntry ve;
+			entries.TryGetValue(name, out ve);
+			return ve;
+d444 1
+a444 1
+			VfsEntry entry = GetVfsEntry(name);
+d458 1
+a458 1
+			VfsEntry entry = GetVfsEntry(path);
+d485 1
+a485 1
+			return entry.IsDirectory ? BA_EXISTS | BA_DIRECTORY : BA_EXISTS | BA_REGULAR;
+d502 10
+@
+

@@ -1,0 +1,302 @@
+head	1.5;
+access;
+symbols
+	v8_1_5717_0:1.5
+	v8_1:1.5.0.24
+	v8_0_5449_1:1.5
+	v8_0_5449_0:1.5
+	v8_0:1.5.0.22
+	v7_4_5196_0:1.5
+	v7_4:1.5.0.20
+	v7_3:1.5.0.18
+	v7_2_4630_6:1.5
+	v7_2_4630_5:1.5
+	v7_2_4630_4:1.5
+	v7_2_4630_3:1.5
+	v7_2_4630_2:1.5
+	v0_46_0_4:1.5
+	v7_2_4630_1:1.5
+	v7_2:1.5.0.16
+	v7_1_4532_2:1.5
+	v7_1_4532_1:1.5
+	v7_1_4532_0:1.5
+	v7_1:1.5.0.14
+	v7_0_4335_3:1.5
+	v7_0_4335_2:1.5
+	v7_0_4335_1:1.5
+	v0_46_0_2:1.5
+	v7_0_4335_0:1.5
+	v7_0:1.5.0.12
+	v0_40_0_6:1.5
+	v0_40_0_5:1.5
+	v0_46_0_1:1.5
+	v0_46_0_0:1.5
+	v0_46:1.5.0.10
+	v0_36_0_14:1.4
+	v0_44_0_6:1.5
+	v0_44_0_5:1.5
+	v0_44_0_4:1.5
+	v0_44_0_3:1.5
+	v0_44_0_2:1.5
+	v0_42_0_7:1.5
+	v0_44_0_1:1.5
+	v0_44_0_0:1.5
+	v0_44:1.5.0.8
+	v0_42_0_6:1.5
+	v0_42_0_5:1.5
+	v0_42_0_4:1.5
+	v0_42_0_3:1.5
+	v0_42_0_2:1.5
+	v0_42_0_1:1.5
+	v0_42_0_0:1.5
+	v0_42:1.5.0.6
+	v0_40_0_3:1.5
+	v0_40_0_2:1.5
+	v0_40_0_1:1.5
+	v0_40_0_0:1.5
+	v0_40:1.5.0.4
+	v0_36_0_13:1.4
+	v0_38_0_1:1.5
+	v0_38_0_0:1.5
+	v0_38:1.5.0.2
+	v0_36_0_9:1.4
+	v0_36_0_7:1.4
+	v0_36_0_5:1.4
+	v0_36_0_4:1.4
+	v0_36_0_3:1.4
+	v0_36_0_2:1.4
+	v0_36_0_1:1.4
+	v0_36_0_0:1.4
+	v0_36:1.4.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.5
+date	2008.06.11.09.06.00;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2007.07.20.09.17.26;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2007.07.19.08.47.42;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.07.18.15.35.29;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.07.18.05.46.38;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.5
+log
+@Converted tabs to spaces.
+@
+text
+@/*
+  Copyright (C) 2002, 2003, 2004, 2005, 2006 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+package sun.nio.ch;
+
+import java.nio.channels.CancelledKeyException;
+import java.nio.channels.SelectableChannel;
+import java.nio.channels.SelectionKey;
+import java.nio.channels.Selector;
+import java.nio.channels.spi.AbstractSelectionKey;
+
+final class SelectionKeyImpl extends AbstractSelectionKey
+{
+    final SelChImpl channel;
+    final SelectorImpl selector;
+    private final cli.System.Net.Sockets.Socket socket;
+    private int readyOps;
+    private volatile int interestOps;
+
+    SelectionKeyImpl(SelChImpl ch, SelectorImpl sel)
+    {
+        this.channel  = ch;
+        this.selector = sel;
+        socket = ch.getFD().getSocket();
+    }
+
+    public SelectableChannel channel()
+    {
+        return (SelectableChannel)channel;
+    }
+
+    public int readyOps()
+    {
+        if (!isValid())
+            throw new CancelledKeyException();
+    
+        return readyOps;
+    }
+
+    void readyOps(int ops)
+    {
+        readyOps = ops;
+    }
+
+    public synchronized int interestOps()
+    {
+        if (!isValid())
+            throw new CancelledKeyException();
+    
+        return interestOps;    
+    }
+
+    public synchronized SelectionKey interestOps(int ops)
+    {
+        if (!isValid())
+            throw new CancelledKeyException();
+
+        if ((ops & ~channel.validOps()) != 0)
+            throw new IllegalArgumentException();
+    
+        interestOps = ops;
+        return this;
+    }
+    
+    public Selector selector()
+    {
+        return selector;
+    }
+
+    cli.System.Net.Sockets.Socket getSocket()
+    {
+        return socket;
+    }
+
+    void nioReadyOps(int ops)
+    {
+        readyOps = ops;
+    }
+
+    int nioReadyOps()
+    {
+        return readyOps;
+    }
+
+    int nioInterestOps()
+    {
+        return interestOps;
+    }
+
+    SelectionKey nioInterestOps(int ops)
+    {
+        if ((ops & ~channel().validOps()) != 0)
+            throw new IllegalArgumentException();
+        channel.translateAndSetInterestOps(ops, this);
+        interestOps = ops;
+        return this;
+    }
+}
+@
+
+
+1.4
+log
+@- Implemented DatagramChannelImpl and PipeImpl.
+- More nio fixes.
+@
+text
+@d44 1
+a44 1
+	socket = ch.getFD().getSocket();
+d49 1
+a49 1
+	return (SelectableChannel)channel;
+d97 1
+a97 1
+	readyOps = ops;
+d102 1
+a102 1
+	return readyOps;
+d107 1
+a107 1
+	return interestOps;
+d112 5
+a116 5
+	if ((ops & ~channel().validOps()) != 0)
+	    throw new IllegalArgumentException();
+	channel.translateAndSetInterestOps(ops, this);
+	interestOps = ops;
+	return this;
+@
+
+
+1.3
+log
+@SelectorImpl fixes and workaround for non-blocking sockets becoming blocking again after connect.
+@
+text
+@d44 1
+a44 13
+	if (ch instanceof SocketChannelImpl)
+	{
+	    socket = ((SocketChannelImpl)ch).getSocket();
+	}
+	else if (ch instanceof ServerSocketChannelImpl)
+	{
+	    socket = ((ServerSocketChannelImpl)ch).getSocket();
+	}
+	else
+	{
+	    // TODO
+	    throw new Error("TODO");
+	}
+@
+
+
+1.2
+log
+@Implemented ServerSocketChannelImpl.
+@
+text
+@a38 1
+    int savedInterestOps;   // used by DotNetSelectorImpl
+@
+
+
+1.1
+log
+@Implement SocketChannelImpl & DotNetSelectorImpl.
+@
+text
+@d49 4
+@
+

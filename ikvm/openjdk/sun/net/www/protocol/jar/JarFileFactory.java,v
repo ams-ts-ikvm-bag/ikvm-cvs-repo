@@ -1,0 +1,534 @@
+head	1.7;
+access;
+symbols
+	v8_1_5717_0:1.7
+	v8_1:1.7.0.4
+	v8_0_5449_1:1.7
+	v8_0_5449_0:1.7
+	v8_0:1.7.0.2
+	v7_4_5196_0:1.6
+	v7_4:1.6.0.2
+	v7_3:1.5.0.8
+	v7_2_4630_6:1.5
+	v7_2_4630_5:1.5
+	v7_2_4630_4:1.5
+	v7_2_4630_3:1.5
+	v7_2_4630_2:1.5
+	v0_46_0_4:1.4
+	v7_2_4630_1:1.5
+	v7_2:1.5.0.6
+	v7_1_4532_2:1.5
+	v7_1_4532_1:1.5
+	v7_1_4532_0:1.5
+	v7_1:1.5.0.4
+	v7_0_4335_3:1.5
+	v7_0_4335_2:1.5
+	v7_0_4335_1:1.5
+	v0_46_0_2:1.4
+	v7_0_4335_0:1.5
+	v7_0:1.5.0.2
+	v0_40_0_6:1.3
+	v0_40_0_5:1.3
+	v0_46_0_1:1.4
+	v0_46_0_0:1.4
+	v0_46:1.4.0.2
+	v0_36_0_14:1.2
+	v0_44_0_6:1.3
+	v0_44_0_5:1.3
+	v0_44_0_4:1.3
+	v0_44_0_3:1.3
+	v0_44_0_2:1.3
+	v0_42_0_7:1.3
+	v0_44_0_1:1.3
+	v0_44_0_0:1.3
+	v0_44:1.3.0.8
+	v0_42_0_6:1.3
+	v0_42_0_5:1.3
+	v0_42_0_4:1.3
+	v0_42_0_3:1.3
+	v0_42_0_2:1.3
+	v0_42_0_1:1.3
+	v0_42_0_0:1.3
+	v0_42:1.3.0.6
+	v0_40_0_3:1.3
+	v0_40_0_2:1.3
+	v0_40_0_1:1.3
+	v0_40_0_0:1.3
+	v0_40:1.3.0.4
+	v0_36_0_13:1.2
+	v0_38_0_1:1.3
+	v0_38_0_0:1.3
+	v0_38:1.3.0.2
+	v0_36_0_9:1.2
+	v0_36_0_7:1.2
+	v0_36_0_5:1.2
+	v0_36_0_4:1.2
+	v0_36_0_3:1.2
+	v0_36_0_2:1.2
+	v0_36_0_1:1.2
+	v0_36_0_0:1.2
+	v0_36:1.2.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.7
+date	2014.05.19.12.43.41;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2014.02.07.14.14.12;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2011.07.07.15.30.10;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2011.01.24.16.40.23;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.06.11.09.05.49;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.07.12.08.40.32;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.05.24.09.23.04;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.7
+log
+@First part of OpenJDK 8 integration.
+@
+text
+@/*
+ * Copyright (c) 1999, 2013, Oracle and/or its affiliates. All rights reserved.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 only, as
+ * published by the Free Software Foundation.  Oracle designates this
+ * particular file as subject to the "Classpath" exception as provided
+ * by Oracle in the LICENSE file that accompanied this code.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * You should have received a copy of the GNU General Public License version
+ * 2 along with this work; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+ * or visit www.oracle.com if you need additional information or have any
+ * questions.
+ */
+
+/*IKVM*/
+/*
+ * Modified for IKVM by Jeroen Frijters on May 22, 2007.
+ * 
+ * This is a merged version of the Windows & Solaris platform specific versions.
+ * Since the IKVM class library binary can be used both on Windows and on *nix,
+ * I've merged the platform specific classes into a generic class that at
+ * runtime determines if it runs on Windows or not.
+ * 
+/*IKVM*/
+
+package sun.net.www.protocol.jar;
+
+import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.HashMap;
+import java.util.jar.JarFile;
+import java.security.Permission;
+import sun.net.util.URLUtil;
+
+/* A factory for cached JAR file. This class is used to both retrieve
+ * and cache Jar files.
+ *
+ * @@author Benjamin Renaud
+ * @@since JDK1.2
+ */
+class JarFileFactory implements URLJarFile.URLJarFileCloseController {
+
+    /* the url to file cache */
+    private static final HashMap<String, JarFile> fileCache = new HashMap<>();
+
+    /* the file to url cache */
+    private static final HashMap<JarFile, URL> urlCache = new HashMap<>();
+
+    private static final JarFileFactory instance = new JarFileFactory();
+
+    private JarFileFactory() { }
+
+    public static JarFileFactory getInstance() {
+        return instance;
+    }
+
+    URLConnection getConnection(JarFile jarFile) throws IOException {
+        URL u;
+        synchronized (instance) {
+            u = urlCache.get(jarFile);
+        }
+        if (u != null)
+            return u.openConnection();
+
+        return null;
+    }
+
+    public JarFile get(URL url) throws IOException {
+        return get(url, true);
+    }
+
+    JarFile get(URL url, boolean useCaches) throws IOException {
+        if (ikvm.internal.Util.WINDOWS && url.getProtocol().equalsIgnoreCase("file")) {
+            // Deal with UNC pathnames specially. See 4180841
+
+            String host = url.getHost();
+            if (host != null && !host.equals("") &&
+                !host.equalsIgnoreCase("localhost")) {
+
+                url = new URL("file", "", "//" + host + url.getPath());
+            }
+        }
+
+        JarFile result;
+        JarFile local_result;
+
+        if (useCaches) {
+            synchronized (instance) {
+                result = getCachedJarFile(url);
+            }
+            if (result == null) {
+                local_result = URLJarFile.getJarFile(url, this);
+                synchronized (instance) {
+                    result = getCachedJarFile(url);
+                    if (result == null) {
+                        fileCache.put(URLUtil.urlNoFragString(url), local_result);
+                        urlCache.put(local_result, url);
+                        result = local_result;
+                    } else {
+                        if (local_result != null) {
+                            local_result.close();
+                        }
+                    }
+                }
+            }
+        } else {
+            result = URLJarFile.getJarFile(url, this);
+        }
+        if (result == null)
+            throw new FileNotFoundException(url.toString());
+
+        return result;
+    }
+
+    /**
+     * Callback method of the URLJarFileCloseController to
+     * indicate that the JarFile is close. This way we can
+     * remove the JarFile from the cache
+     */
+    public void close(JarFile jarFile) {
+        synchronized (instance) {
+            URL urlRemoved = urlCache.remove(jarFile);
+            if (urlRemoved != null)
+                fileCache.remove(URLUtil.urlNoFragString(urlRemoved));
+        }
+    }
+
+    private JarFile getCachedJarFile(URL url) {
+        assert Thread.holdsLock(instance);
+        JarFile result = fileCache.get(URLUtil.urlNoFragString(url));
+
+        /* if the JAR file is cached, the permission will always be there */
+        if (result != null) {
+            Permission perm = getPermission(result);
+            if (perm != null) {
+                SecurityManager sm = System.getSecurityManager();
+                if (sm != null) {
+                    try {
+                        sm.checkPermission(perm);
+                    } catch (SecurityException se) {
+                        // fallback to checkRead/checkConnect for pre 1.2
+                        // security managers
+                        if ((perm instanceof java.io.FilePermission) &&
+                            perm.getActions().indexOf("read") != -1) {
+                            sm.checkRead(perm.getName());
+                        } else if ((perm instanceof
+                            java.net.SocketPermission) &&
+                            perm.getActions().indexOf("connect") != -1) {
+                            sm.checkConnect(url.getHost(), url.getPort());
+                        } else {
+                            throw se;
+                        }
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
+    private Permission getPermission(JarFile jarFile) {
+        try {
+            URLConnection uc = getConnection(jarFile);
+            if (uc != null)
+                return uc.getPermission();
+        } catch (IOException ioe) {
+            // gulp
+        }
+
+        return null;
+    }
+}
+@
+
+
+1.6
+log
+@Merged OpenJDK 7u40 b34, except for java.lang.invoke and sun.invoke packages.
+@
+text
+@d2 1
+a2 1
+ * Copyright (c) 1999, 2006, Oracle and/or its affiliates. All rights reserved.
+d175 1
+a175 1
+            URLConnection uc = (URLConnection)getConnection(jarFile);
+@
+
+
+1.5
+log
+@Update forked sun.net classes to OpenJDK 7.
+@
+text
+@d57 1
+a57 1
+    private static HashMap<String, JarFile> fileCache = new HashMap<String, JarFile>();
+d60 9
+a68 1
+    private static HashMap<JarFile, URL> urlCache = new HashMap<JarFile, URL>();
+d71 4
+a74 1
+        URL u = urlCache.get(jarFile);
+d97 2
+a98 2
+        JarFile result = null;
+        JarFile local_result = null;
+d101 1
+a101 1
+            synchronized (this) {
+d106 1
+a106 1
+                synchronized (this) {
+d134 3
+a136 2
+        URL urlRemoved = urlCache.remove(jarFile);
+        if( urlRemoved != null) {
+d142 1
+@
+
+
+1.4
+log
+@Integrated OpenJDK 6 b21.
+@
+text
+@d39 6
+a44 5
+import java.io.*;
+import java.net.*;
+import java.util.*;
+import java.util.jar.*;
+import java.util.zip.ZipFile;
+d46 1
+d57 1
+a57 1
+    private static HashMap fileCache = new HashMap();
+d60 1
+a60 1
+    private static HashMap urlCache = new HashMap();
+d63 1
+a63 1
+        URL u = (URL)urlCache.get(jarFile);
+d89 1
+a89 1
+        if (useCaches) {        
+d98 1
+a98 1
+                        fileCache.put(url, local_result);
+d110 2
+a111 2
+        }  
+        if (result == null) 
+d123 1
+a123 1
+        URL urlRemoved = (URL) urlCache.remove(jarFile);
+d125 1
+a125 1
+                fileCache.remove(urlRemoved);
+d130 1
+a130 1
+        JarFile result = (JarFile)fileCache.get(url);
+d146 1
+a146 1
+                        } else if ((perm instanceof 
+@
+
+
+1.3
+log
+@Converted tabs to spaces.
+@
+text
+@d2 1
+a2 1
+ * Copyright 1997-2006 Sun Microsystems, Inc.  All Rights Reserved.
+d7 1
+a7 1
+ * published by the Free Software Foundation.  Sun designates this
+d9 1
+a9 1
+ * by Sun in the LICENSE file that accompanied this code.
+d21 3
+a23 3
+ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
+ * CA 95054 USA or visit www.sun.com if you need additional information or
+ * have any questions.
+@
+
+
+1.2
+log
+@- Added WINDOWS constant to ikvm.internal.Util to check if we're running on Windows.
+- Added a bunch of native methods to openjdk.cs (some real implementations, some stubs)
+- Added OpenJDK derived PlainSocketImpl/SocketInputStream/SocketOutputStream implementations.
+- Added OpenJDK derived file protocol handler (a single class that supports both Windows and non-Windows)
+@
+text
+@d61 3
+a63 3
+	URL u = (URL)urlCache.get(jarFile);
+	if (u != null)
+	    return u.openConnection();
+d65 1
+a65 1
+	return null;
+d84 1
+a84 1
+	JarFile result = null;
+d87 1
+a87 1
+        if (useCaches) {	
+d89 17
+a105 17
+	        result = getCachedJarFile(url);
+	    }
+	    if (result == null) {
+	        local_result = URLJarFile.getJarFile(url, this);
+	        synchronized (this) {
+		    result = getCachedJarFile(url);
+		    if (result == null) {
+		        fileCache.put(url, local_result);
+		        urlCache.put(local_result, url);
+		        result = local_result;
+		    } else {
+		        if (local_result != null) {
+		            local_result.close();
+		        }
+	            }
+	        }
+	    }
+d109 2
+a110 2
+	if (result == null) 
+	    throw new FileNotFoundException(url.toString());
+d112 1
+a112 1
+	return result;
+d121 4
+a124 4
+    	URL urlRemoved = (URL) urlCache.remove(jarFile);
+    	if( urlRemoved != null) {
+    		fileCache.remove(urlRemoved);
+    	}
+d128 1
+a128 1
+	JarFile result = (JarFile)fileCache.get(url);
+d130 26
+a155 26
+	/* if the JAR file is cached, the permission will always be there */
+	if (result != null) {
+	    Permission perm = getPermission(result);
+	    if (perm != null) {
+		SecurityManager sm = System.getSecurityManager();
+		if (sm != null) {
+		    try {
+			sm.checkPermission(perm);
+		    } catch (SecurityException se) {
+			// fallback to checkRead/checkConnect for pre 1.2
+			// security managers
+			if ((perm instanceof java.io.FilePermission) &&
+			    perm.getActions().indexOf("read") != -1) {
+			    sm.checkRead(perm.getName());
+			} else if ((perm instanceof 
+			    java.net.SocketPermission) &&
+			    perm.getActions().indexOf("connect") != -1) {
+			    sm.checkConnect(url.getHost(), url.getPort());
+			} else {
+			    throw se;
+			}
+		    }
+		}
+	    }
+	}
+	return result;
+d159 7
+a165 7
+	try {
+	    URLConnection uc = (URLConnection)getConnection(jarFile);
+	    if (uc != null)
+		return uc.getPermission();
+	} catch (IOException ioe) {
+	    // gulp
+	}
+d167 1
+a167 1
+	return null;
+@
+
+
+1.1
+log
+@First batch of OpenJDK integration code.
+@
+text
+@a53 2
+    private static final boolean runningOnWindows = cli.System.Environment.get_OSVersion().ToString().indexOf("Unix") == -1;
+
+d73 1
+a73 1
+        if (runningOnWindows && url.getProtocol().equalsIgnoreCase("file")) {
+@
+

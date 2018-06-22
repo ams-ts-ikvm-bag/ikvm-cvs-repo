@@ -1,0 +1,207 @@
+head	1.5;
+access;
+symbols
+	v8_1_5717_0:1.5
+	v8_1:1.5.0.14
+	v8_0_5449_1:1.5
+	v8_0_5449_0:1.5
+	v8_0:1.5.0.12
+	v7_4_5196_0:1.5
+	v7_4:1.5.0.10
+	v7_3:1.5.0.8
+	v7_2_4630_6:1.5
+	v7_2_4630_5:1.5
+	v7_2_4630_4:1.5
+	v7_2_4630_3:1.5
+	v7_2_4630_2:1.5
+	v0_46_0_4:1.4
+	v7_2_4630_1:1.5
+	v7_2:1.5.0.6
+	v7_1_4532_2:1.5
+	v7_1_4532_1:1.5
+	v7_1_4532_0:1.5
+	v7_1:1.5.0.4
+	v7_0_4335_3:1.5
+	v7_0_4335_2:1.5
+	v7_0_4335_1:1.5
+	v0_46_0_2:1.4
+	v7_0_4335_0:1.5
+	v7_0:1.5.0.2
+	v0_40_0_6:1.2
+	v0_40_0_5:1.2
+	v0_46_0_1:1.4
+	v0_46_0_0:1.4
+	v0_46:1.4.0.4
+	v0_44_0_6:1.4
+	v0_44_0_5:1.4
+	v0_44_0_4:1.4
+	v0_44_0_3:1.4
+	v0_44_0_2:1.4
+	v0_42_0_7:1.3
+	v0_44_0_1:1.4
+	v0_44_0_0:1.4
+	v0_44:1.4.0.2
+	v0_42_0_6:1.3
+	v0_42_0_5:1.3
+	v0_42_0_4:1.3
+	v0_42_0_3:1.3
+	v0_42_0_2:1.3
+	v0_42_0_1:1.3
+	v0_42_0_0:1.3
+	v0_42:1.3.0.2
+	v0_40_0_3:1.2
+	v0_40_0_2:1.2
+	v0_40_0_1:1.2
+	v0_40_0_0:1.2
+	v0_40:1.2.0.2
+	v0_38_0_1:1.1
+	v0_38_0_0:1.1
+	v0_38:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.5
+date	2011.09.01.07.53.58;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.06.09.06.09.49;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2009.07.03.14.12.04;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.12.23.07.28.20;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.09.21.09.53.06;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.5
+log
+@Implemented platform MBean server support (although with very limited information/exposed operations).
+@
+text
+@/*
+  Copyright (C) 2002, 2003, 2004, 2005, 2006 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("IKVM.NET Runtime")]
+[assembly: AssemblyDescription("JVM for Mono and .NET")]
+
+[assembly: System.Security.AllowPartiallyTrustedCallers]
+
+#if SIGNCODE
+[assembly: InternalsVisibleTo("IKVM.Runtime.JNI, PublicKey=@@PUBLICKEY@@")]
+[assembly: InternalsVisibleTo("IKVM.OpenJDK.Core, PublicKey=@@PUBLICKEY@@")]
+[assembly: InternalsVisibleTo("IKVM.OpenJDK.Util, PublicKey=@@PUBLICKEY@@")]
+[assembly: InternalsVisibleTo("IKVM.OpenJDK.Security, PublicKey=@@PUBLICKEY@@")]
+[assembly: InternalsVisibleTo("IKVM.OpenJDK.Management, PublicKey=@@PUBLICKEY@@")]
+[assembly: InternalsVisibleTo("IKVM.OpenJDK.Media, PublicKey=@@PUBLICKEY@@")]
+[assembly: InternalsVisibleTo("IKVM.OpenJDK.Misc, PublicKey=@@PUBLICKEY@@")]
+[assembly: InternalsVisibleTo("IKVM.OpenJDK.Remoting, PublicKey=@@PUBLICKEY@@")]
+[assembly: InternalsVisibleTo("IKVM.OpenJDK.SwingAWT, PublicKey=@@PUBLICKEY@@")]
+#else
+[assembly: InternalsVisibleTo("IKVM.Runtime.JNI")]
+[assembly: InternalsVisibleTo("IKVM.OpenJDK.Core")]
+[assembly: InternalsVisibleTo("IKVM.OpenJDK.Util")]
+[assembly: InternalsVisibleTo("IKVM.OpenJDK.Security")]
+[assembly: InternalsVisibleTo("IKVM.OpenJDK.Management")]
+[assembly: InternalsVisibleTo("IKVM.OpenJDK.Media")]
+[assembly: InternalsVisibleTo("IKVM.OpenJDK.Misc")]
+[assembly: InternalsVisibleTo("IKVM.OpenJDK.Remoting")]
+[assembly: InternalsVisibleTo("IKVM.OpenJDK.SwingAWT")]
+#endif
+@
+
+
+1.4
+log
+@Individual types/methods have been annotated, so assembly can be transparent now.
+@
+text
+@d42 1
+d52 1
+@
+
+
+1.3
+log
+@Split off Beans and Media from Misc.
+@
+text
+@a34 1
+[assembly: System.Security.SecurityCritical]
+@
+
+
+1.2
+log
+@Updated build to split IKVM.OpenJDK.ClassLibrary.dll into ten parts.
+@
+text
+@d43 1
+d45 1
+a45 1
+[assembly: InternalsVisibleTo("IKVM.OpenJDK.XML, PublicKey=@@PUBLICKEY@@")]
+d52 1
+d54 1
+a54 1
+[assembly: InternalsVisibleTo("IKVM.OpenJDK.XML")]
+@
+
+
+1.1
+log
+@Removed hardcoded ikvm PublicKey from build.
+@
+text
+@d40 6
+a45 1
+[assembly: InternalsVisibleTo("IKVM.OpenJDK.ClassLibrary, PublicKey=@@PUBLICKEY@@")]
+d48 6
+a53 1
+[assembly: InternalsVisibleTo("IKVM.OpenJDK.ClassLibrary")]
+@
+

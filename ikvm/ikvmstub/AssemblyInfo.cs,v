@@ -1,0 +1,1081 @@
+head	1.33;
+access;
+symbols
+	v8_1_5717_0:1.33
+	v8_1:1.33.0.24
+	v8_0_5449_1:1.33
+	v8_0_5449_0:1.33
+	v8_0:1.33.0.22
+	v7_4_5196_0:1.33
+	v7_4:1.33.0.20
+	v7_3:1.33.0.18
+	v7_2_4630_6:1.33
+	v7_2_4630_5:1.33
+	v7_2_4630_4:1.33
+	v7_2_4630_3:1.33
+	v7_2_4630_2:1.33
+	v0_46_0_4:1.33
+	v7_2_4630_1:1.33
+	v7_2:1.33.0.16
+	v7_1_4532_2:1.33
+	v7_1_4532_1:1.33
+	v7_1_4532_0:1.33
+	v7_1:1.33.0.14
+	v7_0_4335_3:1.33
+	v7_0_4335_2:1.33
+	v7_0_4335_1:1.33
+	v0_46_0_2:1.33
+	v7_0_4335_0:1.33
+	v7_0:1.33.0.12
+	v0_40_0_6:1.33
+	v0_40_0_5:1.33
+	v0_46_0_1:1.33
+	v0_46_0_0:1.33
+	v0_46:1.33.0.10
+	v0_36_0_14:1.31.2.14
+	v0_44_0_6:1.33
+	v0_44_0_5:1.33
+	v0_44_0_4:1.33
+	v0_44_0_3:1.33
+	v0_44_0_2:1.33
+	v0_42_0_7:1.33
+	v0_44_0_1:1.33
+	v0_44_0_0:1.33
+	v0_44:1.33.0.8
+	v0_42_0_6:1.33
+	v0_42_0_5:1.33
+	v0_42_0_4:1.33
+	v0_42_0_3:1.33
+	v0_42_0_2:1.33
+	v0_42_0_1:1.33
+	v0_42_0_0:1.33
+	v0_42:1.33.0.6
+	v0_40_0_3:1.33
+	v0_40_0_2:1.33
+	v0_40_0_1:1.33
+	v0_40_0_0:1.33
+	v0_40:1.33.0.4
+	v0_36_0_13:1.31.2.13
+	v0_38_0_1:1.33
+	v0_38_0_0:1.33
+	v0_38:1.33.0.2
+	v0_36_0_9:1.31.2.10
+	v0_36_0_7:1.31.2.8
+	v0_36_0_5:1.31.2.6
+	v0_36_0_4:1.31.2.5
+	v0_36_0_3:1.31.2.4
+	v0_36_0_2:1.31.2.3
+	v0_36_0_1:1.31.2.2
+	v0_36_0_0:1.31.2.1
+	v0_36:1.31.0.2
+	v0_34_0_3:1.30.2.4
+	v0_34_0_2:1.30.2.3
+	v0_34_0_1:1.30.2.2
+	v0_34_0_0:1.30.2.1
+	v0_34:1.30.0.2
+	v0_32:1.28.0.2
+	v0_32_0_0:1.28
+	v0_30:1.26.0.2
+	v0_28_0_0:1.25
+	v0_26_0_1:1.23
+	v0_26_0_0:1.22
+	v0_24_0_1:1.20
+	v0_24_0_0:1.19
+	v0_22_0_0:1.17
+	v0_20_0_0:1.15
+	v0_18_0_0:1.13
+	v0_16_0_0:1.12
+	v0_14_0_1:1.10
+	v0_14_0_0:1.9
+	v0_12_0_0:1.7
+	v0_10_0_1:1.5
+	v0_10_0_0:1.4
+	v0_8_0_0:1.2;
+locks; strict;
+comment	@ * @;
+
+
+1.33
+date	2008.01.03.09.45.50;	author jfrijters;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2007.10.22.15.45.52;	author jfrijters;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2007.04.09.08.32.48;	author jfrijters;	state Exp;
+branches
+	1.31.2.1;
+next	1.30;
+
+1.30
+date	2007.02.03.14.26.18;	author jfrijters;	state Exp;
+branches
+	1.30.2.1;
+next	1.29;
+
+1.29
+date	2006.12.11.13.13.28;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2006.12.11.07.07.13;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2006.08.04.12.06.41;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2006.05.23.12.49.17;	author jfrijters;	state Exp;
+branches
+	1.26.2.1;
+next	1.25;
+
+1.25
+date	2006.05.16.08.34.56;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2006.03.23.11.57.44;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2006.03.11.18.35.30;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2006.03.07.09.34.32;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2006.01.31.10.13.32;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2006.01.23.10.18.44;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2006.01.20.08.35.31;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2005.12.07.09.06.32;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2005.11.14.10.16.51;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2005.09.21.14.26.38;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2005.09.07.07.02.48;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2005.07.25.09.53.25;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2005.07.18.07.27.43;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2005.07.01.09.25.35;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2005.05.13.11.41.33;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2005.05.09.07.23.02;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2005.05.02.11.11.53;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2005.03.03.08.20.13;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2005.03.02.09.01.36;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2005.02.02.15.12.03;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2005.01.10.08.24.27;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2005.01.07.09.34.20;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2004.07.10.07.19.57;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2004.06.28.09.46.33;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2004.05.27.07.12.10;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.26.2.1
+date	2006.08.09.11.49.10;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.30.2.1
+date	2007.04.13.06.46.40;	author jfrijters;	state Exp;
+branches;
+next	1.30.2.2;
+
+1.30.2.2
+date	2007.04.24.08.27.34;	author jfrijters;	state Exp;
+branches;
+next	1.30.2.3;
+
+1.30.2.3
+date	2007.04.29.08.49.19;	author jfrijters;	state Exp;
+branches;
+next	1.30.2.4;
+
+1.30.2.4
+date	2007.05.30.09.46.48;	author jfrijters;	state Exp;
+branches;
+next	1.30.2.5;
+
+1.30.2.5
+date	2007.08.06.08.09.37;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.31.2.1
+date	2007.08.30.09.25.50;	author jfrijters;	state Exp;
+branches;
+next	1.31.2.2;
+
+1.31.2.2
+date	2007.09.13.07.30.05;	author jfrijters;	state Exp;
+branches;
+next	1.31.2.3;
+
+1.31.2.3
+date	2007.09.20.13.54.22;	author jfrijters;	state Exp;
+branches;
+next	1.31.2.4;
+
+1.31.2.4
+date	2007.10.01.13.02.41;	author jfrijters;	state Exp;
+branches;
+next	1.31.2.5;
+
+1.31.2.5
+date	2007.10.12.16.18.41;	author jfrijters;	state Exp;
+branches;
+next	1.31.2.6;
+
+1.31.2.6
+date	2007.12.04.06.04.31;	author jfrijters;	state Exp;
+branches;
+next	1.31.2.7;
+
+1.31.2.7
+date	2008.01.14.04.58.30;	author jfrijters;	state Exp;
+branches;
+next	1.31.2.8;
+
+1.31.2.8
+date	2008.01.25.07.12.19;	author jfrijters;	state Exp;
+branches;
+next	1.31.2.9;
+
+1.31.2.9
+date	2008.02.03.07.44.12;	author jfrijters;	state Exp;
+branches;
+next	1.31.2.10;
+
+1.31.2.10
+date	2008.02.20.14.24.39;	author jfrijters;	state Exp;
+branches;
+next	1.31.2.11;
+
+1.31.2.11
+date	2008.03.14.06.11.11;	author jfrijters;	state Exp;
+branches;
+next	1.31.2.12;
+
+1.31.2.12
+date	2008.05.04.08.23.38;	author jfrijters;	state Exp;
+branches;
+next	1.31.2.13;
+
+1.31.2.13
+date	2008.11.05.07.52.01;	author jfrijters;	state Exp;
+branches;
+next	1.31.2.14;
+
+1.31.2.14
+date	2010.11.11.06.00.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.33
+log
+@- Moved common assembly attributes to single file (CommonAssemblyInfo.cs).
+- Added IKVM.Runtime.JNI project to Visual Studio solution.
+- Added atomic.cs to Visual Studio projects.
+- Added SecurityCritical and AllowPartiallyTrustedCallers attributes to IKVM.Runtime.dll.
+@
+text
+@/*
+  Copyright (C) 2002, 2003, 2004, 2005, 2006 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System.Reflection;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("IKVM.NET Stub Generator")]
+[assembly: AssemblyDescription("")]
+@
+
+
+1.32
+log
+@Updated version numbers to 0.37.
+@
+text
+@a24 1
+using System.Runtime.CompilerServices;
+a32 49
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("IKVM.NET")]
+[assembly: AssemblyCopyright("Copyright (C) 2002-2007 Jeroen Frijters")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]		
+
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("0.37.*")]
+
+//
+// In order to sign your assembly you must specify a key to use. Refer to the 
+// Microsoft .NET Framework documentation for more information on assembly signing.
+//
+// Use the attributes below to control which key is used for signing. 
+//
+// Notes: 
+//   (*) If no key is specified, the assembly is not signed.
+//   (*) KeyName refers to a key that has been installed in the Crypto Service
+//       Provider (CSP) on your machine. KeyFile refers to a file which contains
+//       a key.
+//   (*) If the KeyFile and the KeyName values are both specified, the 
+//       following processing occurs:
+//       (1) If the KeyName can be found in the CSP, that key is used.
+//       (2) If the KeyName does not exist and the KeyFile does exist, the key 
+//           in the KeyFile is installed into the CSP and used.
+//   (*) In order to create a KeyFile, you can use the sn.exe (Strong Name) utility.
+//       When specifying the KeyFile, the location of the KeyFile should be
+//       relative to the project output directory which is
+//       %Project Directory%\obj\<configuration>. For example, if your KeyFile is
+//       located in the project directory, you would specify the AssemblyKeyFile 
+//       attribute as [assembly: AssemblyKeyFile("..\\..\\mykey.snk")]
+//   (*) Delay Signing is an advanced option - see the Microsoft .NET Framework
+//       documentation for more information on this.
+//
+[assembly: AssemblyDelaySign(false)]
+#if SIGNCODE
+	[assembly: AssemblyKeyName("ikvm-key")]
+#endif
+@
+
+
+1.31
+log
+@Updated version numbers.
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.35.*")]
+@
+
+
+1.31.2.1
+log
+@Updated version numbers to 0.36.0.0
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.36.0.0")]
+@
+
+
+1.31.2.2
+log
+@Ported fixes from trunk. Changed version to 0.36.0.1.
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.36.0.1")]
+@
+
+
+1.31.2.3
+log
+@Backported fixes from trunk. Changed version to 0.36.0.2.
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.36.0.2")]
+@
+
+
+1.31.2.4
+log
+@Backported fixes from trunk. Changed version to 0.36.0.3.
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.36.0.3")]
+@
+
+
+1.31.2.5
+log
+@Backported fixes. Changed version to 0.36.0.4.
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.36.0.4")]
+@
+
+
+1.31.2.6
+log
+@Backported fixes and changed version to 0.36.0.5
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.36.0.5")]
+@
+
+
+1.31.2.7
+log
+@- Updated version to 0.36.0.6
+- Fix for issue reported in http://sourceforge.net/mailarchive/message.php?msg_name=477171a5.1ec37e0a.1f81.7bc8%40mx.google.com
+- Fix for bug #1865922
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.36.0.6")]
+@
+
+
+1.31.2.8
+log
+@- Changed version to 0.36.0.7
+- Fixed serialization bug
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.36.0.7")]
+@
+
+
+1.31.2.9
+log
+@Set version number to 0.36.0.8.
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.36.0.8")]
+@
+
+
+1.31.2.10
+log
+@- Changed version to 0.36.0.9
+- Added java.util.BitSet perf hack to map.xml
+- Back ported codegen optimizations from 0.37.2970
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.36.0.9")]
+@
+
+
+1.31.2.11
+log
+@- Updated version to 0.36.0.11
+- Updated copyright statements to 2002-2008
+@
+text
+@d37 1
+a37 1
+[assembly: AssemblyCopyright("Copyright (C) 2002-2008 Jeroen Frijters")]
+d52 1
+a52 1
+[assembly: AssemblyVersion("0.36.0.11")]
+@
+
+
+1.31.2.12
+log
+@Set version to 0.36.0.12.
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.36.0.12")]
+@
+
+
+1.31.2.13
+log
+@Back ported various fixes:
+- Changed version to 0.36.0.13.
+- Fixed ikvmc not to open the key file for write access.
+- Added more efficient float/double to/from int/long bits converters.
+- Fixed libikvm-native.so build to include reference to gmodule-2.0 library.
+- Fixed ikvmc not to open the key file for write access.
+- Fixed Graphics2D.rotate() to convert rotation angle from radians (Java) to degrees (.NET).
+- Applied awt patch #1979656 by Daniel Wilson.
+- Fixed three String bugs found by OpenJDK string tests.
+- Fixed ldc <class> where <class> is a ghost array.
+- Fixed bug in instanceof <class> where <class> is a Serializable[].
+- Removed incorrect DataFormatException thrown in java.util.zip.InflaterHuffmanTree.
+- Fixed #2001802 contributed by Andy Malakov.
+- Fixed #2001799.
+- Fixed #2006953.
+- Made finalize() and clone() methods in cli.System.Object and cli.System.Exception final.
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.36.0.13")]
+@
+
+
+1.31.2.14
+log
+@Updated version to 0.36.0.14.
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.36.0.14")]
+@
+
+
+1.30
+log
+@Updated year in copyright messages.
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.33.*")]
+@
+
+
+1.30.2.1
+log
+@Preparing for release.
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.34.0.0")]
+@
+
+
+1.30.2.2
+log
+@Updated version numbers to 0.34.0.1
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.34.0.1")]
+@
+
+
+1.30.2.3
+log
+@Update version to 0.34.0.2
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.34.0.2")]
+@
+
+
+1.30.2.4
+log
+@Updated version numbers to 0.34.0.3
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.34.0.3")]
+@
+
+
+1.30.2.5
+log
+@back ported the follwing fixes and incremented version to 0.34.0.4:
+- magic assembly type for assembly attribute annotations (bug #1721688)
+- LocalVariableTable robustness fix (bug #1765952)
+- public interfaces extending non-public interfaces
+- parameter annotations on redirected contructors
+- casting ghost interface arrays (bug #1757889)
+- JNI NewObject fix
+- make sure all implemented interface methods on .NET types are public (so that ikvmstub generates jars that javac is happy with)
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.34.0.4")]
+@
+
+
+1.29
+log
+@*** empty log message ***
+@
+text
+@d37 1
+a37 1
+[assembly: AssemblyCopyright("Copyright (C) 2002-2006 Jeroen Frijters")]
+@
+
+
+1.28
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.32.0.0")]
+@
+
+
+1.27
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.31.*")]
+@
+
+
+1.26
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.29.*")]
+@
+
+
+1.26.2.1
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.30.0.0")]
+@
+
+
+1.25
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.28.0.0")]
+@
+
+
+1.24
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.27.*")]
+@
+
+
+1.23
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.26.0.1")]
+@
+
+
+1.22
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.26.0.0")]
+@
+
+
+1.21
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.25.*")]
+@
+
+
+1.20
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002, 2003, 2004, 2005 Jeroen Frijters
+d32 1
+a32 1
+[assembly: AssemblyTitle("")]
+d36 2
+a37 2
+[assembly: AssemblyProduct("")]
+[assembly: AssemblyCopyright("")]
+d52 1
+a52 1
+[assembly: AssemblyVersion("0.24.0.1")]
+@
+
+
+1.19
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.24.0.0")]
+@
+
+
+1.18
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.23.*")]
+@
+
+
+1.17
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.22.0.0")]
+@
+
+
+1.16
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.21.*")]
+@
+
+
+1.15
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.20.0.0")]
+@
+
+
+1.14
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.19.*")]
+@
+
+
+1.13
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.18.0.0")]
+@
+
+
+1.12
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.16.0.0")]
+@
+
+
+1.11
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.15.*")]
+@
+
+
+1.10
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.14.0.1")]
+@
+
+
+1.9
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.14.0.0")]
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.13.*")]
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.12.0.0")]
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.11.*")]
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.10.0.1")]
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.10.0.0")]
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002 Jeroen Frijters
+d52 1
+a52 1
+[assembly: AssemblyVersion("0.9.*")]
+d80 3
+a82 2
+[assembly: AssemblyKeyFile("")]
+[assembly: AssemblyKeyName("")]
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.8.0.0")]
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+[assembly: AssemblyVersion("0.7.*")]
+@
+

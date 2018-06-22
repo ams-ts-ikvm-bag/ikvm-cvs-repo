@@ -1,0 +1,122 @@
+head	1.1;
+access;
+symbols
+	v8_1_5717_0:1.1
+	v8_1:1.1.0.12
+	v8_0_5449_1:1.1
+	v8_0_5449_0:1.1
+	v8_0:1.1.0.10
+	v7_4_5196_0:1.1
+	v7_4:1.1.0.8
+	v7_3:1.1.0.6
+	v7_2_4630_6:1.1
+	v7_2_4630_5:1.1
+	v7_2_4630_4:1.1
+	v7_2_4630_3:1.1
+	v7_2_4630_2:1.1
+	v7_2_4630_1:1.1
+	v7_2:1.1.0.4
+	v7_1_4532_2:1.1
+	v7_1_4532_1:1.1
+	v7_1_4532_0:1.1
+	v7_1:1.1.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.1
+date	2011.12.01.06.30.51;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@- Rewrote custom modifier handling to retain ordering.
+- Added ConstructorInfo.__ReturnParameter to expose custom modifiers.
+- Added __GetCustomModifiers() to various *Info types.
+- Added CustomModifiers type to encapsulate a custom modifier sequence.
+- Added CustomModifiersBuilder to create a CustomModifiers sequence.
+- Marked a number of IKVM.Reflection specific methods Obsolete, because they are replaced with method that take CustomModifiers value(s).
+@
+text
+@﻿/*
+  Copyright (C) 2011 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace IKVM.Reflection.Emit
+{
+	public sealed class CustomModifiersBuilder
+	{
+		private readonly List<Item> list = new List<Item>();
+
+		internal struct Item
+		{
+			internal Type type;
+			internal bool required;
+		}
+
+		public void AddRequired(Type type)
+		{
+			Item item;
+			item.type = type;
+			item.required = true;
+			list.Add(item);
+		}
+
+		public void AddOptional(Type type)
+		{
+			Item item;
+			item.type = type;
+			item.required = false;
+			list.Add(item);
+		}
+
+		// this adds the custom modifiers in the same order as the normal SRE APIs
+		// (the advantage over using the SRE APIs is that a CustomModifiers object is slightly more efficient,
+		// because unlike the Type arrays it doesn't need to be copied)
+		public void Add(Type[] requiredCustomModifiers, Type[] optionalCustomModifiers)
+		{
+			foreach (CustomModifiers.Entry entry in CustomModifiers.FromReqOpt(requiredCustomModifiers, optionalCustomModifiers))
+			{
+				Item item;
+				item.type = entry.Type;
+				item.required = entry.IsRequired;
+				list.Add(item);
+			}
+		}
+
+		public CustomModifiers Create()
+		{
+			return new CustomModifiers(list);
+		}
+	}
+}
+@

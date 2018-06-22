@@ -1,0 +1,1507 @@
+head	1.32;
+access;
+symbols
+	v8_1_5717_0:1.32
+	v8_1:1.32.0.8
+	v8_0_5449_1:1.32
+	v8_0_5449_0:1.32
+	v8_0:1.32.0.6
+	v7_4_5196_0:1.32
+	v7_4:1.32.0.4
+	v7_3:1.32.0.2
+	v7_2_4630_6:1.24
+	v7_2_4630_5:1.24
+	v7_2_4630_4:1.24
+	v7_2_4630_3:1.24
+	v7_2_4630_2:1.24
+	v0_46_0_4:1.22.2.1
+	v7_2_4630_1:1.24
+	v7_2:1.24.0.4
+	v7_1_4532_2:1.24
+	v7_1_4532_1:1.24
+	v7_1_4532_0:1.24
+	v7_1:1.24.0.2
+	v7_0_4335_3:1.23
+	v7_0_4335_2:1.23
+	v7_0_4335_1:1.23
+	v0_46_0_2:1.22
+	v7_0_4335_0:1.23
+	v7_0:1.23.0.2
+	v0_40_0_6:1.15
+	v0_40_0_5:1.15
+	v0_46_0_1:1.22
+	v0_46_0_0:1.22
+	v0_46:1.22.0.2
+	v0_36_0_14:1.10.2.2
+	v0_44_0_6:1.20
+	v0_44_0_5:1.20
+	v0_44_0_4:1.20
+	v0_44_0_3:1.20
+	v0_44_0_2:1.20
+	v0_42_0_7:1.16
+	v0_44_0_1:1.20
+	v0_44_0_0:1.20
+	v0_44:1.20.0.2
+	v0_42_0_6:1.16
+	v0_42_0_5:1.16
+	v0_42_0_4:1.16
+	v0_42_0_3:1.16
+	v0_42_0_2:1.16
+	v0_42_0_1:1.16
+	v0_42_0_0:1.16
+	v0_42:1.16.0.2
+	v0_40_0_3:1.15
+	v0_40_0_2:1.15
+	v0_40_0_1:1.15
+	v0_40_0_0:1.15
+	v0_40:1.15.0.2
+	v0_36_0_13:1.10.2.2
+	v0_38_0_1:1.14
+	v0_38_0_0:1.14
+	v0_38:1.14.0.2
+	v0_36_0_9:1.10.2.2
+	v0_36_0_7:1.10.2.2
+	v0_36_0_5:1.10.2.2
+	v0_36_0_4:1.10.2.1
+	v0_36_0_3:1.10.2.1
+	v0_36_0_2:1.10.2.1
+	v0_36_0_1:1.10.2.1
+	v0_36_0_0:1.10
+	v0_36:1.10.0.2
+	v0_34_0_3:1.9
+	v0_34_0_2:1.9
+	v0_34_0_1:1.9
+	v0_34_0_0:1.9
+	v0_34:1.9.0.2
+	v0_32:1.8.0.2
+	v0_32_0_0:1.8;
+locks; strict;
+comment	@# @;
+
+
+1.32
+date	2013.02.23.08.50.01;	author jfrijters;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2013.02.23.08.47.55;	author jfrijters;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2013.02.23.08.27.18;	author jfrijters;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2013.02.22.09.18.14;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2013.02.21.13.31.03;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2013.02.21.12.32.10;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2013.02.21.07.00.37;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2013.02.14.10.40.51;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2012.05.23.09.09.23;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2011.03.29.12.54.55;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2010.11.03.07.55.11;	author jfrijters;	state Exp;
+branches
+	1.22.2.1;
+next	1.21;
+
+1.21
+date	2010.08.05.13.43.00;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2010.06.03.14.28.50;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2010.05.21.06.25.06;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2010.01.29.07.08.56;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2009.11.03.07.06.36;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2009.05.28.05.32.37;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2009.02.04.07.24.44;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2007.10.25.12.56.18;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2007.10.22.08.09.19;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2007.10.22.05.13.08;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2007.09.07.13.11.49;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2007.06.19.10.21.17;	author jfrijters;	state Exp;
+branches
+	1.10.2.1;
+next	1.9;
+
+1.9
+date	2007.03.29.09.17.19;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2006.12.05.07.52.27;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2006.11.30.14.29.43;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2006.11.27.07.39.31;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2006.08.21.05.15.52;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2006.08.17.08.20.59;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2006.08.15.08.50.43;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2006.08.14.07.34.37;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2006.08.12.07.19.35;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.10.2.1
+date	2007.09.13.07.30.05;	author jfrijters;	state Exp;
+branches;
+next	1.10.2.2;
+
+1.10.2.2
+date	2007.12.04.06.04.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.22.2.1
+date	2012.10.03.06.18.56;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.32
+log
+@Remove Assembly field from AssemblyClassLoader, instead associate the ikvm.runtime.AssemblyClassLoader with the runtime AssemblyClassLoader.
+@
+text
+@/*
+  Copyright (C) 2006-2013 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+// HACK because of historical reasons this class' source lives in ikvm/internal instead of ikvm/runtime
+package ikvm.runtime;
+
+import cli.System.Reflection.Assembly;
+import gnu.java.util.EmptyEnumeration;
+import ikvm.lang.Internal;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Enumeration;
+import java.util.Vector;
+import java.util.jar.Attributes;
+import java.util.jar.Manifest;
+
+public final class AssemblyClassLoader extends ClassLoader
+{
+    private boolean packagesDefined;
+
+    // This constructor is used to manually construct an AssemblyClassLoader that is used
+    // as a delegation parent for custom assembly class loaders.
+    //
+    // In that case the class loader object graph looks like this:
+    //
+    //            +---------------------------------+
+    //            |IKVM.Internal.AssemblyClassLoader|
+    //            +---------------------------------+
+    //              ||     /\                  /\
+    //              \/     ||                  ||
+    //    +-------------------+                ||
+    //    |Custom Class Loader|      +--------------------------------+
+    //    +-------------------+      |ikvm.runtime.AssemblyClassLoader|
+    //                               +--------------------------------+
+    //
+    public AssemblyClassLoader(Assembly assembly)
+    {
+        super(null);
+        setWrapper(assembly);
+    }
+
+    private native void setWrapper(Assembly assembly);
+
+    // this constructor is used by the runtime and calls a privileged
+    // ClassLoader constructor to avoid the security check
+    AssemblyClassLoader()
+    {
+        super(null, null);
+    }
+
+    @@Override
+    protected native Class loadClass(String name, boolean resolve) throws ClassNotFoundException;
+
+    @@Override
+    public native URL getResource(String name);
+
+    @@Override
+    public native Enumeration<URL> getResources(String name) throws IOException;
+
+    @@Override
+    protected native URL findResource(String name);
+
+    @@Override
+    protected native Enumeration<URL> findResources(String name) throws IOException;
+
+    private synchronized void lazyDefinePackagesCheck()
+    {
+        if(!packagesDefined)
+        {
+            packagesDefined = true;
+            lazyDefinePackages();
+        }
+    }
+
+    private native void lazyDefinePackages();
+
+    @@Override
+    protected Package getPackage(String name)
+    {
+        lazyDefinePackagesCheck();
+        return super.getPackage(name);
+    }
+
+    @@Override
+    protected Package[] getPackages()
+    {
+        lazyDefinePackagesCheck();
+        return super.getPackages();
+    }
+
+    @@Override
+    public native String toString();
+
+    // return the ClassLoader for the assembly. Note that this doesn't have to be an AssemblyClassLoader.
+    public static native ClassLoader getAssemblyClassLoader(Assembly asm);
+}
+
+final class GenericClassLoader extends ClassLoader
+{
+    // this constructor avoids the security check in ClassLoader by passing in null as the security manager
+    // to the IKVM specific constructor in ClassLoader
+    GenericClassLoader()
+    {
+        super(null, null);
+    }
+
+    @@Override
+    public native String toString();
+
+    @@Override
+    public URL getResource(String name)
+    {
+        Enumeration<URL> e = getResources(name);
+        return e.hasMoreElements()
+            ? e.nextElement()
+            : null;
+    }
+
+    @@Override
+    public native Enumeration<URL> getResources(String name);
+
+    @@Override
+    protected native URL findResource(String name);
+
+    @@Override
+    protected Enumeration<URL> findResources(String name)
+    {
+        Vector<URL> v = new Vector<URL>();
+        URL url = findResource(name);
+        if (url != null)
+        {
+            v.add(url);
+        }
+        return v.elements();
+    }
+}
+@
+
+
+1.31
+log
+@Simplified AssemblyClassLoader construction.
+@
+text
+@a39 1
+    private final Assembly assembly;
+d42 15
+d60 1
+a60 1
+        this.assembly = assembly;
+d63 2
+d67 1
+a67 1
+    AssemblyClassLoader(Assembly assembly, SecurityManager security)
+a69 1
+        this.assembly = assembly;
+d73 1
+a73 6
+    protected Class loadClass(String name, boolean resolve) throws ClassNotFoundException
+    {
+        return LoadClass(this, assembly, name);
+    }
+
+    private static native Class LoadClass(ClassLoader classLoader, Assembly assembly, String name) throws ClassNotFoundException;
+d76 1
+a76 4
+    public URL getResource(String name)
+    {
+        return getResource(assembly, name);
+    }
+d79 1
+a79 4
+    public Enumeration getResources(String name) throws IOException
+    {
+        return getResources(assembly, name);
+    }
+d82 1
+a82 4
+    protected URL findResource(String name)
+    {
+        return getResource(assembly, name);
+    }
+d85 1
+a85 8
+    protected Enumeration findResources(String name) throws IOException
+    {
+        return getResources(assembly, name);
+    }
+
+    private static native URL getResource(Assembly assembly, String name);
+    
+    private static native Enumeration getResources(Assembly assembly, String name) throws IOException;
+d113 1
+a113 4
+    public String toString()
+    {
+        return assembly.get_FullName();
+    }
+@
+
+
+1.30
+log
+@Moved AssemblyClassLoader package definition to runtime.
+@
+text
+@d45 2
+a46 1
+        this(assembly, System.getSecurityManager());
+d49 2
+a50 1
+    // this constructor is used by the runtime to avoid the security check (by passing in null as the security manager)    
+d53 1
+a53 1
+        super(null, security);
+@
+
+
+1.29
+log
+@getResource and getResources are no longer used outside of AssemblyClassLoader.
+@
+text
+@a90 6
+    // also used by java.lang.LangHelper
+    @@Internal
+    public static native String[] GetPackages(Assembly assembly);
+
+    private static native URL GetManifest(Assembly assembly);
+
+d100 1
+a100 64
+    private static String getAttributeValue(Attributes.Name name, Attributes first, Attributes second)
+    {
+        String result = null;
+        if(first != null)
+        {
+            result = first.getValue(name);
+        }
+        if(second != null && result == null)
+        {
+            result = second.getValue(name);
+        }
+        return result;
+    }
+
+    private Manifest getManifest()
+    {
+        try
+        {
+            URL url = GetManifest(assembly);
+            if (url != null)
+            {
+                return new Manifest(url.openStream());
+            }
+        }
+        catch (MalformedURLException _)
+        {
+        }
+        catch (IOException _)
+        {
+        }
+        return null;
+    }
+
+    private void lazyDefinePackages()
+    {
+        URL sealBase = getCodeBase();
+        Manifest manifest = getManifest();
+        Attributes attr = null;
+        if(manifest != null)
+        {
+            attr = manifest.getMainAttributes();
+        }
+        String[] packages = GetPackages(assembly);
+        for(int i = 0; i < packages.length; i++)
+        {
+            String name = packages[i];
+            if(super.getPackage(name) == null)
+            {
+                Attributes entryAttr = null;
+                if(manifest != null)
+                {
+                    entryAttr = manifest.getAttributes(name.replace('.', '/') + '/');
+                }
+                definePackage(name,
+                    getAttributeValue(Attributes.Name.SPECIFICATION_TITLE, entryAttr, attr),
+                    getAttributeValue(Attributes.Name.SPECIFICATION_VERSION, entryAttr, attr),
+                    getAttributeValue(Attributes.Name.SPECIFICATION_VENDOR, entryAttr, attr),
+                    getAttributeValue(Attributes.Name.IMPLEMENTATION_TITLE, entryAttr, attr),
+                    getAttributeValue(Attributes.Name.IMPLEMENTATION_VERSION, entryAttr, attr),
+                    getAttributeValue(Attributes.Name.IMPLEMENTATION_VENDOR, entryAttr, attr),
+                    "true".equalsIgnoreCase(getAttributeValue(Attributes.Name.SEALED, entryAttr, attr)) ? sealBase : null);
+            }
+        }
+    }
+a121 16
+    private URL getCodeBase()
+    {
+        try
+        {
+            if(false) throw new cli.System.NotSupportedException();
+            return new URL(assembly.get_CodeBase());
+        }
+        catch(cli.System.NotSupportedException _)
+        {
+        }
+        catch(MalformedURLException _)
+        {
+        }
+        return null;
+    }
+    
+@
+
+
+1.28
+log
+@Removed remains of generic class loader support from AssemblyClassLoader.
+@
+text
+@d87 1
+a87 2
+    @@Internal
+    public static native URL getResource(Assembly assembly, String name);
+d89 1
+a89 2
+    @@Internal
+    public static native Enumeration getResources(Assembly assembly, String name) throws IOException;
+@
+
+
+1.27
+log
+@Untangled generic class loader resource loading.
+@
+text
+@d66 1
+a66 1
+        return getResource(this, assembly, name);
+d72 1
+a72 1
+        return getResources(this, assembly, name);
+d78 1
+a78 1
+        return getResource(this, assembly, name);
+d84 1
+a84 1
+        return getResources(this, assembly, name);
+d88 1
+a88 1
+    public static native URL getResource(ClassLoader classLoader, Assembly assembly, String name);
+d91 1
+a91 1
+    public static native Enumeration getResources(ClassLoader classLoader, Assembly assembly, String name) throws IOException;
+@
+
+
+1.26
+log
+@Stop abusing ikvm.runtime.AssemblyClassLoader as a class loader for generic types.
+@
+text
+@d228 4
+a231 1
+        return AssemblyClassLoader.getResource(this, null, name);
+d235 1
+a235 4
+    public Enumeration getResources(String name) throws IOException
+    {
+        return AssemblyClassLoader.getResources(this, null, name);
+    }
+d238 1
+a238 4
+    protected URL findResource(String name)
+    {
+        return AssemblyClassLoader.getResource(this, null, name);
+    }
+d241 1
+a241 1
+    protected Enumeration findResources(String name) throws IOException
+d243 7
+a249 1
+        return AssemblyClassLoader.getResources(this, null, name);
+@
+
+
+1.25
+log
+@Changed object to java.lang.ClassLoader in some signatures.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2006, 2007, 2010 Jeroen Frijters
+a39 1
+    // NOTE assembly is null for "generics" class loader instances
+d55 1
+d63 1
+d69 1
+d75 1
+d81 1
+a92 1
+    private static native String GetGenericClassLoaderName(ClassLoader classLoader);
+d126 2
+a127 1
+            if(assembly != null)
+d129 1
+a129 5
+                URL url = GetManifest(assembly);
+                if (url != null)
+                {
+                    return new Manifest(url.openStream());
+                }
+a142 5
+	if(assembly == null)
+	{
+	    // generic class loader (doesn't support packages)
+	    return;
+	}
+d173 1
+d180 1
+d187 1
+d190 1
+a190 5
+        if(assembly != null)
+        {
+            return assembly.get_FullName();
+        }
+        return GetGenericClassLoaderName(this);
+d197 2
+a198 5
+            if(assembly != null)
+            {
+                if(false) throw new cli.System.NotSupportedException();
+                return new URL(assembly.get_CodeBase());
+            }
+d212 37
+@
+
+
+1.24
+log
+@Fixed regression introduced in 7.0 that caused the manifest to be ignored when creating the Package objects.
+@
+text
+@d89 1
+a89 1
+    private static native String GetGenericClassLoaderName(Object classLoader);
+@
+
+
+1.23
+log
+@Corrected comment.
+@
+text
+@d94 2
+d125 5
+a129 1
+                return new Manifest(gnu.java.net.protocol.ikvmres.Handler.readResourceFromAssembly(assembly, "/META-INF/MANIFEST.MF"));
+@
+
+
+1.22
+log
+@Avoid security manager check for assembly class loaders. The runtime should be priviliged to create the default assembly class loader and a custom security manager might recursively require the assembly class loader to be loaded (which is only "supported" for custom assembly class loaders).
+@
+text
+@d90 1
+a90 1
+    // also used by VMClassLoader
+@
+
+
+1.22.2.1
+log
+@Backported fixes for 0.46.0.3:
+- Bug fix. java.lang.Package was not populated from manifest for ikvmc compiled assemblies.
+- Bug fix. When writing a direct ByteBuffer to a non-blocking socket and the write fails because there is no kernel buffer available, we should not advance the ByteBuffer position.
+- Bug fix. When adding certificates to virtual cacerts file make sure that the aliases are unique.
+- Bug fix. If a finally/fault handler contains reachable code before the handler's start index, the handler should branch to the handler start index.
+- Bug fix. After emitting a finally/fault handler block, we should emit the block leave stubs (even though you can't leave the block, they also emit the backward branch stubs).
+- Bug fix. If a Java class extends a remapped .NET type (cli.System.Object or cli.System.Exception), we should correctly report the base class.
+- Bug fix. If we encounter a jsr or ret instruction, we should throw a VerifyError (instead of NotImplementedException).
+- Bug fix. If an exception block ends with an astore, we need to propagate the local variable type after the astore to the exception handler.
+- Disable AppDomain.ProcessExit hook to run shutdown hooks when running on Mono to workaround https://bugzilla.xamarin.com/show_bug.cgi?id=5650
+- Bug fix. Custom attribute properties that don't have a public getter and setter should not be exposed as annotation properties.
+- Bug fix. Non-public property getter/setter methods should be ignored when we create properties to hide properties inherited from shadow types. This fixes a build break with .NET 4.5 beta which introduces a protected setter for Exception.HResult.
+- Bug fix. The $Method inner class for delegates should also be loadable for generic delegates. Thanks to Michael Bayne for reporting this.
+- Bug fix. When constructing a generic class loader we can't use GetWrapperFromType() on the type arguments, because they might refer to a subtype that is currently being loaded.
+- Replaced non-ascii character (micro) with ascii 'u' in Win32PrintService.java.
+- IKVM.Reflection: Bug fix. Resource Directory Entries must be sorted and names are case-insensitive
+
+Backported for 0.46.0.4:
+- Fixed ikvmc to retain transient modifier on constant static final fields.
+- Fixed Field.getModifiers() to only return the relevant modifiers.
+- Fixed IKVM.Reflection to set AddressOfRawData in IMAGE_DEBUG_DIRECTORY.
+@
+text
+@d90 1
+a90 1
+    // also used by java.lang.LangHelper
+a93 2
+    private static native URL GetManifest(Assembly assembly);
+
+d123 1
+a123 5
+                URL url = GetManifest(assembly);
+                if (url != null)
+                {
+                    return new Manifest(url.openStream());
+                }
+@
+
+
+1.21
+log
+@Massive change to change resource handling. Java resources are now stored in jars that are stored as managed .NET resources. The jars are projected into VFS and the assembly class loaders know how to load resources from these jars.
+@
+text
+@d46 7
+a52 1
+        super(null);
+@
+
+
+1.20
+log
+@Make synthesized .class resources available via getResources (note the plural) as well.
+@
+text
+@a58 9
+        // for consistency with class loading, we change the delegation order for .class files
+        if(name.endsWith(".class"))
+        {
+            URL url = getResource(this, assembly, name);
+            if(url != null)
+            {
+                return url;
+            }
+        }
+d78 2
+a79 13
+    public static URL makeIkvmresURL(Assembly asm, String name)
+    {
+        String assemblyName = asm.get_FullName();
+        try
+        {
+            return new URL("ikvmres", assemblyName, -1, "/" + name);
+        }
+        catch(MalformedURLException x)
+        {
+            throw (InternalError)new InternalError().initCause(x);
+        }
+    }
+
+d81 1
+a81 52
+    public static URL getResource(ClassLoader classLoader, Assembly assembly, String name)
+    {
+	if(assembly != null)
+	{
+	    Assembly[] asm = FindResourceAssemblies(assembly, name, true);
+	    if(asm != null && asm.length > 0)
+	    {
+		return makeIkvmresURL(asm[0], name);
+	    }
+	}
+	return getClassResource(classLoader, assembly, name);
+    }
+    
+    private static URL getClassResource(ClassLoader classLoader, Assembly assembly, String name)
+    {
+        if(name.endsWith(".class") && name.indexOf('.') == name.length() - 6)
+        {
+            Class c = null;
+            try
+            {
+                c = LoadClass(classLoader, assembly, name.substring(0, name.length() - 6).replace('/', '.'));
+            }
+            catch(ClassNotFoundException _)
+            {
+            }
+            catch(LinkageError _)
+            {
+            }
+            if(c != null && !IsDynamic(c))
+            {
+		assembly = GetAssemblyFromClass(c);
+                if(assembly != null)
+                {
+                    return makeIkvmresURL(assembly, name);
+                }
+                else
+                {
+                    // HACK we use an index to identity the generic class loader in the url
+                    // TODO this obviously isn't persistable, we should use a list of assemblies instead.
+                    try
+                    {
+                        return new URL("ikvmres", "gen", GetGenericClassLoaderId(c.getClassLoader()), "/" + name);
+                    }
+                    catch(MalformedURLException x)
+                    {
+                        throw (InternalError)new InternalError().initCause(x);
+                    }                    
+                }
+            }
+        }
+        return null;
+    }
+a82 2
+    private static native Assembly[] FindResourceAssemblies(Assembly assembly, String name, boolean firstOnly);
+    private static native int GetGenericClassLoaderId(ClassLoader classLoader);
+a83 2
+    private static native Assembly GetAssemblyFromClass(Class clazz);
+    private static native boolean IsDynamic(Class clazz);
+a87 20
+    @@Internal
+    public static Enumeration getResources(ClassLoader classLoader, Assembly assembly, String name) throws IOException
+    {
+        Vector v = new Vector();
+        Assembly[] assemblies = FindResourceAssemblies(assembly, name, false);
+        if(assemblies != null)
+        {
+            for(int i = 0; i < assemblies.length; i++)
+            {
+                v.addElement(makeIkvmresURL(assemblies[i], name));
+            }
+        }
+        URL url = getClassResource(classLoader, assembly, name);
+        if(url != null)
+        {
+            v.addElement(url);
+        }
+        return v.elements();
+    }
+
+@
+
+
+1.19
+log
+@The AssemblyClassLoader should not claim to be able to load .class resources for dynamically loaded classes.
+@
+text
+@d111 5
+d166 1
+a169 1
+            Vector v = new Vector();
+a173 1
+            return v.elements();
+d175 6
+a180 1
+        return EmptyEnumeration.getInstance();
+@
+
+
+1.18
+log
+@Removed ReflectionOnly support from runtime. Now that ikvmstub no longer requires it, there's no good reason to allow Java code to see ReflectionOnly types.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2006, 2007 Jeroen Frijters
+a59 1
+        // (this also helps make ikvmstub work reliably)
+d124 1
+a124 1
+            if(c != null)
+d153 1
+@
+
+
+1.17
+log
+@Added public API to get ClassLoader from Assembly.
+@
+text
+@a90 4
+        if(IsReflectionOnly(asm))
+        {
+            assemblyName += "[ReflectionOnly]";
+        }
+a149 1
+    private static native boolean IsReflectionOnly(Assembly asm);
+@
+
+
+1.16
+log
+@Dynamic assemblies don't have a CodeBase.
+@
+text
+@d296 3
+@
+
+
+1.15
+log
+@Added AssemblyClassLoader.GetAssembly(TypeWrapper) and changed most code that assumed that an AssemblyClassLoader represented a single assembly to use it.
+@
+text
+@d284 1
+d288 3
+@
+
+
+1.14
+log
+@Made AssemblyClassLoader public and moved it to ikvm.runtime package.
+@
+text
+@d131 1
+a131 6
+                classLoader = c.getClassLoader();
+                if(classLoader == null)
+                {
+                    return makeIkvmresURL(GetBootClassLoaderAssembly(), name);
+                }
+		assembly = GetAssemblyFromClassLoader(classLoader);
+d142 1
+a142 1
+                        return new URL("ikvmres", "gen", GetGenericClassLoaderId(classLoader), "/" + name);
+a156 1
+    private static native Assembly GetBootClassLoaderAssembly();
+d158 1
+a158 1
+    private static native Assembly GetAssemblyFromClassLoader(ClassLoader classLoader);
+@
+
+
+1.13
+log
+@Implemented two custom assembly class loaders.
+@
+text
+@d24 2
+a25 1
+package ikvm.internal;
+a37 1
+@@Internal
+d87 1
+d105 1
+d166 1
+d169 1
+@
+
+
+1.12
+log
+@Changed AssemblyClassLoader to be useable as a delegation parent for custom assembly class loaders.
+@
+text
+@d87 1
+a87 1
+    private static URL makeIkvmresURL(Assembly asm, String name)
+@
+
+
+1.11
+log
+@Only seal packages that are sealed in the manifest.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2006 Jeroen Frijters
+a35 5
+import java.security.AllPermission;
+import java.security.CodeSource;
+import java.security.Permissions;
+import java.security.ProtectionDomain;
+import java.security.cert.Certificate;
+a41 1
+    private ProtectionDomain pd;
+d52 1
+a52 1
+        return LoadClass(this, name);
+d55 1
+a55 1
+    private static native Class LoadClass(Object classLoader, String name) throws ClassNotFoundException;
+d63 1
+a63 1
+            URL url = getResource(this, name);
+d69 1
+a69 1
+        return getResource(this, name);
+d74 1
+a74 1
+        return getResources(this, name);
+d79 1
+a79 1
+        return getResource(this, name);
+d84 1
+a84 1
+        return getResources(this, name);
+d104 1
+a104 1
+    public static URL getResource(AssemblyClassLoader classLoader, String name)
+d106 9
+a114 6
+        Assembly[] asm = FindResourceAssemblies(classLoader, name, true);
+        if(asm != null && asm.length > 0)
+        {
+            return makeIkvmresURL(asm[0], name);
+        }
+        else if(name.endsWith(".class") && name.indexOf('.') == name.length() - 6)
+d119 1
+a119 1
+                c = LoadClass(classLoader, name.substring(0, name.length() - 6).replace('/', '.'));
+d129 1
+a129 1
+                classLoader = (AssemblyClassLoader)c.getClassLoader();
+d134 2
+a135 1
+                else if(classLoader.assembly != null)
+d137 1
+a137 1
+                    return makeIkvmresURL(classLoader.assembly, name);
+d158 2
+a159 2
+    private static native Assembly[] FindResourceAssemblies(Object classLoader, String name, boolean firstOnly);
+    private static native int GetGenericClassLoaderId(AssemblyClassLoader classLoader);
+d162 1
+d164 1
+a164 1
+    public static native String[] GetPackages(Object classLoader);
+d166 1
+a166 1
+    public static Enumeration getResources(Object classLoader, String name) throws IOException
+d168 1
+a168 1
+        Assembly[] assemblies = FindResourceAssemblies(classLoader, name, false);
+d224 5
+d236 1
+a236 1
+        String[] packages = GetPackages(this);
+a293 11
+
+    public synchronized ProtectionDomain getProtectionDomain()
+    {
+        if(pd == null)
+        {
+            Permissions permissions = new Permissions();
+            permissions.add(new AllPermission());
+            pd = new ProtectionDomain(new CodeSource(getCodeBase(), (Certificate[])null), permissions, this, null);
+        }
+        return pd;
+    }
+@
+
+
+1.10
+log
+@Disambiguate CodeSource constructor invocation.
+@
+text
+@d250 1
+a250 1
+                    sealBase);
+@
+
+
+1.10.2.1
+log
+@Ported fixes from trunk. Changed version to 0.36.0.1.
+@
+text
+@d250 1
+a250 1
+                    "true".equalsIgnoreCase(getAttributeValue(Attributes.Name.SEALED, entryAttr, attr)) ? sealBase : null);
+@
+
+
+1.10.2.2
+log
+@Backported fixes and changed version to 0.36.0.5
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2006, 2007 Jeroen Frijters
+d24 1
+a24 2
+// HACK because of historical reasons this class' source lives in ikvm/internal instead of ikvm/runtime
+package ikvm.runtime;
+d36 5
+d42 1
+d47 1
+d58 1
+a58 1
+        return LoadClass(this, assembly, name);
+d61 1
+a61 1
+    private static native Class LoadClass(ClassLoader classLoader, Assembly assembly, String name) throws ClassNotFoundException;
+d69 1
+a69 1
+            URL url = getResource(this, assembly, name);
+d75 1
+a75 1
+        return getResource(this, assembly, name);
+d80 1
+a80 1
+        return getResources(this, assembly, name);
+d85 1
+a85 1
+        return getResource(this, assembly, name);
+d90 1
+a90 1
+        return getResources(this, assembly, name);
+d93 1
+a93 2
+    @@Internal
+    public static URL makeIkvmresURL(Assembly asm, String name)
+d110 1
+a110 2
+    @@Internal
+    public static URL getResource(ClassLoader classLoader, Assembly assembly, String name)
+d112 6
+a117 9
+	if(assembly != null)
+	{
+	    Assembly[] asm = FindResourceAssemblies(assembly, name, true);
+	    if(asm != null && asm.length > 0)
+	    {
+		return makeIkvmresURL(asm[0], name);
+	    }
+	}
+        if(name.endsWith(".class") && name.indexOf('.') == name.length() - 6)
+d122 1
+a122 1
+                c = LoadClass(classLoader, assembly, name.substring(0, name.length() - 6).replace('/', '.'));
+d132 1
+a132 1
+                classLoader = c.getClassLoader();
+d137 1
+a137 2
+		assembly = GetAssemblyFromClassLoader(classLoader);
+                if(assembly != null)
+d139 1
+a139 1
+                    return makeIkvmresURL(assembly, name);
+d160 2
+a161 2
+    private static native Assembly[] FindResourceAssemblies(Assembly assembly, String name, boolean firstOnly);
+    private static native int GetGenericClassLoaderId(ClassLoader classLoader);
+a163 1
+    private static native Assembly GetAssemblyFromClassLoader(ClassLoader classLoader);
+d165 1
+a165 2
+    @@Internal
+    public static native String[] GetPackages(Assembly assembly);
+d167 1
+a167 2
+    @@Internal
+    public static Enumeration getResources(ClassLoader classLoader, Assembly assembly, String name) throws IOException
+d169 1
+a169 1
+        Assembly[] assemblies = FindResourceAssemblies(assembly, name, false);
+a224 5
+	if(assembly == null)
+	{
+	    // generic class loader (doesn't support packages)
+	    return;
+	}
+d232 1
+a232 1
+        String[] packages = GetPackages(assembly);
+d290 11
+@
+
+
+1.9
+log
+@- .NET "generic class loaders" now return something sensible when toString() is called on them.
+- Ikvmc no longer warns about generic stubs.
+- Ikvmstub now has WHIDBEY conditional code to properly determine if a class is a generic type instance (instead of the name based hack).
+- Fixed .NET generic type name mangling bug (nested generic types were double encoded).
+- Added support for loading .NET generic type stubs.
+- Fixed several .NET generic type loading bugs.
+- Fixed ikvm.runtime.Util.getInstanceTypeFromClass() to return null instead of throw an exception when it is called on a "dynamic only" class.
+@
+text
+@d40 1
+d297 1
+a297 1
+            pd = new ProtectionDomain(new CodeSource(getCodeBase(), null), permissions, this, null);
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@d162 1
+d272 1
+a272 2
+        // TODO make this string more meaningful
+        return "GenericClassLoader";
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d44 1
+d131 22
+a152 1
+                return makeIkvmresURL(GetClassAssembly(c), name);
+d160 2
+a161 1
+    private static native Assembly GetClassAssembly(Class c);
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d73 6
+a78 1
+        return super.getResource(name);
+d110 2
+a111 2
+        Assembly asm = FindResourceAssembly(classLoader, name);
+        if(asm != null)
+d113 1
+a113 1
+            return makeIkvmresURL(asm, name);
+d137 1
+a137 2
+    private static native Assembly FindResourceAssembly(Object classLoader, String name);
+    private static native Assembly[] FindResourceAssemblies(Object classLoader, String name);
+d144 1
+a144 1
+        Assembly[] assemblies = FindResourceAssemblies(classLoader, name);
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d44 1
+d48 1
+a48 1
+    public AssemblyClassLoader()
+d51 1
+a134 1
+    private static native Assembly GetAssembly(Object classLoader);
+d180 1
+a180 2
+            Assembly asm = GetAssembly(this);
+            if(asm != null)
+d182 1
+a182 1
+                return new Manifest(gnu.java.net.protocol.ikvmres.Handler.readResourceFromAssembly(asm, "/META-INF/MANIFEST.MF"));
+d240 1
+a240 2
+        Assembly asm = GetAssembly(this);
+        if(asm != null)
+d242 1
+a242 1
+            return asm.get_FullName();
+d252 1
+a252 2
+            Assembly asm = GetAssembly(this);
+            if(asm != null)
+d254 1
+a254 1
+                return new URL(asm.get_CodeBase());
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@a26 1
+import gnu.java.util.DoubleEnumeration;
+d45 1
+d52 1
+a52 2
+    protected synchronized Class loadClass(String name, boolean resolve)
+        throws ClassNotFoundException
+d61 3
+a63 2
+        URL url = getResource(this, name);
+        if(url == null)
+d65 5
+a69 1
+            url = super.getResource(name);
+d71 11
+a81 1
+        return url;
+d84 1
+a84 1
+    private static URL makeIkvmresURL(Assembly asm, String name) throws MalformedURLException
+d91 8
+a98 1
+        return new URL("ikvmres", assemblyName, -1, "/" + name);
+d101 1
+a101 1
+    public static URL getResource(Object classLoader, String name)
+d106 5
+d113 1
+a113 1
+                return makeIkvmresURL(asm, name);
+d115 1
+a115 1
+            catch(MalformedURLException x)
+a116 1
+                throw (InternalError)new InternalError().initCause(x);
+d118 1
+a118 4
+        }
+        else if(name.endsWith(".class") && name.indexOf('.') == name.length() - 6)
+        {
+            try
+a119 12
+                Class c = LoadClass(classLoader, name.substring(0, name.length() - 6).replace('/', '.'));
+                if(c != null)
+                {
+                    try
+                    {
+                        return makeIkvmresURL(GetClassAssembly(c), name);
+                    }
+                    catch(MalformedURLException x)
+                    {
+                        throw (InternalError)new InternalError().initCause(x);
+                    }
+                }
+d121 1
+a121 1
+            catch(ClassNotFoundException _)
+d123 1
+a136 5
+    public Enumeration getResources(String name) throws IOException
+    {
+        return new DoubleEnumeration(getResources(this, name), super.getResources(name));
+    }
+
+a151 2
+    private static boolean packagesDefined;
+
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d27 1
+d62 6
+a67 1
+        return getResource(this, name);
+d128 1
+a128 1
+        return getResources(this, name);
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d36 4
+d44 2
+d169 5
+a173 1
+            return new Manifest(gnu.java.net.protocol.ikvmres.Handler.readResourceFromAssembly(GetAssembly(this), "/META-INF/MANIFEST.MF"));
+d186 1
+a186 8
+        URL sealBase = null;
+        try
+        {
+            sealBase = new URL(GetAssembly(this).get_CodeBase());
+        }
+        catch(MalformedURLException _)
+        {
+        }
+d238 27
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@d194 1
+a194 2
+            Attributes entryAttr = null;
+            if(manifest != null)
+d196 13
+a208 1
+                entryAttr = manifest.getAttributes(name.replace('.', '/') + '/');
+a209 8
+            definePackage(name,
+                getAttributeValue(Attributes.Name.SPECIFICATION_TITLE, entryAttr, attr),
+                getAttributeValue(Attributes.Name.SPECIFICATION_VERSION, entryAttr, attr),
+                getAttributeValue(Attributes.Name.SPECIFICATION_VENDOR, entryAttr, attr),
+                getAttributeValue(Attributes.Name.IMPLEMENTATION_TITLE, entryAttr, attr),
+                getAttributeValue(Attributes.Name.IMPLEMENTATION_VERSION, entryAttr, attr),
+                getAttributeValue(Attributes.Name.IMPLEMENTATION_VENDOR, entryAttr, attr),
+                sealBase);
+@
+

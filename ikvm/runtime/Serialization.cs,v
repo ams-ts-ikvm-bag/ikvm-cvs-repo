@@ -1,0 +1,1021 @@
+head	1.19;
+access;
+symbols
+	v8_1_5717_0:1.19
+	v8_1:1.19.0.4
+	v8_0_5449_1:1.19
+	v8_0_5449_0:1.19
+	v8_0:1.19.0.2
+	v7_4_5196_0:1.18
+	v7_4:1.18.0.4
+	v7_3:1.18.0.2
+	v7_2_4630_6:1.15
+	v7_2_4630_5:1.15
+	v7_2_4630_4:1.15
+	v7_2_4630_3:1.15
+	v7_2_4630_2:1.15
+	v0_46_0_4:1.11.2.1
+	v7_2_4630_1:1.15
+	v7_2:1.15.0.2
+	v7_1_4532_2:1.14
+	v7_1_4532_1:1.14
+	v7_1_4532_0:1.14
+	v7_1:1.14.0.2
+	v7_0_4335_3:1.12
+	v7_0_4335_2:1.12
+	v7_0_4335_1:1.12
+	v0_46_0_2:1.11.2.1
+	v7_0_4335_0:1.12
+	v7_0:1.12.0.2
+	v0_46_0_1:1.11
+	v0_46_0_0:1.11
+	v0_46:1.11.0.2
+	v0_44_0_6:1.10
+	v0_44_0_5:1.10
+	v0_44_0_4:1.10
+	v0_44_0_3:1.10
+	v0_44_0_2:1.10
+	v0_42_0_7:1.3.2.2
+	v0_44_0_1:1.10
+	v0_44_0_0:1.10
+	v0_44:1.10.0.2
+	v0_42_0_6:1.3.2.2
+	v0_42_0_5:1.3.2.2
+	v0_42_0_4:1.3.2.1
+	v0_42_0_3:1.3.2.1
+	v0_42_0_2:1.3.2.1
+	v0_42_0_1:1.3
+	v0_42_0_0:1.3
+	v0_42:1.3.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.19
+date	2014.07.09.08.45.25;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2013.02.14.16.09.04;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2012.09.13.13.21.35;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2012.09.11.10.25.11;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2012.07.03.14.45.51;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2012.03.26.14.47.07;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2011.12.12.11.13.33;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2011.06.26.11.24.35;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2010.09.30.04.03.33;	author jfrijters;	state Exp;
+branches
+	1.11.2.1;
+next	1.10;
+
+1.10
+date	2010.05.03.07.58.01;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2010.04.12.04.17.40;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2010.02.19.08.07.38;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2010.01.28.09.18.34;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2010.01.25.07.53.12;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2009.10.23.06.29.54;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2009.10.14.14.58.41;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2009.08.11.05.58.45;	author jfrijters;	state Exp;
+branches
+	1.3.2.1;
+next	1.2;
+
+1.2
+date	2009.07.31.09.57.15;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2009.07.30.13.14.14;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.3.2.1
+date	2009.10.26.04.51.24;	author jfrijters;	state Exp;
+branches;
+next	1.3.2.2;
+
+1.3.2.2
+date	2010.02.19.08.14.27;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.11.2.1
+date	2011.12.20.09.20.45;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.19
+log
+@Added .NET serialization interop to lambda classes.
+@
+text
+@﻿/*
+  Copyright (C) 2009-2011 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Runtime.Serialization;
+using System.Security;
+using System.Security.Permissions;
+#if STATIC_COMPILER
+using IKVM.Reflection;
+using IKVM.Reflection.Emit;
+using Type = IKVM.Reflection.Type;
+#else
+using System.Reflection;
+using System.Reflection.Emit;
+#endif
+
+namespace IKVM.Internal
+{
+	// This class deals with .NET serialization. When a class is Java serializable it will attempt to automagically make it .NET serializable.
+	static class Serialization
+	{
+		private static readonly CustomAttributeBuilder serializableAttribute = new CustomAttributeBuilder(JVM.Import(typeof(SerializableAttribute)).GetConstructor(Type.EmptyTypes), new object[0]);
+		private static readonly CustomAttributeBuilder securityCriticalAttribute = new CustomAttributeBuilder(JVM.Import(typeof(SecurityCriticalAttribute)).GetConstructor(Type.EmptyTypes), new object[0]);
+		private static readonly TypeWrapper iserializable = ClassLoaderWrapper.GetWrapperFromType(JVM.Import(typeof(ISerializable)));
+		private static readonly TypeWrapper iobjectreference = ClassLoaderWrapper.GetWrapperFromType(JVM.Import(typeof(IObjectReference)));
+		private static readonly TypeWrapper externalizable = ClassLoaderWrapper.LoadClassCritical("java.io.Externalizable");
+		private static readonly PermissionSet psetSerializationFormatter;
+
+		static Serialization()
+		{
+			psetSerializationFormatter = new PermissionSet(PermissionState.None);
+			psetSerializationFormatter.AddPermission(new SecurityPermission(SecurityPermissionFlag.SerializationFormatter));
+		}
+
+		internal static bool IsISerializable(TypeWrapper wrapper)
+		{
+			return wrapper == iserializable;
+		}
+
+		private static bool IsSafeForAutomagicSerialization(TypeWrapper wrapper)
+		{
+			if (wrapper.TypeAsBaseType.IsSerializable)
+			{
+				return false;
+			}
+			if (wrapper.IsSubTypeOf(iserializable))
+			{
+				return false;
+			}
+			if (wrapper.IsSubTypeOf(iobjectreference))
+			{
+				return false;
+			}
+			if (wrapper.GetMethodWrapper("GetObjectData", "(Lcli.System.Runtime.Serialization.SerializationInfo;Lcli.System.Runtime.Serialization.StreamingContext;)V", false) != null)
+			{
+				return false;
+			}
+			if (wrapper.GetMethodWrapper("<init>", "(Lcli.System.Runtime.Serialization.SerializationInfo;Lcli.System.Runtime.Serialization.StreamingContext;)V", false) != null)
+			{
+				return false;
+			}
+			return true;
+		}
+
+		internal static MethodBuilder AddAutomagicSerialization(DynamicTypeWrapper wrapper, TypeBuilder typeBuilder)
+		{
+			MethodBuilder serializationCtor = null;
+			if ((wrapper.Modifiers & IKVM.Attributes.Modifiers.Enum) != 0)
+			{
+				MarkSerializable(typeBuilder);
+			}
+			else if (wrapper.IsSubTypeOf(CoreClasses.java.io.Serializable.Wrapper) && IsSafeForAutomagicSerialization(wrapper))
+			{
+				if (wrapper.IsSubTypeOf(externalizable))
+				{
+					MethodWrapper ctor = wrapper.GetMethodWrapper("<init>", "()V", false);
+					if (ctor != null && ctor.IsPublic)
+					{
+						MarkSerializable(typeBuilder);
+						ctor.Link();
+						serializationCtor = AddConstructor(typeBuilder, ctor, null, true);
+						if (!wrapper.BaseTypeWrapper.IsSubTypeOf(CoreClasses.java.io.Serializable.Wrapper))
+						{
+							AddGetObjectData(typeBuilder);
+						}
+						if (wrapper.BaseTypeWrapper.GetMethodWrapper("readResolve", "()Ljava.lang.Object;", true) != null)
+						{
+							RemoveReadResolve(typeBuilder);
+						}
+					}
+				}
+				else if (wrapper.BaseTypeWrapper.IsSubTypeOf(CoreClasses.java.io.Serializable.Wrapper))
+				{
+					MethodBase baseCtor = wrapper.GetBaseSerializationConstructor();
+					if (baseCtor != null && (baseCtor.IsFamily || baseCtor.IsFamilyOrAssembly))
+					{
+						MarkSerializable(typeBuilder);
+						serializationCtor = AddConstructor(typeBuilder, null, baseCtor, false);
+						AddReadResolve(wrapper, typeBuilder);
+					}
+				}
+				else
+				{
+					MethodWrapper baseCtor = wrapper.BaseTypeWrapper.GetMethodWrapper("<init>", "()V", false);
+					if (baseCtor != null && baseCtor.IsAccessibleFrom(wrapper.BaseTypeWrapper, wrapper, wrapper))
+					{
+						MarkSerializable(typeBuilder);
+						AddGetObjectData(typeBuilder);
+#if STATIC_COMPILER
+						// because the base type can be a __WorkaroundBaseClass__, we may need to replace the constructor
+						baseCtor = ((AotTypeWrapper)wrapper).ReplaceMethodWrapper(baseCtor);
+#endif
+						baseCtor.Link();
+						serializationCtor = AddConstructor(typeBuilder, baseCtor, null, true);
+						AddReadResolve(wrapper, typeBuilder);
+					}
+				}
+			}
+			return serializationCtor;
+		}
+
+		internal static MethodBuilder AddAutomagicSerializationToWorkaroundBaseClass(TypeBuilder typeBuilderWorkaroundBaseClass, MethodBase baseCtor)
+		{
+			if (typeBuilderWorkaroundBaseClass.BaseType.IsSerializable)
+			{
+				typeBuilderWorkaroundBaseClass.SetCustomAttribute(serializableAttribute);
+				if (baseCtor != null && (baseCtor.IsFamily || baseCtor.IsFamilyOrAssembly))
+				{
+					return AddConstructor(typeBuilderWorkaroundBaseClass, null, baseCtor, false);
+				}
+			}
+			return null;
+		}
+
+		internal static void MarkSerializable(TypeBuilder tb)
+		{
+			tb.SetCustomAttribute(serializableAttribute);
+		}
+
+		internal static void AddGetObjectData(TypeBuilder tb)
+		{
+			string name = tb.IsSealed
+				? "System.Runtime.Serialization.ISerializable.GetObjectData"
+				: "GetObjectData";
+			MethodAttributes attr = tb.IsSealed
+				? MethodAttributes.Private | MethodAttributes.Virtual | MethodAttributes.NewSlot | MethodAttributes.Final
+				: MethodAttributes.Family | MethodAttributes.Virtual | MethodAttributes.NewSlot | MethodAttributes.CheckAccessOnOverride;
+			tb.AddInterfaceImplementation(JVM.Import(typeof(ISerializable)));
+			MethodBuilder getObjectData = tb.DefineMethod(name, attr, null,
+				new Type[] { JVM.Import(typeof(SerializationInfo)), JVM.Import(typeof(StreamingContext)) });
+			getObjectData.SetCustomAttribute(securityCriticalAttribute);
+			AttributeHelper.HideFromJava(getObjectData);
+			getObjectData.AddDeclarativeSecurity(SecurityAction.Demand, psetSerializationFormatter);
+			tb.DefineMethodOverride(getObjectData, JVM.Import(typeof(ISerializable)).GetMethod("GetObjectData"));
+			CodeEmitter ilgen = CodeEmitter.Create(getObjectData);
+			ilgen.Emit(OpCodes.Ldarg_0);
+			ilgen.Emit(OpCodes.Ldarg_1);
+			TypeWrapper serializationHelper = ClassLoaderWrapper.LoadClassCritical("ikvm.internal.Serialization");
+			MethodWrapper mw = serializationHelper.GetMethodWrapper("writeObject", "(Ljava.lang.Object;Lcli.System.Runtime.Serialization.SerializationInfo;)V", false);
+			mw.Link();
+			mw.EmitCall(ilgen);
+			ilgen.Emit(OpCodes.Ret);
+			ilgen.DoEmit();
+		}
+
+		private static MethodBuilder AddConstructor(TypeBuilder tb, MethodWrapper defaultConstructor, MethodBase serializationConstructor, bool callReadObject)
+		{
+			MethodBuilder ctor = ReflectUtil.DefineConstructor(tb, MethodAttributes.Family, new Type[] { JVM.Import(typeof(SerializationInfo)), JVM.Import(typeof(StreamingContext)) });
+			AttributeHelper.HideFromJava(ctor);
+			ctor.AddDeclarativeSecurity(SecurityAction.Demand, psetSerializationFormatter);
+			CodeEmitter ilgen = CodeEmitter.Create(ctor);
+			ilgen.Emit(OpCodes.Ldarg_0);
+			if (defaultConstructor != null)
+			{
+				defaultConstructor.EmitCall(ilgen);
+			}
+			else
+			{
+				ilgen.Emit(OpCodes.Ldarg_1);
+				ilgen.Emit(OpCodes.Ldarg_2);
+				ilgen.Emit(OpCodes.Call, serializationConstructor);
+			}
+			if (callReadObject)
+			{
+				ilgen.Emit(OpCodes.Ldarg_0);
+				ilgen.Emit(OpCodes.Ldarg_1);
+				TypeWrapper serializationHelper = ClassLoaderWrapper.LoadClassCritical("ikvm.internal.Serialization");
+				MethodWrapper mw = serializationHelper.GetMethodWrapper("readObject", "(Ljava.lang.Object;Lcli.System.Runtime.Serialization.SerializationInfo;)V", false);
+				mw.Link();
+				mw.EmitCall(ilgen);
+			}
+			ilgen.Emit(OpCodes.Ret);
+			ilgen.DoEmit();
+			return ctor;
+		}
+
+		private static void AddReadResolve(DynamicTypeWrapper wrapper, TypeBuilder tb)
+		{
+			MethodWrapper mw = wrapper.GetMethodWrapper("readResolve", "()Ljava.lang.Object;", false);
+			if (mw != null && !wrapper.IsSubTypeOf(iobjectreference))
+			{
+				tb.AddInterfaceImplementation(JVM.Import(typeof(IObjectReference)));
+				MethodBuilder getRealObject = tb.DefineMethod("IObjectReference.GetRealObject", MethodAttributes.Private | MethodAttributes.Virtual | MethodAttributes.NewSlot | MethodAttributes.Final,
+					Types.Object, new Type[] { JVM.Import(typeof(StreamingContext)) });
+				getRealObject.SetCustomAttribute(securityCriticalAttribute);
+				AttributeHelper.HideFromJava(getRealObject);
+				tb.DefineMethodOverride(getRealObject, JVM.Import(typeof(IObjectReference)).GetMethod("GetRealObject"));
+				CodeEmitter ilgen = CodeEmitter.Create(getRealObject);
+				mw.Link();
+				if (!wrapper.IsFinal)
+				{
+					// readResolve is only applicable if it exists on the actual type of the object, so if we're a subclass don't call it
+					ilgen.Emit(OpCodes.Ldarg_0);
+					ilgen.Emit(OpCodes.Callvirt, Compiler.getTypeMethod);
+					ilgen.Emit(OpCodes.Ldtoken, wrapper.TypeAsBaseType);
+					ilgen.Emit(OpCodes.Call, Compiler.getTypeFromHandleMethod);
+					CodeEmitterLabel label = ilgen.DefineLabel();
+					ilgen.EmitBeq(label);
+					ilgen.Emit(OpCodes.Ldarg_0);
+					ilgen.Emit(OpCodes.Ret);
+					ilgen.MarkLabel(label);
+				}
+				ilgen.Emit(OpCodes.Ldarg_0);
+				mw.EmitCall(ilgen);
+				ilgen.Emit(OpCodes.Ret);
+				ilgen.DoEmit();
+			}
+		}
+
+		private static void RemoveReadResolve(TypeBuilder tb)
+		{
+			tb.AddInterfaceImplementation(JVM.Import(typeof(IObjectReference)));
+			MethodBuilder getRealObject = tb.DefineMethod("IObjectReference.GetRealObject", MethodAttributes.Private | MethodAttributes.Virtual | MethodAttributes.NewSlot | MethodAttributes.Final,
+				Types.Object, new Type[] { JVM.Import(typeof(StreamingContext)) });
+			getRealObject.SetCustomAttribute(securityCriticalAttribute);
+			AttributeHelper.HideFromJava(getRealObject);
+			tb.DefineMethodOverride(getRealObject, JVM.Import(typeof(IObjectReference)).GetMethod("GetRealObject"));
+			CodeEmitter ilgen = CodeEmitter.Create(getRealObject);
+			ilgen.Emit(OpCodes.Ldarg_0);
+			ilgen.Emit(OpCodes.Ret);
+			ilgen.DoEmit();
+		}
+	}
+}
+@
+
+
+1.18
+log
+@- Added java.io.Serializable and java.lang.Cloneable to the core classes.
+- Replaced LoadClassCritical("ikvm.internal.CallerID") with a core class reference.
+@
+text
+@d55 5
+d155 1
+a155 1
+		private static void MarkSerializable(TypeBuilder tb)
+d160 1
+a160 1
+		private static void AddGetObjectData(TypeBuilder tb)
+d162 6
+d169 1
+a169 1
+			MethodBuilder getObjectData = tb.DefineMethod("GetObjectData", MethodAttributes.Family | MethodAttributes.Virtual | MethodAttributes.NewSlot, null,
+@
+
+
+1.17
+log
+@Removed remaining ConstructorBuilder usages.
+@
+text
+@a45 1
+		private static readonly TypeWrapper serializable = ClassLoaderWrapper.LoadClassCritical("java.io.Serializable");
+d87 1
+a87 1
+			else if (wrapper.IsSubTypeOf(serializable) && IsSafeForAutomagicSerialization(wrapper))
+d97 1
+a97 1
+						if (!wrapper.BaseTypeWrapper.IsSubTypeOf(serializable))
+d107 1
+a107 1
+				else if (wrapper.BaseTypeWrapper.IsSubTypeOf(serializable))
+@
+
+
+1.16
+log
+@Do the "no serialization" check before calling Serialization.AddAutomagicSerialization() to avoid triggering the class initializer (which will try to load SerializableAttribute, which is not available everywhere).
+@
+text
+@d81 1
+a81 1
+		internal static ConstructorInfo AddAutomagicSerialization(DynamicTypeWrapper wrapper, TypeBuilder typeBuilder)
+d83 1
+a83 1
+			ConstructorInfo serializationCtor = null;
+d110 1
+a110 1
+					ConstructorInfo baseCtor = wrapper.GetBaseSerializationConstructor();
+d138 1
+a138 1
+		internal static ConstructorInfo AddAutomagicSerializationToWorkaroundBaseClass(TypeBuilder typeBuilderWorkaroundBaseClass, ConstructorInfo baseCtor)
+d176 1
+a176 1
+		private static ConstructorInfo AddConstructor(TypeBuilder tb, MethodWrapper defaultConstructor, ConstructorInfo serializationConstructor, bool callReadObject)
+d178 1
+a178 1
+			ConstructorBuilder ctor = tb.DefineConstructor(MethodAttributes.Family, CallingConventions.Standard, new Type[] { JVM.Import(typeof(SerializationInfo)), JVM.Import(typeof(StreamingContext)) });
+@
+
+
+1.15
+log
+@- Made CodeEmitter more "type safe" by adding specific EmitXxx methods instead of following the more general ILGenerator pattern.
+- Added some new optimizations to CodeEmitter (disabled unless experimental optimizations are enabled).
+- Added some invariant checks to CodeEmitter to help debug optimizations (and document the invariants).
+@
+text
+@d84 1
+a84 5
+			if (wrapper.GetClassLoader().NoAutomagicSerialization)
+			{
+				// do nothing
+			}
+			else if ((wrapper.Modifiers & IKVM.Attributes.Modifiers.Enum) != 0)
+@
+
+
+1.14
+log
+@There is no reason for Serialization class to be public.
+@
+text
+@d232 1
+a232 1
+					ilgen.Emit(OpCodes.Beq_S, label);
+@
+
+
+1.13
+log
+@Removed usage of TypeAsBuilder from automagic serialization generation code.
+@
+text
+@d40 1
+a40 1
+	public static class Serialization
+@
+
+
+1.12
+log
+@Fixed a serialization interop bug. If an object is a subclass of a class that has readResolve() method, but the subclass doesn't have a readResolve(), we should not call the base class readResolve().
+@
+text
+@d81 1
+a81 1
+		internal static ConstructorInfo AddAutomagicSerialization(TypeWrapper wrapper)
+d90 1
+a90 1
+				MarkSerializable(wrapper);
+d99 1
+a99 1
+						MarkSerializable(wrapper);
+d101 1
+a101 1
+						serializationCtor = AddConstructor(wrapper.TypeAsBuilder, ctor, null, true);
+d104 1
+a104 1
+							AddGetObjectData(wrapper);
+d108 1
+a108 1
+							RemoveReadResolve(wrapper);
+d117 3
+a119 3
+						MarkSerializable(wrapper);
+						serializationCtor = AddConstructor(wrapper.TypeAsBuilder, null, baseCtor, false);
+						AddReadResolve(wrapper);
+d127 2
+a128 2
+						MarkSerializable(wrapper);
+						AddGetObjectData(wrapper);
+d134 2
+a135 2
+						serializationCtor = AddConstructor(wrapper.TypeAsBuilder, baseCtor, null, true);
+						AddReadResolve(wrapper);
+d155 1
+a155 1
+		private static void MarkSerializable(TypeWrapper wrapper)
+a156 1
+			TypeBuilder tb = wrapper.TypeAsBuilder;
+d160 1
+a160 1
+		private static void AddGetObjectData(TypeWrapper wrapper)
+a161 1
+			TypeBuilder tb = wrapper.TypeAsBuilder;
+d211 1
+a211 1
+		private static void AddReadResolve(TypeWrapper wrapper)
+a215 1
+				TypeBuilder tb = wrapper.TypeAsBuilder;
+d244 1
+a244 1
+		private static void RemoveReadResolve(TypeWrapper wrapper)
+a245 1
+			TypeBuilder tb = wrapper.TypeAsBuilder;
+@
+
+
+1.11
+log
+@Build intermediate store of MSIL code in CodeEmitter to allow post-processing optimization steps.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009-2010 Jeroen Frijters
+d227 13
+@
+
+
+1.11.2.1
+log
+@Backport: Fixed a serialization interop bug. If an object is a subclass of a class that has readResolve() method, but the subclass doesn't have a readResolve(), we should not call the base class readResolve().
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009-2011 Jeroen Frijters
+a226 13
+				if (!wrapper.IsFinal)
+				{
+					// readResolve is only applicable if it exists on the actual type of the object, so if we're a subclass don't call it
+					ilgen.Emit(OpCodes.Ldarg_0);
+					ilgen.Emit(OpCodes.Callvirt, Compiler.getTypeMethod);
+					ilgen.Emit(OpCodes.Ldtoken, wrapper.TypeAsBaseType);
+					ilgen.Emit(OpCodes.Call, Compiler.getTypeFromHandleMethod);
+					CodeEmitterLabel label = ilgen.DefineLabel();
+					ilgen.Emit(OpCodes.Beq_S, label);
+					ilgen.Emit(OpCodes.Ldarg_0);
+					ilgen.Emit(OpCodes.Ret);
+					ilgen.MarkLabel(label);
+				}
+@
+
+
+1.10
+log
+@Added ikvmc option to disable automagic serialization.
+@
+text
+@d179 1
+d209 1
+d230 1
+d246 1
+@
+
+
+1.9
+log
+@Prep for .NET 4.0 security model:
+- serialization methods must be critical.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Jeroen Frijters
+d84 5
+a88 1
+			if ((wrapper.Modifiers & IKVM.Attributes.Modifiers.Enum) != 0)
+@
+
+
+1.8
+log
+@Fix for bug #2946842.
+@
+text
+@d43 1
+d163 1
+d216 1
+d233 1
+@
+
+
+1.7
+log
+@Removed IKVM_REF_EMIT, as STATIC_COMPILER or STUB_GENERATOR now always implies IKVM.Reflection.
+@
+text
+@d80 1
+a80 1
+		internal static void AddAutomagicSerialization(TypeWrapper wrapper)
+d82 1
+d96 1
+a96 1
+						AddConstructor(wrapper.TypeAsBuilder, (ConstructorInfo)ctor.GetMethod(), null, true);
+d109 1
+a109 2
+					ConstructorInfo baseCtor = wrapper.TypeAsBaseType.BaseType.GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] {
+						JVM.Import(typeof(SerializationInfo)), JVM.Import(typeof(StreamingContext)) }, null);
+d113 1
+a113 1
+						AddConstructor(wrapper.TypeAsBuilder, null, baseCtor, false);
+d124 6
+a129 3
+						// because the base type can be a __WorkaroundBaseClass__, we need to resolve the constructor again, on the actual base type
+						ConstructorInfo constructor = wrapper.TypeAsBaseType.BaseType.GetConstructor(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance, null, Type.EmptyTypes, null);
+						AddConstructor(wrapper.TypeAsBuilder, constructor, null, true);
+d134 1
+d137 1
+a137 1
+		internal static void AddAutomagicSerializationToWorkaroundBaseClass(TypeBuilder typeBuilderWorkaroundBaseClass)
+a141 2
+				ConstructorInfo baseCtor = typeBuilderWorkaroundBaseClass.BaseType.GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] {
+					JVM.Import(typeof(SerializationInfo)), JVM.Import(typeof(StreamingContext)) }, null);
+d144 1
+a144 1
+					AddConstructor(typeBuilderWorkaroundBaseClass, null, baseCtor, false);
+d147 1
+d175 1
+a175 1
+		private static void AddConstructor(TypeBuilder tb, ConstructorInfo defaultConstructor, ConstructorInfo serializationConstructor, bool callReadObject)
+d184 1
+a184 1
+				ilgen.Emit(OpCodes.Call, defaultConstructor);
+d202 1
+@
+
+
+1.6
+log
+@Integrated new IKVM.Reflection implementation.
+@
+text
+@d28 1
+a28 1
+#if IKVM_REF_EMIT
+@
+
+
+1.5
+log
+@Fixed automagic serialization interop to work correctly in the face of a __WorkaroundBaseClass__ base type.
+@
+text
+@a24 1
+using System.Reflection;
+d29 1
+d31 1
+d33 1
+@
+
+
+1.4
+log
+@Replaced most type literals with static field access (in Types class) or warpped JVM.Import() around them.
+@
+text
+@d92 2
+a93 1
+						AddConstructor(wrapper, ctor, null, true);
+d106 1
+a106 1
+					ConstructorInfo baseCtor = wrapper.BaseTypeWrapper.TypeAsBaseType.GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] {
+d111 1
+a111 1
+						AddConstructor(wrapper, null, baseCtor, false);
+d122 3
+a124 1
+						AddConstructor(wrapper, baseCtor, null, true);
+d131 14
+d170 1
+a170 1
+		private static void AddConstructor(TypeWrapper wrapper, MethodWrapper defaultConstructor, ConstructorInfo serializationConstructor, bool callReadObject)
+a171 1
+			TypeBuilder tb = wrapper.TypeAsBuilder;
+d179 1
+a179 2
+				defaultConstructor.Link();
+				defaultConstructor.EmitCall(ilgen);
+@
+
+
+1.3
+log
+@Automagic .NET serialization support (for classes that are Java serializable).
+@
+text
+@d40 3
+a42 3
+		private static readonly CustomAttributeBuilder serializableAttribute = new CustomAttributeBuilder(typeof(SerializableAttribute).GetConstructor(Type.EmptyTypes), new object[0]);
+		private static readonly TypeWrapper iserializable = ClassLoaderWrapper.GetWrapperFromType(typeof(ISerializable));
+		private static readonly TypeWrapper iobjectreference = ClassLoaderWrapper.GetWrapperFromType(typeof(IObjectReference));
+d105 2
+a106 1
+					ConstructorInfo baseCtor = wrapper.BaseTypeWrapper.TypeAsBaseType.GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] { typeof(SerializationInfo), typeof(StreamingContext) }, null);
+d137 1
+a137 1
+			tb.AddInterfaceImplementation(typeof(ISerializable));
+d139 1
+a139 1
+				new Type[] { typeof(SerializationInfo), typeof(StreamingContext) });
+d142 1
+a142 1
+			tb.DefineMethodOverride(getObjectData, typeof(ISerializable).GetMethod("GetObjectData"));
+d156 1
+a156 1
+			ConstructorBuilder ctor = tb.DefineConstructor(MethodAttributes.Family, CallingConventions.Standard, new Type[] { typeof(SerializationInfo), typeof(StreamingContext) });
+d190 1
+a190 1
+				tb.AddInterfaceImplementation(typeof(IObjectReference));
+d192 1
+a192 1
+					typeof(object), new Type[] { typeof(StreamingContext) });
+d194 1
+a194 1
+				tb.DefineMethodOverride(getRealObject, typeof(IObjectReference).GetMethod("GetRealObject"));
+d206 1
+a206 1
+			tb.AddInterfaceImplementation(typeof(IObjectReference));
+d208 1
+a208 1
+				typeof(object), new Type[] { typeof(StreamingContext) });
+d210 1
+a210 1
+			tb.DefineMethodOverride(getRealObject, typeof(IObjectReference).GetMethod("GetRealObject"));
+@
+
+
+1.3.2.1
+log
+@Fixed automagic serialization interop to work correctly in the face of a __WorkaroundBaseClass__ base type.
+@
+text
+@d92 1
+a92 2
+						ctor.Link();
+						AddConstructor(wrapper.TypeAsBuilder, (ConstructorInfo)ctor.GetMethod(), null, true);
+d105 1
+a105 1
+					ConstructorInfo baseCtor = wrapper.TypeAsBaseType.BaseType.GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] { typeof(SerializationInfo), typeof(StreamingContext) }, null);
+d109 1
+a109 1
+						AddConstructor(wrapper.TypeAsBuilder, null, baseCtor, false);
+d120 1
+a120 3
+						// because the base type can be a __WorkaroundBaseClass__, we need to resolve the constructor again, on the actual base type
+						ConstructorInfo constructor = wrapper.TypeAsBaseType.BaseType.GetConstructor(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance, null, Type.EmptyTypes, null);
+						AddConstructor(wrapper.TypeAsBuilder, constructor, null, true);
+a126 13
+		internal static void AddAutomagicSerializationToWorkaroundBaseClass(TypeBuilder typeBuilderWorkaroundBaseClass)
+		{
+			if (typeBuilderWorkaroundBaseClass.BaseType.IsSerializable)
+			{
+				typeBuilderWorkaroundBaseClass.SetCustomAttribute(serializableAttribute);
+				ConstructorInfo baseCtor = typeBuilderWorkaroundBaseClass.BaseType.GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] { typeof(SerializationInfo), typeof(StreamingContext) }, null);
+				if (baseCtor != null && (baseCtor.IsFamily || baseCtor.IsFamilyOrAssembly))
+				{
+					AddConstructor(typeBuilderWorkaroundBaseClass, null, baseCtor, false);
+				}
+			}
+		}
+
+d152 1
+a152 1
+		private static void AddConstructor(TypeBuilder tb, ConstructorInfo defaultConstructor, ConstructorInfo serializationConstructor, bool callReadObject)
+d154 1
+d162 2
+a163 1
+				ilgen.Emit(OpCodes.Call, defaultConstructor);
+@
+
+
+1.3.2.2
+log
+@Back port of fix for #2946842.
+@
+text
+@d78 1
+a78 1
+		internal static ConstructorInfo AddAutomagicSerialization(TypeWrapper wrapper)
+a79 1
+			ConstructorInfo serializationCtor = null;
+d93 1
+a93 1
+						serializationCtor = AddConstructor(wrapper.TypeAsBuilder, ctor, null, true);
+d106 1
+a106 1
+					ConstructorInfo baseCtor = wrapper.GetBaseSerializationConstructor();
+d110 1
+a110 1
+						serializationCtor = AddConstructor(wrapper.TypeAsBuilder, null, baseCtor, false);
+d121 3
+a123 6
+#if STATIC_COMPILER
+						// because the base type can be a __WorkaroundBaseClass__, we may need to replace the constructor
+						baseCtor = ((AotTypeWrapper)wrapper).ReplaceMethodWrapper(baseCtor);
+#endif
+						baseCtor.Link();
+						serializationCtor = AddConstructor(wrapper.TypeAsBuilder, baseCtor, null, true);
+a127 1
+			return serializationCtor;
+d130 1
+a130 1
+		internal static ConstructorInfo AddAutomagicSerializationToWorkaroundBaseClass(TypeBuilder typeBuilderWorkaroundBaseClass, ConstructorInfo baseCtor)
+d135 1
+d138 1
+a138 1
+					return AddConstructor(typeBuilderWorkaroundBaseClass, null, baseCtor, false);
+a140 1
+			return null;
+d168 1
+a168 1
+		private static ConstructorInfo AddConstructor(TypeBuilder tb, MethodWrapper defaultConstructor, ConstructorInfo serializationConstructor, bool callReadObject)
+d177 1
+a177 1
+				defaultConstructor.EmitCall(ilgen);
+a194 1
+			return ctor;
+@
+
+
+1.2
+log
+@Having a serialPersistentFields field, also implies custom serialization.
+@
+text
+@d25 4
+d40 6
+a45 6
+		private static CustomAttributeBuilder serializableAttribute = new CustomAttributeBuilder(typeof(SerializableAttribute).GetConstructor(Type.EmptyTypes), new object[0]);
+		private static TypeWrapper iserializable = ClassLoaderWrapper.GetWrapperFromType(typeof(System.Runtime.Serialization.ISerializable));
+		private static TypeWrapper serializable = ClassLoaderWrapper.LoadClassCritical("java.io.Serializable");
+		private static TypeWrapper externalizable = ClassLoaderWrapper.LoadClassCritical("java.io.Externalizable");
+		private static TypeWrapper objectStreamClass = ClassLoaderWrapper.LoadClassCritical("java.io.ObjectStreamClass");
+		private static TypeWrapper javaLangEnum = ClassLoaderWrapper.LoadClassCritical("java.lang.Enum");
+d47 1
+a47 1
+		private static bool IsTriviallySerializable(TypeWrapper wrapper)
+d49 11
+a59 1
+			if ((wrapper.Modifiers & IKVM.Attributes.Modifiers.Enum) != 0)
+d61 1
+a61 1
+				return true;
+d63 1
+a63 1
+			if (wrapper == CoreClasses.java.lang.Object.Wrapper)
+d65 1
+a65 1
+				return true;
+d67 1
+a67 1
+			if (!IsTriviallySerializable(wrapper.BaseTypeWrapper))
+d71 1
+a71 1
+			if (wrapper.IsSubTypeOf(iserializable))
+d75 10
+a84 1
+			if (wrapper.IsSubTypeOf(serializable))
+d88 35
+a122 1
+					return false;
+a123 37
+				if (wrapper == objectStreamClass || wrapper == CoreClasses.java.lang.Class.Wrapper || wrapper == javaLangEnum)
+				{
+					return false;
+				}
+				if (wrapper.GetMethodWrapper("readObject", "(Ljava.io.ObjectInputStream;)V", false) != null)
+				{
+					return false;
+				}
+				if (wrapper.GetMethodWrapper("writeObject", "(Ljava.io.ObjectOutputStream;)V", false) != null)
+				{
+					return false;
+				}
+				if (wrapper.GetMethodWrapper("readObjectNoData", "()V", false) != null)
+				{
+					return false;
+				}
+				if (wrapper.GetMethodWrapper("writeReplace", "()Ljava.lang.Object;", false) != null)
+				{
+					return false;
+				}
+				if (wrapper.GetMethodWrapper("readResolve", "()Ljava.lang.Object;", false) != null)
+				{
+					return false;
+				}
+				if (wrapper.GetFieldWrapper("serialPersistentFields", "[Ljava.io.ObjectStreamField;") != null)
+				{
+					return false;
+				}
+				if (wrapper.GetMethodWrapper("GetObjectData", "(Lcli.System.Runtime.Serialization.SerializationInfo;Lcli.System.Runtime.Serialization.StreamingContext;)V", false) != null)
+				{
+					return false;
+				}
+				if (wrapper.GetMethodWrapper("<init>", "(Lcli.System.Runtime.Serialization.SerializationInfo;Lcli.System.Runtime.Serialization.StreamingContext;)V", false) != null)
+				{
+					return false;
+				}
+				return true;
+a124 1
+			return false;
+d127 57
+a183 1
+		internal static void AddAutomagicSerialization(DynamicTypeWrapper wrapper)
+d185 2
+a186 1
+			if (IsTriviallySerializable(wrapper))
+d188 11
+a198 1
+				wrapper.TypeAsBuilder.SetCustomAttribute(serializableAttribute);
+d201 13
+@
+
+
+1.1
+log
+@Implemented automatically enabling .NET serialization support for Java classes that are trivially serializable.
+@
+text
+@d91 4
+@
+

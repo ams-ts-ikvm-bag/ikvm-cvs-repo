@@ -1,0 +1,39 @@
+head	1.1;
+access;
+symbols
+	v8_1_5717_0:1.1
+	v8_1:1.1.0.8
+	v8_0_5449_1:1.1
+	v8_0_5449_0:1.1
+	v8_0:1.1.0.6
+	v7_4_5196_0:1.1
+	v7_4:1.1.0.4
+	v7_3:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	2013.02.27.16.09.44;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Generate manifest instead of copying it.
+@
+text
+@Manifest-Version: 1.0
+Implementation-Vendor: Oracle Corporation & others
+Implementation-Title: IKVM.NET OpenJDK
+Implementation-Version: @@IMPLEMENTATION_VERSION@@
+Specification-Vendor: Oracle Corporation
+Specification-Title: Java Platform API Specification
+Specification-Version: @@SPECIFICATION_VERSION@@
+
+@

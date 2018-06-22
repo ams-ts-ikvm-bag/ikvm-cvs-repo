@@ -1,0 +1,261 @@
+head	1.11;
+access;
+symbols
+	v0_40_0_6:1.6
+	v0_40_0_5:1.6
+	v0_42_0_7:1.10
+	v0_42_0_6:1.10
+	v0_42_0_5:1.10
+	v0_42_0_4:1.10
+	v0_42_0_3:1.10
+	v0_42_0_2:1.10
+	v0_42_0_1:1.10
+	v0_42_0_0:1.10
+	v0_42:1.10.0.2
+	v0_40_0_3:1.6
+	v0_40_0_2:1.6
+	v0_40_0_1:1.6
+	v0_40_0_0:1.6
+	v0_40:1.6.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.11
+date	2010.04.02.04.03.42;	author jfrijters;	state dead;
+branches;
+next	1.10;
+
+1.10
+date	2009.08.23.09.14.09;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2009.06.25.14.44.36;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2009.06.18.05.53.17;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2009.05.25.13.40.44;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2009.03.26.14.55.59;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2009.03.26.14.32.28;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2009.03.16.06.49.00;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2009.01.21.05.13.49;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2009.01.20.06.50.57;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.11.14.07.40.49;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.11
+log
+@Removed old refemit code.
+@
+text
+@<?xml version="1.0"?>
+<project name="refemit" default="IKVM.Reflection.Emit">
+    <target name="IKVM.Reflection.Emit">
+        <property name="defs" value="IKVM_REF_EMIT" />
+        <if test="${property::exists('signed')}">
+            <property name="defs" value="${defs};${signed}" />
+        </if>
+        <if test="${version::get-major(framework::get-version(framework::get-target-framework() )) == 4}">
+            <property name="defs" value="${defs};NET_4_0" />
+        </if>
+        <csc target="library" output="../bin/IKVM.Reflection.Emit.dll" optimize="true" define="${defs}">
+            <sources>
+                <include name="../CommonAssemblyInfo.cs" />
+                <include name="AssemblyBuilder.cs" />
+                <include name="ConstructorBuilder.cs" />
+                <include name="CustomAttributeBuilder.cs" />
+                <include name="Enums.cs" />
+                <include name="EventBuilder.cs" />
+                <include name="FieldBuilder.cs" />
+                <include name="IkvmAssembly.cs" />
+                <include name="ILGenerator.cs" />
+                <include name="MethodBuilder.cs" />
+                <include name="ModuleBuilder.cs" />
+                <include name="OpCodes.cs" />
+                <include name="ParameterBuilder.cs" />
+                <include name="PropertyBuilder.cs" />
+                <include name="SignatureHelper.cs" />
+                <include name="Tokens.cs" />
+                <include name="TypeBuilder.cs" />
+                <include name="Impl/CryptoConvert.cs" />
+                <include name="Impl/CryptoHack.cs" />
+                <include name="Impl/ITypeOwner.cs" />
+                <include name="Impl/PdbSupport.cs" />
+                <include name="Impl/TypeBase.cs" />
+                <include name="Properties/AssemblyInfo.cs" />
+                <include name="Writer/ByteBuffer.cs" />
+                <include name="Writer/Heaps.cs" />
+                <include name="Writer/MetadataWriter.cs" />
+                <include name="Writer/ModuleWriter.cs" />
+                <include name="Writer/PEWriter.cs" />
+                <include name="Writer/TextSection.cs" />
+                <include name="Writer/VersionInfo.cs" />
+            </sources>
+        </csc>
+        <nant buildfile="IKVM.PdbWriter/pdbwriter.build" />
+        <if test="${framework::exists('mono-2.0')}">
+            <nant buildfile="IKVM.MdbWriter/mdbwriter.build" />
+        </if>
+    </target>
+</project>
+@
+
+
+1.10
+log
+@Removed ISymWrapper.dll dependency.
+@
+text
+@@
+
+
+1.9
+log
+@Added support for defining events.
+@
+text
+@d45 1
+a45 3
+        <if test="${file::exists(path::combine(framework::get-assembly-directory(framework::get-target-framework()), 'ISymWrapper.dll'))}">
+            <nant buildfile="IKVM.PdbWriter/pdbwriter.build" />
+        </if>
+@
+
+
+1.8
+log
+@Added optimize="true".
+@
+text
+@d18 1
+@
+
+
+1.7
+log
+@Define NET_4_0 when building for .NET 4.0.
+@
+text
+@d11 1
+a11 1
+        <csc target="library" output="../bin/IKVM.Reflection.Emit.dll" define="${defs}">
+@
+
+
+1.6
+log
+@Fixed Mono detection.
+@
+text
+@d8 3
+@
+
+
+1.5
+log
+@- Renamed IKVM.PdbWriter.dll to IKVM.Reflection.Emit.PdbWriter.dll.
+- Added IKVM.Reflection.Emit.MdbWriter.dll (untested and not yet complete).
+- Changed SymbolWriter plug-in API to be more flexible.
+- Added ModuleBuilder.ResolveMethod() API.
+- Don't write PE debug directory if symbol writer doesn't supply debug data.
+@
+text
+@d44 1
+a44 1
+        <if test="${file::exists(path::combine(framework::get-assembly-directory('mono-2.0'), 'Mono.CompilerServices.SymbolWriter.dll'))}">
+@
+
+
+1.4
+log
+@Moved PDB support into seperate assembly to make Mono support easier.
+@
+text
+@d44 3
+@
+
+
+1.3
+log
+@Fixed Impl directory casing.
+@
+text
+@a7 4
+        <if test="${file::exists(path::combine(framework::get-assembly-directory(framework::get-target-framework()), 'ISymWrapper.dll'))}">
+            <property name="defs" value="${defs};HAS_ISYMWRAPPER" />
+            <property name="has.isymwrapper" value="true" />
+        </if>
+a39 3
+            <references>
+                <include if="${property::exists('has.isymwrapper')}" name="${framework::get-assembly-directory(framework::get-target-framework())}/ISymWrapper.dll" />
+            </references>
+d41 3
+@
+
+
+1.2
+log
+@Disabled PDB support when compiling on Mono (because of the missing ISymWrapper.dll dependency).
+@
+text
+@d30 5
+a34 5
+                <include name="impl/CryptoConvert.cs" />
+                <include name="impl/CryptoHack.cs" />
+                <include name="impl/ITypeOwner.cs" />
+                <include name="impl/PdbSupport.cs" />
+                <include name="impl/TypeBase.cs" />
+@
+
+
+1.1
+log
+@New Ref.Emit implementation.
+@
+text
+@a3 1
+        <property overwrite="false" name="signed" value="" />
+d8 4
+d45 1
+a45 1
+                <include name="${framework::get-assembly-directory(framework::get-target-framework())}/ISymWrapper.dll" />
+@
+

@@ -1,0 +1,351 @@
+head	1.11;
+access;
+symbols
+	v8_1_5717_0:1.11
+	v8_1:1.11.0.4
+	v8_0_5449_1:1.11
+	v8_0_5449_0:1.11
+	v8_0:1.11.0.2
+	v7_4_5196_0:1.10
+	v7_4:1.10.0.4
+	v7_3:1.10.0.2
+	v7_2_4630_6:1.9
+	v7_2_4630_5:1.9
+	v7_2_4630_4:1.9
+	v7_2_4630_3:1.9
+	v7_2_4630_2:1.9
+	v0_46_0_4:1.9
+	v7_2_4630_1:1.9
+	v7_2:1.9.0.8
+	v7_1_4532_2:1.9
+	v7_1_4532_1:1.9
+	v7_1_4532_0:1.9
+	v7_1:1.9.0.6
+	v7_0_4335_3:1.9
+	v7_0_4335_2:1.9
+	v7_0_4335_1:1.9
+	v0_46_0_2:1.9
+	v7_0_4335_0:1.9
+	v7_0:1.9.0.4
+	v0_40_0_6:1.3
+	v0_40_0_5:1.3
+	v0_46_0_1:1.9
+	v0_46_0_0:1.9
+	v0_46:1.9.0.2
+	v0_44_0_6:1.8
+	v0_44_0_5:1.8
+	v0_44_0_4:1.8
+	v0_44_0_3:1.8
+	v0_44_0_2:1.8
+	v0_42_0_7:1.5
+	v0_44_0_1:1.8
+	v0_44_0_0:1.8
+	v0_44:1.8.0.2
+	v0_42_0_6:1.5
+	v0_42_0_5:1.5
+	v0_42_0_4:1.5
+	v0_42_0_3:1.5
+	v0_42_0_2:1.5
+	v0_42_0_1:1.5
+	v0_42_0_0:1.5
+	v0_42:1.5.0.2
+	v0_40_0_3:1.3
+	v0_40_0_2:1.3
+	v0_40_0_1:1.3
+	v0_40_0_0:1.3
+	v0_40:1.3.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.11
+date	2014.04.11.13.03.37;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2012.09.13.13.21.35;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2010.09.30.04.03.33;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2010.01.28.09.18.34;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2010.01.25.07.53.12;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2009.10.14.14.58.41;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2009.07.14.06.27.41;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2009.07.07.11.58.46;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2009.03.18.08.56.15;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2009.03.08.06.20.35;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2009.03.04.05.47.20;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.11
+log
+@Centralized switches to control C# interop workarounds.
+@
+text
+@/*
+  Copyright (C) 2009 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+#if STATIC_COMPILER
+using IKVM.Reflection;
+using IKVM.Reflection.Emit;
+using Type = IKVM.Reflection.Type;
+#else
+using System.Reflection;
+using System.Reflection.Emit;
+#endif
+using System.Diagnostics;
+
+namespace IKVM.Internal
+{
+	static class RuntimeHelperTypes
+	{
+		private static Type classLiteralType;
+		private static FieldInfo classLiteralField;
+
+		internal static FieldInfo GetClassLiteralField(Type type)
+		{
+			Debug.Assert(type != Types.Void);
+			if (classLiteralType == null)
+			{
+#if STATIC_COMPILER
+				classLiteralType = JVM.CoreAssembly.GetType("ikvm.internal.ClassLiteral`1");
+#elif !FIRST_PASS
+				classLiteralType = typeof(ikvm.@@internal.ClassLiteral<>);
+#endif
+			}
+#if !STATIC_COMPILER
+			if (!IsTypeBuilder(type))
+			{
+				return classLiteralType.MakeGenericType(type).GetField("Value", BindingFlags.Public | BindingFlags.Static);
+			}
+#endif
+			if (classLiteralField == null)
+			{
+				classLiteralField = classLiteralType.GetField("Value", BindingFlags.Public | BindingFlags.Static);
+			}
+			return TypeBuilder.GetField(classLiteralType.MakeGenericType(type), classLiteralField);
+		}
+
+		private static bool IsTypeBuilder(Type type)
+		{
+			return type is TypeBuilder || (type.HasElementType && IsTypeBuilder(type.GetElementType()));
+		}
+
+#if STATIC_COMPILER
+		internal static void Create(CompilerClassLoader ccl)
+		{
+			EmitClassLiteral(ccl);
+		}
+
+		private static void EmitClassLiteral(CompilerClassLoader ccl)
+		{
+			TypeBuilder tb = ccl.GetTypeWrapperFactory().ModuleBuilder.DefineType("ikvm.internal.ClassLiteral`1", TypeAttributes.Public | TypeAttributes.Sealed | TypeAttributes.Abstract | TypeAttributes.Class | TypeAttributes.BeforeFieldInit);
+			GenericTypeParameterBuilder typeParam = tb.DefineGenericParameters("T")[0];
+			Type classType = CoreClasses.java.lang.Class.Wrapper.TypeAsSignatureType;
+			classLiteralField = tb.DefineField("Value", classType, FieldAttributes.Public | FieldAttributes.Static | FieldAttributes.InitOnly);
+			CodeEmitter ilgen = CodeEmitter.Create(ReflectUtil.DefineTypeInitializer(tb, ccl));
+			ilgen.Emit(OpCodes.Ldtoken, typeParam);
+			ilgen.Emit(OpCodes.Call, Types.Type.GetMethod("GetTypeFromHandle", new Type[] { Types.RuntimeTypeHandle }));
+			MethodWrapper mw = CoreClasses.java.lang.Class.Wrapper.GetMethodWrapper("<init>", "(Lcli.System.Type;)V", false);
+			mw.Link();
+			mw.EmitNewobj(ilgen);
+			ilgen.Emit(OpCodes.Stsfld, classLiteralField);
+			ilgen.Emit(OpCodes.Ret);
+			ilgen.DoEmit();
+			classLiteralType = tb.CreateType();
+		}
+#endif
+	}
+}
+@
+
+
+1.10
+log
+@Removed remaining ConstructorBuilder usages.
+@
+text
+@d83 1
+a83 1
+			CodeEmitter ilgen = CodeEmitter.Create(ReflectUtil.DefineTypeInitializer(tb));
+@
+
+
+1.9
+log
+@Build intermediate store of MSIL code in CodeEmitter to allow post-processing optimization steps.
+@
+text
+@d83 1
+a83 2
+			ConstructorBuilder cctor = tb.DefineTypeInitializer();
+			CodeEmitter ilgen = CodeEmitter.Create(cctor);
+@
+
+
+1.8
+log
+@Removed IKVM_REF_EMIT, as STATIC_COMPILER or STUB_GENERATOR now always implies IKVM.Reflection.
+@
+text
+@d92 1
+@
+
+
+1.7
+log
+@Integrated new IKVM.Reflection implementation.
+@
+text
+@d25 1
+a25 1
+#if IKVM_REF_EMIT
+d53 1
+a53 1
+#if !IKVM_REF_EMIT
+@
+
+
+1.6
+log
+@Replaced most type literals with static field access (in Types class) or warpped JVM.Import() around them.
+@
+text
+@a24 1
+using System.Reflection;
+d26 1
+d28 1
+d30 1
+a62 4
+#if IKVM_REF_EMIT
+			// MONOBUG https://bugzilla.novell.com/show_bug.cgi?id=486307
+			return TypeBuilder.GetField(MonoHackGenericType.Make(classLiteralType, type), classLiteralField);
+#else
+a63 1
+#endif
+@
+
+
+1.5
+log
+@Moved responsibility for creating java.lang.Class instances for "fast literal" enable types into ClassLiteral<T>, this allows class literals to be really cheap, because non of the underlying reflection is needed, the class will cache the Type and lazily resolve it to its TypeWrapper.
+@
+text
+@d42 1
+a42 1
+			Debug.Assert(type != typeof(void));
+d89 1
+a89 1
+			ilgen.Emit(OpCodes.Call, typeof(Type).GetMethod("GetTypeFromHandle", new Type[] { typeof(RuntimeTypeHandle) }));
+@
+
+
+1.4
+log
+@Last checkin broke the build.
+@
+text
+@d87 1
+a87 1
+			ILGenerator ilgen = cctor.GetILGenerator();
+d89 4
+a92 2
+			ilgen.Emit(OpCodes.Call, StaticCompiler.GetType("IKVM.Runtime.ByteCodeHelper").GetMethod("GetClassFromTypeHandle"));
+			ilgen.Emit(OpCodes.Castclass, classType);
+@
+
+
+1.3
+log
+@Workaround for https://bugzilla.novell.com/show_bug.cgi?id=486307
+@
+text
+@d89 1
+a89 1
+			ilgen.Emit(OpCodes.Call, ByteCodeHelperMethods.GetClassFromTypeHandle);
+@
+
+
+1.2
+log
+@Fixed TypeBuilder check.
+@
+text
+@d61 4
+d66 1
+@
+
+
+1.1
+log
+@Implemented ikvm.internal.ClassLiteral<T> to allow for more efficient class literals.
+@
+text
+@d52 1
+a52 1
+			if (!(type is TypeBuilder))
+d64 5
+@
+

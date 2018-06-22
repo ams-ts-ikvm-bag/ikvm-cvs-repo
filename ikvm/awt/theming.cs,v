@@ -1,0 +1,154 @@
+head	1.2;
+access;
+symbols
+	v8_1_5717_0:1.2
+	v8_1:1.2.0.12
+	v8_0_5449_1:1.2
+	v8_0_5449_0:1.2
+	v8_0:1.2.0.10
+	v7_4_5196_0:1.2
+	v7_4:1.2.0.8
+	v7_3:1.2.0.6
+	v7_2_4630_6:1.2
+	v7_2_4630_5:1.2
+	v7_2_4630_4:1.2
+	v7_2_4630_3:1.2
+	v7_2_4630_2:1.2
+	v7_2_4630_1:1.2
+	v7_2:1.2.0.4
+	v7_1_4532_2:1.2
+	v7_1_4532_1:1.2
+	v7_1_4532_0:1.2
+	v7_1:1.2.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.2
+date	2012.03.21.08.36.09;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2012.03.20.20.30.37;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@Fixed the .NET 4 security attributes.
+@
+text
+@/*
+  Copyright (C) 2012 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.IO;
+using System.Threading;
+using System.Runtime.InteropServices;
+using System.Security;
+
+sealed class ThemingActivationContext : IDisposable
+{
+	private IntPtr cookie;
+
+	[SecurityCritical]
+	public ThemingActivationContext()
+	{
+		if (Context.hActCtx != IntPtr.Zero)
+		{
+			IntPtr tmp;
+			if (ActivateActCtx(Context.hActCtx, out tmp))
+			{
+				cookie = tmp;
+			}
+		}
+	}
+
+	[SecuritySafeCritical]
+	public void Dispose()
+	{
+		IntPtr tmp = Interlocked.Exchange(ref cookie, IntPtr.Zero);
+		if (tmp != IntPtr.Zero)
+		{
+			DeactivateActCtx(0, tmp);
+		}
+	}
+
+	static class Context
+	{
+		internal static readonly IntPtr hActCtx;
+
+		[SecurityCritical]
+		static Context()
+		{
+			ACTCTX actctx = new ACTCTX();
+			actctx.cbSize = Marshal.SizeOf(typeof(ACTCTX));
+			actctx.lpSource = Path.Combine(RuntimeEnvironment.GetRuntimeDirectory(), "XPThemes.manifest");
+			IntPtr handle = CreateActCtx(ref actctx);
+			if (handle != new IntPtr(-1))
+			{
+				hActCtx = handle;
+			}
+		}
+
+		struct ACTCTX
+		{
+			internal int cbSize;
+			internal uint dwFlags;
+			internal string lpSource;
+			internal ushort wProcessorArchitecture;
+			internal ushort wLangId;
+			internal string lpAssemblyDirectory;
+			internal string lpResourceName;
+			internal string lpApplicationName;
+		}
+
+		[DllImport("kernel32.dll")]
+		extern static IntPtr CreateActCtx(ref ACTCTX actctx);
+	}
+
+	[DllImport("kernel32.dll")]
+	extern static bool ActivateActCtx(IntPtr hActCtx, out IntPtr lpCookie);
+	[DllImport("kernel32.dll")]
+	extern static bool DeactivateActCtx(uint dwFlags, IntPtr lpCookie);
+}
+@
+
+
+1.1
+log
+@Use XP style for FileChooserIcons
+@
+text
+@d28 1
+d34 1
+d47 1
+d61 1
+@
+

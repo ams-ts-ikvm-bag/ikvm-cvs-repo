@@ -1,0 +1,339 @@
+head	1.6;
+access;
+symbols
+	v8_1_5717_0:1.6
+	v8_1:1.6.0.8
+	v8_0_5449_1:1.6
+	v8_0_5449_0:1.6
+	v8_0:1.6.0.6
+	v7_4_5196_0:1.6
+	v7_4:1.6.0.4
+	v7_3:1.6.0.2
+	v7_2_4630_6:1.5
+	v7_2_4630_5:1.5
+	v7_2_4630_4:1.5
+	v7_2_4630_3:1.5
+	v7_2_4630_2:1.5
+	v0_46_0_4:1.3.4.1
+	v7_2_4630_1:1.5
+	v7_2:1.5.0.4
+	v7_1_4532_2:1.5
+	v7_1_4532_1:1.5
+	v7_1_4532_0:1.5
+	v7_1:1.5.0.2
+	v7_0_4335_3:1.4
+	v7_0_4335_2:1.4
+	v7_0_4335_1:1.4
+	v0_46_0_2:1.3.4.1
+	v7_0_4335_0:1.4
+	v7_0:1.4.0.2
+	v0_46_0_1:1.3.4.1
+	v0_46_0_0:1.3
+	v0_46:1.3.0.4
+	v0_44_0_6:1.3
+	v0_44_0_5:1.3
+	v0_44_0_4:1.3
+	v0_44_0_3:1.3
+	v0_44_0_2:1.3
+	v0_44_0_1:1.3
+	v0_44_0_0:1.3
+	v0_44:1.3.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.6
+date	2012.12.04.09.03.20;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2012.01.16.08.49.56;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2011.03.10.10.48.18;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.06.28.06.33.17;	author jfrijters;	state Exp;
+branches
+	1.3.4.1;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.3.4.1
+date	2011.03.17.05.18.42;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.6
+log
+@- Added UniverseOptions.MetadataOnly.
+- Added comment describing UniverseOptions.
+- Made user string heap loading lazy.
+@
+text
+@/*
+  Copyright (C) 2009 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using IKVM.Reflection.Reader;
+using System.IO;
+
+namespace IKVM.Reflection
+{
+	public sealed class MethodBody
+	{
+		private readonly IList<ExceptionHandlingClause> exceptionClauses;
+		private readonly IList<LocalVariableInfo> locals;
+		private readonly bool initLocals;
+		private readonly int maxStack;
+		private readonly int localVarSigTok;
+		private byte[] body;
+
+		internal MethodBody(ModuleReader module, int rva, IGenericContext context)
+		{
+			const byte CorILMethod_TinyFormat = 0x02;
+			const byte CorILMethod_FatFormat = 0x03;
+			const byte CorILMethod_MoreSects = 0x08;
+			const byte CorILMethod_InitLocals = 0x10;
+			const byte CorILMethod_Sect_EHTable = 0x01;
+			const byte CorILMethod_Sect_FatFormat = 0x40;
+			const byte CorILMethod_Sect_MoreSects = 0x80;
+
+			List<ExceptionHandlingClause> exceptionClauses = new List<ExceptionHandlingClause>();
+			List<LocalVariableInfo> locals = new List<LocalVariableInfo>();
+			Stream stream = module.GetStream();
+			module.SeekRVA(rva);
+			BinaryReader br = new BinaryReader(stream);
+			byte b = br.ReadByte();
+			if ((b & 3) == CorILMethod_TinyFormat)
+			{
+				initLocals = true;
+				body = br.ReadBytes(b >> 2);
+				maxStack = 8;
+			}
+			else if ((b & 3) == CorILMethod_FatFormat)
+			{
+				initLocals = (b & CorILMethod_InitLocals) != 0;
+				short flagsAndSize = (short)(b | (br.ReadByte() << 8));
+				if ((flagsAndSize >> 12) != 3)
+				{
+					throw new BadImageFormatException("Fat format method header size should be 3");
+				}
+				maxStack = br.ReadUInt16();
+				int codeLength = br.ReadInt32();
+				localVarSigTok = br.ReadInt32();
+				body = br.ReadBytes(codeLength);
+				if ((b & CorILMethod_MoreSects) != 0)
+				{
+					stream.Position = (stream.Position + 3) & ~3;
+					int hdr = br.ReadInt32();
+					if ((hdr & CorILMethod_Sect_MoreSects) != 0 || (hdr & CorILMethod_Sect_EHTable) == 0)
+					{
+						throw new NotImplementedException();
+					}
+					else if ((hdr & CorILMethod_Sect_FatFormat) != 0)
+					{
+						int count = ComputeExceptionCount((hdr >> 8) & 0xFFFFFF, 24);
+						for (int i = 0; i < count; i++)
+						{
+							int flags = br.ReadInt32();
+							int tryOffset = br.ReadInt32();
+							int tryLength = br.ReadInt32();
+							int handlerOffset = br.ReadInt32();
+							int handlerLength = br.ReadInt32();
+							int classTokenOrFilterOffset = br.ReadInt32();
+							exceptionClauses.Add(new ExceptionHandlingClause(module, flags, tryOffset, tryLength, handlerOffset, handlerLength, classTokenOrFilterOffset, context));
+						}
+					}
+					else
+					{
+						int count = ComputeExceptionCount((hdr >> 8) & 0xFF, 12);
+						for (int i = 0; i < count; i++)
+						{
+							int flags = br.ReadUInt16();
+							int tryOffset = br.ReadUInt16();
+							int tryLength = br.ReadByte();
+							int handlerOffset = br.ReadUInt16();
+							int handlerLength = br.ReadByte();
+							int classTokenOrFilterOffset = br.ReadInt32();
+							exceptionClauses.Add(new ExceptionHandlingClause(module, flags, tryOffset, tryLength, handlerOffset, handlerLength, classTokenOrFilterOffset, context));
+						}
+					}
+				}
+				if (localVarSigTok != 0)
+				{
+					ByteReader sig = module.GetStandAloneSig((localVarSigTok & 0xFFFFFF) - 1);
+					Signature.ReadLocalVarSig(module, sig, context, locals);
+				}
+			}
+			else
+			{
+				throw new BadImageFormatException();
+			}
+			this.exceptionClauses = exceptionClauses.AsReadOnly();
+			this.locals = locals.AsReadOnly();
+		}
+
+		private static int ComputeExceptionCount(int size, int itemLength)
+		{
+			// LAMESPEC according to the spec, the count should be calculated as "(size - 4) / itemLength",
+			// FXBUG but to workaround a VB compiler bug that specifies the size incorrectly,
+			// we do a truncating division instead.
+			return size / itemLength;
+		}
+
+		public IList<ExceptionHandlingClause> ExceptionHandlingClauses
+		{
+			get { return exceptionClauses; }
+		}
+
+		public bool InitLocals
+		{
+			get { return initLocals; }
+		}
+
+		public IList<LocalVariableInfo> LocalVariables
+		{
+			get { return locals; }
+		}
+
+		public byte[] GetILAsByteArray()
+		{
+			return body;
+		}
+
+		public int LocalSignatureMetadataToken
+		{
+			get { return localVarSigTok; }
+		}
+
+		public int MaxStackSize
+		{
+			get { return maxStack; }
+		}
+	}
+}
+@
+
+
+1.5
+log
+@Fix to throw proper exception when wrong metadata token is passed to Module.Resolve* methods.
+@
+text
+@d52 1
+d54 1
+a54 1
+			BinaryReader br = new BinaryReader(module.stream);
+d76 1
+a76 1
+					module.stream.Position = (module.stream.Position + 3) & ~3;
+@
+
+
+1.4
+log
+@Bug fix. MaxStack returned incorrect value for tiny header methods.
+@
+text
+@d112 1
+a112 1
+					ByteReader sig = module.ResolveSignature(localVarSigTok);
+@
+
+
+1.3
+log
+@Implemented workaround for incorrect exception table length in methods generated by VB compiler.
+@
+text
+@d59 1
+@
+
+
+1.3.4.1
+log
+@Back ported fixes:
+- Bug fix. BeginExceptFilterBlock() should behave like BeginCatchBlock(), not BeginFinallyBlock().
+- Fix for http://gcc.gnu.org/bugzilla/show_bug.cgi?id=48131.
+- Bug fix. Support loading resources from assemblies added to the boot classloader (with ikvm.runtime.Startup.addBootClassPathAssemby()).
+- Type parameters should be separated by commas.
+- Only the assembly name should escape the ']' characters.
+- Bug fix. <Module> should not extend object.
+- Bug fix. String literals that are invalid UTF-16 should not be "corrected".
+- Bug fix. MaxStack returned incorrect value for tiny header methods.
+- Fix. Module does not inherit members from Object.
+- Align initialized data arrays.
+- Align managed resources on 8 bytes.
+@
+text
+@a58 1
+				maxStack = 8;
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d82 1
+a82 1
+						int count = (((hdr >> 8) & 0xFFFFFF) - 4) / 24;
+d96 1
+a96 1
+						int count = (((hdr >> 8) & 0xFF) - 4) / 12;
+d123 8
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

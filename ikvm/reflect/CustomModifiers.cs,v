@@ -1,0 +1,523 @@
+head	1.5;
+access;
+symbols
+	v8_1_5717_0:1.5
+	v8_1:1.5.0.8
+	v8_0_5449_1:1.5
+	v8_0_5449_0:1.5
+	v8_0:1.5.0.6
+	v7_4_5196_0:1.5
+	v7_4:1.5.0.4
+	v7_3:1.5.0.2
+	v7_2_4630_6:1.3.2.1
+	v7_2_4630_5:1.3.2.1
+	v7_2_4630_4:1.3.2.1
+	v7_2_4630_3:1.3.2.1
+	v7_2_4630_2:1.3
+	v7_2_4630_1:1.3
+	v7_2:1.3.0.2
+	v7_1_4532_2:1.2
+	v7_1_4532_1:1.2
+	v7_1_4532_0:1.2
+	v7_1:1.2.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.5
+date	2012.12.24.10.49.51;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2012.10.13.20.12.32;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2012.05.31.13.26.26;	author jfrijters;	state Exp;
+branches
+	1.3.2.1;
+next	1.2;
+
+1.2
+date	2011.12.01.09.47.21;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2011.12.01.06.30.50;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.3.2.1
+date	2012.10.23.08.15.53;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.5
+log
+@- Implemented __ContainsMissingType for function pointer types.
+- Changed __ContainsMissingType to take custom modifiers into account.
+@
+text
+@﻿/*
+  Copyright (C) 2011 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Text;
+using IKVM.Reflection.Emit;
+using IKVM.Reflection.Reader;
+
+namespace IKVM.Reflection
+{
+	public struct CustomModifiers : IEquatable<CustomModifiers>, IEnumerable<CustomModifiers.Entry>
+	{
+		// note that FromReqOpt assumes that Initial == ModOpt
+		private static Type Initial { get { return MarkerType.ModOpt; } }
+		private readonly Type[] types;
+
+		internal CustomModifiers(List<CustomModifiersBuilder.Item> list)
+		{
+			bool required = Initial == MarkerType.ModReq;
+			int count = list.Count;
+			foreach (CustomModifiersBuilder.Item item in list)
+			{
+				if (item.required != required)
+				{
+					required = item.required;
+					count++;
+				}
+			}
+			types = new Type[count];
+			required = Initial == MarkerType.ModReq;
+			int index = 0;
+			foreach (CustomModifiersBuilder.Item item in list)
+			{
+				if (item.required != required)
+				{
+					required = item.required;
+					types[index++] = required ? MarkerType.ModReq : MarkerType.ModOpt;
+				}
+				types[index++] = item.type;
+			}
+		}
+
+		private CustomModifiers(Type[] types)
+		{
+			Debug.Assert(types == null || types.Length != 0);
+			this.types = types;
+		}
+
+		public struct Enumerator : IEnumerator<Entry>
+		{
+			private readonly Type[] types;
+			private int index;
+			private bool required;
+
+			internal Enumerator(Type[] types)
+			{
+				this.types = types;
+				this.index = -1;
+				this.required = Initial == MarkerType.ModReq;
+			}
+
+			void System.Collections.IEnumerator.Reset()
+			{
+				this.index = -1;
+				this.required = Initial == MarkerType.ModReq;
+			}
+
+			public Entry Current
+			{
+				get { return new Entry(types[index], required); }
+			}
+
+			public bool MoveNext()
+			{
+				if (types == null || index == types.Length)
+				{
+					return false;
+				}
+				index++;
+				if (index == types.Length)
+				{
+					return false;
+				}
+				else if (types[index] == MarkerType.ModOpt)
+				{
+					required = false;
+					index++;
+				}
+				else if (types[index] == MarkerType.ModReq)
+				{
+					required = true;
+					index++;
+				}
+				return true;
+			}
+
+			object System.Collections.IEnumerator.Current
+			{
+				get { return Current; }
+			}
+
+			void IDisposable.Dispose()
+			{
+			}
+		}
+
+		public struct Entry
+		{
+			private readonly Type type;
+			private readonly bool required;
+
+			internal Entry(Type type, bool required)
+			{
+				this.type = type;
+				this.required = required;
+			}
+
+			public Type Type
+			{
+				get { return type; }
+			}
+
+			public bool IsRequired
+			{
+				get { return required; }
+			}
+		}
+
+		public Enumerator GetEnumerator()
+		{
+			return new Enumerator(types);
+		}
+
+		IEnumerator<Entry> IEnumerable<Entry>.GetEnumerator()
+		{
+			return GetEnumerator();
+		}
+
+		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+		{
+			return GetEnumerator();
+		}
+
+		public bool IsEmpty
+		{
+			get { return types == null; }
+		}
+
+		public bool Equals(CustomModifiers other)
+		{
+			return Util.ArrayEquals(types, other.types);
+		}
+
+		public override bool Equals(object obj)
+		{
+			CustomModifiers? other = obj as CustomModifiers?;
+			return other != null && Equals(other.Value);
+		}
+
+		public override int GetHashCode()
+		{
+			return Util.GetHashCode(types);
+		}
+
+		public override string ToString()
+		{
+			if (types == null)
+			{
+				return string.Empty;
+			}
+			StringBuilder sb = new StringBuilder();
+			string sep = "";
+			foreach (Entry e in this)
+			{
+				sb.Append(sep).Append(e.IsRequired ? "modreq(" : "modopt(").Append(e.Type.FullName).Append(')');
+				sep = " ";
+			}
+			return sb.ToString();
+		}
+
+		public bool ContainsMissingType
+		{
+			get { return Type.ContainsMissingType(types); }
+		}
+
+		private Type[] GetRequiredOrOptional(bool required)
+		{
+			if (types == null)
+			{
+				return Type.EmptyTypes;
+			}
+			int count = 0;
+			foreach (Entry e in this)
+			{
+				if (e.IsRequired == required)
+				{
+					count++;
+				}
+			}
+			Type[] result = new Type[count];
+			foreach (Entry e in this)
+			{
+				if (e.IsRequired == required)
+				{
+					// FXBUG reflection (and ildasm) return custom modifiers in reverse order
+					// while SRE writes them in the specified order
+					result[--count] = e.Type;
+				}
+			}
+			return result;
+		}
+
+		internal Type[] GetRequired()
+		{
+			return GetRequiredOrOptional(true);
+		}
+
+		internal Type[] GetOptional()
+		{
+			return GetRequiredOrOptional(false);
+		}
+
+		internal CustomModifiers Bind(IGenericBinder binder)
+		{
+			if (types == null)
+			{
+				return this;
+			}
+			Type[] result = types;
+			for (int i = 0; i < types.Length; i++)
+			{
+				if (types[i] == MarkerType.ModOpt || types[i] == MarkerType.ModReq)
+				{
+					continue;
+				}
+				Type type = types[i].BindTypeParameters(binder);
+				if (!ReferenceEquals(type, types[i]))
+				{
+					if (result == types)
+					{
+						result = (Type[])types.Clone();
+					}
+					result[i] = type;
+				}
+			}
+			return new CustomModifiers(result);
+		}
+
+		internal static CustomModifiers Read(ModuleReader module, ByteReader br, IGenericContext context)
+		{
+			byte b = br.PeekByte();
+			if (!IsCustomModifier(b))
+			{
+				return new CustomModifiers();
+			}
+			List<Type> list = new List<Type>();
+			Type mode = Initial;
+			do
+			{
+				Type cmod = br.ReadByte() == Signature.ELEMENT_TYPE_CMOD_REQD ? MarkerType.ModReq : MarkerType.ModOpt;
+				if (mode != cmod)
+				{
+					mode = cmod;
+					list.Add(mode);
+				}
+				list.Add(Signature.ReadTypeDefOrRefEncoded(module, br, context));
+				b = br.PeekByte();
+			}
+			while (IsCustomModifier(b));
+			return new CustomModifiers(list.ToArray());
+		}
+
+		internal static void Skip(ByteReader br)
+		{
+			byte b = br.PeekByte();
+			while (IsCustomModifier(b))
+			{
+				br.ReadByte();
+				br.ReadCompressedUInt();
+				b = br.PeekByte();
+			}
+		}
+
+		internal static CustomModifiers FromReqOpt(Type[] req, Type[] opt)
+		{
+			List<Type> list = null;
+			if (opt != null && opt.Length != 0)
+			{
+				Debug.Assert(Initial == MarkerType.ModOpt);
+				list = new List<Type>(opt);
+			}
+			if (req != null && req.Length != 0)
+			{
+				if (list == null)
+				{
+					list = new List<Type>();
+				}
+				list.Add(MarkerType.ModReq);
+				list.AddRange(req);
+			}
+			if (list == null)
+			{
+				return new CustomModifiers();
+			}
+			else
+			{
+				return new CustomModifiers(list.ToArray());
+			}
+		}
+
+		private static bool IsCustomModifier(byte b)
+		{
+			return b == Signature.ELEMENT_TYPE_CMOD_OPT || b == Signature.ELEMENT_TYPE_CMOD_REQD;
+		}
+
+		internal static CustomModifiers Combine(CustomModifiers mods1, CustomModifiers mods2)
+		{
+			if (mods1.IsEmpty)
+			{
+				return mods2;
+			}
+			else if (mods2.IsEmpty)
+			{
+				return mods1;
+			}
+			else
+			{
+				Type[] combo = new Type[mods1.types.Length + mods2.types.Length];
+				Array.Copy(mods1.types, combo, mods1.types.Length);
+				Array.Copy(mods2.types, 0, combo, mods1.types.Length, mods2.types.Length);
+				return new CustomModifiers(combo);
+			}
+		}
+	}
+}
+@
+
+
+1.4
+log
+@Renamed methods that deal with unsigned compressed integers to *CompressedUInt instead of *CompressedInt.
+@
+text
+@d203 5
+@
+
+
+1.3
+log
+@Moved MarkerType from ILGenerator.cs to Type.cs and made all instances static fields in MarkerType.
+@
+text
+@d296 1
+a296 1
+				br.ReadCompressedInt();
+@
+
+
+1.3.2.1
+log
+@Backported fixes for rc 3.
+- Bug fix. Off-by-one error in local ref index reusing. Fix for bug #3575555.
+- Bug fix. Don't try to inject DynamicMethod in array types (applies to array.clone() method for MethodHandles).
+- IKVM.Reflection: Bug fix. ModuleReader.ResolveMember() should support types. Thanks to Jb Evain for finding this.
+- IKVM.Reflection: Bug fix. While reading the Cecil source I realized that array bounds are signed.
+- IKVM.Reflection: Bug fix. LocalBuilder should extend LocalVariableInfo.
+- IKVM.Reflection: Implemented LocalVariableInfo.ToString().
+@
+text
+@d296 1
+a296 1
+				br.ReadCompressedUInt();
+@
+
+
+1.2
+log
+@- Added custom modifier support in local variable signatures.
+- Fixed SignatureHelper to support custom modifiers in method signatures.
+@
+text
+@d35 2
+a36 3
+		private static readonly Type ModOpt = new MarkerType();
+		private static readonly Type ModReq = new MarkerType();
+		private static readonly Type Initial = ModOpt;
+d41 1
+a41 1
+			bool required = Initial == ModReq;
+d52 1
+a52 1
+			required = Initial == ModReq;
+d59 1
+a59 1
+					types[index++] = required ? ModReq : ModOpt;
+d81 1
+a81 1
+				this.required = Initial == ModReq;
+d87 1
+a87 1
+				this.required = Initial == ModReq;
+d106 1
+a106 1
+				else if (types[index] == ModOpt)
+d111 1
+a111 1
+				else if (types[index] == ModReq)
+d249 1
+a249 1
+				if (types[i] == ModOpt || types[i] == ModReq)
+d277 1
+a277 1
+				Type cmod = br.ReadByte() == Signature.ELEMENT_TYPE_CMOD_REQD ? ModReq : ModOpt;
+d306 1
+d315 1
+a315 1
+				list.Add(ModReq);
+@
+
+
+1.1
+log
+@- Rewrote custom modifier handling to retain ordering.
+- Added ConstructorInfo.__ReturnParameter to expose custom modifiers.
+- Added __GetCustomModifiers() to various *Info types.
+- Added CustomModifiers type to encapsulate a custom modifier sequence.
+- Added CustomModifiersBuilder to create a CustomModifiers sequence.
+- Marked a number of IKVM.Reflection specific methods Obsolete, because they are replaced with method that take CustomModifiers value(s).
+@
+text
+@d332 19
+@
+

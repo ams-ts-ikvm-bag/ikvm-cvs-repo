@@ -1,0 +1,48 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	2015.09.02.11.19.42;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Patch by Christopher Boumenot to split platform specific binaries into a separate nuget package and build support to copy them into the output directory.
+@
+text
+@<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ItemGroup>
+        <None Condition="Exists('$(MSBuildThisFileDirectory)\..\NativeBinaries\x64\lib\ikvm-native-win32-x64.dll')" 
+              Include="$(MSBuildThisFileDirectory)\..\NativeBinaries\x64\lib\ikvm-native-win32-x64.dll">
+            <Link>NativeBinaries\x64\lib\ikvm-native-win32-x64.dll</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Condition="Exists('$(MSBuildThisFileDirectory)\..\NativeBinaries\x64\lib\JVM.dll')" 
+              Include="$(MSBuildThisFileDirectory)\..\NativeBinaries\x64\lib\JVM.dll">
+            <Link>NativeBinaries\x64\lib\JVM.dll</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Condition="Exists('$(MSBuildThisFileDirectory)\..\NativeBinaries\x86\lib\ikvm-native-win32-x86.dll')" 
+              Include="$(MSBuildThisFileDirectory)\..\NativeBinaries\x86\lib\ikvm-native-win32-x86.dll">
+            <Link>NativeBinaries\x86\lib\ikvm-native-win32-x86.dll</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Condition="Exists('$(MSBuildThisFileDirectory)\..\NativeBinaries\x86\lib\JVM.dll')" 
+              Include="$(MSBuildThisFileDirectory)\..\NativeBinaries\x86\lib\JVM.dll">
+            <Link>NativeBinaries\x86\lib\JVM.dll</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+</Project>
+@

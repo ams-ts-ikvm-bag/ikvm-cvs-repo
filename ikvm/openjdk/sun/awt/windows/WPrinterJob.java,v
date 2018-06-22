@@ -1,0 +1,380 @@
+head	1.3;
+access;
+symbols
+	v8_1_5717_0:1.3
+	v8_1:1.3.0.16
+	v8_0_5449_1:1.3
+	v8_0_5449_0:1.3
+	v8_0:1.3.0.14
+	v7_4_5196_0:1.3
+	v7_4:1.3.0.12
+	v7_3:1.3.0.10
+	v7_2_4630_6:1.3
+	v7_2_4630_5:1.3
+	v7_2_4630_4:1.3
+	v7_2_4630_3:1.3
+	v7_2_4630_2:1.3
+	v0_46_0_4:1.3
+	v7_2_4630_1:1.3
+	v7_2:1.3.0.8
+	v7_1_4532_2:1.3
+	v7_1_4532_1:1.3
+	v7_1_4532_0:1.3
+	v7_1:1.3.0.6
+	v7_0_4335_3:1.3
+	v7_0_4335_2:1.3
+	v7_0_4335_1:1.3
+	v0_46_0_2:1.3
+	v7_0_4335_0:1.3
+	v7_0:1.3.0.4
+	v0_46_0_1:1.3
+	v0_46_0_0:1.3
+	v0_46:1.3.0.2
+	v0_44_0_6:1.2
+	v0_44_0_5:1.2
+	v0_44_0_4:1.2
+	v0_44_0_3:1.2
+	v0_44_0_2:1.2
+	v0_42_0_7:1.1
+	v0_44_0_1:1.2
+	v0_44_0_0:1.2
+	v0_44:1.2.0.2
+	v0_42_0_6:1.1
+	v0_42_0_5:1.1
+	v0_42_0_4:1.1
+	v0_42_0_3:1.1
+	v0_42_0_2:1.1
+	v0_42_0_1:1.1
+	v0_42_0_0:1.1
+	v0_42:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.3
+date	2011.01.17.05.42.41;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2009.11.01.12.03.01;	author smallsql;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2009.10.02.18.16.20;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.3
+log
+@Added ikvm.internal.NotYetImplementedError. Replaced all throw sun.reflect.generics.reflectiveObjects.NotImplementedException code with throw NotYetImplementedError.
+@
+text
+@/*
+  Copyright (C) 2009 Volker Berlin (i-net software)
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+ */
+package sun.awt.windows;
+
+import ikvm.awt.IkvmToolkit;
+
+import java.awt.Graphics;
+import java.awt.HeadlessException;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.awt.print.PageFormat;
+import java.awt.print.Pageable;
+import java.awt.print.Paper;
+import java.awt.print.Printable;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
+
+import javax.print.PrintService;
+import javax.print.attribute.PrintRequestAttributeSet;
+
+import cli.System.Drawing.Printing.*;
+
+import sun.print.PeekGraphics;
+import sun.print.PrintPeer;
+import sun.print.RasterPrinterJob;
+import sun.print.Win32PrintService;
+
+import ikvm.internal.NotYetImplementedError;
+
+/**
+ * @@author Volker Berlin
+ */
+public class WPrinterJob extends RasterPrinterJob{
+
+    @@Override
+    protected void abortDoc(){
+        throw new NotYetImplementedError();
+    }
+
+    @@Override
+    protected void endDoc() throws PrinterException{
+        throw new NotYetImplementedError();
+    }
+
+    @@Override
+    protected void endPage(PageFormat format, Printable painter, int index) throws PrinterException{
+        throw new NotYetImplementedError();
+    }
+
+    @@Override
+    protected double getPhysicalPageHeight(Paper p){
+        throw new NotYetImplementedError();
+    }
+
+    @@Override
+    protected double getPhysicalPageWidth(Paper p){
+        throw new NotYetImplementedError();
+    }
+
+    @@Override
+    protected double getPhysicalPrintableHeight(Paper p){
+        throw new NotYetImplementedError();
+    }
+
+    @@Override
+    protected double getPhysicalPrintableWidth(Paper p){
+        throw new NotYetImplementedError();
+    }
+
+    @@Override
+    protected double getPhysicalPrintableX(Paper p){
+        throw new NotYetImplementedError();
+    }
+
+    @@Override
+    protected double getPhysicalPrintableY(Paper p){
+        throw new NotYetImplementedError();
+    }
+
+    @@Override
+    protected double getXRes(){
+        throw new NotYetImplementedError();
+    }
+
+    @@Override
+    protected double getYRes(){
+        throw new NotYetImplementedError();
+    }
+
+    @@Override
+    protected void printBand(byte[] data, int x, int y, int width, int height) throws PrinterException{
+        throw new NotYetImplementedError();
+    }
+
+    @@Override
+    protected void startDoc() throws PrinterException{
+        throw new NotYetImplementedError();
+    }
+
+    @@Override
+    protected void startPage(PageFormat format, Printable painter, int index, boolean paperChanged)
+            throws PrinterException{
+        throw new NotYetImplementedError();
+    }
+}
+@
+
+
+1.2
+log
+@Printing API next step
+@
+text
+@a47 2
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
+d49 1
+d58 1
+a58 1
+        throw new NotImplementedException();
+d63 1
+a63 1
+        throw new NotImplementedException();
+d68 1
+a68 1
+        throw new NotImplementedException();
+d73 1
+a73 1
+        throw new NotImplementedException();
+d78 1
+a78 1
+        throw new NotImplementedException();
+d83 1
+a83 1
+        throw new NotImplementedException();
+d88 1
+a88 1
+        throw new NotImplementedException();
+d93 1
+a93 1
+        throw new NotImplementedException();
+d98 1
+a98 1
+        throw new NotImplementedException();
+d103 1
+a103 1
+        throw new NotImplementedException();
+d108 1
+a108 1
+        throw new NotImplementedException();
+d113 1
+a113 1
+        throw new NotImplementedException();
+d118 1
+a118 1
+        throw new NotImplementedException();
+d124 1
+a124 1
+        throw new NotImplementedException();
+@
+
+
+1.1
+log
+@Placeholder for future implementations
+@
+text
+@d26 3
+d30 2
+d34 1
+d39 11
+d55 1
+a55 1
+public class WPrinterJob extends PrinterJob{
+d58 2
+a59 3
+    public void cancel(){
+        // TODO Auto-generated method stub
+
+a61 1
+
+d63 2
+a64 3
+    public PageFormat defaultPage(PageFormat page){
+        // TODO Auto-generated method stub
+        return null;
+a66 1
+
+d68 2
+a69 3
+    public int getCopies(){
+        // TODO Auto-generated method stub
+        return 0;
+a71 1
+
+d73 2
+a74 3
+    public String getJobName(){
+        // TODO Auto-generated method stub
+        return null;
+a76 1
+
+d78 2
+a79 3
+    public String getUserName(){
+        // TODO Auto-generated method stub
+        return null;
+a81 1
+
+d83 2
+a84 3
+    public boolean isCancelled(){
+        // TODO Auto-generated method stub
+        return false;
+a86 1
+
+d88 2
+a89 3
+    public PageFormat pageDialog(PageFormat page) throws HeadlessException{
+        // TODO Auto-generated method stub
+        return null;
+a91 1
+
+d93 2
+a94 3
+    public void print() throws PrinterException{
+        // TODO Auto-generated method stub
+
+a96 1
+
+d98 2
+a99 3
+    public boolean printDialog() throws HeadlessException{
+        // TODO Auto-generated method stub
+        return false;
+a101 1
+
+d103 2
+a104 3
+    public void setCopies(int copies){
+        // TODO Auto-generated method stub
+
+a106 8
+
+    @@Override
+    public void setJobName(String jobName){
+        // TODO Auto-generated method stub
+
+    }
+
+
+d108 2
+a109 3
+    public void setPageable(Pageable document) throws NullPointerException{
+        // TODO Auto-generated method stub
+
+a111 1
+
+d113 2
+a114 3
+    public void setPrintable(Printable painter){
+        // TODO Auto-generated method stub
+
+a116 1
+
+d118 2
+a119 3
+    public void setPrintable(Printable painter, PageFormat format){
+        // TODO Auto-generated method stub
+
+a121 1
+
+d123 3
+a125 3
+    public PageFormat validatePage(PageFormat page){
+        // TODO Auto-generated method stub
+        return null;
+a126 1
+
+@
+

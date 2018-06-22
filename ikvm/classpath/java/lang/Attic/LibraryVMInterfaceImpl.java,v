@@ -1,0 +1,811 @@
+head	1.18;
+access;
+symbols
+	v0_36_0_14:1.15.2.1
+	v0_36_0_13:1.15.2.1
+	v0_36_0_9:1.15.2.1
+	v0_36_0_7:1.15.2.1
+	v0_36_0_5:1.15.2.1
+	v0_36_0_4:1.15
+	v0_36_0_3:1.15
+	v0_36_0_2:1.15
+	v0_36_0_1:1.15
+	v0_36_0_0:1.15
+	v0_36:1.15.0.2
+	v0_34_0_3:1.14
+	v0_34_0_2:1.14
+	v0_34_0_1:1.14
+	v0_34_0_0:1.14
+	v0_34:1.14.0.4
+	v0_32:1.14.0.2
+	v0_32_0_0:1.14
+	v0_30:1.9.0.2
+	v0_28_0_0:1.8
+	v0_26_0_1:1.7
+	v0_26_0_0:1.7
+	v0_24_0_1:1.7
+	v0_24_0_0:1.7
+	v0_22_0_0:1.7
+	v0_20_0_0:1.6
+	v0_18_0_0:1.5
+	v0_16_0_0:1.5
+	v0_14_0_1:1.4
+	v0_14_0_0:1.4
+	v0_12_0_0:1.3
+	v0_10_0_1:1.2
+	v0_10_0_0:1.2;
+locks; strict;
+comment	@# @;
+
+
+1.18
+date	2008.08.06.12.51.17;	author jfrijters;	state dead;
+branches;
+next	1.17;
+
+1.17
+date	2007.10.25.12.56.22;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2007.10.24.04.24.12;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2007.04.23.08.24.33;	author jfrijters;	state Exp;
+branches
+	1.15.2.1;
+next	1.14;
+
+1.14
+date	2006.11.27.07.39.31;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2006.08.21.05.15.52;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2006.08.17.07.33.39;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2006.08.15.08.50.43;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2006.08.14.07.57.03;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2006.07.21.10.18.15;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2006.03.27.16.21.32;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2005.11.01.14.01.43;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2005.09.06.08.06.04;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2005.05.23.08.24.08;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2005.05.02.10.03.24;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2005.02.02.15.12.01;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2004.12.07.09.53.42;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2004.11.29.13.58.21;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.15.2.1
+date	2007.12.04.06.04.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.18
+log
+@Removed files that are no longer needed no that GNU Classpath support has been dropped.
+@
+text
+@/*
+  Copyright (C) 2004, 2005, 2006, 2007 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+
+package java.lang;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.VMFieldImpl;
+import java.lang.reflect.Method;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.security.AccessController;
+import java.security.PrivilegedAction;
+import ikvm.internal.AnnotationAttributeBase;
+import ikvm.lang.CIL;
+import ikvm.lang.Internal;
+import ikvm.runtime.AssemblyClassLoader;
+
+@@Internal
+public class LibraryVMInterfaceImpl implements ikvm.internal.LibraryVMInterface
+{
+    public Object newClass(Object wrapper, Object protectionDomain, Object classLoader)
+    {
+        if(protectionDomain == null)
+        {
+            protectionDomain = getProtectionDomain((java.lang.ClassLoader)classLoader);
+        }
+        return new Class(wrapper, (java.security.ProtectionDomain)protectionDomain);
+    }
+
+    private static native java.security.ProtectionDomain getProtectionDomain(java.lang.ClassLoader classLoader);
+
+    public Object newField(Object clazz, Object wrapper)
+    {
+        return VMFieldImpl.newField((Class)clazz, wrapper);
+    }
+
+    public Object newConstructor(Object clazz, Object wrapper)
+    {
+        return new Constructor((Class)clazz, wrapper);
+    }
+
+    public Object newMethod(Object clazz, Object wrapper)
+    {
+        return new Method((Class)clazz, wrapper);
+    }
+
+    public Object getWrapperFromClass(Object clazz)
+    {
+        return ((Class)clazz).vmdata;
+    }
+
+    public Object getWrapperFromField(Object field)
+    {
+        return ((Field)field).impl.fieldCookie;
+    }
+
+    public Object getWrapperFromMethodOrConstructor(Object methodOrConstructor)
+    {
+        if(methodOrConstructor instanceof Method)
+        {
+            return ((Method)methodOrConstructor).methodCookie;
+        }
+        else
+        {
+            return ((Constructor)methodOrConstructor).methodCookie;
+        }
+    }
+
+    public Object getWrapperFromClassLoader(Object classLoader)
+    {
+        return ((ClassLoader)classLoader).vmdata;
+    }
+
+    public void setWrapperForClassLoader(Object classLoader, Object wrapper)
+    {
+        ((ClassLoader)classLoader).vmdata = wrapper;
+    }
+
+    public Object box(Object val)
+    {
+        if(val instanceof cli.System.Byte)
+        {
+            return new Byte(CIL.unbox_byte(val));
+        }
+        else if(val instanceof cli.System.Boolean)
+        {
+            return new Boolean(CIL.unbox_boolean(val));
+        }
+        else if(val instanceof cli.System.Int16)
+        {
+            return new Short(CIL.unbox_short(val));
+        }
+        else if(val instanceof cli.System.Char)
+        {
+            return new Character(CIL.unbox_char(val));
+        }
+        else if(val instanceof cli.System.Int32)
+        {
+            return new Integer(CIL.unbox_int(val));
+        }
+        else if(val instanceof cli.System.Single)
+        {
+            return new Float(CIL.unbox_float(val));
+        }
+        else if(val instanceof cli.System.Int64)
+        {
+            return new Long(CIL.unbox_long(val));
+        }
+        else if(val instanceof cli.System.Double)
+        {
+            return new Double(CIL.unbox_double(val));
+        }
+        else
+        {
+            throw new IllegalArgumentException();
+        }
+    }
+    
+    public Object unbox(Object val)
+    {
+        if(val instanceof Byte)
+        {
+            return CIL.box_byte(((Byte)val).byteValue());
+        }
+        else if(val instanceof Boolean)
+        {
+            return CIL.box_boolean(((Boolean)val).booleanValue());
+        }
+        else if(val instanceof Short)
+        {
+            return CIL.box_short(((Short)val).shortValue());
+        }
+        else if(val instanceof Character)
+        {
+            return CIL.box_char(((Character)val).charValue());
+        }
+        else if(val instanceof Integer)
+        {
+            return CIL.box_int(((Integer)val).intValue());
+        }
+        else if(val instanceof Float)
+        {
+            return CIL.box_float(((Float)val).floatValue());
+        }
+        else if(val instanceof Long)
+        {
+            return CIL.box_long(((Long)val).longValue());
+        }
+        else if(val instanceof Double)
+        {
+            return CIL.box_double(((Double)val).doubleValue());
+        }
+        else
+        {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    public Throwable mapException(Throwable t)
+    {
+        return ExceptionHelper.MapExceptionFast(t, true);
+    }
+
+    public void jniWaitUntilLastThread()
+    {
+        VMThread.jniWaitUntilLastThread();
+    }
+
+    public void jniDetach()
+    {
+        VMThread.jniDetach();
+    }
+
+    public void setThreadGroup(Object group)
+    {
+        VMThread.setThreadGroup((ThreadGroup)group);
+    }
+
+    public Object newDirectByteBuffer(cli.System.IntPtr address, int capacity)
+    {
+        return java.nio.VMDirectByteBuffer.NewDirectByteBuffer(address, capacity);
+    }
+
+    public cli.System.IntPtr getDirectBufferAddress(Object buffer)
+    {
+        return java.nio.VMDirectByteBuffer.GetDirectBufferAddress((java.nio.Buffer)buffer);
+    }
+    
+    public int getDirectBufferCapacity(Object buffer)
+    {
+        return ((java.nio.Buffer)buffer).capacity();
+    }
+
+    public void setProperties(cli.System.Collections.Hashtable props)
+    {
+        gnu.classpath.VMSystemProperties.props = props;
+    }
+
+    public boolean runFinalizersOnExit()
+    {
+        return VMRuntime.runFinalizersOnExitFlag;
+    }
+
+    public Object newAnnotation(Object classLoader, Object definition)
+    {
+        return AnnotationAttributeBase.newAnnotation((ClassLoader)classLoader, definition);
+    }
+
+    public Object newAnnotationElementValue(Object classLoader, Object expectedClass, Object definition)
+    {
+        try
+        {
+            return AnnotationAttributeBase.decodeElementValue(definition, (Class)expectedClass, (ClassLoader)classLoader);
+        }
+        catch (IllegalAccessException x)
+        {
+            // TODO this shouldn't be here
+            return null;
+        }
+    }
+
+    public Object newAssemblyClassLoader(final cli.System.Reflection.Assembly assembly)
+    {
+        return AccessController.doPrivileged(new PrivilegedAction() {
+            public Object run() {
+                return new AssemblyClassLoader(assembly);
+            }
+        });
+    }
+}
+@
+
+
+1.17
+log
+@Made AssemblyClassLoader public and moved it to ikvm.runtime package.
+@
+text
+@@
+
+
+1.16
+log
+@Make "classpath" build target build again.
+@
+text
+@a34 1
+import ikvm.internal.AssemblyClassLoader;
+d37 1
+@
+
+
+1.15
+log
+@Simplified VM -> Class Library interface by taking advantage of the fact that IKVM.Runtime.dll is now compiled in two passes with the second pass linking against the class library.
+@
+text
+@d44 1
+a44 1
+        if(protectionDomain == null && classLoader instanceof AssemblyClassLoader)
+d46 1
+a46 1
+            protectionDomain = ((AssemblyClassLoader)classLoader).getProtectionDomain();
+d51 2
+@
+
+
+1.15.2.1
+log
+@Backported fixes and changed version to 0.36.0.5
+@
+text
+@d35 1
+a37 1
+import ikvm.runtime.AssemblyClassLoader;
+d44 1
+a44 1
+        if(protectionDomain == null)
+d46 1
+a46 1
+            protectionDomain = getProtectionDomain((java.lang.ClassLoader)classLoader);
+a50 2
+    private static native java.security.ProtectionDomain getProtectionDomain(java.lang.ClassLoader classLoader);
+
+@
+
+
+1.14
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2004, 2005, 2006 Jeroen Frijters
+a41 6
+    public Object loadClass(Object classLoader, String name) throws ClassNotFoundException
+    {
+        Class c = ((ClassLoader)classLoader).loadClass(name);
+        return c == null ? null : c.vmdata;
+    }
+
+a182 5
+    public void printStackTrace(Throwable t)
+    {
+        t.printStackTrace();
+    }
+
+a240 140
+    public Throwable newIllegalAccessError(String msg)
+    {
+        return new IllegalAccessError(msg);
+    }
+
+    public Throwable newIllegalAccessException(String msg)
+    {
+        return new IllegalAccessException(msg);
+    }
+
+    public Throwable newIncompatibleClassChangeError(String msg)
+    {
+        return new IncompatibleClassChangeError(msg);
+    }
+
+    public Throwable newLinkageError(String msg)
+    {
+        return new LinkageError(msg);
+    }
+
+    public Throwable newVerifyError(String msg)
+    {
+        return new VerifyError(msg);
+    }
+
+    public Throwable newClassCircularityError(String msg)
+    {
+        return new ClassCircularityError(msg);
+    }
+
+    public Throwable newClassFormatError(String msg)
+    {
+        return new ClassFormatError(msg);
+    }
+
+    public Throwable newUnsupportedClassVersionError(String msg)
+    {
+        return new UnsupportedClassVersionError(msg);
+    }
+
+    public Throwable newNoClassDefFoundError(String msg)
+    {
+        return new NoClassDefFoundError(msg);
+    }
+
+    public Throwable newClassNotFoundException(String msg)
+    {
+        return new ClassNotFoundException(msg);
+    }
+
+    public Throwable newUnsatisfiedLinkError(String msg)
+    {
+        return new UnsatisfiedLinkError(msg);
+    }
+
+    public Throwable newIllegalArgumentException(String msg)
+    {
+        return new IllegalArgumentException(msg);
+    }
+
+    public Throwable newNegativeArraySizeException()
+    {
+        return new NegativeArraySizeException();
+    }
+
+    public Throwable newArrayStoreException()
+    {
+        return new ArrayStoreException();
+    }
+
+    public Throwable newIndexOutOfBoundsException(String msg)
+    {
+        return new IndexOutOfBoundsException(msg);
+    }
+
+    public Throwable newStringIndexOutOfBoundsException()
+    {
+        return new StringIndexOutOfBoundsException();
+    }
+
+    public Throwable newInvocationTargetException(Throwable t)
+    {
+        return new InvocationTargetException(t);
+    }
+
+    public Throwable newUnknownHostException(String msg)
+    {
+        return new java.net.UnknownHostException(msg);
+    }
+
+    public Throwable newArrayIndexOutOfBoundsException()
+    {
+        return new ArrayIndexOutOfBoundsException();
+    }
+
+    public Throwable newNumberFormatException(String msg)
+    {
+        return new NumberFormatException(msg);
+    }
+
+    public Throwable newNullPointerException()
+    {
+        return new NullPointerException();
+    }
+
+    public Throwable newClassCastException(String msg)
+    {
+        return new ClassCastException(msg);
+    }
+
+    public Throwable newNoSuchFieldError(String msg)
+    {
+        return new NoSuchFieldError(msg);
+    }
+
+    public Throwable newNoSuchMethodError(String msg)
+    {
+        return new NoSuchMethodError(msg);
+    }
+
+    public Throwable newInstantiationError(String msg)
+    {
+        return new InstantiationError(msg);
+    }
+
+    public Throwable newInstantiationException(String msg)
+    {
+        return new InstantiationException(msg);
+    }
+
+    public Throwable newInterruptedException()
+    {
+        return new InterruptedException();
+    }
+
+    public Throwable newIllegalMonitorStateException()
+    {
+        return new IllegalMonitorStateException();
+    }
+
+@
+
+
+1.13
+log
+@*** empty log message ***
+@
+text
+@d392 1
+a392 1
+    public Object newAssemblyClassLoader()
+d396 1
+a396 1
+                return new AssemblyClassLoader();
+@
+
+
+1.12
+log
+@*** empty log message ***
+@
+text
+@d44 2
+a45 1
+        return ((ClassLoader)classLoader).loadClass(name).vmdata;
+@
+
+
+1.11
+log
+@*** empty log message ***
+@
+text
+@d37 1
+d39 2
+a40 1
+class LibraryVMInterfaceImpl implements ikvm.internal.LibraryVMInterface
+@
+
+
+1.10
+log
+@*** empty log message ***
+@
+text
+@d45 1
+a45 1
+    public Object newClass(Object wrapper, Object protectionDomain)
+d47 4
+@
+
+
+1.9
+log
+@*** empty log message ***
+@
+text
+@d35 1
+a35 1
+import ikvm.internal.ReflectionOnlyClassLoader;
+a96 5
+    public Object getSystemClassLoader()
+    {
+        return ClassLoader.StaticData.systemClassLoader;
+    }
+
+d385 1
+a385 1
+    public Object newReflectionOnlyClassLoader()
+d389 1
+a389 1
+                return new ReflectionOnlyClassLoader();
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@d32 2
+d35 1
+d389 9
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2004, 2005 Jeroen Frijters
+d28 1
+d49 1
+a49 1
+        return VMClass.createField((Class)clazz, wrapper);
+d54 1
+a54 1
+        return VMClass.createConstructor((Class)clazz, wrapper);
+d59 1
+a59 1
+        return VMClass.createMethod((Class)clazz, wrapper);
+d69 1
+a69 1
+        return getWrapperFromField((Field)field);
+a71 4
+    private static native Object getWrapperFromField(Field field);
+    private static native Object getWrapperFromMethod(Method method);
+    private static native Object getWrapperFromConstructor(Constructor constructor);
+
+d76 1
+a76 1
+            return getWrapperFromMethod((Method)methodOrConstructor);
+d80 1
+a80 1
+            return getWrapperFromConstructor((Constructor)methodOrConstructor);
+d204 9
+a212 2
+    public native Object newDirectByteBuffer(cli.System.IntPtr address, int capacity);
+    public native cli.System.IntPtr getDirectBufferAddress(Object buffer);
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d31 1
+a31 1
+
+d225 18
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d87 10
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d174 1
+a174 1
+        return ExceptionHelper.MapExceptionFast(t);
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d210 5
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2004 Jeroen Frijters
+d94 1
+a94 1
+        if(val instanceof cli.System.SByte)
+d192 5
+d202 1
+a202 1
+        return ((java.nio.ByteBuffer)buffer).capacity();
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@d89 1
+a89 1
+        return System.systemClassLoader;
+d200 5
+@
+

@@ -1,0 +1,549 @@
+head	1.9;
+access;
+symbols
+	v8_1_5717_0:1.9
+	v8_1:1.9.0.2
+	v8_0_5449_1:1.8
+	v8_0_5449_0:1.8
+	v8_0:1.8.0.6
+	v7_4_5196_0:1.8
+	v7_4:1.8.0.4
+	v7_3:1.8.0.2
+	v7_2_4630_6:1.7
+	v7_2_4630_5:1.7
+	v7_2_4630_4:1.7
+	v7_2_4630_3:1.7
+	v7_2_4630_2:1.7
+	v0_46_0_4:1.4
+	v7_2_4630_1:1.7
+	v7_2:1.7.0.2
+	v7_1_4532_2:1.6
+	v7_1_4532_1:1.6
+	v7_1_4532_0:1.6
+	v7_1:1.6.0.2
+	v7_0_4335_3:1.5
+	v7_0_4335_2:1.5
+	v7_0_4335_1:1.5
+	v0_46_0_2:1.4
+	v7_0_4335_0:1.5
+	v7_0:1.5.0.2
+	v0_46_0_1:1.4
+	v0_46_0_0:1.4
+	v0_46:1.4.0.4
+	v0_44_0_6:1.4
+	v0_44_0_5:1.4
+	v0_44_0_4:1.4
+	v0_44_0_3:1.4
+	v0_44_0_2:1.4
+	v0_44_0_1:1.4
+	v0_44_0_0:1.4
+	v0_44:1.4.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.9
+date	2015.04.06.07.12.29;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2012.10.15.23.14.45;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2012.07.16.10.14.38;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2012.04.10.06.18.32;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2011.03.10.11.05.54;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.06.28.10.18.07;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.02.26.09.26.20;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.9
+log
+@Fixed known custom attribute handling. They should be recognized by type name, not type identity.
+@
+text
+@/*
+  Copyright (C) 2009-2011 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using IKVM.Reflection.Metadata;
+using IKVM.Reflection.Writer;
+
+namespace IKVM.Reflection.Emit
+{
+	public sealed class EventBuilder : EventInfo
+	{
+		private readonly TypeBuilder typeBuilder;
+		private readonly string name;
+		private EventAttributes attributes;
+		private readonly int eventtype;
+		private MethodBuilder addOnMethod;
+		private MethodBuilder removeOnMethod;
+		private MethodBuilder fireMethod;
+		private readonly List<Accessor> accessors = new List<Accessor>();
+		private int lazyPseudoToken;
+
+		private struct Accessor
+		{
+			internal short Semantics;
+			internal MethodBuilder Method;
+		}
+
+		internal EventBuilder(TypeBuilder typeBuilder, string name, EventAttributes attributes, Type eventtype)
+		{
+			this.typeBuilder = typeBuilder;
+			this.name = name;
+			this.attributes = attributes;
+			this.eventtype = typeBuilder.ModuleBuilder.GetTypeTokenForMemberRef(eventtype);
+		}
+
+		public void SetAddOnMethod(MethodBuilder mdBuilder)
+		{
+			addOnMethod = mdBuilder;
+			Accessor acc;
+			acc.Semantics = MethodSemanticsTable.AddOn;
+			acc.Method = mdBuilder;
+			accessors.Add(acc);
+		}
+
+		public void SetRemoveOnMethod(MethodBuilder mdBuilder)
+		{
+			removeOnMethod = mdBuilder;
+			Accessor acc;
+			acc.Semantics = MethodSemanticsTable.RemoveOn;
+			acc.Method = mdBuilder;
+			accessors.Add(acc);
+		}
+
+		public void SetRaiseMethod(MethodBuilder mdBuilder)
+		{
+			fireMethod = mdBuilder;
+			Accessor acc;
+			acc.Semantics = MethodSemanticsTable.Fire;
+			acc.Method = mdBuilder;
+			accessors.Add(acc);
+		}
+
+		public void AddOtherMethod(MethodBuilder mdBuilder)
+		{
+			Accessor acc;
+			acc.Semantics = MethodSemanticsTable.Other;
+			acc.Method = mdBuilder;
+			accessors.Add(acc);
+		}
+
+		public void SetCustomAttribute(ConstructorInfo con, byte[] binaryAttribute)
+		{
+			SetCustomAttribute(new CustomAttributeBuilder(con, binaryAttribute));
+		}
+
+		public void SetCustomAttribute(CustomAttributeBuilder customBuilder)
+		{
+			if (customBuilder.KnownCA == KnownCA.SpecialNameAttribute)
+			{
+				attributes |= EventAttributes.SpecialName;
+			}
+			else
+			{
+				if (lazyPseudoToken == 0)
+				{
+					lazyPseudoToken = typeBuilder.ModuleBuilder.AllocPseudoToken();
+				}
+				typeBuilder.ModuleBuilder.SetCustomAttribute(lazyPseudoToken, customBuilder);
+			}
+		}
+
+		public override EventAttributes Attributes
+		{
+			get { return attributes; }
+		}
+
+		public override MethodInfo GetAddMethod(bool nonPublic)
+		{
+			return nonPublic || (addOnMethod != null && addOnMethod.IsPublic) ? addOnMethod : null;
+		}
+
+		public override MethodInfo GetRemoveMethod(bool nonPublic)
+		{
+			return nonPublic || (removeOnMethod != null && removeOnMethod.IsPublic) ? removeOnMethod : null;
+		}
+
+		public override MethodInfo GetRaiseMethod(bool nonPublic)
+		{
+			return nonPublic || (fireMethod != null && fireMethod.IsPublic) ? fireMethod : null;
+		}
+
+		public override MethodInfo[] GetOtherMethods(bool nonPublic)
+		{
+			List<MethodInfo> list = new List<MethodInfo>();
+			foreach (Accessor acc in accessors)
+			{
+				if (acc.Semantics == MethodSemanticsTable.Other && (nonPublic || acc.Method.IsPublic))
+				{
+					list.Add(acc.Method);
+				}
+			}
+			return list.ToArray();
+		}
+
+		public override MethodInfo[] __GetMethods()
+		{
+			List<MethodInfo> list = new List<MethodInfo>();
+			foreach (Accessor acc in accessors)
+			{
+				list.Add(acc.Method);
+			}
+			return list.ToArray();
+		}
+
+		public override Type DeclaringType
+		{
+			get { return typeBuilder; }
+		}
+
+		public override string Name
+		{
+			get { return name; }
+		}
+
+		public override Module Module
+		{
+			get { return typeBuilder.ModuleBuilder; }
+		}
+
+		public EventToken GetEventToken()
+		{
+			if (lazyPseudoToken == 0)
+			{
+				lazyPseudoToken = typeBuilder.ModuleBuilder.AllocPseudoToken();
+			}
+			return new EventToken(lazyPseudoToken);
+		}
+
+		public override Type EventHandlerType
+		{
+			get { return typeBuilder.ModuleBuilder.ResolveType(eventtype); }
+		}
+
+		internal void Bake()
+		{
+			EventTable.Record rec = new EventTable.Record();
+			rec.EventFlags = (short)attributes;
+			rec.Name = typeBuilder.ModuleBuilder.Strings.Add(name);
+			rec.EventType = eventtype;
+			int token = 0x14000000 | typeBuilder.ModuleBuilder.Event.AddRecord(rec);
+
+			if (lazyPseudoToken == 0)
+			{
+				lazyPseudoToken = token;
+			}
+			else
+			{
+				typeBuilder.ModuleBuilder.RegisterTokenFixup(lazyPseudoToken, token);
+			}
+
+			foreach (Accessor acc in accessors)
+			{
+				AddMethodSemantics(acc.Semantics, acc.Method.MetadataToken, token);
+			}
+		}
+
+		private void AddMethodSemantics(short semantics, int methodToken, int propertyToken)
+		{
+			MethodSemanticsTable.Record rec = new MethodSemanticsTable.Record();
+			rec.Semantics = semantics;
+			rec.Method = methodToken;
+			rec.Association = propertyToken;
+			typeBuilder.ModuleBuilder.MethodSemantics.AddRecord(rec);
+		}
+
+		internal override bool IsPublic
+		{
+			get
+			{
+				foreach (Accessor acc in accessors)
+				{
+					if (acc.Method.IsPublic)
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+		}
+
+		internal override bool IsNonPrivate
+		{
+			get
+			{
+				foreach (Accessor acc in accessors)
+				{
+					if ((acc.Method.Attributes & MethodAttributes.MemberAccessMask) > MethodAttributes.Private)
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+		}
+
+		internal override bool IsStatic
+		{
+			get
+			{
+				foreach (Accessor acc in accessors)
+				{
+					if (acc.Method.IsStatic)
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+		}
+
+		internal override bool IsBaked
+		{
+			get { return typeBuilder.IsBaked; }
+		}
+
+		internal override int GetCurrentToken()
+		{
+			if (typeBuilder.ModuleBuilder.IsSaved && ModuleBuilder.IsPseudoToken(lazyPseudoToken))
+			{
+				return typeBuilder.ModuleBuilder.ResolvePseudoToken(lazyPseudoToken);
+			}
+			else
+			{
+				return lazyPseudoToken;
+			}
+		}
+	}
+}
+@
+
+
+1.8
+log
+@Made ModuleBuilder.IsPseudoToken() method static.
+@
+text
+@d100 1
+a100 2
+			Universe u = typeBuilder.ModuleBuilder.universe;
+			if (customBuilder.Constructor.DeclaringType == u.System_Runtime_CompilerServices_SpecialNameAttribute)
+@
+
+
+1.7
+log
+@Refactored custom attribute handling of MemberInfo types.
+@
+text
+@d271 1
+a271 1
+			if (typeBuilder.ModuleBuilder.IsSaved && typeBuilder.ModuleBuilder.IsPseudoToken(lazyPseudoToken))
+@
+
+
+1.6
+log
+@Moved GetEvents(), GetFields(), GetConstructors(), GetNestedTypes() and GetProperties() to a common implementation that fixes a number of bugs.
+@
+text
+@d195 5
+a199 1
+			if (lazyPseudoToken != 0)
+d263 17
+@
+
+
+1.5
+log
+@- Retain event method ordering.
+- Allow duplicate event methods.
+- Added API extension EventInfo.__GetMethods() to get all methods associated with an event.
+@
+text
+@d230 15
+@
+
+
+1.4
+log
+@Use GetTypeTokenForMemberRef() instead of GetTypeToken(), where appropriate.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Jeroen Frijters
+d41 1
+a41 1
+		private List<MethodBuilder> otherMethods;
+d44 6
+d61 4
+d70 4
+d79 4
+d87 4
+a90 5
+			if (otherMethods == null)
+			{
+				otherMethods = new List<MethodBuilder>();
+			}
+			otherMethods.Add(mdBuilder);
+d138 1
+a138 1
+			if (otherMethods != null)
+d140 1
+a140 1
+				foreach (MethodInfo method in otherMethods)
+d142 1
+a142 4
+					if (nonPublic || method.IsPublic)
+					{
+						list.Add(method);
+					}
+d148 10
+d200 1
+a200 5
+			if (addOnMethod != null)
+			{
+				AddMethodSemantics(MethodSemanticsTable.AddOn, addOnMethod.MetadataToken, token);
+			}
+			if (removeOnMethod != null)
+d202 1
+a202 12
+				AddMethodSemantics(MethodSemanticsTable.RemoveOn, removeOnMethod.MetadataToken, token);
+			}
+			if (fireMethod != null)
+			{
+				AddMethodSemantics(MethodSemanticsTable.Fire, fireMethod.MetadataToken, token);
+			}
+			if (otherMethods != null)
+			{
+				foreach (MethodBuilder method in otherMethods)
+				{
+					AddMethodSemantics(MethodSemanticsTable.Other, method.MetadataToken, token);
+				}
+d219 1
+a219 5
+				if ((addOnMethod != null && addOnMethod.IsPublic) || (removeOnMethod != null && removeOnMethod.IsPublic) || (fireMethod != null && fireMethod.IsPublic))
+				{
+					return true;
+				}
+				if (otherMethods != null)
+d221 1
+a221 1
+					foreach (MethodBuilder method in otherMethods)
+d223 1
+a223 4
+						if (method.IsPublic)
+						{
+							return true;
+						}
+d234 1
+a234 5
+				if ((addOnMethod != null && addOnMethod.IsStatic) || (removeOnMethod != null && removeOnMethod.IsStatic) || (fireMethod != null && fireMethod.IsStatic))
+				{
+					return true;
+				}
+				if (otherMethods != null)
+d236 1
+a236 1
+					foreach (MethodBuilder method in otherMethods)
+d238 1
+a238 4
+						if (method.IsStatic)
+						{
+							return true;
+						}
+@
+
+
+1.3
+log
+@Made property and event public/static flag handling compatible with .NET
+@
+text
+@d49 1
+a49 1
+			this.eventtype = typeBuilder.ModuleBuilder.GetTypeToken(eventtype).Token;
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d205 44
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

@@ -1,0 +1,739 @@
+head	1.11;
+access;
+symbols
+	v8_1_5717_0:1.11
+	v8_1:1.11.0.4
+	v8_0_5449_1:1.11
+	v8_0_5449_0:1.11
+	v8_0:1.11.0.2
+	v7_4_5196_0:1.10
+	v7_4:1.10.0.10
+	v7_3:1.10.0.8
+	v7_2_4630_6:1.10
+	v7_2_4630_5:1.10
+	v7_2_4630_4:1.10
+	v7_2_4630_3:1.10
+	v7_2_4630_2:1.10
+	v0_46_0_4:1.8
+	v7_2_4630_1:1.10
+	v7_2:1.10.0.6
+	v7_1_4532_2:1.10
+	v7_1_4532_1:1.10
+	v7_1_4532_0:1.10
+	v7_1:1.10.0.4
+	v7_0_4335_3:1.10
+	v7_0_4335_2:1.10
+	v7_0_4335_1:1.10
+	v0_46_0_2:1.8
+	v7_0_4335_0:1.10
+	v7_0:1.10.0.2
+	v0_40_0_6:1.6
+	v0_40_0_5:1.6
+	v0_46_0_1:1.8
+	v0_46_0_0:1.8
+	v0_46:1.8.0.2
+	v0_36_0_14:1.4
+	v0_44_0_6:1.7
+	v0_44_0_5:1.7
+	v0_44_0_4:1.7
+	v0_44_0_3:1.7
+	v0_44_0_2:1.7
+	v0_42_0_7:1.6
+	v0_44_0_1:1.7
+	v0_44_0_0:1.7
+	v0_44:1.7.0.2
+	v0_42_0_6:1.6
+	v0_42_0_5:1.6
+	v0_42_0_4:1.6
+	v0_42_0_3:1.6
+	v0_42_0_2:1.6
+	v0_42_0_1:1.6
+	v0_42_0_0:1.6
+	v0_42:1.6.0.6
+	v0_40_0_3:1.6
+	v0_40_0_2:1.6
+	v0_40_0_1:1.6
+	v0_40_0_0:1.6
+	v0_40:1.6.0.4
+	v0_36_0_13:1.4
+	v0_38_0_1:1.6
+	v0_38_0_0:1.6
+	v0_38:1.6.0.2
+	v0_36_0_9:1.4
+	v0_36_0_7:1.4
+	v0_36_0_5:1.4
+	v0_36_0_4:1.4
+	v0_36_0_3:1.4
+	v0_36_0_2:1.4
+	v0_36_0_1:1.4
+	v0_36_0_0:1.4
+	v0_36:1.4.0.2
+	v0_34_0_3:1.3
+	v0_34_0_2:1.3
+	v0_34_0_1:1.3
+	v0_34_0_0:1.3
+	v0_34:1.3.0.6
+	v0_32:1.3.0.4
+	v0_32_0_0:1.3
+	v0_30:1.3.0.2
+	v0_28_0_0:1.3
+	v0_26_0_1:1.3
+	v0_26_0_0:1.3
+	v0_24_0_1:1.3
+	v0_24_0_0:1.3
+	v0_22_0_0:1.3
+	v0_20_0_0:1.3
+	v0_18_0_0:1.3
+	v0_16_0_0:1.3
+	v0_14_0_1:1.3
+	v0_14_0_0:1.3
+	v0_12_0_0:1.3
+	v0_10_0_1:1.3
+	v0_10_0_0:1.3;
+locks; strict;
+comment	@# @;
+
+
+1.11
+date	2014.06.29.07.13.58;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2011.05.17.11.40.17;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2011.05.05.13.29.40;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2010.11.07.11.58.08;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2010.01.11.07.06.17;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2008.07.21.12.17.16;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2008.02.09.17.19.29;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2007.05.21.15.42.41;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2004.07.05.13.57.40;	author sschaub;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2004.06.30.12.37.04;	author sschaub;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2004.06.29.12.59.29;	author sschaub;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.11
+log
+@Updated wiki links.
+@
+text
+@<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>IKVM.NET Home Page</title>
+<link type="text/css" href="skin/page.css" rel="stylesheet">
+</head>
+<body text="#000000" bgcolor="#FFFFFF">
+<!--================= start Navigation Path ==================-->
+<table summary="navigation path" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td nowrap="nowrap" valign="middle" bgcolor="#CFDCED" height="20"><img height="1" width="5" alt="" src="skin/images/spacer.gif" class="spacer"><!--===== breadcrumb trail (javascript-generated) ====--><font size="2" face="Arial, Helvetica, Sans-serif"><script src="skin/breadcrumbs.js" language="JavaScript" type="text/javascript"></script></font></td>
+</tr>
+<tr>
+<td bgcolor="#4C6C8F" height="2"><img height="2" width="2" alt="" src="skin/images/spacer.gif" class="spacer"></td>
+</tr>
+</table>
+<!--================= end Navigation Path ==================-->
+<!--================= start Banner ==================-->
+<table summary="header with logos" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<!--================= start Group Logo ==================-->
+<td bgcolor="#294563"></td>
+<!--================= end Group Logo ==================-->
+<!--================= start Project Logo ==================--><td width="100%" align="center" bgcolor="#294563"><a href="http://www.ikvm.net/"><img border="0" class="logoImage" alt="IKVM.NET" src="images/project.gif" title="Java on .NET"></a></td>
+<!--================= end Project Logo ==================-->
+<!--================= start Search ==================--><td valign="top" rowspan="2" bgcolor="#294563"></td>
+<!--================= start Search ==================--><td bgcolor="#294563"><img height="10" width="10" alt="" src="skin/images/spacer.gif" class="spacer"></td>
+</tr>
+<tr>
+<td valign="bottom" bgcolor="#294563" colspan="2">
+<!--================= start Tabs ==================-->
+<div class="tab">
+<table summary="tab bar" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="6"><img alt="" height="8" width="6" src="skin/images/spacer.gif"></td>
+</tr>
+</table>
+</div>
+<!--================= end Tabs ==================-->
+</td><td bgcolor="#294563"><img alt="" width="1" height="1" src="skin/images/spacer.gif" class="spacer"></td>
+</tr>
+<tr>
+<td bgcolor="#4C6C8F" colspan="4"><img width="1" height="10" alt="" src="skin/images/spacer.gif" class="spacer"></td>
+</tr>
+</table>
+<!--================= end Banner ==================-->
+<!--================= start Menu, NavBar, Content ==================-->
+<table summary="page content" bgcolor="#ffffff" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top">
+<table summary="menu" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<!--================= start left top NavBar ==================-->
+<td rowspan="3" valign="top">
+<table summary="blue line" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td bgcolor="#294563"><img width="10" height="1" alt="" src="skin/images/spacer.gif" class="spacer"></td>
+</tr>
+<tr>
+<td bgcolor="#CFDCED"><font color="#4C6C8F" size="4" face="Arial, Helvetica, Sans-serif">&nbsp;</font></td>
+</tr>
+<tr>
+<td bgcolor="#294563"><img width="10" height="1" alt="" src="skin/images/spacer.gif" class="spacer"></td>
+</tr>
+</table>
+</td>
+<!--================= end left top NavBar ==================--><td bgcolor="#294563"><img width="1" height="1" alt="" src="skin/images/spacer.gif" class="spacer"></td><td valign="bottom" bgcolor="#4C6C8F"><img width="10" height="10" alt="" src="skin/images/spacer.gif" class="spacer"></td><td nowrap="nowrap" valign="top" bgcolor="#4C6C8F">
+<!--================= start Menu items ==================-->
+<div class="menu">
+<ul>
+<li>
+<font color="#CFDCED">About</font>
+<ul>
+    
+<li>
+<span class="sel"><font color="#ffcc00">Home</font></span>
+</li>
+    
+<li>
+<a href="download.html" title="">Download</a>
+</li>
+    
+<li>
+<a href="uses.html" title="">Uses</a>
+</li>
+    
+<li>
+<a href="http://weblog.ikvm.net" title="">News</a>
+</li>
+    
+<li>
+<a href="http://sourceforge.net/p/ikvm/wiki/FAQ/" title="">FAQ</a>
+</li>
+    
+<li>
+<a href="http://sourceforge.net/p/ikvm/wiki/License/" title="">License</a>
+</li>
+    
+<li>
+<a href="stories.html" title="">Case Studies</a>
+</li>
+  
+</ul>
+</li>
+<li>
+<font color="#CFDCED">User's Guide</font>
+<ul>
+    
+<li>
+<a href="http://sourceforge.net/p/ikvm/wiki/User%27s_Guide/">Introduction</a>
+</li>
+    
+<li>
+<a href="http://sourceforge.net/p/ikvm/wiki/Installation/" title="">Installation</a>
+</li>
+    
+<li>
+<a href="http://sourceforge.net/p/ikvm/wiki/Tutorial/" title="">Tutorial</a>
+</li>
+    
+<li>
+<a href="http://sourceforge.net/p/ikvm/wiki/Tools/" title="">Tools Reference</a>
+</li>
+  
+</ul>
+</li>
+<li>
+<font color="#CFDCED">Developer's Guide</font>
+<ul>
+    
+<li>
+<a href="devguide/intro.html" title="">Introduction</a>
+</li>    
+    
+<li>
+<a href="devguide/concepts.html" title="">Concepts</a>
+</li>
+    
+<li>
+<a href="devguide/net2java.html" title="">Using Java Libraries</a>
+</li>
+    
+<li>
+<a href="devguide/java2net.html" title="">Developing in Java</a>
+</li>
+  
+</ul>
+</li>
+<li>
+<font color="#CFDCED">Contributing</font>
+<ul>
+    
+<li>
+<a href="http://sourceforge.net/mail/?group_id=69637">Mailing Lists</a>
+</li>
+    
+<li>
+<a href="http://sourceforge.net/tracker/?group_id=69637">Report Bugs</a>
+</li>
+    
+<li>
+<a href="http://sourceforge.net/cvs/?group_id=69637">CVS Repository</a>
+</li>
+  
+</ul>
+</li>
+</ul>
+</div>
+<!--================= end Menu items ==================-->
+</td><td valign="bottom" bgcolor="#4C6C8F"><img width="10" height="10" alt="" src="skin/images/spacer.gif" class="spacer"></td><td bgcolor="#294563"><img width="1" height="1" alt="" src="skin/images/spacer.gif" class="spacer"></td>
+</tr>
+<tr>
+<td valign="bottom" align="left" colspan="2" rowspan="2" bgcolor="#4C6C8F"><img height="10" width="10" border="0" alt="" src="skin/images/menu-left.gif"></td><td bgcolor="#4C6C8F"><img height="10" width="10" alt="" src="skin/images/spacer.gif" class="spacer"></td><td valign="bottom" align="right" colspan="2" rowspan="2" bgcolor="#4C6C8F"><img height="10" width="10" border="0" alt="" src="skin/images/menu-right.gif"></td>
+</tr>
+<tr>
+<td height="1" bgcolor="#294563"><img width="1" height="1" alt="" src="skin/images/spacer.gif" class="spacer"></td>
+</tr>
+</table>
+</td><td valign="top" width="100%">
+<table summary="content" width="100%" border="0" cellpadding="0" cellspacing="0">
+<!--================= start middle NavBar ==================-->
+<tr>
+<td colspan="4" bgcolor="#294563"><img width="10" height="1" alt="" src="skin/images/spacer.gif" class="spacer"></td>
+</tr>
+<tr>
+<td align="left" width="10" bgcolor="#CFDCED"><img width="10" height="1" alt="" src="skin/images/spacer.gif" class="spacer"></td><td align="left" width="50%" bgcolor="#CFDCED"><font color="#4C6C8F" size="3" face="Arial, Helvetica, Sans-serif">
+                &nbsp;
+                
+                </font><img width="10" height="8" alt="" src="skin/images/spacer.gif" class="spacer"></td><td align="right" width="50%" bgcolor="#CFDCED"><font color="#4C6C8F" size="3" face="Arial, Helvetica, Sans-serif">
+                &nbsp;
+                
+                </font><img width="10" height="8" alt="" src="skin/images/spacer.gif" class="spacer"></td><td width="10" bgcolor="#CFDCED"><img width="10" height="1" alt="" src="skin/images/spacer.gif" class="spacer"></td>
+</tr>
+<tr>
+<td colspan="4" bgcolor="#294563"><img width="10" height="1" alt="" src="skin/images/spacer.gif" class="spacer"></td>
+</tr>
+<!--================= end middle NavBar ==================-->
+<!--================= start Content==================-->
+<tr>
+<td align="left" width="10"><img width="10" height="1" alt="" src="skin/images/spacer.gif" class="spacer"></td><td colspan="2" align="left" width="100%">
+<div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="content">
+<table class="title" summary="">
+<tr>
+<td valign="middle">
+<h1>IKVM.NET Home Page</h1>
+</td>
+</tr>
+</table>
+<ul class="minitoc">
+<li>
+<a href="#Introduction">Introduction</a>
+</li>
+<li>
+<a href="#Related+Work">Related Work</a>
+</li>
+</ul> 
+    
+<a name="N1000C"></a><a name="Introduction"></a>
+<h3>Introduction</h3>
+<div style="margin-left: 0 ; border: 2px">
+<p>IKVM.NET is an implementation of Java for <a target="_blank" href="http://www.go-mono.org">Mono</a> and the <a target="_blank" href="http://msdn.microsoft.com/netframework/">Microsoft .NET Framework</a>.
+      It includes the following components:</p>
+<ul>
+      
+<li>A Java Virtual Machine implemented in .NET</li>
+      
+<li>A .NET implementation of the Java class libraries</li>
+      
+<li>Tools that enable Java and .NET interoperability</li>
+      
+</ul>
+<p>
+<a href="uses.html">Read more</a> about what you can do with IKVM.NET.</p>
+</div>
+    
+<a name="N10030"></a><a name="Related+Work"></a>
+<h3>Related Work</h3>
+<div style="margin-left: 0 ; border: 2px">
+<p>The following projects are related to IKVM.NET in some way:</p>
+<ul>
+        
+<li>
+<a href="http://www.go-mono.org">Mono: Open Source .NET implementation that includes IKVM.NET</a>
+</li>
+        
+<li>
+<a href="http://www.monodevelop.com/">MonoDevelop: A Mono IDE with IKVM Support</a>
+</li>
+        
+<li>
+<a href="http://ant-ikvmc.sourceforge.net/">Ant task for ikvmc</a>
+</li>
+        
+<li>
+<a href="http://code.google.com/p/jar2ikvmc/">Tool to figure out jar dependencies and generate ikvmc script</a>
+</li>
+        
+<li>
+<a href="http://lamp.epfl.ch/~magarcia/jdk2ikvm/">jdk2ikvm: A source-level conversion tool to migrate Scala programs from JDK to .NET</a>
+</li>
+      
+</ul>
+</div>
+  
+<div class="attribution"></div>
+</div>
+</td><td width="10"><img width="10" height="1" alt="" src="skin/images/spacer.gif" class="spacer"></td>
+</tr>
+<!--================= end Content==================-->
+</table>
+</td>
+</tr>
+</table>
+<!--================= end Menu, NavBar, Content ==================-->
+<!--================= start Footer ==================-->
+<table summary="footer" cellspacing="0" cellpadding="0" width="100%" border="0">
+<tr>
+<td colspan="2" height="1" bgcolor="#4C6C8F"><img height="1" width="1" alt="" src="skin/images/spacer.gif" class="spacer"><a href="skin/images/label.gif"></a><a href="skin/images/page.gif"></a><a href="skin/images/chapter.gif"></a><a href="skin/images/chapter_open.gif"></a><a href="skin/images/current.gif"></a><a href="/favicon.ico"></a></td>
+</tr>
+<tr>
+<td colspan="2" bgcolor="#CFDCED" class="copyright" align="center"><font size="2" face="Arial, Helvetica, Sans-Serif">
+	  
+      Send feedback about this page to <a href="mailto:webmaster@@ikvm.net?subject=IKVM Website Feedback - Page index.html">webmaster@@ikvm.net</a>
+<br>
+	  
+	  Copyright &copy;
+          2002-2011&nbsp;Jeroen Frijters  All rights reserved.<script type="text/javascript" language="JavaScript"><!--
+              document.write(" - "+"Last Published: " + document.lastModified);
+            //  --></script></font></td>
+</tr>
+<tr>
+<td colspan="2" align="left" bgcolor="#CFDCED" class="logos">
+<div>
+<img alt="" height="1" width="10" src="skin/images/spacer.gif"><a href="http://xml.apache.org/forrest/"><img border="0" alt="Built with Apache Forrest logo" src="images/built-with-forrest-button.png" width="88" height="31"><img height="1" width="5" alt="" src="skin/images/spacer.gif" class="spacer"></a>
+</div>
+</td>
+</tr>
+</table>
+<!--================= end Footer ==================-->
+</body>
+</html>
+@
+
+
+1.10
+log
+@Added Scala.NET jdk2ikvm tool to Related Work links.
+@
+text
+@d93 1
+a93 1
+<a href="https://sourceforge.net/apps/mediawiki/ikvm/index.php?title=FAQ" title="">FAQ</a>
+d97 1
+a97 1
+<a href="https://sourceforge.net/apps/mediawiki/ikvm/index.php?title=License" title="">License</a>
+d111 1
+a111 1
+<a href="https://sourceforge.net/apps/mediawiki/ikvm/index.php?title=User%27s_Guide">Introduction</a>
+d115 1
+a115 1
+<a href="https://sourceforge.net/apps/mediawiki/ikvm/index.php?title=Installation" title="">Installation</a>
+d119 1
+a119 1
+<a href="https://sourceforge.net/apps/mediawiki/ikvm/index.php?title=Tutorial" title="">Tutorial</a>
+d123 1
+a123 1
+<a href="https://sourceforge.net/apps/mediawiki/ikvm/index.php?title=Tools" title="">Tools Reference</a>
+@
+
+
+1.9
+log
+@- Added Tchatche.com case study.
+- Updated copyright year to 2002-2011.
+@
+text
+@d258 4
+@
+
+
+1.8
+log
+@Removed w3c validation icons, the page doesn't validate.
+@
+text
+@d284 1
+a284 1
+          2010&nbsp;Jeroen Frijters  All rights reserved.<script type="text/javascript" language="JavaScript"><!--
+@
+
+
+1.7
+log
+@Moved User Guide content to wiki.
+@
+text
+@d291 1
+a291 1
+<a href="http://validator.w3.org/check/referer"><img width="88" height="31" alt="Valid HTML 4.01!" src="skin/images/valid-html401.png" class="logoImage"></a><a href="http://jigsaw.w3.org/css-validator/"><img width="88" height="31" alt="Valid CSS!" src="skin/images/vcss.png" class="logoImage"></a><img alt="" height="1" width="10" src="skin/images/spacer.gif"><a href="http://xml.apache.org/forrest/"><img border="0" alt="Built with Apache Forrest logo" src="images/built-with-forrest-button.png" width="88" height="31"><img height="1" width="5" alt="" src="skin/images/spacer.gif" class="spacer"></a>
+@
+
+
+1.6
+log
+@Website updates.
+@
+text
+@d93 1
+a93 1
+<a href="http://weblog.ikvm.net/story.aspx/faq" title="">FAQ</a>
+d97 1
+a97 1
+<a href="http://weblog.ikvm.net/story.aspx/license" title="">License</a>
+d111 1
+a111 1
+<a href="userguide/intro.html">Introduction</a>
+d115 1
+a115 1
+<a href="userguide/install.html" title="">Installation</a>
+d119 1
+a119 1
+<a href="userguide/tutorial.html" title="">Tutorial</a>
+d123 1
+a123 1
+<a href="userguide/tools.html" title="">Tools Reference</a>
+a124 3
+      
+      
+      
+a214 6
+<a href="#IKVM.NET+Components">IKVM.NET Components</a>
+</li>
+<li>
+<a href="#Project+Status">Project Status</a>
+</li>
+<li>
+d237 1
+a237 71
+<a name="N10030"></a><a name="IKVM.NET+Components"></a>
+<h3>IKVM.NET Components</h3>
+<div style="margin-left: 0 ; border: 2px">
+<p>IKVM.NET 0.36 consists of several parts:</p>
+<ul>
+
+<li>
+
+<strong>IKVM.Runtime.dll</strong>: The VM runtime and all supporting code. It contains (among other things):
+<ul>
+
+<li>Byte Code JIT compiler/verifier: Just-in-time compiles Java Byte Code to CIL.</li>
+
+<li>Object model remapping infrastructure: Makes System.Object, System.String and System.Exception appear to 
+Java code as java.lang.Object, java.lang.String and java.lang.Throwable.</li>
+
+<li>Managed .NET re-implementations of the native methods in Classpath. </li>
+
+</ul>
+
+</li>
+
+<li>
+
+<strong>IKVM.OpenJDK.ClassLibrary.dll</strong>: compiled version of the Java class libraries derived from the <a href="http://openjdk.java.net/">OpenJDK</a> class library with some parts filled in with code from <a href="http://www.gnu.org/software/classpath/classpath.html">GNU Classpath</a> and <a href="http://icedtea.classpath.org/wiki/Main_Page">IcedTea</a>, 
+plus some additional IKVM.NET specific code.
+</li>
+
+<li>
+
+<strong>ikvm-native.dll</strong>: Unmanaged C library that implements a small part of the JNI interface and some platform specific code on non Windows platforms. On Windows this is an optional part, only required when an application uses its own native libraries. This is not needed for pure Java applications. On non-Windows platforms it is required, but it is included with the Mono distribution so it usually doesn't need to be installed seperately.
+</li>
+
+<li>
+
+<strong>ikvm.exe</strong>: Starter executable, comparable to java.exe ("dynamic mode").
+</li>
+
+<li>
+
+<strong>ikvmc.exe</strong>: Static compiler. Used to compile Java classes and jars into a .NET assembly ("static mode") .
+</li>
+
+<li>
+
+<strong>ikvmstub.exe</strong>: A tool that generates stub class files from a .NET assembly, so that Java code can be compiled against .NET code. IKVM.NET understands the stubs and replaces the references to the stubs by references to the actual .NET types. 
+</li>
+
+<li>
+
+<strong>IKVM.AWT.WinForms.dll</strong>: Very limited and broken implementation of a few AWT peers. This is a low priority issue for me.</li>
+
+</ul>
+</div>
+    
+<a name="N1007F"></a><a name="Project+Status"></a>
+<h3>Project Status</h3>
+<div style="margin-left: 0 ; border: 2px">
+<p>This project is currently in active development. Compliance with JDK 1.6 is largely implemented, but there are some
+      holes. In particular, </p>
+<ul>
+      
+<li>AWT and Swing are not presently functional. This is a low priority item for the project developers.</li>
+      
+<li>Security is another fairly large hole missing from the IKVM platform. This will be solved by relying on the sophisticated and powerful security model offered by the .NET platform.</li>
+      
+</ul>
+<p>Still, enough functionality is in place that several large Java projects run successfully. </p>
+</div>
+    
+<a name="N10095"></a><a name="Related+Work"></a>
+d284 1
+a284 1
+          2008&nbsp;Jeroen Frijters  All rights reserved.<script type="text/javascript" language="JavaScript"><!--
+@
+
+
+1.5
+log
+@Updated copyright year and added a case study.
+@
+text
+@d249 1
+a249 1
+<p>IKVM.NET consists of several parts:</p>
+d270 2
+a271 2
+<strong>IKVM.GNU.Classpath.dll</strong>: compiled version of <a href="http://www.gnu.org/software/classpath/classpath.html">GNU Classpath</a>, the Free Software Foundation's implementation of the Java class libraries, 
+plus some additional IKVM.NET specific code. Note that GNU Classpath isn't <em>part</em> of IKVM.NET, but it is <em>used</em> by IKVM.NET 
+d301 1
+a301 1
+<a name="N1007D"></a><a name="Project+Status"></a>
+d304 2
+a305 2
+<p>This project is currently in active development. Compliance with JDK 1.4 is largely implemented, but there are some
+      holes (particularly in the <a target="_top" href="http://www.kaffe.org/~stuart/japi/htmlout/h-jdk14-classpath.html">Classpath API's</a>). In particular, </p>
+d316 1
+a316 1
+<a name="N10097"></a><a name="Related+Work"></a>
+d323 4
+d331 5
+a335 1
+<a href="http://www.gnu.org/software/classpath/classpath.html">GNU Classpath: The Free Java Library Project</a>
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d355 1
+a355 1
+          2007&nbsp;Jeroen Frijters  All rights reserved.<script type="text/javascript" language="JavaScript"><!--
+@
+
+
+1.3
+log
+@Minor fixes; added feedback link to each page
+@
+text
+@d93 1
+a93 1
+<a href="faqdoc.html" title="">FAQ</a>
+d97 5
+a101 1
+<a href="license.html" title="">License</a>
+d205 1
+a205 1
+<div class="content">
+d271 1
+a271 1
+plus some additional IKVM.NET specific code. Note that GNU Classpath isn't <em>part</em> of IKVM.NET, but it is <em>used</em> by IK.VM.NET 
+d276 1
+a276 1
+<strong>IKVM.JNI.[Mono|CLR-Win32].dll</strong>: Managed C++ assembly that implements the JNI interface. This is an optional part, only required when an application uses its own native libraries. This is not needed for pure Java applications. 
+a328 4
+        
+<li>
+<a href="http://msdn.microsoft.com/vjsharp/default.aspx">Microsoft's J# for .NET</a>
+</li>
+d355 1
+a355 1
+          2004&nbsp;Jeroen Frijters  All rights reserved.<script type="text/javascript" language="JavaScript"><!--
+@
+
+
+1.2
+log
+@Minor fixes; added feedback link to each page
+@
+text
+@d250 1
+a250 1
+<strong>ikvm.runtime.dll</strong>: The VM runtime and all supporting code. It contains (among other things):
+d266 1
+a266 1
+<strong>ikvm.gnu.classpath.dll</strong>: compiled version of <a href="http://www.gnu.org/software/classpath/classpath.html">GNU Classpath</a>, the Free Software Foundation's implementation of the Java class libraries, 
+d272 1
+a272 1
+<strong>ikvm.jni.[mono|clr-win32].dll</strong>: Managed C++ assembly that implements the JNI interface. This is an optional part, only required when an application uses its own native libraries. This will not be required for pure Java applications, this is important because this code will only run on Microsoft's .NET implementation. 
+d351 1
+a351 1
+      Send feedback about the website to <a href="mailto:webmaster@@ikvm.net?subject=IKVM Website Feedback Page&body=Page URL: ">webmaster@@ikvm.net</a>
+@
+
+
+1.1
+log
+@Initial website commit
+@
+text
+@d158 4
+d349 6
+a354 1
+<td colspan="2" bgcolor="#CFDCED" class="copyright" align="center"><font size="2" face="Arial, Helvetica, Sans-Serif">Copyright &copy;
+@
+

@@ -1,0 +1,2087 @@
+head	1.63;
+access;
+symbols
+	v8_1_5717_0:1.61
+	v8_1:1.61.0.2
+	v8_0_5449_1:1.60
+	v8_0_5449_0:1.60
+	v8_0:1.60.0.4
+	v7_4_5196_0:1.60
+	v7_4:1.60.0.2
+	v7_3:1.59.0.2
+	v7_2_4630_6:1.52
+	v7_2_4630_5:1.52
+	v7_2_4630_4:1.52
+	v7_2_4630_3:1.52
+	v7_2_4630_2:1.52
+	v0_46_0_4:1.18.2.1
+	v7_2_4630_1:1.52
+	v7_2:1.52.0.2
+	v7_1_4532_2:1.47
+	v7_1_4532_1:1.47
+	v7_1_4532_0:1.47
+	v7_1:1.47.0.2
+	v7_0_4335_3:1.31
+	v7_0_4335_2:1.31
+	v7_0_4335_1:1.31
+	v0_46_0_2:1.18.2.1
+	v7_0_4335_0:1.31
+	v7_0:1.31.0.2
+	v0_46_0_1:1.18.2.1
+	v0_46_0_0:1.18
+	v0_46:1.18.0.2
+	v0_44_0_6:1.8
+	v0_44_0_5:1.8
+	v0_44_0_4:1.8
+	v0_44_0_3:1.8
+	v0_44_0_2:1.8
+	v0_44_0_1:1.8
+	v0_44_0_0:1.8
+	v0_44:1.8.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.63
+date	2016.07.04.06.25.44;	author jfrijters;	state Exp;
+branches;
+next	1.62;
+
+1.62
+date	2016.07.04.05.15.00;	author jfrijters;	state Exp;
+branches;
+next	1.61;
+
+1.61
+date	2015.04.07.11.55.51;	author jfrijters;	state Exp;
+branches;
+next	1.60;
+
+1.60
+date	2013.05.30.15.22.36;	author jfrijters;	state Exp;
+branches;
+next	1.59;
+
+1.59
+date	2013.01.29.11.54.43;	author jfrijters;	state Exp;
+branches;
+next	1.58;
+
+1.58
+date	2013.01.29.08.10.44;	author jfrijters;	state Exp;
+branches;
+next	1.57;
+
+1.57
+date	2013.01.07.11.57.04;	author jfrijters;	state Exp;
+branches;
+next	1.56;
+
+1.56
+date	2012.12.04.09.03.20;	author jfrijters;	state Exp;
+branches;
+next	1.55;
+
+1.55
+date	2012.11.21.07.36.04;	author jfrijters;	state Exp;
+branches;
+next	1.54;
+
+1.54
+date	2012.10.12.14.09.41;	author jfrijters;	state Exp;
+branches;
+next	1.53;
+
+1.53
+date	2012.10.11.10.33.42;	author jfrijters;	state Exp;
+branches;
+next	1.52;
+
+1.52
+date	2012.07.16.12.45.42;	author jfrijters;	state Exp;
+branches;
+next	1.51;
+
+1.51
+date	2012.07.16.12.36.31;	author jfrijters;	state Exp;
+branches;
+next	1.50;
+
+1.50
+date	2012.07.16.11.27.56;	author jfrijters;	state Exp;
+branches;
+next	1.49;
+
+1.49
+date	2012.07.16.07.23.00;	author jfrijters;	state Exp;
+branches;
+next	1.48;
+
+1.48
+date	2012.07.12.15.39.45;	author jfrijters;	state Exp;
+branches;
+next	1.47;
+
+1.47
+date	2012.04.09.10.04.58;	author jfrijters;	state Exp;
+branches;
+next	1.46;
+
+1.46
+date	2012.03.21.12.36.44;	author jfrijters;	state Exp;
+branches;
+next	1.45;
+
+1.45
+date	2012.03.21.11.32.08;	author jfrijters;	state Exp;
+branches;
+next	1.44;
+
+1.44
+date	2012.03.21.11.09.23;	author jfrijters;	state Exp;
+branches;
+next	1.43;
+
+1.43
+date	2012.03.05.13.48.17;	author jfrijters;	state Exp;
+branches;
+next	1.42;
+
+1.42
+date	2012.01.27.10.11.18;	author jfrijters;	state Exp;
+branches;
+next	1.41;
+
+1.41
+date	2012.01.26.05.48.13;	author jfrijters;	state Exp;
+branches;
+next	1.40;
+
+1.40
+date	2012.01.25.08.05.44;	author jfrijters;	state Exp;
+branches;
+next	1.39;
+
+1.39
+date	2012.01.18.11.15.45;	author jfrijters;	state Exp;
+branches;
+next	1.38;
+
+1.38
+date	2012.01.18.07.58.24;	author jfrijters;	state Exp;
+branches;
+next	1.37;
+
+1.37
+date	2012.01.17.14.39.18;	author jfrijters;	state Exp;
+branches;
+next	1.36;
+
+1.36
+date	2012.01.16.08.49.56;	author jfrijters;	state Exp;
+branches;
+next	1.35;
+
+1.35
+date	2012.01.12.06.50.52;	author jfrijters;	state Exp;
+branches;
+next	1.34;
+
+1.34
+date	2012.01.05.14.05.25;	author jfrijters;	state Exp;
+branches;
+next	1.33;
+
+1.33
+date	2011.12.01.12.03.23;	author jfrijters;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2011.12.01.07.37.48;	author jfrijters;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2011.03.18.16.55.14;	author jfrijters;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2011.03.18.05.49.05;	author jfrijters;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2011.03.17.08.39.43;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2011.03.17.08.15.02;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2011.03.11.15.15.25;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2011.03.11.14.26.31;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2011.03.11.14.11.15;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2011.03.09.07.11.38;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2011.03.09.07.07.11;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2011.03.08.07.47.45;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2011.03.08.06.43.01;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2011.03.08.06.14.22;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2011.03.08.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2011.03.03.08.34.58;	author jfrijters;	state Exp;
+branches
+	1.18.2.1;
+next	1.17;
+
+1.17
+date	2011.01.20.14.38.19;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2011.01.20.05.38.11;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2011.01.13.15.44.28;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2011.01.13.15.27.03;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2010.12.09.07.16.28;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2010.12.08.06.33.03;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2010.11.29.14.00.10;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2010.11.29.09.48.00;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2010.11.29.09.28.48;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2010.05.20.12.17.16;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2010.05.20.09.34.34;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2010.05.20.09.25.30;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2010.05.12.08.41.27;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.05.12.05.56.19;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.04.18.08.39.20;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.18.2.1
+date	2011.03.17.05.18.42;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.63
+log
+@Module constructor should be internal, not protected.
+@
+text
+@/*
+  Copyright (C) 2009-2013 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using IKVM.Reflection.Metadata;
+using IKVM.Reflection.Reader;
+
+namespace IKVM.Reflection
+{
+	public sealed class RawModule : IDisposable
+	{
+		private readonly ModuleReader module;
+		private readonly bool isManifestModule;
+		private bool imported;
+
+		internal RawModule(ModuleReader module)
+		{
+			this.module = module;
+			this.isManifestModule = module.Assembly != null;
+		}
+
+		public string Location
+		{
+			get { return module.FullyQualifiedName; }
+		}
+
+		public bool IsManifestModule
+		{
+			get { return isManifestModule; }
+		}
+
+		public Guid ModuleVersionId
+		{
+			get { return module.ModuleVersionId; }
+		}
+
+		public string ImageRuntimeVersion
+		{
+			get { return module.__ImageRuntimeVersion; }
+		}
+
+		public int MDStreamVersion
+		{
+			get { return module.MDStreamVersion; }
+		}
+
+		private void CheckManifestModule()
+		{
+			if (!IsManifestModule)
+			{
+				throw new BadImageFormatException("Module does not contain a manifest");
+			}
+		}
+
+		public AssemblyName GetAssemblyName()
+		{
+			CheckManifestModule();
+			return module.Assembly.GetName();
+		}
+
+		public AssemblyName[] GetReferencedAssemblies()
+		{
+			return module.__GetReferencedAssemblies();
+		}
+
+		public void Dispose()
+		{
+			if (!imported)
+			{
+				module.Dispose();
+			}
+		}
+
+		internal AssemblyReader ToAssembly()
+		{
+			if (imported)
+			{
+				throw new InvalidOperationException();
+			}
+			imported = true;
+			return (AssemblyReader)module.Assembly;
+		}
+
+		internal Module ToModule(Assembly assembly)
+		{
+			if (module.Assembly != null)
+			{
+				throw new InvalidOperationException();
+			}
+			imported = true;
+			module.SetAssembly(assembly);
+			return module;
+		}
+	}
+
+	public abstract class Module : ICustomAttributeProvider
+	{
+		internal readonly Universe universe;
+		internal readonly ModuleTable ModuleTable = new ModuleTable();
+		internal readonly TypeRefTable TypeRef = new TypeRefTable();
+		internal readonly TypeDefTable TypeDef = new TypeDefTable();
+		internal readonly FieldPtrTable FieldPtr = new FieldPtrTable();
+		internal readonly FieldTable Field = new FieldTable();
+		internal readonly MemberRefTable MemberRef = new MemberRefTable();
+		internal readonly ConstantTable Constant = new ConstantTable();
+		internal readonly CustomAttributeTable CustomAttribute = new CustomAttributeTable();
+		internal readonly FieldMarshalTable FieldMarshal = new FieldMarshalTable();
+		internal readonly DeclSecurityTable DeclSecurity = new DeclSecurityTable();
+		internal readonly ClassLayoutTable ClassLayout = new ClassLayoutTable();
+		internal readonly FieldLayoutTable FieldLayout = new FieldLayoutTable();
+		internal readonly ParamPtrTable ParamPtr = new ParamPtrTable();
+		internal readonly ParamTable Param = new ParamTable();
+		internal readonly InterfaceImplTable InterfaceImpl = new InterfaceImplTable();
+		internal readonly StandAloneSigTable StandAloneSig = new StandAloneSigTable();
+		internal readonly EventMapTable EventMap = new EventMapTable();
+		internal readonly EventPtrTable EventPtr = new EventPtrTable();
+		internal readonly EventTable Event = new EventTable();
+		internal readonly PropertyMapTable PropertyMap = new PropertyMapTable();
+		internal readonly PropertyPtrTable PropertyPtr = new PropertyPtrTable();
+		internal readonly PropertyTable Property = new PropertyTable();
+		internal readonly MethodSemanticsTable MethodSemantics = new MethodSemanticsTable();
+		internal readonly MethodImplTable MethodImpl = new MethodImplTable();
+		internal readonly ModuleRefTable ModuleRef = new ModuleRefTable();
+		internal readonly TypeSpecTable TypeSpec = new TypeSpecTable();
+		internal readonly ImplMapTable ImplMap = new ImplMapTable();
+		internal readonly FieldRVATable FieldRVA = new FieldRVATable();
+		internal readonly AssemblyTable AssemblyTable = new AssemblyTable();
+		internal readonly AssemblyRefTable AssemblyRef = new AssemblyRefTable();
+		internal readonly MethodPtrTable MethodPtr = new MethodPtrTable();
+		internal readonly MethodDefTable MethodDef = new MethodDefTable();
+		internal readonly NestedClassTable NestedClass = new NestedClassTable();
+		internal readonly FileTable File = new FileTable();
+		internal readonly ExportedTypeTable ExportedType = new ExportedTypeTable();
+		internal readonly ManifestResourceTable ManifestResource = new ManifestResourceTable();
+		internal readonly GenericParamTable GenericParam = new GenericParamTable();
+		internal readonly MethodSpecTable MethodSpec = new MethodSpecTable();
+		internal readonly GenericParamConstraintTable GenericParamConstraint = new GenericParamConstraintTable();
+
+		internal Module(Universe universe)
+		{
+			this.universe = universe;
+		}
+
+		internal Table[] GetTables()
+		{
+			Table[] tables = new Table[64];
+			tables[ModuleTable.Index] = ModuleTable;
+			tables[TypeRefTable.Index] = TypeRef;
+			tables[TypeDefTable.Index] = TypeDef;
+			tables[FieldPtrTable.Index] = FieldPtr;
+			tables[FieldTable.Index] = Field;
+			tables[MemberRefTable.Index] = MemberRef;
+			tables[ConstantTable.Index] = Constant;
+			tables[CustomAttributeTable.Index] = CustomAttribute;
+			tables[FieldMarshalTable.Index] = FieldMarshal;
+			tables[DeclSecurityTable.Index] = DeclSecurity;
+			tables[ClassLayoutTable.Index] = ClassLayout;
+			tables[FieldLayoutTable.Index] = FieldLayout;
+			tables[ParamPtrTable.Index] = ParamPtr;
+			tables[ParamTable.Index] = Param;
+			tables[InterfaceImplTable.Index] = InterfaceImpl;
+			tables[StandAloneSigTable.Index] = StandAloneSig;
+			tables[EventMapTable.Index] = EventMap;
+			tables[EventPtrTable.Index] = EventPtr;
+			tables[EventTable.Index] = Event;
+			tables[PropertyMapTable.Index] = PropertyMap;
+			tables[PropertyPtrTable.Index] = PropertyPtr;
+			tables[PropertyTable.Index] = Property;
+			tables[MethodSemanticsTable.Index] = MethodSemantics;
+			tables[MethodImplTable.Index] = MethodImpl;
+			tables[ModuleRefTable.Index] = ModuleRef;
+			tables[TypeSpecTable.Index] = TypeSpec;
+			tables[ImplMapTable.Index] = ImplMap;
+			tables[FieldRVATable.Index] = FieldRVA;
+			tables[AssemblyTable.Index] = AssemblyTable;
+			tables[AssemblyRefTable.Index] = AssemblyRef;
+			tables[MethodPtrTable.Index] = MethodPtr;
+			tables[MethodDefTable.Index] = MethodDef;
+			tables[NestedClassTable.Index] = NestedClass;
+			tables[FileTable.Index] = File;
+			tables[ExportedTypeTable.Index] = ExportedType;
+			tables[ManifestResourceTable.Index] = ManifestResource;
+			tables[GenericParamTable.Index] = GenericParam;
+			tables[MethodSpecTable.Index] = MethodSpec;
+			tables[GenericParamConstraintTable.Index] = GenericParamConstraint;
+			return tables;
+		}
+
+		public virtual void __GetDataDirectoryEntry(int index, out int rva, out int length)
+		{
+			throw new NotSupportedException();
+		}
+
+		public virtual long __RelativeVirtualAddressToFileOffset(int rva)
+		{
+			throw new NotSupportedException();
+		}
+
+		public bool __GetSectionInfo(int rva, out string name, out int characteristics)
+		{
+			int virtualAddress;
+			int virtualSize;
+			int pointerToRawData;
+			int sizeOfRawData;
+			return __GetSectionInfo(rva, out name, out characteristics, out virtualAddress, out virtualSize, out pointerToRawData, out sizeOfRawData);
+		}
+
+		public virtual bool __GetSectionInfo(int rva, out string name, out int characteristics, out int virtualAddress, out int virtualSize, out int pointerToRawData, out int sizeOfRawData)
+		{
+			throw new NotSupportedException();
+		}
+
+		public virtual int __ReadDataFromRVA(int rva, byte[] data, int offset, int length)
+		{
+			throw new NotSupportedException();
+		}
+
+		public virtual void GetPEKind(out PortableExecutableKinds peKind, out ImageFileMachine machine)
+		{
+			throw new NotSupportedException();
+		}
+
+		public virtual int __Subsystem
+		{
+			get { throw new NotSupportedException(); }
+		}
+
+		public FieldInfo GetField(string name)
+		{
+			return GetField(name, BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+		}
+
+		public FieldInfo GetField(string name, BindingFlags bindingFlags)
+		{
+			return IsResource() ? null : GetModuleType().GetField(name, bindingFlags | BindingFlags.DeclaredOnly);
+		}
+
+		public FieldInfo[] GetFields()
+		{
+			return GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+		}
+
+		public FieldInfo[] GetFields(BindingFlags bindingFlags)
+		{
+			return IsResource() ? Empty<FieldInfo>.Array : GetModuleType().GetFields(bindingFlags | BindingFlags.DeclaredOnly);
+		}
+
+		public MethodInfo GetMethod(string name)
+		{
+			return IsResource() ? null : GetModuleType().GetMethod(name, BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+		}
+
+		public MethodInfo GetMethod(string name, Type[] types)
+		{
+			return IsResource() ? null : GetModuleType().GetMethod(name, BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly, null, types, null);
+		}
+
+		public MethodInfo GetMethod(string name, BindingFlags bindingAttr, Binder binder, CallingConventions callConv, Type[] types, ParameterModifier[] modifiers)
+		{
+			return IsResource() ? null : GetModuleType().GetMethod(name, bindingAttr | BindingFlags.DeclaredOnly, binder, callConv, types, modifiers);
+		}
+
+		public MethodInfo[] GetMethods()
+		{
+			return GetMethods(BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+		}
+
+		public MethodInfo[] GetMethods(BindingFlags bindingFlags)
+		{
+			return IsResource() ? Empty<MethodInfo>.Array : GetModuleType().GetMethods(bindingFlags | BindingFlags.DeclaredOnly);
+		}
+
+		public ConstructorInfo __ModuleInitializer
+		{
+			get { return IsResource() ? null : GetModuleType().TypeInitializer; }
+		}
+
+		public virtual byte[] ResolveSignature(int metadataToken)
+		{
+			throw new NotSupportedException();
+		}
+
+		public virtual __StandAloneMethodSig __ResolveStandAloneMethodSig(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+		{
+			throw new NotSupportedException();
+		}
+
+		public virtual CustomModifiers __ResolveTypeSpecCustomModifiers(int typeSpecToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+		{
+			throw new NotSupportedException();
+		}
+
+		public int MetadataToken
+		{
+			get { return IsResource() ? 0 : 1; }
+		}
+
+		public abstract int MDStreamVersion { get ;}
+		public abstract Assembly Assembly { get; }
+		public abstract string FullyQualifiedName { get; }
+		public abstract string Name { get; }
+		public abstract Guid ModuleVersionId { get; }
+		public abstract MethodBase ResolveMethod(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments);
+		public abstract FieldInfo ResolveField(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments);
+		public abstract MemberInfo ResolveMember(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments);
+
+		public abstract string ResolveString(int metadataToken);
+		public abstract Type[] __ResolveOptionalParameterTypes(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments, out CustomModifiers[] customModifiers);
+		public abstract string ScopeName { get; }
+
+		internal abstract void GetTypesImpl(List<Type> list);
+
+		internal abstract Type FindType(TypeName name);
+		internal abstract Type FindTypeIgnoreCase(TypeName lowerCaseName);
+
+#if !NETSTANDARD
+		[Obsolete("Please use __ResolveOptionalParameterTypes(int, Type[], Type[], out CustomModifiers[]) instead.")]
+		public Type[] __ResolveOptionalParameterTypes(int metadataToken)
+		{
+			CustomModifiers[] dummy;
+			return __ResolveOptionalParameterTypes(metadataToken, null, null, out dummy);
+		}
+#endif
+
+		public Type GetType(string className)
+		{
+			return GetType(className, false, false);
+		}
+
+		public Type GetType(string className, bool ignoreCase)
+		{
+			return GetType(className, false, ignoreCase);
+		}
+
+		public Type GetType(string className, bool throwOnError, bool ignoreCase)
+		{
+			TypeNameParser parser = TypeNameParser.Parse(className, throwOnError);
+			if (parser.Error)
+			{
+				return null;
+			}
+			if (parser.AssemblyName != null)
+			{
+				if (throwOnError)
+				{
+					throw new ArgumentException("Type names passed to Module.GetType() must not specify an assembly.");
+				}
+				else
+				{
+					return null;
+				}
+			}
+			TypeName typeName = TypeName.Split(TypeNameParser.Unescape(parser.FirstNamePart));
+			Type type = ignoreCase
+				? FindTypeIgnoreCase(typeName.ToLowerInvariant())
+				: FindType(typeName);
+			if (type == null && __IsMissing)
+			{
+				throw new MissingModuleException((MissingModule)this);
+			}
+			return parser.Expand(type, this, throwOnError, className, false, ignoreCase);
+		}
+
+		public Type[] GetTypes()
+		{
+			List<Type> list = new List<Type>();
+			GetTypesImpl(list);
+			return list.ToArray();
+		}
+
+		public Type[] FindTypes(TypeFilter filter, object filterCriteria)
+		{
+			List<Type> list = new List<Type>();
+			foreach (Type type in GetTypes())
+			{
+				if (filter(type, filterCriteria))
+				{
+					list.Add(type);
+				}
+			}
+			return list.ToArray();
+		}
+
+		public virtual bool IsResource()
+		{
+			return false;
+		}
+
+		public Type ResolveType(int metadataToken)
+		{
+			return ResolveType(metadataToken, null, null);
+		}
+
+		internal sealed class GenericContext : IGenericContext
+		{
+			private readonly Type[] genericTypeArguments;
+			private readonly Type[] genericMethodArguments;
+
+			internal GenericContext(Type[] genericTypeArguments, Type[] genericMethodArguments)
+			{
+				this.genericTypeArguments = genericTypeArguments;
+				this.genericMethodArguments = genericMethodArguments;
+			}
+
+			public Type GetGenericTypeArgument(int index)
+			{
+				return genericTypeArguments[index];
+			}
+
+			public Type GetGenericMethodArgument(int index)
+			{
+				return genericMethodArguments[index];
+			}
+		}
+
+		public Type ResolveType(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+		{
+			if ((metadataToken >> 24) == TypeSpecTable.Index)
+			{
+				return ResolveType(metadataToken, new GenericContext(genericTypeArguments, genericMethodArguments));
+			}
+			else
+			{
+				return ResolveType(metadataToken, null);
+			}
+		}
+
+		internal abstract Type ResolveType(int metadataToken, IGenericContext context);
+
+		public MethodBase ResolveMethod(int metadataToken)
+		{
+			return ResolveMethod(metadataToken, null, null);
+		}
+
+		public FieldInfo ResolveField(int metadataToken)
+		{
+			return ResolveField(metadataToken, null, null);
+		}
+
+		public MemberInfo ResolveMember(int metadataToken)
+		{
+			return ResolveMember(metadataToken, null, null);
+		}
+
+		public bool IsDefined(Type attributeType, bool inherit)
+		{
+			return CustomAttributeData.__GetCustomAttributes(this, attributeType, inherit).Count != 0;
+		}
+
+		public IList<CustomAttributeData> __GetCustomAttributes(Type attributeType, bool inherit)
+		{
+			return CustomAttributeData.__GetCustomAttributes(this, attributeType, inherit);
+		}
+
+		public IList<CustomAttributeData> GetCustomAttributesData()
+		{
+			return CustomAttributeData.GetCustomAttributes(this);
+		}
+
+		public IEnumerable<CustomAttributeData> CustomAttributes
+		{
+			get { return GetCustomAttributesData(); }
+		}
+
+		public virtual IList<CustomAttributeData> __GetPlaceholderAssemblyCustomAttributes(bool multiple, bool security)
+		{
+			return Empty<CustomAttributeData>.Array;
+		}
+
+		public abstract AssemblyName[] __GetReferencedAssemblies();
+
+		public virtual void __ResolveReferencedAssemblies(Assembly[] assemblies)
+		{
+			throw new NotSupportedException();
+		}
+
+		public abstract string[] __GetReferencedModules();
+
+		public abstract Type[] __GetReferencedTypes();
+
+		public abstract Type[] __GetExportedTypes();
+
+		public virtual bool __IsMissing
+		{
+			get { return false; }
+		}
+
+		public long __ImageBase
+		{
+			get { return GetImageBaseImpl(); }
+		}
+
+		protected abstract long GetImageBaseImpl();
+
+		public long __StackReserve
+		{
+			get { return GetStackReserveImpl(); }
+		}
+
+		protected abstract long GetStackReserveImpl();
+
+		public int __FileAlignment
+		{
+			get { return GetFileAlignmentImpl(); }
+		}
+
+		protected abstract int GetFileAlignmentImpl();
+
+		public DllCharacteristics __DllCharacteristics
+		{
+			get { return GetDllCharacteristicsImpl(); }
+		}
+
+		protected abstract DllCharacteristics GetDllCharacteristicsImpl();
+
+		public virtual byte[] __ModuleHash
+		{
+			get { throw new NotSupportedException(); }
+		}
+
+		public virtual int __EntryPointRVA
+		{
+			get { throw new NotSupportedException(); }
+		}
+
+		public virtual int __EntryPointToken
+		{
+			get { throw new NotSupportedException(); }
+		}
+
+		public virtual string __ImageRuntimeVersion
+		{
+			get { throw new NotSupportedException(); }
+		}
+
+		public IEnumerable<CustomAttributeData> __EnumerateCustomAttributeTable()
+		{
+			List<CustomAttributeData> list = new List<CustomAttributeData>(CustomAttribute.RowCount);
+			for (int i = 0; i < CustomAttribute.RowCount; i++)
+			{
+				list.Add(new CustomAttributeData(this, i));
+			}
+			return list;
+		}
+
+#if !NETSTANDARD
+		[Obsolete]
+		public List<CustomAttributeData> __GetCustomAttributesFor(int token)
+		{
+			return CustomAttributeData.GetCustomAttributesImpl(new List<CustomAttributeData>(), this, token, null);
+		}
+#endif
+
+		public bool __TryGetImplMap(int token, out ImplMapFlags mappingFlags, out string importName, out string importScope)
+		{
+			foreach (int i in ImplMap.Filter(token))
+			{
+				mappingFlags = (ImplMapFlags)(ushort)ImplMap.records[i].MappingFlags;
+				importName = GetString(ImplMap.records[i].ImportName);
+				importScope = GetString(ModuleRef.records[(ImplMap.records[i].ImportScope & 0xFFFFFF) - 1]);
+				return true;
+			}
+			mappingFlags = 0;
+			importName = null;
+			importScope = null;
+			return false;
+		}
+
+#if !NO_AUTHENTICODE
+		public virtual System.Security.Cryptography.X509Certificates.X509Certificate GetSignerCertificate()
+		{
+			return null;
+		}
+#endif // !NO_AUTHENTICODE
+
+		internal abstract Type GetModuleType();
+
+		internal abstract ByteReader GetBlob(int blobIndex);
+
+		internal IList<CustomAttributeData> GetDeclarativeSecurity(int metadataToken)
+		{
+			List<CustomAttributeData> list = new List<CustomAttributeData>();
+			foreach (int i in DeclSecurity.Filter(metadataToken))
+			{
+				CustomAttributeData.ReadDeclarativeSecurity(this, i, list);
+			}
+			return list;
+		}
+
+		internal virtual void Dispose()
+		{
+		}
+
+		internal virtual void ExportTypes(int fileToken, IKVM.Reflection.Emit.ModuleBuilder manifestModule)
+		{
+		}
+
+		internal virtual string GetString(int index)
+		{
+			throw new NotSupportedException();
+		}
+	}
+
+	abstract class NonPEModule : Module
+	{
+		protected NonPEModule(Universe universe)
+			: base(universe)
+		{
+		}
+
+		protected virtual Exception InvalidOperationException()
+		{
+			return new InvalidOperationException();
+		}
+
+		protected virtual Exception NotSupportedException()
+		{
+			return new NotSupportedException();
+		}
+
+		protected virtual Exception ArgumentOutOfRangeException()
+		{
+			return new ArgumentOutOfRangeException();
+		}
+
+		internal sealed override Type GetModuleType()
+		{
+			throw InvalidOperationException();
+		}
+
+		internal sealed override ByteReader GetBlob(int blobIndex)
+		{
+			throw InvalidOperationException();
+		}
+
+		public sealed override AssemblyName[] __GetReferencedAssemblies()
+		{
+			throw NotSupportedException();
+		}
+
+		public sealed override string[] __GetReferencedModules()
+		{
+			throw NotSupportedException();
+		}
+
+		public override Type[] __GetReferencedTypes()
+		{
+			throw NotSupportedException();
+		}
+
+		public override Type[] __GetExportedTypes()
+		{
+			throw NotSupportedException();
+		}
+
+		protected sealed override long GetImageBaseImpl()
+		{
+			throw NotSupportedException();
+		}
+
+		protected sealed override long GetStackReserveImpl()
+		{
+			throw NotSupportedException();
+		}
+
+		protected sealed override int GetFileAlignmentImpl()
+		{
+			throw NotSupportedException();
+		}
+
+		protected override DllCharacteristics GetDllCharacteristicsImpl()
+		{
+			throw NotSupportedException();
+		}
+
+		internal sealed override Type ResolveType(int metadataToken, IGenericContext context)
+		{
+			throw ArgumentOutOfRangeException();
+		}
+
+		public sealed override MethodBase ResolveMethod(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+		{
+			throw ArgumentOutOfRangeException();
+		}
+
+		public sealed override FieldInfo ResolveField(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+		{
+			throw ArgumentOutOfRangeException();
+		}
+
+		public sealed override MemberInfo ResolveMember(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+		{
+			throw ArgumentOutOfRangeException();
+		}
+
+		public sealed override string ResolveString(int metadataToken)
+		{
+			throw ArgumentOutOfRangeException();
+		}
+
+		public sealed override Type[] __ResolveOptionalParameterTypes(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments, out CustomModifiers[] customModifiers)
+		{
+			throw ArgumentOutOfRangeException();
+		}
+	}
+
+	public delegate bool TypeFilter(Type m, object filterCriteria);
+	public delegate bool MemberFilter(MemberInfo m, object filterCriteria);
+}
+@
+
+
+1.62
+log
+@Removed [Obsolete] methods from NETSTANDARD build.
+@
+text
+@d160 1
+a160 1
+		protected Module(Universe universe)
+@
+
+
+1.61
+log
+@Added Module.__TryGetImplMap() public API to get ImplMap by token.
+@
+text
+@d337 1
+d344 1
+d567 1
+d573 1
+@
+
+
+1.60
+log
+@Expose ImageRuntimeVersion and MDStreamVersion on RawModule.
+@
+text
+@d571 15
+@
+
+
+1.59
+log
+@Added another overload of the public API Module.__GetSectionInfo() that returns more information about the section.
+@
+text
+@d58 10
+@
+
+
+1.58
+log
+@Added new public API Module.__ResolveTypeSpecCustomModifiers() to resolve the (useless) custom modifiers that can be put on TypeSpecs.
+@
+text
+@d210 10
+a219 1
+		public virtual bool __GetSectionInfo(int rva, out string name, out int characteristics)
+@
+
+
+1.57
+log
+@Changed type name parser to use Module as context, instead of Assembly.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009-2012 Jeroen Frijters
+d290 5
+@
+
+
+1.56
+log
+@- Added UniverseOptions.MetadataOnly.
+- Added comment describing UniverseOptions.
+- Made user string heap loading lazy.
+@
+text
+@d356 1
+a356 1
+			return parser.Expand(type, this.Assembly, throwOnError, className, false, ignoreCase);
+@
+
+
+1.55
+log
+@Made authenticode support optional because mcs can't depend on System.Security.dll. To disable it define NO_AUTHENTICODE.
+@
+text
+@d81 1
+a81 1
+				module.stream.Dispose();
+@
+
+
+1.54
+log
+@Added (old) API Module.GetSignerCertificate().
+@
+text
+@d547 1
+d552 1
+@
+
+
+1.53
+log
+@- Added new .NET 4.0 method GetCustomAttributesData() to Assembly, MemberInfo, Module and ParameterInfo.
+- Added new .NET 4.5 property CustomAttributes to Assembly, MemberInfo, Module and ParameterInfo.
+@
+text
+@d547 5
+@
+
+
+1.52
+log
+@Removed Module.GetCustomAttributes(int, Type) helper.
+@
+text
+@d450 10
+@
+
+
+1.51
+log
+@Minor refactoring of Module.ResolveType(). Moved the wrapping of the type arrays into an IGenericContext up into Module.
+@
+text
+@d534 1
+a534 1
+			return GetCustomAttributes(token, null);
+a540 20
+		internal List<CustomAttributeData> GetCustomAttributes(int metadataToken, Type attributeType)
+		{
+			List<CustomAttributeData> list = new List<CustomAttributeData>();
+			foreach (int i in CustomAttribute.Filter(metadataToken))
+			{
+				if (attributeType == null)
+				{
+					list.Add(new CustomAttributeData(this, i));
+				}
+				else
+				{
+					if (attributeType.IsAssignableFrom(ResolveMethod(CustomAttribute.records[i].Type).DeclaringType))
+					{
+						list.Add(new CustomAttributeData(this, i));
+					}
+				}
+			}
+			return list;
+		}
+
+@
+
+
+1.50
+log
+@Moved Module custom attribute handling to CustomAtttributeData.
+@
+text
+@a299 1
+		public abstract Type ResolveType(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments);
+d389 36
+d657 1
+a657 1
+		public sealed override Type ResolveType(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+@
+
+
+1.49
+log
+@Added new API MethodInfo.__TryGetImplMap().
+@
+text
+@a505 5
+		internal virtual IList<CustomAttributeData> GetCustomAttributesData(Type attributeType)
+		{
+			return GetCustomAttributes(0x00000001, attributeType);
+		}
+
+@
+
+
+1.48
+log
+@Removed unnecessary cast.
+@
+text
+@d548 5
+@
+
+
+1.47
+log
+@Added support for case-insensitive type lookup.
+@
+text
+@d522 1
+a522 2
+					ConstructorInfo constructor = (ConstructorInfo)ResolveMethod(CustomAttribute.records[i].Type);
+					if (attributeType.IsAssignableFrom(constructor.DeclaringType))
+@
+
+
+1.46
+log
+@New API. Added Module.__DllCharacteristics and ModuleBuilder.__DllCharacteristics properties to get and set image DLL characteristics flags.
+@
+text
+@d312 1
+a332 4
+			if (ignoreCase)
+			{
+				throw new NotImplementedException();
+			}
+d349 4
+a352 1
+			Type type = FindType(TypeName.Split(TypeNameParser.Unescape(parser.FirstNamePart)));
+d357 1
+a357 1
+			return parser.Expand(type, this.Assembly, throwOnError, className, false);
+@
+
+
+1.45
+log
+@New API. Made ModuleBuilder.__FileAlignment writeable.
+@
+text
+@d459 7
+d618 5
+@
+
+
+1.44
+log
+@Marked ModuleBuilder.__SetStackReserve() obsolete and made ModuleBuilder.__StackReserve property writeable to be consistent with __ImageBase property.
+@
+text
+@d452 1
+a452 1
+		public virtual int __FileAlignment
+d454 1
+a454 1
+			get { throw new NotSupportedException(); }
+d457 2
+d606 5
+@
+
+
+1.43
+log
+@Added RawModule.ModuleVersionId property.
+@
+text
+@d445 1
+a445 1
+		public virtual long __StackReserve
+d447 1
+a447 1
+			get { throw new NotSupportedException(); }
+d450 2
+d599 5
+@
+
+
+1.42
+log
+@Generalized sorted metadata table lookups with binary search.
+@
+text
+@d53 5
+@
+
+
+1.41
+log
+@Use binary search in custom attribute lookup.
+@
+text
+@a143 1
+		protected ulong sortedTableMask;
+d498 1
+a498 1
+			if ((sortedTableMask & (1UL << CustomAttributeTable.Index)) == 0)
+d500 1
+a500 1
+				for (int i = 0; i < CustomAttribute.RowCount; i++)
+d502 1
+a502 15
+					if (CustomAttribute.records[i].Parent == metadataToken)
+					{
+						if (attributeType == null)
+						{
+							list.Add(new CustomAttributeData(this, i));
+						}
+						else
+						{
+							ConstructorInfo constructor = (ConstructorInfo)ResolveMethod(CustomAttribute.records[i].Type);
+							if (attributeType.IsAssignableFrom(constructor.DeclaringType))
+							{
+								list.Add(new CustomAttributeData(this, i));
+							}
+						}
+					}
+d504 1
+a504 8
+			}
+			else
+			{
+				// do a binary search (on the rid part of the token)
+				CustomAttributeTable.Record rec = new CustomAttributeTable.Record();
+				rec.Parent = metadataToken;
+				int index = Array.BinarySearch(CustomAttribute.records, 0, CustomAttribute.RowCount, rec, BinarySearch.Comparer);
+				if (index >= 0)
+d506 2
+a507 5
+					while (index > 0 && (CustomAttribute.records[index - 1].Parent & 0xFFFFFF) == (metadataToken & 0xFFFFFF))
+					{
+						index--;
+					}
+					for (; index < CustomAttribute.RowCount && (CustomAttribute.records[index].Parent & 0xFFFFFF) == (metadataToken & 0xFFFFFF); index++)
+d509 1
+a509 15
+						if (CustomAttribute.records[index].Parent == metadataToken)
+						{
+							if (attributeType == null)
+							{
+								list.Add(new CustomAttributeData(this, index));
+							}
+							else
+							{
+								ConstructorInfo constructor = (ConstructorInfo)ResolveMethod(CustomAttribute.records[index].Type);
+								if (attributeType.IsAssignableFrom(constructor.DeclaringType))
+								{
+									list.Add(new CustomAttributeData(this, index));
+								}
+							}
+						}
+a515 10
+		private sealed class BinarySearch : IComparer<CustomAttributeTable.Record>
+		{
+			internal static readonly BinarySearch Comparer = new BinarySearch();
+
+			public int Compare(CustomAttributeTable.Record x, CustomAttributeTable.Record y)
+			{
+				return (x.Parent & 0xFFFFFF).CompareTo(y.Parent & 0xFFFFFF);
+			}
+		}
+
+d519 1
+a519 2
+			// TODO use binary search?
+			for (int i = 0; i < DeclSecurity.records.Length; i++)
+d521 1
+a521 4
+				if (DeclSecurity.records[i].Parent == metadataToken)
+				{
+					CustomAttributeData.ReadDeclarativeSecurity(this, i, list);
+				}
+@
+
+
+1.40
+log
+@The assemblies list only contains AssemblyReader instances, so we should type it as such.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009-2011 Jeroen Frijters
+d144 1
+d499 22
+a520 2
+			// TODO use binary search?
+			for (int i = 0; i < CustomAttribute.records.Length; i++)
+d522 5
+a526 1
+				if (CustomAttribute.records[i].Parent == metadataToken)
+d528 1
+a528 1
+					if (attributeType == null)
+d530 1
+a530 1
+						list.Add(new CustomAttributeData(this, i));
+d532 1
+a532 1
+					else
+d534 1
+a534 2
+						ConstructorInfo constructor = (ConstructorInfo)ResolveMethod(CustomAttribute.records[i].Type);
+						if (attributeType.IsAssignableFrom(constructor.DeclaringType))
+d536 12
+a547 1
+							list.Add(new CustomAttributeData(this, i));
+d555 10
+@
+
+
+1.39
+log
+@Added Module.__ImageRuntimeVersion API.
+@
+text
+@d80 1
+a80 1
+		internal Assembly ToAssembly()
+d87 1
+a87 1
+			return module.Assembly;
+@
+
+
+1.38
+log
+@- Added Module.__EnumerateCustomAttributeTable() API.
+- Removed Module.__GetDeclarativeSecurityFor() API.
+- Added CustomAttributeData.__Parent API.
+@
+text
+@d465 5
+@
+
+
+1.37
+log
+@Added API for getting raw DeclSecurity blobs.
+@
+text
+@d465 1
+a465 1
+		public List<CustomAttributeData> __GetCustomAttributesFor(int token)
+d467 6
+a472 1
+			return GetCustomAttributes(token, null);
+d475 2
+a476 1
+		public byte[] __GetDeclarativeSecurityFor(int token, System.Security.Permissions.SecurityAction action)
+d478 1
+a478 11
+			// TODO use binary search?
+			for (int i = 0; i < DeclSecurity.records.Length; i++)
+			{
+				if (DeclSecurity.records[i].Parent == token
+					&& DeclSecurity.records[i].Action == (int)action)
+				{
+					ByteReader br = GetBlob(DeclSecurity.records[i].PermissionSet);
+					return br.ReadBytes(br.Length);
+				}
+			}
+			return null;
+d507 1
+a507 1
+							list.Add(new CustomAttributeData(this.Assembly, constructor, GetBlob(CustomAttribute.records[i].Value)));
+d523 1
+a523 3
+					int action = DeclSecurity.records[i].Action;
+					int permissionSet = DeclSecurity.records[i].PermissionSet;
+					CustomAttributeData.ReadDeclarativeSecurity(this.Assembly, list, action, GetBlob(permissionSet));
+@
+
+
+1.36
+log
+@Fix to throw proper exception when wrong metadata token is passed to Module.Resolve* methods.
+@
+text
+@d470 15
+@
+
+
+1.35
+log
+@Added Module.__EntryPointRVA and Module.__EntryPointToken properties.
+@
+text
+@d275 1
+a275 1
+		public byte[] ResolveSignature(int metadataToken)
+a276 6
+			ModuleReader rdr = this as ModuleReader;
+			if (rdr != null)
+			{
+				ByteReader br = rdr.ResolveSignature(metadataToken);
+				return br.ReadBytes(br.Length);
+			}
+@
+
+
+1.34
+log
+@Added Module.__FileAlignment property.
+@
+text
+@d461 10
+@
+
+
+1.33
+log
+@Added new overload of __ResolveOptionalParameterTypes() that supports resolving generic type parameters and custom modifiers.
+@
+text
+@d451 5
+@
+
+
+1.32
+log
+@Added support for function pointer types.
+@
+text
+@d307 1
+a307 1
+		public abstract Type[] __ResolveOptionalParameterTypes(int metadataToken);
+d314 7
+d602 1
+a602 1
+		public sealed override Type[] __ResolveOptionalParameterTypes(int metadataToken)
+@
+
+
+1.31
+log
+@Reverted Universe.ForceAssemblyResolve patch and introduced Module.__ResolveReferencedAssemblies() to allow custom assembly reference resolution.
+@
+text
+@a453 11
+		internal Type CanonicalizeType(Type type)
+		{
+			Type canon;
+			if (!universe.canonicalizedTypes.TryGetValue(type, out canon))
+			{
+				canon = type;
+				universe.canonicalizedTypes.Add(canon, canon);
+			}
+			return canon;
+		}
+
+@
+
+
+1.30
+log
+@Added Module.__ReadDataFromRVA() to make it more convenient to read data based on rva.
+@
+text
+@d416 5
+@
+
+
+1.29
+log
+@Added API extension Module.__GetSectionInfo() to query the section information based on an RVA.
+@
+text
+@d210 5
+@
+
+
+1.28
+log
+@- Added API extension to query the types exported from a module.
+- Fixed __AddTypeForwarder() to handle missing types.
+@
+text
+@d205 5
+@
+
+
+1.27
+log
+@Added API extension to get/set stack reserve.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009-2010 Jeroen Frijters
+d410 2
+d556 5
+@
+
+
+1.26
+log
+@Added API extensions to get and set custom attributes at the token level.
+@
+text
+@d422 5
+@
+
+
+1.25
+log
+@Added API extension to get the file hash of a resource module.
+@
+text
+@d427 5
+@
+
+
+1.24
+log
+@- Fixed support for missing types in generic type parameters in custom attribute values.
+- Fixed TypeParser.GetType() not to throw MissingAssemblyException.
+- Unified type name parsing again.
+@
+text
+@d422 5
+@
+
+
+1.23
+log
+@Fix. Module does not inherit members from Object.
+@
+text
+@d341 1
+a341 1
+			return parser.Expand(type, this.Assembly, throwOnError, className);
+@
+
+
+1.22
+log
+@Added API extension Module.__GetReferencedTypes() to get the TypeRef table contents.
+@
+text
+@d217 1
+a217 1
+			return IsResource() ? null : GetModuleType().GetField(name);
+d222 1
+a222 1
+			return IsResource() ? null : GetModuleType().GetField(name, bindingFlags);
+d227 1
+a227 1
+			return IsResource() ? Empty<FieldInfo>.Array : GetModuleType().GetFields();
+d232 1
+a232 1
+			return IsResource() ? Empty<FieldInfo>.Array : GetModuleType().GetFields(bindingFlags);
+d237 1
+a237 1
+			return IsResource() ? null : GetModuleType().GetMethod(name);
+d242 1
+a242 1
+			return IsResource() ? null : GetModuleType().GetMethod(name, types);
+d247 1
+a247 1
+			return IsResource() ? null : GetModuleType().GetMethod(name, bindingAttr, binder, callConv, types, modifiers);
+d252 1
+a252 1
+			return IsResource() ? Empty<MethodInfo>.Array : GetModuleType().GetMethods();
+d257 1
+a257 1
+			return IsResource() ? Empty<MethodInfo>.Array : GetModuleType().GetMethods(bindingFlags);
+@
+
+
+1.21
+log
+@Introduced base class for virtual Module classes to have common place to implement abstract Module methods that aren't supported.
+@
+text
+@d408 2
+d534 5
+@
+
+
+1.20
+log
+@Added API extension __ImageBase to Module.
+@
+text
+@d145 1
+a145 1
+		internal Module(Universe universe)
+d490 78
+@
+
+
+1.19
+log
+@Added API extensions to get and add referenced modules.
+@
+text
+@d413 7
+@
+
+
+1.18
+log
+@Added limited support for #- metadata stream ("uncompressed" table heap). ParamPtr table is not yet implemented.
+@
+text
+@d406 2
+@
+
+
+1.18.2.1
+log
+@Back ported fixes:
+- Bug fix. BeginExceptFilterBlock() should behave like BeginCatchBlock(), not BeginFinallyBlock().
+- Fix for http://gcc.gnu.org/bugzilla/show_bug.cgi?id=48131.
+- Bug fix. Support loading resources from assemblies added to the boot classloader (with ikvm.runtime.Startup.addBootClassPathAssemby()).
+- Type parameters should be separated by commas.
+- Only the assembly name should escape the ']' characters.
+- Bug fix. <Module> should not extend object.
+- Bug fix. String literals that are invalid UTF-16 should not be "corrected".
+- Bug fix. MaxStack returned incorrect value for tiny header methods.
+- Fix. Module does not inherit members from Object.
+- Align initialized data arrays.
+- Align managed resources on 8 bytes.
+@
+text
+@d217 1
+a217 1
+			return GetField(name, BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+d222 1
+a222 1
+			return IsResource() ? null : GetModuleType().GetField(name, bindingFlags | BindingFlags.DeclaredOnly);
+d227 1
+a227 1
+			return GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+d232 1
+a232 1
+			return IsResource() ? Empty<FieldInfo>.Array : GetModuleType().GetFields(bindingFlags | BindingFlags.DeclaredOnly);
+d237 1
+a237 1
+			return IsResource() ? null : GetModuleType().GetMethod(name, BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+d242 1
+a242 1
+			return IsResource() ? null : GetModuleType().GetMethod(name, BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly, null, types, null);
+d247 1
+a247 1
+			return IsResource() ? null : GetModuleType().GetMethod(name, bindingAttr | BindingFlags.DeclaredOnly, binder, callConv, types, modifiers);
+d252 1
+a252 1
+			return GetMethods(BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+d257 1
+a257 1
+			return IsResource() ? Empty<MethodInfo>.Array : GetModuleType().GetMethods(bindingFlags | BindingFlags.DeclaredOnly);
+@
+
+
+1.17
+log
+@Moved GetTypeImpl into GetType.
+@
+text
+@d108 1
+d117 1
+d122 1
+d125 1
+d135 1
+d156 1
+d165 1
+d170 1
+d173 1
+d183 1
+@
+
+
+1.16
+log
+@More type name fixes. This time to support the fact that the CLR and Mono both treat TypeNamespace and TypeName as separate names and do not consider fullName to be relevant.
+@
+text
+@a291 10
+		internal Type GetTypeImpl(string typeName)
+		{
+			Type type = FindType(TypeName.Split(TypeNameParser.Unescape(typeName)));
+			if (type == null && __IsMissing)
+			{
+				throw new MissingModuleException((MissingModule)this);
+			}
+			return type;
+		}
+
+d326 6
+a331 1
+			return parser.Expand(GetTypeImpl(parser.FirstNamePart), this.Assembly, throwOnError, className);
+@
+
+
+1.15
+log
+@Added __IsMissing to Module and Assembly and make sure that __GetDeclarativeSecurity() when called with a MissingAssembly.
+@
+text
+@a289 1
+		internal abstract Type GetTypeImpl(string typeName);
+d292 12
+@
+
+
+1.14
+log
+@Prevent invalid operations on MissingModule.
+@
+text
+@d390 5
+@
+
+
+1.13
+log
+@Made CustomAttributeData more lazy (when all custom attributes are queried, regardless of type).
+@
+text
+@d405 1
+a405 1
+		internal IList<CustomAttributeData> GetCustomAttributesData(Type attributeType)
+@
+
+
+1.12
+log
+@Added Module.__GetReferencedAssemblies() API.
+@
+text
+@d418 1
+a418 2
+					ConstructorInfo constructor = (ConstructorInfo)ResolveMethod(CustomAttribute.records[i].Type);
+					if (attributeType == null || attributeType.IsAssignableFrom(constructor.DeclaringType))
+d420 9
+a428 1
+						list.Add(new CustomAttributeData(this.Assembly, constructor, GetBlob(CustomAttribute.records[i].Value)));
+@
+
+
+1.11
+log
+@Added API to query placeholder assembly custom attributes in a module.
+@
+text
+@d69 1
+a69 1
+			return module.GetReferencedAssemblies();
+d388 2
+@
+
+
+1.10
+log
+@RawModule.GetReferencedAssemblies() should work for non-manifest modules as well.
+@
+text
+@d383 5
+@
+
+
+1.9
+log
+@Added AssemblyBuilder.__AddModule() to allow pre-existing modules to be linked in.
+@
+text
+@d69 1
+a69 2
+			CheckManifestModule();
+			return module.Assembly.GetReferencedAssemblies();
+@
+
+
+1.8
+log
+@Added ICustomAttributeProvider interface.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Jeroen Frijters
+d34 1
+d40 1
+d50 1
+a50 1
+			get { return module.Assembly != null; }
+d90 11
+d441 4
+@
+
+
+1.7
+log
+@Implemented Assembly/Module.IsDefined() in terms of __GetCustomAttributes().Count != 0 to improve efficiency and correctly handle subtyping.
+@
+text
+@d90 1
+a90 1
+	public abstract class Module
+d366 5
+@
+
+
+1.6
+log
+@Implemented custom attribute filtering at the source. Added support for custom attribute sub typing.
+@
+text
+@d363 1
+a363 8
+			foreach (CustomAttributeData cad in CustomAttributeData.GetCustomAttributes(this))
+			{
+				if (cad.Constructor.DeclaringType.Equals(attributeType))
+				{
+					return true;
+				}
+			}
+			return false;
+@
+
+
+1.5
+log
+@Added Location property and GetReferencedAssemblies() to RawModule.
+@
+text
+@d388 1
+a388 1
+		internal IList<CustomAttributeData> GetCustomAttributesData()
+d390 1
+a390 1
+			return GetCustomAttributes(0x00000001);
+d393 1
+a393 1
+		internal List<CustomAttributeData> GetCustomAttributes(int metadataToken)
+d402 4
+a405 1
+					list.Add(new CustomAttributeData(this.Assembly, constructor, GetBlob(CustomAttribute.records[i].Value)));
+@
+
+
+1.4
+log
+@Added RawModule to allow user code to load and inspect a module without it becoming part of the universe and also import it efficiently into the universe.
+@
+text
+@d41 5
+d51 1
+a51 1
+		public AssemblyName GetAssemblyName()
+d57 5
+d65 6
+@
+
+
+1.3
+log
+@Introduced Empty<T> to cache zero length arrays.
+@
+text
+@d31 43
+d407 4
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d146 1
+a146 1
+			return IsResource() ? FieldInfo.EmptyArray : GetModuleType().GetFields();
+d151 1
+a151 1
+			return IsResource() ? FieldInfo.EmptyArray : GetModuleType().GetFields(bindingFlags);
+d171 1
+a171 1
+			return IsResource() ? new MethodInfo[0] : GetModuleType().GetMethods();
+d176 1
+a176 1
+			return IsResource() ? new MethodInfo[0] : GetModuleType().GetMethods(bindingFlags);
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

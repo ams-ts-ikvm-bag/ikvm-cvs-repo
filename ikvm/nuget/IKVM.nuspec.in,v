@@ -1,0 +1,47 @@
+head	1.1;
+access;
+symbols
+	v8_1_5717_0:1.1
+	v8_1:1.1.0.8
+	v8_0_5449_1:1.1
+	v8_0_5449_0:1.1
+	v8_0:1.1.0.6
+	v7_4_5196_0:1.1
+	v7_4:1.1.0.4
+	v7_3:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	2013.03.19.10.12.46;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Added build project to create nuget package.
+@
+text
+@<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <version>@@VERSION@@</version>
+    <authors>Jeroen Frijters</authors>
+    <owners />
+    <licenseUrl>http://sourceforge.net/apps/mediawiki/ikvm/index.php?title=License</licenseUrl>
+    <projectUrl>http://www.ikvm.net/</projectUrl>
+    <id>IKVM</id>
+    <title>IKVM.NET</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>IKVM.NET is an implementation of Java for Mono and the Microsoft .NET Framework.</description>
+    <tags>IKVM.NET, Java, .NET</tags>
+    <releaseNotes>The release notes can be found here: http://ikvm.net/release/@@VERSION@@</releaseNotes>
+  </metadata>  
+</package>
+@

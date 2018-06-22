@@ -1,0 +1,464 @@
+head	1.13;
+access;
+symbols
+	v8_1_5717_0:1.13
+	v8_1:1.13.0.8
+	v8_0_5449_1:1.13
+	v8_0_5449_0:1.13
+	v8_0:1.13.0.6
+	v7_4_5196_0:1.13
+	v7_4:1.13.0.4
+	v7_3:1.13.0.2
+	v7_2_4630_6:1.11
+	v7_2_4630_5:1.11
+	v7_2_4630_4:1.11
+	v7_2_4630_3:1.11
+	v7_2_4630_2:1.11
+	v0_46_0_4:1.7
+	v7_2_4630_1:1.11
+	v7_2:1.11.0.2
+	v7_1_4532_2:1.9
+	v7_1_4532_1:1.9
+	v7_1_4532_0:1.9
+	v7_1:1.9.0.2
+	v7_0_4335_3:1.7
+	v7_0_4335_2:1.7
+	v7_0_4335_1:1.7
+	v0_46_0_2:1.7
+	v7_0_4335_0:1.7
+	v7_0:1.7.0.4
+	v0_46_0_1:1.7
+	v0_46_0_0:1.7
+	v0_46:1.7.0.2
+	v0_44_0_6:1.6
+	v0_44_0_5:1.6
+	v0_44_0_4:1.6
+	v0_44_0_3:1.6
+	v0_44_0_2:1.6
+	v0_44_0_1:1.6
+	v0_44_0_0:1.6
+	v0_44:1.6.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.13
+date	2012.10.11.10.33.42;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2012.10.11.10.07.50;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2012.07.13.06.33.30;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2012.07.12.15.10.58;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2012.04.10.09.07.54;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2011.12.01.06.30.50;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2011.01.13.05.58.54;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2010.05.20.12.17.16;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2010.05.20.09.25.30;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.04.18.08.39.20;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.02.09.07.58.14;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.13
+log
+@- Added new .NET 4.0 method GetCustomAttributesData() to Assembly, MemberInfo, Module and ParameterInfo.
+- Added new .NET 4.5 property CustomAttributes to Assembly, MemberInfo, Module and ParameterInfo.
+@
+text
+@/*
+  Copyright (C) 2009 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System.Collections.Generic;
+
+namespace IKVM.Reflection
+{
+	public abstract class ParameterInfo : ICustomAttributeProvider
+	{
+		// prevent external subclasses
+		internal ParameterInfo()
+		{
+		}
+
+		public sealed override bool Equals(object obj)
+		{
+			ParameterInfo other = obj as ParameterInfo;
+			return other != null && other.Member == this.Member && other.Position == this.Position;
+		}
+
+		public sealed override int GetHashCode()
+		{
+			return this.Member.GetHashCode() * 1777 + this.Position;
+		}
+
+		public static bool operator ==(ParameterInfo p1, ParameterInfo p2)
+		{
+			return ReferenceEquals(p1, p2) || (!ReferenceEquals(p1, null) && p1.Equals(p2));
+		}
+
+		public static bool operator !=(ParameterInfo p1, ParameterInfo p2)
+		{
+			return !(p1 == p2);
+		}
+
+		public abstract string Name { get; }
+		public abstract Type ParameterType { get; }
+		public abstract ParameterAttributes Attributes { get; }
+		public abstract int Position { get; }
+		public abstract object RawDefaultValue { get; }
+		public abstract CustomModifiers __GetCustomModifiers();
+		public abstract bool __TryGetFieldMarshal(out FieldMarshal fieldMarshal);
+		public abstract MemberInfo Member { get; }
+		public abstract int MetadataToken { get; }
+		internal abstract Module Module { get; }
+
+		public Type[] GetOptionalCustomModifiers()
+		{
+			return __GetCustomModifiers().GetOptional();
+		}
+
+		public Type[] GetRequiredCustomModifiers()
+		{
+			return __GetCustomModifiers().GetRequired();
+		}
+
+		public bool IsIn
+		{
+			get { return (Attributes & ParameterAttributes.In) != 0; }
+		}
+
+		public bool IsOut
+		{
+			get { return (Attributes & ParameterAttributes.Out) != 0; }
+		}
+
+		public bool IsLcid
+		{
+			get { return (Attributes & ParameterAttributes.Lcid) != 0; }
+		}
+
+		public bool IsRetval
+		{
+			get { return (Attributes & ParameterAttributes.Retval) != 0; }
+		}
+
+		public bool IsOptional
+		{
+			get { return (Attributes & ParameterAttributes.Optional) != 0; }
+		}
+
+		public bool HasDefaultValue
+		{
+			get { return (Attributes & ParameterAttributes.HasDefault) != 0; }
+		}
+
+		public bool IsDefined(Type attributeType, bool inherit)
+		{
+			return CustomAttributeData.__GetCustomAttributes(this, attributeType, inherit).Count != 0;
+		}
+
+		public IList<CustomAttributeData> __GetCustomAttributes(Type attributeType, bool inherit)
+		{
+			return CustomAttributeData.__GetCustomAttributes(this, attributeType, inherit);
+		}
+
+		public IList<CustomAttributeData> GetCustomAttributesData()
+		{
+			return CustomAttributeData.GetCustomAttributes(this);
+		}
+
+		public IEnumerable<CustomAttributeData> CustomAttributes
+		{
+			get { return GetCustomAttributesData(); }
+		}
+	}
+
+	sealed class ParameterInfoWrapper : ParameterInfo
+	{
+		private readonly MemberInfo member;
+		private readonly ParameterInfo forward;
+
+		internal ParameterInfoWrapper(MemberInfo member, ParameterInfo forward)
+		{
+			this.member = member;
+			this.forward = forward;
+		}
+
+		public override string Name
+		{
+			get { return forward.Name; }
+		}
+
+		public override Type ParameterType
+		{
+			get { return forward.ParameterType; }
+		}
+
+		public override ParameterAttributes Attributes
+		{
+			get { return forward.Attributes; }
+		}
+
+		public override int Position
+		{
+			get { return forward.Position; }
+		}
+
+		public override object RawDefaultValue
+		{
+			get { return forward.RawDefaultValue; }
+		}
+
+		public override CustomModifiers __GetCustomModifiers()
+		{
+			return forward.__GetCustomModifiers();
+		}
+
+		public override bool __TryGetFieldMarshal(out FieldMarshal fieldMarshal)
+		{
+			return forward.__TryGetFieldMarshal(out fieldMarshal);
+		}
+
+		public override MemberInfo Member
+		{
+			get { return member; }
+		}
+
+		public override int MetadataToken
+		{
+			get { return forward.MetadataToken; }
+		}
+
+		internal override Module Module
+		{
+			get { return member.Module; }
+		}
+	}
+}
+@
+
+
+1.12
+log
+@Added new .NET 4.5 property ParameterInfo.HasDefaultValue.
+@
+text
+@d116 10
+@
+
+
+1.11
+log
+@- Changed [Field|Parameter]Info.__FieldMarshal property to __TryGetFieldMarshal method.
+- Changed FieldMarshal class into a value type with public fields.
+@
+text
+@d102 5
+@
+
+
+1.10
+log
+@- Added new public APIs FieldInfo.__FieldMarshal and ParameterInfo.__FieldMarshal.
+- Moved ParameterInfo pseudo custom attribute handling to CustomAttributeData.
+- Ignore HasFieldMarshal attribute and always return the pseudo custom attribute if a FieldMarshal record exists. This is similar to .NET reflection.
+@
+text
+@d62 1
+a62 1
+		public abstract FieldMarshal __FieldMarshal { get; }
+d154 1
+a154 1
+		public override FieldMarshal __FieldMarshal
+d156 1
+a156 1
+			get { return forward.__FieldMarshal; }
+@
+
+
+1.9
+log
+@Added MemberInfo.ReflectedType.
+@
+text
+@d62 1
+a110 5
+
+		internal virtual IList<CustomAttributeData> GetCustomAttributesData(Type attributeType)
+		{
+			return this.Module.GetCustomAttributes(this.MetadataToken, attributeType);
+		}
+d154 5
+a172 5
+
+		internal override IList<CustomAttributeData> GetCustomAttributesData(Type attributeType)
+		{
+			return forward.GetCustomAttributesData(attributeType);
+		}
+@
+
+
+1.8
+log
+@- Rewrote custom modifier handling to retain ordering.
+- Added ConstructorInfo.__ReturnParameter to expose custom modifiers.
+- Added __GetCustomModifiers() to various *Info types.
+- Added CustomModifiers type to encapsulate a custom modifier sequence.
+- Added CustomModifiersBuilder to create a CustomModifiers sequence.
+- Marked a number of IKVM.Reflection specific methods Obsolete, because they are replaced with method that take CustomModifiers value(s).
+@
+text
+@d116 62
+@
+
+
+1.7
+log
+@Prevent external subclassing. It's not part of the design to suppor that, now it is also enforced.
+@
+text
+@d61 1
+a61 2
+		public abstract Type[] GetOptionalCustomModifiers();
+		public abstract Type[] GetRequiredCustomModifiers();
+d66 10
+@
+
+
+1.6
+log
+@Added ICustomAttributeProvider interface.
+@
+text
+@d30 5
+@
+
+
+1.5
+log
+@Implemented custom attribute filtering at the source. Added support for custom attribute sub typing.
+@
+text
+@d28 1
+a28 1
+	public abstract class ParameterInfo
+d92 5
+@
+
+
+1.4
+log
+@Introduced Empty<T> to cache zero length arrays.
+@
+text
+@d92 1
+a92 1
+		internal virtual IList<CustomAttributeData> GetCustomAttributesData()
+d94 1
+a94 1
+			return this.Module.GetCustomAttributes(this.MetadataToken);
+@
+
+
+1.3
+log
+@Added == and != operators and implemented Equals/GetHashCode.
+@
+text
+@a29 2
+		internal static readonly ParameterInfo[] EmptyArray = new ParameterInfo[0];
+
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d32 21
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

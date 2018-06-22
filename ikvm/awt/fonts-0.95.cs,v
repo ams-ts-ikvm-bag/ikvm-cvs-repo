@@ -1,0 +1,1182 @@
+head	1.12;
+access;
+symbols
+	v8_1_5717_0:1.12
+	v8_1:1.12.0.16
+	v8_0_5449_1:1.12
+	v8_0_5449_0:1.12
+	v8_0:1.12.0.14
+	v7_4_5196_0:1.12
+	v7_4:1.12.0.12
+	v7_3:1.12.0.10
+	v7_2_4630_6:1.12
+	v7_2_4630_5:1.12
+	v7_2_4630_4:1.12
+	v7_2_4630_3:1.12
+	v7_2_4630_2:1.12
+	v0_46_0_4:1.12
+	v7_2_4630_1:1.12
+	v7_2:1.12.0.8
+	v7_1_4532_2:1.12
+	v7_1_4532_1:1.12
+	v7_1_4532_0:1.12
+	v7_1:1.12.0.6
+	v7_0_4335_3:1.12
+	v7_0_4335_2:1.12
+	v7_0_4335_1:1.12
+	v0_46_0_2:1.12
+	v7_0_4335_0:1.12
+	v7_0:1.12.0.4
+	v0_40_0_6:1.2
+	v0_40_0_5:1.2
+	v0_46_0_1:1.12
+	v0_46_0_0:1.12
+	v0_46:1.12.0.2
+	v0_36_0_14:1.1
+	v0_44_0_6:1.6
+	v0_44_0_5:1.6
+	v0_44_0_4:1.6
+	v0_44_0_3:1.6
+	v0_44_0_2:1.6
+	v0_42_0_7:1.6
+	v0_44_0_1:1.6
+	v0_44_0_0:1.6
+	v0_44:1.6.0.4
+	v0_42_0_6:1.6
+	v0_42_0_5:1.6
+	v0_42_0_4:1.6
+	v0_42_0_3:1.6
+	v0_42_0_2:1.6
+	v0_42_0_1:1.6
+	v0_42_0_0:1.6
+	v0_42:1.6.0.2
+	v0_40_0_3:1.2
+	v0_40_0_2:1.2
+	v0_40_0_1:1.2
+	v0_40_0_0:1.2
+	v0_40:1.2.0.2
+	v0_36_0_13:1.1
+	v0_38_0_1:1.1
+	v0_38_0_0:1.1
+	v0_38:1.1.0.4
+	v0_36_0_9:1.1
+	v0_36_0_7:1.1
+	v0_36_0_5:1.1
+	v0_36_0_4:1.1
+	v0_36_0_3:1.1
+	v0_36_0_2:1.1
+	v0_36_0_1:1.1
+	v0_36_0_0:1.1
+	v0_36:1.1.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.12
+date	2011.01.23.11.20.38;	author smallsql;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2010.12.15.14.29.16;	author smallsql;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2010.10.28.08.19.38;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2010.10.11.06.23.47;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2010.10.06.08.31.53;	author smallsql;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2010.09.07.09.50.24;	author smallsql;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2009.05.30.21.32.32;	author smallsql;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2009.05.16.16.34.40;	author smallsql;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2009.05.07.19.00.56;	author smallsql;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2009.04.15.04.58.12;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2009.03.13.11.26.52;	author smallsql;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.08.16.09.53.02;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.12
+log
+@Currently there are an inconsistency between NetFontMetrics and FontDesignMetrics. To prevent this we replace all with FontDesignMetrics and remove NetFontMetrics.
+@
+text
+@/*
+  Copyright (C) 2002, 2004, 2005, 2006, 2007 Jeroen Frijters
+  Copyright (C) 2006 Active Endpoints, Inc.
+  Copyright (C) 2006, 2007, 2009 - 2011 Volker Berlin
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net 
+
+*/
+
+using System;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Text;
+using System.Text;
+using java.awt.font;
+using java.awt.geom;
+using java.util;
+#if WINFX
+using System.Windows;
+using System.Windows.Media;
+#endif
+
+
+namespace ikvm.awt
+{
+
+    /*class NetFontMetrics : java.awt.FontMetrics
+    {
+        private static readonly Bitmap defaultbitmap = new Bitmap(1, 1);
+        [ThreadStatic]
+        private static Graphics threadLocalDefaultGraphics;
+
+		private static Graphics GetDefaultGraphics()
+		{
+			Graphics g = threadLocalDefaultGraphics;
+			if (g == null)
+			{
+				g = threadLocalDefaultGraphics = Graphics.FromImage(defaultbitmap);
+				g.SmoothingMode = SmoothingMode.None;
+				g.PixelOffsetMode = PixelOffsetMode.None;
+				g.TextRenderingHint = TextRenderingHint.SingleBitPerPixelGridFit;
+			}
+			return g;
+		}
+
+        public NetFontMetrics(java.awt.Font font) : base(font)
+        {
+        }
+
+        private Font GetNetFont()
+        {
+            return font.getNetFont();
+        }
+
+        public override int getHeight()
+        {
+            return GetNetFont().Height;
+        }
+
+        public override int getLeading()
+        {
+            return (int)Math.Round(GetLeadingFloat());
+        }
+
+        public override int getMaxAdvance()
+        {
+            // HACK very lame
+            return charWidth('M');
+        }
+
+        public override int charWidth(char ch)
+        {
+            // HACK we average 20 characters to decrease the influence of the pre/post spacing
+            return stringWidth(new String(ch, 20)) / 20;
+        }
+
+        public override int charsWidth(char[] data, int off, int len)
+        {
+            return stringWidth(new String(data, off, len));
+        }
+
+        public override int getAscent()
+        {
+            return (int)Math.Round(GetAscentFloat());
+        }
+
+        public override int getDescent()
+        {
+            return (int)Math.Round(GetDescentFloat());
+        }
+
+        public override int stringWidth(string s) 
+        {
+            return (int)Math.Round(GetStringWidth(s, GetDefaultGraphics()));
+        }
+
+        public float GetAscentFloat()
+        {
+            Font f = GetNetFont();
+            int ascent = f.FontFamily.GetCellAscent(f.Style);
+            return f.Size * ascent / f.FontFamily.GetEmHeight(f.Style);
+        }
+
+        public float GetDescentFloat()
+        {
+            Font f = GetNetFont();
+            int descent = f.FontFamily.GetCellDescent(f.Style);
+            return f.Size * descent / f.FontFamily.GetEmHeight(f.Style);
+        }
+
+        public float GetLeadingFloat()
+        {
+            float leading = getHeight() - (GetAscentFloat() + GetDescentFloat());
+            return Math.Max(0.0f, leading);
+        }
+
+        internal float GetStringWidth(String aString, System.Drawing.Graphics g)
+        {
+            if (aString.Length == 0)
+            {
+                return 0;
+            }
+            // System.Windows.Forms.TextRenderer#MeasureText seems to large
+            // Graphics#MeasureString is many faster but work only correct with TextRenderingHint.AntiAlias
+            bool rounding;
+            StringFormat format;
+            switch (g.TextRenderingHint)
+            {
+                // Fractional metrics
+                case TextRenderingHint.AntiAlias:
+                case TextRenderingHint.SingleBitPerPixel:
+                    // this very mystic, if a StringFormat extends from GenericTypographic then the metric are different but like Java with fractional metrics
+                    format = new StringFormat(StringFormat.GenericTypographic);
+                    rounding = false;
+                    break;
+                default:
+                    format = new StringFormat();
+                    rounding = true;
+                    break;
+            }
+
+            format.FormatFlags = StringFormatFlags.MeasureTrailingSpaces | StringFormatFlags.NoWrap |
+                                 StringFormatFlags.FitBlackBox;
+            format.Trimming = StringTrimming.None;
+            format.SetMeasurableCharacterRanges(new CharacterRange[] {new CharacterRange(0, aString.Length)});
+            Region[] regions = g.MeasureCharacterRanges(aString, GetNetFont(),
+                                                        new RectangleF(0, 0, int.MaxValue, int.MaxValue), format);
+            SizeF size = regions[0].GetBounds(g).Size;
+            regions[0].Dispose();
+            //with Arial 9.0 and only one character under Vista .NET does not round it, that we rounding manualy
+            return rounding ? (int) Math.Round(size.Width) : size.Width;
+        }
+
+        internal java.awt.geom.Rectangle2D GetStringBounds(String aString, System.Drawing.Graphics g)
+        {
+            Font netFont = GetNetFont();
+            FontFamily family = netFont.FontFamily;
+            FontStyle style = netFont.Style;
+            float factor = netFont.Size / family.GetEmHeight(style);
+            float height = family.GetLineSpacing(style) * factor;
+            float descent = family.GetCellDescent(style) * factor;
+            float ascent = family.GetCellAscent(style) * factor;
+            float leading = height - ascent - descent;
+
+            return new java.awt.geom.Rectangle2D.Float(0, -ascent - leading / 2, GetStringWidth(aString, g), height);
+        }
+
+        public override java.awt.geom.Rectangle2D getStringBounds(String aString, java.awt.Graphics gr)
+        {
+            if (gr is NetGraphics)
+            {
+                return GetStringBounds(aString, ((NetGraphics)gr).JGraphics);
+            }
+            return GetStringBounds(aString, GetDefaultGraphics());
+        }
+    }*/
+
+/*    class NetFontPeer : java.awt.peer.FontPeer, IDisposable
+    {
+        internal readonly Font netFont;
+
+        internal NetFontPeer(string name, java.util.Map attrs)
+            : base(name, attrs)
+        {
+            netFont = J2C.ConvertFont(name, getStyle(null), getSize(null));
+        }
+
+        public override bool canDisplay(int codePoint)
+        {
+            //HACK There is no equivalent in C# http://msdn2.microsoft.com/en-us/library/sf4dhbw8(VS.80).aspx
+            return true;
+        }
+
+        public override int canDisplayUpTo(java.awt.Font font, java.text.CharacterIterator param2, int param3, int param4)
+        {
+            //HACK There is no equivalent in C# http://msdn2.microsoft.com/en-us/library/e8bh4szw(VS.80).aspx
+            return -1;
+        }
+
+        public override GlyphVector createGlyphVector(java.awt.Font font, FontRenderContext frc, int[] glyphCodes)
+        {
+            char[] chars = new char[glyphCodes.Length];
+            for (int i = 0; i < chars.Length; i++)
+            {
+                chars[i] = (char)glyphCodes[i];
+            }
+            return new NetGlyphVector(netFont, font, frc, chars);
+        }
+
+        public override GlyphVector createGlyphVector(java.awt.Font font, FontRenderContext frc, java.text.CharacterIterator text)
+        {
+            int count = text.getEndIndex() - text.getBeginIndex();
+            char[] chars = new char[count];
+            text.first();
+            for (int i = 0; i < count; i++)
+            {
+                chars[i] = text.current();
+                text.next();
+            }
+            return new NetGlyphVector(netFont, font, frc, chars);
+        }
+
+        public override byte getBaselineFor(java.awt.Font font, char param2)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override java.awt.FontMetrics getFontMetrics(java.awt.Font font)
+        {
+            return new NetFontMetrics(font);
+        }
+
+        public override string getGlyphName(java.awt.Font font, int param2)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override LineMetrics getLineMetrics(java.awt.Font font, java.text.CharacterIterator aCharacterIterator, int aBegin, int aLimit, FontRenderContext aFontRenderContext)
+        {
+            string s = ToString(aCharacterIterator, aBegin, aLimit);
+            return new NetLineMetrics(font, s);
+        }
+
+        public override java.awt.geom.Rectangle2D getMaxCharBounds(java.awt.Font font, FontRenderContext param2)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override int getMissingGlyphCode(java.awt.Font font)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override int getNumGlyphs(java.awt.Font font)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string getPostScriptName(java.awt.Font font)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool hasUniformLineMetrics(java.awt.Font font)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override GlyphVector layoutGlyphVector(java.awt.Font font, FontRenderContext frc, char[] text, int beginIndex, int endIndex, int flags)
+        {
+            char[] chars = new char[endIndex - beginIndex];
+            Array.Copy(text, beginIndex, chars, 0, chars.Length);
+            return new NetGlyphVector(netFont, font, frc, chars);
+        }
+
+        public override string getSubFamilyName(java.awt.Font font, Locale param2)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static string ToString(java.text.CharacterIterator aCharacterIterator, int aBegin, int aLimit)
+        {
+            aCharacterIterator.setIndex(aBegin);
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = aBegin; i <= aLimit; ++i)
+            {
+                char c = aCharacterIterator.current();
+                sb.Append(c);
+                aCharacterIterator.next();
+            }
+
+            return sb.ToString();
+        }
+
+        #region IDisposable Members
+
+        public void Dispose()
+        {
+            netFont.Dispose();
+        }
+
+        #endregion
+    }*/
+
+    /*    class NetGlyphVector : GlyphVector
+        {
+            private readonly Font netFont;
+            private readonly java.awt.Font font;
+            private readonly FontRenderContext frc;
+            private readonly char[] text;
+            private NetFontMetrics metrics;
+
+
+            internal NetGlyphVector(Font netFont, java.awt.Font font, FontRenderContext frc, char[] text)
+            {
+                this.netFont = netFont;
+                this.font = font;
+                this.frc = frc;
+                this.text = text;
+            }
+
+            private NetFontMetrics getMetrics()
+            {
+                if(metrics == null)
+                {
+                    metrics = new NetFontMetrics(font);
+                }
+                return metrics;
+            }
+
+            public override bool equals(GlyphVector gv)
+            {
+                throw new NotImplementedException();
+            }
+
+            public override java.awt.Font getFont()
+            {
+                return font;
+            }
+
+            public override FontRenderContext getFontRenderContext()
+            {
+                return frc;
+            }
+
+            public override int getGlyphCode(int i)
+            {
+                throw new NotImplementedException();
+            }
+
+            public override int[] getGlyphCodes(int i1, int i2, int[] iarr)
+            {
+                throw new NotImplementedException();
+            }
+
+            public override GlyphJustificationInfo getGlyphJustificationInfo(int i)
+            {
+                throw new NotImplementedException();
+            }
+
+            public override java.awt.Shape getGlyphLogicalBounds(int i)
+            {
+                throw new NotImplementedException();
+            }
+
+            public override GlyphMetrics getGlyphMetrics(int i)
+            {
+                throw new NotImplementedException();
+            }
+
+            public override java.awt.Shape getGlyphOutline(int i)
+            {
+                throw new NotImplementedException();
+            }
+
+            public override Point2D getGlyphPosition(int i)
+            {
+                throw new NotImplementedException();
+            }
+
+            public override float[] getGlyphPositions(int i1, int i2, float[] farr)
+            {
+                throw new NotImplementedException();
+            }
+
+            public override AffineTransform getGlyphTransform(int i)
+            {
+                throw new NotImplementedException();
+            }
+
+            public override java.awt.Shape getGlyphVisualBounds(int index)
+            {
+                return getMetrics().GetStringBounds(new String(text, index, 1));
+            }
+
+            public override Rectangle2D getLogicalBounds()
+            {
+                return getMetrics().GetStringBounds(new String(text));
+            }
+
+            public override int getNumGlyphs()
+            {
+                return text.Length;
+            }
+
+            public override java.awt.Shape getOutline()
+            {
+                throw new NotImplementedException();
+            }
+
+            public override java.awt.Shape getOutline(float f1, float f2)
+            {
+                throw new NotImplementedException();
+            }
+
+            public override Rectangle2D getVisualBounds()
+            {
+                return new NetFontMetrics(font).GetStringBounds(new String(text));
+            }
+
+            public override void performDefaultLayout()
+            {
+                throw new NotImplementedException();
+            }
+
+            public override void setGlyphPosition(int i, Point2D pd)
+            {
+                throw new NotImplementedException();
+            }
+
+            public override void setGlyphTransform(int i, AffineTransform at)
+            {
+                throw new NotImplementedException();
+            }
+
+            public char[] getText()
+            {
+                return text;
+            }
+    }*/
+
+    /*class NetLineMetrics : LineMetrics
+    {
+        private java.awt.Font mFont;
+        private String mString;
+        private FontFamily fontFamily;
+        private FontStyle style;
+        private float factor;
+
+        public NetLineMetrics(java.awt.Font aFont, String aString)
+        {
+            mFont = aFont;
+            mString = aString;
+            fontFamily = J2C.CreateFontFamily(aFont.getName());
+            style = (FontStyle)mFont.getStyle();
+            factor = aFont.getSize2D() / fontFamily.GetEmHeight(style);
+        }
+
+        public override float getAscent()
+        {
+            return fontFamily.GetCellAscent(style) * factor;
+        }
+
+        public override int getBaselineIndex()
+        {
+            return 0; //I have no font see that return another value.
+        }
+
+        public override float[] getBaselineOffsets()
+        {
+            float ascent = getAscent();
+            return new float[] { 0, (getDescent() / 2f - ascent) / 2f, -ascent };
+        }
+
+        public override float getDescent()
+        {
+            return fontFamily.GetCellDescent(style) * factor;
+        }
+
+        public override float getHeight()
+        {
+            return fontFamily.GetLineSpacing(style) * factor;
+        }
+
+        public override float getLeading()
+        {
+            return getHeight() - getAscent() - getDescent();
+        }
+
+        public override int getNumChars()
+        {
+            return mString.Length;
+        }
+
+#if WINFX
+        private Typeface GetTypeface()
+        {
+            return new Typeface(fontFamily, style, FontWeight.Normal, FontStretch.Medium);
+        }
+#endif
+
+        public override float getStrikethroughOffset()
+        {
+#if WINFX              
+            return GetTypeface().StrikethroughPosition * factor;
+#else
+            return getAscent() / -3;
+#endif
+        }
+
+        public override float getStrikethroughThickness()
+        {
+#if WINFX              
+            return GetTypeface().StrikethroughThickness * factor;
+#else
+            return mFont.getSize2D() / 18;
+#endif
+        }
+
+        public override float getUnderlineOffset()
+        {
+#if WINFX              
+            return GetTypeface().UnderlinePosition * factor;
+#else
+            return mFont.getSize2D() / 8.7F;
+#endif
+        }
+
+        public override float getUnderlineThickness()
+        {
+#if WINFX              
+            return GetTypeface().UnderlineThickness * factor;
+#else
+            return mFont.getSize2D() / 18;
+#endif
+        }
+    }*/
+
+}
+@
+
+
+1.11
+log
+@remove an indent
+@
+text
+@d4 1
+a4 1
+  Copyright (C) 2006, 2007, 2009, 2010 Volker Berlin
+d44 1
+a44 1
+    class NetFontMetrics : java.awt.FontMetrics
+d193 1
+a193 1
+    }
+d460 1
+a460 1
+    class NetLineMetrics : LineMetrics
+d555 1
+a555 1
+    }
+@
+
+
+1.10
+log
+@Massive AWT peer restructuring.
+@
+text
+@d134 4
+a137 2
+        internal float GetStringWidth(String aString, System.Drawing.Graphics g) {
+            if (aString.Length == 0) {
+a138 27
+            } else {
+                // System.Windows.Forms.TextRenderer#MeasureText seems to large
+                // Graphics#MeasureString is many faster but work only correct with TextRenderingHint.AntiAlias
+                bool rounding;
+                StringFormat format;
+                switch (g.TextRenderingHint){
+                    // Fractional metrics
+                    case TextRenderingHint.AntiAlias:
+                    case TextRenderingHint.SingleBitPerPixel:
+                        // this very mystic, if a StringFormat extends from GenericTypographic then the metric are different but like Java with fractional metrics
+                        format = new StringFormat(StringFormat.GenericTypographic);
+                        rounding = false;
+                        break;
+                    default:
+                        format = new StringFormat();
+                        rounding = true;
+                        break;
+                }
+
+                format.FormatFlags = StringFormatFlags.MeasureTrailingSpaces | StringFormatFlags.NoWrap | StringFormatFlags.FitBlackBox;
+                format.Trimming = StringTrimming.None;
+                format.SetMeasurableCharacterRanges(new CharacterRange[] { new CharacterRange(0, aString.Length) });
+                Region[] regions = g.MeasureCharacterRanges(aString, GetNetFont(), new RectangleF(0, 0, int.MaxValue, int.MaxValue), format);
+                SizeF size = regions[0].GetBounds(g).Size;
+                regions[0].Dispose();
+                //with Arial 9.0 and only one character under Vista .NET does not round it, that we rounding manualy
+                return rounding ? (int)Math.Round(size.Width) : size.Width;
+d140 29
+@
+
+
+1.9
+log
+@Made default graphics into a thread local to avoid sharing the graphics object between threads (which causes problems).
+@
+text
+@a45 1
+
+a188 8
+
+		internal java.awt.geom.Rectangle2D GetStringBounds(String aString)
+		{
+			using (System.Drawing.Graphics g = NetToolkit.bogusForm.CreateGraphics())
+			{
+				return GetStringBounds(aString, g);
+			}
+		}
+@
+
+
+1.8
+log
+@Fix a rounding problem with FontMetrics
+@
+text
+@d48 2
+a49 1
+        private static readonly Graphics defaultGraphics = Graphics.FromImage(defaultbitmap);
+d51 12
+a62 6
+        static NetFontMetrics() {
+            defaultGraphics.SmoothingMode = SmoothingMode.None;
+            defaultGraphics.PixelOffsetMode = PixelOffsetMode.None;
+            defaultGraphics.TextRenderingHint = TextRenderingHint.SingleBitPerPixelGridFit;
+
+        }
+d112 1
+a112 1
+            return (int)Math.Round(GetStringWidth(s, defaultGraphics));
+d188 1
+a188 1
+            return GetStringBounds(aString, defaultGraphics);
+@
+
+
+1.7
+log
+@Fix the metrix junit tests.
+@
+text
+@d134 1
+d142 1
+d146 1
+d149 2
+a150 2
+                
+                format.FormatFlags = StringFormatFlags.MeasureTrailingSpaces | StringFormatFlags.NoWrap;
+d156 2
+a157 1
+                return size.Width;
+@
+
+
+1.6
+log
+@fixing the painting of the GlyphVector with the StandardGlyphVector from Sun
+@
+text
+@d4 1
+a4 1
+  Copyright (C) 2006, 2007, 2009 Volker Berlin
+d29 2
+d47 10
+d103 1
+a103 1
+        public override int stringWidth(string s)
+d105 1
+a105 1
+            return (int)Math.Round(GetStringBounds(s).getWidth());
+d128 20
+a147 23
+        internal java.awt.geom.Rectangle2D GetStringBounds(String aString, System.Drawing.Graphics g)
+        {
+            // TODO (KR) Could replace with System.Windows.Forms.TextRenderer#MeasureText (to skip creating Graphics)
+            //
+            // From .NET Framework Class Library documentation for Graphics#MeasureString:
+            //
+            //    To obtain metrics suitable for adjacent strings in layout (for
+            //    example, when implementing formatted text), use the
+            //    MeasureCharacterRanges method or one of the MeasureString
+            //    methods that takes a StringFormat, and pass GenericTypographic.
+            //    Also, ensure the TextRenderingHint for the Graphics is
+            //    AntiAlias.
+            //
+            // TODO (KR) Consider implementing with one of the Graphics#MeasureString methods that takes a StringFormat.
+            // TODO (KR) Consider implementing with Graphics#MeasureCharacterRanges().
+            if (aString.Length == 0)
+            {
+                SizeF size = g.MeasureString(aString, GetNetFont(), Int32.MaxValue, StringFormat.GenericTypographic);
+                return new java.awt.geom.Rectangle2D.Float(0, 0, size.Width, size.Height);
+            }
+            else
+            {
+                StringFormat format = new StringFormat(StringFormatFlags.MeasureTrailingSpaces | StringFormatFlags.NoWrap);
+d153 1
+a153 1
+                return new java.awt.geom.Rectangle2D.Float(0, -getAscent(), size.Width, size.Height);
+d157 14
+d177 1
+a177 1
+            return GetStringBounds(aString);
+@
+
+
+1.5
+log
+@Replace the GNU ClasspathToolkit with the SunToolkit in .NET Code. Replace the usage of the FontPeer with the Java2D. Replace the NetGlyphVector with the StandardGlyphVector
+@
+text
+@d294 7
+a300 7
+    class NetGlyphVector : GlyphVector
+    {
+        private readonly Font netFont;
+        private readonly java.awt.Font font;
+        private readonly FontRenderContext frc;
+        private readonly char[] text;
+        private NetFontMetrics metrics;
+d303 7
+a309 7
+        internal NetGlyphVector(Font netFont, java.awt.Font font, FontRenderContext frc, char[] text)
+        {
+            this.netFont = netFont;
+            this.font = font;
+            this.frc = frc;
+            this.text = text;
+        }
+d311 1
+a311 3
+        private NetFontMetrics getMetrics()
+        {
+            if(metrics == null)
+d313 5
+a317 1
+                metrics = new NetFontMetrics(font);
+a318 2
+            return metrics;
+        }
+d320 4
+a323 4
+        public override bool equals(GlyphVector gv)
+        {
+            throw new NotImplementedException();
+        }
+d325 4
+a328 4
+        public override java.awt.Font getFont()
+        {
+            return font;
+        }
+d330 4
+a333 4
+        public override FontRenderContext getFontRenderContext()
+        {
+            return frc;
+        }
+d335 4
+a338 4
+        public override int getGlyphCode(int i)
+        {
+            throw new NotImplementedException();
+        }
+d340 4
+a343 4
+        public override int[] getGlyphCodes(int i1, int i2, int[] iarr)
+        {
+            throw new NotImplementedException();
+        }
+d345 4
+a348 4
+        public override GlyphJustificationInfo getGlyphJustificationInfo(int i)
+        {
+            throw new NotImplementedException();
+        }
+d350 4
+a353 4
+        public override java.awt.Shape getGlyphLogicalBounds(int i)
+        {
+            throw new NotImplementedException();
+        }
+d355 4
+a358 4
+        public override GlyphMetrics getGlyphMetrics(int i)
+        {
+            throw new NotImplementedException();
+        }
+d360 4
+a363 4
+        public override java.awt.Shape getGlyphOutline(int i)
+        {
+            throw new NotImplementedException();
+        }
+d365 4
+a368 4
+        public override Point2D getGlyphPosition(int i)
+        {
+            throw new NotImplementedException();
+        }
+d370 4
+a373 4
+        public override float[] getGlyphPositions(int i1, int i2, float[] farr)
+        {
+            throw new NotImplementedException();
+        }
+d375 4
+a378 4
+        public override AffineTransform getGlyphTransform(int i)
+        {
+            throw new NotImplementedException();
+        }
+d380 4
+a383 4
+        public override java.awt.Shape getGlyphVisualBounds(int index)
+        {
+            return getMetrics().GetStringBounds(new String(text, index, 1));
+        }
+d385 4
+a388 4
+        public override Rectangle2D getLogicalBounds()
+        {
+            return getMetrics().GetStringBounds(new String(text));
+        }
+d390 4
+a393 4
+        public override int getNumGlyphs()
+        {
+            return text.Length;
+        }
+d395 4
+a398 4
+        public override java.awt.Shape getOutline()
+        {
+            throw new NotImplementedException();
+        }
+d400 4
+a403 4
+        public override java.awt.Shape getOutline(float f1, float f2)
+        {
+            throw new NotImplementedException();
+        }
+d405 4
+a408 4
+        public override Rectangle2D getVisualBounds()
+        {
+            return new NetFontMetrics(font).GetStringBounds(new String(text));
+        }
+d410 4
+a413 4
+        public override void performDefaultLayout()
+        {
+            throw new NotImplementedException();
+        }
+d415 4
+a418 4
+        public override void setGlyphPosition(int i, Point2D pd)
+        {
+            throw new NotImplementedException();
+        }
+d420 4
+a423 4
+        public override void setGlyphTransform(int i, AffineTransform at)
+        {
+            throw new NotImplementedException();
+        }
+d425 5
+a429 5
+        public char[] getText()
+        {
+            return text;
+        }
+}
+@
+
+
+1.4
+log
+@implements some GlyphVector methods for Swing
+@
+text
+@d4 1
+a4 1
+  Copyright (C) 2006, 2007 Volker Berlin
+a43 1
+        private readonly NetFontPeer peer;
+a46 1
+            peer = (NetFontPeer)font.getPeer();
+d51 1
+a51 1
+            return peer.netFont;
+d166 1
+a166 1
+    class NetFontPeer : gnu.java.awt.peer.ClasspathFontPeer, IDisposable
+d176 1
+a176 1
+        public override bool canDisplay(java.awt.Font font, char param2)
+d292 1
+a292 1
+    }
+@
+
+
+1.3
+log
+@converter.cs
+- ConvertRoundRect - correction in representation differences
+- LineJoin, LineCap, Dash conversions
+- CreateFontFamily - case sensitivity fix
+fonts.cs, fonts-0.95.cs
+- overriding FontMetrics.getStringBounds
+- y coordinate of the returned rectangle should be the negative ascent in Java
+graphics.cs
+- NetGraphics.drawArc, fillArc - correction in representation differences
+- NetGraphics.drawRoundRect, fillRoundRect - correction in representation differences
+- NetGraphics.drawString - text was mispositioned
+- NetGraphics.setStroke - BasicStroke support for LineCap, LineJoin, LineDash
+- NetGraphicsEnvironment.createGraphics returned empty image
+images.cs
+- NetProducerImage.setPixels - implementation for byte[] argument
+toolkit.cs, toolkit-0.95.cs
+toolkit.cs: NetToolkit implements ikvm.awt.IkvmToolkit, see BufferedImage.createGraphics implementation
+NetToolkit - getBestCursorSize, createCustomCursor implementation
+NetToolkit - DoubleClick, ContextMenu support
+NetToolkit - MapKeyCode did not work for Enter and Delete keys
+NetToolkit - OnBoundsChanged - component resized event seems to be missing
+NetToolkit - createImage(ImageProducer) implementation
+NetToolkit - setCursorImpl, NetCustomCursor
+NetDialogPeer - setting the title of the dialog
+NetFramePeer - setting icon for the frame
+
+Contributed by: Judit Vasko-Szedlar (Chemaxon)
+@
+text
+@d302 1
+d313 9
+d382 1
+a382 1
+        public override java.awt.Shape getGlyphVisualBounds(int i)
+d384 1
+a384 1
+            throw new NotImplementedException();
+d389 1
+a389 1
+            return new NetFontMetrics(font).GetStringBounds(new String(text));
+d530 1
+a530 1
+}@
+
+
+1.2
+log
+@Graphics improvement
+@
+text
+@d118 1
+a118 1
+        internal java.awt.geom.Rectangle2D GetStringBounds(String aString)
+d120 14
+a133 1
+            using (Graphics g = NetToolkit.bogusForm.CreateGraphics())
+d135 2
+a136 28
+                // TODO (KR) Could replace with System.Windows.Forms.TextRenderer#MeasureText (to skip creating Graphics)
+                //
+                // From .NET Framework Class Library documentation for Graphics#MeasureString:
+                //
+                //    To obtain metrics suitable for adjacent strings in layout (for
+                //    example, when implementing formatted text), use the
+                //    MeasureCharacterRanges method or one of the MeasureString
+                //    methods that takes a StringFormat, and pass GenericTypographic.
+                //    Also, ensure the TextRenderingHint for the Graphics is
+                //    AntiAlias.
+                //
+                // TODO (KR) Consider implementing with one of the Graphics#MeasureString methods that takes a StringFormat.
+                // TODO (KR) Consider implementing with Graphics#MeasureCharacterRanges().
+				if (aString.Length == 0)
+				{
+					SizeF size = g.MeasureString(aString, GetNetFont(), Int32.MaxValue, StringFormat.GenericTypographic);
+					return new java.awt.geom.Rectangle2D.Float(0, 0, size.Width, size.Height);
+				}
+				else
+				{
+					StringFormat format = new StringFormat(StringFormatFlags.MeasureTrailingSpaces | StringFormatFlags.NoWrap);
+					format.Trimming = StringTrimming.None;
+					format.SetMeasurableCharacterRanges(new CharacterRange[] { new CharacterRange(0, aString.Length) });
+					Region[] regions = g.MeasureCharacterRanges(aString, GetNetFont(), new RectangleF(0, 0, int.MaxValue, int.MaxValue), format);
+					SizeF size = regions[0].GetBounds(g).Size;
+					regions[0].Dispose();
+					return new java.awt.geom.Rectangle2D.Float(0, 0, size.Width, size.Height);
+				}
+d138 19
+d158 8
+@
+
+
+1.1
+log
+@- Switched GNU Classpath AWT/Swing back to version 0.95.
+- Copied GNU Classpath version of java.text.Bidi into openjdk directory.
+- Copied and integrated GNU Classpath's pure Java zip support with OpenJDK zip classes.
+- Added GNU Classpath 0.95 compatible versions of awt\font.cs and awt\toolkit.cs.
+@
+text
+@d403 4
+@
+

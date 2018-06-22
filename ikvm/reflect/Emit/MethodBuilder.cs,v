@@ -1,0 +1,1830 @@
+head	1.42;
+access;
+symbols
+	v8_1_5717_0:1.40
+	v8_1:1.40.0.2
+	v8_0_5449_1:1.37
+	v8_0_5449_0:1.37
+	v8_0:1.37.0.2
+	v7_4_5196_0:1.36
+	v7_4:1.36.0.4
+	v7_3:1.36.0.2
+	v7_2_4630_6:1.31
+	v7_2_4630_5:1.31
+	v7_2_4630_4:1.31
+	v7_2_4630_3:1.31
+	v7_2_4630_2:1.31
+	v0_46_0_4:1.17
+	v7_2_4630_1:1.31
+	v7_2:1.31.0.2
+	v7_1_4532_2:1.23
+	v7_1_4532_1:1.23
+	v7_1_4532_0:1.23
+	v7_1:1.23.0.2
+	v7_0_4335_3:1.19
+	v7_0_4335_2:1.19
+	v7_0_4335_1:1.19
+	v0_46_0_2:1.17
+	v7_0_4335_0:1.19
+	v7_0:1.19.0.2
+	v0_46_0_1:1.17
+	v0_46_0_0:1.17
+	v0_46:1.17.0.2
+	v0_44_0_6:1.13
+	v0_44_0_5:1.13
+	v0_44_0_4:1.13
+	v0_44_0_3:1.13
+	v0_44_0_2:1.13
+	v0_44_0_1:1.13
+	v0_44_0_0:1.13
+	v0_44:1.13.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.42
+date	2016.07.01.05.44.41;	author jfrijters;	state Exp;
+branches;
+next	1.41;
+
+1.41
+date	2016.07.01.05.15.22;	author jfrijters;	state Exp;
+branches;
+next	1.40;
+
+1.40
+date	2015.04.21.10.15.39;	author jfrijters;	state Exp;
+branches;
+next	1.39;
+
+1.39
+date	2015.04.06.07.12.29;	author jfrijters;	state Exp;
+branches;
+next	1.38;
+
+1.38
+date	2015.02.16.12.24.28;	author jfrijters;	state Exp;
+branches;
+next	1.37;
+
+1.37
+date	2014.05.19.09.08.32;	author jfrijters;	state Exp;
+branches;
+next	1.36;
+
+1.36
+date	2012.12.01.19.10.13;	author jfrijters;	state Exp;
+branches;
+next	1.35;
+
+1.35
+date	2012.11.11.11.28.19;	author jfrijters;	state Exp;
+branches;
+next	1.34;
+
+1.34
+date	2012.10.11.15.10.38;	author jfrijters;	state Exp;
+branches;
+next	1.33;
+
+1.33
+date	2012.10.11.14.03.03;	author jfrijters;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2012.10.11.13.28.18;	author jfrijters;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2012.07.16.10.14.38;	author jfrijters;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2012.07.16.08.05.37;	author jfrijters;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2012.07.16.07.22.59;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2012.07.13.06.33.30;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2012.07.12.15.10.58;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2012.06.26.13.28.56;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2012.06.26.12.52.32;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2012.06.22.15.43.21;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2012.04.11.20.41.56;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2012.01.12.06.51.18;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2012.01.09.09.13.43;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2011.12.01.06.30.51;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2011.03.22.10.26.52;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2011.03.11.15.50.55;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2011.02.14.05.50.46;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2011.01.26.12.08.31;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2010.12.06.05.35.24;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2010.11.26.13.44.06;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2010.06.28.09.33.27;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2010.06.24.08.46.25;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2010.05.07.07.21.29;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2010.04.20.13.06.09;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2010.04.19.05.23.09;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2010.04.18.08.55.55;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2010.02.09.07.50.07;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2010.02.09.07.29.25;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2010.02.09.05.27.51;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.02.04.09.58.46;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.02.04.09.46.18;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.42
+log
+@Replaced CORECLR symbol with NETSTANDARD.
+@
+text
+@/*
+  Copyright (C) 2008-2012 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.IO;
+using System.Diagnostics;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
+#if !NO_SYMBOL_WRITER
+using System.Diagnostics.SymbolStore;
+#endif
+using IKVM.Reflection.Metadata;
+using IKVM.Reflection.Writer;
+
+namespace IKVM.Reflection.Emit
+{
+	public sealed class MethodBuilder : MethodInfo
+	{
+		private readonly TypeBuilder typeBuilder;
+		private readonly string name;
+		private readonly int pseudoToken;
+		private int nameIndex;
+		private int signature;
+		private Type returnType;
+		private Type[] parameterTypes;
+		private PackedCustomModifiers customModifiers;
+		private MethodAttributes attributes;
+		private MethodImplAttributes implFlags;
+		private ILGenerator ilgen;
+		private int rva = -1;
+		private CallingConventions callingConvention;
+		private List<ParameterBuilder> parameters;
+		private GenericTypeParameterBuilder[] gtpb;
+		private List<CustomAttributeBuilder> declarativeSecurity;
+		private MethodSignature methodSignature;
+		private bool initLocals = true;
+
+		internal MethodBuilder(TypeBuilder typeBuilder, string name, MethodAttributes attributes, CallingConventions callingConvention)
+		{
+			this.typeBuilder = typeBuilder;
+			this.name = name;
+			this.pseudoToken = typeBuilder.ModuleBuilder.AllocPseudoToken();
+			this.attributes = attributes;
+			if ((attributes & MethodAttributes.Static) == 0)
+			{
+				callingConvention |= CallingConventions.HasThis;
+			}
+			this.callingConvention = callingConvention;
+		}
+
+		public ILGenerator GetILGenerator()
+		{
+			return GetILGenerator(16);
+		}
+
+		public ILGenerator GetILGenerator(int streamSize)
+		{
+			if (rva != -1)
+			{
+				throw new InvalidOperationException();
+			}
+			if (ilgen == null)
+			{
+				ilgen = new ILGenerator(typeBuilder.ModuleBuilder, streamSize);
+			}
+			return ilgen;
+		}
+
+		public void __ReleaseILGenerator()
+		{
+			if (ilgen != null)
+			{
+#if !NO_SYMBOL_WRITER
+				if (this.ModuleBuilder.symbolWriter != null)
+				{
+					this.ModuleBuilder.symbolWriter.OpenMethod(new SymbolToken(-pseudoToken | 0x06000000), this);
+				}
+#endif
+				rva = ilgen.WriteBody(initLocals);
+#if !NO_SYMBOL_WRITER
+				if (this.ModuleBuilder.symbolWriter != null)
+				{
+					this.ModuleBuilder.symbolWriter.CloseMethod();
+				}
+#endif
+				ilgen = null;
+			}
+		}
+
+		public void SetCustomAttribute(ConstructorInfo con, byte[] binaryAttribute)
+		{
+			SetCustomAttribute(new CustomAttributeBuilder(con, binaryAttribute));
+		}
+
+		private void SetDllImportPseudoCustomAttribute(CustomAttributeBuilder customBuilder)
+		{
+			CallingConvention? callingConvention = customBuilder.GetFieldValue<CallingConvention>("CallingConvention");
+			CharSet? charSet = customBuilder.GetFieldValue<CharSet>("CharSet");
+			SetDllImportPseudoCustomAttribute((string)customBuilder.GetConstructorArgument(0),
+				(string)customBuilder.GetFieldValue("EntryPoint"),
+				callingConvention,
+				charSet,
+				(bool?)customBuilder.GetFieldValue("BestFitMapping"),
+				(bool?)customBuilder.GetFieldValue("ThrowOnUnmappableChar"),
+				(bool?)customBuilder.GetFieldValue("SetLastError"),
+				(bool?)customBuilder.GetFieldValue("PreserveSig"),
+				(bool?)customBuilder.GetFieldValue("ExactSpelling"));
+		}
+
+		internal void SetDllImportPseudoCustomAttribute(string dllName, string entryName, CallingConvention? nativeCallConv, CharSet? nativeCharSet,
+			bool? bestFitMapping, bool? throwOnUnmappableChar, bool? setLastError, bool? preserveSig, bool? exactSpelling)
+		{
+			const short NoMangle = 0x0001;
+			const short CharSetMask = 0x0006;
+			const short CharSetNotSpec = 0x0000;
+			const short CharSetAnsi = 0x0002;
+			const short CharSetUnicode = 0x0004;
+			const short CharSetAuto = 0x0006;
+			const short SupportsLastError = 0x0040;
+			const short CallConvMask = 0x0700;
+			const short CallConvWinapi = 0x0100;
+			const short CallConvCdecl = 0x0200;
+			const short CallConvStdcall = 0x0300;
+			const short CallConvThiscall = 0x0400;
+			const short CallConvFastcall = 0x0500;
+			// non-standard flags
+			const short BestFitOn = 0x0010;
+			const short BestFitOff = 0x0020;
+			const short CharMapErrorOn = 0x1000;
+			const short CharMapErrorOff = 0x2000;
+			short flags = CharSetNotSpec | CallConvWinapi;
+			if (bestFitMapping.HasValue)
+			{
+				flags |= bestFitMapping.Value ? BestFitOn : BestFitOff;
+			}
+			if (throwOnUnmappableChar.HasValue)
+			{
+				flags |= throwOnUnmappableChar.Value ? CharMapErrorOn : CharMapErrorOff;
+			}
+			if (nativeCallConv.HasValue)
+			{
+				flags &= ~CallConvMask;
+				switch (nativeCallConv.Value)
+				{
+					case System.Runtime.InteropServices.CallingConvention.Cdecl:
+						flags |= CallConvCdecl;
+						break;
+#if NETSTANDARD
+					case (System.Runtime.InteropServices.CallingConvention)5:
+#else
+					case System.Runtime.InteropServices.CallingConvention.FastCall:
+#endif
+						flags |= CallConvFastcall;
+						break;
+					case System.Runtime.InteropServices.CallingConvention.StdCall:
+						flags |= CallConvStdcall;
+						break;
+					case System.Runtime.InteropServices.CallingConvention.ThisCall:
+						flags |= CallConvThiscall;
+						break;
+					case System.Runtime.InteropServices.CallingConvention.Winapi:
+						flags |= CallConvWinapi;
+						break;
+				}
+			}
+			if (nativeCharSet.HasValue)
+			{
+				flags &= ~CharSetMask;
+				switch (nativeCharSet.Value)
+				{
+					case CharSet.Ansi:
+#if NETSTANDARD
+					case (CharSet)1:
+#else
+					case CharSet.None:
+#endif
+						flags |= CharSetAnsi;
+						break;
+#if NETSTANDARD
+					case (CharSet)4:
+#else
+					case CharSet.Auto:
+#endif
+						flags |= CharSetAuto;
+						break;
+					case CharSet.Unicode:
+						flags |= CharSetUnicode;
+						break;
+				}
+			}
+			if (exactSpelling.HasValue && exactSpelling.Value)
+			{
+				flags |= NoMangle;
+			}
+			if (!preserveSig.HasValue || preserveSig.Value)
+			{
+				implFlags |= MethodImplAttributes.PreserveSig;
+			}
+			if (setLastError.HasValue && setLastError.Value)
+			{
+				flags |= SupportsLastError;
+			}
+			ImplMapTable.Record rec = new ImplMapTable.Record();
+			rec.MappingFlags = flags;
+			rec.MemberForwarded = pseudoToken;
+			rec.ImportName = this.ModuleBuilder.Strings.Add(entryName ?? name);
+			rec.ImportScope = this.ModuleBuilder.ModuleRef.FindOrAddRecord(dllName == null ? 0 : this.ModuleBuilder.Strings.Add(dllName));
+			this.ModuleBuilder.ImplMap.AddRecord(rec);
+		}
+
+		private void SetMethodImplAttribute(CustomAttributeBuilder customBuilder)
+		{
+			MethodImplOptions opt;
+			switch (customBuilder.Constructor.ParameterCount)
+			{
+				case 0:
+					opt = 0;
+					break;
+				case 1:
+					{
+						object val = customBuilder.GetConstructorArgument(0);
+						if (val is short)
+						{
+							opt = (MethodImplOptions)(short)val;
+						}
+						else if (val is int)
+						{
+							opt = (MethodImplOptions)(int)val;
+						}
+						else
+						{
+							opt = (MethodImplOptions)val;
+						}
+						break;
+					}
+				default:
+					throw new NotSupportedException();
+			}
+			implFlags = (MethodImplAttributes)opt;
+#if NETSTANDARD
+			object type = customBuilder.GetFieldValue("MethodCodeType");
+			if (type != null)
+			{
+				implFlags |= (MethodImplAttributes)(int)type;
+			}
+#else
+			MethodCodeType? type = customBuilder.GetFieldValue<MethodCodeType>("MethodCodeType");
+			if (type.HasValue)
+			{
+				implFlags |= (MethodImplAttributes)type;
+			}
+#endif
+		}
+
+		public void SetCustomAttribute(CustomAttributeBuilder customBuilder)
+		{
+			switch (customBuilder.KnownCA)
+			{
+				case KnownCA.DllImportAttribute:
+					SetDllImportPseudoCustomAttribute(customBuilder.DecodeBlob(this.Module.Assembly));
+					attributes |= MethodAttributes.PinvokeImpl;
+					break;
+				case KnownCA.MethodImplAttribute:
+					SetMethodImplAttribute(customBuilder.DecodeBlob(this.Module.Assembly));
+					break;
+				case KnownCA.PreserveSigAttribute:
+					implFlags |= MethodImplAttributes.PreserveSig;
+					break;
+				case KnownCA.SpecialNameAttribute:
+					attributes |= MethodAttributes.SpecialName;
+					break;
+				case KnownCA.SuppressUnmanagedCodeSecurityAttribute:
+					attributes |= MethodAttributes.HasSecurity;
+					goto default;
+				default:
+					this.ModuleBuilder.SetCustomAttribute(pseudoToken, customBuilder);
+					break;
+			}
+		}
+
+		public void __AddDeclarativeSecurity(CustomAttributeBuilder customBuilder)
+		{
+			attributes |= MethodAttributes.HasSecurity;
+			if (declarativeSecurity == null)
+			{
+				declarativeSecurity = new List<CustomAttributeBuilder>();
+			}
+			declarativeSecurity.Add(customBuilder);
+		}
+
+#if !NETSTANDARD
+		public void AddDeclarativeSecurity(System.Security.Permissions.SecurityAction securityAction, System.Security.PermissionSet permissionSet)
+		{
+			this.ModuleBuilder.AddDeclarativeSecurity(pseudoToken, securityAction, permissionSet);
+			this.attributes |= MethodAttributes.HasSecurity;
+		}
+#endif
+
+		public void SetImplementationFlags(MethodImplAttributes attributes)
+		{
+			implFlags = attributes;
+		}
+
+		public ParameterBuilder DefineParameter(int position, ParameterAttributes attributes, string strParamName)
+		{
+			if (parameters == null)
+			{
+				parameters = new List<ParameterBuilder>();
+			}
+			this.ModuleBuilder.Param.AddVirtualRecord();
+			ParameterBuilder pb = new ParameterBuilder(this.ModuleBuilder, position, attributes, strParamName);
+			if (parameters.Count == 0 || position >= parameters[parameters.Count - 1].Position)
+			{
+				parameters.Add(pb);
+			}
+			else
+			{
+				for (int i = 0; i < parameters.Count; i++)
+				{
+					if (parameters[i].Position > position)
+					{
+						parameters.Insert(i, pb);
+						break;
+					}
+				}
+			}
+			return pb;
+		}
+
+		private void CheckSig()
+		{
+			if (methodSignature != null)
+			{
+				throw new InvalidOperationException("The method signature can not be modified after it has been used.");
+			}
+		}
+
+		public void SetParameters(params Type[] parameterTypes)
+		{
+			CheckSig();
+			this.parameterTypes = Util.Copy(parameterTypes);
+		}
+
+		public void SetReturnType(Type returnType)
+		{
+			CheckSig();
+			this.returnType = returnType ?? this.Module.universe.System_Void;
+		}
+
+		public void SetSignature(Type returnType, Type[] returnTypeRequiredCustomModifiers, Type[] returnTypeOptionalCustomModifiers, Type[] parameterTypes, Type[][] parameterTypeRequiredCustomModifiers, Type[][] parameterTypeOptionalCustomModifiers)
+		{
+			SetSignature(returnType, parameterTypes, PackedCustomModifiers.CreateFromExternal(returnTypeOptionalCustomModifiers, returnTypeRequiredCustomModifiers,
+				parameterTypeOptionalCustomModifiers, parameterTypeRequiredCustomModifiers, Util.NullSafeLength(parameterTypes)));
+		}
+
+		public void __SetSignature(Type returnType, CustomModifiers returnTypeCustomModifiers, Type[] parameterTypes, CustomModifiers[] parameterTypeCustomModifiers)
+		{
+			SetSignature(returnType, parameterTypes, PackedCustomModifiers.CreateFromExternal(returnTypeCustomModifiers, parameterTypeCustomModifiers, Util.NullSafeLength(parameterTypes)));
+		}
+
+		private void SetSignature(Type returnType, Type[] parameterTypes, PackedCustomModifiers customModifiers)
+		{
+			CheckSig();
+			this.returnType = returnType ?? this.Module.universe.System_Void;
+			this.parameterTypes = Util.Copy(parameterTypes);
+			this.customModifiers = customModifiers;
+		}
+
+		public GenericTypeParameterBuilder[] DefineGenericParameters(params string[] names)
+		{
+			CheckSig();
+			if (gtpb != null)
+			{
+				throw new InvalidOperationException("Generic parameters already defined.");
+			}
+			gtpb = new GenericTypeParameterBuilder[names.Length];
+			for (int i = 0; i < names.Length; i++)
+			{
+				gtpb[i] = new GenericTypeParameterBuilder(names[i], this, i);
+			}
+			return (GenericTypeParameterBuilder[])gtpb.Clone();
+		}
+
+		public override MethodInfo MakeGenericMethod(params Type[] typeArguments)
+		{
+			return new GenericMethodInstance(typeBuilder, this, typeArguments);
+		}
+
+		public override MethodInfo GetGenericMethodDefinition()
+		{
+			if (gtpb == null)
+			{
+				throw new InvalidOperationException();
+			}
+			return this;
+		}
+
+		public override Type[] GetGenericArguments()
+		{
+			return Util.Copy(gtpb);
+		}
+
+		internal override Type GetGenericMethodArgument(int index)
+		{
+			return gtpb[index];
+		}
+
+		internal override int GetGenericMethodArgumentCount()
+		{
+			return gtpb == null ? 0 : gtpb.Length;
+		}
+
+		public override Type ReturnType
+		{
+			get { return returnType; }
+		}
+
+		public override ParameterInfo ReturnParameter
+		{
+			get { return new ParameterInfoImpl(this, -1); }
+		}
+
+		public override MethodAttributes Attributes
+		{
+			get { return attributes; }
+		}
+
+		public void __SetAttributes(MethodAttributes attributes)
+		{
+			this.attributes = attributes;
+		}
+
+		public void __SetCallingConvention(CallingConventions callingConvention)
+		{
+			this.callingConvention = callingConvention;
+			this.methodSignature = null;
+		}
+
+		public override MethodImplAttributes GetMethodImplementationFlags()
+		{
+			return implFlags;
+		}
+
+		private sealed class ParameterInfoImpl : ParameterInfo
+		{
+			private readonly MethodBuilder method;
+			private readonly int parameter;
+
+			internal ParameterInfoImpl(MethodBuilder method, int parameter)
+			{
+				this.method = method;
+				this.parameter = parameter;
+			}
+
+			private ParameterBuilder ParameterBuilder
+			{
+				get
+				{
+					if (method.parameters != null)
+					{
+						foreach (ParameterBuilder pb in method.parameters)
+						{
+							// ParameterBuilder.Position is 1-based
+							if (pb.Position - 1 == parameter)
+							{
+								return pb;
+							}
+						}
+					}
+					return null;
+				}
+			}
+
+			public override string Name
+			{
+				get
+				{
+					ParameterBuilder pb = this.ParameterBuilder;
+					return pb != null ? pb.Name : null;
+				}
+			}
+
+			public override Type ParameterType
+			{
+				get { return parameter == -1 ? method.returnType : method.parameterTypes[parameter]; }
+			}
+
+			public override ParameterAttributes Attributes
+			{
+				get
+				{
+					ParameterBuilder pb = this.ParameterBuilder;
+					return pb != null ? (ParameterAttributes)pb.Attributes : ParameterAttributes.None;
+				}
+			}
+
+			public override int Position
+			{
+				get { return parameter; }
+			}
+
+			public override object RawDefaultValue
+			{
+				get
+				{
+					ParameterBuilder pb = this.ParameterBuilder;
+					if (pb != null && (pb.Attributes & (int)ParameterAttributes.HasDefault) != 0)
+					{
+						return method.ModuleBuilder.Constant.GetRawConstantValue(method.ModuleBuilder, pb.PseudoToken);
+					}
+					if (pb != null && (pb.Attributes & (int)ParameterAttributes.Optional) != 0)
+					{
+						return Missing.Value;
+					}
+					return null;
+				}
+			}
+
+			public override CustomModifiers __GetCustomModifiers()
+			{
+				return method.customModifiers.GetParameterCustomModifiers(parameter);
+			}
+
+			public override bool __TryGetFieldMarshal(out FieldMarshal fieldMarshal)
+			{
+				fieldMarshal = new FieldMarshal();
+				return false;
+			}
+
+			public override MemberInfo Member
+			{
+				get { return method; }
+			}
+
+			public override int MetadataToken
+			{
+				get
+				{
+					ParameterBuilder pb = this.ParameterBuilder;
+					return pb != null ? pb.PseudoToken : 0x08000000;
+				}
+			}
+
+			internal override Module Module
+			{
+				get { return method.Module; }
+			}
+		}
+
+		public override ParameterInfo[] GetParameters()
+		{
+			ParameterInfo[] parameters = new ParameterInfo[parameterTypes.Length];
+			for (int i = 0; i < parameters.Length; i++)
+			{
+				parameters[i] = new ParameterInfoImpl(this, i);
+			}
+			return parameters;
+		}
+
+		internal override int ParameterCount
+		{
+			get { return parameterTypes.Length; }
+		}
+
+		public override Type DeclaringType
+		{
+			get { return typeBuilder.IsModulePseudoType ? null : typeBuilder; }
+		}
+
+		public override string Name
+		{
+			get { return name; }
+		}
+
+		public override CallingConventions CallingConvention
+		{
+			get { return callingConvention; }
+		}
+
+		public override int MetadataToken
+		{
+			get { return pseudoToken; }
+		}
+
+		public override bool IsGenericMethod
+		{
+			get { return gtpb != null; }
+		}
+
+		public override bool IsGenericMethodDefinition
+		{
+			get { return gtpb != null; }
+		}
+
+		public override Module Module
+		{
+			get { return typeBuilder.Module; }
+		}
+
+		public Module GetModule()
+		{
+			return typeBuilder.Module;
+		}
+
+		public MethodToken GetToken()
+		{
+			return new MethodToken(pseudoToken);
+		}
+
+		public override MethodBody GetMethodBody()
+		{
+			throw new NotSupportedException();
+		}
+
+		public override int __MethodRVA
+		{
+			get { throw new NotImplementedException(); }
+		}
+
+		public bool InitLocals
+		{
+			get { return initLocals; }
+			set { initLocals = value; }
+		}
+
+		public void __AddUnmanagedExport(string name, int ordinal)
+		{
+			this.ModuleBuilder.AddUnmanagedExport(name, ordinal, this, new RelativeVirtualAddress(0xFFFFFFFF));
+		}
+
+		public void CreateMethodBody(byte[] il, int count)
+		{
+			if (il == null)
+			{
+				throw new NotSupportedException();
+			}
+			if (il.Length != count)
+			{
+				Array.Resize(ref il, count);
+			}
+			SetMethodBody(il, 16, null, null, null);
+		}
+
+		public void SetMethodBody(byte[] il, int maxStack, byte[] localSignature, IEnumerable<ExceptionHandler> exceptionHandlers, IEnumerable<int> tokenFixups)
+		{
+			ByteBuffer bb = this.ModuleBuilder.methodBodies;
+
+			if (localSignature == null && exceptionHandlers == null && maxStack <= 8 && il.Length < 64)
+			{
+				rva = bb.Position;
+				ILGenerator.WriteTinyHeader(bb, il.Length);
+			}
+			else
+			{
+				// fat headers require 4-byte alignment
+				bb.Align(4);
+				rva = bb.Position;
+				ILGenerator.WriteFatHeader(bb, initLocals, exceptionHandlers != null, (ushort)maxStack, il.Length,
+					localSignature == null ? 0 : this.ModuleBuilder.GetSignatureToken(localSignature, localSignature.Length).Token);
+			}
+
+			if (tokenFixups != null)
+			{
+				ILGenerator.AddTokenFixups(bb.Position, this.ModuleBuilder.tokenFixupOffsets, tokenFixups);
+			}
+			bb.Write(il);
+
+			if (exceptionHandlers != null)
+			{
+				List<ILGenerator.ExceptionBlock> exceptions = new List<ILGenerator.ExceptionBlock>();
+				foreach (ExceptionHandler block in exceptionHandlers)
+				{
+					exceptions.Add(new ILGenerator.ExceptionBlock(block));
+				}
+				ILGenerator.WriteExceptionHandlers(bb, exceptions);
+			}
+		}
+
+		internal void Bake()
+		{
+			this.nameIndex = this.ModuleBuilder.Strings.Add(name);
+			this.signature = this.ModuleBuilder.GetSignatureBlobIndex(this.MethodSignature);
+
+			__ReleaseILGenerator();
+
+			if (declarativeSecurity != null)
+			{
+				this.ModuleBuilder.AddDeclarativeSecurity(pseudoToken, declarativeSecurity);
+			}
+		}
+
+		internal ModuleBuilder ModuleBuilder
+		{
+			get { return typeBuilder.ModuleBuilder; }
+		}
+
+		internal void WriteMethodDefRecord(int baseRVA, MetadataWriter mw, ref int paramList)
+		{
+			if (rva != -1)
+			{
+				mw.Write(rva + baseRVA);
+			}
+			else
+			{
+				mw.Write(0);
+			}
+			mw.Write((short)implFlags);
+			mw.Write((short)attributes);
+			mw.WriteStringIndex(nameIndex);
+			mw.WriteBlobIndex(signature);
+			mw.WriteParam(paramList);
+			if (parameters != null)
+			{
+				paramList += parameters.Count;
+			}
+		}
+
+		internal void WriteParamRecords(MetadataWriter mw)
+		{
+			if (parameters != null)
+			{
+				foreach (ParameterBuilder pb in parameters)
+				{
+					pb.WriteParamRecord(mw);
+				}
+			}
+		}
+
+		internal void FixupToken(int token, ref int parameterToken)
+		{
+			typeBuilder.ModuleBuilder.RegisterTokenFixup(this.pseudoToken, token);
+			if (parameters != null)
+			{
+				foreach (ParameterBuilder pb in parameters)
+				{
+					pb.FixupToken(parameterToken++);
+				}
+			}
+		}
+
+		internal override MethodSignature MethodSignature
+		{
+			get
+			{
+				if (methodSignature == null)
+				{
+					methodSignature = MethodSignature.MakeFromBuilder(returnType ?? typeBuilder.Universe.System_Void, parameterTypes ?? Type.EmptyTypes,
+						customModifiers, callingConvention, gtpb == null ? 0 : gtpb.Length);
+				}
+				return methodSignature;
+			}
+		}
+
+		internal override int ImportTo(ModuleBuilder other)
+		{
+			return other.ImportMethodOrField(typeBuilder, name, this.MethodSignature);
+		}
+
+		internal void CheckBaked()
+		{
+			typeBuilder.CheckBaked();
+		}
+
+		internal override int GetCurrentToken()
+		{
+			if (typeBuilder.ModuleBuilder.IsSaved)
+			{
+				return typeBuilder.ModuleBuilder.ResolvePseudoToken(pseudoToken);
+			}
+			else
+			{
+				return pseudoToken;
+			}
+		}
+
+		internal override bool IsBaked
+		{
+			get { return typeBuilder.IsBaked; }
+		}
+	}
+}
+@
+
+
+1.41
+log
+@Added support for building against .NET Standard 1.3.
+@
+text
+@d312 1
+a312 1
+#if !CORECLR
+@
+
+
+1.40
+log
+@Use sigElementType to implement IsGenericParameter.
+@
+text
+@d169 3
+d173 1
+d193 3
+d197 1
+d200 3
+d204 1
+d260 8
+a268 1
+			implFlags = (MethodImplAttributes)opt;
+d273 1
+@
+
+
+1.39
+log
+@Fixed known custom attribute handling. They should be recognized by type name, not type identity.
+@
+text
+@d380 1
+a380 1
+				gtpb[i] = new GenericTypeParameterBuilder(names[i], null, this, i);
+@
+
+
+1.38
+log
+@Added CoreCLR target for IKVM.Reflection.
+@
+text
+@d258 1
+a258 3
+			Universe u = this.ModuleBuilder.universe;
+			Type type = customBuilder.Constructor.DeclaringType;
+			if (type == u.System_Runtime_InteropServices_DllImportAttribute)
+d260 14
+a273 19
+				attributes |= MethodAttributes.PinvokeImpl;
+				SetDllImportPseudoCustomAttribute(customBuilder.DecodeBlob(this.Module.Assembly));
+			}
+			else if (type == u.System_Runtime_CompilerServices_MethodImplAttribute)
+			{
+				SetMethodImplAttribute(customBuilder.DecodeBlob(this.Module.Assembly));
+			}
+			else if (type == u.System_Runtime_InteropServices_PreserveSigAttribute)
+			{
+				implFlags |= MethodImplAttributes.PreserveSig;
+			}
+			else if (type == u.System_Runtime_CompilerServices_SpecialNameAttribute)
+			{
+				attributes |= MethodAttributes.SpecialName;
+			}
+			else
+			{
+				if (type == u.System_Security_SuppressUnmanagedCodeSecurityAttribute)
+				{
+d275 4
+a278 2
+				}
+				this.ModuleBuilder.SetCustomAttribute(pseudoToken, customBuilder);
+@
+
+
+1.37
+log
+@It is legal for a MethodBuilder to not have a signature, in that case it defaults to returning void with no parameters.
+@
+text
+@d30 1
+d32 1
+d94 1
+d99 1
+d101 1
+d106 1
+d297 1
+d303 1
+@
+
+
+1.36
+log
+@When calling MethodBuilder.DefineParameter() multiple times for the same parameter, we would (sometimes) not store the ParameterBuilder and this would cause the resulting PE file to be corrupt. Now we store the duplicate Param records like SRE does.
+@
+text
+@d745 2
+a746 1
+					methodSignature = MethodSignature.MakeFromBuilder(returnType, parameterTypes, customModifiers, callingConvention, gtpb == null ? 0 : gtpb.Length);
+@
+
+
+1.35
+log
+@Throw InvalidOperationException when MethodBuilder.DefineGenericParameters() is called a second time.
+@
+text
+@d310 1
+a310 1
+			if (parameters.Count == 0 || position > parameters[parameters.Count - 1].Position)
+@
+
+
+1.34
+log
+@Refactored ILGenerator and MethodBuilder.SetMethodBody() to share more code.
+@
+text
+@d370 4
+@
+
+
+1.33
+log
+@- Added (old) method MethodBuilder.CreateMethodBody() that is now trivial to implement.
+- Fixed bug in SetMethodBody (tokenFixups parameter is allowed to be null).
+@
+text
+@a639 2
+			// TODO this should be refactored to share code with ILGenerator
+			// TODO for now we always write a fat header
+a640 3
+			// fat headers require 4-byte alignment
+			bb.Align(4);
+			rva = bb.Position;
+d642 1
+a642 6
+			const byte CorILMethod_FatFormat = 0x03;
+			const byte CorILMethod_MoreSects = 0x08;
+			const byte CorILMethod_InitLocals = 0x10;
+
+			short flagsAndSize = (short)(CorILMethod_FatFormat | (3 << 12));
+			if (initLocals)
+d644 2
+a645 1
+				flagsAndSize |= CorILMethod_InitLocals;
+d647 1
+a647 3
+
+			List<ExceptionHandler> exceptions = new List<ExceptionHandler>(exceptionHandlers ?? Empty<ExceptionHandler>.Array);
+			if (exceptions.Count > 0)
+d649 5
+a653 1
+				flagsAndSize |= CorILMethod_MoreSects;
+a655 5
+			bb.Write(flagsAndSize);
+			bb.Write(maxStack);
+			bb.Write(il.Length);
+			bb.Write(localSignature == null ? 0 : this.ModuleBuilder.GetSignatureToken(localSignature, localSignature.Length).Token);
+
+d658 1
+a658 5
+				int codeOffset = bb.Position;
+				foreach (int fixup in tokenFixups)
+				{
+					this.ModuleBuilder.tokenFixupOffsets.Add(fixup + codeOffset);
+				}
+d662 1
+a662 1
+			if (exceptions.Count > 0)
+d664 2
+a665 45
+				bb.Align(4);
+
+				bool fat = false;
+				if (exceptions.Count * 12 + 4 > 255)
+				{
+					fat = true;
+				}
+				else
+				{
+					foreach (ExceptionHandler block in exceptions)
+					{
+						if (block.TryOffset > 65535 || block.TryLength > 255 || block.HandlerOffset > 65535 || block.HandlerLength > 255)
+						{
+							fat = true;
+							break;
+						}
+					}
+				}
+				const byte CorILMethod_Sect_EHTable = 0x1;
+				const byte CorILMethod_Sect_FatFormat = 0x40;
+
+				if (fat)
+				{
+					bb.Write((byte)(CorILMethod_Sect_EHTable | CorILMethod_Sect_FatFormat));
+					int dataSize = exceptions.Count * 24 + 4;
+					bb.Write((byte)dataSize);
+					bb.Write((short)(dataSize >> 8));
+					foreach (ExceptionHandler block in exceptions)
+					{
+						bb.Write((int)block.Kind);
+						bb.Write(block.TryOffset);
+						bb.Write(block.TryLength);
+						bb.Write(block.HandlerOffset);
+						bb.Write(block.HandlerLength);
+						if (block.Kind == ExceptionHandlingClauseOptions.Filter)
+						{
+							bb.Write(block.FilterOffset);
+						}
+						else
+						{
+							bb.Write(block.ExceptionTypeToken);
+						}
+					}
+				}
+				else
+d667 1
+a667 19
+					bb.Write(CorILMethod_Sect_EHTable);
+					bb.Write((byte)(exceptions.Count * 12 + 4));
+					bb.Write((short)0);
+					foreach (ExceptionHandler block in exceptions)
+					{
+						bb.Write((short)block.Kind);
+						bb.Write((short)block.TryOffset);
+						bb.Write((byte)block.TryLength);
+						bb.Write((short)block.HandlerOffset);
+						bb.Write((byte)block.HandlerLength);
+						if (block.Kind == ExceptionHandlingClauseOptions.Filter)
+						{
+							bb.Write(block.FilterOffset);
+						}
+						else
+						{
+							bb.Write(block.ExceptionTypeToken);
+						}
+					}
+d669 1
+@
+
+
+1.32
+log
+@Added new .NET 4.5 methods ConstructorBuilder.SetMethodBody() and MethodBuilder.SetMethodBody(). Note that the implementation is currently completely untested.
+@
+text
+@d625 13
+d668 1
+a668 2
+			int codeOffset = bb.Position;
+			foreach (int fixup in tokenFixups)
+d670 5
+a674 1
+				this.ModuleBuilder.tokenFixupOffsets.Add(fixup + codeOffset);
+@
+
+
+1.31
+log
+@Refactored custom attribute handling of MemberInfo types.
+@
+text
+@d625 108
+@
+
+
+1.30
+log
+@Moved method pseudo custom attribute synthesis up into MethodInfo to support them on baked MethodBuilders.
+@
+text
+@d721 1
+a721 1
+		internal override IList<CustomAttributeData> GetCustomAttributesData(Type attributeType)
+d723 1
+a723 6
+			if (!typeBuilder.IsCreated())
+			{
+				// like .NET we we don't return custom attributes for unbaked types
+				throw new NotImplementedException();
+			}
+			return base.GetCustomAttributesData(attributeType);
+@
+
+
+1.29
+log
+@Added new API MethodInfo.__TryGetImplMap().
+@
+text
+@d720 10
+@
+
+
+1.28
+log
+@- Changed [Field|Parameter]Info.__FieldMarshal property to __TryGetFieldMarshal method.
+- Changed FieldMarshal class into a value type with public fields.
+@
+text
+@d708 12
+@
+
+
+1.27
+log
+@- Added new public APIs FieldInfo.__FieldMarshal and ParameterInfo.__FieldMarshal.
+- Moved ParameterInfo pseudo custom attribute handling to CustomAttributeData.
+- Ignore HasFieldMarshal attribute and always return the pseudo custom attribute if a FieldMarshal record exists. This is similar to .NET reflection.
+@
+text
+@d518 1
+a518 1
+			public override FieldMarshal __FieldMarshal
+d520 2
+a521 1
+				get { return null; }
+@
+
+
+1.26
+log
+@Explicitly disallow modifying the method signature after it has been used. We previously didn't support it properly (because method signatures are written to metadata eagerly), now we explicitly disallow it to avoid surprises.
+@
+text
+@d518 5
+@
+
+
+1.25
+log
+@Removed unnecessary code.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008-2011 Jeroen Frijters
+d328 8
+d338 1
+a339 1
+			this.methodSignature = null;
+d344 1
+a345 1
+			this.methodSignature = null;
+d361 1
+a364 1
+			this.methodSignature = null;
+d369 1
+a369 1
+			this.methodSignature = null;
+@
+
+
+1.24
+log
+@Bug fix. If the MethodSignature was previously created and one of its components gets modified, the cached MethodSignature should be thorwn away.
+@
+text
+@d687 1
+a687 12
+			if (typeBuilder.IsGenericTypeDefinition)
+			{
+				return other.ImportMember(TypeBuilder.GetMethod(typeBuilder, this));
+			}
+			else if (other == typeBuilder.ModuleBuilder)
+			{
+				return pseudoToken;
+			}
+			else
+			{
+				return other.ImportMethodOrField(typeBuilder, name, this.MethodSignature);
+			}
+@
+
+
+1.23
+log
+@Previous commit required some MethodBuilder changes too.
+@
+text
+@d331 1
+d337 1
+d356 1
+d361 1
+d422 1
+@
+
+
+1.22
+log
+@Added MethodBase.__MethodRVA property.
+@
+text
+@a303 2
+			// the parameter is named "position", but it is actually a sequence number (i.e. 0 = return parameter, 1 = first parameter)
+			int sequence = position--;
+d309 1
+a309 1
+			ParameterBuilder pb = new ParameterBuilder(this.ModuleBuilder, sequence, attributes, strParamName);
+d444 2
+a445 1
+							if (pb.Position == parameter)
+@
+
+
+1.21
+log
+@Avoid the need for (expensive) ResolveMethod call by maintaining a map from token to MethodBase. Thanks to Miguel Alfredo Garcia Gutierrez for pointing this out.
+@
+text
+@d591 5
+@
+
+
+1.20
+log
+@- Rewrote custom modifier handling to retain ordering.
+- Added ConstructorInfo.__ReturnParameter to expose custom modifiers.
+- Added __GetCustomModifiers() to various *Info types.
+- Added CustomModifiers type to encapsulate a custom modifier sequence.
+- Added CustomModifiersBuilder to create a CustomModifiers sequence.
+- Marked a number of IKVM.Reflection specific methods Obsolete, because they are replaced with method that take CustomModifiers value(s).
+@
+text
+@d94 1
+a94 1
+					this.ModuleBuilder.symbolWriter.OpenMethod(new SymbolToken(-pseudoToken | 0x06000000));
+@
+
+
+1.19
+log
+@Added high level API extension MethodBuilder.__AddUnmanagedExport().
+@
+text
+@d45 1
+a45 1
+		private Type[][][] modifiers;	// see PackedCustomModifiers
+d342 11
+d355 1
+a355 2
+			this.modifiers = PackedCustomModifiers.CreateFromExternal(returnTypeOptionalCustomModifiers, returnTypeRequiredCustomModifiers,
+				parameterTypeOptionalCustomModifiers, parameterTypeRequiredCustomModifiers, this.parameterTypes.Length);
+d501 1
+a501 15
+			private Type[] GetCustomModifiers(int optOrReq)
+			{
+				if (method.modifiers == null || method.modifiers[parameter + 1] == null)
+				{
+					return Type.EmptyTypes;
+				}
+				return Util.Copy(method.modifiers[parameter + 1][optOrReq]);
+			}
+
+			public override Type[] GetOptionalCustomModifiers()
+			{
+				return GetCustomModifiers(0);
+			}
+
+			public override Type[] GetRequiredCustomModifiers()
+d503 1
+a503 1
+				return GetCustomModifiers(1);
+d670 1
+a670 1
+					methodSignature = MethodSignature.MakeFromBuilder(returnType, parameterTypes, modifiers, callingConvention, gtpb == null ? 0 : gtpb.Length);
+@
+
+
+1.18
+log
+@Added API extension to set the calling convention (without it being meddled with).
+@
+text
+@d601 5
+@
+
+
+1.17
+log
+@Added MethodBuilder.__ReleaseILGenerator() API to eagerly bake the method body and release the ILGenerator.
+@
+text
+@d50 1
+a50 1
+		private readonly CallingConventions callingConvention;
+d407 5
+@
+
+
+1.16
+log
+@Allocate method name token during Bake() instead of constructor to prepare for allowing missing methods in type builders to be resolved to method builders (possible future enhancement).
+@
+text
+@d49 1
+a49 1
+		private int rva;
+d77 4
+d88 17
+d601 1
+a601 17
+			if (ilgen != null)
+			{
+				if (this.ModuleBuilder.symbolWriter != null)
+				{
+					this.ModuleBuilder.symbolWriter.OpenMethod(new SymbolToken(-pseudoToken | 0x06000000));
+				}
+				rva = ilgen.WriteBody(initLocals);
+				if (this.ModuleBuilder.symbolWriter != null)
+				{
+					this.ModuleBuilder.symbolWriter.CloseMethod();
+				}
+				ilgen = null;
+			}
+			else
+			{
+				rva = -1;
+			}
+@
+
+
+1.15
+log
+@Keep Param table records is correct order.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008-2010 Jeroen Frijters
+a39 1
+		private readonly int nameIndex;
+d41 1
+a61 3
+			// because all the MethodBuilders constitute a virtual MethodDef table, we cannot allocate the string during WriteMethodDefRecord,
+			// since by then the metadata has already been frozen
+			this.nameIndex = typeBuilder.ModuleBuilder.Strings.Add(name);
+a124 1
+			int name = this.nameIndex;
+a172 4
+			if (entryName != null)
+			{
+				name = this.ModuleBuilder.Strings.Add(entryName);
+			}
+d188 1
+a188 1
+			rec.ImportName = name;
+d577 1
+@
+
+
+1.14
+log
+@- Added IKVM.Reflection.Missing type.
+- Fixed ParameterInfo.RawDefaultValue to return Missing.Value if the parameter is optional, but doesn't have a default and to return null, if the parameter isn't optional (and doesn't have a default).
+@
+text
+@d291 2
+d298 16
+a313 2
+			ParameterBuilder pb = new ParameterBuilder(this.ModuleBuilder, position, attributes, strParamName);
+			parameters.Add(pb);
+@
+
+
+1.13
+log
+@Renamed StandAloneSigTable and ModuleRefTable Add methods to FindOrAddRecord for clarity and consistency with the other FindOrAddRecord methods.
+@
+text
+@d449 4
+@
+
+
+1.12
+log
+@Fixed ImportTo to use canonical form, which for methods on generic type definitions is the Generic[Method|Field]Instance, instead of the builder. This fixes a duplicate MemberRef row issue when using both the MethodBuilder and the "expanded" form (TypeBuilder.GetMethod(...)).
+@
+text
+@d197 1
+a197 1
+			rec.ImportScope = this.ModuleBuilder.ModuleRef.Add(dllName == null ? 0 : this.ModuleBuilder.Strings.Add(dllName));
+@
+
+
+1.11
+log
+@Added TypeBuilder.__SetAttributes() and MethodBuilder.__SetAttributes() to allow modying the attributes after the builder has been created.
+@
+text
+@d654 5
+a658 1
+			if (other == typeBuilder.ModuleBuilder && !typeBuilder.IsGenericTypeDefinition)
+@
+
+
+1.10
+log
+@Made custom modifier packing more efficient and shared between MethodSignature and MethodBuilder.
+@
+text
+@d373 5
+@
+
+
+1.9
+log
+@Null check was in the wrong place.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008, 2009 Jeroen Frijters
+d45 1
+a45 2
+		private Type[][] optionalCustomModifiers;	// last element is for the return type
+		private Type[][] requiredCustomModifiers;
+a72 25
+		private static Type[][] PackCustomModifiers(Type[] returnTypeCustomModifiers, Type[][] parameterTypeCustomModifiers, int parameterCount)
+		{
+			if (returnTypeCustomModifiers == null && parameterTypeCustomModifiers == null)
+			{
+				return null;
+			}
+			Type[][] newArray = new Type[parameterCount + 1][];
+			newArray[parameterCount] = Util.Copy(returnTypeCustomModifiers);
+			if (parameterTypeCustomModifiers != null)
+			{
+				for (int i = 0; i < parameterCount; i++)
+				{
+					newArray[i] = Util.Copy(parameterTypeCustomModifiers[i]);
+				}
+			}
+			else
+			{
+				for (int i = 0; i < parameterCount; i++)
+				{
+					newArray[i] = Type.EmptyTypes;
+				}
+			}
+			return newArray;
+		}
+
+d315 2
+a316 2
+			this.requiredCustomModifiers = PackCustomModifiers(returnTypeRequiredCustomModifiers, parameterTypeRequiredCustomModifiers, this.parameterTypes.Length);
+			this.optionalCustomModifiers = PackCustomModifiers(returnTypeOptionalCustomModifiers, parameterTypeOptionalCustomModifiers, this.parameterTypes.Length);
+d448 1
+a448 1
+			public override Type[] GetOptionalCustomModifiers()
+d450 1
+a450 1
+				if (method.optionalCustomModifiers == null)
+d454 6
+a459 2
+				int index = parameter == -1 ? method.optionalCustomModifiers.Length - 1 : parameter;
+				return Util.Copy(method.optionalCustomModifiers[index]);
+d464 1
+a464 6
+				if (method.requiredCustomModifiers == null)
+				{
+					return Type.EmptyTypes;
+				}
+				int index = parameter == -1 ? method.requiredCustomModifiers.Length - 1 : parameter;
+				return Util.Copy(method.requiredCustomModifiers[index]);
+d641 1
+a641 1
+					methodSignature = MethodSignature.MakeFromBuilder(returnType, parameterTypes, optionalCustomModifiers, requiredCustomModifiers, callingConvention, gtpb == null ? 0 : gtpb.Length);
+@
+
+
+1.8
+log
+@Don't crash when a DllImportAttribute doesn't have an ImportScope (which can happen for C++ code).
+@
+text
+@d223 1
+a223 1
+			rec.ImportScope = dllName == null ? 0 : this.ModuleBuilder.ModuleRef.Add(this.ModuleBuilder.Strings.Add(dllName));
+@
+
+
+1.7
+log
+@Implemented GenericTypeParameterBuilder.GenericParameterAttributes.
+@
+text
+@d223 1
+a223 1
+			rec.ImportScope = this.ModuleBuilder.ModuleRef.Add(this.ModuleBuilder.Strings.Add(dllName));
+@
+
+
+1.6
+log
+@Moved common metadata table record adding code to GenericTypeParameterBuilder constructor and did some other GenericTypeParameterBuilder clean up.
+@
+text
+@d685 5
+@
+
+
+1.5
+log
+@DllImportAttribute implies MethodAttributes.PinvokeImpl.
+@
+text
+@d350 1
+a350 6
+				GenericParamTable.Record rec = new GenericParamTable.Record();
+				rec.Number = (short)i;
+				rec.Flags = 0;
+				rec.Owner = pseudoToken;
+				rec.Name = this.ModuleBuilder.Strings.Add(names[i]);
+				gtpb[i] = new GenericTypeParameterBuilder(this.ModuleBuilder, names[i], null, this, this.ModuleBuilder.GenericParam.AddRecord(rec), i);
+@
+
+
+1.4
+log
+@Removed accidentally checked in test code.
+@
+text
+@d269 1
+@
+
+
+1.3
+log
+@MethodBuilder should implement GetGenericMethodArgument() and GetGenericMethodArgumentCount(), to allow type parameter binding to work (even though it is a no-op).
+@
+text
+@a379 2
+			Console.WriteLine(new StackTrace());
+			Environment.Exit(0);
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d378 12
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

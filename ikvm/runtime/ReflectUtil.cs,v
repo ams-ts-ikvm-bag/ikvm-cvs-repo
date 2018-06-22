@@ -1,0 +1,834 @@
+head	1.22;
+access;
+symbols
+	v8_1_5717_0:1.22
+	v8_1:1.22.0.4
+	v8_0_5449_1:1.22
+	v8_0_5449_0:1.22
+	v8_0:1.22.0.2
+	v7_4_5196_0:1.21
+	v7_4:1.21.0.2
+	v7_3:1.20.0.2
+	v7_2_4630_6:1.16.2.2
+	v7_2_4630_5:1.16.2.2
+	v7_2_4630_4:1.16.2.2
+	v7_2_4630_3:1.16.2.2
+	v7_2_4630_2:1.16.2.1
+	v0_46_0_4:1.10
+	v7_2_4630_1:1.16.2.1
+	v7_2:1.16.0.2
+	v7_1_4532_2:1.12
+	v7_1_4532_1:1.12
+	v7_1_4532_0:1.12
+	v7_1:1.12.0.4
+	v7_0_4335_3:1.12
+	v7_0_4335_2:1.12
+	v7_0_4335_1:1.12
+	v0_46_0_2:1.10
+	v7_0_4335_0:1.12
+	v7_0:1.12.0.2
+	v0_40_0_6:1.1
+	v0_40_0_5:1.1
+	v0_46_0_1:1.10
+	v0_46_0_0:1.10
+	v0_46:1.10.0.4
+	v0_44_0_6:1.10
+	v0_44_0_5:1.10
+	v0_44_0_4:1.10
+	v0_44_0_3:1.10
+	v0_44_0_2:1.10
+	v0_42_0_7:1.5.2.2
+	v0_44_0_1:1.10
+	v0_44_0_0:1.10
+	v0_44:1.10.0.2
+	v0_42_0_6:1.5.2.2
+	v0_42_0_5:1.5.2.1
+	v0_42_0_4:1.5.2.1
+	v0_42_0_3:1.5.2.1
+	v0_42_0_2:1.5.2.1
+	v0_42_0_1:1.5
+	v0_42_0_0:1.5
+	v0_42:1.5.0.2
+	v0_40_0_3:1.1
+	v0_40_0_2:1.1
+	v0_40_0_1:1.1
+	v0_40_0_0:1.1
+	v0_40:1.1.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.22
+date	2014.04.11.13.03.37;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2013.05.10.06.16.58;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2013.03.06.15.26.04;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2013.01.15.14.20.38;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2012.10.19.19.25.33;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2012.09.11.12.00.46;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2012.08.29.07.05.37;	author jfrijters;	state Exp;
+branches
+	1.16.2.1;
+next	1.15;
+
+1.15
+date	2012.08.16.11.32.27;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2012.08.15.08.45.39;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2012.06.25.14.32.07;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2011.08.06.11.00.10;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2011.07.25.23.11.10;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2010.03.18.13.43.54;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2010.01.29.06.58.10;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2010.01.28.09.18.34;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2010.01.25.07.53.12;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2009.10.21.04.43.27;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2009.07.28.13.02.30;	author jfrijters;	state Exp;
+branches
+	1.5.2.1;
+next	1.4;
+
+1.4
+date	2009.07.20.06.51.28;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2009.05.28.05.58.35;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2009.05.25.13.42.16;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.11.14.08.42.07;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.5.2.1
+date	2009.10.26.04.49.21;	author jfrijters;	state Exp;
+branches;
+next	1.5.2.2;
+
+1.5.2.2
+date	2010.04.06.05.10.26;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.16.2.1
+date	2012.09.17.11.17.31;	author jfrijters;	state Exp;
+branches;
+next	1.16.2.2;
+
+1.16.2.2
+date	2012.10.23.08.15.53;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.22
+log
+@Centralized switches to control C# interop workarounds.
+@
+text
+@﻿/*
+  Copyright (C) 2008-2012 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+#if STATIC_COMPILER || STUB_GENERATOR
+using IKVM.Reflection;
+using IKVM.Reflection.Emit;
+using Type = IKVM.Reflection.Type;
+#else
+using System.Reflection;
+using System.Reflection.Emit;
+#endif
+
+namespace IKVM.Internal
+{
+	static class ReflectUtil
+	{
+#if !NET_4_0 && !STATIC_COMPILER && !STUB_GENERATOR
+		private static readonly bool clr_v4 = Environment.Version.Major >= 4;
+		private static Predicate<Assembly> get_IsDynamic;
+#endif
+
+		internal static bool IsSameAssembly(Type type1, Type type2)
+		{
+			return type1.Assembly.Equals(type2.Assembly);
+		}
+
+		internal static bool IsFromAssembly(Type type, Assembly assembly)
+		{
+			return type.Assembly.Equals(assembly);
+		}
+
+		internal static Assembly GetAssembly(Type type)
+		{
+			return type.Assembly;
+		}
+
+		internal static bool IsDynamicAssembly(Assembly asm)
+		{
+#if STATIC_COMPILER || STUB_GENERATOR
+			return false;
+#elif NET_4_0
+			return asm.IsDynamic;
+#else
+			if (clr_v4)
+			{
+				// on .NET 4.0 dynamic assemblies have a non-AssemblyBuilder derived peer, so we have to call IsDynamic
+				if (get_IsDynamic == null)
+				{
+					get_IsDynamic = (Predicate<Assembly>)Delegate.CreateDelegate(typeof(Predicate<Assembly>), typeof(Assembly).GetMethod("get_IsDynamic"));
+				}
+				return get_IsDynamic(asm);
+			}
+			return asm is AssemblyBuilder;
+#endif
+		}
+
+		internal static bool IsReflectionOnly(Type type)
+		{
+			while (type.HasElementType)
+			{
+				type = type.GetElementType();
+			}
+			Assembly asm = type.Assembly;
+			if (asm != null && asm.ReflectionOnly)
+			{
+				return true;
+			}
+			if (!type.IsGenericType || type.IsGenericTypeDefinition)
+			{
+				return false;
+			}
+			// we have a generic type instantiation, it might have ReflectionOnly type arguments
+			foreach (Type arg in type.GetGenericArguments())
+			{
+				if (IsReflectionOnly(arg))
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+
+		internal static bool ContainsTypeBuilder(Type type)
+		{
+			while (type.HasElementType)
+			{
+				type = type.GetElementType();
+			}
+			if (!type.IsGenericType || type.IsGenericTypeDefinition)
+			{
+				return type is TypeBuilder;
+			}
+			foreach (Type arg in type.GetGenericArguments())
+			{
+				if (ContainsTypeBuilder(arg))
+				{
+					return true;
+				}
+			}
+			return type.GetGenericTypeDefinition() is TypeBuilder;
+		}
+
+		internal static bool IsVector(Type type)
+		{
+#if STATIC_COMPILER || STUB_GENERATOR
+			return type.__IsVector;
+#else
+			// there's no API to distinguish an array of rank 1 from a vector,
+			// so we check if the type name ends in [], which indicates it's a vector
+			// (non-vectors will have [*] or [,]).
+			return type.IsArray && type.Name.EndsWith("[]");
+#endif
+		}
+
+		internal static bool IsDynamicMethod(MethodInfo method)
+		{
+			// there's no way to distinguish a baked DynamicMethod from a RuntimeMethodInfo and
+			// on top of that Mono behaves completely different from .NET
+			try
+			{
+				// on Mono 2.10 the MetadataToken property returns zero instead of throwing InvalidOperationException
+				return method.MetadataToken == 0;
+			}
+			catch (InvalidOperationException)
+			{
+				return true;
+			}
+		}
+
+		internal static MethodBuilder DefineTypeInitializer(TypeBuilder typeBuilder, ClassLoaderWrapper loader)
+		{
+			MethodAttributes attr = MethodAttributes.Static | MethodAttributes.RTSpecialName | MethodAttributes.SpecialName;
+			if (typeBuilder.IsInterface && loader.WorkaroundInterfacePrivateMethods)
+			{
+				// LAMESPEC the ECMA spec says (part. I, sect. 8.5.3.2) that all interface members must be public, so we make
+				// the class constructor public.
+				// NOTE it turns out that on .NET 2.0 this isn't necessary anymore (neither Ref.Emit nor the CLR verifier complain about it),
+				// but the C# compiler still considers interfaces with non-public methods to be invalid, so to keep interop with C# we have
+				// to keep making the .cctor method public.
+				attr |= MethodAttributes.Public;
+			}
+			else
+			{
+				attr |= MethodAttributes.Private;
+			}
+			return typeBuilder.DefineMethod(ConstructorInfo.TypeConstructorName, attr, null, Type.EmptyTypes);
+		}
+
+		internal static bool MatchNameAndPublicKeyToken(AssemblyName name1, AssemblyName name2)
+		{
+			return name1.Name.Equals(name2.Name, StringComparison.OrdinalIgnoreCase)
+				&& CompareKeys(name1.GetPublicKeyToken(), name2.GetPublicKeyToken());
+		}
+
+		private static bool CompareKeys(byte[] b1, byte[] b2)
+		{
+			int len1 = b1 == null ? 0 : b1.Length;
+			int len2 = b2 == null ? 0 : b2.Length;
+			if (len1 != len2)
+			{
+				return false;
+			}
+			for (int i = 0; i < len1; i++)
+			{
+				if (b1[i] != b2[i])
+				{
+					return false;
+				}
+			}
+			return true;
+		}
+
+		internal static bool IsConstructor(MethodBase method)
+		{
+			return method.IsSpecialName && method.Name == ConstructorInfo.ConstructorName;
+		}
+
+		internal static MethodBuilder DefineConstructor(TypeBuilder tb, MethodAttributes attribs, Type[] parameterTypes)
+		{
+			return tb.DefineMethod(ConstructorInfo.ConstructorName, attribs | MethodAttributes.SpecialName | MethodAttributes.RTSpecialName, null, parameterTypes);
+		}
+
+		internal static bool CanOwnDynamicMethod(Type type)
+		{
+			return type != null
+				&& !type.IsInterface
+				&& !type.HasElementType
+				&& !type.IsGenericTypeDefinition
+				&& !type.IsGenericParameter;
+		}
+
+		internal static bool MatchParameterInfos(ParameterInfo p1, ParameterInfo p2)
+		{
+			if (p1.ParameterType != p2.ParameterType)
+			{
+				return false;
+			}
+			if (!MatchTypes(p1.GetOptionalCustomModifiers(), p2.GetOptionalCustomModifiers()))
+			{
+				return false;
+			}
+			if (!MatchTypes(p1.GetRequiredCustomModifiers(), p2.GetRequiredCustomModifiers()))
+			{
+				return false;
+			}
+			return true;
+		}
+
+		private static bool MatchTypes(Type[] t1, Type[] t2)
+		{
+			if (t1.Length == t2.Length)
+			{
+				for (int i = 0; i < t1.Length; i++)
+				{
+					if (t1[i] != t2[i])
+					{
+						return false;
+					}
+				}
+				return true;
+			}
+			return false;
+		}
+
+#if STATIC_COMPILER
+		internal static Type GetMissingType(Type type)
+		{
+			while (type.HasElementType)
+			{
+				type = type.GetElementType();
+			}
+			if (type.__IsMissing)
+			{
+				return type;
+			}
+			else if (type.__ContainsMissingType)
+			{
+				if (type.IsGenericType)
+				{
+					foreach (Type arg in type.GetGenericArguments())
+					{
+						Type t1 = GetMissingType(arg);
+						if (t1.__IsMissing)
+						{
+							return t1;
+						}
+					}
+				}
+				throw new NotImplementedException(type.FullName);
+			}
+			else
+			{
+				return type;
+			}
+		}
+#endif
+	}
+}
+@
+
+
+1.21
+log
+@Replaced incorrect usage of StringComparison.InvariantCultureIgnoreCase with StringComparison.OrdinalIgnoreCase.
+@
+text
+@d151 1
+a151 1
+		internal static MethodBuilder DefineTypeInitializer(TypeBuilder typeBuilder)
+d154 1
+a154 1
+			if (typeBuilder.IsInterface)
+@
+
+
+1.20
+log
+@Implemented Java 8 default interface methods.
+@
+text
+@d172 1
+a172 1
+			return name1.Name.Equals(name2.Name, StringComparison.InvariantCultureIgnoreCase)
+@
+
+
+1.19
+log
+@If the missing type is a constructed type, extract the real missing type from it.
+@
+text
+@d213 33
+@
+
+
+1.18
+log
+@Bug fix. Don't try to inject DynamicMethod in array types (applies to array.clone() method for MethodHandles).
+@
+text
+@d212 33
+@
+
+
+1.17
+log
+@Removed more ConstructorBuilder usage to fix regression (constructor custom attributes specified map.xml were not applied).
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008-2011 Jeroen Frijters
+d203 9
+@
+
+
+1.16
+log
+@Fixed regression caused by ConstructorBuilder removal. We can no longer test for MethodInfo or ConstructorInfo to distinguish the two.
+@
+text
+@d198 5
+@
+
+
+1.16.2.1
+log
+@- Fixed build number
+- Fixed .NET 4.0 build issues
+- Fixed map.xml custom attribute application regression
+- Updated HOWTO
+@
+text
+@a197 5
+
+		internal static MethodBuilder DefineConstructor(TypeBuilder tb, MethodAttributes attribs, Type[] parameterTypes)
+		{
+			return tb.DefineMethod(ConstructorInfo.ConstructorName, attribs | MethodAttributes.SpecialName | MethodAttributes.RTSpecialName, null, parameterTypes);
+		}
+@
+
+
+1.16.2.2
+log
+@Backported fixes for rc 3.
+- Bug fix. Off-by-one error in local ref index reusing. Fix for bug #3575555.
+- Bug fix. Don't try to inject DynamicMethod in array types (applies to array.clone() method for MethodHandles).
+- IKVM.Reflection: Bug fix. ModuleReader.ResolveMember() should support types. Thanks to Jb Evain for finding this.
+- IKVM.Reflection: Bug fix. While reading the Cecil source I realized that array bounds are signed.
+- IKVM.Reflection: Bug fix. LocalBuilder should extend LocalVariableInfo.
+- IKVM.Reflection: Implemented LocalVariableInfo.ToString().
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008-2012 Jeroen Frijters
+a202 9
+
+		internal static bool CanOwnDynamicMethod(Type type)
+		{
+			return type != null
+				&& !type.IsInterface
+				&& !type.HasElementType
+				&& !type.IsGenericTypeDefinition
+				&& !type.IsGenericParameter;
+		}
+@
+
+
+1.15
+log
+@Fixed InternalsVisibleToAttribute handling to take the public key into account as well.
+@
+text
+@d193 5
+@
+
+
+1.14
+log
+@Stop using ConstructorBuilder (always use MethodBuilder).
+@
+text
+@d169 24
+@
+
+
+1.13
+log
+@Moved TypeBuilder.DefineTypeInitializer() workaround to ReflectUtil.
+@
+text
+@d151 1
+a151 1
+		internal static ConstructorBuilder DefineTypeInitializer(TypeBuilder typeBuilder)
+d153 1
+d161 1
+a161 1
+				return typeBuilder.DefineConstructor(MethodAttributes.Static | MethodAttributes.Public, CallingConventions.Standard, Type.EmptyTypes);
+d163 5
+a167 1
+			return typeBuilder.DefineTypeInitializer();
+@
+
+
+1.12
+log
+@Implemented a large chunk of MethodHandle support.
+@
+text
+@d150 14
+@
+
+
+1.11
+log
+@Merge in java.lang.invoke package and the beginnings of MethodHandle support.
+@
+text
+@d135 15
+@
+
+
+1.10
+log
+@IKVM.Reflection.Assembly doesn't have the IsDynamic property.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008 Jeroen Frijters
+d104 20
+@
+
+
+1.9
+log
+@- Moved ClassLoaderWrapper.IsVector() and TypeWrapper.IsReflectionOnly() to ReflectUtil.
+- Fixed IsReflectionOnly() to handle more complicated constructed types.
+- Optimized IsDynamic() to use a delegate to call get_IsDynamic when running on .NET 4.0
+- Optimized IsVector() to use __IsVector when IKVM.Reflection is used.
+@
+text
+@d60 3
+a62 1
+#if NET_4_0
+a63 2
+#elif STATIC_COMPILER || STUB_GENERATOR
+			return false;
+@
+
+
+1.8
+log
+@Removed IKVM_REF_EMIT, as STATIC_COMPILER or STUB_GENERATOR now always implies IKVM.Reflection.
+@
+text
+@d38 1
+d40 2
+d68 5
+a72 1
+				return (bool)typeof(Assembly).InvokeMember("get_IsDynamic", BindingFlags.Instance | BindingFlags.Public | BindingFlags.InvokeMethod, null, asm, null);
+d77 38
+@
+
+
+1.7
+log
+@Integrated new IKVM.Reflection implementation.
+@
+text
+@d25 1
+a25 1
+#if IKVM_REF_EMIT
+d59 1
+a59 1
+#elif IKVM_REF_EMIT
+@
+
+
+1.6
+log
+@Removed .NET 4.0 beta 1 workarounds and did some minor updates for .NET 4.0 beta 2.
+@
+text
+@a24 1
+using System.Reflection;
+d26 1
+d28 1
+d30 1
+a41 3
+#if IKVM_REF_EMIT && !NET_4_0
+			return IkvmAssembly.GetAssembly(type1) == IkvmAssembly.GetAssembly(type2);
+#else
+a42 1
+#endif
+a44 6
+#if IKVM_REF_EMIT && !NET_4_0
+		internal static bool IsFromAssembly(Type type, IkvmAssembly assembly)
+		{
+			return IkvmAssembly.GetAssembly(type) == assembly;
+		}
+#else
+a48 1
+#endif
+a49 6
+#if IKVM_REF_EMIT && !NET_4_0
+		internal static IkvmAssembly GetAssembly(Type type)
+		{
+			return IkvmAssembly.GetAssembly(type);
+		}
+#else
+a53 1
+#endif
+@
+
+
+1.5
+log
+@Remove compilation warning. In ikvmc (with IKVM_REF_EMIT defined) an Assembly can never be an AssemblyBuilder.
+@
+text
+@d74 1
+a74 1
+			return asm.IsDynamic();
+d81 1
+a81 1
+				return (bool)typeof(Assembly).InvokeMember("IsDynamic", BindingFlags.Instance | BindingFlags.Public | BindingFlags.InvokeMethod, null, asm, null);
+@
+
+
+1.5.2.1
+log
+@Update for .NET 4.0 beta 2.
+@
+text
+@d74 1
+a74 1
+			return asm.IsDynamic;
+d81 1
+a81 1
+				return (bool)typeof(Assembly).InvokeMember("get_IsDynamic", BindingFlags.Instance | BindingFlags.Public | BindingFlags.InvokeMethod, null, asm, null);
+@
+
+
+1.5.2.2
+log
+@back ported fix: don't use Type.IsArray when we only want to deal with vectors.
+@
+text
+@a85 8
+
+		internal static bool IsVector(Type type)
+		{
+			// there's no API to distinguish an array of rank 1 from a vector,
+			// so we check if the type name ends in [], which indicates it's a vector
+			// (non-vectors will have [*] or [,]).
+			return type.IsArray && type.Name.EndsWith("[]");
+		}
+@
+
+
+1.4
+log
+@Fixed detection of dynamic assemblies. Previous manifest module name based hack didn't work on localized versions.
+@
+text
+@d75 2
+@
+
+
+1.3
+log
+@Made dynamic assembly detection more reliable and moved the utility method to ReflectUtil.
+@
+text
+@d36 2
+d76 6
+a81 4
+			// HACK pre-.NET 4.0 there is no API for this
+			string manifest = asm.ManifestModule.Name;
+			return manifest == "<In Memory Module>" 		// .NET name
+				|| manifest == "Default Dynamic Module";	// Mono name
+@
+
+
+1.2
+log
+@When building for .NET 4.0 we can derived ModuleBuilder from Module and AssemblyBuilder from Assembly.
+@
+text
+@d68 12
+@
+
+
+1.1
+log
+@Integrated IKVM.Reflection.Emit in ikvmc.
+@
+text
+@d38 1
+a38 1
+#if IKVM_REF_EMIT
+d45 1
+a45 1
+#if IKVM_REF_EMIT
+d57 1
+a57 1
+#if IKVM_REF_EMIT
+@
+

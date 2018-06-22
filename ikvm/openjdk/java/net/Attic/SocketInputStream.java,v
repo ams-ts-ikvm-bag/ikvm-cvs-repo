@@ -1,0 +1,800 @@
+head	1.10;
+access;
+symbols
+	v8_0_5449_1:1.9
+	v8_0_5449_0:1.9
+	v8_0:1.9.0.2
+	v7_4_5196_0:1.8
+	v7_4:1.8.0.2
+	v7_3:1.7.0.8
+	v7_2_4630_6:1.7
+	v7_2_4630_5:1.7
+	v7_2_4630_4:1.7
+	v7_2_4630_3:1.7
+	v7_2_4630_2:1.7
+	v0_46_0_4:1.6
+	v7_2_4630_1:1.7
+	v7_2:1.7.0.6
+	v7_1_4532_2:1.7
+	v7_1_4532_1:1.7
+	v7_1_4532_0:1.7
+	v7_1:1.7.0.4
+	v7_0_4335_3:1.7
+	v7_0_4335_2:1.7
+	v7_0_4335_1:1.7
+	v0_46_0_2:1.6
+	v7_0_4335_0:1.7
+	v7_0:1.7.0.2
+	v0_40_0_6:1.3
+	v0_40_0_5:1.3
+	v0_46_0_1:1.6
+	v0_46_0_0:1.6
+	v0_46:1.6.0.2
+	v0_36_0_14:1.1
+	v0_44_0_6:1.3
+	v0_44_0_5:1.3
+	v0_44_0_4:1.3
+	v0_44_0_3:1.3
+	v0_44_0_2:1.3
+	v0_42_0_7:1.3
+	v0_44_0_1:1.3
+	v0_44_0_0:1.3
+	v0_44:1.3.0.8
+	v0_42_0_6:1.3
+	v0_42_0_5:1.3
+	v0_42_0_4:1.3
+	v0_42_0_3:1.3
+	v0_42_0_2:1.3
+	v0_42_0_1:1.3
+	v0_42_0_0:1.3
+	v0_42:1.3.0.6
+	v0_40_0_3:1.3
+	v0_40_0_2:1.3
+	v0_40_0_1:1.3
+	v0_40_0_0:1.3
+	v0_40:1.3.0.4
+	v0_36_0_13:1.1
+	v0_38_0_1:1.3
+	v0_38_0_0:1.3
+	v0_38:1.3.0.2
+	v0_36_0_9:1.1
+	v0_36_0_7:1.1
+	v0_36_0_5:1.1
+	v0_36_0_4:1.1
+	v0_36_0_3:1.1
+	v0_36_0_2:1.1
+	v0_36_0_1:1.1
+	v0_36_0_0:1.1
+	v0_36:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.10
+date	2015.06.26.14.41.59;	author jfrijters;	state dead;
+branches;
+next	1.9;
+
+1.9
+date	2014.05.19.12.43.39;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2013.08.15.14.27.57;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2011.07.07.08.32.55;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2011.01.24.16.40.22;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2010.10.11.14.48.40;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.09.09.06.55.31;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.06.12.09.09.50;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.06.11.09.05.25;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.07.12.08.40.33;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.10
+log
+@Unforked java/net/SocketInputStream.java and java/net/SocketOutputStream.java.
+@
+text
+@/*
+ * Copyright (c) 1995, 2013, Oracle and/or its affiliates. All rights reserved.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 only, as
+ * published by the Free Software Foundation.  Oracle designates this
+ * particular file as subject to the "Classpath" exception as provided
+ * by Oracle in the LICENSE file that accompanied this code.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * You should have received a copy of the GNU General Public License version
+ * 2 along with this work; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+ * or visit www.oracle.com if you need additional information or have any
+ * questions.
+ */
+
+package java.net;
+
+import java.io.FileDescriptor;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.nio.channels.FileChannel;
+import static ikvm.internal.Winsock.*;
+import static java.net.net_util_md.*;
+
+import sun.net.ConnectionResetException;
+
+/**
+ * This stream extends FileInputStream to implement a
+ * SocketInputStream. Note that this class should <b>NOT</b> be
+ * public.
+ *
+ * @@author      Jonathan Payne
+ * @@author      Arthur van Hoff
+ */
+class SocketInputStream extends FileInputStream
+{
+
+    private boolean eof;
+    private AbstractPlainSocketImpl impl = null;
+    private byte temp[];
+    private Socket socket = null;
+
+    /**
+     * Creates a new SocketInputStream. Can only be called
+     * by a Socket. This method needs to hang on to the owner Socket so
+     * that the fd will not be closed.
+     * @@param impl the implemented socket input stream
+     */
+    SocketInputStream(AbstractPlainSocketImpl impl) throws IOException {
+        super(impl.getFileDescriptor());
+        this.impl = impl;
+        socket = impl.getSocket();
+    }
+
+    /**
+     * Returns the unique {@@link java.nio.channels.FileChannel FileChannel}
+     * object associated with this file input stream.</p>
+     *
+     * The {@@code getChannel} method of {@@code SocketInputStream}
+     * returns {@@code null} since it is a socket based stream.</p>
+     *
+     * @@return  the file channel associated with this file input stream
+     *
+     * @@since 1.4
+     * @@spec JSR-51
+     */
+    public final FileChannel getChannel() {
+        return null;
+    }
+
+    /**
+     * Reads into an array of bytes at the specified offset using
+     * the received socket primitive.
+     * @@param fd the FileDescriptor
+     * @@param b the buffer into which the data is read
+     * @@param off the start offset of the data
+     * @@param len the maximum number of bytes read
+     * @@param timeout the read timeout in ms
+     * @@return the actual number of bytes read, -1 is
+     *          returned when the end of the stream is reached.
+     * @@exception IOException If an I/O error has occurred.
+     */
+    private int socketRead0(FileDescriptor fdObj, byte bufP[], int off, int len, int timeout) throws IOException
+    {
+        // [IKVM] this method is a direct port of the native code in openjdk6-b18\jdk\src\windows\native\java\net\SocketInputStream.c
+        cli.System.Net.Sockets.Socket fd = null;
+        int nread;
+        
+        if (IS_NULL(fdObj)) {
+            throw new SocketException("socket closed");
+        }
+        fd = fdObj.getSocket();
+        if (fd == null) {
+            throw new SocketException("Socket closed");
+        }
+
+        if (timeout != 0) {
+            if (timeout <= 5000 || !isRcvTimeoutSupported) {
+                int ret = NET_Timeout (fd, timeout);
+                
+                if (ret <= 0) {
+                    if (ret == 0) {
+                        throw new SocketTimeoutException("Read timed out");
+                    } else {
+                        // [IKVM] the OpenJDK native code is broken and always throws this exception on any failure of NET_Timeout
+                        throw new SocketException("socket closed");
+                    }
+                }
+                
+                /*check if the socket has been closed while we were in timeout*/
+                if (fdObj.getSocket() == null) {
+                    throw new SocketException("Socket Closed");
+                }
+            }
+        }
+        
+        nread = recv(fd, bufP, off, len, 0);
+        if (nread > 0) {
+            // ok
+        } else {
+            if (nread < 0) {
+                /*
+                 * Recv failed.
+                 */
+                switch (WSAGetLastError()) {
+                    case WSAEINTR:
+                        throw new SocketException("socket closed");
+
+                    case WSAECONNRESET:
+                    case WSAESHUTDOWN:
+                        /*
+                         * Connection has been reset - Windows sometimes reports
+                         * the reset as a shutdown error.
+                         */
+                        throw new ConnectionResetException();
+
+                    case WSAETIMEDOUT :
+                        throw new SocketTimeoutException("Read timed out");
+
+                    default:
+                        throw NET_ThrowCurrent("recv failed");
+                }
+            }
+        }
+        return nread;
+    }
+
+    /**
+     * Reads into a byte array data from the socket.
+     * @@param b the buffer into which the data is read
+     * @@return the actual number of bytes read, -1 is
+     *          returned when the end of the stream is reached.
+     * @@exception IOException If an I/O error has occurred.
+     */
+    public int read(byte b[]) throws IOException {
+        return read(b, 0, b.length);
+    }
+
+    /**
+     * Reads into a byte array <i>b</i> at offset <i>off</i>,
+     * <i>length</i> bytes of data.
+     * @@param b the buffer into which the data is read
+     * @@param off the start offset of the data
+     * @@param length the maximum number of bytes read
+     * @@return the actual number of bytes read, -1 is
+     *          returned when the end of the stream is reached.
+     * @@exception IOException If an I/O error has occurred.
+     */
+    public int read(byte b[], int off, int length) throws IOException {
+        return read(b, off, length, impl.getTimeout());
+    }
+
+    int read(byte b[], int off, int length, int timeout) throws IOException {
+        int n;
+
+        // EOF already encountered
+        if (eof) {
+            return -1;
+        }
+
+        // connection reset
+        if (impl.isConnectionReset()) {
+            throw new SocketException("Connection reset");
+        }
+
+        // bounds check
+        if (length <= 0 || off < 0 || off + length > b.length) {
+            if (length == 0) {
+                return 0;
+            }
+            throw new ArrayIndexOutOfBoundsException();
+        }
+
+        boolean gotReset = false;
+
+        // acquire file descriptor and do the read
+        FileDescriptor fd = impl.acquireFD();
+        try {
+            n = socketRead0(fd, b, off, length, timeout);
+            if (n > 0) {
+                return n;
+            }
+        } catch (ConnectionResetException rstExc) {
+            gotReset = true;
+        } finally {
+            impl.releaseFD();
+        }
+
+        /*
+         * We receive a "connection reset" but there may be bytes still
+         * buffered on the socket
+         */
+        if (gotReset) {
+            impl.setConnectionResetPending();
+            impl.acquireFD();
+            try {
+                n = socketRead0(fd, b, off, length, timeout);
+                if (n > 0) {
+                    return n;
+                }
+            } catch (ConnectionResetException rstExc) {
+            } finally {
+                impl.releaseFD();
+            }
+        }
+
+        /*
+         * If we get here we are at EOF, the socket has been closed,
+         * or the connection has been reset.
+         */
+        if (impl.isClosedOrPending()) {
+            throw new SocketException("Socket closed");
+        }
+        if (impl.isConnectionResetPending()) {
+            impl.setConnectionReset();
+        }
+        if (impl.isConnectionReset()) {
+            throw new SocketException("Connection reset");
+        }
+        eof = true;
+        return -1;
+    }
+
+    /**
+     * Reads a single byte from the socket.
+     */
+    public int read() throws IOException {
+        if (eof) {
+            return -1;
+        }
+        temp = new byte[1];
+        int n = read(temp, 0, 1);
+        if (n <= 0) {
+            return -1;
+        }
+        return temp[0] & 0xff;
+    }
+
+    /**
+     * Skips n bytes of input.
+     * @@param numbytes the number of bytes to skip
+     * @@return  the actual number of bytes skipped.
+     * @@exception IOException If an I/O error has occurred.
+     */
+    public long skip(long numbytes) throws IOException {
+        if (numbytes <= 0) {
+            return 0;
+        }
+        long n = numbytes;
+        int buflen = (int) Math.min(1024, n);
+        byte data[] = new byte[buflen];
+        while (n > 0) {
+            int r = read(data, 0, (int) Math.min((long) buflen, n));
+            if (r < 0) {
+                break;
+            }
+            n -= r;
+        }
+        return numbytes - n;
+    }
+
+    /**
+     * Returns the number of bytes that can be read without blocking.
+     * @@return the number of immediately available bytes
+     */
+    public int available() throws IOException {
+        return impl.available();
+    }
+
+    /**
+     * Closes the stream.
+     */
+    private boolean closing = false;
+    public void close() throws IOException {
+        // Prevent recursion. See BugId 4484411
+        if (closing)
+            return;
+        closing = true;
+        if (socket != null) {
+            if (!socket.isClosed())
+                socket.close();
+        } else
+            impl.close();
+        closing = false;
+    }
+
+    void setEOF(boolean eof) {
+        this.eof = eof;
+    }
+
+    /**
+     * Overrides finalize, the fd is closed by the Socket.
+     */
+    protected void finalize() {}
+}
+@
+
+
+1.9
+log
+@First part of OpenJDK 8 integration.
+@
+text
+@@
+
+
+1.8
+log
+@Merged in IoTrace hooks.
+@
+text
+@d2 1
+a2 1
+ * Copyright (c) 1995, 2010, Oracle and/or its affiliates. All rights reserved.
+a34 1
+import sun.misc.IoTrace;
+d69 2
+a70 2
+     * The <code>getChannel</code> method of <code>SocketInputStream</code>
+     * returns <code>null</code> since it is a socket based stream.</p>
+d174 1
+a174 1
+     * @@param len the maximum number of bytes read
+d184 1
+a184 1
+        int n = 0;
+a205 1
+        Object traceContext = IoTrace.socketReadBegin();
+a216 2
+            IoTrace.socketReadEnd(traceContext, impl.address, impl.port,
+                                  timeout, n > 0 ? n : 0);
+a223 1
+            traceContext = IoTrace.socketReadBegin();
+a233 2
+                IoTrace.socketReadEnd(traceContext, impl.address, impl.port,
+                                      timeout, n > 0 ? n : 0);
+d271 1
+a271 1
+     * @@param n the number of bytes to skip
+@
+
+
+1.7
+log
+@Updated to OpenJDK 7.
+@
+text
+@d35 1
+a44 1
+ * @@author      Jeroen Frijters
+d185 1
+a185 1
+        int n;
+d207 1
+d219 2
+d228 1
+d239 2
+@
+
+
+1.6
+log
+@Integrated OpenJDK 6 b21.
+@
+text
+@d2 1
+a2 1
+ * Copyright (c) 1995, 2007, Oracle and/or its affiliates. All rights reserved.
+d181 4
+d210 1
+a210 1
+            n = socketRead0(fd, b, off, length, impl.getTimeout());
+d228 1
+a228 1
+                n = socketRead0(fd, b, off, length, impl.getTimeout());
+@
+
+
+1.5
+log
+@Fixed regression. SocketInputStream.read() ignored the offset into the byte array.
+@
+text
+@d2 1
+a2 1
+ * Copyright 1995-2007 Sun Microsystems, Inc.  All Rights Reserved.
+d7 1
+a7 1
+ * published by the Free Software Foundation.  Sun designates this
+d9 1
+a9 1
+ * by Sun in the LICENSE file that accompanied this code.
+d21 3
+a23 3
+ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
+ * CA 95054 USA or visit www.sun.com if you need additional information or
+ * have any questions.
+@
+
+
+1.4
+log
+@Implemented IPv6 support for java.net package APIs.
+@
+text
+@d128 1
+a128 1
+        nread = recv(fd, bufP, len, 0);
+@
+
+
+1.3
+log
+@Merged OpenJDK 6 b10 whitespace and comment changes.
+@
+text
+@d32 2
+d44 1
+d50 1
+a50 1
+    private PlainSocketImpl impl = null;
+d60 1
+a60 1
+    SocketInputStream(PlainSocketImpl impl) throws IOException {
+d94 1
+a94 1
+    private int socketRead0(FileDescriptor fd, byte b[], int off, int len, int timeout) throws IOException
+d96 61
+a156 1
+        return impl.read(b, off, len, timeout);
+@
+
+
+1.2
+log
+@Converted tabs to spaces.
+@
+text
+@d2 1
+a2 1
+ * Copyright 1995-2002 Sun Microsystems, Inc.  All Rights Reserved.
+a39 1
+ * @@version     1.41, 05/05/07
+d45 1
+d48 1
+a48 1
+    private byte temp[]; 
+d79 1
+a79 1
+    /** 
+d81 1
+a81 1
+     * the received socket primitive. 
+d88 1
+a88 1
+     *          returned when the end of the stream is reached. 
+d96 2
+a97 2
+    /** 
+     * Reads into a byte array data from the socket. 
+d100 2
+a101 2
+     *          returned when the end of the stream is reached. 
+     * @@exception IOException If an I/O error has occurred. 
+d107 2
+a108 2
+    /** 
+     * Reads into a byte array <i>b</i> at offset <i>off</i>, 
+d114 1
+a114 1
+     *          returned when the end of the stream is reached. 
+d142 1
+a142 1
+        try {   
+d180 1
+a180 1
+        } 
+d188 2
+a189 2
+    /** 
+     * Reads a single byte from the socket. 
+d203 1
+a203 1
+    /** 
+d255 1
+a255 1
+    /** 
+a259 1
+
+@
+
+
+1.1
+log
+@- Added WINDOWS constant to ikvm.internal.Util to check if we're running on Windows.
+- Added a bunch of native methods to openjdk.cs (some real implementations, some stubs)
+- Added OpenJDK derived PlainSocketImpl/SocketInputStream/SocketOutputStream implementations.
+- Added OpenJDK derived file protocol handler (a single class that supports both Windows and non-Windows)
+@
+text
+@d41 2
+a42 2
+ * @@author	Jonathan Payne
+ * @@author	Arthur van Hoff
+d58 3
+a60 3
+	super(impl.getFileDescriptor());
+	this.impl = impl;
+	socket = impl.getSocket();
+d76 1
+a76 1
+	return null;
+d93 1
+a93 1
+	return impl.read(b, off, len, timeout);
+d104 1
+a104 1
+	return read(b, 0, b.length);
+d118 1
+a118 1
+	int n;
+d120 55
+a174 55
+	// EOF already encountered
+	if (eof) {
+	    return -1;
+	}
+
+	// connection reset
+	if (impl.isConnectionReset()) {
+	    throw new SocketException("Connection reset");
+	}
+
+	// bounds check
+	if (length <= 0 || off < 0 || off + length > b.length) {
+	    if (length == 0) {
+		return 0;
+	    }
+	    throw new ArrayIndexOutOfBoundsException();
+	}
+
+	boolean gotReset = false;
+
+	// acquire file descriptor and do the read
+	FileDescriptor fd = impl.acquireFD();
+ 	try {	
+	    n = socketRead0(fd, b, off, length, impl.getTimeout());
+	    if (n > 0) {
+		return n;
+	    }
+	} catch (ConnectionResetException rstExc) {
+	    gotReset = true;
+	} finally {
+	    impl.releaseFD();
+	}
+
+	/*
+	 * We receive a "connection reset" but there may be bytes still
+	 * buffered on the socket
+	 */
+	if (gotReset) {
+	    impl.setConnectionResetPending();
+	    impl.acquireFD();
+	    try {
+	        n = socketRead0(fd, b, off, length, impl.getTimeout());
+		if (n > 0) {
+		    return n;
+		}
+	    } catch (ConnectionResetException rstExc) {
+	    } finally {
+		impl.releaseFD();
+	    }
+	}
+
+	/*
+	 * If we get here we are at EOF, the socket has been closed,
+	 * or the connection has been reset.
+	 */
+d178 8
+a185 8
+	if (impl.isConnectionResetPending()) {
+	    impl.setConnectionReset();
+	} 
+	if (impl.isConnectionReset()) {
+	    throw new SocketException("Connection reset");
+	}
+	eof = true;
+	return -1;
+d192 9
+a200 9
+	if (eof) {
+	    return -1;
+	}
+	temp = new byte[1];
+ 	int n = read(temp, 0, 1);
+	if (n <= 0) {
+	    return -1;
+	}
+	return temp[0] & 0xff;
+d206 1
+a206 1
+     * @@return	the actual number of bytes skipped.
+d210 14
+a223 14
+	if (numbytes <= 0) {
+	    return 0;
+	}
+	long n = numbytes;
+	int buflen = (int) Math.min(1024, n);
+	byte data[] = new byte[buflen];
+	while (n > 0) {
+	    int r = read(data, 0, (int) Math.min((long) buflen, n));
+	    if (r < 0) {
+		break;
+	    }
+	    n -= r;
+	}
+	return numbytes - n;
+d231 1
+a231 1
+	return impl.available();
+d239 10
+a248 10
+	// Prevent recursion. See BugId 4484411
+	if (closing)
+	    return;
+	closing = true;
+	if (socket != null) {
+	    if (!socket.isClosed())
+		socket.close();
+	} else
+	    impl.close();
+	closing = false;
+d252 1
+a252 1
+	this.eof = eof;
+@
+

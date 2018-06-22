@@ -1,0 +1,706 @@
+head	1.13;
+access;
+symbols
+	initial:1.1.1.1 ikvm:1.1.1;
+locks; strict;
+comment	@ * @;
+
+
+1.13
+date	2004.05.27.07.12.14;	author jfrijters;	state dead;
+branches;
+next	1.12;
+
+1.12
+date	2004.05.14.09.31.55;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2004.03.08.15.18.47;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2004.01.11.13.14.43;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2003.10.17.08.08.31;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2003.07.31.12.49.29;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2003.05.30.12.09.00;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2003.02.22.12.28.12;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2003.02.20.14.18.39;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2003.02.15.16.32.50;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2003.02.15.09.45.11;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2003.01.06.14.00.43;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2002.12.18.16.01.09;	author jfrijters;	state Exp;
+branches
+	1.1.1.1;
+next	;
+
+1.1.1.1
+date	2002.12.18.16.01.09;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.13
+log
+@*** empty log message ***
+@
+text
+@/*
+  Copyright (C) 2002, 2003, 2004 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Reflection;
+using System.Reflection.Emit;
+
+[AttributeUsage(AttributeTargets.Class)]
+public sealed class ExceptionIsUnsafeForMappingAttribute : Attribute
+{
+}
+
+[AttributeUsage(AttributeTargets.Method)]
+public sealed class RemappedInterfaceMethodAttribute : Attribute
+{
+	private string name;
+	private string mappedTo;
+
+	public RemappedInterfaceMethodAttribute(string name, string mappedTo)
+	{
+		this.name = name;
+		this.mappedTo = mappedTo;
+	}
+
+	public string Name
+	{
+		get
+		{
+			return name;
+		}
+	}
+
+	public string MappedTo
+	{
+		get
+		{
+			return mappedTo;
+		}
+	}
+}
+
+[AttributeUsage(AttributeTargets.Assembly)]
+public sealed class RemappedClassAttribute : Attribute
+{
+	private string name;
+	private Type remappedType;
+
+	public RemappedClassAttribute(string name, Type remappedType)
+	{
+		this.name = name;
+		this.remappedType = remappedType;
+	}
+
+	public string Name
+	{
+		get
+		{
+			return name;
+		}
+	}
+
+	public Type RemappedType
+	{
+		get
+		{
+			return remappedType;
+		}
+	}
+}
+
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface)]
+public sealed class RemappedTypeAttribute : Attribute
+{
+	private Type type;
+
+	public RemappedTypeAttribute(Type type)
+	{
+		this.type = type;
+	}
+
+	public Type Type
+	{
+		get
+		{
+			return type;
+		}
+	}
+}
+
+[AttributeUsage(AttributeTargets.Module)]
+public sealed class JavaModuleAttribute : Attribute
+{
+	private string version;
+
+	public JavaModuleAttribute(string version)
+	{
+		this.version = version;
+	}
+
+	public Version Version
+	{
+		get
+		{
+			return new Version(version);
+		}
+	}
+}
+
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Interface | AttributeTargets.Assembly)]
+public sealed class NoPackagePrefixAttribute : Attribute
+{
+}
+
+[AttributeUsage(AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.Method)]
+public sealed class UnloadableTypeAttribute : Attribute
+{
+	private string name;
+
+	public UnloadableTypeAttribute(string name)
+	{
+		this.name = name;
+	}
+
+	public string Name
+	{
+		get
+		{
+			return name;
+		}
+	}
+}
+
+[AttributeUsage(AttributeTargets.Struct)]
+public sealed class GhostInterfaceAttribute : Attribute
+{
+}
+@
+
+
+1.12
+log
+@*** empty log message ***
+@
+text
+@@
+
+
+1.11
+log
+@*** empty log message ***
+@
+text
+@d113 14
+a156 57
+
+[AttributeUsage(AttributeTargets.Method | AttributeTargets.Constructor | AttributeTargets.Property | AttributeTargets.Class)]
+public sealed class StackTraceInfoAttribute : Attribute
+{
+	private bool hidden;
+	private string className;
+	private bool truncate;
+	private int eatFrames;
+
+	public bool Hidden
+	{
+		get
+		{
+			return hidden;
+		}
+		set
+		{
+			hidden = value;
+		}
+	}
+
+	public int EatFrames
+	{
+		get
+		{
+			return eatFrames;
+		}
+		set
+		{
+			eatFrames = value;
+		}
+	}
+
+	public string Class
+	{
+		get
+		{
+			return className;
+		}
+		set
+		{
+			className = value;
+		}
+	}
+
+	public bool Truncate
+	{
+		get
+		{
+			return truncate;
+		}
+		set
+		{
+			truncate = value;
+		}
+	}
+}
+@
+
+
+1.10
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002 Jeroen Frijters
+d28 82
+@
+
+
+1.9
+log
+@*** empty log message ***
+@
+text
+@d28 5
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@d28 5
+d52 2
+a53 2
+[AttributeUsage(AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.Method)]
+public sealed class GhostTypeAttribute : Attribute
+a54 14
+	private Type type;
+
+	public GhostTypeAttribute(Type type)
+	{
+		this.type = type;
+	}
+
+	public Type Type
+	{
+		get
+		{
+			return type;
+		}
+	}
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d28 2
+a29 2
+[AttributeUsage(AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.ReturnValue)]
+public class UnloadableTypeAttribute : Attribute
+d47 19
+d67 1
+a67 1
+public class StackTraceInfoAttribute : Attribute
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@a27 10
+[AttributeUsage(AttributeTargets.Class)]
+public class OverrideStubTypeAttribute : Attribute
+{
+}
+
+[AttributeUsage(AttributeTargets.Assembly)]
+public class IKVMAssemblyAttribute : Attribute
+{
+}
+
+a33 220
+	{
+		this.name = name;
+	}
+
+	public string Name
+	{
+		get
+		{
+			return name;
+		}
+	}
+}
+
+[AttributeUsage(AttributeTargets.All)]
+public class ModifiersAttribute : Attribute
+{
+	private Modifiers modifiers;
+
+	public ModifiersAttribute(Modifiers modifiers)
+	{
+		this.modifiers = modifiers;
+	}
+
+	public Modifiers Modifiers
+	{
+		get
+		{
+			return modifiers;
+		}
+	}
+
+	public static bool IsSynthetic(FieldInfo fi)
+	{
+		return (GetModifiers(fi) & Modifiers.Synthetic) != 0;
+	}
+
+	public static bool IsSynthetic(MethodBase mb)
+	{
+		return (GetModifiers(mb) & Modifiers.Synthetic) != 0;
+	}
+
+	public static Modifiers GetModifiers(MethodBase mb)
+	{
+		object[] customAttribute = mb.GetCustomAttributes(typeof(ModifiersAttribute), false);
+		if(customAttribute.Length == 1)
+		{
+			return ((ModifiersAttribute)customAttribute[0]).Modifiers;
+		}
+		Modifiers modifiers = 0;
+		if(mb.IsPublic)
+		{
+			modifiers |= Modifiers.Public;
+		}
+		if(mb.IsPrivate)
+		{
+			modifiers |= Modifiers.Private;
+		}
+		if(mb.IsFamily || mb.IsFamilyOrAssembly)
+		{
+			modifiers |= Modifiers.Protected;
+		}
+		// NOTE Java doesn't support non-virtual methods, but we set the Final modifier for
+		// non-virtual methods to approximate the semantics
+		if(mb.IsFinal || (!mb.IsStatic && !mb.IsVirtual))
+		{
+			modifiers |= Modifiers.Final;
+		}
+		if(mb.IsAbstract)
+		{
+			modifiers |= Modifiers.Abstract;
+		}
+		if(mb.IsStatic)
+		{
+			modifiers |= Modifiers.Static;
+		}
+		if((mb.GetMethodImplementationFlags() & MethodImplAttributes.Synchronized) != 0)
+		{
+			modifiers |= Modifiers.Synchronized;
+		}
+		if((mb.Attributes & MethodAttributes.PinvokeImpl) != 0)
+		{
+			modifiers |= Modifiers.Native;
+		}
+		return modifiers;
+	}
+
+	public static Modifiers GetModifiers(FieldInfo fi)
+	{
+		object[] customAttribute = fi.GetCustomAttributes(typeof(ModifiersAttribute), false);
+		if(customAttribute.Length == 1)
+		{
+			return ((ModifiersAttribute)customAttribute[0]).Modifiers;
+		}
+		// NOTE privatescope fields are always treated as synthetic (even when they are in a .NET type, because
+		// Java wouldn't be able to cope with them anyway, because of potential name clashes)
+		if((fi.Attributes & FieldAttributes.FieldAccessMask) == FieldAttributes.PrivateScope)
+		{
+			return Modifiers.Synthetic;
+		}
+		Modifiers modifiers = 0;
+		if(fi.IsPublic)
+		{
+			modifiers |= Modifiers.Public;
+		}
+		if(fi.IsPrivate)
+		{
+			modifiers |= Modifiers.Private;
+		}
+		if(fi.IsFamily || fi.IsFamilyOrAssembly)
+		{
+			modifiers |= Modifiers.Protected;
+		}
+		if(fi.IsInitOnly || fi.IsLiteral)
+		{
+			modifiers |= Modifiers.Final;
+		}
+		if(fi.IsNotSerialized)
+		{
+			modifiers |= Modifiers.Transient;
+		}
+		if(fi.IsStatic)
+		{
+			modifiers |= Modifiers.Static;
+		}
+		// TODO reflection doesn't support volatile
+		return modifiers;
+	}
+
+	public static Modifiers GetModifiers(Type type)
+	{
+		TypeWrapper.AssertFinished(type);
+		// NOTE array types do not support GetCustomAttributes
+		if(type.IsArray)
+		{
+			// NOTE in .NET arrays are always public, so we need to look at the ultimate element type
+			Type elemType = type.GetElementType();
+			while(elemType.IsArray)
+			{
+				elemType = type.GetElementType();
+			}
+			return Modifiers.Final | Modifiers.Abstract | (elemType.IsPublic ? Modifiers.Public : 0);
+		}
+		try
+		{
+			object[] customAttribute = type.GetCustomAttributes(typeof(ModifiersAttribute), false);
+			if(customAttribute.Length == 1)
+			{
+				return ((ModifiersAttribute)customAttribute[0]).Modifiers;
+			}
+		}
+		catch(Exception x)
+		{
+			// HACK this is just to find other types that don't support GetCustomAttributes
+			Console.WriteLine(x);
+		}
+		// only returns public, protected, private, final, static, abstract and interface (as per
+		// the documentation of Class.getModifiers())
+		Modifiers modifiers = 0;
+		if(type.IsPublic)
+		{
+			modifiers |= Modifiers.Public;
+		}
+		if(type.IsNestedPrivate)
+		{
+			modifiers |= Modifiers.Private;
+		}
+		if(type.IsNestedFamily || type.IsNestedFamORAssem)
+		{
+			modifiers |= Modifiers.Protected;
+		}
+		if(type.IsSealed)
+		{
+			modifiers |= Modifiers.Final;
+		}
+		if(type.DeclaringType != null)
+		{
+			modifiers |= Modifiers.Static;
+		}
+		if(type.IsAbstract)
+		{
+			modifiers |= Modifiers.Abstract;
+		}
+		if(type.IsInterface)
+		{
+			modifiers |= Modifiers.Interface;
+		}
+		return modifiers;
+	}
+
+	public static void SetModifiers(MethodBuilder mb, Modifiers modifiers)
+	{
+		CustomAttributeBuilder customAttributeBuilder = new CustomAttributeBuilder(typeof(ModifiersAttribute).GetConstructor(new Type[] { typeof(Modifiers) }), new object[] { modifiers });
+		mb.SetCustomAttribute(customAttributeBuilder);
+	}
+
+	public static void SetModifiers(ConstructorBuilder cb, Modifiers modifiers)
+	{
+		CustomAttributeBuilder customAttributeBuilder = new CustomAttributeBuilder(typeof(ModifiersAttribute).GetConstructor(new Type[] { typeof(Modifiers) }), new object[] { modifiers });
+		cb.SetCustomAttribute(customAttributeBuilder);
+	}
+
+	public static void SetModifiers(FieldBuilder fb, Modifiers modifiers)
+	{
+		CustomAttributeBuilder customAttributeBuilder = new CustomAttributeBuilder(typeof(ModifiersAttribute).GetConstructor(new Type[] { typeof(Modifiers) }), new object[] { modifiers });
+		fb.SetCustomAttribute(customAttributeBuilder);
+	}
+
+	public static void SetModifiers(TypeBuilder tb, Modifiers modifiers)
+	{
+		CustomAttributeBuilder customAttributeBuilder = new CustomAttributeBuilder(typeof(ModifiersAttribute).GetConstructor(new Type[] { typeof(Modifiers) }), new object[] { modifiers });
+		tb.SetCustomAttribute(customAttributeBuilder);
+	}
+}
+
+[AttributeUsage(AttributeTargets.Class)]
+public class ClassNameAttribute : Attribute
+{
+	private string name;
+
+	public ClassNameAttribute(string name)
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d174 2
+a175 1
+		// NOTE array types do not support GetCustomAttributes, but they also have some funny modifiers
+d178 7
+a184 1
+			return ClassLoaderWrapper.GetWrapperFromType(type).Modifiers;
+@
+
+
+1.4
+log
+@no message
+@
+text
+@d174 2
+a175 2
+		object[] customAttribute = type.GetCustomAttributes(typeof(ModifiersAttribute), false);
+		if(customAttribute.Length == 1)
+d177 14
+a190 1
+			return ((ModifiersAttribute)customAttribute[0]).Modifiers;
+d248 19
+@
+
+
+1.3
+log
+@no message
+@
+text
+@d67 1
+a67 1
+	public bool IsSynthetic
+d71 1
+a71 1
+			return modifiers == Modifiers.Synthetic;
+d75 6
+a80 1
+	public Modifiers Modifiers
+d82 1
+a82 4
+		get
+		{
+			return modifiers;
+		}
+d229 6
+@
+
+
+1.2
+log
+@no message
+@
+text
+@d217 6
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d38 19
+@
+
+
+1.1.1.1
+log
+@no message
+@
+text
+@@

@@ -1,0 +1,279 @@
+head	1.7;
+access;
+symbols
+	v8_1_5717_0:1.7
+	v8_1:1.7.0.8
+	v8_0_5449_1:1.7
+	v8_0_5449_0:1.7
+	v8_0:1.7.0.6
+	v7_4_5196_0:1.7
+	v7_4:1.7.0.4
+	v7_3:1.7.0.2
+	v7_2_4630_6:1.6
+	v7_2_4630_5:1.6
+	v7_2_4630_4:1.6
+	v7_2_4630_3:1.6
+	v7_2_4630_2:1.6
+	v0_46_0_4:1.6
+	v7_2_4630_1:1.6
+	v7_2:1.6.0.10
+	v7_1_4532_2:1.6
+	v7_1_4532_1:1.6
+	v7_1_4532_0:1.6
+	v7_1:1.6.0.8
+	v7_0_4335_3:1.6
+	v7_0_4335_2:1.6
+	v7_0_4335_1:1.6
+	v0_46_0_2:1.6
+	v7_0_4335_0:1.6
+	v7_0:1.6.0.6
+	v0_40_0_6:1.5
+	v0_40_0_5:1.5
+	v0_46_0_1:1.6
+	v0_46_0_0:1.6
+	v0_46:1.6.0.4
+	v0_44_0_6:1.6
+	v0_44_0_5:1.6
+	v0_44_0_4:1.6
+	v0_44_0_3:1.6
+	v0_44_0_2:1.6
+	v0_42_0_7:1.5
+	v0_44_0_1:1.6
+	v0_44_0_0:1.6
+	v0_44:1.6.0.2
+	v0_42_0_6:1.5
+	v0_42_0_5:1.5
+	v0_42_0_4:1.5
+	v0_42_0_3:1.5
+	v0_42_0_2:1.5
+	v0_42_0_1:1.5
+	v0_42_0_0:1.5
+	v0_42:1.5.0.4
+	v0_40_0_3:1.5
+	v0_40_0_2:1.5
+	v0_40_0_1:1.5
+	v0_40_0_0:1.5
+	v0_40:1.5.0.2
+	v0_38_0_1:1.2
+	v0_38_0_0:1.2
+	v0_38:1.2.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.7
+date	2012.12.13.10.11.17;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2010.01.25.07.52.40;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2009.03.26.14.32.28;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2009.03.16.06.49.00;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.11.14.08.11.50;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.01.03.09.45.49;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.11.21.07.15.44;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.7
+log
+@Ported MSBuild task to .NET 2.0 and included the project in the VS solution.
+@
+text
+@Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKVM.Runtime.8", "runtime\IKVM.Runtime.8.csproj", "{F5C7B588-0403-4AF2-A4DE-5697DE21BC2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ikvm.8", "ikvm\ikvm.8.csproj", "{4FBAFF23-1E48-4977-8C50-30F87E70A8B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ikvmstub.8", "ikvmstub\ikvmstub.8.csproj", "{D2A9434D-59E4-43E9-8D9C-332AA138CEAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ikvmc.8", "ikvmc.8.csproj", "{4CA3F3DF-D2B7-4FA2-874C-BFC4B04286A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKVM.AWT.WinForms.8", "awt\IKVM.AWT.WinForms.8.csproj", "{E00A0FA2-1FD7-4DD9-8C06-7202CE366102}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ikvm-native", "native\native.9.vcproj", "{14EC8F2A-90C6-4CFC-AD26-04C9A3392B8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKVM.Runtime.JNI.8", "runtime\IKVM.Runtime.JNI.8.csproj", "{CEA4FEC4-1D24-4004-908E-F86C8D7AC772}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKVM.Reflection", "reflect\IKVM.Reflection.csproj", "{4CB170EF-DFE6-4A56-9E1B-A85449E827A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKVM.MSBuild", "msbuild\IKVM.MSBuild.csproj", "{D7FF23BC-49C2-490D-B702-8EEE8F5AF296}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Win32 = Debug|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5C7B588-0403-4AF2-A4DE-5697DE21BC2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5C7B588-0403-4AF2-A4DE-5697DE21BC2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5C7B588-0403-4AF2-A4DE-5697DE21BC2C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F5C7B588-0403-4AF2-A4DE-5697DE21BC2C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F5C7B588-0403-4AF2-A4DE-5697DE21BC2C}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{4FBAFF23-1E48-4977-8C50-30F87E70A8B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FBAFF23-1E48-4977-8C50-30F87E70A8B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FBAFF23-1E48-4977-8C50-30F87E70A8B5}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4FBAFF23-1E48-4977-8C50-30F87E70A8B5}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4FBAFF23-1E48-4977-8C50-30F87E70A8B5}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{D2A9434D-59E4-43E9-8D9C-332AA138CEAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2A9434D-59E4-43E9-8D9C-332AA138CEAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2A9434D-59E4-43E9-8D9C-332AA138CEAD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D2A9434D-59E4-43E9-8D9C-332AA138CEAD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D2A9434D-59E4-43E9-8D9C-332AA138CEAD}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{4CA3F3DF-D2B7-4FA2-874C-BFC4B04286A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CA3F3DF-D2B7-4FA2-874C-BFC4B04286A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CA3F3DF-D2B7-4FA2-874C-BFC4B04286A2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4CA3F3DF-D2B7-4FA2-874C-BFC4B04286A2}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4CA3F3DF-D2B7-4FA2-874C-BFC4B04286A2}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{E00A0FA2-1FD7-4DD9-8C06-7202CE366102}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E00A0FA2-1FD7-4DD9-8C06-7202CE366102}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E00A0FA2-1FD7-4DD9-8C06-7202CE366102}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E00A0FA2-1FD7-4DD9-8C06-7202CE366102}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E00A0FA2-1FD7-4DD9-8C06-7202CE366102}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{14EC8F2A-90C6-4CFC-AD26-04C9A3392B8E}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{14EC8F2A-90C6-4CFC-AD26-04C9A3392B8E}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{14EC8F2A-90C6-4CFC-AD26-04C9A3392B8E}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{14EC8F2A-90C6-4CFC-AD26-04C9A3392B8E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{14EC8F2A-90C6-4CFC-AD26-04C9A3392B8E}.Debug|Win32.Build.0 = Debug|Win32
+		{CEA4FEC4-1D24-4004-908E-F86C8D7AC772}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEA4FEC4-1D24-4004-908E-F86C8D7AC772}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEA4FEC4-1D24-4004-908E-F86C8D7AC772}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{CEA4FEC4-1D24-4004-908E-F86C8D7AC772}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{CEA4FEC4-1D24-4004-908E-F86C8D7AC772}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{4CB170EF-DFE6-4A56-9E1B-A85449E827A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CB170EF-DFE6-4A56-9E1B-A85449E827A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CB170EF-DFE6-4A56-9E1B-A85449E827A7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4CB170EF-DFE6-4A56-9E1B-A85449E827A7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4CB170EF-DFE6-4A56-9E1B-A85449E827A7}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{D7FF23BC-49C2-490D-B702-8EEE8F5AF296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7FF23BC-49C2-490D-B702-8EEE8F5AF296}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7FF23BC-49C2-490D-B702-8EEE8F5AF296}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D7FF23BC-49C2-490D-B702-8EEE8F5AF296}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D7FF23BC-49C2-490D-B702-8EEE8F5AF296}.Debug|Win32.ActiveCfg = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
+@
+
+
+1.6
+log
+@Integrated new IKVM.Reflection implementation.
+@
+text
+@d19 2
+d68 5
+@
+
+
+1.5
+log
+@- Renamed IKVM.PdbWriter.dll to IKVM.Reflection.Emit.PdbWriter.dll.
+- Added IKVM.Reflection.Emit.MdbWriter.dll (untested and not yet complete).
+- Changed SymbolWriter plug-in API to be more flexible.
+- Added ModuleBuilder.ResolveMethod() API.
+- Don't write PE debug directory if symbol writer doesn't supply debug data.
+@
+text
+@d17 1
+a17 5
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKVM.Reflection.Emit", "refemit\IKVM.Reflection.Emit.csproj", "{3949055D-38DF-4A8F-A632-0F0E62337428}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKVM.Reflection.Emit.PdbWriter", "refemit\IKVM.PdbWriter\IKVM.Reflection.Emit.PdbWriter.csproj", "{54037FA3-3F3F-4806-938B-A76C4B4B78B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKVM.Reflection.Emit.MdbWriter", "refemit\IKVM.MdbWriter\IKVM.Reflection.Emit.MdbWriter.csproj", "{30D0FC5E-31D2-4BC0-B4F0-51D01C0A89B5}"
+d61 5
+a65 15
+		{3949055D-38DF-4A8F-A632-0F0E62337428}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3949055D-38DF-4A8F-A632-0F0E62337428}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3949055D-38DF-4A8F-A632-0F0E62337428}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3949055D-38DF-4A8F-A632-0F0E62337428}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3949055D-38DF-4A8F-A632-0F0E62337428}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{54037FA3-3F3F-4806-938B-A76C4B4B78B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54037FA3-3F3F-4806-938B-A76C4B4B78B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54037FA3-3F3F-4806-938B-A76C4B4B78B9}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{54037FA3-3F3F-4806-938B-A76C4B4B78B9}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{54037FA3-3F3F-4806-938B-A76C4B4B78B9}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{30D0FC5E-31D2-4BC0-B4F0-51D01C0A89B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30D0FC5E-31D2-4BC0-B4F0-51D01C0A89B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30D0FC5E-31D2-4BC0-B4F0-51D01C0A89B5}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{30D0FC5E-31D2-4BC0-B4F0-51D01C0A89B5}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{30D0FC5E-31D2-4BC0-B4F0-51D01C0A89B5}.Debug|Win32.ActiveCfg = Debug|Any CPU
+@
+
+
+1.4
+log
+@Moved PDB support into seperate assembly to make Mono support easier.
+@
+text
+@d19 3
+a21 1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKVM.PdbWriter", "refemit\IKVM.PdbWriter\IKVM.PdbWriter.csproj", "{54037FA3-3F3F-4806-938B-A76C4B4B78B9}"
+d75 5
+@
+
+
+1.3
+log
+@Added IKVM.Reflection.Emit project.
+@
+text
+@d19 2
+d68 5
+@
+
+
+1.2
+log
+@- Moved common assembly attributes to single file (CommonAssemblyInfo.cs).
+- Added IKVM.Runtime.JNI project to Visual Studio solution.
+- Added atomic.cs to Visual Studio projects.
+- Added SecurityCritical and AllowPartiallyTrustedCallers attributes to IKVM.Runtime.dll.
+@
+text
+@d17 2
+d61 5
+@
+
+
+1.1
+log
+@- Removed Visual Studio 2003 solution/project files.
+- Added Visual Studio 2008 solution.
+@
+text
+@d15 2
+d54 5
+@
+

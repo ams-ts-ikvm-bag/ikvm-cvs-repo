@@ -1,0 +1,1026 @@
+head	1.48;
+access;
+symbols
+	v8_1_5717_0:1.48
+	v8_1:1.48.0.2
+	v8_0_5449_1:1.46
+	v8_0_5449_0:1.46
+	v8_0:1.46.0.2
+	v7_4_5196_0:1.43
+	v7_4:1.43.0.2
+	v7_3:1.38.0.2
+	v7_2_4630_6:1.37
+	v7_2_4630_5:1.37
+	v7_2_4630_4:1.37
+	v7_2_4630_3:1.37
+	v7_2_4630_2:1.37
+	v0_46_0_4:1.33
+	v7_2_4630_1:1.37
+	v7_2:1.37.0.6
+	v7_1_4532_2:1.37
+	v7_1_4532_1:1.37
+	v7_1_4532_0:1.37
+	v7_1:1.37.0.4
+	v7_0_4335_3:1.37
+	v7_0_4335_2:1.37
+	v7_0_4335_1:1.37
+	v0_46_0_2:1.33
+	v7_0_4335_0:1.37
+	v7_0:1.37.0.2
+	v0_40_0_6:1.19
+	v0_40_0_5:1.19
+	v0_46_0_1:1.33
+	v0_46_0_0:1.33
+	v0_46:1.33.0.2
+	v0_36_0_14:1.8
+	v0_44_0_6:1.26
+	v0_44_0_5:1.26
+	v0_44_0_4:1.26
+	v0_44_0_3:1.26
+	v0_44_0_2:1.26
+	v0_42_0_7:1.25
+	v0_44_0_1:1.26
+	v0_44_0_0:1.26
+	v0_44:1.26.0.2
+	v0_42_0_6:1.25
+	v0_42_0_5:1.25
+	v0_42_0_4:1.25
+	v0_42_0_3:1.25
+	v0_42_0_2:1.25
+	v0_42_0_1:1.25
+	v0_42_0_0:1.25
+	v0_42:1.25.0.2
+	v0_40_0_3:1.19
+	v0_40_0_2:1.19
+	v0_40_0_1:1.19
+	v0_40_0_0:1.19
+	v0_40:1.19.0.2
+	v0_36_0_13:1.8
+	v0_38_0_1:1.16
+	v0_38_0_0:1.16
+	v0_38:1.16.0.2
+	v0_36_0_9:1.8
+	v0_36_0_7:1.8
+	v0_36_0_5:1.8
+	v0_36_0_4:1.8
+	v0_36_0_3:1.8
+	v0_36_0_2:1.8
+	v0_36_0_1:1.8
+	v0_36_0_0:1.8
+	v0_36:1.8.0.2
+	v0_34_0_3:1.1
+	v0_34_0_2:1.1
+	v0_34_0_1:1.1
+	v0_34_0_0:1.1
+	v0_34:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.48
+date	2015.06.26.14.41.58;	author jfrijters;	state Exp;
+branches;
+next	1.47;
+
+1.47
+date	2015.06.24.14.10.40;	author jfrijters;	state Exp;
+branches;
+next	1.46;
+
+1.46
+date	2014.07.01.15.12.34;	author jfrijters;	state Exp;
+branches;
+next	1.45;
+
+1.45
+date	2014.07.01.15.09.11;	author jfrijters;	state Exp;
+branches;
+next	1.44;
+
+1.44
+date	2014.05.19.12.43.42;	author jfrijters;	state Exp;
+branches;
+next	1.43;
+
+1.43
+date	2013.03.29.11.28.24;	author jfrijters;	state Exp;
+branches;
+next	1.42;
+
+1.42
+date	2013.03.29.08.28.17;	author jfrijters;	state Exp;
+branches;
+next	1.41;
+
+1.41
+date	2013.03.20.14.03.28;	author jfrijters;	state Exp;
+branches;
+next	1.40;
+
+1.40
+date	2013.03.20.11.24.51;	author jfrijters;	state Exp;
+branches;
+next	1.39;
+
+1.39
+date	2013.03.20.09.11.21;	author jfrijters;	state Exp;
+branches;
+next	1.38;
+
+1.38
+date	2013.02.21.16.56.09;	author jfrijters;	state Exp;
+branches;
+next	1.37;
+
+1.37
+date	2011.09.01.07.53.58;	author jfrijters;	state Exp;
+branches;
+next	1.36;
+
+1.36
+date	2011.08.11.11.34.55;	author jfrijters;	state Exp;
+branches;
+next	1.35;
+
+1.35
+date	2011.07.26.13.00.25;	author jfrijters;	state Exp;
+branches;
+next	1.34;
+
+1.34
+date	2011.07.15.09.05.27;	author jfrijters;	state Exp;
+branches;
+next	1.33;
+
+1.33
+date	2010.12.10.06.32.15;	author jfrijters;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2010.12.10.05.27.07;	author jfrijters;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2010.12.10.05.19.00;	author jfrijters;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2010.12.10.05.09.46;	author jfrijters;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2010.12.09.14.15.25;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2010.12.09.13.53.50;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2010.09.14.07.38.42;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2009.10.14.14.58.41;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2009.09.07.04.19.06;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2009.08.31.06.16.04;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2009.08.31.05.44.51;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2009.07.30.13.14.14;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2009.05.12.04.30.10;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2009.04.16.05.34.21;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2009.03.04.05.47.19;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2008.12.23.07.28.20;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2008.11.14.08.42.07;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2008.08.06.12.22.07;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2008.08.06.05.25.19;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2008.05.09.05.57.59;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2008.01.03.09.45.50;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2007.12.28.10.23.46;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2007.12.18.09.56.12;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2007.11.26.08.38.39;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2007.11.21.07.15.46;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2007.08.22.11.51.19;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2007.07.25.08.17.53;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2007.06.22.07.00.56;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2007.06.14.07.06.42;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2007.05.29.16.27.10;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2007.05.27.08.14.57;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.05.24.12.17.38;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.03.29.09.21.10;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.48
+log
+@Unforked java/net/SocketInputStream.java and java/net/SocketOutputStream.java.
+@
+text
+@﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F5C7B588-0403-4AF2-A4DE-5697DE21BC2C}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>IKVM.Runtime</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>
+    </RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;DEBUG;EMITTERS</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IKVM.OpenJDK.Core, Version=0.39.3280.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Management, Version=7.0.4259.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\IKVM.OpenJDK.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Misc, Version=0.39.3280.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\IKVM.OpenJDK.Misc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util, Version=0.39.3280.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime.JNI, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\IKVM.Runtime.JNI.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Management" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyClassLoader.cs" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Assertions.cs" />
+    <Compile Include="atomic.cs" />
+    <Compile Include="attributes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BigEndianBinaryReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Boxer.cs" />
+    <Compile Include="ByteCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ByteCodeHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassFile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLoaderWrapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeEmitter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="common.cs" />
+    <Compile Include="compiler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CoreClasses.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DotNetTypeWrapper.cs" />
+    <Compile Include="DynamicClassLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DynamicMethodUtils.cs" />
+    <Compile Include="DynamicTypeWrapper.cs" />
+    <Compile Include="ExceptionHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="fdlibm\e_hypot.cs" />
+    <Compile Include="fdlibm\e_pow.cs" />
+    <Compile Include="fdlibm\e_rem_pio2.cs" />
+    <Compile Include="fdlibm\fdlibm_h.cs" />
+    <Compile Include="fdlibm\k_rem_pio2.cs" />
+    <Compile Include="fdlibm\k_tan.cs" />
+    <Compile Include="fdlibm\s_cbrt.cs" />
+    <Compile Include="fdlibm\s_expm1.cs" />
+    <Compile Include="fdlibm\s_floor.cs" />
+    <Compile Include="fdlibm\s_log1p.cs" />
+    <Compile Include="fdlibm\s_scalbn.cs" />
+    <Compile Include="fdlibm\s_tan.cs" />
+    <Compile Include="intrinsics.cs" />
+    <Compile Include="JavaException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JsrInliner.cs" />
+    <Compile Include="LambdaMetafactory.cs" />
+    <Compile Include="LocalVars.cs" />
+    <Compile Include="MemberWrapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MethodHandleUtil.cs" />
+    <Compile Include="openjdk\java.io.cs" />
+    <Compile Include="openjdk\java.lang.cs" />
+    <Compile Include="openjdk\java.lang.invoke.cs" />
+    <Compile Include="openjdk\java.lang.reflect.cs" />
+    <Compile Include="openjdk\java.net.cs" />
+    <Compile Include="openjdk\java.net.SocketInputStream.cs" />
+    <Compile Include="openjdk\java.nio.cs" />
+    <Compile Include="openjdk\java.security.cs" />
+    <Compile Include="openjdk\java.util.cs" />
+    <Compile Include="openjdk\java.util.prefs.cs" />
+    <Compile Include="openjdk\misc.cs" />
+    <Compile Include="openjdk\NativeInvokerBytecodeGenerator.cs" />
+    <Compile Include="openjdk\sun.management.cs" />
+    <Compile Include="openjdk\sun.misc.cs" />
+    <Compile Include="openjdk\sun.nio.ch.cs" />
+    <Compile Include="openjdk\sun.reflect.cs" />
+    <Compile Include="openjdk\sun.security.krb5.cs" />
+    <Compile Include="openjdk\sun.util.locale.provider.cs" />
+    <Compile Include="PassiveWeakDictionary.cs" />
+    <Compile Include="profiler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReflectUtil.cs" />
+    <Compile Include="RuntimeHelperTypes.cs" />
+    <Compile Include="Serialization.cs" />
+    <Compile Include="stubgen\ClassFileWriter.cs" />
+    <Compile Include="stubgen\SerialVersionUID.cs" />
+    <Compile Include="stubgen\StubGenerator.cs" />
+    <Compile Include="tracer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types.cs" />
+    <Compile Include="TypeWrapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="verifier.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vfs.cs" />
+    <Compile Include="vm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>@
+
+
+1.47
+log
+@Optimized LambdaForm compiler.
+@
+text
+@d158 1
+@
+
+
+1.46
+log
+@Added intrinsic for LambdaMetafactory.metafactory().
+@
+text
+@d163 1
+@
+
+
+1.45
+log
+@Make Boxer helper class available to runtime.
+@
+text
+@d147 1
+@
+
+
+1.44
+log
+@First part of OpenJDK 8 integration.
+@
+text
+@d98 1
+@
+
+
+1.43
+log
+@Moved part of MethodHandleUtil that is used by the runtime for JNI non-virtual invocation into a separate file.
+@
+text
+@d166 1
+@
+
+
+1.42
+log
+@Introduced EMITTERS conditional compilation constant.
+@
+text
+@d150 1
+@
+
+
+1.41
+log
+@Moved the remaining code from openjdk.cs to separate files.
+@
+text
+@d39 1
+a39 1
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+@
+
+
+1.40
+log
+@Moved java.lang and java.lang.reflect native methods into separate files.
+@
+text
+@d90 1
+d124 1
+a149 1
+    <Compile Include="openjdk.cs" />
+d154 6
+d161 1
+d163 1
+@
+
+
+1.39
+log
+@Moved java.io native methods to separate source file and use "new style" native methods.
+@
+text
+@d150 1
+d152 1
+@
+
+
+1.38
+log
+@Removed the old Java stub class generator and replaced it with the ikvmstub core.
+@
+text
+@d149 1
+@
+
+
+1.37
+log
+@Implemented platform MBean server support (although with very limited information/exposed operations).
+@
+text
+@d160 3
+@
+
+
+1.36
+log
+@Added Kerberos support (on Windows). Based on patch submitted by Trevor Bell.
+@
+text
+@d60 4
+d150 1
+@
+
+
+1.35
+log
+@Add new source to project as well.
+@
+text
+@d147 1
+@
+
+
+1.34
+log
+@Updated bulk of java.nio to OpenJDK 7.
+@
+text
+@d145 1
+@
+
+
+1.33
+log
+@Add new files to project.
+@
+text
+@d145 1
+@
+
+
+1.32
+log
+@Ported fdlibm/s_log1p.
+@
+text
+@d125 1
+d127 2
+d131 1
+d134 1
+@
+
+
+1.31
+log
+@Ported fdlibm/e_hypot.
+@
+text
+@d128 1
+@
+
+
+1.30
+log
+@- Ported fdlibm/s_exmp1.
+- Fixed signed/unsigned issues in fdlibm/e_pow.
+- Moved constants into method for fdlibm/e_pow and fdlibm/s_scalbn.
+@
+text
+@d123 1
+@
+
+
+1.29
+log
+@Ported fdlibm cbrt to C# and use that for StrictMath.cbrt().
+@
+text
+@d126 1
+@
+
+
+1.28
+log
+@- Added fdlibm files to project.
+- Changed StrictMath.pow() to use new fdlibm version.
+@
+text
+@d125 1
+@
+
+
+1.27
+log
+@Moved local variable analysis from verifier.cs to new file LocalVars.cs.
+@
+text
+@d123 3
+@
+
+
+1.26
+log
+@Replaced most type literals with static field access (in Types class) or warpped JVM.Import() around them.
+@
+text
+@d128 1
+@
+
+
+1.25
+log
+@Moved AssemblyClassLoader and BootstrapClassLoader into AssemblyClassLoader.cs.
+@
+text
+@d142 1
+@
+
+
+1.24
+log
+@Moved DotNetTypeWrapper class into its own source file.
+@
+text
+@d82 1
+@
+
+
+1.23
+log
+@Added new DynamicTypeWrapper.cs source to project.
+@
+text
+@d114 1
+@
+
+
+1.22
+log
+@Implemented automatically enabling .NET serialization support for Java classes that are trivially serializable.
+@
+text
+@d117 1
+@
+
+
+1.21
+log
+@Moved Virtual File System into a separate source file.
+@
+text
+@d135 1
+@
+
+
+1.20
+log
+@Added support for inlining subroutines (jsr/ret) to allow the verifier and compiler to be simplified and to hopefully pave the way for future codegen optimizations.
+@
+text
+@d144 1
+@
+
+
+1.19
+log
+@Implemented ikvm.internal.ClassLiteral<T> to allow for more efficient class literals.
+@
+text
+@d124 1
+@
+
+
+1.18
+log
+@Updated build to split IKVM.OpenJDK.ClassLibrary.dll into ten parts.
+@
+text
+@d133 1
+@
+
+
+1.17
+log
+@Integrated IKVM.Reflection.Emit in ikvmc.
+@
+text
+@d56 1
+a56 1
+    <Reference Include="IKVM.OpenJDK.ClassLibrary, Version=0.35.2790.20823, Culture=neutral, processorArchitecture=MSIL">
+d58 9
+a66 1
+      <HintPath>..\bin\IKVM.OpenJDK.ClassLibrary.dll</HintPath>
+@
+
+
+1.16
+log
+@Removed support for building with GNU Classpath class library.
+@
+text
+@d4 1
+a4 1
+    <ProductVersion>8.0.50727</ProductVersion>
+d124 1
+@
+
+
+1.15
+log
+@- Added ghost array tagging to be able to report the instantiated class (instead of object[] which is allocated instead).
+- Fixed ldc <class> where <class> is a ghost array.
+- Fixed bug in instanceof <class> where <class> is a Serializable[].
+@
+text
+@d39 1
+a39 1
+    <DefineConstants>TRACE;DEBUG;WHIDBEY;OPENJDK</DefineConstants>
+a95 3
+    <Compile Include="classpath.cs">
+      <SubType>Code</SubType>
+    </Compile>
+@
+
+
+1.14
+log
+@- added more efficient float/double to/from int/long bits converters
+- made Double.doubleToRawLongBits/longBitsToDouble and Float.floatToRawIntBits/intBitsToFloat intrinsics
+- generalized the intrinsics support
+@
+text
+@d123 1
+@
+
+
+1.13
+log
+@- Moved common assembly attributes to single file (CommonAssemblyInfo.cs).
+- Added IKVM.Runtime.JNI project to Visual Studio solution.
+- Added atomic.cs to Visual Studio projects.
+- Added SecurityCritical and AllowPartiallyTrustedCallers attributes to IKVM.Runtime.dll.
+@
+text
+@d115 1
+@
+
+
+1.12
+log
+@Intrinsified AtomicReferenceFieldUpdater.newUpdater().
+@
+text
+@d34 1
+a34 1
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+d71 3
+@
+
+
+1.11
+log
+@Moved JNI implementation into a separate assembly (IKVM.Runtime.JNI.dll) to make IKVM.Runtime.dll verifiable.
+@
+text
+@d74 1
+@
+
+
+1.10
+log
+@- Removed .NET 1.1 specific code
+- Removed conditional compilation of .NET 2.0 specific code
+@
+text
+@d60 4
+a113 3
+    <Compile Include="JniInterface.cs">
+      <SubType>Code</SubType>
+    </Compile>
+@
+
+
+1.9
+log
+@- Removed Visual Studio 2003 solution/project files.
+- Added Visual Studio 2008 solution.
+@
+text
+@a115 1
+    <Compile Include="netinf.cs" />
+@
+
+
+1.8
+log
+@Renamed IKVM.Hybrid.GNU.Classpath.OpenJDK.dll to IKVM.OpenJDK.ClassLibrary.dll and made OpenJDK build the default.
+@
+text
+@d1 1
+a1 1
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+d30 1
+@
+
+
+1.7
+log
+@Added .NET 1.1 implementation of the System.Net.NetworkInformation namespace.
+@
+text
+@d55 1
+a55 1
+    <Reference Include="IKVM.Hybrid.GNU.Classpath.OpenJDK, Version=0.35.2728.21374, Culture=neutral, processorArchitecture=MSIL">
+d57 1
+a57 1
+      <HintPath>..\bin\IKVM.Hybrid.GNU.Classpath.OpenJDK.dll</HintPath>
+a86 3
+    <Compile Include="classpath-hybrid.cs">
+      <SubType>Code</SubType>
+    </Compile>
+@
+
+
+1.6
+log
+@Switched Visual Studio project to hybrid build.
+@
+text
+@d63 1
+d118 1
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d55 3
+a57 3
+    <Reference Include="IKVM.GNU.Classpath">
+      <Name>IKVM.GNU.Classpath</Name>
+      <HintPath>..\bin\IKVM.GNU.Classpath.dll</HintPath>
+@
+
+
+1.4
+log
+@Integrated OpenJDK's java.lang.reflect.* classes (except for Array).
+@
+text
+@d86 3
+a88 1
+    <Compile Include="classpath-hybrid.cs" />
+d95 1
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d38 1
+a38 1
+    <DefineConstants>TRACE;DEBUG;WHIDBEY</DefineConstants>
+d86 1
+@
+
+
+1.2
+log
+@Integrated GNU Classpath / OpenJDK hybrid build.
+@
+text
+@d62 1
+@
+
+
+1.1
+log
+@New Visual Studio 2005 solution and project files.
+@
+text
+@d112 1
+@
+

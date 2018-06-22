@@ -1,0 +1,1595 @@
+head	1.3;
+access;
+symbols
+	v8_1_5717_0:1.3
+	v8_1:1.3.0.22
+	v8_0_5449_1:1.3
+	v8_0_5449_0:1.3
+	v8_0:1.3.0.20
+	v7_4_5196_0:1.3
+	v7_4:1.3.0.18
+	v7_3:1.3.0.16
+	v7_2_4630_6:1.3
+	v7_2_4630_5:1.3
+	v7_2_4630_4:1.3
+	v7_2_4630_3:1.3
+	v7_2_4630_2:1.3
+	v0_46_0_4:1.3
+	v7_2_4630_1:1.3
+	v7_2:1.3.0.14
+	v7_1_4532_2:1.3
+	v7_1_4532_1:1.3
+	v7_1_4532_0:1.3
+	v7_1:1.3.0.12
+	v7_0_4335_3:1.3
+	v7_0_4335_2:1.3
+	v7_0_4335_1:1.3
+	v0_46_0_2:1.3
+	v7_0_4335_0:1.3
+	v7_0:1.3.0.10
+	v0_40_0_6:1.3
+	v0_40_0_5:1.3
+	v0_46_0_1:1.3
+	v0_46_0_0:1.3
+	v0_46:1.3.0.8
+	v0_44_0_6:1.3
+	v0_44_0_5:1.3
+	v0_44_0_4:1.3
+	v0_44_0_3:1.3
+	v0_44_0_2:1.3
+	v0_42_0_7:1.3
+	v0_44_0_1:1.3
+	v0_44_0_0:1.3
+	v0_44:1.3.0.6
+	v0_42_0_6:1.3
+	v0_42_0_5:1.3
+	v0_42_0_4:1.3
+	v0_42_0_3:1.3
+	v0_42_0_2:1.3
+	v0_42_0_1:1.3
+	v0_42_0_0:1.3
+	v0_42:1.3.0.4
+	v0_40_0_3:1.3
+	v0_40_0_2:1.3
+	v0_40_0_1:1.3
+	v0_40_0_0:1.3
+	v0_40:1.3.0.2;
+locks; strict;
+comment	@# @;
+expand	@k@;
+
+
+1.3
+date	2009.02.01.10.39.43;	author smallsql;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2009.01.25.09.03.24;	author smallsql;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2009.01.18.21.47.51;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.3
+log
+@many database metadata implement and updatable resultset added
+@
+text
+@/*
+  Copyright (C) 2009 Volker Berlin (i-net software)
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+ */
+package sun.jdbc.odbc;
+
+import java.sql.*;
+
+import cli.System.Data.*;
+
+/**
+ * This JDBC Driver is a wrapper to the ODBC.NET Data Provider. This ResultSet based on DataTable. It is read only and
+ * scrollable.
+ */
+public class JdbcOdbcDTResultSet extends JdbcOdbcResultSet{
+
+    private final DataTable data;
+
+    private DataRowCollection rows;
+
+    private int rowIndex; // row index starting with 0; -1 means beforeFirst
+
+    private cli.System.Data.DataRow row;
+
+
+    public JdbcOdbcDTResultSet(DataTable data){
+        this(data, CONCUR_READ_ONLY);
+    }
+    public JdbcOdbcDTResultSet(DataTable data, int concurrency){
+        super(null, TYPE_SCROLL_INSENSITIVE, concurrency);
+        this.data = data;
+        this.rows = data.get_Rows();
+        this.rowIndex = -1;
+    }
+
+
+    @@Override
+    public boolean absolute(int rowPosition) throws SQLException{
+        if(rowPosition == 0){
+            return !isBeforeFirst() && !isAfterLast();
+        }
+        DataRowCollection dataRows = getRows();
+        int count = dataRows.get_Count();
+        if(rowPosition > 0){
+            if(rowPosition > count){
+                rowIndex = count;
+                setDataRow();
+                return false;
+            }
+            rowIndex = rowPosition - 1;
+            setDataRow();
+            return true;
+        }else{
+            if(-rowPosition > count){
+                rowIndex = -1;
+                setDataRow();
+                return false;
+            }
+            rowIndex = count + rowPosition;
+            setDataRow();
+            return true;
+        }
+    }
+
+
+    @@Override
+    public void afterLast() throws SQLException{
+        rowIndex = getRows().get_Count();
+        setDataRow();
+    }
+
+
+    @@Override
+    public void beforeFirst() throws SQLException{
+        rowIndex = -1;
+        setDataRow();
+    }
+
+
+    @@Override
+    public void close(){
+        rows = null;
+    }
+
+
+    @@Override
+    public int findColumn(String columnLabel) throws SQLException{
+        getRows(); // Check if ResultSet is closed
+        int idx = data.get_Columns().IndexOf(columnLabel);
+        if(idx < 0){
+            throw new SQLException("Column '" + columnLabel + "' not found.", "S0022");
+        }
+        return idx + 1;
+    }
+
+
+    @@Override
+    public boolean first() throws SQLException{
+        beforeFirst();
+        return next();
+    }
+
+
+    @@Override
+    public ResultSetMetaData getMetaData(){
+        return new JdbcOdbcDTResultSetMetaData(data);
+    }
+
+
+    @@Override
+    public int getRow() throws SQLException{
+        return rowIndex < getRows().get_Count() ? rowIndex + 1 : 0;
+    }
+
+
+    @@Override
+    public boolean isAfterLast() throws SQLException{
+        int count = getRows().get_Count();
+        return rowIndex >= count || count == 0;
+    }
+
+
+    @@Override
+    public boolean isBeforeFirst() throws SQLException{
+        return rowIndex <= -1 || getRows().get_Count() == 0;
+    }
+
+
+    @@Override
+    public boolean isClosed(){
+        return rows == null;
+    }
+
+
+    @@Override
+    public boolean isFirst() throws SQLException{
+        return rowIndex == 0 && getRows().get_Count() > 0;
+    }
+
+
+    @@Override
+    public boolean isLast() throws SQLException{
+        return rowIndex >= 0 && rowIndex == getRows().get_Count() - 1;
+    }
+
+
+    @@Override
+    public boolean last() throws SQLException{
+        afterLast();
+        return previous();
+    }
+
+
+    @@Override
+    public boolean next() throws SQLException{
+        DataRowCollection dataRows = getRows();
+        if(rowIndex + 1 < dataRows.get_Count()){
+            ++rowIndex;
+            setDataRow();
+            return true;
+        }else{
+            rowIndex = dataRows.get_Count();
+            setDataRow();
+            return false;
+        }
+    }
+
+
+    @@Override
+    public boolean previous() throws SQLException{
+        if(rowIndex > 0){
+            --rowIndex;
+            setDataRow();
+            return true;
+        }else{
+            rowIndex = -1;
+            setDataRow();
+            return false;
+        }
+    }
+
+
+    @@Override
+    public void refreshRow(){
+        // ignore it
+    }
+
+
+    @@Override
+    public boolean relative(int rowPositions) throws SQLException{
+        DataRowCollection dataRows = getRows();
+        int newRowIndex = rowIndex + rowPositions;
+        if(newRowIndex < 0){
+            rowIndex = -1;
+            setDataRow();
+            return false;
+        }
+        int count = dataRows.get_Count();
+        if(newRowIndex >= dataRows.get_Count()){
+            rowIndex = count;
+            setDataRow();
+            return false;
+        }
+        rowIndex = newRowIndex;
+        setDataRow();
+        return true;
+    }
+
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+    protected Object getObjectImpl(int columnIndex) throws SQLException{
+        try{
+            return getDataRow().get_Item(columnIndex - 1);
+        }catch(ArrayIndexOutOfBoundsException ex){
+            throw new SQLException("Invalid column number (" + columnIndex + "). A number between 1 and "
+                    + data.get_Columns().get_Count() + " is valid.", "S1002");
+        }
+    }
+
+
+    /**
+     * Check if this ResultSet is closed before access to the DataRowCollection
+     * 
+     * @@return the local rows object
+     * @@throws SQLException
+     *             If the ResultSet is closed.
+     */
+    protected DataRowCollection getRows() throws SQLException{
+        if(rows == null){
+            throw new SQLException("ResultSet is closed.", "24000");
+        }
+        return rows;
+    }
+
+
+    /**
+     * Get the current DataRow
+     * 
+     * @@return the DataRow
+     * @@throws SQLException
+     *             if closed or no current Row
+     */
+    protected DataRow getDataRow() throws SQLException{
+        getRows(); // checks if ResultSet is closed
+        if(row == null){
+            throw new SQLException("No current row", "S1109");
+        }
+        return row;
+    }
+    
+    /**
+     * Set the current row from the current rowIndex. If the rowIndex was not change
+     * then the row variable will be new set.
+     * @@throws SQLException If the ResultSet is closed.
+     */
+    protected void setDataRow() throws SQLException{
+        DataRowCollection dataRows = getRows();
+        if(rowIndex < 0 || rowIndex >= dataRows.get_Count()){
+            row = null;
+        }else{
+            row = dataRows.get_Item(rowIndex);
+        }
+    }
+
+}
+@
+
+
+1.2
+log
+@250 TODO in JDBC-ODBC-Bridge fixt
+@
+text
+@d31 2
+a32 2
+ * This JDBC Driver is a wrapper to the ODBC.NET Data Provider. This ResultSet based on DataTable.
+ * It is read only and scrollable.
+d46 4
+a49 1
+        super(null, TYPE_SCROLL_INSENSITIVE, CONCUR_READ_ONLY);
+a64 1
+                row = null;
+d66 1
+d70 1
+a70 1
+            row = dataRows.get_Item(rowIndex);
+a73 1
+                row = null;
+d75 1
+d79 1
+a79 1
+            row = dataRows.get_Item(rowIndex);
+a86 1
+        row = null;
+d88 1
+d93 1
+a93 2
+    public void beforeFirst(){
+        row = null;
+d95 1
+d177 2
+a178 1
+            row = dataRows.get_Item(++rowIndex);
+d182 1
+a182 1
+            row = null;
+d191 2
+a192 1
+            row = getRows().get_Item(--rowIndex);
+d196 1
+a196 1
+            row = null;
+d214 1
+a214 1
+            row = null;
+d220 1
+a220 1
+            row = null;
+d224 1
+a224 1
+        row = getRows().get_Item(newRowIndex);
+a233 4
+        getRows(); // checks if ResultSet is closed
+        if(row == null){
+            throw new SQLException("No current row", "S1109");
+        }
+d235 1
+a235 1
+            return row.get_Item(columnIndex - 1);
+d237 2
+a238 1
+            throw new SQLException( "Invalid column number ("+columnIndex+"). A number between 1 and "+data.get_Columns().get_Count()+" is valid.", "S1002");
+d250 1
+a250 1
+    private DataRowCollection getRows() throws SQLException{
+d256 31
+@
+
+
+1.1
+log
+@JDBC-ODBC-Bridge Step 2
+@
+text
+@a25 4
+import java.io.InputStream;
+import java.io.Reader;
+import java.math.BigDecimal;
+import java.net.URL;
+a26 2
+import java.util.Calendar;
+import java.util.Map;
+d31 2
+a32 2
+ * This JDBC Driver is a wrapper to the ODBC.NET Data Provider.
+ * This ResultSet based on DataTable.
+d34 1
+a34 1
+public class JdbcOdbcDTResultSet implements ResultSet{
+d37 5
+a41 2
+    private final DataRowCollection rows;
+    private int rowIndex; // row index starting with 0;
+d44 1
+d46 1
+d53 26
+a78 3
+    public boolean absolute(int row) throws SQLException{
+        // TODO Auto-generated method stub
+        return false;
+d82 1
+d84 2
+a85 20
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void beforeFirst() throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void cancelRowUpdates() throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void clearWarnings() throws SQLException{
+        // TODO Auto-generated method stub
+
+d89 4
+a92 3
+    public void close() throws SQLException{
+        // TODO Auto-generated method stub
+
+d96 3
+a98 3
+    public void deleteRow() throws SQLException{
+        // TODO Auto-generated method stub
+
+d102 1
+d104 6
+a109 1
+        return data.get_Columns().IndexOf(columnLabel) + 1;
+d113 1
+d115 2
+a116 2
+        // TODO Auto-generated method stub
+        return false;
+d120 3
+a122 3
+    public Array getArray(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d126 3
+a128 3
+    public Array getArray(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d132 4
+a135 3
+    public InputStream getAsciiStream(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d139 3
+a141 3
+    public InputStream getAsciiStream(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d145 3
+a147 3
+    public BigDecimal getBigDecimal(int columnIndex, int scale) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d151 3
+a153 3
+    public BigDecimal getBigDecimal(String columnLabel, int scale) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d157 3
+a159 3
+    public BigDecimal getBigDecimal(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d163 4
+a166 3
+    public BigDecimal getBigDecimal(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d170 11
+a180 3
+    public InputStream getBinaryStream(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d184 10
+a193 3
+    public InputStream getBinaryStream(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d197 3
+a199 3
+    public Blob getBlob(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d203 18
+a220 206
+    public Blob getBlob(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public boolean getBoolean(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+
+    public boolean getBoolean(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+
+    public byte getByte(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+
+    public byte getByte(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+
+    public byte[] getBytes(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public byte[] getBytes(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public Reader getCharacterStream(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public Reader getCharacterStream(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public Clob getClob(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public Clob getClob(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public int getConcurrency() throws SQLException{
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+
+    public String getCursorName() throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public Date getDate(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public Date getDate(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public Date getDate(int columnIndex, Calendar cal) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public Date getDate(String columnLabel, Calendar cal) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public double getDouble(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+
+    public double getDouble(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+
+    public int getFetchDirection() throws SQLException{
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+
+    public int getFetchSize() throws SQLException{
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+
+    public float getFloat(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+
+    public float getFloat(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+
+    public int getHoldability() throws SQLException{
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+
+    public int getInt(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+
+    public int getInt(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+
+    public long getLong(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+
+    public long getLong(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+
+    public ResultSetMetaData getMetaData(){
+        return new JdbcOdbcDTResultSetMetaData(null, data);
+    }
+
+
+    public Reader getNCharacterStream(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public Reader getNCharacterStream(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public NClob getNClob(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public NClob getNClob(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public String getNString(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public String getNString(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+d224 6
+a229 1
+    public Object getObject(int columnIndex) throws SQLException{
+d233 5
+a237 1
+        return row.get_Item(columnIndex - 1);
+d241 12
+a252 194
+    public Object getObject(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public Object getObject(int columnIndex, Map<String, Class<?>> map) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public Object getObject(String columnLabel, Map<String, Class<?>> map) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public Ref getRef(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public Ref getRef(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public int getRow(){
+        return rowIndex < rows.get_Count() ? rowIndex + 1 : 0;
+    }
+
+
+    public RowId getRowId(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public RowId getRowId(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public SQLXML getSQLXML(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public SQLXML getSQLXML(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public short getShort(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+
+    public short getShort(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+
+    public Statement getStatement() throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public String getString(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public String getString(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public Time getTime(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public Time getTime(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public Time getTime(int columnIndex, Calendar cal) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public Time getTime(String columnLabel, Calendar cal) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public Timestamp getTimestamp(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public Timestamp getTimestamp(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public Timestamp getTimestamp(int columnIndex, Calendar cal) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public Timestamp getTimestamp(String columnLabel, Calendar cal) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public int getType() throws SQLException{
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+
+    public URL getURL(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public URL getURL(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public InputStream getUnicodeStream(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public InputStream getUnicodeStream(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public SQLWarning getWarnings() throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public void insertRow() throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public boolean isAfterLast() throws SQLException{
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+
+    public boolean isBeforeFirst() throws SQLException{
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+
+    public boolean isClosed() throws SQLException{
+        // TODO Auto-generated method stub
+        return false;
+a253 607
+
+
+    public boolean isFirst() throws SQLException{
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+
+    public boolean isLast() throws SQLException{
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+
+    public boolean last() throws SQLException{
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+
+    public void moveToCurrentRow() throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void moveToInsertRow() throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public boolean next() throws SQLException{
+        if( rowIndex + 1 < rows.get_Count()){
+            rowIndex++;
+            row = rows.get_Item(rowIndex);
+            return true;
+        }else{
+            row = null;
+            return false;
+        }
+    }
+
+
+    public boolean previous() throws SQLException{
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+
+    public void refreshRow() throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public boolean relative(int rows) throws SQLException{
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+
+    public boolean rowDeleted() throws SQLException{
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+
+    public boolean rowInserted() throws SQLException{
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+
+    public boolean rowUpdated() throws SQLException{
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+
+    public void setFetchDirection(int direction) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void setFetchSize(int rows) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateArray(int columnIndex, Array x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateArray(String columnLabel, Array x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateAsciiStream(int columnIndex, InputStream x, int length) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateAsciiStream(String columnLabel, InputStream x, int length) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateAsciiStream(int columnIndex, InputStream x, long length) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateAsciiStream(String columnLabel, InputStream x, long length) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateAsciiStream(int columnIndex, InputStream x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateAsciiStream(String columnLabel, InputStream x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateBigDecimal(int columnIndex, BigDecimal x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateBigDecimal(String columnLabel, BigDecimal x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateBinaryStream(int columnIndex, InputStream x, int length) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateBinaryStream(String columnLabel, InputStream x, int length) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateBinaryStream(int columnIndex, InputStream x, long length) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateBinaryStream(String columnLabel, InputStream x, long length) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateBinaryStream(int columnIndex, InputStream x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateBinaryStream(String columnLabel, InputStream x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateBlob(int columnIndex, Blob x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateBlob(String columnLabel, Blob x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateBlob(int columnIndex, InputStream inputStream, long length) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateBlob(String columnLabel, InputStream inputStream, long length) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateBlob(int columnIndex, InputStream inputStream) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateBlob(String columnLabel, InputStream inputStream) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateBoolean(int columnIndex, boolean x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateBoolean(String columnLabel, boolean x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateByte(int columnIndex, byte x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateByte(String columnLabel, byte x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateBytes(int columnIndex, byte[] x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateBytes(String columnLabel, byte[] x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateCharacterStream(int columnIndex, Reader x, int length) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateCharacterStream(String columnLabel, Reader reader, int length) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateCharacterStream(int columnIndex, Reader x, long length) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateCharacterStream(String columnLabel, Reader reader, long length) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateCharacterStream(int columnIndex, Reader x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateCharacterStream(String columnLabel, Reader reader) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateClob(int columnIndex, Clob x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateClob(String columnLabel, Clob x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateClob(int columnIndex, Reader reader, long length) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateClob(String columnLabel, Reader reader, long length) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateClob(int columnIndex, Reader reader) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateClob(String columnLabel, Reader reader) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateDate(int columnIndex, Date x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateDate(String columnLabel, Date x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateDouble(int columnIndex, double x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateDouble(String columnLabel, double x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateFloat(int columnIndex, float x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateFloat(String columnLabel, float x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateInt(int columnIndex, int x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateInt(String columnLabel, int x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateLong(int columnIndex, long x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateLong(String columnLabel, long x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateNCharacterStream(int columnIndex, Reader x, long length) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateNCharacterStream(String columnLabel, Reader reader, long length) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateNCharacterStream(int columnIndex, Reader x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateNCharacterStream(String columnLabel, Reader reader) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateNClob(int columnIndex, NClob clob) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateNClob(String columnLabel, NClob clob) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateNClob(int columnIndex, Reader reader, long length) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateNClob(String columnLabel, Reader reader, long length) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateNClob(int columnIndex, Reader reader) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateNClob(String columnLabel, Reader reader) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateNString(int columnIndex, String string) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateNString(String columnLabel, String string) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateNull(int columnIndex) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateNull(String columnLabel) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateObject(int columnIndex, Object x, int scaleOrLength) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateObject(int columnIndex, Object x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateObject(String columnLabel, Object x, int scaleOrLength) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateObject(String columnLabel, Object x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateRef(int columnIndex, Ref x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateRef(String columnLabel, Ref x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateRow() throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateRowId(int columnIndex, RowId x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateRowId(String columnLabel, RowId x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateSQLXML(int columnIndex, SQLXML xmlObject) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateSQLXML(String columnLabel, SQLXML xmlObject) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateShort(int columnIndex, short x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateShort(String columnLabel, short x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateString(int columnIndex, String x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateString(String columnLabel, String x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateTime(int columnIndex, Time x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateTime(String columnLabel, Time x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateTimestamp(int columnIndex, Timestamp x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public void updateTimestamp(String columnLabel, Timestamp x) throws SQLException{
+        // TODO Auto-generated method stub
+
+    }
+
+
+    public boolean wasNull() throws SQLException{
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+
+    public boolean isWrapperFor(Class<?> iface) throws SQLException{
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+
+    public <T>T unwrap(Class<T> iface) throws SQLException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+@
+

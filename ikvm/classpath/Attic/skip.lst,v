@@ -1,0 +1,330 @@
+head	1.13;
+access;
+symbols
+	v0_36_0_14:1.12
+	v0_36_0_13:1.12
+	v0_36_0_9:1.12
+	v0_36_0_7:1.12
+	v0_36_0_5:1.12
+	v0_36_0_4:1.12
+	v0_36_0_3:1.12
+	v0_36_0_2:1.12
+	v0_36_0_1:1.12
+	v0_36_0_0:1.12
+	v0_36:1.12.0.4
+	v0_34_0_3:1.12
+	v0_34_0_2:1.12
+	v0_34_0_1:1.12
+	v0_34_0_0:1.12
+	v0_34:1.12.0.2
+	v0_32:1.10.0.2
+	v0_32_0_0:1.10
+	v0_30:1.7.0.2
+	v0_28_0_0:1.4
+	v0_26_0_1:1.2
+	v0_26_0_0:1.2;
+locks; strict;
+comment	@# @;
+
+
+1.13
+date	2008.08.06.12.51.13;	author jfrijters;	state dead;
+branches;
+next	1.12;
+
+1.12
+date	2007.03.05.14.56.40;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2006.12.11.13.13.27;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2006.10.19.06.12.48;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2006.09.22.13.26.13;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2006.09.20.05.53.38;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2006.07.11.14.28.42;	author jfrijters;	state Exp;
+branches
+	1.7.2.1;
+next	1.6;
+
+1.6
+date	2006.07.01.13.07.15;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2006.06.20.14.50.57;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2006.05.15.09.57.19;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2006.04.17.08.33.49;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2006.02.09.09.52.33;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2006.01.31.10.13.32;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.7.2.1
+date	2006.08.03.16.06.06;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.13
+log
+@Removed files that are no longer needed no that GNU Classpath support has been dropped.
+@
+text
+@/classpath/external/jsr166/java/util/concurrent/atomic/AtomicBoolean.java
+/classpath/external/jsr166/java/util/concurrent/atomic/AtomicInteger.java
+/classpath/external/jsr166/java/util/concurrent/atomic/AtomicIntegerArray.java
+/classpath/external/jsr166/java/util/concurrent/atomic/AtomicLong.java
+/classpath/external/jsr166/java/util/concurrent/atomic/AtomicLongArray.java
+/classpath/external/jsr166/java/util/concurrent/atomic/AtomicReference.java
+/classpath/external/jsr166/java/util/concurrent/atomic/AtomicReferenceArray.java
+/classpath/external/jsr166/java/util/concurrent/locks/LockSupport.java
+/classpath/gnu/java/awt/dnd/
+/classpath/gnu/java/awt/peer/ClasspathDesktopPeer.java
+/classpath/gnu/java/awt/peer/GnomeDesktopPeer.java
+/classpath/gnu/java/awt/peer/KDEDesktopPeer.java
+/classpath/gnu/java/awt/peer/gtk/
+/classpath/gnu/java/awt/peer/qt/
+/classpath/gnu/java/awt/peer/x/
+/classpath/gnu/java/util/prefs/gconf/
+/classpath/gnu/java/util/prefs/GConfBasedFactory.java
+/classpath/gnu/java/util/prefs/GConfBasedPreferences.java
+/classpath/compat/
+/classpath/examples/
+/classpath/gnu/classpath/jdwp/
+/classpath/gnu/java/net/local/
+/classpath/gnu/java/net/PlainDatagramSocketImpl.java
+/classpath/gnu/java/net/PlainSocketImpl.java 
+/classpath/gnu/java/nio/channels/FileChannelImpl.java
+/classpath/gnu/java/nio/charset/iconv/
+/classpath/gnu/java/nio/DatagramChannelImpl.java
+/classpath/gnu/java/nio/DatagramChannelSelectionKey.java
+/classpath/gnu/java/nio/EpollSelectionKeyImpl.java
+/classpath/gnu/java/nio/EpollSelectorImpl.java
+/classpath/gnu/java/nio/FileChannelImpl.java
+/classpath/gnu/java/nio/KqueueSelectorImpl.java
+/classpath/gnu/java/nio/KqueueSelectionKeyImpl.java
+/classpath/gnu/java/nio/NIOConstants.java
+/classpath/gnu/java/nio/NIODatagramSocket.java
+/classpath/gnu/java/nio/NIOServerSocket.java
+/classpath/gnu/java/nio/NIOSocket.java
+/classpath/gnu/java/nio/NIOSocketImpl.java
+/classpath/gnu/java/nio/PipeImpl.java
+/classpath/gnu/java/nio/SelectionKeyImpl.java
+/classpath/gnu/java/nio/SelectorImpl.java
+/classpath/gnu/java/nio/SelectorProviderImpl.java
+/classpath/gnu/java/nio/ServerSocketChannelImpl.java
+/classpath/gnu/java/nio/ServerSocketChannelSelectionKey.java
+/classpath/gnu/java/nio/SocketChannelImpl.java
+/classpath/gnu/java/nio/SocketChannelSelectionKey.java
+/classpath/gnu/java/nio/SocketChannelSelectionKeyImpl.java
+/classpath/gnu/java/nio/VMChannelOwner.java
+/classpath/gnu/javax/sound/midi/
+/classpath/gnu/xml/libxmlj/
+/classpath/gnu/test/
+/classpath/java/lang/ref/Reference.java
+/classpath/java/nio/DirectByteBufferImpl.java
+/classpath/java/nio/MappedByteBufferImpl.java
+/classpath/testsuite/
+/classpath/test/
+/classpath/tools/
+/classpath/vm/reference/
+blablalba
+@
+
+
+1.12
+log
+@Updated for current GNU Classpath cvs.
+@
+text
+@@
+
+
+1.11
+log
+@*** empty log message ***
+@
+text
+@d10 3
+@
+
+
+1.10
+log
+@*** empty log message ***
+@
+text
+@d1 8
+d56 1
+@
+
+
+1.9
+log
+@*** empty log message ***
+@
+text
+@a10 3
+/classpath/gnu/classpath/Pointer.java
+/classpath/gnu/classpath/Pointer32.java
+/classpath/gnu/classpath/Pointer64.java
+d42 1
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@d21 2
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d19 1
+d21 9
+d32 2
+d35 1
+d38 1
+@
+
+
+1.7.2.1
+log
+@*** empty log message ***
+@
+text
+@d1 33
+a33 33
+/classpath-0.92/gnu/java/awt/dnd/
+/classpath-0.92/gnu/java/awt/peer/gtk/
+/classpath-0.92/gnu/java/awt/peer/qt/
+/classpath-0.92/gnu/java/awt/peer/x/
+/classpath-0.92/gnu/java/util/prefs/gconf/
+/classpath-0.92/gnu/java/util/prefs/GConfBasedFactory.java
+/classpath-0.92/gnu/java/util/prefs/GConfBasedPreferences.java
+/classpath-0.92/compat/
+/classpath-0.92/examples/
+/classpath-0.92/gnu/classpath-0.92/jdwp/
+/classpath-0.92/gnu/classpath-0.92/Pointer.java
+/classpath-0.92/gnu/classpath-0.92/Pointer32.java
+/classpath-0.92/gnu/classpath-0.92/Pointer64.java
+/classpath-0.92/gnu/java/net/local/
+/classpath-0.92/gnu/java/net/PlainDatagramSocketImpl.java
+/classpath-0.92/gnu/java/net/PlainSocketImpl.java 
+/classpath-0.92/gnu/java/nio/channels/FileChannelImpl.java
+/classpath-0.92/gnu/java/nio/charset/iconv/
+/classpath-0.92/gnu/java/nio/DatagramChannelSelectionKey.java
+/classpath-0.92/gnu/java/nio/SelectionKeyImpl.java
+/classpath-0.92/gnu/java/nio/SelectorImpl.java
+/classpath-0.92/gnu/java/nio/ServerSocketChannelSelectionKey.java
+/classpath-0.92/gnu/java/nio/SocketChannelSelectionKey.java
+/classpath-0.92/gnu/java/nio/SocketChannelSelectionKeyImpl.java
+/classpath-0.92/gnu/javax/sound/midi/
+/classpath-0.92/gnu/xml/libxmlj/
+/classpath-0.92/gnu/test/
+/classpath-0.92/java/lang/ref/Reference.java
+/classpath-0.92/java/nio/MappedByteBufferImpl.java
+/classpath-0.92/testsuite/
+/classpath-0.92/test/
+/classpath-0.92/tools/
+/classpath-0.92/vm/reference/
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d1 1
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d3 1
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d3 3
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d19 1
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d9 1
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@d25 1
+@
+

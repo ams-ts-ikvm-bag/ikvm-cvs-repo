@@ -1,0 +1,754 @@
+head	1.21;
+access;
+symbols
+	v8_1_5717_0:1.21
+	v8_1:1.21.0.2
+	v8_0_5449_1:1.20
+	v8_0_5449_0:1.20
+	v8_0:1.20.0.8
+	v7_4_5196_0:1.20
+	v7_4:1.20.0.6
+	v7_3:1.20.0.4
+	v7_2_4630_6:1.20
+	v7_2_4630_5:1.20
+	v7_2_4630_4:1.20
+	v7_2_4630_3:1.20
+	v7_2_4630_2:1.20
+	v0_46_0_4:1.4.4.1
+	v7_2_4630_1:1.20
+	v7_2:1.20.0.2
+	v7_1_4532_2:1.8
+	v7_1_4532_1:1.8
+	v7_1_4532_0:1.8
+	v7_1:1.8.0.2
+	v7_0_4335_3:1.7
+	v7_0_4335_2:1.7
+	v7_0_4335_1:1.7
+	v0_46_0_2:1.4.4.1
+	v7_0_4335_0:1.7
+	v7_0:1.7.0.2
+	v0_46_0_1:1.4.4.1
+	v0_46_0_0:1.4
+	v0_46:1.4.0.4
+	v0_44_0_6:1.4
+	v0_44_0_5:1.4
+	v0_44_0_4:1.4
+	v0_44_0_3:1.4
+	v0_44_0_2:1.4
+	v0_44_0_1:1.4
+	v0_44_0_0:1.4
+	v0_44:1.4.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.21
+date	2015.04.06.07.12.29;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2012.07.16.10.14.38;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2012.07.13.13.08.28;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2012.07.13.10.26.07;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2012.07.13.10.22.18;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2012.07.13.10.17.11;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2012.07.13.09.45.43;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2012.07.13.09.10.50;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2012.07.13.07.37.54;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2012.07.13.06.33.30;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2012.07.12.15.10.58;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2012.07.12.13.30.05;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2012.06.26.12.52.32;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2011.12.01.06.30.51;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2011.03.13.09.03.15;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2011.03.08.08.41.00;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2011.03.08.08.05.09;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.06.24.08.46.25;	author jfrijters;	state Exp;
+branches
+	1.4.4.1;
+next	1.3;
+
+1.3
+date	2010.04.19.05.26.28;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.4.4.1
+date	2011.03.17.05.18.42;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.21
+log
+@Fixed known custom attribute handling. They should be recognized by type name, not type identity.
+@
+text
+@/*
+  Copyright (C) 2008-2012 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using IKVM.Reflection.Metadata;
+using IKVM.Reflection.Writer;
+
+namespace IKVM.Reflection.Emit
+{
+	public sealed class FieldBuilder : FieldInfo
+	{
+		private readonly TypeBuilder typeBuilder;
+		private readonly string name;
+		private readonly int pseudoToken;
+		private FieldAttributes attribs;
+		private readonly int nameIndex;
+		private readonly int signature;
+		private readonly FieldSignature fieldSig;
+
+		internal FieldBuilder(TypeBuilder type, string name, Type fieldType, CustomModifiers customModifiers, FieldAttributes attribs)
+		{
+			this.typeBuilder = type;
+			this.name = name;
+			this.pseudoToken = type.ModuleBuilder.AllocPseudoToken();
+			this.nameIndex = type.ModuleBuilder.Strings.Add(name);
+			this.fieldSig = FieldSignature.Create(fieldType, customModifiers);
+			ByteBuffer sig = new ByteBuffer(5);
+			fieldSig.WriteSig(this.typeBuilder.ModuleBuilder, sig);
+			this.signature = this.typeBuilder.ModuleBuilder.Blobs.Add(sig);
+			this.attribs = attribs;
+			this.typeBuilder.ModuleBuilder.Field.AddVirtualRecord();
+		}
+
+		public void SetConstant(object defaultValue)
+		{
+			attribs |= FieldAttributes.HasDefault;
+			typeBuilder.ModuleBuilder.AddConstant(pseudoToken, defaultValue);
+		}
+
+		public override object GetRawConstantValue()
+		{
+			if (!typeBuilder.IsCreated())
+			{
+				// the .NET FieldBuilder doesn't support this method
+				// (since we dont' have a different FieldInfo object after baking, we will support it once we're baked)
+				throw new NotSupportedException();
+			}
+			return typeBuilder.Module.Constant.GetRawConstantValue(typeBuilder.Module, GetCurrentToken());
+		}
+
+		public void __SetDataAndRVA(byte[] data)
+		{
+			SetDataAndRvaImpl(data, typeBuilder.ModuleBuilder.initializedData, 0);
+		}
+
+		public void __SetReadOnlyDataAndRVA(byte[] data)
+		{
+			SetDataAndRvaImpl(data, typeBuilder.ModuleBuilder.methodBodies, unchecked((int)0x80000000));
+		}
+
+		private void SetDataAndRvaImpl(byte[] data, ByteBuffer bb, int readonlyMarker)
+		{
+			attribs |= FieldAttributes.HasFieldRVA;
+			FieldRVATable.Record rec = new FieldRVATable.Record();
+			bb.Align(8);
+			rec.RVA = bb.Position + readonlyMarker;
+			rec.Field = pseudoToken;
+			typeBuilder.ModuleBuilder.FieldRVA.AddRecord(rec);
+			bb.Write(data);
+		}
+
+		public override void __GetDataFromRVA(byte[] data, int offset, int length)
+		{
+			throw new NotImplementedException();
+		}
+
+		public override int __FieldRVA
+		{
+			get { throw new NotImplementedException(); }
+		}
+
+		public override bool __TryGetFieldOffset(out int offset)
+		{
+			int pseudoTokenOrIndex = pseudoToken;
+			if (typeBuilder.ModuleBuilder.IsSaved)
+			{
+				pseudoTokenOrIndex = typeBuilder.ModuleBuilder.ResolvePseudoToken(pseudoToken) & 0xFFFFFF;
+			}
+			foreach (int i in this.Module.FieldLayout.Filter(pseudoTokenOrIndex))
+			{
+				offset = this.Module.FieldLayout.records[i].Offset;
+				return true;
+			}
+			offset = 0;
+			return false;
+		}
+
+		public void SetCustomAttribute(ConstructorInfo con, byte[] binaryAttribute)
+		{
+			SetCustomAttribute(new CustomAttributeBuilder(con, binaryAttribute));
+		}
+
+		public void SetCustomAttribute(CustomAttributeBuilder customBuilder)
+		{
+			switch (customBuilder.KnownCA)
+			{
+				case KnownCA.FieldOffsetAttribute:
+					SetOffset((int)customBuilder.DecodeBlob(this.Module.Assembly).GetConstructorArgument(0));
+					break;
+				case KnownCA.MarshalAsAttribute:
+					FieldMarshal.SetMarshalAsAttribute(typeBuilder.ModuleBuilder, pseudoToken, customBuilder);
+					attribs |= FieldAttributes.HasFieldMarshal;
+					break;
+				case KnownCA.NonSerializedAttribute:
+					attribs |= FieldAttributes.NotSerialized;
+					break;
+				case KnownCA.SpecialNameAttribute:
+					attribs |= FieldAttributes.SpecialName;
+					break;
+				default:
+					typeBuilder.ModuleBuilder.SetCustomAttribute(pseudoToken, customBuilder);
+					break;
+			}
+		}
+
+		public void SetOffset(int iOffset)
+		{
+			FieldLayoutTable.Record rec = new FieldLayoutTable.Record();
+			rec.Offset = iOffset;
+			rec.Field = pseudoToken;
+			typeBuilder.ModuleBuilder.FieldLayout.AddRecord(rec);
+		}
+
+		public override FieldAttributes Attributes
+		{
+			get { return attribs; }
+		}
+
+		public override Type DeclaringType
+		{
+			get { return typeBuilder.IsModulePseudoType ? null : typeBuilder; }
+		}
+
+		public override string Name
+		{
+			get { return name; }
+		}
+
+		public override int MetadataToken
+		{
+			get { return pseudoToken; }
+		}
+
+		public override Module Module
+		{
+			get { return typeBuilder.Module; }
+		}
+
+		public FieldToken GetToken()
+		{
+			return new FieldToken(pseudoToken);
+		}
+
+		internal void WriteFieldRecords(MetadataWriter mw)
+		{
+			mw.Write((short)attribs);
+			mw.WriteStringIndex(nameIndex);
+			mw.WriteBlobIndex(signature);
+		}
+
+		internal void FixupToken(int token)
+		{
+			typeBuilder.ModuleBuilder.RegisterTokenFixup(this.pseudoToken, token);
+		}
+
+		internal override FieldSignature FieldSignature
+		{
+			get { return fieldSig; }
+		}
+
+		internal override int ImportTo(ModuleBuilder other)
+		{
+			return other.ImportMethodOrField(typeBuilder, name, fieldSig);
+		}
+
+		internal override int GetCurrentToken()
+		{
+			if (typeBuilder.ModuleBuilder.IsSaved)
+			{
+				return typeBuilder.ModuleBuilder.ResolvePseudoToken(pseudoToken);
+			}
+			else
+			{
+				return pseudoToken;
+			}
+		}
+
+		internal override bool IsBaked
+		{
+			get { return typeBuilder.IsBaked; }
+		}
+	}
+}
+@
+
+
+1.20
+log
+@Refactored custom attribute handling of MemberInfo types.
+@
+text
+@d127 1
+a127 2
+			Universe u = this.Module.universe;
+			if (customBuilder.Constructor.DeclaringType == u.System_Runtime_InteropServices_FieldOffsetAttribute)
+d129 16
+a144 19
+				customBuilder = customBuilder.DecodeBlob(this.Module.Assembly);
+				SetOffset((int)customBuilder.GetConstructorArgument(0));
+			}
+			else if (customBuilder.Constructor.DeclaringType == u.System_Runtime_InteropServices_MarshalAsAttribute)
+			{
+				FieldMarshal.SetMarshalAsAttribute(typeBuilder.ModuleBuilder, pseudoToken, customBuilder);
+				attribs |= FieldAttributes.HasFieldMarshal;
+			}
+			else if (customBuilder.Constructor.DeclaringType == u.System_NonSerializedAttribute)
+			{
+				attribs |= FieldAttributes.NotSerialized;
+			}
+			else if (customBuilder.Constructor.DeclaringType == u.System_Runtime_CompilerServices_SpecialNameAttribute)
+			{
+				attribs |= FieldAttributes.SpecialName;
+			}
+			else
+			{
+				typeBuilder.ModuleBuilder.SetCustomAttribute(pseudoToken, customBuilder);
+@
+
+
+1.19
+log
+@Fixed regression in __TryGetFieldOffset. The FieldLayout.Field field is an index (not a token), except for unsaved modules where it is a pseudo token.
+@
+text
+@a211 10
+		internal override IList<CustomAttributeData> GetCustomAttributesData(Type attributeType)
+		{
+			if (!typeBuilder.IsCreated())
+			{
+				// like .NET we we don't return custom attributes for unbaked types
+				throw new NotImplementedException();
+			}
+			return base.GetCustomAttributesData(attributeType);
+		}
+
+d223 5
+@
+
+
+1.18
+log
+@All FieldInfo subclasses should implement GetCurrentToken().
+@
+text
+@d104 16
+@
+
+
+1.17
+log
+@Moved __TryGetFieldOffset and __TryGetFieldMarshal up into FieldInfo.
+@
+text
+@d206 1
+a206 1
+		protected override int GetCurrentToken()
+@
+
+
+1.16
+log
+@Moved common custom attribute code into FieldInfo.
+@
+text
+@a103 16
+		public override bool __TryGetFieldOffset(out int offset)
+		{
+			foreach (int i in typeBuilder.Module.FieldLayout.Filter(GetCurrentToken()))
+			{
+				offset = typeBuilder.Module.FieldLayout.records[i].Offset;
+				return true;
+			}
+			offset = 0;
+			return false;
+		}
+
+		public override bool __TryGetFieldMarshal(out FieldMarshal fieldMarshal)
+		{
+			return FieldMarshal.ReadFieldMarshal(typeBuilder.Module, GetCurrentToken(), out fieldMarshal);
+		}
+
+@
+
+
+1.15
+log
+@Bug fix. FieldBuilder.GetRawConstantValue() didn't work after saving the module.
+@
+text
+@d219 1
+a219 19
+			List<CustomAttributeData> list = typeBuilder.Module.GetCustomAttributes(GetCurrentToken(), attributeType);
+			if (attributeType == null || attributeType.IsAssignableFrom(typeBuilder.Universe.System_Runtime_InteropServices_MarshalAsAttribute))
+			{
+				FieldMarshal spec;
+				if (__TryGetFieldMarshal(out spec))
+				{
+					list.Add(spec.ToCustomAttribute(typeBuilder.Module));
+				}
+			}
+			if (attributeType == null || attributeType.IsAssignableFrom(typeBuilder.Universe.System_Runtime_InteropServices_FieldOffsetAttribute))
+			{
+				int offset;
+				if (__TryGetFieldOffset(out offset))
+				{
+					ConstructorInfo constructor = typeBuilder.Universe.System_Runtime_InteropServices_FieldOffsetAttribute.GetPseudoCustomAttributeConstructor(typeBuilder.Universe.System_Int32);
+					list.Add(new CustomAttributeData(typeBuilder.Module, constructor, new object[] { offset }, null));
+				}
+			}
+			return list;
+d222 1
+a222 1
+		private int GetCurrentToken()
+@
+
+
+1.14
+log
+@Use the right token value for getting the custom attributes (because it changes after the module is saved).
+@
+text
+@d64 7
+a70 1
+			return typeBuilder.Module.Constant.GetRawConstantValue(typeBuilder.Module, this.MetadataToken);
+@
+
+
+1.13
+log
+@- Changed FieldInfo.__FieldOffset property to __TryGetFieldOffset() method.
+- Implemented __TryGetFieldMarshal() & __TryGetFieldOffest() for FieldBuilder.
+- Fixed FieldBuilder to throw NotImplementedException when trying to get custom attributes on unbaked type.
+- Fixed FieldBuilder to return pseudo custom attributes (but it is currently still broken after the module has been saved).
+@
+text
+@d100 1
+a100 6
+			int token = pseudoToken;
+			if (typeBuilder.ModuleBuilder.IsSaved)
+			{
+				token = typeBuilder.ModuleBuilder.ResolvePseudoToken(pseudoToken);
+			}
+			foreach (int i in typeBuilder.Module.FieldLayout.Filter(token))
+d111 1
+a111 6
+			int token = pseudoToken;
+			if (typeBuilder.ModuleBuilder.IsSaved)
+			{
+				token = typeBuilder.ModuleBuilder.ResolvePseudoToken(pseudoToken);
+			}
+			return FieldMarshal.ReadFieldMarshal(typeBuilder.Module, token, out fieldMarshal);
+d213 1
+a213 1
+			IList<CustomAttributeData> list = base.GetCustomAttributesData(attributeType);
+d233 12
+@
+
+
+1.12
+log
+@- Changed [Field|Parameter]Info.__FieldMarshal property to __TryGetFieldMarshal method.
+- Changed FieldMarshal class into a value type with public fields.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008 Jeroen Frijters
+d25 1
+d98 1
+a98 1
+		public override int __FieldOffset
+d100 12
+a111 1
+			get { throw new NotImplementedException(); }
+d116 6
+a121 2
+			fieldMarshal = new FieldMarshal();
+			return false;
+d215 28
+@
+
+
+1.11
+log
+@- Added new public APIs FieldInfo.__FieldMarshal and ParameterInfo.__FieldMarshal.
+- Moved ParameterInfo pseudo custom attribute handling to CustomAttributeData.
+- Ignore HasFieldMarshal attribute and always return the pseudo custom attribute if a FieldMarshal record exists. This is similar to .NET reflection.
+@
+text
+@d102 1
+a102 1
+		public override FieldMarshal __FieldMarshal
+d104 2
+a105 1
+			get { throw new NotImplementedException(); }
+@
+
+
+1.10
+log
+@Added public API FieldInfo.__FieldOffset to get the offset of the field (in an explicit layout type) without having to parse the pseudo custom attribute.
+@
+text
+@d102 5
+d122 1
+a122 1
+				MarshalSpec.SetMarshalAsAttribute(typeBuilder.ModuleBuilder, pseudoToken, customBuilder);
+@
+
+
+1.9
+log
+@Removed unnecessary code.
+@
+text
+@d97 5
+@
+
+
+1.8
+log
+@- Rewrote custom modifier handling to retain ordering.
+- Added ConstructorInfo.__ReturnParameter to expose custom modifiers.
+- Added __GetCustomModifiers() to various *Info types.
+- Added CustomModifiers type to encapsulate a custom modifier sequence.
+- Added CustomModifiersBuilder to create a CustomModifiers sequence.
+- Marked a number of IKVM.Reflection specific methods Obsolete, because they are replaced with method that take CustomModifiers value(s).
+@
+text
+@d186 1
+a186 12
+			if (typeBuilder.IsGenericTypeDefinition)
+			{
+				return other.ImportMember(TypeBuilder.GetField(typeBuilder, this));
+			}
+			else if (other == typeBuilder.ModuleBuilder)
+			{
+				return pseudoToken;
+			}
+			else
+			{
+				return other.ImportMethodOrField(typeBuilder, name, fieldSig);
+			}
+@
+
+
+1.7
+log
+@Added API extension FieldInfo.__FieldRVA.
+@
+text
+@d41 1
+a41 1
+		internal FieldBuilder(TypeBuilder type, string name, Type fieldType, Type[] requiredCustomModifiers, Type[] optionalCustomModifiers, FieldAttributes attribs)
+d47 1
+a47 1
+			this.fieldSig = FieldSignature.Create(fieldType, optionalCustomModifiers, requiredCustomModifiers);
+@
+
+
+1.6
+log
+@Added FieldBuilder.__SetReadOnlyDataAndRVA() to define read-only initialized data.
+@
+text
+@d92 5
+@
+
+
+1.5
+log
+@Align initialized data arrays.
+@
+text
+@d68 10
+d80 2
+a81 2
+			typeBuilder.ModuleBuilder.initializedData.Align(8);
+			rec.RVA = typeBuilder.ModuleBuilder.initializedData.Position;
+d84 1
+a84 1
+			typeBuilder.ModuleBuilder.initializedData.Write(data);
+@
+
+
+1.4
+log
+@Fixed ImportTo to use canonical form, which for methods on generic type definitions is the Generic[Method|Field]Instance, instead of the builder. This fixes a duplicate MemberRef row issue when using both the MethodBuilder and the "expanded" form (TypeBuilder.GetMethod(...)).
+@
+text
+@d70 1
+@
+
+
+1.4.4.1
+log
+@Back ported fixes:
+- Bug fix. BeginExceptFilterBlock() should behave like BeginCatchBlock(), not BeginFinallyBlock().
+- Fix for http://gcc.gnu.org/bugzilla/show_bug.cgi?id=48131.
+- Bug fix. Support loading resources from assemblies added to the boot classloader (with ikvm.runtime.Startup.addBootClassPathAssemby()).
+- Type parameters should be separated by commas.
+- Only the assembly name should escape the ']' characters.
+- Bug fix. <Module> should not extend object.
+- Bug fix. String literals that are invalid UTF-16 should not be "corrected".
+- Bug fix. MaxStack returned incorrect value for tiny header methods.
+- Fix. Module does not inherit members from Object.
+- Align initialized data arrays.
+- Align managed resources on 8 bytes.
+@
+text
+@a69 1
+			typeBuilder.ModuleBuilder.initializedData.Align(8);
+@
+
+
+1.3
+log
+@Made __GetDataFromRVA more generic by taking an offset and a length (to be able to reuse the byte array) and this also removes the need for the field type to have a StructLayout.
+@
+text
+@d170 5
+a174 1
+			if (other == typeBuilder.ModuleBuilder && !typeBuilder.IsGenericTypeDefinition)
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d76 1
+a76 1
+		public override void __GetDataFromRVA(byte[] data)
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

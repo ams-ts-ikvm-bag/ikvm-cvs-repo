@@ -1,0 +1,238 @@
+head	1.8;
+access;
+symbols
+	v0_32:1.7.0.2
+	v0_32_0_0:1.7
+	v0_30:1.6.0.2
+	v0_28_0_0:1.5
+	v0_26_0_1:1.4
+	v0_26_0_0:1.4
+	v0_24_0_1:1.2
+	v0_24_0_0:1.2
+	v0_22_0_0:1.1;
+locks; strict;
+comment	@# @;
+
+
+1.8
+date	2006.12.11.13.18.31;	author jfrijters;	state dead;
+branches;
+next	1.7;
+
+1.7
+date	2006.12.11.07.07.13;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2006.05.23.12.49.17;	author jfrijters;	state Exp;
+branches
+	1.6.2.1;
+next	1.5;
+
+1.5
+date	2006.03.23.11.57.44;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2006.03.07.09.34.32;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2006.01.31.10.13.32;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2006.01.20.08.35.31;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2005.11.14.10.16.51;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.6.2.1
+date	2006.08.10.08.06.06;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@/* gnu.classpath.Configuration
+   Copyright (C) 1998, 2001 Free Software Foundation, Inc.
+
+This file is part of GNU Classpath.
+
+GNU Classpath is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2, or (at your option)
+any later version.
+ 
+GNU Classpath is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with GNU Classpath; see the file COPYING.  If not, write to the
+Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+02111-1307 USA.
+
+Linking this library statically or dynamically with other modules is
+making a combined work based on this library.  Thus, the terms and
+conditions of the GNU General Public License cover the whole
+combination.
+
+As a special exception, the copyright holders of this library give you
+permission to link this library with independent modules to produce an
+executable, regardless of the license terms of these independent
+modules, and to copy and distribute the resulting executable under
+terms of your choice, provided that you also meet, for each linked
+independent module, the terms and conditions of the license of that
+module.  An independent module is a module which is not derived from
+or based on this library.  If you modify this library, you may extend
+this exception to your version of the library, but you are not
+obligated to do so.  If you do not wish to do so, delete this
+exception statement from your version. */
+
+package gnu.classpath;
+
+/**
+ * This file defines compile-time constants that can be accessed by
+ * java code. It is pre-processed by configure.  
+ */
+public interface Configuration
+{
+  // TODO
+  String CLASSPATH_HOME = "";
+  String CLASSPATH_VERSION = "0.93-generics";
+
+
+  /**
+   * The value of DEBUG is substituted according to whether the
+   * "--enable-debug" argument was passed to configure. Code
+   * which is made conditional based on the value of this flag - typically 
+   * code that generates debugging output - will be removed by the optimizer 
+   * in a non-debug build.
+   */
+  boolean DEBUG = false;
+
+  /**
+   * The value of LOAD_LIBRARY is substituted according to whether the
+   * "--enable-load-library" or "--disable-load-library" argument was passed 
+   * to configure.  By default, configure should define this is as true.
+   * If set to false, loadLibrary() calls to load native function
+   * implementations, typically found in static initializers of classes
+   * which contain native functions, will be omitted.  This is useful for
+   * runtimes which pre-link their native function implementations and do
+   * not require additional shared libraries to be loaded.
+   */
+  boolean INIT_LOAD_LIBRARY = false;
+
+  /**
+   * Name of default AWT peer library.
+   */
+  String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms";
+}
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.92-generics-pre";
+@
+
+
+1.6.2.1
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.92-generics";
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.91-generics-pre";
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.90-generics";
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.21-generics-pre";
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.20-generics";
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+  String CLASSPATH_VERSION = "0.19-generics";
+d75 1
+a75 1
+  String default_awt_peer_toolkit = "gnu.java.awt.peer.gtk.GTKToolkit";
+@
+

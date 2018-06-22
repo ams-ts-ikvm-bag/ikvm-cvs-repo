@@ -1,0 +1,117 @@
+head	1.3;
+access;
+symbols
+	v8_1_5717_0:1.3
+	v8_1:1.3.0.8
+	v8_0_5449_1:1.3
+	v8_0_5449_0:1.3
+	v8_0:1.3.0.6
+	v7_4_5196_0:1.3
+	v7_4:1.3.0.4
+	v7_3:1.3.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.3
+date	2013.02.27.16.23.19;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2012.12.13.10.11.17;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2012.10.25.19.48.21;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.3
+log
+@Added license headers to build scripts.
+@
+text
+@<?xml version="1.0"?>
+<!--
+  Copyright (C) 2002-2013 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+-->
+<project name="msbuild" default="msbuild">
+    <target name="msbuild">
+        <csc target="library" output="../bin/IKVM.MSBuild.dll">
+            <sources>
+                <include name="AssemblyInfo.cs" />
+                <include name="JavaTask.cs" />
+            </sources>
+            <references>
+                <include name="../bin/IKVM.OpenJDK.Core.dll" asis="true" />
+                <include name="../bin/IKVM.OpenJDK.Tools.dll" asis="true" />
+                <include name="Microsoft.Build.Framework.dll" asis="true" />
+                <include name="Microsoft.Build.Tasks.dll" asis="true" />
+                <include name="Microsoft.Build.Utilities.dll" asis="true" />
+                <include name="System.dll" asis="true" />
+            </references>
+        </csc>
+        <copy file="IKVM.MSBuild.Java.Targets" tofile="../bin/IKVM.MSBuild.Java.Targets" overwrite="true" />
+    </target>
+</project>
+@
+
+
+1.2
+log
+@Ported MSBuild task to .NET 2.0 and included the project in the VS solution.
+@
+text
+@d2 23
+@
+
+
+1.1
+log
+@Build script for msbuild task
+@
+text
+@d4 1
+a4 5
+        <property name="defs" value="STUB_GENERATOR;TRACE" />
+        <if test="${property::exists('signed')}">
+            <property name="defs" value="${defs};${signed}" />
+        </if>
+        <csc target="library" output="../bin/IKVM.MsBuild.dll" define="${defs}">
+d13 2
+a14 2
+                <include name="Microsoft.Build.Tasks.v4.0.dll" asis="true" />
+                <include name="Microsoft.Build.Utilities.v4.0.dll" asis="true" />
+d18 1
+a18 2
+        <copy file="IKVM.MSBuild.Java.Targets" tofile="../bin/IKVM.MSBuild.Java.Targets" overwrite="true">
+        </copy>
+@
+

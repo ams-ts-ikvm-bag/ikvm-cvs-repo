@@ -1,0 +1,43 @@
+head	1.2;
+access;
+symbols
+	v0_8_0_0:1.1;
+locks; strict;
+comment	@// @;
+
+
+1.2
+date	2004.08.30.15.56.25;	author jfrijters;	state dead;
+branches;
+next	1.1;
+
+1.1
+date	2004.05.27.07.12.12;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@// stdafx.cpp : source file that includes just the standard includes
+// jni.pch will be the pre-compiled header
+// stdafx.obj will contain the pre-compiled type information
+
+#include "stdafx.h"
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@@
+

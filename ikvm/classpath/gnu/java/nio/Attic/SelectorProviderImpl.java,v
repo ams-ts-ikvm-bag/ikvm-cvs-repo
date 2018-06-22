@@ -1,0 +1,92 @@
+head	1.2;
+access;
+symbols
+	v0_36_0_14:1.1
+	v0_36_0_13:1.1
+	v0_36_0_9:1.1
+	v0_36_0_7:1.1
+	v0_36_0_5:1.1
+	v0_36_0_4:1.1
+	v0_36_0_3:1.1
+	v0_36_0_2:1.1
+	v0_36_0_1:1.1
+	v0_36_0_0:1.1
+	v0_36:1.1.0.6
+	v0_34_0_3:1.1
+	v0_34_0_2:1.1
+	v0_34_0_1:1.1
+	v0_34_0_0:1.1
+	v0_34:1.1.0.4
+	v0_32:1.1.0.2
+	v0_32_0_0:1.1;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2008.08.06.12.51.16;	author jfrijters;	state dead;
+branches;
+next	1.1;
+
+1.1
+date	2006.09.20.05.53.39;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@Removed files that are no longer needed no that GNU Classpath support has been dropped.
+@
+text
+@package gnu.java.nio;
+
+import java.io.IOException;
+import java.nio.channels.DatagramChannel;
+import java.nio.channels.Pipe;
+import java.nio.channels.ServerSocketChannel;
+import java.nio.channels.SocketChannel;
+import java.nio.channels.spi.AbstractSelector;
+import java.nio.channels.spi.SelectorProvider;
+
+public final class SelectorProviderImpl extends SelectorProvider
+{
+    public DatagramChannel openDatagramChannel() throws IOException
+    {
+        return new DatagramChannelImpl(this);
+    }
+
+    public Pipe openPipe() throws IOException
+    {
+        return new PipeImpl(this);
+    }
+    
+    public AbstractSelector openSelector() throws IOException
+    {
+        return new SelectorImpl(this);
+    }
+
+    public ServerSocketChannel openServerSocketChannel() throws IOException
+    {
+        return new ServerSocketChannelImpl(this);
+    }
+
+    public SocketChannel openSocketChannel() throws IOException
+    {
+        return new SocketChannelImpl(this);
+    }
+}
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@@
+

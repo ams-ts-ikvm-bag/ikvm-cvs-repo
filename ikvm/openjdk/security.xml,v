@@ -1,0 +1,99 @@
+head	1.1;
+access;
+symbols
+	v8_1_5717_0:1.1
+	v8_1:1.1.0.14
+	v8_0_5449_1:1.1
+	v8_0_5449_0:1.1
+	v8_0:1.1.0.12
+	v7_4_5196_0:1.1
+	v7_4:1.1.0.10
+	v7_3:1.1.0.8
+	v7_2_4630_6:1.1
+	v7_2_4630_5:1.1
+	v7_2_4630_4:1.1
+	v7_2_4630_3:1.1
+	v7_2_4630_2:1.1
+	v7_2_4630_1:1.1
+	v7_2:1.1.0.6
+	v7_1_4532_2:1.1
+	v7_1_4532_1:1.1
+	v7_1_4532_0:1.1
+	v7_1:1.1.0.4
+	v7_0_4335_3:1.1
+	v7_0_4335_2:1.1
+	v7_0_4335_1:1.1
+	v7_0_4335_0:1.1
+	v7_0:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	2011.07.06.05.57.59;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Make SeedGenerator.getSystemEntropy() use Crypto API when available to avoid file system dependency.
+@
+text
+@<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Copyright (C) 2011 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+-->
+<root>
+    <assembly>
+        <class name="sun.security.provider.SeedGenerator">
+            <method name="getSystemEntropy" sig="()[B">
+                <prologue>
+                    <exceptionBlock>
+                        <try>
+                            <ldc_i4 value="20" />
+                            <newarr sig="B" />
+                            <stloc name="buf" class="[B" />
+                            <newobj class="cli.System.Security.Cryptography.RNGCryptoServiceProvider" name="&lt;init&gt;" sig="()V" />
+                            <ldloc name="buf" />
+                            <callvirt type="System.Security.Cryptography.RandomNumberGenerator" name="GetBytes" sig="([B)V" />
+                            <leave name="return" />
+                        </try>
+                        <catch type="System.Security.Cryptography.CryptographicException">
+                            <leave name="continue" />
+                        </catch>
+                    </exceptionBlock>
+                    <label name="return" />
+                    <ldloc name="buf" />
+                    <ret />
+                    <label name="continue" />
+                </prologue>
+            </method>
+        </class>
+    </assembly>
+</root>
+@

@@ -1,0 +1,2082 @@
+head	1.26;
+access;
+symbols
+	v0_30:1.24.0.2
+	v0_28_0_0:1.23
+	v0_26_0_1:1.22
+	v0_26_0_0:1.22
+	v0_24_0_1:1.20
+	v0_24_0_0:1.20
+	v0_22_0_0:1.19
+	v0_20_0_0:1.19
+	v0_18_0_0:1.16
+	v0_16_0_0:1.16
+	v0_14_0_1:1.12
+	v0_14_0_0:1.12
+	v0_12_0_0:1.8
+	v0_10_0_1:1.7
+	v0_10_0_0:1.7
+	v0_8_0_0:1.3;
+locks; strict;
+comment	@# @;
+
+
+1.26
+date	2006.09.20.05.53.39;	author jfrijters;	state dead;
+branches;
+next	1.25;
+
+1.25
+date	2006.08.12.07.15.23;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2006.06.20.14.31.58;	author jfrijters;	state Exp;
+branches
+	1.24.2.1;
+next	1.23;
+
+1.23
+date	2006.03.27.16.21.32;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2006.02.13.16.41.14;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2006.02.13.15.11.00;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2005.12.07.09.06.32;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2005.08.22.12.42.02;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2005.08.03.14.10.01;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2005.08.01.09.36.57;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2005.05.31.09.04.42;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2005.05.31.08.57.37;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2005.05.31.06.18.24;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2005.05.20.09.02.56;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2005.05.02.08.15.31;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2005.04.11.13.59.58;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2005.04.11.08.05.42;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2005.03.11.13.56.45;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2005.02.02.15.12.00;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2004.12.12.14.36.25;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2004.11.29.09.48.02;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2004.11.08.10.01.46;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2004.08.17.09.05.25;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2004.06.14.10.36.38;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2004.05.14.09.31.58;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2004.04.23.14.21.46;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.24.2.1
+date	2006.08.08.20.20.17;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.26
+log
+@*** empty log message ***
+@
+text
+@/* FileChannelImpl.java -- 
+   Copyright (C) 2002, 2004, 2005 Free Software Foundation, Inc.
+
+This file is part of GNU Classpath.
+
+GNU Classpath is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2, or (at your option)
+any later version.
+
+GNU Classpath is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with GNU Classpath; see the file COPYING.  If not, write to the
+Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301 USA.
+
+Linking this library statically or dynamically with other modules is
+making a combined work based on this library.  Thus, the terms and
+conditions of the GNU General Public License cover the whole
+combination.
+
+As a special exception, the copyright holders of this library give you
+permission to link this library with independent modules to produce an
+executable, regardless of the license terms of these independent
+modules, and to copy and distribute the resulting executable under
+terms of your choice, provided that you also meet, for each linked
+independent module, the terms and conditions of the license of that
+module.  An independent module is a module which is not derived from
+or based on this library.  If you modify this library, you may extend
+this exception to your version of the library, but you are not
+obligated to do so.  If you do not wish to do so, delete this
+exception statement from your version. */
+
+
+package gnu.java.nio.channels;
+
+import gnu.classpath.Configuration;
+import gnu.java.nio.FileLockImpl;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.MappedByteBuffer;
+import java.nio.MappedByteBufferImpl;
+import java.nio.channels.ClosedChannelException;
+import java.nio.channels.FileChannel;
+import java.nio.channels.FileLock;
+import java.nio.channels.NonReadableChannelException;
+import java.nio.channels.NonWritableChannelException;
+import java.nio.channels.ReadableByteChannel;
+import java.nio.channels.WritableByteChannel;
+
+import cli.System.Console;
+import cli.System.IO.*;
+import cli.System.IntPtr;
+import cli.System.Type;
+import cli.System.Reflection.MethodInfo;
+import cli.System.Reflection.ParameterModifier;
+import cli.System.Reflection.BindingFlags;
+import cli.System.Runtime.InteropServices.DllImportAttribute;
+import gnu.classpath.Pointer;
+
+/**
+ * This file is not user visible !
+ * But alas, Java does not have a concept of friendly packages
+ * so this class is public. 
+ * Instances of this class are created by invoking getChannel
+ * Upon a Input/Output/RandomAccessFile object.
+ */
+
+public abstract class FileChannelImpl extends FileChannel
+{
+    // These are mode values for open().
+    public static final int READ   = 1;
+    public static final int WRITE  = 2;
+    public static final int APPEND = 4;
+
+    // EXCL is used only when making a temp file.
+    public static final int EXCL   = 8;
+    public static final int SYNC   = 16;
+    public static final int DSYNC  = 32;
+
+    private static final boolean win32 = runningOnWindows();
+
+    private volatile Stream stream;
+    private int mode;
+
+    private static boolean runningOnWindows()
+    {
+        cli.System.OperatingSystem os = cli.System.Environment.get_OSVersion();
+        int platform = os.get_Platform().Value;
+        return platform == cli.System.PlatformID.Win32NT || 
+            platform == cli.System.PlatformID.Win32Windows;
+    }
+
+    final static class Win32 extends FileChannelImpl
+    {
+        Win32(File file, int mode) throws FileNotFoundException
+        {
+            super(file, mode);
+        }
+
+        Win32(Stream stream)
+        {
+            super(stream);
+        }
+
+        Pointer mapViewOfFile(FileStream fs, boolean writeable, boolean copy_on_write, long position, int size)
+            throws IOException
+        {
+            try
+            {
+                int PAGE_READONLY = 2;
+                int PAGE_READWRITE = 4;
+                int PAGE_WRITECOPY = 8;
+                IntPtr hFileMapping = CreateFileMapping(fs.get_Handle(), IntPtr.Zero, 
+                    copy_on_write ? PAGE_WRITECOPY : (writeable ? PAGE_READWRITE : PAGE_READONLY),
+                    0, size, null);
+                if(hFileMapping.Equals(IntPtr.Zero))
+                {
+                    int err = cli.System.Runtime.InteropServices.Marshal.GetLastWin32Error();
+                    throw new IOException("Win32 error " + err);
+                }
+                int FILE_MAP_WRITE = 2;
+                int FILE_MAP_READ = 4;
+                int FILE_MAP_COPY = 1;
+                IntPtr p = MapViewOfFile(hFileMapping,
+                    copy_on_write ? FILE_MAP_COPY : (writeable ? FILE_MAP_WRITE : FILE_MAP_READ),
+                    (int)(position >> 32), (int)position, new IntPtr(size));
+                CloseHandle(hFileMapping);
+                if(p.Equals(IntPtr.Zero))
+                {
+                    int err = cli.System.Runtime.InteropServices.Marshal.GetLastWin32Error();
+                    throw new IOException("Win32 error " + err);
+                }
+                return new Pointer(p);                
+            }
+            finally
+            {
+                cli.System.GC.KeepAlive(fs);
+            }
+        }
+        
+        boolean flush(FileStream fs)
+        {
+            int rc = FlushFileBuffers(fs.get_Handle());
+            cli.System.GC.KeepAlive(fs);
+            return rc != 0;
+        }
+
+        @@DllImportAttribute.Annotation("kernel32")
+        private static native int FlushFileBuffers(IntPtr handle);
+
+        @@DllImportAttribute.Annotation("kernel32")
+        private static native int CloseHandle(IntPtr handle);
+
+        @@DllImportAttribute.Annotation(value="kernel32", SetLastError=true)
+        private static native IntPtr CreateFileMapping(IntPtr hFile, IntPtr lpAttributes, int flProtect, int dwMaximumSizeHigh, int dwMaximumSizeLow, String lpName);
+
+        @@DllImportAttribute.Annotation(value="kernel32", SetLastError=true)
+        private static native IntPtr MapViewOfFile(IntPtr hFileMapping, int dwDesiredAccess, int dwFileOffsetHigh, int dwFileOffsetLow, IntPtr dwNumberOfBytesToMap);
+    }
+
+    final static class Posix extends FileChannelImpl
+    {
+        Posix(File file, int mode) throws FileNotFoundException
+        {
+            super(file, mode);
+        }
+
+        Posix(Stream stream)
+        {
+            super(stream);
+        }
+
+        Pointer mapViewOfFile(FileStream fs, boolean writeable, boolean copy_on_write, long position, int size)
+        {
+            IntPtr p = ikvm_mmap(fs.get_Handle(), (byte)(writeable ? 1 : 0), (byte)(copy_on_write ? 1 : 0), position, size);
+            cli.System.GC.KeepAlive(fs);
+	    // HACK ikvm_mmap should really be changed to return a null pointer on failure,
+	    // instead of whatever MAP_FAILED is defined to on the particular system we're running on,
+	    // common values for MAP_FAILED are 0 and -1, so we test for these.
+            if(p.Equals(IntPtr.Zero) || p.Equals(new IntPtr(-1)))
+            {
+                return null;
+            }
+            return new Pointer(p);
+        }
+        
+        boolean flush(FileStream fs)
+        {
+            Type t = Type.GetType("Mono.Posix.Syscall, Mono.Posix");
+            if(t != null)
+            {
+                BindingFlags flags = BindingFlags.wrap(BindingFlags.Public | BindingFlags.Static);
+            	MethodInfo mono_1_1_Flush = t.GetMethod("fsync", flags, null, new Type[] { Type.GetType("System.Int32") }, new ParameterModifier[0]);
+                if(mono_1_1_Flush != null)
+                {
+		    Object[] args = new Object[] { ikvm.lang.CIL.box_int(fs.get_Handle().ToInt32()) };
+		    return ikvm.lang.CIL.unbox_int(mono_1_1_Flush.Invoke(null, args)) == 0;
+                }
+            }
+            return true;
+        }
+
+        @@DllImportAttribute.Annotation("ikvm-native")
+        private static native IntPtr ikvm_mmap(IntPtr handle, byte writeable, byte copy_on_write, long position, int size);
+    }
+
+    /* Open a file.  MODE is a combination of the above mode flags. */
+    public static FileChannelImpl create(File file, int mode)
+        throws FileNotFoundException
+    {
+        return win32 ? new Win32(file, mode) : (FileChannelImpl)new Posix(file, mode);
+    }
+
+    FileChannelImpl(File file, int mode)
+        throws FileNotFoundException
+    {
+	stream = open(file.getPath(), mode);
+	this.mode = mode;
+    }
+
+    public static FileChannelImpl create(Stream stream)
+    {
+        return win32 ? new Win32(stream) : (FileChannelImpl)new Posix(stream);
+    }
+
+    private FileChannelImpl(Stream stream)
+    {
+	this.stream = stream;
+	mode = (stream.get_CanRead() ? READ : 0) | (stream.get_CanWrite() ? WRITE : 0);
+    }
+
+    public static final FileChannelImpl in;
+    public static final FileChannelImpl out;
+    public static final FileChannelImpl err;
+
+    static
+    {
+        FileChannelImpl _in;
+        FileChannelImpl _out;
+        FileChannelImpl _err;
+        try
+        {
+            _in = FileChannelImpl.create(getStandardStream(0));
+            _out = FileChannelImpl.create(getStandardStream(1));
+            _err = FileChannelImpl.create(getStandardStream(2));
+        }
+        catch(cli.System.MissingMethodException _)
+        {
+            _in = FileChannelImpl.create(Stream.Null);
+            _out = FileChannelImpl.create(Stream.Null);
+            _err = FileChannelImpl.create(Stream.Null);
+        }
+        in = _in;
+        out = _out;
+        err = _err;
+    }
+
+    private static Stream getStandardStream(int id)
+        throws cli.System.MissingMethodException
+    {
+        switch(id)
+        {
+            case 0:
+                return Console.OpenStandardInput();
+            case 1:
+                return Console.OpenStandardOutput();
+            case 2:
+                return Console.OpenStandardError();
+            default:
+                throw new Error();
+        }
+    }
+
+    private Stream open (String path, int mode) throws FileNotFoundException
+    {
+	if(stream != null)
+	    throw new InternalError("FileChannelImpl already open");
+	try
+	{
+	    int fileMode;
+	    int fileAccess;
+	    int fileShare;
+	    // NOTE we don't support SYNC or DSYNC
+	    switch(mode & (READ|WRITE|APPEND))
+	    {
+		case READ:
+		    fileMode = FileMode.Open;
+		    fileAccess = FileAccess.Read;
+		    break;
+		case READ|WRITE:
+		    fileMode = FileMode.OpenOrCreate;
+		    fileAccess = FileAccess.ReadWrite;
+		    break;
+		case WRITE:
+		    fileMode = FileMode.Create;
+		    fileAccess = FileAccess.Write;
+		    break;
+		case APPEND:
+		case APPEND|WRITE:
+		    fileMode = FileMode.Append;
+		    fileAccess = FileAccess.Write;
+		    break;
+		default:
+		    throw new IllegalArgumentException("Invalid mode value: " + mode);
+	    }
+	    if(false) throw new cli.System.IO.IOException();
+	    if(false) throw new cli.System.Security.SecurityException();
+	    if(false) throw new cli.System.UnauthorizedAccessException();
+	    if(false) throw new cli.System.ArgumentException();
+	    if(false) throw new cli.System.NotSupportedException();
+	    return new FileStream(demanglePath(path), FileMode.wrap(fileMode), FileAccess.wrap(fileAccess), FileShare.wrap(FileShare.ReadWrite), 1, false);
+	}
+	catch(cli.System.Security.SecurityException x1)
+	{
+	    throw new SecurityException(x1.getMessage());
+	}
+	catch(cli.System.IO.IOException x2)
+	{
+	    throw new FileNotFoundException(x2.getMessage());
+	}
+	catch(cli.System.UnauthorizedAccessException x3)
+	{
+	    // this is caused by "name" being a directory instead of a file
+	    throw new FileNotFoundException(x3.getMessage());
+	}
+	catch(cli.System.ArgumentException x4)
+	{
+	    throw new FileNotFoundException(x4.getMessage());
+	}
+	catch(cli.System.NotSupportedException x5)
+	{
+	    throw new FileNotFoundException(x5.getMessage());
+	}
+    }
+
+    private static String demanglePath(String path)
+    {
+	// HACK for some reason Java accepts: \c:\foo.txt
+	// I don't know what else, but for now lets just support this
+	if(path.length() > 3 && (path.charAt(0) == '\\' || path.charAt(0) == '/') && path.charAt(2) == ':')
+	{
+	    path = path.substring(1);
+	}
+	return path;
+    }
+
+    public int available () throws IOException
+    {
+	if(stream == null)
+	    throw new IOException("Invalid FileChannelImpl");
+
+	try
+	{
+	    if(false) throw new cli.System.IO.IOException();
+	    if(false) throw new cli.System.NotSupportedException();
+	    if(stream.get_CanSeek())
+		return (int)Math.min(Integer.MAX_VALUE, Math.max(0, stream.get_Length() - stream.get_Position()));
+	    return 0;
+	}
+	catch(cli.System.IO.IOException x)
+	{
+	    throw new IOException(x.getMessage());
+	}
+	catch(cli.System.NotSupportedException x1)
+	{
+	    // this means we have a broken Stream, because if CanSeek returns true, it must
+	    // support Length and Position
+	    return 0;
+	}
+    }
+
+    private long implPosition () throws IOException
+    {
+	if(stream == null)
+	    throw new IOException("Invalid FileChannelImpl");
+
+	try
+	{
+	    if(false) throw new cli.System.IO.IOException();
+	    return stream.get_Position();
+	}
+	catch(cli.System.IO.IOException x)
+	{
+	    throw new IOException(x.getMessage());
+	}
+	// TODO map al the other exceptions as well...
+    }
+
+    private void seek (long newPosition) throws IOException
+    {
+	if(stream == null)
+	    throw new IOException("Invalid FileChannelImpl");
+
+	try
+	{
+	    if(false) throw new cli.System.IO.IOException();
+	    stream.Seek(newPosition, SeekOrigin.wrap(SeekOrigin.Begin));
+	}
+	catch(cli.System.IO.IOException x)
+	{
+	    throw new IOException(x.getMessage());
+	}
+	// TODO map al the other exceptions as well...
+    }
+
+    private void implTruncate (long size) throws IOException
+    {
+	if(stream == null)
+	    throw new IOException("Invalid FileChannelImpl");
+
+	try
+	{
+	    if(false) throw new cli.System.IO.IOException();
+            if(size < stream.get_Length())
+            {
+	        stream.SetLength(size);
+            }
+	}
+	catch(cli.System.IO.IOException x)
+	{
+	    throw new IOException(x.getMessage());
+	}
+	// TODO map al the other exceptions as well...
+    }
+  
+    public void unlock (long pos, long len) throws IOException
+    {
+	if(stream == null)
+	    throw new IOException("Invalid FileChannelImpl");
+
+	try
+	{
+	    if(false) throw new cli.System.IO.IOException();
+	    if(false) throw new cli.System.ArgumentOutOfRangeException();
+	    ((FileStream)stream).Unlock(pos, len);
+	}
+	catch(ClassCastException c)
+	{
+	    throw new IOException("Locking not supported");
+	}
+	catch(cli.System.ArgumentOutOfRangeException x1)
+	{
+	    throw new IOException(x1.getMessage());
+	}
+	catch(cli.System.IO.IOException x)
+	{
+	    throw new IOException(x.getMessage());
+	}
+	// TODO map al the other exceptions as well...
+    }
+
+    public long size () throws IOException
+    {
+	if(stream == null)
+	    throw new IOException("Invalid FileChannelImpl");
+
+	try
+	{
+	    if(false) throw new cli.System.IO.IOException();
+	    return stream.get_Length();
+	}
+	catch(cli.System.IO.IOException x)
+	{
+	    throw new IOException(x.getMessage());
+	}
+	// TODO map al the other exceptions as well...
+    }
+    
+    protected void implCloseChannel() throws IOException
+    {
+	if(stream != null)
+	{
+            Stream local = stream;
+            stream = null;
+	    try
+	    {
+		local.Close();
+                if(false) throw new cli.System.IO.IOException();
+                if(false) throw new cli.System.NotSupportedException();
+	    }
+            catch(cli.System.NotSupportedException _)
+            {
+                // FXBUG ignore this, there's a bug in System.IO.__ConsoleStream,
+                // it throws this exception when you try to close it.
+            }
+            catch(cli.System.IO.IOException x)
+	    {
+		throw new IOException(x.getMessage());
+	    }
+	}
+    }
+
+    public int read(ByteBuffer dst) throws IOException
+    {
+        if (dst.hasArray())
+        {
+            byte[] buffer = dst.array();
+            int result = read(buffer, dst.arrayOffset() + dst.position(), dst.remaining());
+            if (result > 0)
+            {
+                dst.position(dst.position() + result);
+            }
+            return result;
+        }
+        else
+        {
+	    byte[] buffer = new byte[dst.remaining()];
+	    int result = read(buffer, 0, buffer.length);
+	    if (result > 0)
+            {
+	        dst.put(buffer, 0, result);
+            }
+	    return result;
+        }
+    }
+
+    public int read(ByteBuffer dst, long position) throws IOException
+    {
+	if (position < 0)
+            throw new IllegalArgumentException ("position: " + position);
+
+        long oldPosition = implPosition();
+	seek(position);
+        try
+        {
+	    return read(dst);
+        }
+        finally
+        {
+	    seek(oldPosition);
+        }
+    }
+
+    public int read() throws IOException
+    {
+	if(stream == null)
+	    throw new IOException("Invalid FileChannelImpl");
+
+	try
+	{
+	    if(false) throw new cli.System.IO.IOException();
+	    return stream.ReadByte();
+	}
+	catch(cli.System.IO.IOException x)
+	{
+	    throw new IOException(x.getMessage());
+	}
+	// TODO map al the other exceptions as well...
+    }
+
+    public int read (byte[] buf, int offset, int len) throws IOException
+    {
+	if(stream == null)
+	    throw new IOException("Invalid FileChannelImpl");
+
+	if (len == 0)
+	    return(0);
+
+	if ((offset < 0) || (offset > buf.length))
+	    throw new IllegalArgumentException("Offset invalid: " + offset);
+
+	if ((len < 0) || (len > (buf.length - offset)))
+	    throw new IllegalArgumentException("Length invalid: " + len);
+
+	try
+	{
+	    if(false) throw new cli.System.IO.IOException();
+            int count = stream.Read(buf, offset, len);
+	    if(count == 0)
+	    {
+		count = -1;
+	    }
+	    return count;
+	}
+	catch(cli.System.IO.IOException x)
+	{
+	    throw new IOException(x.getMessage());
+	}
+	// TODO map al the other exceptions as well...
+    }
+
+    public long read(ByteBuffer[] dsts, int offset, int length) throws IOException
+    {
+	long result = 0;
+
+	for (int i = offset; i < offset + length; i++)
+	{
+	    result += read(dsts [i]);
+	}
+
+	return result;
+    }
+
+    public int write(ByteBuffer src) throws IOException
+    {
+	int len = src.remaining();
+	if (src.hasArray() && !src.isReadOnly())
+	{
+	    byte[] buffer = src.array();
+	    write(buffer, src.arrayOffset() + src.position(), len);
+            src.position(src.position() + len);
+	}
+	else
+	{
+	    // Use a more efficient native method! FIXME!
+	    byte[] buffer = new byte[len];
+	    src.get(buffer, 0, len);
+	    write(buffer, 0, len);
+	}
+	return len;
+    }
+    
+    public int write(ByteBuffer src, long position) throws IOException
+    {
+	if (position < 0)
+            throw new IllegalArgumentException ("position: " + position);
+
+	if (!isOpen ())
+	    throw new ClosedChannelException ();
+    
+	if ((mode & WRITE) == 0)
+	    throw new NonWritableChannelException ();
+
+	long oldPosition = implPosition();
+	seek(position);
+        try
+        {
+	    return write(src);
+        }
+        finally
+        {
+	    seek(oldPosition);
+        }
+    }
+
+    public void write(byte[] buf, int offset, int len) throws IOException
+    {
+	if(stream == null)
+	    throw new ClosedChannelException();
+
+	if (len == 0)
+	    return;
+
+	if ((offset < 0) || (offset > buf.length))
+	    throw new IllegalArgumentException("Offset invalid: " + offset);
+
+	if ((len < 0) || (len > (buf.length - offset)))
+	    throw new IllegalArgumentException("Length invalid: " + len);
+
+	try
+	{
+            if(false) throw new cli.System.IO.IOException();
+            if(false) throw new cli.System.ObjectDisposedException(null);
+	    stream.Write(buf, offset, len);
+	    // NOTE FileStream buffers the output, so we have to flush explicitly
+	    stream.Flush();
+	}
+	catch(cli.System.IO.IOException x)
+	{
+	    throw new IOException(x.getMessage());
+	}
+        catch(cli.System.ObjectDisposedException x2)
+        {
+            throw new ClosedChannelException();
+        }
+    }
+  
+    public void write(int b) throws IOException
+    {
+        if(stream == null)
+            throw new ClosedChannelException();
+
+        try
+        {
+            if(false) throw new cli.System.IO.IOException();
+            if(false) throw new cli.System.ObjectDisposedException(null);
+            stream.WriteByte((byte)b);
+            // NOTE FileStream buffers the output, so we have to flush explicitly
+            stream.Flush();
+        }
+        catch(cli.System.IO.IOException x)
+        {
+            throw new IOException(x.getMessage());
+        }
+        catch(cli.System.ObjectDisposedException x2)
+        {
+            throw new ClosedChannelException();
+        }
+    }
+
+    public long write(ByteBuffer[] srcs, int offset, int length)
+	throws IOException
+    {
+	long result = 0;
+
+	for (int i = offset;i < offset + length;i++)
+	{
+	    result += write (srcs[i]);
+	}
+    
+	return result;
+    }
+				   
+    private MappedByteBuffer mapImpl (char mode, long position, int size) throws IOException
+    {
+        if (! (stream instanceof FileStream))
+            throw new IllegalArgumentException("only file streams can be mapped");
+
+        Pointer address = mapViewOfFile((FileStream)stream, mode != 'r', mode == 'c', position, size);
+        if (address == null)
+            throw new IOException("file mapping failed");
+        return MappedByteBufferImpl.create(address, size, mode == 'r', win32);
+    }
+
+    abstract Pointer mapViewOfFile(FileStream stream, boolean writeable, boolean copy_on_write, long position, int size) throws IOException;
+
+    public MappedByteBuffer map (FileChannel.MapMode mode,
+	long position, long size)
+	throws IOException
+    {
+	char nmode = 0;
+	if (mode == MapMode.READ_ONLY)
+	{
+	    nmode = 'r';
+	    if ((this.mode & READ) == 0)
+		throw new NonReadableChannelException();
+	}
+	else if (mode == MapMode.READ_WRITE || mode == MapMode.PRIVATE)
+	{
+	    nmode = mode == MapMode.READ_WRITE ? '+' : 'c';
+            if ((this.mode & READ) == 0)
+                throw new NonReadableChannelException();
+            if ((this.mode & WRITE) == 0)
+                throw new NonWritableChannelException();
+	}
+	else
+            throw new IllegalArgumentException ("mode: " + mode);
+    
+	if (position < 0 || size < 0 || size > Integer.MAX_VALUE)
+            throw new IllegalArgumentException ("position: " + position
+                                                + ", size: " + size);
+        return mapImpl(nmode, position, (int) size);
+    }
+
+    /**
+     * msync with the disk
+     */
+    public void force (boolean metaData) throws IOException
+    {
+	if (!isOpen ())
+	    throw new ClosedChannelException ();
+
+	if (!stream.get_CanWrite())
+	    return;
+
+	try
+	{
+	    if (false) throw new cli.System.IO.IOException();
+	    stream.Flush();
+	}
+	catch(cli.System.IO.IOException x)
+	{
+	    throw new IOException(x.getMessage());
+	}
+
+	if (stream instanceof FileStream)
+	{
+	    if(!flush(((FileStream)stream)))
+	    {
+		throw new IOException();
+	    }
+	}
+    }
+
+    abstract boolean flush(FileStream fs);
+
+    public long transferTo(long position, long count, WritableByteChannel target) throws IOException
+    {
+        if (position < 0 || count < 0)
+            throw new IllegalArgumentException ("position: " + position + ", count: " + count);
+
+        if (!isOpen())
+            throw new ClosedChannelException ();
+
+        if ((mode & READ) == 0)
+            throw new NonReadableChannelException ();
+   
+        long total = 0;
+        ByteBuffer buf = ByteBuffer.allocate((int)Math.min(4096, count));
+
+        while (count > 0)
+        {
+            buf.clear();
+            buf.limit((int)Math.min(buf.capacity(), count));
+            int bytesRead = read(buf, position);
+            if (bytesRead <= 0)
+            {
+                break;
+            }
+            buf.flip();
+            int bytesWritten = target.write(buf);
+            total += bytesWritten;
+            position += bytesWritten;
+            count -= bytesWritten;
+            if (bytesWritten != bytesRead)
+            {
+                break;
+            }
+        }
+
+        return total;
+    }
+
+    public long transferFrom(ReadableByteChannel src, long position, long count) throws IOException
+    {
+        if (position < 0 || count < 0)
+            throw new IllegalArgumentException ("position: " + position + ", count: " + count);
+
+        if (!isOpen())
+            throw new ClosedChannelException ();
+
+        if ((mode & WRITE) == 0)
+            throw new NonWritableChannelException ();
+
+        long total = 0;
+        ByteBuffer buf = ByteBuffer.allocate((int)Math.min(4096, count));
+
+        while (count > 0)
+        {
+            buf.clear();
+            buf.limit((int)Math.min(buf.capacity(), count));
+            long transferred = src.read(buf);
+            if (transferred <= 0)
+            {
+                break;
+            }
+            buf.flip();
+            write(buf, position);
+            total += transferred;
+            position += transferred;
+            count -= transferred;
+        }
+
+        return total;
+    }
+
+    // Shared sanity checks between lock and tryLock methods.
+    private void lockCheck(long position, long size, boolean shared)
+        throws IOException
+    {
+        if (position < 0
+            || size < 0)
+            throw new IllegalArgumentException ("position: " + position
+                + ", size: " + size);
+
+        if (!isOpen ())
+            throw new ClosedChannelException();
+
+        if (shared && ((mode & READ) == 0))
+            throw new NonReadableChannelException();
+	
+        if (!shared && ((mode & WRITE) == 0))
+            throw new NonWritableChannelException();
+    }
+
+    public FileLock tryLock (long position, long size, boolean shared)
+	throws IOException
+    {
+        lockCheck(position, size, shared);
+	
+	boolean completed = false;
+    
+	try
+	{
+	    begin();
+	    boolean lockable = lock(position, size, shared, false);
+	    completed = true;
+            return (lockable
+                ? new FileLockImpl(this, position, size, shared)
+                : null);
+	}
+	finally
+	{
+	    end(completed);
+	}
+    }
+
+    /** Try to acquire a lock at the given position and size.
+     * On success return true.
+     * If wait as specified, block until we can get it.
+     * Otherwise return false.
+     */
+    private boolean lock(long position, long size, boolean shared, boolean wait) throws IOException
+    {
+	if(stream == null)
+	    throw new IOException("Invalid FileChannelImpl");
+
+	try
+	{
+	    if(false) throw new cli.System.ArgumentOutOfRangeException();
+            int backoff = 5;
+            for(;;)
+            {
+                try
+                {
+                    if(false) throw new cli.System.IO.IOException();
+                    ((FileStream)stream).Lock(position, size);
+                    return true;
+                }
+                catch(cli.System.IO.IOException x)
+                {
+                    if(!wait)
+                    {
+                        return false;
+                    }
+                    try
+                    {
+                        Thread.sleep(backoff);
+                        backoff *= 2;
+                        if(backoff > 1000)
+                        {
+                            backoff = 40;
+                        }
+                    }
+                    catch(InterruptedException _)
+                    {
+                        // SPECNOTE The API spec says that an interrupt lock
+                        // throws a FileLockInterruptedException, but in
+                        // reality Sun returns null from lock (at least on Windows).
+                        return false;
+                    }
+                }
+            }
+	}
+	catch(ClassCastException c)
+	{
+	    throw new IOException("Locking not supported");
+	}
+	catch(cli.System.ArgumentOutOfRangeException x1)
+	{
+	    throw new IOException(x1.getMessage());
+	}
+	// TODO map al the other exceptions as well...	
+    }
+  
+    public FileLock lock (long position, long size, boolean shared)
+	throws IOException
+    {
+        lockCheck(position, size, shared);
+
+	boolean completed = false;
+
+	try
+	{
+	    boolean lockable = lock(position, size, shared, true);
+	    completed = true;
+	    return (lockable
+		? new FileLockImpl(this, position, size, shared)
+		: null);
+	}
+	finally
+	{
+	    end(completed);
+	}
+    }
+
+    public long position ()
+	throws IOException
+    {
+	if (!isOpen ())
+	    throw new ClosedChannelException ();
+
+	return implPosition ();
+    }
+  
+    public FileChannel position (long newPosition)
+	throws IOException
+    {
+	if (newPosition < 0)
+            throw new IllegalArgumentException ("newPostition: " + newPosition);
+
+	if (!isOpen ())
+	    throw new ClosedChannelException ();
+
+	// FIXME note semantics if seeking beyond eof.
+	// We should seek lazily - only on a write.
+	seek (newPosition);
+	return this;
+    }
+  
+    public FileChannel truncate (long size)
+	throws IOException
+    {
+	if (size < 0)
+            throw new IllegalArgumentException ("size: " + size);
+
+	if (!isOpen ())
+	    throw new ClosedChannelException ();
+
+	if ((mode & WRITE) == 0)
+	    throw new NonWritableChannelException ();
+
+        if (size < size ())
+            implTruncate (size);
+	return this;
+    }
+}
+@
+
+
+1.25
+log
+@*** empty log message ***
+@
+text
+@@
+
+
+1.24
+log
+@*** empty log message ***
+@
+text
+@d501 1
+a501 1
+    public int read (ByteBuffer dst) throws IOException
+d503 20
+a522 9
+	int result;
+	byte[] buffer = new byte [dst.remaining ()];
+    
+	result = read (buffer, 0, buffer.length);
+
+	if (result > 0)
+	    dst.put (buffer, 0, result);
+
+	return result;
+d525 1
+a525 2
+    public int read (ByteBuffer dst, long position)
+	throws IOException
+d529 11
+a539 6
+        long oldPosition = implPosition ();
+	position (position);
+	int result = read(dst);
+	position (oldPosition);
+    
+	return result;
+d542 1
+a542 1
+    public int read () throws IOException
+d590 1
+a590 2
+    public long read (ByteBuffer[] dsts, int offset, int length)
+	throws IOException
+d596 1
+a596 1
+	    result += read (dsts [i]);
+d602 1
+a602 1
+    public int write (ByteBuffer src) throws IOException
+d604 2
+a605 2
+	int len = src.remaining ();
+	if (src.hasArray())
+d614 3
+a616 3
+	    byte[] buffer = new byte [len];
+	    src.get (buffer, 0, len);
+	    write (buffer, 0, len);
+d621 1
+a621 2
+    public int write (ByteBuffer src, long position)
+	throws IOException
+d632 10
+a641 9
+	int result;
+	long oldPosition;
+
+	oldPosition = implPosition ();
+	seek (position);
+	result = write(src);
+	seek (oldPosition);
+    
+	return result;
+d785 1
+a785 25
+    // like transferTo, but with a count of less than 2Gbytes
+    private int smallTransferTo (long position, int count, 
+        WritableByteChannel target)
+        throws IOException
+    {
+        ByteBuffer buffer;
+        try
+        {
+            // Try to use a mapped buffer if we can.  If this fails for
+            // any reason we'll fall back to using a ByteBuffer.
+            buffer = map (MapMode.READ_ONLY, position, count);
+        }
+        catch (IOException e)
+        {
+            buffer = ByteBuffer.allocate (count);
+            read (buffer, position);
+            buffer.flip();
+        }
+
+        return target.write (buffer);
+    }
+
+    public long transferTo (long position, long count, 
+        WritableByteChannel target)
+        throws IOException
+d787 2
+a788 4
+        if (position < 0
+            || count < 0)
+            throw new IllegalArgumentException ("position: " + position
+                                                + ", count: " + count);
+d790 1
+a790 1
+        if (!isOpen ())
+a795 1
+        final int pageSize = 65536;
+d797 1
+d801 5
+a805 4
+            int transferred 
+                = smallTransferTo (position, (int)Math.min (count, pageSize), 
+                target);
+            if (transferred < 0)
+a806 23
+            total += transferred;
+            position += transferred;
+            count -= transferred;
+        }
+
+        return total;
+    }
+
+    // like transferFrom, but with a count of less than 2Gbytes
+    private int smallTransferFrom (ReadableByteChannel src, long position, 
+        int count)
+        throws IOException
+    {
+        ByteBuffer buffer = null;
+
+        if (src instanceof FileChannel)
+        {
+            try
+            {
+                // Try to use a mapped buffer if we can.  If this fails
+                // for any reason we'll fall back to using a ByteBuffer.
+                buffer = ((FileChannel)src).map (MapMode.READ_ONLY, position, 
+                    count);
+d808 6
+a813 1
+            catch (IOException e)
+d815 1
+d819 1
+a819 8
+        if (buffer == null)
+        {
+            buffer = ByteBuffer.allocate ((int) count);
+            src.read (buffer);
+            buffer.flip();
+        }
+
+        return write (buffer, position);
+d822 1
+a822 3
+    public long transferFrom (ReadableByteChannel src, long position, 
+        long count)
+        throws IOException
+d824 2
+a825 4
+        if (position < 0
+            || count < 0)
+            throw new IllegalArgumentException ("position: " + position
+                                                + ", count: " + count);
+d827 1
+a827 1
+        if (!isOpen ())
+a832 1
+        final int pageSize = 65536;
+d834 1
+d838 5
+a842 3
+            int transferred = smallTransferFrom (src, position, 
+                (int)Math.min (count, pageSize));
+            if (transferred < 0)
+d844 3
+@
+
+
+1.24.2.1
+log
+@*** empty log message ***
+@
+text
+@d501 1
+a501 1
+    public int read(ByteBuffer dst) throws IOException
+d503 9
+a511 20
+        if (dst.hasArray())
+        {
+            byte[] buffer = dst.array();
+            int result = read(buffer, dst.arrayOffset() + dst.position(), dst.remaining());
+            if (result > 0)
+            {
+                dst.position(dst.position() + result);
+            }
+            return result;
+        }
+        else
+        {
+	    byte[] buffer = new byte[dst.remaining()];
+	    int result = read(buffer, 0, buffer.length);
+	    if (result > 0)
+            {
+	        dst.put(buffer, 0, result);
+            }
+	    return result;
+        }
+d514 2
+a515 1
+    public int read(ByteBuffer dst, long position) throws IOException
+d519 6
+a524 11
+
+        long oldPosition = implPosition();
+	seek(position);
+        try
+        {
+	    return read(dst);
+        }
+        finally
+        {
+	    seek(oldPosition);
+        }
+d527 1
+a527 1
+    public int read() throws IOException
+d575 2
+a576 1
+    public long read(ByteBuffer[] dsts, int offset, int length) throws IOException
+d582 1
+a582 1
+	    result += read(dsts [i]);
+d588 1
+a588 1
+    public int write(ByteBuffer src) throws IOException
+d590 2
+a591 2
+	int len = src.remaining();
+	if (src.hasArray() && !src.isReadOnly())
+d600 3
+a602 3
+	    byte[] buffer = new byte[len];
+	    src.get(buffer, 0, len);
+	    write(buffer, 0, len);
+d607 2
+a608 1
+    public int write(ByteBuffer src, long position) throws IOException
+d619 9
+a627 10
+	long oldPosition = implPosition();
+	seek(position);
+        try
+        {
+	    return write(src);
+        }
+        finally
+        {
+	    seek(oldPosition);
+        }
+d771 25
+a795 1
+    public long transferTo(long position, long count, WritableByteChannel target) throws IOException
+d797 4
+a800 2
+        if (position < 0 || count < 0)
+            throw new IllegalArgumentException ("position: " + position + ", count: " + count);
+d802 1
+a802 1
+        if (!isOpen())
+d808 1
+a809 1
+        ByteBuffer buf = ByteBuffer.allocate((int)Math.min(4096, count));
+d813 23
+a835 4
+            buf.clear();
+            buf.limit((int)Math.min(buf.capacity(), count));
+            int bytesRead = read(buf, position);
+            if (bytesRead <= 0)
+d837 4
+a840 1
+                break;
+d842 1
+a842 6
+            buf.flip();
+            int bytesWritten = target.write(buf);
+            total += bytesWritten;
+            position += bytesWritten;
+            count -= bytesWritten;
+            if (bytesWritten != bytesRead)
+a843 1
+                break;
+d847 8
+a854 1
+        return total;
+d857 3
+a859 1
+    public long transferFrom(ReadableByteChannel src, long position, long count) throws IOException
+d861 4
+a864 2
+        if (position < 0 || count < 0)
+            throw new IllegalArgumentException ("position: " + position + ", count: " + count);
+d866 1
+a866 1
+        if (!isOpen())
+d872 1
+a873 1
+        ByteBuffer buf = ByteBuffer.allocate((int)Math.min(4096, count));
+d877 3
+a879 5
+            buf.clear();
+            buf.limit((int)Math.min(buf.capacity(), count));
+            long transferred = src.read(buf);
+            if (transferred <= 0)
+            {
+a880 3
+            }
+            buf.flip();
+            write(buf, position);
+@
+
+
+1.23
+log
+@*** empty log message ***
+@
+text
+@d65 1
+d156 1
+a156 1
+        //[DllImport("kernel32")]
+d159 1
+a159 1
+        //[DllImport("kernel32")]
+d162 1
+a162 1
+        //[DllImport("kernel32", SetLastError=true)]
+d165 1
+a165 1
+        //[DllImport("kernel32", SetLastError=true)]
+d211 2
+a212 2
+	//[DllImport("ikvm-native")]
+	private static native IntPtr ikvm_mmap(IntPtr handle, byte writeable, byte copy_on_write, long position, int size);
+@
+
+
+1.22
+log
+@*** empty log message ***
+@
+text
+@d49 1
+d705 1
+a705 1
+        return createMappedByteBufferImpl(address, size, mode == 'r', win32);
+a709 3
+    // implementation in map.xml to bypass Java access checking
+    private static native MappedByteBuffer createMappedByteBufferImpl(Pointer address, int size, boolean readonly, boolean win32);
+
+@
+
+
+1.21
+log
+@*** empty log message ***
+@
+text
+@a532 1
+            stream.Flush();
+a558 1
+            stream.Flush();
+@
+
+
+1.20
+log
+@*** empty log message ***
+@
+text
+@d533 1
+d560 2
+a561 1
+	    int count = stream.Read(buf, offset, len);
+@
+
+
+1.19
+log
+@*** empty log message ***
+@
+text
+@d238 41
+a278 3
+    public static final FileChannelImpl in = FileChannelImpl.create(Console.OpenStandardInput());
+    public static final FileChannelImpl out = FileChannelImpl.create(Console.OpenStandardOutput());
+    public static final FileChannelImpl err = FileChannelImpl.create(Console.OpenStandardError());
+@
+
+
+1.18
+log
+@*** empty log message ***
+@
+text
+@d443 1
+a443 2
+            // HACK don't close stdin because that throws a NotSupportedException (bug in System.IO.__ConsoleStream)
+	    if(local != in.stream)
+d445 12
+a456 9
+		try
+		{
+		    local.Close();
+		    if(false) throw new cli.System.IO.IOException();
+		}
+		catch(cli.System.IO.IOException x)
+		{
+		    throw new IOException(x.getMessage());
+		}
+@
+
+
+1.17
+log
+@*** empty log message ***
+@
+text
+@d64 1
+a64 1
+import gnu.classpath.RawData;
+d111 1
+a111 1
+        RawData mapViewOfFile(FileStream fs, boolean writeable, boolean copy_on_write, long position, int size)
+d139 1
+a139 1
+                return new RawData(p);                
+d179 1
+a179 1
+        RawData mapViewOfFile(FileStream fs, boolean writeable, boolean copy_on_write, long position, int size)
+d190 1
+a190 1
+            return new RawData(p);
+d661 1
+a661 1
+        RawData address = mapViewOfFile((FileStream)stream, mode != 'r', mode == 'c', position, size);
+d667 1
+a667 1
+    abstract RawData mapViewOfFile(FileStream stream, boolean writeable, boolean copy_on_write, long position, int size) throws IOException;
+d670 1
+a670 1
+    private static native MappedByteBuffer createMappedByteBufferImpl(RawData address, int size, boolean readonly, boolean win32);
+@
+
+
+1.16
+log
+@*** empty log message ***
+@
+text
+@d18 2
+a19 2
+Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+02111-1307 USA.
+d88 1
+a88 1
+    private Stream stream;
+d441 4
+a444 2
+	    // HACK don't close stdin because that throws a NotSupportedException (bug in System.IO.__ConsoleStream)
+	    if(stream != in.stream)
+d448 1
+a448 1
+		    stream.Close();
+a455 1
+	    stream = null;
+d476 2
+a477 2
+	    throw new IllegalArgumentException ();
+	long oldPosition = implPosition ();
+d569 1
+a569 1
+	    throw new IllegalArgumentException ();
+d692 1
+a692 1
+	    throw new IllegalArgumentException ();
+d695 3
+a697 2
+	    throw new IllegalArgumentException ();
+	return mapImpl(nmode, position, (int) size);
+d760 2
+a761 1
+            throw new IllegalArgumentException ();
+d824 2
+a825 1
+            throw new IllegalArgumentException ();
+d850 3
+a852 2
+    public FileLock tryLock (long position, long size, boolean shared)
+	throws IOException
+d854 4
+a857 3
+	if (position < 0
+	    || size < 0)
+	    throw new IllegalArgumentException ();
+d859 2
+a860 2
+	if (!isOpen ())
+	    throw new ClosedChannelException ();
+d862 2
+a863 2
+	if (shared && (mode & READ) == 0)
+	    throw new NonReadableChannelException ();
+d865 8
+a872 2
+	if (!shared && (mode & WRITE) == 0)
+	    throw new NonWritableChannelException ();
+d879 1
+a879 1
+	    boolean lockable = lock(position, size, shared, true);
+a902 1
+	    if(false) throw new cli.System.IO.IOException();
+d904 33
+a936 3
+	    // TODO if wait is false, we shouldn't block...
+	    ((FileStream)stream).Lock(position, size);
+	    return true;
+a945 4
+	catch(cli.System.IO.IOException x)
+	{
+	    throw new IOException(x.getMessage());
+	}
+d952 1
+a952 6
+	if (position < 0
+	    || size < 0)
+	    throw new IllegalArgumentException ();
+
+	if (!isOpen ())
+	    throw new ClosedChannelException ();
+d958 1
+a958 1
+	    boolean lockable = lock(position, size, shared, false);
+d983 1
+a983 1
+	    throw new IllegalArgumentException ();
+d998 1
+a998 1
+	    throw new IllegalArgumentException ();
+d1006 2
+a1007 1
+	implTruncate (size);
+@
+
+
+1.15
+log
+@*** empty log message ***
+@
+text
+@d202 1
+a202 1
+		    Object[] args = new Object[] { fs.get_Handle().ToInt32() };
+d217 1
+a217 1
+        return win32 ? new Win32(file, mode) : new Posix(file, mode);
+d229 1
+a229 1
+        return win32 ? new Win32(stream) : new Posix(stream);
+@
+
+
+1.14
+log
+@*** empty log message ***
+@
+text
+@d59 5
+d74 1
+a74 1
+public final class FileChannelImpl extends FileChannel
+d86 2
+d91 122
+d217 1
+a217 1
+        return new FileChannelImpl(file, mode);
+d220 1
+a220 1
+    private FileChannelImpl(File file, int mode)
+d229 1
+a229 1
+        return new FileChannelImpl(stream);
+d238 3
+a240 3
+    public static final FileChannelImpl in = new FileChannelImpl(Console.OpenStandardInput());
+    public static final FileChannelImpl out = new FileChannelImpl(Console.OpenStandardOutput());
+    public static final FileChannelImpl err = new FileChannelImpl(Console.OpenStandardError());
+d663 1
+a663 1
+        return createMappedByteBufferImpl(address, size, mode == 'r');
+d666 1
+a666 1
+    private static native RawData mapViewOfFile(FileStream stream, boolean writeable, boolean copy_on_write, long position, int size);
+d669 1
+a669 1
+    private static native MappedByteBuffer createMappedByteBufferImpl(RawData address, int size, boolean readonly);
+d728 1
+a728 1
+    private static native boolean flush(FileStream fs);
+@
+
+
+1.13
+log
+@*** empty log message ***
+@
+text
+@d84 3
+a86 1
+    public FileChannelImpl ()
+d88 1
+d91 2
+a92 2
+    /* Open a file.  MODE is a combination of the above mode flags. */
+    public FileChannelImpl (File path, int mode) throws FileNotFoundException
+d94 1
+a94 1
+	stream = open (path.getPath(), mode);
+d98 6
+a103 1
+    public FileChannelImpl(Stream stream)
+@
+
+
+1.12
+log
+@*** empty log message ***
+@
+text
+@d730 1
+a730 1
+	    lock(position, size, shared, true);
+d732 3
+a734 1
+	    return new FileLockImpl(this, position, size, shared);
+@
+
+
+1.11
+log
+@*** empty log message ***
+@
+text
+@d44 1
+d89 1
+a89 1
+    public FileChannelImpl (String path, int mode) throws FileNotFoundException
+d91 1
+a91 1
+	stream = open (path, mode);
+@
+
+
+1.10
+log
+@*** empty log message ***
+@
+text
+@d547 4
+a550 2
+	    if ((this.mode & (READ|WRITE)) != (READ|WRITE))
+		throw new NonWritableChannelException();
+@
+
+
+1.9
+log
+@*** empty log message ***
+@
+text
+@d58 1
+a58 1
+import ikvm.lang.CIL;
+d141 1
+a141 1
+	    return new cli.System.IO.FileStream(demanglePath(path), FileMode.wrap(fileMode), FileAccess.wrap(fileAccess), FileShare.wrap(FileShare.ReadWrite), 1, false);
+d517 1
+a517 1
+    public MappedByteBuffer mapImpl (char mode, long position, int size) throws IOException
+d519 7
+a525 2
+	// TODO
+	throw new IOException("not implemented");
+d528 5
+d579 1
+a579 1
+	if (stream instanceof cli.System.IO.FileStream)
+d581 1
+a581 1
+	    if(!flush(((cli.System.IO.FileStream)stream)))
+d588 1
+a588 1
+    private static native boolean flush(cli.System.IO.FileStream fs);
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+   Copyright (C) 2002, 2004 Free Software Foundation, Inc.
+a240 4
+	if (size < 0)
+	    throw new IllegalArgumentException("Length cannot be less than zero " +
+		size);
+
+d520 1
+a520 1
+	throw new Error("not implemented");
+d580 25
+a604 2
+    public long transferTo (long position, long count, WritableByteChannel target)
+	throws IOException
+d606 3
+a608 3
+	if (position < 0
+	    || count < 0)
+	    throw new IllegalArgumentException ();
+d610 2
+a611 2
+	if (!isOpen ())
+	    throw new ClosedChannelException ();
+d613 2
+a614 2
+	if ((mode & READ) == 0)
+	    throw new NonReadableChannelException ();
+d616 47
+a662 5
+	// XXX: count needs to be casted from long to int. Dataloss ?
+	ByteBuffer buffer = ByteBuffer.allocate ((int) count);
+	read (buffer, position);
+	buffer.flip();
+	return target.write (buffer);
+d665 3
+a667 2
+    public long transferFrom (ReadableByteChannel src, long position, long count)
+	throws IOException
+d669 9
+a677 3
+	if (position < 0
+	    || count < 0)
+	    throw new IllegalArgumentException ();
+d679 2
+a680 2
+	if (!isOpen ())
+	    throw new ClosedChannelException ();
+d682 10
+a691 2
+	if ((mode & WRITE) == 0)
+	    throw new NonWritableChannelException ();
+d693 1
+a693 5
+	// XXX: count needs to be casted from long to int. Dataloss ?
+	ByteBuffer buffer = ByteBuffer.allocate ((int) count);
+	src.read (buffer);
+	buffer.flip();
+	return write (buffer, position);
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@a57 1
+import ikvm.lang.ByteArrayHack;
+d384 1
+a384 1
+	    int count = stream.Read(ByteArrayHack.cast(buf), offset, len);
+d418 1
+d471 1
+a471 1
+	    stream.Write(ByteArrayHack.cast(buf), offset, len);
+d494 1
+a494 1
+            stream.WriteByte(CIL.box_ubyte((byte)b));
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d142 1
+a142 1
+	    return cli.System.IO.File.Open(demanglePath(path), FileMode.wrap(fileMode), FileAccess.wrap(fileAccess), FileShare.wrap(FileShare.ReadWrite));
+d453 1
+a453 1
+    public void write (byte[] buf, int offset, int len) throws IOException
+d456 1
+a456 1
+	    throw new IOException("Invalid FileChannelImpl");
+d469 2
+a470 1
+	    if(false) throw new cli.System.IO.IOException();
+d479 4
+a482 1
+	// TODO map al the other exceptions as well...
+d485 1
+a485 1
+    public void write (int b) throws IOException
+d487 19
+a505 1
+	stream.WriteByte(CIL.box_ubyte((byte)b));
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d249 4
+a252 1
+	    stream.SetLength(size);
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d534 21
+d557 2
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@a108 2
+	if ((path == null) || path.equals(""))
+	    throw new IllegalArgumentException("Path cannot be null");
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d59 1
+d482 1
+a482 2
+	// HACK we can't call WriteByte because it takes a cli.System.Byte
+	write(new byte[] { (byte)b }, 0, 1);
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@d107 1
+a107 1
+	    throw new InternalError("FileDescriptor already open");
+d142 1
+d162 4
+a165 1
+	// TODO map al the other exceptions as well...
+a178 6
+    /** Attach to an already-opened file.  */
+    private FileChannelImpl (int desc, int mode)
+    {
+	this.mode = mode;
+    }
+
+@
+

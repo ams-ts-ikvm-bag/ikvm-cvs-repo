@@ -1,0 +1,253 @@
+head	1.4;
+access;
+symbols
+	v8_1_5717_0:1.4
+	v8_1:1.4.0.14
+	v8_0_5449_1:1.4
+	v8_0_5449_0:1.4
+	v8_0:1.4.0.12
+	v7_4_5196_0:1.4
+	v7_4:1.4.0.10
+	v7_3:1.4.0.8
+	v7_2_4630_6:1.4
+	v7_2_4630_5:1.4
+	v7_2_4630_4:1.4
+	v7_2_4630_3:1.4
+	v7_2_4630_2:1.4
+	v0_46_0_4:1.2
+	v7_2_4630_1:1.4
+	v7_2:1.4.0.6
+	v7_1_4532_2:1.4
+	v7_1_4532_1:1.4
+	v7_1_4532_0:1.4
+	v7_1:1.4.0.4
+	v7_0_4335_3:1.4
+	v7_0_4335_2:1.4
+	v7_0_4335_1:1.4
+	v0_46_0_2:1.2
+	v7_0_4335_0:1.4
+	v7_0:1.4.0.2
+	v0_40_0_6:1.1
+	v0_40_0_5:1.1
+	v0_46_0_1:1.2
+	v0_46_0_0:1.2
+	v0_46:1.2.0.6
+	v0_44_0_6:1.2
+	v0_44_0_5:1.2
+	v0_44_0_4:1.2
+	v0_44_0_3:1.2
+	v0_44_0_2:1.2
+	v0_42_0_7:1.2
+	v0_44_0_1:1.2
+	v0_44_0_0:1.2
+	v0_44:1.2.0.4
+	v0_42_0_6:1.2
+	v0_42_0_5:1.2
+	v0_42_0_4:1.2
+	v0_42_0_3:1.2
+	v0_42_0_2:1.2
+	v0_42_0_1:1.2
+	v0_42_0_0:1.2
+	v0_42:1.2.0.2
+	v0_40_0_3:1.1
+	v0_40_0_2:1.1
+	v0_40_0_1:1.1
+	v0_40_0_0:1.1
+	v0_40:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.4
+date	2011.06.21.19.42.45;	author smallsql;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2011.06.20.18.25.46;	author smallsql;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2009.04.17.06.25.19;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2009.01.15.21.40.00;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.4
+log
+@Updated ODBC Bridge to OpenJDK7 part 2
+@
+text
+@/*
+  Copyright (C) 2009, 2011 Volker Berlin (i-net software)
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+ */
+package sun.jdbc.odbc;
+
+import java.sql.*;
+import java.util.Properties;
+import java.util.logging.Logger;
+
+/**
+ * This JDBC Driver is a wrapper to the ODBC.NET Data Provider
+ */
+public class JdbcOdbcDriver implements Driver{
+
+    private static final String URL_PREFIX = "jdbc:odbc:";
+
+    static{
+        try{
+            DriverManager.registerDriver(new JdbcOdbcDriver());
+        }catch(SQLException ex){
+            throw new ExceptionInInitializerError(ex);
+        }
+    }
+
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+	public boolean acceptsURL(String url){
+        return url.startsWith(URL_PREFIX);
+    }
+
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+	public Connection connect(String url, Properties info) throws SQLException{
+        if(!acceptsURL(url)){
+            return null;
+        }
+        String connectString = url.substring(URL_PREFIX.length());
+        return new JdbcOdbcConnection(connectString, info);
+    }
+
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+	public int getMajorVersion(){
+        return 2;
+    }
+
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+	public int getMinorVersion(){
+        return 1;
+    }
+
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+	public DriverPropertyInfo[] getPropertyInfo(String url, Properties info) throws SQLException{
+        return new DriverPropertyInfo[0];
+    }
+
+
+    /**
+     * {@@inheritDoc}
+     */
+    @@Override
+	public boolean jdbcCompliant(){
+        return true;
+    }
+
+
+    /**
+     * {@@inheritDoc}
+     */
+	public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+		throw new SQLFeatureNotSupportedException();
+	}
+
+}
+@
+
+
+1.3
+log
+@Updated ODBC Bridge to OpenJDK7 part 1
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2009 Volker Berlin (i-net software)
+@
+
+
+1.2
+log
+@Added copyright header.
+@
+text
+@d28 1
+d49 2
+a50 1
+    public boolean acceptsURL(String url){
+d58 2
+a59 1
+    public Connection connect(String url, Properties info) throws SQLException{
+d71 2
+a72 1
+    public int getMajorVersion(){
+d80 2
+a81 1
+    public int getMinorVersion(){
+d89 2
+a90 1
+    public DriverPropertyInfo[] getPropertyInfo(String url, Properties info) throws SQLException{
+d98 2
+a99 1
+    public boolean jdbcCompliant(){
+d103 8
+@
+
+
+1.1
+log
+@First Step of the JDBC ODBC Bridge
+@
+text
+@d2 21
+a22 1
+ * Created on 07.01.2009
+@
+

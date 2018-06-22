@@ -1,0 +1,391 @@
+head	1.3;
+access;
+symbols
+	v8_1_5717_0:1.3
+	v8_1:1.3.0.16
+	v8_0_5449_1:1.3
+	v8_0_5449_0:1.3
+	v8_0:1.3.0.14
+	v7_4_5196_0:1.3
+	v7_4:1.3.0.12
+	v7_3:1.3.0.10
+	v7_2_4630_6:1.3
+	v7_2_4630_5:1.3
+	v7_2_4630_4:1.3
+	v7_2_4630_3:1.3
+	v7_2_4630_2:1.3
+	v0_46_0_4:1.3
+	v7_2_4630_1:1.3
+	v7_2:1.3.0.8
+	v7_1_4532_2:1.3
+	v7_1_4532_1:1.3
+	v7_1_4532_0:1.3
+	v7_1:1.3.0.6
+	v7_0_4335_3:1.3
+	v7_0_4335_2:1.3
+	v7_0_4335_1:1.3
+	v0_46_0_2:1.3
+	v7_0_4335_0:1.3
+	v7_0:1.3.0.4
+	v0_40_0_6:1.2
+	v0_40_0_5:1.2
+	v0_46_0_1:1.3
+	v0_46_0_0:1.3
+	v0_46:1.3.0.2
+	v0_36_0_14:1.1
+	v0_44_0_6:1.2
+	v0_44_0_5:1.2
+	v0_44_0_4:1.2
+	v0_44_0_3:1.2
+	v0_44_0_2:1.2
+	v0_42_0_7:1.2
+	v0_44_0_1:1.2
+	v0_44_0_0:1.2
+	v0_44:1.2.0.8
+	v0_42_0_6:1.2
+	v0_42_0_5:1.2
+	v0_42_0_4:1.2
+	v0_42_0_3:1.2
+	v0_42_0_2:1.2
+	v0_42_0_1:1.2
+	v0_42_0_0:1.2
+	v0_42:1.2.0.6
+	v0_40_0_3:1.2
+	v0_40_0_2:1.2
+	v0_40_0_1:1.2
+	v0_40_0_0:1.2
+	v0_40:1.2.0.4
+	v0_36_0_13:1.1
+	v0_38_0_1:1.2
+	v0_38_0_0:1.2
+	v0_38:1.2.0.2
+	v0_36_0_9:1.1
+	v0_36_0_7:1.1
+	v0_36_0_5:1.1
+	v0_36_0_4:1.1
+	v0_36_0_3:1.1
+	v0_36_0_2:1.1
+	v0_36_0_1:1.1
+	v0_36_0_0:1.1
+	v0_36:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.3
+date	2011.01.24.16.40.23;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.06.11.09.05.48;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.07.12.08.40.33;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.3
+log
+@Integrated OpenJDK 6 b21.
+@
+text
+@/*
+ * Copyright (c) 1999, 2003, Oracle and/or its affiliates. All rights reserved.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 only, as
+ * published by the Free Software Foundation.  Oracle designates this
+ * particular file as subject to the "Classpath" exception as provided
+ * by Oracle in the LICENSE file that accompanied this code.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * You should have received a copy of the GNU General Public License version
+ * 2 along with this work; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+ * or visit www.oracle.com if you need additional information or have any
+ * questions.
+ */
+
+package sun.net.www.protocol.file;
+
+import java.net.InetAddress;
+import java.net.URLConnection;
+import java.net.URL;
+import java.net.Proxy;
+import java.net.MalformedURLException;
+import java.net.URLStreamHandler;
+import java.io.InputStream;
+import java.io.IOException;
+import sun.net.www.ParseUtil;
+import java.io.File;
+
+/**
+ * Open an file input stream given a URL.
+ * @@author      James Gosling
+ */
+public class Handler extends URLStreamHandler {
+
+    private String getHost(URL url) {
+        String host = url.getHost();
+        if (host == null)
+            host = "";
+        return host;
+    }
+
+
+    protected void parseURL(URL u, String spec, int start, int limit) {
+        /*
+         * Ugly backwards compatibility. Flip any file separator
+         * characters to be forward slashes. This is a nop on Unix
+         * and "fixes" win32 file paths. According to RFC 2396,
+         * only forward slashes may be used to represent hierarchy
+         * separation in a URL but previous releases unfortunately
+         * performed this "fixup" behavior in the file URL parsing code
+         * rather than forcing this to be fixed in the caller of the URL
+         * class where it belongs. Since backslash is an "unwise"
+         * character that would normally be encoded if literally intended
+         * as a non-seperator character the damage of veering away from the
+         * specification is presumably limited.
+         */
+        super.parseURL(u, spec.replace(File.separatorChar, '/'), start, limit);
+    }
+
+    public synchronized URLConnection openConnection(URL url)
+        throws IOException {
+        return openConnection(url, null);
+    }
+
+    public synchronized URLConnection openConnection(URL url, Proxy p)
+           throws IOException {
+
+        String path;
+        String file = url.getFile();
+        String host = url.getHost();
+
+        if (ikvm.internal.Util.WINDOWS) {
+            path = ParseUtil.decode(file);
+            path = path.replace('/', '\\');
+            path = path.replace('|', ':');
+        } else {
+            path = ParseUtil.decode(url.getPath());
+        }
+
+        if ((host == null) || host.equals("") ||
+                host.equalsIgnoreCase("localhost") ||
+                host.equals("~")) {
+           return createFileURLConnection(url, new File(path));
+        }
+
+        /*
+         * attempt to treat this as a UNC path. See 4180841
+         */
+        if (ikvm.internal.Util.WINDOWS) {
+            path = "\\\\" + host + path;
+            File f = new File(path);
+            if (f.exists()) {
+                return createFileURLConnection(url, f);
+            }
+        }
+
+        /*
+         * Now attempt an ftp connection.
+         */
+        URLConnection uc;
+        URL newurl;
+
+        try {
+            newurl = new URL("ftp", host, file +
+                            (url.getRef() == null ? "":
+                            "#" + url.getRef()));
+            if (p != null) {
+                uc = newurl.openConnection(p);
+            } else {
+                uc = newurl.openConnection();
+            }
+        } catch (IOException e) {
+            uc = null;
+        }
+        if (uc == null) {
+            throw new IOException("Unable to connect to: " +
+                                        url.toExternalForm());
+        }
+        return uc;
+    }
+
+    /**
+     * Template method to be overriden by Java Plug-in. [stanleyh]
+     */
+    protected URLConnection createFileURLConnection(URL url, File file) {
+        return new FileURLConnection(url, file);
+    }
+
+    /**
+     * Compares the host components of two URLs.
+     * @@param u1 the URL of the first host to compare 
+     * @@param u2 the URL of the second host to compare 
+     * @@return  <tt>true</tt> if and only if they 
+     * are equal, <tt>false</tt> otherwise.
+     */
+    protected boolean hostsEqual(URL u1, URL u2) {
+        /*
+         * Special case for file: URLs
+         * per RFC 1738 no hostname is equivalent to 'localhost'
+         * i.e. file:///path is equal to file://localhost/path
+         */
+        String s1 = u1.getHost();
+        String s2 = u2.getHost();
+        if ("localhost".equalsIgnoreCase(s1) && ( s2 == null || "".equals(s2)))
+            return true;
+        if ("localhost".equalsIgnoreCase(s2) && ( s1 == null || "".equals(s1)))
+            return true;
+        return super.hostsEqual(u1, u2);
+    }
+}
+@
+
+
+1.2
+log
+@Converted tabs to spaces.
+@
+text
+@d2 1
+a2 1
+ * Copyright 1999-2003 Sun Microsystems, Inc.  All Rights Reserved.
+d7 1
+a7 1
+ * published by the Free Software Foundation.  Sun designates this
+d9 1
+a9 1
+ * by Sun in the LICENSE file that accompanied this code.
+d21 3
+a23 3
+ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
+ * CA 95054 USA or visit www.sun.com if you need additional information or
+ * have any questions.
+a41 1
+ * @@version     1.19, 07/05/05
+@
+
+
+1.1
+log
+@- Added WINDOWS constant to ikvm.internal.Util to check if we're running on Windows.
+- Added a bunch of native methods to openjdk.cs (some real implementations, some stubs)
+- Added OpenJDK derived PlainSocketImpl/SocketInputStream/SocketOutputStream implementations.
+- Added OpenJDK derived file protocol handler (a single class that supports both Windows and non-Windows)
+@
+text
+@d41 2
+a42 2
+ * @@author	James Gosling
+ * @@version 	1.19, 07/05/05
+d47 4
+a50 4
+	String host = url.getHost();
+	if (host == null)
+	    host = "";
+	return host;
+d55 14
+a68 14
+	/*
+	 * Ugly backwards compatibility. Flip any file separator
+	 * characters to be forward slashes. This is a nop on Unix
+	 * and "fixes" win32 file paths. According to RFC 2396,
+	 * only forward slashes may be used to represent hierarchy
+	 * separation in a URL but previous releases unfortunately
+	 * performed this "fixup" behavior in the file URL parsing code
+	 * rather than forcing this to be fixed in the caller of the URL
+	 * class where it belongs. Since backslash is an "unwise"
+	 * character that would normally be encoded if literally intended
+	 * as a non-seperator character the damage of veering away from the
+	 * specification is presumably limited.
+	 */
+	super.parseURL(u, spec.replace(File.separatorChar, '/'), start, limit);
+d72 2
+a73 2
+	throws IOException {
+	return openConnection(url, null);
+d80 2
+a81 2
+	String file = url.getFile();
+	String host = url.getHost();
+d91 3
+a93 3
+	if ((host == null) || host.equals("") ||
+		host.equalsIgnoreCase("localhost") ||
+		host.equals("~")) {
+d95 1
+a95 1
+	}
+d97 3
+a99 3
+	/*
+	 * attempt to treat this as a UNC path. See 4180841
+	 */
+d105 1
+a105 1
+	    }
+d108 23
+a130 23
+	/*
+	 * Now attempt an ftp connection.
+	 */
+	URLConnection uc;
+	URL newurl;
+
+	try {
+	    newurl = new URL("ftp", host, file +
+			    (url.getRef() == null ? "":
+			    "#" + url.getRef()));
+	    if (p != null) {
+		uc = newurl.openConnection(p);
+	    } else {
+		uc = newurl.openConnection();
+	    }
+	} catch (IOException e) {
+	    uc = null;
+	}
+	if (uc == null) {
+	    throw new IOException("Unable to connect to: " +
+					url.toExternalForm());
+	}
+	return uc;
+d137 1
+a137 1
+	return new FileURLConnection(url, file);
+d144 1
+a144 1
+     * @@return	<tt>true</tt> if and only if they 
+d148 12
+a159 12
+	/*
+	 * Special case for file: URLs
+	 * per RFC 1738 no hostname is equivalent to 'localhost'
+	 * i.e. file:///path is equal to file://localhost/path
+	 */
+	String s1 = u1.getHost();
+	String s2 = u2.getHost();
+	if ("localhost".equalsIgnoreCase(s1) && ( s2 == null || "".equals(s2)))
+	    return true;
+	if ("localhost".equalsIgnoreCase(s2) && ( s1 == null || "".equals(s1)))
+	    return true;
+	return super.hostsEqual(u1, u2);
+@
+

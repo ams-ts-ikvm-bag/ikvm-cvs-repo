@@ -1,0 +1,758 @@
+head	1.14;
+access;
+symbols
+	v8_1_5717_0:1.14.2.1
+	v8_1:1.14.0.2
+	v8_0_5449_1:1.12.2.2
+	v8_0_5449_0:1.12.2.1
+	v8_0:1.12.0.2
+	v7_4_5196_0:1.11.2.1
+	v7_4:1.11.0.2
+	v7_3:1.9.0.2
+	v7_2_4630_6:1.7.2.6
+	v7_2_4630_5:1.7.2.5
+	v7_2_4630_4:1.7.2.4
+	v7_2_4630_3:1.7.2.3
+	v7_2_4630_2:1.7.2.2
+	v0_46_0_4:1.2.2.4
+	v7_2_4630_1:1.7.2.1
+	v7_2:1.7.0.2
+	v7_1_4532_2:1.6.2.3
+	v7_1_4532_1:1.6.2.2
+	v7_1_4532_0:1.6.2.1
+	v7_1:1.6.0.2
+	v7_0_4335_3:1.4.2.4
+	v7_0_4335_2:1.4.2.3
+	v7_0_4335_1:1.4.2.2
+	v0_46_0_2:1.2.2.3
+	v7_0_4335_0:1.4.2.1
+	v7_0:1.4.0.2
+	v0_46_0_1:1.2.2.2
+	v0_46_0_0:1.2.2.1
+	v0_46:1.2.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.14
+date	2015.03.24.09.43.14;	author jfrijters;	state Exp;
+branches
+	1.14.2.1;
+next	1.13;
+
+1.13
+date	2015.02.16.10.29.11;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2014.04.14.09.05.36;	author jfrijters;	state Exp;
+branches
+	1.12.2.1;
+next	1.11;
+
+1.11
+date	2014.02.07.14.14.10;	author jfrijters;	state Exp;
+branches
+	1.11.2.1;
+next	1.10;
+
+1.10
+date	2013.03.21.13.37.24;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2013.01.14.14.31.13;	author jfrijters;	state Exp;
+branches
+	1.9.2.1;
+next	1.8;
+
+1.8
+date	2012.09.20.07.37.11;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2012.06.11.14.43.15;	author jfrijters;	state Exp;
+branches
+	1.7.2.1;
+next	1.6;
+
+1.6
+date	2012.01.05.08.55.04;	author jfrijters;	state Exp;
+branches
+	1.6.2.1;
+next	1.5;
+
+1.5
+date	2011.11.15.06.05.50;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2011.08.01.09.13.06;	author jfrijters;	state Exp;
+branches
+	1.4.2.1;
+next	1.3;
+
+1.3
+date	2011.03.03.12.30.23;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2011.01.21.11.05.18;	author jfrijters;	state Exp;
+branches
+	1.2.2.1;
+next	1.1;
+
+1.1
+date	2010.08.20.13.15.47;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.2.2.1
+date	2011.03.03.12.26.03;	author jfrijters;	state Exp;
+branches;
+next	1.2.2.2;
+
+1.2.2.2
+date	2011.03.17.05.28.10;	author jfrijters;	state Exp;
+branches;
+next	1.2.2.3;
+
+1.2.2.3
+date	2011.12.20.12.40.49;	author jfrijters;	state Exp;
+branches;
+next	1.2.2.4;
+
+1.2.2.4
+date	2012.10.03.06.18.56;	author jfrijters;	state Exp;
+branches;
+next	1.2.2.5;
+
+1.2.2.5
+date	2013.09.10.15.16.02;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.4.2.1
+date	2011.11.14.12.27.40;	author jfrijters;	state Exp;
+branches;
+next	1.4.2.2;
+
+1.4.2.2
+date	2012.01.03.12.03.25;	author jfrijters;	state Exp;
+branches;
+next	1.4.2.3;
+
+1.4.2.3
+date	2012.02.27.12.14.25;	author jfrijters;	state Exp;
+branches;
+next	1.4.2.4;
+
+1.4.2.4
+date	2012.03.19.07.54.51;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.6.2.1
+date	2012.05.29.16.08.08;	author jfrijters;	state Exp;
+branches;
+next	1.6.2.2;
+
+1.6.2.2
+date	2012.06.04.15.23.00;	author jfrijters;	state Exp;
+branches;
+next	1.6.2.3;
+
+1.6.2.3
+date	2012.06.29.06.35.23;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.7.2.1
+date	2012.09.17.11.17.30;	author jfrijters;	state Exp;
+branches;
+next	1.7.2.2;
+
+1.7.2.2
+date	2012.10.08.07.43.47;	author jfrijters;	state Exp;
+branches;
+next	1.7.2.3;
+
+1.7.2.3
+date	2012.10.23.08.15.53;	author jfrijters;	state Exp;
+branches;
+next	1.7.2.4;
+
+1.7.2.4
+date	2012.10.31.12.35.36;	author jfrijters;	state Exp;
+branches;
+next	1.7.2.5;
+
+1.7.2.5
+date	2012.12.06.08.57.34;	author jfrijters;	state Exp;
+branches;
+next	1.7.2.6;
+
+1.7.2.6
+date	2013.01.15.10.28.01;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.9.2.1
+date	2013.03.27.16.12.35;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.11.2.1
+date	2014.03.24.07.24.57;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.12.2.1
+date	2015.01.09.09.43.44;	author jfrijters;	state Exp;
+branches;
+next	1.12.2.2;
+
+1.12.2.2
+date	2015.01.09.12.26.20;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.14.2.1
+date	2015.08.26.10.55.56;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.14
+log
+@Updated version to 8.1.
+@
+text
+@/*
+  Copyright (C) 2008 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System.Reflection;
+
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Jeroen Frijters")]
+[assembly: AssemblyProduct("IKVM.NET")]
+[assembly: AssemblyCopyright("Copyright (C) 2002-2015 Jeroen Frijters")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+[assembly: AssemblyVersion("8.1.@@BUILD@@.0")]
+
+#if SIGNCODE
+	#pragma warning disable 1699
+	[assembly: AssemblyKeyName("ikvm-key")]
+#endif
+@
+
+
+1.14.2.1
+log
+@Fixed build number to 5717.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("8.1.5717.0")]
+@
+
+
+1.13
+log
+@Updated copyright year.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("8.0.@@BUILD@@.0")]
+@
+
+
+1.12
+log
+@Start of Java 8 support.
+@
+text
+@d29 1
+a29 1
+[assembly: AssemblyCopyright("Copyright (C) 2002-2014 Jeroen Frijters")]
+@
+
+
+1.12.2.1
+log
+@Set build version to 5449.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("8.0.5449.0")]
+@
+
+
+1.12.2.2
+log
+@Updated version to 8.0.5449.1.
+
+Back ported:
+- Implemented OperatingSystemMXBean.getFreePhysicalMemorySize and  OperatingSystemMXBean.getTotalPhysicalMemorySize.
+- Fixed build error when using Java 8u25.
+- Bug fix. Unsafe.compareAndSwapObject should resolve field before passing it to MakeTypedReference.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("8.0.5449.1")]
+@
+
+
+1.11
+log
+@Merged OpenJDK 7u40 b34, except for java.lang.invoke and sun.invoke packages.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("7.4.@@BUILD@@.0")]
+@
+
+
+1.11.2.1
+log
+@7.4 rc 0
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("7.4.5196.0")]
+@
+
+
+1.10
+log
+@7.3 branch has been created.
+@
+text
+@d29 1
+a29 1
+[assembly: AssemblyCopyright("Copyright (C) 2002-2013 Jeroen Frijters")]
+@
+
+
+1.9
+log
+@Update copyright year.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("7.3.@@BUILD@@.0")]
+@
+
+
+1.9.2.1
+log
+@Set build number.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("7.3.4830.0")]
+@
+
+
+1.8
+log
+@Updated version to 7.3.*
+@
+text
+@d29 1
+a29 1
+[assembly: AssemblyCopyright("Copyright (C) 2002-2012 Jeroen Frijters")]
+@
+
+
+1.7
+log
+@New development version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("7.2.@@BUILD@@.0")]
+@
+
+
+1.7.2.1
+log
+@- Fixed build number
+- Fixed .NET 4.0 build issues
+- Fixed map.xml custom attribute application regression
+- Updated HOWTO
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("7.2.4630.1")]
+@
+
+
+1.7.2.2
+log
+@Changes:
+- Set version to 7.2.4630.2.
+- Bug fix. Class.forName("") should not throw System.ArgumentException.
+- Bug fix. Transient field modifier should be retained on literal fields.
+- Bug fix. Field.getModifiers() should only return the relevant modifiers.
+- IKVM.Reflection: Bug fix. Ignore unknown metadata streams.
+- IKVM.Reflection: Bug fix. Set AddressOfRawData in IMAGE_DEBUG_DIRECTORY.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("7.2.4630.2")]
+@
+
+
+1.7.2.3
+log
+@Backported fixes for rc 3.
+- Bug fix. Off-by-one error in local ref index reusing. Fix for bug #3575555.
+- Bug fix. Don't try to inject DynamicMethod in array types (applies to array.clone() method for MethodHandles).
+- IKVM.Reflection: Bug fix. ModuleReader.ResolveMember() should support types. Thanks to Jb Evain for finding this.
+- IKVM.Reflection: Bug fix. While reading the Cecil source I realized that array bounds are signed.
+- IKVM.Reflection: Bug fix. LocalBuilder should extend LocalVariableInfo.
+- IKVM.Reflection: Implemented LocalVariableInfo.ToString().
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("7.2.4630.3")]
+@
+
+
+1.7.2.4
+log
+@- Changed version to 7.2.4630.4.
+Backported fixes for new rc:
+- Added (optional) support for building without System.Core.dll dependency.
+- Bug fix. Abstract generic methods are not supported. Fix for #3579785.
+- Bug fix. Interface mappings can be "incomplete". Fix for bug #3581564.
+- Bug fix. Verifier should not merge state from instruction following exception block to handler. Fix for bug #3580611.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("7.2.4630.4")]
+@
+
+
+1.7.2.5
+log
+@New rc version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("7.2.4630.5")]
+@
+
+
+1.7.2.6
+log
+@Updated version to 7.2.4630.6 and changed copyright year to 2013.
+Backported bug fixes:
+- Don't deadlock AppDomain.ProcessExit event handler when the event gets called from another thread than the one initiating exit.
+- Static compiler should not use proxy stubs to implement non-public interfaces in another assembly (because this situation can only arise when compiling the assemblies together and the InternalsVisibileToAttribute will be used and proxy stubs are not understood by CompiledTypeWrapper, so they can only be used in dynamic mode).
+- Don't add duplicate methods to attribute annotation interfaces. The primary cause of this was attributes with virtual properties where we would add the base class property as well as the derived class overridden property.
+- Local variable analysis for finally blocks was incorrect. Fixes bug #3600788.
+@
+text
+@d29 1
+a29 1
+[assembly: AssemblyCopyright("Copyright (C) 2002-2013 Jeroen Frijters")]
+d32 1
+a32 1
+[assembly: AssemblyVersion("7.2.4630.6")]
+@
+
+
+1.6
+log
+@Updated copyright year.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("7.1.@@BUILD@@.0")]
+@
+
+
+1.6.2.1
+log
+@Set build number for 7.1 release branch.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("7.1.4532.0")]
+@
+
+
+1.6.2.2
+log
+@Updated revision number and backported fixes:
+- Fixed Linux build issue due to assembly.class filename case error in tools.rsp
+- Added workaround for Mono 2.10 bug in AssemblyName (public key token for ECMA public key is not created correctly).
+- Added workaround for Mono to StrongNameKeyPair.
+- Disallow key container constructor of StrongNameKeyPair when running on Mono on Windows.
+- Introduced Universe.MonoRuntime to ease checking of Mono runtime.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("7.1.4532.1")]
+@
+
+
+1.6.2.3
+log
+@Updated version to 7.1.4532.2.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("7.1.4532.2")]
+@
+
+
+1.5
+log
+@New version number.
+@
+text
+@d29 1
+a29 1
+[assembly: AssemblyCopyright("Copyright (C) 2002-2011 Jeroen Frijters")]
+@
+
+
+1.4
+log
+@New version numbering scheme.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("7.0.@@BUILD@@.0")]
+@
+
+
+1.4.2.1
+log
+@Prepare for rc 0.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("7.0.4335.0")]
+@
+
+
+1.4.2.2
+log
+@New version for 7.0 Update 1.
+@
+text
+@d29 1
+a29 1
+[assembly: AssemblyCopyright("Copyright (C) 2002-2012 Jeroen Frijters")]
+d32 1
+a32 1
+[assembly: AssemblyVersion("7.0.4335.1")]
+@
+
+
+1.4.2.3
+log
+@Updated version to 7.0.4335.2 and backported:
+- java.lang.ref.Reference.get() fix to enqueue cleared reference before get() returns null.
+- Removed non-ascii character from openjdk/sun/print/Win32PrintService.java.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("7.0.4335.2")]
+@
+
+
+1.4.2.4
+log
+@- Backported non-blocking direct ByteBuffer nio socket write bug fix.
+- Updated version to 7.0.4335.3.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("7.0.4335.3")]
+@
+
+
+1.3
+log
+@New development version.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.47.@@BUILD@@.0")]
+@
+
+
+1.2
+log
+@Update copyright year.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.45.@@BUILD@@.0")]
+@
+
+
+1.2.2.1
+log
+@Prep for 0.46 release.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.46.0.0")]
+@
+
+
+1.2.2.2
+log
+@Update version to 0.46.0.1.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.46.0.1")]
+@
+
+
+1.2.2.3
+log
+@Updated version number.
+@
+text
+@d32 1
+a32 1
+[assembly: AssemblyVersion("0.46.0.2")]
+@
+
+
+1.2.2.4
+log
+@Backported fixes for 0.46.0.3:
+- Bug fix. java.lang.Package was not populated from manifest for ikvmc compiled assemblies.
+- Bug fix. When writing a direct ByteBuffer to a non-blocking socket and the write fails because there is no kernel buffer available, we should not advance the ByteBuffer position.
+- Bug fix. When adding certificates to virtual cacerts file make sure that the aliases are unique.
+- Bug fix. If a finally/fault handler contains reachable code before the handler's start index, the handler should branch to the handler start index.
+- Bug fix. After emitting a finally/fault handler block, we should emit the block leave stubs (even though you can't leave the block, they also emit the backward branch stubs).
+- Bug fix. If a Java class extends a remapped .NET type (cli.System.Object or cli.System.Exception), we should correctly report the base class.
+- Bug fix. If we encounter a jsr or ret instruction, we should throw a VerifyError (instead of NotImplementedException).
+- Bug fix. If an exception block ends with an astore, we need to propagate the local variable type after the astore to the exception handler.
+- Disable AppDomain.ProcessExit hook to run shutdown hooks when running on Mono to workaround https://bugzilla.xamarin.com/show_bug.cgi?id=5650
+- Bug fix. Custom attribute properties that don't have a public getter and setter should not be exposed as annotation properties.
+- Bug fix. Non-public property getter/setter methods should be ignored when we create properties to hide properties inherited from shadow types. This fixes a build break with .NET 4.5 beta which introduces a protected setter for Exception.HResult.
+- Bug fix. The $Method inner class for delegates should also be loadable for generic delegates. Thanks to Michael Bayne for reporting this.
+- Bug fix. When constructing a generic class loader we can't use GetWrapperFromType() on the type arguments, because they might refer to a subtype that is currently being loaded.
+- Replaced non-ascii character (micro) with ascii 'u' in Win32PrintService.java.
+- IKVM.Reflection: Bug fix. Resource Directory Entries must be sorted and names are case-insensitive
+
+Backported for 0.46.0.4:
+- Fixed ikvmc to retain transient modifier on constant static final fields.
+- Fixed Field.getModifiers() to only return the relevant modifiers.
+- Fixed IKVM.Reflection to set AddressOfRawData in IMAGE_DEBUG_DIRECTORY.
+@
+text
+@d29 1
+a29 1
+[assembly: AssemblyCopyright("Copyright (C) 2002-2012 Jeroen Frijters")]
+d32 1
+a32 1
+[assembly: AssemblyVersion("0.46.0.4")]
+@
+
+
+1.2.2.5
+log
+@Updated version to 0.46.0.5 and backported bug fixes:
+- IKVM.Reflection should ignore unknown metadata streams.
+- Off-by-one error in local ref index reusing. Fix for bug #3575555.
+- Interface mappings can be "incomplete". Fix for bug #3581564.
+- The local variable state at the end of an exception block (if the last instruction is a local variable store) needs to be merged into the exception handler state.
+- Local variable analysis for finally blocks was incorrect. Fixes bug #3600788.
+- Don't implement interfaces that aren't accessible.
+- Updated Mono workaround for Mono 3.0.x.
+- Check for supported delegate signatures should detect pointers inside byref and array types and return type should be checked as well.
+- Fake nested types should have Static modifier set in innerclasses attribute. Fixes scala compiler interop issue. Thanks to Michael Bayne for reporting this.
+- ikvmstub -skiperror should also skip errors during WriteClass.
+- An ITEMIDLIST should be freed using CoTaskMemFree.
+- String.CaseInsensitiveComparator inner class should be acknowledged by String.
+- Fixed the SHFILEINFO declaration. Thanks to Andras Kovacs for reporting this.
+- Fixed race condition in MethodWrapper.ResolveMethod().
+@
+text
+@d29 1
+a29 1
+[assembly: AssemblyCopyright("Copyright (C) 2002-2013 Jeroen Frijters")]
+d32 1
+a32 1
+[assembly: AssemblyVersion("0.46.0.5")]
+@
+
+
+1.1
+log
+@Auto-generate CommonAssemblyInfo.cs with today's build number.
+@
+text
+@d29 1
+a29 1
+[assembly: AssemblyCopyright("Copyright (C) 2002-2010 Jeroen Frijters")]
+@
+

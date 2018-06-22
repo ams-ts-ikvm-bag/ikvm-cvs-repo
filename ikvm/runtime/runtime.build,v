@@ -1,0 +1,1750 @@
+head	1.81;
+access;
+symbols
+	v8_1_5717_0:1.81
+	v8_1:1.81.0.2
+	v8_0_5449_1:1.79
+	v8_0_5449_0:1.79
+	v8_0:1.79.0.2
+	v7_4_5196_0:1.76
+	v7_4:1.76.0.2
+	v7_3:1.70.0.2
+	v7_2_4630_6:1.67
+	v7_2_4630_5:1.67
+	v7_2_4630_4:1.67
+	v7_2_4630_3:1.67
+	v7_2_4630_2:1.67
+	v0_46_0_4:1.62
+	v7_2_4630_1:1.67
+	v7_2:1.67.0.6
+	v7_1_4532_2:1.67
+	v7_1_4532_1:1.67
+	v7_1_4532_0:1.67
+	v7_1:1.67.0.4
+	v7_0_4335_3:1.67
+	v7_0_4335_2:1.67
+	v7_0_4335_1:1.67
+	v0_46_0_2:1.62
+	v7_0_4335_0:1.67
+	v7_0:1.67.0.2
+	v0_40_0_6:1.35
+	v0_40_0_5:1.35
+	v0_46_0_1:1.62
+	v0_46_0_0:1.62
+	v0_46:1.62.0.2
+	v0_36_0_14:1.19
+	v0_44_0_6:1.52.2.1
+	v0_44_0_5:1.52
+	v0_44_0_4:1.52
+	v0_44_0_3:1.52
+	v0_44_0_2:1.52
+	v0_42_0_7:1.47
+	v0_44_0_1:1.52
+	v0_44_0_0:1.52
+	v0_44:1.52.0.2
+	v0_42_0_6:1.47
+	v0_42_0_5:1.47
+	v0_42_0_4:1.47
+	v0_42_0_3:1.47
+	v0_42_0_2:1.47
+	v0_42_0_1:1.47
+	v0_42_0_0:1.47
+	v0_42:1.47.0.2
+	v0_40_0_3:1.35
+	v0_40_0_2:1.35
+	v0_40_0_1:1.35
+	v0_40_0_0:1.35
+	v0_40:1.35.0.2
+	v0_36_0_13:1.19
+	v0_38_0_1:1.31
+	v0_38_0_0:1.31
+	v0_38:1.31.0.2
+	v0_36_0_9:1.19
+	v0_36_0_7:1.19
+	v0_36_0_5:1.19
+	v0_36_0_4:1.19
+	v0_36_0_3:1.19
+	v0_36_0_2:1.19
+	v0_36_0_1:1.19
+	v0_36_0_0:1.19
+	v0_36:1.19.0.2
+	v0_34_0_3:1.11
+	v0_34_0_2:1.11
+	v0_34_0_1:1.11
+	v0_34_0_0:1.11
+	v0_34:1.11.0.2
+	v0_32:1.9.0.4
+	v0_32_0_0:1.9
+	v0_30:1.9.0.2
+	v0_28_0_0:1.9
+	v0_26_0_1:1.8
+	v0_26_0_0:1.8
+	v0_24_0_1:1.7
+	v0_24_0_0:1.7
+	v0_22_0_0:1.6
+	v0_20_0_0:1.4
+	v0_18_0_0:1.4
+	v0_16_0_0:1.4
+	v0_14_0_1:1.4
+	v0_14_0_0:1.4
+	v0_12_0_0:1.4
+	v0_10_0_1:1.4
+	v0_10_0_0:1.4
+	v0_8_0_0:1.1;
+locks; strict;
+comment	@# @;
+
+
+1.81
+date	2015.06.26.14.41.58;	author jfrijters;	state Exp;
+branches;
+next	1.80;
+
+1.80
+date	2015.06.24.14.10.40;	author jfrijters;	state Exp;
+branches;
+next	1.79;
+
+1.79
+date	2014.07.01.15.12.34;	author jfrijters;	state Exp;
+branches;
+next	1.78;
+
+1.78
+date	2014.07.01.15.09.11;	author jfrijters;	state Exp;
+branches;
+next	1.77;
+
+1.77
+date	2014.05.19.12.43.43;	author jfrijters;	state Exp;
+branches;
+next	1.76;
+
+1.76
+date	2013.03.29.11.28.25;	author jfrijters;	state Exp;
+branches;
+next	1.75;
+
+1.75
+date	2013.03.29.08.28.17;	author jfrijters;	state Exp;
+branches;
+next	1.74;
+
+1.74
+date	2013.03.25.09.15.38;	author jfrijters;	state Exp;
+branches;
+next	1.73;
+
+1.73
+date	2013.03.20.14.03.28;	author jfrijters;	state Exp;
+branches;
+next	1.72;
+
+1.72
+date	2013.03.20.11.24.51;	author jfrijters;	state Exp;
+branches;
+next	1.71;
+
+1.71
+date	2013.03.20.09.11.21;	author jfrijters;	state Exp;
+branches;
+next	1.70;
+
+1.70
+date	2013.02.27.16.23.19;	author jfrijters;	state Exp;
+branches;
+next	1.69;
+
+1.69
+date	2013.02.21.16.56.09;	author jfrijters;	state Exp;
+branches;
+next	1.68;
+
+1.68
+date	2012.12.12.09.00.18;	author jfrijters;	state Exp;
+branches;
+next	1.67;
+
+1.67
+date	2011.09.01.07.53.58;	author jfrijters;	state Exp;
+branches;
+next	1.66;
+
+1.66
+date	2011.08.12.06.15.58;	author jfrijters;	state Exp;
+branches;
+next	1.65;
+
+1.65
+date	2011.08.11.11.34.55;	author jfrijters;	state Exp;
+branches;
+next	1.64;
+
+1.64
+date	2011.07.25.23.11.10;	author jfrijters;	state Exp;
+branches;
+next	1.63;
+
+1.63
+date	2011.07.15.09.05.27;	author jfrijters;	state Exp;
+branches;
+next	1.62;
+
+1.62
+date	2010.12.10.06.31.08;	author jfrijters;	state Exp;
+branches;
+next	1.61;
+
+1.61
+date	2010.12.10.05.27.07;	author jfrijters;	state Exp;
+branches;
+next	1.60;
+
+1.60
+date	2010.12.10.05.19.00;	author jfrijters;	state Exp;
+branches;
+next	1.59;
+
+1.59
+date	2010.12.10.05.09.46;	author jfrijters;	state Exp;
+branches;
+next	1.58;
+
+1.58
+date	2010.12.09.14.15.25;	author jfrijters;	state Exp;
+branches;
+next	1.57;
+
+1.57
+date	2010.12.09.13.51.42;	author jfrijters;	state Exp;
+branches;
+next	1.56;
+
+1.56
+date	2010.11.25.08.52.30;	author jfrijters;	state Exp;
+branches;
+next	1.55;
+
+1.55
+date	2010.09.14.07.38.42;	author jfrijters;	state Exp;
+branches;
+next	1.54;
+
+1.54
+date	2010.09.09.06.37.23;	author jfrijters;	state Exp;
+branches;
+next	1.53;
+
+1.53
+date	2010.08.20.05.35.49;	author jfrijters;	state Exp;
+branches;
+next	1.52;
+
+1.52
+date	2010.06.09.06.13.19;	author jfrijters;	state Exp;
+branches
+	1.52.2.1;
+next	1.51;
+
+1.51
+date	2010.05.27.08.38.48;	author jfrijters;	state Exp;
+branches;
+next	1.50;
+
+1.50
+date	2010.04.12.06.37.18;	author jfrijters;	state Exp;
+branches;
+next	1.49;
+
+1.49
+date	2009.11.05.07.41.05;	author jfrijters;	state Exp;
+branches;
+next	1.48;
+
+1.48
+date	2009.10.14.14.58.41;	author jfrijters;	state Exp;
+branches;
+next	1.47;
+
+1.47
+date	2009.09.07.04.19.06;	author jfrijters;	state Exp;
+branches;
+next	1.46;
+
+1.46
+date	2009.08.31.06.16.04;	author jfrijters;	state Exp;
+branches;
+next	1.45;
+
+1.45
+date	2009.08.31.05.10.11;	author jfrijters;	state Exp;
+branches;
+next	1.44;
+
+1.44
+date	2009.08.28.06.47.16;	author jfrijters;	state Exp;
+branches;
+next	1.43;
+
+1.43
+date	2009.07.30.13.14.14;	author jfrijters;	state Exp;
+branches;
+next	1.42;
+
+1.42
+date	2009.07.08.09.02.18;	author jfrijters;	state Exp;
+branches;
+next	1.41;
+
+1.41
+date	2009.06.29.08.53.33;	author jfrijters;	state Exp;
+branches;
+next	1.40;
+
+1.40
+date	2009.06.02.07.38.21;	author jfrijters;	state Exp;
+branches;
+next	1.39;
+
+1.39
+date	2009.05.25.13.40.44;	author jfrijters;	state Exp;
+branches;
+next	1.38;
+
+1.38
+date	2009.05.24.06.54.24;	author jfrijters;	state Exp;
+branches;
+next	1.37;
+
+1.37
+date	2009.05.12.04.30.10;	author jfrijters;	state Exp;
+branches;
+next	1.36;
+
+1.36
+date	2009.04.16.05.34.21;	author jfrijters;	state Exp;
+branches;
+next	1.35;
+
+1.35
+date	2009.03.04.05.47.20;	author jfrijters;	state Exp;
+branches;
+next	1.34;
+
+1.34
+date	2008.12.23.07.28.20;	author jfrijters;	state Exp;
+branches;
+next	1.33;
+
+1.33
+date	2008.11.18.07.15.56;	author jfrijters;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2008.11.14.08.42.07;	author jfrijters;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2008.09.21.09.53.06;	author jfrijters;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2008.08.06.12.22.13;	author jfrijters;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2008.08.06.05.25.21;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2008.05.20.07.15.37;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2008.05.09.05.58.04;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2008.01.03.09.45.51;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2007.12.28.10.23.46;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2007.12.19.11.28.12;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2007.12.18.09.56.12;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2007.12.04.08.09.53;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2007.11.26.11.01.29;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2007.11.26.08.38.39;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2007.08.22.11.51.19;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2007.08.01.07.34.36;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2007.07.25.08.17.53;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2007.06.27.06.14.55;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2007.06.13.11.46.24;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2007.06.05.06.57.18;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2007.05.29.16.27.10;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2007.05.24.12.17.38;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2007.02.16.07.42.33;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2007.02.15.09.09.45;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2006.04.10.09.09.10;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2006.03.01.12.26.26;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2005.12.07.09.06.32;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2005.10.21.20.43.04;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2005.10.01.11.16.12;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2005.01.07.09.34.20;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2004.08.30.15.56.25;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2004.08.17.09.05.25;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2004.05.27.07.12.12;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.52.2.1
+date	2010.10.22.06.56.12;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.81
+log
+@Unforked java/net/SocketInputStream.java and java/net/SocketOutputStream.java.
+@
+text
+@<?xml version="1.0"?>
+<!--
+  Copyright (C) 2002-2015 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+-->
+<project name="IKVM.Runtime" default="full">
+    <include buildfile="../ikvm.include" />
+
+    <target name="first-pass" depends="DummyLibrary">
+        <property name="first-pass" value="true" />
+        <call target="IKVM.Runtime" />
+        <exec program="${project::get-base-directory()}/../bin/ikvmstub.exe" commandline="-bootstrap IKVM.Runtime.dll -r:IKVM.OpenJDK.Core.dll" useruntimeengine="true" />
+    </target>
+
+    <target name="full" depends="first-pass">
+        <property name="first-pass" value="false" />
+        <call target="IKVM.Runtime.JNI" />
+        <call target="IKVM.Runtime" />
+        <if test="${property::exists('peverify')}">
+            <exec program="${peverify}" commandline="-nologo ../bin/IKVM.Runtime.dll" />
+        </if>
+    </target>
+
+    <target name="signed">
+        <property name="signed" value="SIGNCODE" />
+        <property name="signoption" value="-key:ikvm-key" />
+        <call target="full" />
+    </target>
+
+    <target name="no-ref-emit">
+        <property name="no-ref-emit" value="true" />
+        <call target="full" />
+    </target>
+
+    <target name="DummyLibrary">
+        <property name="defs" value="DUMMY" />
+        <if test="${property::exists('signed')}">
+            <property name="defs" value="${defs};${signed}" />
+        </if>
+        <csc noconfig="true" target="library" output="IKVM.OpenJDK.Core.dll" define="${defs}" unsafe="false" rebuild="true">
+            <sources>
+                <include name="../CommonAssemblyInfo.cs" />
+                <include name="Dummy.OpenJDK.Core.cs" />
+            </sources>
+        </csc>
+    </target>
+
+    <target name="AssemblyInfo.cs">
+        <loadfile file="../tools/pubkey.txt" property="publickey" />
+        <copy file="AssemblyInfo.cs.in" tofile="AssemblyInfo.cs" overwrite="true">
+            <filterchain>
+                <replacetokens>
+                    <token key="PUBLICKEY" value="${publickey}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+    </target>
+
+    <target name="JniAssemblyInfo.cs">
+        <loadfile file="../tools/pubkey.txt" property="publickey" />
+        <copy file="JniAssemblyInfo.cs.in" tofile="JniAssemblyInfo.cs" overwrite="true">
+            <filterchain>
+                <replacetokens>
+                    <token key="PUBLICKEY" value="${publickey}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+    </target>
+
+    <target name="defs">
+        <property name="defs" value="TRACE;EMITTERS" />
+        <if test="${property::exists('signed')}">
+            <property name="defs" value="${defs};${signed}" />
+        </if>
+        <if test="${version::get-major(framework::get-version(framework::get-target-framework() )) == 4}">
+            <property name="defs" value="${defs};NET_4_0;CLASSGC" />
+        </if>
+        <if test="${first-pass}">
+            <property name="defs" value="${defs};FIRST_PASS" />
+        </if>
+        <if test="${property::exists('no-ref-emit')}">
+            <property name="defs" value="${defs};NO_REF_EMIT" />
+        </if>
+    </target>
+
+    <target name="IKVM.Runtime.JNI" depends="JniAssemblyInfo.cs defs">
+        <csc noconfig="true" target="library" output="IKVM.Runtime.JNI.dll" define="${defs}" optimize="true" unsafe="true" rebuild="true" nostdlib="true">
+            <arg unless="${string::starts-with(framework::get-target-framework(), 'mono')}" value="/baseaddress:0x55300000" />
+            <sources>
+                <include name="../CommonAssemblyInfo.cs" />
+                <include name="JniAssemblyInfo.cs" />
+                <include name="JniInterface.cs" />
+            </sources>
+            <references>
+                <include name="../bin/IKVM.OpenJDK.Core.dll" asis="true" />
+                <include name="../bin/IKVM.Runtime.dll" asis="true" />
+                <include name="${ReferencePath}/mscorlib.dll" />
+                <include name="${ReferencePath}/System.dll" />
+            </references>
+        </csc>
+        <copy file="IKVM.Runtime.JNI.dll" todir="../bin" />        
+    </target>
+
+    <target name="IKVM.Runtime" depends="AssemblyInfo.cs defs">
+        <if test="${not first-pass}">
+            <!-- on Mono the C# compiler doesn't give an error if the vfs.zip resource is missing, so we have to check it here -->
+            <if test="${not file::exists('../openjdk/vfs.zip')}">
+                <fail message="../openjdk/vfs.zip is missing. Make sure to build ikvm/openjdk first." />
+            </if>
+        </if>
+        <csc noconfig="true" target="library" output="IKVM.Runtime.dll" define="${defs}" optimize="true" unsafe="false" rebuild="true" nostdlib="true">
+            <arg unless="${string::starts-with(framework::get-target-framework(), 'mono')}" value="/baseaddress:0x55000000" />
+            <nowarn>
+                <warning number="169" if="${first-pass}" />
+                <warning number="649" if="${first-pass}" />
+            </nowarn>
+            <sources>
+                <include name="../CommonAssemblyInfo.cs" />
+                <include name="AssemblyInfo.cs" />
+                <include name="AssemblyClassLoader.cs" />
+                <include name="Assertions.cs" />
+                <include name="atomic.cs" />
+                <include name="attributes.cs" />
+                <include name="BigEndianBinaryReader.cs" />
+                <include name="Boxer.cs" />
+                <include name="ByteCode.cs" />
+                <include name="ByteCodeHelper.cs" />
+                <include name="ClassFile.cs" />
+                <include name="ClassLoaderWrapper.cs" />
+                <include name="CodeEmitter.cs" />
+                <include name="common.cs" />
+                <include name="compiler.cs" />
+                <include name="CoreClasses.cs" />
+                <include name="DotNetTypeWrapper.cs" />
+                <include name="DynamicClassLoader.cs" />
+                <include name="DynamicMethodUtils.cs" />
+                <include name="DynamicTypeWrapper.cs" />
+                <include name="ExceptionHelper.cs" />
+                <include name="intrinsics.cs" />
+                <include name="JavaException.cs" />
+                <include name="JsrInliner.cs" />
+                <include name="LambdaMetafactory.cs" />
+                <include name="LocalVars.cs" />
+                <include name="MemberWrapper.cs" />
+                <include name="MethodHandleUtil.cs" />
+                <include name="PassiveWeakDictionary.cs" />
+                <include name="profiler.cs" />
+                <include name="ReflectUtil.cs" />
+                <include name="RuntimeHelperTypes.cs" />
+                <include name="Serialization.cs" />
+                <include name="tracer.cs" />
+                <include name="Types.cs" />
+                <include name="TypeWrapper.cs" />
+                <include name="verifier.cs" />
+                <include name="vfs.cs" />
+                <include name="vm.cs" />
+                <include name="fdlibm/e_hypot.cs" />
+                <include name="fdlibm/e_pow.cs" />
+                <include name="fdlibm/e_rem_pio2.cs" />
+                <include name="fdlibm/fdlibm_h.cs" />
+                <include name="fdlibm/k_rem_pio2.cs" />
+                <include name="fdlibm/k_tan.cs" />
+                <include name="fdlibm/s_cbrt.cs" />
+                <include name="fdlibm/s_expm1.cs" />
+                <include name="fdlibm/s_floor.cs" />
+                <include name="fdlibm/s_log1p.cs" />
+                <include name="fdlibm/s_scalbn.cs" />
+                <include name="fdlibm/s_tan.cs" />
+                <include name="openjdk/java.io.cs" />
+                <include name="openjdk/java.lang.cs" />
+                <include name="openjdk/java.lang.invoke.cs" />
+                <include name="openjdk/java.lang.reflect.cs" />
+                <include name="openjdk/java.net.cs" />
+                <include name="openjdk/java.net.SocketInputStream.cs" />
+                <include name="openjdk/java.nio.cs" />
+                <include name="openjdk/java.security.cs" />
+                <include name="openjdk/java.util.cs" />
+                <include name="openjdk/java.util.prefs.cs" />
+                <include name="openjdk/misc.cs" />
+                <include name="openjdk/NativeInvokerBytecodeGenerator.cs" />
+                <include name="openjdk/sun.management.cs" />
+                <include name="openjdk/sun.misc.cs" />
+                <include name="openjdk/sun.nio.ch.cs" />
+                <include name="openjdk/sun.reflect.cs" />
+                <include name="openjdk/sun.security.krb5.cs" />
+                <include name="openjdk/sun.util.locale.provider.cs" />
+                <include name="stubgen/ClassFileWriter.cs" />
+                <include name="stubgen/SerialVersionUID.cs" />
+                <include name="stubgen/StubGenerator.cs" />
+            </sources>
+            <resources>
+                <include if="${not first-pass}" name="../openjdk/vfs.zip" />
+            </resources>
+            <references>
+                <include if="${first-pass}" name="IKVM.OpenJDK.Core.dll" asis="true" />
+                <include if="${not first-pass}" name="../bin/IKVM.Runtime.JNI.dll" asis="true" />
+                <include if="${not first-pass}" name="../bin/IKVM.OpenJDK.Core.dll" asis="true" />
+                <include if="${not first-pass}" name="../bin/IKVM.OpenJDK.Util.dll" asis="true" />
+                <include if="${not first-pass}" name="../bin/IKVM.OpenJDK.Management.dll" asis="true" />
+                <include if="${not first-pass}" name="../bin/IKVM.OpenJDK.Misc.dll" asis="true" />
+                <include name="${ReferencePath}/mscorlib.dll" />
+                <include name="${ReferencePath}/System.dll" />
+                <include name="${ReferencePath}/System.Configuration.dll" />
+            </references>
+        </csc>
+        <copy file="IKVM.Runtime.dll" todir="../bin" />
+    </target>
+</project>
+@
+
+
+1.80
+log
+@Optimized LambdaForm compiler.
+@
+text
+@d193 1
+@
+
+
+1.79
+log
+@Added intrinsic for LambdaMetafactory.metafactory().
+@
+text
+@d3 1
+a3 1
+  Copyright (C) 2002-2013 Jeroen Frijters
+d198 1
+@
+
+
+1.78
+log
+@Make Boxer helper class available to runtime.
+@
+text
+@d161 1
+@
+
+
+1.77
+log
+@First part of OpenJDK 8 integration.
+@
+text
+@d144 1
+@
+
+
+1.76
+log
+@Moved part of MethodHandleUtil that is used by the runtime for JNI non-virtual invocation into a separate file.
+@
+text
+@d201 1
+@
+
+
+1.75
+log
+@Introduced EMITTERS conditional compilation constant.
+@
+text
+@d162 1
+@
+
+
+1.74
+log
+@Added no-ref-emit target.
+@
+text
+@d90 1
+a90 1
+        <property name="defs" value="TRACE" />
+@
+
+
+1.73
+log
+@Moved the remaining code from openjdk.cs to separate files.
+@
+text
+@d46 5
+a50 1
+        <property name="ilasm_signoption" value="/key:@@ikvm-key" />
+d100 3
+@
+
+
+1.72
+log
+@Moved java.lang and java.lang.reflect native methods into separate files.
+@
+text
+@d133 1
+d147 1
+a154 1
+                <include name="openjdk.cs" />
+d182 6
+d189 1
+d191 1
+@
+
+
+1.71
+log
+@Moved java.io native methods to separate source file and use "new style" native methods.
+@
+text
+@d178 1
+d180 1
+@
+
+
+1.70
+log
+@Added license headers to build scripts.
+@
+text
+@d177 1
+@
+
+
+1.69
+log
+@Removed the old Java stub class generator and replaced it with the ikvmstub core.
+@
+text
+@d2 23
+@
+
+
+1.68
+log
+@Changed build infrastructure to support targetting .NET 4.0 on systems where 4.5 is installed.
+@
+text
+@d158 3
+@
+
+
+1.67
+log
+@Implemented platform MBean server support (although with very limited information/exposed operations).
+@
+text
+@d76 1
+a76 1
+        <csc noconfig="true" target="library" output="IKVM.Runtime.JNI.dll" define="${defs}" optimize="true" unsafe="true" rebuild="true">
+d86 2
+a87 1
+                <include name="${framework::get-assembly-directory(framework::get-target-framework())}/System.dll" />
+d100 1
+a100 1
+        <csc noconfig="true" target="library" output="IKVM.Runtime.dll" define="${defs}" optimize="true" unsafe="false" rebuild="true">
+d169 3
+a171 2
+                <include name="${framework::get-assembly-directory(framework::get-target-framework())}/System.dll" />
+                <include name="${framework::get-assembly-directory(framework::get-target-framework())}/System.Configuration.dll" />
+@
+
+
+1.66
+log
+@Fixed build to always run ikvmstub on first-pass version of IKVM.Runtime.dll. Cleaned up runtime.build. Always do a first-pass runtime build.
+@
+text
+@d154 1
+d166 1
+@
+
+
+1.65
+log
+@Added Kerberos support (on Windows). Based on patch submitted by Trevor Bell.
+@
+text
+@d2 1
+a2 1
+<project name="IKVM.Runtime" default="IKVM.Runtime">
+d4 1
+d8 1
+d10 10
+d24 1
+a24 1
+        <call target="IKVM.Runtime" />
+d40 12
+a51 1
+    <target name="IKVM.Runtime.JNI">
+d60 16
+d92 1
+a92 20
+    <target name="IKVM.Runtime">
+        <property overwrite="false" name="first-pass" value="false" />
+        <property name="defs" value="TRACE" />
+        <if test="${property::exists('signed')}">
+            <property name="defs" value="${defs};${signed}" />
+        </if>
+        <loadfile file="../tools/pubkey.txt" property="publickey" />
+        <copy file="AssemblyInfo.cs.in" tofile="AssemblyInfo.cs" overwrite="true">
+            <filterchain>
+                <replacetokens>
+                    <token key="PUBLICKEY" value="${publickey}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+        <if test="${version::get-major(framework::get-version(framework::get-target-framework() )) == 4}">
+            <property name="defs" value="${defs};NET_4_0;CLASSGC" />
+        </if>
+        <if test="${first-pass}">
+            <property name="defs" value="${defs};FIRST_PASS" />
+        </if>
+a97 1
+            <call target="IKVM.Runtime.JNI" />
+d101 4
+a170 5
+        <if test="${not first-pass}">
+            <if test="${property::exists('peverify')}">
+                <exec program="${peverify}" commandline="-nologo ../bin/IKVM.Runtime.dll" />
+            </if>
+        </if>
+@
+
+
+1.64
+log
+@Merge in java.lang.invoke package and the beginnings of MethodHandle support.
+@
+text
+@d132 1
+@
+
+
+1.63
+log
+@Updated bulk of java.nio to OpenJDK 7.
+@
+text
+@d130 1
+@
+
+
+1.62
+log
+@Ported fdlibm/floor and fdlibm/tan (and dependencies).
+@
+text
+@d130 1
+@
+
+
+1.61
+log
+@Ported fdlibm/s_log1p.
+@
+text
+@d120 1
+d122 2
+d126 1
+d129 1
+@
+
+
+1.60
+log
+@Ported fdlibm/e_hypot.
+@
+text
+@d123 1
+@
+
+
+1.59
+log
+@- Ported fdlibm/s_exmp1.
+- Fixed signed/unsigned issues in fdlibm/e_pow.
+- Moved constants into method for fdlibm/e_pow and fdlibm/s_scalbn.
+@
+text
+@d118 1
+@
+
+
+1.58
+log
+@Ported fdlibm cbrt to C# and use that for StrictMath.cbrt().
+@
+text
+@d121 1
+@
+
+
+1.57
+log
+@Ported e_pow and s_scalbn to C# and added some support methods.
+@
+text
+@d120 1
+@
+
+
+1.56
+log
+@There's no first-pass build of IKVM.Runtime.JNI.dll.
+@
+text
+@d118 3
+@
+
+
+1.55
+log
+@Moved local variable analysis from verifier.cs to new file LocalVars.cs.
+@
+text
+@d45 1
+a45 1
+                <include if="${not first-pass}" name="../bin/IKVM.OpenJDK.Core.dll" asis="true" />
+@
+
+
+1.54
+log
+@Added check to make sure that vfs.zip exists, before building second pass version of IKVM.Runtime.dll, because it appears that mcs doesn't complain about missing resources.
+@
+text
+@d104 1
+@
+
+
+1.53
+log
+@- Removed the requirement to have peverify and ilasm in the PATH. They are now located automatically and if they are not found, the corresponding build steps are skipped.
+- Added "managed" and "native" targets to ikvm.build to allow building just the managed parts (that don't require a C compiler to be installed).
+@
+text
+@d74 4
+@
+
+
+1.52
+log
+@It turns out that peverify loads the assembly from the DEVPATH instead of loading the specified file, so we copy IKVM.Runtime.dll to bin and verify it there.
+@
+text
+@d3 1
+d129 2
+a130 2
+            <if test="${platform::is-win32()}">
+                <exec program="peverify" commandline="-nologo ../bin/IKVM.Runtime.dll" />
+@
+
+
+1.52.2.1
+log
+@Backported build improvements.
+@
+text
+@a2 1
+    <include buildfile="../ikvm.include" />
+d128 2
+a129 2
+            <if test="${property::exists('peverify')}">
+                <exec program="${peverify}" commandline="-nologo ../bin/IKVM.Runtime.dll" />
+@
+
+
+1.51
+log
+@Add a dummy IKVM.OpenJDK.Core.dll to the build to make it possible to use core types in method signatures during first-pass build of IKVM.Runtime.dll.
+@
+text
+@d126 1
+d129 1
+a129 5
+                <exec program="peverify" commandline="-nologo IKVM.Runtime.dll">
+                    <environment>
+                        <variable name="DEVPATH" value="${path::get-full-path('../bin/')}" />
+                    </environment>
+                </exec>
+a131 1
+        <copy file="IKVM.Runtime.dll" todir="../bin" />
+@
+
+
+1.50
+log
+@Prep for .NET 4.0 security model:
+- modified build to run peverify on IKVM.Runtime.dll
+@
+text
+@d3 1
+a3 1
+    <target name="first-pass">
+d14 13
+d117 1
+@
+
+
+1.49
+log
+@Removed .NET 4.0 workaround.
+@
+text
+@d112 9
+@
+
+
+1.48
+log
+@Replaced most type literals with static field access (in Types class) or warpped JVM.Import() around them.
+@
+text
+@a53 1
+            <echo message="[assembly: System.Security.SecurityRules(System.Security.SecurityRuleSet.Level1)]" file="AssemblyInfo.cs" append="true" />
+@
+
+
+1.47
+log
+@Moved AssemblyClassLoader and BootstrapClassLoader into AssemblyClassLoader.cs.
+@
+text
+@d95 1
+@
+
+
+1.46
+log
+@Moved DotNetTypeWrapper class into its own source file.
+@
+text
+@d68 1
+@
+
+
+1.45
+log
+@Moved DynamicTypeWrapper class into its own source file.
+@
+text
+@d79 1
+@
+
+
+1.44
+log
+@Removed vestigial compact framework support.
+@
+text
+@d80 1
+@
+
+
+1.43
+log
+@Implemented automatically enabling .NET serialization support for Java classes that are trivially serializable.
+@
+text
+@a39 1
+        <property overwrite="false" name="cfnet" value="false" />
+@
+
+
+1.42
+log
+@Added workaround for the fact that mcs doesn't support the -baseaddress option and that NAnt supplies this option when targetting Mono.
+@
+text
+@d91 1
+@
+
+
+1.41
+log
+@Specify -baseaddress:<address> option for all runtime assemblies. This should make ngen images more efficient.
+@
+text
+@d23 2
+a24 1
+        <csc noconfig="true" target="library" output="IKVM.Runtime.JNI.dll" define="${defs}" optimize="true" unsafe="true" baseaddress="0x55300000" rebuild="true">
+d64 2
+a65 1
+        <csc noconfig="true" target="library" output="IKVM.Runtime.dll" define="${defs}" optimize="true" unsafe="false" baseaddress="0x55000000" rebuild="true">
+@
+
+
+1.40
+log
+@Implemented class gc (available only when compiling on .NET 4.0).
+@
+text
+@d23 1
+a23 1
+        <csc noconfig="true" target="library" output="IKVM.Runtime.JNI.dll" define="${defs}" optimize="true" unsafe="true" rebuild="true">
+d63 1
+a63 1
+        <csc noconfig="true" target="library" output="IKVM.Runtime.dll" define="${defs}" optimize="true" unsafe="false" rebuild="true">
+@
+
+
+1.39
+log
+@Define NET_4_0 when building for .NET 4.0.
+@
+text
+@d55 1
+a55 1
+            <property name="defs" value="${defs};NET_4_0" />
+@
+
+
+1.38
+log
+@Preparing for .NET 4.0:
+- Added SecurityRules(Level1) attribute to IKVM.Runtime.dll to (temporarily) opt out of new .NET 4.0 security model.
+- Changed compiler/runtime to automatically add SecurityRules(Level1) attribute when running on .NET 4.0 beta 1 to work around bug in the handling of MethodImpls in beta 1.
+@
+text
+@d55 1
+@
+
+
+1.37
+log
+@Moved Virtual File System into a separate source file.
+@
+text
+@d53 3
+@
+
+
+1.36
+log
+@Added support for inlining subroutines (jsr/ret) to allow the verifier and compiler to be simplified and to hopefully pave the way for future codegen optimizations.
+@
+text
+@d88 1
+@
+
+
+1.35
+log
+@Implemented ikvm.internal.ClassLiteral<T> to allow for more efficient class literals.
+@
+text
+@d78 1
+@
+
+
+1.34
+log
+@Updated build to split IKVM.OpenJDK.ClassLibrary.dll into ten parts.
+@
+text
+@d83 1
+@
+
+
+1.33
+log
+@Removed hard coded public key from JniInterface.cs.
+@
+text
+@d30 1
+a30 1
+                <include if="${not first-pass}" name="../bin/IKVM.OpenJDK.ClassLibrary.dll" asis="true" />
+d93 3
+a95 1
+                <include if="${not first-pass}" name="../bin/IKVM.OpenJDK.ClassLibrary.dll" asis="true" />
+@
+
+
+1.32
+log
+@Integrated IKVM.Reflection.Emit in ikvmc.
+@
+text
+@d15 8
+d26 1
+@
+
+
+1.31
+log
+@Removed hardcoded ikvm PublicKey from build.
+@
+text
+@d73 1
+@
+
+
+1.30
+log
+@Removed support for building with GNU Classpath class library.
+@
+text
+@d36 8
+@
+
+
+1.29
+log
+@- Added ghost array tagging to be able to report the instantiated class (instead of object[] which is allocated instead).
+- Fixed ldc <class> where <class> is a ghost array.
+- Fixed bug in instanceof <class> where <class> is a Serializable[].
+@
+text
+@a6 4
+    <target name="classpath">
+        <property name="classpath" value="true" />
+        <call target="IKVM.Runtime" />
+    </target>
+a7 1
+        <property name="classpath" value="false" />
+d21 1
+a21 2
+                <include unless="${first-pass or not classpath}" name="../bin/IKVM.GNU.Classpath.dll" asis="true" />
+                <include unless="${first-pass or classpath}" name="../bin/IKVM.OpenJDK.ClassLibrary.dll" asis="true" />
+a29 1
+        <property overwrite="false" name="classpath" value="false" />
+a35 3
+        <if test="${not classpath}">
+            <property name="defs" value="${defs};OPENJDK" />
+        </if>
+a52 1
+                <include if="${classpath}" name="classpath.cs" />
+d62 1
+a62 1
+                <include unless="${classpath}" name="openjdk.cs" />
+d71 1
+a71 1
+                <include if="${not classpath and not first-pass}" name="../openjdk/vfs.zip" />
+d74 2
+a75 3
+                <include unless="${first-pass}" name="../bin/IKVM.Runtime.JNI.dll" asis="true" />
+                <include unless="${first-pass or not classpath}" name="../bin/IKVM.GNU.Classpath.dll" asis="true" />
+                <include unless="${first-pass or classpath}" name="../bin/IKVM.OpenJDK.ClassLibrary.dll" asis="true" />
+a78 4
+            <nowarn>
+                <!-- don't whine about deprecated methods -->
+                <warning number="618" />
+            </nowarn>
+@
+
+
+1.28
+log
+@Added noconfig="true" to csc to prevent gmcs from sucking in reference to System.Core.dll (and thus complaining about our version of ExtensionAttribute).
+@
+text
+@d74 1
+@
+
+
+1.27
+log
+@- added more efficient float/double to/from int/long bits converters
+- made Double.doubleToRawLongBits/longBitsToDouble and Float.floatToRawIntBits/intBitsToFloat intrinsics
+- generalized the intrinsics support
+@
+text
+@d20 1
+a20 1
+        <csc target="library" output="IKVM.Runtime.JNI.dll" define="${defs}" optimize="true" unsafe="true" rebuild="true">
+d29 1
+d52 1
+a52 1
+        <csc target="library" output="IKVM.Runtime.dll" define="${defs}" optimize="true" unsafe="false" rebuild="true">
+d87 1
+a87 1
+                <!-- HACK mcs requires an explicit reference to System.Configuration -->
+@
+
+
+1.26
+log
+@- Moved common assembly attributes to single file (CommonAssemblyInfo.cs).
+- Added IKVM.Runtime.JNI project to Visual Studio solution.
+- Added atomic.cs to Visual Studio projects.
+- Added SecurityCritical and AllowPartiallyTrustedCallers attributes to IKVM.Runtime.dll.
+@
+text
+@d69 1
+@
+
+
+1.25
+log
+@Intrinsified AtomicReferenceFieldUpdater.newUpdater().
+@
+text
+@d22 1
+d53 1
+@
+
+
+1.24
+log
+@Restructured VM <-> Library interface to take advantage of InternalsVisibleTo to remove public methods and reflection usage.
+@
+text
+@d53 1
+@
+
+
+1.23
+log
+@Moved JNI implementation into a separate assembly (IKVM.Runtime.JNI.dll) to make IKVM.Runtime.dll verifiable.
+@
+text
+@a90 4
+        <if test="${not first-pass}">
+            <!-- We have to build again, to be able to bind against the real ikvm.internal.LibraryVMInterface in the class library assembly -->
+            <call target="IKVM.Runtime.JNI" />
+        </if>
+@
+
+
+1.22
+log
+@Added explicit reference to System.Configuration.dll as required by mcs.
+@
+text
+@d19 14
+d47 4
+a50 1
+        <csc target="library" output="IKVM.Runtime.dll" define="${defs}" optimize="true" unsafe="true" rebuild="true">
+a66 1
+                <include name="JniInterface.cs" />
+d79 1
+d91 4
+@
+
+
+1.21
+log
+@More .NET 1.1 -> 2.0 work.
+@
+text
+@d65 2
+a66 2
+                <!-- HACK mcs 1.2.3 requires explicit reference to System.Management -->
+                <include name="${framework::get-assembly-directory(framework::get-target-framework())}/System.Management.dll" />
+@
+
+
+1.20
+log
+@- Removed .NET 1.1 specific code
+- Removed conditional compilation of .NET 2.0 specific code
+@
+text
+@a32 3
+	<if test="${framework::get-target-framework()=='net-2.0'}">
+            <property name="defs" value="${defs};WHIDBEY" />
+        </if>
+@
+
+
+1.19
+log
+@Renamed IKVM.Hybrid.GNU.Classpath.OpenJDK.dll to IKVM.OpenJDK.ClassLibrary.dll and made OpenJDK build the default.
+@
+text
+@a54 1
+                <include unless="${classpath}" name="netinf.cs" />
+@
+
+
+1.18
+log
+@Fixed compilation under Mono.
+@
+text
+@d7 2
+a8 2
+    <target name="hybrid">
+        <property name="hybrid" value="true" />
+d12 1
+a12 1
+        <property name="hybrid" value="false" />
+d20 1
+a20 1
+        <property overwrite="false" name="hybrid" value="false" />
+d27 1
+a27 1
+        <if test="${hybrid}">
+d45 1
+a45 2
+                <include unless="${hybrid}" name="classpath.cs" />
+                <include if="${hybrid}" name="classpath-hybrid.cs" />
+d55 2
+a56 2
+                <include if="${hybrid}" name="netinf.cs" />
+                <include if="${hybrid}" name="openjdk.cs" />
+d64 1
+a64 1
+                <include if="${hybrid and not first-pass}" name="../openjdk/vfs.zip" />
+d67 2
+a68 2
+                <include unless="${first-pass or hybrid}" name="../bin/IKVM.GNU.Classpath.dll" asis="true" />
+                <include unless="${first-pass or not hybrid}" name="../bin/IKVM.Hybrid.GNU.Classpath.OpenJDK.dll" asis="true" />
+@
+
+
+1.17
+log
+@Added .NET 1.1 implementation of the System.Net.NetworkInformation namespace.
+@
+text
+@d56 1
+a56 1
+                <include name="netinf.cs" />
+d70 2
+@
+
+
+1.16
+log
+@Implemented the beginnings of a virtual file system for the java.home directory.
+@
+text
+@d56 1
+@
+
+
+1.15
+log
+@Moved common (between GNU Classpath & OpenJDK) "native" code to common.cs.
+@
+text
+@d63 3
+@
+
+
+1.14
+log
+@Integrated OpenJDK's java.lang.Thread
+@
+text
+@d48 1
+@
+
+
+1.13
+log
+@Integrated OpenJDK's java.lang.reflect.* classes (except for Array).
+@
+text
+@d66 4
+@
+
+
+1.12
+log
+@Integrated GNU Classpath / OpenJDK hybrid build.
+@
+text
+@d45 2
+a46 1
+                <include name="classpath.cs" />
+@
+
+
+1.11
+log
+@Restructured mutual dependency of IKVM.Runtime and IKVM.GNU.Classpath to work around Mono C# compiler limitation.
+@
+text
+@d7 2
+a8 2
+    <target name="generics">
+        <property name="generics" value="true" />
+d12 1
+a12 1
+        <property name="generics" value="false" />
+d20 1
+a20 1
+        <property overwrite="false" name="generics" value="false" />
+d27 2
+a28 2
+        <if test="${generics}">
+            <property name="defs" value="${defs};GENERICS" />
+d54 1
+d62 2
+a63 1
+                <include unless="${first-pass}" name="../bin/IKVM.GNU.Classpath.dll" asis="true" />
+@
+
+
+1.10
+log
+@Changed the build process to build IKVM.Runtime in two passes to enable it to reference IKVM.GNU.Classpath (which also references IKVM.Runtime). This removes the need to do reflection to find the loaded IKVM.GNU.Classpath from IKVM.Runtime and completes the ability to run different versions of IKVM side-by-side in the same AppDomain. This should also fix bug 1659196.
+@
+text
+@d36 1
+a36 1
+        <csc target="library" output="../bin/IKVM.Runtime.dll" define="${defs}" optimize="true" unsafe="true" rebuild="true">
+d64 1
+@
+
+
+1.9
+log
+@*** empty log message ***
+@
+text
+@d3 4
+d22 1
+d30 3
+d36 1
+a36 1
+        <csc target="library" output="../bin/IKVM.Runtime.dll" define="${defs}" optimize="true" unsafe="true">
+d60 3
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@d30 21
+a50 1
+                <include name="*.cs" />
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d7 7
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d10 1
+d12 1
+a12 1
+        <if propertyexists="signed">
+d15 1
+a15 1
+        <if propertytrue="generics">
+d18 3
+d23 1
+a23 1
+                <includes name="*.cs" />
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d9 1
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d3 5
+d9 8
+a16 2
+        <property overwrite="false" name="signed" value="" />
+        <csc target="library" output="../bin/IKVM.Runtime.dll" define="TRACE;${signed}" optimize="true" unsafe="true">
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d4 2
+a5 1
+        <csc target="library" output="../bin/IKVM.Runtime.dll" define="TRACE" optimize="true" unsafe="true">
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d4 1
+a4 1
+        <csc target="library" output="../bin/IKVM.Runtime.dll" define="TRACE" optimize="true">
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@d4 1
+a4 1
+        <csc target="library" output="../bin/IKVM.Runtime.dll" define="TRACE">
+@
+

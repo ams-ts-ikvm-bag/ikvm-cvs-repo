@@ -1,0 +1,1088 @@
+head	1.30;
+access;
+symbols
+	v7_2_4630_6:1.29
+	v7_2_4630_5:1.29
+	v7_2_4630_4:1.29
+	v7_2_4630_3:1.29
+	v7_2_4630_2:1.29
+	v0_46_0_4:1.29
+	v7_2_4630_1:1.29
+	v7_2:1.29.0.14
+	v7_1_4532_2:1.29
+	v7_1_4532_1:1.29
+	v7_1_4532_0:1.29
+	v7_1:1.29.0.12
+	v7_0_4335_3:1.29
+	v7_0_4335_2:1.29
+	v7_0_4335_1:1.29
+	v0_46_0_2:1.29
+	v7_0_4335_0:1.29
+	v7_0:1.29.0.10
+	v0_40_0_6:1.29
+	v0_40_0_5:1.29
+	v0_46_0_1:1.29
+	v0_46_0_0:1.29
+	v0_46:1.29.0.8
+	v0_36_0_14:1.25.2.14
+	v0_44_0_6:1.29
+	v0_44_0_5:1.29
+	v0_44_0_4:1.29
+	v0_44_0_3:1.29
+	v0_44_0_2:1.29
+	v0_42_0_7:1.29
+	v0_44_0_1:1.29
+	v0_44_0_0:1.29
+	v0_44:1.29.0.6
+	v0_42_0_6:1.29
+	v0_42_0_5:1.29
+	v0_42_0_4:1.29
+	v0_42_0_3:1.29
+	v0_42_0_2:1.29
+	v0_42_0_1:1.29
+	v0_42_0_0:1.29
+	v0_42:1.29.0.4
+	v0_40_0_3:1.29
+	v0_40_0_2:1.29
+	v0_40_0_1:1.29
+	v0_40_0_0:1.29
+	v0_40:1.29.0.2
+	v0_36_0_13:1.25.2.13
+	v0_38_0_1:1.27.2.2
+	v0_38_0_0:1.27.2.1
+	v0_38:1.27.0.2
+	v0_36_0_9:1.25.2.10
+	v0_36_0_7:1.25.2.8
+	v0_36_0_5:1.25.2.6
+	v0_36_0_4:1.25.2.5
+	v0_36_0_3:1.25.2.4
+	v0_36_0_2:1.25.2.3
+	v0_36_0_1:1.25.2.2
+	v0_36_0_0:1.25.2.1
+	v0_36:1.25.0.2
+	v0_34_0_3:1.23.2.4
+	v0_34_0_2:1.23.2.3
+	v0_34_0_1:1.23.2.2
+	v0_34_0_0:1.23.2.1
+	v0_34:1.23.0.2
+	v0_32:1.22.0.2
+	v0_32_0_0:1.22
+	v0_30:1.20.0.2
+	v0_28_0_0:1.20
+	v0_26_0_1:1.18
+	v0_26_0_0:1.17
+	v0_24_0_1:1.15
+	v0_24_0_0:1.14
+	v0_22_0_0:1.12
+	v0_20_0_0:1.11
+	v0_18_0_0:1.9
+	v0_16_0_0:1.8
+	v0_14_0_1:1.6
+	v0_14_0_0:1.5
+	v0_12_0_0:1.5
+	v0_10_0_1:1.4
+	v0_10_0_0:1.3;
+locks; strict;
+comment	@# @;
+
+
+1.30
+date	2013.01.12.14.27.12;	author jfrijters;	state dead;
+branches;
+next	1.29;
+
+1.29
+date	2008.11.19.05.42.47;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2008.11.14.07.51.31;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2007.12.18.09.56.11;	author jfrijters;	state Exp;
+branches
+	1.27.2.1;
+next	1.26;
+
+1.26
+date	2007.10.22.15.45.52;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2007.05.24.12.16.34;	author jfrijters;	state Exp;
+branches
+	1.25.2.1;
+next	1.24;
+
+1.24
+date	2007.04.09.08.32.49;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2006.12.11.13.13.28;	author jfrijters;	state Exp;
+branches
+	1.23.2.1;
+next	1.22;
+
+1.22
+date	2006.12.11.07.07.13;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2006.08.04.12.06.41;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2006.05.16.08.34.56;	author jfrijters;	state Exp;
+branches
+	1.20.2.1;
+next	1.19;
+
+1.19
+date	2006.03.23.11.57.44;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2006.03.11.18.35.30;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2006.03.07.09.34.33;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2006.01.31.10.13.32;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2006.01.23.10.18.44;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2006.01.20.08.35.31;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2005.12.07.09.06.32;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2005.11.14.10.16.51;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2005.09.07.07.02.48;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2005.07.25.09.53.25;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2005.07.18.07.27.43;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2005.07.01.09.25.38;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2005.05.13.11.41.33;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2005.05.09.07.23.02;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2005.02.02.15.12.03;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2005.01.10.08.24.28;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2005.01.07.09.34.20;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2004.12.07.09.53.42;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2004.12.02.08.43.06;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.20.2.1
+date	2006.08.09.11.49.10;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.23.2.1
+date	2007.04.13.06.46.40;	author jfrijters;	state Exp;
+branches;
+next	1.23.2.2;
+
+1.23.2.2
+date	2007.04.24.08.27.34;	author jfrijters;	state Exp;
+branches;
+next	1.23.2.3;
+
+1.23.2.3
+date	2007.04.29.08.49.19;	author jfrijters;	state Exp;
+branches;
+next	1.23.2.4;
+
+1.23.2.4
+date	2007.05.30.09.46.48;	author jfrijters;	state Exp;
+branches;
+next	1.23.2.5;
+
+1.23.2.5
+date	2007.08.06.08.09.37;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.25.2.1
+date	2007.08.30.09.25.50;	author jfrijters;	state Exp;
+branches;
+next	1.25.2.2;
+
+1.25.2.2
+date	2007.09.13.07.30.05;	author jfrijters;	state Exp;
+branches;
+next	1.25.2.3;
+
+1.25.2.3
+date	2007.09.20.13.54.22;	author jfrijters;	state Exp;
+branches;
+next	1.25.2.4;
+
+1.25.2.4
+date	2007.10.01.13.02.41;	author jfrijters;	state Exp;
+branches;
+next	1.25.2.5;
+
+1.25.2.5
+date	2007.10.12.16.18.41;	author jfrijters;	state Exp;
+branches;
+next	1.25.2.6;
+
+1.25.2.6
+date	2007.12.04.06.04.32;	author jfrijters;	state Exp;
+branches;
+next	1.25.2.7;
+
+1.25.2.7
+date	2008.01.14.04.58.33;	author jfrijters;	state Exp;
+branches;
+next	1.25.2.8;
+
+1.25.2.8
+date	2008.01.25.07.12.19;	author jfrijters;	state Exp;
+branches;
+next	1.25.2.9;
+
+1.25.2.9
+date	2008.02.03.07.44.12;	author jfrijters;	state Exp;
+branches;
+next	1.25.2.10;
+
+1.25.2.10
+date	2008.02.20.14.24.39;	author jfrijters;	state Exp;
+branches;
+next	1.25.2.11;
+
+1.25.2.11
+date	2008.03.14.06.11.12;	author jfrijters;	state Exp;
+branches;
+next	1.25.2.12;
+
+1.25.2.12
+date	2008.05.04.08.23.39;	author jfrijters;	state Exp;
+branches;
+next	1.25.2.13;
+
+1.25.2.13
+date	2008.11.05.07.52.01;	author jfrijters;	state Exp;
+branches;
+next	1.25.2.14;
+
+1.25.2.14
+date	2010.11.11.06.00.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.27.2.1
+date	2008.09.23.10.18.47;	author jfrijters;	state Exp;
+branches;
+next	1.27.2.2;
+
+1.27.2.2
+date	2008.11.04.05.29.20;	author jfrijters;	state Exp;
+branches;
+next	1.27.2.3;
+
+1.27.2.3
+date	2008.11.11.18.32.19;	author jfrijters;	state Exp;
+branches;
+next	1.27.2.4;
+
+1.27.2.4
+date	2009.02.02.05.58.20;	author jfrijters;	state Exp;
+branches;
+next	1.27.2.5;
+
+1.27.2.5
+date	2009.02.05.14.44.56;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.30
+log
+@Replace ilasm usage to generate JVM.DLL with a custom tool.
+@
+text
+@/*
+  Copyright (C) 2004, 2005 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+.module JVM.DLL
+
+.method public static int32 JNI_CreateJavaVM(void* ppvm, void* ppenv, void* args)
+{
+  .vtentry 1:1
+  .export [1] as JNI_CreateJavaVM
+  ldarg.0
+  ldarg.1
+  ldarg.2
+  call int32 [IKVM.Runtime.JNI]IKVM.Runtime.JNI::CreateJavaVM(void*, void*, void*)
+  ret
+}
+
+.method public static int32 JNI_GetDefaultJavaVMInitArgs(void *vm_args)
+{
+  .vtentry 1:2
+  .export [2] as JNI_GetDefaultJavaVMInitArgs
+  ldarg.0
+  call int32 [IKVM.Runtime.JNI]IKVM.Runtime.JNI::GetDefaultJavaVMInitArgs(void*)
+  ret
+}
+
+.method public static int32 JNI_GetCreatedJavaVMs(void* ppvmBuf, int32 bufLen, int32* nVMs)
+{
+  .vtentry 1:3
+  .export [3] as JNI_GetCreatedJavaVMs
+  ldarg.0
+  ldarg.1
+  ldarg.2
+  call int32 [IKVM.Runtime.JNI]IKVM.Runtime.JNI::GetCreatedJavaVMs(void*, int32, int32*)
+  ret
+}
+@
+
+
+1.29
+log
+@Generate assembly versions for IKVM.OpenJDK.ClassLibrary.dll and JVM.dll automatically based on IKVM.Runtime.dll version.
+@
+text
+@@
+
+
+1.28
+log
+@Changed version to 0.39.
+@
+text
+@a23 4
+.assembly JVM
+{
+  .ver 0:39:0:0
+}
+@
+
+
+1.27
+log
+@Moved JNI implementation into a separate assembly (IKVM.Runtime.JNI.dll) to make IKVM.Runtime.dll verifiable.
+@
+text
+@d26 1
+a26 1
+  .ver 0:37:0:0
+@
+
+
+1.27.2.1
+log
+@Set version no. to 0.38.0.0.
+@
+text
+@d26 1
+a26 1
+  .ver 0:38:0:0
+@
+
+
+1.27.2.2
+log
+@Backported fixes and updated version to 0.38.0.1:
+- Hide callerID nested types.
+- Made finalize() and clone() methods in cli.System.Object and cli.System.Exception final.
+- Fixed reflection to work on .NET 2.0 RTM.
+@
+text
+@d26 1
+a26 1
+  .ver 0:38:0:1
+@
+
+
+1.27.2.3
+log
+@- Changed version to 0.38.0.2
+- Fixed openjdk.build BOM issue on Linux
+- Fixed verifier bug in handling of jsr instruction
+@
+text
+@d26 1
+a26 1
+  .ver 0:38:0:2
+@
+
+
+1.27.2.4
+log
+@Changed version to 0.38.0.3 and backported these fixes:
+- Fixed the stack trace when an unwrapped java.lang.Error (or subclass) escapes from a static initializer.
+- It turns out that we really should create an MBeanServer in sun.management.ManagementFactory.createPlatformMBeanServer(), even if we don't populate it with anything useful, applications might still want to register their own MBeans. This fix allows Derby 10.4.2.0 to work.
+- Added helpful message to ClassCastException generated for ghost array casts.
+- Added check for constructor with missing body in map.xml.
+- Removed over eager state checking from java.util.zip.Deflater. Fixes Lucene issue.
+- Fixed enclosing method discovery to work for ReflectionOnly assemblies. This allows ikvmstub to work with ikvmc generated assemblies.
+- Always emit an explicit method override if we've mangled the name/sig, because we can't predict whether it will be needed or not (without keeping track of the mangling in the base classes) and the cost is minimal since this doesn't happen all that often.
+- Miranda method should use mangled name (if the name is mangled).
+- Fixed pointer detection to work for types with multiple indirection levels.
+- If the last call site of a subroutine wasn't reachable, the return switch would fall through potentially causing the code to be unverifiable.
+- The check for unloadable types on the stack indexed the stack in the wrong order.
+- Fixed exception wrapping for java.security.AccessController.doPrivileged().
+- Fixed tracer to only add a trace listener in executables.
+@
+text
+@d26 1
+a26 1
+  .ver 0:38:0:3
+@
+
+
+1.27.2.5
+log
+@- Updated version to 0.38.0.4
+- Backported fix to PassiveWeakDictionary.
+@
+text
+@d26 1
+a26 1
+  .ver 0:38:0:4
+@
+
+
+1.26
+log
+@Updated version numbers to 0.37.
+@
+text
+@d37 1
+a37 1
+  call int32 [IKVM.Runtime]IKVM.Runtime.JNI::CreateJavaVM(void*, void*, void*)
+d46 1
+a46 1
+  call int32 [IKVM.Runtime]IKVM.Runtime.JNI::GetDefaultJavaVMInitArgs(void*)
+d57 1
+a57 1
+  call int32 [IKVM.Runtime]IKVM.Runtime.JNI::GetCreatedJavaVMs(void*, int32, int32*)
+@
+
+
+1.25
+log
+@Removed no longer needed IKVM.GNU.Classpath.dll dependency.
+@
+text
+@d26 1
+a26 1
+  .ver 0:35:0:0
+@
+
+
+1.25.2.1
+log
+@Updated version numbers to 0.36.0.0
+@
+text
+@d26 1
+a26 1
+  .ver 0:36:0:0
+@
+
+
+1.25.2.2
+log
+@Ported fixes from trunk. Changed version to 0.36.0.1.
+@
+text
+@d26 1
+a26 1
+  .ver 0:36:0:1
+@
+
+
+1.25.2.3
+log
+@Backported fixes from trunk. Changed version to 0.36.0.2.
+@
+text
+@d26 1
+a26 1
+  .ver 0:36:0:2
+@
+
+
+1.25.2.4
+log
+@Backported fixes from trunk. Changed version to 0.36.0.3.
+@
+text
+@d26 1
+a26 1
+  .ver 0:36:0:3
+@
+
+
+1.25.2.5
+log
+@Backported fixes. Changed version to 0.36.0.4.
+@
+text
+@d26 1
+a26 1
+  .ver 0:36:0:4
+@
+
+
+1.25.2.6
+log
+@Backported fixes and changed version to 0.36.0.5
+@
+text
+@d26 1
+a26 1
+  .ver 0:36:0:5
+@
+
+
+1.25.2.7
+log
+@- Updated version to 0.36.0.6
+- Fix for issue reported in http://sourceforge.net/mailarchive/message.php?msg_name=477171a5.1ec37e0a.1f81.7bc8%40mx.google.com
+- Fix for bug #1865922
+@
+text
+@d26 1
+a26 1
+  .ver 0:36:0:6
+@
+
+
+1.25.2.8
+log
+@- Changed version to 0.36.0.7
+- Fixed serialization bug
+@
+text
+@d26 1
+a26 1
+  .ver 0:36:0:7
+@
+
+
+1.25.2.9
+log
+@Set version number to 0.36.0.8.
+@
+text
+@d26 1
+a26 1
+  .ver 0:36:0:8
+@
+
+
+1.25.2.10
+log
+@- Changed version to 0.36.0.9
+- Added java.util.BitSet perf hack to map.xml
+- Back ported codegen optimizations from 0.37.2970
+@
+text
+@d26 1
+a26 1
+  .ver 0:36:0:9
+@
+
+
+1.25.2.11
+log
+@- Updated version to 0.36.0.11
+- Updated copyright statements to 2002-2008
+@
+text
+@d26 1
+a26 1
+  .ver 0:36:0:11
+@
+
+
+1.25.2.12
+log
+@Set version to 0.36.0.12.
+@
+text
+@d26 1
+a26 1
+  .ver 0:36:0:12
+@
+
+
+1.25.2.13
+log
+@Back ported various fixes:
+- Changed version to 0.36.0.13.
+- Fixed ikvmc not to open the key file for write access.
+- Added more efficient float/double to/from int/long bits converters.
+- Fixed libikvm-native.so build to include reference to gmodule-2.0 library.
+- Fixed ikvmc not to open the key file for write access.
+- Fixed Graphics2D.rotate() to convert rotation angle from radians (Java) to degrees (.NET).
+- Applied awt patch #1979656 by Daniel Wilson.
+- Fixed three String bugs found by OpenJDK string tests.
+- Fixed ldc <class> where <class> is a ghost array.
+- Fixed bug in instanceof <class> where <class> is a Serializable[].
+- Removed incorrect DataFormatException thrown in java.util.zip.InflaterHuffmanTree.
+- Fixed #2001802 contributed by Andy Malakov.
+- Fixed #2001799.
+- Fixed #2006953.
+- Made finalize() and clone() methods in cli.System.Object and cli.System.Exception final.
+@
+text
+@d26 1
+a26 1
+  .ver 0:36:0:13
+@
+
+
+1.25.2.14
+log
+@Updated version to 0.36.0.14.
+@
+text
+@d26 1
+a26 1
+  .ver 0:36:0:14
+@
+
+
+1.24
+log
+@Updated version numbers.
+@
+text
+@a33 5
+
+  // Make sure that the correct IKVM.GNU.Classpath assembly is loaded
+  ldtoken [IKVM.GNU.Classpath]java.lang.Object
+  pop
+
+@
+
+
+1.23
+log
+@*** empty log message ***
+@
+text
+@d26 1
+a26 1
+  .ver 0:33:0:0
+@
+
+
+1.23.2.1
+log
+@Preparing for release.
+@
+text
+@d26 1
+a26 1
+  .ver 0:34:0:0
+@
+
+
+1.23.2.2
+log
+@Updated version numbers to 0.34.0.1
+@
+text
+@d26 1
+a26 1
+  .ver 0:34:0:1
+@
+
+
+1.23.2.3
+log
+@Update version to 0.34.0.2
+@
+text
+@d26 1
+a26 1
+  .ver 0:34:0:2
+@
+
+
+1.23.2.4
+log
+@Updated version numbers to 0.34.0.3
+@
+text
+@d26 1
+a26 1
+  .ver 0:34:0:3
+@
+
+
+1.23.2.5
+log
+@back ported the follwing fixes and incremented version to 0.34.0.4:
+- magic assembly type for assembly attribute annotations (bug #1721688)
+- LocalVariableTable robustness fix (bug #1765952)
+- public interfaces extending non-public interfaces
+- parameter annotations on redirected contructors
+- casting ghost interface arrays (bug #1757889)
+- JNI NewObject fix
+- make sure all implemented interface methods on .NET types are public (so that ikvmstub generates jars that javac is happy with)
+@
+text
+@d26 1
+a26 1
+  .ver 0:34:0:4
+@
+
+
+1.22
+log
+@*** empty log message ***
+@
+text
+@d26 1
+a26 1
+  .ver 0:32:0:0
+@
+
+
+1.21
+log
+@*** empty log message ***
+@
+text
+@d26 1
+a26 1
+  .ver 0:31:0:0
+@
+
+
+1.20
+log
+@*** empty log message ***
+@
+text
+@d26 1
+a26 1
+  .ver 0:28:0:0
+@
+
+
+1.20.2.1
+log
+@*** empty log message ***
+@
+text
+@d26 1
+a26 1
+  .ver 0:30:0:0
+@
+
+
+1.19
+log
+@*** empty log message ***
+@
+text
+@d26 1
+a26 1
+  .ver 0:27:0:0
+@
+
+
+1.18
+log
+@*** empty log message ***
+@
+text
+@d26 1
+a26 1
+  .ver 0:26:0:1
+@
+
+
+1.17
+log
+@*** empty log message ***
+@
+text
+@d26 1
+a26 1
+  .ver 0:26:0:0
+@
+
+
+1.16
+log
+@*** empty log message ***
+@
+text
+@d26 1
+a26 1
+  .ver 0:25:0:0
+@
+
+
+1.15
+log
+@*** empty log message ***
+@
+text
+@d26 1
+a26 1
+  .ver 0:24:0:1
+@
+
+
+1.14
+log
+@*** empty log message ***
+@
+text
+@d26 1
+a26 1
+  .ver 0:24:0:0
+@
+
+
+1.13
+log
+@*** empty log message ***
+@
+text
+@d26 1
+a26 1
+  .ver 0:23:0:0
+@
+
+
+1.12
+log
+@*** empty log message ***
+@
+text
+@d26 1
+a26 1
+  .ver 0:22:0:0
+@
+
+
+1.11
+log
+@*** empty log message ***
+@
+text
+@d26 1
+a26 1
+  .ver 0:20:0:0
+@
+
+
+1.10
+log
+@*** empty log message ***
+@
+text
+@d26 1
+a26 1
+  .ver 0:19:0:0
+@
+
+
+1.9
+log
+@*** empty log message ***
+@
+text
+@d26 1
+a26 1
+  .ver 0:18:0:0
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@d26 1
+a26 1
+  .ver 0:16:0:0
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d26 1
+a26 1
+  .ver 0:15:0:0
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d26 1
+a26 1
+  .ver 0:14:0:1
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d26 1
+a26 1
+  .ver 0:11:0:0
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d26 1
+a26 1
+  .ver 0:10:0:1
+a28 3
+.corflags 0x00000002
+.vtfixup [3] int32 fromunmanaged at VTable
+.data VTable = int32[3]
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d26 1
+a26 1
+  .ver 0:10:0:0
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2004 Jeroen Frijters
+d24 4
+a27 1
+.assembly JVM {}
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@d34 5
+@
+

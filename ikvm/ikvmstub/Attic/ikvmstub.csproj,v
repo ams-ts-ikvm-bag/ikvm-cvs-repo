@@ -1,0 +1,236 @@
+head	1.5;
+access;
+symbols
+	v0_36_0_14:1.4
+	v0_36_0_13:1.4
+	v0_36_0_9:1.4
+	v0_36_0_7:1.4
+	v0_36_0_5:1.4
+	v0_36_0_4:1.4
+	v0_36_0_3:1.4
+	v0_36_0_2:1.4
+	v0_36_0_1:1.4
+	v0_36_0_0:1.4
+	v0_36:1.4.0.6
+	v0_34_0_3:1.4
+	v0_34_0_2:1.4
+	v0_34_0_1:1.4
+	v0_34_0_0:1.4
+	v0_34:1.4.0.4
+	v0_32:1.4.0.2
+	v0_32_0_0:1.4
+	v0_30:1.3.0.2
+	v0_28_0_0:1.3
+	v0_26_0_1:1.3
+	v0_26_0_0:1.3
+	v0_24_0_1:1.3
+	v0_24_0_0:1.3
+	v0_22_0_0:1.3
+	v0_20_0_0:1.3
+	v0_18_0_0:1.3
+	v0_16_0_0:1.3
+	v0_14_0_1:1.2
+	v0_14_0_0:1.2
+	v0_12_0_0:1.2
+	v0_10_0_1:1.2
+	v0_10_0_0:1.2
+	v0_8_0_0:1.2;
+locks; strict;
+comment	@# @;
+
+
+1.5
+date	2007.11.21.07.15.45;	author jfrijters;	state dead;
+branches;
+next	1.4;
+
+1.4
+date	2006.08.04.12.39.33;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2005.05.26.14.47.46;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2004.06.07.08.28.57;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2004.05.27.07.12.11;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.5
+log
+@- Removed Visual Studio 2003 solution/project files.
+- Added Visual Studio 2008 solution.
+@
+text
+@<VisualStudioProject>
+    <CSHARP
+        ProjectType = "Local"
+        ProductVersion = "7.10.3077"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{D2A9434D-59E4-43E9-8D9C-332AA138CEAD}"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "ikvmstub"
+                AssemblyOriginatorKeyFile = ""
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Grid"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "Exe"
+                PreBuildEvent = ""
+                PostBuildEvent = ""
+                RootNamespace = ""
+                RunPostBuildEvent = "OnBuildSuccess"
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "DEBUG;TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "true"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "true"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "false"
+                    OutputPath = "bin\Debug\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+                <Config
+                    Name = "Release"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "true"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "true"
+                    OutputPath = "bin\Release\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                />
+                <Reference
+                    Name = "IKVM.Runtime"
+                    Project = "{F5C7B588-0403-4AF2-A4DE-5697DE21BC2C}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+                <Reference
+                    Name = "IKVM.GNU.Classpath"
+                    AssemblyName = "IKVM.GNU.Classpath"
+                    HintPath = "..\bin\IKVM.GNU.Classpath.dll"
+                />
+                <Reference
+                    Name = "ICSharpCode.SharpZipLib"
+                    AssemblyName = "ICSharpCode.SharpZipLib"
+                    HintPath = "..\bin\ICSharpCode.SharpZipLib.dll"
+                />
+            </References>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "AssemblyInfo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ikvmstub.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+            </Include>
+        </Files>
+    </CSHARP>
+</VisualStudioProject>
+
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@a95 5
+                    RelPath = "ClassFileWriter.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@a71 8
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                />
+                <Reference
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@d12 1
+a12 1
+                AssemblyName = "netexp"
+d21 1
+a21 1
+                RootNamespace = "netexp"
+@
+

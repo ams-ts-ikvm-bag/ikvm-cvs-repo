@@ -1,0 +1,738 @@
+head	1.6;
+access;
+symbols
+	v8_1_5717_0:1.6
+	v8_1:1.6.0.4
+	v8_0_5449_1:1.6
+	v8_0_5449_0:1.6
+	v8_0:1.6.0.2
+	v7_4_5196_0:1.5
+	v7_4:1.5.0.10
+	v7_3:1.5.0.8
+	v7_2_4630_6:1.5
+	v7_2_4630_5:1.5
+	v7_2_4630_4:1.5
+	v7_2_4630_3:1.5
+	v7_2_4630_2:1.5
+	v0_46_0_4:1.4
+	v7_2_4630_1:1.5
+	v7_2:1.5.0.6
+	v7_1_4532_2:1.5
+	v7_1_4532_1:1.5
+	v7_1_4532_0:1.5
+	v7_1:1.5.0.4
+	v7_0_4335_3:1.5
+	v7_0_4335_2:1.5
+	v7_0_4335_1:1.5
+	v0_46_0_2:1.4
+	v7_0_4335_0:1.5
+	v7_0:1.5.0.2
+	v0_40_0_6:1.3
+	v0_40_0_5:1.3
+	v0_46_0_1:1.4
+	v0_46_0_0:1.4
+	v0_46:1.4.0.2
+	v0_36_0_14:1.2
+	v0_44_0_6:1.3
+	v0_44_0_5:1.3
+	v0_44_0_4:1.3
+	v0_44_0_3:1.3
+	v0_44_0_2:1.3
+	v0_42_0_7:1.3
+	v0_44_0_1:1.3
+	v0_44_0_0:1.3
+	v0_44:1.3.0.8
+	v0_42_0_6:1.3
+	v0_42_0_5:1.3
+	v0_42_0_4:1.3
+	v0_42_0_3:1.3
+	v0_42_0_2:1.3
+	v0_42_0_1:1.3
+	v0_42_0_0:1.3
+	v0_42:1.3.0.6
+	v0_40_0_3:1.3
+	v0_40_0_2:1.3
+	v0_40_0_1:1.3
+	v0_40_0_0:1.3
+	v0_40:1.3.0.4
+	v0_36_0_13:1.2
+	v0_38_0_1:1.3
+	v0_38_0_0:1.3
+	v0_38:1.3.0.2
+	v0_36_0_9:1.2
+	v0_36_0_7:1.2
+	v0_36_0_5:1.2
+	v0_36_0_4:1.2
+	v0_36_0_3:1.2
+	v0_36_0_2:1.2
+	v0_36_0_1:1.2
+	v0_36_0_0:1.2
+	v0_36:1.2.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.6
+date	2014.05.19.12.43.42;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2011.07.15.09.05.27;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2011.01.24.16.40.23;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.06.11.09.06.01;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.08.15.12.04.26;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.07.18.05.46.38;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.6
+log
+@First part of OpenJDK 8 integration.
+@
+text
+@/*
+ * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 only, as
+ * published by the Free Software Foundation.  Oracle designates this
+ * particular file as subject to the "Classpath" exception as provided
+ * by Oracle in the LICENSE file that accompanied this code.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * You should have received a copy of the GNU General Public License version
+ * 2 along with this work; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+ * or visit www.oracle.com if you need additional information or have any
+ * questions.
+ */
+
+package sun.nio.ch;
+
+import java.lang.ref.SoftReference;
+import java.lang.reflect.*;
+import java.io.IOException;
+import java.io.FileDescriptor;
+import java.nio.ByteBuffer;
+import java.nio.MappedByteBuffer;
+import java.nio.channels.*;
+import java.security.AccessController;
+import java.security.PrivilegedAction;
+import java.util.*;
+import sun.misc.Unsafe;
+import sun.misc.Cleaner;
+import sun.security.action.GetPropertyAction;
+
+
+public class Util {
+
+
+    // -- Random stuff --
+
+    static ByteBuffer[] subsequence(ByteBuffer[] bs, int offset, int length) {
+        if ((offset == 0) && (length == bs.length))
+            return bs;
+        int n = length;
+        ByteBuffer[] bs2 = new ByteBuffer[n];
+        for (int i = 0; i < n; i++)
+            bs2[i] = bs[offset + i];
+        return bs2;
+    }
+
+    static <E> Set<E> ungrowableSet(final Set<E> s) {
+        return new Set<E>() {
+
+                public int size()                 { return s.size(); }
+                public boolean isEmpty()          { return s.isEmpty(); }
+                public boolean contains(Object o) { return s.contains(o); }
+                public Object[] toArray()         { return s.toArray(); }
+                public <T> T[] toArray(T[] a)     { return s.toArray(a); }
+                public String toString()          { return s.toString(); }
+                public Iterator<E> iterator()     { return s.iterator(); }
+                public boolean equals(Object o)   { return s.equals(o); }
+                public int hashCode()             { return s.hashCode(); }
+                public void clear()               { s.clear(); }
+                public boolean remove(Object o)   { return s.remove(o); }
+
+                public boolean containsAll(Collection<?> coll) {
+                    return s.containsAll(coll);
+                }
+                public boolean removeAll(Collection<?> coll) {
+                    return s.removeAll(coll);
+                }
+                public boolean retainAll(Collection<?> coll) {
+                    return s.retainAll(coll);
+                }
+
+                public boolean add(E o){
+                    throw new UnsupportedOperationException();
+                }
+                public boolean addAll(Collection<? extends E> coll) {
+                    throw new UnsupportedOperationException();
+                }
+
+        };
+    }
+
+
+    private static volatile Constructor<?> directByteBufferConstructor = null;
+
+    private static void initDBBConstructor() {
+        AccessController.doPrivileged(new PrivilegedAction<Void>() {
+                public Void run() {
+                    try {
+                        Class<?> cl = Class.forName("java.nio.DirectByteBuffer");
+                        Constructor<?> ctor = cl.getDeclaredConstructor(
+                            new Class<?>[] { int.class,
+                                             long.class,
+                                             FileDescriptor.class,
+                                             Runnable.class });
+                        ctor.setAccessible(true);
+                        directByteBufferConstructor = ctor;
+                    } catch (ClassNotFoundException   |
+                             NoSuchMethodException    |
+                             IllegalArgumentException |
+                             ClassCastException x) {
+                        throw new InternalError(x);
+                    }
+                    return null;
+                }});
+    }
+
+    static MappedByteBuffer newMappedByteBuffer(int size, long addr,
+                                                FileDescriptor fd,
+                                                Runnable unmapper)
+    {
+        MappedByteBuffer dbb;
+        if (directByteBufferConstructor == null)
+            initDBBConstructor();
+        try {
+            dbb = (MappedByteBuffer)directByteBufferConstructor.newInstance(
+              new Object[] { new Integer(size),
+                             new Long(addr),
+                             fd,
+                             unmapper });
+        } catch (InstantiationException |
+                 IllegalAccessException |
+                 InvocationTargetException e) {
+            throw new InternalError(e);
+        }
+        return dbb;
+    }
+
+    private static volatile Constructor<?> directByteBufferRConstructor = null;
+
+    private static void initDBBRConstructor() {
+        AccessController.doPrivileged(new PrivilegedAction<Void>() {
+                public Void run() {
+                    try {
+                        Class<?> cl = Class.forName("java.nio.DirectByteBufferR");
+                        Constructor<?> ctor = cl.getDeclaredConstructor(
+                            new Class<?>[] { int.class,
+                                             long.class,
+                                             FileDescriptor.class,
+                                             Runnable.class });
+                        ctor.setAccessible(true);
+                        directByteBufferRConstructor = ctor;
+                    } catch (ClassNotFoundException |
+                             NoSuchMethodException |
+                             IllegalArgumentException |
+                             ClassCastException x) {
+                        throw new InternalError(x);
+                    }
+                    return null;
+                }});
+    }
+
+    static MappedByteBuffer newMappedByteBufferR(int size, long addr,
+                                                 FileDescriptor fd,
+                                                 Runnable unmapper)
+    {
+        MappedByteBuffer dbb;
+        if (directByteBufferRConstructor == null)
+            initDBBRConstructor();
+        try {
+            dbb = (MappedByteBuffer)directByteBufferRConstructor.newInstance(
+              new Object[] { new Integer(size),
+                             new Long(addr),
+                             fd,
+                             unmapper });
+        } catch (InstantiationException |
+                 IllegalAccessException |
+                 InvocationTargetException e) {
+            throw new InternalError(e);
+        }
+        return dbb;
+    }
+
+
+    // -- Bug compatibility --
+
+    private static volatile String bugLevel = null;
+
+    static boolean atBugLevel(String bl) {              // package-private
+        if (bugLevel == null) {
+            if (!sun.misc.VM.isBooted())
+                return false;
+            String value = AccessController.doPrivileged(
+                new GetPropertyAction("sun.nio.ch.bugLevel"));
+            bugLevel = (value != null) ? value : "";
+        }
+        return bugLevel.equals(bl);
+    }
+
+}
+@
+
+
+1.5
+log
+@Updated bulk of java.nio to OpenJDK 7.
+@
+text
+@d2 1
+a2 1
+ * Copyright (c) 2000, 2010, Oracle and/or its affiliates. All rights reserved.
+d43 1
+a43 61
+class Util {
+
+    private static class SelectorWrapper {
+        private Selector sel;
+        private SelectorWrapper (Selector sel) {
+            this.sel = sel;
+            Cleaner.create(this, new Closer(sel));
+        }
+        private static class Closer implements Runnable {
+            private Selector sel;
+            private Closer (Selector sel) {
+                this.sel = sel;
+            }
+            public void run () {
+                try {
+                    sel.close();
+                } catch (Throwable th) {
+                    throw new Error(th);
+                }
+            }
+        }
+        public Selector get() { return sel;}
+    }
+
+    // Per-thread cached selector
+    private static ThreadLocal<SoftReference<SelectorWrapper>> localSelector
+        = new ThreadLocal<SoftReference<SelectorWrapper>>();
+    // Hold a reference to the selWrapper object to prevent it from
+    // being cleaned when the temporary selector wrapped is on lease.
+    private static ThreadLocal<SelectorWrapper> localSelectorWrapper
+        = new ThreadLocal<SelectorWrapper>();
+
+    // When finished, invoker must ensure that selector is empty
+    // by cancelling any related keys and explicitly releasing
+    // the selector by invoking releaseTemporarySelector()
+    static Selector getTemporarySelector(SelectableChannel sc)
+        throws IOException
+    {
+        SoftReference<SelectorWrapper> ref = localSelector.get();
+        SelectorWrapper selWrapper = null;
+        Selector sel = null;
+        if (ref == null
+            || ((selWrapper = ref.get()) == null)
+            || ((sel = selWrapper.get()) == null)
+            || (sel.provider() != sc.provider())) {
+            sel = sc.provider().openSelector();
+            selWrapper = new SelectorWrapper(sel);
+            localSelector.set(new SoftReference<SelectorWrapper>(selWrapper));
+        }
+        localSelectorWrapper.set(selWrapper);
+        return sel;
+    }
+
+    static void releaseTemporarySelector(Selector sel)
+        throws IOException
+    {
+        // Selector should be empty
+        sel.selectNow();                // Flush cancelled keys
+        assert sel.keys().isEmpty() : "Temporary selector not empty";
+        localSelectorWrapper.set(null);
+    }
+d94 1
+a94 1
+    private static volatile Constructor directByteBufferConstructor = null;
+d101 5
+a105 5
+                        Constructor ctor = cl.getDeclaredConstructor(
+                            new Class[] { int.class,
+                                          long.class,
+                                          FileDescriptor.class,
+                                          Runnable.class });
+d108 5
+a112 8
+                    } catch (ClassNotFoundException x) {
+                        throw new InternalError();
+                    } catch (NoSuchMethodException x) {
+                        throw new InternalError();
+                    } catch (IllegalArgumentException x) {
+                        throw new InternalError();
+                    } catch (ClassCastException x) {
+                        throw new InternalError();
+d131 4
+a134 6
+        } catch (InstantiationException e) {
+            throw new InternalError();
+        } catch (IllegalAccessException e) {
+            throw new InternalError();
+        } catch (InvocationTargetException e) {
+            throw new InternalError();
+d139 1
+a139 1
+    private static volatile Constructor directByteBufferRConstructor = null;
+d146 5
+a150 5
+                        Constructor ctor = cl.getDeclaredConstructor(
+                            new Class[] { int.class,
+                                          long.class,
+                                          FileDescriptor.class,
+                                          Runnable.class });
+d153 5
+a157 8
+                    } catch (ClassNotFoundException x) {
+                        throw new InternalError();
+                    } catch (NoSuchMethodException x) {
+                        throw new InternalError();
+                    } catch (IllegalArgumentException x) {
+                        throw new InternalError();
+                    } catch (ClassCastException x) {
+                        throw new InternalError();
+d176 4
+a179 6
+        } catch (InstantiationException e) {
+            throw new InternalError();
+        } catch (IllegalAccessException e) {
+            throw new InternalError();
+        } catch (InvocationTargetException e) {
+            throw new InternalError();
+a199 8
+
+
+    // -- Initialization --
+
+
+    static void load() {
+    }
+
+@
+
+
+1.4
+log
+@Integrated OpenJDK 6 b21.
+@
+text
+@d2 1
+a2 1
+ * Copyright (c) 2000, 2007, Oracle and/or its affiliates. All rights reserved.
+d31 1
+a34 1
+import java.nio.channels.spi.*;
+d68 2
+a69 1
+    private static ThreadLocal localSelector = new ThreadLocal();
+d72 2
+a73 1
+    private static ThreadLocal localSelectorWrapper = new ThreadLocal();
+d81 1
+a81 1
+        SoftReference ref = (SoftReference)localSelector.get();
+d85 1
+a85 1
+            || ((selWrapper = (SelectorWrapper) ref.get()) == null)
+d89 2
+a90 3
+            localSelector.set(new SoftReference(new SelectorWrapper(sel)));
+        } else {
+            localSelectorWrapper.set(selWrapper);
+d92 1
+d157 2
+a158 2
+        AccessController.doPrivileged(new PrivilegedAction() {
+                public Object run() {
+d160 1
+a160 1
+                        Class cl = Class.forName("java.nio.DirectByteBuffer");
+d164 1
+d182 1
+d192 1
+d207 2
+a208 2
+        AccessController.doPrivileged(new PrivilegedAction() {
+                public Object run() {
+d210 1
+a210 1
+                        Class cl = Class.forName("java.nio.DirectByteBufferR");
+d214 1
+d232 1
+d242 1
+@
+
+
+1.3
+log
+@Converted tabs to spaces.
+@
+text
+@d2 1
+a2 1
+ * Copyright 2000-2007 Sun Microsystems, Inc.  All Rights Reserved.
+d7 1
+a7 1
+ * published by the Free Software Foundation.  Sun designates this
+d9 1
+a9 1
+ * by Sun in the LICENSE file that accompanied this code.
+d21 3
+a23 3
+ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
+ * CA 95054 USA or visit www.sun.com if you need additional information or
+ * have any questions.
+d57 1
+a57 1
+                try { 
+d59 1
+a59 1
+                } catch (Throwable th) { 
+d82 2
+a83 2
+        if (ref == null 
+            || ((selWrapper = (SelectorWrapper) ref.get()) == null) 
+d94 1
+a94 1
+    static void releaseTemporarySelector(Selector sel)    
+d96 1
+a96 1
+    { 
+d100 1
+a100 1
+        localSelectorWrapper.set(null); 
+d103 1
+a103 1
+
+d151 1
+a151 1
+
+d246 1
+a246 1
+
+d255 2
+a256 3
+            java.security.PrivilegedAction pa =
+                new GetPropertyAction("sun.nio.ch.bugLevel");
+            String value = (String)AccessController.doPrivileged(pa);
+d263 1
+a263 1
+
+d266 1
+@
+
+
+1.2
+log
+@Integrated OpenJDK java.nio package.
+@
+text
+@d56 1
+a56 1
+	    public void run () {
+d58 5
+a62 5
+		    sel.close();
+		} catch (Throwable th) { 
+		    throw new Error(th);
+		}
+	    }
+d77 1
+a77 1
+	throws IOException
+d80 9
+a88 9
+	SelectorWrapper selWrapper = null;
+	Selector sel = null;
+	if (ref == null 
+	    || ((selWrapper = (SelectorWrapper) ref.get()) == null) 
+	    || ((sel = selWrapper.get()) == null)
+	    || (sel.provider() != sc.provider())) {
+	    sel = sc.provider().openSelector();
+	    localSelector.set(new SoftReference(new SelectorWrapper(sel)));
+	} else {
+d90 2
+a91 2
+	}
+	return sel;
+d97 4
+a100 4
+	// Selector should be empty
+	sel.selectNow();		// Flush cancelled keys
+	assert sel.keys().isEmpty() : "Temporary selector not empty";
+	localSelectorWrapper.set(null); 
+d107 7
+a113 7
+	if ((offset == 0) && (length == bs.length))
+	    return bs;
+	int n = length;
+	ByteBuffer[] bs2 = new ByteBuffer[n];
+	for (int i = 0; i < n; i++)
+	    bs2[i] = bs[offset + i];
+	return bs2;
+d117 1
+a117 1
+	return new Set<E>() {
+d119 28
+a146 28
+		public int size() 		  { return s.size(); }
+		public boolean isEmpty() 	  { return s.isEmpty(); }
+		public boolean contains(Object o) { return s.contains(o); }
+		public Object[] toArray()         { return s.toArray(); }
+		public <T> T[] toArray(T[] a)     { return s.toArray(a); }
+		public String toString()          { return s.toString(); }
+		public Iterator<E> iterator()     { return s.iterator(); }
+		public boolean equals(Object o)   { return s.equals(o); }
+		public int hashCode()             { return s.hashCode(); }
+		public void clear()               { s.clear(); }
+		public boolean remove(Object o)   { return s.remove(o); }
+
+		public boolean containsAll(Collection<?> coll) {
+		    return s.containsAll(coll);
+		}
+		public boolean removeAll(Collection<?> coll) {
+		    return s.removeAll(coll);
+		}
+		public boolean retainAll(Collection<?> coll) {
+		    return s.retainAll(coll);
+		}
+
+		public boolean add(E o){
+		    throw new UnsupportedOperationException();
+		}
+		public boolean addAll(Collection<? extends E> coll) {
+		    throw new UnsupportedOperationException();
+		}
+d148 1
+a148 1
+	};
+d155 4
+a158 4
+	AccessController.doPrivileged(new PrivilegedAction() {
+		public Object run() {
+		    try {
+			Class cl = Class.forName("java.nio.DirectByteBuffer");
+d160 1
+a160 1
+			    new Class[] { int.class,
+d162 1
+a162 1
+				          Runnable.class });
+d164 10
+a173 10
+			directByteBufferConstructor = ctor;
+		    } catch (ClassNotFoundException x) {
+			throw new InternalError();
+		    } catch (NoSuchMethodException x) {
+			throw new InternalError();
+		    } catch (IllegalArgumentException x) {
+			throw new InternalError();
+		    } catch (ClassCastException x) {
+			throw new InternalError();
+		    }
+d175 1
+a175 1
+		}});
+d179 1
+a179 1
+						Runnable unmapper)
+d188 1
+a188 1
+			     unmapper });
+d202 6
+a207 6
+	AccessController.doPrivileged(new PrivilegedAction() {
+		public Object run() {
+		    try {
+			Class cl = Class.forName("java.nio.DirectByteBufferR");
+			Constructor ctor = cl.getDeclaredConstructor(
+			    new Class[] { int.class,
+d209 12
+a220 12
+					  Runnable.class });
+			ctor.setAccessible(true);
+			directByteBufferRConstructor = ctor;
+		    } catch (ClassNotFoundException x) {
+			throw new InternalError();
+		    } catch (NoSuchMethodException x) {
+			throw new InternalError();
+		    } catch (IllegalArgumentException x) {
+			throw new InternalError();
+		    } catch (ClassCastException x) {
+			throw new InternalError();
+		    }
+d222 1
+a222 1
+		}});
+d226 1
+a226 1
+						 Runnable unmapper)
+d235 1
+a235 1
+			     unmapper });
+d251 10
+a260 10
+    static boolean atBugLevel(String bl) {		// package-private
+	if (bugLevel == null) {
+	    if (!sun.misc.VM.isBooted())
+		return false;
+	    java.security.PrivilegedAction pa =
+		new GetPropertyAction("sun.nio.ch.bugLevel");
+	    String value = (String)AccessController.doPrivileged(pa);
+ 	    bugLevel = (value != null) ? value : "";
+	}
+	return bugLevel.equals(bl);
+@
+
+
+1.1
+log
+@Implement SocketChannelImpl & DotNetSelectorImpl.
+@
+text
+@d152 95
+@
+

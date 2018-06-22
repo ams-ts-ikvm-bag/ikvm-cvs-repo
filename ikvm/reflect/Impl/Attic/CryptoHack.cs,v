@@ -1,0 +1,145 @@
+head	1.4;
+access;
+symbols
+	v0_46_0_4:1.2
+	v7_0_4335_3:1.2
+	v7_0_4335_2:1.2
+	v7_0_4335_1:1.2
+	v0_46_0_2:1.2
+	v7_0_4335_0:1.2
+	v7_0:1.2.0.6
+	v0_46_0_1:1.2
+	v0_46_0_0:1.2
+	v0_46:1.2.0.4
+	v0_44_0_6:1.2
+	v0_44_0_5:1.2
+	v0_44_0_4:1.2
+	v0_44_0_3:1.2
+	v0_44_0_2:1.2
+	v0_44_0_1:1.2
+	v0_44_0_0:1.2
+	v0_44:1.2.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.4
+date	2012.04.26.08.06.30;	author jfrijters;	state dead;
+branches;
+next	1.3;
+
+1.3
+date	2012.04.26.06.41.27;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.4
+log
+@Rewrote StrongNameKeyPair without depending on System.Reflection.StrongNameKeyPair.
+@
+text
+@/*
+  Copyright (C) 2008 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Security.Cryptography;
+using System.Runtime.Serialization;
+
+namespace IKVM.Reflection.Impl
+{
+	static class CryptoHack
+	{
+		internal static RSA CreateRSA(StrongNameKeyPair keyPair)
+		{
+			// HACK use serialization to get at the private key or key container name,
+			// this should be more future proof than using reflection to access the fields directly.
+			SerializationInfo ser = new SerializationInfo(typeof(StrongNameKeyPair), new FormatterConverter());
+			((ISerializable)keyPair.keyPair).GetObjectData(ser, new StreamingContext());
+			byte[] key = (byte[])ser.GetValue("_keyPairArray", typeof(byte[]));
+			string keycontainer = ser.GetString("_keyPairContainer");
+			if (keycontainer != null)
+			{
+				CspParameters parm = new CspParameters();
+				parm.Flags = CspProviderFlags.UseMachineKeyStore;
+				parm.KeyContainerName = keycontainer;
+				parm.KeyNumber = 2;	// Signature
+				return new RSACryptoServiceProvider(parm);
+			}
+			else
+			{
+				RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
+				rsa.ImportCspBlob(key);
+				return rsa;
+			}
+		}
+	}
+}
+@
+
+
+1.3
+log
+@Removed Mono CryptoConvert code and use .NET 2.0 API instead.
+@
+text
+@@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d52 3
+a54 1
+				return Mono.Security.Cryptography.CryptoConvert.FromCapiKeyBlob(key);
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

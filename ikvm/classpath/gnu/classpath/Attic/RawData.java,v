@@ -1,0 +1,62 @@
+head	1.2;
+access;
+symbols
+	v0_18_0_0:1.1
+	v0_16_0_0:1.1
+	v0_14_0_1:1.1
+	v0_14_0_0:1.1
+	v0_12_0_0:1.1
+	v0_10_0_1:1.1
+	v0_10_0_0:1.1;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2005.08.03.14.10.02;	author jfrijters;	state dead;
+branches;
+next	1.1;
+
+1.1
+date	2004.11.23.17.46.43;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@package gnu.classpath;
+
+// NOTE this class isn't actually used (only during compilation)
+// at runtime, gnu.classpath.RawData in IKVM.Runtime is used instead
+public final class RawData
+{
+    public RawData(cli.System.IntPtr p)
+    {
+    }
+
+    public native cli.System.IntPtr p();
+
+    public native void MoveMemory(int dst_offset, int src_offset, int count);
+
+    public native byte ReadByte(int index);
+
+    public native void WriteByte(int index, byte b);
+}
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@@
+

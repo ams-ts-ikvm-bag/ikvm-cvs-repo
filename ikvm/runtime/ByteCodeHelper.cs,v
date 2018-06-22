@@ -1,0 +1,4788 @@
+head	1.101;
+access;
+symbols
+	v8_1_5717_0:1.101
+	v8_1:1.101.0.2
+	v8_0_5449_1:1.92
+	v8_0_5449_0:1.92
+	v8_0:1.92.0.2
+	v7_4_5196_0:1.90
+	v7_4:1.90.0.2
+	v7_3:1.81.0.2
+	v7_2_4630_6:1.62
+	v7_2_4630_5:1.62
+	v7_2_4630_4:1.62
+	v7_2_4630_3:1.62
+	v7_2_4630_2:1.62
+	v0_46_0_4:1.52
+	v7_2_4630_1:1.62
+	v7_2:1.62.0.4
+	v7_1_4532_2:1.62
+	v7_1_4532_1:1.62
+	v7_1_4532_0:1.62
+	v7_1:1.62.0.2
+	v7_0_4335_3:1.61
+	v7_0_4335_2:1.61
+	v7_0_4335_1:1.61
+	v0_46_0_2:1.52
+	v7_0_4335_0:1.61
+	v7_0:1.61.0.2
+	v0_40_0_6:1.40
+	v0_40_0_5:1.40
+	v0_46_0_1:1.52
+	v0_46_0_0:1.52
+	v0_46:1.52.0.2
+	v0_36_0_14:1.30.2.1
+	v0_44_0_6:1.51.2.1
+	v0_44_0_5:1.51.2.1
+	v0_44_0_4:1.51.2.1
+	v0_44_0_3:1.51.2.1
+	v0_44_0_2:1.51
+	v0_42_0_7:1.41.2.2
+	v0_44_0_1:1.51
+	v0_44_0_0:1.51
+	v0_44:1.51.0.2
+	v0_42_0_6:1.41.2.2
+	v0_42_0_5:1.41
+	v0_42_0_4:1.41
+	v0_42_0_3:1.41
+	v0_42_0_2:1.41
+	v0_42_0_1:1.41
+	v0_42_0_0:1.41
+	v0_42:1.41.0.2
+	v0_40_0_3:1.40
+	v0_40_0_2:1.40
+	v0_40_0_1:1.40
+	v0_40_0_0:1.40
+	v0_40:1.40.0.2
+	v0_36_0_13:1.30.2.1
+	v0_38_0_1:1.39
+	v0_38_0_0:1.39
+	v0_38:1.39.0.2
+	v0_36_0_9:1.30
+	v0_36_0_7:1.30
+	v0_36_0_5:1.30
+	v0_36_0_4:1.30
+	v0_36_0_3:1.30
+	v0_36_0_2:1.30
+	v0_36_0_1:1.30
+	v0_36_0_0:1.30
+	v0_36:1.30.0.2
+	v0_34_0_3:1.28
+	v0_34_0_2:1.28
+	v0_34_0_1:1.28
+	v0_34_0_0:1.28
+	v0_34:1.28.0.2
+	v0_32:1.26.0.2
+	v0_32_0_0:1.26
+	v0_30:1.25.0.2
+	v0_28_0_0:1.24
+	v0_26_0_1:1.24
+	v0_26_0_0:1.24
+	v0_24_0_1:1.24
+	v0_24_0_0:1.24
+	v0_22_0_0:1.22
+	v0_20_0_0:1.22
+	v0_18_0_0:1.19
+	v0_16_0_0:1.19
+	v0_14_0_1:1.16
+	v0_14_0_0:1.16
+	v0_12_0_0:1.11
+	v0_10_0_1:1.9
+	v0_10_0_0:1.9
+	v0_8_0_0:1.1;
+locks; strict;
+comment	@ * @;
+
+
+1.101
+date	2015.03.24.09.39.11;	author jfrijters;	state Exp;
+branches;
+next	1.100;
+
+1.100
+date	2015.03.20.14.44.55;	author jfrijters;	state Exp;
+branches;
+next	1.99;
+
+1.99
+date	2015.03.13.16.00.03;	author jfrijters;	state Exp;
+branches;
+next	1.98;
+
+1.98
+date	2015.03.12.14.46.14;	author jfrijters;	state Exp;
+branches;
+next	1.97;
+
+1.97
+date	2015.03.11.13.32.36;	author jfrijters;	state Exp;
+branches;
+next	1.96;
+
+1.96
+date	2015.03.11.13.18.58;	author jfrijters;	state Exp;
+branches;
+next	1.95;
+
+1.95
+date	2015.03.11.12.57.36;	author jfrijters;	state Exp;
+branches;
+next	1.94;
+
+1.94
+date	2015.03.06.09.27.22;	author jfrijters;	state Exp;
+branches;
+next	1.93;
+
+1.93
+date	2015.03.06.08.07.40;	author jfrijters;	state Exp;
+branches;
+next	1.92;
+
+1.92
+date	2014.04.29.13.08.42;	author jfrijters;	state Exp;
+branches;
+next	1.91;
+
+1.91
+date	2014.04.28.14.26.37;	author jfrijters;	state Exp;
+branches;
+next	1.90;
+
+1.90
+date	2014.02.27.06.57.35;	author jfrijters;	state Exp;
+branches;
+next	1.89;
+
+1.89
+date	2014.02.25.10.21.24;	author jfrijters;	state Exp;
+branches;
+next	1.88;
+
+1.88
+date	2014.02.25.07.37.52;	author jfrijters;	state Exp;
+branches;
+next	1.87;
+
+1.87
+date	2014.02.21.10.04.58;	author jfrijters;	state Exp;
+branches;
+next	1.86;
+
+1.86
+date	2014.02.21.09.57.54;	author jfrijters;	state Exp;
+branches;
+next	1.85;
+
+1.85
+date	2014.02.20.16.51.25;	author jfrijters;	state Exp;
+branches;
+next	1.84;
+
+1.84
+date	2014.02.06.08.46.11;	author jfrijters;	state Exp;
+branches;
+next	1.83;
+
+1.83
+date	2013.03.29.14.46.35;	author jfrijters;	state Exp;
+branches;
+next	1.82;
+
+1.82
+date	2013.03.25.07.34.03;	author jfrijters;	state Exp;
+branches;
+next	1.81;
+
+1.81
+date	2013.03.07.13.03.01;	author jfrijters;	state Exp;
+branches;
+next	1.80;
+
+1.80
+date	2013.03.05.10.34.49;	author jfrijters;	state Exp;
+branches;
+next	1.79;
+
+1.79
+date	2013.03.04.13.52.49;	author jfrijters;	state Exp;
+branches;
+next	1.78;
+
+1.78
+date	2013.03.04.13.30.25;	author jfrijters;	state Exp;
+branches;
+next	1.77;
+
+1.77
+date	2013.02.24.15.29.06;	author jfrijters;	state Exp;
+branches;
+next	1.76;
+
+1.76
+date	2013.02.23.12.41.02;	author jfrijters;	state Exp;
+branches;
+next	1.75;
+
+1.75
+date	2013.02.11.08.38.38;	author jfrijters;	state Exp;
+branches;
+next	1.74;
+
+1.74
+date	2013.02.11.08.27.20;	author jfrijters;	state Exp;
+branches;
+next	1.73;
+
+1.73
+date	2013.02.09.10.12.11;	author jfrijters;	state Exp;
+branches;
+next	1.72;
+
+1.72
+date	2013.02.09.10.10.50;	author jfrijters;	state Exp;
+branches;
+next	1.71;
+
+1.71
+date	2013.02.09.10.04.13;	author jfrijters;	state Exp;
+branches;
+next	1.70;
+
+1.70
+date	2013.01.31.18.03.55;	author jfrijters;	state Exp;
+branches;
+next	1.69;
+
+1.69
+date	2013.01.31.17.39.47;	author jfrijters;	state Exp;
+branches;
+next	1.68;
+
+1.68
+date	2013.01.31.16.22.20;	author jfrijters;	state Exp;
+branches;
+next	1.67;
+
+1.67
+date	2013.01.31.10.55.49;	author jfrijters;	state Exp;
+branches;
+next	1.66;
+
+1.66
+date	2013.01.31.09.14.28;	author jfrijters;	state Exp;
+branches;
+next	1.65;
+
+1.65
+date	2013.01.30.17.39.46;	author jfrijters;	state Exp;
+branches;
+next	1.64;
+
+1.64
+date	2013.01.30.12.20.07;	author jfrijters;	state Exp;
+branches;
+next	1.63;
+
+1.63
+date	2013.01.30.12.08.01;	author jfrijters;	state Exp;
+branches;
+next	1.62;
+
+1.62
+date	2012.01.20.14.02.23;	author jfrijters;	state Exp;
+branches;
+next	1.61;
+
+1.61
+date	2011.08.26.08.56.25;	author jfrijters;	state Exp;
+branches;
+next	1.60;
+
+1.60
+date	2011.08.15.16.11.00;	author jfrijters;	state Exp;
+branches;
+next	1.59;
+
+1.59
+date	2011.08.12.13.06.46;	author jfrijters;	state Exp;
+branches;
+next	1.58;
+
+1.58
+date	2011.08.10.10.12.10;	author jfrijters;	state Exp;
+branches;
+next	1.57;
+
+1.57
+date	2011.08.08.04.56.16;	author jfrijters;	state Exp;
+branches;
+next	1.56;
+
+1.56
+date	2011.08.07.05.41.34;	author jfrijters;	state Exp;
+branches;
+next	1.55;
+
+1.55
+date	2011.08.06.19.51.17;	author jfrijters;	state Exp;
+branches;
+next	1.54;
+
+1.54
+date	2011.08.06.11.00.10;	author jfrijters;	state Exp;
+branches;
+next	1.53;
+
+1.53
+date	2011.07.25.23.11.10;	author jfrijters;	state Exp;
+branches;
+next	1.52;
+
+1.52
+date	2010.08.03.13.41.38;	author jfrijters;	state Exp;
+branches;
+next	1.51;
+
+1.51
+date	2010.05.31.05.58.37;	author jfrijters;	state Exp;
+branches
+	1.51.2.1;
+next	1.50;
+
+1.50
+date	2010.05.31.05.08.57;	author jfrijters;	state Exp;
+branches;
+next	1.49;
+
+1.49
+date	2010.05.30.06.53.49;	author jfrijters;	state Exp;
+branches;
+next	1.48;
+
+1.48
+date	2010.05.29.13.53.32;	author jfrijters;	state Exp;
+branches;
+next	1.47;
+
+1.47
+date	2010.05.28.11.05.18;	author jfrijters;	state Exp;
+branches;
+next	1.46;
+
+1.46
+date	2010.02.26.13.31.39;	author jfrijters;	state Exp;
+branches;
+next	1.45;
+
+1.45
+date	2009.11.09.08.52.17;	author jfrijters;	state Exp;
+branches;
+next	1.44;
+
+1.44
+date	2009.11.05.07.37.46;	author jfrijters;	state Exp;
+branches;
+next	1.43;
+
+1.43
+date	2009.11.04.05.16.32;	author jfrijters;	state Exp;
+branches;
+next	1.42;
+
+1.42
+date	2009.11.03.07.15.37;	author jfrijters;	state Exp;
+branches;
+next	1.41;
+
+1.41
+date	2009.08.28.06.47.16;	author jfrijters;	state Exp;
+branches
+	1.41.2.1;
+next	1.40;
+
+1.40
+date	2009.01.06.09.47.59;	author jfrijters;	state Exp;
+branches;
+next	1.39;
+
+1.39
+date	2008.08.21.06.09.33;	author jfrijters;	state Exp;
+branches
+	1.39.2.1;
+next	1.38;
+
+1.38
+date	2008.08.06.12.22.06;	author jfrijters;	state Exp;
+branches;
+next	1.37;
+
+1.37
+date	2008.08.06.05.25.19;	author jfrijters;	state Exp;
+branches;
+next	1.36;
+
+1.36
+date	2008.05.31.15.20.37;	author jfrijters;	state Exp;
+branches;
+next	1.35;
+
+1.35
+date	2008.05.09.05.57.59;	author jfrijters;	state Exp;
+branches;
+next	1.34;
+
+1.34
+date	2008.04.21.04.27.59;	author jfrijters;	state Exp;
+branches;
+next	1.33;
+
+1.33
+date	2007.12.19.11.28.10;	author jfrijters;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2007.12.18.11.04.53;	author jfrijters;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2007.11.26.08.38.39;	author jfrijters;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2007.05.31.07.12.56;	author jfrijters;	state Exp;
+branches
+	1.30.2.1;
+next	1.29;
+
+1.29
+date	2007.04.23.08.24.33;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2007.04.02.08.21.14;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2007.01.05.08.14.18;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2006.08.17.07.33.39;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2006.06.08.09.26.38;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2005.12.19.15.12.50;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2005.12.07.09.06.32;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2005.08.25.07.46.57;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2005.08.24.11.35.00;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2005.08.24.08.14.23;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2005.06.01.09.49.30;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2005.05.31.05.44.29;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2005.05.26.06.53.51;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2005.05.02.10.03.25;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2005.03.14.14.30.06;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2005.03.11.13.56.45;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2005.03.04.14.00.42;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2005.03.03.08.20.13;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2005.02.11.14.47.04;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2005.02.02.15.12.03;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2005.01.03.08.26.22;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2004.12.21.14.59.30;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2004.12.21.10.26.53;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2004.10.19.13.43.56;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2004.10.04.19.30.54;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2004.09.17.09.32.07;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2004.09.09.11.17.55;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2004.08.17.09.05.25;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2004.05.27.07.12.12;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.30.2.1
+date	2008.11.05.07.52.01;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.39.2.1
+date	2009.02.02.05.58.20;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.41.2.1
+date	2010.04.06.05.10.26;	author jfrijters;	state Exp;
+branches;
+next	1.41.2.2;
+
+1.41.2.2
+date	2010.04.06.05.23.10;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.51.2.1
+date	2010.08.03.14.12.09;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.101
+log
+@Removed sig decoding methods with implicit LoadMode.
+@
+text
+@/*
+  Copyright (C) 2002-2015 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Reflection;
+using System.Diagnostics;
+using System.Threading;
+using IKVM.Attributes;
+using IKVM.Internal;
+using System.Runtime.InteropServices;
+
+namespace IKVM.Runtime
+{
+	static class GhostTag
+	{
+		private static volatile PassiveWeakDictionary<object, TypeWrapper> dict;
+
+		internal static void SetTag(object obj, RuntimeTypeHandle typeHandle)
+		{
+			SetTag(obj, ClassLoaderWrapper.GetWrapperFromType(Type.GetTypeFromHandle(typeHandle)));
+		}
+
+		internal static void SetTag(object obj, TypeWrapper wrapper)
+		{
+			if(dict == null)
+			{
+				PassiveWeakDictionary<object, TypeWrapper> newDict = new PassiveWeakDictionary<object, TypeWrapper>();
+#pragma warning disable 0420 // don't whine about CompareExchange not respecting 'volatile'
+				if(Interlocked.CompareExchange(ref dict, newDict, null) != null)
+#pragma warning restore
+				{
+					newDict.Dispose();
+				}
+			}
+			dict.Add(obj, wrapper);
+		}
+
+		internal static TypeWrapper GetTag(object obj)
+		{
+			if(dict != null)
+			{
+				TypeWrapper tw;
+				dict.TryGetValue(obj, out tw);
+				return tw;
+			}
+			return null;
+		}
+
+		// this method is called from <GhostType>.IsInstanceArray()
+		internal static bool IsGhostArrayInstance(object obj, RuntimeTypeHandle typeHandle, int rank)
+		{
+			TypeWrapper tw1 = GhostTag.GetTag(obj);
+			if(tw1 != null)
+			{
+				TypeWrapper tw2 = ClassLoaderWrapper.GetWrapperFromType(Type.GetTypeFromHandle(typeHandle)).MakeArrayType(rank);
+				return tw1.IsAssignableTo(tw2);
+			}
+			return false;
+		}
+
+		// this method is called from <GhostType>.CastArray()
+		[HideFromJava]
+		internal static void ThrowClassCastException(object obj, RuntimeTypeHandle typeHandle, int rank)
+		{
+#if !FIRST_PASS
+			System.Text.StringBuilder sb = new System.Text.StringBuilder();
+			sb.Append(ikvm.runtime.Util.getClassFromObject(obj).getName()).Append(" cannot be cast to ")
+				.Append('[', rank).Append('L').Append(ikvm.runtime.Util.getClassFromTypeHandle(typeHandle).getName()).Append(';');
+			throw new java.lang.ClassCastException(sb.ToString());
+#endif
+		}
+	}
+
+	public static class ByteCodeHelper
+	{
+		[DebuggerStepThroughAttribute]
+		public static object multianewarray(RuntimeTypeHandle typeHandle, int[] lengths)
+		{
+			for(int i = 0; i < lengths.Length; i++)
+			{
+				if(lengths[i] < 0)
+				{
+#if !FIRST_PASS
+					throw new java.lang.NegativeArraySizeException();
+#endif
+				}
+			}
+			return MultianewarrayHelper(Type.GetTypeFromHandle(typeHandle).GetElementType(), lengths, 0);
+		}
+
+		private static object MultianewarrayHelper(Type elemType, int[] lengths, int index)
+		{
+			object o = Array.CreateInstance(elemType, lengths[index++]);
+			if(index < lengths.Length)
+			{
+				elemType = elemType.GetElementType();
+				object[] a = (object[])o;
+				for(int i = 0; i < a.Length; i++)
+				{
+					a[i] = MultianewarrayHelper(elemType, lengths, index);
+				}
+			}
+			return o;
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static object multianewarray_ghost(RuntimeTypeHandle typeHandle, int[] lengths)
+		{
+			Type type = Type.GetTypeFromHandle(typeHandle);
+			int rank = 0;
+			while(ReflectUtil.IsVector(type))
+			{
+				rank++;
+				type = type.GetElementType();
+			}
+			object obj = multianewarray(ArrayTypeWrapper.MakeArrayType(typeof(object), rank).TypeHandle, lengths);
+			GhostTag.SetTag(obj, typeHandle);
+			return obj;
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static T[] anewarray_ghost<T>(int length, RuntimeTypeHandle typeHandle)
+		{
+			T[] obj = new T[length];
+			GhostTag.SetTag(obj, typeHandle);
+			return obj;
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static object DynamicMultianewarray(int[] lengths, java.lang.Class clazz)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			Profiler.Count("DynamicMultianewarray");
+			TypeWrapper wrapper = TypeWrapper.FromClass(clazz);
+			object obj = multianewarray(wrapper.TypeAsArrayType.TypeHandle, lengths);
+			if (wrapper.IsGhostArray)
+			{
+				GhostTag.SetTag(obj, wrapper);
+			}
+			return obj;
+#endif
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static object DynamicNewarray(int length, java.lang.Class clazz)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			Profiler.Count("DynamicNewarray");
+			if(length < 0)
+			{
+				throw new java.lang.NegativeArraySizeException();
+			}
+			TypeWrapper wrapper = TypeWrapper.FromClass(clazz);
+			Array obj = Array.CreateInstance(wrapper.TypeAsArrayType, length);
+			if (wrapper.IsGhost || wrapper.IsGhostArray)
+			{
+				GhostTag.SetTag(obj, wrapper.MakeArrayType(1));
+			}
+			return obj;
+#endif
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static void DynamicAastore(object arrayref, int index, object val)
+		{
+#if !FIRST_PASS
+			Profiler.Count("DynamicAastore");
+			((Array)arrayref).SetValue(val, index);
+#endif
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static object DynamicAaload(object arrayref, int index)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			Profiler.Count("DynamicAaload");
+			return ((Array)arrayref).GetValue(index);
+#endif
+		}
+
+		// the sole purpose of this method is to check whether the clazz can be instantiated (but not to actually do it)
+		[DebuggerStepThroughAttribute]
+		public static void DynamicNewCheckOnly(java.lang.Class clazz)
+		{
+#if !FIRST_PASS
+			Profiler.Count("DynamicNewCheckOnly");
+			TypeWrapper wrapper = TypeWrapper.FromClass(clazz);
+			if(wrapper.IsAbstract)
+			{
+				throw new java.lang.InstantiationError(wrapper.Name);
+			}
+			wrapper.RunClassInit();
+#endif
+		}
+
+		private static TypeWrapper LoadTypeWrapper(string clazz, ikvm.@@internal.CallerID callerId)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			try
+			{
+				TypeWrapper context = TypeWrapper.FromClass(callerId.getCallerClass());
+				TypeWrapper wrapper = ClassLoaderWrapper.FromCallerID(callerId).LoadClassByDottedName(clazz);
+				java.lang.ClassLoader loader = callerId.getCallerClassLoader();
+				if(loader != null)
+				{
+					loader.checkPackageAccess(wrapper.ClassObject, callerId.getCallerClass().pd);
+				}
+				if(!wrapper.IsAccessibleFrom(context))
+				{
+					throw new java.lang.IllegalAccessError("Try to access class " + wrapper.Name + " from class " + context.Name);
+				}
+				wrapper.Finish();
+				return wrapper;
+			}
+			catch(RetargetableJavaException x)
+			{
+				throw x.ToJava();
+			}
+#endif
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static java.lang.Class DynamicClassLiteral(string clazz, ikvm.@@internal.CallerID callerId)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			Profiler.Count("DynamicClassLiteral");
+			return LoadTypeWrapper(clazz, callerId).ClassObject;
+#endif
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static object DynamicCast(object obj, java.lang.Class clazz)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			Debug.Assert(obj != null);
+			Profiler.Count("DynamicCast");
+			if (!DynamicInstanceOf(obj, clazz))
+			{
+				throw new java.lang.ClassCastException(NativeCode.ikvm.runtime.Util.GetTypeWrapperFromObject(obj).Name + " cannot be cast to " + clazz.getName());
+			}
+			return obj;
+#endif
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static bool DynamicInstanceOf(object obj, java.lang.Class clazz)
+		{
+#if FIRST_PASS
+			return false;
+#else
+			Debug.Assert(obj != null);
+			Profiler.Count("DynamicInstanceOf");
+			TypeWrapper tw = TypeWrapper.FromClass(clazz);
+			// we have to mimick the bytecode behavior, which allows these .NET-isms to show through
+			if (tw.TypeAsBaseType == typeof(Array))
+			{
+				return obj is Array;
+			}
+			if (tw.TypeAsBaseType == typeof(string))
+			{
+				return obj is string;
+			}
+			if (tw.TypeAsBaseType == typeof(IComparable))
+			{
+				return obj is IComparable;
+			}
+			return tw.IsInstance(obj);
+#endif
+		}
+
+		[DebuggerStepThrough]
+		public static java.lang.invoke.MethodType DynamicLoadMethodType(ref java.lang.invoke.MethodType cache, string sig, ikvm.@@internal.CallerID callerID)
+		{
+			if (cache == null)
+			{
+				DynamicLoadMethodTypeImpl(ref cache, sig, callerID);
+			}
+			return cache;
+		}
+
+		private static void DynamicLoadMethodTypeImpl(ref java.lang.invoke.MethodType cache, string sig, ikvm.@@internal.CallerID callerID)
+		{
+#if !FIRST_PASS
+			try
+			{
+				ClassLoaderWrapper loader = ClassLoaderWrapper.FromCallerID(callerID);
+				TypeWrapper[] args = loader.ArgTypeWrapperListFromSig(sig, LoadMode.LoadOrThrow);
+				java.lang.Class[] ptypes = new java.lang.Class[args.Length];
+				for (int i = 0; i < ptypes.Length; i++)
+				{
+					ptypes[i] = args[i].ClassObject;
+				}
+				Interlocked.CompareExchange(ref cache, java.lang.invoke.MethodType.methodType(loader.RetTypeWrapperFromSig(sig, LoadMode.LoadOrThrow).ClassObject, ptypes), null);
+			}
+			catch (RetargetableJavaException x)
+			{
+				throw x.ToJava();
+			}
+#endif
+		}
+
+		[DebuggerStepThrough]
+		public static java.lang.invoke.MethodHandle DynamicLoadMethodHandle(ref java.lang.invoke.MethodHandle cache, int kind, string clazz, string name, string sig, ikvm.@@internal.CallerID callerID)
+		{
+			if (cache == null)
+			{
+				Interlocked.CompareExchange(ref cache, DynamicLoadMethodHandleImpl(kind, clazz, name, sig, callerID), null);
+			}
+			return cache;
+		}
+
+		private static java.lang.invoke.MethodHandle DynamicLoadMethodHandleImpl(int kind, string clazz, string name, string sig, ikvm.@@internal.CallerID callerID)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			java.lang.Class refc = LoadTypeWrapper(clazz, callerID).ClassObject;
+			try
+			{
+				switch ((ClassFile.RefKind)kind)
+				{
+					case ClassFile.RefKind.getStatic:
+					case ClassFile.RefKind.putStatic:
+					case ClassFile.RefKind.getField:
+					case ClassFile.RefKind.putField:
+						java.lang.Class type = ClassLoaderWrapper.FromCallerID(callerID).FieldTypeWrapperFromSig(sig, LoadMode.LoadOrThrow).ClassObject;
+						return java.lang.invoke.MethodHandleNatives.linkMethodHandleConstant(callerID.getCallerClass(), kind, refc, name, type);
+					default:
+						java.lang.invoke.MethodType mt = null;
+						DynamicLoadMethodType(ref mt, sig, callerID);
+						// HACK linkMethodHandleConstant is broken for MethodHandle.invoke[Exact]
+						if (kind == (int)ClassFile.RefKind.invokeVirtual && refc == CoreClasses.java.lang.invoke.MethodHandle.Wrapper.ClassObject)
+						{
+							switch (name)
+							{
+								case "invokeExact":
+									return java.lang.invoke.MethodHandles.exactInvoker(mt);
+								case "invoke":
+									return java.lang.invoke.MethodHandles.invoker(mt);
+							}
+						}
+						return java.lang.invoke.MethodHandleNatives.linkMethodHandleConstant(callerID.getCallerClass(), kind, refc, name, mt);
+				}
+			}
+			catch (RetargetableJavaException x)
+			{
+				throw x.ToJava();
+			}
+#endif
+		}
+
+		[DebuggerStepThrough]
+		public static T DynamicBinderMemberLookup<T>(int kind, string clazz, string name, string sig, ikvm.@@internal.CallerID callerID)
+			where T : class /* delegate */
+		{
+#if FIRST_PASS
+			return null;
+#else
+			try
+			{
+				java.lang.invoke.MethodHandle mh = DynamicLoadMethodHandleImpl(kind, clazz, name, sig, callerID);
+				return GetDelegateForInvokeExact<T>(java.lang.invoke.MethodHandles.explicitCastArguments(mh, MethodHandleUtil.GetDelegateMethodType(typeof(T))));
+			}
+			catch (java.lang.IncompatibleClassChangeError x)
+			{
+				if (x.getCause() is java.lang.NoSuchMethodException)
+				{
+					throw new java.lang.NoSuchMethodError(x.getCause().Message);
+				}
+				if (x.getCause() is java.lang.NoSuchFieldException)
+				{
+					throw new java.lang.NoSuchFieldError(x.getCause().Message);
+				}
+				if (x.getCause() is java.lang.IllegalAccessException)
+				{
+					throw new java.lang.IllegalAccessError(x.getCause().Message);
+				}
+				throw;
+			}
+#endif
+		}
+
+		[DebuggerStepThrough]
+		public static Delegate DynamicCreateDelegate(object obj, Type delegateType, string name, string sig)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			TypeWrapper tw = TypeWrapper.FromClass(ikvm.runtime.Util.getClassFromObject(obj));
+			MethodWrapper mw = tw.GetMethodWrapper(name, sig, true);
+			if (mw == null || mw.IsStatic || !mw.IsPublic)
+			{
+#if NO_REF_EMIT
+				java.lang.invoke.MethodType methodType = MethodHandleUtil.GetDelegateMethodType(delegateType);
+				if (methodType.parameterCount() > MethodHandleUtil.MaxArity)
+				{
+					throw new NotImplementedException();
+				}
+				java.lang.invoke.MethodHandle exception = java.lang.invoke.MethodHandles.publicLookup()
+					.findConstructor(mw == null || mw.IsStatic ? typeof(java.lang.AbstractMethodError) : typeof(java.lang.IllegalAccessError),
+						java.lang.invoke.MethodType.methodType(typeof(void), typeof(string)))
+					.bindTo(tw.Name + ".Invoke" + sig);
+				return Delegate.CreateDelegate(delegateType,
+						java.lang.invoke.MethodHandles.dropArguments(
+							java.lang.invoke.MethodHandles.foldArguments(java.lang.invoke.MethodHandles.throwException(methodType.returnType(), exception.type().returnType()), exception),
+							0, methodType.parameterArray()).vmtarget, "Invoke");
+#else
+				MethodInfo invoke = delegateType.GetMethod("Invoke");
+				ParameterInfo[] parameters = invoke.GetParameters();
+				Type[] parameterTypes = new Type[parameters.Length + 1];
+				parameterTypes[0] = typeof(object);
+				for (int i = 0; i < parameters.Length; i++)
+				{
+					parameterTypes[i + 1] = parameters[i].ParameterType;
+				}
+				System.Reflection.Emit.DynamicMethod dm = new System.Reflection.Emit.DynamicMethod("Invoke", invoke.ReturnType, parameterTypes);
+				CodeEmitter ilgen = CodeEmitter.Create(dm);
+				ilgen.Emit(System.Reflection.Emit.OpCodes.Ldstr, tw.Name + ".Invoke" + sig);
+				ClassLoaderWrapper.GetBootstrapClassLoader()
+					.LoadClassByDottedName(mw == null || mw.IsStatic ? "java.lang.AbstractMethodError" : "java.lang.IllegalAccessError")
+					.GetMethodWrapper("<init>", "(Ljava.lang.String;)V", false)
+					.EmitNewobj(ilgen);
+				ilgen.Emit(System.Reflection.Emit.OpCodes.Throw);
+				ilgen.DoEmit();
+				return dm.CreateDelegate(delegateType, obj);
+#endif
+			}
+			else
+			{
+				mw.ResolveMethod();
+				return Delegate.CreateDelegate(delegateType, obj, (MethodInfo)mw.GetMethod());
+			}
+#endif
+		}
+
+		[DebuggerStepThrough]
+		public static ikvm.@@internal.CallerID DynamicCallerID(object capability)
+		{
+			return ((DynamicCallerIDProvider)capability).GetCallerID();
+		}
+
+		[DebuggerStepThrough]
+		public static java.lang.invoke.MethodHandle DynamicEraseInvokeExact(java.lang.invoke.MethodHandle mh, java.lang.invoke.MethodType expected, java.lang.invoke.MethodType target)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			if (mh.type() != expected)
+			{
+				throw new java.lang.invoke.WrongMethodTypeException();
+			}
+			return java.lang.invoke.MethodHandles.explicitCastArguments(mh, target);
+#endif
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static int f2i(float f)
+		{
+			if (f > int.MinValue && f < int.MaxValue)
+			{
+				return (int)f;
+			}
+			if (f <= int.MinValue)
+			{
+				return int.MinValue;
+			}
+			if (f >= int.MaxValue)
+			{
+				return int.MaxValue;
+			}
+			return 0;
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static long f2l(float f)
+		{
+			if (f > long.MinValue && f < long.MaxValue)
+			{
+				return (long)f;
+			}
+			if (f <= long.MinValue)
+			{
+				return long.MinValue;
+			}
+			if (f >= long.MaxValue)
+			{
+				return long.MaxValue;
+			}
+			return 0;
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static int d2i(double d)
+		{
+			if (d > int.MinValue && d < int.MaxValue)
+			{
+				return (int)d;
+			}
+			if (d <= int.MinValue)
+			{
+				return int.MinValue;
+			}
+			if (d >= int.MaxValue)
+			{
+				return int.MaxValue;
+			}
+			return 0;
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static long d2l(double d)
+		{
+			if (d > long.MinValue && d < long.MaxValue)
+			{
+				return (long)d;
+			}
+			if (d <= long.MinValue)
+			{
+				return long.MinValue;
+			}
+			if (d >= long.MaxValue)
+			{
+				return long.MaxValue;
+			}
+			return 0;
+		}
+
+		// This is used by static JNI and synchronized methods that need a class object
+		[DebuggerStepThroughAttribute]
+		public static object GetClassFromTypeHandle(RuntimeTypeHandle typeHandle)
+		{
+			return NativeCode.ikvm.runtime.Util.getClassFromTypeHandle(typeHandle);
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static void arraycopy(object src, int srcStart, object dest, int destStart, int len)
+		{
+#if !FIRST_PASS
+			// If the two arrays are the same, we can use the fast path, but we're also required to do so,
+			// to get the required memmove semantics.
+			if(src == dest)
+			{
+				try
+				{
+					arraycopy_fast((Array)src, srcStart, (Array)dest, destStart, len);
+					return;
+				}
+				catch(InvalidCastException)
+				{
+					throw new java.lang.ArrayStoreException();
+				}
+			}
+			else if(src == null || dest == null)
+			{
+				throw new java.lang.NullPointerException();
+			}
+			else if(len < 0)
+			{
+				throw new java.lang.ArrayIndexOutOfBoundsException();
+			}
+			else
+			{
+				object[] src1 = src as object[];
+				object[] dst1 = dest as object[];
+				if(src1 != null && dst1 != null)
+				{
+					// for small copies, don't bother comparing the types as this is relatively expensive
+					if(len > 50 && src.GetType() == dest.GetType())
+					{
+						arraycopy_fast(src1, srcStart, dst1, destStart, len);
+						return;
+					}
+					else
+					{
+						for(; len > 0; len--)
+						{
+							// NOTE we don't need to catch ArrayTypeMismatchException & IndexOutOfRangeException, because
+							// they automatically get converted to the Java equivalents anyway.
+							dst1[destStart++] = src1[srcStart++];
+						}
+						return;
+					}
+				}
+				else if(src.GetType() != dest.GetType() &&
+						(IsPrimitiveArrayType(src.GetType()) || IsPrimitiveArrayType(dest.GetType())))
+				{
+					// we don't want to allow copying a primitive into an object array!
+					throw new java.lang.ArrayStoreException();
+				}
+				else
+				{
+					try
+					{
+						arraycopy_fast((Array)src, srcStart, (Array)dest, destStart, len);
+						return;
+					}
+					catch(InvalidCastException)
+					{
+						throw new java.lang.ArrayStoreException();
+					}
+				}
+			}
+#endif // !FIRST_PASS
+		}
+
+		private static bool IsPrimitiveArrayType(Type type)
+		{
+			return type.IsArray && ClassLoaderWrapper.GetWrapperFromType(type.GetElementType()).IsPrimitive;
+		}
+		
+		[DebuggerStepThroughAttribute]
+		public static void arraycopy_fast(Array src, int srcStart, Array dest, int destStart, int len)
+		{
+#if !FIRST_PASS
+			try 
+			{
+				Array.Copy(src, srcStart, dest, destStart, len);
+			}
+			catch(ArgumentNullException)
+			{
+				throw new java.lang.NullPointerException();
+			}
+			catch(ArgumentException) 
+			{
+				throw new java.lang.ArrayIndexOutOfBoundsException();
+			}
+#endif // !FIRST_PASS
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static void arraycopy_primitive_8(Array src, int srcStart, Array dest, int destStart, int len)
+		{
+#if !FIRST_PASS
+			try 
+			{
+				checked
+				{
+					Buffer.BlockCopy(src, srcStart * 8, dest, destStart * 8, len * 8);
+					return;
+				}
+			}
+			catch(ArgumentNullException)
+			{
+				throw new java.lang.NullPointerException();
+			}
+			catch(OverflowException)
+			{
+				throw new java.lang.ArrayIndexOutOfBoundsException();
+			}
+			catch(ArgumentException) 
+			{
+				throw new java.lang.ArrayIndexOutOfBoundsException();
+			}
+#endif // !FIRST_PASS
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static void arraycopy_primitive_4(Array src, int srcStart, Array dest, int destStart, int len)
+		{
+#if !FIRST_PASS
+			try 
+			{
+				checked
+				{
+					Buffer.BlockCopy(src, srcStart * 4, dest, destStart * 4, len * 4);
+					return;
+				}
+			}
+			catch(ArgumentNullException)
+			{
+				throw new java.lang.NullPointerException();
+			}
+			catch(OverflowException)
+			{
+				throw new java.lang.ArrayIndexOutOfBoundsException();
+			}
+			catch(ArgumentException) 
+			{
+				throw new java.lang.ArrayIndexOutOfBoundsException();
+			}
+#endif // !FIRST_PASS
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static void arraycopy_primitive_2(Array src, int srcStart, Array dest, int destStart, int len)
+		{
+#if !FIRST_PASS
+			try 
+			{
+				checked
+				{
+					Buffer.BlockCopy(src, srcStart * 2, dest, destStart * 2, len * 2);
+					return;
+				}
+			}
+			catch(ArgumentNullException)
+			{
+				throw new java.lang.NullPointerException();
+			}
+			catch(OverflowException)
+			{
+				throw new java.lang.ArrayIndexOutOfBoundsException();
+			}
+			catch(ArgumentException) 
+			{
+				throw new java.lang.ArrayIndexOutOfBoundsException();
+			}
+#endif // !FIRST_PASS
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static void arraycopy_primitive_1(Array src, int srcStart, Array dest, int destStart, int len)
+		{
+#if !FIRST_PASS
+			try 
+			{
+				Buffer.BlockCopy(src, srcStart, dest, destStart, len);
+				return;
+			}
+			catch(ArgumentNullException)
+			{
+				throw new java.lang.NullPointerException();
+			}
+			catch(OverflowException)
+			{
+				throw new java.lang.ArrayIndexOutOfBoundsException();
+			}
+			catch(ArgumentException) 
+			{
+				throw new java.lang.ArrayIndexOutOfBoundsException();
+			}
+#endif // !FIRST_PASS
+		}
+
+		[HideFromJava]
+		public static void VerboseCastFailure(RuntimeTypeHandle typeHandle, object obj)
+		{
+#if !FIRST_PASS
+			Type t1 = obj.GetType();
+			Type t2 = Type.GetTypeFromHandle(typeHandle);
+			string msg;
+			if(t1.Assembly.FullName == t2.Assembly.FullName && t1.Assembly.Location != t2.Assembly.Location)
+			{
+				string l1 = t1.Assembly.Location;
+				string l2 = t2.Assembly.Location;
+				if(l1 == "")
+				{
+					l1 = "unknown location";
+				}
+				if(l2 == "")
+				{
+					l2 = "unknown location";
+				}
+				msg = String.Format("Object of type \"{0}\" loaded from {1} cannot be cast to \"{2}\" loaded from {3}", t1.AssemblyQualifiedName, l1, t2.AssemblyQualifiedName, l2);
+			}
+			else
+			{
+				msg = String.Format("Object of type \"{0}\" cannot be cast to \"{1}\"", t1.AssemblyQualifiedName, t2.AssemblyQualifiedName);
+			}
+			throw new java.lang.ClassCastException(msg);
+#endif // !FIRST_PASS
+		}
+
+		public static bool SkipFinalizer()
+		{
+#if FIRST_PASS
+			return false;
+#else
+			return Environment.HasShutdownStarted && !java.lang.Shutdown.runFinalizersOnExit;
+#endif
+		}
+
+		public static long VolatileRead(ref long v)
+		{
+#if NO_REF_EMIT && !FIRST_PASS
+			lock (VolatileLongDoubleFieldWrapper.lockObject)
+			{
+				return v;
+			}
+#else
+			return Interlocked.Read(ref v);
+#endif
+		}
+
+		public static void VolatileWrite(ref long v, long newValue)
+		{
+#if NO_REF_EMIT && !FIRST_PASS
+			lock (VolatileLongDoubleFieldWrapper.lockObject)
+			{
+				v = newValue;
+			}
+#else
+			Interlocked.Exchange(ref v, newValue);
+#endif
+		}
+
+		public static double VolatileRead(ref double v)
+		{
+#if NO_REF_EMIT && !FIRST_PASS
+			lock (VolatileLongDoubleFieldWrapper.lockObject)
+			{
+				return v;
+			}
+#else
+			return Interlocked.CompareExchange(ref v, 0.0, 0.0);
+#endif
+		}
+
+		public static void VolatileWrite(ref double v, double newValue)
+		{
+#if NO_REF_EMIT && !FIRST_PASS
+			lock (VolatileLongDoubleFieldWrapper.lockObject)
+			{
+				v = newValue;
+			}
+#else
+			Interlocked.Exchange(ref v, newValue);
+#endif
+		}
+
+		[System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+		public static void InitializeModule(Module module)
+		{
+			Assembly asm = Assembly.GetCallingAssembly();
+			if (module.Assembly != asm)
+			{
+				throw new ArgumentOutOfRangeException();
+			}
+			object classLoader = AssemblyClassLoader.FromAssembly(asm).GetJavaClassLoader();
+			Action<Module> init = (Action<Module>)Delegate.CreateDelegate(typeof(Action<Module>), classLoader, "InitializeModule", false, false);
+			if (init != null)
+			{
+				init(module);
+			}
+		}
+
+		public static T GetDotNetEnumField<T>(string name)
+#if !FIRST_PASS
+			where T : java.lang.Enum
+#endif
+		{
+#if FIRST_PASS
+			return default(T);
+#else
+			try
+			{
+				return (T)java.lang.Enum.valueOf(ikvm.@@internal.ClassLiteral<T>.Value, name);
+			}
+			catch (java.lang.IllegalArgumentException)
+			{
+				throw new java.lang.NoSuchFieldError(ikvm.@@internal.ClassLiteral<T>.Value.getName() + "." + name);
+			}
+#endif
+		}
+
+		[Flags]
+		public enum MapFlags
+		{
+			None = 0,
+			NoRemapping = 1,
+			Unused = 2,
+		}
+
+		[HideFromJava]
+		public static T MapException<T>(Exception x, MapFlags mode) where T : Exception
+		{
+			return ExceptionHelper.MapException<T>(x, (mode & MapFlags.NoRemapping) == 0, (mode & MapFlags.Unused) != 0);
+		}
+
+		[HideFromJava]
+		public static Exception DynamicMapException(Exception x, MapFlags mode, java.lang.Class exceptionClass)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			TypeWrapper exceptionTypeWrapper = TypeWrapper.FromClass(exceptionClass);
+			mode &= ~MapFlags.NoRemapping;
+			if (exceptionTypeWrapper.IsSubTypeOf(CoreClasses.cli.System.Exception.Wrapper))
+			{
+				mode |= MapFlags.NoRemapping;
+			}
+			Type exceptionType = exceptionTypeWrapper == CoreClasses.java.lang.Throwable.Wrapper ? typeof(System.Exception) : exceptionTypeWrapper.TypeAsBaseType;
+			return (Exception)ByteCodeHelperMethods.mapException.MakeGenericMethod(exceptionType).Invoke(null, new object[] { x, mode });
+#endif
+		}
+
+		public static T GetDelegateForInvokeExact<T>(global::java.lang.invoke.MethodHandle h)
+			where T : class
+		{
+#if FIRST_PASS
+			return null;
+#else
+			T del = h._invokeExactDelegate as T;
+			if (del == null)
+			{
+				del = MethodHandleUtil.GetDelegateForInvokeExact<T>(h);
+			}
+			return del;
+#endif
+		}
+
+		public static T GetDelegateForInvoke<T>(global::java.lang.invoke.MethodHandle h, java.lang.invoke.MethodType realType, ref InvokeCache<T> cache)
+			where T : class
+		{
+#if FIRST_PASS
+			return null;
+#else
+			T del;
+			if (cache.Type == h.type() && (del = (h.isVarargsCollector() ? cache.varArg : cache.fixedArg)) != null)
+			{
+				return del;
+			}
+			del = h.form.vmentry.vmtarget as T;
+			if (del == null)
+			{
+				global::java.lang.invoke.MethodHandle adapter = global::java.lang.invoke.MethodHandles.exactInvoker(h.type());
+				if (h.isVarargsCollector())
+				{
+					adapter = adapter.asVarargsCollector(h.type().parameterType(h.type().parameterCount() - 1));
+				}
+				// if realType is set, the delegate contains erased unloadable types
+				if (realType != null)
+				{
+					adapter = adapter.asType(realType.insertParameterTypes(0, ikvm.@@internal.ClassLiteral<java.lang.invoke.MethodHandle>.Value)).asFixedArity();
+				}
+				adapter = adapter.asType(MethodHandleUtil.GetDelegateMethodType(typeof(T)));
+				del = GetDelegateForInvokeExact<T>(adapter);
+				if (cache.TrySetType(h.type()))
+				{
+					if (h.isVarargsCollector())
+					{
+						cache.varArg = del;
+					}
+					else
+					{
+						cache.fixedArg = del;
+					}
+				}
+			}
+			return del;
+#endif
+		}
+
+		public static T GetDelegateForInvokeBasic<T>(java.lang.invoke.MethodHandle h)
+			where T : class
+		{
+#if FIRST_PASS
+			return null;
+#else
+			T del = h.form.vmentry.vmtarget as T;
+			if (del == null)
+			{
+				del = MethodHandleUtil.GetVoidAdapter(h.form.vmentry) as T;
+			}
+			return del;
+#endif
+		}
+
+		public static java.lang.invoke.MethodType LoadMethodType<T>()
+			where T : class // Delegate
+		{
+#if FIRST_PASS
+			return null;
+#else
+			return MethodHandleUtil.GetDelegateMethodType(typeof(T));
+#endif
+		}
+
+		[HideFromJava]
+		public static void LinkIndyCallSite<T>(ref IndyCallSite<T> site, java.lang.invoke.CallSite cs, Exception x)
+			where T : class // Delegate
+		{
+#if !FIRST_PASS
+			// when a CallSite is first constructed, it doesn't call MethodHandleNatives.setCallSiteTargetNormal(),
+			// so we have to check if we need to initialize it here (i.e. attach an IndyCallSite<T> to it)
+			if (cs != null)
+			{
+				if (cs.ics == null)
+				{
+					Java_java_lang_invoke_MethodHandleNatives.InitializeCallSite(cs);
+				}
+				lock (cs.ics)
+				{
+					cs.ics.SetTarget(cs.target);
+				}
+			}
+			IndyCallSite<T> ics;
+			if (x != null || cs == null || (ics = cs.ics as IndyCallSite<T>) == null)
+			{
+				x = MapException<Exception>(x ?? (cs == null
+					? (Exception)new java.lang.ClassCastException("bootstrap method failed to produce a CallSite")
+					: new java.lang.invoke.WrongMethodTypeException()), MapFlags.None);
+				java.lang.invoke.MethodType type = LoadMethodType<T>();
+				java.lang.invoke.MethodHandle exc = x is java.lang.BootstrapMethodError
+					? java.lang.invoke.MethodHandles.constant(typeof(java.lang.BootstrapMethodError), x)
+					: java.lang.invoke.MethodHandles.publicLookup().findConstructor(typeof(java.lang.BootstrapMethodError), java.lang.invoke.MethodType.methodType(typeof(void), typeof(string), typeof(Exception)))
+						.bindTo("call site initialization exception").bindTo(x);
+				ics = new IndyCallSite<T>();
+				((IIndyCallSite)ics).SetTarget(
+					java.lang.invoke.MethodHandles.dropArguments(
+						java.lang.invoke.MethodHandles.foldArguments(
+							java.lang.invoke.MethodHandles.throwException(type.returnType(), typeof(java.lang.BootstrapMethodError)),
+								exc),
+						0, type.parameterArray()));
+			}
+			IndyCallSite<T> curr = site;
+			if (curr.IsBootstrap)
+			{
+				Interlocked.CompareExchange(ref site, ics, curr);
+			}
+#endif
+		}
+
+		[HideFromJava]
+		public static void DynamicLinkIndyCallSite<T>(ref IndyCallSite<T> site, java.lang.invoke.CallSite cs, Exception x, string signature, ikvm.@@internal.CallerID callerID)
+			where T : class // Delegate
+		{
+#if !FIRST_PASS
+			// when a CallSite is first constructed, it doesn't call MethodHandleNatives.setCallSiteTargetNormal(),
+			// so we have to check if we need to initialize it here (i.e. attach an IndyCallSite<T> to it)
+			if (cs != null)
+			{
+				if (cs.ics == null)
+				{
+					Java_java_lang_invoke_MethodHandleNatives.InitializeCallSite(cs);
+				}
+				lock (cs.ics)
+				{
+					cs.ics.SetTarget(cs.target);
+				}
+			}
+			java.lang.invoke.MethodType typeCache = null;
+			IndyCallSite<T> ics;
+			if (x != null || cs == null || cs.type() != DynamicLoadMethodType(ref typeCache, signature, callerID))
+			{
+				x = MapException<Exception>(x ?? (cs == null
+					? (Exception)new java.lang.ClassCastException("bootstrap method failed to produce a CallSite")
+					: new java.lang.invoke.WrongMethodTypeException()), MapFlags.None);
+				java.lang.invoke.MethodType type = LoadMethodType<T>();
+				java.lang.invoke.MethodHandle exc = x is java.lang.BootstrapMethodError
+					? java.lang.invoke.MethodHandles.constant(typeof(java.lang.BootstrapMethodError), x)
+					: java.lang.invoke.MethodHandles.publicLookup().findConstructor(typeof(java.lang.BootstrapMethodError), java.lang.invoke.MethodType.methodType(typeof(void), typeof(string), typeof(Exception)))
+						.bindTo("call site initialization exception").bindTo(x);
+				ics = new IndyCallSite<T>();
+				((IIndyCallSite)ics).SetTarget(
+					java.lang.invoke.MethodHandles.dropArguments(
+						java.lang.invoke.MethodHandles.foldArguments(
+							java.lang.invoke.MethodHandles.throwException(type.returnType(), typeof(java.lang.BootstrapMethodError)),
+								exc),
+						0, type.parameterArray()));
+			}
+			else
+			{
+				ics = new IndyCallSite<T>();
+				((IIndyCallSite)ics).SetTarget(cs.dynamicInvoker().asType(LoadMethodType<T>()));
+			}
+			IndyCallSite<T> curr = site;
+			if (curr.IsBootstrap)
+			{
+				Interlocked.CompareExchange(ref site, ics, curr);
+			}
+#endif
+		}
+	}
+
+	interface IIndyCallSite
+	{
+		void SetTarget(java.lang.invoke.MethodHandle mh);
+	}
+
+	public sealed class IndyCallSite<T>
+		: IIndyCallSite
+		where T : class // Delegate
+	{
+		internal readonly bool IsBootstrap;
+		private volatile T target;
+
+		internal IndyCallSite()
+		{
+		}
+
+		internal IndyCallSite(T target, bool bootstrap)
+		{
+			this.IsBootstrap = bootstrap;
+			this.target = target;
+		}
+
+		void IIndyCallSite.SetTarget(java.lang.invoke.MethodHandle mh)
+		{
+#if !FIRST_PASS
+			target = ByteCodeHelper.GetDelegateForInvokeExact<T>(mh);
+#endif
+		}
+		
+		public static IndyCallSite<T> CreateBootstrap(T bootstrap)
+		{
+			return new IndyCallSite<T>(bootstrap, true);
+		}
+
+		public T GetTarget()
+		{
+			return target;
+		}
+	}
+
+	public struct InvokeCache<T>
+		where T : class
+	{
+#if CLASSGC
+		private WeakReference weakRef;
+
+		internal java.lang.invoke.MethodType Type
+		{
+			get { return weakRef == null ? null : (java.lang.invoke.MethodType)weakRef.Target; }
+		}
+
+		internal bool TrySetType(java.lang.invoke.MethodType newType)
+		{
+			if (weakRef == null)
+			{
+				return Interlocked.CompareExchange(ref weakRef, new WeakReference(newType), null) == null;
+			}
+			return Type == newType;
+		}
+#else
+		private java.lang.invoke.MethodType type;
+
+		internal java.lang.invoke.MethodType Type
+		{
+			get { return type; }
+		}
+
+		internal bool TrySetType(java.lang.invoke.MethodType newType)
+		{
+			Interlocked.CompareExchange(ref type, newType, null);
+			return type == newType;
+		}
+#endif
+		internal T fixedArg;
+		internal T varArg;
+	}
+
+	[StructLayout(LayoutKind.Explicit)]
+	public struct DoubleConverter
+	{
+		[FieldOffset(0)]
+		private double d;
+		[FieldOffset(0)]
+		private long l;
+
+		public static long ToLong(double value, ref DoubleConverter converter)
+		{
+			converter.d = value;
+			return converter.l;
+		}
+
+		public static double ToDouble(long value, ref DoubleConverter converter)
+		{
+			converter.l = value;
+			return converter.d;
+		}
+	}
+
+	[StructLayout(LayoutKind.Explicit)]
+	public struct FloatConverter
+	{
+		[FieldOffset(0)]
+		private float f;
+		[FieldOffset(0)]
+		private int i;
+
+		public static int ToInt(float value, ref FloatConverter converter)
+		{
+			converter.f = value;
+			return converter.i;
+		}
+
+		public static float ToFloat(int value, ref FloatConverter converter)
+		{
+			converter.i = value;
+			return converter.f;
+		}
+	}
+
+	public struct MHA<T1, T2, T3, T4, T5, T6, T7, T8>
+	{
+		public T1 t1;
+		public T2 t2;
+		public T3 t3;
+		public T4 t4;
+		public T5 t5;
+		public T6 t6;
+		public T7 t7;
+		public T8 t8;
+
+		public MHA(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8)
+		{
+			this.t1 = t1;
+			this.t2 = t2;
+			this.t3 = t3;
+			this.t4 = t4;
+			this.t5 = t5;
+			this.t6 = t6;
+			this.t7 = t7;
+			this.t8 = t8;
+		}
+	}
+
+	public delegate void MHV();
+	public delegate void MHV<T1>(T1 t1);
+	public delegate void MHV<T1, T2>(T1 t1, T2 t2);
+	public delegate void MHV<T1, T2, T3>(T1 t1, T2 t2, T3 t3);
+	public delegate void MHV<T1, T2, T3, T4>(T1 t1, T2 t2, T3 t3, T4 t4);
+	public delegate void MHV<T1, T2, T3, T4, T5>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5);
+	public delegate void MHV<T1, T2, T3, T4, T5, T6>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6);
+	public delegate void MHV<T1, T2, T3, T4, T5, T6, T7>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7);
+	public delegate void MHV<T1, T2, T3, T4, T5, T6, T7, T8>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8);
+
+	public delegate TResult MH<TResult>();
+	public delegate TResult MH<T1, TResult>(T1 t1);
+	public delegate TResult MH<T1, T2, TResult>(T1 t1, T2 t2);
+	public delegate TResult MH<T1, T2, T3, TResult>(T1 t1, T2 t2, T3 t3);
+	public delegate TResult MH<T1, T2, T3, T4, TResult>(T1 t1, T2 t2, T3 t3, T4 t4);
+	public delegate TResult MH<T1, T2, T3, T4, T5, TResult>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5);
+	public delegate TResult MH<T1, T2, T3, T4, T5, T6, TResult>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6);
+	public delegate TResult MH<T1, T2, T3, T4, T5, T6, T7, TResult>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7);
+	public delegate TResult MH<T1, T2, T3, T4, T5, T6, T7, T8, TResult>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8);
+
+	public static class LiveObjectHolder<T>
+	{
+		public static object[] values;
+	}
+}
+@
+
+
+1.100
+log
+@Bug fix. Handle unloadable type in MH.invoke() signature.
+@
+text
+@d319 1
+a319 1
+				TypeWrapper[] args = loader.ArgTypeWrapperListFromSig(sig);
+d325 1
+a325 1
+				Interlocked.CompareExchange(ref cache, java.lang.invoke.MethodType.methodType(loader.RetTypeWrapperFromSig(sig).ClassObject, ptypes), null);
+d358 1
+a358 1
+						java.lang.Class type = ClassLoaderWrapper.FromCallerID(callerID).FieldTypeWrapperFromSig(sig).ClassObject;
+@
+
+
+1.99
+log
+@Bug fix. Late bound delegate signature conversion should use explicitCastArguments instead of asType to handle varargs correctly.
+@
+text
+@d934 1
+a934 1
+		public static T GetDelegateForInvoke<T>(global::java.lang.invoke.MethodHandle h, ref InvokeCache<T> cache)
+d953 5
+@
+
+
+1.98
+log
+@Changed dynamic CallerID implementation to use only immutable CallerID objects. If a CallerID is passed along downstream, it should not start returning a different caller. Also simplified host caller id.
+@
+text
+@d394 1
+a394 1
+				return GetDelegateForInvokeExact<T>(mh.asType(MethodHandleUtil.GetDelegateMethodType(typeof(T))));
+@
+
+
+1.97
+log
+@Bug fix. Late bound instanceof and castclass should behave the same as regular versions (with respect to type system holes caused by .NET types).
+@
+text
+@d374 1
+a374 7
+						java.lang.Class caller = callerID.getCallerClass();
+						DynamicTypeWrapper.FinishContext.HostCallerID hostCallerID = callerID as DynamicTypeWrapper.FinishContext.HostCallerID;
+						if (hostCallerID != null)
+						{
+							caller = hostCallerID.host.ClassObject;
+						}
+						return java.lang.invoke.MethodHandleNatives.linkMethodHandleConstant(caller, kind, refc, name, mt);
+d469 6
+@
+
+
+1.96
+log
+@Bug fix. Handle late-bound MethodHandle.invokeExact() with unloadable type in signature.
+@
+text
+@d285 15
+a299 1
+			return TypeWrapper.FromClass(clazz).IsInstance(obj);
+@
+
+
+1.95
+log
+@Bug fix. Allow invokedynamic with unloadable type in signature.
+@
+text
+@d460 14
+@
+
+
+1.94
+log
+@Bug fix. When catching a dynamically loaded .NET exception type the exception should not be remapped.
+@
+text
+@d1012 51
+@
+
+
+1.93
+log
+@Bug fix. Dynamically created ghost arrays should get tagged.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002-2014 Jeroen Frijters
+d874 17
+@
+
+
+1.92
+log
+@Since OpenJDK 8 it is possible for the bootclassloader to use MethodHandles, so we need to guard against a null class loader.
+@
+text
+@d157 6
+a162 1
+			return multianewarray(wrapper.TypeAsArrayType.TypeHandle, lengths);
+d178 6
+a183 1
+			return Array.CreateInstance(wrapper.TypeAsArrayType, length);
+@
+
+
+1.91
+log
+@Allow classes defined by Unsafe.defineAnonymousClass() access to private methods of their host class.
+@
+text
+@d221 5
+a225 1
+				callerId.getCallerClassLoader().checkPackageAccess(wrapper.ClassObject, callerId.getCallerClass().pd);
+@
+
+
+1.90
+log
+@Integrated OpenJDK 7u40 JSR-292 implementation (aka LambdaForms).
+@
+text
+@d346 7
+a352 1
+						return java.lang.invoke.MethodHandleNatives.linkMethodHandleConstant(callerID.getCallerClass(), kind, refc, name, mt);
+@
+
+
+1.89
+log
+@Use standard MethodHandle combinators to throw BootstrapMethodError, instead of cheating with implementation specifics.
+@
+text
+@a320 6
+			java.lang.invoke.MethodHandles.Lookup lookup = new java.lang.invoke.MethodHandles.Lookup(callerID.getCallerClass(),
+				java.lang.invoke.MethodHandles.Lookup.PUBLIC |
+				java.lang.invoke.MethodHandles.Lookup.PRIVATE |
+				java.lang.invoke.MethodHandles.Lookup.PROTECTED |
+				java.lang.invoke.MethodHandles.Lookup.PACKAGE,
+				true);
+d331 1
+a331 13
+						switch ((ClassFile.RefKind)kind)
+						{
+							case ClassFile.RefKind.getStatic:
+								return lookup.findStaticGetter(refc, name, type);
+							case ClassFile.RefKind.putStatic:
+								return lookup.findStaticSetter(refc, name, type);
+							case ClassFile.RefKind.getField:
+								return lookup.findGetter(refc, name, type);
+							case ClassFile.RefKind.putField:
+								return lookup.findSetter(refc, name, type);
+							default:
+								throw new InvalidOperationException();
+						}
+d335 2
+a336 1
+						switch ((ClassFile.RefKind)kind)
+d338 7
+a344 12
+							case ClassFile.RefKind.invokeInterface:
+								return lookup.findVirtual(refc, name, mt);
+							case ClassFile.RefKind.invokeSpecial:
+								return lookup.findSpecial(refc, name, mt, callerID.getCallerClass());
+							case ClassFile.RefKind.invokeStatic:
+								return lookup.findStatic(refc, name, mt);
+							case ClassFile.RefKind.invokeVirtual:
+								return lookup.findVirtual(refc, name, mt);
+							case ClassFile.RefKind.newInvokeSpecial:
+								return lookup.findConstructor(refc, mt);
+							default:
+								throw new InvalidOperationException();
+d346 1
+a352 4
+			catch (java.lang.ReflectiveOperationException x)
+			{
+				throw new java.lang.IncompatibleClassChangeError().initCause(x);
+			}
+d366 1
+a366 2
+				return mh.vmtarget as T
+					?? (T)mh.asType(MethodHandleUtil.GetDelegateMethodType(typeof(T))).vmtarget;
+d860 1
+a860 1
+			T del = h.vmtarget as T;
+d863 1
+a863 1
+				throw new global::java.lang.invoke.WrongMethodTypeException();
+d880 1
+a880 1
+			del = h.vmtarget as T;
+d888 2
+a889 1
+				del = (T)adapter.asType(MethodHandleUtil.GetDelegateMethodType(typeof(T))).vmtarget;
+d906 15
+d936 13
+d960 2
+a961 1
+				ics = new IndyCallSite<T>((T)
+d966 1
+a966 3
+						0, type.parameterArray())
+					.vmtarget,
+					false);
+d977 5
+d983 1
+a983 3
+#if !FIRST_PASS
+		: java.lang.invoke.CallSite.IndyCallSite
+#endif
+d999 2
+d1002 2
+a1003 3
+		void java.lang.invoke.CallSite.IndyCallSite.setTarget(object target)
+		{
+			this.target = (T)target;
+d1005 1
+a1005 2
+#endif
+
+@
+
+
+1.88
+log
+@Removed constant MethodHandle optimization to make it easier to integrate LambdaForm.
+@
+text
+@a940 11
+#if !FIRST_PASS
+		sealed class ConstantMethodHandle : java.lang.invoke.MethodHandle
+		{
+			internal ConstantMethodHandle(Delegate del)
+				: base(MethodHandleUtil.GetDelegateMethodType(del.GetType()))
+			{
+				this.vmtarget = del;
+			}
+		}
+#endif
+
+d953 4
+d961 1
+a961 1
+								new ConstantMethodHandle((MH<Exception, java.lang.BootstrapMethodError>)CreateBootstrapException).bindTo(x)),
+a972 12
+
+#if !FIRST_PASS
+		[HideFromJava]
+		private static java.lang.BootstrapMethodError CreateBootstrapException(Exception x)
+		{
+			if (x is java.lang.BootstrapMethodError)
+			{
+				return (java.lang.BootstrapMethodError)x;
+			}
+			return new java.lang.BootstrapMethodError("call site initialization exception", x);
+		}
+#endif
+@
+
+
+1.87
+log
+@Bug fix. MethodHandle.invoke() cache should consider vararg-ness of the MethodHandle.
+@
+text
+@a951 9
+		public static java.lang.invoke.MethodHandle MethodHandleFromDelegate(Delegate del)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			return new ConstantMethodHandle(del);
+#endif
+		}
+
+@
+
+
+1.86
+log
+@If CLASSGC is enabled, we should use a WeakReference to cache the MethodType for the MethodHandle.invoke() cache.
+@
+text
+@d901 2
+a902 1
+			if (cache.Type == h.type() && cache.del != null)
+d904 1
+a904 1
+				return cache.del;
+d906 1
+a906 1
+			T del = h.vmtarget as T;
+d917 8
+a924 1
+					cache.del = del;
+d1073 2
+a1074 1
+		internal T del;
+@
+
+
+1.85
+log
+@Added Unsafe.defineAnonymousClass().
+@
+text
+@d901 1
+a901 1
+			if (cache.type == h.type() && cache.del != null)
+d914 1
+a914 1
+				if (Interlocked.CompareExchange(ref cache.type, h.type(), null) == null)
+d1035 30
+a1064 1
+		internal global::java.lang.invoke.MethodType type;
+@
+
+
+1.84
+log
+@Make all byte code helper methods available during in first-pass version of IKVM.Runtime.dll and changed compiler to check that all methods are available.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002-2013 Jeroen Frijters
+d1124 5
+@
+
+
+1.83
+log
+@Added a (partial) NO_REF_EMIT implementation of the DynamicCreateDelegate error hander.
+@
+text
+@a148 1
+#if !FIRST_PASS
+d152 3
+d158 1
+d164 3
+d174 1
+d180 1
+d183 1
+d189 3
+d194 1
+d201 1
+d209 1
+d239 3
+d244 1
+d250 3
+d260 1
+d266 3
+d272 1
+d416 3
+d463 1
+a464 19
+#else
+		[DebuggerStepThroughAttribute]
+		public static object DynamicCast(object obj, RuntimeTypeHandle type, string clazz)
+		{
+			return null;
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static bool DynamicInstanceOf(object obj, RuntimeTypeHandle type, string clazz)
+		{
+			return false;
+		}
+
+		[DebuggerStepThrough]
+		public static Delegate DynamicCreateDelegate(object obj, Type delegateType)
+		{
+			return null;
+		}
+#endif //!FIRST_PASS
+@
+
+
+1.82
+log
+@Added NO_REF_EMIT conditional compilation support for reflection.
+@
+text
+@d393 15
+d426 1
+@
+
+
+1.81
+log
+@Optimized f2i, f2l, d2i and d2l.
+@
+text
+@d757 6
+d764 1
+d769 6
+d776 1
+d781 6
+d788 1
+d793 6
+d800 1
+@
+
+
+1.80
+log
+@Switched dynamic field binding to method handles.
+@
+text
+@d441 5
+a445 1
+			if(f <= int.MinValue)
+d449 1
+a449 1
+			if(f >= int.MaxValue)
+d453 1
+a453 5
+			if(float.IsNaN(f))
+			{
+				return 0;
+			}
+			return (int)f;
+d459 5
+a463 1
+			if(f <= long.MinValue)
+d467 1
+a467 1
+			if(f >= long.MaxValue)
+d471 1
+a471 5
+			if(float.IsNaN(f))
+			{
+				return 0;
+			}
+			return (long)f;
+d477 5
+a481 1
+			if(d <= int.MinValue)
+d485 1
+a485 1
+			if(d >= int.MaxValue)
+d489 1
+a489 5
+			if(double.IsNaN(d))
+			{
+				return 0;
+			}
+			return (int)d;
+d495 5
+a499 1
+			if(d <= long.MinValue)
+d503 1
+a503 1
+			if(d >= long.MaxValue)
+d507 1
+a507 5
+			if(double.IsNaN(d))
+			{
+				return 0;
+			}
+			return (long)d;
+@
+
+
+1.79
+log
+@Removed unnecessary parameters from dynamic array load/store.
+@
+text
+@a183 88
+		private static FieldWrapper GetFieldWrapper(object thisObj, string clazz, string name, string sig, bool isStatic, ikvm.@@internal.CallerID callerId)
+		{
+			TypeWrapper caller = TypeWrapper.FromClass(callerId.getCallerClass());
+			TypeWrapper wrapper = LoadTypeWrapper(clazz, callerId);
+			FieldWrapper field = wrapper.GetFieldWrapper(name, sig);
+			if(field == null)
+			{
+				throw new java.lang.NoSuchFieldError(clazz + "." + name);
+			}
+			// TODO check loader constraints
+			if(field.IsStatic != isStatic)
+			{
+				throw new java.lang.IncompatibleClassChangeError(clazz + "." + name);
+			}
+			TypeWrapper objType = null;
+			if(thisObj != null)
+			{
+				objType = ClassLoaderWrapper.GetWrapperFromType(thisObj.GetType());
+			}
+			if(field.IsAccessibleFrom(wrapper, caller, objType))
+			{
+				return field;
+			}
+			throw new java.lang.IllegalAccessError(field.DeclaringType.Name + "." + name);
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static object DynamicGetfield(object obj, string name, string sig, string clazz, ikvm.@@internal.CallerID callerID)
+		{
+			Profiler.Count("DynamicGetfield");
+			FieldWrapper fw = GetFieldWrapper(obj, clazz, name, sig, false, callerID);
+			java.lang.reflect.Field field = (java.lang.reflect.Field)fw.ToField(false);
+			object val = field.get(obj, callerID);
+			if(fw.FieldTypeWrapper.IsPrimitive)
+			{
+				val = JVM.Unbox(val);
+			}
+			return val;
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static object DynamicGetstatic(string name, string sig, string clazz, ikvm.@@internal.CallerID callerID)
+		{
+			Profiler.Count("DynamicGetstatic");
+			FieldWrapper fw = GetFieldWrapper(null, clazz, name, sig, true, callerID);
+			java.lang.reflect.Field field = (java.lang.reflect.Field)fw.ToField(false);
+			object val = field.get(null, callerID);
+			if(fw.FieldTypeWrapper.IsPrimitive)
+			{
+				val = JVM.Unbox(val);
+			}
+			return val;
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static void DynamicPutfield(object obj, object val, string name, string sig, string clazz, ikvm.@@internal.CallerID callerID)
+		{
+			Profiler.Count("DynamicPutfield");
+			FieldWrapper fw = GetFieldWrapper(obj, clazz, name, sig, false, callerID);
+			if(fw.IsFinal)
+			{
+				throw new java.lang.IllegalAccessError("Field " + fw.DeclaringType.Name + "." + fw.Name + " is final");
+			}
+			java.lang.reflect.Field field = (java.lang.reflect.Field)fw.ToField(false);
+			if(fw.FieldTypeWrapper.IsPrimitive)
+			{
+				val = JVM.Box(val);
+			}
+			field.set(obj, val, callerID);
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static void DynamicPutstatic(object val, string name, string sig, string clazz, ikvm.@@internal.CallerID callerID)
+		{
+			Profiler.Count("DynamicPutstatic");
+			FieldWrapper fw = GetFieldWrapper(null, clazz, name, sig, true, callerID);
+			if(fw.IsFinal)
+			{
+				throw new java.lang.IllegalAccessError("Field " + fw.DeclaringType.Name + "." + fw.Name + " is final");
+			}
+			java.lang.reflect.Field field = (java.lang.reflect.Field)fw.ToField(false);
+			if(fw.FieldTypeWrapper.IsPrimitive)
+			{
+				val = JVM.Box(val);
+			}
+			field.set(null, val, callerID);
+		}
+
+@
+
+
+1.78
+log
+@Optimized DynamicMultianewarray, DynamicNewarray, DynamicNewCheckOnly, DynamicCast and DynamicInstanceOf by reusing (cached) dynamic class literal.
+@
+text
+@d171 1
+a171 1
+		public static void DynamicAastore(object arrayref, int index, object val, RuntimeTypeHandle type, string clazz)
+a173 1
+			// TODO do we need to load the type here?
+d178 1
+a178 1
+		public static object DynamicAaload(object arrayref, int index, RuntimeTypeHandle type, string clazz)
+a180 1
+			// TODO do we need to load the type here?
+@
+
+
+1.77
+log
+@Reimplemented dynamic binding on top of MethodHandles. This avoids having to instantiate a java.lang.reflect.Method which might fail if it declares a checked exception that is not loadable. It also has the potential of being faster, but no perf work has been done yet.
+@
+text
+@d151 1
+a151 1
+		public static object DynamicMultianewarray(string clazz, int[] lengths, ikvm.@@internal.CallerID callerId)
+d154 1
+a154 1
+			TypeWrapper wrapper = LoadTypeWrapper(clazz, callerId);
+d159 1
+a159 1
+		public static object DynamicNewarray(int length, string clazz, ikvm.@@internal.CallerID callerId)
+d166 1
+a166 1
+			TypeWrapper wrapper = LoadTypeWrapper(clazz, callerId);
+d276 1
+a276 1
+		public static void DynamicNewCheckOnly(string clazz, ikvm.@@internal.CallerID callerId)
+d279 1
+a279 1
+			TypeWrapper wrapper = LoadTypeWrapper(clazz, callerId);
+d282 1
+a282 1
+				throw new java.lang.InstantiationError(clazz);
+d319 1
+a319 1
+		public static object DynamicCast(object obj, string clazz, ikvm.@@internal.CallerID callerId)
+d321 1
+d323 1
+a323 3
+			// NOTE it's important that we don't try to load the class if obj == null
+			// (to be compatible with Sun)
+			if(obj != null && !DynamicInstanceOf(obj, clazz, callerId))
+d325 1
+a325 1
+				throw new java.lang.ClassCastException(NativeCode.ikvm.runtime.Util.GetTypeWrapperFromObject(obj).Name);
+d331 1
+a331 1
+		public static bool DynamicInstanceOf(object obj, string clazz, ikvm.@@internal.CallerID callerId)
+d333 1
+d335 1
+a335 8
+			// NOTE it's important that we don't try to load the class if obj == null
+			// (to be compatible with Sun)
+			if(obj == null)
+			{
+				return false;
+			}
+			TypeWrapper wrapper = LoadTypeWrapper(clazz, callerId);
+			return wrapper.IsInstance(obj);
+@
+
+
+1.76
+log
+@Simplified class loading exception handling.
+@
+text
+@a344 117
+		private static MethodWrapper GetMethodWrapper(object thisObj, string clazz, string name, string sig, bool isStatic, ikvm.@@internal.CallerID callerId)
+		{
+			TypeWrapper caller = TypeWrapper.FromClass(callerId.getCallerClass());
+			TypeWrapper wrapper = LoadTypeWrapper(clazz, callerId);
+			MethodWrapper mw = wrapper.GetMethodWrapper(name, sig, name != StringConstants.INIT);
+			if(mw == null)
+			{
+				throw new java.lang.NoSuchMethodError(clazz + "." + name + sig);
+			}
+			// TODO check loader constraints
+			if(mw.IsStatic != isStatic)
+			{
+				throw new java.lang.IncompatibleClassChangeError(clazz + "." + name);
+			}
+			TypeWrapper objType = null;
+			if(thisObj != null)
+			{
+				if(!wrapper.IsInstance(thisObj))
+				{
+					throw new java.lang.IncompatibleClassChangeError(clazz + "." + name);
+				}
+				objType = ClassLoaderWrapper.GetWrapperFromType(thisObj.GetType());
+			}
+			if(mw.IsAccessibleFrom(wrapper, caller, objType))
+			{
+				return mw;
+			}
+			throw new java.lang.IllegalAccessError(clazz + "." + name + sig);
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static object DynamicInvokeSpecialNew(string clazz, string name, string sig, object[] args, ikvm.@@internal.CallerID callerID)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			Profiler.Count("DynamicInvokeSpecialNew");
+			MethodWrapper mw = GetMethodWrapper(null, clazz, name, sig, false, callerID);
+			if (mw.DeclaringType.IsAbstract)
+			{
+				throw new java.lang.InstantiationError(mw.DeclaringType.Name);
+			}
+			try
+			{
+				java.lang.reflect.Constructor cons = (java.lang.reflect.Constructor)mw.ToMethodOrConstructor(false);
+				return cons.newInstance(BoxArgs(mw, args), callerID);
+			}
+			catch (java.lang.reflect.InvocationTargetException x)
+			{
+				throw x.getCause();
+			}
+#endif
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static object DynamicInvokestatic(string clazz, string name, string sig, object[] args, ikvm.@@internal.CallerID callerID)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			Profiler.Count("DynamicInvokestatic");
+			MethodWrapper mw = GetMethodWrapper(null, clazz, name, sig, true, callerID);
+			java.lang.reflect.Method m = (java.lang.reflect.Method)mw.ToMethodOrConstructor(false);
+			try
+			{
+				object val = m.invoke(null, BoxArgs(mw, args), callerID);
+				if (mw.ReturnType.IsPrimitive && mw.ReturnType != PrimitiveTypeWrapper.VOID)
+				{
+					val = JVM.Unbox(val);
+				}
+				return val;
+			}
+			catch (java.lang.reflect.InvocationTargetException x)
+			{
+				throw x.getCause();
+			}
+#endif
+		}
+
+		[DebuggerStepThroughAttribute]
+		public static object DynamicInvokevirtual(object obj, string clazz, string name, string sig, object[] args, ikvm.@@internal.CallerID callerID)
+		{
+#if FIRST_PASS
+			return null;
+#else
+			Profiler.Count("DynamicInvokevirtual");
+			MethodWrapper mw = GetMethodWrapper(obj, clazz, name, sig, false, callerID);
+			java.lang.reflect.Method m = (java.lang.reflect.Method)mw.ToMethodOrConstructor(false);
+			try
+			{
+				object val = m.invoke(obj, BoxArgs(mw, args), callerID);
+				if (mw.ReturnType.IsPrimitive && mw.ReturnType != PrimitiveTypeWrapper.VOID)
+				{
+					val = JVM.Unbox(val);
+				}
+				return val;
+			}
+			catch (java.lang.reflect.InvocationTargetException x)
+			{
+				throw x.getCause();
+			}
+#endif
+		}
+
+		private static object[] BoxArgs(MethodWrapper mw, object[] args)
+		{
+			TypeWrapper[] paramTypes = mw.GetParameters();
+			for (int i = 0; i < paramTypes.Length; i++)
+			{
+				if (paramTypes[i].IsPrimitive)
+				{
+					args[i] = JVM.Box(args[i]);
+				}
+			}
+			return args;
+		}
+
+d452 32
+@
+
+
+1.75
+log
+@When linking a method handle constant access exceptions should be wrapped in IncompatibleClassChangeError.
+@
+text
+@a303 4
+			catch(ClassNotFoundException x)
+			{
+				throw new java.lang.NoClassDefFoundError(x.Message);
+			}
+d306 1
+a306 6
+				Exception javaException = x.ToJava();
+				if(!(javaException is java.lang.Error))
+				{
+					throw new java.lang.NoClassDefFoundError(javaException.Message).initCause(javaException);
+				}
+				throw javaException;
+a485 4
+			catch (ClassNotFoundException x)
+			{
+				throw new java.lang.NoClassDefFoundError(x.Message);
+			}
+d488 1
+a488 6
+				Exception javaException = x.ToJava();
+				if (!(javaException is java.lang.Error))
+				{
+					throw new java.lang.NoClassDefFoundError(javaException.Message).initCause(javaException);
+				}
+				throw javaException;
+a556 4
+			catch (ClassNotFoundException x)
+			{
+				throw new java.lang.NoClassDefFoundError(x.Message);
+			}
+d559 1
+a559 6
+				Exception javaException = x.ToJava();
+				if (!(javaException is java.lang.Error))
+				{
+					throw new java.lang.NoClassDefFoundError(javaException.Message).initCause(javaException);
+				}
+				throw javaException;
+@
+
+
+1.74
+log
+@When (dynamically) linking method handle constants we should not call the security manager.
+@
+text
+@d588 1
+a588 1
+			catch (java.lang.NoSuchFieldException x)
+d590 1
+a590 9
+				throw new java.lang.NoSuchFieldError(x.getMessage());
+			}
+			catch (java.lang.NoSuchMethodException x)
+			{
+				throw new java.lang.NoSuchMethodError(x.getMessage());
+			}
+			catch (java.lang.IllegalAccessException x)
+			{
+				throw new java.lang.IllegalAccessError(x.getMessage());
+@
+
+
+1.73
+log
+@Added support for dynamic ldc MethodHandle.
+@
+text
+@d526 6
+a531 1
+			java.lang.invoke.MethodHandles.Lookup lookup = java.lang.invoke.MethodHandles.lookup(callerID);
+a599 4
+			catch (java.lang.SecurityException x)
+			{
+				throw new java.lang.IllegalAccessError().initCause(x);
+			}
+@
+
+
+1.72
+log
+@Now that the custom assembly class loader initialization bug is fixed, it is no longer necessary to call Class.forName() in LoadTypeWrapper. Also fixed exception handling to wrap non-java.lang.Error exceptions in NoClassDefFoundError.
+@
+text
+@d512 91
+@
+
+
+1.71
+log
+@Improved ldc MethodType:
+- use nested type with class constructor to create values with statically know signatures (like ldc MethodHandle).
+- use caching for dynamicallly constructed MethodType values but retry on failure.
+@
+text
+@a291 11
+			java.lang.ClassLoader cl = callerId.getCallerClassLoader();
+			java.lang.Class c;
+			try
+			{
+				c = java.lang.Class.forName(clazz, false, cl, callerId);
+			}
+			catch (java.lang.ClassNotFoundException x)
+			{
+				throw new java.lang.NoClassDefFoundError(x.getMessage());
+			}
+			cl.checkPackageAccess(c, callerId.getCallerClass().pd);
+d295 2
+a296 1
+				TypeWrapper wrapper = TypeWrapper.FromClass(c);
+d304 4
+d310 6
+a315 1
+				throw x.ToJava();
+@
+
+
+1.70
+log
+@Bug fix. When calling a non-constructor instance method, the receiver object should be of the correct type.
+@
+text
+@d473 40
+@
+
+
+1.69
+log
+@Bug fix. Dynamic method lookup should also look in base classes (for non-constructor methods).
+@
+text
+@d372 4
+@
+
+
+1.68
+log
+@Bug fixes.
+- Dynamic method invocations should unwrap InvocationTargetException.
+- Throw InstantiationError when trying to instantiate an abstract class.
+@
+text
+@d359 1
+a359 1
+			MethodWrapper mw = wrapper.GetMethodWrapper(name, sig, false);
+@
+
+
+1.67
+log
+@Disallow EmitCheckcast() and EmitInstanceOf() on unloadable types.
+@
+text
+@d384 3
+d389 14
+a402 2
+			java.lang.reflect.Constructor cons = (java.lang.reflect.Constructor)mw.ToMethodOrConstructor(false);
+			return cons.newInstance(BoxArgs(mw, args), callerID);
+d408 3
+d414 1
+a414 2
+			object val = m.invoke(null, BoxArgs(mw, args), callerID);
+			if (mw.ReturnType.IsPrimitive && mw.ReturnType != PrimitiveTypeWrapper.VOID)
+d416 10
+a425 1
+				val = JVM.Unbox(val);
+d427 1
+a427 1
+			return val;
+d433 3
+d439 1
+a439 2
+			object val = m.invoke(obj, BoxArgs(mw, args), callerID);
+			if (mw.ReturnType.IsPrimitive && mw.ReturnType != PrimitiveTypeWrapper.VOID)
+d441 6
+a446 1
+				val = JVM.Unbox(val);
+d448 5
+a452 1
+			return val;
+@
+
+
+1.66
+log
+@Changed DynamicClassLiteral return type to java.lang.Class.
+@
+text
+@a291 6
+			// HACK Unloadable's EmitCheckcast and EmitInstanceOf don't have the right context to get a callerId,
+			// so we have to walk the stack in that case
+			if (callerId == null)
+			{
+				callerId = ikvm.@@internal.CallerID.create(TypeWrapper.FromClass(sun.reflect.Reflection.getCallerClass(0)).TypeAsBaseType.TypeHandle);
+			}
+@
+
+
+1.65
+log
+@Implemented package access checks (dynamic mode only).
+@
+text
+@d328 1
+a328 1
+		public static object DynamicClassLiteral(string clazz, ikvm.@@internal.CallerID callerId)
+@
+
+
+1.64
+log
+@Changed dynamic bytecode helper methods to be CallerID based instead of trusting the caller to provide the right context type handle. Also, use Java class loader to load classes, instead of directly going to the runtime. Currently this makes no difference, but if we are to allow dynamic code in statically compiled code this is necessary to respect custom assembly class loaders.
+@
+text
+@d298 1
+d302 1
+a302 1
+				c = java.lang.Class.forName(clazz, false, callerId.getCallerClassLoader(), callerId);
+d308 1
+@
+
+
+1.63
+log
+@Removed unused method.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002-2012 Jeroen Frijters
+d151 1
+a151 1
+		public static object DynamicMultianewarray(RuntimeTypeHandle type, string clazz, int[] lengths)
+d154 1
+a154 1
+			TypeWrapper wrapper = LoadTypeWrapper(type, clazz);
+d159 1
+a159 1
+		public static object DynamicNewarray(int length, RuntimeTypeHandle type, string clazz)
+d166 1
+a166 1
+			TypeWrapper wrapper = LoadTypeWrapper(type, clazz);
+d186 1
+a186 1
+		private static FieldWrapper GetFieldWrapper(object thisObj, RuntimeTypeHandle type, string clazz, string name, string sig, bool isStatic)
+d188 2
+a189 2
+			TypeWrapper caller = ClassLoaderWrapper.GetWrapperFromType(Type.GetTypeFromHandle(type));
+			TypeWrapper wrapper = LoadTypeWrapper(type, clazz);
+d213 1
+a213 1
+		public static object DynamicGetfield(object obj, string name, string sig, RuntimeTypeHandle type, string clazz, ikvm.@@internal.CallerID callerID)
+d216 1
+a216 1
+			FieldWrapper fw = GetFieldWrapper(obj, type, clazz, name, sig, false);
+d227 1
+a227 1
+		public static object DynamicGetstatic(string name, string sig, RuntimeTypeHandle type, string clazz, ikvm.@@internal.CallerID callerID)
+d230 1
+a230 1
+			FieldWrapper fw = GetFieldWrapper(null, type, clazz, name, sig, true);
+d241 1
+a241 1
+		public static void DynamicPutfield(object obj, object val, string name, string sig, RuntimeTypeHandle type, string clazz, ikvm.@@internal.CallerID callerID)
+d244 1
+a244 1
+			FieldWrapper fw = GetFieldWrapper(obj, type, clazz, name, sig, false);
+d258 1
+a258 1
+		public static void DynamicPutstatic(object val, string name, string sig, RuntimeTypeHandle type, string clazz, ikvm.@@internal.CallerID callerID)
+d261 1
+a261 1
+			FieldWrapper fw = GetFieldWrapper(null, type, clazz, name, sig, true);
+d276 1
+a276 1
+		public static void DynamicNewCheckOnly(RuntimeTypeHandle type, string clazz)
+d279 1
+a279 1
+			TypeWrapper wrapper = LoadTypeWrapper(type, clazz);
+d287 1
+a287 1
+		private static TypeWrapper LoadTypeWrapper(RuntimeTypeHandle type, string clazz)
+d289 10
+d301 10
+a310 6
+				TypeWrapper context = ClassLoaderWrapper.GetWrapperFromType(Type.GetTypeFromHandle(type));
+				TypeWrapper wrapper = context.GetClassLoader().LoadClassByDottedNameFast(clazz);
+				if(wrapper == null)
+				{
+					throw new java.lang.NoClassDefFoundError(clazz);
+				}
+d322 1
+d326 1
+a326 1
+		public static object DynamicClassLiteral(RuntimeTypeHandle type, string clazz)
+d329 1
+a329 1
+			return LoadTypeWrapper(type, clazz).ClassObject;
+d333 1
+a333 1
+		public static object DynamicCast(object obj, RuntimeTypeHandle type, string clazz)
+d338 1
+a338 1
+			if(obj != null && !DynamicInstanceOf(obj, type, clazz))
+d346 1
+a346 1
+		public static bool DynamicInstanceOf(object obj, RuntimeTypeHandle type, string clazz)
+d355 1
+a355 1
+			TypeWrapper wrapper = LoadTypeWrapper(type, clazz);
+d359 1
+a359 1
+		private static MethodWrapper GetMethodWrapper(object thisObj, RuntimeTypeHandle type, string clazz, string name, string sig, bool isStatic)
+d361 2
+a362 2
+			TypeWrapper caller = ClassLoaderWrapper.GetWrapperFromType(Type.GetTypeFromHandle(type));
+			TypeWrapper wrapper = LoadTypeWrapper(type, clazz);
+d386 1
+a386 1
+		public static object DynamicInvokeSpecialNew(RuntimeTypeHandle type, string clazz, string name, string sig, object[] args, ikvm.@@internal.CallerID callerID)
+d389 1
+a389 1
+			MethodWrapper mw = GetMethodWrapper(null, type, clazz, name, sig, false);
+d395 1
+a395 1
+		public static object DynamicInvokestatic(RuntimeTypeHandle type, string clazz, string name, string sig, object[] args, ikvm.@@internal.CallerID callerID)
+d398 1
+a398 1
+			MethodWrapper mw = GetMethodWrapper(null, type, clazz, name, sig, true);
+d409 1
+a409 1
+		public static object DynamicInvokevirtual(object obj, RuntimeTypeHandle type, string clazz, string name, string sig, object[] args, ikvm.@@internal.CallerID callerID)
+d412 1
+a412 1
+			MethodWrapper mw = GetMethodWrapper(obj, type, clazz, name, sig, false);
+@
+
+
+1.62
+log
+@When instantiating a delegate and the object passed in does not properly implement the delegate's Method interface, bind the delegate to an error stub that throws the appropriate error.
+@
+text
+@a419 7
+		[DebuggerStepThroughAttribute]
+		public static Type DynamicGetTypeAsExceptionType(RuntimeTypeHandle type, string clazz)
+		{
+			Profiler.Count("DynamicGetTypeAsExceptionType");
+			return LoadTypeWrapper(type, clazz).TypeAsExceptionType;
+		}
+
+a464 6
+		[DebuggerStepThroughAttribute]
+		public static Type DynamicGetTypeAsExceptionType(RuntimeTypeHandle type, string clazz)
+		{
+			return null;
+		}
+
+@
+
+
+1.61
+log
+@Bug fix. If the bootstrap method throws an exception and the call signature has a non-void return type, we didn't generate the proper exception throwing stub.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002-2011 Jeroen Frijters
+d426 33
+d477 6
+@
+
+
+1.60
+log
+@Implemented invokedynamic instruction.
+@
+text
+@d916 9
+a924 4
+				ics = new IndyCallSite<T>((T)java.lang.invoke.MethodHandles
+					.dropArguments(new ConstantMethodHandle((MHV<Exception>)ThrowBootstrapException)
+						.bindTo(x), 0, LoadMethodType<T>().parameterArray())
+					.vmtarget, false);
+d936 1
+a936 1
+		private static void ThrowBootstrapException(Exception x)
+d940 1
+a940 1
+				throw x;
+d942 1
+a942 1
+			throw new java.lang.BootstrapMethodError("call site initialization exception", x);
+@
+
+
+1.59
+log
+@Added support for MethodHandle constants (ldc <MethodHandle>).
+@
+text
+@d904 73
+@
+
+
+1.58
+log
+@Added support for MethodType constants (ldc <MethodType>).
+@
+text
+@d876 1
+d884 20
+@
+
+
+1.57
+log
+@Implemented full arity support for MethodHandle.
+@
+text
+@d874 9
+@
+
+
+1.56
+log
+@Fixed varargs support for invoke.
+@
+text
+@d925 24
+a957 13
+	public delegate void MHV<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9);
+	public delegate void MHV<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10);
+	public delegate void MHV<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11);
+	public delegate void MHV<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11, T12 t12);
+	public delegate void MHV<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11, T12 t12, T13 t13);
+	public delegate void MHV<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11, T12 t12, T13 t13, T14 t14);
+	public delegate void MHV<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11, T12 t12, T13 t13, T14 t14, T15 t15);
+	public delegate void MHV<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11, T12 t12, T13 t13, T14 t14, T15 t15, T16 t16);
+	public delegate void MHV<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11, T12 t12, T13 t13, T14 t14, T15 t15, T16 t16, T17 t17);
+	public delegate void MHV<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11, T12 t12, T13 t13, T14 t14, T15 t15, T16 t16, T17 t17, T18 t18);
+	public delegate void MHV<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11, T12 t12, T13 t13, T14 t14, T15 t15, T16 t16, T17 t17, T18 t18, T19 t19);
+	public delegate void MHV<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11, T12 t12, T13 t13, T14 t14, T15 t15, T16 t16, T17 t17, T18 t18, T19 t19, T20 t20);
+	public delegate void MHV<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11, T12 t12, T13 t13, T14 t14, T15 t15, T16 t16, T17 t17, T18 t18, T19 t19, T20 t20, T21 t21);
+a967 13
+	public delegate TResult MH<T1, T2, T3, T4, T5, T6, T7, T8, T9, TResult>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9);
+	public delegate TResult MH<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, TResult>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10);
+	public delegate TResult MH<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, TResult>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11);
+	public delegate TResult MH<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, TResult>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11, T12 t12);
+	public delegate TResult MH<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, TResult>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11, T12 t12, T13 t13);
+	public delegate TResult MH<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, TResult>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11, T12 t12, T13 t13, T14 t14);
+	public delegate TResult MH<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, TResult>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11, T12 t12, T13 t13, T14 t14, T15 t15);
+	public delegate TResult MH<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, TResult>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11, T12 t12, T13 t13, T14 t14, T15 t15, T16 t16);
+	public delegate TResult MH<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, TResult>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11, T12 t12, T13 t13, T14 t14, T15 t15, T16 t16, T17 t17);
+	public delegate TResult MH<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, TResult>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11, T12 t12, T13 t13, T14 t14, T15 t15, T16 t16, T17 t17, T18 t18);
+	public delegate TResult MH<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, TResult>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11, T12 t12, T13 t13, T14 t14, T15 t15, T16 t16, T17 t17, T18 t18, T19 t19);
+	public delegate TResult MH<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, TResult>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11, T12 t12, T13 t13, T14 t14, T15 t15, T16 t16, T17 t17, T18 t18, T19 t19, T20 t20);
+	public delegate TResult MH<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, TResult>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11, T12 t12, T13 t13, T14 t14, T15 t15, T16 t16, T17 t17, T18 t18, T19 t19, T20 t20, T21 t21);
+@
+
+
+1.55
+log
+@Fixed MethodHandle.invoke() caching. We were caching the instance, instead of just the type.
+@
+text
+@d860 6
+a865 2
+				del = (T)global::java.lang.invoke.MethodHandles.exactInvoker(h.type())
+					.asType(MethodHandleUtil.GetDelegateMethodType(typeof(T))).vmtarget;
+@
+
+
+1.54
+log
+@Implemented a large chunk of MethodHandle support.
+@
+text
+@d860 2
+a861 1
+				del = (T)h.asType(MethodHandleUtil.GetDelegateMethodType(typeof(T))).vmtarget;
+@
+
+
+1.53
+log
+@Merge in java.lang.invoke package and the beginnings of MethodHandle support.
+@
+text
+@d832 1
+a832 1
+		public static T GetDelegate<T>(global::java.lang.invoke.MethodHandle h)
+d846 30
+@
+
+
+1.52
+log
+@Dynamic* instructions should throw NoClassDefFoundError before NullPointerException.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002-2008 Jeroen Frijters
+d831 15
+d889 46
+@
+
+
+1.51
+log
+@Made MapException generic, instead of passing the type explicitly.
+@
+text
+@d186 1
+a186 1
+		private static FieldWrapper GetFieldWrapper(TypeWrapper thisType, RuntimeTypeHandle type, string clazz, string name, string sig, bool isStatic)
+d200 6
+a205 1
+			if(field.IsAccessibleFrom(wrapper, caller, thisType))
+d216 1
+a216 1
+			FieldWrapper fw = GetFieldWrapper(ClassLoaderWrapper.GetWrapperFromType(obj.GetType()), type, clazz, name, sig, false);
+d244 1
+a244 1
+			FieldWrapper fw = GetFieldWrapper(ClassLoaderWrapper.GetWrapperFromType(obj.GetType()), type, clazz, name, sig, false);
+d344 1
+a344 1
+		private static MethodWrapper GetMethodWrapper(TypeWrapper thisType, RuntimeTypeHandle type, string clazz, string name, string sig, bool isStatic)
+d358 6
+a363 1
+			if(mw.IsAccessibleFrom(wrapper, caller, thisType))
+d397 1
+a397 1
+			MethodWrapper mw = GetMethodWrapper(ClassLoaderWrapper.GetWrapperFromType(obj.GetType()), type, clazz, name, sig, false);
+@
+
+
+1.51.2.1
+log
+@Dynamic* instructions should throw NoClassDefFoundError before NullPointerException.
+@
+text
+@d186 1
+a186 1
+		private static FieldWrapper GetFieldWrapper(object thisObj, RuntimeTypeHandle type, string clazz, string name, string sig, bool isStatic)
+d200 1
+a200 6
+			TypeWrapper objType = null;
+			if(thisObj != null)
+			{
+				objType = ClassLoaderWrapper.GetWrapperFromType(thisObj.GetType());
+			}
+			if(field.IsAccessibleFrom(wrapper, caller, objType))
+d211 1
+a211 1
+			FieldWrapper fw = GetFieldWrapper(obj, type, clazz, name, sig, false);
+d239 1
+a239 1
+			FieldWrapper fw = GetFieldWrapper(obj, type, clazz, name, sig, false);
+d339 1
+a339 1
+		private static MethodWrapper GetMethodWrapper(object thisObj, RuntimeTypeHandle type, string clazz, string name, string sig, bool isStatic)
+d353 1
+a353 6
+			TypeWrapper objType = null;
+			if(thisObj != null)
+			{
+				objType = ClassLoaderWrapper.GetWrapperFromType(thisObj.GetType());
+			}
+			if(mw.IsAccessibleFrom(wrapper, caller, objType))
+d387 1
+a387 1
+			MethodWrapper mw = GetMethodWrapper(obj, type, clazz, name, sig, false);
+@
+
+
+1.50
+log
+@Fixed regression in dynamic exception handling and made it simpler.
+@
+text
+@d819 1
+a819 1
+			return (T)ExceptionHelper.MapException(x, typeof(T), (mode & MapFlags.NoRemapping) == 0, (mode & MapFlags.Unused) != 0);
+@
+
+
+1.49
+log
+@Removed exception mapping methods from Throwable and consolidated into a single method (actually, two methods, but the dynamic one should not be necessary and should be removed later).
+@
+text
+@a820 6
+
+		[HideFromJava]
+		public static Exception MapExceptionDynamic(Exception x, Type type, MapFlags mode)
+		{
+			return ExceptionHelper.MapException(x, type, (mode & MapFlags.NoRemapping) == 0, (mode & MapFlags.Unused) != 0);
+		}
+@
+
+
+1.48
+log
+@Disable stack trace collection for remapped exceptions that are discarded in their handler.
+@
+text
+@d821 6
+@
+
+
+1.47
+log
+@Implemented a more efficient (in terms of the MSIL size) MapException API.
+@
+text
+@d813 1
+d819 1
+a819 1
+			return (T)ExceptionHelper.MapException(x, typeof(T), (mode & MapFlags.NoRemapping) == 0);
+@
+
+
+1.46
+log
+@Replaced incorrect usages of Type.IsArray with ReflectUtil.IsVector().
+@
+text
+@d807 13
+@
+
+
+1.45
+log
+@- Moved enum helper methods into new EnumHelper class.
+- Changed .NET EnumEnum field to call ByteCodeHelper method, instead of emitting code in place.
+@
+text
+@d131 1
+a131 1
+			while(type.IsArray)
+@
+
+
+1.44
+log
+@Removed micro optimization that requires full trust on .NET 4.0.
+@
+text
+@d788 19
+@
+
+
+1.43
+log
+@DynamicGetTypeAsExceptionType should be available during FIRST_PASS because it is used by ikvmc (if there is a configuration issue during boot class library build).
+@
+text
+@d548 1
+a548 1
+					if(len > 50 && Type.GetTypeHandle(src).Value == Type.GetTypeHandle(dest).Value)
+d564 1
+a564 1
+				else if(Type.GetTypeHandle(src).Value != Type.GetTypeHandle(dest).Value &&
+@
+
+
+1.42
+log
+@Added (optional) per-module initialization to custom assembly class loaders.
+@
+text
+@d420 1
+a420 7
+			if(obj != null)
+			{
+#if !FIRST_PASS
+				throw new java.lang.ClassCastException();
+#endif
+			}
+			return obj;
+d428 6
+@
+
+
+1.41
+log
+@Removed vestigial compact framework support.
+@
+text
+@d772 16
+@
+
+
+1.41.2.1
+log
+@back ported fix: don't use Type.IsArray when we only want to deal with vectors.
+@
+text
+@d131 1
+a131 1
+			while(ReflectUtil.IsVector(type))
+@
+
+
+1.41.2.2
+log
+@back ported partial trust fixes.
+@
+text
+@d548 1
+a548 1
+					if(len > 50 && src.GetType() == dest.GetType())
+d564 1
+a564 1
+				else if(src.GetType() != dest.GetType() &&
+@
+
+
+1.40
+log
+@Include helpful exception message in ClassCastException generated for ghost array casts.
+@
+text
+@d149 1
+a149 1
+#if !COMPACT_FRAMEWORK && !FIRST_PASS
+d434 1
+a434 1
+#endif //!COMPACT_FRAMEWORK
+a546 1
+#if !COMPACT_FRAMEWORK
+a553 1
+#endif
+a563 4
+#if COMPACT_FRAMEWORK
+				else if(src.GetType() != dest.GetType() &&
+						(IsPrimitiveArrayType(src.GetType()) || IsPrimitiveArrayType(dest.GetType())))
+#else
+a565 1
+#endif
+d746 1
+a746 1
+#if COMPACT_FRAMEWORK || FIRST_PASS
+a752 4
+#if COMPACT_FRAMEWORK
+		private static readonly object volatileLock = new object();
+#endif
+
+a754 1
+#if !COMPACT_FRAMEWORK
+a755 6
+#else
+			lock(volatileLock)
+			{
+				return v;
+			}
+#endif
+a759 1
+#if !COMPACT_FRAMEWORK
+a760 6
+#else
+			lock(volatileLock)
+			{
+				v = newValue;
+			}
+#endif
+a764 1
+#if !COMPACT_FRAMEWORK
+a765 6
+#else
+			lock(volatileLock)
+			{
+				return v;
+			}
+#endif
+a769 1
+#if !COMPACT_FRAMEWORK
+a770 6
+#else
+			lock(volatileLock)
+			{
+				v = newValue;
+			}
+#endif
+@
+
+
+1.39
+log
+@Changed dynamic (for unloadable classes) bytecode handling to use Java reflection.
+@
+text
+@d80 12
+@
+
+
+1.39.2.1
+log
+@Changed version to 0.38.0.3 and backported these fixes:
+- Fixed the stack trace when an unwrapped java.lang.Error (or subclass) escapes from a static initializer.
+- It turns out that we really should create an MBeanServer in sun.management.ManagementFactory.createPlatformMBeanServer(), even if we don't populate it with anything useful, applications might still want to register their own MBeans. This fix allows Derby 10.4.2.0 to work.
+- Added helpful message to ClassCastException generated for ghost array casts.
+- Added check for constructor with missing body in map.xml.
+- Removed over eager state checking from java.util.zip.Deflater. Fixes Lucene issue.
+- Fixed enclosing method discovery to work for ReflectionOnly assemblies. This allows ikvmstub to work with ikvmc generated assemblies.
+- Always emit an explicit method override if we've mangled the name/sig, because we can't predict whether it will be needed or not (without keeping track of the mangling in the base classes) and the cost is minimal since this doesn't happen all that often.
+- Miranda method should use mangled name (if the name is mangled).
+- Fixed pointer detection to work for types with multiple indirection levels.
+- If the last call site of a subroutine wasn't reachable, the return switch would fall through potentially causing the code to be unverifiable.
+- The check for unloadable types on the stack indexed the stack in the wrong order.
+- Fixed exception wrapping for java.security.AccessController.doPrivileged().
+- Fixed tracer to only add a trace listener in executables.
+@
+text
+@a79 12
+
+		// this method is called from <GhostType>.CastArray()
+		[HideFromJava]
+		internal static void ThrowClassCastException(object obj, RuntimeTypeHandle typeHandle, int rank)
+		{
+#if !FIRST_PASS
+			System.Text.StringBuilder sb = new System.Text.StringBuilder();
+			sb.Append(ikvm.runtime.Util.getClassFromObject(obj).getName()).Append(" cannot be cast to ")
+				.Append('[', rank).Append('L').Append(ikvm.runtime.Util.getClassFromTypeHandle(typeHandle).getName()).Append(';');
+			throw new java.lang.ClassCastException(sb.ToString());
+#endif
+		}
+@
+
+
+1.38
+log
+@Removed support for building with GNU Classpath class library.
+@
+text
+@d196 1
+a196 1
+		public static object DynamicGetfield(object obj, string name, string sig, RuntimeTypeHandle type, string clazz)
+d199 8
+a206 1
+			return GetFieldWrapper(ClassLoaderWrapper.GetWrapperFromType(obj.GetType()), type, clazz, name, sig, false).GetValue(obj);
+d210 1
+a210 1
+		public static object DynamicGetstatic(string name, string sig, RuntimeTypeHandle type, string clazz)
+d213 8
+a220 1
+			return GetFieldWrapper(null, type, clazz, name, sig, true).GetValue(null);
+d224 1
+a224 1
+		public static void DynamicPutfield(object obj, object val, string name, string sig, RuntimeTypeHandle type, string clazz)
+d232 6
+a237 1
+			fw.SetValue(obj, val);
+d241 1
+a241 1
+		public static void DynamicPutstatic(object val, string name, string sig, RuntimeTypeHandle type, string clazz)
+d249 6
+a254 1
+			fw.SetValue(null, val);
+d349 1
+a349 2
+		[System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+		public static object DynamicInvokeSpecialNew(RuntimeTypeHandle type, string clazz, string name, string sig, object[] args)
+d352 3
+a354 1
+			return GetMethodWrapper(null, type, clazz, name, sig, false).Invoke(null, args, false, ikvm.@@internal.CallerID.create(new StackFrame(1, false)));
+d358 1
+a358 2
+		[System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+		public static object DynamicInvokestatic(RuntimeTypeHandle type, string clazz, string name, string sig, object[] args)
+d361 8
+a368 1
+			return GetMethodWrapper(null, type, clazz, name, sig, true).Invoke(null, args, false, ikvm.@@internal.CallerID.create(new StackFrame(1, false)));
+d372 1
+a372 2
+		[System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+		public static object DynamicInvokevirtual(object obj, RuntimeTypeHandle type, string clazz, string name, string sig, object[] args)
+d375 21
+a395 1
+			return GetMethodWrapper(ClassLoaderWrapper.GetWrapperFromType(obj.GetType()), type, clazz, name, sig, false).Invoke(obj, args, false, ikvm.@@internal.CallerID.create(new StackFrame(1, false)));
+@
+
+
+1.37
+log
+@- Added ghost array tagging to be able to report the instantiated class (instead of object[] which is allocated instead).
+- Fixed ldc <class> where <class> is a ghost array.
+- Fixed bug in instanceof <class> where <class> is a Serializable[].
+@
+text
+@d693 1
+a693 1
+#elif OPENJDK
+a694 2
+#else
+			return Environment.HasShutdownStarted && !IKVM.Internal.JVM.Library.runFinalizersOnExit();
+@
+
+
+1.36
+log
+@- Implemented CallerID infrastructure.
+- Marked various methods with HasCallerID annotation.
+- Rewrote some methods to explicitly use CallerID.
+@
+text
+@d34 48
+d114 23
+@
+
+
+1.35
+log
+@- added more efficient float/double to/from int/long bits converters
+- made Double.doubleToRawLongBits/longBitsToDouble and Float.floatToRawIntBits/intBitsToFloat intrinsics
+- generalized the intrinsics support
+@
+text
+@d254 1
+d258 1
+a258 1
+			return GetMethodWrapper(null, type, clazz, name, sig, false).Invoke(null, args, false);
+d262 1
+d266 1
+a266 1
+			return GetMethodWrapper(null, type, clazz, name, sig, true).Invoke(null, args, false);
+d270 1
+d274 1
+a274 1
+			return GetMethodWrapper(ClassLoaderWrapper.GetWrapperFromType(obj.GetType()), type, clazz, name, sig, false).Invoke(obj, args, false);
+@
+
+
+1.34
+log
+@Added assembly location to verbose class cast exception if the assembly fullnames matches but the locations don't.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002, 2003, 2004, 2005, 2007 Jeroen Frijters
+d30 1
+d678 42
+@
+
+
+1.33
+log
+@Restructured VM <-> Library interface to take advantage of InternalsVisibleTo to remove public methods and reflection usage.
+@
+text
+@d589 21
+a609 1
+			string msg = String.Format("Object of type \"{0}\" cannot be cast to \"{1}\"", obj.GetType().AssemblyQualifiedName, Type.GetTypeFromHandle(typeHandle).AssemblyQualifiedName);
+@
+
+
+1.32
+log
+@Made classes static.
+@
+text
+@d596 1
+a596 1
+#if COMPACT_FRAMEWORK
+d598 2
+@
+
+
+1.31
+log
+@- Removed .NET 1.1 specific code
+- Removed conditional compilation of .NET 2.0 specific code
+@
+text
+@d33 1
+a33 1
+	public class ByteCodeHelper
+@
+
+
+1.30
+log
+@Moved "instance of" test to TypeWrapper and added support for ghost and dynamiconly type arrays.
+@
+text
+@d603 1
+a603 1
+#if !WHIDBEY || COMPACT_FRAMEWORK
+d609 1
+a609 1
+#if WHIDBEY && !COMPACT_FRAMEWORK
+d621 1
+a621 1
+#if WHIDBEY && !COMPACT_FRAMEWORK
+d633 1
+a633 1
+#if WHIDBEY && !COMPACT_FRAMEWORK
+d645 1
+a645 1
+#if WHIDBEY && !COMPACT_FRAMEWORK
+@
+
+
+1.30.2.1
+log
+@Back ported various fixes:
+- Changed version to 0.36.0.13.
+- Fixed ikvmc not to open the key file for write access.
+- Added more efficient float/double to/from int/long bits converters.
+- Fixed libikvm-native.so build to include reference to gmodule-2.0 library.
+- Fixed ikvmc not to open the key file for write access.
+- Fixed Graphics2D.rotate() to convert rotation angle from radians (Java) to degrees (.NET).
+- Applied awt patch #1979656 by Daniel Wilson.
+- Fixed three String bugs found by OpenJDK string tests.
+- Fixed ldc <class> where <class> is a ghost array.
+- Fixed bug in instanceof <class> where <class> is a Serializable[].
+- Removed incorrect DataFormatException thrown in java.util.zip.InflaterHuffmanTree.
+- Fixed #2001802 contributed by Andy Malakov.
+- Fixed #2001799.
+- Fixed #2006953.
+- Made finalize() and clone() methods in cli.System.Object and cli.System.Exception final.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002, 2003, 2004, 2005, 2007, 2008 Jeroen Frijters
+a29 1
+using System.Runtime.InteropServices;
+a654 42
+
+	[StructLayout(LayoutKind.Explicit)]
+	struct DoubleConverter
+	{
+		[FieldOffset(0)]
+		private double d;
+		[FieldOffset(0)]
+		private long l;
+
+		public static long ToLong(double value, ref DoubleConverter converter)
+		{
+			converter.d = value;
+			return converter.l;
+		}
+
+		public static double ToDouble(long value, ref DoubleConverter converter)
+		{
+			converter.l = value;
+			return converter.d;
+		}
+	}
+
+	[StructLayout(LayoutKind.Explicit)]
+	struct FloatConverter
+	{
+		[FieldOffset(0)]
+		private float f;
+		[FieldOffset(0)]
+		private int i;
+
+		public static int ToInt(float value, ref FloatConverter converter)
+		{
+			converter.f = value;
+			return converter.i;
+		}
+
+		public static float ToFloat(int value, ref FloatConverter converter)
+		{
+			converter.i = value;
+			return converter.f;
+		}
+	}
+@
+
+
+1.29
+log
+@Simplified VM -> Class Library interface by taking advantage of the fact that IKVM.Runtime.dll is now compiled in two passes with the second pass linking against the class library.
+@
+text
+@d228 1
+a228 2
+			TypeWrapper other = NativeCode.ikvm.runtime.Util.GetTypeWrapperFromObject(obj);
+			return other.IsAssignableTo(wrapper);
+@
+
+
+1.28
+log
+@Changed left-shift to multiply operator, as it turns out that shift operators aren't affected by "checked".
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002, 2003, 2004, 2005 Jeroen Frijters
+d42 3
+a44 1
+					throw JavaException.NegativeArraySizeException();
+d65 1
+a65 1
+#if !COMPACT_FRAMEWORK
+d80 1
+a80 1
+				throw JavaException.NegativeArraySizeException();
+d109 1
+a109 1
+				throw JavaException.NoSuchFieldError(clazz + "." + name);
+d114 1
+a114 1
+				throw JavaException.IncompatibleClassChangeError(clazz + "." + name);
+d120 1
+a120 1
+			throw JavaException.IllegalAccessError(field.DeclaringType.Name + "." + name);
+d144 1
+a144 1
+				throw JavaException.IllegalAccessError("Field " + fw.DeclaringType.Name + "." + fw.Name + " is final");
+d156 1
+a156 1
+				throw JavaException.IllegalAccessError("Field " + fw.DeclaringType.Name + "." + fw.Name + " is final");
+d169 1
+a169 1
+				throw JavaException.InstantiationError(clazz);
+d182 1
+a182 1
+					throw JavaException.NoClassDefFoundError(clazz);
+d186 1
+a186 1
+					throw JavaException.IllegalAccessError("Try to access class " + wrapper.Name + " from class " + context.Name);
+d212 1
+a212 1
+				throw JavaException.ClassCastException(NativeCode.ikvm.runtime.Util.GetTypeWrapperFromObject(obj).Name);
+d239 1
+a239 1
+				throw JavaException.NoSuchMethodError(clazz + "." + name + sig);
+d244 1
+a244 1
+				throw JavaException.IncompatibleClassChangeError(clazz + "." + name);
+d250 1
+a250 1
+			throw JavaException.IllegalAccessError(clazz + "." + name + sig);
+d286 3
+a288 1
+				throw JavaException.ClassCastException("");
+d382 1
+d394 1
+a394 1
+					throw JavaException.ArrayStoreException();
+d399 1
+a399 1
+				throw JavaException.NullPointerException();
+d403 1
+a403 1
+				throw JavaException.ArrayIndexOutOfBoundsException();
+d439 1
+a439 1
+					throw JavaException.ArrayStoreException();
+d450 1
+a450 1
+						throw JavaException.ArrayStoreException();
+d454 1
+d465 1
+d472 1
+a472 1
+				throw JavaException.NullPointerException();
+d476 1
+a476 1
+				throw JavaException.ArrayIndexOutOfBoundsException();
+d478 1
+d484 1
+d495 1
+a495 1
+				throw JavaException.NullPointerException();
+d499 1
+a499 1
+				throw JavaException.ArrayIndexOutOfBoundsException();
+d503 1
+a503 1
+				throw JavaException.ArrayIndexOutOfBoundsException();
+d505 1
+d511 1
+d522 1
+a522 1
+				throw JavaException.NullPointerException();
+d526 1
+a526 1
+				throw JavaException.ArrayIndexOutOfBoundsException();
+d530 1
+a530 1
+				throw JavaException.ArrayIndexOutOfBoundsException();
+d532 1
+d538 1
+d549 1
+a549 1
+				throw JavaException.NullPointerException();
+d553 1
+a553 1
+				throw JavaException.ArrayIndexOutOfBoundsException();
+d557 1
+a557 1
+				throw JavaException.ArrayIndexOutOfBoundsException();
+d559 1
+d565 1
+d573 1
+a573 1
+				throw JavaException.NullPointerException();
+d577 1
+a577 1
+				throw JavaException.ArrayIndexOutOfBoundsException();
+d581 1
+a581 1
+				throw JavaException.ArrayIndexOutOfBoundsException();
+d583 1
+d589 1
+d591 2
+a592 1
+			throw JavaException.ClassCastException(msg);
+@
+
+
+1.27
+log
+@*** empty log message ***
+@
+text
+@d480 1
+a480 1
+					Buffer.BlockCopy(src, srcStart << 3, dest, destStart << 3, len << 3);
+d505 1
+a505 1
+					Buffer.BlockCopy(src, srcStart << 2, dest, destStart << 2, len << 2);
+d530 1
+a530 1
+					Buffer.BlockCopy(src, srcStart << 1, dest, destStart << 1, len << 1);
+@
+
+
+1.26
+log
+@*** empty log message ***
+@
+text
+@d210 1
+a210 1
+				throw JavaException.ClassCastException(ClassLoaderWrapper.GetWrapperFromType(obj.GetType()).Name);
+d226 1
+a226 1
+			TypeWrapper other = ClassLoaderWrapper.GetWrapperFromType(obj.GetType());
+@
+
+
+1.25
+log
+@*** empty log message ***
+@
+text
+@d372 1
+a372 1
+			return Util.GetClassFromTypeHandle(typeHandle);
+@
+
+
+1.24
+log
+@*** empty log message ***
+@
+text
+@d27 1
+d585 52
+@
+
+
+1.23
+log
+@*** empty log message ***
+@
+text
+@d62 1
+d277 17
+d573 1
+a573 1
+			throw IKVM.Internal.JVM.Library.newClassCastException(msg);
+@
+
+
+1.22
+log
+@*** empty log message ***
+@
+text
+@d288 1
+a288 1
+			if(f != f)
+d306 1
+a306 1
+			if(f != f)
+d324 1
+a324 1
+			if(d != d)
+d342 1
+a342 1
+			if(d != d)
+d387 1
+d395 1
+d406 4
+d412 1
+d560 3
+d564 1
+@
+
+
+1.21
+log
+@*** empty log message ***
+@
+text
+@d189 1
+a189 7
+				Exception r = x.ToJava();
+				// HACK we need to convert a ClassNotFoundException into a NoClassDefFoundError
+				if(r.GetType().FullName == "java.lang.ClassNotFoundException")
+				{
+					throw JavaException.NoClassDefFoundError(r.Message);
+				}
+				throw r;
+@
+
+
+1.20
+log
+@*** empty log message ***
+@
+text
+@d189 1
+a189 4
+				throw x.ToJava();
+			}
+			catch(Exception x)
+			{
+d191 1
+a191 1
+				if(x.GetType().FullName == "java.lang.ClassNotFoundException")
+d193 1
+a193 1
+					throw JavaException.NoClassDefFoundError(x.Message);
+d195 1
+a195 1
+				throw;
+@
+
+
+1.19
+log
+@*** empty log message ***
+@
+text
+@d167 1
+@
+
+
+1.18
+log
+@*** empty log message ***
+@
+text
+@d28 1
+@
+
+
+1.17
+log
+@*** empty log message ***
+@
+text
+@d111 1
+a111 1
+			if(field.IsAccessibleFrom(caller, thisType))
+d249 1
+a249 1
+			if(mw.IsAccessibleFrom(caller, thisType == null ? wrapper : thisType))
+@
+
+
+1.16
+log
+@*** empty log message ***
+@
+text
+@d27 1
+d551 1
+@
+
+
+1.15
+log
+@*** empty log message ***
+@
+text
+@d555 5
+@
+
+
+1.14
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002, 2003, 2004 Jeroen Frijters
+d223 6
+@
+
+
+1.13
+log
+@*** empty log message ***
+@
+text
+@d210 3
+a212 1
+			if(!DynamicInstanceOf(obj, type, clazz))
+@
+
+
+1.12
+log
+@*** empty log message ***
+@
+text
+@d544 2
+a545 1
+			throw IKVM.Internal.JVM.Library.newClassCastException(String.Format("Object of type \"{0}\" cannot be cast to \"{1}\"", obj.GetType().AssemblyQualifiedName, Type.GetTypeFromHandle(typeHandle).AssemblyQualifiedName));
+@
+
+
+1.11
+log
+@*** empty log message ***
+@
+text
+@d357 3
+a359 1
+			if(src != dest)
+a360 5
+				// NOTE side effect of GetTypeHandle call is null check for src and dest (it
+				// throws an ArgumentNullException)
+				// Since constructing a Type object is expensive, we use Type.GetTypeHandle and
+				// hope that it is implemented in a such a way that it is more efficient than
+				// Object.GetType()
+d363 29
+a391 3
+					RuntimeTypeHandle type_src = Type.GetTypeHandle(src);
+					RuntimeTypeHandle type_dst = Type.GetTypeHandle(dest);
+					if(type_src.Value != type_dst.Value)
+d393 1
+a393 1
+						if(len >= 0)
+d395 3
+a397 35
+							try
+							{
+								// since Java strictly defines what happens when an ArrayStoreException occurs during copying
+								// and .NET doesn't, we have to do it by hand
+								object[] src1 = src as object[];
+								object[] dst1 = dest as object[];
+								if(src1 != null && dst1 != null)
+								{
+									for(; len > 0; len--)
+									{
+										dst1[destStart++] = src1[srcStart++];
+									}
+								}
+								else
+								{
+									// one (or both) of the arrays might be a value type array
+									Array src2 = (Array)src;
+									Array dst2 = (Array)dest;
+									// we don't want to allow copying a primitive into an object array!
+									if(ClassLoaderWrapper.GetWrapperFromType(src2.GetType().GetElementType()).IsPrimitive ||
+										ClassLoaderWrapper.GetWrapperFromType(dst2.GetType().GetElementType()).IsPrimitive)
+									{
+										throw JavaException.ArrayStoreException();
+									}
+									for(; len > 0; len--)
+									{
+										dst2.SetValue(src2.GetValue(srcStart++), destStart++);
+									}
+								}
+								return;
+							}
+							catch(InvalidCastException)
+							{
+								throw JavaException.ArrayStoreException();
+							}
+d399 1
+a399 1
+						throw JavaException.ArrayIndexOutOfBoundsException();
+d402 7
+a408 1
+				catch(ArgumentNullException)
+d410 9
+a418 1
+					throw JavaException.NullPointerException();
+d421 10
+d433 1
+a433 1
+				Array.Copy((Array)src, srcStart, (Array)dest, destStart, len);
+a442 4
+			catch(InvalidCastException)
+			{
+				throw JavaException.ArrayStoreException();
+			}
+d444 1
+a444 1
+		
+@
+
+
+1.10
+log
+@*** empty log message ***
+@
+text
+@d530 5
+@
+
+
+1.9
+log
+@*** empty log message ***
+@
+text
+@d179 1
+a179 1
+					throw JavaException.IllegalAccessError("Try to access class " + wrapper.Name + " from class " + clazz);
+d265 1
+a265 1
+			return GetMethodWrapper(ClassLoaderWrapper.GetWrapperFromType(obj.GetType()), type, clazz, name, sig, false).Invoke(obj, args, true);
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@d230 1
+a230 1
+			MethodWrapper mw = wrapper.GetMethodWrapper(new MethodDescriptor(name, sig), false);
+a346 22
+		[DebuggerStepThroughAttribute]
+		public static void monitorenter(object obj)
+		{
+			bool interruptPending = false;
+			for(;;)
+			{
+				try
+				{
+					System.Threading.Monitor.Enter(obj);
+					if(interruptPending)
+					{
+						System.Threading.Thread.CurrentThread.Interrupt();
+					}
+					return;
+				}
+				catch(System.Threading.ThreadInterruptedException)
+				{
+					interruptPending = true;
+				}
+			}
+		}
+
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d203 1
+a203 1
+			return IKVM.NativeCode.java.lang.VMClass.getClassFromWrapper(LoadTypeWrapper(type, clazz));
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d188 9
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d161 1
+a161 1
+			if(wrapper.IsAbstract || wrapper.IsInterface)
+d364 1
+a364 1
+			return IKVM.NativeCode.java.lang.VMClass.getClassFromType(Type.GetTypeFromHandle(typeHandle));
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d100 1
+a100 1
+			FieldWrapper field = wrapper.GetFieldWrapper(name, caller.GetClassLoader().ExpressionTypeWrapper(sig));
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d338 22
+d361 1
+d367 1
+d447 1
+d472 1
+d497 1
+d522 1
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d28 1
+a28 1
+public class ByteCodeHelper
+d30 1
+a30 2
+	[DebuggerStepThroughAttribute]
+	public static object multianewarray(RuntimeTypeHandle typeHandle, int[] lengths)
+d32 2
+a33 1
+		for(int i = 0; i < lengths.Length; i++)
+d35 1
+a35 1
+			if(lengths[i] < 0)
+d37 4
+a40 1
+				throw JavaException.NegativeArraySizeException();
+d42 1
+a43 2
+		return MultianewarrayHelper(Type.GetTypeFromHandle(typeHandle).GetElementType(), lengths, 0);
+	}
+d45 1
+a45 4
+	private static object MultianewarrayHelper(Type elemType, int[] lengths, int index)
+	{
+		object o = Array.CreateInstance(elemType, lengths[index++]);
+		if(index < lengths.Length)
+d47 2
+a48 3
+			elemType = elemType.GetElementType();
+			object[] a = (object[])o;
+			for(int i = 0; i < a.Length; i++)
+d50 6
+a55 1
+				a[i] = MultianewarrayHelper(elemType, lengths, index);
+d57 1
+a58 2
+		return o;
+	}
+d60 7
+a66 7
+	[DebuggerStepThroughAttribute]
+	public static object DynamicMultianewarray(RuntimeTypeHandle type, string clazz, int[] lengths)
+	{
+		Profiler.Count("DynamicMultianewarray");
+		TypeWrapper wrapper = LoadTypeWrapper(type, clazz);
+		return multianewarray(wrapper.TypeAsArrayType.TypeHandle, lengths);
+	}
+d68 2
+a69 5
+	[DebuggerStepThroughAttribute]
+	public static object DynamicNewarray(int length, RuntimeTypeHandle type, string clazz)
+	{
+		Profiler.Count("DynamicNewarray");
+		if(length < 0)
+d71 7
+a77 1
+			throw JavaException.NegativeArraySizeException();
+a78 3
+		TypeWrapper wrapper = LoadTypeWrapper(type, clazz);
+		return Array.CreateInstance(wrapper.TypeAsArrayType, length);
+	}
+d80 7
+a86 7
+	[DebuggerStepThroughAttribute]
+	public static void DynamicAastore(object arrayref, int index, object val, RuntimeTypeHandle type, string clazz)
+	{
+		Profiler.Count("DynamicAastore");
+		// TODO do we need to load the type here?
+		((Array)arrayref).SetValue(val, index);
+	}
+d88 7
+a94 7
+	[DebuggerStepThroughAttribute]
+	public static object DynamicAaload(object arrayref, int index, RuntimeTypeHandle type, string clazz)
+	{
+		Profiler.Count("DynamicAaload");
+		// TODO do we need to load the type here?
+		return ((Array)arrayref).GetValue(index);
+	}
+d96 1
+a96 6
+	private static FieldWrapper GetFieldWrapper(TypeWrapper thisType, RuntimeTypeHandle type, string clazz, string name, string sig, bool isStatic)
+	{
+		TypeWrapper caller = ClassLoaderWrapper.GetWrapperFromType(Type.GetTypeFromHandle(type));
+		TypeWrapper wrapper = LoadTypeWrapper(type, clazz);
+		FieldWrapper field = wrapper.GetFieldWrapper(name, caller.GetClassLoader().ExpressionTypeWrapper(sig));
+		if(field == null)
+d98 17
+a114 1
+			throw JavaException.NoSuchFieldError(clazz + "." + name);
+d116 3
+a118 2
+		// TODO check loader constraints
+		if(field.IsStatic != isStatic)
+d120 2
+a121 1
+			throw JavaException.IncompatibleClassChangeError(clazz + "." + name);
+d123 3
+a125 1
+		if(field.IsAccessibleFrom(caller, thisType))
+d127 2
+a128 1
+			return field;
+a129 2
+		throw JavaException.IllegalAccessError(field.DeclaringType.Name + "." + name);
+	}
+d131 2
+a132 20
+	[DebuggerStepThroughAttribute]
+	public static object DynamicGetfield(object obj, string name, string sig, RuntimeTypeHandle type, string clazz)
+	{
+		Profiler.Count("DynamicGetfield");
+		return GetFieldWrapper(ClassLoaderWrapper.GetWrapperFromType(obj.GetType()), type, clazz, name, sig, false).GetValue(obj);
+	}
+
+	[DebuggerStepThroughAttribute]
+	public static object DynamicGetstatic(string name, string sig, RuntimeTypeHandle type, string clazz)
+	{
+		Profiler.Count("DynamicGetstatic");
+		return GetFieldWrapper(null, type, clazz, name, sig, true).GetValue(null);
+	}
+
+	[DebuggerStepThroughAttribute]
+	public static void DynamicPutfield(object obj, object val, string name, string sig, RuntimeTypeHandle type, string clazz)
+	{
+		Profiler.Count("DynamicPutfield");
+		FieldWrapper fw = GetFieldWrapper(ClassLoaderWrapper.GetWrapperFromType(obj.GetType()), type, clazz, name, sig, false);
+		if(fw.IsFinal)
+d134 7
+a140 1
+			throw JavaException.IllegalAccessError("Field " + fw.DeclaringType.Name + "." + fw.Name + " is final");
+a141 2
+		fw.SetValue(obj, val);
+	}
+d143 2
+a144 6
+	[DebuggerStepThroughAttribute]
+	public static void DynamicPutstatic(object val, string name, string sig, RuntimeTypeHandle type, string clazz)
+	{
+		Profiler.Count("DynamicPutstatic");
+		FieldWrapper fw = GetFieldWrapper(null, type, clazz, name, sig, true);
+		if(fw.IsFinal)
+d146 7
+a152 1
+			throw JavaException.IllegalAccessError("Field " + fw.DeclaringType.Name + "." + fw.Name + " is final");
+a153 2
+		fw.SetValue(null, val);
+	}
+d155 3
+a157 7
+	// the sole purpose of this method is to check whether the clazz can be instantiated (but not to actually do it)
+	[DebuggerStepThroughAttribute]
+	public static void DynamicNewCheckOnly(RuntimeTypeHandle type, string clazz)
+	{
+		Profiler.Count("DynamicNewCheckOnly");
+		TypeWrapper wrapper = LoadTypeWrapper(type, clazz);
+		if(wrapper.IsAbstract || wrapper.IsInterface)
+d159 6
+a164 1
+			throw JavaException.InstantiationError(clazz);
+a165 1
+	}
+d167 1
+a167 3
+	private static TypeWrapper LoadTypeWrapper(RuntimeTypeHandle type, string clazz)
+	{
+		try
+d169 1
+a169 3
+			TypeWrapper context = ClassLoaderWrapper.GetWrapperFromType(Type.GetTypeFromHandle(type));
+			TypeWrapper wrapper = context.GetClassLoader().LoadClassByDottedNameFast(clazz);
+			if(wrapper == null)
+d171 12
+a182 1
+				throw JavaException.NoClassDefFoundError(clazz);
+d184 1
+a184 1
+			if(!wrapper.IsAccessibleFrom(context))
+d186 1
+a186 1
+				throw JavaException.IllegalAccessError("Try to access class " + wrapper.Name + " from class " + clazz);
+a187 2
+			wrapper.Finish();
+			return wrapper;
+d189 3
+a191 1
+		catch(RetargetableJavaException x)
+d193 2
+a194 1
+			throw x.ToJava();
+a195 1
+	}
+d197 10
+a206 6
+	[DebuggerStepThroughAttribute]
+	public static object DynamicClassLiteral(RuntimeTypeHandle type, string clazz)
+	{
+		Profiler.Count("DynamicClassLiteral");
+		return NativeCode.java.lang.VMClass.getClassFromWrapper(LoadTypeWrapper(type, clazz));
+	}
+d208 2
+a209 5
+	[DebuggerStepThroughAttribute]
+	public static object DynamicCast(object obj, RuntimeTypeHandle type, string clazz)
+	{
+		Profiler.Count("DynamicCast");
+		if(!DynamicInstanceOf(obj, type, clazz))
+d211 4
+a214 1
+			throw JavaException.ClassCastException(ClassLoaderWrapper.GetWrapperFromType(obj.GetType()).Name);
+a215 11
+		return obj;
+	}
+
+	[DebuggerStepThroughAttribute]
+	public static bool DynamicInstanceOf(object obj, RuntimeTypeHandle type, string clazz)
+	{
+		Profiler.Count("DynamicInstanceOf");
+		TypeWrapper wrapper = LoadTypeWrapper(type, clazz);
+		TypeWrapper other = ClassLoaderWrapper.GetWrapperFromType(obj.GetType());
+		return other.IsAssignableTo(wrapper);
+	}
+d217 1
+a217 6
+	private static MethodWrapper GetMethodWrapper(TypeWrapper thisType, RuntimeTypeHandle type, string clazz, string name, string sig, bool isStatic)
+	{
+		TypeWrapper caller = ClassLoaderWrapper.GetWrapperFromType(Type.GetTypeFromHandle(type));
+		TypeWrapper wrapper = LoadTypeWrapper(type, clazz);
+		MethodWrapper mw = wrapper.GetMethodWrapper(new MethodDescriptor(name, sig), false);
+		if(mw == null)
+d219 17
+a235 1
+			throw JavaException.NoSuchMethodError(clazz + "." + name + sig);
+d237 3
+a239 2
+		// TODO check loader constraints
+		if(mw.IsStatic != isStatic)
+d241 2
+a242 1
+			throw JavaException.IncompatibleClassChangeError(clazz + "." + name);
+d244 3
+a246 1
+		if(mw.IsAccessibleFrom(caller, thisType == null ? wrapper : thisType))
+d248 2
+a249 1
+			return mw;
+a250 2
+		throw JavaException.IllegalAccessError(clazz + "." + name + sig);
+	}
+d252 2
+a253 32
+	[DebuggerStepThroughAttribute]
+	public static object DynamicInvokeSpecialNew(RuntimeTypeHandle type, string clazz, string name, string sig, object[] args)
+	{
+		Profiler.Count("DynamicInvokeSpecialNew");
+		return GetMethodWrapper(null, type, clazz, name, sig, false).Invoke(null, args, false);
+	}
+
+	[DebuggerStepThroughAttribute]
+	public static object DynamicInvokestatic(RuntimeTypeHandle type, string clazz, string name, string sig, object[] args)
+	{
+		Profiler.Count("DynamicInvokestatic");
+		return GetMethodWrapper(null, type, clazz, name, sig, true).Invoke(null, args, false);
+	}
+
+	[DebuggerStepThroughAttribute]
+	public static object DynamicInvokevirtual(object obj, RuntimeTypeHandle type, string clazz, string name, string sig, object[] args)
+	{
+		Profiler.Count("DynamicInvokevirtual");
+		return GetMethodWrapper(ClassLoaderWrapper.GetWrapperFromType(obj.GetType()), type, clazz, name, sig, false).Invoke(obj, args, true);
+	}
+
+	[DebuggerStepThroughAttribute]
+	public static Type DynamicGetTypeAsExceptionType(RuntimeTypeHandle type, string clazz)
+	{
+		Profiler.Count("DynamicGetTypeAsExceptionType");
+		return LoadTypeWrapper(type, clazz).TypeAsExceptionType;
+	}
+
+	[DebuggerStepThroughAttribute]
+	public static int f2i(float f)
+	{
+		if(f <= int.MinValue)
+d255 2
+a256 1
+			return int.MinValue;
+d258 3
+a260 1
+		if(f >= int.MaxValue)
+d262 2
+a263 1
+			return int.MaxValue;
+d265 3
+a267 1
+		if(f != f)
+d269 13
+a281 1
+			return 0;
+a282 2
+		return (int)f;
+	}
+d284 2
+a285 4
+	[DebuggerStepThroughAttribute]
+	public static long f2l(float f)
+	{
+		if(f <= long.MinValue)
+d287 13
+a299 1
+			return long.MinValue;
+d301 3
+a303 1
+		if(f >= long.MaxValue)
+d305 13
+a317 1
+			return long.MaxValue;
+d319 3
+a321 1
+		if(f != f)
+d323 13
+a335 1
+			return 0;
+a336 2
+		return (long)f;
+	}
+d338 2
+a339 4
+	[DebuggerStepThroughAttribute]
+	public static int d2i(double d)
+	{
+		if(d <= int.MinValue)
+d341 1
+a341 1
+			return int.MinValue;
+d343 2
+a344 1
+		if(d >= int.MaxValue)
+d346 75
+a420 1
+			return int.MaxValue;
+d422 2
+a423 1
+		if(d != d)
+d425 20
+a444 1
+			return 0;
+a445 2
+		return (int)d;
+	}
+d447 1
+a447 4
+	[DebuggerStepThroughAttribute]
+	public static long d2l(double d)
+	{
+		if(d <= long.MinValue)
+d449 20
+a468 1
+			return long.MinValue;
+d470 2
+a471 1
+		if(d >= long.MaxValue)
+d473 20
+a492 1
+			return long.MaxValue;
+d494 2
+a495 1
+		if(d != d)
+d497 17
+a513 1
+			return 0;
+a514 1
+		return (long)d;
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@d103 1
+d108 1
+a108 5
+		// NOTE this access check is duplicated in Compiler.GetPutField
+		if(field.IsPublic ||
+			(field.IsProtected && (isStatic ? caller.IsSubTypeOf(field.DeclaringType) : thisType.IsSubTypeOf(caller))) ||
+			(field.IsPrivate && caller == field.DeclaringType) ||
+			(!(field.IsPublic || field.IsPrivate) && caller.IsInSamePackageAs(field.DeclaringType)))
+d133 6
+a138 1
+		GetFieldWrapper(ClassLoaderWrapper.GetWrapperFromType(obj.GetType()), type, clazz, name, sig, false).SetValue(obj, val);
+d145 6
+a150 1
+		GetFieldWrapper(null, type, clazz, name, sig, true).SetValue(null, val);
+d167 1
+a167 3
+		TypeWrapper context = ClassLoaderWrapper.GetWrapperFromType(Type.GetTypeFromHandle(type));
+		TypeWrapper wrapper = context.GetClassLoader().LoadClassByDottedNameFast(clazz);
+		if(wrapper == null)
+d169 12
+a180 1
+			throw JavaException.NoClassDefFoundError(clazz);
+d182 1
+a182 1
+		if(!wrapper.IsAccessibleFrom(context))
+d184 1
+a184 1
+			throw JavaException.IllegalAccessError("Try to access class " + wrapper.Name + " from class " + clazz);
+a185 3
+		// TODO is this really needed?
+		wrapper.Finish();
+		return wrapper;
+d215 1
+a215 2
+	[DebuggerStepThroughAttribute]
+	public static object DynamicInvokeSpecialNew(RuntimeTypeHandle type, string clazz, string name, string sig, object[] args)
+d217 1
+a217 1
+		Profiler.Count("DynamicInvokeSpecialNew");
+d219 1
+a219 3
+		// TODO who checks that the arg types are loadable?
+		// TODO check accessibility
+		MethodWrapper mw = wrapper.GetMethodWrapper(MethodDescriptor.FromNameSig(wrapper.GetClassLoader(), name, sig), false);
+d222 1
+a222 2
+			// TODO throw the appropriate exception
+			throw new NotImplementedException("constructor missing");
+d224 17
+a240 1
+		return mw.Invoke(null, args, false);
+d247 1
+a247 10
+		TypeWrapper wrapper = LoadTypeWrapper(type, clazz);
+		// TODO who checks that the arg types are loadable?
+		// TODO check accessibility
+		MethodWrapper mw = wrapper.GetMethodWrapper(MethodDescriptor.FromNameSig(wrapper.GetClassLoader(), name, sig), true);
+		if(mw == null)
+		{
+			// TODO throw the appropriate exception
+			throw new NotImplementedException("method missing");
+		}
+		return mw.Invoke(null, args, false);
+d254 1
+a254 10
+		TypeWrapper wrapper = LoadTypeWrapper(type, clazz);
+		// TODO who checks that the arg types are loadable?
+		// TODO check accessibility
+		MethodWrapper mw = wrapper.GetMethodWrapper(MethodDescriptor.FromNameSig(wrapper.GetClassLoader(), name, sig), true);
+		if(mw == null)
+		{
+			// TODO throw the appropriate exception
+			throw new NotImplementedException("method missing");
+		}
+		return mw.Invoke(obj, args, false);
+d261 1
+a261 3
+		TypeWrapper tw = LoadTypeWrapper(type, clazz);
+		tw.Finish();
+		return tw.TypeAsExceptionType;
+@
+

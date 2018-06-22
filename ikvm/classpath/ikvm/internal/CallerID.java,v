@@ -1,0 +1,423 @@
+head	1.9;
+access;
+symbols
+	v8_1_5717_0:1.9
+	v8_1:1.9.0.2
+	v8_0_5449_1:1.8
+	v8_0_5449_0:1.8
+	v8_0:1.8.0.4
+	v7_4_5196_0:1.8
+	v7_4:1.8.0.2
+	v7_3:1.6.0.12
+	v7_2_4630_6:1.6
+	v7_2_4630_5:1.6
+	v7_2_4630_4:1.6
+	v7_2_4630_3:1.6
+	v7_2_4630_2:1.6
+	v0_46_0_4:1.6
+	v7_2_4630_1:1.6
+	v7_2:1.6.0.10
+	v7_1_4532_2:1.6
+	v7_1_4532_1:1.6
+	v7_1_4532_0:1.6
+	v7_1:1.6.0.8
+	v7_0_4335_3:1.6
+	v7_0_4335_2:1.6
+	v7_0_4335_1:1.6
+	v0_46_0_2:1.6
+	v7_0_4335_0:1.6
+	v7_0:1.6.0.6
+	v0_40_0_6:1.4
+	v0_40_0_5:1.4
+	v0_46_0_1:1.6
+	v0_46_0_0:1.6
+	v0_46:1.6.0.4
+	v0_44_0_6:1.6
+	v0_44_0_5:1.6
+	v0_44_0_4:1.6
+	v0_44_0_3:1.6
+	v0_44_0_2:1.6
+	v0_42_0_7:1.5
+	v0_44_0_1:1.6
+	v0_44_0_0:1.6
+	v0_44:1.6.0.2
+	v0_42_0_6:1.5
+	v0_42_0_5:1.5
+	v0_42_0_4:1.5
+	v0_42_0_3:1.5
+	v0_42_0_2:1.5
+	v0_42_0_1:1.5
+	v0_42_0_0:1.5
+	v0_42:1.5.0.2
+	v0_40_0_3:1.4
+	v0_40_0_2:1.4
+	v0_40_0_1:1.4
+	v0_40_0_0:1.4
+	v0_40:1.4.0.4
+	v0_38_0_1:1.4
+	v0_38_0_0:1.4
+	v0_38:1.4.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.9
+date	2015.03.12.14.46.13;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2014.02.27.06.57.34;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2013.05.30.15.24.10;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2010.02.03.15.00.55;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2009.07.14.08.44.55;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2008.06.04.05.12.46;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.06.02.04.15.44;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.06.02.04.04.39;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.05.31.15.20.47;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.9
+log
+@Changed dynamic CallerID implementation to use only immutable CallerID objects. If a CallerID is passed along downstream, it should not start returning a different caller. Also simplified host caller id.
+@
+text
+@/*
+  Copyright (C) 2008-2015 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+package ikvm.internal;
+
+import cli.System.Type;
+import cli.System.Diagnostics.StackFrame;
+import cli.System.Reflection.Assembly;
+
+public abstract class CallerID
+{
+    private Class clazz;
+    private ClassLoader classLoader;
+
+    private CallerID(Class clazz, ClassLoader classLoader)
+    {
+        this.clazz = clazz;
+        this.classLoader = classLoader;
+    }
+
+    protected CallerID() { }
+
+    @@ikvm.lang.Internal
+    public final Class getCallerClass()
+    {
+	if (clazz == null)
+	{
+	    clazz = GetClass();
+	}
+        return clazz;
+    }
+
+    @@ikvm.lang.Internal
+    public final ClassLoader getCallerClassLoader()
+    {
+	ClassLoader cl = classLoader;
+	if (cl == null)
+	{
+	    cl = classLoader = GetClassLoader();
+	    if (cl == null)
+	    {
+		cl = classLoader = ClassLoader.DUMMY;
+	    }
+	}
+	return cl == ClassLoader.DUMMY ? null : cl;
+    }
+
+    @@ikvm.lang.Internal
+    public static CallerID create(cli.System.Diagnostics.StackFrame frame)
+    {
+	return create(frame.GetMethod());
+    }
+
+    @@ikvm.lang.Internal
+    public static CallerID create(final cli.System.Reflection.MethodBase method)
+    {
+	return new CallerID() {
+	    Class GetClass() {
+		if (method == null) {
+		    // this happens if a native thread attaches and calls back into Java
+		    return null;
+		}
+		Type type = method.get_DeclaringType();
+		if (type == null) {
+		    // TODO we probably should return a class corresponding to <Module>
+		    throw new InternalError();
+		}
+		return ikvm.runtime.Util.getClassFromTypeHandle(type.get_TypeHandle());
+	    }
+	    ClassLoader GetClassLoader() {
+		if (method == null) {
+		    // this happens if a native thread attaches and calls back into Java
+		    return null;
+		}
+		Assembly asm = method.get_Module().get_Assembly();
+		return GetAssemblyClassLoader(asm);
+	    }
+	};
+    }
+
+    // this is a shortcut for use inside the core class library, it removes the need to create a nested type for every caller
+    @@ikvm.lang.Internal
+    public static CallerID create(final cli.System.RuntimeTypeHandle typeHandle)
+    {
+	return new CallerID() {
+	    Class GetClass() {
+		return ikvm.runtime.Util.getClassFromTypeHandle(typeHandle);
+	    }
+	    ClassLoader GetClassLoader() {
+	        // since this optimization is only available inside the core class library, we know that the class loader is null
+		return null;
+	    }
+	};
+    }
+
+    // used by the runtime for EmitHostCallerID and DynamicCallerID
+    static CallerID create(Class clazz, ClassLoader classLoader)
+    {
+        return new CallerID(clazz, classLoader) {
+	    Class GetClass() {
+		return null;
+	    }
+	    ClassLoader GetClassLoader() {
+		return null;
+	    }
+        };
+    }
+
+    @@ikvm.lang.Internal
+    public static CallerID getCallerID()
+    {
+	// this is a compiler intrinsic, so there is no meaningful implementation here
+	return null;
+    }
+
+    native Class GetClass();
+    native ClassLoader GetClassLoader();
+    static native ClassLoader GetAssemblyClassLoader(Assembly asm);
+}
+@
+
+
+1.8
+log
+@Integrated OpenJDK 7u40 JSR-292 implementation (aka LambdaForms).
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008-2014 Jeroen Frijters
+d35 6
+d46 1
+a46 1
+	if (clazz != null)
+d48 1
+a48 1
+	    return clazz;
+d50 1
+a50 1
+        return getAndCacheClass();
+d59 5
+a63 1
+	    cl = getAndCacheClassLoader();
+a67 17
+    // virtual method that is overridden by DynamicCallerID in MethodHandle code
+    Class getAndCacheClass()
+    {
+        return clazz = GetClass();
+    }
+
+    // virtual method that is overridden by DynamicCallerID in MethodHandle code
+    ClassLoader getAndCacheClassLoader()
+    {
+        ClassLoader cl = classLoader = GetClassLoader();
+        if (cl == null)
+        {
+	    cl = classLoader = ClassLoader.DUMMY;
+        }
+        return cl;
+    }
+
+d116 13
+@
+
+
+1.7
+log
+@Added support for binding method handles to methods that require CallerID.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2008 Jeroen Frijters
+d40 1
+a40 1
+	if (clazz == null)
+d42 1
+a42 1
+	    clazz = GetClass();
+d44 1
+a44 1
+	return clazz;
+d53 1
+a53 5
+	    cl = classLoader = GetClassLoader();
+	    if (cl == null)
+	    {
+		cl = classLoader = ClassLoader.DUMMY;
+	    }
+d58 17
+a122 12
+    // this is used by the MethodHandle code to create a CallerID from the lookupClass
+    static CallerID create(final Class clazz) {
+	return new CallerID() {
+	    Class GetClass() {
+		return clazz;
+	    }
+	    ClassLoader GetClassLoader() {
+		return clazz.getClassLoader();
+	    }
+	};
+    }
+
+@
+
+
+1.6
+log
+@Forgot to cache the classLoader. Thanks to Mainsoft for this fix.
+@
+text
+@d110 12
+@
+
+
+1.5
+log
+@Take advantage of the fact that a callerID generated inside core class library has a known class loader (i.e. null) to avoid calling Class.getClassLoader().
+@
+text
+@d53 1
+a53 1
+	    cl = GetClassLoader();
+@
+
+
+1.4
+log
+@- Renamed ClassLoader.NIL_CLASSLOADER to ClassLoader.DUMMY.
+- Removed unused ClassLoader.registerNatives().
+- Removed unnecessary field initializers in ClassLoader.
+- Moved necessary field initializers in ClassLoader to constructor.
+- Changed Thread to make use of ClassLoader.DUMMY, instead of having an extra field to keep track of contextClassLoader status.
+@
+text
+@d104 2
+a105 1
+		return getCallerClass().getClassLoader();
+@
+
+
+1.3
+log
+@Removed dependency on constructor having run, to protect against finalizer attacks.
+@
+text
+@d56 1
+a56 1
+		cl = classLoader = ClassLoader.NIL_CLASSLOADER;
+d59 1
+a59 1
+	return cl == ClassLoader.NIL_CLASSLOADER ? null : cl;
+@
+
+
+1.2
+log
+@Added optimization to omit callerid nested type inside core library.
+@
+text
+@d33 1
+a33 1
+    private ClassLoader classLoader = ClassLoader.NIL_CLASSLOADER;
+d50 2
+a51 1
+	if (classLoader == ClassLoader.NIL_CLASSLOADER)
+d53 5
+a57 1
+	    classLoader = GetClassLoader();
+d59 1
+a59 1
+	return classLoader;
+@
+
+
+1.1
+log
+@- Implemented CallerID infrastructure.
+- Marked various methods with HasCallerID annotation.
+- Rewrote some methods to explicitly use CallerID.
+@
+text
+@d90 14
+@
+

@@ -1,0 +1,141 @@
+head	1.2;
+access;
+symbols
+	v0_40_0_6:1.1
+	v0_40_0_5:1.1
+	v0_36_0_14:1.1
+	v0_42_0_7:1.1
+	v0_42_0_6:1.1
+	v0_42_0_5:1.1
+	v0_42_0_4:1.1
+	v0_42_0_3:1.1
+	v0_42_0_2:1.1
+	v0_42_0_1:1.1
+	v0_42_0_0:1.1
+	v0_42:1.1.0.14
+	v0_40_0_3:1.1
+	v0_40_0_2:1.1
+	v0_40_0_1:1.1
+	v0_40_0_0:1.1
+	v0_40:1.1.0.12
+	v0_36_0_13:1.1
+	v0_38_0_1:1.1
+	v0_38_0_0:1.1
+	v0_38:1.1.0.10
+	v0_36_0_9:1.1
+	v0_36_0_7:1.1
+	v0_36_0_5:1.1
+	v0_36_0_4:1.1
+	v0_36_0_3:1.1
+	v0_36_0_2:1.1
+	v0_36_0_1:1.1
+	v0_36_0_0:1.1
+	v0_36:1.1.0.8
+	v0_34_0_3:1.1
+	v0_34_0_2:1.1
+	v0_34_0_1:1.1
+	v0_34_0_0:1.1
+	v0_34:1.1.0.6
+	v0_32:1.1.0.4
+	v0_32_0_0:1.1
+	v0_30:1.1.0.2
+	v0_28_0_0:1.1
+	v0_26_0_1:1.1
+	v0_26_0_0:1.1
+	v0_24_0_1:1.1
+	v0_24_0_0:1.1
+	v0_22_0_0:1.1
+	v0_20_0_0:1.1
+	v0_18_0_0:1.1
+	v0_16_0_0:1.1
+	v0_14_0_1:1.1
+	v0_14_0_0:1.1
+	v0_12_0_0:1.1
+	v0_10_0_1:1.1
+	v0_10_0_0:1.1;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2010.01.11.07.06.36;	author jfrijters;	state dead;
+branches;
+next	1.1;
+
+1.1
+date	2004.06.29.12.59.30;	author sschaub;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@Moved User Guide content to wiki.
+@
+text
+@<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.2//EN" "http://apache.org/forrest/ttd/document-v12.ttd">
+<document>
+	<header>
+		<title>IKVM.NET Stub Generator (ikvmstub.exe)</title>
+		<abstract>The ikvmstub tool generates Java stubs from .NET assemblies.</abstract>
+	</header>
+	<body>
+		<section>
+			<title>Usage</title>
+<table><tr><td>
+			<p xml:space="preserve">    ikvmstub <em>assemblyNameOrPath</em> </p>
+</td></tr></table>				
+			<dl>
+				<dt>assemblyNameOrPath</dt>
+				<dd>Name of an assembly. May be a fully-qualified path. </dd>
+				
+			</dl>
+		</section>
+
+		
+		<section>
+			<title>Notes</title>
+            <p>ikvmstub reads the specified assembly and generates a Java jar file containing
+            Java interfaces and stub classes. For more information about the generated stubs,
+            see the <link href="site:java2net">Developer's Guide</link>.</p>
+			<p>The tool uses the following algorithm to locate the assembly:</p>
+                                                <ol>
+                                                <li>First it attempts to load the assembly from the default load context of ikvmstub.exe.
+                                                For practical purposes, this usually means it searches the Global Assembly Cache.</li>
+                                                <li>If not found in the default load context, ikvmstub looks for the assembly at the indicated path (or the current
+                                                   directory, if no path is supplied).</li>
+                                                </ol>
+						
+			
+			
+		</section>
+		
+		<section>
+			<title>Examples</title>
+			<p xml:space="preserve"><code>    ikvmstub mscorlib.dll </code></p>
+			<p>Generates mscorlib.jar, containing stubs for classes, interfaces, etc., defined in mscorlib.dll.
+			</p>
+                        
+                                                <p xml:space="preserve"><code>    ikvmstub c:\lib\mylib.dll </code></p>
+			<p>Generates mylib.jar, containing stubs for classes, interfaces, etc., defined in c:\lib\mylib.dll.
+			</p>
+
+			
+		</section>
+	</body>
+</document>
+@
+
+
+1.1
+log
+@Initial website commit
+@
+text
+@@
+

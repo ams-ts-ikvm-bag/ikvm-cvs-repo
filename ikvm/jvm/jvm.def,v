@@ -1,0 +1,36 @@
+head	1.1;
+access;
+symbols
+	v8_1_5717_0:1.1
+	v8_1:1.1.0.8
+	v8_0_5449_1:1.1
+	v8_0_5449_0:1.1
+	v8_0:1.1.0.6
+	v7_4_5196_0:1.1
+	v7_4:1.1.0.4
+	v7_3:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	2013.01.12.14.27.12;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Replace ilasm usage to generate JVM.DLL with a custom tool.
+@
+text
+@LIBRARY JVM.DLL
+EXPORTS
+    JNI_CreateJavaVM=[IKVM.Runtime.JNI]IKVM.Runtime.JNI::CreateJavaVM                          @@2164
+    JNI_GetCreatedJavaVMs=[IKVM.Runtime.JNI]IKVM.Runtime.JNI::GetCreatedJavaVMs                @@2165
+    JNI_GetDefaultJavaVMInitArgs=[IKVM.Runtime.JNI]IKVM.Runtime.JNI::GetDefaultJavaVMInitArgs  @@2166
+@

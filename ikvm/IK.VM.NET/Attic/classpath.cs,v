@@ -1,0 +1,4633 @@
+head	1.54;
+access;
+symbols
+	initial:1.1.1.1 ikvm:1.1.1;
+locks; strict;
+comment	@ * @;
+
+
+1.54
+date	2004.05.27.07.12.15;	author jfrijters;	state dead;
+branches;
+next	1.53;
+
+1.53
+date	2004.05.14.09.31.55;	author jfrijters;	state Exp;
+branches;
+next	1.52;
+
+1.52
+date	2004.04.23.14.21.43;	author jfrijters;	state Exp;
+branches;
+next	1.51;
+
+1.51
+date	2004.03.20.13.25.08;	author jfrijters;	state Exp;
+branches;
+next	1.50;
+
+1.50
+date	2004.03.16.17.10.10;	author jfrijters;	state Exp;
+branches;
+next	1.49;
+
+1.49
+date	2004.03.08.15.18.47;	author jfrijters;	state Exp;
+branches;
+next	1.48;
+
+1.48
+date	2004.02.02.09.46.26;	author jfrijters;	state Exp;
+branches;
+next	1.47;
+
+1.47
+date	2004.01.30.15.27.53;	author jfrijters;	state Exp;
+branches;
+next	1.46;
+
+1.46
+date	2004.01.28.11.28.16;	author jfrijters;	state Exp;
+branches;
+next	1.45;
+
+1.45
+date	2004.01.11.13.14.43;	author jfrijters;	state Exp;
+branches;
+next	1.44;
+
+1.44
+date	2003.12.24.11.51.41;	author jfrijters;	state Exp;
+branches;
+next	1.43;
+
+1.43
+date	2003.12.19.22.19.18;	author jfrijters;	state Exp;
+branches;
+next	1.42;
+
+1.42
+date	2003.11.17.12.01.52;	author jfrijters;	state Exp;
+branches;
+next	1.41;
+
+1.41
+date	2003.10.17.08.08.31;	author jfrijters;	state Exp;
+branches;
+next	1.40;
+
+1.40
+date	2003.09.10.12.21.01;	author jfrijters;	state Exp;
+branches;
+next	1.39;
+
+1.39
+date	2003.08.21.10.06.35;	author jfrijters;	state Exp;
+branches;
+next	1.38;
+
+1.38
+date	2003.08.12.13.09.31;	author jfrijters;	state Exp;
+branches;
+next	1.37;
+
+1.37
+date	2003.08.08.12.37.24;	author jfrijters;	state Exp;
+branches;
+next	1.36;
+
+1.36
+date	2003.08.07.14.55.43;	author jfrijters;	state Exp;
+branches;
+next	1.35;
+
+1.35
+date	2003.08.05.14.07.23;	author jfrijters;	state Exp;
+branches;
+next	1.34;
+
+1.34
+date	2003.07.31.12.49.29;	author jfrijters;	state Exp;
+branches;
+next	1.33;
+
+1.33
+date	2003.07.29.10.27.31;	author jfrijters;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2003.07.24.21.02.18;	author jfrijters;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2003.07.21.07.00.22;	author jfrijters;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2003.06.10.13.28.48;	author jfrijters;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2003.05.31.12.16.58;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2003.05.30.12.09.00;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2003.05.10.11.43.12;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2003.04.17.13.15.13;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2003.04.14.09.41.58;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2003.03.31.14.54.35;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2003.03.21.13.41.43;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2003.03.17.14.04.27;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2003.02.27.16.41.50;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2003.02.25.15.52.15;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2003.02.22.12.28.12;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2003.02.20.14.18.39;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2003.02.18.09.31.20;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2003.02.17.13.48.44;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2003.02.15.16.28.11;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2003.02.15.13.36.13;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2003.02.15.11.20.58;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2003.02.15.09.38.42;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2003.02.12.12.39.19;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2003.01.17.14.36.15;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2003.01.07.15.15.41;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2003.01.06.14.02.03;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2003.01.02.15.44.29;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2003.01.02.13.50.54;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2002.12.29.16.31.58;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2002.12.28.10.53.19;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2002.12.27.11.09.35;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2002.12.27.09.09.02;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2002.12.18.16.01.13;	author jfrijters;	state Exp;
+branches
+	1.1.1.1;
+next	;
+
+1.1.1.1
+date	2002.12.18.16.01.13;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.54
+log
+@*** empty log message ***
+@
+text
+@/*
+  Copyright (C) 2002, 2003, 2004 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections;
+using System.IO;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
+using System.Text;
+using OpenSystem.Java;
+using NetSystem = System;
+
+namespace NativeCode.java
+{
+	namespace lang
+	{
+		namespace reflect
+		{
+			public class Proxy
+			{
+				// NOTE not used, only here to shut up ikvmc during compilation of classpath.dll
+				public static object getProxyClass0(object o1, object o2)
+				{
+					throw new InvalidOperationException();
+				}
+				
+				// NOTE not used, only here to shut up ikvmc during compilation of classpath.dll
+				public static object getProxyData0(object o1, object o2)
+				{
+					throw new InvalidOperationException();
+				}
+				
+				// NOTE not used, only here to shut up ikvmc during compilation of classpath.dll
+				public static object generateProxyClass0(object o1, object o2)
+				{
+					throw new InvalidOperationException();
+				}
+			}
+
+			public class Array
+			{
+				public static object createObjectArray(object clazz, int dim)
+				{
+					if(dim >= 0)
+					{
+						// TODO handle ghost types
+						return NetSystem.Array.CreateInstance(VMClass.getWrapperFromClass(clazz).TypeAsArrayType, dim);
+					}
+					throw JavaException.NegativeArraySizeException();
+				}
+			}
+
+			internal class JavaWrapper
+			{
+				private static Type java_lang_Byte = ClassLoaderWrapper.LoadClassCritical("java.lang.Byte").TypeAsTBD;
+				private static Type java_lang_Boolean = ClassLoaderWrapper.LoadClassCritical("java.lang.Boolean").TypeAsTBD;
+				private static Type java_lang_Short = ClassLoaderWrapper.LoadClassCritical("java.lang.Short").TypeAsTBD;
+				private static Type java_lang_Character = ClassLoaderWrapper.LoadClassCritical("java.lang.Character").TypeAsTBD;
+				private static Type java_lang_Integer = ClassLoaderWrapper.LoadClassCritical("java.lang.Integer").TypeAsTBD;
+				private static Type java_lang_Long = ClassLoaderWrapper.LoadClassCritical("java.lang.Long").TypeAsTBD;
+				private static Type java_lang_Float = ClassLoaderWrapper.LoadClassCritical("java.lang.Float").TypeAsTBD;
+				private static Type java_lang_Double = ClassLoaderWrapper.LoadClassCritical("java.lang.Double").TypeAsTBD;
+
+				internal static object Box(object o)
+				{
+					if(o is sbyte)
+					{
+						return Activator.CreateInstance(java_lang_Byte, new object[] { o });
+					}
+					else if(o is byte)
+					{
+						return Activator.CreateInstance(java_lang_Byte, new object[] { (sbyte)(byte)o });
+					}
+					else if(o is bool)
+					{
+						return Activator.CreateInstance(java_lang_Boolean, new object[] { o });
+					}
+					else if(o is short)
+					{
+						return Activator.CreateInstance(java_lang_Short, new object[] { o });
+					}
+					else if(o is ushort)
+					{
+						return Activator.CreateInstance(java_lang_Short, new object[] { (short)(ushort)o });
+					}
+					else if(o is char)
+					{
+						return Activator.CreateInstance(java_lang_Character, new object[] { o });
+					}
+					else if(o is int)
+					{
+						return Activator.CreateInstance(java_lang_Integer, new object[] { o });
+					}
+					else if(o is uint)
+					{
+						return Activator.CreateInstance(java_lang_Integer, new object[] { (int)(uint)o });
+					}
+					else if(o is long)
+					{
+						return Activator.CreateInstance(java_lang_Long, new object[] { o });
+					}
+					else if(o is ulong)
+					{
+						return Activator.CreateInstance(java_lang_Long, new object[] { (long)(ulong)o });
+					}
+					else if(o is float)
+					{
+						return Activator.CreateInstance(java_lang_Float, new object[] { o });
+					}
+					else if(o is double)
+					{
+						return Activator.CreateInstance(java_lang_Double, new object[] { o });
+					}
+					else if(o is Enum)
+					{
+						Type enumType = Enum.GetUnderlyingType(o.GetType());
+						if(enumType == typeof(byte) || enumType == typeof(sbyte))
+						{
+							return JavaWrapper.Box((sbyte)((IConvertible)o).ToInt32(null));
+						}
+						else if(enumType == typeof(short) || enumType == typeof(ushort))
+						{
+							return JavaWrapper.Box((short)((IConvertible)o).ToInt32(null));
+						}
+						else if(enumType == typeof(int))
+						{
+							return JavaWrapper.Box(((IConvertible)o).ToInt32(null));
+						}
+						else if(enumType == typeof(uint))
+						{
+							return JavaWrapper.Box(unchecked((int)((IConvertible)o).ToUInt32(null)));
+						}
+						else if(enumType == typeof(long))
+						{
+							return JavaWrapper.Box(((IConvertible)o).ToInt64(null));
+						}
+						else if(enumType == typeof(ulong))
+						{
+							return JavaWrapper.Box(unchecked((long)((IConvertible)o).ToUInt64(null)));
+						}
+						else
+						{
+							throw new InvalidOperationException();
+						}
+					}
+					else
+					{
+						throw new NotImplementedException(o.GetType().FullName);
+					}
+				}
+
+				internal static object Unbox(object o)
+				{
+					Type type = o.GetType();
+					if(type == java_lang_Byte)
+					{
+						return java_lang_Byte.GetMethod("byteValue").Invoke(o, new object[0]);
+					}
+					else if(type == java_lang_Boolean)
+					{
+						return java_lang_Boolean.GetMethod("booleanValue").Invoke(o, new object[0]);
+					}
+					else if(type == java_lang_Short)
+					{
+						return java_lang_Short.GetMethod("shortValue").Invoke(o, new object[0]);
+					}
+					else if(type == java_lang_Character)
+					{
+						return java_lang_Character.GetMethod("charValue").Invoke(o, new object[0]);
+					}
+					else if(type == java_lang_Integer)
+					{
+						return java_lang_Integer.GetMethod("intValue").Invoke(o, new object[0]);
+					}
+					else if(type == java_lang_Long)
+					{
+						return java_lang_Long.GetMethod("longValue").Invoke(o, new object[0]);
+					}
+					else if(type == java_lang_Float)
+					{
+						return java_lang_Float.GetMethod("floatValue").Invoke(o, new object[0]);
+					}
+					else if(type == java_lang_Double)
+					{
+						return java_lang_Double.GetMethod("doubleValue").Invoke(o, new object[0]);
+					}
+					else
+					{
+						throw JavaException.IllegalArgumentException(type.FullName);
+					}
+				}
+			}
+
+			public class Method
+			{
+				public static String GetName(object methodCookie)
+				{
+					MethodWrapper wrapper = (MethodWrapper)methodCookie;
+					return wrapper.Name;
+				}
+				
+				public static int GetModifiers(object methodCookie)
+				{
+					MethodWrapper wrapper = (MethodWrapper)methodCookie;
+					return (int)wrapper.Modifiers;
+				}
+
+				public static object GetReturnType(object methodCookie)
+				{
+					MethodWrapper wrapper = (MethodWrapper)methodCookie;
+					return VMClass.getClassFromWrapper(wrapper.ReturnType);
+				}
+
+				public static object[] GetParameterTypes(object methodCookie)
+				{
+					MethodWrapper wrapper = (MethodWrapper)methodCookie;
+					TypeWrapper[] parameters = wrapper.GetParameters();
+					object[] parameterClasses = new object[parameters.Length];
+					for(int i = 0; i < parameters.Length; i++)
+					{
+						parameterClasses[i] = VMClass.getClassFromWrapper(parameters[i]);
+					}
+					return parameterClasses;
+				}
+
+				public static string[] GetExceptionTypes(object methodCookie)
+				{
+					MethodWrapper wrapper = (MethodWrapper)methodCookie;
+					wrapper.DeclaringType.Finish();
+					return wrapper.GetExceptions();
+				}
+
+				public static object Invoke(object methodCookie, object o, object[] args)
+				{
+					object[] argsCopy = new Object[args != null ? args.Length : 0];
+					MethodWrapper mw = (MethodWrapper)methodCookie;
+					mw.DeclaringType.Finish();
+					TypeWrapper[] argWrappers = mw.GetParameters();
+					for(int i = 0; i < argWrappers.Length; i++)
+					{
+						if(argWrappers[i].IsPrimitive)
+						{
+							if(args[i] == null)
+							{
+								throw JavaException.IllegalArgumentException("primitive wrapper null");
+							}
+							argsCopy[i] = JavaWrapper.Unbox(args[i]);
+						}
+						else
+						{
+							argsCopy[i] = args[i];
+						}
+					}
+					object retval = mw.Invoke(o, argsCopy, false);
+					if(mw.ReturnType.IsPrimitive && mw.ReturnType != PrimitiveTypeWrapper.VOID)
+					{
+						retval = JavaWrapper.Box(retval);
+					}
+					return retval;
+				}
+			}
+
+			public class Field
+			{
+				// HACK this is used by netexp to query the constant value of a field
+				public static object getConstant(object field)
+				{
+					// HACK we use reflection to extract the fieldCookie from the java.lang.reflect.Field object
+					FieldWrapper wrapper = (FieldWrapper)field.GetType().GetField("fieldCookie", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(field);
+					return wrapper.GetConstant();
+				}
+
+				public static string GetName(object fieldCookie)
+				{
+					FieldWrapper wrapper = (FieldWrapper)fieldCookie;
+					return wrapper.Name;
+				}
+
+				public static int GetModifiers(object fieldCookie)
+				{
+					FieldWrapper wrapper = (FieldWrapper)fieldCookie;
+					return (int)wrapper.Modifiers;
+				}
+
+				public static object GetFieldType(object fieldCookie)
+				{
+					FieldWrapper wrapper = (FieldWrapper)fieldCookie;
+					return VMClass.getClassFromWrapper(wrapper.FieldTypeWrapper);
+				}
+
+				public static bool isSamePackage(object a, object b)
+				{
+					return VMClass.getWrapperFromClass(a).IsInSamePackageAs(VMClass.getWrapperFromClass(b));
+				}
+
+				public static object getClassFromFrame(NetSystem.Diagnostics.StackFrame frame)
+				{
+					return VMClass.getClassFromType(frame.GetMethod().DeclaringType);
+				}
+
+				public static object GetValue(object fieldCookie, object o)
+				{
+					Profiler.Enter("Field.GetValue");
+					try
+					{
+						FieldWrapper wrapper = (FieldWrapper)fieldCookie;
+						object val = wrapper.GetValue(o);
+						if(wrapper.FieldTypeWrapper.IsPrimitive)
+						{
+							val = JavaWrapper.Box(val);
+						}
+						return val;
+					}
+					finally
+					{
+						Profiler.Leave("Field.GetValue");
+					}
+				}
+
+				public static void SetValue(object fieldCookie, object o, object v)
+				{
+					Profiler.Enter("Field.SetValue");
+					try
+					{
+						FieldWrapper wrapper = (FieldWrapper)fieldCookie;
+						if(wrapper.IsFinal)
+						{
+							// NOTE Java runs the class initializer when trying to set a final field
+							wrapper.DeclaringType.RunClassInit();
+							// NOTE even if the caller is the class itself, it still isn't legal
+							throw JavaException.IllegalAccessException("Field is final");
+						}
+						// TODO enforce accessibility (isAccessible() is false)
+						if(wrapper.FieldTypeWrapper.IsPrimitive)
+						{
+							v = JavaWrapper.Unbox(v);
+						}
+						wrapper.SetValue(o, v);
+					}
+					finally
+					{
+						Profiler.Leave("Field.SetValue");
+					}
+				}
+			}
+		}
+
+		public class VMRuntime
+		{
+			public static string getVersion()
+			{
+				return typeof(VMRuntime).Assembly.GetName().Version.ToString();
+			}
+
+			public static int nativeLoad(string filename)
+			{
+				// TODO native libraries somehow need to be scoped by class loader
+				return JVM.JniProvider.LoadNativeLibrary(filename);
+			}
+		}
+
+		public class Math
+		{
+			public static double pow(double x, double y)
+			{
+				return NetSystem.Math.Pow(x, y);
+			}
+
+			public static double exp(double d)
+			{
+				return NetSystem.Math.Exp(d);
+			}
+
+			public static double rint(double d)
+			{
+				return NetSystem.Math.Round(d);
+			}
+
+			public static double IEEEremainder(double f1, double f2)
+			{
+				if(double.IsInfinity(f2) && !double.IsInfinity(f1))
+				{
+					return f1;
+				}
+				return NetSystem.Math.IEEERemainder(f1, f2);
+			}
+
+			public static double sqrt(double d)
+			{
+				return NetSystem.Math.Sqrt(d);
+			}
+
+			public static double floor(double d)
+			{
+				return NetSystem.Math.Floor(d);
+			}
+
+			public static double ceil(double d)
+			{
+				return NetSystem.Math.Ceiling(d);
+			}
+
+			public static double log(double d)
+			{
+				return NetSystem.Math.Log(d);
+			}
+
+			public static double sin(double d)
+			{
+				return NetSystem.Math.Sin(d);
+			}
+
+			public static double asin(double d)
+			{
+				return NetSystem.Math.Asin(d);
+			}
+
+			public static double cos(double d)
+			{
+				return NetSystem.Math.Cos(d);
+			}
+
+			public static double acos(double d)
+			{
+				return NetSystem.Math.Acos(d);
+			}
+
+			public static double tan(double d)
+			{
+				return NetSystem.Math.Tan(d);
+			}
+
+			public static double atan(double d)
+			{
+				return NetSystem.Math.Atan(d);
+			}
+
+			public static double atan2(double y, double x)
+			{
+				if(double.IsInfinity(y) && double.IsInfinity(x))
+				{
+					if(double.IsPositiveInfinity(y))
+					{
+						if(double.IsPositiveInfinity(x))
+						{
+							return NetSystem.Math.PI / 4.0;
+						}
+						else
+						{
+							return NetSystem.Math.PI * 3.0 / 4.0;
+						}
+					}
+					else
+					{
+						if(double.IsPositiveInfinity(x))
+						{
+							return - NetSystem.Math.PI / 4.0;
+						}
+						else
+						{
+							return - NetSystem.Math.PI * 3.0 / 4.0;
+						}
+					}
+				}
+				return NetSystem.Math.Atan2(y, x);
+			}
+		}
+
+		public class Double
+		{
+			public static void initIDs()
+			{
+			}
+
+			public static double parseDouble(string s)
+			{
+				try
+				{
+					// TODO I doubt that this is correct
+					return double.Parse(s);
+				}
+				catch(FormatException x)
+				{
+					throw JavaException.NumberFormatException(x.Message);
+				}
+			}
+
+			public static string toString(double d, bool isFloat)
+			{
+				if(isFloat)
+				{
+					float f = (float)d;
+					// TODO this is not correct, we need to use the Java algorithm of converting a float to string
+					if(float.IsNaN(f))
+					{
+						return "NaN";
+					}
+					if(float.IsNegativeInfinity(f))
+					{
+						return "-Infinity";
+					}
+					if(float.IsPositiveInfinity(f))
+					{
+						return "Infinity";
+					}
+					// HACK really lame hack to apprioximate the Java behavior a little bit
+					string s = f.ToString(System.Globalization.CultureInfo.InvariantCulture);
+					if(s.IndexOf('.') == -1)
+					{
+						s += ".0";
+					}
+					// make sure -0.0 renders correctly
+					if(d == 0.0 && BitConverter.DoubleToInt64Bits(d) < 0)
+					{
+						return "-" + s;
+					}
+					return s;
+				}
+				else
+				{
+					StringBuilder sb = new StringBuilder();
+					DoubleToString.append(sb, d);
+					return sb.ToString();
+				}
+			}
+		}
+
+		public class VMSecurityManager
+		{
+			public static object getClassContext()
+			{
+				ArrayList ar = new ArrayList();
+				NetSystem.Diagnostics.StackTrace st = new NetSystem.Diagnostics.StackTrace();
+				for(int i = 0; i < st.FrameCount; i++)
+				{
+					NetSystem.Diagnostics.StackFrame frame = st.GetFrame(i);
+					// HACK very insecure
+					// TODO handle reflection scenario
+					if(frame.GetMethod().Name != "getClassContext")
+					{
+						ar.Add(VMClass.getClassFromType(frame.GetMethod().DeclaringType));
+					}
+				}
+				return ar.ToArray(CoreClasses.java.lang.Class.Wrapper.TypeAsArrayType);
+			}
+
+			public static object currentClassLoader()
+			{
+				// TODO handle PrivilegedAction
+				NetSystem.Diagnostics.StackTrace st = new NetSystem.Diagnostics.StackTrace();
+				for(int i = 0; i < st.FrameCount; i++)
+				{
+					NetSystem.Diagnostics.StackFrame frame = st.GetFrame(i);
+					TypeWrapper wrapper = ClassLoaderWrapper.GetWrapperFromTypeFast(frame.GetMethod().DeclaringType);
+					if(wrapper != null && wrapper.GetClassLoader().GetJavaClassLoader() != null)
+					{
+						return wrapper.GetClassLoader().GetJavaClassLoader();
+					}
+				}
+				return null;
+			}
+		}
+
+		public class VMSystem
+		{
+			public static void arraycopy_primitive_8(Array src, int srcStart, Array dest, int destStart, int len)
+			{
+				try 
+				{
+					checked
+					{
+						Buffer.BlockCopy(src, srcStart << 3, dest, destStart << 3, len << 3);
+						return;
+					}
+				}
+				catch(ArgumentNullException)
+				{
+					throw JavaException.NullPointerException();
+				}
+				catch(OverflowException)
+				{
+					throw JavaException.ArrayIndexOutOfBoundsException();
+				}
+				catch(ArgumentException) 
+				{
+					throw JavaException.ArrayIndexOutOfBoundsException();
+				}
+			}
+
+			public static void arraycopy_primitive_4(Array src, int srcStart, Array dest, int destStart, int len)
+			{
+				try 
+				{
+					checked
+					{
+						Buffer.BlockCopy(src, srcStart << 2, dest, destStart << 2, len << 2);
+						return;
+					}
+				}
+				catch(ArgumentNullException)
+				{
+					throw JavaException.NullPointerException();
+				}
+				catch(OverflowException)
+				{
+					throw JavaException.ArrayIndexOutOfBoundsException();
+				}
+				catch(ArgumentException) 
+				{
+					throw JavaException.ArrayIndexOutOfBoundsException();
+				}
+			}
+
+			public static void arraycopy_primitive_2(Array src, int srcStart, Array dest, int destStart, int len)
+			{
+				try 
+				{
+					checked
+					{
+						Buffer.BlockCopy(src, srcStart << 1, dest, destStart << 1, len << 1);
+						return;
+					}
+				}
+				catch(ArgumentNullException)
+				{
+					throw JavaException.NullPointerException();
+				}
+				catch(OverflowException)
+				{
+					throw JavaException.ArrayIndexOutOfBoundsException();
+				}
+				catch(ArgumentException) 
+				{
+					throw JavaException.ArrayIndexOutOfBoundsException();
+				}
+			}
+
+			public static void arraycopy_primitive_1(Array src, int srcStart, Array dest, int destStart, int len)
+			{
+				try 
+				{
+					Buffer.BlockCopy(src, srcStart, dest, destStart, len);
+					return;
+				}
+				catch(ArgumentNullException)
+				{
+					throw JavaException.NullPointerException();
+				}
+				catch(OverflowException)
+				{
+					throw JavaException.ArrayIndexOutOfBoundsException();
+				}
+				catch(ArgumentException) 
+				{
+					throw JavaException.ArrayIndexOutOfBoundsException();
+				}
+			}
+
+			public static void arraycopy(object src, int srcStart, object dest, int destStart, int len)
+			{
+				if(src != dest)
+				{
+					// NOTE side effect of GetTypeHandle call is null check for src and dest (it
+					// throws an ArgumentNullException)
+					// Since constructing a Type object is expensive, we use Type.GetTypeHandle and
+					// hope that it is implemented in a such a way that it is more efficient than
+					// Object.GetType()
+					try
+					{
+						RuntimeTypeHandle type_src = Type.GetTypeHandle(src);
+						RuntimeTypeHandle type_dst = Type.GetTypeHandle(dest);
+						if(type_src.Value != type_dst.Value)
+						{
+							if(len >= 0)
+							{
+								try
+								{
+									// since Java strictly defines what happens when an ArrayStoreException occurs during copying
+									// and .NET doesn't, we have to do it by hand
+									Object[] src1 = (Object[])src;
+									Object[] dst1 = (Object[])dest;
+									for(; len > 0; len--)
+									{
+										dst1[destStart++] = src1[srcStart++];
+									}
+									return;
+								}
+								catch(InvalidCastException)
+								{
+									throw JavaException.ArrayStoreException("cast failed");
+								}
+							}
+							throw JavaException.ArrayIndexOutOfBoundsException();
+						}
+					}
+					catch(ArgumentNullException)
+					{
+						throw JavaException.NullPointerException();
+					}
+				}
+				try 
+				{
+					Array.Copy((Array)src, srcStart, (Array)dest, destStart, len);
+				}
+				catch(ArgumentNullException)
+				{
+					throw JavaException.NullPointerException();
+				}
+				catch(ArgumentException) 
+				{
+					throw JavaException.ArrayIndexOutOfBoundsException();
+				}
+				catch(InvalidCastException x)
+				{
+					if(!src.GetType().IsArray)
+					{
+						throw JavaException.ArrayStoreException("source is not an array");
+					}
+					if(!dest.GetType().IsArray)
+					{
+						throw JavaException.ArrayStoreException("destination is not an array");
+					}
+					// this shouldn't happen
+					throw JavaException.ArrayStoreException(x.Message);
+				}
+			}
+
+			public static bool isWordsBigEndian()
+			{
+				return !BitConverter.IsLittleEndian;
+			}
+
+			public static long currentTimeMillis()
+			{
+				const long january_1st_1970 = 62135596800000L;
+				return DateTime.UtcNow.Ticks / 10000L - january_1st_1970;
+			}
+
+			public static void setErr(object printStream)
+			{
+				TypeWrapper tw = ClassLoaderWrapper.LoadClassCritical("java.lang.System");
+				FieldWrapper fw = tw.GetFieldWrapper("err", ClassLoaderWrapper.LoadClassCritical("java.io.PrintStream"));
+			}
+
+			public static void setIn(object inputStream)
+			{
+				TypeWrapper tw = ClassLoaderWrapper.LoadClassCritical("java.lang.System");
+				FieldWrapper fw = tw.GetFieldWrapper("in", ClassLoaderWrapper.LoadClassCritical("java.io.InputStream"));
+				fw.SetValue(null, inputStream);
+			}
+
+			public static void setOut(object printStream)
+			{
+				TypeWrapper tw = ClassLoaderWrapper.LoadClassCritical("java.lang.System");
+				FieldWrapper fw = tw.GetFieldWrapper("out", ClassLoaderWrapper.LoadClassCritical("java.io.PrintStream"));
+				fw.SetValue(null, printStream);
+			}
+
+			public static int identityHashCode(object o)
+			{
+				return RuntimeHelpers.GetHashCode(o);
+			}
+		}
+
+		public class VMClassLoader
+		{
+			public static Assembly findResourceAssembly(string name)
+			{
+				Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
+				for(int i = 0; i < assemblies.Length; i++)
+				{
+					if(!(assemblies[i] is NetSystem.Reflection.Emit.AssemblyBuilder))
+					{
+						if(assemblies[i].GetManifestResourceInfo("ikvm:" + name) != null)
+						{
+							return assemblies[i];
+						}
+					}
+				}
+				return null;
+			}
+
+			public static object getBootstrapClassLoader()
+			{
+				return ClassLoaderWrapper.GetJavaBootstrapClassLoader();
+			}
+
+			public static object getPrimitiveClass(char type)
+			{
+				switch(type)
+				{
+					case 'Z':
+						return VMClass.getClassFromType(typeof(bool));
+					case 'B':
+						return VMClass.getClassFromType(typeof(sbyte));
+					case 'C':
+						return VMClass.getClassFromType(typeof(char));
+					case 'D':
+						return VMClass.getClassFromType(typeof(double));
+					case 'F':
+						return VMClass.getClassFromType(typeof(float));
+					case 'I':
+						return VMClass.getClassFromType(typeof(int));
+					case 'J':
+						return VMClass.getClassFromType(typeof(long));
+					case 'S':
+						return VMClass.getClassFromType(typeof(short));
+					case 'V':
+						return VMClass.getClassFromType(typeof(void));
+					default:
+						throw new InvalidOperationException();
+				}
+			}
+
+			public static object defineClass(object classLoader, string name, byte[] data, int offset, int length, object protectionDomain)
+			{
+				Profiler.Enter("ClassLoader.defineClass");
+				try
+				{
+					try
+					{
+						ClassFile classFile = new ClassFile(data, offset, length, name);
+						if(name != null && classFile.Name != name)
+						{
+							throw JavaException.NoClassDefFoundError("{0} (wrong name: {1})", name, classFile.Name);
+						}
+						TypeWrapper type = ClassLoaderWrapper.GetClassLoaderWrapper(classLoader).DefineClass(classFile);
+						object clazz = VMClass.CreateClassInstance(type);
+						if(protectionDomain != null)
+						{
+							// TODO cache the FieldInfo
+							clazz.GetType().GetField("pd", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(clazz, protectionDomain);
+						}
+						return clazz;
+					}
+					catch(ClassFile.UnsupportedClassVersionError x)
+					{
+						throw JavaException.UnsupportedClassVersionError(x.Message);
+					}
+					catch(ClassFile.ClassFormatError x)
+					{
+						throw JavaException.ClassFormatError(x.Message);
+					}
+				}
+				finally
+				{
+					Profiler.Leave("ClassLoader.defineClass");
+				}
+			}
+		}
+
+		public class VMClass
+		{
+			private static Hashtable map = new Hashtable();
+			private delegate object LookupDelegate(object o);
+			private static LookupDelegate createClass;
+			private static LookupDelegate getWrapper;
+
+			public static void throwException(Exception e)
+			{
+				throw e;
+			}
+
+			public static object loadArrayClass(string name, object classLoader)
+			{
+				ClassLoaderWrapper classLoaderWrapper = ClassLoaderWrapper.GetClassLoaderWrapper(classLoader);
+				TypeWrapper type = classLoaderWrapper.LoadClassByDottedName(name);
+				return getClassFromWrapper(type);
+			}
+
+			public static object loadBootstrapClass(string name, bool initialize)
+			{
+				TypeWrapper type = ClassLoaderWrapper.GetBootstrapClassLoader().LoadClassByDottedNameFast(name);
+				if(type != null)
+				{
+					if(initialize)
+					{
+						type.Finish();
+						type.RunClassInit();
+					}
+					return getClassFromWrapper(type);
+				}
+				return null;
+			}
+
+			internal static object CreateClassInstance(TypeWrapper wrapper)
+			{
+				if(createClass == null)
+				{
+					TypeWrapper tw = ClassLoaderWrapper.LoadClassCritical("java.lang.VMClass");
+					tw.Finish();
+					createClass = (LookupDelegate)Delegate.CreateDelegate(typeof(LookupDelegate), tw.TypeAsTBD.GetMethod("createClass", BindingFlags.Static | BindingFlags.Public));
+					// HACK to make sure we don't run into any problems creating class objects for classes that
+					// participate in the VMClass static initialization, we first do a bogus call to initialize
+					// the machinery (I ran into this when running netexp on classpath.dll)
+					createClass(null);
+					lock(map.SyncRoot)
+					{
+						object o = map[wrapper];
+						if(o != null)
+						{
+							return o;
+						}
+					}
+				}
+				object clazz = createClass(wrapper);
+				lock(map.SyncRoot)
+				{
+					if(wrapper != null)
+					{
+						map.Add(wrapper, clazz);
+					}
+				}
+				return clazz;
+			}
+
+			public static bool IsAssignableFrom(object w1, object w2)
+			{
+				return ((TypeWrapper)w2).IsAssignableTo((TypeWrapper)w1);
+			}
+
+			public static bool IsInterface(object wrapper)
+			{
+				return ((TypeWrapper)wrapper).IsInterface;
+			}
+
+			public static bool IsArray(object wrapper)
+			{
+				return ((TypeWrapper)wrapper).IsArray;
+			}
+
+			public static object GetSuperClassFromWrapper(object wrapper)
+			{
+				TypeWrapper baseWrapper = ((TypeWrapper)wrapper).BaseTypeWrapper;
+				if(baseWrapper != null)
+				{
+					return getClassFromWrapper(baseWrapper);
+				}
+				return null;
+			}
+
+			public static object getComponentClassFromWrapper(object wrapper)
+			{
+				TypeWrapper typeWrapper = (TypeWrapper)wrapper;
+				if(typeWrapper.ArrayRank > 0)
+				{
+					TypeWrapper elementWrapper = typeWrapper.ElementTypeWrapper;
+					// TODO why are we finishing here? This shouldn't be necessary
+					elementWrapper.Finish();
+					return getClassFromWrapper(elementWrapper);
+				}
+				return null;
+			}
+
+			internal static TypeWrapper getWrapperFromClass(object clazz)
+			{
+				if(getWrapper == null)
+				{
+					TypeWrapper tw = ClassLoaderWrapper.LoadClassCritical("java.lang.VMClass");
+					tw.Finish();
+					getWrapper = (LookupDelegate)Delegate.CreateDelegate(typeof(LookupDelegate), tw.TypeAsTBD.GetMethod("getWrapperFromClass", BindingFlags.Static | BindingFlags.Public));
+				}
+				return (TypeWrapper)getWrapper(clazz);
+			}
+
+			internal static object getClassFromWrapper(TypeWrapper wrapper)
+			{
+				lock(map.SyncRoot)
+				{
+					object clazz = map[wrapper];
+					if(clazz == null)
+					{
+						clazz = CreateClassInstance(wrapper);
+					}
+					return clazz;
+				}
+			}
+
+			public static object getClassFromType(Type type)
+			{
+				TypeWrapper.AssertFinished(type);
+				if(type == null)
+				{
+					return null;
+				}
+				return getClassFromWrapper(ClassLoaderWrapper.GetWrapperFromType(type));
+			}
+
+			public static string GetName(object wrapper)
+			{
+				TypeWrapper typeWrapper = (TypeWrapper)wrapper;
+				if(typeWrapper.IsPrimitive)
+				{
+					if(typeWrapper == PrimitiveTypeWrapper.VOID)
+					{
+						return "void";
+					}
+					else if(typeWrapper == PrimitiveTypeWrapper.BYTE)
+					{
+						return "byte";
+					}
+					else if(typeWrapper == PrimitiveTypeWrapper.BOOLEAN)
+					{
+						return "boolean";
+					}
+					else if(typeWrapper == PrimitiveTypeWrapper.SHORT)
+					{
+						return "short";
+					}
+					else if(typeWrapper == PrimitiveTypeWrapper.CHAR)
+					{
+						return "char";
+					}
+					else if(typeWrapper == PrimitiveTypeWrapper.INT)
+					{
+						return "int";
+					}
+					else if(typeWrapper == PrimitiveTypeWrapper.LONG)
+					{
+						return "long";
+					}
+					else if(typeWrapper == PrimitiveTypeWrapper.FLOAT)
+					{
+						return "float";
+					}
+					else if(typeWrapper == PrimitiveTypeWrapper.DOUBLE)
+					{
+						return "double";
+					}
+					else
+					{
+						throw new InvalidOperationException();
+					}
+				}
+				return typeWrapper.Name;
+			}
+	
+			public static void initialize(object cwrapper)
+			{
+				TypeWrapper wrapper = (TypeWrapper)cwrapper;
+				wrapper.Finish();
+				wrapper.RunClassInit();
+			}
+
+			public static object getClassLoader0(object wrapper)
+			{
+				return ((TypeWrapper)wrapper).GetClassLoader().GetJavaClassLoader();
+			}
+
+			public static object getClassLoaderFromType(Type type)
+			{
+				return ClassLoaderWrapper.GetWrapperFromType(type).GetClassLoader().GetJavaClassLoader();
+			}
+
+			public static object[] GetDeclaredMethods(object cwrapper, bool getMethods, bool publicOnly)
+			{
+				Profiler.Enter("VMClass.GetDeclaredMethods");
+				try
+				{
+					TypeWrapper wrapper = (TypeWrapper)cwrapper;
+					// we need to finish the type otherwise all methods will not be in the method map yet
+					wrapper.Finish();
+					// we need to look through the array for unloadable types, because we may not let them
+					// escape into the 'wild'
+					MethodWrapper[] methods = wrapper.GetMethods();
+					ArrayList list = new ArrayList();
+					for(int i = 0; i < methods.Length; i++)
+					{
+						// we don't want to expose "hideFromReflection" methods (one reason is that it would
+						// mess up the serialVersionUID computation)
+						if(!methods[i].IsHideFromReflection)
+						{
+							if(methods[i].Name == "<clinit>")
+							{
+								// not reported back
+							}
+							else if(publicOnly && !methods[i].IsPublic)
+							{
+								// caller is only asking for public methods, so we don't return this non-public method
+							}
+							else if((methods[i].Name == "<init>") != getMethods)
+							{
+								if(methods[i].ReturnType.IsUnloadable)
+								{
+									throw JavaException.NoClassDefFoundError(methods[i].ReturnType.Name);
+								}
+								TypeWrapper[] args = methods[i].GetParameters();
+								for(int j = 0; j < args.Length; j++)
+								{
+									if(args[j].IsUnloadable)
+									{
+										throw JavaException.NoClassDefFoundError(args[j].Name);
+									}
+								}
+								list.Add(methods[i]);
+							}
+						}
+					}
+					return (MethodWrapper[])list.ToArray(typeof(MethodWrapper));
+				}
+				finally
+				{
+					Profiler.Leave("VMClass.GetDeclaredMethods");
+				}
+			}
+
+			public static object[] GetDeclaredFields(object cwrapper, bool publicOnly)
+			{
+				Profiler.Enter("VMClass.GetDeclaredFields");
+				try
+				{
+					TypeWrapper wrapper = (TypeWrapper)cwrapper;
+					// we need to finish the type otherwise all fields will not be in the field map yet
+					wrapper.Finish();
+					// we need to look through the array for unloadable types, because we may not let them
+					// escape into the 'wild'
+					FieldWrapper[] fields = wrapper.GetFields();
+					if(publicOnly)
+					{
+						ArrayList list = new ArrayList();
+						for(int i = 0; i < fields.Length; i++)
+						{
+							if(fields[i].IsPublic)
+							{
+								list.Add(fields[i]);
+							}
+						}
+						fields = (FieldWrapper[])list.ToArray(typeof(FieldWrapper));
+					}
+					for(int i = 0; i < fields.Length; i++)
+					{
+						if(fields[i].FieldTypeWrapper.IsUnloadable)
+						{
+							throw JavaException.NoClassDefFoundError(fields[i].FieldTypeWrapper.Name);
+						}
+					}
+					return fields;
+				}
+				finally
+				{
+					Profiler.Leave("VMClass.GetDeclaredFields");
+				}
+			}
+
+			public static object[] GetDeclaredClasses(object cwrapper, bool publicOnly)
+			{
+				TypeWrapper wrapper = (TypeWrapper)cwrapper;
+				// NOTE to get at the InnerClasses we need to finish the type
+				wrapper.Finish();
+				TypeWrapper[] wrappers = wrapper.InnerClasses;
+				if(publicOnly)
+				{
+					ArrayList list = new ArrayList();
+					for(int i = 0; i < wrappers.Length; i++)
+					{
+						if(wrappers[i].IsUnloadable)
+						{
+							throw JavaException.NoClassDefFoundError(wrappers[i].Name);
+						}
+						// because the VM lacks any support for nested visibility control, we
+						// cannot rely on the publicness of the type here, but instead we have
+						// to look at the reflective modifiers
+						wrappers[i].Finish();
+						if((wrappers[i].ReflectiveModifiers & Modifiers.Public) != 0)
+						{
+							list.Add(wrappers[i]);
+						}
+					}
+					wrappers = (TypeWrapper[])list.ToArray(typeof(TypeWrapper));
+				}
+				object[] innerclasses = new object[wrappers.Length];
+				for(int i = 0; i < innerclasses.Length; i++)
+				{
+					if(wrappers[i].IsUnloadable)
+					{
+						throw JavaException.NoClassDefFoundError(wrappers[i].Name);
+					}
+					innerclasses[i] = getClassFromWrapper(wrappers[i]);
+				}
+				return innerclasses;
+			}
+
+			public static object GetDeclaringClass(object cwrapper)
+			{
+				TypeWrapper wrapper = (TypeWrapper)cwrapper;
+				// before we can call DeclaringTypeWrapper, we need to finish the type
+				wrapper.Finish();
+				TypeWrapper declaring = wrapper.DeclaringTypeWrapper;
+				if(declaring == null)
+				{
+					return null;
+				}
+				if(declaring.IsUnloadable)
+				{
+					throw JavaException.NoClassDefFoundError(declaring.Name);
+				}
+				return getClassFromWrapper(declaring);
+			}
+
+			public static object[] GetInterfaces(object cwrapper)
+			{
+				TypeWrapper wrapper = (TypeWrapper)cwrapper;
+				// we need to finish the type otherwise all fields will not be in the field map yet
+				// TODO this should not be needed (make sure it isn't and remove)
+				wrapper.Finish();
+				TypeWrapper[] interfaceWrappers = wrapper.Interfaces;
+				object[] interfaces = new object[interfaceWrappers.Length];
+				for(int i = 0; i < interfaces.Length; i++)
+				{
+					interfaces[i] = getClassFromWrapper(interfaceWrappers[i]);
+				}
+				return interfaces;
+			}
+
+			public static int GetModifiers(Object cwrapper)
+			{
+				TypeWrapper wrapper = (TypeWrapper)cwrapper;
+				// NOTE ReflectiveModifiers is only available for finished types
+				wrapper.Finish();
+				// NOTE we don't return the modifiers from the TypeWrapper, because for inner classes
+				// the reflected modifiers are different from the physical ones
+				Modifiers modifiers = wrapper.ReflectiveModifiers;
+				// only returns public, protected, private, final, static, abstract and interface (as per
+				// the documentation of Class.getModifiers())
+				Modifiers mask = Modifiers.Public | Modifiers.Protected | Modifiers.Private | Modifiers.Final |
+					Modifiers.Static | Modifiers.Abstract | Modifiers.Interface;
+				return (int)(modifiers & mask);
+			}
+		}
+	}
+
+	namespace io
+	{
+		public class VMObjectStreamClass
+		{
+			public static bool hasClassInitializer(object clazz)
+			{
+				TypeWrapper wrapper = NativeCode.java.lang.VMClass.getWrapperFromClass(clazz);
+				wrapper.Finish();
+				Type type = wrapper.TypeAsTBD;
+				try
+				{
+					if(!type.IsArray && type.TypeInitializer != null)
+					{
+						return !AttributeHelper.IsHideFromReflection(type.TypeInitializer);
+					}
+					return false;
+				}
+				catch(Exception x)
+				{
+					Console.WriteLine(type.FullName);
+					Console.WriteLine(x);
+					return false;
+				}
+			}
+
+			private static FieldWrapper GetFieldWrapperFromField(object field)
+			{
+				// TODO optimize this
+				return (FieldWrapper)field.GetType().GetField("fieldCookie", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(field);
+			}
+
+			public static void setDoubleNative(object field, object obj, double val)
+			{
+				GetFieldWrapperFromField(field).SetValue(obj, val);
+			}
+
+			public static void setFloatNative(object field, object obj, float val)
+			{
+				GetFieldWrapperFromField(field).SetValue(obj, val);
+			}
+
+			public static void setLongNative(object field, object obj, long val)
+			{
+				GetFieldWrapperFromField(field).SetValue(obj, val);
+			}
+
+			public static void setIntNative(object field, object obj, int val)
+			{
+				GetFieldWrapperFromField(field).SetValue(obj, val);
+			}
+
+			public static void setShortNative(object field, object obj, short val)
+			{
+				GetFieldWrapperFromField(field).SetValue(obj, val);
+			}
+
+			public static void setCharNative(object field, object obj, char val)
+			{
+				GetFieldWrapperFromField(field).SetValue(obj, val);
+			}
+
+			public static void setByteNative(object field, object obj, sbyte val)
+			{
+				GetFieldWrapperFromField(field).SetValue(obj, val);
+			}
+
+			public static void setBooleanNative(object field, object obj, bool val)
+			{
+				GetFieldWrapperFromField(field).SetValue(obj, val);
+			}
+
+			public static void setObjectNative(object field, object obj, object val)
+			{
+				GetFieldWrapperFromField(field).SetValue(obj, val);
+			}
+		}
+
+		public class ObjectInputStream
+		{
+			public static object currentClassLoader(object sm)
+			{
+				// TODO calling currentClassLoader in SecurityManager results in null being returned, so we use our own
+				// version for now, don't know what the security implications of this are
+				// SECURITY
+				return NativeCode.java.lang.VMSecurityManager.currentClassLoader();
+			}
+
+			public static object allocateObject(object ois, object clazz)
+			{
+				Profiler.Enter("ObjectInputStream.allocateObject");
+				try
+				{
+					return JniHelper.AllocObject(clazz);
+				}
+				finally
+				{
+					Profiler.Leave("ObjectInputStream.allocateObject");
+				}
+			}
+
+			public static void callConstructor(object ois, object clazz, object obj)
+			{
+				Profiler.Enter("ObjectInputStream.callConstructor");
+				try
+				{
+					TypeWrapper type = NativeCode.java.lang.VMClass.getWrapperFromClass(clazz);
+					type.Finish();
+					MethodWrapper mw = type.GetMethodWrapper(MethodDescriptor.FromNameSig(type.GetClassLoader(), "<init>", "()V"), false);
+					if(mw == null)
+					{
+						// TODO what should we do here?
+						throw new NotImplementedException();
+					}
+					// TODO what about exceptions? (should they be unwrapped?)
+					mw.Invoke(obj, null, true);
+				}
+				finally
+				{
+					Profiler.Leave("ObjectInputStream.callConstructor");
+				}
+			}
+		}
+	}
+
+	namespace util
+	{
+		public class TimeZone
+		{
+			public static string getDefaultTimeZoneId()
+			{
+				NetSystem.TimeZone currentTimeZone = NetSystem.TimeZone.CurrentTimeZone;
+				NetSystem.TimeSpan timeSpan = currentTimeZone.GetUtcOffset(DateTime.Now);
+
+				int hours = timeSpan.Hours;
+				int mins = timeSpan.Minutes;
+
+				return "GMT" + hours + ":" + mins;
+			}
+		}
+	}
+
+	namespace net
+	{
+		public class InetAddress
+		{
+			public static sbyte[] lookupInaddrAny()
+			{
+				return new sbyte[] { 0, 0, 0, 0 };
+			}
+
+			public static string getLocalHostname()
+			{
+				// TODO error handling
+				return NetSystem.Net.Dns.GetHostName();
+			}
+
+			public static sbyte[][] getHostByName(string name)
+			{
+				// TODO error handling
+				try
+				{
+					NetSystem.Net.IPHostEntry he = NetSystem.Net.Dns.GetHostByName(name);
+					NetSystem.Net.IPAddress[] addresses = he.AddressList;
+					sbyte[][] list = new sbyte[addresses.Length][];
+					for(int i = 0; i < addresses.Length; i++)
+					{
+						byte[] address = addresses[i].GetAddressBytes();
+						sbyte[] sb = new sbyte[address.Length];
+						for(int j = 0; j < sb.Length; j++)
+						{
+							sb[j] = (sbyte)address[j];
+						}
+						list[i] = sb;
+					}
+					return list;
+				}
+				catch(Exception x)
+				{
+					throw JavaException.UnknownHostException(x.Message);
+				}
+			}
+
+			public static string getHostByAddr(byte[] address)
+			{
+				string s;
+				try
+				{
+					s = NetSystem.Net.Dns.GetHostByAddress(string.Format("{0}.{1}.{2}.{3}", address[0], address[1], address[2], address[3])).HostName;
+				}
+				catch(NetSystem.Net.Sockets.SocketException x)
+				{
+					throw JavaException.UnknownHostException(x.Message);
+				}
+				try
+				{
+					NetSystem.Net.Dns.GetHostByName(s);
+				}
+				catch(NetSystem.Net.Sockets.SocketException)
+				{
+					// FXBUG .NET framework bug
+					// HACK if GetHostByAddress returns a netbios name, it appends the default DNS suffix, but if the
+					// machine's netbios name isn't the same as the DNS hostname, this might result in an unresolvable
+					// name, if that happens we chop of the DNS suffix.
+					int idx = s.IndexOf('.');
+					if(idx > 0)
+					{
+						return s.Substring(0, idx);
+					}
+				}
+				return s;
+			}
+		}
+	}
+}
+@
+
+
+1.53
+log
+@*** empty log message ***
+@
+text
+@@
+
+
+1.52
+log
+@*** empty log message ***
+@
+text
+@a253 1
+				[StackTraceInfo(Hidden = true)]
+a1058 1
+			[StackTraceInfo(Hidden = true)]
+a1254 252
+		public class File
+		{
+			internal static string DemanglePath(string path)
+			{
+				//Console.WriteLine("Demangle: " + path);
+				// HACK for some reason Java accepts: \c:\foo.txt
+				// I don't know what else, but for now lets just support this
+				if(path.Length > 3 && (path[0] == '\\' || path[0] == '/') && path[2] == ':')
+				{
+					path = path.Substring(1);
+				}
+				return path;
+			}
+
+			public static string[] listRootsInternal()
+			{
+				return System.IO.Directory.GetLogicalDrives();
+			}
+
+			public static bool existsInternal(object obj, string path)
+			{
+				path = DemanglePath(path);
+				try
+				{
+					return NetSystem.IO.File.Exists(path) || NetSystem.IO.Directory.Exists(path);
+				}
+				catch(Exception)
+				{
+					return false;
+				}
+			}
+
+			public static bool isFileInternal(object obj, string path)
+			{
+				// TODO handle errors
+				// TODO make sure semantics are the same
+				try
+				{
+					return NetSystem.IO.File.Exists(DemanglePath(path));
+				}
+				catch(Exception)
+				{
+					return false;
+				}
+			}
+
+			public static bool isDirectoryInternal(object obj, string path)
+			{
+				// TODO handle errors
+				// TODO make sure semantics are the same
+				try
+				{
+					return NetSystem.IO.Directory.Exists(DemanglePath(path));
+				}
+				catch(Exception)
+				{
+					return false;
+				}
+			}
+
+			public static long lengthInternal(object obj, string path)
+			{
+				// TODO handle errors
+				try
+				{
+					return new NetSystem.IO.FileInfo(DemanglePath(path)).Length;
+				}
+				catch(Exception)
+				{
+					return 0;
+				}
+			}
+
+			public static bool mkdirInternal(object obj, string path)
+			{
+				path = DemanglePath(path);
+				// TODO handle errors
+				if (!NetSystem.IO.Directory.Exists(NetSystem.IO.Directory.GetParent(path).FullName) ||
+					NetSystem.IO.Directory.Exists(path)) 
+				{
+					return false;
+				}
+				return NetSystem.IO.Directory.CreateDirectory(path) != null;
+			}
+
+			public static bool deleteInternal(object obj, string path) 
+			{
+				path = DemanglePath(path);
+				// TODO handle errors
+				try
+				{
+					if (NetSystem.IO.Directory.Exists(path)) 
+					{
+						NetSystem.IO.Directory.Delete(path);
+					} 
+					else if (NetSystem.IO.File.Exists(path)) 
+					{
+						NetSystem.IO.File.Delete(path);
+					} 
+					else 
+					{
+						return false;
+					}
+					return true;
+				}
+				catch(Exception)
+				{
+					return false;
+				}
+			}
+
+			public static bool createInternal(string path) 
+			{
+				path = DemanglePath(path);
+				// TODO handle errors
+				try
+				{
+					NetSystem.IO.File.Open(path, FileMode.CreateNew).Close();
+					return true;
+				}
+				catch(Exception)
+				{
+					return false;
+				}
+			}
+
+			private static long DateTimeToJavaLongTime(DateTime datetime)
+			{
+				return (TimeZone.CurrentTimeZone.ToUniversalTime(datetime) - new DateTime(1970, 1, 1)).Ticks / 10000L;
+			}
+
+			public static DateTime JavaLongTimeToDateTime(long datetime)
+			{
+				return TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(new DateTime(1970, 1, 1).Ticks + datetime * 10000L));
+			}
+
+			public static long lastModifiedInternal(object obj, string path)
+			{
+				try
+				{
+					return DateTimeToJavaLongTime(NetSystem.IO.File.GetLastWriteTime(DemanglePath(path)));
+				}
+				catch(Exception)
+				{
+					return 0;
+				}
+			}
+
+			public static string[] listInternal(object obj, string dirname)
+			{
+				// TODO error handling
+				try
+				{
+					string[] l = NetSystem.IO.Directory.GetFileSystemEntries(DemanglePath(dirname));
+					for(int i = 0; i < l.Length; i++)
+					{
+						int pos = l[i].LastIndexOf(Path.DirectorySeparatorChar);
+						if(pos >= 0)
+						{
+							l[i] = l[i].Substring(pos + 1);
+						}
+					}
+					return l;
+				}
+				catch(Exception)
+				{
+					return null;
+				}
+			}
+
+			public static bool canReadInternal(object obj, string file)
+			{
+				file = DemanglePath(file);
+				try
+				{
+					// HACK if file refers to a directory, we always return true
+					if(NetSystem.IO.Directory.Exists(file))
+					{
+						return true;
+					}
+					new FileInfo(file).Open(FileMode.Open, FileAccess.Read, FileShare.ReadWrite).Close();
+					return true;
+				}
+				catch(Exception)
+				{
+					return false;
+				}
+			}
+
+			public static bool canWriteInternal(object obj, string file)
+			{
+				file = DemanglePath(file);
+				try
+				{
+					// HACK if file refers to a directory, we always return true
+					if(NetSystem.IO.Directory.Exists(file))
+					{
+						return true;
+					}
+					new FileInfo(file).Open(FileMode.Open, FileAccess.Write, FileShare.ReadWrite).Close();
+					return true;
+				}
+				catch(Exception)
+				{
+					return false;
+				}
+			}
+
+			public static bool renameToInternal(object obj, string oldName, string newName)
+			{
+				oldName = DemanglePath(oldName);
+				newName = DemanglePath(newName);
+				try
+				{
+					new FileInfo(oldName).MoveTo(newName);
+					return true;
+				}
+				catch(Exception)
+				{
+					return false;
+				}
+			}
+
+			public static bool setLastModifiedInternal(object obj, string file, long lastModified)
+			{
+				file = DemanglePath(file);
+				try
+				{
+					new FileInfo(file).LastWriteTime = JavaLongTimeToDateTime(lastModified);
+					return true;
+				}
+				catch(Exception)
+				{
+					return false;
+				}
+			}
+
+			public static bool setReadOnlyInternal(object obj, string file)
+			{
+				file = DemanglePath(file);
+				try
+				{
+					new FileInfo(file).Attributes |= FileAttributes.ReadOnly;
+					return true;
+				}
+				catch(Exception)
+				{
+					return false;
+				}
+			}
+		}
+
+a1465 68
+
+	namespace nio
+	{
+		namespace channels
+		{
+			// HACK this is a rubbish implementation
+			public class FileChannelImpl
+			{
+				private static Stream GetStream(object o)
+				{
+					object fd = o.GetType().GetField("fd", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(o);
+					return (Stream)fd.GetType().GetField("stream", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(fd);
+				}
+
+				public static long implPosition(object thiz)
+				{
+					// TODO map exceptions
+					return GetStream(thiz).Position;
+				}
+
+				public static object implPosition(object thiz, long newPosition)
+				{
+					// TODO map exceptions
+					GetStream(thiz).Position = newPosition;
+					// why are we returning thiz?
+					return thiz;
+				}
+
+				public static object implTruncate(object thiz, long size)
+				{
+					throw new NotImplementedException();
+				}
+  
+				public static IntPtr nio_mmap_file(object thiz, long pos, long size, int mode)
+				{
+					throw new NotImplementedException();
+				}
+
+				public static void nio_unmmap_file(object thiz, IntPtr map_address, int size)
+				{
+					throw new NotImplementedException();
+				}
+
+				public static void nio_msync(object thiz, IntPtr map_address, int length)
+				{
+				}
+
+				public static long size(object thiz)
+				{
+					// TODO map exceptions
+					return GetStream(thiz).Length;
+				}
+
+				public static int implRead(object thiz, byte[] buffer, int offset, int length)
+				{
+					// TODO map exceptions
+					return GetStream(thiz).Read(buffer, offset, length);
+				}
+
+				public static int implWrite(object thiz, byte[] buffer, int offset, int length)
+				{
+					// TODO map exceptions
+					GetStream(thiz).Write(buffer, offset, length);
+					return length;
+				}
+			}
+		}
+	}
+@
+
+
+1.51
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002, 2003 Jeroen Frijters
+d805 5
+d1344 1
+a1345 1
+				// TODO shouldn't we demangle the path?
+d1370 1
+a1371 1
+				// TODO shouldn't we demangle the path?
+d1410 1
+a1410 1
+					string[] l = NetSystem.IO.Directory.GetFileSystemEntries(dirname);
+d1429 1
+d1448 1
+d1467 2
+d1482 1
+d1496 1
+d1531 51
+d1599 1
+a1599 4
+					TypeWrapper wrapper = NativeCode.java.lang.VMClass.getWrapperFromClass(clazz);
+					wrapper.Finish();
+					// TODO if we're instantiating a remapping type, we need to use TypeAsBaseType (except for String)
+					return NetSystem.Runtime.Serialization.FormatterServices.GetUninitializedObject(wrapper.TypeAsTBD);
+@
+
+
+1.50
+log
+@*** empty log message ***
+@
+text
+@d566 1
+a566 1
+				return ar.ToArray(CoreClasses.java_lang_Class.TypeAsArrayType);
+d777 1
+a777 1
+				FieldWrapper fw = tw.GetFieldWrapper("in", ClassLoaderWrapper.LoadClassCritical("java.io.PrintStream"));
+@
+
+
+1.49
+log
+@*** empty log message ***
+@
+text
+@a376 16
+//			public static string nativeGetLibname(string pathname, string libname)
+//			{
+//				if(Environment.OSVersion.ToString().IndexOf("Unix") >= 0)
+//				{
+//					return "lib" + libname + ".so";
+//				}
+//
+//				// HACK this seems like a lame way of doing things, but in order to get Eclipse to work,
+//				// we have append .dll to the libname here
+//				if(!libname.ToUpper().EndsWith(".DLL"))
+//				{
+//					libname += ".dll";
+//				}
+//				return libname;
+//			}
+
+d566 1
+a566 1
+				return ar.ToArray(ClassLoaderWrapper.LoadClassCritical("java.lang.Class").TypeAsArrayType);
+a754 2
+			private static long timebase = ((TimeZone.CurrentTimeZone.ToUniversalTime(DateTime.Now) - new DateTime(1970, 1, 1)).Ticks / 10000L) - Environment.TickCount;
+
+d757 2
+a758 2
+				// NOTE this wraps after 24.9 days, but it is much faster than calling DateTime.Now every time
+				return timebase + Environment.TickCount;
+d764 1
+a764 5
+				tw.Finish();
+				// NOTE we cannot use Java reflection, because the field is final
+				// TODO JNI reflection should also ignore the final-ness of a field, so once we've got that
+				// sorted out, we could use that mechanism
+				tw.TypeAsTBD.GetField("err", BindingFlags.Static | BindingFlags.NonPublic).SetValue(null, printStream);
+d770 2
+a771 3
+				tw.Finish();
+				// NOTE we cannot use Java reflection, because the field is final
+				tw.TypeAsTBD.GetField("in", BindingFlags.Static | BindingFlags.NonPublic).SetValue(null, inputStream);
+d777 2
+a778 3
+				tw.Finish();
+				// NOTE we cannot use Java reflection, because the field is final
+				tw.TypeAsTBD.GetField("out", BindingFlags.Static | BindingFlags.NonPublic).SetValue(null, printStream);
+d796 1
+a796 1
+						if(assemblies[i].GetLoadedModules()[0].GetField(name) != null)
+@
+
+
+1.48
+log
+@*** empty log message ***
+@
+text
+@d1563 1
+d1671 1
+a1671 1
+					// BUG .NET framework bug
+@
+
+
+1.47
+log
+@*** empty log message ***
+@
+text
+@d313 10
+d861 1
+a861 9
+					// TODO handle errors
+					ClassFile classFile = new ClassFile(data, offset, length, name);
+					if(name != null && classFile.Name != name)
+					{
+						throw JavaException.NoClassDefFoundError("{0} (wrong name: {1})", name, classFile.Name);
+					}
+					TypeWrapper type = ClassLoaderWrapper.GetClassLoaderWrapper(classLoader).DefineClass(classFile);
+					object clazz = VMClass.CreateClassInstance(type);
+					if(protectionDomain != null)
+d863 21
+a883 2
+						// TODO cache the FieldInfo
+						clazz.GetType().GetField("pd", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(clazz, protectionDomain);
+a884 1
+					return clazz;
+d896 3
+a898 3
+			private delegate object CreateClassDelegate(object typeWrapper);
+			private static CreateClassDelegate CreateClass;
+			private static MethodInfo getWrapper;
+d929 1
+a929 1
+				if(CreateClass == null)
+d933 1
+a933 1
+					CreateClass = (CreateClassDelegate)Delegate.CreateDelegate(typeof(CreateClassDelegate), tw.TypeAsTBD.GetMethod("createClass", BindingFlags.Static | BindingFlags.Public));
+d937 1
+a937 1
+					CreateClass(null);
+d947 1
+a947 1
+				object clazz = CreateClass(wrapper);
+d1002 1
+a1002 1
+					getWrapper = tw.TypeAsTBD.GetMethod("getWrapperFromClass", BindingFlags.NonPublic | BindingFlags.Static);
+d1004 1
+a1004 1
+				return (TypeWrapper)getWrapper.Invoke(null, new object[] { clazz });
+d1562 1
+a1575 1
+					// TODO use TypeWrapper based reflection, instead of .NET reflection
+@
+
+
+1.46
+log
+@*** empty log message ***
+@
+text
+@d540 5
+@
+
+
+1.45
+log
+@*** empty log message ***
+@
+text
+@d315 12
+a326 3
+					FieldWrapper wrapper = (FieldWrapper)fieldCookie;
+					object val = wrapper.GetValue(o);
+					if(wrapper.FieldTypeWrapper.IsPrimitive)
+d328 1
+a328 1
+						val = JavaWrapper.Box(val);
+a329 1
+					return val;
+d334 2
+a335 2
+					FieldWrapper wrapper = (FieldWrapper)fieldCookie;
+					if(wrapper.FieldTypeWrapper.IsPrimitive)
+d337 18
+a354 1
+						v = JavaWrapper.Unbox(v);
+a355 1
+					wrapper.SetValue(o, v);
+d1074 11
+a1084 12
+				TypeWrapper wrapper = (TypeWrapper)cwrapper;
+				// we need to finish the type otherwise all methods will not be in the method map yet
+				wrapper.Finish();
+				// we need to look through the array for unloadable types, because we may not let them
+				// escape into the 'wild'
+				MethodWrapper[] methods = wrapper.GetMethods();
+				ArrayList list = new ArrayList();
+				for(int i = 0; i < methods.Length; i++)
+				{
+					// we don't want to expose "hideFromReflection" methods (one reason is that it would
+					// mess up the serialVersionUID computation)
+					if(!methods[i].IsHideFromReflection)
+d1086 3
+a1088 1
+						if(methods[i].Name == "<clinit>")
+d1090 5
+a1094 9
+							// not reported back
+						}
+						else if(publicOnly && !methods[i].IsPublic)
+						{
+							// caller is only asking for public methods, so we don't return this non-public method
+						}
+						else if((methods[i].Name == "<init>") != getMethods)
+						{
+							if(methods[i].ReturnType.IsUnloadable)
+d1096 1
+a1096 1
+								throw JavaException.NoClassDefFoundError(methods[i].ReturnType.Name);
+d1098 1
+a1098 2
+							TypeWrapper[] args = methods[i].GetParameters();
+							for(int j = 0; j < args.Length; j++)
+d1100 1
+a1100 1
+								if(args[j].IsUnloadable)
+d1102 1
+a1102 1
+									throw JavaException.NoClassDefFoundError(args[j].Name);
+d1104 9
+a1113 1
+							list.Add(methods[i]);
+d1116 5
+a1121 1
+				return (MethodWrapper[])list.ToArray(typeof(MethodWrapper));
+d1126 2
+a1127 7
+				TypeWrapper wrapper = (TypeWrapper)cwrapper;
+				// we need to finish the type otherwise all fields will not be in the field map yet
+				wrapper.Finish();
+				// we need to look through the array for unloadable types, because we may not let them
+				// escape into the 'wild'
+				FieldWrapper[] fields = wrapper.GetFields();
+				if(publicOnly)
+d1129 18
+a1146 1
+					ArrayList list = new ArrayList();
+d1149 1
+a1149 1
+						if(fields[i].IsPublic)
+d1151 1
+a1151 1
+							list.Add(fields[i]);
+d1154 1
+a1154 1
+					fields = (FieldWrapper[])list.ToArray(typeof(FieldWrapper));
+d1156 1
+a1156 1
+				for(int i = 0; i < fields.Length; i++)
+d1158 1
+a1158 4
+					if(fields[i].FieldTypeWrapper.IsUnloadable)
+					{
+						throw JavaException.NoClassDefFoundError(fields[i].FieldTypeWrapper.Name);
+					}
+a1159 1
+				return fields;
+d1533 10
+a1542 2
+				TypeWrapper wrapper = NativeCode.java.lang.VMClass.getWrapperFromClass(clazz);
+				return NetSystem.Runtime.Serialization.FormatterServices.GetUninitializedObject(wrapper.TypeAsTBD);
+d1547 2
+a1548 5
+				// TODO use TypeWrapper based reflection, instead of .NET reflection
+				TypeWrapper type = NativeCode.java.lang.VMClass.getWrapperFromClass(clazz);
+				type.Finish();
+				MethodWrapper mw = type.GetMethodWrapper(MethodDescriptor.FromNameSig(type.GetClassLoader(), "<init>", "()V"), false);
+				if(mw == null)
+d1550 15
+a1564 2
+					// TODO what should we do here?
+					throw new NotImplementedException();
+a1565 2
+				// TODO what about exceptions? (should they be unwrapped?)
+				mw.Invoke(obj, null, true);
+@
+
+
+1.44
+log
+@*** empty log message ***
+@
+text
+@d68 1
+a68 1
+						return NetSystem.Array.CreateInstance(VMClass.getType(clazz), dim);
+d76 8
+a83 8
+				private static Type java_lang_Byte = ClassLoaderWrapper.LoadClassCritical("java.lang.Byte").Type;
+				private static Type java_lang_Boolean = ClassLoaderWrapper.LoadClassCritical("java.lang.Boolean").Type;
+				private static Type java_lang_Short = ClassLoaderWrapper.LoadClassCritical("java.lang.Short").Type;
+				private static Type java_lang_Character = ClassLoaderWrapper.LoadClassCritical("java.lang.Character").Type;
+				private static Type java_lang_Integer = ClassLoaderWrapper.LoadClassCritical("java.lang.Integer").Type;
+				private static Type java_lang_Long = ClassLoaderWrapper.LoadClassCritical("java.lang.Long").Type;
+				private static Type java_lang_Float = ClassLoaderWrapper.LoadClassCritical("java.lang.Float").Type;
+				private static Type java_lang_Double = ClassLoaderWrapper.LoadClassCritical("java.lang.Double").Type;
+d543 1
+a543 1
+				return ar.ToArray(ClassLoaderWrapper.LoadClassCritical("java.lang.Class").Type);
+d745 3
+a747 1
+				tw.Type.GetField("err", BindingFlags.Static | BindingFlags.NonPublic).SetValue(null, printStream);
+d755 1
+a755 1
+				tw.Type.GetField("in", BindingFlags.Static | BindingFlags.NonPublic).SetValue(null, inputStream);
+d763 1
+a763 1
+				tw.Type.GetField("out", BindingFlags.Static | BindingFlags.NonPublic).SetValue(null, printStream);
+d871 1
+a871 1
+						RuntimeHelpers.RunClassConstructor(type.Type.TypeHandle);
+d884 1
+a884 1
+					CreateClass = (CreateClassDelegate)Delegate.CreateDelegate(typeof(CreateClassDelegate), tw.Type.GetMethod("createClass", BindingFlags.Static | BindingFlags.Public));
+d947 1
+a947 14
+			public static Type getTypeFromWrapper(object clazz, object wrapper)
+			{
+				((TypeWrapper)wrapper).Finish();
+				Type type = ((TypeWrapper)wrapper).Type;
+				TypeWrapper.AssertFinished(type);
+				return type;
+			}
+
+			public static object getWrapperFromType(Type t)
+			{
+				return ClassLoaderWrapper.GetWrapperFromType(t);
+			}
+
+			public static Type getType(object clazz)
+d953 1
+a953 1
+					getWrapper = tw.Type.GetMethod("getWrapperFromClass", BindingFlags.NonPublic | BindingFlags.Static);
+d955 1
+a955 3
+				TypeWrapper wrapper = (TypeWrapper)getWrapper.Invoke(null, new object[] { clazz });
+				wrapper.Finish();
+				return wrapper.Type;
+a1029 142
+			internal static string getName(Type type)
+			{
+				TypeWrapper wrapperType = ClassLoaderWrapper.GetWrapperFromTypeFast(type);
+				if(wrapperType != null)
+				{
+					string name = ((TypeWrapper)wrapperType).Name;
+					// HACK name is null for primitives
+					if(name != null)
+					{
+						return name;
+					}
+				}
+				if(type.IsValueType)
+				{
+					if(type == typeof(void))
+					{
+						return "void";
+					}
+					else if(type == typeof(bool))
+					{
+						return "boolean";
+					}
+					else if(type == typeof(sbyte))
+					{
+						return "byte";
+					}
+					else if(type == typeof(char))
+					{
+						return "char";
+					}
+					else if(type == typeof(short))
+					{
+						return "short";
+					}
+					else if(type == typeof(int))
+					{
+						return "int";
+					}
+					else if(type == typeof(long))
+					{
+						return "long";
+					}
+					else if(type == typeof(float))
+					{
+						return "float";
+					}
+					else if(type == typeof(double))
+					{
+						return "double";
+					}
+					else
+					{
+						// HACK we're assuming for the time being that Java code cannot define new value types
+						return DotNetTypeWrapper.GetName(type);
+					}
+				}
+				else if(type.IsArray)
+				{
+					StringBuilder sb = new StringBuilder();
+					while(type.IsArray)
+					{
+						sb.Append('[');
+						type = type.GetElementType();
+					}
+					if(type.IsValueType)
+					{
+						if(type == typeof(void))
+						{
+							sb.Append('V');
+						}
+						else if(type == typeof(bool))
+						{
+							sb.Append('Z');
+						}
+						else if(type == typeof(sbyte))
+						{
+							sb.Append('B');
+						}
+						else if(type == typeof(char))
+						{
+							sb.Append('C');
+						}
+						else if(type == typeof(short))
+						{
+							sb.Append('S');
+						}
+						else if(type == typeof(int))
+						{
+							sb.Append('I');
+						}
+						else if(type == typeof(long))
+						{
+							sb.Append('J');
+						}
+						else if(type == typeof(float))
+						{
+							sb.Append('F');
+						}
+						else if(type == typeof(double))
+						{
+							sb.Append('D');
+						}
+						else
+						{
+							// HACK we're assuming for the time being that Java code cannot define new value types
+							sb.Append(DotNetTypeWrapper.GetName(type));
+						}
+					}
+					else
+					{
+						sb.Append('L').Append(getName(type)).Append(';');
+					}
+					return sb.ToString();
+				}
+				else
+				{
+					while(type.IsDefined(typeof(HideFromReflectionAttribute), false))
+					{
+						type = type.BaseType;
+					}
+					TypeWrapper wrapper = ClassLoaderWrapper.GetWrapperFromTypeFast(type);
+					if(wrapper != null)
+					{
+						return wrapper.Name;
+					}
+					// look for our custom attribute, that contains the real name of the type (for inner classes)
+					Object[] attribs = type.GetCustomAttributes(typeof(InnerClassAttribute), false);
+					if(attribs.Length == 1)
+					{
+						return ((InnerClassAttribute)attribs[0]).InnerClassName;
+					}
+					if(type.Assembly is System.Reflection.Emit.AssemblyBuilder || type.Assembly.IsDefined(typeof(JavaAssemblyAttribute), false))
+					{
+						return type.FullName;
+					}
+					else
+					{
+						return DotNetTypeWrapper.GetName(type);
+					}
+				}
+			}
+
+d1035 1
+a1035 1
+				RuntimeHelpers.RunClassConstructor(wrapper.Type.TypeHandle);
+d1461 3
+a1463 1
+				Type type = NativeCode.java.lang.VMClass.getType(clazz);
+d1493 2
+a1494 2
+				Type type = NativeCode.java.lang.VMClass.getType(clazz);
+				return NetSystem.Runtime.Serialization.FormatterServices.GetUninitializedObject(type);
+d1500 10
+a1509 2
+				Type type = NativeCode.java.lang.VMClass.getType(clazz);
+				type.GetConstructor(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance, null, Type.EmptyTypes, null).Invoke(obj, null);
+@
+
+
+1.43
+log
+@*** empty log message ***
+@
+text
+@d76 8
+a83 8
+				private static Type java_lang_Byte = ClassLoaderWrapper.GetType("java.lang.Byte");
+				private static Type java_lang_Boolean = ClassLoaderWrapper.GetType("java.lang.Boolean");
+				private static Type java_lang_Short = ClassLoaderWrapper.GetType("java.lang.Short");
+				private static Type java_lang_Character = ClassLoaderWrapper.GetType("java.lang.Character");
+				private static Type java_lang_Integer = ClassLoaderWrapper.GetType("java.lang.Integer");
+				private static Type java_lang_Long = ClassLoaderWrapper.GetType("java.lang.Long");
+				private static Type java_lang_Float = ClassLoaderWrapper.GetType("java.lang.Float");
+				private static Type java_lang_Double = ClassLoaderWrapper.GetType("java.lang.Double");
+d247 1
+a247 1
+				public static object[] GetExceptionTypes(object methodCookie)
+d251 1
+a251 8
+					TypeWrapper[] exceptions = wrapper.GetExceptions();
+					object[] exceptionClasses = new object[exceptions.Length];
+					for(int i = 0; i < exceptions.Length; i++)
+					{
+						// TODO check for unloadable types
+						exceptionClasses[i] = VMClass.getClassFromWrapper(exceptions[i]);
+					}
+					return exceptionClasses;
+d543 1
+a543 1
+				return ar.ToArray(ClassLoaderWrapper.GetType("java.lang.Class"));
+d742 4
+a745 1
+				ClassLoaderWrapper.GetType("java.lang.System").GetField("err", BindingFlags.Static | BindingFlags.NonPublic).SetValue(null, printStream);
+d750 4
+a753 1
+				ClassLoaderWrapper.GetType("java.lang.System").GetField("in", BindingFlags.Static | BindingFlags.NonPublic).SetValue(null, inputStream);
+d758 4
+a761 1
+				ClassLoaderWrapper.GetType("java.lang.System").GetField("out", BindingFlags.Static | BindingFlags.NonPublic).SetValue(null, printStream);
+d880 3
+a882 1
+					CreateClass = (CreateClassDelegate)Delegate.CreateDelegate(typeof(CreateClassDelegate), ClassLoaderWrapper.GetType("java.lang.VMClass").GetMethod("createClass", BindingFlags.Static | BindingFlags.Public));
+d962 3
+a964 1
+					getWrapper = ClassLoaderWrapper.GetType("java.lang.VMClass").GetMethod("getWrapperFromClass", BindingFlags.NonPublic | BindingFlags.Static);
+@
+
+
+1.42
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2002 Jeroen Frijters
+a33 113
+namespace java.lang
+{
+	// TODO should be serializable
+	public sealed class StackTraceElement
+	{
+		private static readonly long serialVersionUID = 6992337162326171013L;
+		private string fileName;
+		private int lineNumber;
+		private string className;
+		private string methodName;
+		[NonSerialized]
+		private bool isNative;
+
+		internal long bogus_method_to_prevent_warning()
+		{
+			return serialVersionUID;
+		}
+
+		internal StackTraceElement(string fileName, int lineNumber, string className, string methodName, bool isNative)
+		{
+			this.fileName = fileName;
+			this.lineNumber = lineNumber;
+			this.className = className;
+			this.methodName = methodName;
+			this.isNative = isNative;
+		}
+
+		public string getFileName()
+		{
+			return fileName;
+		}
+
+		public int getLineNumber()
+		{
+			return lineNumber;
+		}
+
+		public string getClassName()
+		{
+			return className;
+		}
+
+		public string getMethodName()
+		{
+			return methodName;
+		}
+
+		public bool isNativeMethod()
+		{
+			return isNative;
+		}
+
+		public override string ToString()
+		{
+			StringBuilder sb = new StringBuilder();
+			if(className != null)
+			{
+				sb.Append(className);
+				if(methodName != null)
+				{
+					sb.Append('.');
+				}
+			}
+			if(methodName != null)
+			{
+				sb.Append(methodName);
+			}
+			sb.Append('(');
+			if(fileName != null)
+			{
+				sb.Append(fileName);
+			}
+			else
+			{
+				sb.Append(isNative ? "Native Method" : "Unknown Source");
+			}
+			if(lineNumber >= 0)
+			{
+				sb.Append(':').Append(lineNumber);
+			}
+			sb.Append(')');
+			return sb.ToString();
+		}
+
+		public override bool Equals(object o)
+		{
+			if(o != null && o.GetType() == GetType())
+			{
+				StackTraceElement ste = (StackTraceElement)o;
+				return ste.className == className &&
+					ste.fileName == fileName &&
+					ste.lineNumber == lineNumber &&
+					ste.methodName == methodName;
+			}
+			return false;
+		}
+
+		public override int GetHashCode()
+		{
+			return GetHashCode(className) ^ GetHashCode(fileName) ^ GetHashCode(methodName) ^ lineNumber;
+		}
+
+		private static int GetHashCode(string o)
+		{
+			if(o == null)
+			{
+				return 0;
+			}
+			return o.GetHashCode();
+		}
+	}
+}
+
+d343 1
+a343 1
+		public class Runtime
+d345 1
+a345 1
+			public static void insertSystemProperties(object properties)
+d347 1
+a347 78
+				MethodInfo m = properties.GetType().GetMethod("setProperty");
+				// TODO set all these properties to something useful
+				m.Invoke(properties, new string[] { "java.version", "1.4" });
+				m.Invoke(properties, new string[] { "java.vendor", "Jeroen Frijters" });
+				m.Invoke(properties, new string[] { "java.vendor.url", "http://ikvm.net/" });
+				// HACK using the Assembly.Location property isn't correct
+				m.Invoke(properties, new string[] { "java.home", new FileInfo(typeof(Runtime).Assembly.Location).DirectoryName });
+				m.Invoke(properties, new string[] { "java.vm.specification.version", "1.0" });
+				m.Invoke(properties, new string[] { "java.vm.specification.vendor", "Sun Microsystems Inc." });
+				m.Invoke(properties, new string[] { "java.vm.specification.name", "Java Virtual Machine Specification" });
+				m.Invoke(properties, new string[] { "java.vm.version", typeof(Runtime).Assembly.GetName().Version.ToString() });
+				m.Invoke(properties, new string[] { "java.vm.vendor", "Jeroen Frijters" });
+				m.Invoke(properties, new string[] { "java.vm.name", "IKVM.NET" });
+				m.Invoke(properties, new string[] { "java.specification.version", "1.4" });
+				m.Invoke(properties, new string[] { "java.specification.vendor", "Sun Microsystems Inc." });
+				m.Invoke(properties, new string[] { "java.specification.name", "Java Platform API Specification" });
+				m.Invoke(properties, new string[] { "java.class.version", "48.0" });
+				string classpath = Environment.GetEnvironmentVariable("CLASSPATH");
+				if(classpath == null)
+				{
+					classpath = ".";
+				}
+				m.Invoke(properties, new string[] { "java.class.path", classpath });
+				string libraryPath = ".";
+				if(Environment.OSVersion.ToString().IndexOf("Unix") >= 0)
+				{
+					string ldLibraryPath = Environment.GetEnvironmentVariable("LD_LIBRARY_PATH");
+					if (ldLibraryPath != null)
+					{
+						libraryPath = ldLibraryPath;
+					}
+					else
+					{
+						libraryPath = "";
+					}
+				}
+				m.Invoke(properties, new string[] { "java.library.path", libraryPath });
+				m.Invoke(properties, new string[] { "java.io.tmpdir", Path.GetTempPath() });
+				m.Invoke(properties, new string[] { "java.compiler", "" });
+				m.Invoke(properties, new string[] { "java.ext.dirs", "" });
+				// NOTE os.name *must* contain "Windows" when running on Windows, because Classpath tests on that
+				string osname = Environment.OSVersion.ToString();
+				string osver = Environment.OSVersion.Version.ToString();
+				// HACK if the osname contains the version, we remove it
+				osname = osname.Replace(osver, "").Trim();
+				m.Invoke(properties, new string[] { "os.name", osname });
+				string arch = Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE");
+				if(arch == null)
+				{
+					// TODO get this info from somewhere else
+					arch = "x86";
+				}
+				m.Invoke(properties, new string[] { "os.arch", arch });
+				m.Invoke(properties, new string[] { "os.version", osver });
+				m.Invoke(properties, new string[] { "file.separator", Path.DirectorySeparatorChar.ToString() });
+				m.Invoke(properties, new string[] { "file.encoding", "8859_1" });
+				m.Invoke(properties, new string[] { "path.separator", Path.PathSeparator.ToString() });
+				m.Invoke(properties, new string[] { "line.separator", Environment.NewLine });
+				m.Invoke(properties, new string[] { "user.name", Environment.UserName });
+				string home = Environment.GetEnvironmentVariable("USERPROFILE");
+				if(home == null)
+				{
+					// maybe we're on *nix
+					home = Environment.GetEnvironmentVariable("HOME");
+					if(home == null)
+					{
+						// TODO may be there is a better way
+						// NOTE on MS .NET this doesn't return the correct path
+						// (it returns "C:\Documents and Settings\username\My Documents", but we really need
+						// "C:\Documents and Settings\username" to be compatible with Sun)
+						home = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+					}
+				}
+				m.Invoke(properties, new string[] { "user.home", home });
+				m.Invoke(properties, new string[] { "user.dir", Environment.CurrentDirectory });
+				m.Invoke(properties, new string[] { "awt.toolkit", "ikvm.awt.NetToolkit, awt, Version=1.0, Culture=neutral, PublicKeyToken=null" });
+				// HACK we assume that the type of the properties object is the classpath assembly
+				m.Invoke(properties, new string[] { "gnu.classpath.home.url", "ikvmres:" + properties.GetType().Assembly.FullName + ":lib" });
+d350 15
+a364 6
+			public static string nativeGetLibname(string pathname, string libname)
+			{
+				if(Environment.OSVersion.ToString().IndexOf("Unix") >= 0)
+				{
+					return "lib" + libname + ".so";
+				}
+d366 1
+a366 10
+				// HACK this seems like a lame way of doing things, but in order to get Eclipse to work,
+				// we have append .dll to the libname here
+				if(!libname.ToUpper().EndsWith(".DLL"))
+				{
+					libname += ".dll";
+				}
+				return libname;
+			}
+
+			public static int nativeLoad(object obj, string filename)
+a369 58
+			}
+
+			public static void gc(object obj)
+			{
+				NetSystem.GC.Collect();
+			}
+
+			public static void runFinalization(object obj)
+			{
+				NetSystem.GC.WaitForPendingFinalizers();
+			}
+
+			public static void runFinalizersOnExitInternal(bool b)
+			{
+				// the CLR always runs the finalizers, so we can ignore this
+			}
+
+			public static void exitInternal(object obj, int rc)
+			{
+				NetSystem.Environment.Exit(rc);
+			}
+
+			public static int availableProcessors(object obj)
+			{
+				string s = NetSystem.Environment.GetEnvironmentVariable("NUMBER_OF_PROCESSORS");
+				if(s != null)
+				{
+					return int.Parse(s);
+				}
+				return 1;
+			}
+
+			public static long freeMemory(object obj)
+			{
+				// TODO figure out if there is anything meaningful we can return here
+				return 10 * 1024 * 1024;
+			}
+
+			public static long maxMemory(object obj)
+			{
+				// spec says: If there is no inherent limit then the value Long.MAX_VALUE will be returned.
+				return long.MaxValue;
+			}
+
+			public static long totalMemory(object obj)
+			{
+				// NOTE this really is a bogus number, but we have to return something
+				return NetSystem.GC.GetTotalMemory(false);
+			}
+
+			public static void traceInstructions(object obj, bool b)
+			{
+				// not supported
+			}
+
+			public static void traceMethodCalls(object obj, bool b)
+			{
+				// not supported
+@
+
+
+1.41
+log
+@*** empty log message ***
+@
+text
+@d153 21
+d363 9
+a371 2
+					// TODO
+					return new object[0];
+d1927 1
+a1927 1
+			public static string getLocalHostName()
+d1987 68
+@
+
+
+1.40
+log
+@*** empty log message ***
+@
+text
+@a406 1
+					// TODO this is a very lame implementation, no where near correct
+d408 2
+a409 3
+					wrapper.DeclaringType.Finish();
+					FieldInfo fi = wrapper.DeclaringType.Type.GetField(wrapper.Name, BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+					if(fi.FieldType.IsValueType)
+d411 1
+a411 1
+						return JavaWrapper.Box(fi.GetValue(o));
+d413 1
+a413 1
+					return fi.GetValue(o);
+a417 1
+					// TODO this is a very lame implementation, no where near correct
+d419 1
+a419 3
+					wrapper.DeclaringType.Finish();
+					FieldInfo fi = wrapper.DeclaringType.Type.GetField(wrapper.Name, BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+					if(fi.FieldType.IsValueType)
+d423 1
+a423 1
+					fi.SetValue(o, v);
+d434 1
+a434 1
+				m.Invoke(properties, new string[] { "java.version", "1.3" });
+d445 1
+a445 1
+				m.Invoke(properties, new string[] { "java.specification.version", "1.3" });
+@
+
+
+1.39
+log
+@*** empty log message ***
+@
+text
+@d159 1
+@
+
+
+1.38
+log
+@*** empty log message ***
+@
+text
+@d182 4
+d194 4
+d206 4
+d214 4
+d226 32
+d378 8
+d1010 1
+a1010 1
+			public static Type getPrimitiveType(char type)
+d1015 1
+a1015 1
+						return typeof(bool);
+d1017 1
+a1017 1
+						return typeof(sbyte);
+d1019 1
+a1019 1
+						return typeof(char);
+d1021 1
+a1021 1
+						return typeof(double);
+d1023 1
+a1023 1
+						return typeof(float);
+d1025 1
+a1025 1
+						return typeof(int);
+d1027 1
+a1027 1
+						return typeof(long);
+d1029 1
+a1029 1
+						return typeof(short);
+d1031 1
+a1031 1
+						return typeof(void);
+d1049 1
+a1049 1
+					object clazz = VMClass.CreateInstance(null, type);
+d1067 3
+a1069 2
+			private static MethodInfo createClass;
+			private static MethodInfo getTypeMethod;
+d1098 1
+a1098 1
+			internal static object CreateInstance(Type type, TypeWrapper wrapper)
+d1100 1
+a1100 2
+				TypeWrapper.AssertFinished(type);
+				if(createClass == null)
+d1102 13
+a1114 1
+					createClass = ClassLoaderWrapper.GetType("java.lang.VMClass").GetMethod("createClass", BindingFlags.Static | BindingFlags.NonPublic);
+d1116 1
+a1116 1
+				object clazz = createClass.Invoke(null, new object[] { type, wrapper });
+a1118 4
+					if(type != null)
+					{
+						map.Add(type, clazz);
+					}
+d1127 1
+a1127 1
+			public static bool IsAssignableFrom(Object w1, Object w2)
+d1132 10
+a1169 7
+				lock(map.SyncRoot)
+				{
+					// NOTE since this method can be called multiple times (or after getClassFromType has added
+					// the Class to the map), we don't use Add() here, but the indexer because that can handle
+					// "overwriting" the existing association (which should always be the same as the new one)
+					map[type] = clazz;
+				}
+d1180 1
+a1180 1
+				if(getTypeMethod == null)
+d1182 1
+a1182 1
+					getTypeMethod = ClassLoaderWrapper.GetType("java.lang.VMClass").GetMethod("getTypeFromClass", BindingFlags.NonPublic | BindingFlags.Static);
+d1184 3
+a1186 1
+				return (Type)getTypeMethod.Invoke(null, new object[] { clazz });
+d1196 1
+a1196 6
+						// Maybe the Class object was already constructed from the type
+						clazz = map[wrapper.Type];
+						if(clazz == null)
+						{
+							clazz = CreateInstance(null, wrapper);
+						}
+d1209 7
+a1215 1
+				lock(map.SyncRoot)
+d1217 37
+a1253 2
+					object clazz = map[type];
+					if(clazz == null)
+d1255 1
+a1255 34
+						// maybe the Class object was constructed from the wrapper
+						TypeWrapper wrapper = ClassLoaderWrapper.GetWrapperFromTypeFast(type);
+						if(wrapper != null)
+						{
+							clazz = map[wrapper];
+							if(clazz != null)
+							{
+								map.Add(type, clazz);
+								return clazz;
+							}
+						}
+						// NOTE we need to get the bootstrap classloader to trigger its construction (if it
+						// hasn't been created yet), because otherwise CreateInstance will do that and this
+						// causes the same class object to be created multiple times)
+						ClassLoaderWrapper.GetBootstrapClassLoader();
+						clazz = map[type];
+						if(clazz == null)
+						{
+							// if this type is an override stub (e.g. java.lang.Object), we need to return the
+							// class object for the parent type
+							// NOTE we first check if type isn't an array, because Type.IsDefined throws an exception
+							// when called on an array type (?)
+							if(!type.IsArray && type.IsDefined(typeof(HideFromReflectionAttribute), false))
+							{
+								clazz = getClassFromType(type.BaseType);
+								map.Add(type, clazz);
+							}
+							else
+							{
+								// TODO should we specify the wrapper?
+								// NOTE CreateInstance adds the Class to the "map"
+								clazz = CreateInstance(type, null);
+							}
+						}
+a1256 1
+					return clazz;
+d1258 1
+a1258 5
+			}
+
+			public static string getName(Type type)
+			{
+				return GetName(type, null);
+d1261 1
+a1261 1
+			public static string GetName(Type type, object wrapperType)
+d1263 1
+a1263 14
+				if(type == null)
+				{
+					string name = ((TypeWrapper)wrapperType).Name;
+					// HACK name is null for primitives
+					if(name != null)
+					{
+						return name;
+					}
+					type = ((TypeWrapper)wrapperType).Type;
+				}
+				if(wrapperType == null)
+				{
+					wrapperType = ClassLoaderWrapper.GetWrapperFromTypeFast(type);
+				}
+d1313 2
+a1314 1
+						return type.FullName;
+d1365 2
+a1366 1
+							sb.Append(type.FullName);
+d1371 1
+a1371 1
+						sb.Append('L').Append(GetName(type, null)).Append(';');
+d1392 8
+a1399 1
+					return type.FullName;
+d1404 1
+a1404 1
+			public static void initializeType(Type type)
+d1406 3
+a1408 1
+				RuntimeHelpers.RunClassConstructor(type.TypeHandle);
+d1411 1
+a1411 1
+			public static object getClassLoader0(Type type, object wrapper)
+d1413 6
+a1418 5
+				if(wrapper != null)
+				{
+					return ((TypeWrapper)wrapper).GetClassLoader().GetJavaClassLoader();
+				}
+				return ClassLoaderWrapper.GetClassLoader(type).GetJavaClassLoader();
+d1421 1
+a1421 1
+			public static object[] GetDeclaredMethods(Type type, object cwrapper, bool getMethods, bool publicOnly)
+a1423 4
+				if(wrapper == null)
+				{
+					wrapper = ClassLoaderWrapper.GetWrapperFromType(type);
+				}
+d1465 1
+a1465 1
+			public static object[] GetDeclaredFields(Type type, object cwrapper, bool publicOnly)
+a1467 4
+				if(wrapper == null)
+				{
+					wrapper = ClassLoaderWrapper.GetWrapperFromType(type);
+				}
+d1495 1
+a1495 1
+			public static object[] GetDeclaredClasses(Type type, object cwrapper, bool publicOnly)
+a1497 4
+				if(wrapper == null)
+				{
+					wrapper = ClassLoaderWrapper.GetWrapperFromType(type);
+				}
+d1533 1
+a1533 1
+			public static object GetDeclaringClass(Type type, object cwrapper)
+a1535 4
+				if(wrapper == null)
+				{
+					wrapper = ClassLoaderWrapper.GetWrapperFromType(type);
+				}
+d1550 1
+a1550 1
+			public static object[] GetInterfaces(Type type, object cwrapper)
+a1552 4
+				if(wrapper == null)
+				{
+					wrapper = ClassLoaderWrapper.GetWrapperFromType(type);
+				}
+d1554 1
+d1565 1
+a1565 1
+			public static int GetModifiers(Type type, Object cwrapper)
+a1567 4
+				if(wrapper == null)
+				{
+					wrapper = ClassLoaderWrapper.GetWrapperFromType(type);
+				}
+@
+
+
+1.37
+log
+@*** empty log message ***
+@
+text
+@d345 1
+a345 1
+					return VMClass.getClassFromType(wrapper.FieldType);
+@
+
+
+1.36
+log
+@*** empty log message ***
+@
+text
+@d929 5
+d1876 7
+a1882 1
+						list[i] = AddressToByteArray(addresses[i]);
+a1920 19
+
+			public static sbyte[] AddressToByteArray(NetSystem.Net.IPAddress ipaddress)
+			{
+				// TODO check for correctness
+				int address = (int)ipaddress.Address;
+				return new sbyte[] { (sbyte)address, (sbyte)(address >> 8), (sbyte)(address >> 16), (sbyte)(address >> 24) };
+			}
+		}
+	}
+}
+
+namespace NativeCode.ikvm.lang
+{
+	// TODO instead of having these methods here, they should be defined as inlined CIL in map.xml
+	public class CIL
+	{
+		public static int unbox_int(object o)
+		{
+			return (int)o;
+@
+
+
+1.35
+log
+@*** empty log message ***
+@
+text
+@a35 4
+	public interface Cloneable
+	{
+	}
+
+a143 7
+	}
+}
+
+namespace java.io
+{
+	public interface Serializable
+	{
+@
+
+
+1.34
+log
+@*** empty log message ***
+@
+text
+@d763 1
+a763 1
+					throw new NullReferenceException();
+d787 1
+a787 1
+					throw new NullReferenceException();
+d811 1
+a811 1
+					throw new NullReferenceException();
+d832 1
+a832 1
+					throw new NullReferenceException();
+d848 6
+a853 4
+					// NOTE side effect is null check for src and dest
+					Type type_src = src.GetType();
+					Type type_dst = dest.GetType();
+					if(type_src != type_dst)
+d855 3
+a857 1
+						if(len >= 0)
+d859 1
+a859 1
+							try
+d861 1
+a861 5
+								// since Java strictly defines what happens when an ArrayStoreException occurs during copying
+								// and .NET doesn't, we have to do it by hand
+								Object[] src1 = (Object[])src;
+								Object[] dst1 = (Object[])dest;
+								for(; len > 0; len--)
+d863 13
+a875 1
+									dst1[destStart++] = src1[srcStart++];
+a876 5
+								return;
+							}
+							catch(InvalidCastException)
+							{
+								throw JavaException.ArrayStoreException("cast failed");
+d878 1
+d880 4
+a883 1
+						throw JavaException.ArrayIndexOutOfBoundsException();
+d892 1
+a892 1
+					throw new NullReferenceException();
+@
+
+
+1.33
+log
+@*** empty log message ***
+@
+text
+@a679 1
+				StringBuilder sb = new StringBuilder();
+d682 21
+a702 1
+					StringBufferHelper.append(sb, (float)d);
+d706 3
+a708 1
+					StringBufferHelper.append(sb, d);
+a709 1
+				return sb.ToString();
+@
+
+
+1.32
+log
+@*** empty log message ***
+@
+text
+@a982 20
+		public class Thread
+		{
+			public static void sleep(long millis, int nanos)
+			{
+				NetSystem.Threading.Thread.Sleep(new TimeSpan(millis * 10000 + (nanos + 99) / 100));
+			}
+
+			public static void joinInternal(NetSystem.Threading.Thread nativeThread, long millis, int nanos)
+			{
+				if(millis == 0 && nanos == 0)
+				{
+					nativeThread.Join();
+				}
+				else
+				{
+					nativeThread.Join(new TimeSpan(millis * 10000 + (nanos + 99) / 100));
+				}
+			}
+		}
+
+@
+
+
+1.31
+log
+@*** empty log message ***
+@
+text
+@a677 19
+			public static long doubleToLongBits(double v)
+			{
+				if(double.IsNaN(v))
+				{
+					return 0x7ff8000000000000L;
+				}
+				return BitConverter.DoubleToInt64Bits(v);
+			}
+
+			public static long doubleToRawLongBits(double v)
+			{
+				return BitConverter.DoubleToInt64Bits(v);
+			}
+
+			public static double longBitsToDouble(long bits)
+			{
+				return BitConverter.Int64BitsToDouble(bits);
+			}
+
+a689 22
+			}
+		}
+
+		public class Float
+		{
+			public static float intBitsToFloat(int v)
+			{
+				return BitConverter.ToSingle(BitConverter.GetBytes(v), 0);
+			}
+
+			public static int floatToIntBits(float v)
+			{
+				if(float.IsNaN(v))
+				{
+					return 0x7fc00000;
+				}
+				return BitConverter.ToInt32(BitConverter.GetBytes(v), 0);
+			}
+
+			public static int floatToRawIntBits(float v)
+			{
+				return BitConverter.ToInt32(BitConverter.GetBytes(v), 0);
+@
+
+
+1.30
+log
+@*** empty log message ***
+@
+text
+@d1924 9
+a1932 1
+				string s = NetSystem.Net.Dns.GetHostByAddress(string.Format("{0}.{1}.{2}.{3}", address[0], address[1], address[2], address[3])).HostName;
+@
+
+
+1.29
+log
+@*** empty log message ***
+@
+text
+@d1382 1
+a1382 1
+			public static object getClassLoader0(Type type)
+d1384 4
+@
+
+
+1.28
+log
+@*** empty log message ***
+@
+text
+@d414 14
+a427 1
+				m.Invoke(properties, new string[] { "java.library.path", "." });
+@
+
+
+1.27
+log
+@*** empty log message ***
+@
+text
+@d31 1
+d991 1
+a991 1
+					if(name != null && classFile.Name.Replace('/', '.') != name)
+d1195 1
+a1195 1
+							if(!type.IsArray && type.IsDefined(typeof(OverrideStubTypeAttribute), false))
+d1225 1
+a1225 1
+						return name.Replace('/', '.');
+d1239 1
+a1239 1
+						return name.Replace('/', '.');
+d1344 1
+a1344 1
+					while(type.IsDefined(typeof(OverrideStubTypeAttribute), false))
+d1351 1
+a1351 1
+						return wrapper.Name.Replace('/', '.');
+d1354 1
+a1354 1
+					Object[] attribs = type.GetCustomAttributes(typeof(ClassNameAttribute), false);
+d1357 1
+a1357 1
+						return ((ClassNameAttribute)attribs[0]).Name.Replace('/', '.');
+d1389 1
+a1389 1
+					// we don't want to expose synthetics methods (one reason is that it would
+d1391 1
+a1391 1
+					if((methods[i].Modifiers & Modifiers.Synthetic) == 0)
+d1463 2
+a1464 1
+				// NOTE to get at the InnerClasses we *don't* need to finish the type
+d1471 4
+d1479 1
+a1479 1
+						if((ModifiersAttribute.GetModifiers(wrappers[i].Type) & Modifiers.Public) != 0)
+d1505 2
+d1539 2
+a1540 1
+				if(type == null)
+d1542 1
+a1542 3
+					TypeWrapper wrapper = (TypeWrapper)cwrapper;
+					wrapper.Finish();
+					type = wrapper.Type;
+d1544 2
+d1548 1
+a1548 1
+				Modifiers modifiers = ModifiersAttribute.GetModifiers(type);
+d1815 1
+a1815 4
+						if(!ModifiersAttribute.IsSynthetic(type.TypeInitializer))
+						{
+							return true;
+						}
+@
+
+
+1.26
+log
+@*** empty log message ***
+@
+text
+@d459 5
+@
+
+
+1.25
+log
+@*** empty log message ***
+@
+text
+@a1922 44
+
+		public class PlainSocketImpl
+		{
+			public static sbyte[] getLocalAddress(NetSystem.Net.Sockets.Socket socket)
+			{
+				return InetAddress.AddressToByteArray(((System.Net.IPEndPoint)socket.LocalEndPoint).Address);
+			}
+		}
+
+		public class PlainDatagramSocketImpl
+		{
+			// TODO this method lives here, because UdpClient.Receive has a ByRef parameter and NetExp doesn't support that
+			// I have to figure out a way to support ref parameters from Java
+			public static void receive(object obj, object packet)
+			{
+				sbyte[] data = (sbyte[])packet.GetType().InvokeMember("getData", BindingFlags.InvokeMethod | BindingFlags.Instance | BindingFlags.Public, null, packet, new object[0]);
+				int length = (int)packet.GetType().InvokeMember("getLength", BindingFlags.InvokeMethod | BindingFlags.Instance | BindingFlags.Public, null, packet, new object[0]);
+				object s = obj.GetType().GetField("socket", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(obj);
+				NetSystem.Net.Sockets.UdpClient socket = (NetSystem.Net.Sockets.UdpClient)s;
+				NetSystem.Net.IPEndPoint remoteEP = new NetSystem.Net.IPEndPoint(0, 0);
+				byte[] buf = socket.Receive(ref remoteEP);
+				for(int i = 0; i < Math.Min(length, buf.Length); i++)
+				{
+					data[i] = (sbyte)buf[i];
+				}
+				packet.GetType().InvokeMember("setLength", BindingFlags.InvokeMethod | BindingFlags.Instance | BindingFlags.Public, null, packet, new object[] { buf.Length });
+				long remoteIP = remoteEP.Address.Address;
+				string remote = (remoteIP & 0xff) + "." + ((remoteIP >> 8) & 0xff) + "." + ((remoteIP >> 16) & 0xff) + "." + ((remoteIP >> 24) & 0xff);
+				object remoteAddress = ClassLoaderWrapper.GetType("java.net.InetAddress").GetMethod("getByName").Invoke(null, new object[] { remote });
+				packet.GetType().InvokeMember("setAddress", BindingFlags.InvokeMethod | BindingFlags.Instance | BindingFlags.Public, null, packet, new object[] { remoteAddress });
+				packet.GetType().InvokeMember("setPort", BindingFlags.InvokeMethod | BindingFlags.Instance | BindingFlags.Public, null, packet, new object[] { remoteEP.Port });
+			}
+		}
+	}
+}
+
+namespace NativeCode.gnu.java.net.protocol.ikvmres
+{
+	public class IkvmresURLConnection
+	{
+		public static void InitArray(sbyte[] buf, FieldInfo field)
+		{
+			NetSystem.Runtime.CompilerServices.RuntimeHelpers.InitializeArray(buf, field.FieldHandle);
+		}
+@
+
+
+1.24
+log
+@*** empty log message ***
+@
+text
+@d169 1
+a169 1
+						return NetSystem.Array.CreateInstance(Class.getType(clazz), dim);
+d285 1
+a285 1
+					return Class.getClassFromWrapper(wrapper.ReturnType);
+d295 1
+a295 1
+						parameterClasses[i] = Class.getClassFromWrapper(parameters[i]);
+d355 1
+a355 1
+					return Class.getClassFromType(wrapper.FieldType);
+d680 10
+a689 1
+				return isFloat ? StringHelper.valueOf((float)d) : StringHelper.valueOf(d);
+d728 1
+a728 1
+						ar.Add(Class.getClassFromType(frame.GetMethod().DeclaringType));
+d990 1
+a990 1
+					object clazz = Class.CreateInstance(null, type);
+d1025 1
+a1025 1
+		public class Class
+d1028 1
+a1028 1
+			private static ConstructorInfo classConstructor;
+d1031 5
+d1061 1
+a1061 1
+				if(classConstructor == null)
+d1063 1
+a1063 1
+					classConstructor = ClassLoaderWrapper.GetType("java.lang.Class").GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, CallingConventions.Standard, new Type[] { typeof(Type), typeof(object) }, null);
+d1065 1
+a1065 1
+				object clazz = classConstructor.Invoke(new object[] { type, wrapper });
+d1132 1
+a1132 1
+					getTypeMethod = ClassLoaderWrapper.GetType("java.lang.Class").GetMethod("getType", BindingFlags.NonPublic | BindingFlags.Instance, null, Type.EmptyTypes, null);
+d1134 1
+a1134 1
+				return (Type)getTypeMethod.Invoke(clazz, new object[0]);
+d1368 1
+a1368 1
+			public static object[] GetDeclaredMethods(Type type, object cwrapper, bool getMethods)
+d1387 1
+a1387 1
+						if(methods[i].ReturnType.IsUnloadable)
+d1389 1
+a1389 9
+							throw JavaException.NoClassDefFoundError(methods[i].ReturnType.Name);
+						}
+						TypeWrapper[] args = methods[i].GetParameters();
+						for(int j = 0; j < args.Length; j++)
+						{
+							if(args[j].IsUnloadable)
+							{
+								throw JavaException.NoClassDefFoundError(args[j].Name);
+							}
+d1391 1
+a1391 1
+						if(methods[i].Name == "<clinit>")
+d1393 1
+a1393 1
+							// not reported back
+d1397 12
+d1416 1
+a1416 1
+			public static object[] GetDeclaredFields(Type type, object cwrapper)
+d1428 12
+d1450 1
+a1450 1
+			public static object[] GetDeclaredClasses(Type type, object cwrapper)
+d1459 16
+d1796 1
+a1796 1
+				Type type = NativeCode.java.lang.Class.getType(clazz);
+d1829 1
+a1829 1
+				Type type = NativeCode.java.lang.Class.getType(clazz);
+d1836 1
+a1836 1
+				Type type = NativeCode.java.lang.Class.getType(clazz);
+@
+
+
+1.23
+log
+@*** empty log message ***
+@
+text
+@d1838 1
+a1838 1
+						list[i] = AddressToByteArray((int)addresses[i].Address);
+d1850 18
+a1867 1
+				return NetSystem.Net.Dns.GetHostByAddress(string.Format("{0}.{1}.{2}.{3}", address[0], address[1], address[2], address[3])).HostName;
+d1870 1
+a1870 1
+			private static sbyte[] AddressToByteArray(int address)
+d1873 1
+d1878 8
+d1920 12
+@
+
+
+1.22
+log
+@*** empty log message ***
+@
+text
+@a503 6
+			public static object execInternal(object obj, string[] cmd, string[] env, object dir)
+			{
+				// TODO this was moved to the Java class ikvm.lang.DotNetProcess
+				throw new NotImplementedException();
+			}
+
+d512 1
+d744 1
+a744 1
+			public static void arraycopy(object src, int srcStart, object dest, int destStart, int len)
+d746 21
+a766 2
+				if ((src == null) || (dest == null))
+					throw new NullReferenceException ();
+d768 23
+a790 2
+				if (!(src is Array) || !(dest is Array))
+					throw JavaException.ArrayStoreException ("source and destination must be an array");
+d792 23
+a814 4
+				Type eltype_src = src.GetType().GetElementType();
+				Type eltype_dst = dest.GetType().GetElementType();
+				bool prim_src = eltype_src.IsPrimitive;
+				bool prim_dst = eltype_dst.IsPrimitive;
+d816 20
+a835 2
+				if (prim_src && !prim_dst)
+					throw JavaException.ArrayStoreException ("source is an array of primitive type while destination is not");
+d837 33
+a869 7
+				if (!prim_src && prim_dst)
+					throw JavaException.ArrayStoreException ("destination is an array of primitive type while source is not");
+
+				if (prim_src && prim_dst && (eltype_src != eltype_dst))
+					throw JavaException.ArrayStoreException ("source and destination must be of the same primitive type");
+
+				try {
+d872 3
+a874 2
+				catch (ArgumentOutOfRangeException) {
+					throw JavaException.ArrayIndexOutOfBoundsException();
+d876 2
+a877 1
+				catch (ArgumentException) {
+d880 12
+a891 2
+				catch (InvalidCastException) {
+					throw JavaException.ArrayStoreException ("cast failed");
+@
+
+
+1.21
+log
+@*** empty log message ***
+@
+text
+@d921 2
+a922 3
+				TypeWrapper type = ClassLoaderWrapper.GetBootstrapClassLoader().LoadClassByDottedName(name);
+				type.Finish();
+				if(initialize)
+d924 6
+a929 1
+					RuntimeHelpers.RunClassConstructor(type.Type.TypeHandle);
+d931 1
+a931 1
+				return getClassFromType(type.Type);
+d1692 7
+a1698 2
+				// HACK return null, classpath then assumes GMT, which is fine by me, for the time being
+				return null;
+@
+
+
+1.20
+log
+@*** empty log message ***
+@
+text
+@d263 1
+a263 1
+						throw new NotImplementedException(o.GetType().FullName);
+d310 1
+d318 9
+a326 1
+							args[i] = JavaWrapper.Unbox(args[i]);
+d329 1
+a329 1
+					object retval = mw.Invoke(o, args, false);
+d557 4
+d616 25
+d895 8
+a902 1
+				nativeThread.Join(new TimeSpan(millis * 10000 + (nanos + 99) / 100));
+@
+
+
+1.19
+log
+@*** empty log message ***
+@
+text
+@d444 2
+@
+
+
+1.18
+log
+@*** empty log message ***
+@
+text
+@d869 1
+a869 2
+				type.Finish();
+				return getClassFromType(type.Type);
+d885 1
+d926 1
+d937 1
+d982 1
+a986 4
+				if(type is NetSystem.Reflection.Emit.TypeBuilder)
+				{
+					throw new InvalidOperationException();
+				}
+a1166 1
+					// TODO look for our custom attribute (which doesn't exist yet), that contains the real name of the type
+d1172 1
+d1628 1
+@
+
+
+1.17
+log
+@*** empty log message ***
+@
+text
+@d1174 5
+@
+
+
+1.16
+log
+@*** empty log message ***
+@
+text
+@d1257 36
+a1292 2
+				// TODO
+				return new object[0];
+d1315 1
+a1315 2
+				TypeWrapper wrapper = (TypeWrapper)cwrapper;
+				if(wrapper == null)
+d1317 3
+a1319 1
+					wrapper = ClassLoaderWrapper.GetWrapperFromType(type);
+d1321 3
+d1328 1
+a1328 1
+				return (int)(wrapper.Modifiers & mask);
+@
+
+
+1.15
+log
+@no message
+@
+text
+@d1189 1
+a1189 1
+			public static object[] GetDeclaredMethods(Type type, object cwrapper)
+d1201 1
+d1206 1
+a1206 1
+					if((methods[i].Modifiers & Modifiers.Synthetic) != 0)
+d1208 17
+a1224 14
+						MethodWrapper[] newmethods = new MethodWrapper[methods.Length - 1];
+						Array.Copy(methods, 0, newmethods, 0, i);
+						Array.Copy(methods, i + 1, newmethods, i, methods.Length - 1 - i);
+						methods = newmethods;
+						continue;
+					}
+					if(methods[i].ReturnType.IsUnloadable)
+					{
+						throw JavaException.NoClassDefFoundError(methods[i].ReturnType.Name);
+					}
+					TypeWrapper[] args = methods[i].GetParameters();
+					for(int j = 0; j < args.Length; j++)
+					{
+						if(args[j].IsUnloadable)
+d1226 1
+a1226 1
+							throw JavaException.NoClassDefFoundError(args[j].Name);
+d1230 1
+a1230 1
+				return methods;
+@
+
+
+1.14
+log
+@no message
+@
+text
+@d430 10
+a439 5
+					// TODO may be there is a better way
+					// NOTE on MS .NET this doesn't return the correct path
+					// (it returns "C:\Documents and Settings\username\My Documents", but we really need
+					// "C:\Documents and Settings\username" to be compatible with Sun)
+					home = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+d613 9
+a621 2
+				// TODO I doubt that this is correct
+				return double.Parse(s);
+d910 10
+d922 8
+a929 3
+				TypeWrapper elementWrapper = ((TypeWrapper)wrapper).ElementTypeWrapper;
+				elementWrapper.Finish();
+				return getClassFromWrapper(elementWrapper);
+d1205 1
+a1205 1
+					if(methods[i].Modifiers == Modifiers.Synthetic)
+d1548 1
+a1548 1
+						if(ModifiersAttribute.GetModifiers(type.TypeInitializer) != Modifiers.Synthetic)
+@
+
+
+1.13
+log
+@no message
+@
+text
+@d414 7
+a420 1
+				m.Invoke(properties, new string[] { "os.arch", Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE") });
+d427 10
+a436 1
+				m.Invoke(properties, new string[] { "user.home", Environment.GetEnvironmentVariable("USERPROFILE") });
+@
+
+
+1.12
+log
+@no message
+@
+text
+@d684 27
+a710 5
+				Array srcArray = (Array)src;
+				Array destArray = (Array)dest;
+				if(srcStart < 0 || (srcStart + len) > srcArray.Length ||
+					destStart < 0 || (destStart + len) > destArray.Length || len < 0)
+				{
+d713 3
+a715 1
+				Array.Copy(srcArray, srcStart, destArray, destStart, len);
+@
+
+
+1.11
+log
+@no message
+@
+text
+@d684 8
+a691 2
+				// TODO
+				Array.Copy((Array)src, srcStart, (Array)dest, destStart, len);
+d854 12
+d983 13
+d1137 10
+d1478 1
+a1478 1
+				if(type.TypeInitializer != null)
+d1480 1
+a1480 1
+					if(ModifiersAttribute.GetModifiers(type.TypeInitializer) != Modifiers.Synthetic)
+d1482 4
+a1485 1
+						return true;
+d1487 7
+a1494 1
+				return false;
+@
+
+
+1.10
+log
+@no message
+@
+text
+@d177 4
+a181 2
+				private static Type java_lang_Short = ClassLoaderWrapper.GetType("java.lang.Short");
+				private static Type java_lang_Boolean = ClassLoaderWrapper.GetType("java.lang.Boolean");
+d183 2
+d188 1
+a188 1
+					if(o is int)
+d190 1
+a190 1
+						return Activator.CreateInstance(java_lang_Integer, new object[] { o });
+d196 12
+d212 8
+d229 1
+a229 1
+					if(type == java_lang_Integer)
+d231 1
+a231 1
+						return java_lang_Integer.GetMethod("intValue").Invoke(o, new object[0]);
+d241 8
+d253 8
+d351 1
+d357 1
+a357 8
+						if(fi.FieldType == typeof(long))
+						{
+							return Activator.CreateInstance(ClassLoaderWrapper.GetType("java.lang.Long"), new object[] { fi.GetValue(o) });
+						}
+						else
+						{
+							throw new NotImplementedException("GetValue: " + fi.FieldType.FullName);
+						}
+d370 1
+a370 1
+						throw new NotImplementedException("SetValue: " + fi.FieldType.FullName);
+d1432 16
+a1457 7
+			public static void callReadMethod(object ois, object obj, object clazz)
+			{
+				Type type = NativeCode.java.lang.Class.getType(clazz);
+				MethodInfo mi = type.GetMethod("readObject", BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] { ois.GetType() }, null);
+				mi.Invoke(obj, new object[] { ois });
+			}
+
+a1467 137
+			}
+
+			public static void setBooleanField(object ois, object obj, object clazz, string field_name, bool val)
+			{
+				SetFieldValue(obj, clazz, field_name, val);
+			}
+
+			public static void setByteField(object ois, object obj, object clazz, string field_name, sbyte val)
+			{
+				SetFieldValue(obj, clazz, field_name, val);
+			}
+
+			public static void setCharField(object ois, object obj, object clazz, string field_name, char val)
+			{
+				SetFieldValue(obj, clazz, field_name, val);
+			}
+
+			public static void setDoubleField(object ois, object obj, object clazz, string field_name, double val)
+			{
+				SetFieldValue(obj, clazz, field_name, val);
+			}
+
+			public static void setFloatField(object ois, object obj, object clazz, string field_name, float val)
+			{
+				SetFieldValue(obj, clazz, field_name, val);
+			}
+
+			public static void setIntField(object ois, object obj, object clazz, string field_name, int val)
+			{
+				SetFieldValue(obj, clazz, field_name, val);
+			}
+
+			public static void setLongField(object ois, object obj, object clazz, string field_name, long val)
+			{
+				SetFieldValue(obj, clazz, field_name, val);
+			}
+
+			public static void setShortField(object ois, object obj, object clazz, string field_name, short val)
+			{
+				SetFieldValue(obj, clazz, field_name, val);
+			}
+
+			public static void setObjectField(object ois, object obj, object clazz, string field_name, string type_code, object val)
+			{
+				SetFieldValue(obj, clazz, field_name, val);
+			}
+
+			private static void SetFieldValue(object obj, object clazz, string field_name, object val)
+			{
+				// TODO support overloaded field name
+				Type type = NativeCode.java.lang.Class.getType(clazz);
+//				while(type != null)
+				{
+					FieldInfo fi = type.GetField(field_name, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+					if(fi != null)
+					{
+						fi.SetValue(obj, val);
+						return;
+					}
+					// NOTE if not found, we're moving up the hierarchy, even though I'd expect GetField to do that, it doesn't, at least
+					// not for private fields
+//					type = type.BaseType;
+				}
+				throw new InvalidOperationException("SetFieldValue: field not found, field_name = " + field_name + ", obj = " + obj);
+			}
+		}
+
+		public class ObjectOutputStream
+		{
+			public static void callWriteMethod(object oos, object obj)
+			{
+				Type type = obj.GetType();
+				MethodInfo mi = type.GetMethod("writeObject", BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] { oos.GetType() }, null);
+				mi.Invoke(obj, new object[] { oos });
+			}
+
+			public static bool getBooleanField(object oos, object obj, object clazz, string field_name)
+			{
+				return (bool)GetFieldValue(obj, clazz, field_name);
+			}
+
+			public static sbyte getByteField(object oos, object obj, object clazz, string field_name)
+			{
+				return (sbyte)GetFieldValue(obj, clazz, field_name);
+			}
+
+			public static char getCharField(object oos, object obj, object clazz, string field_name)
+			{
+				return (char)GetFieldValue(obj, clazz, field_name);
+			}
+
+			public static double getDoubleField(object oos, object obj, object clazz, string field_name)
+			{
+				return (double)GetFieldValue(obj, clazz, field_name);
+			}
+
+			public static float getFloatField(object oos, object obj, object clazz, string field_name)
+			{
+				return (float)GetFieldValue(obj, clazz, field_name);
+			}
+
+			public static int getIntField(object oos, object obj, object clazz, string field_name)
+			{
+				return (int)GetFieldValue(obj, clazz, field_name);
+			}
+
+			public static long getLongField(object oos, object obj, object clazz, string field_name)
+			{
+				return (long)GetFieldValue(obj, clazz, field_name);
+			}
+
+			public static short getShortField(object oos, object obj, object clazz, string field_name)
+			{
+				return (short)GetFieldValue(obj, clazz, field_name);
+			}
+
+			public static object getObjectField(object oos, object obj, object clazz, string field_name, string type_code)
+			{
+				return GetFieldValue(obj, clazz, field_name);
+			}
+
+			private static object GetFieldValue(object obj, object clazz, string field_name)
+			{
+				// TODO support overloaded field name
+				Type type = NativeCode.java.lang.Class.getType(clazz);
+//				while(type != null)
+				{
+					FieldInfo fi = type.GetField(field_name, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+					if(fi != null)
+					{
+						return fi.GetValue(obj);
+					}
+					// NOTE if not found, we're moving up the hierarchy, even though I'd expect GetField to do that, it doesn't, at least
+					// not for private fields
+//					type = type.BaseType;
+				}
+				throw new InvalidOperationException("GetFieldValue: field not found, field_name = " + field_name + ", obj = " + obj);
+@
+
+
+1.9
+log
+@no message
+@
+text
+@d175 53
+d267 1
+d270 4
+a273 30
+					// TODO this is a very lame implementation, no where near correct
+					MethodWrapper wrapper = (MethodWrapper)methodCookie;
+					wrapper.DeclaringType.Finish();
+					TypeWrapper[] argWrappers = wrapper.GetParameters();
+					Type[] argTypes = new Type[argWrappers.Length];
+					for(int i = 0; i < argTypes.Length; i++)
+					{
+						argWrappers[i].Finish();
+						argTypes[i] = argWrappers[i].Type;
+						if(argTypes[i].IsPrimitive)
+						{
+							if(argTypes[i] == typeof(int))
+							{
+								args[i] = ClassLoaderWrapper.GetType("java.lang.Integer").GetMethod("intValue").Invoke(args[i], new object[0]);
+							}
+							else if(argTypes[i] == typeof(bool))
+							{
+								args[i] = ClassLoaderWrapper.GetType("java.lang.Boolean").GetMethod("booleanValue").Invoke(args[i], new object[0]);
+							}
+							else if(argTypes[i] == typeof(short))
+							{
+								args[i] = ClassLoaderWrapper.GetType("java.lang.Short").GetMethod("shortValue").Invoke(args[i], new object[0]);
+							}
+							else
+							{
+								throw new NotImplementedException("argtype: " + argTypes[i].FullName);
+							}
+						}
+					}
+					try
+d275 1
+a275 12
+						if(wrapper.Name == "<init>")
+						{
+							if(o == null)
+							{
+								return wrapper.DeclaringType.Type.GetConstructor(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public, null, argTypes, null).Invoke(args);
+							}
+							else
+							{
+								throw new NotImplementedException("invoking constructor on existing instance");
+							}
+						}
+						else
+d277 1
+a277 34
+							MethodInfo mi;
+							if(wrapper.GetMethod() is NetSystem.Reflection.Emit.MethodBuilder || wrapper.GetMethod() == null)
+							{
+								mi = wrapper.DeclaringType.Type.GetMethod(wrapper.Name, BindingFlags.Static | BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public, null, argTypes, null);
+							}
+							else
+							{
+								mi = (MethodInfo)wrapper.GetMethod();
+							}
+							if(mi == null)
+							{
+								throw new InvalidOperationException("Method not found: " + wrapper.DeclaringType.Name + "." + wrapper.Name + wrapper.Descriptor.Signature);
+							}
+							object retval = mi.Invoke(o, args);
+							if(wrapper.ReturnType.Type.IsValueType)
+							{
+								if(wrapper.ReturnType.Type == typeof(int))
+								{
+									retval = Activator.CreateInstance(ClassLoaderWrapper.GetType("java.lang.Integer"), new object[] { (int)retval });
+								}
+								else if(wrapper.ReturnType.Type == typeof(bool))
+								{
+									retval = Activator.CreateInstance(ClassLoaderWrapper.GetType("java.lang.Boolean"), new object[] { (bool)retval });
+								}
+								else if(wrapper.ReturnType.Type == typeof(void))
+								{
+									// nothing to do
+								}
+								else
+								{
+									throw new NotImplementedException("rettype: " + wrapper.ReturnType.Type.FullName);
+								}
+							}
+							return retval;
+d280 2
+a281 1
+					catch(TargetInvocationException x)
+d283 1
+a283 1
+						throw JavaException.InvocationTargetException(ExceptionHelper.MapException(x.InnerException, typeof(Exception)));
+d285 1
+a285 6
+				}
+
+				// TODO remove this, it isn't used anymore
+				public static Exception mapException(Exception x)
+				{
+					return ExceptionHelper.MapException(x, typeof(Exception));
+d349 1
+a349 1
+				m.Invoke(properties, new string[] { "java.version", "1.1" });
+d351 13
+a363 12
+				m.Invoke(properties, new string[] { "java.vendor.url", "http://jeroen.nu/" });
+				m.Invoke(properties, new string[] { "java.home", "" });
+				m.Invoke(properties, new string[] { "java.vm.specification.version", "" });
+				m.Invoke(properties, new string[] { "java.vm.specification.vendor", "" });
+				m.Invoke(properties, new string[] { "java.vm.specification.name", "" });
+				m.Invoke(properties, new string[] { "java.vm.version", "" });
+				m.Invoke(properties, new string[] { "java.vm.vendor", "" });
+				m.Invoke(properties, new string[] { "java.vm.name", "" });
+				m.Invoke(properties, new string[] { "java.specification.version", "" });
+				m.Invoke(properties, new string[] { "java.specification.vendor", "" });
+				m.Invoke(properties, new string[] { "java.specification.name", "" });
+				m.Invoke(properties, new string[] { "java.class.version", "" });
+d374 8
+a381 3
+				m.Invoke(properties, new string[] { "os.name", "Windows" });
+				m.Invoke(properties, new string[] { "os.arch", "" });
+				m.Invoke(properties, new string[] { "os.version", Environment.OSVersion.ToString() });
+d387 1
+a387 1
+				m.Invoke(properties, new string[] { "user.home", "" });
+d405 1
+a644 33
+
+		/* not used anymore
+		public class System
+		{
+			public static bool isWordsBigEndian()
+			{
+				return !BitConverter.IsLittleEndian;
+			}
+
+			private static long timebase = ((TimeZone.CurrentTimeZone.ToUniversalTime(DateTime.Now) - new DateTime(1970, 1, 1)).Ticks / 10000L) - Environment.TickCount;
+
+			public static long currentTimeMillis()
+			{
+				// NOTE this wraps after 24.9 days, but it is much faster than calling DateTime.Now every time
+				return timebase + Environment.TickCount;
+			}
+
+			public static void setErr0(object printStream)
+			{
+				ClassLoaderWrapper.GetType("java.lang.System").GetField("err", BindingFlags.Static | BindingFlags.NonPublic).SetValue(null, printStream);
+			}
+
+			public static void setIn0(object inputStream)
+			{
+				ClassLoaderWrapper.GetType("java.lang.System").GetField("in", BindingFlags.Static | BindingFlags.NonPublic).SetValue(null, inputStream);
+			}
+
+			public static void setOut0(object printStream)
+			{
+				ClassLoaderWrapper.GetType("java.lang.System").GetField("out", BindingFlags.Static | BindingFlags.NonPublic).SetValue(null, printStream);
+			}
+		}
+		*/
+@
+
+
+1.8
+log
+@no message
+@
+text
+@d820 8
+d941 3
+a943 1
+							if(type.IsDefined(typeof(OverrideStubTypeAttribute), false))
+@
+
+
+1.7
+log
+@no message
+@
+text
+@d1103 19
+a1121 1
+				return wrapper.GetMethods();
+d1133 11
+a1143 1
+				return wrapper.GetFields();
+@
+
+
+1.6
+log
+@no message
+@
+text
+@a1101 2
+				// TODO since this can be called from Java code while finishing is in progress (finishing triggers
+				// class loading, which runs Java code which might call this method), we shouldn't finish here
+a1113 2
+				// TODO since this can be called from Java code while finishing is in progress (finishing triggers
+				// class loading, which runs Java code which might call this method), we shouldn't finish here
+@
+
+
+1.5
+log
+@no message
+@
+text
+@d454 1
+a454 1
+				// TODO
+d866 5
+d1102 2
+d1116 2
+@
+
+
+1.4
+log
+@no message
+@
+text
+@d776 2
+a777 3
+				// TODO handle errors
+				ClassFile classFile = new ClassFile(data, offset, length, name);
+				if(name != null && classFile.Name.Replace('/', '.') != name)
+d779 14
+a792 1
+					throw JavaException.NoClassDefFoundError("{0} (wrong name: {1})", name, classFile.Name);
+d794 1
+a794 10
+//				if(classFile.Name == "org/eclipse/core/internal/boot/InternalBootLoader")
+//				{
+//					using(FileStream fs = File.Create("internalbootloader.class"))
+//					{
+//						fs.Write(data, offset, length);
+//					}
+//				}
+				TypeWrapper type = ClassLoaderWrapper.GetClassLoaderWrapper(classLoader).DefineClass(classFile);
+				object clazz = Class.CreateInstance(null, type);
+				if(protectionDomain != null)
+d796 1
+a796 2
+					// TODO cache the FieldInfo
+					clazz.GetType().GetField("pd", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(clazz, protectionDomain);
+a797 1
+				return clazz;
+@
+
+
+1.3
+log
+@no message
+@
+text
+@d397 1
+@
+
+
+1.2
+log
+@no message
+@
+text
+@d407 6
+a412 1
+				// TODO
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d413 1
+a413 1
+				return JNI.LoadNativeLibrary(filename);
+a479 36
+		public class System
+		{
+			private static long timebase;
+
+			static System()
+			{
+				timebase = ((TimeZone.CurrentTimeZone.ToUniversalTime(DateTime.Now) - new DateTime(1970, 1, 1)).Ticks / 10000L) - Environment.TickCount;
+			}
+
+			public static bool isWordsBigEndian()
+			{
+				return !BitConverter.IsLittleEndian;
+			}
+
+			public static long currentTimeMillis()
+			{
+				// NOTE this wraps after 24.9 days, but it is much faster than calling DateTime.Now every time
+				return timebase + Environment.TickCount;
+			}
+
+			public static void setErr0(object printStream)
+			{
+				ClassLoaderWrapper.GetType("java.lang.System").GetField("err", BindingFlags.Static | BindingFlags.NonPublic).SetValue(null, printStream);
+			}
+
+			public static void setIn0(object inputStream)
+			{
+				ClassLoaderWrapper.GetType("java.lang.System").GetField("in", BindingFlags.Static | BindingFlags.NonPublic).SetValue(null, inputStream);
+			}
+
+			public static void setOut0(object printStream)
+			{
+				ClassLoaderWrapper.GetType("java.lang.System").GetField("out", BindingFlags.Static | BindingFlags.NonPublic).SetValue(null, printStream);
+			}
+		}
+
+d653 33
+d694 22
+a715 2
+			private static MethodInfo hashCodeMethod;
+			private static object[] noargs = new object[0];
+d717 1
+a717 1
+			public static int identityHashCode(object arg)
+d719 1
+a719 10
+				if(arg == null)
+				{
+					return 0;
+				}
+				// TODO this should be optimized, using reflection is probably too slow
+				if(hashCodeMethod == null)
+				{
+					hashCodeMethod = typeof(object).GetMethod("GetHashCode");
+				}
+				return (int)hashCodeMethod.Invoke(arg, noargs);
+d1152 1
+d1155 1
+a1155 1
+				if(path.Length > 3 && path[0] == '\\' && path[2] == ':')
+d1162 5
+d1223 1
+a1224 1
+				// TODO shouldn't we demangle the path?
+d1237 1
+a1237 1
+				if (NetSystem.IO.Directory.Exists(path)) 
+d1239 15
+a1253 7
+					NetSystem.IO.Directory.Delete(path);
+				} 
+				else if (NetSystem.IO.File.Exists(path)) 
+				{
+					NetSystem.IO.File.Delete(path);
+				} 
+				else 
+a1256 1
+				return true;
+d1589 1
+a1589 1
+			public static int[][] getHostByName(string name)
+d1596 1
+a1596 1
+					int[][] list = new int[addresses.Length][];
+d1599 1
+a1599 1
+						list[i] = AddressToIntArray((int)addresses[i].Address);
+d1614 1
+a1614 1
+			private static int[] AddressToIntArray(int address)
+d1617 1
+a1617 1
+				return new int[] { address & 0xff, (address >> 8) & 0xff, (address >> 16) & 0xff, (address >> 24) & 0xff };
+@
+
+
+1.1.1.1
+log
+@no message
+@
+text
+@@

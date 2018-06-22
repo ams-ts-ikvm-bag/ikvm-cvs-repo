@@ -1,0 +1,277 @@
+head	1.8;
+access;
+symbols
+	v8_1_5717_0:1.8
+	v8_1:1.8.0.2
+	v8_0_5449_1:1.6
+	v8_0_5449_0:1.6
+	v8_0:1.6.0.8
+	v7_4_5196_0:1.6
+	v7_4:1.6.0.6
+	v7_3:1.6.0.4
+	v7_2_4630_6:1.6
+	v7_2_4630_5:1.6
+	v7_2_4630_4:1.6
+	v7_2_4630_3:1.6
+	v7_2_4630_2:1.6
+	v0_46_0_4:1.3
+	v7_2_4630_1:1.6
+	v7_2:1.6.0.2
+	v7_1_4532_2:1.5
+	v7_1_4532_1:1.5
+	v7_1_4532_0:1.5
+	v7_1:1.5.0.2
+	v7_0_4335_3:1.4
+	v7_0_4335_2:1.4
+	v7_0_4335_1:1.4
+	v0_46_0_2:1.3
+	v7_0_4335_0:1.4
+	v7_0:1.4.0.2
+	v0_46_0_1:1.3
+	v0_46_0_0:1.3
+	v0_46:1.3.0.2
+	v0_44_0_6:1.2
+	v0_44_0_5:1.2
+	v0_44_0_4:1.2
+	v0_44_0_3:1.2
+	v0_44_0_2:1.2
+	v0_44_0_1:1.2
+	v0_44_0_0:1.2
+	v0_44:1.2.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.8
+date	2015.02.17.13.48.31;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2015.02.16.12.24.28;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2012.06.04.14.46.00;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2012.01.09.09.13.43;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2011.10.06.12.15.57;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2011.02.15.14.05.37;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.01;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.31;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.8
+log
+@Added UniverseOptions.DeterministicOutput to enable deterministic output (i.e. setting the PE file header time stamp to zero and computing the module version id based on the contents, instead of using a random guid).
+@
+text
+@/*
+  Copyright (C) 2008, 2009 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Runtime.InteropServices;
+#if !NO_SYMBOL_WRITER
+using System.Diagnostics.SymbolStore;
+#endif
+using IKVM.Reflection.Emit;
+
+namespace IKVM.Reflection.Impl
+{
+	[StructLayout(LayoutKind.Sequential)]
+	struct IMAGE_DEBUG_DIRECTORY
+	{
+		public uint Characteristics;
+		public uint TimeDateStamp;
+		public ushort MajorVersion;
+		public ushort MinorVersion;
+		public uint Type;
+		public uint SizeOfData;
+		public uint AddressOfRawData;
+		public uint PointerToRawData;
+	}
+
+#if NO_SYMBOL_WRITER
+	struct SymbolToken
+	{
+		internal SymbolToken(int value) { }
+	}
+
+	interface ISymbolWriterImpl
+	{
+		byte[] GetDebugInfo(ref IMAGE_DEBUG_DIRECTORY idd);
+		void RemapToken(int oldToken, int newToken);
+		void DefineLocalVariable2(string name, FieldAttributes attributes, int signature, int addrKind, int addr1, int addr2, int addr3, int startOffset, int endOffset);
+		void OpenMethod(SymbolToken symbolToken, MethodBase mb);
+		bool IsDeterministic { get; }
+	}
+#else
+	interface ISymbolWriterImpl : ISymbolWriter
+	{
+		byte[] GetDebugInfo(ref IMAGE_DEBUG_DIRECTORY idd);
+		void RemapToken(int oldToken, int newToken);
+		void DefineLocalVariable2(string name, FieldAttributes attributes, int signature, SymAddressKind addrKind, int addr1, int addr2, int addr3, int startOffset, int endOffset);
+		void OpenMethod(SymbolToken symbolToken, MethodBase mb);
+		bool IsDeterministic { get; }
+	}
+#endif
+
+	static class SymbolSupport
+	{
+		internal static ISymbolWriterImpl CreateSymbolWriterFor(ModuleBuilder moduleBuilder)
+		{
+#if NO_SYMBOL_WRITER
+			throw new NotSupportedException("IKVM.Reflection compiled with NO_SYMBOL_WRITER does not support writing debugging symbols.");
+#else
+			if (Universe.MonoRuntime)
+			{
+#if MONO
+				return new MdbWriter(moduleBuilder);
+#else
+				throw new NotSupportedException("IKVM.Reflection must be compiled with MONO defined to support writing Mono debugging symbols.");
+#endif
+			}
+			else
+			{
+				return new PdbWriter(moduleBuilder);
+			}
+#endif
+		}
+
+		internal static byte[] GetDebugInfo(ISymbolWriterImpl writer, ref IMAGE_DEBUG_DIRECTORY idd)
+		{
+			return writer.GetDebugInfo(ref idd);
+		}
+
+		internal static void RemapToken(ISymbolWriterImpl writer, int oldToken, int newToken)
+		{
+			writer.RemapToken(oldToken, newToken);
+		}
+	}
+}
+@
+
+
+1.7
+log
+@Added CoreCLR target for IKVM.Reflection.
+@
+text
+@d58 1
+d67 1
+@
+
+
+1.6
+log
+@Introduce Universe.MonoRuntime static variable to check for Mono Runtime.
+@
+text
+@d26 1
+d28 1
+d46 14
+d67 1
+@
+
+
+1.5
+log
+@Avoid the need for (expensive) ResolveMethod call by maintaining a map from token to MethodBase. Thanks to Miguel Alfredo Garcia Gutierrez for pointing this out.
+@
+text
+@a53 4
+#if !NO_SYMBOL_WRITER
+		private static readonly bool runningOnMono = System.Type.GetType("Mono.Runtime") != null;
+#endif
+
+d59 1
+a59 1
+			if (runningOnMono)
+@
+
+
+1.4
+log
+@Remove field that is unused when NO_SYMBOL_WRITER is defined.
+@
+text
+@d49 1
+@
+
+
+1.3
+log
+@Allow mcs to avoid mdb/pdb writer dependencies.
+@
+text
+@d53 1
+d55 1
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d57 3
+d72 1
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

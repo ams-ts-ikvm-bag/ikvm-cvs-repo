@@ -1,0 +1,690 @@
+head	1.22;
+access;
+symbols
+	v8_1_5717_0:1.22
+	v8_1:1.22.0.10
+	v8_0_5449_1:1.22
+	v8_0_5449_0:1.22
+	v8_0:1.22.0.8
+	v7_4_5196_0:1.22
+	v7_4:1.22.0.6
+	v7_3:1.22.0.4
+	v7_2_4630_6:1.22
+	v7_2_4630_5:1.22
+	v7_2_4630_4:1.22
+	v7_2_4630_3:1.22
+	v7_2_4630_2:1.22
+	v0_46_0_4:1.7
+	v7_2_4630_1:1.22
+	v7_2:1.22.0.2
+	v7_1_4532_2:1.12
+	v7_1_4532_1:1.12
+	v7_1_4532_0:1.12
+	v7_1:1.12.0.2
+	v7_0_4335_3:1.11
+	v7_0_4335_2:1.11
+	v7_0_4335_1:1.11
+	v0_46_0_2:1.7
+	v7_0_4335_0:1.11
+	v7_0:1.11.0.2
+	v0_46_0_1:1.7
+	v0_46_0_0:1.7
+	v0_46:1.7.0.4
+	v0_44_0_6:1.7
+	v0_44_0_5:1.7
+	v0_44_0_4:1.7
+	v0_44_0_3:1.7
+	v0_44_0_2:1.7
+	v0_44_0_1:1.7
+	v0_44_0_0:1.7
+	v0_44:1.7.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.22
+date	2012.07.16.10.14.38;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2012.07.13.13.08.28;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2012.07.13.10.26.07;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2012.07.13.10.22.19;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2012.07.13.10.17.11;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2012.07.13.07.37.54;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2012.07.13.06.33.30;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2012.07.12.15.22.47;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2012.07.12.15.10.58;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2012.07.12.13.30.07;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2012.01.27.10.11.18;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2011.03.18.05.49.06;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2011.03.13.09.03.15;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2011.03.06.08.16.41;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2011.03.03.12.42.57;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2010.06.30.07.18.35;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2010.05.20.09.25.30;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2010.04.21.10.13.56;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.04.19.05.26.28;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.04.18.08.59.18;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.01.25.05.49.02;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.01.25.05.29.32;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.22
+log
+@Refactored custom attribute handling of MemberInfo types.
+@
+text
+@/*
+  Copyright (C) 2009 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.IO;
+using IKVM.Reflection.Metadata;
+
+namespace IKVM.Reflection.Reader
+{
+	sealed class FieldDefImpl : FieldInfo
+	{
+		private readonly ModuleReader module;
+		private readonly TypeDefImpl declaringType;
+		private readonly int index;
+		private FieldSignature lazyFieldSig;
+
+		internal FieldDefImpl(ModuleReader module, TypeDefImpl declaringType, int index)
+		{
+			this.module = module;
+			this.declaringType = declaringType;
+			this.index = index;
+		}
+
+		public override FieldAttributes Attributes
+		{
+			get { return (FieldAttributes)module.Field.records[index].Flags; }
+		}
+
+		public override Type DeclaringType
+		{
+			get { return declaringType.IsModulePseudoType ? null : declaringType; }
+		}
+
+		public override string Name
+		{
+			get { return module.GetString(module.Field.records[index].Name); }
+		}
+
+		public override string ToString()
+		{
+			return this.FieldType.Name + " " + this.Name;
+		}
+
+		public override Module Module
+		{
+			get { return module; }
+		}
+
+		public override int MetadataToken
+		{
+			get { return (FieldTable.Index << 24) + index + 1; }
+		}
+
+		public override object GetRawConstantValue()
+		{
+			return module.Constant.GetRawConstantValue(module, this.MetadataToken);
+		}
+
+		public override void __GetDataFromRVA(byte[] data, int offset, int length)
+		{
+			int rva = this.__FieldRVA;
+			if (rva == 0)
+			{
+				// C++ assemblies can have fields that have an RVA that is zero
+				Array.Clear(data, offset, length);
+				return;
+			}
+			module.__ReadDataFromRVA(rva, data, offset, length);
+		}
+
+		public override int __FieldRVA
+		{
+			get
+			{
+				foreach (int i in module.FieldRVA.Filter(index + 1))
+				{
+					return module.FieldRVA.records[i].RVA;
+				}
+				throw new InvalidOperationException();
+			}
+		}
+
+		public override bool __TryGetFieldOffset(out int offset)
+		{
+			foreach (int i in this.Module.FieldLayout.Filter(index + 1))
+			{
+				offset = this.Module.FieldLayout.records[i].Offset;
+				return true;
+			}
+			offset = 0;
+			return false;
+		}
+
+		internal override FieldSignature FieldSignature
+		{
+			get { return lazyFieldSig ?? (lazyFieldSig = FieldSignature.ReadSig(module, module.GetBlob(module.Field.records[index].Signature), declaringType)); }
+		}
+
+		internal override int ImportTo(Emit.ModuleBuilder module)
+		{
+			return module.ImportMethodOrField(declaringType, this.Name, this.FieldSignature);
+		}
+
+		internal override int GetCurrentToken()
+		{
+			return this.MetadataToken;
+		}
+
+		internal override bool IsBaked
+		{
+			get { return true; }
+		}
+	}
+}
+@
+
+
+1.21
+log
+@Fixed regression in __TryGetFieldOffset. The FieldLayout.Field field is an index (not a token), except for unsaved modules where it is a pseudo token.
+@
+text
+@d130 5
+@
+
+
+1.20
+log
+@All FieldInfo subclasses should implement GetCurrentToken().
+@
+text
+@d105 11
+@
+
+
+1.19
+log
+@Moved __TryGetFieldOffset and __TryGetFieldMarshal up into FieldInfo.
+@
+text
+@d114 5
+@
+
+
+1.18
+log
+@Moved common custom attribute code into FieldInfo.
+@
+text
+@a104 16
+		public override bool __TryGetFieldOffset(out int offset)
+		{
+			foreach (int i in module.FieldLayout.Filter(index + 1))
+			{
+				offset = module.FieldLayout.records[i].Offset;
+				return true;
+			}
+			offset = 0;
+			return false;
+		}
+
+		public override bool __TryGetFieldMarshal(out FieldMarshal fieldMarshal)
+		{
+			return FieldMarshal.ReadFieldMarshal(module, this.MetadataToken, out fieldMarshal);
+		}
+
+@
+
+
+1.17
+log
+@- Changed FieldInfo.__FieldOffset property to __TryGetFieldOffset() method.
+- Implemented __TryGetFieldMarshal() & __TryGetFieldOffest() for FieldBuilder.
+- Fixed FieldBuilder to throw NotImplementedException when trying to get custom attributes on unbaked type.
+- Fixed FieldBuilder to return pseudo custom attributes (but it is currently still broken after the module has been saved).
+@
+text
+@a120 23
+		internal override IList<CustomAttributeData> GetCustomAttributesData(Type attributeType)
+		{
+			List<CustomAttributeData> list = module.GetCustomAttributes(this.MetadataToken, attributeType);
+			if (attributeType == null || attributeType.IsAssignableFrom(module.universe.System_Runtime_InteropServices_MarshalAsAttribute))
+			{
+				FieldMarshal spec;
+				if (__TryGetFieldMarshal(out spec))
+				{
+					list.Add(spec.ToCustomAttribute(module));
+				}
+			}
+			if (attributeType == null || attributeType.IsAssignableFrom(module.universe.System_Runtime_InteropServices_FieldOffsetAttribute))
+			{
+				int offset;
+				if (__TryGetFieldOffset(out offset))
+				{
+					ConstructorInfo constructor = module.universe.System_Runtime_InteropServices_FieldOffsetAttribute.GetPseudoCustomAttributeConstructor(module.universe.System_Int32);
+					list.Add(new CustomAttributeData(module, constructor, new object[] { offset }, null));
+				}
+			}
+			return list;
+		}
+
+@
+
+
+1.16
+log
+@- Changed [Field|Parameter]Info.__FieldMarshal property to __TryGetFieldMarshal method.
+- Changed FieldMarshal class into a value type with public fields.
+@
+text
+@d105 1
+a105 1
+		public override int __FieldOffset
+d107 1
+a107 1
+			get
+d109 2
+a110 5
+				foreach (int i in module.FieldLayout.Filter(index + 1))
+				{
+					return module.FieldLayout.records[i].Offset;
+				}
+				throw new InvalidOperationException();
+d112 2
+d134 2
+a135 1
+				foreach (int i in module.FieldLayout.Filter(index + 1))
+d138 1
+a138 4
+					list.Add(new CustomAttributeData(module, constructor,
+						new object[] { module.FieldLayout.records[i].Offset },
+						null));
+					break;
+@
+
+
+1.15
+log
+@Removed incorrect optimization. If a FieldLayout record exists, we should always return the pseudo custom attribute FieldOffset, regardless of the declaring type's layout.
+@
+text
+@d117 1
+a117 1
+		public override FieldMarshal __FieldMarshal
+d119 1
+a119 1
+			get { return FieldMarshal.ReadFieldMarshal(module, this.MetadataToken); }
+d127 2
+a128 2
+				FieldMarshal spec = FieldMarshal.ReadFieldMarshal(module, this.MetadataToken);
+				if (spec != null)
+@
+
+
+1.14
+log
+@- Added new public APIs FieldInfo.__FieldMarshal and ParameterInfo.__FieldMarshal.
+- Moved ParameterInfo pseudo custom attribute handling to CustomAttributeData.
+- Ignore HasFieldMarshal attribute and always return the pseudo custom attribute if a FieldMarshal record exists. This is similar to .NET reflection.
+@
+text
+@d133 1
+a133 2
+			if (declaringType.IsExplicitLayout
+				&& (attributeType == null || attributeType.IsAssignableFrom(module.universe.System_Runtime_InteropServices_FieldOffsetAttribute)))
+@
+
+
+1.13
+log
+@Added public API FieldInfo.__FieldOffset to get the offset of the field (in an explicit layout type) without having to parse the pseudo custom attribute.
+@
+text
+@d117 5
+d125 1
+a125 2
+			if ((this.Attributes & FieldAttributes.HasFieldMarshal) != 0
+				&& (attributeType == null || attributeType.IsAssignableFrom(module.universe.System_Runtime_InteropServices_MarshalAsAttribute)))
+d127 5
+a131 1
+				list.Add(MarshalSpec.GetMarshalAsAttribute(module, this.MetadataToken));
+@
+
+
+1.12
+log
+@Generalized sorted metadata table lookups with binary search.
+@
+text
+@d105 12
+@
+
+
+1.11
+log
+@Added Module.__ReadDataFromRVA() to make it more convenient to read data based on rva.
+@
+text
+@d97 1
+a97 3
+				int rid = index + 1;
+				// TODO binary search?
+				for (int i = 0; i < module.FieldRVA.records.Length; i++)
+d99 1
+a99 4
+					if (module.FieldRVA.records[i].Field == rid)
+					{
+						return module.FieldRVA.records[i].RVA;
+					}
+d116 1
+a116 3
+				int rid = index + 1;
+				// TODO use binary search?
+				for (int i = 0; i < module.FieldLayout.records.Length; i++)
+d118 5
+a122 8
+					if (module.FieldLayout.records[i].Field == rid)
+					{
+						ConstructorInfo constructor = module.universe.System_Runtime_InteropServices_FieldOffsetAttribute.GetPseudoCustomAttributeConstructor(module.universe.System_Int32);
+						list.Add(new CustomAttributeData(module, constructor,
+							new object[] { module.FieldLayout.records[i].Offset },
+							null));
+						break;
+					}
+@
+
+
+1.10
+log
+@Added API extension FieldInfo.__FieldRVA.
+@
+text
+@d90 1
+a90 12
+			module.SeekRVA(rva);
+			while (length > 0)
+			{
+				int read = module.stream.Read(data, offset, length);
+				if (read == 0)
+				{
+					// C++ assemblies can have fields that have an RVA that lies outside of the file
+					break;
+				}
+				offset += read;
+				length -= read;
+			}
+@
+
+
+1.9
+log
+@Add support for returning pseudo-custom attributes based on missing types.
+@
+text
+@d83 2
+a84 3
+			int rid = index + 1;
+			// TODO binary search?
+			for (int i = 0; i < module.FieldRVA.records.Length; i++)
+d86 25
+a110 1
+				if (module.FieldRVA.records[i].Field == rid)
+d112 1
+a112 9
+					int rva = module.FieldRVA.records[i].RVA;
+					if (rva == 0)
+					{
+						// C++ assemblies can have fields that have an RVA that is zero
+						Array.Clear(data, offset, length);
+						return;
+					}
+					module.SeekRVA(rva);
+					while (length > 0)
+d114 1
+a114 8
+						int read = module.stream.Read(data, offset, length);
+						if (read == 0)
+						{
+							// C++ assemblies can have fields that have an RVA that lies outside of the file
+							break;
+						}
+						offset += read;
+						length -= read;
+a115 1
+					return;
+d117 1
+a118 1
+			throw new InvalidOperationException();
+@
+
+
+1.8
+log
+@- Fixed CustomAttributeData.__GetBlob() to work for pseudo-custom attributes.
+- Added CustomAttributeBuilder.__FromBlob() to avoid having to use two overloads of SetCustomAttribute when dealing with both builders and blobs.
+@
+text
+@d131 1
+a131 1
+						ConstructorInfo constructor = module.universe.System_Runtime_InteropServices_FieldOffsetAttribute.GetConstructor(new Type[] { module.universe.System_Int32 });
+@
+
+
+1.7
+log
+@Support fields that have an RVA, but where it is set to zero (C++/CLI does this).
+@
+text
+@d132 1
+a132 1
+						list.Add(new CustomAttributeData(constructor,
+@
+
+
+1.6
+log
+@Implemented custom attribute filtering at the source. Added support for custom attribute sub typing.
+@
+text
+@d89 8
+a96 1
+					module.SeekRVA(module.FieldRVA.records[i].RVA);
+@
+
+
+1.5
+log
+@Made signature resolution lazy.
+@
+text
+@d107 1
+a107 1
+		internal override IList<CustomAttributeData> GetCustomAttributesData()
+d109 3
+a111 2
+			List<CustomAttributeData> list = module.GetCustomAttributes(this.MetadataToken);
+			if ((this.Attributes & FieldAttributes.HasFieldMarshal) != 0)
+d115 2
+a116 1
+			if (declaringType.IsExplicitLayout)
+@
+
+
+1.4
+log
+@Made __GetDataFromRVA more generic by taking an offset and a length (to be able to reuse the byte array) and this also removes the need for the field type to have a StructLayout.
+@
+text
+@d37 1
+a37 1
+		private readonly FieldSignature fieldSig;
+a43 1
+			this.fieldSig = FieldSignature.ReadSig(module, module.GetBlob(module.Field.records[index].Signature), declaringType);
+d135 1
+a135 1
+			get { return fieldSig; }
+d140 1
+a140 1
+			return module.ImportMethodOrField(declaringType, this.Name, fieldSig);
+@
+
+
+1.3
+log
+@Don't loop infinitely when the RVA lies outside of the file.
+@
+text
+@d82 1
+a82 1
+		public override void __GetDataFromRVA(byte[] data)
+a89 1
+					int size = this.FieldType.StructLayoutAttribute.Size;
+d91 1
+a91 2
+					int offset = 0;
+					while (size > 0)
+d93 1
+a93 1
+						int read = module.stream.Read(data, offset, size);
+d100 1
+a100 1
+						size -= read;
+@
+
+
+1.2
+log
+@Removed UTF-8 byte order marks.
+@
+text
+@d96 5
+@
+
+
+1.1
+log
+@New IKVM.Reflection implementation.
+@
+text
+@d1 1
+a1 1
+﻿/*
+@
+

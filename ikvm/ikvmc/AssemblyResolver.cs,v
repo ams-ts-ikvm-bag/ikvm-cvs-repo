@@ -1,0 +1,1166 @@
+head	1.20;
+access;
+symbols
+	v8_1_5717_0:1.20
+	v8_1:1.20.0.6
+	v8_0_5449_1:1.20
+	v8_0_5449_0:1.20
+	v8_0:1.20.0.4
+	v7_4_5196_0:1.20
+	v7_4:1.20.0.2
+	v7_3:1.19.0.2
+	v7_2_4630_6:1.15
+	v7_2_4630_5:1.15
+	v7_2_4630_4:1.15
+	v7_2_4630_3:1.15
+	v7_2_4630_2:1.15
+	v0_46_0_4:1.13
+	v7_2_4630_1:1.15
+	v7_2:1.15.0.4
+	v7_1_4532_2:1.15
+	v7_1_4532_1:1.15
+	v7_1_4532_0:1.15
+	v7_1:1.15.0.2
+	v7_0_4335_3:1.13
+	v7_0_4335_2:1.13
+	v7_0_4335_1:1.13
+	v0_46_0_2:1.13
+	v7_0_4335_0:1.13
+	v7_0:1.13.0.4
+	v0_46_0_1:1.13
+	v0_46_0_0:1.13
+	v0_46:1.13.0.2
+	v0_44_0_6:1.12.2.1
+	v0_44_0_5:1.12
+	v0_44_0_4:1.12
+	v0_44_0_3:1.12
+	v0_44_0_2:1.12
+	v0_44_0_1:1.12
+	v0_44_0_0:1.12
+	v0_44:1.12.0.2;
+locks; strict;
+comment	@ * @;
+
+
+1.20
+date	2013.03.24.12.40.33;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2013.01.15.15.33.50;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2013.01.15.14.55.50;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2013.01.15.14.43.20;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2013.01.15.14.40.03;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2012.03.23.16.45.41;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2012.03.22.09.27.51;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2010.10.06.07.39.59;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2010.05.18.06.55.15;	author jfrijters;	state Exp;
+branches
+	1.12.2.1;
+next	1.11;
+
+1.11
+date	2010.05.18.06.48.40;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2010.05.12.15.23.17;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2010.05.12.08.43.13;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2010.05.11.15.22.15;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2010.05.11.09.34.58;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2010.05.11.06.11.03;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2010.05.11.04.15.29;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2010.05.10.08.22.03;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2010.05.10.07.18.05;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.04.23.07.53.21;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.04.23.04.58.36;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.12.2.1
+date	2010.10.22.07.12.29;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.20
+log
+@Introduced ArrayUtil.Concat() methods.
+@
+text
+@﻿/*
+  Copyright (C) 2010-2013 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.IO;
+using IKVM.Reflection;
+
+namespace IKVM.Internal
+{
+	sealed class AssemblyResolver
+	{
+		private readonly List<string> libpath = new List<string>();
+		private Universe universe;
+		private Version mscorlibVersion;
+
+		internal enum WarningId
+		{
+			HigherVersion = 1,
+			LocationIgnored = 2,
+			InvalidLibDirectoryOption = 3,
+			InvalidLibDirectoryEnvironment = 4,
+			LegacySearchRule = 5,
+		}
+
+		internal delegate void WarningEvent(WarningId warning, string message, string[] parameters);
+		internal event WarningEvent Warning;
+
+		private void EmitWarning(WarningId warning, string message, params string[] parameters)
+		{
+			if (Warning != null)
+			{
+				Warning(warning, message, parameters);
+			}
+			else
+			{
+				Console.Error.WriteLine("Warning: " + message, parameters);
+			}
+		}
+
+		internal void Init(Universe universe, bool nostdlib, IList<string> references, IList<string> userLibPaths)
+		{
+			this.universe = universe;
+			// like the C# compiler, the references are loaded from:
+			// current directory, CLR directory, -lib: option, %LIB% environment
+			// (note that, unlike the C# compiler, we don't add the CLR directory if -nostdlib has been specified)
+			libpath.Add(Environment.CurrentDirectory);
+			if (!nostdlib)
+			{
+				libpath.Add(System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeDirectory());
+			}
+			foreach (string str in userLibPaths)
+			{
+				AddLibraryPaths(str, true);
+			}
+			AddLibraryPaths(Environment.GetEnvironmentVariable("LIB") ?? "", false);
+			if (nostdlib)
+			{
+				 mscorlibVersion = LoadMscorlib(references).GetName().Version;
+			}
+			else
+			{
+				mscorlibVersion = universe.Load("mscorlib").GetName().Version;
+			}
+#if STATIC_COMPILER
+			universe.AssemblyResolve += AssemblyResolve;
+#else
+			universe.AssemblyResolve += LegacyAssemblyResolve;
+#endif
+		}
+
+		internal Assembly LoadFile(string path)
+		{
+			string ex = null;
+			try
+			{
+				using (RawModule module = universe.OpenRawModule(path))
+				{
+					if (mscorlibVersion != null)
+					{
+						// to avoid problems (i.e. weird exceptions), we don't allow assemblies to load that reference a newer version of mscorlib
+						foreach (AssemblyName asmref in module.GetReferencedAssemblies())
+						{
+							if (asmref.Name == "mscorlib" && asmref.Version > mscorlibVersion)
+							{
+								Console.Error.WriteLine("Error: unable to load assembly '{0}' as it depends on a higher version of mscorlib than the one currently loaded", path);
+								Environment.Exit(1);
+							}
+						}
+					}
+					Assembly asm = universe.LoadAssembly(module);
+					if (asm.Location != module.Location && CanonicalizePath(asm.Location) != CanonicalizePath(module.Location))
+					{
+						EmitWarning(WarningId.LocationIgnored, "assembly \"{0}\" is ignored as previously loaded assembly \"{1}\" has the same identity \"{2}\"", path, asm.Location, asm.FullName);
+					}
+					return asm;
+				}
+			}
+			catch (IOException x)
+			{
+				ex = x.Message;
+			}
+			catch (UnauthorizedAccessException x)
+			{
+				ex = x.Message;
+			}
+			catch (IKVM.Reflection.BadImageFormatException x)
+			{
+				ex = x.Message;
+			}
+			Console.Error.WriteLine("Error: unable to load assembly '{0}'" + Environment.NewLine + "    ({1})", path, ex);
+			Environment.Exit(1);
+			return null;
+		}
+
+		private static string CanonicalizePath(string path)
+		{
+			try
+			{
+				System.IO.FileInfo fi = new System.IO.FileInfo(path);
+				if (fi.DirectoryName == null)
+				{
+					return path.Length > 1 && path[1] == ':' ? path.ToUpper() : path;
+				}
+				string dir = CanonicalizePath(fi.DirectoryName);
+				string name = fi.Name;
+				try
+				{
+					string[] arr = System.IO.Directory.GetFileSystemEntries(dir, name);
+					if (arr.Length == 1)
+					{
+						name = arr[0];
+					}
+				}
+				catch (System.UnauthorizedAccessException)
+				{
+				}
+				catch (System.IO.IOException)
+				{
+				}
+				return System.IO.Path.Combine(dir, name);
+			}
+			catch (System.UnauthorizedAccessException)
+			{
+			}
+			catch (System.IO.IOException)
+			{
+			}
+			catch (System.Security.SecurityException)
+			{
+			}
+			catch (System.NotSupportedException)
+			{
+			}
+			return path;
+		}
+
+		internal Assembly LoadWithPartialName(string name)
+		{
+			foreach (string path in FindAssemblyPath(name + ".dll"))
+			{
+				return LoadFile(path);
+			}
+			return null;
+		}
+
+		internal bool ResolveReference(Dictionary<string, Assembly> cache, ref Assembly[] references, string reference)
+		{
+			string[] files = new string[0];
+			try
+			{
+				string path = Path.GetDirectoryName(reference);
+				files = Directory.GetFiles(path == "" ? "." : path, Path.GetFileName(reference));
+			}
+			catch (ArgumentException)
+			{
+			}
+			catch (IOException)
+			{
+			}
+			if (files.Length == 0)
+			{
+				Assembly asm = null;
+				cache.TryGetValue(reference, out asm);
+				if (asm == null)
+				{
+					foreach (string found in FindAssemblyPath(reference))
+					{
+						asm = LoadFile(found);
+						cache.Add(reference, asm);
+						break;
+					}
+				}
+				if (asm == null)
+				{
+					return false;
+				}
+				ArrayAppend(ref references, asm);
+			}
+			else
+			{
+				foreach (string file in files)
+				{
+					Assembly asm;
+					if (!cache.TryGetValue(file, out asm))
+					{
+						asm = LoadFile(file);
+					}
+					ArrayAppend(ref references, asm);
+				}
+			}
+			return true;
+		}
+
+		private static void ArrayAppend<T>(ref T[] array, T element)
+		{
+			if (array == null)
+			{
+				array = new T[] { element };
+			}
+			else
+			{
+				array = ArrayUtil.Concat(array, element);
+			}
+		}
+
+		private Assembly AssemblyResolve(object sender, IKVM.Reflection.ResolveEventArgs args)
+		{
+			AssemblyName name = new AssemblyName(args.Name);
+			AssemblyName previousMatch = null;
+			int previousMatchLevel = 0;
+			foreach (Assembly asm in universe.GetAssemblies())
+			{
+				if (Match(asm.GetName(), name, ref previousMatch, ref previousMatchLevel))
+				{
+					return asm;
+				}
+			}
+			if (previousMatch != null)
+			{
+				if (previousMatchLevel == 2)
+				{
+					EmitWarning(WarningId.HigherVersion, "assuming assembly reference \"{0}\" matches \"{1}\", you may need to supply runtime policy", previousMatch.FullName, name.FullName);
+					return universe.Load(previousMatch.FullName);
+				}
+				else if (args.RequestingAssembly != null)
+				{
+					Console.Error.WriteLine("Error: Assembly '{0}' uses '{1}' which has a higher version than referenced assembly '{2}'", args.RequestingAssembly.FullName, name.FullName, previousMatch.FullName);
+					Environment.Exit(1);
+					return null;
+				}
+				else
+				{
+					Console.Error.WriteLine("Error: Assembly '{0}' was requested which is a higher version than referenced assembly '{1}'", name.FullName, previousMatch.FullName);
+					Environment.Exit(1);
+					return null;
+				}
+			}
+			else if (args.RequestingAssembly != null)
+			{
+				return universe.CreateMissingAssembly(args.Name);
+			}
+			else
+			{
+				return null;
+			}
+		}
+
+		private Assembly LegacyAssemblyResolve(object sender, IKVM.Reflection.ResolveEventArgs args)
+		{
+			return LegacyLoad(new AssemblyName(args.Name), args.RequestingAssembly);
+		}
+	
+		internal Assembly LegacyLoad(AssemblyName name, Assembly requestingAssembly)
+		{
+			AssemblyName previousMatch = null;
+			int previousMatchLevel = 0;
+			foreach (Assembly asm in universe.GetAssemblies())
+			{
+				if (Match(asm.GetName(), name, ref previousMatch, ref previousMatchLevel))
+				{
+					return asm;
+				}
+			}
+			foreach (string file in FindAssemblyPath(name.Name + ".dll"))
+			{
+				if (Match(AssemblyName.GetAssemblyName(file), name, ref previousMatch, ref previousMatchLevel))
+				{
+					return LoadFile(file);
+				}
+			}
+			if (requestingAssembly != null)
+			{
+				string path = Path.Combine(Path.GetDirectoryName(requestingAssembly.Location), name.Name + ".dll");
+				if (File.Exists(path) && Match(AssemblyName.GetAssemblyName(path), name, ref previousMatch, ref previousMatchLevel))
+				{
+					return LoadFile(path);
+				}
+			}
+			if (previousMatch != null)
+			{
+				if (previousMatchLevel == 2)
+				{
+					EmitWarning(WarningId.HigherVersion, "assuming assembly reference \"{0}\" matches \"{1}\", you may need to supply runtime policy", previousMatch.FullName, name.FullName);
+					return LoadFile(new Uri(previousMatch.CodeBase).LocalPath);
+				}
+				else if (requestingAssembly != null)
+				{
+					Console.Error.WriteLine("Error: Assembly '{0}' uses '{1}' which has a higher version than referenced assembly '{2}'", requestingAssembly.FullName, name.FullName, previousMatch.FullName);
+				}
+				else
+				{
+					Console.Error.WriteLine("Error: Assembly '{0}' was requested which is a higher version than referenced assembly '{1}'", name.FullName, previousMatch.FullName);
+				}
+			}
+			else
+			{
+#if STUB_GENERATOR
+				return universe.CreateMissingAssembly(name.FullName);
+#else
+				Console.Error.WriteLine("Error: unable to find assembly '{0}'", name.FullName);
+				if (requestingAssembly != null)
+				{
+					Console.Error.WriteLine("    (a dependency of '{0}')", requestingAssembly.FullName);
+				}
+#endif
+			}
+			Environment.Exit(1);
+			return null;
+		}
+
+		private bool Match(AssemblyName assemblyDef, AssemblyName assemblyRef, ref AssemblyName bestMatch, ref int bestMatchLevel)
+		{
+			// Match levels:
+			//   0 = no match
+			//   1 = lower version match (i.e. not a suitable match, but used in error reporting: something was found but the version was too low)
+			//   2 = higher version potential match (i.e. we can use this version, but if it is available the exact match will be preferred)
+			//
+			// If we find a perfect match, bestMatch is not changed but we return true to signal that the search can end right now.
+			AssemblyComparisonResult result;
+			universe.CompareAssemblyIdentity(assemblyRef.FullName, false, assemblyDef.FullName, true, out result);
+			switch (result)
+			{
+				case AssemblyComparisonResult.EquivalentFullMatch:
+				case AssemblyComparisonResult.EquivalentPartialMatch:
+				case AssemblyComparisonResult.EquivalentFXUnified:
+				case AssemblyComparisonResult.EquivalentPartialFXUnified:
+				case AssemblyComparisonResult.EquivalentPartialWeakNamed:
+				case AssemblyComparisonResult.EquivalentWeakNamed:
+					return true;
+				case AssemblyComparisonResult.NonEquivalentPartialVersion:
+				case AssemblyComparisonResult.NonEquivalentVersion:
+					if (bestMatchLevel < 1)
+					{
+						bestMatchLevel = 1;
+						bestMatch = assemblyDef;
+					}
+					return false;
+				case AssemblyComparisonResult.EquivalentUnified:
+				case AssemblyComparisonResult.EquivalentPartialUnified:
+					if (bestMatchLevel < 2)
+					{
+						bestMatchLevel = 2;
+						bestMatch = assemblyDef;
+					}
+					return false;
+				case AssemblyComparisonResult.NonEquivalent:
+				case AssemblyComparisonResult.Unknown:
+					return false;
+				default:
+					throw new NotImplementedException();
+			}
+		}
+
+		private void AddLibraryPaths(string str, bool option)
+		{
+			foreach (string dir in str.Split(Path.PathSeparator))
+			{
+				if (Directory.Exists(dir))
+				{
+					libpath.Add(dir);
+				}
+				else if (dir != "")
+				{
+					if (option)
+					{
+						EmitWarning(WarningId.InvalidLibDirectoryOption, "directory \"{0}\" specified in -lib option is not valid", dir);
+					}
+					else
+					{
+						EmitWarning(WarningId.InvalidLibDirectoryEnvironment, "directory \"{0}\" specified in LIB environment is not valid", dir);
+					}
+				}
+			}
+		}
+
+		private Assembly LoadMscorlib(IList<string> references)
+		{
+			if (references != null)
+			{
+				foreach (string r in references)
+				{
+					try
+					{
+						if (AssemblyName.GetAssemblyName(r).Name == "mscorlib")
+						{
+							return LoadFile(r);
+						}
+					}
+					catch
+					{
+					}
+				}
+			}
+			foreach (string mscorlib in FindAssemblyPath("mscorlib.dll"))
+			{
+				return LoadFile(mscorlib);
+			}
+			Console.Error.WriteLine("Error: unable to find mscorlib.dll");
+			Environment.Exit(1);
+			return null;
+		}
+
+		private IEnumerable<string> FindAssemblyPath(string file)
+		{
+			if (Path.IsPathRooted(file))
+			{
+				if (File.Exists(file))
+				{
+					yield return file;
+				}
+			}
+			else
+			{
+				foreach (string dir in libpath)
+				{
+					string path = Path.Combine(dir, file);
+					if (File.Exists(path))
+					{
+						yield return path;
+					}
+					// for legacy compat, we try again after appending .dll
+					path = Path.Combine(dir, file + ".dll");
+					if (File.Exists(path))
+					{
+						EmitWarning(WarningId.LegacySearchRule, "found assembly \"{0}\" using legacy search rule, please append '.dll' to the reference", file);
+						yield return path;
+					}
+				}
+			}
+		}
+	}
+}
+@
+
+
+1.19
+log
+@Disabled automatic assembly loading for ikvmc. All dependencies must now be explicitly referenced (except for the stub jar loophole and secondary assemblies in a shared class loader group).
+@
+text
+@d244 1
+a244 4
+				T[] temp = new T[array.Length + 1];
+				Array.Copy(array, 0, temp, 0, array.Length);
+				temp[temp.Length - 1] = element;
+				array = temp;
+@
+
+
+1.18
+log
+@Moved secondary assembly loading (from a shared class loader group) to an explicit step early in the compilation process. Referencing a secondary assembly is now an error, instead of a warning.
+@
+text
+@d2 1
+a2 1
+  Copyright (C) 2010 Jeroen Frijters
+d86 5
+a90 1
+			universe.AssemblyResolve += new IKVM.Reflection.ResolveEventHandler(universe_AssemblyResolve);
+d251 43
+a293 1
+		private Assembly universe_AssemblyResolve(object sender, IKVM.Reflection.ResolveEventArgs args)
+@
+
+
+1.17
+log
+@Fix previous commit.
+@
+text
+@a34 1
+		private readonly Dictionary<string, string> hintpaths = new Dictionary<string, string>();
+a277 9
+			string hintpath;
+			if (hintpaths.TryGetValue(name.FullName, out hintpath))
+			{
+				string path = Path.Combine(hintpath, name.Name + ".dll");
+				if (File.Exists(path) && Match(AssemblyName.GetAssemblyName(path), name, ref previousMatch, ref previousMatchLevel))
+				{
+					return LoadFile(path);
+				}
+			}
+a429 5
+
+		internal void AddHintPath(string assemblyName, string path)
+		{
+			hintpaths.Add(assemblyName, path);
+		}
+@
+
+
+1.16
+log
+@Moved (legacy) stub class parsing from the guts of the class loader to an explicit upfront step.
+@
+text
+@d307 1
+a307 1
+				return universe.CreateMissingAssembly(args.Name);
+@
+
+
+1.15
+log
+@Lots of ikvmc error handling clean up.
+@
+text
+@d250 5
+a254 1
+			AssemblyName name = new AssemblyName(args.Name);
+d271 1
+a271 1
+			if (args.RequestingAssembly != null)
+d273 1
+a273 1
+				string path = Path.Combine(Path.GetDirectoryName(args.RequestingAssembly.Location), name.Name + ".dll");
+d295 1
+a295 1
+				else if (args.RequestingAssembly != null)
+d297 1
+a297 1
+					Console.Error.WriteLine("Error: Assembly '{0}' uses '{1}' which has a higher version than referenced assembly '{2}'", args.RequestingAssembly.FullName, name.FullName, previousMatch.FullName);
+d309 2
+a310 2
+				Console.Error.WriteLine("Error: unable to find assembly '{0}'", args.Name);
+				if (args.RequestingAssembly != null)
+d312 1
+a312 1
+					Console.Error.WriteLine("    (a dependency of '{0}')", args.RequestingAssembly.FullName);
+@
+
+
+1.14
+log
+@Changed ikvmstub to use missing assemblies when a dependency is not found and only complain about it when it is actually needed.
+@
+text
+@d185 1
+a185 1
+		internal int ResolveReference(Dictionary<string, Assembly> cache, ref Assembly[] references, string reference)
+d214 1
+a214 2
+					Console.Error.WriteLine("Error: reference not found: {0}", reference);
+					return 1;
+d230 1
+a230 1
+			return 0;
+@
+
+
+1.13
+log
+@Fix to make sure that ikvmc (and ikvmstub) can find assemblies that are part of a multi assembly (shared class loader) group (if the assembly is in the same directory as the main assembly of the group).
+@
+text
+@d303 3
+d311 1
+@
+
+
+1.12
+log
+@If the locations don't match, canonicalize them and compare them again to make sure.
+@
+text
+@d35 1
+d276 9
+d433 5
+@
+
+
+1.12.2.1
+log
+@Backport: Fix to make sure that ikvmc (and ikvmstub) can find assemblies that are part of a multi assembly (shared class loader) group (if the assembly is in the same directory as the main assembly of the group).
+@
+text
+@a34 1
+		private readonly Dictionary<string, string> hintpaths = new Dictionary<string, string>();
+a274 9
+			string hintpath;
+			if (hintpaths.TryGetValue(name.FullName, out hintpath))
+			{
+				string path = Path.Combine(hintpath, name.Name + ".dll");
+				if (File.Exists(path) && Match(AssemblyName.GetAssemblyName(path), name, ref previousMatch, ref previousMatchLevel))
+				{
+					return LoadFile(path);
+				}
+			}
+a422 5
+
+		internal void AddHintPath(string assemblyName, string path)
+		{
+			hintpaths.Add(assemblyName, path);
+		}
+@
+
+
+1.11
+log
+@Made all AssemblyResolver warnings into formal ikvmc warnings.
+@
+text
+@d109 1
+a109 1
+					if (asm.Location != module.Location)
+d133 42
+@
+
+
+1.10
+log
+@- Removed use of Universe.LoadMscorlib().
+- Removed unncessary return value from Init().
+@
+text
+@d38 23
+a60 2
+		internal delegate void HigherVersionEvent(AssemblyName assemblyDef, AssemblyName assemblyRef);
+		internal event HigherVersionEvent HigherVersion;
+d75 1
+a75 1
+				AddLibraryPaths(str, "-lib option");
+d77 1
+a77 1
+			AddLibraryPaths(Environment.GetEnvironmentVariable("LIB") ?? "", "LIB environment");
+d111 1
+a111 1
+						Console.Error.WriteLine("Warning: assembly '{0}' is ignored as previously loaded assembly '{1}' has the same identity '{2}'", path, asm.Location, asm.FullName);
+d237 1
+a237 4
+					if (HigherVersion != null)
+					{
+						HigherVersion(previousMatch, name);
+					}
+d304 1
+a304 1
+		private void AddLibraryPaths(string str, string msg)
+d314 8
+a321 1
+					Console.Error.WriteLine("Warning: directory '{0}' specified in {1} is not valid", dir, msg);
+d375 1
+a375 1
+						Console.WriteLine("Warning: Found assembly '{0}' using legacy search rule. Please append '.dll' to the reference.", file);
+@
+
+
+1.9
+log
+@- Consolidated and improved error handling in LoadFile.
+- Added warning when LoadFile returns previously loaded assembly, instead of the one specified.
+@
+text
+@d41 1
+a41 1
+		internal int Init(Universe universe, bool nostdlib, IList<string> references, IList<string> userLibPaths)
+a56 1
+			int rc = 0;
+d59 1
+a59 1
+				rc = LoadMscorlib(references);
+d61 1
+a61 1
+			if (rc == 0)
+a63 1
+				universe.AssemblyResolve += new IKVM.Reflection.ResolveEventHandler(universe_AssemblyResolve);
+d65 1
+a65 1
+			return rc;
+d301 1
+a301 1
+		private int LoadMscorlib(IList<string> references)
+d311 1
+a311 2
+							universe.LoadMscorlib(r);
+							return 0;
+d321 1
+a321 2
+				universe.LoadMscorlib(mscorlib);
+				return 0;
+d324 2
+a325 1
+			return 1;
+@
+
+
+1.8
+log
+@Base assembly ref/def matching on Universe.CompareAssemblyIdentity().
+@
+text
+@d72 2
+a73 3
+			Assembly asm = universe.LoadFile(path);
+			// to avoid problems (i.e. weird exceptions), we don't allow assemblies to load that reference a newer version of mscorlib
+			foreach (AssemblyName asmref in asm.GetReferencedAssemblies())
+d75 1
+a75 1
+				if (asmref.Name == "mscorlib" && asmref.Version > mscorlibVersion)
+d77 18
+a94 2
+					Console.Error.WriteLine("Error: unable to load assembly '{0}' as it depends on a higher version of mscorlib than the one currently loaded", path);
+					Environment.Exit(1);
+d97 15
+a111 1
+			return asm;
+d141 1
+a141 1
+				try
+d143 1
+a143 1
+					if (asm == null)
+d145 3
+a147 6
+						foreach (string found in FindAssemblyPath(reference))
+						{
+							asm = LoadFile(found);
+							cache.Add(reference, asm);
+							break;
+						}
+a149 3
+				catch (FileLoadException)
+				{
+				}
+d161 2
+a162 10
+					try
+					{
+						Assembly asm;
+						if (!cache.TryGetValue(file, out asm))
+						{
+							asm = LoadFile(file);
+						}
+						ArrayAppend(ref references, asm);
+					}
+					catch (FileLoadException)
+d164 1
+a164 2
+						Console.Error.WriteLine("Error: reference not found: {0}", file);
+						return 1;
+d166 1
+@
+
+
+1.7
+log
+@Added check to avoid loading assemblies that require a newer version of mscorlib than the one were using (to avoid weird exceptions and potential other problems).
+@
+text
+@a173 3
+			// to support Universe.GetType("System.Object, mscorlib"), we have to support partial names
+			// (the map.xml file contains such type names)
+			bool partialName = !args.Name.Contains(",");
+a178 4
+				if (partialName && asm.GetName().Name == name.Name)
+				{
+					return asm;
+				}
+d186 1
+a186 1
+				if (partialName || Match(AssemblyName.GetAssemblyName(file), name, ref previousMatch, ref previousMatchLevel))
+d230 1
+a230 2
+		// TODO this method should be based on Fusion's CompareAssemblyIdentity (which we should have an equivalent of in Universe)
+		private static bool Match(AssemblyName assemblyDef, AssemblyName assemblyRef, ref AssemblyName bestMatch, ref int bestMatchLevel)
+d237 14
+a250 18
+			// If we find a perfect match, bestMatch is not changed but we return true to signal that the search can end right now. 
+			if (assemblyDef.Name != assemblyRef.Name)
+			{
+				return false;
+			}
+			bool strongNamed = IsStrongNamed(assemblyDef);
+			if (strongNamed != IsStrongNamed(assemblyRef))
+			{
+				return false;
+			}
+			if (strongNamed)
+			{
+				if (!IsEqual(assemblyDef.GetPublicKeyToken(), assemblyRef.GetPublicKeyToken()))
+				{
+					return false;
+				}
+				if (assemblyDef.Version < assemblyRef.Version)
+				{
+d257 2
+a258 3
+				}
+				else if (assemblyDef.Version > assemblyRef.Version)
+				{
+d265 2
+a266 21
+				}
+			}
+			return true;
+		}
+
+		private static bool IsStrongNamed(AssemblyName name)
+		{
+			byte[] key = name.GetPublicKeyToken();
+			return key != null && key.Length != 0;
+		}
+
+		private static bool IsEqual(byte[] b1, byte[] b2)
+		{
+			if (b1.Length != b2.Length)
+			{
+				return false;
+			}
+			for (int i = 0; i < b1.Length; i++)
+			{
+				if (b1[i] != b2[i])
+				{
+d268 2
+a269 1
+				}
+a270 1
+			return true;
+@
+
+
+1.6
+log
+@Added strong named assembly version "policy" support. Reject lower versions, accept higher versions with optional warning and prefer exact matches.
+@
+text
+@d36 1
+d64 1
+d70 15
+d89 1
+a89 1
+				return universe.LoadFile(path);
+d118 1
+a118 1
+							asm = universe.LoadFile(found);
+d143 1
+a143 1
+							asm = universe.LoadFile(file);
+d195 1
+a195 1
+					return universe.LoadFile(file);
+d203 1
+a203 1
+					return universe.LoadFile(path);
+d214 1
+a214 1
+					return universe.LoadFile(new Uri(previousMatch.CodeBase).LocalPath);
+d237 1
+@
+
+
+1.5
+log
+@We shouldn't use StaticCompiler, but our own universe reference.
+@
+text
+@d37 3
+d161 2
+d165 5
+a169 1
+				if (Matches(asm.GetName(), name) || (partialName && asm.GetName().Name == name.Name))
+d176 1
+a176 2
+				Assembly asm = universe.LoadFile(file);
+				if (Matches(asm.GetName(), name) || partialName)
+d178 1
+a178 1
+					return asm;
+d184 1
+a184 1
+				if (File.Exists(path) && Matches(AssemblyName.GetAssemblyName(path), name))
+d189 20
+a208 2
+			Console.Error.WriteLine("Error: unable to find assembly '{0}'", args.Name);
+			if (args.RequestingAssembly != null)
+d210 5
+a214 1
+				Console.Error.WriteLine("    (a dependency of '{0}')", args.RequestingAssembly.FullName);
+d220 1
+a220 1
+		private static bool Matches(AssemblyName assemblyDef, AssemblyName assemblyRef)
+d222 6
+d239 22
+a260 1
+				return IsEqual(assemblyDef.GetPublicKeyToken(), assemblyRef.GetPublicKeyToken()) && assemblyDef.Version >= assemblyRef.Version;
+@
+
+
+1.4
+log
+@Resolver should also resolve assemblies that have already been loaded.
+@
+text
+@d98 1
+a98 1
+							asm = StaticCompiler.LoadFile(found);
+d123 1
+a123 1
+							asm = StaticCompiler.LoadFile(file);
+d167 1
+a167 1
+				Assembly asm = StaticCompiler.LoadFile(file);
+d178 1
+a178 1
+					return StaticCompiler.LoadFile(path);
+d255 1
+a255 1
+							StaticCompiler.Universe.LoadMscorlib(r);
+d266 1
+a266 1
+				StaticCompiler.Universe.LoadMscorlib(mscorlib);
+@
+
+
+1.3
+log
+@Recognize mscorlib by its name, not by having a System.Object type.
+@
+text
+@d158 7
+@
+
+
+1.2
+log
+@Don't NPE when -nostdlib is used without any -reference
+@
+text
+@a241 1
+				Universe dummy = new Universe();
+d246 1
+a246 2
+						Assembly asm = dummy.LoadFile(r);
+						if (asm.GetType("System.Object") != null)
+@
+
+
+1.1
+log
+@- Rewrote assembly loading for ikvmc and ikvmstub (and unified it). It now no longer depends on the runtime to do assembly name to path resolution and behaves more csc like.
+- Added -nostdlib and -lib options to ikvmc and ikvmstub.
+- openjdk.build now uses our System.Core.dll (unless we're building on .NET 4.0).
+@
+text
+@d240 1
+a240 2
+			Universe dummy = new Universe();
+			foreach (string r in references)
+d242 2
+a243 1
+				try
+d245 10
+a254 2
+					Assembly asm = dummy.LoadFile(r);
+					if (asm.GetType("System.Object") != null)
+a255 2
+						StaticCompiler.Universe.LoadMscorlib(r);
+						return 0;
+a257 3
+				catch
+				{
+				}
+@
+

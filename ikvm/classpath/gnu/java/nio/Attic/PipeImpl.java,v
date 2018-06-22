@@ -1,0 +1,490 @@
+head	1.3;
+access;
+symbols
+	v0_36_0_14:1.2
+	v0_36_0_13:1.2
+	v0_36_0_9:1.2
+	v0_36_0_7:1.2
+	v0_36_0_5:1.2
+	v0_36_0_4:1.2
+	v0_36_0_3:1.2
+	v0_36_0_2:1.2
+	v0_36_0_1:1.2
+	v0_36_0_0:1.2
+	v0_36:1.2.0.2
+	v0_34_0_3:1.1.4.1
+	v0_34_0_2:1.1.4.1
+	v0_34_0_1:1.1
+	v0_34_0_0:1.1
+	v0_34:1.1.0.4
+	v0_32:1.1.0.2
+	v0_32_0_0:1.1;
+locks; strict;
+comment	@# @;
+
+
+1.3
+date	2008.08.06.12.51.16;	author jfrijters;	state dead;
+branches;
+next	1.2;
+
+1.2
+date	2007.04.28.10.42.13;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2006.09.20.05.53.39;	author jfrijters;	state Exp;
+branches
+	1.1.4.1;
+next	;
+
+1.1.4.1
+date	2007.04.29.08.50.49;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.3
+log
+@Removed files that are no longer needed no that GNU Classpath support has been dropped.
+@
+text
+@/*
+  Copyright (C) 2006, 2007 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+package gnu.java.nio;
+
+import ikvm.internal.Util;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.ServerSocket;
+import java.nio.ByteBuffer;
+import java.nio.channels.Pipe;
+import java.nio.channels.ServerSocketChannel;
+import java.nio.channels.SocketChannel;
+import java.nio.channels.spi.SelectorProvider;
+
+final class PipeImpl extends Pipe
+{
+	private static ServerSocketChannel server;
+    private final SourceChannelImpl source;
+	private final SocketChannel sourceSocket;
+    private final SinkChannelImpl sink;
+	private final SocketChannel sinkSocket;
+
+	static
+	{
+		try
+		{
+			server = ServerSocketChannel.open();
+			server.socket().bind(new InetSocketAddress(InetAddress.getAllByName(null)[0], 0), 1);
+		}
+		catch(IOException _)
+		{
+		}
+	}
+
+	final class SourceChannelImpl extends Pipe.SourceChannel
+	{
+		SourceChannelImpl(SelectorProvider provider)
+		{
+			super(provider);
+		}
+
+		cli.System.Net.Sockets.Socket getSocket()
+		{
+			return ((SocketChannelImpl)sourceSocket).getSocket();
+		}
+
+		protected void implCloseSelectableChannel() throws IOException
+		{
+			sourceSocket.close();
+		}
+
+		protected void implConfigureBlocking(boolean blocking) throws IOException
+		{
+			sourceSocket.configureBlocking(blocking);
+		}
+
+		public int read(ByteBuffer src) throws IOException
+		{
+			return sourceSocket.read(src);
+		}
+
+		public long read(ByteBuffer[] srcs) throws IOException
+		{
+			return sourceSocket.read(srcs);
+		}
+
+		public long read(ByteBuffer[] srcs, int offset, int length) throws IOException
+		{
+			return sourceSocket.read(srcs, offset, length);
+		}
+	}
+
+	final class SinkChannelImpl extends Pipe.SinkChannel
+	{
+		SinkChannelImpl(SelectorProvider provider)
+		{
+			super(provider);
+		}
+
+		cli.System.Net.Sockets.Socket getSocket()
+		{
+			return ((SocketChannelImpl)sinkSocket).getSocket();
+		}
+
+		protected void implCloseSelectableChannel() throws IOException
+		{
+			sinkSocket.close();
+		}
+
+		protected void implConfigureBlocking(boolean blocking) throws IOException
+		{
+			sinkSocket.configureBlocking(blocking);
+		}
+
+		public int write(ByteBuffer dst) throws IOException
+		{
+			return sinkSocket.write(dst);
+		}
+
+		public long write(ByteBuffer[] dsts) throws IOException
+		{
+			return sinkSocket.write(dsts);
+		}
+
+		public long write(ByteBuffer[] dsts, int offset, int length) throws IOException
+		{
+			return sinkSocket.write(dsts, offset, length);
+		}
+	}
+  
+    PipeImpl(SelectorProvider provider) throws IOException
+    {
+		sinkSocket = SocketChannel.open();
+		sinkSocket.socket().bind(null);
+		sinkSocket.configureBlocking(false);
+		sinkSocket.connect(server.socket().getLocalSocketAddress());
+		SocketChannel ch;
+		for(;;)
+		{
+			ch = server.accept();
+			// we have a connection, now make sure that accept returned the socket associated with our connection
+			int sourcePort = ((InetSocketAddress)ch.socket().getRemoteSocketAddress()).getPort();
+			int sinkPort = sinkSocket.socket().getLocalPort();
+			if(sourcePort == sinkPort)
+			{
+				sinkSocket.configureBlocking(true);
+				if(!sinkSocket.finishConnect())
+				{
+					throw new IOException("Unexpected: finishConnect returned false");
+				}
+				break;
+			}
+			try
+			{
+				ch.close();
+			}
+			catch(IOException _)
+			{
+			}
+		}
+		sourceSocket = ch;
+		source = new SourceChannelImpl(provider);
+		sink = new SinkChannelImpl(provider);
+	}
+
+    public Pipe.SinkChannel sink()
+    {
+        return sink;
+    }
+
+    public Pipe.SourceChannel source()
+    {
+        return source;
+    }
+}
+@
+
+
+1.2
+log
+@Implemented NIO Pipe support.
+@
+text
+@@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@d1 23
+d28 3
+d33 2
+d39 93
+a131 2
+    private final Pipe.SourceChannel source;
+    private final Pipe.SinkChannel sink;
+d135 32
+a166 61
+        source = new Pipe.SourceChannel(provider)
+        {
+            protected void implCloseSelectableChannel() throws IOException
+            {
+                throw new Error("Not implemented");
+            }
+
+            protected void implConfigureBlocking(boolean blocking) throws IOException
+            {
+                throw new Error("Not implemented");
+            }
+
+            public int read(ByteBuffer src) throws IOException
+            {
+                throw new Error("Not implemented");
+            }
+
+            public long read(ByteBuffer[] srcs) throws IOException
+            {
+                throw new Error("Not implemented");
+            }
+
+            public long read(ByteBuffer[] srcs, int offset, int length) throws IOException
+            {
+                if (!Util.rangeCheck(srcs.length, offset, length))
+                    throw new IndexOutOfBoundsException();
+
+                throw new Error("Not implemented");
+            }
+        };
+        sink = new Pipe.SinkChannel(provider)
+        {
+            protected void implCloseSelectableChannel() throws IOException
+            {
+                throw new Error("Not implemented");
+            }
+
+            protected void implConfigureBlocking(boolean blocking) throws IOException
+            {
+                throw new Error("Not implemented");
+            }
+
+            public int write(ByteBuffer dst) throws IOException
+            {
+                throw new Error("Not implemented");
+            }
+
+            public long write(ByteBuffer[] dst) throws IOException
+            {
+                throw new Error("Not implemented");
+            }
+
+            public long write(ByteBuffer[] dsts, int offset, int length) throws IOException
+            {
+                if (!Util.rangeCheck(dsts.length, offset, length))
+                    throw new IndexOutOfBoundsException();
+      
+                throw new Error("Not implemented");
+            }
+        };
+    }
+@
+
+
+1.1.4.1
+log
+@Backported socket fixes and NIO pipe implementation.
+@
+text
+@a0 23
+/*
+  Copyright (C) 2006, 2007 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+a4 3
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.ServerSocket;
+a6 2
+import java.nio.channels.ServerSocketChannel;
+import java.nio.channels.SocketChannel;
+d11 2
+a12 93
+	private static ServerSocketChannel server;
+    private final SourceChannelImpl source;
+	private final SocketChannel sourceSocket;
+    private final SinkChannelImpl sink;
+	private final SocketChannel sinkSocket;
+
+	static
+	{
+		try
+		{
+			server = ServerSocketChannel.open();
+			server.socket().bind(new InetSocketAddress(InetAddress.getAllByName(null)[0], 0), 1);
+		}
+		catch(IOException _)
+		{
+		}
+	}
+
+	final class SourceChannelImpl extends Pipe.SourceChannel
+	{
+		SourceChannelImpl(SelectorProvider provider)
+		{
+			super(provider);
+		}
+
+		cli.System.Net.Sockets.Socket getSocket()
+		{
+			return ((SocketChannelImpl)sourceSocket).getSocket();
+		}
+
+		protected void implCloseSelectableChannel() throws IOException
+		{
+			sourceSocket.close();
+		}
+
+		protected void implConfigureBlocking(boolean blocking) throws IOException
+		{
+			sourceSocket.configureBlocking(blocking);
+		}
+
+		public int read(ByteBuffer src) throws IOException
+		{
+			return sourceSocket.read(src);
+		}
+
+		public long read(ByteBuffer[] srcs) throws IOException
+		{
+			return sourceSocket.read(srcs);
+		}
+
+		public long read(ByteBuffer[] srcs, int offset, int length) throws IOException
+		{
+			return sourceSocket.read(srcs, offset, length);
+		}
+	}
+
+	final class SinkChannelImpl extends Pipe.SinkChannel
+	{
+		SinkChannelImpl(SelectorProvider provider)
+		{
+			super(provider);
+		}
+
+		cli.System.Net.Sockets.Socket getSocket()
+		{
+			return ((SocketChannelImpl)sinkSocket).getSocket();
+		}
+
+		protected void implCloseSelectableChannel() throws IOException
+		{
+			sinkSocket.close();
+		}
+
+		protected void implConfigureBlocking(boolean blocking) throws IOException
+		{
+			sinkSocket.configureBlocking(blocking);
+		}
+
+		public int write(ByteBuffer dst) throws IOException
+		{
+			return sinkSocket.write(dst);
+		}
+
+		public long write(ByteBuffer[] dsts) throws IOException
+		{
+			return sinkSocket.write(dsts);
+		}
+
+		public long write(ByteBuffer[] dsts, int offset, int length) throws IOException
+		{
+			return sinkSocket.write(dsts, offset, length);
+		}
+	}
+d16 61
+a76 32
+		sinkSocket = SocketChannel.open();
+		sinkSocket.socket().bind(null);
+		sinkSocket.configureBlocking(false);
+		sinkSocket.connect(server.socket().getLocalSocketAddress());
+		SocketChannel ch;
+		for(;;)
+		{
+			ch = server.accept();
+			// we have a connection, now make sure that accept returned the socket associated with our connection
+			int sourcePort = ((InetSocketAddress)ch.socket().getRemoteSocketAddress()).getPort();
+			int sinkPort = sinkSocket.socket().getLocalPort();
+			if(sourcePort == sinkPort)
+			{
+				sinkSocket.configureBlocking(true);
+				if(!sinkSocket.finishConnect())
+				{
+					throw new IOException("Unexpected: finishConnect returned false");
+				}
+				break;
+			}
+			try
+			{
+				ch.close();
+			}
+			catch(IOException _)
+			{
+			}
+		}
+		sourceSocket = ch;
+		source = new SourceChannelImpl(provider);
+		sink = new SinkChannelImpl(provider);
+	}
+@
+
+

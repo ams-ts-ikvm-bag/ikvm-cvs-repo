@@ -1,0 +1,636 @@
+head	1.5;
+access;
+symbols
+	v8_1_5717_0:1.5
+	v8_1:1.5.0.4
+	v8_0_5449_1:1.5
+	v8_0_5449_0:1.5
+	v8_0:1.5.0.2
+	v7_4_5196_0:1.4
+	v7_4:1.4.0.10
+	v7_3:1.4.0.8
+	v7_2_4630_6:1.4
+	v7_2_4630_5:1.4
+	v7_2_4630_4:1.4
+	v7_2_4630_3:1.4
+	v7_2_4630_2:1.4
+	v0_46_0_4:1.2
+	v7_2_4630_1:1.4
+	v7_2:1.4.0.6
+	v7_1_4532_2:1.4
+	v7_1_4532_1:1.4
+	v7_1_4532_0:1.4
+	v7_1:1.4.0.4
+	v7_0_4335_3:1.4
+	v7_0_4335_2:1.4
+	v7_0_4335_1:1.4
+	v0_46_0_2:1.2
+	v7_0_4335_0:1.4
+	v7_0:1.4.0.2
+	v0_40_0_6:1.2
+	v0_40_0_5:1.2
+	v0_46_0_1:1.2
+	v0_46_0_0:1.2
+	v0_46:1.2.0.10
+	v0_36_0_14:1.1
+	v0_44_0_6:1.2
+	v0_44_0_5:1.2
+	v0_44_0_4:1.2
+	v0_44_0_3:1.2
+	v0_44_0_2:1.2
+	v0_42_0_7:1.2
+	v0_44_0_1:1.2
+	v0_44_0_0:1.2
+	v0_44:1.2.0.8
+	v0_42_0_6:1.2
+	v0_42_0_5:1.2
+	v0_42_0_4:1.2
+	v0_42_0_3:1.2
+	v0_42_0_2:1.2
+	v0_42_0_1:1.2
+	v0_42_0_0:1.2
+	v0_42:1.2.0.6
+	v0_40_0_3:1.2
+	v0_40_0_2:1.2
+	v0_40_0_1:1.2
+	v0_40_0_0:1.2
+	v0_40:1.2.0.4
+	v0_36_0_13:1.1
+	v0_38_0_1:1.2
+	v0_38_0_0:1.2
+	v0_38:1.2.0.2
+	v0_36_0_9:1.1
+	v0_36_0_7:1.1
+	v0_36_0_5:1.1
+	v0_36_0_4:1.1
+	v0_36_0_3:1.1
+	v0_36_0_2:1.1
+	v0_36_0_1:1.1
+	v0_36_0_0:1.1
+	v0_36:1.1.0.8
+	v0_34_0_3:1.1
+	v0_34_0_2:1.1
+	v0_34_0_1:1.1
+	v0_34_0_0:1.1
+	v0_34:1.1.0.6
+	v0_32:1.1.0.4
+	v0_32_0_0:1.1
+	v0_30:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.5
+date	2014.05.19.12.43.29;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2011.07.06.12.43.05;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2011.05.13.07.29.31;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.06.11.09.04.58;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2006.07.03.09.41.02;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.5
+log
+@First part of OpenJDK 8 integration.
+@
+text
+@/*
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 only, as
+ * published by the Free Software Foundation.  Oracle designates this
+ * particular file as subject to the "Classpath" exception as provided
+ * by Oracle in the LICENSE file that accompanied this code.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * You should have received a copy of the GNU General Public License version
+ * 2 along with this work; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+ * or visit www.oracle.com if you need additional information or have any
+ * questions.
+ */
+
+/*
+ * This file is available under and governed by the GNU General Public
+ * License version 2 only, as published by the Free Software Foundation.
+ * However, the following notice accompanied the original version of this
+ * file:
+ *
+ * Written by Doug Lea with assistance from members of JCP JSR-166
+ * Expert Group and released to the public domain, as explained at
+ * http://creativecommons.org/publicdomain/zero/1.0/
+ */
+
+package java.util.concurrent.atomic;
+import java.util.function.LongUnaryOperator;
+import java.util.function.LongBinaryOperator;
+
+/**
+ * A {@@code long} value that may be updated atomically.  See the
+ * {@@link java.util.concurrent.atomic} package specification for
+ * description of the properties of atomic variables. An
+ * {@@code AtomicLong} is used in applications such as atomically
+ * incremented sequence numbers, and cannot be used as a replacement
+ * for a {@@link java.lang.Long}. However, this class does extend
+ * {@@code Number} to allow uniform access by tools and utilities that
+ * deal with numerically-based classes.
+ *
+ * @@since 1.5
+ * @@author Doug Lea
+ */
+public class AtomicLong extends Number implements java.io.Serializable {
+    private static final long serialVersionUID = 1927816293512124184L;
+
+    /**
+     * Records whether the underlying JVM supports lockless
+     * compareAndSwap for longs. While the Unsafe.compareAndSwapLong
+     * method works in either case, some constructions should be
+     * handled at Java level to avoid locking user-visible locks.
+     */
+    static final boolean VM_SUPPORTS_LONG_CAS = false;
+
+    private volatile long value;
+
+    /**
+     * Creates a new AtomicLong with the given initial value.
+     *
+     * @@param initialValue the initial value
+     */
+    public AtomicLong(long initialValue) {
+        value = initialValue;
+    }
+
+    /**
+     * Creates a new AtomicLong with initial value {@@code 0}.
+     */
+    public AtomicLong() {
+    }
+
+    /**
+     * Gets the current value.
+     *
+     * @@return the current value
+     */
+    public final long get() {
+        return value;
+    }
+
+    /**
+     * Sets to the given value.
+     *
+     * @@param newValue the new value
+     */
+    public final void set(long newValue) {
+        value = newValue;
+    }
+
+    /**
+     * Eventually sets to the given value.
+     *
+     * @@param newValue the new value
+     * @@since 1.6
+     */
+    public final void lazySet(long newValue) {
+        value = newValue;
+    }
+
+    /**
+     * Atomically sets to the given value and returns the old value.
+     *
+     * @@param newValue the new value
+     * @@return the previous value
+     */
+    public final native long getAndSet(long newValue);
+
+    /**
+     * Atomically sets the value to the given updated value
+     * if the current value {@@code ==} the expected value.
+     *
+     * @@param expect the expected value
+     * @@param update the new value
+     * @@return {@@code true} if successful. False return indicates that
+     * the actual value was not equal to the expected value.
+     */
+    public final native boolean compareAndSet(long expect, long update);
+
+    /**
+     * Atomically sets the value to the given updated value
+     * if the current value {@@code ==} the expected value.
+     *
+     * <p><a href="package-summary.html#weakCompareAndSet">May fail
+     * spuriously and does not provide ordering guarantees</a>, so is
+     * only rarely an appropriate alternative to {@@code compareAndSet}.
+     *
+     * @@param expect the expected value
+     * @@param update the new value
+     * @@return {@@code true} if successful
+     */
+    public final boolean weakCompareAndSet(long expect, long update) {
+        return compareAndSet(expect, update);
+    }
+
+    /**
+     * Atomically increments by one the current value.
+     *
+     * @@return the previous value
+     */
+    public final long getAndIncrement() {
+        return incrementAndGet() - 1;
+    }
+
+    /**
+     * Atomically decrements by one the current value.
+     *
+     * @@return the previous value
+     */
+    public final long getAndDecrement() {
+        return decrementAndGet() + 1;
+    }
+
+    /**
+     * Atomically adds the given value to the current value.
+     *
+     * @@param delta the value to add
+     * @@return the previous value
+     */
+    public final long getAndAdd(long delta) {
+        return addAndGet(delta) - delta;
+    }
+
+    /**
+     * Atomically increments by one the current value.
+     *
+     * @@return the updated value
+     */
+    public final native long incrementAndGet();
+
+    /**
+     * Atomically decrements by one the current value.
+     *
+     * @@return the updated value
+     */
+    public final native long decrementAndGet();
+
+    /**
+     * Atomically adds the given value to the current value.
+     *
+     * @@param delta the value to add
+     * @@return the updated value
+     */
+    public final native long addAndGet(long delta);
+
+    /**
+     * Atomically updates the current value with the results of
+     * applying the given function, returning the previous value. The
+     * function should be side-effect-free, since it may be re-applied
+     * when attempted updates fail due to contention among threads.
+     *
+     * @@param updateFunction a side-effect-free function
+     * @@return the previous value
+     * @@since 1.8
+     */
+    public final long getAndUpdate(LongUnaryOperator updateFunction) {
+        long prev, next;
+        do {
+            prev = get();
+            next = updateFunction.applyAsLong(prev);
+        } while (!compareAndSet(prev, next));
+        return prev;
+    }
+
+    /**
+     * Atomically updates the current value with the results of
+     * applying the given function, returning the updated value. The
+     * function should be side-effect-free, since it may be re-applied
+     * when attempted updates fail due to contention among threads.
+     *
+     * @@param updateFunction a side-effect-free function
+     * @@return the updated value
+     * @@since 1.8
+     */
+    public final long updateAndGet(LongUnaryOperator updateFunction) {
+        long prev, next;
+        do {
+            prev = get();
+            next = updateFunction.applyAsLong(prev);
+        } while (!compareAndSet(prev, next));
+        return next;
+    }
+
+    /**
+     * Atomically updates the current value with the results of
+     * applying the given function to the current and given values,
+     * returning the previous value. The function should be
+     * side-effect-free, since it may be re-applied when attempted
+     * updates fail due to contention among threads.  The function
+     * is applied with the current value as its first argument,
+     * and the given update as the second argument.
+     *
+     * @@param x the update value
+     * @@param accumulatorFunction a side-effect-free function of two arguments
+     * @@return the previous value
+     * @@since 1.8
+     */
+    public final long getAndAccumulate(long x,
+                                       LongBinaryOperator accumulatorFunction) {
+        long prev, next;
+        do {
+            prev = get();
+            next = accumulatorFunction.applyAsLong(prev, x);
+        } while (!compareAndSet(prev, next));
+        return prev;
+    }
+
+    /**
+     * Atomically updates the current value with the results of
+     * applying the given function to the current and given values,
+     * returning the updated value. The function should be
+     * side-effect-free, since it may be re-applied when attempted
+     * updates fail due to contention among threads.  The function
+     * is applied with the current value as its first argument,
+     * and the given update as the second argument.
+     *
+     * @@param x the update value
+     * @@param accumulatorFunction a side-effect-free function of two arguments
+     * @@return the updated value
+     * @@since 1.8
+     */
+    public final long accumulateAndGet(long x,
+                                       LongBinaryOperator accumulatorFunction) {
+        long prev, next;
+        do {
+            prev = get();
+            next = accumulatorFunction.applyAsLong(prev, x);
+        } while (!compareAndSet(prev, next));
+        return next;
+    }
+
+    /**
+     * Returns the String representation of the current value.
+     * @@return the String representation of the current value
+     */
+    public String toString() {
+        return Long.toString(get());
+    }
+
+    /**
+     * Returns the value of this {@@code AtomicLong} as an {@@code int}
+     * after a narrowing primitive conversion.
+     * @@jls 5.1.3 Narrowing Primitive Conversions
+     */
+    public int intValue() {
+        return (int)get();
+    }
+
+    /**
+     * Returns the value of this {@@code AtomicLong} as a {@@code long}.
+     */
+    public long longValue() {
+        return get();
+    }
+
+    /**
+     * Returns the value of this {@@code AtomicLong} as a {@@code float}
+     * after a widening primitive conversion.
+     * @@jls 5.1.2 Widening Primitive Conversions
+     */
+    public float floatValue() {
+        return (float)get();
+    }
+
+    /**
+     * Returns the value of this {@@code AtomicLong} as a {@@code double}
+     * after a widening primitive conversion.
+     * @@jls 5.1.2 Widening Primitive Conversions
+     */
+    public double doubleValue() {
+        return (double)get();
+    }
+
+}
+@
+
+
+1.4
+log
+@Updated java.util.concurrent.* packages to OpenJDK 7.
+@
+text
+@d37 2
+d123 1
+a123 1
+     * @@return true if successful. False return indicates that
+d132 3
+a134 3
+     * <p>May <a href="package-summary.html#Spurious">fail spuriously</a>
+     * and does not provide ordering guarantees, so is only rarely an
+     * appropriate alternative to {@@code compareAndSet}.
+d138 1
+a138 1
+     * @@return true if successful.
+d195 86
+d282 1
+a282 1
+     * @@return the String representation of the current value.
+d288 5
+a292 1
+
+d297 3
+d304 5
+d313 5
+@
+
+
+1.3
+log
+@- Updated AtomicInteger, AtomicIntegerArray, AtomicLonger, AtomicLongerArray to use .NET 2.0 interlocked operations.
+- Added stind_i8 opcode to remapper.
+@
+text
+@d2 17
+a18 3
+ * Written by Doug Lea with assistance from members of JCP JSR-166
+ * Expert Group and released to the public domain, as explained at
+ * http://creativecommons.org/licenses/publicdomain
+d20 3
+a22 1
+ * Modified for IKVM.NET by Jeroen Frijters
+d26 9
+a34 22
+  Parts Copyright (C) 2006-2011 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+d39 1
+a39 1
+ * A <tt>long</tt> value that may be updated atomically.  See the
+d42 1
+a42 1
+ * <tt>AtomicLong</tt> is used in applications such as atomically
+d45 1
+a45 1
+ * <tt>Number</tt> to allow uniform access by tools and utilities that
+d56 1
+a56 1
+     * CompareAndSet for longs. While the unsafe.CompareAndSetLong
+d74 1
+a74 1
+     * Creates a new AtomicLong with initial value <tt>0</tt>.
+d117 1
+a117 1
+     * if the current value <tt>==</tt> the expected value.
+d128 5
+a132 3
+     * if the current value <tt>==</tt> the expected value.
+     * May fail spuriously and does not provide ordering guarantees,
+     * so is only rarely an appropriate alternative to <tt>compareAndSet</tt>.
+d206 1
+a206 1
+        return (long)get();
+@
+
+
+1.2
+log
+@Converted tabs to spaces.
+@
+text
+@d10 1
+a10 1
+  Parts Copyright (C) 2006 Jeroen Frijters
+d59 1
+a59 1
+    private long value;
+d67 1
+a67 1
+        set(initialValue);
+d81 1
+a81 1
+    public final synchronized long get() {
+d90 1
+a90 1
+    public final synchronized void set(long newValue) {
+d101 1
+a101 1
+        set(newValue);
+d110 1
+a110 5
+    public final synchronized long getAndSet(long newValue) {
+        long v = value;
+        value = newValue;
+        return v;
+    }
+d121 1
+a121 7
+    public final synchronized boolean compareAndSet(long expect, long update) {
+        if (value == expect) {
+            value = update;
+            return true;
+        }
+        return false;
+    }
+d142 2
+a143 2
+    public final synchronized long getAndIncrement() {
+        return value++;
+d151 2
+a152 2
+    public final synchronized long getAndDecrement() {
+        return value--;
+d161 2
+a162 4
+    public final synchronized long getAndAdd(long delta) {
+        long v = value;
+        value += delta;
+        return v;
+d170 1
+a170 3
+    public final synchronized long incrementAndGet() {
+        return ++value;
+    }
+d177 1
+a177 3
+    public final synchronized long decrementAndGet() {
+        return --value;
+    }
+d185 1
+a185 4
+    public final synchronized long addAndGet(long delta) {
+        value += delta;
+        return value;
+    }
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@d130 1
+a130 1
+	return false;
+d144 1
+a144 1
+	return compareAndSet(expect, update);
+d216 1
+a216 1
+	return (int)get();
+d220 1
+a220 1
+	return (long)get();
+d224 1
+a224 1
+	return (float)get();
+d228 1
+a228 1
+	return (double)get();
+@
+

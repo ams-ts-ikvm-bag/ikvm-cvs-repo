@@ -1,0 +1,42 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	2015.09.02.11.19.42;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Patch by Christopher Boumenot to split platform specific binaries into a separate nuget package and build support to copy them into the output directory.
+@
+text
+@<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <version>@@VERSION@@</version>
+    <authors>Jeroen Frijters</authors>
+    <owners />
+    <licenseUrl>http://sourceforge.net/apps/mediawiki/ikvm/index.php?title=License</licenseUrl>
+    <projectUrl>http://www.ikvm.net/</projectUrl>
+    <id>IKVM.NativeBinaries</id>
+    <title>IKVM.NET Native Binaries</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>IKVM.NET is an implementation of Java for Mono and the Microsoft .NET Framework.</description>
+    <tags>IKVM.NET, Java, .NET</tags>
+    <releaseNotes>The release notes can be found here: http://ikvm.net/release/@@VERSION@@</releaseNotes>
+    <dependencies>
+      <dependency id="IKVM" version="[@@VERSION@@]" />
+    </dependencies>
+  </metadata>  
+</package>
+@

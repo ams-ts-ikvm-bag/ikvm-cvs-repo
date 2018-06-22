@@ -1,0 +1,148 @@
+head	1.3;
+access;
+symbols
+	v8_1_5717_0:1.3
+	v8_1:1.3.0.18
+	v8_0_5449_1:1.3
+	v8_0_5449_0:1.3
+	v8_0:1.3.0.16
+	v7_4_5196_0:1.3
+	v7_4:1.3.0.14
+	v7_3:1.3.0.12
+	v7_2_4630_6:1.3
+	v7_2_4630_5:1.3
+	v7_2_4630_4:1.3
+	v7_2_4630_3:1.3
+	v7_2_4630_2:1.3
+	v0_46_0_4:1.3
+	v7_2_4630_1:1.3
+	v7_2:1.3.0.10
+	v7_1_4532_2:1.3
+	v7_1_4532_1:1.3
+	v7_1_4532_0:1.3
+	v7_1:1.3.0.8
+	v7_0_4335_3:1.3
+	v7_0_4335_2:1.3
+	v7_0_4335_1:1.3
+	v0_46_0_2:1.3
+	v7_0_4335_0:1.3
+	v7_0:1.3.0.6
+	v0_40_0_6:1.1
+	v0_40_0_5:1.1
+	v0_46_0_1:1.3
+	v0_46_0_0:1.3
+	v0_46:1.3.0.4
+	v0_44_0_6:1.3
+	v0_44_0_5:1.3
+	v0_44_0_4:1.3
+	v0_44_0_3:1.3
+	v0_44_0_2:1.3
+	v0_42_0_7:1.2
+	v0_44_0_1:1.3
+	v0_44_0_0:1.3
+	v0_44:1.3.0.2
+	v0_42_0_6:1.2
+	v0_42_0_5:1.2
+	v0_42_0_4:1.2
+	v0_42_0_3:1.2
+	v0_42_0_2:1.2
+	v0_42_0_1:1.2
+	v0_42_0_0:1.2
+	v0_42:1.2.0.2
+	v0_40_0_3:1.1
+	v0_40_0_2:1.1
+	v0_40_0_1:1.1
+	v0_40_0_0:1.1
+	v0_40:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.3
+date	2009.11.01.12.01.38;	author smallsql;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2009.10.02.18.11.51;	author smallsql;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2009.03.03.20.05.35;	author smallsql;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.3
+log
+@PrintGraphics added
+@
+text
+@/*
+  Copyright (C) 2009 Volker Berlin (i-net software)
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+ */
+package sun.print;
+
+import java.awt.Graphics2D;
+
+
+
+/**
+ * A helper interface for implementing the print API for IKVM
+ */
+public interface PrintPeer{
+
+    public Object getPrinterStatus(String PrinterName, Class category);
+
+    public String getDefaultPrinterName();
+
+    public String[] getAllPrinterNames();
+    
+    public Graphics2D createGraphics(cli.System.Drawing.Graphics g);
+}
+@
+
+
+1.2
+log
+@Add getDefaultPrinterName and getAllPrinterNames to the PrintPeer
+@
+text
+@d26 2
+d40 2
+@
+
+
+1.1
+log
+@Add a PrintPeer as helper class for the print API
+@
+text
+@d34 4
+@
+

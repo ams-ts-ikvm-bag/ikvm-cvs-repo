@@ -1,0 +1,1587 @@
+head	1.69;
+access;
+symbols
+	v0_36_0_14:1.68
+	v0_36_0_13:1.68
+	v0_36_0_9:1.68
+	v0_36_0_7:1.68
+	v0_36_0_5:1.68
+	v0_36_0_4:1.68
+	v0_36_0_3:1.68
+	v0_36_0_2:1.68
+	v0_36_0_1:1.68
+	v0_36_0_0:1.68
+	v0_36:1.68.0.2
+	v0_34_0_3:1.66.2.4
+	v0_34_0_2:1.66.2.3
+	v0_34_0_1:1.66.2.2
+	v0_34_0_0:1.66.2.1
+	v0_34:1.66.0.2
+	v0_32:1.62.0.2
+	v0_32_0_0:1.62
+	v0_30:1.56.0.2
+	v0_28_0_0:1.54
+	v0_26_0_1:1.51
+	v0_26_0_0:1.50
+	v0_24_0_1:1.47
+	v0_24_0_0:1.46
+	v0_22_0_0:1.44
+	v0_20_0_0:1.40
+	v0_18_0_0:1.38
+	v0_16_0_0:1.36
+	v0_14_0_1:1.31
+	v0_14_0_0:1.30
+	v0_12_0_0:1.25
+	v0_10_0_1:1.21
+	v0_10_0_0:1.20
+	v0_8_0_0:1.14
+	initial:1.1.1.1
+	ikvm:1.1.1;
+locks; strict;
+comment	@# @;
+
+
+1.69
+date	2008.08.06.12.51.13;	author jfrijters;	state dead;
+branches;
+next	1.68;
+
+1.68
+date	2007.05.05.15.37.51;	author jfrijters;	state Exp;
+branches;
+next	1.67;
+
+1.67
+date	2007.04.09.08.32.48;	author jfrijters;	state Exp;
+branches;
+next	1.66;
+
+1.66
+date	2007.03.07.07.54.34;	author jfrijters;	state Exp;
+branches
+	1.66.2.1;
+next	1.65;
+
+1.65
+date	2007.01.15.05.52.01;	author jfrijters;	state Exp;
+branches;
+next	1.64;
+
+1.64
+date	2006.12.11.13.22.34;	author jfrijters;	state Exp;
+branches;
+next	1.63;
+
+1.63
+date	2006.12.11.13.13.27;	author jfrijters;	state Exp;
+branches;
+next	1.62;
+
+1.62
+date	2006.12.11.07.07.13;	author jfrijters;	state Exp;
+branches;
+next	1.61;
+
+1.61
+date	2006.12.05.07.52.26;	author jfrijters;	state Exp;
+branches;
+next	1.60;
+
+1.60
+date	2006.10.19.06.12.48;	author jfrijters;	state Exp;
+branches;
+next	1.59;
+
+1.59
+date	2006.10.16.05.40.35;	author jfrijters;	state Exp;
+branches;
+next	1.58;
+
+1.58
+date	2006.08.14.07.57.03;	author jfrijters;	state Exp;
+branches;
+next	1.57;
+
+1.57
+date	2006.08.04.12.06.41;	author jfrijters;	state Exp;
+branches;
+next	1.56;
+
+1.56
+date	2006.07.18.12.34.27;	author jfrijters;	state Exp;
+branches
+	1.56.2.1;
+next	1.55;
+
+1.55
+date	2006.05.23.12.49.17;	author jfrijters;	state Exp;
+branches;
+next	1.54;
+
+1.54
+date	2006.05.16.08.34.56;	author jfrijters;	state Exp;
+branches;
+next	1.53;
+
+1.53
+date	2006.04.05.11.04.43;	author jfrijters;	state Exp;
+branches;
+next	1.52;
+
+1.52
+date	2006.03.23.11.57.43;	author jfrijters;	state Exp;
+branches;
+next	1.51;
+
+1.51
+date	2006.03.11.18.35.30;	author jfrijters;	state Exp;
+branches;
+next	1.50;
+
+1.50
+date	2006.03.07.09.34.32;	author jfrijters;	state Exp;
+branches;
+next	1.49;
+
+1.49
+date	2006.02.22.14.44.07;	author jfrijters;	state Exp;
+branches;
+next	1.48;
+
+1.48
+date	2006.01.31.10.13.32;	author jfrijters;	state Exp;
+branches;
+next	1.47;
+
+1.47
+date	2006.01.23.10.18.44;	author jfrijters;	state Exp;
+branches;
+next	1.46;
+
+1.46
+date	2006.01.16.14.18.45;	author jfrijters;	state Exp;
+branches;
+next	1.45;
+
+1.45
+date	2005.12.07.09.06.32;	author jfrijters;	state Exp;
+branches;
+next	1.44;
+
+1.44
+date	2005.11.14.10.16.50;	author jfrijters;	state Exp;
+branches;
+next	1.43;
+
+1.43
+date	2005.11.01.14.01.43;	author jfrijters;	state Exp;
+branches;
+next	1.42;
+
+1.42
+date	2005.10.01.11.16.12;	author jfrijters;	state Exp;
+branches;
+next	1.41;
+
+1.41
+date	2005.09.21.14.26.38;	author jfrijters;	state Exp;
+branches;
+next	1.40;
+
+1.40
+date	2005.09.07.07.02.48;	author jfrijters;	state Exp;
+branches;
+next	1.39;
+
+1.39
+date	2005.07.25.09.53.25;	author jfrijters;	state Exp;
+branches;
+next	1.38;
+
+1.38
+date	2005.07.18.07.27.43;	author jfrijters;	state Exp;
+branches;
+next	1.37;
+
+1.37
+date	2005.07.14.08.38.53;	author jfrijters;	state Exp;
+branches;
+next	1.36;
+
+1.36
+date	2005.07.01.09.25.35;	author jfrijters;	state Exp;
+branches;
+next	1.35;
+
+1.35
+date	2005.06.20.13.41.18;	author jfrijters;	state Exp;
+branches;
+next	1.34;
+
+1.34
+date	2005.05.31.09.04.42;	author jfrijters;	state Exp;
+branches;
+next	1.33;
+
+1.33
+date	2005.05.23.08.24.08;	author jfrijters;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2005.05.13.11.41.33;	author jfrijters;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2005.05.09.07.23.01;	author jfrijters;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2005.05.02.11.11.53;	author jfrijters;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2005.04.27.06.10.01;	author jfrijters;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2005.04.18.08.34.16;	author jfrijters;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2005.04.07.09.32.13;	author jfrijters;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2005.03.03.08.20.13;	author jfrijters;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2005.03.02.09.01.35;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2005.03.01.08.24.54;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2005.02.16.11.20.45;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2005.02.02.15.11.51;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2005.01.10.08.24.27;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2005.01.07.09.34.20;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2005.01.06.09.36.49;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2005.01.05.12.32.00;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2005.01.03.08.26.22;	author jfrijters;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2004.09.02.20.02.50;	author vargaz2;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2004.07.10.07.19.57;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2004.05.27.07.12.09;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2004.05.14.09.31.57;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2004.05.05.06.46.08;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2004.03.16.17.10.11;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2004.03.08.15.18.48;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2004.02.16.10.00.55;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2004.02.10.09.53.57;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2003.12.19.22.19.18;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2003.11.17.12.01.52;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2003.08.08.12.37.25;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2003.07.21.12.13.13;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2003.03.03.15.36.26;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2003.02.25.15.48.30;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2002.12.18.16.00.29;	author jfrijters;	state Exp;
+branches
+	1.1.1.1;
+next	;
+
+1.1.1.1
+date	2002.12.18.16.00.29;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.56.2.1
+date	2006.08.03.16.06.06;	author jfrijters;	state Exp;
+branches;
+next	1.56.2.2;
+
+1.56.2.2
+date	2006.08.09.11.49.09;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.66.2.1
+date	2007.04.13.06.46.38;	author jfrijters;	state Exp;
+branches;
+next	1.66.2.2;
+
+1.66.2.2
+date	2007.04.24.08.27.33;	author jfrijters;	state Exp;
+branches;
+next	1.66.2.3;
+
+1.66.2.3
+date	2007.04.29.08.49.17;	author jfrijters;	state Exp;
+branches;
+next	1.66.2.4;
+
+1.66.2.4
+date	2007.05.30.09.46.48;	author jfrijters;	state Exp;
+branches;
+next	1.66.2.5;
+
+1.66.2.5
+date	2007.08.06.08.09.36;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.69
+log
+@Removed files that are no longer needed no that GNU Classpath support has been dropped.
+@
+text
+@<?xml version="1.0"?>
+<project name="IKVM.GNU.Classpath.dll" default="IKVM.GNU.Classpath.dll">
+    <property name="pathsep" value=":" />
+    <property overwrite="false" name="signoption" value="" />
+    <property name="Classpath.dir" value="${project::get-base-directory()}/../../classpath" />
+    <if test="${platform::is-win32()}">
+        <property name="pathsep" value=";" />
+    </if>
+
+    <target name="jars">
+        <!-- TODO
+        <exec program="${project::get-base-directory()}/../bin/ikvmstub.exe" commandline="" />
+        -->
+    </target>
+
+    <target name="classes" depends="jars" description="GNU Classpath + IKVM.NET specific Java classes">
+        <delete>
+		<fileset basedir="${Classpath.dir}">
+			<include name="**.class"/>
+		</fileset>
+	</delete>
+	<delete>
+		<fileset basedir=".">
+			<include name="**.class"/>
+		</fileset>
+	</delete>
+        <exec program="ecj" commandline="-g -1.5 -nowarn -cp mscorlib.jar${pathsep}System.jar @@allsources.lst" useruntimeengine="false" />
+    </target>
+
+    <target name="IKVM.GNU.Classpath.dll" depends="classes">
+        <exec program="${project::get-base-directory()}/../bin/ikvmc.exe" useruntimeengine="true">
+<!--
+<arg value="-debug" />
+<arg value="-srcpath:/classpath/" />
+-->
+          <arg value="-nowarn:100:java.math.BigInteger$NativeMPI" />
+          <arg value="-version:0.35.*" />
+          <arg value="${signoption}" />
+          <arg value="-compressresources" />
+          <arg value="-opt:fields" />
+          <arg value="-strictfinalfieldsemantics" />
+          <arg value="-out:IKVM.GNU.Classpath.dll" />
+          <arg value="-remap:map.xml" />
+          <arg value="-exclude:exclude.lst" />
+          <arg value="-target:library" />
+          <arg value="-recurse:./*.class" />
+          <arg value="-recurse:${Classpath.dir}/*.class" />
+          <arg value="-recurse:${Classpath.dir}/resource/*.css" />
+          <arg value="-recurse:${Classpath.dir}/resource/*.properties" />
+          <arg value="-recurse:${Classpath.dir}/resource/javax.*" />
+          <arg value="-recurse:${Classpath.dir}/resource/org.xml.*" />
+          <arg value="-r:mscorlib" />
+          <arg value="-r:${framework::get-assembly-directory(framework::get-target-framework())}/System.dll" />
+<!--
+          <arg value="-r:C:\Program Files\Microsoft Visual Studio 8\SmartDevices\SDK\CompactFramework\2.0\v2.0\WindowsCE\System.dll" />
+-->
+          <arg value="-resource:lib/security/classpath.security=${Classpath.dir}/resource/java/security/classpath.security" />
+          <arg value="-resource:META-INF/MANIFEST.MF=MANIFEST.MF" />
+        </exec>
+        <copy file="IKVM.GNU.Classpath.dll" tofile="../bin/IKVM.GNU.Classpath.dll.new" />
+        <if test="${platform::is-win32()}">
+            <call target="peverify-classpath"/>
+        </if>
+        <copy file="IKVM.GNU.Classpath.dll" todir="../bin" />
+	<delete file="../bin/IKVM.GNU.Classpath.dll.new" />
+    </target>
+
+    <target name="peverify-classpath">
+        <exec program="peverify" commandline="../bin/IKVM.GNU.Classpath.dll.new" />
+    </target>
+
+</project>
+@
+
+
+1.68
+log
+@*** empty log message ***
+@
+text
+@@
+
+
+1.67
+log
+@Updated version numbers.
+@
+text
+@d48 1
+a48 1
+          <arg value="-recurse:${Classpath.dir}/*.css" />
+@
+
+
+1.66
+log
+@Changed mscorlib reference from path to partial name to work around build problem on x64
+@
+text
+@d37 1
+a37 1
+          <arg value="-version:0.33.*" />
+@
+
+
+1.66.2.1
+log
+@Preparing for release.
+@
+text
+@d5 1
+a5 1
+    <property name="Classpath.dir" value="${project::get-base-directory()}/../../classpath-0.95" />
+d32 6
+a37 1
+          <arg value="-version:0.34.0.0" />
+d51 1
+d54 3
+@
+
+
+1.66.2.2
+log
+@Updated version numbers to 0.34.0.1
+@
+text
+@d32 1
+a32 1
+          <arg value="-version:0.34.0.1" />
+@
+
+
+1.66.2.3
+log
+@Update version to 0.34.0.2
+@
+text
+@d32 1
+a32 1
+          <arg value="-version:0.34.0.2" />
+@
+
+
+1.66.2.4
+log
+@Updated version numbers to 0.34.0.3
+@
+text
+@d32 1
+a32 1
+          <arg value="-version:0.34.0.3" />
+@
+
+
+1.66.2.5
+log
+@back ported the follwing fixes and incremented version to 0.34.0.4:
+- magic assembly type for assembly attribute annotations (bug #1721688)
+- LocalVariableTable robustness fix (bug #1765952)
+- public interfaces extending non-public interfaces
+- parameter annotations on redirected contructors
+- casting ghost interface arrays (bug #1757889)
+- JNI NewObject fix
+- make sure all implemented interface methods on .NET types are public (so that ikvmstub generates jars that javac is happy with)
+@
+text
+@d32 1
+a32 1
+          <arg value="-version:0.34.0.4" />
+@
+
+
+1.65
+log
+@*** empty log message ***
+@
+text
+@d52 1
+a52 1
+          <arg value="-r:${framework::get-assembly-directory(framework::get-target-framework())}/mscorlib.dll" />
+@
+
+
+1.64
+log
+@*** empty log message ***
+@
+text
+@d48 1
+@
+
+
+1.63
+log
+@*** empty log message ***
+@
+text
+@d37 1
+a37 1
+          <arg value="-version:0.32.0.0" />
+@
+
+
+1.62
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+<project name="IKVM.GNU.Classpath.dll" default="branch">
+d5 1
+a5 1
+    <property overwrite="false" name="generics" value="false" />
+a9 17
+    <target name="branch">
+        <call target="generics" if="${generics}" />
+        <call target="trunk" unless="${generics}" />
+    </target>
+
+    <target name="trunk">
+        <property name="Classpath.dir" value="${project::get-base-directory()}/../../classpath-0.93" />
+        <property name="allsources" value="allsources.lst" />
+        <call target="IKVM.GNU.Classpath.dll" />
+    </target>
+
+    <target name="generics">
+        <property name="Classpath.dir" value="${project::get-base-directory()}/../../classpath-0.93-generics" />
+        <property name="allsources" value="allsources-generics.lst" />
+        <call target="IKVM.GNU.Classpath.dll" />
+    </target>
+
+d27 1
+a27 1
+        <exec program="ecj" commandline="-g -1.5 -nowarn -cp mscorlib.jar${pathsep}System.jar @@${allsources}" useruntimeengine="false" />
+@
+
+
+1.61
+log
+@*** empty log message ***
+@
+text
+@d54 1
+a54 1
+          <arg value="-version:0.31.*" />
+@
+
+
+1.60
+log
+@*** empty log message ***
+@
+text
+@d16 1
+a16 1
+        <property name="Classpath.dir" value="${project::get-base-directory()}/../../classpath" />
+d22 1
+a22 1
+        <property name="Classpath.dir" value="${project::get-base-directory()}/../../classpath-generics" />
+@
+
+
+1.59
+log
+@*** empty log message ***
+@
+text
+@d53 1
+@
+
+
+1.58
+log
+@*** empty log message ***
+@
+text
+@d6 1
+a6 1
+    <if test="${nant.platform.win32}">
+d11 2
+a12 6
+        <if test="${generics}">
+            <call target="generics" />
+        </if>
+        <ifnot test="${generics}">
+            <call target="trunk" />
+        </ifnot>
+d16 1
+a16 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath" />
+d22 1
+a22 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath-generics" />
+d29 1
+a29 1
+        <exec program="${nant.project.basedir}/../bin/ikvmstub.exe" commandline="" />
+d48 1
+a48 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" useruntimeengine="true">
+d76 1
+a76 1
+        <if test="${nant.platform.win32}">
+@
+
+
+1.57
+log
+@*** empty log message ***
+@
+text
+@d71 1
+@
+
+
+1.56
+log
+@*** empty log message ***
+@
+text
+@d57 1
+a57 1
+          <arg value="-version:0.29.*" />
+@
+
+
+1.56.2.1
+log
+@*** empty log message ***
+@
+text
+@d20 1
+a20 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath-0.92" />
+d26 1
+a26 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath-0.92-generics" />
+@
+
+
+1.56.2.2
+log
+@*** empty log message ***
+@
+text
+@d57 1
+a57 1
+          <arg value="-version:0.30.0.0" />
+@
+
+
+1.55
+log
+@*** empty log message ***
+@
+text
+@d75 1
+a75 1
+          <arg value="-resource:lib/security/classpath.security=classpath.security" />
+@
+
+
+1.54
+log
+@*** empty log message ***
+@
+text
+@d20 1
+a20 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath-0.91" />
+d26 1
+a26 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath-0.91-generics" />
+d57 1
+a57 1
+          <arg value="-version:0.28.0.0" />
+@
+
+
+1.53
+log
+@*** empty log message ***
+@
+text
+@d20 1
+a20 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath" />
+d26 1
+a26 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath-generics" />
+d57 1
+a57 1
+          <arg value="-version:0.27.*" />
+@
+
+
+1.52
+log
+@*** empty log message ***
+@
+text
+@a76 3
+          <environment>
+            <variable name="IKVM_EXPERIMENTAL_JDK_5_0" value="1" />
+          </environment>
+@
+
+
+1.51
+log
+@*** empty log message ***
+@
+text
+@d20 1
+a20 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath-0.90" />
+d26 1
+a26 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath-0.90-generics" />
+d57 1
+a57 1
+          <arg value="-version:0.26.0.1" />
+@
+
+
+1.50
+log
+@*** empty log message ***
+@
+text
+@d57 1
+a57 1
+          <arg value="-version:0.26.0.0" />
+@
+
+
+1.49
+log
+@*** empty log message ***
+@
+text
+@d20 1
+a20 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath" />
+d26 1
+a26 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath-generics" />
+d57 1
+a57 1
+          <arg value="-version:0.25.*" />
+@
+
+
+1.48
+log
+@*** empty log message ***
+@
+text
+@d53 4
+@
+
+
+1.47
+log
+@*** empty log message ***
+@
+text
+@d20 1
+a20 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath-0.20" />
+d26 1
+a26 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath-0.20-generics" />
+d53 1
+a53 1
+          <arg value="-version:0.24.0.1" />
+@
+
+
+1.46
+log
+@*** empty log message ***
+@
+text
+@d53 1
+a53 1
+          <arg value="-version:0.24.0.0" />
+@
+
+
+1.45
+log
+@*** empty log message ***
+@
+text
+@d20 1
+a20 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath" />
+d26 1
+a26 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath-generics" />
+d53 1
+a53 1
+          <arg value="-version:0.23.*" />
+@
+
+
+1.44
+log
+@*** empty log message ***
+@
+text
+@d6 1
+a6 1
+    <if propertytrue="nant.platform.win32">
+a8 2
+    <property name="jikes.compiler" value="false" />
+    <property name="ecj.compiler" value="true" />
+d11 1
+a11 1
+        <if propertytrue="generics">
+d14 1
+a14 1
+        <ifnot propertytrue="generics">
+d20 1
+a20 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath-0.19" />
+d26 1
+a26 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath-0.19-generics" />
+d40 1
+a40 1
+			<includes name="**.class"/>
+d45 1
+a45 1
+			<includes name="**.class"/>
+d48 1
+a48 7
+        <if propertytrue="jikes.compiler">
+            <property name="classpath" value=".${pathsep}${Classpath.dir}${pathsep}${Classpath.dir}/external/w3c_dom${pathsep}${Classpath.dir}/external/sax${pathsep}${Classpath.dir}/vm/reference${pathsep}mscorlib.jar${pathsep}System.jar" />
+            <exec program="jikes" commandline="-g -nowarn -classpath ${classpath} @@${allsources}"/>
+        </if>
+        <if propertytrue="ecj.compiler">
+            <exec program="ecj" commandline="-g -1.5 -nowarn -cp mscorlib.jar${pathsep}System.jar @@${allsources}"/>
+        </if>
+d53 1
+a53 1
+          <arg value="-version:0.22.0.0" />
+d67 4
+a70 3
+          <arg value="mscorlib.jar" />
+          <arg value="System.jar" />
+          <arg value="System.Xml.jar" />
+d74 1
+a74 1
+            <option name="IKVM_EXPERIMENTAL_JDK_5_0" value="1" />
+d78 1
+a78 1
+        <if propertytrue="nant.platform.win32">
+@
+
+
+1.43
+log
+@*** empty log message ***
+@
+text
+@d22 1
+a22 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath" />
+d28 1
+a28 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath-generics" />
+d61 1
+a61 1
+          <arg value="-version:0.21.*" />
+@
+
+
+1.42
+log
+@*** empty log message ***
+@
+text
+@d79 1
+@
+
+
+1.41
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+<project name="IKVM.GNU.Classpath.dll" default="HEAD">
+d5 1
+d12 10
+a21 1
+    <target name="HEAD">
+@
+
+
+1.40
+log
+@*** empty log message ***
+@
+text
+@d12 1
+a12 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath-0.18" />
+d51 1
+a51 1
+          <arg value="-version:0.20.0.0" />
+@
+
+
+1.39
+log
+@*** empty log message ***
+@
+text
+@d12 1
+a12 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath" />
+d51 1
+a51 1
+          <arg value="-version:0.19.*" />
+@
+
+
+1.38
+log
+@*** empty log message ***
+@
+text
+@d12 1
+a12 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath-0.17" />
+d51 1
+a51 1
+          <arg value="-version:0.18.0.0" />
+@
+
+
+1.37
+log
+@*** empty log message ***
+@
+text
+@d12 1
+a12 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath" />
+d51 1
+a51 1
+          <arg value="-version:0.17.*" />
+@
+
+
+1.36
+log
+@*** empty log message ***
+@
+text
+@d9 1
+a9 1
+    <property name="ecj.compiler" value="false" />
+d12 1
+a12 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath-0.16" />
+a13 1
+        <property name="jikes.compiler" value="true" />
+a19 1
+        <property name="ecj.compiler" value="true" />
+d51 1
+a51 1
+          <arg value="-version:0.16.0.0" />
+d55 1
+@
+
+
+1.35
+log
+@*** empty log message ***
+@
+text
+@d12 1
+a12 1
+        <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath" />
+d53 1
+a53 1
+          <arg value="-version:0.15.*" />
+@
+
+
+1.34
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 2
+<project name="IKVM.GNU.Classpath.dll" default="IKVM.GNU.Classpath.dll">
+    <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath" />
+a4 3
+    <property name="jikes.compiler" value="true" />
+    <property name="ecj.compiler" value="false" />
+
+d8 16
+d44 1
+a44 1
+            <exec program="jikes" commandline="-g -nowarn -classpath ${classpath} @@allsources.lst"/>
+d47 1
+a47 1
+            <exec program="ecj" commandline="-g -1.5 -nowarn -cp mscorlib.jar${pathsep}System.jar @@allsources.lst"/>
+@
+
+
+1.33
+log
+@*** empty log message ***
+@
+text
+@d40 22
+a61 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" useruntimeengine="true" commandline="-version:0.15.* ${signoption} -compressresources -opt:fields -out:IKVM.GNU.Classpath.dll -remap:map.xml -exclude:exclude.lst -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class -recurse:${Classpath.dir}/resource/*.properties mscorlib.jar System.jar System.Xml.jar -resource:lib/security/classpath.security=classpath.security" />
+@
+
+
+1.32
+log
+@*** empty log message ***
+@
+text
+@d40 1
+a40 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" useruntimeengine="true" commandline="-version:0.15.* ${signoption} -opt:fields -out:IKVM.GNU.Classpath.dll -remap:map.xml -exclude:exclude.lst -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class -recurse:${Classpath.dir}/resource/*.properties mscorlib.jar System.jar System.Xml.jar -resource:lib/security/classpath.security=classpath.security" />
+@
+
+
+1.31
+log
+@*** empty log message ***
+@
+text
+@d3 1
+a3 1
+    <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath-0.15" />
+d40 1
+a40 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" useruntimeengine="true" commandline="-version:0.14.0.1 ${signoption} -opt:fields -out:IKVM.GNU.Classpath.dll -remap:map.xml -exclude:exclude.lst -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class -recurse:${Classpath.dir}/resource/*.properties mscorlib.jar System.jar System.Xml.jar -resource:lib/security/classpath.security=classpath.security" />
+@
+
+
+1.30
+log
+@*** empty log message ***
+@
+text
+@d40 1
+a40 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" useruntimeengine="true" commandline="-version:0.14.0.0 ${signoption} -opt:fields -out:IKVM.GNU.Classpath.dll -remap:map.xml -exclude:exclude.lst -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class -recurse:${Classpath.dir}/resource/*.properties mscorlib.jar System.jar System.Xml.jar -resource:lib/security/classpath.security=classpath.security" />
+@
+
+
+1.29
+log
+@*** empty log message ***
+@
+text
+@d3 1
+a3 1
+    <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath" />
+d40 1
+a40 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" useruntimeengine="true" commandline="-version:0.13.* ${signoption} -opt:fields -out:IKVM.GNU.Classpath.dll -remap:map.xml -exclude:exclude.lst -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class -recurse:${Classpath.dir}/resource/*.properties mscorlib.jar System.jar System.Xml.jar -resource:lib/security/classpath.security=classpath.security" />
+@
+
+
+1.28
+log
+@*** empty log message ***
+@
+text
+@d40 1
+a40 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" useruntimeengine="true" commandline="-version:0.13.* ${signoption} -enabletls -opt:fields -out:IKVM.GNU.Classpath.dll -remap:map.xml -exclude:exclude.lst -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class -recurse:${Classpath.dir}/resource/*.properties mscorlib.jar System.jar System.Xml.jar -resource:lib/security/classpath.security=classpath.security" />
+@
+
+
+1.27
+log
+@*** empty log message ***
+@
+text
+@d40 1
+a40 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" useruntimeengine="true" commandline="-version:0.13.* ${signoption} -enabletls -opt:fields -nojni -out:IKVM.GNU.Classpath.dll -remap:map.xml -exclude:exclude.lst -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class -recurse:${Classpath.dir}/resource/*.properties mscorlib.jar System.jar System.Xml.jar -resource:lib/security/classpath.security=classpath.security" />
+@
+
+
+1.26
+log
+@*** empty log message ***
+@
+text
+@d40 1
+a40 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" useruntimeengine="true" commandline="-version:0.13.* ${signoption} -monoBugWorkaround -enabletls -opt:fields -nojni -out:IKVM.GNU.Classpath.dll -remap:map.xml -exclude:exclude.lst -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class -recurse:${Classpath.dir}/resource/*.properties mscorlib.jar System.jar System.Xml.jar -resource:lib/security/classpath.security=classpath.security" />
+@
+
+
+1.25
+log
+@*** empty log message ***
+@
+text
+@d3 1
+a3 1
+    <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath-0.14" />
+d40 1
+a40 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" useruntimeengine="true" commandline="-version:0.12.0.0 ${signoption} -monoBugWorkaround -enabletls -opt:fields -nojni -out:IKVM.GNU.Classpath.dll -remap:map.xml -exclude:exclude.lst -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class -recurse:${Classpath.dir}/resource/*.properties mscorlib.jar System.jar System.Xml.jar -resource:lib/security/classpath.security=classpath.security" />
+@
+
+
+1.24
+log
+@*** empty log message ***
+@
+text
+@d40 1
+a40 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" useruntimeengine="true" commandline="-version:0.11.* ${signoption} -monoBugWorkaround -enabletls -opt:fields -nojni -out:IKVM.GNU.Classpath.dll -remap:map.xml -exclude:exclude.lst -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class -recurse:${Classpath.dir}/resource/*.properties mscorlib.jar System.jar System.Xml.jar -resource:lib/security/classpath.security=classpath.security" />
+@
+
+
+1.23
+log
+@*** empty log message ***
+@
+text
+@d3 1
+a3 1
+    <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath" />
+@
+
+
+1.22
+log
+@*** empty log message ***
+@
+text
+@d40 1
+a40 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" useruntimeengine="true" commandline="-version:0.11.* ${signoption} -monoBugWorkaround -opt:fields -nojni -out:IKVM.GNU.Classpath.dll -remap:map.xml -exclude:exclude.lst -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class -recurse:${Classpath.dir}/resource/*.properties mscorlib.jar System.jar System.Xml.jar -resource:lib/security/classpath.security=classpath.security" />
+@
+
+
+1.21
+log
+@*** empty log message ***
+@
+text
+@d3 1
+a3 1
+    <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath-0.13" />
+d6 2
+d30 7
+a36 2
+        <property name="classpath" value=".${pathsep}${Classpath.dir}${pathsep}${Classpath.dir}/external/w3c_dom${pathsep}${Classpath.dir}/external/sax${pathsep}${Classpath.dir}/vm/reference${pathsep}mscorlib.jar${pathsep}System.jar" />
+        <exec program="jikes" commandline="-g -nowarn -classpath ${classpath} @@allsources.lst"/>
+d40 1
+a40 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" useruntimeengine="true" commandline="-version:0.10.0.1 ${signoption} -monoBugWorkaround -opt:fields -nojni -out:IKVM.GNU.Classpath.dll -remap:map.xml -exclude:exclude.lst -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class -recurse:${Classpath.dir}/*.properties -recurse:${Classpath.dir}/resource/*.properties mscorlib.jar System.jar System.Xml.jar -resource:lib/security/classpath.security=classpath.security" />
+d43 2
+a44 2
+			<call target="peverify-classpath"/>
+		</if>
+d49 1
+a49 1
+	<target name="peverify-classpath">
+d51 1
+a51 1
+	</target>
+@
+
+
+1.20
+log
+@*** empty log message ***
+@
+text
+@d33 1
+a33 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" useruntimeengine="true" commandline="-version:0.10.0.0 ${signoption} -monoBugWorkaround -opt:fields -nojni -out:IKVM.GNU.Classpath.dll -remap:map.xml -exclude:exclude.lst -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class -recurse:${Classpath.dir}/*.properties -recurse:${Classpath.dir}/resource/*.properties mscorlib.jar System.jar System.Xml.jar -resource:lib/security/classpath.security=classpath.security" />
+@
+
+
+1.19
+log
+@*** empty log message ***
+@
+text
+@d3 1
+a3 1
+    <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath" />
+d5 2
+d9 1
+a9 1
+    </if>   
+d33 1
+a33 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" useruntimeengine="true" commandline="-version:0.9.* -monoBugWorkaround -opt:fields -nojni -out:IKVM.GNU.Classpath.dll -remap:map.xml -exclude:exclude.lst -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class -recurse:${Classpath.dir}/*.properties -recurse:${Classpath.dir}/resource/*.properties mscorlib.jar System.jar System.Xml.jar -resource:lib/security/classpath.security=classpath.security" />
+@
+
+
+1.18
+log
+@*** empty log message ***
+@
+text
+@d31 1
+a31 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" useruntimeengine="true" commandline="-version:0.9.* -opt:fields -nojni -out:IKVM.GNU.Classpath.dll -remap:map.xml -exclude:exclude.lst -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class -recurse:${Classpath.dir}/*.properties -recurse:${Classpath.dir}/resource/*.properties mscorlib.jar System.jar System.Xml.jar -resource:lib/security/classpath.security=classpath.security" />
+@
+
+
+1.17
+log
+@*** empty log message ***
+@
+text
+@d31 1
+a31 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" useruntimeengine="true" commandline="-version:0.9.* -nojni -out:IKVM.GNU.Classpath.dll -remap:map.xml -exclude:exclude.lst -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class -recurse:${Classpath.dir}/*.properties -recurse:${Classpath.dir}/resource/*.properties mscorlib.jar System.jar System.Xml.jar -resource:lib/security/classpath.security=classpath.security" />
+@
+
+
+1.16
+log
+@Do not call peverify on unix.
+@
+text
+@d26 1
+a26 1
+        <property name="classpath" value=".${pathsep}${Classpath.dir}${pathsep}${Classpath.dir}/vm/reference${pathsep}mscorlib.jar${pathsep}System.jar" />
+@
+
+
+1.15
+log
+@*** empty log message ***
+@
+text
+@d33 3
+a35 1
+        <exec program="peverify" commandline="../bin/IKVM.GNU.Classpath.dll.new" />
+d39 5
+@
+
+
+1.14
+log
+@*** empty log message ***
+@
+text
+@d3 1
+a3 1
+    <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath-0.09" />
+d31 1
+a31 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" useruntimeengine="true" commandline="-version:0.9 -nojni -out:IKVM.GNU.Classpath.dll -remap:map.xml -exclude:exclude.lst -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class -recurse:${Classpath.dir}/*.properties -recurse:${Classpath.dir}/resource/*.properties mscorlib.jar System.jar System.Xml.jar -resource:lib/security/classpath.security=classpath.security" />
+@
+
+
+1.13
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+<project name="classpath.dll" default="classpath.dll">
+d11 1
+a11 1
+        <exec program="${nant.project.basedir}/../bin/netexp.exe" commandline="" />
+d15 1
+a15 1
+    <target name="classes" depends="jars" description="Classpath + IK.VM.NET specifica Java classes">
+d30 6
+a35 6
+    <target name="classpath.dll" depends="classes">
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" useruntimeengine="true" commandline="-version:0.9 -nojni -out:classpath.dll -remap:map.xml -exclude:exclude.lst -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class -recurse:${Classpath.dir}/*.properties -recurse:${Classpath.dir}/resource/*.properties mscorlib.jar System.jar System.Xml.jar -resource:lib/security/classpath.security=classpath.security" />
+        <copy file="classpath.dll" tofile="../bin/classpath.dll.new" />
+        <exec program="peverify" commandline="../bin/classpath.dll.new" />
+        <copy file="classpath.dll" todir="../bin" />
+	<delete file="../bin/classpath.dll.new" />
+@
+
+
+1.12
+log
+@*** empty log message ***
+@
+text
+@d31 1
+a31 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" useruntimeengine="true" commandline="-nojni -out:classpath.dll -remap:map.xml -exclude:exclude.lst -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class -recurse:${Classpath.dir}/*.properties -recurse:${Classpath.dir}/resource/*.properties mscorlib.jar System.jar System.Xml.jar -resource:lib/security/classpath.security=classpath.security" />
+@
+
+
+1.11
+log
+@*** empty log message ***
+@
+text
+@d3 1
+a3 1
+    <property name="Classpath.dir" value="${nant.project.basedir}/../../classpath" />
+@
+
+
+1.10
+log
+@*** empty log message ***
+@
+text
+@d31 1
+a31 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" useruntimeengine="true" commandline="-nojni -out:classpath.dll -remap:map.xml -exclude:exclude.lst -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class -recurse:${Classpath.dir}/*.properties mscorlib.jar System.jar System.Xml.jar -resource:lib/security/classpath.security=classpath.security" />
+@
+
+
+1.9
+log
+@*** empty log message ***
+@
+text
+@d31 1
+a31 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" useruntimeengine="true" commandline="-nojni -noTypeInitWarning -out:classpath.dll -exclude:exclude.lst -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class -recurse:${Classpath.dir}/*.properties mscorlib.jar System.jar System.Xml.jar -resource:lib/security/classpath.security=classpath.security" />
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@d31 1
+a31 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" useruntimeengine="true" commandline="-nojni -out:classpath.dll -exclude:exclude.lst -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class -recurse:${Classpath.dir}/*.properties mscorlib.jar System.jar System.Xml.jar -resource:lib/security/classpath.security=classpath.security" />
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d27 1
+a27 1
+        <exec program="jikes" commandline="-g -classpath ${classpath} @@allsources.lst"/>
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d3 5
+a7 1
+    <property name="Classpath.dir" value="/classpath" />
+d26 2
+a27 2
+        <property name="classpath" value=".;${Classpath.dir};${Classpath.dir}/vm/reference;mscorlib.jar;System.jar" />
+        <exec program="jikes.exe" commandline="-g:vars -classpath ${classpath} @@allsources.lst"/>
+d31 1
+a31 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" commandline="-nojni -out:classpath.dll -exclude:exclude.lst -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class -recurse:${Classpath.dir}/*.properties mscorlib.jar System.jar System.Xml.jar -resource:lib/security/classpath.security=classpath.security" />
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d27 1
+a27 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" commandline="-nojni -out:classpath.dll -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class -recurse:${Classpath.dir}/*.properties mscorlib.jar System.jar System.Xml.jar -resource:lib/security/classpath.security=classpath.security" />
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d27 1
+a27 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" commandline="-nojni -out:classpath.dll -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class mscorlib.jar System.jar System.Xml.jar -resource:lib/security/classpath.security=classpath.security" />
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d23 1
+a23 1
+        <exec program="jikes.exe" commandline="-classpath ${classpath} @@allsources.lst"/>
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d3 1
+a3 1
+    <property name="Classpath.dir" value="/classpath-0.04" />
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d27 1
+a27 1
+        <exec program="${nant.project.basedir}/../bin/ikvmc.exe" commandline="-nojni -out:classpath.dll -target:library -recurse:./*.class -recurse:${Classpath.dir}/*.class mscorlib.jar System.jar System.Xml.jar" />
+@
+
+
+1.1.1.1
+log
+@no message
+@
+text
+@@

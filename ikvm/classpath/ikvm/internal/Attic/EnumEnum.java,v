@@ -1,0 +1,86 @@
+head	1.2;
+access;
+symbols
+	v0_36_0_14:1.1
+	v0_36_0_13:1.1
+	v0_36_0_9:1.1
+	v0_36_0_7:1.1
+	v0_36_0_5:1.1
+	v0_36_0_4:1.1
+	v0_36_0_3:1.1
+	v0_36_0_2:1.1
+	v0_36_0_1:1.1
+	v0_36_0_0:1.1
+	v0_36:1.1.0.4
+	v0_34_0_3:1.1
+	v0_34_0_2:1.1
+	v0_34_0_1:1.1
+	v0_34_0_0:1.1
+	v0_34:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2008.03.03.07.05.21;	author jfrijters;	state dead;
+branches;
+next	1.1;
+
+1.1
+date	2007.01.04.07.46.40;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@Replaced notion of DynamicOnly types with Fake types. Fake types are implemented as generic type instances and can have DynamicOnly methods.
+@
+text
+@/*
+  Copyright (C) 2006 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+package ikvm.internal;
+
+enum EnumEnum
+{
+    // This class is used as a proxy class for all __Enum enum classes that represent .NET enum types as Java enums.
+    // In map.xml an instance field named "typeWrapper" is added to this class, to record the actual type of the enum
+    // instance. Object.getClass() (in particular IKVM.NativeCode.ikvm.runtime.GetTypeWrapperFromObject) is special
+    // cased for this class.
+    // Objects of this class are constructed by invoking the private (String,int) constructor using reflection.
+}
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@@
+

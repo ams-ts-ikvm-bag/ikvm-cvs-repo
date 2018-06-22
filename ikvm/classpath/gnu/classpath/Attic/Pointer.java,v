@@ -1,0 +1,63 @@
+head	1.2;
+access;
+symbols
+	v0_30:1.1.0.2
+	v0_28_0_0:1.1
+	v0_26_0_1:1.1
+	v0_26_0_0:1.1
+	v0_24_0_1:1.1
+	v0_24_0_0:1.1
+	v0_22_0_0:1.1
+	v0_20_0_0:1.1;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2006.10.19.06.12.48;	author jfrijters;	state dead;
+branches;
+next	1.1;
+
+1.1
+date	2005.08.03.14.10.02;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@package gnu.classpath;
+
+// NOTE this class isn't actually used (only during compilation)
+// at runtime, gnu.classpath.Pointer in IKVM.Runtime is used instead
+public final class Pointer
+{
+    public Pointer(cli.System.IntPtr p)
+    {
+    }
+
+    public native cli.System.IntPtr p();
+
+    public native void MoveMemory(int dst_offset, int src_offset, int count);
+
+    public native byte ReadByte(int index);
+
+    public native void WriteByte(int index, byte b);
+}
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@@
+

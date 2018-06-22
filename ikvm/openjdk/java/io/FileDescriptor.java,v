@@ -1,0 +1,1871 @@
+head	1.25;
+access;
+symbols
+	v8_1_5717_0:1.25
+	v8_1:1.25.0.4
+	v8_0_5449_1:1.25
+	v8_0_5449_0:1.25
+	v8_0:1.25.0.2
+	v7_4_5196_0:1.24
+	v7_4:1.24.0.4
+	v7_3:1.24.0.2
+	v7_2_4630_6:1.23
+	v7_2_4630_5:1.23
+	v7_2_4630_4:1.23
+	v7_2_4630_3:1.23
+	v7_2_4630_2:1.23
+	v0_46_0_4:1.19
+	v7_2_4630_1:1.23
+	v7_2:1.23.0.2
+	v7_1_4532_2:1.22
+	v7_1_4532_1:1.22
+	v7_1_4532_0:1.22
+	v7_1:1.22.0.4
+	v7_0_4335_3:1.22
+	v7_0_4335_2:1.22
+	v7_0_4335_1:1.22
+	v0_46_0_2:1.19
+	v7_0_4335_0:1.22
+	v7_0:1.22.0.2
+	v0_40_0_6:1.13
+	v0_40_0_5:1.13
+	v0_46_0_1:1.19
+	v0_46_0_0:1.19
+	v0_46:1.19.0.2
+	v0_36_0_14:1.6
+	v0_44_0_6:1.16
+	v0_44_0_5:1.16
+	v0_44_0_4:1.16
+	v0_44_0_3:1.16
+	v0_44_0_2:1.16
+	v0_42_0_7:1.13
+	v0_44_0_1:1.16
+	v0_44_0_0:1.16
+	v0_44:1.16.0.2
+	v0_42_0_6:1.13
+	v0_42_0_5:1.13
+	v0_42_0_4:1.13
+	v0_42_0_3:1.13
+	v0_42_0_2:1.13
+	v0_42_0_1:1.13
+	v0_42_0_0:1.13
+	v0_42:1.13.0.4
+	v0_40_0_3:1.13
+	v0_40_0_2:1.13
+	v0_40_0_1:1.13
+	v0_40_0_0:1.13
+	v0_40:1.13.0.2
+	v0_36_0_13:1.6
+	v0_38_0_1:1.12
+	v0_38_0_0:1.12
+	v0_38:1.12.0.2
+	v0_36_0_9:1.6
+	v0_36_0_7:1.6
+	v0_36_0_5:1.6
+	v0_36_0_4:1.6
+	v0_36_0_3:1.6
+	v0_36_0_2:1.6
+	v0_36_0_1:1.6
+	v0_36_0_0:1.6
+	v0_36:1.6.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.25
+date	2014.05.19.12.43.37;	author jfrijters;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2012.11.01.11.19.43;	author jfrijters;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2012.08.29.07.18.06;	author jfrijters;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2011.08.25.14.31.55;	author jfrijters;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2011.07.15.09.05.27;	author jfrijters;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2011.07.01.06.01.17;	author jfrijters;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2011.01.24.16.40.22;	author jfrijters;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2010.12.27.05.51.42;	author jfrijters;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2010.12.19.12.40.23;	author smallsql;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2010.06.08.12.47.51;	author jfrijters;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2010.04.12.06.38.46;	author jfrijters;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2010.04.08.13.06.36;	author jfrijters;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2009.03.09.06.29.54;	author jfrijters;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2008.07.21.12.16.41;	author jfrijters;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2008.06.13.09.01.03;	author jfrijters;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2008.06.12.09.09.13;	author jfrijters;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2008.06.11.09.05.01;	author jfrijters;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2008.04.07.04.31.10;	author jfrijters;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2008.03.30.06.51.29;	author jfrijters;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2007.08.21.07.23.53;	author jfrijters;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2007.07.20.09.17.26;	author jfrijters;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2007.07.12.08.40.32;	author jfrijters;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2007.06.27.06.14.54;	author jfrijters;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.06.25.06.45.29;	author jfrijters;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.06.18.09.16.20;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.25
+log
+@First part of OpenJDK 8 integration.
+@
+text
+@/*
+ * Copyright (c) 2003, 2011, Oracle and/or its affiliates. All rights reserved.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 only, as
+ * published by the Free Software Foundation.  Oracle designates this
+ * particular file as subject to the "Classpath" exception as provided
+ * by Oracle in the LICENSE file that accompanied this code.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * You should have received a copy of the GNU General Public License version
+ * 2 along with this work; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+ * or visit www.oracle.com if you need additional information or have any
+ * questions.
+ */
+
+package java.io;
+
+import cli.System.IO.FileAccess;
+import cli.System.IO.FileMode;
+import cli.System.IO.FileShare;
+import cli.System.IO.FileStream;
+import cli.System.IO.SeekOrigin;
+import cli.System.Runtime.InteropServices.DllImportAttribute;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Instances of the file descriptor class serve as an opaque handle
+ * to the underlying machine-specific structure representing an
+ * open file, an open socket, or another source or sink of bytes.
+ * The main practical use for a file descriptor is to create a
+ * {@@link FileInputStream} or {@@link FileOutputStream} to contain it.
+ *
+ * <p>Applications should not create their own file descriptors.
+ *
+ * @@author  Pavani Diwanji
+ * @@since   JDK1.0
+ */
+public final class FileDescriptor {
+
+    private volatile cli.System.IO.Stream stream;
+    private volatile cli.System.Net.Sockets.Socket socket;
+    private volatile boolean nonBlockingSocket;
+    private volatile cli.System.IAsyncResult asyncResult;
+
+    /**
+     * HACK
+     *   JRuby uses reflection to get at the handle (on Windows) and fd (on non-Windows)
+     *   fields to convert it into a native handle and query if it is a tty.
+     */
+    @@ikvm.lang.Property(get = "get_fd")
+    private int fd;
+
+    @@ikvm.lang.Property(get = "get_handle")
+    private long handle;
+
+    private Closeable parent;
+    private List<Closeable> otherParents;
+    private boolean closed;
+    
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    private long get_handle()
+    {
+        if (ikvm.internal.Util.WINDOWS)
+        {
+            if (stream instanceof cli.System.IO.FileStream)
+            {
+                cli.System.IO.FileStream fs = (cli.System.IO.FileStream)stream;
+                return fs.get_Handle().ToInt64();
+            }
+            else if (this == in)
+            {
+                return GetStdHandle(-10).ToInt64();
+            }
+            else if (this == out)
+            {
+                return GetStdHandle(-11).ToInt64();
+            }
+            else if (this == err)
+            {
+                return GetStdHandle(-12).ToInt64();
+            }
+        }
+        return -1;
+    }
+    
+    @@cli.System.Security.SecurityCriticalAttribute.Annotation
+    private int get_fd()
+    {
+        if (!ikvm.internal.Util.WINDOWS)
+        {
+            if (stream instanceof cli.System.IO.FileStream)
+            {
+                cli.System.IO.FileStream fs = (cli.System.IO.FileStream)stream;
+                return fs.get_Handle().ToInt32();
+            }
+            else if (this == in)
+            {
+                return 0;
+            }
+            else if (this == out)
+            {
+                return 1;
+            }
+            else if (this == err)
+            {
+                return 2;
+            }
+        }
+        return -1;
+    }
+    
+    @@DllImportAttribute.Annotation("kernel32")
+    private static native cli.System.IntPtr GetStdHandle(int nStdHandle);
+
+    /**
+     * Constructs an (invalid) FileDescriptor
+     * object.
+     */
+    public /**/ FileDescriptor() {
+    }
+
+    /**
+     * A handle to the standard input stream. Usually, this file
+     * descriptor is not used directly, but rather via the input stream
+     * known as {@@code System.in}.
+     *
+     * @@see     java.lang.System#in
+     */
+    public static final FileDescriptor in = standardStream(0);
+
+    /**
+     * A handle to the standard output stream. Usually, this file
+     * descriptor is not used directly, but rather via the output stream
+     * known as {@@code System.out}.
+     * @@see     java.lang.System#out
+     */
+    public static final FileDescriptor out = standardStream(1);
+
+    /**
+     * A handle to the standard error stream. Usually, this file
+     * descriptor is not used directly, but rather via the output stream
+     * known as {@@code System.err}.
+     *
+     * @@see     java.lang.System#err
+     */
+    public static final FileDescriptor err = standardStream(2);
+
+    /**
+     * Tests if this file descriptor object is valid.
+     *
+     * @@return  {@@code true} if the file descriptor object represents a
+     *          valid, open file, socket, or other active I/O connection;
+     *          {@@code false} otherwise.
+     */
+    public boolean valid() {
+        return stream != null || socket != null;
+    }
+
+    /**
+     * Force all system buffers to synchronize with the underlying
+     * device.  This method returns after all modified data and
+     * attributes of this FileDescriptor have been written to the
+     * relevant device(s).  In particular, if this FileDescriptor
+     * refers to a physical storage medium, such as a file in a file
+     * system, sync will not return until all in-memory modified copies
+     * of buffers associated with this FileDesecriptor have been
+     * written to the physical medium.
+     *
+     * sync is meant to be used by code that requires physical
+     * storage (such as a file) to be in a known state  For
+     * example, a class that provided a simple transaction facility
+     * might use sync to ensure that all changes to a file caused
+     * by a given transaction were recorded on a storage medium.
+     *
+     * sync only affects buffers downstream of this FileDescriptor.  If
+     * any in-memory buffering is being done by the application (for
+     * example, by a BufferedOutputStream object), those buffers must
+     * be flushed into the FileDescriptor (for example, by invoking
+     * OutputStream.flush) before that data will be affected by sync.
+     *
+     * @@exception SyncFailedException
+     *        Thrown when the buffers cannot be flushed,
+     *        or because the system cannot guarantee that all the
+     *        buffers have been synchronized with physical media.
+     * @@since     JDK1.1
+     */
+    public void sync() throws SyncFailedException
+    {
+        if (stream == null)
+        {
+            throw new SyncFailedException("sync failed");
+        }
+
+        if (!stream.get_CanWrite())
+        {
+            return;
+        }
+
+        try
+        {
+            if (false) throw new cli.System.IO.IOException();
+            stream.Flush();
+        }
+        catch (cli.System.IO.IOException x)
+        {
+            throw new SyncFailedException(x.getMessage());
+        }
+
+        if (stream instanceof FileStream)
+        {
+            FileStream fs = (FileStream)stream;
+            boolean ok = ikvm.internal.Util.WINDOWS ? flushWin32(fs) : flushPosix(fs);
+            if (!ok)
+            {
+                throw new SyncFailedException("sync failed");
+            }
+        }
+    }
+
+    private static native boolean flushPosix(FileStream fs);
+
+    @@cli.System.Security.SecuritySafeCriticalAttribute.Annotation
+    private static boolean flushWin32(FileStream fs)
+    {
+        return FlushFileBuffers(fs.get_SafeFileHandle()) != 0;
+    }
+
+    @@DllImportAttribute.Annotation("kernel32")
+    private static native int FlushFileBuffers(cli.Microsoft.Win32.SafeHandles.SafeFileHandle handle);
+
+    private static FileDescriptor standardStream(int fd) {
+        FileDescriptor desc = new FileDescriptor();
+        try
+        {
+            desc.stream = getStandardStream(fd);
+        }
+        catch (cli.System.MissingMethodException _)
+        {
+            desc.stream = cli.System.IO.Stream.Null;
+        }
+        return desc;
+    }
+
+    private static cli.System.IO.Stream getStandardStream(int fd) throws cli.System.MissingMethodException
+    {
+        switch (fd)
+        {
+            case 0:
+                return cli.System.Console.OpenStandardInput();
+            case 1:
+                return cli.System.Console.OpenStandardOutput();
+            case 2:
+                return cli.System.Console.OpenStandardError();
+            default:
+                throw new Error();
+        }
+    }
+
+    /*
+     * Package private methods to track referents.
+     * If multiple streams point to the same FileDescriptor, we cycle
+     * through the list of all referents and call close()
+     */
+
+    /**
+     * Attach a Closeable to this FD for tracking.
+     * parent reference is added to otherParents when
+     * needed to make closeAll simpler.
+     */
+    synchronized void attach(Closeable c) {
+        if (parent == null) {
+            // first caller gets to do this
+            parent = c;
+        } else if (otherParents == null) {
+            otherParents = new ArrayList<>();
+            otherParents.add(parent);
+            otherParents.add(c);
+        } else {
+            otherParents.add(c);
+        }
+    }
+
+    /**
+     * Cycle through all Closeables sharing this FD and call
+     * close() on each one.
+     *
+     * The caller closeable gets to call close0().
+     */
+    @@SuppressWarnings("try")
+    synchronized void closeAll(Closeable releaser) throws IOException {
+        if (!closed) {
+            closed = true;
+            IOException ioe = null;
+            try (Closeable c = releaser) {
+                if (otherParents != null) {
+                    for (Closeable referent : otherParents) {
+                        try {
+                            referent.close();
+                        } catch(IOException x) {
+                            if (ioe == null) {
+                                ioe = x;
+                            } else {
+                                ioe.addSuppressed(x);
+                            }
+                        }
+                    }
+                }
+            } catch(IOException ex) {
+                /*
+                 * If releaser close() throws IOException
+                 * add other exceptions as suppressed.
+                 */
+                if (ioe != null)
+                    ex.addSuppressed(ioe);
+                ioe = ex;
+            } finally {
+                if (ioe != null)
+                    throw ioe;
+            }
+        }
+    }
+
+    void openReadOnly(String name) throws FileNotFoundException
+    {
+        open(name, FileMode.Open, FileAccess.Read);
+    }
+
+    void openWriteOnly(String name) throws FileNotFoundException
+    {
+        open(name, FileMode.Create, FileAccess.Write);
+    }
+
+    void openReadWrite(String name) throws FileNotFoundException
+    {
+        open(name, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+    }
+
+    void openAppend(String name) throws FileNotFoundException
+    {
+        open(name, FileMode.Append, FileAccess.Write);
+    }
+
+    private static native cli.System.IO.Stream open(String name, FileMode fileMode, FileAccess fileAccess)
+        throws cli.System.IO.IOException,
+            cli.System.Security.SecurityException,
+            cli.System.UnauthorizedAccessException,
+            cli.System.ArgumentException,
+            cli.System.NotSupportedException;
+    
+    private void open(String name, int fileMode, int fileAccess) throws FileNotFoundException
+    {
+        try
+        {
+            stream = open(name, FileMode.wrap(fileMode), FileAccess.wrap(fileAccess));
+        }
+        catch (cli.System.Security.SecurityException x1)
+        {
+            throw new SecurityException(x1.getMessage());
+        }
+        catch (cli.System.IO.IOException x2)
+        {
+            throw new FileNotFoundException(x2.getMessage());
+        }
+        catch (cli.System.UnauthorizedAccessException x3)
+        {
+            // this is caused by "name" being a directory instead of a file
+            // or by name being a read-only file
+            throw new FileNotFoundException(name + " (Access is denied)");
+        }
+        catch (cli.System.ArgumentException x4)
+        {
+            throw new FileNotFoundException(x4.getMessage());
+        }
+        catch (cli.System.NotSupportedException x5)
+        {
+            throw new FileNotFoundException(x5.getMessage());
+        }
+    }
+
+    private void checkOpen() throws IOException
+    {
+        if (stream == null)
+        {
+            throw new IOException("Stream Closed");
+        }
+    }
+
+    int read() throws IOException
+    {
+        checkOpen();
+        try
+        {
+            if (false) throw new cli.System.NotSupportedException();
+            if (false) throw new cli.System.IO.IOException();
+            if (false) throw new cli.System.ObjectDisposedException(null);
+            return stream.ReadByte();
+        }
+        catch (cli.System.NotSupportedException x)
+        {
+            throw new IOException(x.getMessage());
+        }
+        catch (cli.System.IO.IOException x)
+        {
+            throw new IOException(x.getMessage());
+        }
+        catch (cli.System.ObjectDisposedException x)
+        {
+            throw new java.nio.channels.ClosedChannelException();
+        }
+    }
+
+    @@ikvm.lang.Internal
+    public int readBytes(byte buf[], int offset, int len) throws IOException
+    {
+        // NOTE we start by dereferencing buf, to make sure you get a NullPointerException first if you pass a null reference.
+        int bufLen = buf.length;
+        if ((offset < 0) || (offset > bufLen) || (len < 0) || (len > (bufLen - offset)))
+        {
+            throw new IndexOutOfBoundsException();
+        }
+
+        if (len == 0)
+        {
+            return 0;
+        }
+
+        checkOpen();
+
+        try
+        {
+            if (false) throw new cli.System.NotSupportedException();
+            if (false) throw new cli.System.IO.IOException();
+            if (false) throw new cli.System.ObjectDisposedException(null);
+            int count = stream.Read(buf, offset, len);
+            if (count == 0)
+            {
+                count = -1;
+            }
+            return count;
+        }
+        catch (cli.System.NotSupportedException x)
+        {
+            throw new IOException(x.getMessage());
+        }
+        catch (cli.System.IO.IOException x)
+        {
+            throw new IOException(x.getMessage());
+        }
+        catch (cli.System.ObjectDisposedException x)
+        {
+            throw new java.nio.channels.ClosedChannelException();
+        }
+    }
+
+    long skip(long n) throws IOException
+    {
+        checkOpen();
+        if (!stream.get_CanSeek())
+        {
+            // in a somewhat bizar twist, for non-seekable streams the JDK throws an exception
+            throw new IOException("The handle is invalid");
+        }
+        try
+        {
+            if (false) throw new cli.System.IO.IOException();
+            if (false) throw new cli.System.NotSupportedException();
+            if (false) throw new cli.System.ObjectDisposedException(null);
+            long cur = stream.get_Position();
+            long end = stream.Seek(n, SeekOrigin.wrap(SeekOrigin.Current));
+            return end - cur;
+        }
+        catch (cli.System.IO.IOException x)
+        {
+            throw new IOException(x.getMessage());
+        }
+        catch (cli.System.NotSupportedException x1)
+        {
+            // this means we have a broken Stream, because if CanSeek returns true, it must
+            // support Length and Position
+            throw new IOException(x1);
+        }
+        catch (cli.System.ObjectDisposedException x)
+        {
+            throw new java.nio.channels.ClosedChannelException();
+        }
+    }
+
+    @@ikvm.lang.Internal
+    public int available() throws IOException
+    {
+        checkOpen();
+        try
+        {
+            if (false) throw new cli.System.IO.IOException();
+            if (false) throw new cli.System.NotSupportedException();
+            if (false) throw new cli.System.ObjectDisposedException(null);
+            if (stream.get_CanSeek())
+            {
+                return (int)Math.min(Integer.MAX_VALUE, Math.max(0, stream.get_Length() - stream.get_Position()));
+            }
+            return 0;
+        }
+        catch (cli.System.IO.IOException x)
+        {
+            throw new IOException(x.getMessage());
+        }
+        catch (cli.System.NotSupportedException x1)
+        {
+            // this means we have a broken Stream, because if CanSeek returns true, it must
+            // support Length and Position
+            throw new IOException(x1);
+        }
+        catch (cli.System.ObjectDisposedException x)
+        {
+            throw new java.nio.channels.ClosedChannelException();
+        }
+    }
+
+    void write(int b) throws IOException
+    {
+        checkOpen();
+        try
+        {
+            if (false) throw new cli.System.NotSupportedException();
+            if (false) throw new cli.System.IO.IOException();
+            if (false) throw new cli.System.ObjectDisposedException(null);
+            stream.WriteByte((byte)b);
+            // NOTE FileStream buffers the output, so we have to flush explicitly
+            stream.Flush();
+        }
+        catch (cli.System.NotSupportedException x)
+        {
+            throw new IOException(x.getMessage());
+        }
+        catch (cli.System.IO.IOException x)
+        {
+            throw new IOException(x.getMessage());
+        }
+        catch (cli.System.ObjectDisposedException x)
+        {
+            throw new java.nio.channels.ClosedChannelException();
+        }
+    }
+
+    @@ikvm.lang.Internal
+    public void writeBytes(byte buf[], int offset, int len) throws IOException
+    {
+        // NOTE we start by dereferencing buf, to make sure you get a NullPointerException first if you pass a null reference.
+        int bufLen = buf.length;
+        if ((offset < 0) || (offset > bufLen) || (len < 0) || (len > (bufLen - offset)))
+        {
+            throw new IndexOutOfBoundsException();
+        }
+
+        if (len == 0)
+        {
+            return;
+        }
+
+        checkOpen();
+
+        try
+        {
+            if (false) throw new cli.System.NotSupportedException();
+            if (false) throw new cli.System.IO.IOException();
+            if (false) throw new cli.System.ObjectDisposedException(null);
+            stream.Write(buf, offset, len);
+            // NOTE FileStream buffers the output, so we have to flush explicitly
+            stream.Flush();
+        }
+        catch (cli.System.NotSupportedException x)
+        {
+            throw new IOException(x.getMessage());
+        }
+        catch (cli.System.IO.IOException x)
+        {
+            throw new IOException(x.getMessage());
+        }
+        catch (cli.System.ObjectDisposedException x)
+        {
+            throw new java.nio.channels.ClosedChannelException();
+        }
+    }
+
+    @@ikvm.lang.Internal
+    public long getFilePointer() throws IOException
+    {
+        checkOpen();
+        try
+        {
+            if (false) throw new cli.System.IO.IOException();
+            if (false) throw new cli.System.NotSupportedException();
+            if (false) throw new cli.System.ObjectDisposedException(null);
+            return stream.get_Position();
+        }
+        catch (cli.System.IO.IOException x)
+        {
+            throw new IOException(x.getMessage());
+        }
+        catch (cli.System.NotSupportedException x1)
+        {
+            throw new IOException(x1);
+        }
+        catch (cli.System.ObjectDisposedException x)
+        {
+            throw new java.nio.channels.ClosedChannelException();
+        }
+    }
+
+    @@ikvm.lang.Internal
+    public void seek(long newPosition) throws IOException
+    {
+        checkOpen();
+        try
+        {
+            if (false) throw new cli.System.IO.IOException();
+            if (false) throw new cli.System.NotSupportedException();
+            if (false) throw new cli.System.ObjectDisposedException(null);
+            if (false) throw new cli.System.ArgumentOutOfRangeException();
+            stream.set_Position(newPosition);
+        }
+        catch (cli.System.IO.IOException x)
+        {
+            throw new IOException(x.getMessage());
+        }
+        catch (cli.System.NotSupportedException x1)
+        {
+            throw new IOException(x1);
+        }
+        catch (cli.System.ObjectDisposedException x)
+        {
+            throw new java.nio.channels.ClosedChannelException();
+        }
+        catch (cli.System.ArgumentOutOfRangeException _)
+        {
+            throw new IOException("Negative seek offset");
+        }
+    }
+
+    @@ikvm.lang.Internal
+    public long length() throws IOException
+    {
+        checkOpen();
+        try
+        {
+            if (false) throw new cli.System.IO.IOException();
+            if (false) throw new cli.System.NotSupportedException();
+            if (false) throw new cli.System.ObjectDisposedException(null);
+            return stream.get_Length();
+        }
+        catch (cli.System.IO.IOException x)
+        {
+            throw new IOException(x.getMessage());
+        }
+        catch (cli.System.NotSupportedException x1)
+        {
+            throw new IOException(x1);
+        }
+        catch (cli.System.ObjectDisposedException x)
+        {
+            throw new java.nio.channels.ClosedChannelException();
+        }
+    }
+
+    @@ikvm.lang.Internal
+    public void setLength(long newLength) throws IOException
+    {
+        checkOpen();
+        try
+        {
+            if (false) throw new cli.System.IO.IOException();
+            if (false) throw new cli.System.NotSupportedException();
+            if (false) throw new cli.System.ObjectDisposedException(null);
+            stream.SetLength(newLength);
+        }
+        catch (cli.System.IO.IOException x)
+        {
+            throw new IOException(x.getMessage());
+        }
+        catch (cli.System.NotSupportedException x1)
+        {
+            throw new IOException(x1);
+        }
+        catch (cli.System.ObjectDisposedException x)
+        {
+            throw new java.nio.channels.ClosedChannelException();
+        }
+    }
+
+    @@ikvm.lang.Internal
+    public void close() throws IOException
+    {
+        cli.System.IO.Stream s = stream;
+        stream = null;
+        if (s != null)
+        {
+            s.Close();
+        }
+    }
+
+    @@ikvm.lang.Internal
+    public cli.System.IO.Stream getStream()
+    {
+        return stream;
+    }
+
+    @@ikvm.lang.Internal
+    public static FileDescriptor fromStream(cli.System.IO.Stream stream)
+    {
+        FileDescriptor desc = new FileDescriptor();
+        desc.stream = stream;
+        return desc;
+    }
+
+    @@ikvm.lang.Internal
+    public cli.System.Net.Sockets.Socket getSocket()
+    {
+        return socket;
+    }
+
+    @@ikvm.lang.Internal
+    public void setSocket(cli.System.Net.Sockets.Socket socket)
+    {
+        this.socket = socket;
+    }
+
+    @@ikvm.lang.Internal
+    public void setSocketBlocking(boolean blocking) throws IOException
+    {
+        this.nonBlockingSocket = !blocking;
+        try
+        {
+            if (false) throw new cli.System.Net.Sockets.SocketException();
+            if (false) throw new cli.System.ObjectDisposedException("");
+            socket.set_Blocking(blocking);
+        }
+        catch (cli.System.Net.Sockets.SocketException x)
+        {
+            if (x.get_ErrorCode() == java.net.SocketUtil.WSAEINVAL)
+            {
+                // Work around for winsock issue. You can't set a socket to blocking if a connection request is pending,
+                // so we'll have to set the blocking again in SocketChannelImpl.checkConnect().
+                return;
+            }
+            throw java.net.SocketUtil.convertSocketExceptionToIOException(x);
+        }
+        catch (cli.System.ObjectDisposedException _)
+        {
+            throw new java.net.SocketException("Socket is closed");
+        }
+    }
+    
+    @@ikvm.lang.Internal
+    public boolean isSocketBlocking()
+    {
+        return !nonBlockingSocket;
+    }
+
+    @@ikvm.lang.Internal
+    public cli.System.IAsyncResult getAsyncResult()
+    {
+        return asyncResult;
+    }
+
+    @@ikvm.lang.Internal
+    public void setAsyncResult(cli.System.IAsyncResult asyncResult)
+    {
+        this.asyncResult = asyncResult;
+    }
+}
+@
+
+
+1.24
+log
+@Changed FileNotFoundException message in the case of an access denied to match the JDK message. JRuby depends on this.
+@
+text
+@d2 1
+a2 1
+ * Copyright (c) 2003, 2012, Oracle and/or its affiliates. All rights reserved.
+d34 2
+a35 1
+import java.util.concurrent.atomic.AtomicInteger;
+d61 3
+d66 4
+a69 3
+    
+    @@ikvm.lang.Property(get = "get_fd")
+    private int fd;
+a126 8
+     * A use counter for tracking the FIS/FOS/RAF instances that
+     * use this FileDescriptor. The FIS/FOS.finalize() will not release
+     * the FileDescriptor if it is still under use by any stream.
+     */
+    private AtomicInteger useCount;
+
+
+    /**
+a130 1
+        useCount = new AtomicInteger();
+d270 5
+a274 1
+    // package private methods used by FIS, FOS and RAF.
+d276 16
+a291 2
+    int incrementAndGetUseCount() {
+        return useCount.incrementAndGet();
+d294 38
+a331 2
+    int decrementAndGetUseCount() {
+        return useCount.decrementAndGet();
+@
+
+
+1.23
+log
+@Updated copyright year.
+@
+text
+@d328 2
+a329 1
+            throw new FileNotFoundException(x3.getMessage());
+@
+
+
+1.22
+log
+@Implemented dual stack sockets.
+@
+text
+@d2 1
+a2 1
+ * Copyright (c) 2003, 2008, Oracle and/or its affiliates. All rights reserved.
+@
+
+
+1.21
+log
+@Updated bulk of java.nio to OpenJDK 7.
+@
+text
+@d171 1
+a171 1
+        return stream != null;
+@
+
+
+1.20
+log
+@Updated forked java.io classes (except FilePermission) to OpenJDK 7.
+@
+text
+@d52 3
+a54 1
+    
+d686 44
+@
+
+
+1.19
+log
+@Integrated OpenJDK 6 b21.
+@
+text
+@d2 1
+a2 1
+ * Copyright (c) 2003, 2007, Oracle and/or its affiliates. All rights reserved.
+d38 6
+a43 7
+ * to the underlying machine-specific structure representing an open
+ * file, an open socket, or another source or sink of bytes. The
+ * main practical use for a file descriptor is to create a
+ * <code>FileInputStream</code> or <code>FileOutputStream</code> to
+ * contain it.
+ * <p>
+ * Applications should not create their own file descriptors.
+a45 2
+ * @@see     java.io.FileInputStream
+ * @@see     java.io.FileOutputStream
+d138 1
+a138 1
+     * known as <code>System.in</code>.
+d147 1
+a147 1
+     * known as <code>System.out</code>.
+d155 1
+a155 1
+     * known as <code>System.err</code>.
+d164 1
+a164 1
+     * @@return  <code>true</code> if the file descriptor object represents a
+d166 1
+a166 1
+     *          <code>false</code> otherwise.
+@
+
+
+1.18
+log
+@Revert change by Volker. We don't want to set the cause, because that is a breaking change.
+@
+text
+@d2 1
+a2 1
+ * Copyright 2003-2007 Sun Microsystems, Inc.  All Rights Reserved.
+d7 1
+a7 1
+ * published by the Free Software Foundation.  Sun designates this
+d9 1
+a9 1
+ * by Sun in the LICENSE file that accompanied this code.
+d21 3
+a23 3
+ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
+ * CA 95054 USA or visit www.sun.com if you need additional information or
+ * have any questions.
+@
+
+
+1.17
+log
+@show original exception as inner exception
+@
+text
+@d333 1
+a333 1
+            throw (FileNotFoundException)new FileNotFoundException(x4.getMessage()).initCause(x4);
+d337 1
+a337 1
+            throw (FileNotFoundException)new FileNotFoundException(x5.getMessage()).initCause(x5);
+@
+
+
+1.16
+log
+@More .NET 4.0 security model attributes.
+@
+text
+@d333 1
+a333 1
+            throw new FileNotFoundException(x4.getMessage());
+d337 1
+a337 1
+            throw new FileNotFoundException(x5.getMessage());
+@
+
+
+1.15
+log
+@Prep for .NET 4.0 security model:
+- added more SecurityCritical attributes
+- added SecuritySafeCritical/TreatAsSafe attributes to Direct-X-Buffer classes
+@
+text
+@d238 1
+@
+
+
+1.14
+log
+@Moved Posix file flushing to C# to be able to use delegate instead of reflection to invoke the Mono.Posix method. Also added DangerousAddRef/Release to prevent the handle from being closed while flushing.
+@
+text
+@d67 1
+d93 1
+@
+
+
+1.13
+log
+@Added hack to support JRuby's tty detection.
+@
+text
+@d226 1
+a226 1
+            boolean ok = ikvm.internal.Util.WINDOWS ? flushWin32(fs) : ikvm.internal.MonoUtils.fsync(fs);
+d234 2
+@
+
+
+1.12
+log
+@Made error handling compatible with OpenJDK to pass OpenJDK tests.
+@
+text
+@d55 64
+@
+
+
+1.11
+log
+@Integrated OpenJDK 6 b10.
+@
+text
+@d307 6
+a312 1
+        checkOpen();
+d319 1
+a319 9
+        if ((offset < 0) || (offset > buf.length))
+        {
+            throw new IllegalArgumentException("Offset invalid: " + offset);
+        }
+
+        if ((len < 0) || (len > (buf.length - offset)))
+        {
+            throw new IllegalArgumentException("Length invalid: " + len);
+        }
+d440 3
+a442 2
+        checkOpen();
+        if (len == 0)
+d444 1
+a444 1
+            return;
+d447 1
+a447 1
+        if ((offset < 0) || (offset > buf.length))
+d449 1
+a449 1
+            throw new IllegalArgumentException("Offset invalid: " + offset);
+d452 1
+a452 4
+        if ((len < 0) || (len > (buf.length - offset)))
+        {
+            throw new IllegalArgumentException("Length invalid: " + len);
+        }
+d511 1
+d526 4
+@
+
+
+1.10
+log
+@Merged OpenJDK 6 b10 whitespace and comment changes.
+@
+text
+@d69 1
+a69 1
+        useCount = new AtomicInteger(1);
+@
+
+
+1.9
+log
+@Converted tabs to spaces.
+@
+text
+@d2 1
+a2 1
+ * Copyright 2003-2006 Sun Microsystems, Inc.  All Rights Reserved.
+a46 1
+ * @@version 1.10, 05/05/07
+d52 1
+a52 1
+ 
+d206 1
+a206 1
+    // package private methods used by FIS, FOS and RAF. 
+d211 1
+a211 1
+ 
+@
+
+
+1.8
+log
+@Moved Mono specific code to ikvm.internal.MonoUtils class.
+@
+text
+@d48 2
+a49 2
+ * @@see	    java.io.FileInputStream
+ * @@see	    java.io.FileOutputStream
+d70 1
+a70 1
+	useCount = new AtomicInteger(1);
+d107 1
+a107 1
+	return stream != null;
+d133 3
+a135 3
+     *	      Thrown when the buffers cannot be flushed,
+     *	      or because the system cannot guarantee that all the
+     *	      buffers have been synchronized with physical media.
+d140 29
+a168 29
+	if (stream == null)
+	{
+	    throw new SyncFailedException("sync failed");
+	}
+
+	if (!stream.get_CanWrite())
+	{
+	    return;
+	}
+
+	try
+	{
+	    if (false) throw new cli.System.IO.IOException();
+	    stream.Flush();
+	}
+	catch (cli.System.IO.IOException x)
+	{
+	    throw new SyncFailedException(x.getMessage());
+	}
+
+	if (stream instanceof FileStream)
+	{
+	    FileStream fs = (FileStream)stream;
+	    boolean ok = ikvm.internal.Util.WINDOWS ? flushWin32(fs) : ikvm.internal.MonoUtils.fsync(fs);
+	    if (!ok)
+	    {
+		throw new SyncFailedException("sync failed");
+	    }
+	}
+d181 8
+a188 8
+	try
+	{
+	    desc.stream = getStandardStream(fd);
+	}
+	catch (cli.System.MissingMethodException _)
+	{
+	    desc.stream = cli.System.IO.Stream.Null;
+	}
+d194 11
+a204 11
+	switch (fd)
+	{
+	    case 0:
+		return cli.System.Console.OpenStandardInput();
+	    case 1:
+		return cli.System.Console.OpenStandardOutput();
+	    case 2:
+		return cli.System.Console.OpenStandardError();
+	    default:
+		throw new Error();
+	}
+d210 1
+a210 1
+	return useCount.incrementAndGet();
+d214 1
+a214 1
+	return useCount.decrementAndGet();
+d219 1
+a219 1
+	open(name, FileMode.Open, FileAccess.Read);
+d224 1
+a224 1
+	open(name, FileMode.Create, FileAccess.Write);
+d229 1
+a229 1
+	open(name, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+d234 1
+a234 1
+	open(name, FileMode.Append, FileAccess.Write);
+d238 5
+a242 5
+	throws cli.System.IO.IOException,
+	    cli.System.Security.SecurityException,
+	    cli.System.UnauthorizedAccessException,
+	    cli.System.ArgumentException,
+	    cli.System.NotSupportedException;
+d246 25
+a270 25
+	try
+	{
+	    stream = open(name, FileMode.wrap(fileMode), FileAccess.wrap(fileAccess));
+	}
+	catch (cli.System.Security.SecurityException x1)
+	{
+	    throw new SecurityException(x1.getMessage());
+	}
+	catch (cli.System.IO.IOException x2)
+	{
+	    throw new FileNotFoundException(x2.getMessage());
+	}
+	catch (cli.System.UnauthorizedAccessException x3)
+	{
+	    // this is caused by "name" being a directory instead of a file
+	    throw new FileNotFoundException(x3.getMessage());
+	}
+	catch (cli.System.ArgumentException x4)
+	{
+	    throw new FileNotFoundException(x4.getMessage());
+	}
+	catch (cli.System.NotSupportedException x5)
+	{
+	    throw new FileNotFoundException(x5.getMessage());
+	}
+d275 4
+a278 4
+	if (stream == null)
+	{
+	    throw new IOException("Stream Closed");
+	}
+d283 5
+a287 5
+	checkOpen();
+	try
+	{
+	    if (false) throw new cli.System.NotSupportedException();
+	    if (false) throw new cli.System.IO.IOException();
+d289 10
+a298 10
+	    return stream.ReadByte();
+	}
+	catch (cli.System.NotSupportedException x)
+	{
+	    throw new IOException(x.getMessage());
+	}
+	catch (cli.System.IO.IOException x)
+	{
+	    throw new IOException(x.getMessage());
+	}
+d308 1
+a308 1
+	checkOpen();
+d310 19
+a328 19
+	if (len == 0)
+	{
+	    return 0;
+	}
+
+	if ((offset < 0) || (offset > buf.length))
+	{
+	    throw new IllegalArgumentException("Offset invalid: " + offset);
+	}
+
+	if ((len < 0) || (len > (buf.length - offset)))
+	{
+	    throw new IllegalArgumentException("Length invalid: " + len);
+	}
+
+	try
+	{
+	    if (false) throw new cli.System.NotSupportedException();
+	    if (false) throw new cli.System.IO.IOException();
+d331 14
+a344 14
+	    if (count == 0)
+	    {
+		count = -1;
+	    }
+	    return count;
+	}
+	catch (cli.System.NotSupportedException x)
+	{
+	    throw new IOException(x.getMessage());
+	}
+	catch (cli.System.IO.IOException x)
+	{
+	    throw new IOException(x.getMessage());
+	}
+d353 10
+a362 10
+	checkOpen();
+	if (!stream.get_CanSeek())
+	{
+	    // in a somewhat bizar twist, for non-seekable streams the JDK throws an exception
+	    throw new IOException("The handle is invalid");
+	}
+	try
+	{
+	    if (false) throw new cli.System.IO.IOException();
+	    if (false) throw new cli.System.NotSupportedException();
+d364 14
+a377 14
+	    long cur = stream.get_Position();
+	    long end = stream.Seek(n, SeekOrigin.wrap(SeekOrigin.Current));
+	    return end - cur;
+	}
+	catch (cli.System.IO.IOException x)
+	{
+	    throw new IOException(x.getMessage());
+	}
+	catch (cli.System.NotSupportedException x1)
+	{
+	    // this means we have a broken Stream, because if CanSeek returns true, it must
+	    // support Length and Position
+	    throw new IOException(x1);
+	}
+d387 5
+a391 5
+	checkOpen();
+	try
+	{
+	    if (false) throw new cli.System.IO.IOException();
+	    if (false) throw new cli.System.NotSupportedException();
+d393 16
+a408 16
+	    if (stream.get_CanSeek())
+	    {
+		return (int)Math.min(Integer.MAX_VALUE, Math.max(0, stream.get_Length() - stream.get_Position()));
+	    }
+	    return 0;
+	}
+	catch (cli.System.IO.IOException x)
+	{
+	    throw new IOException(x.getMessage());
+	}
+	catch (cli.System.NotSupportedException x1)
+	{
+	    // this means we have a broken Stream, because if CanSeek returns true, it must
+	    // support Length and Position
+	    throw new IOException(x1);
+	}
+d417 1
+a417 1
+	checkOpen();
+d420 1
+a420 1
+	    if (false) throw new cli.System.NotSupportedException();
+d427 4
+a430 4
+	catch (cli.System.NotSupportedException x)
+	{
+	    throw new IOException(x.getMessage());
+	}
+d444 19
+a462 19
+	checkOpen();
+	if (len == 0)
+	{
+	    return;
+	}
+
+	if ((offset < 0) || (offset > buf.length))
+	{
+	    throw new IllegalArgumentException("Offset invalid: " + offset);
+	}
+
+	if ((len < 0) || (len > (buf.length - offset)))
+	{
+	    throw new IllegalArgumentException("Length invalid: " + len);
+	}
+
+	try
+	{
+	    if (false) throw new cli.System.NotSupportedException();
+d465 12
+a476 12
+	    stream.Write(buf, offset, len);
+	    // NOTE FileStream buffers the output, so we have to flush explicitly
+	    stream.Flush();
+	}
+	catch (cli.System.NotSupportedException x)
+	{
+	    throw new IOException(x.getMessage());
+	}
+	catch (cli.System.IO.IOException x)
+	{
+	    throw new IOException(x.getMessage());
+	}
+d486 5
+a490 5
+	checkOpen();
+	try
+	{
+	    if (false) throw new cli.System.IO.IOException();
+	    if (false) throw new cli.System.NotSupportedException();
+d492 10
+a501 10
+	    return stream.get_Position();
+	}
+	catch (cli.System.IO.IOException x)
+	{
+	    throw new IOException(x.getMessage());
+	}
+	catch (cli.System.NotSupportedException x1)
+	{
+	    throw new IOException(x1);
+	}
+d511 5
+a515 5
+	checkOpen();
+	try
+	{
+	    if (false) throw new cli.System.IO.IOException();
+	    if (false) throw new cli.System.NotSupportedException();
+d517 10
+a526 10
+	    stream.set_Position(newPosition);
+	}
+	catch (cli.System.IO.IOException x)
+	{
+	    throw new IOException(x.getMessage());
+	}
+	catch (cli.System.NotSupportedException x1)
+	{
+	    throw new IOException(x1);
+	}
+d536 5
+a540 5
+	checkOpen();
+	try
+	{
+	    if (false) throw new cli.System.IO.IOException();
+	    if (false) throw new cli.System.NotSupportedException();
+d542 10
+a551 10
+	    return stream.get_Length();
+	}
+	catch (cli.System.IO.IOException x)
+	{
+	    throw new IOException(x.getMessage());
+	}
+	catch (cli.System.NotSupportedException x1)
+	{
+	    throw new IOException(x1);
+	}
+d561 5
+a565 5
+	checkOpen();
+	try
+	{
+	    if (false) throw new cli.System.IO.IOException();
+	    if (false) throw new cli.System.NotSupportedException();
+d567 10
+a576 10
+	    stream.SetLength(newLength);
+	}
+	catch (cli.System.IO.IOException x)
+	{
+	    throw new IOException(x.getMessage());
+	}
+	catch (cli.System.NotSupportedException x1)
+	{
+	    throw new IOException(x1);
+	}
+d586 6
+a591 6
+	cli.System.IO.Stream s = stream;
+	stream = null;
+	if (s != null)
+	{
+	    s.Close();
+	}
+d597 1
+a597 1
+	return stream;
+d603 3
+a605 3
+	FileDescriptor desc = new FileDescriptor();
+	desc.stream = stream;
+	return desc;
+d611 1
+a611 1
+	return socket;
+d617 1
+a617 1
+	this.socket = socket;
+@
+
+
+1.7
+log
+@Updated FlushFileBuffers p/invoke to use SafeFileHandle.
+@
+text
+@a32 4
+import cli.System.IntPtr;
+import cli.System.Type;
+import cli.System.Reflection.BindingFlags;
+import cli.System.Reflection.MethodInfo;
+d163 1
+a163 1
+	    boolean ok = ikvm.internal.Util.WINDOWS ? flushWin32(fs) : flushPosix(fs);
+a175 16
+    private static boolean flushPosix(FileStream fs)
+    {
+        Type t = Type.GetType("Mono.Unix.Native.Syscall, Mono.Posix");
+        if (t != null)
+        {
+            BindingFlags flags = BindingFlags.wrap(BindingFlags.Public | BindingFlags.Static);
+            MethodInfo fsync = t.GetMethod("fsync", flags, null, new Type[] { Type.GetType("System.Int32") }, null);
+            if (fsync != null)
+            {
+                Object[] args = new Object[] { ikvm.lang.CIL.box_int(fs.get_Handle().ToInt32()) };
+                return ikvm.lang.CIL.unbox_int(fsync.Invoke(null, args)) == 0;
+            }
+        }
+        return true;
+    }
+
+@
+
+
+1.6
+log
+@New FileChannelImpl implementation based on OpenJDK.
+@
+text
+@d177 1
+a177 3
+        int rc = FlushFileBuffers(fs.get_Handle());
+        cli.System.GC.KeepAlive(fs);
+        return rc != 0;
+d197 1
+a197 1
+    private static native int FlushFileBuffers(IntPtr handle);
+@
+
+
+1.5
+log
+@- Implemented DatagramChannelImpl and PipeImpl.
+- More nio fixes.
+@
+text
+@d327 2
+a328 1
+    int readBytes(byte buf[], int offset, int len) throws IOException
+d334 1
+a334 1
+	    return(0);
+d406 2
+a407 1
+    int available() throws IOException
+d463 2
+a464 1
+    void writeBytes(byte buf[], int offset, int len) throws IOException
+d505 2
+a506 1
+    long getFilePointer() throws IOException
+d530 2
+a531 1
+    void seek(long newPosition) throws IOException
+d555 2
+a556 1
+    long length() throws IOException
+d580 2
+a581 1
+    void setLength(long newLength) throws IOException
+d605 2
+a606 1
+    void close() throws IOException
+@
+
+
+1.4
+log
+@- Added WINDOWS constant to ikvm.internal.Util to check if we're running on Windows.
+- Added a bunch of native methods to openjdk.cs (some real implementations, some stubs)
+- Added OpenJDK derived PlainSocketImpl/SocketInputStream/SocketOutputStream implementations.
+- Added OpenJDK derived file protocol handler (a single class that supports both Windows and non-Windows)
+@
+text
+@d59 1
+d621 12
+@
+
+
+1.3
+log
+@Implemented the beginnings of a virtual file system for the java.home directory.
+@
+text
+@a57 1
+    private static final boolean win32 = runningOnWindows();
+a59 8
+    private static boolean runningOnWindows()
+    {
+        cli.System.OperatingSystem os = cli.System.Environment.get_OSVersion();
+        int platform = os.get_Platform().Value;
+        return platform == cli.System.PlatformID.Win32NT || 
+            platform == cli.System.PlatformID.Win32Windows;
+    }
+
+d166 1
+a166 1
+	    boolean ok = win32 ? flushWin32(fs) : flushPosix(fs);
+@
+
+
+1.2
+log
+@Improved exception handling.
+@
+text
+@a246 11
+    private static String demanglePath(String path)
+    {
+	// HACK for some reason Java accepts: \c:\foo.txt
+	// I don't know what else, but for now lets just support this
+	if(path.length() > 3 && (path.charAt(0) == '\\' || path.charAt(0) == '/') && path.charAt(2) == ':')
+	{
+	    path = path.substring(1);
+	}
+	return path;
+    }
+
+d267 7
+d278 1
+a278 6
+	    if (false) throw new cli.System.IO.IOException();
+	    if (false) throw new cli.System.Security.SecurityException();
+	    if (false) throw new cli.System.UnauthorizedAccessException();
+	    if (false) throw new cli.System.ArgumentException();
+	    if (false) throw new cli.System.NotSupportedException();
+	    stream = new FileStream(demanglePath(name), FileMode.wrap(fileMode), FileAccess.wrap(fileAccess), FileShare.wrap(FileShare.ReadWrite), 1, false);
+@
+
+
+1.1
+log
+@Integrated OpenJDK's java.io.FileDescriptor, FileInputStream, FileOutputStream & RandomAccessFile.
+@
+text
+@d325 1
+d327 1
+d330 4
+d338 4
+a341 1
+	// TODO map all the other exceptions as well...
+d365 1
+d367 1
+d375 4
+d383 4
+a386 1
+	// TODO map all the other exceptions as well...
+d401 1
+d416 4
+d429 1
+d446 4
+d457 3
+a459 2
+            if(false) throw new cli.System.IO.IOException();
+            if(false) throw new cli.System.ObjectDisposedException(null);
+d464 4
+d472 1
+a472 1
+        catch (cli.System.ObjectDisposedException x2)
+d498 1
+d505 4
+d513 1
+a513 1
+        catch (cli.System.ObjectDisposedException x2)
+d526 1
+d537 4
+d550 1
+d561 4
+d574 1
+d585 4
+d598 1
+d609 4
+@
+

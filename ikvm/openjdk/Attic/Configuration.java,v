@@ -1,0 +1,409 @@
+head	1.2;
+access;
+symbols
+	v0_36_0_14:1.1.2.13
+	v0_36_0_13:1.1.2.12
+	v0_38_0_1:1.1.4.2
+	v0_38_0_0:1.1.4.1
+	v0_38:1.1.0.4
+	v0_36_0_9:1.1.2.9
+	v0_36_0_7:1.1.2.7
+	v0_36_0_5:1.1.2.6
+	v0_36_0_4:1.1.2.5
+	v0_36_0_3:1.1.2.4
+	v0_36_0_2:1.1.2.3
+	v0_36_0_1:1.1.2.2
+	v0_36_0_0:1.1.2.1
+	v0_36:1.1.0.2;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2008.11.18.07.46.53;	author jfrijters;	state dead;
+branches;
+next	1.1;
+
+1.1
+date	2007.08.16.14.05.01;	author jfrijters;	state Exp;
+branches
+	1.1.2.1
+	1.1.4.1;
+next	;
+
+1.1.2.1
+date	2007.08.30.09.25.50;	author jfrijters;	state Exp;
+branches;
+next	1.1.2.2;
+
+1.1.2.2
+date	2007.09.13.07.30.06;	author jfrijters;	state Exp;
+branches;
+next	1.1.2.3;
+
+1.1.2.3
+date	2007.09.20.13.54.23;	author jfrijters;	state Exp;
+branches;
+next	1.1.2.4;
+
+1.1.2.4
+date	2007.10.01.13.02.41;	author jfrijters;	state Exp;
+branches;
+next	1.1.2.5;
+
+1.1.2.5
+date	2007.10.12.16.18.41;	author jfrijters;	state Exp;
+branches;
+next	1.1.2.6;
+
+1.1.2.6
+date	2007.12.04.06.04.32;	author jfrijters;	state Exp;
+branches;
+next	1.1.2.7;
+
+1.1.2.7
+date	2008.01.25.07.12.20;	author jfrijters;	state Exp;
+branches;
+next	1.1.2.8;
+
+1.1.2.8
+date	2008.02.03.07.44.12;	author jfrijters;	state Exp;
+branches;
+next	1.1.2.9;
+
+1.1.2.9
+date	2008.02.20.14.24.40;	author jfrijters;	state Exp;
+branches;
+next	1.1.2.10;
+
+1.1.2.10
+date	2008.03.14.06.11.12;	author jfrijters;	state Exp;
+branches;
+next	1.1.2.11;
+
+1.1.2.11
+date	2008.05.04.08.23.40;	author jfrijters;	state Exp;
+branches;
+next	1.1.2.12;
+
+1.1.2.12
+date	2008.11.05.07.52.01;	author jfrijters;	state Exp;
+branches;
+next	1.1.2.13;
+
+1.1.2.13
+date	2010.11.17.05.46.14;	author jfrijters;	state Exp;
+branches;
+next	;
+
+1.1.4.1
+date	2008.09.23.10.18.47;	author jfrijters;	state Exp;
+branches;
+next	1.1.4.2;
+
+1.1.4.2
+date	2008.11.05.07.48.43;	author jfrijters;	state Exp;
+branches;
+next	1.1.4.3;
+
+1.1.4.3
+date	2008.11.11.18.32.19;	author jfrijters;	state Exp;
+branches;
+next	1.1.4.4;
+
+1.1.4.4
+date	2009.02.02.05.58.20;	author jfrijters;	state Exp;
+branches;
+next	1.1.4.5;
+
+1.1.4.5
+date	2009.02.05.14.44.56;	author jfrijters;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@Changed build to autogenerate the assembly qualified name of the AWT peer toolkit.
+@
+text
+@/*
+  Copyright (C) 2007 Jeroen Frijters
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jeroen Frijters
+  jeroen@@frijters.net
+  
+*/
+package gnu.classpath;
+
+/*
+ * This is a temporary class while we're using the GNU Classpath AWT/Swing implementation.
+ */
+public interface Configuration
+{
+    String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms";
+}
+@
+
+
+1.1
+log
+@Refactored system properties initialization.
+@
+text
+@@
+
+
+1.1.4.1
+log
+@Set version no. to 0.38.0.0.
+@
+text
+@d31 1
+a31 1
+    String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.38.0.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.1.4.2
+log
+@As usual, I forgot to update the version number here.
+@
+text
+@d31 1
+a31 1
+    String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.38.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.1.4.3
+log
+@- Changed version to 0.38.0.2
+- Fixed openjdk.build BOM issue on Linux
+- Fixed verifier bug in handling of jsr instruction
+@
+text
+@d31 1
+a31 1
+    String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.38.0.2, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.1.4.4
+log
+@Changed version to 0.38.0.3 and backported these fixes:
+- Fixed the stack trace when an unwrapped java.lang.Error (or subclass) escapes from a static initializer.
+- It turns out that we really should create an MBeanServer in sun.management.ManagementFactory.createPlatformMBeanServer(), even if we don't populate it with anything useful, applications might still want to register their own MBeans. This fix allows Derby 10.4.2.0 to work.
+- Added helpful message to ClassCastException generated for ghost array casts.
+- Added check for constructor with missing body in map.xml.
+- Removed over eager state checking from java.util.zip.Deflater. Fixes Lucene issue.
+- Fixed enclosing method discovery to work for ReflectionOnly assemblies. This allows ikvmstub to work with ikvmc generated assemblies.
+- Always emit an explicit method override if we've mangled the name/sig, because we can't predict whether it will be needed or not (without keeping track of the mangling in the base classes) and the cost is minimal since this doesn't happen all that often.
+- Miranda method should use mangled name (if the name is mangled).
+- Fixed pointer detection to work for types with multiple indirection levels.
+- If the last call site of a subroutine wasn't reachable, the return switch would fall through potentially causing the code to be unverifiable.
+- The check for unloadable types on the stack indexed the stack in the wrong order.
+- Fixed exception wrapping for java.security.AccessController.doPrivileged().
+- Fixed tracer to only add a trace listener in executables.
+@
+text
+@d31 1
+a31 1
+    String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.38.0.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.1.4.5
+log
+@- Updated version to 0.38.0.4
+- Backported fix to PassiveWeakDictionary.
+@
+text
+@d31 1
+a31 1
+    String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.38.0.4, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.1.2.1
+log
+@Updated version numbers to 0.36.0.0
+@
+text
+@d31 1
+a31 1
+    String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.36.0.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.1.2.2
+log
+@Ported fixes from trunk. Changed version to 0.36.0.1.
+@
+text
+@d31 1
+a31 1
+    String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.36.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.1.2.3
+log
+@Backported fixes from trunk. Changed version to 0.36.0.2.
+@
+text
+@d31 1
+a31 1
+    String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.36.0.2, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.1.2.4
+log
+@Backported fixes from trunk. Changed version to 0.36.0.3.
+@
+text
+@d31 1
+a31 1
+    String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.36.0.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.1.2.5
+log
+@Backported fixes. Changed version to 0.36.0.4.
+@
+text
+@d31 1
+a31 1
+    String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.36.0.4, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.1.2.6
+log
+@Backported fixes and changed version to 0.36.0.5
+@
+text
+@d31 1
+a31 1
+    String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.36.0.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.1.2.7
+log
+@- Changed version to 0.36.0.7
+- Fixed serialization bug
+@
+text
+@d31 1
+a31 1
+    String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.36.0.7, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.1.2.8
+log
+@Set version number to 0.36.0.8.
+@
+text
+@d31 1
+a31 1
+    String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.36.0.8, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.1.2.9
+log
+@- Changed version to 0.36.0.9
+- Added java.util.BitSet perf hack to map.xml
+- Back ported codegen optimizations from 0.37.2970
+@
+text
+@d31 1
+a31 1
+    String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.36.0.9, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.1.2.10
+log
+@- Updated version to 0.36.0.11
+- Updated copyright statements to 2002-2008
+@
+text
+@d31 1
+a31 1
+    String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.36.0.11, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.1.2.11
+log
+@Set version to 0.36.0.12.
+@
+text
+@d31 1
+a31 1
+    String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.36.0.12, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.1.2.12
+log
+@Back ported various fixes:
+- Changed version to 0.36.0.13.
+- Fixed ikvmc not to open the key file for write access.
+- Added more efficient float/double to/from int/long bits converters.
+- Fixed libikvm-native.so build to include reference to gmodule-2.0 library.
+- Fixed ikvmc not to open the key file for write access.
+- Fixed Graphics2D.rotate() to convert rotation angle from radians (Java) to degrees (.NET).
+- Applied awt patch #1979656 by Daniel Wilson.
+- Fixed three String bugs found by OpenJDK string tests.
+- Fixed ldc <class> where <class> is a ghost array.
+- Fixed bug in instanceof <class> where <class> is a Serializable[].
+- Removed incorrect DataFormatException thrown in java.util.zip.InflaterHuffmanTree.
+- Fixed #2001802 contributed by Andy Malakov.
+- Fixed #2001799.
+- Fixed #2006953.
+- Made finalize() and clone() methods in cli.System.Object and cli.System.Exception final.
+@
+text
+@d31 1
+a31 1
+    String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.36.0.13, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
+1.1.2.13
+log
+@Forgot to update AWT assembly version.
+@
+text
+@d31 1
+a31 1
+    String default_awt_peer_toolkit = "ikvm.awt.NetToolkit, IKVM.AWT.WinForms, Version=0.36.0.14, Culture=neutral, PublicKeyToken=13235d27fcbfff58";
+@
+
+
